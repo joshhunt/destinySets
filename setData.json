@@ -1,0 +1,225 @@
+[
+  {
+    "name": "Wrath of the Machine",
+    "groups": [
+      {
+        "name": "Weapons",
+        "type": "weapon",
+        "items": [
+          {
+            "hash": 621603243,
+            "name": "GENESIS CHAIN~",
+            "source": "Aksis Phase 2 (Normal)"
+          },
+          {
+            "hash": 2125403517,
+            "name": "QUANTIPLASM~",
+            "source": "Vosik (Normal)"
+          },
+          {
+            "hash": 242628276,
+            "name": "IF MATERIA~",
+            "source": "Siege Engine (Normal)"
+          },
+          {
+            "hash": 2154053164,
+            "name": "FEVER AND REMEDY~",
+            "source": "Aksis Phase 2 (Hard)"
+          },
+          {
+            "hash": 1784034858,
+            "name": "SOUND AND FURY~",
+            "source": "Siege Engine (Normal)"
+          },
+          {
+            "hash": 3598793896,
+            "name": "ETHER NOVA~",
+            "source": "Vosik (Normal)"
+          },
+          {
+            "hash": 2001493563,
+            "name": "EX MACHINA~",
+            "source": "Vosik (Hard)"
+          },
+          {
+            "hash": 3632330099,
+            "name": "STEEL MEDULLA~",
+            "source": "Aksis Phase 2 (Hard)"
+          },
+          {
+            "hash": 2542033072,
+            "name": "CHAOS DOGMA~",
+            "source": "Aksis Phase 2 (Normal)"
+          },
+          {
+            "hash": 3569444312,
+            "name": "ZEAL VECTOR~",
+            "source": "Vosik (Hard)"
+          }
+        ]
+      },
+      {
+        "name": "Armor",
+        "type": "armor",
+        "items": [
+          {
+            "hash": 3138343137,
+            "name": "Cosmoclast Helm",
+            "source": ""
+          },
+          {
+            "hash": 3976262648,
+            "name": "Cosmoclast Gauntlets",
+            "source": ""
+          },
+          {
+            "hash": 307172368,
+            "name": "Cosmoclast Plate",
+            "source": ""
+          },
+          {
+            "hash": 2011530290,
+            "name": "Cosmoclast Greaves",
+            "source": ""
+          },
+          {
+            "hash": 3529294925,
+            "name": "Cosmoclast Mark",
+            "source": ""
+          },
+          {
+            "hash": 661529959,
+            "name": "Nanomania Mask",
+            "source": ""
+          },
+          {
+            "hash": 2903199470,
+            "name": "Nanomania Grasps",
+            "source": ""
+          },
+          {
+            "hash": 1823306242,
+            "name": "Nanomania Vest",
+            "source": ""
+          },
+          {
+            "hash": 691310312,
+            "name": "Nanomania Boots",
+            "source": ""
+          },
+          {
+            "hash": 1047302227,
+            "name": "Nanomania Cloak",
+            "source": ""
+          },
+          {
+            "hash": 1299613398,
+            "name": "Red Miasma Hood",
+            "source": ""
+          },
+          {
+            "hash": 2503707047,
+            "name": "Red Miasma Gloves",
+            "source": ""
+          },
+          {
+            "hash": 2679967697,
+            "name": "Red Miasma Robes",
+            "source": ""
+          },
+          {
+            "hash": 1680970217,
+            "name": "Red Miasma Boots",
+            "source": ""
+          },
+          {
+            "hash": 155972844,
+            "name": "Red Miasma Bond",
+            "source": ""
+          }
+        ]
+      },
+      {
+        "name": "Spliced Armor",
+        "type": "armor",
+        "items": [
+          {
+            "hash": 3138343136,
+            "name": "Spliced Cosmoclast Helm",
+            "source": "Aksis Phase 2 (Hard)"
+          },
+          {
+            "hash": 3976262649,
+            "name": "Spliced Cosmoclast Gauntlets",
+            "source": "Siege Engine (Hard)"
+          },
+          {
+            "hash": 307172369,
+            "name": "Spliced Cosmoclast Plate",
+            "source": "Siege Engine (Hard)"
+          },
+          {
+            "hash": 2011530291,
+            "name": "Spliced Cosmoclast Greaves",
+            "source": "Vosik (Hard)"
+          },
+          {
+            "hash": 3529294924,
+            "name": "Spliced Cosmoclast Mark",
+            "source": "Aksis Phase 2 (Hard)"
+          },
+          {
+            "hash": 661529958,
+            "name": "Spliced Nanomania Mask",
+            "source": "Aksis Phase 2 (Hard)"
+          },
+          {
+            "hash": 2903199471,
+            "name": "Spliced Nanomania Grasps",
+            "source": "Siege Engine (Hard)"
+          },
+          {
+            "hash": 1823306243,
+            "name": "Spliced Nanomania Vest",
+            "source": "Siege Engine (Hard)"
+          },
+          {
+            "hash": 691310313,
+            "name": "Spliced Nanomania Boots",
+            "source": "Vosik (Hard)"
+          },
+          {
+            "hash": 1047302226,
+            "name": "Spliced Nanomania Cloak",
+            "source": "Aksis Phase 2 (Hard)"
+          },
+          {
+            "hash": 1299613399,
+            "name": "Spliced Red Miasma Hood",
+            "source": "Aksis Phase 2 (Hard)"
+          },
+          {
+            "hash": 2503707046,
+            "name": "Spliced Red Miasma Gloves",
+            "source": "Siege Engine (Hard)"
+          },
+          {
+            "hash": 2679967696,
+            "name": "Spliced Red Miasma Robes",
+            "source": "Siege Engine (Hard)"
+          },
+          {
+            "hash": 1680970216,
+            "name": "Spliced Red Miasma Boots",
+            "source": "Vosik (Hard)"
+          },
+          {
+            "hash": 155972845,
+            "name": "Spliced Red Miasma Bond",
+            "source": "Aksis Phase 2 (Hard)"
+          }
+        ]
+      }
+    ]
+  }
+]
