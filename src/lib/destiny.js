@@ -40,20 +40,21 @@ export function getDestiny(url, opts = {}, postBody) {
         localStorage.setItem(lsKey, JSON.stringify(resp));
       }
 
-      return resp;
+      return resp.Response || resp;
     });
 }
 
-export function getAllInventoryItems() {
+export function getCurrentBungieAccount() {
   return getDestiny('https://www.bungie.net/Platform/User/GetCurrentBungieAccount/', { _cache: true })
-    .then((data) => {
-      console.log(data);
-      if (data.Message !== 'Ok') {
-        console.error(data);
-        throw new Error('API Error - ' + data.Message);
-      }
+}
 
-      const account = data.Response.destinyAccounts[0];
+export function getAccountSummary(account) {
+}
+
+export function getAllInventoryItems() {
+  return getCurrentBungieAccount()
+    .then((body) => {
+      const account = body.destinyAccounts[0];
       const membershipType = account.userInfo.membershipType;
       const destinyMembershipId = account.userInfo.membershipId;
 
@@ -73,8 +74,8 @@ export function getAllInventoryItems() {
     .then((inventories) => {
       console.log(inventories);
 
-      const allItems = inventories.reduce((acc, { Response }) => {
-        const items = Response.data.items.map(item => item.itemHash);
+      const allItems = inventories.reduce((acc, body) => {
+        const items = body.data.items.map(item => item.itemHash);
         return acc.concat(items);
       }, []);
 

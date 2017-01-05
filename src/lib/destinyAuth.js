@@ -1,9 +1,8 @@
 import queryString from 'query-string';
 import { getDestiny } from 'app/lib/destiny';
 
-function handleNewAuthData(resp) {
-  console.info('Recieved new auth data', resp);
-  const authResponse = resp.Response;
+function handleNewAuthData(data) {
+  const authResponse = data;
 
   const accessTokenExpiry = new Date();
   const refreshTokenExpiry = new Date();
