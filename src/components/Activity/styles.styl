@@ -1,12 +1,17 @@
+$width = 600px
+
 .root
-  width: 600px
+  width: 100%
+  max-width: $width
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.5)
   background: rgba(20, 25, 30, 1.0)
   color: white
 
 .image
   width: 100%
-  height: auto
+  height: 240px
+  object-fit: cover
+  object-position: center
   display: block
 
 // TODO: how do we get this colour?
@@ -15,7 +20,9 @@
 
 .activityName
   font-size: 20px
-  font-weight: 600
+  font-weight: 400
+  margin: 0
+  line-height: 1
 
 .drops
   padding: 25px

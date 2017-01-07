@@ -40,7 +40,7 @@ export default function(cb) {
   if (accessTokenIsValid) {
     console.info('Access token is valid, running main()');
     window.AUTH_DATA = prevAuthData;
-    cb();
+    cb(null, true);
 
   } else if (!accessTokenIsValid && refreshTokenIsValid) {
     console.info('Do refresh logic here');
@@ -48,21 +48,26 @@ export default function(cb) {
     getDestiny('https://www.bungie.net/Platform/App/GetAccessTokensFromRefreshToken/', {}, {
       refreshToken: prevAuthData.refreshToken,
     }).then(handleNewAuthData)
-      .then(() => cb())
+      .then(() => cb(null, true))
       .catch(cb);
 
   } else if (queryParams.code) {
+    window.history.replaceState( {} , 'foo', '/' );
     console.info('Recieved auth code, getting access tokens');
 
     getDestiny('https://www.bungie.net/Platform/App/GetAccessTokensFromCode/', {}, {
       code: queryParams.code,
     }).then(handleNewAuthData)
-      .then(() => cb())
+      .then(() => cb(null, true))
       .catch(cb);
 
   } else {
-    console.info('Requesting authorization from Bungie');
-    const AUTH_URL = 'https://www.bungie.net/en/Application/Authorize/11145';
-    window.location.href = AUTH_URL;
+    // console.info('Requesting authorization from Bungie');
+    // const AUTH_URL = 'https://www.bungie.net/en/Application/Authorize/11145';
+    // window.location.href = AUTH_URL;
+    cb(null, false);
   }
 }
+
+
+export const authUrl = 'https://www.bungie.net/en/Application/Authorize/11145';

@@ -5,7 +5,7 @@ import Item from '../Item';
 
 import styles from './styles.styl';
 
-export default function Activity({ activity, drops }) {
+export default function Activity({ className, activity, drops }) {
   if (!activity) return null;
 
   const {
@@ -19,7 +19,7 @@ export default function Activity({ activity, drops }) {
   };
 
   return (
-    <div className={cx(styles.root, typeClass[activityTypeName])}>
+    <div className={cx(className, styles.root, typeClass[activityTypeName])}>
       <div className={styles.header}>
         <div className={styles.activityName}>{activityName}</div>
       </div>

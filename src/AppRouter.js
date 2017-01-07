@@ -8,9 +8,10 @@ import CurrentActivity from './views/CurrentActivity';
 export default class AppRouter extends Component {
   render() {
     return (
-      <Router history={browserHistory} component={App}>
+      <Router history={browserHistory}>
+        <Route path="/" component={CurrentActivity} />
+
         <Route component={App}>
-          <Route path="/" component={CurrentActivity} />
           <Route path="/raid" component={Home} />
         </Route>
       </Router>

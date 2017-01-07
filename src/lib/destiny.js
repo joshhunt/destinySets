@@ -6,11 +6,11 @@ export function get(url, opts) {
   return fetch(url, opts).then(res => res.json());
 }
 
-export function getDestiny(url, opts = {}, postBody) {
-  const shouldCache = CACHE_ENABLED && opts._cache;
+export function getDestiny(_url, opts = {}, postBody) {
+  const url = _url + '?definitions=false';
 
   const lsKey = `requestCache$$${url}`;
-  if (shouldCache) {
+  if (CACHE_ENABLED) {
     const lsItem = localStorage.getItem(lsKey)
     if (lsItem) {
       return Promise.resolve(JSON.parse(lsItem));
@@ -36,7 +36,7 @@ export function getDestiny(url, opts = {}, postBody) {
         throw new Error('Bungie API Error ' + resp.ErrorStatus + ' - ' + resp.Message);
       }
 
-      if (shouldCache) {
+      if (CACHE_ENABLED) {
         localStorage.setItem(lsKey, JSON.stringify(resp));
       }
 
@@ -45,7 +45,7 @@ export function getDestiny(url, opts = {}, postBody) {
 }
 
 export function getCurrentBungieAccount() {
-  return getDestiny('https://www.bungie.net/Platform/User/GetCurrentBungieAccount/', { _cache: true })
+  return getDestiny('https://www.bungie.net/Platform/User/GetCurrentBungieAccount/')
 }
 
 export function getAccountSummary(account) {
@@ -62,11 +62,11 @@ export function getAllInventoryItems() {
         const characterId = char.characterId;
         const url = `https://www.bungie.net/Platform/Destiny/${membershipType}/Account/${destinyMembershipId}/Character/${characterId}/Inventory/Summary/`;
 
-        return getDestiny(url, { _cache: true })
+        return getDestiny(url)
       });
 
       inventoryPromises.push(
-        getDestiny( `https://www.bungie.net/Platform/Destiny/${membershipType}/MyAccount/Vault/Summary/`, { _cache: true })
+        getDestiny( `https://www.bungie.net/Platform/Destiny/${membershipType}/MyAccount/Vault/Summary/`)
       );
 
       return Promise.all(inventoryPromises);

@@ -1,0 +1,48 @@
+.root
+  display: flex
+  margin-bottom: 20px
+  color: rgba(231, 232, 232, 1.0)
+
+  &.obtained
+    opacity: .5
+
+  &:last-of-type
+    margin-bottom: 0
+
+.accessory
+  flex: 0 1 auto
+  position: relative
+  color: white
+
+  .obtained &:after
+    content: '✔'
+    display: block
+    position: absolute
+    top: -4.5px
+    right: -4.5px
+    background: #27ae60
+    font-size: 10px
+    width: 18px
+    height: 18px
+    border-radius: 18px
+    display: flex
+    align-items: center
+    justify-content: center
+    color: white
+
+.image
+  width: 50px
+  height: 50px
+  display: block
+
+.main
+  flex: 1 1 auto
+  margin-left: 10px
+
+.name
+  font-size: 16px
+  margin-bottom: 5px
+
+.type
+  font-size: 14px
+  opacity: .8

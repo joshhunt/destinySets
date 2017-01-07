@@ -1,6 +1,92 @@
 .root
+  color: white
+
+.hero.large
   min-height: 100vh
+  display: flex
+  flex-direction: column
+
+.currentActivity
   display: flex
   align-items: center
   justify-content: center
-  background: rgba(2, 2, 3, 1.0)
+  flex-direction: column
+  flex: 1 0 auto
+
+.caTop
+  width: 600px
+  display: flex
+  justify-content: space-between
+  margin-bottom: 15px
+
+  .heading
+    margin-top: 0
+    font-size: 20px
+    opacity: .5
+
+.refreshBtn
+  color: black !important
+  background: rgba(208, 170, 11, 1.0)
+  padding: 8px 15px
+  text-decoration: none
+  transition: 150ms ease-in-out
+  display: inline-block
+  border: none
+  font-size: 14px
+  cursor: pointer
+  outline: none !important
+  opacity: 0
+
+  &:hover
+    background: #ffce1f
+    opacity: 1
+
+  &:active
+    opacity: .8
+
+  &:disabled
+    opacity: .5 !important
+    pointer-events: none
+
+.allActivites
+  display: flex
+  flex-wrap: wrap
+  justify-content: space-around
+
+.activity
+  margin: 25px
+
+.heading
+  font-weight: 400
+  font-size: 22px
+  margin-bottom: .1em
+
+.currentActivityInfo
+  text-align: center
+
+.panel
+  background: #2c3e50
+  text-align: center
+  width: 100%
+  max-width: 500px
+  margin: auto
+  margin-top: 25px
+  padding: 25px
+
+.loginUpsell
+  composes: panel
+  font-size: 18px
+
+  .heading
+    margin-top: 0
+
+.authLink
+  color: black !important
+  background: rgba(208, 170, 11, 1.0)
+  padding: 10px 20px
+  text-decoration: none
+  transition: 150ms ease-in-out
+  display: inline-block
+
+  &:hover
+    background: #ffce1f
