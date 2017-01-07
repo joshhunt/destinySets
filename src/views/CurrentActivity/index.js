@@ -1,7 +1,5 @@
 /* eslint-disable import/no-webpack-loader-syntax */
 import React, { Component } from 'react';
-import vibrant from 'node-vibrant';
-// import cx from 'classnames';
 
 import Loading from 'app/views/Loading';
 import Activity from 'app/components/Activity';
@@ -9,12 +7,7 @@ import * as destiny from 'app/lib/destiny';
 
 import styles from './styles.styl';
 
-const ARMOUR_DEFS_URL = 'https://destiny.plumbing/new/en/Armor.json';
-const WEAPON_DEFS_URL = 'https://destiny.plumbing/new/en/Weapon.json';
-const ACTIVITY_DEFS_URL = 'https://destiny.plumbing/new/en/DestinyActivityDefinition.json';
-const ACTIVITY_TYPES_DEFS_URL = 'https://destiny.plumbing/new/en/DestinyActivityTypeDefinition.json';
-
-const themeImg = require('app/the_shadow_thief.jpg');
+const STRIKE_DATA = require('!file-loader!../../../activity-drop-data.json');
 
 class CurrentActivity extends Component {
   state = {
@@ -24,67 +17,61 @@ class CurrentActivity extends Component {
   componentDidMount() {
 
     const promises = [
-      destiny.get(ARMOUR_DEFS_URL),
-      destiny.get(WEAPON_DEFS_URL),
-      destiny.get(ACTIVITY_DEFS_URL),
-      destiny.get(ACTIVITY_TYPES_DEFS_URL),
+      destiny.get(STRIKE_DATA),
+      destiny.getAllInventoryItems(),
     ];
 
     Promise.all(promises)
       .then((results) => {
         const [
-          armourDefs,
-          weaponDefs,
-          activityDefs,
-          activityTypeDefs,
+          activityData,
+          playerInventory,
         ] = results;
 
-        this.itemDefs = { ...armourDefs, ...weaponDefs };
-        this.activityDefs = activityDefs;
-        this.activityTypeDefs = activityTypeDefs;
+        this.activityData = activityData;
+        this.playerInventory = playerInventory;
 
         this.getCurrentActivity();
+
+        // setInterval(() => {
+        //   this.getCurrentActivity();
+        // }, 5 * 1000);
       });
   }
 
   getCurrentActivity() {
     this.setState({ loaded: false });
+    console.log('running getCurrentActivity');
 
-    destiny.getCurrentBungieAccount()
-      .then((account) => {
+    // destiny.getCurrentBungieAccount()
+    //   .then((account) => {
+
         // I guess this doesnt handle people who have multiple destiny accounts? is that possible?
         // const currentActivities = account.destinyAccounts[0].characters.map(c => c.currentActivityHash);
-        const currentActivities = [4227723347]
+        const currentActivities = [1084620606]
 
         // Assuming the first character will be the active one
-        if (currentActivities[0] !== 0) {
-          const baseActivity = this.activityDefs[currentActivities[0]];
-
-          const type = this.activityTypeDefs[baseActivity.activityTypeHash.toString()];
-          const img = `https://destinysets.imgix.net${baseActivity.pgcrImage}`;
-
-          vibrant.from(img).getPalette((err, colors) => {
-            console.log({ err, colors })
-
-            const [r, g, b] = colors.Muted.rgb;
-
-            const activity = {
-              ...baseActivity,
-              $type: type,
-            };
-
-            this.setState({
-              activity,
-              loaded: true,
-              pageColor: `rgba(${r}, ${g}, ${b}, 1.5)`
-            });
-
-          })
-        } else {
+        if (currentActivities[0] === 0) {
           this.setState({ loaded: true });
         }
 
-      });
+        const activity = this.activityData.activities[currentActivities[0]]
+        const dropList = this.activityData.dropLists[activity.dropListID]
+        const drops = dropList && dropList.items.map((itemHash) => {
+          const item = this.activityData.strikeItemHashes[itemHash];
+          return {
+            ...item,
+            owned: this.playerInventory.includes(itemHash)
+          }
+        });
+
+        this.setState({
+          activity,
+          drops,
+          loaded: true,
+        });
+
+      // });
   }
 
   render() {
@@ -97,8 +84,8 @@ class CurrentActivity extends Component {
     }
 
     return (
-      <div className={styles.root} style={{backgroundColor: this.state.pageColor}}>
-        <Activity activity={this.state.activity} />
+      <div className={styles.root}>
+        <Activity activity={this.state.activity} drops={this.state.drops} />
       </div>
     );
   }

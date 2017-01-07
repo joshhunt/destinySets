@@ -1,16 +1,17 @@
 import React from 'react';
 import cx from 'classnames';
 
+import Item from '../Item';
+
 import styles from './styles.styl';
 
-export default function Activity({ activity }) {
+export default function Activity({ activity, drops }) {
   if (!activity) return null;
 
   const {
     activityName,
     pgcrImage,
-    // tempImage,
-    $type: type,
+    activityTypeName,
   } = activity;
 
   const typeClass = {
@@ -18,12 +19,16 @@ export default function Activity({ activity }) {
   };
 
   return (
-    <div className={cx(styles.root, typeClass[type.activityTypeName])}>
+    <div className={cx(styles.root, typeClass[activityTypeName])}>
       <div className={styles.header}>
         <div className={styles.activityName}>{activityName}</div>
       </div>
 
-      <img className={styles.image} src={'https://destinysets.imgix.net' + pgcrImage} role="presentation" />
+      <img className={styles.image} src={'https://bungie.net' + pgcrImage} role="presentation" />
+
+      <div className={styles.drops}>
+        {drops && drops.map(item => <Item key={item.itemHash} item={item} />)}
+      </div>
     </div>
   );
 }
