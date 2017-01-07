@@ -55,5 +55,6 @@ jspm_packages
 
 
 data
+dist
 working
 legacyData.json
