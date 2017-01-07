@@ -118,6 +118,7 @@ module.exports = {
           /\.(js|jsx)$/,
           /\.styl$/,
           /\.json$/,
+          /\.css$/,
           /\.svg$/,
         ],
         loader: 'url',
@@ -148,6 +149,11 @@ module.exports = {
       {
         test: /\.styl$/,
         loader: ExtractTextPlugin.extract('style', 'css?importLoaders=2&modules!postcss!stylus')
+        // Note: this won't work without `new ExtractTextPlugin()` in `plugins`.
+      },
+      {
+        test: /\.css$/,
+        loader: ExtractTextPlugin.extract('style', 'css?importLoaders=2!postcss')
         // Note: this won't work without `new ExtractTextPlugin()` in `plugins`.
       },
       // JSON is not enabled by default in Webpack but both Node and Browserify
