@@ -1,4 +1,4 @@
-const API_KEY = 'f6de961e2a2041f9b3fd1a6c4dddd05c';
+const API_KEY = __DESTINY_API_KEY__;
 
 const CACHE_ENABLED = false;
 

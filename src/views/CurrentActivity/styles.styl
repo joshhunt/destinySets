@@ -8,19 +8,23 @@
 
 .currentActivity
   display: flex
-  align-items: center
   justify-content: center
+  align-items: center
   flex-direction: column
   flex: 1 0 auto
 
+  @media screen and (max-width: 600px)
+    padding: 0 10px
+
 .caTop
-  width: 600px
+  width: 100%
+  max-width: 600px
+  margin-bottom: 5px
   display: flex
   justify-content: space-between
-  margin-bottom: 15px
 
   .heading
-    margin-top: 0
+    margin: 0
     font-size: 20px
     opacity: .5
 
@@ -53,16 +57,10 @@
   flex-wrap: wrap
   justify-content: space-around
 
-.activity
-  margin: 25px
-
 .heading
   font-weight: 400
   font-size: 22px
   margin-bottom: .1em
-
-.currentActivityInfo
-  text-align: center
 
 .panel
   background: #2c3e50
@@ -72,6 +70,13 @@
   margin: auto
   margin-top: 25px
   padding: 25px
+
+.panel
+.activity
+  @media screen and (max-width: 500px)
+    width: auto
+    margin-left: 10px
+    margin-right: 10px
 
 .loginUpsell
   composes: panel
@@ -90,3 +95,21 @@
 
   &:hover
     background: #ffce1f
+
+.spacer
+  width: 600px
+  margin: 0 25px
+
+.spacerForLargeScreens
+  composes: spacer
+  display: none
+
+  @media screen and (min-width: 1950px)
+    display: block
+
+.spacerForSuperLargeScreens
+  composes: spacer
+  display: none
+
+  @media screen and (min-width: 2600px)
+    display: block

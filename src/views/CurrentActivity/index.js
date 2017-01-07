@@ -73,6 +73,10 @@ class CurrentActivity extends Component {
         setInterval(() => {
           this.getCurrentActivity();
         }, 60 * 1000);
+      })
+      .catch((err) => {
+        console.log(err);
+        this.setState({ err })
       });
   }
 
@@ -110,6 +114,10 @@ class CurrentActivity extends Component {
   };
 
   render() {
+    if (this.state.err) {
+      return (<Loading>An error occurred! {this.state.err.message}</Loading>);
+    }
+
     if (!this.state.loaded) {
       return (<Loading>Loading...</Loading>);
     }
@@ -148,11 +156,13 @@ class CurrentActivity extends Component {
         </div>
 
         <div className={styles.allActivites}>
-          <div style={{ width: 600 }}>
+          <div className={styles.spacer}>
             <h2 className={styles.heading}>All Strikes</h2>
           </div>
 
-          <div style={{ width: 600 }}/>
+          <div className={styles.spacer} />
+          <div className={styles.spacerForLargeScreens} />
+          <div className={styles.spacerForSuperLargeScreens} />
 
           { this.state.activitiesWithDrops.map((activity) => (
             <Activity

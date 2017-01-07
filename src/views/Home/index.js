@@ -7,8 +7,8 @@ import * as destiny from 'app/lib/destiny';
 
 import styles from './styles.styl';
 
-const inventoryDefsUrl = require('!file-loader!../../../data/raw/DestinyInventoryItemDefinition.json');
-const setsUrl = require('!file-loader!../../../setData.json');
+// const inventoryDefsUrl = require('!file-loader!../../../data/raw/DestinyInventoryItemDefinition.json');
+// const setsUrl = require('!file-loader!../../../setData.json');
 
 const ITEM_TYPE_SORT_VALUE = {
   "Helmet": 1,

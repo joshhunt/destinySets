@@ -7,6 +7,8 @@ var WatchMissingNodeModulesPlugin = require('react-dev-utils/WatchMissingNodeMod
 var getClientEnvironment = require('./env');
 var paths = require('./paths');
 
+const appConfig = require('../appConfig').dev;
+
 // Webpack uses `publicPath` to determine where the app is being served from.
 // In development, we always serve from the root. This makes config easier.
 var publicPath = '/';
@@ -83,11 +85,11 @@ module.exports = {
     // First, run the linter.
     // It's important to do this before Babel processes the JS.
     preLoaders: [
-      {
-        test: /\.(js|jsx)$/,
-        loader: 'eslint',
-        include: paths.appSrc,
-      }
+      // {
+      //   test: /\.(js|jsx)$/,
+      //   loader: 'eslint',
+      //   include: paths.appSrc,
+      // }
     ],
     loaders: [
       // Default loader: load all assets that are not handled
@@ -183,7 +185,10 @@ module.exports = {
     }),
     // Makes some environment variables available to the JS code, for example:
     // if (process.env.NODE_ENV === 'development') { ... }. See `./env.js`.
-    new webpack.DefinePlugin(env),
+    new webpack.DefinePlugin(Object.assign({
+      __DESTINY_API_KEY__: JSON.stringify(appConfig.apiKey),
+      __DESTINY_AUTH_URL__: JSON.stringify(appConfig.authUrl),
+    }, env)),
     // This is necessary to emit hot updates (currently CSS only):
     new webpack.HotModuleReplacementPlugin(),
     // Watcher doesn't work well if you mistype casing in a path so we use

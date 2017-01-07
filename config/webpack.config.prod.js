@@ -8,7 +8,7 @@ var url = require('url');
 var paths = require('./paths');
 var getClientEnvironment = require('./env');
 
-
+const appConfig = require('../appConfig').prod;
 
 function ensureSlash(path, needsSlash) {
   var hasSlash = path.endsWith('/');
@@ -93,11 +93,11 @@ module.exports = {
     // First, run the linter.
     // It's important to do this before Babel processes the JS.
     preLoaders: [
-      {
-        test: /\.(js|jsx)$/,
-        loader: 'eslint',
-        include: paths.appSrc,
-      },
+      // {
+      //   test: /\.(js|jsx)$/,
+      //   loader: 'eslint',
+      //   include: paths.appSrc,
+      // },
     ],
     loaders: [
       // Default loader: load all assets that are not handled
@@ -209,7 +209,10 @@ module.exports = {
     // if (process.env.NODE_ENV === 'production') { ... }. See `./env.js`.
     // It is absolutely essential that NODE_ENV was set to production here.
     // Otherwise React will be compiled in the very slow development mode.
-    new webpack.DefinePlugin(env),
+    new webpack.DefinePlugin(Object.assign({
+      __DESTINY_API_KEY__: JSON.stringify(appConfig.apiKey),
+      __DESTINY_AUTH_URL__: JSON.stringify(appConfig.authUrl),
+    }, env)),
     // This helps ensure the builds are consistent if source hasn't changed:
     new webpack.optimize.OccurrenceOrderPlugin(),
     // Try to dedupe duplicated modules, if any:

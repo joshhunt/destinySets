@@ -3,7 +3,7 @@ import cx from 'classnames';
 
 import styles from './styles.styl';
 
-export default function Item({ item }) {
+export default function Item({ item, dev }) {
   return (
     <div className={cx(styles.root, { [styles.obtained]: item.owned })} key={item.itemHash}>
       <div className={styles.accessory}>
@@ -12,7 +12,7 @@ export default function Item({ item }) {
 
       <div className={styles.main}>
         <div className={styles.name}>{item.itemName}</div>
-        <div className={styles.type}>{item.itemTypeName}</div>
+        <div className={styles.type}>{dev ? item.itemHash : item.itemTypeName}</div>
       </div>
 
     </div>

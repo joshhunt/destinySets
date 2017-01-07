@@ -48,9 +48,10 @@
   },
   "dependencies": {
     "airport-codes": "1.0.2",
+    "babel-polyfill": "6.20.0",
     "classnames": "2.2.5",
     "expand-home-dir": "0.0.3",
-    "isomorphic-fetch": "^2.2.1",
+    "isomorphic-fetch": "2.2.1",
     "pushstate-server": "2.1.0",
     "query-string": "4.2.3",
     "react": "15.4.1",
@@ -61,8 +62,9 @@
   },
   "scripts": {
     "start": "node scripts/start.js",
-    "build": "node scripts/build.js",
-    "get-destiny-data": "node scripts/destinyManifest/index.js",
+    "build": "yarn run generate-strike-data && node scripts/build.js",
+    "deploy": "yarn run build && env AWS_PROFILE=money aws s3 sync dist/ s3://destinysets.com/ --region=ap-southeast-2 --acl public-read",
+    "generate-strike-data": "node generateData.js",
     "test": "echo 'No tests lol'"
   },
   "babel": {

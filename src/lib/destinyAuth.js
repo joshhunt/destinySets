@@ -69,5 +69,4 @@ export default function(cb) {
   }
 }
 
-
-export const authUrl = 'https://www.bungie.net/en/Application/Authorize/11145';
+export const authUrl = __DESTINY_AUTH_URL__;
