@@ -14,6 +14,12 @@ const DESTINATION_DEFS_URL = 'https://destiny.plumbing/new/en/DestinyDestination
 const PLACE_DEFS_URL = 'https://destiny.plumbing/new/en/DestinyPlaceDefinition.json';
 const ACTIVITY_TYPES_DEFS_URL = 'https://destiny.plumbing/new/en/DestinyActivityTypeDefinition.json';
 
+const CLASSES = {
+  0: 'Titan',
+  1: 'Hunter',
+  2: 'Warlock',
+};
+
 const promises = [
   get(ARMOUR_DEFS_URL),
   get(WEAPON_DEFS_URL),
@@ -91,6 +97,12 @@ Promise.all(promises)
           'itemHash',
           'itemTypeName',
         ]);
+
+        const className = CLASSES[item.classType];
+
+        if (className && !refinedItem.itemTypeName.includes(className)) {
+          refinedItem.itemTypeName = `${className} ${refinedItem.itemTypeName}`;
+        }
 
         return _.extend({}, acc, {
           [item.itemHash]: refinedItem,

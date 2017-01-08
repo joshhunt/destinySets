@@ -58,3 +58,4 @@ data
 dist
 working
 legacyData.json
+appConfig.js
