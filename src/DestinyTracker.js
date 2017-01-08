@@ -61,7 +61,6 @@ var DestinyTracker;
             if (url.indexOf("bungie.net") !== -1 || url.indexOf("destinytracker.com") !== -1 || url.indexOf("/") == 0) {
                 var regex = /(activities\/|destinations\/|items\/|inventory\/item\/|quests\/|(?:\&|\?)item\=|sources\/|vendors\/)([0-9]+)/i;
                 if (regex.test(url)) {
-                  console.log('it matches', url);
                     if (window.location.hostname == "bungie.net" && url.indexOf("www.bungie.net") !== -1)
                         return;
                     callback();
@@ -69,7 +68,6 @@ var DestinyTracker;
             }
         };
         Tooltip.prototype.fetchTooltip = function(url, callback) {
-          console.log('fetching tooltip');
             var _this = this;
             if (this.tooltipData[url] == "")
                 return;
