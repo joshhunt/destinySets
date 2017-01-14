@@ -147,7 +147,7 @@ class CurrentActivity extends Component {
             </div>
           }
 
-          { (this.props.isAuthenticated && !this.state.activity) &&
+          { (this.props.isAuthenticated && !this.state.currentActivity) &&
             <div className={styles.panel}>
               Looks like you're not currently playing Destiny. Check back here when you're in a strike.
             </div>
