@@ -59,6 +59,10 @@ export function getCurrentBungieAccount() {
 export function getAccountSummary(account) {
 }
 
+export function getBonds(account) {
+  return getDestiny('https://www.bungie.net/Platform/Destiny/1/MyAccount/Advisors/Bonds/')
+}
+
 export function getAllInventoryItems(destinyAccount) {
   const accountPromise = destinyAccount ? Promise.resolve(destinyAccount) : getCurrentBungieAccount();
 
@@ -81,8 +85,6 @@ export function getAllInventoryItems(destinyAccount) {
       return Promise.all(inventoryPromises);
     })
     .then((inventories) => {
-      console.log(inventories);
-
       const allItems = inventories.reduce((acc, body) => {
         const items = body.data.items.map(item => item.itemHash);
         return acc.concat(items);

@@ -32,8 +32,8 @@ class CurrentActivity extends Component {
     if (!this.props.isAuthenticated && newProps.isAuthenticated){
       this.fetchUserData(newProps);
 
-      // Okay, user is now authed :)
-
+      destiny.getBonds()
+        .then((resp) => console.log(resp));
     }
   }
 
@@ -134,7 +134,7 @@ class CurrentActivity extends Component {
 
     return (
       <div className={styles.root}>
-        <div className={cx(styles.hero, this.state.activity && styles.large)}>
+        <div className={cx(styles.hero, this.state.currentActivity && styles.large)}>
           <Header />
 
           { this.state.currentActivity &&
