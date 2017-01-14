@@ -11,7 +11,7 @@ export default class AppRouter extends Component {
     return (
       <Router history={browserHistory}>
         <Route path="/" component={CurrentActivity} />
-        <Route path="/all-items" component={AllItems} />
+        <Route path="/items" component={AllItems} />
 
         {/*<Route component={App}>
           <Route path="/raid" component={Home} />
