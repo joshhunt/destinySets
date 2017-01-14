@@ -1,7 +1,7 @@
 /* eslint-disable import/no-webpack-loader-syntax */
 import React, { Component } from 'react';
 import cx from 'classnames';
-import { mapValues, uniqBy } from 'lodash';
+import { mapValues, uniqBy, clone } from 'lodash';
 
 import * as destiny from 'app/lib/destiny';
 import { authUrl } from 'app/lib/destinyAuth';
@@ -13,7 +13,7 @@ import Header from 'app/components/Header';
 
 import styles from './styles.styl';
 
-const STRIKE_DATA = require('!file-loader!../../../activity-drop-data.json');
+const ACTIVITY_DATA = 'https://destiny.plumbing/en/collections/combinedStrikeDrops.json';
 
 class CurrentActivity extends Component {
   state = {
@@ -21,97 +21,106 @@ class CurrentActivity extends Component {
   };
 
   componentDidMount() {
-    this.doEverything(this.props);
+    this.fetchActivityData();
+
+    if (this.props.isAuthenticated) {
+      this.fetchUserData();
+    }
   }
 
   componentWillReceiveProps(newProps) {
-    if (!this.props.isAuthenticated && newProps.isAuthenticated) {
-      this.doEverything(newProps);
+    if (!this.props.isAuthenticated && newProps.isAuthenticated){
+      this.fetchUserData(newProps);
+
+      // Okay, user is now authed :)
+
     }
   }
 
-  doEverything(props) {
+  fetchUserData(props = this.props) {
+    this.fetchAccount(props)
+      .then(() => this.fetchInventory());
+  }
 
-    const promises = [
-      destiny.get(STRIKE_DATA),
-      props.isAuthenticated && destiny.getAllInventoryItems(),
-    ];
-
-    Promise.all(promises)
-      .then((results) => {
-        const [
-          activityData,
-          playerInventory,
-        ] = results;
-
-        const activities = mapValues(activityData.activities, (activity) => {
-          const dropList = activityData.dropLists[activity.dropListID]
-
-          const drops = dropList && dropList.items.map((itemHash) => {
-            const item = activityData.strikeItemHashes[itemHash];
-            return {
-              ...item,
-              owned: playerInventory && playerInventory.includes(itemHash)
-            }
-          });
-
-          return {
-            ...activity,
-            drops,
-          };
-        });
-
-        const activitiesWithDrops = uniqBy(
-          Object.values(activities).filter(activity => activity.drops),
-          'activityName'
-        );
-
-        this.setState({ activities, activitiesWithDrops, loaded: true });
-
-        this.getCurrentActivity();
-
-        setInterval(() => {
-          window.ga && window.ga('send', 'event', 'ping', 'current-activity-check');
-          this.getCurrentActivity();
-        }, 60 * 1000);
-      })
-      .catch((err) => {
-        console.log(err);
-        this.setState({ err })
+  fetchActivityData() {
+    destiny.get(ACTIVITY_DATA)
+      .then(activityData => {
+        this.activityData = activityData;
+        this.updateState();
       });
   }
 
-  getCurrentActivity() {
-    console.log('running getCurrentActivity');
+  fetchInventory() {
+    destiny.getAllInventoryItems(this.destinyAccount)
+      .then((inventory) => {
+        this.inventory = inventory;
+        this.updateState();
+      })
+  }
 
-    if (!this.props.isAuthenticated) {
+  fetchAccount(props = this.props) {
+    if (!props.isAuthenticated) { return; }
+
+    return destiny.getCurrentBungieAccount()
+      .then((account) => {
+        this.destinyAccount = account;
+        this.updateState();
+        return this.destinyAccount;
+      });
+  }
+
+  updateState() {
+    if (!(this.destinyAccount && this.inventory && this.activityData)) {
       return;
     }
 
-    destiny.getCurrentBungieAccount()
-      .then((account) => {
+    const activityData = clone(this.activityData);
+    const activities = mapValues(activityData.activities, (activity) => {
+      const dropList = activityData.dropLists[activity.dropListID]
 
-        // I guess this doesnt handle people who have multiple destiny accounts? is that possible?
-        const currentActivities = account.destinyAccounts[0].characters.map(c => c.currentActivityHash);
-        // const currentActivities = [1084620606]
-        // const currentActivities = [0]
-
-        // Assuming the first character will be the active one
-        if (currentActivities[0] === 0) {
-          return;
+      const drops = dropList && dropList.items.map((itemHash) => {
+        const item = activityData.strikeItemHashes[itemHash];
+        return {
+          ...item,
+          owned: this.inventory && this.inventory.includes(itemHash)
         }
-
-        const activity = this.state.activities[currentActivities[0]]
-
-        this.setState({
-          activity,
-        });
-
       });
+
+      return {
+        ...activity,
+        drops,
+      };
+    });
+
+    const activitiesWithDrops = uniqBy(
+      Object.values(activities).filter(activity => activity.drops),
+      'activityName'
+    );
+
+    const currentActivities = this.destinyAccount.characters.map(c => c.currentActivityHash);
+    const currentActivity = activities[currentActivities[0]];
+
+    // if (currentActivity.activityHash !== this.state.currentActivity.activityHash) {
+    //   // If the user has changed activity, fetch their new inventory. The updateState()
+    //   // call at the end of fetchInventory will do all this work again for us
+    //   this.fetchInventory();
+    // }
+
+    this.setState({ currentActivity, activities, activitiesWithDrops, loaded: true });
+  }
+
+  poll() {
+    setInterval(() => {
+      window.ga && window.ga('send', 'event', 'ping', 'current-activity-check');
+    }, 60 * 1000);
+
+    setInterval(() => {
+      this.fetchAccount();
+    }, 30 * 1000);
   }
 
   refresh = () => {
-    this.doEverything(this.props);
+    this.fetchUserData();
   };
 
   render() {
@@ -128,13 +137,13 @@ class CurrentActivity extends Component {
         <div className={cx(styles.hero, this.state.activity && styles.large)}>
           <Header />
 
-          { this.state.activity &&
+          { this.state.currentActivity &&
             <div className={styles.currentActivity}>
               <div className={styles.caTop}>
                 <h2 className={styles.heading}>Current activity</h2>
                 <button className={styles.refreshBtn} onClick={this.refresh}>Refresh</button>
               </div>
-              <Activity activity={this.state.activity} drops={this.state.activity.drops} />
+              <Activity activity={this.state.currentActivity} drops={this.state.currentActivity.drops} />
             </div>
           }
 

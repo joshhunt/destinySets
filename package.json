@@ -63,9 +63,7 @@
   },
   "scripts": {
     "start": "node scripts/start.js",
-    "build": "yarn run generate-strike-data && node scripts/build.js",
-    "deploy": "yarn run build && env AWS_PROFILE=money aws s3 sync dist/ s3://destinysets.com/ --region=ap-southeast-2 --acl public-read",
-    "generate-strike-data": "node generateData.js",
+    "deploy": "env AWS_PROFILE=money aws s3 sync dist/ s3://destinysets.com/ --region=ap-southeast-2 --acl public-read",
     "test": "echo 'No tests lol'"
   },
   "babel": {

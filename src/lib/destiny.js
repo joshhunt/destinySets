@@ -7,7 +7,7 @@ export function get(url, opts) {
 }
 
 export function getDestiny(_url, opts = {}, postBody) {
-  const url = _url + '?definitions=false';
+  const url = `${_url}?definitions=false&t=${Date.now()}`;
 
   const lsKey = `requestCache$$${url}`;
   if (CACHE_ENABLED) {
@@ -46,15 +46,24 @@ export function getDestiny(_url, opts = {}, postBody) {
 
 export function getCurrentBungieAccount() {
   return getDestiny('https://www.bungie.net/Platform/User/GetCurrentBungieAccount/')
+    .then(body => {
+      const accountsByLastPlayed = body.destinyAccounts
+        .sort((accountA, accountB) => {
+          return (new Date(accountA.lastPlayed)) - (new Date(accountB.lastPlayed));
+        })[0];
+
+      return accountsByLastPlayed;
+    });
 }
 
 export function getAccountSummary(account) {
 }
 
-export function getAllInventoryItems() {
-  return getCurrentBungieAccount()
-    .then((body) => {
-      const account = body.destinyAccounts[0];
+export function getAllInventoryItems(destinyAccount) {
+  const accountPromise = destinyAccount ? Promise.resolve(destinyAccount) : getCurrentBungieAccount();
+
+  return accountPromise
+    .then((account) => {
       const membershipType = account.userInfo.membershipType;
       const destinyMembershipId = account.userInfo.membershipId;
 

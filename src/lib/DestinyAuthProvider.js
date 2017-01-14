@@ -10,6 +10,7 @@ export default function DestinyAuthProvider(WrappedComponent) {
 
     componentDidMount() {
       destinyAuth((err, isAuthenticated) => {
+        console.log('DestinyAuthProvider', { err, isAuthenticated })
         if (err) {
           throw err;
         }
