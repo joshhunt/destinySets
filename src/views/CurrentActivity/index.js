@@ -31,9 +31,6 @@ class CurrentActivity extends Component {
   componentWillReceiveProps(newProps) {
     if (!this.props.isAuthenticated && newProps.isAuthenticated){
       this.fetchUserData(newProps);
-
-      destiny.getBonds()
-        .then((resp) => console.log(resp));
     }
   }
 
