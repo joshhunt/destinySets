@@ -3,7 +3,7 @@ import cx from 'classnames';
 
 import styles from './styles.styl';
 
-export default function Item({ item, dev }) {
+export default function Item({ item, dev, small }) {
   const dtrLink = 'http://db.destinytracker.com/items/' + item.itemHash;
   const dtrProps = {
     href: dtrLink,
@@ -11,7 +11,7 @@ export default function Item({ item, dev }) {
   };
 
   return (
-    <div className={cx(styles.root, { [styles.obtained]: item.owned })} key={item.itemHash}>
+    <div className={cx(styles.root, { [styles.obtained]: item.owned, [styles.small]: small })} key={item.itemHash}>
       <div className={styles.accessory}>
         <a className={styles.link} {...dtrProps}>
           <img className={styles.image} src={item.icon} role="presentation" />

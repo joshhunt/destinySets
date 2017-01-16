@@ -4,6 +4,7 @@ import { Router, Route, browserHistory } from 'react-router';
 // import App from './views/App';
 // import Home from './views/Home';
 import CurrentActivity from './views/CurrentActivity';
+import RaidDrops from './views/RaidDrops';
 import AllItems from './views/AllItems';
 
 export default class AppRouter extends Component {
@@ -11,6 +12,7 @@ export default class AppRouter extends Component {
     return (
       <Router history={browserHistory}>
         <Route path="/" component={CurrentActivity} />
+        <Route path="/raid" component={RaidDrops} />
         <Route path="/items" component={AllItems} />
 
         {/*<Route component={App}>

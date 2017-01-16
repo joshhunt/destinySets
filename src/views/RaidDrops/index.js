@@ -13,9 +13,14 @@ import Header from 'app/components/Header';
 
 import styles from './styles.styl';
 
-const ACTIVITY_DATA = 'https://destiny.plumbing/en/collections/combinedStrikeDrops.json';
+const ACTIVITY_DATA = 'https://destiny.plumbing/en/collections/combinedWoTMDrops.json';
 
-class CurrentActivity extends Component {
+const CUSTOM_ACTIVITY_NAME = {
+  260765522: 'Wrath of the Machine (Normal)',
+  1387993552: 'Wrath of the Machine (Hard)',
+}
+
+class RaidDrops extends Component {
   state = {
     loaded: false,
   };
@@ -66,26 +71,51 @@ class CurrentActivity extends Component {
       });
   }
 
+  transformItemList(itemList, activityData) {
+    return (itemList || []).map((itemHash) => {
+      const item = activityData.items[itemHash];
+      window.inventory = this.inventory;
+
+      return {
+        ...item,
+        owned: this.inventory && this.inventory.includes(itemHash)
+      }
+    })
+  }
+
   updateState() {
     if (!(this.destinyAccount && this.inventory && this.activityData)) {
       return;
     }
 
     const activityData = clone(this.activityData);
-    const activities = mapValues(activityData.activities, (activity) => {
-      const dropList = activityData.dropLists[activity.dropListID]
 
-      const drops = dropList && dropList.items.map((itemHash) => {
-        const item = activityData.strikeItemHashes[itemHash];
+    const activities = mapValues(activityData.activities, (activity) => {
+      const dropList = activityData.dropLists[activity.dropListID];
+      const activityName = CUSTOM_ACTIVITY_NAME[activity.activityHash] || activity.activityName;
+
+      if (!dropList) {
         return {
-          ...item,
-          owned: this.inventory && this.inventory.includes(itemHash)
+          ...activity,
+          activityName,
+        };
+      }
+
+      const drops = this.transformItemList(dropList.items, activityData);
+      const sections = (dropList.sections || []).map((section) => {
+
+
+        return {
+          ...section,
+          items: this.transformItemList(section.items, activityData),
         }
       });
 
       return {
         ...activity,
+        activityName,
         drops,
+        sections
       };
     });
 
@@ -96,12 +126,6 @@ class CurrentActivity extends Component {
 
     const currentActivities = this.destinyAccount.characters.map(c => c.currentActivityHash);
     const currentActivity = activities[currentActivities[0]];
-
-    // if (currentActivity.activityHash !== this.state.currentActivity.activityHash) {
-    //   // If the user has changed activity, fetch their new inventory. The updateState()
-    //   // call at the end of fetchInventory will do all this work again for us
-    //   this.fetchInventory();
-    // }
 
     this.setState({ currentActivity, activities, activitiesWithDrops, loaded: true });
   }
@@ -146,7 +170,7 @@ class CurrentActivity extends Component {
 
           { (this.props.isAuthenticated && !this.state.currentActivity) &&
             <div className={styles.panel}>
-              Looks like you're not currently playing Destiny. Check back here when you're in a strike.
+              Looks like you're not currently playing Destiny. Check back here when you're in a raid.
             </div>
           }
 
@@ -154,7 +178,7 @@ class CurrentActivity extends Component {
             <div className={styles.loginUpsell}>
               <h2 className={styles.heading}>Login for more features</h2>
               <p>
-                See the items you've already collected, plus track your currently active strike.
+                See the items you've already collected, plus track your currently active raid.
               </p>
 
               <a className={styles.authLink} href={authUrl}>Authorize with Bungie.net</a>
@@ -164,7 +188,7 @@ class CurrentActivity extends Component {
 
         <div className={styles.allActivites}>
           <div className={styles.spacer}>
-            <h2 className={styles.heading}>All Strikes</h2>
+            <h2 className={styles.heading}>All Raids</h2>
           </div>
 
           <div className={styles.spacer} />
@@ -190,4 +214,4 @@ class CurrentActivity extends Component {
   }
 }
 
-export default DestinyAuthProvider(CurrentActivity);
+export default DestinyAuthProvider(RaidDrops);

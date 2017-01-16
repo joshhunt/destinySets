@@ -6,14 +6,20 @@ import getTypeClass from './getTypeClass';
 
 import styles from './styles.styl';
 
-export default function Activity({ className, activity, drops }) {
+export default function Activity(props) {
+  const { className, activity } = props;
+
   if (!activity) return null;
 
   const {
+    drops,
     activityName,
     pgcrImage,
     activityTypeName,
+    sections,
   } = activity;
+
+  console.log(drops);
 
   return (
     <div className={cx(className, styles.root, getTypeClass(activityTypeName))}>
@@ -23,11 +29,19 @@ export default function Activity({ className, activity, drops }) {
 
       <img className={styles.image} src={'https://bungie.net' + pgcrImage} role="presentation" />
 
-      { drops && drops.length &&
+      { (drops || []).length ?
         <div className={styles.drops}>
           {drops.map(item => <Item key={item.itemHash} item={item} />)}
         </div>
+        : null
       }
+
+      { sections && sections.length && sections.map(section => (
+        <div className={styles.section}>
+          <div className={styles.sectionName}>{section.title}</div>
+          {section.items.map(item => <Item key={item.itemHash} item={item} small />)}
+        </div>
+      ))}
     </div>
   );
 }
