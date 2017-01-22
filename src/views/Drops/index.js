@@ -27,22 +27,28 @@ function getClassFromTypeName(itemTypeName) {
   }
 }
 
-const ACTIVITY_DATA = 'https://destiny.plumbing/en/collections/combinedWoTMDrops.json';
-
 const CUSTOM_ACTIVITY_NAME = {
   260765522: 'Wrath of the Machine (Normal)',
   1387993552: 'Wrath of the Machine (Hard)',
 }
 
-class RaidDrops extends Component {
-  state = {
-    loaded: false,
-    classFilter: {
-      warlock: true,
-      titan: true,
-      hunter: true,
-    },
-  };
+const DATA_URL_FOR_VARIATION = {
+  strike: 'https://destiny.plumbing/en/collections/combinedStrikeDrops.json',
+  raid: 'https://destiny.plumbing/en/collections/combinedWoTMDrops.json',
+};
+
+class Drops extends Component {
+  constructor(props) {
+    super(props);
+
+    this.variation = props.route.variation;
+    this.dataUrl = DATA_URL_FOR_VARIATION[this.variation];
+
+    this.state = {
+      loaded: false,
+      filterCss: '',
+    };
+  }
 
   componentDidMount() {
     this.fetchActivityData();
@@ -56,6 +62,12 @@ class RaidDrops extends Component {
     if (!this.props.isAuthenticated && newProps.isAuthenticated){
       this.fetchUserData(newProps);
     }
+
+    if (this.props.route.variation !== newProps.route.variation) {
+      this.variation = newProps.route.variation;
+      this.dataUrl = DATA_URL_FOR_VARIATION[this.variation];
+      this.fetchActivityData();
+    }
   }
 
   fetchUserData(props = this.props) {
@@ -64,9 +76,10 @@ class RaidDrops extends Component {
   }
 
   fetchActivityData() {
-    destiny.get(ACTIVITY_DATA)
+    destiny.get(this.dataUrl)
       .then(activityData => {
         this.activityData = activityData;
+        this.activityData.items = activityData.items || activityData.strikeItemHashes;
         this.updateState();
       });
   }
@@ -168,48 +181,31 @@ class RaidDrops extends Component {
     this.fetchUserData();
   };
 
-  onFilterChange = (ev) => {
-    this.setState({
-      classFilter: {
-        ...this.state.classFilter,
-        [ev.target.name]: ev.target.checked,
-      }
-    });
+  updateFilter = (opts) => {
+    const filterCss = toPairs(opts).map(([ dClass, shouldDisplay ]) => {
+      return `[data-class="${dClass}"] { display: ${shouldDisplay ? 'inline-block' : 'none'} }`
+    }).join('\n');
+
+    this.setState({ filterCss });
   }
 
   render() {
-    if (this.state.err) {
+    const { err, loaded, filterCss } = this.state;
+
+    if (err) {
       return (<Loading>An error occurred! {this.state.err.message}</Loading>);
     }
 
-    if (!this.state.loaded) {
+    if (!loaded) {
       return (<Loading>Loading...</Loading>);
     }
-
-    console.log(this.state.classFilter);
-
-    const filterCss = toPairs(this.state.classFilter).map(([ dClass, shouldDisplay ]) => {
-      return `
-        [data-class="${dClass}"] {
-          display: ${shouldDisplay ? 'inline-block' : 'none'}
-        }
-      `
-    }).join('\n');
-
-    console.log(filterCss);
 
     return (
       <div className={styles.root}>
         <div className={cx(styles.hero, this.state.currentActivity && styles.large)}>
-          <Header />
+          <Header onFilterChange={this.updateFilter}/>
 
           <style dangerouslySetInnerHTML={{__html: filterCss}}></style>
-
-          <div>
-            <label><input type="checkbox" name="warlock" checked={this.state.classFilter.warlock} onChange={this.onFilterChange}/> Warlock</label>
-            <label><input type="checkbox" name="titan" checked={this.state.classFilter.titan} onChange={this.onFilterChange}/> Titan</label>
-            <label><input type="checkbox" name="hunter" checked={this.state.classFilter.hunter} onChange={this.onFilterChange}/> Hunter</label>
-          </div>
 
           { this.state.currentActivity &&
             <div className={styles.currentActivity}>
@@ -263,4 +259,4 @@ class RaidDrops extends Component {
   }
 }
 
-export default DestinyAuthProvider(RaidDrops);
+export default DestinyAuthProvider(Drops);

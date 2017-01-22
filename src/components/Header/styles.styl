@@ -1,8 +1,14 @@
+$baseColour = rgba(11, 13, 16, 1.0)
+$bgColour = lighten($baseColour, 4%)
+$filterColour = lighten($baseColour, 10%)
+$edgePadding = 15px
+
 .header
-  background: lighten(rgba(11, 13, 16, 1.0), 4%)
+  background: $bgColour
   display: flex
   justify-content: space-between
   align-items: center
+  padding: 0 $edgePadding
 
 .main
   display: flex
@@ -17,23 +23,24 @@
   text-decoration: none
 
   &:hover
-    background: lighten(rgba(11, 13, 16, 1.0), 7%)
+    background: lighten($baseColour, 7%)
 
-.active
-  position: relative
+  &.active
+    position: relative
 
-  &:after
-    display: block
-    content: ''
-    position absolute
-    bottom: 0
-    right: 0
-    left: 0
-    height: 3px
-    background: lighten(rgba(11, 13, 16, 1.0), 30%)
+    &:after
+      display: block
+      content: ''
+      position absolute
+      bottom: 0
+      right: 0
+      left: 0
+      height: 3px
+      background: lighten($baseColour, 30%)
 
 .siteName
-  padding: 15px
+  padding: $edgePadding
+  padding-left: 0
   composes: navItem
   font-weight: 400
   font-size: 22px
@@ -43,9 +50,10 @@
     background: none
 
 .social
-  font-size: 20px
+  margin-right: -7px
 
 .socialItem
+  font-size: 20px
   padding: 0 7px
   opacity: .7
   transition: all 150ms ease-in-out
@@ -53,3 +61,39 @@
 
   &:hover
     opacity: 1
+
+
+.filter
+  padding: 0 10px
+  background: $filterColour
+  transition: all 150ms ease-in-out
+  height: 0
+  overflow: hidden
+
+.filterOpen
+  height: 44px
+
+.filterButton
+  background: $bgColour
+  text-color: inherit
+  border: none
+  font-size: inherit
+  color: #dadada
+  cursor: pointer
+  font-size: .9em
+  outline: none !important
+  margin-right: 15px
+
+  &.active
+    background: lighten($baseColour, 10%)
+
+    &:after
+      display: none !important
+
+.filterItem
+  padding: 10px
+  display: inline-block
+  transition: all 150ms ease-in-out
+
+  &:hover
+    background: lighten($filterColour, 7%)

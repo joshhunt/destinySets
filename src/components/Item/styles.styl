@@ -1,14 +1,18 @@
+.filterRoot
+  display: inline-block
+  width: 100%
+  margin-bottom: 15px
+
+  &:last-of-type
+    margin-bottom: 0
+
 .root
   display: flex
-  padding-bottom: 20px
   color: rgba(231, 232, 232, 1.0)
   transition: all 150ms ease-in-out
 
   &.obtained
     opacity: .5
-
-  &:last-of-type
-    padding-bottom: 0
 
 .accessory
   flex: 0 1 auto
@@ -53,9 +57,10 @@
   color: inherit !important
 
 .small
-  display: inline-block
-  padding-bottom: 0
-  padding-right: 10px
+  margin-right: 15px
+
+  &.filterRoot
+    width: initial
 
   &:last-of-type
     padding-right: 0

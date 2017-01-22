@@ -7,6 +7,9 @@ $width = 600px
   color: white
   margin-bottom: 25px
 
+  @media screen and (max-width: $width)
+    width: 100%
+
 .image
   width: $width
   height: 240px
@@ -14,7 +17,8 @@ $width = 600px
   object-position: center
   display: block
 
-  @media screen and (max-width: 500px)
+  @media screen and (max-width: $width)
+    width: 100%
     height: 45vw
 
 // TODO: how do we get this colour?
@@ -28,7 +32,8 @@ $width = 600px
   line-height: 1
 
 .drops
-  padding: 25px
+  padding: 15px
+  font-size: 0
 
 .typeStory .header,
 .typeStory .itemHeader,

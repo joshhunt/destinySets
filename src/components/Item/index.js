@@ -11,22 +11,24 @@ export default function Item({ item, dev, small }) {
   };
 
   return (
-    <div className={cx(styles.root, { [styles.obtained]: item.owned, [styles.small]: small })} key={item.itemHash} data-class={item.dClass}>
-      <div className={styles.accessory}>
-        <a className={styles.link} {...dtrProps}>
-          <img className={styles.image} src={item.icon} role="presentation" />
-        </a>
-      </div>
-
-      <div className={styles.main}>
-        <div className={styles.name}>
-          <a className={styles.link} {...dtrProps}>{item.itemName}</a>
+    <div className={cx(styles.filterRoot, small && styles.small)} data-class={item.dClass}>
+      <div className={cx(styles.root, { [styles.obtained]: item.owned})} key={item.itemHash}>
+        <div className={styles.accessory}>
+          <a className={styles.link} {...dtrProps}>
+            <img className={styles.image} src={item.icon} role="presentation" />
+          </a>
         </div>
-        <div className={styles.type}>
-          {dev ? item.itemHash : item.itemTypeName}
-        </div>
-      </div>
 
+        <div className={styles.main}>
+          <div className={styles.name}>
+            <a className={styles.link} {...dtrProps}>{item.itemName}</a>
+          </div>
+          <div className={styles.type}>
+            {dev ? item.itemHash : item.itemTypeName}
+          </div>
+        </div>
+
+      </div>
     </div>
   )
 }
