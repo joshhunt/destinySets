@@ -19,8 +19,6 @@ export default function Activity(props) {
     sections,
   } = activity;
 
-  console.log(drops);
-
   return (
     <div className={cx(className, styles.root, getTypeClass(activityTypeName))}>
       <div className={styles.header}>
@@ -37,7 +35,7 @@ export default function Activity(props) {
       }
 
       { sections && sections.length && sections.map(section => (
-        <div className={styles.section}>
+        <div className={styles.section} key={section.id}>
           <div className={styles.sectionName}>{section.title}</div>
           {section.items.map(item => <Item key={item.itemHash} item={item} small />)}
         </div>

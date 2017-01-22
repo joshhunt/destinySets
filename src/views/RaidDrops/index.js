@@ -1,7 +1,7 @@
 /* eslint-disable import/no-webpack-loader-syntax */
 import React, { Component } from 'react';
 import cx from 'classnames';
-import { mapValues, uniqBy, clone } from 'lodash';
+import { mapValues, uniqBy, clone, toPairs } from 'lodash';
 
 import * as destiny from 'app/lib/destiny';
 import { authUrl } from 'app/lib/destinyAuth';
@@ -10,8 +10,22 @@ import DestinyAuthProvider from 'app/lib/DestinyAuthProvider';
 import Loading from 'app/views/Loading';
 import Activity from 'app/components/Activity';
 import Header from 'app/components/Header';
+import Footer from 'app/components/Footer';
 
 import styles from './styles.styl';
+
+function getClassFromTypeName(itemTypeName) {
+  const name = itemTypeName.toLowerCase();
+  if (name.includes('warlock')) {
+    return 'warlock';
+  } else if (name.includes('titan')) {
+    return 'titan';
+  } else if (name.includes('hunter')) {
+    return 'hunter';
+  } else {
+    return 'noclass';
+  }
+}
 
 const ACTIVITY_DATA = 'https://destiny.plumbing/en/collections/combinedWoTMDrops.json';
 
@@ -23,6 +37,11 @@ const CUSTOM_ACTIVITY_NAME = {
 class RaidDrops extends Component {
   state = {
     loaded: false,
+    classFilter: {
+      warlock: true,
+      titan: true,
+      hunter: true,
+    },
   };
 
   componentDidMount() {
@@ -74,10 +93,12 @@ class RaidDrops extends Component {
   transformItemList(itemList, activityData) {
     return (itemList || []).map((itemHash) => {
       const item = activityData.items[itemHash];
+      const dClass = getClassFromTypeName(item.itemTypeName);
       window.inventory = this.inventory;
 
       return {
         ...item,
+        dClass,
         owned: this.inventory && this.inventory.includes(itemHash)
       }
     })
@@ -132,7 +153,7 @@ class RaidDrops extends Component {
 
   poll() {
     setInterval(() => {
-      window.ga && window.ga('send', 'event', 'ping', 'current-activity-check');
+      window.ga && window.ga('send', 'event', 'ping', 'raid-activity-check');
     }, 60 * 1000);
 
     setInterval(() => {
@@ -144,6 +165,15 @@ class RaidDrops extends Component {
     this.fetchUserData();
   };
 
+  onFilterChange = (ev) => {
+    this.setState({
+      classFilter: {
+        ...this.state.classFilter,
+        [ev.target.name]: ev.target.checked,
+      }
+    });
+  }
+
   render() {
     if (this.state.err) {
       return (<Loading>An error occurred! {this.state.err.message}</Loading>);
@@ -153,10 +183,26 @@ class RaidDrops extends Component {
       return (<Loading>Loading...</Loading>);
     }
 
+    const filterCss = toPairs(this.state.classFilter).map(([ dClass, shouldDisplay ]) => {
+      return `
+        [data-class="${dClass}"] {
+          display: ${shouldDisplay ? 'inline-block' : 'none'}
+        }
+      `
+    }).join('\n');
+
     return (
       <div className={styles.root}>
         <div className={cx(styles.hero, this.state.currentActivity && styles.large)}>
           <Header />
+
+          <style dangerouslySetInnerHTML={{__html: filterCss}}></style>
+
+          {/*<div>
+            <label><input type="checkbox" name="warlock" value={this.state.classFilter.warlock} onChange={this.onFilterChange}/> Warlock</label>
+            <label><input type="checkbox" name="titan" value={this.state.classFilter.titan} onChange={this.onFilterChange}/> Titan</label>
+            <label><input type="checkbox" name="hunter" value={this.state.classFilter.hunter} onChange={this.onFilterChange}/> Hunter</label>
+          </div>*/}
 
           { this.state.currentActivity &&
             <div className={styles.currentActivity}>
@@ -170,7 +216,7 @@ class RaidDrops extends Component {
 
           { (this.props.isAuthenticated && !this.state.currentActivity) &&
             <div className={styles.panel}>
-              Looks like you're not currently playing Destiny. Check back here when you're in a raid.
+              Looks like you're not currently in a raid. Check back here next time you raid.
             </div>
           }
 
@@ -204,11 +250,7 @@ class RaidDrops extends Component {
           ))}
         </div>
 
-        <div className={styles.footer}>
-          Made with love by <a href="http://joshhunt.is" target="_blank">Josh Hunt</a> for Destiny fans.<br/>
-          Destiny is a registered trademark of Bungie. Data and images sourced from Bungie.
-          Loot tables <a href="https://lowlidev.com.au/destiny/" target="_blank">originally from lowlines</a>.
-        </div>
+        <Footer />
       </div>
     );
   }

@@ -1,18 +1,49 @@
 .header
   background: lighten(rgba(11, 13, 16, 1.0), 4%)
-  padding: 10px 15px
   display: flex
   justify-content: space-between
   align-items: center
 
+.main
+  display: flex
+  height: 100%
+
+.navItem
+  padding: 17px 15px 13px 15px
+  height: 100%
+  line-height: 22px
+  transition: all 150ms ease-in-out
+  color: inherit
+  text-decoration: none
+
+  &:hover
+    background: lighten(rgba(11, 13, 16, 1.0), 7%)
+
+.active
+  position: relative
+
+  &:after
+    display: block
+    content: ''
+    position absolute
+    bottom: 0
+    right: 0
+    left: 0
+    height: 3px
+    background: lighten(rgba(11, 13, 16, 1.0), 30%)
+
 .siteName
+  padding: 15px
+  composes: navItem
   font-weight: 400
   font-size: 22px
   margin: 0
 
+  &:hover
+    background: none
+
 .social
   font-size: 20px
-
 
 .socialItem
   padding: 0 7px

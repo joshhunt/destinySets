@@ -11,7 +11,7 @@ export default function Item({ item, dev, small }) {
   };
 
   return (
-    <div className={cx(styles.root, { [styles.obtained]: item.owned, [styles.small]: small })} key={item.itemHash}>
+    <div className={cx(styles.root, { [styles.obtained]: item.owned, [styles.small]: small })} key={item.itemHash} data-class={item.dClass}>
       <div className={styles.accessory}>
         <a className={styles.link} {...dtrProps}>
           <img className={styles.image} src={item.icon} role="presentation" />

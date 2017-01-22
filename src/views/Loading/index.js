@@ -1,11 +1,17 @@
 import React from 'react';
 
+import Header from 'app/components/Header';
 import styles from './styles.styl';
 
 export default function Loading({ children }) {
   return (
     <div className={styles.root}>
-      <h2 className={styles.root}>{children}</h2>
+
+      <div className={styles.topPart}><Header /></div>
+
+      <div className={styles.content}>
+        {children}
+      </div>
     </div>
   );
 }

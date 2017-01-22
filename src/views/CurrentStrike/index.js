@@ -10,12 +10,13 @@ import DestinyAuthProvider from 'app/lib/DestinyAuthProvider';
 import Loading from 'app/views/Loading';
 import Activity from 'app/components/Activity';
 import Header from 'app/components/Header';
+import Footer from 'app/components/Footer';
 
 import styles from './styles.styl';
 
 const ACTIVITY_DATA = 'https://destiny.plumbing/en/collections/combinedStrikeDrops.json';
 
-class CurrentActivity extends Component {
+class CurrentStrike extends Component {
   state = {
     loaded: false,
   };
@@ -67,9 +68,13 @@ class CurrentActivity extends Component {
   }
 
   updateState() {
-    if (!(this.destinyAccount && this.inventory && this.activityData)) {
-      return;
+    if (!this.activityData) {
+      return
     }
+
+    // if (!(this.destinyAccount && this.inventory && this.activityData)) {
+    //   return;
+    // }
 
     const activityData = clone(this.activityData);
     const activities = mapValues(activityData.activities, (activity) => {
@@ -94,8 +99,11 @@ class CurrentActivity extends Component {
       'activityName'
     );
 
-    const currentActivities = this.destinyAccount.characters.map(c => c.currentActivityHash);
-    const currentActivity = activities[currentActivities[0]];
+    let currentActivity;
+    if (this.destinyAccount) {
+      const currentActivities = this.destinyAccount.characters.map(c => c.currentActivityHash);
+      currentActivity = activities[currentActivities[0]];
+    }
 
     // if (currentActivity.activityHash !== this.state.currentActivity.activityHash) {
     //   // If the user has changed activity, fetch their new inventory. The updateState()
@@ -180,14 +188,10 @@ class CurrentActivity extends Component {
           ))}
         </div>
 
-        <div className={styles.footer}>
-          Made with love by <a href="http://joshhunt.is" target="_blank">Josh Hunt</a> for Destiny fans.<br/>
-          Destiny is a registered trademark of Bungie. Data and images sourced from Bungie.
-          Loot tables <a href="https://lowlidev.com.au/destiny/" target="_blank">originally from lowlines</a>.
-        </div>
+        <Footer />
       </div>
     );
   }
 }
 
-export default DestinyAuthProvider(CurrentActivity);
+export default DestinyAuthProvider(CurrentStrike);
