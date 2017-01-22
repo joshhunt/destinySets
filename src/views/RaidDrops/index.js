@@ -105,7 +105,7 @@ class RaidDrops extends Component {
   }
 
   updateState() {
-    if (!(this.destinyAccount && this.inventory && this.activityData)) {
+    if (!this.activityData) {
       return;
     }
 
