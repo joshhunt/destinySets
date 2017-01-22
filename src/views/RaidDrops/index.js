@@ -186,6 +186,8 @@ class RaidDrops extends Component {
       return (<Loading>Loading...</Loading>);
     }
 
+    console.log(this.state.classFilter);
+
     const filterCss = toPairs(this.state.classFilter).map(([ dClass, shouldDisplay ]) => {
       return `
         [data-class="${dClass}"] {
@@ -194,6 +196,8 @@ class RaidDrops extends Component {
       `
     }).join('\n');
 
+    console.log(filterCss);
+
     return (
       <div className={styles.root}>
         <div className={cx(styles.hero, this.state.currentActivity && styles.large)}>
@@ -201,11 +205,11 @@ class RaidDrops extends Component {
 
           <style dangerouslySetInnerHTML={{__html: filterCss}}></style>
 
-          {/*<div>
-            <label><input type="checkbox" name="warlock" value={this.state.classFilter.warlock} onChange={this.onFilterChange}/> Warlock</label>
-            <label><input type="checkbox" name="titan" value={this.state.classFilter.titan} onChange={this.onFilterChange}/> Titan</label>
-            <label><input type="checkbox" name="hunter" value={this.state.classFilter.hunter} onChange={this.onFilterChange}/> Hunter</label>
-          </div>*/}
+          <div>
+            <label><input type="checkbox" name="warlock" checked={this.state.classFilter.warlock} onChange={this.onFilterChange}/> Warlock</label>
+            <label><input type="checkbox" name="titan" checked={this.state.classFilter.titan} onChange={this.onFilterChange}/> Titan</label>
+            <label><input type="checkbox" name="hunter" checked={this.state.classFilter.hunter} onChange={this.onFilterChange}/> Hunter</label>
+          </div>
 
           { this.state.currentActivity &&
             <div className={styles.currentActivity}>
