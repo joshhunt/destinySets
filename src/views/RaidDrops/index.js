@@ -145,8 +145,11 @@ class RaidDrops extends Component {
       'activityName'
     );
 
-    const currentActivities = this.destinyAccount.characters.map(c => c.currentActivityHash);
-    const currentActivity = activities[currentActivities[0]];
+    let currentActivity;
+    if (this.destinyAccount) {
+      const currentActivities = this.destinyAccount.characters.map(c => c.currentActivityHash);
+      currentActivity = activities[currentActivities[0]];
+    }
 
     this.setState({ currentActivity, activities, activitiesWithDrops, loaded: true });
   }
