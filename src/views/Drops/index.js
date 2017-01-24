@@ -103,6 +103,10 @@ class Drops extends Component {
 
     return destiny.getCurrentBungieAccount()
       .then((account) => {
+        localStorage.setItem('uid', account.bungieNetUser.membershipId);
+        if (window.ga) {
+          window.ga('set', 'userId', account.bungieNetUser.membershipId);
+        }
         this.destinyAccount = account;
         this.updateState();
         this.setState({ loadedAccount: true });

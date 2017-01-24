@@ -52,6 +52,8 @@ export function getCurrentBungieAccount() {
           return (new Date(accountA.lastPlayed)) - (new Date(accountB.lastPlayed));
         })[0];
 
+      accountsByLastPlayed.bungieNetUser = body.bungieNetUser;
+
       return accountsByLastPlayed;
     });
 }
