@@ -14,6 +14,11 @@ import Footer from 'app/components/Footer';
 
 import styles from './styles.styl';
 
+const NO_ACTIVITY_MESSAGE = {
+  strike: "Looks like you're not currently in an activity. Check back here next time you're in a strike.",
+  raid: "Looks like you're not currently in a raid. Check back here next time you raid."
+}
+
 function getClassFromTypeName(itemTypeName) {
   const name = itemTypeName.toLowerCase();
   if (name.includes('warlock')) {
@@ -46,6 +51,7 @@ class Drops extends Component {
 
     this.state = {
       loaded: false,
+      loadedAccount: false,
       filterCss: '',
     };
   }
@@ -99,6 +105,7 @@ class Drops extends Component {
       .then((account) => {
         this.destinyAccount = account;
         this.updateState();
+        this.setState({ loadedAccount: true });
         return this.destinyAccount;
       });
   }
@@ -190,7 +197,7 @@ class Drops extends Component {
   }
 
   render() {
-    const { err, loaded, filterCss } = this.state;
+    const { err, loaded, filterCss, loadedAccount } = this.state;
 
     if (err) {
       return (<Loading>An error occurred! {this.state.err.message}</Loading>);
@@ -199,6 +206,8 @@ class Drops extends Component {
     if (!loaded) {
       return (<Loading>Loading...</Loading>);
     }
+
+    const noActivityMessage = NO_ACTIVITY_MESSAGE[this.props.route.variation];
 
     return (
       <div className={styles.root}>
@@ -217,9 +226,9 @@ class Drops extends Component {
             </div>
           }
 
-          { (this.props.isAuthenticated && !this.state.currentActivity) &&
+          { (this.props.isAuthenticated && loadedAccount && !this.state.currentActivity) &&
             <div className={styles.panel}>
-              Looks like you're not currently in a raid. Check back here next time you raid.
+              {noActivityMessage}
             </div>
           }
 
