@@ -61,12 +61,14 @@ class Drops extends Component {
 
     if (this.props.isAuthenticated) {
       this.fetchUserData();
+      this.poll();
     }
   }
 
   componentWillReceiveProps(newProps) {
     if (!this.props.isAuthenticated && newProps.isAuthenticated){
       this.fetchUserData(newProps);
+      this.poll();
     }
 
     if (this.props.route.variation !== newProps.route.variation) {
@@ -179,11 +181,13 @@ class Drops extends Component {
   }
 
   poll() {
+    console.log('starting to poll');
     setInterval(() => {
       window.ga && window.ga('send', 'event', 'ping', 'raid-activity-check');
     }, 60 * 1000);
 
     setInterval(() => {
+      console.log('polling');
       this.fetchAccount();
     }, 30 * 1000);
   }
