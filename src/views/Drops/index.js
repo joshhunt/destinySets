@@ -19,6 +19,11 @@ const NO_ACTIVITY_MESSAGE = {
   raid: "Looks like you're not currently in a raid. Check back here next time you raid."
 }
 
+const HEADER_TEXT = {
+  strike: 'All Activities',
+  raid: 'Other Raids',
+}
+
 function getClassFromTypeName(itemTypeName) {
   const name = itemTypeName.toLowerCase();
   if (name.includes('warlock')) {
@@ -254,7 +259,7 @@ class Drops extends Component {
 
         <div className={styles.allActivites}>
           <div className={styles.spacer}>
-            <h2 className={styles.heading}>All Raids</h2>
+            <h2 className={styles.heading}>{HEADER_TEXT[this.props.route.variation]}</h2>
           </div>
 
           <div className={styles.spacer} />
