@@ -30,6 +30,8 @@ export function getDestiny(_url, opts = {}, postBody) {
     opts.body = (typeof postBody === 'string') ? postBody : JSON.stringify(postBody);
   }
 
+  console.info('[BNET REQUEST]', url, opts);
+
   return get(url, opts)
     .then((resp) => {
       if (resp.ErrorCode !== 1) {
@@ -44,17 +46,29 @@ export function getDestiny(_url, opts = {}, postBody) {
     });
 }
 
+export function log(prom) {
+  prom
+    .then((result) => console.log(result))
+    .catch((err) => console.error(err))
+}
+
+export function dev(...args) {
+  log(getDestiny(...args))
+}
+
 export function getCurrentBungieAccount() {
   return getDestiny('https://www.bungie.net/Platform/User/GetCurrentBungieAccount/')
     .then(body => {
-      const accountsByLastPlayed = body.destinyAccounts
+      const lastPlayedAccount = body.destinyAccounts
         .sort((accountA, accountB) => {
           return (new Date(accountA.lastPlayed)) - (new Date(accountB.lastPlayed));
         })[0];
 
-      accountsByLastPlayed.bungieNetUser = body.bungieNetUser;
+      lastPlayedAccount.bungieNetUser = body.bungieNetUser;
 
-      return accountsByLastPlayed;
+      window.lastPlayedAccount = lastPlayedAccount;
+
+      return lastPlayedAccount;
     });
 }
 
@@ -74,7 +88,7 @@ export function getAllInventoryItems(destinyAccount) {
       });
 
       inventoryPromises.push(
-        getDestiny( `https://www.bungie.net/Platform/Destiny/${membershipType}/MyAccount/Vault/Summary/`)
+        getDestiny(`https://www.bungie.net/Platform/Destiny/${membershipType}/MyAccount/Vault/Summary/`)
       );
 
       return Promise.all(inventoryPromises);
@@ -86,5 +100,21 @@ export function getAllInventoryItems(destinyAccount) {
       }, []);
 
       return allItems;
+    });
+}
+
+export function getVendor(vendorHash) {
+  const accountPromise = getCurrentBungieAccount();
+
+  return accountPromise
+    .then((account) => {
+      const membershipType = account.userInfo.membershipType;
+      const characterId = account.characters[0].characterId; // TODO: Only first character?
+
+      const url = `https://www.bungie.net/Platform/Destiny/${membershipType}/MyAccount/Character/${characterId}/Vendor/${vendorHash}/Metadata/`;
+      return getDestiny(url);
+    })
+    .then(({ data }) => {
+      return data.vendor;
     });
 }

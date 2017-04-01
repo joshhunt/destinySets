@@ -52,11 +52,6 @@
     opacity: .5 !important
     pointer-events: none
 
-.allActivites
-  display: flex
-  flex-wrap: wrap
-  justify-content: space-around
-
 .heading
   font-weight: 400
   font-size: 22px
@@ -72,7 +67,6 @@
   padding: 25px
 
 .panel
-.activity
   @media screen and (max-width: 500px)
     width: auto
     margin-left: 10px
@@ -95,21 +89,3 @@
 
   &:hover
     background: #ffce1f
-
-.spacer
-  width: 600px
-  margin: 0 25px
-
-.spacerForLargeScreens
-  composes: spacer
-  display: none
-
-  @media screen and (min-width: 1950px)
-    display: block
-
-.spacerForSuperLargeScreens
-  composes: spacer
-  display: none
-
-  @media screen and (min-width: 2600px)
-    display: block

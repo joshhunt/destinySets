@@ -1,13 +1,13 @@
 import React from 'react';
 import cx from 'classnames';
 
-import Item from '../Item';
+import ItemList from '../ItemList';
 import getTypeClass from './getTypeClass';
 
 import styles from './styles.styl';
 
 export default function Activity(props) {
-  const { className, activity } = props;
+  const { className, activity, tinyItems } = props;
 
   if (!activity) return null;
 
@@ -17,29 +17,22 @@ export default function Activity(props) {
     pgcrImage,
     activityTypeName,
     sections,
+
+    title,
+    type,
   } = activity;
 
   return (
-    <div className={cx(className, styles.root, getTypeClass(activityTypeName))}>
+    <div className={cx(className, styles.root, getTypeClass(activityTypeName || type))}>
       <div className={styles.header}>
-        <div className={styles.activityName}>{activityName}</div>
+        <div className={styles.activityName}>{activityName || title}</div>
       </div>
 
-      <img className={styles.image} src={'https://bungie.net' + pgcrImage} role="presentation" />
-
-      { (drops || []).length ?
-        <div className={styles.drops}>
-          {drops.map(item => <Item key={item.itemHash} item={item} />)}
-        </div>
-        : null
+      { pgcrImage &&
+        <img className={styles.image} src={'https://bungie.net' + pgcrImage} role="presentation" />
       }
 
-      { (sections && sections.length) ? sections.map(section => (
-        <div className={styles.section} key={section.id}>
-          <div className={styles.sectionName}>{section.title}</div>
-          {section.items.map(item => <Item key={item.itemHash} item={item} small />)}
-        </div>
-      )) : null}
+      <ItemList drops={drops} sections={sections} tinyItems={tinyItems} />
     </div>
   );
 }

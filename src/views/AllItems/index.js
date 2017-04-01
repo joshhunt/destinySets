@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ReactList from 'react-list';
 import cx from 'classnames';
-import { debounce, throttle, remove } from 'lodash';
+import { debounce } from 'lodash';
 
 import * as destiny from 'app/lib/destiny';
 
@@ -9,8 +9,9 @@ import Item from 'app/components/Item';
 import Loading from 'app/views/Loading';
 import styles from './styles.styl';
 
-const ARMOUR_DEFS_URL = 'https://destiny.plumbing/en/items/Armor.json';
-const WEAPON_DEFS_URL = 'https://destiny.plumbing/en/items/Weapon.json';
+const ITEM_URLS = [
+  'https://destiny.plumbing/en/items/All.json',
+];
 
 export default class AllItems extends Component {
   state = {
@@ -25,14 +26,12 @@ export default class AllItems extends Component {
   }
 
   componentDidMount() {
-    Promise.all([
-      destiny.get(ARMOUR_DEFS_URL),
-      destiny.get(WEAPON_DEFS_URL),
-    ]).then(([ armour, weapons ]) => {
-      this.allItems = Object.values({
-        ...armour,
-        ...weapons,
-      });
+    const prom = ITEM_URLS.map(u => destiny.get(u));
+
+    Promise.all(prom).then((data) => {
+      this.allItems = data.reduce((acc, items) => {
+        return acc.concat(Object.values(items));
+      }, []);
 
       this.setState({
         loading: false,
@@ -62,11 +61,17 @@ export default class AllItems extends Component {
   };
 
   updateFilter(text) {
-    console.log(text);
+    const search = text.toLowerCase();
+    const searchAsNum = parseInt(text, 10);
 
-    this.setState({
-      items: this.allItems.filter(item => item.itemName.toLowerCase().includes(text.toLowerCase())),
-    });
+    const filteredItems = this.allItems
+      .filter(item => {
+        const name = (item.itemName || '').toLowerCase();
+
+        return name.includes(search) || item.itemHash === searchAsNum;
+      })
+
+    this.setState({ items: filteredItems });
   }
 
   copy = () => {

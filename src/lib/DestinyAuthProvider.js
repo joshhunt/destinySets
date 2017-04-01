@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import destinyAuth from 'app/lib/destinyAuth';
 
-export default function DestinyAuthProvider(WrappedComponent) {
+export default function DestinyAuthProvider(WrappedComponent, onlyRenderWhenAuthed) {
 
-  return class PP extends Component {
+  return class DestinyAuthProviderWrapper extends Component {
     state = {
       isAuthenticated: false,
     };
@@ -20,6 +20,12 @@ export default function DestinyAuthProvider(WrappedComponent) {
     }
 
     render() {
+      if (onlyRenderWhenAuthed) {
+        return this.state.isAuthenticated
+          ? <WrappedComponent {...this.props} isAuthenticated={this.state.isAuthenticated}/>
+          : <em>Loading...</em>
+      }
+
       return <WrappedComponent {...this.props} isAuthenticated={this.state.isAuthenticated}/>
     }
   }

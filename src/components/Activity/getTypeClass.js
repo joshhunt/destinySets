@@ -46,6 +46,6 @@ const defs = {
   "Strike": styles.typeStrike,
 };
 
-export default function getForActivityName(activityName) {
-  return defs[activityName];
+export default function getForActivityName(type) {
+  return defs[type] || styles.typeMisc;
 }

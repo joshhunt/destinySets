@@ -52,6 +52,7 @@ export default class Item extends React.Component {
             <Link to="/" className={styles.siteName}>Destiny Sets</Link>
             <Link to="/" className={styles.navItem} activeClassName={styles.active}>Strikes</Link>
             <Link to="/raid" className={styles.navItem} activeClassName={styles.active}>Raids</Link>
+            <Link to="/kiosks" className={styles.navItem} activeClassName={styles.active}>Kiosks</Link>
           </div>
 
           <div className={styles.social}>

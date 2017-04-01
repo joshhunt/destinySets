@@ -12,7 +12,7 @@
   transition: all 150ms ease-in-out
 
   &.obtained
-    opacity: .5
+    opacity: .35
 
 .accessory
   flex: 0 1 auto
@@ -35,6 +35,7 @@
     align-items: center
     justify-content: center
     color: white
+    letter-spacing: -2px
 
 .image
   width: 50px
@@ -67,3 +68,18 @@
 
   .main
     display: none
+
+.tiny
+  margin-right: 10px
+  margin-bottom: 10px
+
+  .image
+    width: 40px
+    height: 40px
+
+
+  .obtained .accessory:after
+    width: 15px
+    height: 15px
+    font-size: 9px
+    letter-spacing: -1px

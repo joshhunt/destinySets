@@ -2,7 +2,7 @@ import React from 'react';
 
 import styles from './styles.styl';
 
-export default function Item({ item }) {
+export default function Footer({ item }) {
   return (
     <div className={styles.footer}>
       Made with love by <a href="http://joshhunt.is" target="_blank">Josh Hunt</a> for Destiny fans.<br/>

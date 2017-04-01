@@ -9,10 +9,13 @@ import DestinyAuthProvider from 'app/lib/DestinyAuthProvider';
 
 import Loading from 'app/views/Loading';
 import Activity from 'app/components/Activity';
+import ActivityList from 'app/components/ActivityList';
 import Header from 'app/components/Header';
 import Footer from 'app/components/Footer';
 
 import styles from './styles.styl';
+
+window.destiny = destiny;
 
 const NO_ACTIVITY_MESSAGE = {
   strike: "Looks like you're not currently in an activity. Check back here next time you're in a strike.",
@@ -257,23 +260,10 @@ class Drops extends Component {
           }
         </div>
 
-        <div className={styles.allActivites}>
-          <div className={styles.spacer}>
-            <h2 className={styles.heading}>{HEADER_TEXT[this.props.route.variation]}</h2>
-          </div>
-
-          <div className={styles.spacer} />
-          <div className={styles.spacerForLargeScreens} />
-          <div className={styles.spacerForSuperLargeScreens} />
-
-          { this.state.activitiesWithDrops.map((activity) => (
-            <Activity
-              key={activity.activityHash}
-              className={styles.activity}
-              activity={activity}
-            />
-          ))}
-        </div>
+        <ActivityList
+          title={HEADER_TEXT[this.props.route.variation]}
+          activities={this.state.activitiesWithDrops}
+        />
 
         <Footer />
       </div>
