@@ -6,27 +6,36 @@ export default function DestinyAuthProvider(WrappedComponent, onlyRenderWhenAuth
   return class DestinyAuthProviderWrapper extends Component {
     state = {
       isAuthenticated: false,
+      authLoaded: false,
     };
 
     componentDidMount() {
       destinyAuth((err, isAuthenticated) => {
-        console.log('DestinyAuthProvider', { err, isAuthenticated })
+        console.info('DestinyAuthProvider', { err, isAuthenticated })
         if (err) {
           throw err;
         }
 
-        this.setState({ isAuthenticated });
+        this.setState({ isAuthenticated, authLoaded: true });
       });
     }
 
     render() {
       if (onlyRenderWhenAuthed) {
         return this.state.isAuthenticated
-          ? <WrappedComponent {...this.props} isAuthenticated={this.state.isAuthenticated}/>
+          ? (<WrappedComponent
+              {...this.props}
+              authLoaded={this.state.authLoaded}
+              isAuthenticated={this.state.isAuthenticated}
+            />)
           : <em>Loading...</em>
       }
 
-      return <WrappedComponent {...this.props} isAuthenticated={this.state.isAuthenticated}/>
+      return (<WrappedComponent
+                {...this.props}
+                authLoaded={this.state.authLoaded}
+                isAuthenticated={this.state.isAuthenticated}
+              />)
     }
   }
 }

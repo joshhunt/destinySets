@@ -1,0 +1,40 @@
+// loginUpsell
+// heading
+// authLink
+
+// TODO: refactor this to remove duplication from Drops styles
+.panel
+  background: #2c3e50
+  text-align: center
+  width: 100%
+  max-width: 500px
+  margin: auto
+  margin-top: 25px
+  padding: 25px
+
+.panel
+  @media screen and (max-width: 500px)
+    width: auto
+    margin-left: 10px
+    margin-right: 10px
+
+.heading
+  font-weight: 400
+  font-size: 22px
+  margin-bottom: .1em
+  margin: 0 0 .1em 0
+
+.loginUpsell
+  composes: panel
+  font-size: 18px
+
+.authLink
+  color: black !important
+  background: rgba(208, 170, 11, 1.0)
+  padding: 10px 20px
+  text-decoration: none
+  transition: 150ms ease-in-out
+  display: inline-block
+
+  &:hover
+    background: #ffce1f

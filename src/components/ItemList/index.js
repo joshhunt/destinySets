@@ -18,7 +18,7 @@ export default function ItemList(props) {
       }
 
       { (sections && sections.length) ? sections.map(section => (
-        <div className={styles.section} key={section.id}>
+        <div className={cx(styles.section, tinyItems && styles.inline)} key={section.id}>
           <div className={styles.sectionName}>{section.title}</div>
           {section.items.map(item => <Item key={item.itemHash} item={item} small tiny={tinyItems} />)}
         </div>

@@ -19,23 +19,32 @@
   position: relative
   color: white
 
-  .obtained &:after
-    font-family: 'sans-serif'
-    content: '✓'
-    display: block
+  &:after
     position: absolute
     top: -4.5px
     right: -4.5px
-    background: #27ae60
-    font-size: 10px
     width: 18px
     height: 18px
+    display: none
+    font-family: 'sans-serif'
+    font-size: 10px
     border-radius: 18px
-    display: flex
     align-items: center
     justify-content: center
     color: white
     letter-spacing: -2px
+
+  .obtained &:after
+    content: '✓'
+    display: flex
+    background: #27ae60
+    color: white
+
+  .forSale &:after
+    content: '$'
+    display: flex
+    background: #e67e22
+    color: white
 
 .image
   width: 50px
@@ -77,8 +86,7 @@
     width: 40px
     height: 40px
 
-
-  .obtained .accessory:after
+  .accessory:after
     width: 15px
     height: 15px
     font-size: 9px

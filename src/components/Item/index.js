@@ -40,9 +40,17 @@ export default function Item({ item, dev, small, tiny }) {
     tiny && styles.tiny
   );
 
+  const itemClassName = cx(
+    styles.root,
+    {
+      [styles.obtained]: item.owned,
+      [styles.forSale]: item.forSale,
+    }
+  );
+
   return (
     <div className={rootClassName} data-class={item.dClass}>
-      <div className={cx(styles.root, { [styles.obtained]: item.owned})} key={item.itemHash}>
+      <div className={itemClassName} key={item.itemHash}>
         <div className={styles.accessory}>
           <a className={styles.link} {...dtrProps}>
             <img className={styles.image} src={item.icon} role="presentation" />

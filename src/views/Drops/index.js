@@ -4,10 +4,10 @@ import cx from 'classnames';
 import { mapValues, uniqBy, clone, toPairs } from 'lodash';
 
 import * as destiny from 'app/lib/destiny';
-import { authUrl } from 'app/lib/destinyAuth';
 import DestinyAuthProvider from 'app/lib/DestinyAuthProvider';
 
 import Loading from 'app/views/Loading';
+import LoginUpsell from 'app/components/LoginUpsell';
 import Activity from 'app/components/Activity';
 import ActivityList from 'app/components/ActivityList';
 import Header from 'app/components/Header';
@@ -47,7 +47,7 @@ const CUSTOM_ACTIVITY_NAME = {
 
 const DATA_URL_FOR_VARIATION = {
   strike: 'https://destiny.plumbing/en/collections/combinedStrikeDrops.json',
-  raid: 'https://destiny.plumbing/en/collections/combinedWoTMDrops.json',
+  raid: 'https://destiny.plumbing/en/collections/combinedRaidDrops.json',
 };
 
 class Drops extends Component {
@@ -249,14 +249,9 @@ class Drops extends Component {
           }
 
           { !this.props.isAuthenticated &&
-            <div className={styles.loginUpsell}>
-              <h2 className={styles.heading}>Login for more features</h2>
-              <p>
-                See the items you've already collected, plus track your currently active raid.
-              </p>
-
-              <a className={styles.authLink} href={authUrl}>Authorize with Bungie.net</a>
-            </div>
+            <LoginUpsell>
+              See the items you've already collected, plus track your currently active raid.
+            </LoginUpsell>
           }
         </div>
 
