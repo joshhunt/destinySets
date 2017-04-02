@@ -4,6 +4,7 @@ import * as destiny from 'app/lib/destiny';
 import DestinyAuthProvider from 'app/lib/DestinyAuthProvider';
 
 import Header from 'app/components/Header';
+import Footer from 'app/components/Footer';
 import ActivityList from 'app/components/ActivityList';
 import Loading from 'app/views/Loading';
 import LoginUpsell from 'app/components/LoginUpsell';
@@ -185,6 +186,8 @@ class Kiosk extends Component {
         { this.state.kiosks &&
           <ActivityList title="Kiosks" activities={this.state.kiosks} tinyItems={true}/>
         }
+
+        <Footer />
       </div>
     );
   }
