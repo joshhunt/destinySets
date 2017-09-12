@@ -1,7 +1,30 @@
-.allActivites
+$grid-padding = 15px
+
+.root
+  padding: 0 $grid-padding
+
+.list
   display: flex
   flex-wrap: wrap
-  justify-content: space-around
+  margin: 0 (-($grid-padding))
+
+  // clearfix
+  &:after
+  &:before
+      content: " "
+      display: table
+
+  &:after
+    clear: both
+
+.activityWrapper
+  width: 50%
+  float: left
+  padding: 0 $grid-padding
+  padding-bottom: ($grid-padding * 2)
+
+  > *
+    height: 100%
 
 .heading
   font-weight: 400
