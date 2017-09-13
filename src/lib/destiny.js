@@ -2,6 +2,16 @@ const API_KEY = __DESTINY_API_KEY__;
 
 const CACHE_ENABLED = false;
 
+const PLATFORMS = {
+  0: 'None',
+  1: 'TigerXbox',
+  2: 'TigerPsn',
+  4: 'TigerBlizzard',
+  10: 'TigerDemon',
+  254: 'BungieNext',
+  [-1]: 'All',
+};
+
 export function get(url, opts) {
   return fetch(url, opts).then(res => res.json());
 }
@@ -11,7 +21,7 @@ export function getDestiny(_url, opts = {}, postBody) {
 
   const lsKey = `requestCache$$${url}`;
   if (CACHE_ENABLED) {
-    const lsItem = localStorage.getItem(lsKey)
+    const lsItem = localStorage.getItem(lsKey);
     if (lsItem) {
       return Promise.resolve(JSON.parse(lsItem));
     }
@@ -27,73 +37,86 @@ export function getDestiny(_url, opts = {}, postBody) {
   if (postBody) {
     opts.method = 'POST';
     opts.headers['Content-Type'] = 'application/json';
-    opts.body = (typeof postBody === 'string') ? postBody : JSON.stringify(postBody);
+    opts.body =
+      typeof postBody === 'string' ? postBody : JSON.stringify(postBody);
   }
 
   console.info('[BNET REQUEST]', url, opts);
 
-  return get(url, opts)
-    .then((resp) => {
-      if (resp.ErrorCode !== 1) {
-        throw new Error('Bungie API Error ' + resp.ErrorStatus + ' - ' + resp.Message);
-      }
+  return get(url, opts).then(resp => {
+    if (resp.ErrorCode !== 1) {
+      throw new Error(
+        'Bungie API Error ' + resp.ErrorStatus + ' - ' + resp.Message
+      );
+    }
 
-      if (CACHE_ENABLED) {
-        localStorage.setItem(lsKey, JSON.stringify(resp));
-      }
+    if (CACHE_ENABLED) {
+      localStorage.setItem(lsKey, JSON.stringify(resp));
+    }
 
-      return resp.Response || resp;
-    });
+    return resp.Response || resp;
+  });
 }
 
 export function log(prom) {
-  prom
-    .then((result) => console.log(result))
-    .catch((err) => console.error(err))
+  prom.then(result => console.log(result)).catch(err => console.error(err));
 }
 
 export function dev(...args) {
-  log(getDestiny(...args))
+  log(getDestiny(...args));
+}
+
+export function getAccountSummary({ membershipType, membershipId }) {
+  return getDestiny(
+    `https://www.bungie.net/Platform/Destiny/${membershipType}/Account/${membershipId}/Summary/`
+  ).then(({ data }) => data);
 }
 
 export function getCurrentBungieAccount() {
-  return getDestiny('https://www.bungie.net/Platform/User/GetCurrentBungieAccount/')
-    .then(body => {
-      const lastPlayedAccount = body.destinyAccounts
-        .sort((accountA, accountB) => {
-          return (new Date(accountA.lastPlayed)) - (new Date(accountB.lastPlayed));
-        })[0];
+  return getDestiny(
+    'https://www.bungie.net/Platform/User/GetMembershipsForCurrentUser/'
+  ).then(body => {
+    const lastPlayedAccount = body.destinyMemberships.sort(
+      (accountA, accountB) => {
+        return new Date(accountA.lastPlayed) - new Date(accountB.lastPlayed);
+      }
+    )[0];
 
-      lastPlayedAccount.bungieNetUser = body.bungieNetUser;
+    // lastPlayedAccount.bungieNetUser = body.bungieNetUser;
 
-      window.lastPlayedAccount = lastPlayedAccount;
+    window.lastPlayedAccount = lastPlayedAccount;
 
-      return lastPlayedAccount;
-    });
+    return getAccountSummary(lastPlayedAccount);
+  });
 }
 
 export function getAllInventoryItems(destinyAccount) {
-  const accountPromise = destinyAccount ? Promise.resolve(destinyAccount) : getCurrentBungieAccount();
+  console.log('getAllInventoryItems');
+  const accountPromise = destinyAccount
+    ? Promise.resolve(destinyAccount)
+    : getCurrentBungieAccount();
 
   return accountPromise
-    .then((account) => {
-      const membershipType = account.userInfo.membershipType;
-      const destinyMembershipId = account.userInfo.membershipId;
+    .then(account => {
+      const membershipType = account.membershipType;
+      const destinyMembershipId = account.membershipId;
 
-      const inventoryPromises = account.characters.map((char) => {
-        const characterId = char.characterId;
+      const inventoryPromises = account.characters.map(char => {
+        const characterId = char.characterBase.characterId;
         const url = `https://www.bungie.net/Platform/Destiny/${membershipType}/Account/${destinyMembershipId}/Character/${characterId}/Inventory/Summary/`;
 
-        return getDestiny(url)
+        return getDestiny(url);
       });
 
       inventoryPromises.push(
-        getDestiny(`https://www.bungie.net/Platform/Destiny/${membershipType}/MyAccount/Vault/Summary/`)
+        getDestiny(
+          `https://www.bungie.net/Platform/Destiny/${membershipType}/MyAccount/Vault/Summary/`
+        )
       );
 
       return Promise.all(inventoryPromises);
     })
-    .then((inventories) => {
+    .then(inventories => {
       const allItems = inventories.reduce((acc, body) => {
         const items = body.data.items.map(item => item.itemHash);
         return acc.concat(items);
@@ -107,7 +130,7 @@ export function getVendor(vendorHash) {
   const accountPromise = getCurrentBungieAccount();
 
   return accountPromise
-    .then((account) => {
+    .then(account => {
       const membershipType = account.userInfo.membershipType;
       const characterId = account.characters[0].characterId; // TODO: Only first character?
 
