@@ -105,11 +105,13 @@ export default class Item extends React.Component {
           <div className={styles.social}>
             {legacy ? (
               <Link to="/" className={styles.navItemSwitchGame}>
-                Destiny 2
+                <span className={styles.shortName}>D2</span>
+                <span className={styles.longName}>Destiny 2</span>
               </Link>
             ) : (
               <Link to="/destiny1" className={styles.navItemSwitchGame}>
-                Destiny 1
+                <span className={styles.shortName}>D1</span>
+                <span className={styles.longName}>Destiny 1</span>
               </Link>
             )}
 
