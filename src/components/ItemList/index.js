@@ -10,19 +10,36 @@ export default function ItemList(props) {
 
   return (
     <div className={cx(className, styles.root)}>
-      { (drops || []).length ?
+      {(drops || []).length ? (
         <div className={styles.drops}>
-          {drops.map(item => <Item key={item.itemHash} item={item} tiny={tinyItems} />)}
+          {drops.map(item => (
+            <Item
+              key={item.itemHash || item.hash}
+              item={item}
+              tiny={tinyItems}
+            />
+          ))}
         </div>
-        : null
-      }
+      ) : null}
 
-      { (sections && sections.length) ? sections.map(section => (
-        <div className={cx(styles.section, tinyItems && styles.inline)} key={section.id}>
-          <div className={styles.sectionName}>{section.title}</div>
-          {section.items.map(item => <Item key={item.itemHash} item={item} small tiny={tinyItems} />)}
-        </div>
-      )) : null}
+      {sections && sections.length ? (
+        sections.map(section => (
+          <div
+            className={cx(styles.section, tinyItems && styles.inline)}
+            key={section.id}
+          >
+            <div className={styles.sectionName}>{section.title}</div>
+            {section.items.map(item => (
+              <Item
+                key={item.itemHash || item.hash}
+                item={item}
+                small
+                tiny={tinyItems}
+              />
+            ))}
+          </div>
+        ))
+      ) : null}
     </div>
   );
 }

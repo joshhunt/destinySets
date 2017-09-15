@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import cx from 'classnames';
 import { mapValues, uniqBy, clone, toPairs } from 'lodash';
 
-import * as destiny from 'app/lib/destiny';
+import * as destiny from 'app/lib/destinyLegacy';
 import DestinyAuthProvider from 'app/lib/DestinyAuthProvider';
 
 import Loading from 'app/views/Loading';
@@ -26,7 +26,7 @@ const NO_ACTIVITY_MESSAGE = {
 
 const HEADER_TEXT = {
   strike: 'All Activities',
-  raid: 'Raids',
+  raid: 'Other Raids',
 };
 
 function getClassFromTypeName(itemTypeName) {
@@ -48,10 +48,11 @@ const CUSTOM_ACTIVITY_NAME = {
 };
 
 const DATA_URL_FOR_VARIATION = {
-  raid: 'https://destiny.plumbing/2/en/collections/combinedRaidDrops.json',
+  strike: 'https://destiny.plumbing/en/collections/combinedStrikeDrops.json',
+  raid: 'https://destiny.plumbing/en/collections/combinedRaidDrops.json',
 };
 
-class Drops extends Component {
+class DropsLegacy extends Component {
   constructor(props) {
     super(props);
 
@@ -66,57 +67,72 @@ class Drops extends Component {
   }
 
   componentDidMount() {
-    this.fetchDropLists();
+    this.fetchActivityData();
 
     if (this.props.isAuthenticated) {
-      this.fetchCharacters();
+      this.fetchUserData();
       this.poll();
     }
   }
 
   componentWillReceiveProps(newProps) {
     if (!this.props.isAuthenticated && newProps.isAuthenticated) {
-      this.fetchCharacters(newProps);
+      this.fetchUserData(newProps);
       this.poll();
     }
 
     if (this.props.route.variation !== newProps.route.variation) {
       this.variation = newProps.route.variation;
       this.dataUrl = DATA_URL_FOR_VARIATION[this.variation];
-      this.fetchDropLists();
+      this.fetchActivityData();
     }
   }
 
-  fetchDropLists() {
-    destiny.get(this.dataUrl).then(dropLists => {
-      this.dropLists = dropLists;
-      this.dropLists.items = dropLists.items || dropLists.strikeItemHashes;
+  fetchUserData(props = this.props) {
+    this.fetchAccount(props).then(() => this.fetchInventory());
+  }
+
+  fetchActivityData() {
+    destiny.get(this.dataUrl).then(activityData => {
+      this.activityData = activityData;
+      this.activityData.items =
+        activityData.items || activityData.strikeItemHashes;
       this.updateState();
     });
   }
 
-  fetchCharacters(props = this.props) {
+  fetchInventory() {
+    destiny.getAllInventoryItems(this.destinyAccount).then(inventory => {
+      this.inventory = inventory;
+      this.updateState();
+    });
+  }
+
+  fetchAccount(props = this.props) {
     if (!props.isAuthenticated) {
       return;
     }
 
-    return destiny.getCurrentProfile().then(profile => {
-      console.log('%cProfile:', 'font-weight: bold', profile);
+    return destiny.getCurrentBungieAccount().then(account => {
+      console.log('Using account', account);
 
-      const itemHashes = destiny.collectItemsFromProfile(profile);
-      console.log('%cInventory:', 'font-weight: bold', itemHashes);
+      localStorage.setItem('uid', account.membershipId);
+      if (window.ga) {
+        window.ga('set', 'userId', account.membershipId);
+      }
 
-      this.profile = profile;
-      this.inventory = itemHashes;
+      this.destinyAccount = account;
       this.updateState();
       this.setState({ loadedAccount: true });
+      return this.destinyAccount;
     });
   }
 
   transformItemList(itemList, activityData) {
     return (itemList || []).map(itemHash => {
       const item = activityData.items[itemHash];
-      const dClass = getClassFromTypeName(item.itemTypeDisplayName);
+      const dClass = getClassFromTypeName(item.itemTypeName);
+      window.inventory = this.inventory;
 
       return {
         ...item,
@@ -127,11 +143,11 @@ class Drops extends Component {
   }
 
   updateState() {
-    if (!this.dropLists) {
+    if (!this.activityData) {
       return;
     }
 
-    const activityData = clone(this.dropLists);
+    const activityData = clone(this.activityData);
 
     const activities = mapValues(activityData.activities, activity => {
       const dropList = activityData.dropLists[activity.dropListID];
@@ -167,12 +183,12 @@ class Drops extends Component {
     );
 
     let currentActivity;
-    // if (this.destinyAccount) {
-    //   const currentActivities = this.destinyAccount.characters.map(
-    //     c => c.currentActivityHash
-    //   );
-    //   currentActivity = activities[currentActivities[0]];
-    // }
+    if (this.destinyAccount) {
+      const currentActivities = this.destinyAccount.characters.map(
+        c => c.currentActivityHash
+      );
+      currentActivity = activities[currentActivities[0]];
+    }
 
     this.setState({
       currentActivity,
@@ -183,16 +199,19 @@ class Drops extends Component {
   }
 
   poll() {
-    // setInterval(() => {
-    //   window.ga && window.ga('send', 'event', 'ping', 'raid-activity-check');
-    // }, 60 * 1000);
-    // setInterval(() => {
-    //   this.fetchCharacters();
-    // }, 30 * 1000);
+    console.log('starting to poll');
+    setInterval(() => {
+      window.ga && window.ga('send', 'event', 'ping', 'raid-activity-check');
+    }, 60 * 1000);
+
+    setInterval(() => {
+      console.log('polling');
+      this.fetchAccount();
+    }, 30 * 1000);
   }
 
   refresh = () => {
-    this.fetchCharacters();
+    this.fetchUserData();
   };
 
   updateFilter = opts => {
@@ -228,7 +247,7 @@ class Drops extends Component {
             this.state.currentActivity && styles.large
           )}
         >
-          <Header onFilterChange={this.updateFilter} legacy={false} />
+          <Header onFilterChange={this.updateFilter} legacy={true} />
 
           <style dangerouslySetInnerHTML={{ __html: filterCss }} />
 
@@ -244,14 +263,17 @@ class Drops extends Component {
             </div>
           )}
 
-          {/*this.props.isAuthenticated &&
+          {this.props.isAuthenticated &&
           loadedAccount &&
           !this.state.currentActivity && (
             <div className={styles.panel}>{noActivityMessage}</div>
-          )*/}
+          )}
 
           {!this.props.isAuthenticated && (
-            <LoginUpsell>See the items you've already collected.</LoginUpsell>
+            <LoginUpsell>
+              See the items you've already collected, plus track your currently
+              active raid.
+            </LoginUpsell>
           )}
         </div>
 
@@ -266,4 +288,4 @@ class Drops extends Component {
   }
 }
 
-export default DestinyAuthProvider(Drops);
+export default DestinyAuthProvider(DropsLegacy);

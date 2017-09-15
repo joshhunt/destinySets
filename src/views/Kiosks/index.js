@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import * as destiny from 'app/lib/destiny';
+import * as destiny from 'app/lib/destinyLegacy';
 import DestinyAuthProvider from 'app/lib/DestinyAuthProvider';
 
 import Header from 'app/components/Header';
@@ -51,7 +51,7 @@ class Kiosk extends Component {
     loading: true,
     vendorItems: [],
     selectedItems: [],
-  }
+  };
 
   componentDidMount() {
     if (this.props.isAuthenticated) {
@@ -60,7 +60,7 @@ class Kiosk extends Component {
   }
 
   componentWillReceiveProps(newProps) {
-    if (!this.props.isAuthenticated && newProps.isAuthenticated){
+    if (!this.props.isAuthenticated && newProps.isAuthenticated) {
       this.getData();
     }
   }
@@ -76,7 +76,7 @@ class Kiosk extends Component {
       destiny.get(ALL_ITEMS),
     ]);
 
-    promise.then((data) => {
+    promise.then(data => {
       const [
         emblemKiosk,
         shadersKiosk,
@@ -84,7 +84,7 @@ class Kiosk extends Component {
         sparrowsKiosk,
         outfitterVendor,
         shipwrightVendor,
-        allItems
+        allItems,
       ] = data;
 
       const kiosks = [
@@ -95,14 +95,24 @@ class Kiosk extends Component {
       ];
 
       const _vendors = [
-        processKiosk(outfitterVendor, 'Eva Levante, Guardian Outfitter', allItems, true),
-        processKiosk(shipwrightVendor, 'Amanda Holliday, Shipwright', allItems, true),
+        processKiosk(
+          outfitterVendor,
+          'Eva Levante, Guardian Outfitter',
+          allItems,
+          true
+        ),
+        processKiosk(
+          shipwrightVendor,
+          'Amanda Holliday, Shipwright',
+          allItems,
+          true
+        ),
       ];
 
       const itemsToObtain = [];
       kiosks.forEach(({ sections }) => {
         sections.forEach(({ items }) => {
-          items.forEach((item) => {
+          items.forEach(item => {
             if (!item.owned) {
               itemsToObtain.push(item.itemHash);
             }
@@ -111,11 +121,11 @@ class Kiosk extends Component {
       });
 
       const itemsForSale = [];
-      const vendors = _vendors.map((vendor) => {
+      const vendors = _vendors.map(vendor => {
         vendor.sections = vendor.sections
-          .map((section) => {
+          .map(section => {
             section.items = section.items
-              .map((item) => {
+              .map(item => {
                 if (itemsToObtain.includes(item.itemHash)) {
                   itemsForSale.push(item.itemHash);
                   return item;
@@ -130,11 +140,11 @@ class Kiosk extends Component {
           .filter(section => section.items.length > 0);
 
         return vendor;
-      })
+      });
 
       kiosks.forEach(({ sections }) => {
         sections.forEach(({ items }) => {
-          items.forEach((item) => {
+          items.forEach(item => {
             item.forSale = itemsForSale.includes(item.itemHash);
           });
         });
@@ -148,17 +158,18 @@ class Kiosk extends Component {
 
   render() {
     if (!this.props.authLoaded) {
-      return <Loading>Loading...</Loading>
+      return <Loading>Loading...</Loading>;
     }
 
     if (this.props.authLoaded && !this.props.isAuthenticated) {
       // TODO: remove duplication with below
       return (
         <div>
-          <Header onFilterChange={this.updateFilter}/>
+          <Header onFilterChange={this.updateFilter} />
 
           <LoginUpsell>
-            Track kiosk completion and missing items for sale, plus more for raids and strikes.
+            Track kiosk completion and missing items for sale, plus more for
+            raids and strikes.
           </LoginUpsell>
         </div>
       );
@@ -168,24 +179,34 @@ class Kiosk extends Component {
       return (
         <Loading>
           <div>Loading items...</div>
-          <div style={{ color: '#bdc3c7', fontSize: '.9em' }}>This might take a while.</div>
+          <div style={{ color: '#bdc3c7', fontSize: '.9em' }}>
+            This might take a while.
+          </div>
         </Loading>
-      )
+      );
     }
 
     return (
       <div className={styles.root}>
-        <Header onFilterChange={this.updateFilter}/>
+        <Header onFilterChange={this.updateFilter} />
 
-        { this.state.vendors &&
-          <ActivityList title="Missing Items For Sale" activities={this.state.vendors} tinyItems={true}/>
-        }
+        {this.state.vendors && (
+          <ActivityList
+            title="Missing Items For Sale"
+            activities={this.state.vendors}
+            tinyItems={true}
+          />
+        )}
 
         <hr />
 
-        { this.state.kiosks &&
-          <ActivityList title="Kiosks" activities={this.state.kiosks} tinyItems={true}/>
-        }
+        {this.state.kiosks && (
+          <ActivityList
+            title="Kiosks"
+            activities={this.state.kiosks}
+            tinyItems={true}
+          />
+        )}
 
         <Footer />
       </div>

@@ -1,0 +1,73 @@
+.root
+  color: white
+
+.hero.large
+  min-height: 90vh
+  display: flex
+  flex-direction: column
+
+.currentActivity
+  display: flex
+  justify-content: center
+  align-items: center
+  flex-direction: column
+  flex: 1 0 auto
+
+  @media screen and (max-width: 600px)
+    padding: 0 10px
+
+.caTop
+  width: 100%
+  max-width: 600px
+  margin-bottom: 5px
+  display: flex
+  justify-content: space-between
+
+  .heading
+    margin: 0
+    font-size: 20px
+    opacity: .5
+
+.refreshBtn
+  color: black !important
+  background: rgba(208, 170, 11, 1.0)
+  padding: 8px 15px
+  text-decoration: none
+  transition: 150ms ease-in-out
+  display: inline-block
+  border: none
+  font-size: 14px
+  cursor: pointer
+  outline: none !important
+  opacity: 0
+
+  &:hover
+    background: #ffce1f
+    opacity: 1
+
+  &:active
+    opacity: .8
+
+  &:disabled
+    opacity: .5 !important
+    pointer-events: none
+
+.heading
+  font-weight: 400
+  font-size: 22px
+  margin-bottom: .1em
+
+.panel
+  background: #2c3e50
+  text-align: center
+  width: 100%
+  max-width: 500px
+  margin: auto
+  margin-top: 25px
+  padding: 25px
+
+.panel
+  @media screen and (max-width: 500px)
+    width: auto
+    margin-left: 10px
+    margin-right: 10px

@@ -10,27 +10,40 @@ class FancyImage extends Component {
 
   onLoad = () => {
     this.setState({ loaded: true });
-  }
+  };
 
   render() {
     const { className, ...props } = this.props;
     const styles = {
       opacity: 0,
       transition: 'opacity 300ms ease-in-out',
-    }
+    };
 
     if (this.state.loaded) {
       styles.opacity = 1;
     }
 
-    return <img className={cx(className)} style={styles} {...props} onLoad={this.onLoad} />
+    return (
+      <img
+        className={cx(className)}
+        style={styles}
+        {...props}
+        onLoad={this.onLoad}
+      />
+    );
   }
 }
 
 export default function Item({ item, dev, small, tiny }) {
-  const dtrLink = 'http://db.destinytracker.com/items/' + item.itemHash;
+  const isDestiny2 = !!item.displayProperties;
+
+  const dtrLink = isDestiny2
+    ? `http://db.destinytracker.com/d2/en/items/${item.hash}`
+    : 'http://db.destinytracker.com/items/' + item.itemHash;
+
   const dtrProps = {
     href: dtrLink,
+    target: '_blank',
     'data-dtr-tooltip': dev ? 'no-show' : undefined,
   };
 
@@ -40,33 +53,40 @@ export default function Item({ item, dev, small, tiny }) {
     tiny && styles.tiny
   );
 
-  const itemClassName = cx(
-    styles.root,
-    {
-      [styles.obtained]: item.owned,
-      [styles.forSale]: item.forSale,
-    }
-  );
+  const itemClassName = cx(styles.root, {
+    [styles.obtained]: item.owned,
+    [styles.forSale]: item.forSale,
+  });
+
+  const { name, icon } = item.displayProperties || {
+    name: item.itemName,
+    icon: item.icon.replace('https://www.bungie.net', ''),
+  };
 
   return (
     <div className={rootClassName} data-class={item.dClass}>
       <div className={itemClassName} key={item.itemHash}>
         <div className={styles.accessory}>
           <a className={styles.link} {...dtrProps}>
-            <img className={styles.image} src={item.icon} role="presentation" />
+            <img
+              className={styles.image}
+              src={`https://www.bungie.net${icon}`}
+              role="presentation"
+            />
           </a>
         </div>
 
         <div className={styles.main}>
           <div className={styles.name}>
-            <a className={styles.link} {...dtrProps}>{item.itemName}</a>
+            <a className={styles.link} {...dtrProps}>
+              {name}
+            </a>
           </div>
           <div className={styles.type}>
             {dev ? item.itemHash : item.itemTypeName}
           </div>
         </div>
-
       </div>
     </div>
-  )
+  );
 }

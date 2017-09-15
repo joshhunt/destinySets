@@ -2,28 +2,58 @@ const API_KEY = __DESTINY_API_KEY__;
 
 const CACHE_ENABLED = false;
 
-const PLATFORMS = {
-  0: 'None',
-  1: 'TigerXbox',
-  2: 'TigerPsn',
-  4: 'TigerBlizzard',
-  10: 'TigerDemon',
-  254: 'BungieNext',
-  [-1]: 'All',
-};
+const componentNone = 0;
+const componentProfiles = 100;
+const componentVendorReceipts = 101;
+const componentProfileInventories = 102;
+const componentProfileCurrencies = 103;
+const componentCharacters = 200;
+const componentCharacterInventories = 201;
+const componentCharacterProgressions = 202;
+const componentCharacterRenderData = 203;
+const componentCharacterActivities = 204;
+const componentCharacterEquipment = 205;
+const componentItemInstances = 300;
+const componentItemObjectives = 301;
+const componentItemPerks = 302;
+const componentItemRenderData = 303;
+const componentItemStats = 304;
+const componentItemSockets = 305;
+const componentItemTalentGrids = 306;
+const componentItemCommonData = 307;
+const componentItemPlugStates = 308;
+const componentVendors = 400;
+const componentVendorCategories = 401;
+const componentVendorSales = 402;
+const componentKiosks = 500;
+
+const COMPONENTS = [
+  componentProfiles,
+  componentProfileInventories,
+  componentCharacters,
+  componentCharacterInventories,
+  componentCharacterActivities,
+  componentCharacterEquipment,
+  componentItemInstances,
+  componentItemCommonData,
+  componentKiosks,
+];
 
 export function get(url, opts) {
   return fetch(url, opts).then(res => res.json());
 }
 
-export function getDestiny(_url, opts = {}, postBody) {
-  const url = `${_url}?definitions=false&t=${Date.now()}`;
+export function getDestiny(_pathname, opts = {}, postBody) {
+  const url = `https://www.bungie.net${_pathname}`;
+  const { pathname } = new URL(url);
 
   const lsKey = `requestCache$$${url}`;
   if (CACHE_ENABLED) {
     const lsItem = localStorage.getItem(lsKey);
     if (lsItem) {
-      return Promise.resolve(JSON.parse(lsItem));
+      const resp = JSON.parse(lsItem);
+      const result = resp.Response || resp;
+      return Promise.resolve(result);
     }
   }
 
@@ -41,12 +71,17 @@ export function getDestiny(_url, opts = {}, postBody) {
       typeof postBody === 'string' ? postBody : JSON.stringify(postBody);
   }
 
-  console.info('[BNET REQUEST]', url, opts);
+  console.info(`[REQUEST]%c ${pathname}`, 'color: blue', opts);
 
   return get(url, opts).then(resp => {
     if (resp.ErrorCode !== 1) {
       throw new Error(
-        'Bungie API Error ' + resp.ErrorStatus + ' - ' + resp.Message
+        'Bungie API Error ' +
+          resp.ErrorStatus +
+          ' - ' +
+          resp.Message +
+          '\nURL: ' +
+          url
       );
     }
 
@@ -54,7 +89,11 @@ export function getDestiny(_url, opts = {}, postBody) {
       localStorage.setItem(lsKey, JSON.stringify(resp));
     }
 
-    return resp.Response || resp;
+    const result = resp.Response || resp;
+
+    console.info(`[RESULT]%c  ${pathname}`, 'color: blue', result);
+
+    return result;
   });
 }
 
@@ -66,78 +105,45 @@ export function dev(...args) {
   log(getDestiny(...args));
 }
 
-export function getAccountSummary({ membershipType, membershipId }) {
+export function getProfile({ membershipType, membershipId }, components) {
   return getDestiny(
-    `https://www.bungie.net/Platform/Destiny/${membershipType}/Account/${membershipId}/Summary/`
-  ).then(({ data }) => data);
+    `/Platform/Destiny2/${membershipType}/Profile/${membershipId}/?components=${components.join(
+      ','
+    )}`
+  );
 }
 
-export function getCurrentBungieAccount() {
-  return getDestiny(
-    'https://www.bungie.net/Platform/User/GetMembershipsForCurrentUser/'
-  ).then(body => {
-    const lastPlayedAccount = body.destinyMemberships.sort(
-      (accountA, accountB) => {
-        return new Date(accountA.lastPlayed) - new Date(accountB.lastPlayed);
-      }
-    )[0];
-
-    // lastPlayedAccount.bungieNetUser = body.bungieNetUser;
-
-    window.lastPlayedAccount = lastPlayedAccount;
-
-    return getAccountSummary(lastPlayedAccount);
-  });
-}
-
-export function getAllInventoryItems(destinyAccount) {
-  console.log('getAllInventoryItems');
-  const accountPromise = destinyAccount
-    ? Promise.resolve(destinyAccount)
-    : getCurrentBungieAccount();
-
-  return accountPromise
-    .then(account => {
-      const membershipType = account.membershipType;
-      const destinyMembershipId = account.membershipId;
-
-      const inventoryPromises = account.characters.map(char => {
-        const characterId = char.characterBase.characterId;
-        const url = `https://www.bungie.net/Platform/Destiny/${membershipType}/Account/${destinyMembershipId}/Character/${characterId}/Inventory/Summary/`;
-
-        return getDestiny(url);
-      });
-
-      inventoryPromises.push(
-        getDestiny(
-          `https://www.bungie.net/Platform/Destiny/${membershipType}/MyAccount/Vault/Summary/`
-        )
+export function getCurrentProfile() {
+  return getDestiny('/Platform/User/GetMembershipsForCurrentUser/')
+    .then(body => {
+      return Promise.all(
+        body.destinyMemberships.map(ship => getProfile(ship, COMPONENTS))
       );
-
-      return Promise.all(inventoryPromises);
     })
-    .then(inventories => {
-      const allItems = inventories.reduce((acc, body) => {
-        const items = body.data.items.map(item => item.itemHash);
-        return acc.concat(items);
-      }, []);
+    .then(profiles => {
+      const latestChars = profiles.sort((profileA, profileB) => {
+        return (
+          new Date(profileB.profile.data.dateLastPlayed) -
+          new Date(profileA.profile.data.dateLastPlayed)
+        );
+      })[0];
 
-      return allItems;
+      // TODO: validate that all fields got their data
+
+      return latestChars;
     });
 }
 
-export function getVendor(vendorHash) {
-  const accountPromise = getCurrentBungieAccount();
+export function collectItemsFromProfile(profile) {
+  const { characterInventories, profileInventory } = profile;
 
-  return accountPromise
-    .then(account => {
-      const membershipType = account.userInfo.membershipType;
-      const characterId = account.characters[0].characterId; // TODO: Only first character?
+  const charItems = Object.values(
+    characterInventories.data
+  ).reduce((acc, { items }) => {
+    return acc.concat(items.map(item => item.itemHash));
+  }, []);
 
-      const url = `https://www.bungie.net/Platform/Destiny/${membershipType}/MyAccount/Character/${characterId}/Vendor/${vendorHash}/Metadata/`;
-      return getDestiny(url);
-    })
-    .then(({ data }) => {
-      return data.vendor;
-    });
+  const profileItems = profileInventory.data.items.map(item => item.itemHash);
+
+  return charItems.concat(profileItems);
 }

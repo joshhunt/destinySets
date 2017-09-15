@@ -22,15 +22,29 @@ export default function Activity(props) {
     type,
   } = activity;
 
+  const { name } = activity.displayProperties || {
+    name: activityName || title,
+  };
+
   return (
-    <div className={cx(className, styles.root, getTypeClass(activityTypeName || type))}>
+    <div
+      className={cx(
+        className,
+        styles.root,
+        getTypeClass(activityTypeName || type)
+      )}
+    >
       <div className={styles.header}>
-        <div className={styles.activityName}>{activityName || title}</div>
+        <div className={styles.activityName}>{name}</div>
       </div>
 
-      { pgcrImage &&
-        <img className={styles.image} src={'https://bungie.net' + pgcrImage} role="presentation" />
-      }
+      {pgcrImage && (
+        <img
+          className={styles.image}
+          src={'https://bungie.net' + pgcrImage}
+          role="presentation"
+        />
+      )}
 
       <ItemList drops={drops} sections={sections} tinyItems={tinyItems} />
     </div>

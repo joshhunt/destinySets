@@ -1,5 +1,5 @@
 import queryString from 'query-string';
-import { getDestiny } from 'app/lib/destiny';
+import { getDestiny } from 'app/lib/destinyLegacy';
 
 function handleNewAuthData(data) {
   const authResponse = data;
@@ -7,8 +7,12 @@ function handleNewAuthData(data) {
   const accessTokenExpiry = new Date();
   const refreshTokenExpiry = new Date();
 
-  accessTokenExpiry.setSeconds(accessTokenExpiry.getSeconds() + authResponse.accessToken.expires);
-  refreshTokenExpiry.setSeconds(refreshTokenExpiry.getSeconds() + authResponse.refreshToken.expires);
+  accessTokenExpiry.setSeconds(
+    accessTokenExpiry.getSeconds() + authResponse.accessToken.expires
+  );
+  refreshTokenExpiry.setSeconds(
+    refreshTokenExpiry.getSeconds() + authResponse.refreshToken.expires
+  );
 
   const authData = {
     accessToken: authResponse.accessToken.value,
@@ -16,7 +20,7 @@ function handleNewAuthData(data) {
 
     refreshToken: authResponse.refreshToken.value,
     refreshTokenExpiry: refreshTokenExpiry,
-  }
+  };
 
   localStorage.setItem('authData', JSON.stringify(authData));
   window.AUTH_DATA = authData;
@@ -36,8 +40,10 @@ export default function(cb) {
   const queryParams = queryString.parse(location.search);
 
   const prevAuthData = JSON.parse(localStorage.getItem('authData') || 'null');
-  const accessTokenIsValid = prevAuthData && (Date.now() < new Date(prevAuthData.accessTokenExpiry));
-  const refreshTokenIsValid = prevAuthData && (Date.now() < new Date(prevAuthData.refreshTokenExpiry));
+  const accessTokenIsValid =
+    prevAuthData && Date.now() < new Date(prevAuthData.accessTokenExpiry);
+  const refreshTokenIsValid =
+    prevAuthData && Date.now() < new Date(prevAuthData.refreshTokenExpiry);
 
   console.log({
     prevAuthData,
@@ -49,33 +55,40 @@ export default function(cb) {
     console.info('Access token is valid, running main()');
     window.AUTH_DATA = prevAuthData;
     cb(null, true);
-
   } else if (!accessTokenIsValid && refreshTokenIsValid) {
     console.info('Access token has expired, but refresh token is still valid.');
     console.info('Using refresh token to get a new access token');
 
-    getDestiny('https://www.bungie.net/Platform/App/GetAccessTokensFromRefreshToken/', {}, {
-      refreshToken: prevAuthData.refreshToken,
-    }).then(handleNewAuthData)
+    getDestiny(
+      'https://www.bungie.net/Platform/App/GetAccessTokensFromRefreshToken/',
+      {},
+      {
+        refreshToken: prevAuthData.refreshToken,
+      }
+    )
+      .then(handleNewAuthData)
       .then(() => {
         console.info('Successfully gotten new access token');
         cb(null, true);
       })
-      .catch((err) => {
+      .catch(err => {
         console.info('Failed to get new access token');
         handleError(err, cb);
-      })
-
+      });
   } else if (queryParams.code) {
-    window.history.replaceState( {} , 'foo', '/' );
+    window.history.replaceState({}, 'foo', '/');
     console.info('Recieved auth code, getting access tokens');
 
-    getDestiny('https://www.bungie.net/Platform/App/GetAccessTokensFromCode/', {}, {
-      code: queryParams.code,
-    }).then(handleNewAuthData)
+    getDestiny(
+      'https://www.bungie.net/Platform/App/GetAccessTokensFromCode/',
+      {},
+      {
+        code: queryParams.code,
+      }
+    )
+      .then(handleNewAuthData)
       .then(() => cb(null, true))
       .catch(err => handleError(err, cb));
-
   } else {
     // console.info('Requesting authorization from Bungie');
     // const AUTH_URL = 'https://www.bungie.net/en/Application/Authorize/11145';

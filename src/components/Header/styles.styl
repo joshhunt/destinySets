@@ -14,6 +14,11 @@ $edgePadding = 15px
   display: flex
   height: 100%
 
+.version
+  font-size: .65em
+  opacity: .8
+  vertical-align: top
+
 .navItem
   padding: 17px 15px 13px 15px
   height: 100%
@@ -37,6 +42,10 @@ $edgePadding = 15px
       left: 0
       height: 3px
       background: lighten($baseColour, 30%)
+
+.navItemSwitchGame
+  composes: navItem
+  color: #dadada
 
 .siteName
   padding: $edgePadding
