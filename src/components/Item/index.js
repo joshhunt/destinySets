@@ -60,7 +60,9 @@ export default function Item({ item, dev, small, tiny }) {
 
   const { name, icon } = item.displayProperties || {
     name: item.itemName,
-    icon: item.icon.replace('https://www.bungie.net', ''),
+    icon: item.icon
+      .replace('https://bungie.net', '')
+      .replace('https://www.bungie.net', ''),
   };
 
   return (

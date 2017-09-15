@@ -18,13 +18,16 @@ $grid-padding = 15px
     clear: both
 
 .activityWrapper
-  width: 50%
+  width: 100%
   float: left
   padding: 0 $grid-padding
   padding-bottom: ($grid-padding * 2)
 
   > *
     height: 100%
+
+  @media screen and (min-width: 680px)
+    width: 50%
 
 .heading
   font-weight: 400

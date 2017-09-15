@@ -46,7 +46,7 @@ function processKiosk(kiosk, title, allItems, isVendor = false) {
   };
 }
 
-class Kiosk extends Component {
+class KioskLegacy extends Component {
   state = {
     loading: true,
     vendorItems: [],
@@ -165,7 +165,7 @@ class Kiosk extends Component {
       // TODO: remove duplication with below
       return (
         <div>
-          <Header onFilterChange={this.updateFilter} />
+          <Header onFilterChange={this.updateFilter} legacy={true} />
 
           <LoginUpsell>
             Track kiosk completion and missing items for sale, plus more for
@@ -214,4 +214,4 @@ class Kiosk extends Component {
   }
 }
 
-export default DestinyAuthProvider(Kiosk);
+export default DestinyAuthProvider(KioskLegacy);
