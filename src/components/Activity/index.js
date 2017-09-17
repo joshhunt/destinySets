@@ -17,12 +17,13 @@ export default function Activity(props) {
     pgcrImage,
     activityTypeName,
     sections,
+    icon,
 
     title,
     type,
   } = activity;
 
-  const { name } = activity.displayProperties || {
+  const { name, description } = activity.displayProperties || {
     name: activityName || title,
   };
 
@@ -35,7 +36,10 @@ export default function Activity(props) {
       )}
     >
       <div className={styles.header}>
-        <div className={styles.activityName}>{name}</div>
+        <div className={styles.activityName}>
+          {name}
+          {description && <p className={styles.description}>{description}</p>}
+        </div>
       </div>
 
       {pgcrImage && (

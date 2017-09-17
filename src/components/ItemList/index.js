@@ -14,6 +14,7 @@ export default function ItemList(props) {
         <div className={styles.drops}>
           {drops.map(item => (
             <Item
+              className={styles.item}
               key={item.itemHash || item.hash}
               item={item}
               tiny={tinyItems}
@@ -29,14 +30,16 @@ export default function ItemList(props) {
             key={section.id}
           >
             <div className={styles.sectionName}>{section.title}</div>
-            {section.items.map(item => (
-              <Item
-                key={item.itemHash || item.hash}
-                item={item}
-                small
-                tiny={tinyItems}
-              />
-            ))}
+            <div className={styles.sectionItems}>
+              {section.items.map(item => (
+                <Item
+                  className={styles.item}
+                  key={item.itemHash || item.hash}
+                  item={item}
+                  tiny={tinyItems}
+                />
+              ))}
+            </div>
           </div>
         ))
       ) : null}

@@ -34,7 +34,7 @@ class FancyImage extends Component {
   }
 }
 
-export default function Item({ item, dev, small, tiny }) {
+export default function Item({ className, item, dev, small, tiny }) {
   const isDestiny2 = !!item.displayProperties;
 
   const dtrLink = isDestiny2
@@ -44,7 +44,7 @@ export default function Item({ item, dev, small, tiny }) {
   const dtrProps = {
     href: dtrLink,
     target: '_blank',
-    'data-dtr-tooltip': dev ? 'no-show' : undefined,
+    'data-dtr-tooltip': dev || isDestiny2 ? 'no-show' : undefined,
   };
 
   const rootClassName = cx(
@@ -66,7 +66,7 @@ export default function Item({ item, dev, small, tiny }) {
   };
 
   return (
-    <div className={rootClassName} data-class={item.dClass}>
+    <div className={cx(rootClassName, className)} data-class={item.dClass}>
       <div className={itemClassName} key={item.itemHash}>
         <div className={styles.accessory}>
           <a className={styles.link} {...dtrProps}>
@@ -85,7 +85,11 @@ export default function Item({ item, dev, small, tiny }) {
             </a>
           </div>
           <div className={styles.type}>
-            {dev ? item.itemHash : item.itemTypeName}
+            {dev ? (
+              item.itemHash
+            ) : (
+              item.itemTypeName || item.itemTypeDisplayName
+            )}
           </div>
         </div>
       </div>

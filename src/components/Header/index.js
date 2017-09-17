@@ -98,6 +98,15 @@ export default class Item extends React.Component {
                 >
                   Raid
                 </Link>,
+
+                <Link
+                  key="/gearsets"
+                  to="/gearsets"
+                  className={styles.navItem}
+                  activeClassName={styles.active}
+                >
+                  Sets
+                </Link>,
               ]
             )}
           </div>

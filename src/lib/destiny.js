@@ -2,6 +2,8 @@ const API_KEY = __DESTINY_API_KEY__;
 
 const CACHE_ENABLED = false;
 
+const DESTINY_2 = 1;
+
 const componentNone = 0;
 const componentProfiles = 100;
 const componentVendorReceipts = 101;
@@ -113,7 +115,7 @@ export function getProfile({ membershipType, membershipId }, components) {
   );
 }
 
-export function getCurrentProfile() {
+export function getCurrentProfiles() {
   return getDestiny('/Platform/User/GetMembershipsForCurrentUser/')
     .then(body => {
       return Promise.all(
@@ -121,17 +123,25 @@ export function getCurrentProfile() {
       );
     })
     .then(profiles => {
-      const latestChars = profiles.sort((profileA, profileB) => {
-        return (
-          new Date(profileB.profile.data.dateLastPlayed) -
-          new Date(profileA.profile.data.dateLastPlayed)
-        );
-      })[0];
-
-      // TODO: validate that all fields got their data
-
-      return latestChars;
+      return profiles.filter(
+        profile => profile.profile.data.versionsOwned === DESTINY_2
+      );
     });
+}
+
+export function getCurrentProfile() {
+  return getCurrentProfiles().then(profiles => {
+    const latestChars = profiles.sort((profileA, profileB) => {
+      return (
+        new Date(profileB.profile.data.dateLastPlayed) -
+        new Date(profileA.profile.data.dateLastPlayed)
+      );
+    })[0];
+
+    // TODO: validate that all fields got their data
+
+    return latestChars;
+  });
 }
 
 export function collectItemsFromProfile(profile) {

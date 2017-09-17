@@ -6,6 +6,11 @@
   display: flex
   flex-direction: column
 
+.centerP
+  text-align: center
+  font-size: 18px
+  margin-top: 30px
+
 .currentActivity
   display: flex
   justify-content: center
@@ -71,3 +76,43 @@
     width: auto
     margin-left: 10px
     margin-right: 10px
+
+.debug
+  text-align: center
+
+.debugLink
+  opacity: 0.8
+  color: inherit
+  text-decoration: none
+  transition: all 150ms ease-in-out
+
+  &:hover
+    opacity: 1
+
+.debugBox
+  display: none
+  width: 100%
+  max-width: 500px
+  padding: 0 15px
+  margin: auto
+  text-align: center
+
+.debugBoxActive
+  display: block
+  margin-bottom: 15px
+
+.debugField
+  width: 100%
+  height: 600px
+  font-family: monospace
+
+.debugCopyButton
+  width: 100%
+  padding: 15px
+  font-size: 16px
+  background: #2ecc71
+  border: none
+  color: white
+  transition: all 50ms ease-in-out
+  outline: none !important
+  cursor: pointer

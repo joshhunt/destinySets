@@ -12,6 +12,7 @@ import Activity from 'app/components/Activity';
 import ActivityList from 'app/components/ActivityList';
 import Header from 'app/components/Header';
 import Footer from 'app/components/Footer';
+import ProfileSwitcher from 'app/components/MembershipSelector';
 
 import styles from './styles.styl';
 
@@ -27,6 +28,10 @@ const NO_ACTIVITY_MESSAGE = {
 const HEADER_TEXT = {
   strike: 'All Activities',
   raid: 'Raids',
+};
+
+const log = (msg, data) => {
+  console.log(`%c${msg}:`, 'font-weight: bold', data);
 };
 
 function getClassFromTypeName(itemTypeName) {
@@ -59,8 +64,10 @@ class Drops extends Component {
     this.dataUrl = DATA_URL_FOR_VARIATION[this.variation];
 
     this.state = {
+      accountLoading: true,
+      showDebug: false,
       loaded: false,
-      loadedAccount: false,
+      accountSelected: false,
       filterCss: '',
     };
   }
@@ -100,18 +107,34 @@ class Drops extends Component {
       return;
     }
 
-    return destiny.getCurrentProfile().then(profile => {
-      console.log('%cProfile:', 'font-weight: bold', profile);
+    destiny.getCurrentProfiles().then(profiles => {
+      log('Profiles', profiles);
+      this.setState({ accountLoading: false });
 
-      const itemHashes = destiny.collectItemsFromProfile(profile);
-      console.log('%cInventory:', 'font-weight: bold', itemHashes);
-
-      this.profile = profile;
-      this.inventory = itemHashes;
-      this.updateState();
-      this.setState({ loadedAccount: true });
+      if (profiles.length > 1) {
+        this.setState({
+          selectProfile: true,
+          profiles,
+        });
+      } else {
+        this.switchProfile(profiles[0]);
+      }
     });
   }
+
+  switchProfile = profile => {
+    log('Profile', profile);
+
+    const itemHashes = destiny.collectItemsFromProfile(profile);
+    log('Inventory:', itemHashes);
+
+    window.inventory = itemHashes;
+
+    this.profile = profile;
+    this.inventory = itemHashes;
+    this.updateState();
+    this.setState({ accountSelected: true });
+  };
 
   transformItemList(itemList, activityData) {
     return (itemList || []).map(itemHash => {
@@ -179,6 +202,7 @@ class Drops extends Component {
       activities,
       activitiesWithDrops,
       loaded: true,
+      debugChar: JSON.stringify(this.profile, null, 2),
     });
   }
 
@@ -207,8 +231,40 @@ class Drops extends Component {
     this.setState({ filterCss });
   };
 
+  toggleDebug = ev => {
+    ev.preventDefault();
+    this.setState({
+      showDebug: !this.state.showDebug,
+    });
+  };
+
+  copyDebug = ev => {
+    ev.preventDefault();
+
+    const copyTextarea = document.querySelector(`.${styles.debugField}`);
+    copyTextarea.select();
+
+    try {
+      const successful = document.execCommand('copy');
+      this.setState({ debugCopySuccessfull: !!successful });
+    } catch (err) {
+      this.setState({ debugCopySuccessfull: false });
+    }
+  };
+
   render() {
-    const { err, loaded, filterCss, loadedAccount } = this.state;
+    const {
+      err,
+      loaded,
+      filterCss,
+      accountLoading,
+      accountSelected,
+      showDebug,
+      debugChar,
+      debugCopySuccessfull,
+      selectProfile,
+      profiles,
+    } = this.state;
 
     if (err) {
       return <Loading>An error occurred! {this.state.err.message}</Loading>;
@@ -218,7 +274,7 @@ class Drops extends Component {
       return <Loading>Loading...</Loading>;
     }
 
-    const noActivityMessage = NO_ACTIVITY_MESSAGE[this.props.route.variation];
+    // const noActivityMessage = NO_ACTIVITY_MESSAGE[this.props.route.variation];
 
     return (
       <div className={styles.root}>
@@ -231,6 +287,17 @@ class Drops extends Component {
           <Header onFilterChange={this.updateFilter} legacy={false} />
 
           <style dangerouslySetInnerHTML={{ __html: filterCss }} />
+
+          {accountLoading && (
+            <p className={styles.centerP}>Loading Destiny account...</p>
+          )}
+
+          {selectProfile && (
+            <ProfileSwitcher
+              profiles={profiles}
+              onSelect={this.switchProfile}
+            />
+          )}
 
           {this.state.currentActivity && (
             <div className={styles.currentActivity}>
@@ -245,7 +312,7 @@ class Drops extends Component {
           )}
 
           {/*this.props.isAuthenticated &&
-          loadedAccount &&
+          accountSelected &&
           !this.state.currentActivity && (
             <div className={styles.panel}>{noActivityMessage}</div>
           )*/}
@@ -259,6 +326,46 @@ class Drops extends Component {
           title={HEADER_TEXT[this.props.route.variation]}
           activities={this.state.activitiesWithDrops}
         />
+
+        <p className={styles.debug}>
+          <a className={styles.debugLink} href="#" onClick={this.toggleDebug}>
+            {showDebug ? 'Hide' : 'View'} debug info
+          </a>
+        </p>
+
+        <div
+          className={cx(styles.debugBox, showDebug && styles.debugBoxActive)}
+        >
+          <p>
+            Includes information from your Bungie account, including, Profiles,
+            ProfileInventories, Characters, CharacterInventories,
+            CharacterActivities, CharacterEquipment, ItemInstances,
+            ItemCommonData, and Kiosks
+          </p>
+          <textarea
+            readOnly
+            className={styles.debugField}
+            value={debugChar || 'Loading...'}
+          />
+
+          <p>
+            Click the button below to copy, then save it somewhere like{' '}
+            <a href="https://gist.github.com" target="_blank">
+              gist.github.com
+            </a>{' '}
+            to send.
+          </p>
+
+          {debugCopySuccessfull && (
+            <p>
+              <strong>Successfully copied to clipboard.</strong>
+            </p>
+          )}
+
+          <button className={styles.debugCopyButton} onClick={this.copyDebug}>
+            Copy
+          </button>
+        </div>
 
         <Footer />
       </div>
