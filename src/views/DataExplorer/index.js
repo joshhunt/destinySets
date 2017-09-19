@@ -142,6 +142,7 @@ export default class DataExplorer extends Component {
       );
 
       this.setState({ items });
+      return;
     }
 
     if (text.length < 3) {
@@ -149,6 +150,23 @@ export default class DataExplorer extends Component {
     }
 
     const search = text.toLowerCase();
+
+    if (search === 'is:exotic') {
+      const items = this.allItems.filter(
+        item => item.inventory.tierTypeName === 'Exotic'
+      );
+      this.setState({ items });
+      return;
+    }
+
+    if (search === 'is:legendary') {
+      const items = this.allItems.filter(
+        item => item.inventory.tierTypeName === 'Legendary'
+      );
+      this.setState({ items });
+      return;
+    }
+
     const searchAsNum = parseInt(text, 10);
 
     const filteredItems = this.allItems
