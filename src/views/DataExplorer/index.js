@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import scrollToElement from 'scroll-to-element';
 import Dexie from 'dexie';
 import DataViewer from './DataView';
 
@@ -18,6 +17,20 @@ const db = new Dexie('destinySetsCache');
 db.version(1).stores({
   dataCache: '&key, data',
 });
+
+function getRandom(arr, n) {
+  var result = new Array(n),
+    len = arr.length,
+    taken = new Array(len);
+  if (n > len)
+    throw new RangeError('getRandom: more elements taken than available');
+  while (n--) {
+    var x = Math.floor(Math.random() * len);
+    result[n] = arr[x in taken ? taken[x] : x];
+    taken[x] = --len;
+  }
+  return result;
+}
 
 const cachedGet = (path, id) => {
   return new Promise((resolve, reject) => {
@@ -90,9 +103,10 @@ export default class DataExplorer extends Component {
 
           this.allItems = Object.values(this.data.itemHash.defs);
 
-          const items = this.allItems
-            .filter(item => !item.redacted)
-            .slice(0, MAX_ITEMS);
+          const items = getRandom(
+            this.allItems.filter(item => !item.redacted),
+            MAX_ITEMS
+          );
 
           this.setState({
             loading: false,
@@ -121,6 +135,15 @@ export default class DataExplorer extends Component {
   }
 
   updateFilter(text) {
+    if (text.length === 0) {
+      const items = getRandom(
+        this.allItems.filter(item => !item.redacted),
+        MAX_ITEMS
+      );
+
+      this.setState({ items });
+    }
+
     if (text.length < 3) {
       return null;
     }

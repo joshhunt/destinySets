@@ -6,7 +6,9 @@ export default [
     'Item',
     'itemHash',
     'singleInitialItemHash',
-    'plugItemHash'
+    'plugItemHash',
+    'previewItemOverrideHash',
+    'itemList'
   ),
 
   src(
