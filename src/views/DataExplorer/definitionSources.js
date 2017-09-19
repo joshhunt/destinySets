@@ -8,7 +8,8 @@ export default [
     'singleInitialItemHash',
     'plugItemHash',
     'previewItemOverrideHash',
-    'itemList'
+    'itemList',
+    'questlineItemHash'
   ),
 
   src(
@@ -25,6 +26,8 @@ export default [
   ),
 
   src('/en/raw/DestinyStatDefinition.json', 'Stat', 'statHash', 'statTypeHash'),
+
+  src('/en/raw/DestinyStatGroupDefinition.json', 'StatGroup', 'statGroupHash'),
 
   src('/en/raw/DestinyLoreDefinition.json', 'Lore', 'loreHash'),
 
