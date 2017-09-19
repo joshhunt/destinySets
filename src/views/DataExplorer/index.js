@@ -135,6 +135,11 @@ export default class DataExplorer extends Component {
   }
 
   updateFilter(text) {
+    const filterItems = func => {
+      const items = this.allItems.filter(func);
+      this.setState({ items });
+    };
+
     if (text.length === 0) {
       const items = getRandom(
         this.allItems.filter(item => !item.redacted),
@@ -151,20 +156,20 @@ export default class DataExplorer extends Component {
 
     const search = text.toLowerCase();
 
-    if (search === 'is:exotic') {
-      const items = this.allItems.filter(
-        item => item.inventory.tierTypeName === 'Exotic'
+    if (search === 'is:transmat') {
+      return filterItems(
+        item =>
+          item.itemTypeDisplayName.includes &&
+          item.itemTypeDisplayName.includes('Transmat Effect')
       );
-      this.setState({ items });
-      return;
+    }
+
+    if (search === 'is:exotic') {
+      return filterItems(item => item.inventory.tierTypeName === 'Exotic');
     }
 
     if (search === 'is:legendary') {
-      const items = this.allItems.filter(
-        item => item.inventory.tierTypeName === 'Legendary'
-      );
-      this.setState({ items });
-      return;
+      return filterItems(item => item.inventory.tierTypeName === 'Legendary');
     }
 
     const searchAsNum = parseInt(text, 10);

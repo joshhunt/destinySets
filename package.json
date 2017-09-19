@@ -53,7 +53,7 @@
     "classnames": "2.2.5",
     "dexie": "^1.5.1",
     "expand-home-dir": "0.0.3",
-    "isomorphic-fetch": "2.2.1",
+    "isomorphic-fetch": "^2.2.1",
     "pushstate-server": "2.1.0",
     "query-string": "4.2.3",
     "react": "15.4.1",
@@ -64,7 +64,8 @@
     "react-router": "3.0.0",
     "scroll-to-element": "^2.0.0",
     "stylus": "0.54.5",
-    "stylus-loader": "2.4.0"
+    "stylus-loader": "2.4.0",
+    "walk-object": "^4.0.0"
   },
   "scripts": {
     "start": "node scripts/start.js",

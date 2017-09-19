@@ -2875,6 +2875,10 @@ is-property@^1.0.0:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/is-property/-/is-property-1.0.2.tgz#57fe1c4e48474edd65b09911f26b1cd4095dda84"
 
+is-pure-object@^1.0.0:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/is-pure-object/-/is-pure-object-1.0.1.tgz#1208bb997d42115455c871fac87ee208cff6cb61"
+
 is-resolvable@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/is-resolvable/-/is-resolvable-1.0.0.tgz#8df57c61ea2e3c501408d100fb013cf8d6e0cc62"
@@ -2917,7 +2921,7 @@ isobject@^2.0.0:
   dependencies:
     isarray "1.0.0"
 
-isomorphic-fetch@2.2.1, isomorphic-fetch@^2.1.1:
+isomorphic-fetch@^2.1.1, isomorphic-fetch@^2.2.1:
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/isomorphic-fetch/-/isomorphic-fetch-2.2.1.tgz#611ae1acf14f5e81f729507472819fe9733558a9"
   dependencies:
@@ -5371,6 +5375,12 @@ vm-browserify@0.0.4:
   resolved "https://registry.yarnpkg.com/vm-browserify/-/vm-browserify-0.0.4.tgz#5d7ea45bbef9e4a6ff65f95438e0a87c357d5a73"
   dependencies:
     indexof "0.0.1"
+
+walk-object@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/walk-object/-/walk-object-4.0.0.tgz#9ca9efc8d39722ececd28870fe806df78269bb2a"
+  dependencies:
+    is-pure-object "^1.0.0"
 
 walker@~1.0.5:
   version "1.0.7"
