@@ -107,8 +107,8 @@ export default class AllItems extends Component {
         <Header onFilterChange={() => {}} legacy={false} />
 
         <p className={styles.beta}>
-          This page is in preview for your curiosity only. It does not yet
-          record whether you have the item or not.
+          This page is in beta for your curiosity only. It does not yet record
+          whether you have the item or not.
         </p>
 
         <ActivityList

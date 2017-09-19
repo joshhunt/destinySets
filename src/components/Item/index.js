@@ -34,7 +34,7 @@ class FancyImage extends Component {
   }
 }
 
-export default function Item({ className, item, dev, small, tiny }) {
+export default function Item({ className, onClick, item, dev, small, tiny }) {
   const isDestiny2 = !!item.displayProperties;
 
   const dtrLink = isDestiny2
@@ -66,7 +66,11 @@ export default function Item({ className, item, dev, small, tiny }) {
   };
 
   return (
-    <div className={cx(rootClassName, className)} data-class={item.dClass}>
+    <div
+      onClick={onClick}
+      className={cx(rootClassName, className)}
+      data-class={item.dClass}
+    >
       <div className={itemClassName} key={item.itemHash}>
         <div className={styles.accessory}>
           <a className={styles.link} {...dtrProps}>

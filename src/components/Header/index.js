@@ -107,6 +107,15 @@ export default class Item extends React.Component {
                 >
                   Sets
                 </Link>,
+
+                <Link
+                  key="/data"
+                  to="/data"
+                  className={styles.navItem}
+                  activeClassName={styles.active}
+                >
+                  Data Explorer
+                </Link>,
               ]
             )}
           </div>
