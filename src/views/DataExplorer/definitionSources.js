@@ -35,7 +35,8 @@ export default [
   src(
     '/en/raw/DestinyItemCategoryDefinition.json',
     'ItemCategory',
-    'itemCategoryHashes'
+    'itemCategoryHashes',
+    'groupedCategoryHashes'
   ),
 
   src(

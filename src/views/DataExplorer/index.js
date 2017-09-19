@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import JSONTree from 'react-json-tree';
 import scrollToElement from 'scroll-to-element';
 import Dexie from 'dexie';
-import { isString } from 'lodash';
+import DataViewer from './DataView';
 
 import * as destiny from 'app/lib/destinyLegacy';
 
@@ -10,9 +9,10 @@ import DATA_SOURCES from './definitionSources';
 import Item from 'app/components/Item';
 import Header from 'app/components/Header';
 import Loading from 'app/views/Loading';
+
 import styles from './styles.styl';
 
-const MAX_ITEMS = 100;
+const MAX_ITEMS = 5;
 
 const db = new Dexie('destinySetsCache');
 db.version(1).stores({
@@ -45,7 +45,9 @@ const cachedGet = (path, id) => {
           fetchData();
         }
       })
-      .catch(() => {
+      .catch(err => {
+        console.error('Error loading data from cache:');
+        console.error(err);
         fetchData();
       });
   });
@@ -55,6 +57,7 @@ export default class DataExplorer extends Component {
   state = {
     loading: true,
     items: [],
+    dataStack: [],
     selectedItems: [],
     numLoaded: 0,
     totalToLoad: DATA_SOURCES.length,
@@ -97,6 +100,7 @@ export default class DataExplorer extends Component {
           });
         })
         .catch(err => {
+          console.error(err);
           this.setState({
             error: true,
           });
@@ -105,15 +109,15 @@ export default class DataExplorer extends Component {
   }
 
   onItemClick(item, ev) {
-    ev.preventDefault();
+    ev && ev.preventDefault();
 
-    setTimeout(() => {
-      if (this.ref) {
-        scrollToElement(this.ref, { duration: 500 });
-      }
-    }, 10);
+    // setTimeout(() => {
+    //   if (this.ref) {
+    //     scrollToElement(this.ref, { duration: 500 });
+    //   }
+    // }, 10);
 
-    this.setState({ activeItem: item });
+    this.setState({ dataStack: [item] });
   }
 
   updateFilter(text) {
@@ -139,53 +143,18 @@ export default class DataExplorer extends Component {
     this.updateFilter(ev.target.value);
   };
 
-  valueRenderer = (prettyValue, rawValue, fieldName, parentFieldName) => {
-    // console.log('***', prettyValue, rawValue, fieldName);
+  pushItem = item => {
+    const newDataStack = [...this.state.dataStack, item];
+    this.setState({ dataStack: newDataStack });
+  };
 
-    if (isString(rawValue) && rawValue.match(/\.(png|jpg|jpeg)$/)) {
-      const imageUrl = `https://bungie.net${rawValue}`;
-
-      return (
-        <span>
-          <a href={imageUrl} target="_blank">
-            <img className={styles.jsonImage} src={imageUrl} />
-          </a>
-
-          {/* prettyValue */}
-        </span>
-      );
-      // return prettyValue;
+  popItem = ev => {
+    console.log(ev.target);
+    if (ev.target.getAttribute('data-pop-item')) {
+      const [...newDataStack] = this.state.dataStack;
+      newDataStack.pop();
+      this.setState({ dataStack: newDataStack });
     }
-
-    // TODO: should we really be falling back like this?
-    const defsForHash = this.data[fieldName] || this.data[parentFieldName];
-
-    if (!defsForHash) {
-      return prettyValue;
-    }
-
-    const item = defsForHash.defs[rawValue] || {};
-    const { displayProperties } = item;
-
-    if (!item) {
-      return (
-        <span
-          className={styles.nonLinkedValue}
-        >{`<${defsForHash.name} ${prettyValue}>`}</span>
-      );
-    }
-
-    const displayName =
-      displayProperties && displayProperties.name
-        ? `"${displayProperties.name}"`
-        : '';
-
-    return (
-      <span
-        onClick={this.onItemClick.bind(this, item)}
-        className={styles.linkedValue}
-      >{`<${defsForHash.name} ${displayName} ${prettyValue}>`}</span>
-    );
   };
 
   render() {
@@ -193,7 +162,7 @@ export default class DataExplorer extends Component {
       loading,
       error,
       items,
-      activeItem,
+      dataStack,
       numLoaded,
       totalToLoad,
     } = this.state;
@@ -245,25 +214,25 @@ export default class DataExplorer extends Component {
           ))}
         </div>
 
-        {activeItem && (
-          <div className={styles.json} ref={r => (this.ref = r)}>
-            <h2 className={styles.activeItem}>
-              {activeItem.displayProperties &&
-              activeItem.displayProperties.name ? (
-                activeItem.displayProperties.name
-              ) : (
-                <em>No name</em>
-              )}
-            </h2>
-
-            {activeItem.displayProperties &&
-            activeItem.displayProperties.description && (
-              <p className={styles.activeItemDesc}>
-                {activeItem.displayProperties.description}
-              </p>
-            )}
-
-            <JSONTree data={activeItem} valueRenderer={this.valueRenderer} />
+        {dataStack.length > 0 && (
+          <div className={styles.dataViews}>
+            {dataStack.map((data, index) => (
+              <div
+                className={styles.dataSlide}
+                style={{ paddingLeft: (index + 1) * 150 }}
+                onClick={this.popItem}
+                data-pop-item="true"
+              >
+                <div className={styles.dataSlideInner}>
+                  <DataViewer
+                    className={styles.dataView}
+                    data={this.data}
+                    item={data}
+                    onItemClick={this.pushItem}
+                  />
+                </div>
+              </div>
+            ))}
           </div>
         )}
       </div>
