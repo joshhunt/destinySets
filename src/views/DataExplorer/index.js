@@ -19,19 +19,6 @@ db.version(1).stores({
   dataCache: '&key, data',
 });
 
-const tc = func => (...args) => {
-  try {
-    func(...args);
-  } catch (e) {
-    console.error(e);
-  }
-};
-
-const ls = {
-  get: tc(key => JSON.parse(localStorage.getItem(key))),
-  set: tc((key, value) => localStorage.setItem(key, JSON.stringify(value))),
-};
-
 const cachedGet = (path, id) => {
   return new Promise((resolve, reject) => {
     const key = id + path;
