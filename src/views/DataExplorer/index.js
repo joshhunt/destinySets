@@ -12,7 +12,7 @@ import Loading from 'app/views/Loading';
 
 import styles from './styles.styl';
 
-const MAX_ITEMS = 5;
+const MAX_ITEMS = 50;
 
 const db = new Dexie('destinySetsCache');
 db.version(1).stores({
