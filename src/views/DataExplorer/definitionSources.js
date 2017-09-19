@@ -31,6 +31,8 @@ export default [
 
   src('/en/raw/DestinyLoreDefinition.json', 'Lore', 'loreHash'),
 
+  src('/en/raw/DestinySandboxPerkDefinition.json', 'Perk', 'perkHash'),
+
   src(
     '/en/raw/DestinyProgressionLevelRequirementDefinition.json',
     'ProgressionLevelRequirement',
