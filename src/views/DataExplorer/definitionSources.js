@@ -2,7 +2,7 @@ const src = (url, name, ...fields) => ({ url, name, fields });
 
 export default [
   src(
-    '/en/raw/DestinyInventoryItemDefinition.json',
+    'DestinyInventoryItemDefinition',
     'Item',
     'itemHash',
     'singleInitialItemHash',
@@ -14,79 +14,56 @@ export default [
   ),
 
   src(
-    '/en/raw/DestinyInventoryBucketDefinition.json',
+    'DestinyInventoryBucketDefinition',
     'InventoryBucket',
     'bucketHash',
     'bucketTypeHash',
     'recoveryBucketTypeHash'
   ),
 
-  src(
-    '/en/raw/DestinyItemTierTypeDefinition.json',
-    'ItemTierType',
-    'tierTypeHash'
-  ),
+  src('DestinyItemTierTypeDefinition', 'ItemTierType', 'tierTypeHash'),
+
+  src('DestinyStatDefinition', 'Stat', 'statHash', 'statTypeHash'),
+
+  src('DestinyStatGroupDefinition', 'StatGroup', 'statGroupHash'),
+
+  src('DestinyLoreDefinition', 'Lore', 'loreHash'),
+
+  src('DestinyVendorDefinition', 'Vendor', 'kioskItems', 'vendorHash'),
+
+  src('DestinyRaceDefinition', 'Race', 'raceHash'),
+  src('DestinyGenderDefinition', 'Gender', 'genderHash'),
+  src('DestinyClassDefinition', 'Class', 'classHash'),
 
   src(
-    '/en/raw/DestinyStatDefinition.json',
-    'Stat',
-    'statHash',
-    // 'stats',
-    'statTypeHash'
-  ),
-
-  src('/en/raw/DestinyStatGroupDefinition.json', 'StatGroup', 'statGroupHash'),
-
-  src('/en/raw/DestinyLoreDefinition.json', 'Lore', 'loreHash'),
-
-  src(
-    '/en/raw/DestinyVendorDefinition.json',
-    'Vendor',
-    'kioskItems',
-    'vendorHash'
-  ),
-
-  src('/en/raw/DestinyRaceDefinition.json', 'Race', 'raceHash'),
-  src('/en/raw/DestinyGenderDefinition.json', 'Gender', 'genderHash'),
-  src('/en/raw/DestinyClassDefinition.json', 'Class', 'classHash'),
-
-  src(
-    '/en/raw/DestinyActivityModeDefinition.json',
+    'DestinyActivityModeDefinition',
     'ActivityMode',
     'currentActivityModeHash',
     'currentActivityModeHashes'
   ),
 
   src(
-    '/en/raw/DestinyActivityDefinition.json',
+    'DestinyActivityDefinition',
     'Activity',
     'activityHash',
     'currentActivityHash',
     'currentPlaylistActivityHash'
   ),
 
-  src(
-    '/en/raw/DestinyProgressionDefinition.json',
-    'Progress',
-    'progressionHash'
-  ),
+  src('DestinyProgressionDefinition', 'Progress', 'progressionHash'),
+
+  src('DestinyDamageTypeDefinition', 'DamageType', 'damageTypeHash'),
+
+  src('DestinySandboxPerkDefinition', 'Perk', 'perkHash'),
 
   src(
-    '/en/raw/DestinyDamageTypeDefinition.json',
-    'DamageType',
-    'damageTypeHash'
-  ),
-
-  src('/en/raw/DestinySandboxPerkDefinition.json', 'Perk', 'perkHash'),
-
-  src(
-    '/en/raw/DestinyProgressionLevelRequirementDefinition.json',
+    'DestinyProgressionLevelRequirementDefinition',
     'ProgressionLevelRequirement',
     'progressionLevelRequirementHash'
   ),
 
   src(
-    '/en/raw/DestinyItemCategoryDefinition.json',
+    'DestinyItemCategoryDefinition',
     'ItemCategory',
     'categoryHash',
     'itemCategoryHashes',
@@ -94,20 +71,12 @@ export default [
   ),
 
   src(
-    '/en/raw/DestinySocketCategoryDefinition.json',
+    'DestinySocketCategoryDefinition',
     'SocketCategory',
     'socketCategoryHash'
   ),
 
-  src(
-    '/en/raw/DestinySocketTypeDefinition.json',
-    'SocketType',
-    'socketTypeHash'
-  ),
+  src('DestinySocketTypeDefinition', 'SocketType', 'socketTypeHash'),
 
-  src(
-    '/en/raw/DestinyTalentGridDefinition.json',
-    'TalentGrid',
-    'talentGridHash'
-  ),
+  src('DestinyTalentGridDefinition', 'TalentGrid', 'talentGridHash'),
 ];

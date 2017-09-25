@@ -69,7 +69,8 @@ export function cachedGet(path, id) {
   });
 }
 
-export function getDefinition(path) {
+export function getDefinition(name, language = 'en') {
+  const path = `/${language}/raw/${name}.json`;
   return getManifest().then(({ id }) => {
     return cachedGet(path, id);
   });

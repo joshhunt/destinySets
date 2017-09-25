@@ -60,7 +60,7 @@ export default function Item({ className, onClick, item, dev, small, tiny }) {
 
   const { name, icon } = item.displayProperties || {
     name: item.itemName,
-    icon: item.icon
+    icon: (item.icon || 'https://www.bungie.net/img/misc/missing_icon_d2.png')
       .replace('https://bungie.net', '')
       .replace('https://www.bungie.net', ''),
   };

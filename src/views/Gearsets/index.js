@@ -1,11 +1,8 @@
 import React, { Component } from 'react';
-import ReactList from 'react-list';
-import cx from 'classnames';
-import { debounce, partition } from 'lodash';
+import { partition } from 'lodash';
 
-import * as destiny from 'app/lib/destinyLegacy';
+import { getDefinition } from 'app/lib/manifestData';
 
-import Item from 'app/components/Item';
 import Header from 'app/components/Header';
 import Loading from 'app/views/Loading';
 import ActivityList from 'app/components/ActivityList';
@@ -17,8 +14,6 @@ const CLASS_TYPE = {
   2: 'Warlock',
 };
 
-const ITEM_URLS = ['https://destiny.plumbing/2/en/items/All.json'];
-
 export default class AllItems extends Component {
   state = {
     loading: true,
@@ -27,75 +22,50 @@ export default class AllItems extends Component {
   };
 
   componentDidMount() {
-    const prom = ITEM_URLS.map(u => destiny.get(u));
-
-    Promise.all(prom).then(data => {
-      const allItems = data.reduce((acc, items) => {
-        return acc.concat(Object.values(items));
-      }, []);
-
-      this.processItems(allItems);
-    });
+    getDefinition('DestinyInventoryItemDefinition').then(this.processItems);
   }
 
-  processItems(_items) {
-    const items = _items.reduce((acc, item) => {
-      return {
-        ...acc,
-        [item.hash]: item,
-      };
-    }, {});
-
+  processItems = itemDefs => {
+    const items = Object.values(itemDefs);
     const inventory = window.inventory || [];
-    console.log('sets inventory', inventory);
 
-    const asActivities = _items.filter(item => item.gearset).map(gearset => {
-      return {
-        displayProperties: gearset.displayProperties,
-        pgcrImage: null,
-        dropListID: gearset.hash,
-        drops: gearset.gearset.itemList.map(itemHash => {
-          const item = items[itemHash];
+    const asActivities = items
+      .filter(item => item.gearset)
+      .map(gearset => {
+        return {
+          displayProperties: gearset.displayProperties,
+          pgcrImage: null,
+          dropListID: gearset.hash,
+          drops: gearset.gearset.itemList.map(itemHash => {
+            const item = itemDefs[itemHash];
 
-          const owned = inventory.includes(item.hash);
+            const owned = inventory.includes(item.hash);
 
-          console.log(
-            'is',
-            item.hash,
-            'in inventory of',
-            inventory.length,
-            'items?'
-          );
+            return {
+              itemName: item.displayProperties.name,
+              icon: item.displayProperties.icon,
+              itemHash: item.hash,
+              itemTypeName: item.itemTypeDisplayName,
+              dClass: CLASS_TYPE[item.classType] || 'noclass',
+              owned,
+            };
+          }),
+          sections: [],
+        };
+      })
+      .sort((setA, setB) => {
+        const sortValue = (setB.displayProperties.name || '')
+          .localeCompare(setA.displayProperties.name);
 
-          if (owned) {
-            console.log(
-              `%cOwned: ${item.displayProperties.name}`,
-              'font-weight: bold; color: green',
-              item
-            );
-          }
-
-          return {
-            itemName: item.displayProperties.name,
-            icon: item.displayProperties.icon,
-            itemHash: item.hash,
-            itemTypeName: item.itemTypeDisplayName,
-            dClass: CLASS_TYPE[item.classType] || 'noclass',
-            owned,
-          };
-        }),
-        sections: [],
-      };
-    });
+        return sortValue;
+      });
 
     const [engrams, gearsets] = partition(asActivities, set =>
       set.displayProperties.name.toLowerCase().includes('engram')
     );
 
-    console.log('asActivities:', asActivities);
-
     this.setState({ gearsets, engrams, loading: false });
-  }
+  };
 
   render() {
     if (this.state.loading) {
