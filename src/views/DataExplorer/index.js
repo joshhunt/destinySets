@@ -1,22 +1,19 @@
 import React, { Component } from 'react';
-import Dexie from 'dexie';
 import DataViewer from './DataView';
 
-import * as destiny from 'app/lib/destinyLegacy';
+import * as destiny from 'app/lib/destiny';
+import { getDefinition } from 'app/lib/manifestData';
 
 import DATA_SOURCES from './definitionSources';
 import Item from 'app/components/Item';
 import Header from 'app/components/Header';
 import Loading from 'app/views/Loading';
 
+import DestinyAuthProvider from 'app/lib/DestinyAuthProvider';
+
 import styles from './styles.styl';
 
 const MAX_ITEMS = 50;
-
-const db = new Dexie('destinySetsCache');
-db.version(1).stores({
-  dataCache: '&key, data',
-});
 
 function getRandom(arr, n) {
   var result = new Array(n),
@@ -32,41 +29,7 @@ function getRandom(arr, n) {
   return result;
 }
 
-const cachedGet = (path, id) => {
-  return new Promise((resolve, reject) => {
-    const key = id + path;
-
-    const fetchData = () => {
-      const url = `https://destiny.plumbing/2${path}?id=${id}`;
-      return destiny.get(url).then(data => {
-        const stringified = JSON.stringify(data);
-
-        db.dataCache.put({ key, data: stringified });
-
-        resolve(data);
-      });
-    };
-
-    db.dataCache
-      .get(key)
-      .then(cachedData => {
-        console.log(`Loaded ${path} from cache`);
-
-        if (cachedData) {
-          resolve(JSON.parse(cachedData.data));
-        } else {
-          fetchData();
-        }
-      })
-      .catch(err => {
-        console.error('Error loading data from cache:');
-        console.error(err);
-        fetchData();
-      });
-  });
-};
-
-export default class DataExplorer extends Component {
+class DataExplorer extends Component {
   state = {
     loading: true,
     items: [],
@@ -77,60 +40,51 @@ export default class DataExplorer extends Component {
   };
 
   componentDidMount() {
-    destiny.get('https://destiny.plumbing/2/index.json').then(({ id }) => {
-      const dataPromises = DATA_SOURCES.map(src => cachedGet(src.url, id));
+    const dataPromises = DATA_SOURCES.map(src => getDefinition(src.url));
 
-      dataPromises.forEach(p =>
-        p.then(() => {
-          this.setState({
-            numLoaded: this.state.numLoaded + 1,
-          });
-        })
-      );
-
-      Promise.all(dataPromises)
-        .then(results => {
-          this.data = results.reduce((acc, defs, index) => {
-            const src = DATA_SOURCES[index];
-            const blob = { name: src.name, defs };
-
-            src.fields.forEach(field => {
-              acc[field] = blob;
-            });
-
-            return acc;
-          }, {});
-
-          this.allItems = Object.values(this.data.itemHash.defs);
-
-          const items = getRandom(
-            this.allItems.filter(item => !item.redacted),
-            MAX_ITEMS
-          );
-
-          this.setState({
-            loading: false,
-            items,
-          });
-        })
-        .catch(err => {
-          console.error(err);
-          this.setState({
-            error: true,
-          });
+    dataPromises.forEach(p =>
+      p.then(() => {
+        this.setState({
+          numLoaded: this.state.numLoaded + 1,
         });
-    });
+      })
+    );
+
+    Promise.all(dataPromises)
+      .then(results => {
+        this.data = results.reduce((acc, defs, index) => {
+          const src = DATA_SOURCES[index];
+          const blob = { name: src.name, defs };
+
+          src.fields.forEach(field => {
+            acc[field] = blob;
+          });
+
+          return acc;
+        }, {});
+
+        this.allItems = Object.values(this.data.itemHash.defs);
+
+        const items = getRandom(
+          this.allItems.filter(item => !item.redacted),
+          MAX_ITEMS
+        );
+
+        this.setState({
+          loading: false,
+          items,
+        });
+      })
+      .catch(err => {
+        console.error(err);
+        this.setState({
+          error: true,
+        });
+      });
   }
 
   onItemClick(item, ev) {
     ev && ev.preventDefault();
-
-    // setTimeout(() => {
-    //   if (this.ref) {
-    //     scrollToElement(this.ref, { duration: 500 });
-    //   }
-    // }, 10);
-
     this.setState({ dataStack: [item] });
   }
 
@@ -159,6 +113,7 @@ export default class DataExplorer extends Component {
     if (search === 'is:transmat') {
       return filterItems(
         item =>
+          item.itemTypeDisplayName &&
           item.itemTypeDisplayName.includes &&
           item.itemTypeDisplayName.includes('Transmat Effect')
       );
@@ -177,13 +132,29 @@ export default class DataExplorer extends Component {
     const filteredItems = this.allItems
       .filter(item => {
         const name = (item.displayProperties.name || '').toLowerCase();
+        const itemType = (item.itemTypeDisplayName || '').toLowerCase();
 
-        return name.includes(search) || item.hash === searchAsNum;
+        return (
+          name.includes(search) ||
+          itemType.includes(search) ||
+          item.hash === searchAsNum
+        );
       })
       .slice(0, MAX_ITEMS);
 
     this.setState({ items: filteredItems });
   }
+
+  loadProfile = () => {
+    if (!this.props.isAuthenticated) {
+      alert('Not authenticated yet. Please wait!');
+      return;
+    }
+
+    destiny.getCurrentProfiles().then(profiles => {
+      this.pushItem(profiles);
+    });
+  };
 
   onFilterChange = ev => {
     this.updateFilter(ev.target.value);
@@ -195,7 +166,6 @@ export default class DataExplorer extends Component {
   };
 
   popItem = ev => {
-    console.log(ev.target);
     if (ev.target.getAttribute('data-pop-item')) {
       const [...newDataStack] = this.state.dataStack;
       newDataStack.pop();
@@ -249,6 +219,8 @@ export default class DataExplorer extends Component {
           />
         </div>
 
+        {/*<button onClick={this.loadProfile}>View Profile</button>*/}
+
         <div className={styles.itemList}>
           {items.map(item => (
             <Item
@@ -265,6 +237,7 @@ export default class DataExplorer extends Component {
             {dataStack.map((data, index) => (
               <div
                 className={styles.dataSlide}
+                key={index}
                 style={{ paddingLeft: (index + 1) * 150 }}
                 onClick={this.popItem}
                 data-pop-item="true"
@@ -285,3 +258,5 @@ export default class DataExplorer extends Component {
     );
   }
 }
+
+export default DestinyAuthProvider(DataExplorer);

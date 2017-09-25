@@ -18,13 +18,6 @@ import styles from './styles.styl';
 
 window.destiny = destiny;
 
-const NO_ACTIVITY_MESSAGE = {
-  strike:
-    "Looks like you're not currently in an activity. Check back here next time you're in a strike.",
-  raid:
-    "Looks like you're not currently in a raid. Check back here next time you raid.",
-};
-
 const HEADER_TEXT = {
   strike: 'All Activities',
   raid: 'Raids',
@@ -189,16 +182,7 @@ class Drops extends Component {
       'activityName'
     );
 
-    let currentActivity;
-    // if (this.destinyAccount) {
-    //   const currentActivities = this.destinyAccount.characters.map(
-    //     c => c.currentActivityHash
-    //   );
-    //   currentActivity = activities[currentActivities[0]];
-    // }
-
     this.setState({
-      currentActivity,
       activities,
       activitiesWithDrops,
       loaded: true,
@@ -258,7 +242,6 @@ class Drops extends Component {
       loaded,
       filterCss,
       accountLoading,
-      accountSelected,
       showDebug,
       debugChar,
       debugCopySuccessfull,
@@ -274,16 +257,9 @@ class Drops extends Component {
       return <Loading>Loading...</Loading>;
     }
 
-    // const noActivityMessage = NO_ACTIVITY_MESSAGE[this.props.route.variation];
-
     return (
       <div className={styles.root}>
-        <div
-          className={cx(
-            styles.hero,
-            this.state.currentActivity && styles.large
-          )}
-        >
+        <div className={styles.hero}>
           <Header onFilterChange={this.updateFilter} legacy={false} />
 
           <style dangerouslySetInnerHTML={{ __html: filterCss }} />
@@ -298,24 +274,6 @@ class Drops extends Component {
               onSelect={this.switchProfile}
             />
           )}
-
-          {this.state.currentActivity && (
-            <div className={styles.currentActivity}>
-              <div className={styles.caTop}>
-                <h2 className={styles.heading}>Current activity</h2>
-                <button className={styles.refreshBtn} onClick={this.refresh}>
-                  Refresh
-                </button>
-              </div>
-              <Activity activity={this.state.currentActivity} />
-            </div>
-          )}
-
-          {/*this.props.isAuthenticated &&
-          accountSelected &&
-          !this.state.currentActivity && (
-            <div className={styles.panel}>{noActivityMessage}</div>
-          )*/}
 
           {!this.props.isAuthenticated && (
             <LoginUpsell>See the items you've already collected.</LoginUpsell>

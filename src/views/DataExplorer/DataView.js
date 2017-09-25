@@ -6,8 +6,8 @@ import { isString } from 'lodash';
 import s from './dataViewStyles.styl';
 
 export default class DataView extends Component {
-  valueRenderer = (prettyValue, rawValue, fieldName, parentFieldName) => {
-    // console.log('***', prettyValue, rawValue, fieldName);
+  valueRenderer = (prettyValue, rawValue, ...itemPath) => {
+    const [fieldName, parentFieldName] = itemPath;
 
     if (isString(rawValue) && rawValue.match(/\.(png|jpg|jpeg)$/)) {
       const imageUrl = `https://bungie.net${rawValue}`;
@@ -17,11 +17,8 @@ export default class DataView extends Component {
           <a href={imageUrl} target="_blank">
             <img className={s.jsonImage} src={imageUrl} />
           </a>
-
-          {/* prettyValue */}
         </span>
       );
-      // return prettyValue;
     }
 
     // TODO: should we really be falling back like this?
@@ -58,7 +55,6 @@ export default class DataView extends Component {
 
   onItemClick(item, ev) {
     ev && ev.preventDefault();
-    console.log('clicking item', { item, ev });
     this.props.onItemClick(item);
   }
 
