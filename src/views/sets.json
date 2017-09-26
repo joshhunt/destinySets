@@ -1,0 +1,154 @@
+[
+  {
+    "name": "Planetary Sets",
+    "sets": [
+      {
+        "name": "European Dead Zone Gear",
+        "description":
+          "Weapons and armor obtained by performing tasks for Devrim Kay in the EDZ.",
+        "sections": [
+          {
+            "title": "Titan Armor",
+            "items": [3080875433, 872284448, 10307688, 3862191322, 1712405061]
+          },
+
+          {
+            "title": "Warlock Armor",
+            "items": [3764013786, 1664741411, 2724176749, 4051755349, 1304122208]
+          },
+
+          {
+            "title": "Hunter Armor",
+            "items": [3973359167, 3907226374, 2729740202, 3466255616, 3366557883]
+          }
+        ]
+      },
+
+      {
+        "name": "Echo Mesa, Io Gear",
+        "description":
+          "Weapons and armor obtained by performing tasks for Asher Mir on Io.",
+        "sections": [
+          {
+            "title": "Hunter Armour",
+            "items": [2715114534, 1729074423, 1085797441, 3537609113, 1868302492]
+          },
+          {
+            "title": "Titan armor",
+            "items": [1370341044, 4071576013, 2523633779, 447407759, 434092458]
+          },
+          {
+            "title": "Warlock armor",
+            "items": [1554079989, 229923140, 3388454204, 2160569198, 845354673]
+          }
+        ]
+      },
+
+      {
+        "name": "New Pacific Arcology Gear",
+        "description":
+          "Weapons and armor obtained by performing tasks for Sloane on Titan.",
+        "sections": [
+          {
+            "title": "Hunter Armour",
+            "items": [1607012852, 479417869, 2380978355, 1150216911, 291437034]
+          },
+          {
+            "title": "Titan armor",
+            "items": [2930137294, 3955340735, 1847610489, 2876590849, 3586337076]
+          },
+          {
+            "title": "Warlock armor",
+            "items": [2575848725, 1251692004, 2400621276, 2757777294, 3686454865]
+          }
+        ]
+      },
+
+      {
+        "name": "Arcadian Valley, Nessus Gear",
+        "description":
+          "Weapons and armor obtained by performing tasks for Failsafe on Nessus.",
+        "sections": [
+          {
+            "title": "Hunter Armour",
+            "items": [3026265798, 2423003287, 2462524641, 3807183801, 3669590332]
+          },
+          {
+            "title": "Titan armor",
+            "items": [1010733668, 957928253, 177493699, 3323553887, 3754164794]
+          },
+          {
+            "title": "Warlock armor",
+            "items": [2811068561, 1427620200, 2359639520, 2528959426, 1669675549]
+          }
+        ]
+      }
+    ]
+  },
+
+  {
+    "name": "Other",
+    "sets": [
+      {
+        "name": "Trials of the Nine Arsenal",
+        "description": "Gear obtained by competing in the Trials of the Nine.",
+        "sections": [
+          {
+            "title": "Weapons",
+            "items": [1909527966, 1187594590, 1825472717, 2094938673, 174804902]
+          },
+          {
+            "title": "Hunter Armour",
+            "items": [400025383, 2641591726, 548290754, 854160040, 238320915]
+          },
+          {
+            "title": "Titan armor",
+            "items": [2391227801, 1863012880, 934145080, 2221648234, 3624606677]
+          },
+          {
+            "title": "Warlock armor",
+            "items": [2964441920, 530515217, 891933383, 4232174819, 1607431126]
+          }
+        ]
+      },
+
+      {
+        "name": "Vanguard Tactician Gear",
+        "description":
+          "Weapons and armor obtained by carrying out special operations for Zavala.",
+        "sections": [
+          {
+            "title": "Weapons",
+            "items": [
+              1644162710,
+              339163900,
+              1960218487,
+              3445437901,
+              3582424018,
+              3967155859,
+              2290863050,
+              1200414607,
+              2168486467,
+              137879537
+            ]
+          },
+
+          {
+            "title": "Hunter Armor",
+            "items": [3198744410, 1099472035, 406401261, 3486485973, 3281314016]
+          },
+
+          {
+            "title": "Warlock Armor",
+            "items": [1540376513, 2378296024, 34846448, 413460498, 3215392301]
+          },
+
+          {
+            "title": "Titan Armor",
+            "items": [3873435116, 3027732901, 1667528443, 3375062567, 24244626]
+          }
+        ]
+      }
+    ]
+  }
+]

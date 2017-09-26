@@ -13,19 +13,13 @@ export default function Activity(props) {
 
   const {
     drops,
-    activityName,
+    name,
+    description,
     pgcrImage,
     activityTypeName,
     sections,
-    icon,
-
-    title,
     type,
   } = activity;
-
-  const { name, description } = activity.displayProperties || {
-    name: activityName || title,
-  };
 
   return (
     <div

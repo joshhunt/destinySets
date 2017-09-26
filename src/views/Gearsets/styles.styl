@@ -1,5 +1,42 @@
+$duration = 500ms
+$durationDelay = $duration / 10
+
+
 .beta
   text-align: center
   max-width: 500px
   opacity: .8
   margin: 20px auto 15px auto
+
+
+.subnav
+  margin: 15px 0
+  font-size: 0
+
+
+.subnavItem
+  display: inline-block
+  font-size: 20px
+  font-weight: bold
+  margin: 0 15px
+  color: darken(#FFFFFF, 50%)
+  // animation: appear $duration
+  animation-fill-mode: both
+
+  for i in 0..10
+    &:nth-child({i})
+      animation-delay: $durationDelay * (i + 5)
+
+  &.active
+    color: #FFFFFF
+
+
+
+@keyframes appear
+  from
+    opacity: 0
+    transform: translate3d(0, -100%, 0)
+
+  to
+    opacity: 1
+    transform: translate3d(0, 0, 0)

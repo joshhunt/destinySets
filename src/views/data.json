@@ -1,0 +1,2223 @@
+[
+  {
+    "displayProperties": {
+      "description":
+        "Armor obtained by carrying out special operations for Zavala.",
+      "name": "Vanguard Tactician Armor",
+      "icon": "/img/misc/missing_icon_d2.png",
+      "hasIcon": false
+    },
+    "pgcrImage": null,
+    "dropListID": 4252280581,
+    "drops": [],
+    "sections": [
+      {
+        "id": "1616736576-a",
+        "title": "Weapons",
+        "items": [
+          {
+            "itemName": "Origin Story",
+            "icon":
+              "/common/destiny2_content/icons/6becbbf1377e2e95fd130635eadca613.jpg",
+            "itemHash": 1644162710,
+            "itemTypeName": "Auto Rifle",
+            "dClass": "noclass",
+            "owned": true
+          },
+          {
+            "itemName": "Nightshade",
+            "icon":
+              "/common/destiny2_content/icons/fe0a4a1d2d0f2a152b1f7ac63445ab54.jpg",
+            "itemHash": 339163900,
+            "itemTypeName": "Pulse Rifle",
+            "dClass": "noclass",
+            "owned": true
+          },
+          {
+            "itemName": "Nameless Midnight",
+            "icon":
+              "/common/destiny2_content/icons/535cb2c4046bec8ca7af199babef875d.jpg",
+            "itemHash": 1960218487,
+            "itemTypeName": "Scout Rifle",
+            "dClass": "noclass",
+            "owned": false
+          },
+          {
+            "itemName": "Main Ingredient",
+            "icon":
+              "/common/destiny2_content/icons/34b5a87f1d8b531b0682bc3fdc222a6d.jpg",
+            "itemHash": 3445437901,
+            "itemTypeName": "Fusion Rifle",
+            "dClass": "noclass",
+            "owned": false
+          },
+          {
+            "itemName": "Deadpan Delivery",
+            "icon":
+              "/common/destiny2_content/icons/ed086a84a2ef136d5d339361c7c7e369.jpg",
+            "itemHash": 3582424018,
+            "itemTypeName": "Shotgun",
+            "dClass": "noclass",
+            "owned": false
+          },
+          {
+            "itemName": "The Last Dance",
+            "icon":
+              "/common/destiny2_content/icons/2b85cf0c8f471a7ea679c210c19407b0.jpg",
+            "itemHash": 3967155859,
+            "itemTypeName": "Sidearm",
+            "dClass": "noclass",
+            "owned": false
+          },
+          {
+            "itemName": "Persuader",
+            "icon":
+              "/common/destiny2_content/icons/11619a8e54d19ab03762dfdf246e6446.jpg",
+            "itemHash": 2290863050,
+            "itemTypeName": "Sniper Rifle",
+            "dClass": "noclass",
+            "owned": false
+          },
+          {
+            "itemName": "The Showrunner",
+            "icon":
+              "/common/destiny2_content/icons/e6a7b3ef6d7c863a3570699e4e2a16ac.jpg",
+            "itemHash": 1200414607,
+            "itemTypeName": "Submachine Gun",
+            "dClass": "noclass",
+            "owned": false
+          },
+          {
+            "itemName": "Wicked Sister",
+            "icon":
+              "/common/destiny2_content/icons/0f65245ef16bb30b88e7b98bb83cc5f0.jpg",
+            "itemHash": 2168486467,
+            "itemTypeName": "Grenade Launcher",
+            "dClass": "noclass",
+            "owned": false
+          },
+          {
+            "itemName": "Curtain Call",
+            "icon":
+              "/common/destiny2_content/icons/6a8e4a429bfbf084c697bb84a291c85c.jpg",
+            "itemHash": 137879537,
+            "itemTypeName": "Rocket Launcher",
+            "dClass": "noclass",
+            "owned": false
+          }
+        ]
+      },
+
+      {
+        "id": "1616736576-b",
+        "title": "Titan Armour",
+        "items": [
+          {
+            "itemName": "The Took Offense",
+            "icon":
+              "/common/destiny2_content/icons/3d88ad4b0ff87ea7c686b188f1e53ca2.jpg",
+            "itemHash": 3198744410,
+            "itemTypeName": "Helmet",
+            "dClass": "Hunter",
+            "owned": false
+          },
+          {
+            "itemName": "The Took Offense",
+            "icon":
+              "/common/destiny2_content/icons/2b1d71a9fbb1e8143d116b70bd314441.jpg",
+            "itemHash": 1099472035,
+            "itemTypeName": "Gauntlets",
+            "dClass": "Hunter",
+            "owned": false
+          },
+          {
+            "itemName": "The Took Offense",
+            "icon":
+              "/common/destiny2_content/icons/ed5ff280e9b77e5210cdeb6b0008eebb.jpg",
+            "itemHash": 406401261,
+            "itemTypeName": "Chest Armor",
+            "dClass": "Hunter",
+            "owned": false
+          },
+          {
+            "itemName": "The Took Offense",
+            "icon":
+              "/common/destiny2_content/icons/87b33dad4a824ef15cfd280e15af0a6d.jpg",
+            "itemHash": 3486485973,
+            "itemTypeName": "Leg Armor",
+            "dClass": "Hunter",
+            "owned": false
+          },
+          {
+            "itemName": "The Took Offense",
+            "icon":
+              "/common/destiny2_content/icons/9f617082c760d1e8abc2fbee9c50cc44.jpg",
+            "itemHash": 3281314016,
+            "itemTypeName": "Hunter Cloak",
+            "dClass": "Hunter",
+            "owned": false
+          }
+        ]
+      },
+
+      {
+        "id": "1616736576-c",
+        "title": "Warlock Armour",
+        "items": [
+          {
+            "itemName": "Xenos Vale IV",
+            "icon":
+              "/common/destiny2_content/icons/da8a633b99d119d4e21269c7e28a24c5.jpg",
+            "itemHash": 1540376513,
+            "itemTypeName": "Helmet",
+            "dClass": "Warlock",
+            "owned": false
+          },
+          {
+            "itemName": "Xenos Vale IV",
+            "icon":
+              "/common/destiny2_content/icons/d6eeaa45318fb928ef27b7d7b9255832.jpg",
+            "itemHash": 2378296024,
+            "itemTypeName": "Gauntlets",
+            "dClass": "Warlock",
+            "owned": false
+          },
+          {
+            "itemName": "Xenos Vale IV",
+            "icon":
+              "/common/destiny2_content/icons/2e731d70ff906e959a8a616ea817a1e6.jpg",
+            "itemHash": 34846448,
+            "itemTypeName": "Chest Armor",
+            "dClass": "Warlock",
+            "owned": true
+          },
+          {
+            "itemName": "Xenos Vale IV",
+            "icon":
+              "/common/destiny2_content/icons/329f2a511931f49a4799033b99846838.jpg",
+            "itemHash": 413460498,
+            "itemTypeName": "Leg Armor",
+            "dClass": "Warlock",
+            "owned": false
+          },
+          {
+            "itemName": "Xenos Vale Bond",
+            "icon":
+              "/common/destiny2_content/icons/eef8a820320ae86b57565f6e078d346d.jpg",
+            "itemHash": 3215392301,
+            "itemTypeName": "Warlock Bond",
+            "dClass": "Warlock",
+            "owned": false
+          }
+        ]
+      },
+
+      {
+        "id": "1616736576-d",
+        "title": "Warlock Armour",
+        "items": [
+          {
+            "itemName": "The Shelter in Place",
+            "icon":
+              "/common/destiny2_content/icons/30f9c387a481d015176083a46e7d1275.jpg",
+            "itemHash": 3873435116,
+            "itemTypeName": "Helmet",
+            "dClass": "Titan",
+            "owned": false
+          },
+          {
+            "itemName": "The Shelter in Place",
+            "icon":
+              "/common/destiny2_content/icons/201720bfdb0712c00740c197ee1e953b.jpg",
+            "itemHash": 3027732901,
+            "itemTypeName": "Gauntlets",
+            "dClass": "Titan",
+            "owned": false
+          },
+          {
+            "itemName": "The Shelter in Place",
+            "icon":
+              "/common/destiny2_content/icons/d83c1fce67417b4236040c173336d79e.jpg",
+            "itemHash": 1667528443,
+            "itemTypeName": "Chest Armor",
+            "dClass": "Titan",
+            "owned": false
+          },
+          {
+            "itemName": "The Shelter in Place",
+            "icon":
+              "/common/destiny2_content/icons/f4909fa738e38fcc0bc2653573ae1f43.jpg",
+            "itemHash": 3375062567,
+            "itemTypeName": "Leg Armor",
+            "dClass": "Titan",
+            "owned": false
+          },
+          {
+            "itemName": "Mark of Shelter",
+            "icon":
+              "/common/destiny2_content/icons/be885c0fa19e10de1edda735adc973b8.jpg",
+            "itemHash": 24244626,
+            "itemTypeName": "Titan Mark",
+            "dClass": "Titan",
+            "owned": false
+          }
+        ]
+      }
+    ]
+  },
+
+  {
+    "displayProperties": {
+      "description": "Weapons obtained by competing in the Trials of the Nine.",
+      "name": "Trials of the Nine Arsenal",
+      "icon": "/img/misc/missing_icon_d2.png",
+      "hasIcon": false
+    },
+    "pgcrImage": null,
+    "dropListID": 3518207880,
+    "drops": [
+      {
+        "itemName": "Prosecutor",
+        "icon":
+          "/common/destiny2_content/icons/fe5c4ef13af20ed4c89a3e40085526c5.jpg",
+        "itemHash": 1909527966,
+        "itemTypeName": "Auto Rifle",
+        "dClass": "noclass",
+        "owned": false
+      },
+      {
+        "itemName": "Relentless",
+        "icon":
+          "/common/destiny2_content/icons/121fd59938b15a38a91eef14d0c01fbb.jpg",
+        "itemHash": 1187594590,
+        "itemTypeName": "Pulse Rifle",
+        "dClass": "noclass",
+        "owned": false
+      },
+      {
+        "itemName": "The End",
+        "icon":
+          "/common/destiny2_content/icons/701304da200d854161358a9ed522daa7.jpg",
+        "itemHash": 1825472717,
+        "itemTypeName": "Scout Rifle",
+        "dClass": "noclass",
+        "owned": false
+      },
+      {
+        "itemName": "Adjudicator",
+        "icon":
+          "/common/destiny2_content/icons/ea58bde6ba0a8ac17e03265d42f7f01f.jpg",
+        "itemHash": 2094938673,
+        "itemTypeName": "Submachine Gun",
+        "dClass": "noclass",
+        "owned": false
+      },
+      {
+        "itemName": "The Long Walk",
+        "icon":
+          "/common/destiny2_content/icons/45892619a8917d8bd44684547f0b1e6f.jpg",
+        "itemHash": 174804902,
+        "itemTypeName": "Sniper Rifle",
+        "dClass": "noclass",
+        "owned": false
+      }
+    ],
+    "sections": []
+  },
+
+
+  {
+    "displayProperties": {
+      "description": "Armor obtained by competing in the Trials of the Nine.",
+      "name": "Trials of the Nine Armor",
+      "icon": "/img/misc/missing_icon_d2.png",
+      "hasIcon": false
+    },
+    "pgcrImage": null,
+    "dropListID": 224198011,
+    "drops": [
+      {
+        "itemName": "Flowing Cowl",
+        "icon":
+          "/common/destiny2_content/icons/3258a77130af92bd2b789a6a0c0bf9c7.jpg",
+        "itemHash": 400025383,
+        "itemTypeName": "Helmet",
+        "dClass": "Hunter",
+        "owned": false
+      },
+      {
+        "itemName": "Flowing Grips",
+        "icon":
+          "/common/destiny2_content/icons/6e304f141de39ba8795c76df35766ea4.jpg",
+        "itemHash": 2641591726,
+        "itemTypeName": "Gauntlets",
+        "dClass": "Hunter",
+        "owned": false
+      },
+      {
+        "itemName": "Flowing Vest",
+        "icon":
+          "/common/destiny2_content/icons/8655411dc76c031dc02116dc887afa4b.jpg",
+        "itemHash": 548290754,
+        "itemTypeName": "Chest Armor",
+        "dClass": "Hunter",
+        "owned": false
+      },
+      {
+        "itemName": "Flowing Boots",
+        "icon":
+          "/common/destiny2_content/icons/95896fc96bc60d5c247c19c31443ebac.jpg",
+        "itemHash": 854160040,
+        "itemTypeName": "Leg Armor",
+        "dClass": "Hunter",
+        "owned": false
+      },
+      {
+        "itemName": "Cloak Judgment",
+        "icon":
+          "/common/destiny2_content/icons/22c4429f97551ec5520e85af8db9ade6.jpg",
+        "itemHash": 238320915,
+        "itemTypeName": "Hunter Cloak",
+        "dClass": "Hunter",
+        "owned": false
+      }
+    ],
+    "sections": []
+  },
+  {
+    "displayProperties": {
+      "description": "Armor obtained by competing in the Trials of the Nine.",
+      "name": "Trials of the Nine Armor",
+      "icon": "/img/misc/missing_icon_d2.png",
+      "hasIcon": false
+    },
+    "pgcrImage": null,
+    "dropListID": 2044758613,
+    "drops": [
+      {
+        "itemName": "Crushing Helm",
+        "icon":
+          "/common/destiny2_content/icons/7101dc83b6bf5fc0c7835865edce2c65.jpg",
+        "itemHash": 2391227801,
+        "itemTypeName": "Helmet",
+        "dClass": "Titan",
+        "owned": false
+      },
+      {
+        "itemName": "Crushing Guard",
+        "icon":
+          "/common/destiny2_content/icons/a604e0a4db6fc0eee7ef9967e3e875f5.jpg",
+        "itemHash": 1863012880,
+        "itemTypeName": "Gauntlets",
+        "dClass": "Titan",
+        "owned": false
+      },
+      {
+        "itemName": "Crushing Plate",
+        "icon":
+          "/common/destiny2_content/icons/5a4b5f5b48082790d13447afd2f5456f.jpg",
+        "itemHash": 934145080,
+        "itemTypeName": "Chest Armor",
+        "dClass": "Titan",
+        "owned": false
+      },
+      {
+        "itemName": "Crushing Greaves",
+        "icon":
+          "/common/destiny2_content/icons/90215bca46d7be65a60b09461a305269.jpg",
+        "itemHash": 2221648234,
+        "itemTypeName": "Leg Armor",
+        "dClass": "Titan",
+        "owned": false
+      },
+      {
+        "itemName": "Mark Judgment",
+        "icon":
+          "/common/destiny2_content/icons/05cf7dc83070245930b1d85d8ef9bf16.jpg",
+        "itemHash": 3624606677,
+        "itemTypeName": "Titan Mark",
+        "dClass": "Titan",
+        "owned": false
+      }
+    ],
+    "sections": []
+  },
+  {
+    "displayProperties": {
+      "description": "Armor obtained by competing in the Trials of the Nine.",
+      "name": "Trials of the Nine Armor",
+      "icon": "/img/misc/missing_icon_d2.png",
+      "hasIcon": false
+    },
+    "pgcrImage": null,
+    "dropListID": 504984804,
+    "drops": [
+      {
+        "itemName": "Channeling Cowl",
+        "icon":
+          "/common/destiny2_content/icons/1365a04f5ac5ab1887df872f835f6e9c.jpg",
+        "itemHash": 2964441920,
+        "itemTypeName": "Helmet",
+        "dClass": "Warlock",
+        "owned": false
+      },
+      {
+        "itemName": "Channeling Wraps",
+        "icon":
+          "/common/destiny2_content/icons/bfd278da367a0dafac57f097335e22a7.jpg",
+        "itemHash": 530515217,
+        "itemTypeName": "Gauntlets",
+        "dClass": "Warlock",
+        "owned": false
+      },
+      {
+        "itemName": "Channeling Robes",
+        "icon":
+          "/common/destiny2_content/icons/d145912b6ac98ff6ef8bfcb15acfe37d.jpg",
+        "itemHash": 891933383,
+        "itemTypeName": "Chest Armor",
+        "dClass": "Warlock",
+        "owned": false
+      },
+      {
+        "itemName": "Flowing Treads",
+        "icon":
+          "/common/destiny2_content/icons/6f087cb18d27c440b755bb929df8e4e5.jpg",
+        "itemHash": 4232174819,
+        "itemTypeName": "Leg Armor",
+        "dClass": "Warlock",
+        "owned": false
+      },
+      {
+        "itemName": "Judgement's Wrap",
+        "icon":
+          "/common/destiny2_content/icons/ddee904321e947a20acbc06666567472.jpg",
+        "itemHash": 1607431126,
+        "itemTypeName": "Warlock Bond",
+        "dClass": "Warlock",
+        "owned": false
+      }
+    ],
+    "sections": []
+  },
+  {
+    "displayProperties": {
+      "description":
+        "A one-time bundle for Guardians who want to stay frosty.\n\nContains Bright Engrams, Bright Dust, and the Sub-Zero Ornament for Coldheart.",
+      "name": "Sub-Zero Bundle",
+      "icon":
+        "/common/destiny2_content/icons/cbcc6dd4ee1b83f5dd80f339e3fe8b37.png",
+      "hasIcon": true
+    },
+    "pgcrImage": null,
+    "dropListID": 2271249246,
+    "drops": [
+      {
+        "itemName": "Coldheart",
+        "icon":
+          "/common/destiny2_content/icons/f73c7ce62b58ca3ae8847b2dcc53074b.jpg",
+        "itemHash": 2927653646,
+        "itemTypeName": "Trace Rifle",
+        "dClass": "noclass",
+        "owned": false
+      }
+    ],
+    "sections": []
+  },
+  {
+    "displayProperties": {
+      "description": "Sparrows exclusively awarded from Bright Engrams.",
+      "name": "Sparrows",
+      "icon":
+        "/common/destiny2_content/icons/d61aab802596683b392e703c8831859d.jpg",
+      "hasIcon": true
+    },
+    "pgcrImage": null,
+    "dropListID": 3976521777,
+    "drops": [
+      {
+        "itemName": "Dinas Emrys",
+        "icon":
+          "/common/destiny2_content/icons/d91e53af196f0b024da571b877edb7aa.jpg",
+        "itemHash": 807458182,
+        "itemTypeName": "Vehicle",
+        "dClass": "noclass",
+        "owned": false
+      }
+    ],
+    "sections": []
+  },
+  {
+    "displayProperties": {
+      "description": "Ships exclusively awarded from Bright Engrams.",
+      "name": "Ships",
+      "icon":
+        "/common/destiny2_content/icons/69e4c8b6fe071bcee00e999dfbbc5b80.jpg",
+      "hasIcon": true
+    },
+    "pgcrImage": null,
+    "dropListID": 512896491,
+    "drops": [
+      {
+        "itemName": "Rose and Bone",
+        "icon":
+          "/common/destiny2_content/icons/38aeb633f1a035a73a1ee04176564342.jpg",
+        "itemHash": 1104161649,
+        "itemTypeName": "Ship",
+        "dClass": "noclass",
+        "owned": false
+      }
+    ],
+    "sections": []
+  },
+  {
+    "displayProperties": {
+      "description":
+        "Weapon Ornaments used to alter the appearance of your gear and found only in the Bright Engram.",
+      "name": "Ornaments",
+      "icon":
+        "/common/destiny2_content/icons/c369b9dc3e49a914e21a8500443308e2.jpg",
+      "hasIcon": true
+    },
+    "pgcrImage": null,
+    "dropListID": 1300953061,
+    "drops": [
+      {
+        "itemName": "Hard Light",
+        "icon":
+          "/common/destiny2_content/icons/7ea308d22105c8235dafbe05398bfaec.jpg",
+        "itemHash": 227756207,
+        "itemTypeName": "Trace Rifle",
+        "dClass": "noclass",
+        "owned": false
+      }
+    ],
+    "sections": []
+  },
+  {
+    "displayProperties": {
+      "description": "Armor obtained by performing tasks for Sloane on Titan.",
+      "name": "New Pacific Arcology Armor",
+      "icon": "/img/misc/missing_icon_d2.png",
+      "hasIcon": false
+    },
+    "pgcrImage": null,
+    "dropListID": 2895268185,
+    "drops": [
+      {
+        "itemName": "Lost Pacific Mask",
+        "icon":
+          "/common/destiny2_content/icons/5ce711e376988502ca513a707a19dacf.jpg",
+        "itemHash": 1607012852,
+        "itemTypeName": "Helmet",
+        "dClass": "Hunter",
+        "owned": false
+      },
+      {
+        "itemName": "Lost Pacific Grips",
+        "icon":
+          "/common/destiny2_content/icons/53839e7c051e4e590c5c0ab119b7bafa.jpg",
+        "itemHash": 479417869,
+        "itemTypeName": "Gauntlets",
+        "dClass": "Hunter",
+        "owned": false
+      },
+      {
+        "itemName": "Lost Pacific Vest",
+        "icon":
+          "/common/destiny2_content/icons/da2e791e0a7d124dc86559eb558c3b63.jpg",
+        "itemHash": 2380978355,
+        "itemTypeName": "Chest Armor",
+        "dClass": "Hunter",
+        "owned": false
+      },
+      {
+        "itemName": "Lost Pacific Strides",
+        "icon":
+          "/common/destiny2_content/icons/cc803c0e18d7bd26a6e1dbfc2fe83d69.jpg",
+        "itemHash": 1150216911,
+        "itemTypeName": "Leg Armor",
+        "dClass": "Hunter",
+        "owned": false
+      },
+      {
+        "itemName": "Lost Pacific Cape",
+        "icon":
+          "/common/destiny2_content/icons/a10b0587afabcaaf885850a9a8d3fd67.jpg",
+        "itemHash": 291437034,
+        "itemTypeName": "Hunter Cloak",
+        "dClass": "Hunter",
+        "owned": false
+      }
+    ],
+    "sections": []
+  },
+  {
+    "displayProperties": {
+      "description": "Armor obtained by performing tasks for Sloane on Titan.",
+      "name": "New Pacific Arcology Armor",
+      "icon": "/img/misc/missing_icon_d2.png",
+      "hasIcon": false
+    },
+    "pgcrImage": null,
+    "dropListID": 3795647179,
+    "drops": [
+      {
+        "itemName": "Lost Pacific Helm",
+        "icon":
+          "/common/destiny2_content/icons/188a5becc3e7ca7975c3aecc51fa952f.jpg",
+        "itemHash": 2930137294,
+        "itemTypeName": "Helmet",
+        "dClass": "Titan",
+        "owned": false
+      },
+      {
+        "itemName": "Lost Pacific Gauntlets",
+        "icon":
+          "/common/destiny2_content/icons/b9fa98eb8eda2b60ff23058117bc2707.jpg",
+        "itemHash": 3955340735,
+        "itemTypeName": "Gauntlets",
+        "dClass": "Titan",
+        "owned": false
+      },
+      {
+        "itemName": "Lost Pacific Plate",
+        "icon":
+          "/common/destiny2_content/icons/b363eb07c1b85e037aa1f5a0308c618e.jpg",
+        "itemHash": 1847610489,
+        "itemTypeName": "Chest Armor",
+        "dClass": "Titan",
+        "owned": false
+      },
+      {
+        "itemName": "Lost Pacific Greaves",
+        "icon":
+          "/common/destiny2_content/icons/705af313a7c4866eac62c9b108066d88.jpg",
+        "itemHash": 2876590849,
+        "itemTypeName": "Leg Armor",
+        "dClass": "Titan",
+        "owned": false
+      },
+      {
+        "itemName": "Lost Pacific Mark",
+        "icon":
+          "/common/destiny2_content/icons/fb9996667e66c930c183e741bb68d39f.jpg",
+        "itemHash": 3586337076,
+        "itemTypeName": "Titan Mark",
+        "dClass": "Titan",
+        "owned": false
+      }
+    ],
+    "sections": []
+  },
+  {
+    "displayProperties": {
+      "description": "Armor obtained by performing tasks for Sloane on Titan.",
+      "name": "New Pacific Arcology Armor",
+      "icon": "/img/misc/missing_icon_d2.png",
+      "hasIcon": false
+    },
+    "pgcrImage": null,
+    "dropListID": 3582466566,
+    "drops": [
+      {
+        "itemName": "Lost Pacific Helmet",
+        "icon":
+          "/common/destiny2_content/icons/40afd573d96c72600e13d4037ebcf815.jpg",
+        "itemHash": 2575848725,
+        "itemTypeName": "Helmet",
+        "dClass": "Warlock",
+        "owned": true
+      },
+      {
+        "itemName": "Lost Pacific Gloves",
+        "icon":
+          "/common/destiny2_content/icons/0a37b17bfb29c59fc6e7f0ff38313e44.jpg",
+        "itemHash": 1251692004,
+        "itemTypeName": "Gauntlets",
+        "dClass": "Warlock",
+        "owned": true
+      },
+      {
+        "itemName": "Lost Pacific Robes",
+        "icon":
+          "/common/destiny2_content/icons/5869b886ebbabec57529287814db314e.jpg",
+        "itemHash": 2400621276,
+        "itemTypeName": "Chest Armor",
+        "dClass": "Warlock",
+        "owned": false
+      },
+      {
+        "itemName": "Lost Pacific Boots",
+        "icon":
+          "/common/destiny2_content/icons/a43987764655e3bea14256bcb35be9c2.jpg",
+        "itemHash": 2757777294,
+        "itemTypeName": "Leg Armor",
+        "dClass": "Warlock",
+        "owned": false
+      },
+      {
+        "itemName": "Lost Pacific Bond",
+        "icon":
+          "/common/destiny2_content/icons/60e08fc9d216eac4778580b18201e3c0.jpg",
+        "itemHash": 3686454865,
+        "itemTypeName": "Warlock Bond",
+        "dClass": "Warlock",
+        "owned": false
+      }
+    ],
+    "sections": []
+  },
+  {
+    "displayProperties": {
+      "description":
+        "Weapons obtained by working with New Monarchy to strengthen the Last City.",
+      "name": "New Monarchy Arsenal",
+      "icon": "/img/misc/missing_icon_d2.png",
+      "hasIcon": false
+    },
+    "pgcrImage": null,
+    "dropListID": 400542689,
+    "drops": [
+      {
+        "itemName": "Classified",
+        "itemHash": 3435238843,
+        "dClass": "Titan",
+        "owned": false
+      },
+      {
+        "itemName": "Classified",
+        "itemHash": 705774642,
+        "dClass": "Titan",
+        "owned": false
+      },
+      {
+        "itemName": "Classified",
+        "itemHash": 1988218406,
+        "dClass": "Titan",
+        "owned": false
+      }
+    ],
+    "sections": []
+  },
+  {
+    "displayProperties": {
+      "description":
+        "Weapons obtained by working with New Monarchy to strengthen the Last City.",
+      "name": "New Monarchy Arsenal",
+      "icon": "/img/misc/missing_icon_d2.png",
+      "hasIcon": false
+    },
+    "pgcrImage": null,
+    "dropListID": 400542690,
+    "drops": [
+      {
+        "itemName": "Classified",
+        "itemHash": 3435238843,
+        "dClass": "Titan",
+        "owned": false
+      }
+    ],
+    "sections": []
+  },
+  {
+    "displayProperties": {
+      "description":
+        "Armor obtained by increasing your reputation with Emperor Calus.",
+      "name": "Leviathan Armor",
+      "icon": "/img/misc/missing_icon_d2.png",
+      "hasIcon": false
+    },
+    "pgcrImage": null,
+    "dropListID": 1034907062,
+    "drops": [
+      {
+        "itemName": "Helm of the Ace-Defiant",
+        "icon":
+          "/common/destiny2_content/icons/c6a46488f2a30020025bd2adad5aa54b.jpg",
+        "itemHash": 2013109092,
+        "itemTypeName": "Helmet",
+        "dClass": "Hunter",
+        "owned": false
+      },
+      {
+        "itemName": "Grips of the Ace-Defiant",
+        "icon":
+          "/common/destiny2_content/icons/086b122214ed3a1ae999ac1f83ec65f9.jpg",
+        "itemHash": 1960303677,
+        "itemTypeName": "Gauntlets",
+        "dClass": "Hunter",
+        "owned": false
+      },
+      {
+        "itemName": "Vest of the Ace-Defiant",
+        "icon":
+          "/common/destiny2_content/icons/1fdb6333d6697463679dbb8df4b737d8.jpg",
+        "itemHash": 407863747,
+        "itemTypeName": "Chest Armor",
+        "dClass": "Hunter",
+        "owned": false
+      },
+      {
+        "itemName": "Boots of the Ace-Defiant",
+        "icon":
+          "/common/destiny2_content/icons/62ec564060712d1a2af12df69d3614fa.jpg",
+        "itemHash": 30962015,
+        "itemTypeName": "Leg Armor",
+        "dClass": "Hunter",
+        "owned": false
+      },
+      {
+        "itemName": "Shadow's Cloak",
+        "icon":
+          "/common/destiny2_content/icons/7f70481501db771b4acd89cec32e65ab.jpg",
+        "itemHash": 3984534842,
+        "itemTypeName": "Hunter Cloak",
+        "dClass": "Hunter",
+        "owned": false
+      }
+    ],
+    "sections": []
+  },
+  {
+    "displayProperties": {
+      "description":
+        "Armor obtained by increasing your reputation with Emperor Calus.",
+      "name": "Leviathan Armor",
+      "icon": "/img/misc/missing_icon_d2.png",
+      "hasIcon": false
+    },
+    "pgcrImage": null,
+    "dropListID": 3519016320,
+    "drops": [
+      {
+        "itemName": "Mask of Rull",
+        "icon":
+          "/common/destiny2_content/icons/081149f3efc6edc485f52ae746750abd.jpg",
+        "itemHash": 1413589586,
+        "itemTypeName": "Helmet",
+        "dClass": "Titan",
+        "owned": false
+      },
+      {
+        "itemName": "Gauntlets of Rull",
+        "icon":
+          "/common/destiny2_content/icons/30d4319e9719c51339d577c93bcedc98.jpg",
+        "itemHash": 1879942843,
+        "itemTypeName": "Gauntlets",
+        "dClass": "Titan",
+        "owned": false
+      },
+      {
+        "itemName": "Chassis of Rull",
+        "icon":
+          "/common/destiny2_content/icons/f74e602467a02c88ebd6e86afca30835.jpg",
+        "itemHash": 1876645653,
+        "itemTypeName": "Chest Armor",
+        "dClass": "Titan",
+        "owned": false
+      },
+      {
+        "itemName": "Greaves of Rull",
+        "icon":
+          "/common/destiny2_content/icons/46241159c48bdea021327f57ca6eb108.jpg",
+        "itemHash": 288406317,
+        "itemTypeName": "Leg Armor",
+        "dClass": "Titan",
+        "owned": false
+      },
+      {
+        "itemName": "Shadow's Mark",
+        "icon":
+          "/common/destiny2_content/icons/feefd93b9670f5aa44c54a5154c84b51.jpg",
+        "itemHash": 574137192,
+        "itemTypeName": "Titan Mark",
+        "dClass": "Titan",
+        "owned": false
+      }
+    ],
+    "sections": []
+  },
+  {
+    "displayProperties": {
+      "description":
+        "Armor obtained by increasing your reputation with Emperor Calus.",
+      "name": "Leviathan Armor",
+      "icon": "/img/misc/missing_icon_d2.png",
+      "hasIcon": false
+    },
+    "pgcrImage": null,
+    "dropListID": 152970995,
+    "drops": [
+      {
+        "itemName": "Mask of the Fulminator",
+        "icon":
+          "/common/destiny2_content/icons/fcba797cd5c51eb6e60f94223e6dd098.jpg",
+        "itemHash": 2700598111,
+        "itemTypeName": "Helmet",
+        "dClass": "Warlock",
+        "owned": false
+      },
+      {
+        "itemName": "Wraps of the Fulminator",
+        "icon":
+          "/common/destiny2_content/icons/59f56c8d5f294b4bae657195480f68d5.jpg",
+        "itemHash": 2676042150,
+        "itemTypeName": "Gauntlets",
+        "dClass": "Warlock",
+        "owned": false
+      },
+      {
+        "itemName": "Robes of the Fulminator",
+        "icon":
+          "/common/destiny2_content/icons/e4bba5f49208b32947a48fd30ddff0d9.jpg",
+        "itemHash": 3592548938,
+        "itemTypeName": "Chest Armor",
+        "dClass": "Warlock",
+        "owned": false
+      },
+      {
+        "itemName": "Boots of the Fulminator",
+        "icon":
+          "/common/destiny2_content/icons/699fc3ca3aecd47c0e3808fd92defa40.jpg",
+        "itemHash": 2193494688,
+        "itemTypeName": "Leg Armor",
+        "dClass": "Warlock",
+        "owned": false
+      },
+      {
+        "itemName": "Shadow's Bond",
+        "icon":
+          "/common/destiny2_content/icons/578535151e449943937960c8e02f76d6.jpg",
+        "itemHash": 3763332443,
+        "itemTypeName": "Warlock Bond",
+        "dClass": "Warlock",
+        "owned": false
+      }
+    ],
+    "sections": []
+  },
+  {
+    "displayProperties": {
+      "description":
+        "Weapons obtained by increasing your standing with Banshee-44, the Gunsmith.",
+      "name": "Gunsmith Arsenal",
+      "icon": "/img/misc/missing_icon_d2.png",
+      "hasIcon": false
+    },
+    "pgcrImage": null,
+    "dropListID": 2731650749,
+    "drops": [
+      {
+        "itemName": "Galliard-42",
+        "icon":
+          "/common/destiny2_content/icons/181c02918fc6d5d5a8cc268bc2807e9f.jpg",
+        "itemHash": 3778520451,
+        "itemTypeName": "Auto Rifle",
+        "dClass": "noclass",
+        "owned": false
+      },
+      {
+        "itemName": "Cadenza-43",
+        "icon":
+          "/common/destiny2_content/icons/4083be2a6547c74605e63086cd01c18e.jpg",
+        "itemHash": 339343291,
+        "itemTypeName": "Pulse Rifle",
+        "dClass": "noclass",
+        "owned": false
+      },
+      {
+        "itemName": "Tango-45",
+        "icon":
+          "/common/destiny2_content/icons/d189199fc7d9b2071e2ae1c3530a9e53.jpg",
+        "itemHash": 925326392,
+        "itemTypeName": "Scout Rifle",
+        "dClass": "noclass",
+        "owned": false
+      },
+      {
+        "itemName": "Minuet-42",
+        "icon":
+          "/common/destiny2_content/icons/a13f52dd696f7da561225ce7efda0d56.jpg",
+        "itemHash": 3860697508,
+        "itemTypeName": "Hand Cannon",
+        "dClass": "noclass",
+        "owned": true
+      },
+      {
+        "itemName": "Somerled-D",
+        "icon":
+          "/common/destiny2_content/icons/ebab4718b5bac3022ab90e518dc81c8e.jpg",
+        "itemHash": 2703340117,
+        "itemTypeName": "Shotgun",
+        "dClass": "noclass",
+        "owned": false
+      },
+      {
+        "itemName": "Erentil FR4",
+        "icon":
+          "/common/destiny2_content/icons/b351f24fde0d311ba74cecb895e11142.jpg",
+        "itemHash": 2398848320,
+        "itemTypeName": "Fusion Rifle",
+        "dClass": "noclass",
+        "owned": false
+      },
+      {
+        "itemName": "Elegy-49",
+        "icon":
+          "/common/destiny2_content/icons/8c78905935fcd6b23dc6cae09265da26.jpg",
+        "itemHash": 3666954563,
+        "itemTypeName": "Sniper Rifle",
+        "dClass": "noclass",
+        "owned": false
+      },
+      {
+        "itemName": "Athelflad-D",
+        "icon":
+          "/common/destiny2_content/icons/8ad008e96fc1fa21c43366f5c37718fe.jpg",
+        "itemHash": 1533499360,
+        "itemTypeName": "Sidearm",
+        "dClass": "noclass",
+        "owned": false
+      },
+      {
+        "itemName": "Resonance-42",
+        "icon":
+          "/common/destiny2_content/icons/f130509cf4debfaeb878dd65820c2452.jpg",
+        "itemHash": 566976652,
+        "itemTypeName": "Submachine Gun",
+        "dClass": "noclass",
+        "owned": false
+      },
+      {
+        "itemName": "Acantha-D",
+        "icon":
+          "/common/destiny2_content/icons/820c23a8000d4bca8869cc2088ca1ef1.jpg",
+        "itemHash": 896923850,
+        "itemTypeName": "Grenade Launcher",
+        "dClass": "noclass",
+        "owned": true
+      },
+      {
+        "itemName": "Pentatonic-48",
+        "icon":
+          "/common/destiny2_content/icons/c453e9d723e52cffb94c00742c51c6f8.jpg",
+        "itemHash": 3748713778,
+        "itemTypeName": "Rocket Launcher",
+        "dClass": "noclass",
+        "owned": false
+      }
+    ],
+    "sections": []
+  },
+  {
+    "displayProperties": {
+      "description":
+        "A limited-time bundle for Guardians fond of sevens.\n\nContains Bright Engrams, shaders, Bright Dust, and a unique ship.",
+      "name": "Golden Sevens Bundle",
+      "icon":
+        "/common/destiny2_content/icons/598a6fee66c84e4bb3d45093b9cea770.png",
+      "hasIcon": true
+    },
+    "pgcrImage": null,
+    "dropListID": 2271249245,
+    "drops": [
+      {
+        "itemName": "Nothing Gold",
+        "icon":
+          "/common/destiny2_content/icons/49450f79429433929ebf8c969f992096.jpg",
+        "itemHash": 838210458,
+        "itemTypeName": "Ship",
+        "dClass": "noclass",
+        "owned": false
+      }
+    ],
+    "sections": []
+  },
+  {
+    "displayProperties": {
+      "description": "Ghost Shells exclusively awarded from Bright Engrams.",
+      "name": "Ghost Shells",
+      "icon":
+        "/common/destiny2_content/icons/183eb54385b27fed98db61464bf370aa.jpg",
+      "hasIcon": true
+    },
+    "pgcrImage": null,
+    "dropListID": 1685575082,
+    "drops": [
+      {
+        "itemName": "Hemisphere Shell",
+        "icon":
+          "/common/destiny2_content/icons/b471eac87822b6dcc25c015cec916e4a.jpg",
+        "itemHash": 277887715,
+        "itemTypeName": "Ghost Shell",
+        "dClass": "noclass",
+        "owned": false
+      }
+    ],
+    "sections": []
+  },
+  {
+    "displayProperties": {
+      "description":
+        "Weapons obtained by working with Future War Cult to prepare for the wars to come.",
+      "name": "Future War Cult Arsenal",
+      "icon": "/img/misc/missing_icon_d2.png",
+      "hasIcon": false
+    },
+    "pgcrImage": null,
+    "dropListID": 7242310,
+    "drops": [
+      {
+        "itemName": "Classified",
+        "itemHash": 408440598,
+        "dClass": "Titan",
+        "owned": false
+      },
+      {
+        "itemName": "Classified",
+        "itemHash": 4145119417,
+        "dClass": "Titan",
+        "owned": false
+      },
+      {
+        "itemName": "Classified",
+        "itemHash": 1339362514,
+        "dClass": "Titan",
+        "owned": false
+      }
+    ],
+    "sections": []
+  },
+  {
+    "displayProperties": {
+      "description":
+        "Weapons obtained by working with Future War Cult to prepare for the wars to come.",
+      "name": "Future War Cult Arsenal",
+      "icon": "/img/misc/missing_icon_d2.png",
+      "hasIcon": false
+    },
+    "pgcrImage": null,
+    "dropListID": 7242309,
+    "drops": [
+      {
+        "itemName": "Classified",
+        "itemHash": 408440598,
+        "dClass": "Titan",
+        "owned": false
+      }
+    ],
+    "sections": []
+  },
+  {
+    "displayProperties": {
+      "description":
+        "Armor obtained by performing tasks for Devrim Kay in the EDZ.",
+      "name": "European Dead Zone Armor",
+      "icon": "/img/misc/missing_icon_d2.png",
+      "hasIcon": false
+    },
+    "pgcrImage": null,
+    "dropListID": 246238708,
+    "drops": [
+      {
+        "itemName": "Wildwood Helm",
+        "icon":
+          "/common/destiny2_content/icons/1895a80a842785bee949c7403544a065.jpg",
+        "itemHash": 3080875433,
+        "itemTypeName": "Helmet",
+        "dClass": "Titan",
+        "owned": false
+      },
+      {
+        "itemName": "Wildwood Gauntlets",
+        "icon":
+          "/common/destiny2_content/icons/c60735d9f57f8d8784085b66fc3f257e.jpg",
+        "itemHash": 872284448,
+        "itemTypeName": "Gauntlets",
+        "dClass": "Titan",
+        "owned": false
+      },
+      {
+        "itemName": "Wildwood Plate",
+        "icon":
+          "/common/destiny2_content/icons/e53c9d114dc2cdc15bd75ab84dae744b.jpg",
+        "itemHash": 10307688,
+        "itemTypeName": "Chest Armor",
+        "dClass": "Titan",
+        "owned": false
+      },
+      {
+        "itemName": "Wildwood Greaves",
+        "icon":
+          "/common/destiny2_content/icons/42dacbe113b3bd0f1e7e63ab68c76853.jpg",
+        "itemHash": 3862191322,
+        "itemTypeName": "Leg Armor",
+        "dClass": "Titan",
+        "owned": false
+      },
+      {
+        "itemName": "Wildwood Mark",
+        "icon":
+          "/common/destiny2_content/icons/b5e611fb85d9997f0db58264c41e8023.jpg",
+        "itemHash": 1712405061,
+        "itemTypeName": "Titan Mark",
+        "dClass": "Titan",
+        "owned": false
+      }
+    ],
+    "sections": []
+  },
+  {
+    "displayProperties": {
+      "description":
+        "Armor obtained by performing tasks for Devrim Kay in the EDZ.",
+      "name": "European Dead Zone Armor",
+      "icon": "/img/misc/missing_icon_d2.png",
+      "hasIcon": false
+    },
+    "pgcrImage": null,
+    "dropListID": 2916228301,
+    "drops": [
+      {
+        "itemName": "Wildwood Cover",
+        "icon":
+          "/common/destiny2_content/icons/f496cccb8d9efdafd36893e80b59323c.jpg",
+        "itemHash": 3764013786,
+        "itemTypeName": "Helmet",
+        "dClass": "Warlock",
+        "owned": false
+      },
+      {
+        "itemName": "Wildwood Gloves",
+        "icon":
+          "/common/destiny2_content/icons/994b679723d58beb4c42133c8e6da565.jpg",
+        "itemHash": 1664741411,
+        "itemTypeName": "Gauntlets",
+        "dClass": "Warlock",
+        "owned": true
+      },
+      {
+        "itemName": "Wildwood Robes",
+        "icon":
+          "/common/destiny2_content/icons/0721d9351100875f69d68f74c9b299a3.jpg",
+        "itemHash": 2724176749,
+        "itemTypeName": "Chest Armor",
+        "dClass": "Warlock",
+        "owned": false
+      },
+      {
+        "itemName": "Wildwood Boots",
+        "icon":
+          "/common/destiny2_content/icons/db198d800d80125ca7407ebfd6d3a535.jpg",
+        "itemHash": 4051755349,
+        "itemTypeName": "Leg Armor",
+        "dClass": "Warlock",
+        "owned": false
+      },
+      {
+        "itemName": "Wildwood Bond",
+        "icon":
+          "/common/destiny2_content/icons/e66dd045dbcb914ba5d0d130820fb1ba.jpg",
+        "itemHash": 1304122208,
+        "itemTypeName": "Warlock Bond",
+        "dClass": "Warlock",
+        "owned": true
+      }
+    ],
+    "sections": []
+  },
+  {
+    "displayProperties": {
+      "description":
+        "Armor obtained by performing tasks for Devrim Kay in the EDZ.",
+      "name": "European Dead Zone Armor",
+      "icon": "/img/misc/missing_icon_d2.png",
+      "hasIcon": false
+    },
+    "pgcrImage": null,
+    "dropListID": 1664208562,
+    "drops": [
+      {
+        "itemName": "Wildwood Mask",
+        "icon":
+          "/common/destiny2_content/icons/9282b852dda02eb05814d5cfde07a7e4.jpg",
+        "itemHash": 3973359167,
+        "itemTypeName": "Helmet",
+        "dClass": "Hunter",
+        "owned": false
+      },
+      {
+        "itemName": "Wildwood Grips",
+        "icon":
+          "/common/destiny2_content/icons/4617e163f8135e40541a1183789a2e8d.jpg",
+        "itemHash": 3907226374,
+        "itemTypeName": "Gauntlets",
+        "dClass": "Hunter",
+        "owned": false
+      },
+      {
+        "itemName": "Wildwood Vest",
+        "icon":
+          "/common/destiny2_content/icons/4f3ad5f3739ac2e4798ece56032ccc5a.jpg",
+        "itemHash": 2729740202,
+        "itemTypeName": "Chest Armor",
+        "dClass": "Hunter",
+        "owned": false
+      },
+      {
+        "itemName": "Wildwood Strides",
+        "icon":
+          "/common/destiny2_content/icons/54179b7740a7ab4aa5e6668903d48f16.jpg",
+        "itemHash": 3466255616,
+        "itemTypeName": "Leg Armor",
+        "dClass": "Hunter",
+        "owned": false
+      },
+      {
+        "itemName": "Wildwood Cloak",
+        "icon":
+          "/common/destiny2_content/icons/63d48473dc634ea739bd050fe84d4451.jpg",
+        "itemHash": 3366557883,
+        "itemTypeName": "Hunter Cloak",
+        "dClass": "Hunter",
+        "owned": false
+      }
+    ],
+    "sections": []
+  },
+  {
+    "displayProperties": {
+      "description": "Armor obtained by performing tasks for Asher Mir on Io.",
+      "name": "Echo Mesa, Io Armor",
+      "icon": "/img/misc/missing_icon_d2.png",
+      "hasIcon": false
+    },
+    "pgcrImage": null,
+    "dropListID": 97626271,
+    "drops": [
+      {
+        "itemName": "Gensym Knight Helm",
+        "icon":
+          "/common/destiny2_content/icons/82cdc174d104458d6b0eb697ff16551e.jpg",
+        "itemHash": 1370341044,
+        "itemTypeName": "Helmet",
+        "dClass": "Titan",
+        "owned": false
+      },
+      {
+        "itemName": "Gensym Knight Gauntlets",
+        "icon":
+          "/common/destiny2_content/icons/8dc14065dd8b3334a91b71b2211ab17b.jpg",
+        "itemHash": 4071576013,
+        "itemTypeName": "Gauntlets",
+        "dClass": "Titan",
+        "owned": false
+      },
+      {
+        "itemName": "Gensym Knight Plate",
+        "icon":
+          "/common/destiny2_content/icons/56a9eed69c526ab1dae59801a92decfa.jpg",
+        "itemHash": 2523633779,
+        "itemTypeName": "Chest Armor",
+        "dClass": "Titan",
+        "owned": false
+      },
+      {
+        "itemName": "Gensym Knight Greaves",
+        "icon":
+          "/common/destiny2_content/icons/e31da0104c8c0718f08f83f0ceb71778.jpg",
+        "itemHash": 447407759,
+        "itemTypeName": "Leg Armor",
+        "dClass": "Titan",
+        "owned": false
+      },
+      {
+        "itemName": "Gensym Knight Mark",
+        "icon":
+          "/common/destiny2_content/icons/afb292454c72119f9660d82761be535c.jpg",
+        "itemHash": 434092458,
+        "itemTypeName": "Titan Mark",
+        "dClass": "Titan",
+        "owned": false
+      }
+    ],
+    "sections": []
+  },
+  {
+    "displayProperties": {
+      "description": "Armor obtained by performing tasks for Asher Mir on Io.",
+      "name": "Echo Mesa, Io Armor",
+      "icon": "/img/misc/missing_icon_d2.png",
+      "hasIcon": false
+    },
+    "pgcrImage": null,
+    "dropListID": 1942183672,
+    "drops": [
+      {
+        "itemName": "Gensym Knight Hood",
+        "icon":
+          "/common/destiny2_content/icons/3ca783723867f74f6ad4da014111ed93.jpg",
+        "itemHash": 1554079989,
+        "itemTypeName": "Helmet",
+        "dClass": "Warlock",
+        "owned": false
+      },
+      {
+        "itemName": "Gensym Knight Gloves",
+        "icon":
+          "/common/destiny2_content/icons/e82da78cc3f91ad875f837bbc51c233f.jpg",
+        "itemHash": 229923140,
+        "itemTypeName": "Gauntlets",
+        "dClass": "Warlock",
+        "owned": false
+      },
+      {
+        "itemName": "Gensym Knight Robes",
+        "icon":
+          "/common/destiny2_content/icons/06ab85bcafe6b055d62a551b8f3bbdae.jpg",
+        "itemHash": 3388454204,
+        "itemTypeName": "Chest Armor",
+        "dClass": "Warlock",
+        "owned": false
+      },
+      {
+        "itemName": "Gensym Knight Boots",
+        "icon":
+          "/common/destiny2_content/icons/d51b810a30fe5730ac5baa76be172e71.jpg",
+        "itemHash": 2160569198,
+        "itemTypeName": "Leg Armor",
+        "dClass": "Warlock",
+        "owned": false
+      },
+      {
+        "itemName": "Gensym Knight Bond",
+        "icon":
+          "/common/destiny2_content/icons/3a8b12c13c152fae294ec71aa0ccd26b.jpg",
+        "itemHash": 845354673,
+        "itemTypeName": "Warlock Bond",
+        "dClass": "Warlock",
+        "owned": false
+      }
+    ],
+    "sections": []
+  },
+  {
+    "displayProperties": {
+      "description": "Armor obtained by performing tasks for Asher on Io.",
+      "name": "Echo Mesa, Io Armor",
+      "icon": "/img/misc/missing_icon_d2.png",
+      "hasIcon": false
+    },
+    "pgcrImage": null,
+    "dropListID": 3563608633,
+    "drops": [
+      {
+        "itemName": "Gensym Knight Casque",
+        "icon":
+          "/common/destiny2_content/icons/7baba41a74e72ba1b1bd89f3ffac5b22.jpg",
+        "itemHash": 2715114534,
+        "itemTypeName": "Helmet",
+        "dClass": "Hunter",
+        "owned": false
+      },
+      {
+        "itemName": "Gensym Knight Grips",
+        "icon":
+          "/common/destiny2_content/icons/103db9d8a326a3af8240524382489ea6.jpg",
+        "itemHash": 1729074423,
+        "itemTypeName": "Gauntlets",
+        "dClass": "Hunter",
+        "owned": false
+      },
+      {
+        "itemName": "Gensym Knight Cuirass",
+        "icon":
+          "/common/destiny2_content/icons/fda5124aef2193e7512f453a59cd04b8.jpg",
+        "itemHash": 1085797441,
+        "itemTypeName": "Chest Armor",
+        "dClass": "Hunter",
+        "owned": false
+      },
+      {
+        "itemName": "Gensym Knight Strides",
+        "icon":
+          "/common/destiny2_content/icons/8176455f9045d005fe1978bb426da317.jpg",
+        "itemHash": 3537609113,
+        "itemTypeName": "Leg Armor",
+        "dClass": "Hunter",
+        "owned": false
+      },
+      {
+        "itemName": "Gensym Knight Cloak",
+        "icon":
+          "/common/destiny2_content/icons/fa6ed95603898040c87853ef49f35348.jpg",
+        "itemHash": 1868302492,
+        "itemTypeName": "Hunter Cloak",
+        "dClass": "Hunter",
+        "owned": false
+      }
+    ],
+    "sections": []
+  },
+  {
+    "displayProperties": {
+      "description":
+        "Armor obtained by working with Dead Orbit in their mission to push beyond the solar system.",
+      "name": "Dead Orbit Arsenal",
+      "icon": "/img/misc/missing_icon_d2.png",
+      "hasIcon": false
+    },
+    "pgcrImage": null,
+    "dropListID": 2091936097,
+    "drops": [
+      {
+        "itemName": "Classified",
+        "itemHash": 472847207,
+        "dClass": "Titan",
+        "owned": false
+      }
+    ],
+    "sections": []
+  },
+  {
+    "displayProperties": {
+      "description":
+        "Armor obtained by working with Dead Orbit in their mission to push beyond the solar system.",
+      "name": "Dead Orbit Arsenal",
+      "icon": "/img/misc/missing_icon_d2.png",
+      "hasIcon": false
+    },
+    "pgcrImage": null,
+    "dropListID": 2091936098,
+    "drops": [
+      {
+        "itemName": "Classified",
+        "itemHash": 472847207,
+        "dClass": "Titan",
+        "owned": false
+      },
+      {
+        "itemName": "Classified",
+        "itemHash": 2625782213,
+        "dClass": "Titan",
+        "owned": false
+      },
+      {
+        "itemName": "Classified",
+        "itemHash": 48361212,
+        "dClass": "Titan",
+        "owned": false
+      }
+    ],
+    "sections": []
+  },
+  {
+    "displayProperties": {
+      "description":
+        "Weapons created for Guardians who test their skills in the Crucible.",
+      "name": "Crucible Arsenal",
+      "icon": "/img/misc/missing_icon_d2.png",
+      "hasIcon": false
+    },
+    "pgcrImage": null,
+    "dropListID": 1665207901,
+    "drops": [
+      {
+        "itemName": "Last Perdition",
+        "icon":
+          "/common/destiny2_content/icons/ebfe41975a804ea9c824e2a1551238f7.jpg",
+        "itemHash": 962412079,
+        "itemTypeName": "Pulse Rifle",
+        "dClass": "noclass",
+        "owned": false
+      },
+      {
+        "itemName": "Does Not Compute",
+        "icon":
+          "/common/destiny2_content/icons/a07827c1be2680cb70f5fd6086aacf52.jpg",
+        "itemHash": 4193877020,
+        "itemTypeName": "Scout Rifle",
+        "dClass": "noclass",
+        "owned": false
+      },
+      {
+        "itemName": "Better Devils",
+        "icon":
+          "/common/destiny2_content/icons/f23023062214b6b778c220f3d841a4ce.jpg",
+        "itemHash": 1048266744,
+        "itemTypeName": "Hand Cannon",
+        "dClass": "noclass",
+        "owned": false
+      },
+      {
+        "itemName": "Critical Sass",
+        "icon":
+          "/common/destiny2_content/icons/de304d5fdcb941593cca5640014e1850.jpg",
+        "itemHash": 1773600468,
+        "itemTypeName": "Fusion Rifle",
+        "dClass": "noclass",
+        "owned": false
+      },
+      {
+        "itemName": "Gentleman Vagabond",
+        "icon":
+          "/common/destiny2_content/icons/bfd13125c9790ca30661a26b6af42b92.jpg",
+        "itemHash": 2660862359,
+        "itemTypeName": "Sniper Rifle",
+        "dClass": "noclass",
+        "owned": false
+      },
+      {
+        "itemName": "Play of the Game",
+        "icon":
+          "/common/destiny2_content/icons/fceef3cf93fb537e259c3734798d2946.jpg",
+        "itemHash": 2621637518,
+        "itemTypeName": "Grenade Launcher",
+        "dClass": "noclass",
+        "owned": false
+      },
+      {
+        "itemName": "Retrofuturist",
+        "icon":
+          "/common/destiny2_content/icons/2a57f8cf7b175d5110a0f8ed3abd40b1.jpg",
+        "itemHash": 1325579289,
+        "itemTypeName": "Shotgun",
+        "dClass": "noclass",
+        "owned": false
+      }
+    ],
+    "sections": []
+  },
+  {
+    "displayProperties": {
+      "description":
+        "Armor awarded to Guardians who hone their skills against each other in the Crucible.",
+      "name": "Crucible Armor",
+      "icon": "/img/misc/missing_icon_d2.png",
+      "hasIcon": false
+    },
+    "pgcrImage": null,
+    "dropListID": 2977071352,
+    "drops": [
+      {
+        "itemName": "Swordflight 4.1",
+        "icon":
+          "/common/destiny2_content/icons/de07b7c7f3af090163f440d24159c140.jpg",
+        "itemHash": 3223280471,
+        "itemTypeName": "Helmet",
+        "dClass": "Hunter",
+        "owned": false
+      },
+      {
+        "itemName": "Swordflight 4.1",
+        "icon":
+          "/common/destiny2_content/icons/ac6a224c594be75ee17dd3f945c60e16.jpg",
+        "itemHash": 2296691422,
+        "itemTypeName": "Gauntlets",
+        "dClass": "Hunter",
+        "owned": false
+      },
+      {
+        "itemName": "Swordflight 4.1",
+        "icon":
+          "/common/destiny2_content/icons/dc0ccaf2f50df6e27b75b8203eb6537d.jpg",
+        "itemHash": 2718495762,
+        "itemTypeName": "Chest Armor",
+        "dClass": "Hunter",
+        "owned": false
+      },
+      {
+        "itemName": "Swordflight 4.1",
+        "icon":
+          "/common/destiny2_content/icons/f7ab019fb8e2396448260d3b0a669a71.jpg",
+        "itemHash": 3140634552,
+        "itemTypeName": "Leg Armor",
+        "dClass": "Hunter",
+        "owned": false
+      },
+      {
+        "itemName": "Binary Phoenix Cloak",
+        "icon":
+          "/common/destiny2_content/icons/4f7c8ce50c9e11c317066fe7d238f967.jpg",
+        "itemHash": 3313736739,
+        "itemTypeName": "Hunter Cloak",
+        "dClass": "Hunter",
+        "owned": false
+      }
+    ],
+    "sections": []
+  },
+  {
+    "displayProperties": {
+      "description":
+        "Armor awarded to Guardians who hone their skills against each other in the Crucible.",
+      "name": "Crucible Armor",
+      "icon": "/img/misc/missing_icon_d2.png",
+      "hasIcon": false
+    },
+    "pgcrImage": null,
+    "dropListID": 2684789946,
+    "drops": [
+      {
+        "itemName": "Phoenix Strife Type 0",
+        "icon":
+          "/common/destiny2_content/icons/9135c4d5d5b49aa479080cfd4bca206f.jpg",
+        "itemHash": 2191401041,
+        "itemTypeName": "Helmet",
+        "dClass": "Titan",
+        "owned": false
+      },
+      {
+        "itemName": "Phoenix Strife Type 0",
+        "icon":
+          "/common/destiny2_content/icons/c8e29fa09c7a1c0e9fae2fbe756ed63c.jpg",
+        "itemHash": 849529384,
+        "itemTypeName": "Gauntlets",
+        "dClass": "Titan",
+        "owned": false
+      },
+      {
+        "itemName": "Phoenix Strife Type 0",
+        "icon":
+          "/common/destiny2_content/icons/1c0302dc8457bf80035bdd947a7a0bc3.jpg",
+        "itemHash": 2815422368,
+        "itemTypeName": "Chest Armor",
+        "dClass": "Titan",
+        "owned": false
+      },
+      {
+        "itemName": "Phoenix Strife Type 0",
+        "icon":
+          "/common/destiny2_content/icons/b504d035356ef766ce30c98cbd5bfac7.jpg",
+        "itemHash": 1484937602,
+        "itemTypeName": "Leg Armor",
+        "dClass": "Titan",
+        "owned": false
+      },
+      {
+        "itemName": "Binary Phoenix Mark",
+        "icon":
+          "/common/destiny2_content/icons/139b4fd1aa0231c771fdf3333ce9e8ce.jpg",
+        "itemHash": 1742680797,
+        "itemTypeName": "Titan Mark",
+        "dClass": "Titan",
+        "owned": false
+      }
+    ],
+    "sections": []
+  },
+  {
+    "displayProperties": {
+      "description":
+        "Armor skins that may be awarded for your current class from Bright Engrams.",
+      "name": "Armor",
+      "icon":
+        "/common/destiny2_content/icons/8ef4b5bd32277dba9aee7c368404ad5d.jpg",
+      "hasIcon": true
+    },
+    "pgcrImage": null,
+    "dropListID": 2684871267,
+    "drops": [
+      {
+        "itemName": "Arms of Optimacy",
+        "icon":
+          "/common/destiny2_content/icons/a76bdede5163394affc2c0f29c1f9a6a.jpg",
+        "itemHash": 1625986881,
+        "itemTypeName": "Gauntlets",
+        "dClass": "Hunter",
+        "owned": false
+      },
+      {
+        "itemName": "Legs of Optimacy",
+        "icon":
+          "/common/destiny2_content/icons/10d8212486210dff19603b44630ec8f4.jpg",
+        "itemHash": 2696374963,
+        "itemTypeName": "Leg Armor",
+        "dClass": "Hunter",
+        "owned": false
+      },
+      {
+        "itemName": "Vest of Optimacy",
+        "icon":
+          "/common/destiny2_content/icons/901bec8141d57ac3d837443adbaf1960.jpg",
+        "itemHash": 369186071,
+        "itemTypeName": "Chest Armor",
+        "dClass": "Hunter",
+        "owned": false
+      },
+      {
+        "itemName": "Mask of Optimacy",
+        "icon":
+          "/common/destiny2_content/icons/3421066fa4d45fde24103dafd82333b4.jpg",
+        "itemHash": 1869779952,
+        "itemTypeName": "Helmet",
+        "dClass": "Hunter",
+        "owned": false
+      },
+      {
+        "itemName": "Cloak of Optimacy",
+        "icon":
+          "/common/destiny2_content/icons/c5b054f3ce361125228b0b035888f9b0.jpg",
+        "itemHash": 2497505510,
+        "itemTypeName": "Hunter Cloak",
+        "dClass": "Hunter",
+        "owned": false
+      },
+      {
+        "itemName": "Arms of Optimacy",
+        "icon":
+          "/common/destiny2_content/icons/a68b8167168266e668498b59df31d803.jpg",
+        "itemHash": 652336087,
+        "itemTypeName": "Gauntlets",
+        "dClass": "Titan",
+        "owned": false
+      },
+      {
+        "itemName": "Legs of Optimacy",
+        "icon":
+          "/common/destiny2_content/icons/5ee58fcb75881da7d9a2ad02f3e51e7e.jpg",
+        "itemHash": 2460870905,
+        "itemTypeName": "Leg Armor",
+        "dClass": "Titan",
+        "owned": false
+      },
+      {
+        "itemName": "Plate of Optimacy",
+        "icon":
+          "/common/destiny2_content/icons/08a3c683b9493be9a70993ced4407270.jpg",
+        "itemHash": 415074081,
+        "itemTypeName": "Chest Armor",
+        "dClass": "Titan",
+        "owned": false
+      },
+      {
+        "itemName": "Helm of Optimacy",
+        "icon":
+          "/common/destiny2_content/icons/480cbfd0459a698fd11bdcaf1db53e3a.jpg",
+        "itemHash": 1638376198,
+        "itemTypeName": "Helmet",
+        "dClass": "Titan",
+        "owned": false
+      },
+      {
+        "itemName": "Mark of Optimacy",
+        "icon":
+          "/common/destiny2_content/icons/7d361b25bd98d6fd3612a156d02f554d.jpg",
+        "itemHash": 1197579132,
+        "itemTypeName": "Titan Mark",
+        "dClass": "Titan",
+        "owned": false
+      },
+      {
+        "itemName": "Arms of Optimacy",
+        "icon":
+          "/common/destiny2_content/icons/0c526a11eae2ec7b7044d7470bb9081c.jpg",
+        "itemHash": 3794819064,
+        "itemTypeName": "Gauntlets",
+        "dClass": "Warlock",
+        "owned": false
+      },
+      {
+        "itemName": "Legs of Optimacy",
+        "icon":
+          "/common/destiny2_content/icons/699ce6a9c1755d2c45aa70a4f2c4318c.jpg",
+        "itemHash": 1830086706,
+        "itemTypeName": "Leg Armor",
+        "dClass": "Warlock",
+        "owned": false
+      },
+      {
+        "itemName": "Robes of Optimacy",
+        "icon":
+          "/common/destiny2_content/icons/fd7f8525b9c79ac6e060624478d21e7b.jpg",
+        "itemHash": 199852048,
+        "itemTypeName": "Chest Armor",
+        "dClass": "Warlock",
+        "owned": false
+      },
+      {
+        "itemName": "Hood of Optimacy",
+        "icon":
+          "/common/destiny2_content/icons/7744f9d66a8a7eac9b32b7c822400df4.jpg",
+        "itemHash": 2956899553,
+        "itemTypeName": "Helmet",
+        "dClass": "Warlock",
+        "owned": false
+      },
+      {
+        "itemName": "Bond of Optimacy",
+        "icon":
+          "/common/destiny2_content/icons/f7f3d1cecb2109c6d905f05159129c37.jpg",
+        "itemHash": 3421974605,
+        "itemTypeName": "Warlock Bond",
+        "dClass": "Warlock",
+        "owned": true
+      }
+    ],
+    "sections": []
+  },
+  {
+    "displayProperties": {
+      "description":
+        "Armor obtained by performing tasks for Failsafe on Nessus.",
+      "name": "Arcadian Valley, Nessus Armor",
+      "icon": "/img/misc/missing_icon_d2.png",
+      "hasIcon": false
+    },
+    "pgcrImage": null,
+    "dropListID": 1269621203,
+    "drops": [
+      {
+        "itemName": "Exodus Down Helm",
+        "icon":
+          "/common/destiny2_content/icons/5390c633f8427eed2c46604a3c93fa57.jpg",
+        "itemHash": 1010733668,
+        "itemTypeName": "Helmet",
+        "dClass": "Titan",
+        "owned": false
+      },
+      {
+        "itemName": "Exodus Down Gauntlets",
+        "icon":
+          "/common/destiny2_content/icons/42d676d12711a4d760c24b7a459e0e83.jpg",
+        "itemHash": 957928253,
+        "itemTypeName": "Gauntlets",
+        "dClass": "Titan",
+        "owned": false
+      },
+      {
+        "itemName": "Exodus Down",
+        "icon":
+          "/common/destiny2_content/icons/928715a737ba5977a96d3dabc59400df.jpg",
+        "itemHash": 177493699,
+        "itemTypeName": "Chest Armor",
+        "dClass": "Titan",
+        "owned": false
+      },
+      {
+        "itemName": "Exodus Down Greaves",
+        "icon":
+          "/common/destiny2_content/icons/d3c9d8287dbfa20747aa232c5923f531.jpg",
+        "itemHash": 3323553887,
+        "itemTypeName": "Leg Armor",
+        "dClass": "Titan",
+        "owned": false
+      },
+      {
+        "itemName": "Exodus Down Mark",
+        "icon":
+          "/common/destiny2_content/icons/f213e3eac5568bcde79ba10e498207d7.jpg",
+        "itemHash": 3754164794,
+        "itemTypeName": "Titan Mark",
+        "dClass": "Titan",
+        "owned": false
+      }
+    ],
+    "sections": []
+  },
+  {
+    "displayProperties": {
+      "description":
+        "Armor obtained by performing tasks for Failsafe on Nessus.",
+      "name": "Arcadian Valley, Nessus Armor",
+      "icon": "/img/misc/missing_icon_d2.png",
+      "hasIcon": false
+    },
+    "pgcrImage": null,
+    "dropListID": 889772445,
+    "drops": [
+      {
+        "itemName": "Exodus Down Mask",
+        "icon":
+          "/common/destiny2_content/icons/708a230e19d30ccf36e6b6cfc09128db.jpg",
+        "itemHash": 3026265798,
+        "itemTypeName": "Helmet",
+        "dClass": "Hunter",
+        "owned": false
+      },
+      {
+        "itemName": "Exodus Down Grips",
+        "icon":
+          "/common/destiny2_content/icons/9e1f30ef56c44e590d92409394f343b1.jpg",
+        "itemHash": 2423003287,
+        "itemTypeName": "Gauntlets",
+        "dClass": "Hunter",
+        "owned": false
+      },
+      {
+        "itemName": "Exodus Down Vest",
+        "icon":
+          "/common/destiny2_content/icons/63361eee15b9dfffeee4d953ba6e6953.jpg",
+        "itemHash": 2462524641,
+        "itemTypeName": "Chest Armor",
+        "dClass": "Hunter",
+        "owned": false
+      },
+      {
+        "itemName": "Exodus Down Strides",
+        "icon":
+          "/common/destiny2_content/icons/cb04ab663267164e28dd05df7a420f65.jpg",
+        "itemHash": 3807183801,
+        "itemTypeName": "Leg Armor",
+        "dClass": "Hunter",
+        "owned": false
+      },
+      {
+        "itemName": "Exodus Down Cloak",
+        "icon":
+          "/common/destiny2_content/icons/f764c5b4e2cc2b28cdf7e9321d791553.jpg",
+        "itemHash": 3669590332,
+        "itemTypeName": "Hunter Cloak",
+        "dClass": "Hunter",
+        "owned": false
+      }
+    ],
+    "sections": []
+  },
+  {
+    "displayProperties": {
+      "description":
+        "Armor obtained by performing tasks for Failsafe on Nessus.",
+      "name": "Arcadian Valley, Nessus Armor",
+      "icon": "/img/misc/missing_icon_d2.png",
+      "hasIcon": false
+    },
+    "pgcrImage": null,
+    "dropListID": 4039920584,
+    "drops": [
+      {
+        "itemName": "Exodus Down Hood",
+        "icon":
+          "/common/destiny2_content/icons/58e45edd2d7f1f9f9620f289bb7279af.jpg",
+        "itemHash": 2811068561,
+        "itemTypeName": "Helmet",
+        "dClass": "Warlock",
+        "owned": false
+      },
+      {
+        "itemName": "Exodus Down Gloves",
+        "icon":
+          "/common/destiny2_content/icons/0128ac009093df8e15ed1cc45edae168.jpg",
+        "itemHash": 1427620200,
+        "itemTypeName": "Gauntlets",
+        "dClass": "Warlock",
+        "owned": false
+      },
+      {
+        "itemName": "Exodus Down Robes",
+        "icon":
+          "/common/destiny2_content/icons/8d5c84c3ac4fd4c5c58a0c802e4520eb.jpg",
+        "itemHash": 2359639520,
+        "itemTypeName": "Chest Armor",
+        "dClass": "Warlock",
+        "owned": false
+      },
+      {
+        "itemName": "Exodus Down Boots",
+        "icon":
+          "/common/destiny2_content/icons/8feb5798b62251d3a33df9696eb8a436.jpg",
+        "itemHash": 2528959426,
+        "itemTypeName": "Leg Armor",
+        "dClass": "Warlock",
+        "owned": false
+      },
+      {
+        "itemName": "Exodus Down Bond",
+        "icon":
+          "/common/destiny2_content/icons/57852fe0e6ee83a6133bce2f35523e8a.jpg",
+        "itemHash": 1669675549,
+        "itemTypeName": "Warlock Bond",
+        "dClass": "Warlock",
+        "owned": true
+      }
+    ],
+    "sections": []
+  },
+  {
+    "displayProperties": {
+      "description": "",
+      "name": "",
+      "icon":
+        "/common/destiny2_content/icons/8943a721611b4c9aca715243cb638ae0.png",
+      "hasIcon": true
+    },
+    "pgcrImage": null,
+    "dropListID": 413219098,
+    "drops": [
+      {
+        "itemName": "Ghost Primus",
+        "icon":
+          "/common/destiny2_content/icons/36ff239bd2629635c04f08a6487d1eed.jpg",
+        "itemHash": 2505533224,
+        "itemTypeName": "Auto Rifle",
+        "dClass": "noclass",
+        "owned": false
+      },
+      {
+        "itemName": "Inaugural Address",
+        "icon":
+          "/common/destiny2_content/icons/00427f2fd52a3d7b887c86c8365a273e.jpg",
+        "itemHash": 3325744914,
+        "itemTypeName": "Pulse Rifle",
+        "dClass": "noclass",
+        "owned": true
+      },
+      {
+        "itemName": "Conspirator",
+        "icon":
+          "/common/destiny2_content/icons/c839a0a360a7683e3ac6f9388d801287.jpg",
+        "itemHash": 3906942101,
+        "itemTypeName": "Scout Rifle",
+        "dClass": "noclass",
+        "owned": false
+      },
+      {
+        "itemName": "Midnight Coup",
+        "icon":
+          "/common/destiny2_content/icons/4944836594336fb4e13a722a8d1f6020.jpg",
+        "itemHash": 1128225405,
+        "itemTypeName": "Hand Cannon",
+        "dClass": "noclass",
+        "owned": false
+      },
+      {
+        "itemName": "Mob Justice",
+        "icon":
+          "/common/destiny2_content/icons/8620ef43de878ba6e8a4090ffecd5679.jpg",
+        "itemHash": 3954531357,
+        "itemTypeName": "Submachine Gun",
+        "dClass": "noclass",
+        "owned": false
+      },
+      {
+        "itemName": "Alone as a god",
+        "icon":
+          "/common/destiny2_content/icons/fdc914a4e67ec0bc031dda9b41a810fd.jpg",
+        "itemHash": 3380742308,
+        "itemTypeName": "Sniper Rifle",
+        "dClass": "noclass",
+        "owned": false
+      },
+      {
+        "itemName": "Sins of the Past",
+        "icon":
+          "/common/destiny2_content/icons/db7d8ce45381db4067dabae557126624.jpg",
+        "itemHash": 3691881271,
+        "itemTypeName": "Rocket Launcher",
+        "dClass": "noclass",
+        "owned": false
+      },
+      {
+        "itemName": "It Stared Back",
+        "icon":
+          "/common/destiny2_content/icons/8ba6a44f16129231360d2910e60a0268.jpg",
+        "itemHash": 1018072983,
+        "itemTypeName": "Sword",
+        "dClass": "noclass",
+        "owned": false
+      }
+    ],
+    "sections": []
+  }
+]

@@ -1,5 +1,5 @@
 import queryString from 'query-string';
-import { getDestiny } from 'app/lib/destinyLegacy';
+import { getDestiny } from 'app/lib/destiny';
 
 function handleNewAuthData(data) {
   const authResponse = data;
@@ -80,7 +80,7 @@ export default function(cb) {
     console.info('Recieved auth code, getting access tokens');
 
     getDestiny(
-      'https://www.bungie.net/Platform/App/GetAccessTokensFromCode/',
+      '/Platform/App/GetAccessTokensFromCode/',
       {},
       {
         code: queryParams.code,

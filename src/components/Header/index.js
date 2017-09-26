@@ -59,87 +59,32 @@ export default class Item extends React.Component {
               <span className={styles.version}>{legacy ? '1' : '2'}</span>
             </Link>
 
-            {legacy ? (
-              [
-                <Link
-                  key="/destiny1"
-                  to="/destiny1"
-                  className={styles.navItem}
-                  activeClassName={styles.active}
-                >
-                  Strikes
-                </Link>,
+            <Link
+              to="/"
+              className={styles.navItem}
+              activeClassName={styles.active}
+            >
+              Raid
+            </Link>
 
-                <Link
-                  key="/destiny1/raid"
-                  to="/destiny1/raid"
-                  className={styles.navItem}
-                  activeClassName={styles.active}
-                >
-                  Raids
-                </Link>,
+            <Link
+              to="/gearsets"
+              className={styles.navItem}
+              activeClassName={styles.active}
+            >
+              Sets
+            </Link>
 
-                <Link
-                  key="/destiny1/kiosks"
-                  to="/destiny1/kiosks"
-                  className={styles.navItem}
-                  activeClassName={styles.active}
-                >
-                  Kiosks
-                </Link>,
-              ]
-            ) : (
-              [
-                <Link
-                  key="/"
-                  to="/"
-                  className={styles.navItem}
-                  activeClassName={styles.active}
-                >
-                  Raid
-                </Link>,
-
-                <Link
-                  key="/gearsets"
-                  to="/gearsets"
-                  className={styles.navItem}
-                  activeClassName={styles.active}
-                >
-                  Sets
-                </Link>,
-
-                <Link
-                  key="/data"
-                  to="/data"
-                  className={styles.navItem}
-                  activeClassName={styles.active}
-                >
-                  Data Explorer
-                </Link>,
-              ]
-            )}
+            <Link
+              to="/data"
+              className={styles.navItem}
+              activeClassName={styles.active}
+            >
+              Data Explorer
+            </Link>
           </div>
 
           <div className={styles.social}>
-            {legacy ? (
-              <Link to="/" className={styles.navItemSwitchGame}>
-                <span className={styles.shortName}>D2</span>
-                <span className={styles.longName}>Destiny 2</span>
-              </Link>
-            ) : (
-              <Link to="/destiny1" className={styles.navItemSwitchGame}>
-                <span className={styles.shortName}>D1</span>
-                <span className={styles.longName}>Destiny 1</span>
-              </Link>
-            )}
-
-            <button
-              className={filterButtonClassName}
-              onClick={this.toggleFilterMenu}
-            >
-              Filter <span className={styles.arrow}>▾</span>
-            </button>
-
             <a
               className={styles.socialItem}
               target="_blank"
@@ -155,38 +100,6 @@ export default class Item extends React.Component {
               <i className="fa fa-github" />
             </a>
           </div>
-        </div>
-
-        <div className={cx(styles.filter, filterMenuOpen && styles.filterOpen)}>
-          <label className={styles.filterItem}>
-            <input
-              type="checkbox"
-              name="warlock"
-              checked={this.state.filter.warlock}
-              onChange={this.onFilterChange}
-            />{' '}
-            Warlock
-          </label>
-
-          <label className={styles.filterItem}>
-            <input
-              type="checkbox"
-              name="titan"
-              checked={this.state.filter.titan}
-              onChange={this.onFilterChange}
-            />{' '}
-            Titan
-          </label>
-
-          <label className={styles.filterItem}>
-            <input
-              type="checkbox"
-              name="hunter"
-              checked={this.state.filter.hunter}
-              onChange={this.onFilterChange}
-            />{' '}
-            Hunter
-          </label>
         </div>
       </div>
     );

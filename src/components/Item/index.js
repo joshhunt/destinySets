@@ -35,35 +35,22 @@ class FancyImage extends Component {
 }
 
 export default function Item({ className, onClick, item, dev, small, tiny }) {
-  const isDestiny2 = !!item.displayProperties;
-
-  const dtrLink = isDestiny2
-    ? `http://db.destinytracker.com/d2/en/items/${item.hash}`
-    : 'http://db.destinytracker.com/items/' + item.itemHash;
+  const dtrLink = `http://db.destinytracker.com/d2/en/items/${item.hash}`;
 
   const dtrProps = {
     href: dtrLink,
     target: '_blank',
-    'data-dtr-tooltip': dev || isDestiny2 ? 'no-show' : undefined,
+    'data-dtr-tooltip': 'no-show',
   };
 
-  const rootClassName = cx(
-    styles.filterRoot,
-    small && styles.small,
-    tiny && styles.tiny
-  );
-
-  const itemClassName = cx(styles.root, {
-    [styles.obtained]: item.owned,
+  const rootClassName = cx(styles.root, {
+    [styles.small]: small,
+    [styles.tiny]: tiny,
+    [styles.obtained]: item.$obtained,
     [styles.forSale]: item.forSale,
   });
 
-  const { name, icon } = item.displayProperties || {
-    name: item.itemName,
-    icon: (item.icon || 'https://www.bungie.net/img/misc/missing_icon_d2.png')
-      .replace('https://bungie.net', '')
-      .replace('https://www.bungie.net', ''),
-  };
+  const { name, icon } = item.displayProperties;
 
   return (
     <div
@@ -71,30 +58,24 @@ export default function Item({ className, onClick, item, dev, small, tiny }) {
       className={cx(rootClassName, className)}
       data-class={item.dClass}
     >
-      <div className={itemClassName} key={item.itemHash}>
-        <div className={styles.accessory}>
+      <div className={styles.accessory}>
+        <a className={styles.link} {...dtrProps}>
+          <img
+            className={styles.image}
+            src={`https://www.bungie.net${icon}`}
+            role="presentation"
+          />
+        </a>
+      </div>
+
+      <div className={styles.main}>
+        <div className={styles.name}>
           <a className={styles.link} {...dtrProps}>
-            <img
-              className={styles.image}
-              src={`https://www.bungie.net${icon}`}
-              role="presentation"
-            />
+            {name}
           </a>
         </div>
-
-        <div className={styles.main}>
-          <div className={styles.name}>
-            <a className={styles.link} {...dtrProps}>
-              {name}
-            </a>
-          </div>
-          <div className={styles.type}>
-            {dev ? (
-              item.itemHash
-            ) : (
-              item.itemTypeName || item.itemTypeDisplayName
-            )}
-          </div>
+        <div className={styles.type}>
+          {dev ? item.itemHash : item.itemTypeName || item.itemTypeDisplayName}
         </div>
       </div>
     </div>

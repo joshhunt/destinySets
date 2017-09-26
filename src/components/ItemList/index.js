@@ -15,28 +15,27 @@ export default function ItemList(props) {
           {drops.map(item => (
             <Item
               className={styles.item}
-              key={item.itemHash || item.hash}
+              key={item.hash}
               item={item}
-              tiny={tinyItems}
+              dev={true}
             />
           ))}
         </div>
       ) : null}
 
       {sections && sections.length ? (
-        sections.map(section => (
+        sections.map((section, index) => (
           <div
             className={cx(styles.section, tinyItems && styles.inline)}
-            key={section.id}
+            key={index}
           >
             <div className={styles.sectionName}>{section.title}</div>
             <div className={styles.sectionItems}>
               {section.items.map(item => (
                 <Item
-                  className={styles.item}
                   key={item.itemHash || item.hash}
                   item={item}
-                  tiny={tinyItems}
+                  small={true}
                 />
               ))}
             </div>

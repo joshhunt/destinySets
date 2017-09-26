@@ -1,18 +1,22 @@
-.filterRoot
-  display: inline-block
-  width: 100%
-  margin-bottom: 15px
+// .filterRoot
+//   display: inline-block
+//   width: 100%
+//   margin-bottom: 15px
 
-  &:last-of-type
-    margin-bottom: 0
+//   &:last-of-type
+//     margin-bottom: 0
 
 .root
   display: flex
   color: rgba(231, 232, 232, 1.0)
   transition: all 150ms ease-in-out
+  margin-bottom: 15px
 
   &.obtained
     opacity: .35
+
+  &.small
+    display: inline-block
 
 .accessory
   flex: 0 1 auto
@@ -67,16 +71,17 @@
   color: inherit !important
 
 .small
-  margin-right: 15px
-
-  &.filterRoot
-    width: initial
+  margin: 0 5px 10px 5px
 
   &:last-of-type
     padding-right: 0
 
   .main
     display: none
+
+  .image
+    height: 55px
+    width: 55px
 
 .tiny
   margin-right: 10px

@@ -8,7 +8,6 @@ import DestinyAuthProvider from 'app/lib/DestinyAuthProvider';
 
 import Loading from 'app/views/Loading';
 import LoginUpsell from 'app/components/LoginUpsell';
-import Activity from 'app/components/Activity';
 import ActivityList from 'app/components/ActivityList';
 import Header from 'app/components/Header';
 import Footer from 'app/components/Footer';
@@ -137,7 +136,7 @@ class Drops extends Component {
       return {
         ...item,
         dClass,
-        owned: this.inventory && this.inventory.includes(itemHash),
+        $obtained: this.inventory && this.inventory.includes(itemHash),
       };
     });
   }
