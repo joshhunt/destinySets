@@ -59,6 +59,42 @@ class Gearsets extends Component {
   processSets = itemDefs => {
     const items = Object.values(itemDefs);
 
+    const itemList = hahses => {
+      return hahses
+        .map(itemHash => {
+          const item = itemDefs[itemHash];
+
+          if (!item) {
+            console.warn('Unable to find item definition for ' + itemHash);
+            return null;
+          }
+
+          return {
+            $obtained: (this.inventory || []).includes(item.hash),
+            ...item,
+          };
+        })
+        .filter(Boolean);
+    };
+
+    const rawSets = items
+      .filter(item => item.gearset)
+      .map(item => {
+        return {
+          name: item.displayProperties.name,
+          description: item.displayProperties.description,
+          sections: [
+            {
+              title: 'Drops',
+              items: itemList(item.gearset.itemList),
+            },
+          ],
+        };
+      })
+      .sort((setA, setB) => {
+        return setB.name.localeCompare(setA.name);
+      });
+
     const exotics = items
       .filter(item => {
         return (
@@ -98,21 +134,7 @@ class Gearsets extends Component {
     const groups = newSets.map(group => {
       const sets = group.sets.map(set => {
         const sections = set.sections.map(section => {
-          const items = section.items
-            .map(itemHash => {
-              const item = itemDefs[itemHash];
-
-              if (!item) {
-                console.warn('Unable to find item definition for ' + itemHash);
-                return null;
-              }
-
-              return {
-                $obtained: (this.inventory || []).includes(item.hash),
-                ...item,
-              };
-            })
-            .filter(Boolean);
+          const items = itemList(section.items);
 
           return {
             ...section,
@@ -139,6 +161,10 @@ class Gearsets extends Component {
           sets: [exoticSet],
         },
         ...groups,
+        {
+          name: 'raw',
+          sets: rawSets,
+        },
       ],
       loading: false,
     });

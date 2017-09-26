@@ -50,7 +50,8 @@ export default function Item({ className, onClick, item, dev, small, tiny }) {
     [styles.forSale]: item.forSale,
   });
 
-  const { name, icon } = item.displayProperties;
+  const { name, icon: _icon } = item.displayProperties;
+  const icon = _icon || '/img/misc/missing_icon_d2.png';
 
   return (
     <div
