@@ -1,5 +1,48 @@
 [
   {
+    "name": "Featured",
+    "sets": [
+      {
+        "name": "Leviathan Armor",
+        "description":
+          "Armor obtained by increasing your reputation with Emperor Calus.",
+        "sections": [
+          {
+            "title": "Weapons",
+            "items": [
+              2505533224,
+              3325744914,
+              3906942101,
+              1128225405,
+              3954531357,
+              3380742308,
+              3691881271,
+              1018072983
+            ]
+          },
+          {
+            "title": "Hunter armor",
+            "items": [2013109092, 1960303677, 407863747, 30962015, 3984534842]
+          },
+          {
+            "title": "Titan armor",
+            "items": [1413589586, 1879942843, 1876645653, 288406317, 574137192]
+          },
+          {
+            "title": "Warlock armor",
+            "items": [
+              2700598111,
+              2676042150,
+              3592548938,
+              2193494688,
+              3763332443
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
     "name": "Factions",
     "sets": [
       {

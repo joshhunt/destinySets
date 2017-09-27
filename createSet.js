@@ -15,14 +15,7 @@ const CLASS_TYPE = {
   [WARLOCK]: 'Warlock',
 };
 
-const SET_ITEM_HASHES = [
-  7242309,
-  7242310,
-  330159795,
-  561964760,
-  1893323658,
-  3312464851,
-];
+const SET_ITEM_HASHES = [152970995, 1034907062, 3519016320, 413219098];
 
 fetch('https://destiny.plumbing/2/en/raw/DestinyInventoryItemDefinition.json')
   .then(r => r.json())

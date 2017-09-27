@@ -6,6 +6,7 @@ import { getDefinition } from 'app/lib/manifestData';
 import * as destiny from 'app/lib/destiny';
 import Header from 'app/components/Header';
 import Loading from 'app/views/Loading';
+import LoginUpsell from 'app/components/LoginUpsell';
 import ItemTooltip from 'app/components/ItemTooltip';
 import ActivityList from 'app/components/ActivityList';
 import ProfileSwitcher from 'app/components/MembershipSelector';
@@ -21,12 +22,6 @@ const ARMOR = 20;
 const TITAN = 0;
 const HUNTER = 1;
 const WARLOCK = 2;
-
-const CLASS_TYPE = {
-  [TITAN]: 'Titan',
-  [HUNTER]: 'Hunter',
-  [WARLOCK]: 'Warlock',
-};
 
 const log = (msg, data) => {
   console.log(`%c${msg}:`, 'font-weight: bold', data);
@@ -155,17 +150,16 @@ class Gearsets extends Component {
       };
     });
 
+    // assuming 0th group is the 'featured' on
+    groups[0].sets.unshift(exoticSet);
+
     this.setState({
       groups: [
-        {
-          name: 'Exotics',
-          sets: [exoticSet],
-        },
         ...groups,
-        {
-          name: 'raw',
-          sets: rawSets,
-        },
+        // {
+        //   name: 'raw',
+        //   sets: rawSets,
+        // },
       ],
       loading: false,
     });
@@ -222,6 +216,10 @@ class Gearsets extends Component {
 
         {selectProfile && (
           <ProfileSwitcher profiles={profiles} onSelect={this.switchProfile} />
+        )}
+
+        {!this.props.isAuthenticated && (
+          <LoginUpsell>See the items you've already collected.</LoginUpsell>
         )}
 
         {/*<div className={styles.subnav}>
