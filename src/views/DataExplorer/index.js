@@ -85,6 +85,11 @@ class DataExplorer extends Component {
 
   onItemClick(item, ev) {
     ev && ev.preventDefault();
+
+    if (item.secondarySpecial) {
+      this.setState({ headerBg: item.secondarySpecial });
+    }
+
     this.setState({ dataStack: [item] });
   }
 
@@ -162,6 +167,11 @@ class DataExplorer extends Component {
 
   pushItem = item => {
     const newDataStack = [...this.state.dataStack, item];
+
+    if (item.secondarySpecial) {
+      this.setState({ headerBg: item.secondarySpecial });
+    }
+
     this.setState({ dataStack: newDataStack });
   };
 
@@ -202,7 +212,11 @@ class DataExplorer extends Component {
 
     return (
       <div className={styles.root}>
-        <Header onFilterChange={() => {}} legacy={false} />
+        <Header
+          bg={this.state.headerBg}
+          onFilterChange={() => {}}
+          legacy={false}
+        />
 
         <p className={styles.beta}>
           This page is in beta and is for developers and those who are super

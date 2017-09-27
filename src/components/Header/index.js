@@ -42,7 +42,7 @@ export default class Item extends React.Component {
   };
 
   render() {
-    const { legacy } = this.props;
+    const { legacy, bg } = this.props;
     const { filterMenuOpen } = this.state;
     const filterButtonClassName = cx(
       styles.navItem,
@@ -50,9 +50,15 @@ export default class Item extends React.Component {
       filterMenuOpen && styles.active
     );
 
+    const style = {};
+
+    if (bg) {
+      style.backgroundImage = `url(https://bungie.net${bg})`;
+    }
+
     return (
       <div className={styles.root}>
-        <div className={styles.header}>
+        <div className={styles.header} style={style}>
           <div className={styles.main}>
             <Link to="/" className={styles.siteName}>
               Destiny Sets{' '}
