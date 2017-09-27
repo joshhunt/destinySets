@@ -17,7 +17,12 @@ export default function ActivityList({
 
       <div className={styles.list}>
         {(activities || []).map((activity, index) => (
-          <div className={styles.activityWrapper} key={index}>
+          <div
+            className={cx(styles.activityWrapper, {
+              [styles.narrow]: activity.small,
+            })}
+            key={index}
+          >
             <Activity
               className={styles.activity}
               activity={activity}

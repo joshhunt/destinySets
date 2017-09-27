@@ -49,6 +49,7 @@
         "name": "Dead Orbit Arsenal",
         "description":
           "Armor obtained by working with Dead Orbit in their mission to push beyond the solar system.",
+        "small": true,
         "sections": [
           {
             "title": "Weapons",
@@ -88,6 +89,7 @@
         "name": "New Monarchy Arsenal",
         "description":
           "Weapons obtained by working with New Monarchy to strengthen the Last City.",
+        "small": true,
         "sections": [
           {
             "title": "Weapons",
@@ -119,6 +121,7 @@
         "name": "Future War Cult Arsenal",
         "description":
           "Weapons obtained by working with Future War Cult to prepare for the wars to come.",
+        "small": true,
         "sections": [
           {
             "title": "Weapons",
@@ -163,6 +166,7 @@
         "name": "European Dead Zone Gear",
         "description":
           "Weapons and armor obtained by performing tasks for Devrim Kay in the EDZ.",
+        "small": true,
         "sections": [
           {
             "title": "Titan Armor",
@@ -197,6 +201,7 @@
         "name": "Echo Mesa, Io Gear",
         "description":
           "Weapons and armor obtained by performing tasks for Asher Mir on Io.",
+        "small": true,
         "sections": [
           {
             "title": "Hunter Armour",
@@ -223,6 +228,7 @@
         "name": "New Pacific Arcology Gear",
         "description":
           "Weapons and armor obtained by performing tasks for Sloane on Titan.",
+        "small": true,
         "sections": [
           {
             "title": "Hunter Armour",
@@ -255,6 +261,7 @@
         "name": "Arcadian Valley, Nessus Gear",
         "description":
           "Weapons and armor obtained by performing tasks for Failsafe on Nessus.",
+        "small": true,
         "sections": [
           {
             "title": "Hunter Armour",

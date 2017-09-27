@@ -145,7 +145,11 @@ export function getCurrentProfile() {
 }
 
 export function collectItemsFromProfile(profile) {
-  const { characterInventories, profileInventory } = profile;
+  const {
+    characterInventories,
+    profileInventory,
+    characterEquipment,
+  } = profile;
 
   const charItems = Object.values(
     characterInventories.data
@@ -153,7 +157,13 @@ export function collectItemsFromProfile(profile) {
     return acc.concat(items.map(item => item.itemHash));
   }, []);
 
+  const equippedItems = Object.values(
+    characterEquipment.data
+  ).reduce((acc, { items }) => {
+    return acc.concat(items.map(item => item.itemHash));
+  }, []);
+
   const profileItems = profileInventory.data.items.map(item => item.itemHash);
 
-  return charItems.concat(profileItems);
+  return charItems.concat(profileItems, equippedItems);
 }

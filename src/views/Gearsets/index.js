@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { partition, groupBy } from 'lodash';
+import { groupBy } from 'lodash';
 
 import { getDefinition } from 'app/lib/manifestData';
 
@@ -129,8 +129,12 @@ class Gearsets extends Component {
 
     const groups = newSets.map(group => {
       const sets = group.sets.map(set => {
+        let maxItems = 0;
         const sections = set.sections.map(section => {
           const items = itemList(section.items);
+          if (items.length > maxItems) {
+            maxItems = items.length;
+          }
 
           return {
             ...section,
@@ -140,6 +144,7 @@ class Gearsets extends Component {
 
         return {
           ...set,
+          maxItems,
           sections,
         };
       });

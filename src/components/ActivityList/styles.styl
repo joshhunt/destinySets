@@ -29,31 +29,25 @@ $grid-padding = 15px
   @media screen and (min-width: 680px)
     width: 50%
 
+  @media screen and (min-width: 1160px)
+    &.narrow
+      width: 33.333%
+
+  @media screen and (min-width: 1560px)
+    width: 33.333%
+
+    &.narrow
+      width: 33.333%
+
+  @media screen and (min-width: 1900px)
+    &.narrow
+      width: 25%
+
 .heading
   font-weight: 400
   font-size: 22px
   margin-bottom: .1em
 
-.spacer
-  width: 600px
-  margin: 0 25px
 
-.spacerForLargeScreens
-  composes: spacer
-  display: none
-
-  @media screen and (min-width: 1950px)
-    display: block
-
-.spacerForSuperLargeScreens
-  composes: spacer
-  display: none
-
-  @media screen and (min-width: 2600px)
-    display: block
-
-.activity
-  @media screen and (max-width: 500px)
-    width: auto
-    margin-left: 10px
-    margin-right: 10px
+// @media screen and (min-width: 1950px)
+  // display: block

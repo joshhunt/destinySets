@@ -44,7 +44,12 @@ export default function Activity(props) {
         />
       )}
 
-      <ItemList drops={drops} sections={sections} tinyItems={tinyItems} />
+      <ItemList
+        className={styles.itemList}
+        drops={drops}
+        sections={sections}
+        tinyItems={tinyItems}
+      />
     </div>
   );
 }
