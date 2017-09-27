@@ -6,6 +6,7 @@ import { getDefinition } from 'app/lib/manifestData';
 import * as destiny from 'app/lib/destiny';
 import Header from 'app/components/Header';
 import Loading from 'app/views/Loading';
+import ItemTooltip from 'app/components/ItemTooltip';
 import ActivityList from 'app/components/ActivityList';
 import ProfileSwitcher from 'app/components/MembershipSelector';
 import DestinyAuthProvider from 'app/lib/DestinyAuthProvider';
@@ -204,6 +205,10 @@ class Gearsets extends Component {
     this.setState({ accountSelected: true });
   };
 
+  getTooltipContent = (...args) => {
+    console.log('getTooltipContent', args);
+  };
+
   render() {
     const { loading, selectProfile, profiles, groups } = this.state;
 
@@ -225,6 +230,36 @@ class Gearsets extends Component {
               <div className={styles.subnavItem}>{group.name}</div>
             ))}
         </div>*/}
+
+        {/*
+        <div
+          style={{
+            margin: 50,
+            padding: 0,
+            background: '#20262d',
+            display: 'inline-block',
+            borderRadius: 3,
+          }}
+        >
+          {groups && (
+            <ItemTooltip item={groups[0].sets[0].sections[0].items[0]} />
+          )}
+        </div>
+
+        <div
+          style={{
+            margin: 50,
+            padding: 0,
+            background: '#20262d',
+            display: 'inline-block',
+            borderRadius: 3,
+          }}
+        >
+          {groups && (
+            <ItemTooltip item={groups[1].sets[0].sections[0].items[0]} />
+          )}
+        </div>
+        */}
 
         {(groups || [])
           .map(group => (

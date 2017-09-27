@@ -1,0 +1,57 @@
+$padding = 10px
+
+.tooltip
+  width: 320px
+  font-size: 15px
+
+.body
+  padding: 0 $padding
+
+:global(.ToolTipPortal)
+  pointer-events: none
+
+.header
+  display: flex
+  align-items: center
+
+.img img
+  display: block
+  width: 70px
+  height: 70px
+
+.headerContent
+  margin: 0 $padding
+  flex: 1
+
+.title
+  font-size: 18px
+
+.subtitle
+  opacity: .8
+  display: flex
+  justify-content: space-between
+
+.description
+  margin: $padding 0
+
+.screenshot
+  width: 100%
+  display: block
+  margin-bottom: $padding
+
+.exotic .header
+  background: #ceae33
+
+.legendary .header
+.superior .header
+  background: #522f65
+
+.rare .header
+  background: #5076a3
+
+.common .header
+  background: #366f3c
+
+.basic .header
+  background: #c3bcb4
+  color: #1e242b

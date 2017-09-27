@@ -60,11 +60,9 @@ export default function(cb) {
     console.info('Using refresh token to get a new access token');
 
     getDestiny(
-      'https://www.bungie.net/Platform/App/GetAccessTokensFromRefreshToken/',
+      '/Platform/App/GetAccessTokensFromRefreshToken/',
       {},
-      {
-        refreshToken: prevAuthData.refreshToken,
-      }
+      { refreshToken: prevAuthData.refreshToken }
     )
       .then(handleNewAuthData)
       .then(() => {
