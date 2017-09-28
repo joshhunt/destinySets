@@ -1,7 +1,5 @@
 const API_KEY = __DESTINY_API_KEY__;
 
-const CACHE_ENABLED = false;
-
 const DESTINY_2 = 1;
 
 const componentNone = 0;
@@ -49,16 +47,6 @@ export function getDestiny(_pathname, opts = {}, postBody) {
   const url = `https://www.bungie.net${_pathname}`;
   const { pathname } = new URL(url);
 
-  const lsKey = `requestCache$$${url}`;
-  if (CACHE_ENABLED) {
-    const lsItem = localStorage.getItem(lsKey);
-    if (lsItem) {
-      const resp = JSON.parse(lsItem);
-      const result = resp.Response || resp;
-      return Promise.resolve(result);
-    }
-  }
-
   opts.headers = opts.headers || {};
   opts.headers['x-api-key'] = API_KEY;
 
@@ -85,10 +73,6 @@ export function getDestiny(_pathname, opts = {}, postBody) {
           '\nURL: ' +
           url
       );
-    }
-
-    if (CACHE_ENABLED) {
-      localStorage.setItem(lsKey, JSON.stringify(resp));
     }
 
     const result = resp.Response || resp;
