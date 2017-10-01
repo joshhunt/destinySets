@@ -137,10 +137,13 @@ class DataExplorer extends Component {
     const filteredItems = this.allItems
       .filter(item => {
         const name = (item.displayProperties.name || '').toLowerCase();
+        const description = (item.displayProperties.description || '')
+          .toLowerCase();
         const itemType = (item.itemTypeDisplayName || '').toLowerCase();
 
         return (
           name.includes(search) ||
+          description.includes(search) ||
           itemType.includes(search) ||
           item.hash === searchAsNum
         );
@@ -245,6 +248,14 @@ class DataExplorer extends Component {
             />
           ))}
         </div>
+
+        {/*<pre>
+          {items.map(item => (
+            <span style={{ display: 'block' }}>
+              {item.hash}, // {item.displayProperties.name}
+            </span>
+          ))}
+        </pre>*/}
 
         {dataStack.length > 0 && (
           <div className={styles.dataViews}>

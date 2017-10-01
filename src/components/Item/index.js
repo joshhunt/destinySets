@@ -19,37 +19,6 @@ const tooltipStyle = {
   },
 };
 
-class FancyImage extends Component {
-  state = {
-    loaded: false,
-  };
-
-  onLoad = () => {
-    this.setState({ loaded: true });
-  };
-
-  render() {
-    const { className, ...props } = this.props;
-    const styles = {
-      opacity: 0,
-      transition: 'opacity 300ms ease-in-out',
-    };
-
-    if (this.state.loaded) {
-      styles.opacity = 1;
-    }
-
-    return (
-      <img
-        className={cx(className)}
-        style={styles}
-        {...props}
-        onLoad={this.onLoad}
-      />
-    );
-  }
-}
-
 export default class Item extends Component {
   state = {
     isTooltipActive: false,
@@ -88,9 +57,6 @@ export default class Item extends Component {
         onClick={onClick}
         className={cx(rootClassName, className)}
         data-class={item.dClass}
-        id={`item${item.hash}`}
-        onMouseEnter={this.showTooltip}
-        onMouseLeave={this.hideTooltip}
       >
         <div className={styles.accessory}>
           <a className={styles.link} {...dtrProps}>
@@ -98,6 +64,9 @@ export default class Item extends Component {
               className={styles.image}
               src={`https://www.bungie.net${icon}`}
               role="presentation"
+              id={`item${item.hash}`}
+              onMouseEnter={this.showTooltip}
+              onMouseLeave={this.hideTooltip}
             />
           </a>
         </div>
@@ -125,7 +94,7 @@ export default class Item extends Component {
           parent={`#item${item.hash}`}
           className={styles.tooltip}
         >
-          <ItemTooltip item={item} />
+          <ItemTooltip key={item.hash} item={item} />
         </ToolTip>
       </div>
     );

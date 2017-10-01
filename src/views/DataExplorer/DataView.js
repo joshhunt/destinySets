@@ -68,7 +68,8 @@ export default class DataView extends Component {
             item.displayProperties.name
           ) : (
             <em>No name</em>
-          )}
+          )}&nbsp;
+          <span className={s.hash}>{item.hash}</span>
         </h2>
 
         {item.displayProperties &&

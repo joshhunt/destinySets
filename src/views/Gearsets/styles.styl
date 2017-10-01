@@ -22,10 +22,15 @@ $durationDelay = $duration / 10
   color: darken(#FFFFFF, 50%)
   // animation: appear $duration
   animation-fill-mode: both
+  text-decoration: none
+  transition: 150ms ease-in-out
 
   for i in 0..10
     &:nth-child({i})
       animation-delay: $durationDelay * (i + 5)
+
+  &:hover
+    color: darken(#FFFFFF, 10%)
 
   &.active
     color: #FFFFFF

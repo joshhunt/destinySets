@@ -15,23 +15,43 @@ const CLASS_TYPE = {
   [WARLOCK]: 'Warlock',
 };
 
-const SET_ITEM_HASHES = [152970995, 1034907062, 3519016320, 413219098];
+const SET_ITEM_HASHES = [
+  1368565477,
+  1574678248,
+  1665207901,
+  2684789946,
+  2977071352,
+];
+
+const ITEM_HASHES = [];
 
 fetch('https://destiny.plumbing/2/en/raw/DestinyInventoryItemDefinition.json')
   .then(r => r.json())
   .then(itemDefs => {
-    const sampleItem = itemDefs[SET_ITEM_HASHES[0]];
+    let sampleItem;
+    let setItems;
 
-    let setItems = SET_ITEM_HASHES.reduce((acc, setItemHash) => {
-      const setItem = itemDefs[setItemHash];
-      const items = setItem.gearset.itemList
-        .map(itemHash => itemDefs[itemHash])
-        .filter(Boolean);
+    if (ITEM_HASHES.length) {
+      sampleItem = { displayProperties: {} };
 
-      return acc.concat(items);
-    }, []);
+      setItems = ITEM_HASHES.map(itemHash => itemDefs[itemHash]);
+    } else {
+      sampleItem = itemDefs[SET_ITEM_HASHES[0]];
 
-    setItems = uniq(setItems);
+      setItems = SET_ITEM_HASHES.reduce((acc, setItemHash) => {
+        const setItem = itemDefs[setItemHash];
+        const items = setItem.gearset.itemList
+          .map(itemHash => itemDefs[itemHash])
+          .filter(Boolean);
+
+        return acc.concat(items);
+      }, []);
+    }
+
+    console.log(sampleItem);
+    console.log(setItems);
+
+    setItems = uniq(setItems, item => item.hash);
 
     const sectionItems = groupBy(setItems, item => {
       if (item.itemCategoryHashes.includes(WEAPON)) {

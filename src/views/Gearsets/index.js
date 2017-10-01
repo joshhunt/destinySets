@@ -7,14 +7,13 @@ import * as destiny from 'app/lib/destiny';
 import Header from 'app/components/Header';
 import Loading from 'app/views/Loading';
 import LoginUpsell from 'app/components/LoginUpsell';
-import ItemTooltip from 'app/components/ItemTooltip';
 import ActivityList from 'app/components/ActivityList';
 import ProfileSwitcher from 'app/components/MembershipSelector';
 import DestinyAuthProvider from 'app/lib/DestinyAuthProvider';
 
 import styles from './styles.styl';
 
-import newSets from '../sets.json';
+import newSets from '../sets.js';
 
 const WEAPON = 1;
 const ARMOR = 20;
@@ -27,23 +26,51 @@ const log = (msg, data) => {
   console.log(`%c${msg}:`, 'font-weight: bold', data);
 };
 
+function collectItemsFromKiosks(kiosks, itemDefs, vendorDefs) {
+  const hashes = [];
+
+  for (let vendorHash in kiosks) {
+    const vendor = vendorDefs[vendorHash];
+    const kiosk = kiosks[vendorHash];
+
+    const kioskItems = kiosk.map(kioskEntry => {
+      const vendorItem = vendor.itemList.find(
+        i => i.vendorItemIndex === kioskEntry.index
+      );
+      const item = itemDefs[vendorItem.itemHash];
+
+      if (kioskEntry.canAcquire) {
+        return item.hash;
+      }
+    });
+
+    hashes.push(...kioskItems);
+  }
+
+  return hashes;
+}
+
 class Gearsets extends Component {
   state = {
     loading: true,
     items: [],
     selectedItems: [],
+    filter: {
+      [TITAN]: true,
+      [HUNTER]: true,
+      [WARLOCK]: true,
+    },
   };
 
   componentDidMount() {
-    this.dataPromise = getDefinition('DestinyInventoryItemDefinition');
+    const itemDefPromise = getDefinition('DestinyInventoryItemDefinition');
+    const vendorDefPromise = getDefinition('DestinyVendorDefinition');
 
-    this.dataPromise.then(data => {
-      this.processSets(data);
+    this.dataPromise = Promise.all([itemDefPromise, vendorDefPromise]);
+
+    this.dataPromise.then(result => {
+      this.processSets(...result);
     });
-
-    if (this.props.isAuthenticated) {
-      this.fetchCharacters();
-    }
   }
 
   componentWillReceiveProps(newProps) {
@@ -52,8 +79,41 @@ class Gearsets extends Component {
     }
   }
 
-  processSets = itemDefs => {
+  processSets = (itemDefs, vendorDefs) => {
     const items = Object.values(itemDefs);
+
+    let profileKioskItems;
+    let charKioskItems;
+
+    // TODO: clean this up, move to destiny.js?
+    if (this.profile) {
+      profileKioskItems = collectItemsFromKiosks(
+        this.profile.profileKiosks.data.kioskItems,
+        itemDefs,
+        vendorDefs
+      );
+
+      charKioskItems = Object.values(
+        this.profile.characterKiosks.data
+      ).reduce((acc, charKiosk) => {
+        const itemHashes = collectItemsFromKiosks(
+          charKiosk.kioskItems,
+          itemDefs,
+          vendorDefs
+        );
+
+        acc.push(...itemHashes);
+
+        return acc;
+      }, []);
+
+      log('Profile kiosk items', profileKioskItems);
+      log('Character kiosk items', charKioskItems);
+    }
+
+    let inventory = [...(this.inventory || [])];
+    profileKioskItems && inventory.push(...profileKioskItems);
+    charKioskItems && inventory.push(...charKioskItems);
 
     const itemList = hahses => {
       return hahses
@@ -66,30 +126,30 @@ class Gearsets extends Component {
           }
 
           return {
-            $obtained: (this.inventory || []).includes(item.hash),
+            $obtained: inventory.includes(item.hash),
             ...item,
           };
         })
         .filter(Boolean);
     };
 
-    const rawSets = items
-      .filter(item => item.gearset)
-      .map(item => {
-        return {
-          name: item.displayProperties.name,
-          description: item.displayProperties.description,
-          sections: [
-            {
-              title: 'Drops',
-              items: itemList(item.gearset.itemList),
-            },
-          ],
-        };
-      })
-      .sort((setA, setB) => {
-        return setB.name.localeCompare(setA.name);
-      });
+    // const rawSets = items
+    //   .filter(item => item.gearset)
+    //   .map(item => {
+    //     return {
+    //       name: item.displayProperties.name,
+    //       description: item.hash + ' - ' + item.displayProperties.description,
+    //       sections: [
+    //         {
+    //           title: 'Drops',
+    //           items: itemList(item.gearset.itemList),
+    //         },
+    //       ],
+    //     };
+    //   })
+    //   .sort((setA, setB) => {
+    //     return setB.name.localeCompare(setA.name);
+    //   });
 
     const exotics = items
       .filter(item => {
@@ -103,7 +163,7 @@ class Gearsets extends Component {
       .map(item => {
         return {
           ...item,
-          $obtained: (this.inventory || []).includes(item.hash),
+          $obtained: inventory.includes(item.hash),
         };
       });
 
@@ -158,9 +218,63 @@ class Gearsets extends Component {
     // assuming 0th group is the 'featured' on
     groups[0].sets.unshift(exoticSet);
 
+    // fuck me, this is bad. filter all the items
+    const finalGroups = groups.reduce((groupAcc, _group) => {
+      const sets = _group.sets.reduce((setAcc, _set) => {
+        const sections = _set.sections.reduce((sectionAcc, _section) => {
+          const items = _section.items.filter(item => {
+            if (item.classType === 3) {
+              return true;
+            }
+
+            if (this.state.filter[HUNTER] && item.classType === HUNTER) {
+              return true;
+            }
+
+            if (this.state.filter[TITAN] && item.classType === TITAN) {
+              return true;
+            }
+
+            if (this.state.filter[WARLOCK] && item.classType === WARLOCK) {
+              return true;
+            }
+
+            return false;
+          });
+
+          if (items.length > 0) {
+            sectionAcc.push({
+              ..._section,
+              items,
+            });
+          }
+
+          return sectionAcc;
+        }, []);
+
+        if (sections.length > 0) {
+          setAcc.push({
+            ..._set,
+            sections,
+          });
+        }
+
+        return setAcc;
+      }, []);
+
+      if (sets.length > 0) {
+        groupAcc.push({
+          ..._group,
+          sets: sets,
+        });
+      }
+
+      return groupAcc;
+    }, []);
+
     this.setState({
       groups: [
-        ...groups,
+        ...finalGroups,
         // {
         //   name: 'raw',
         //   sets: rawSets,
@@ -193,19 +307,20 @@ class Gearsets extends Component {
   switchProfile = profile => {
     log('Active Profile', profile);
 
+    // TODO: don't put profile on here for kisosks
+    this.profile = profile;
     this.inventory = destiny.collectItemsFromProfile(profile);
 
     log('Inventory', this.inventory);
 
-    this.dataPromise.then(data => {
-      this.processSets(data);
+    this.dataPromise.then(result => {
+      this.processSets(...result);
     });
 
-    this.setState({ accountSelected: true });
-  };
-
-  getTooltipContent = (...args) => {
-    console.log('getTooltipContent', args);
+    this.setState({
+      accountSelected: true,
+      profile,
+    });
   };
 
   render() {
@@ -227,12 +342,17 @@ class Gearsets extends Component {
           <LoginUpsell>See the items you've already collected.</LoginUpsell>
         )}
 
-        {/*<div className={styles.subnav}>
-          {(groups || [])
-            .map(group => (
-              <div className={styles.subnavItem}>{group.name}</div>
-            ))}
-        </div>*/}
+        <div className={styles.subnav}>
+          {(groups || []).map((group, index) => (
+            <a
+              className={styles.subnavItem}
+              key={index}
+              href={`#group_${index}`}
+            >
+              {group.name}
+            </a>
+          ))}
+        </div>
 
         {/*
         <div
@@ -264,10 +384,11 @@ class Gearsets extends Component {
         </div>
         */}
 
-        {(groups || [])
-          .map(group => (
+        {(groups || []).map((group, index) => (
+          <div key={index} id={`group_${index}`}>
             <ActivityList title={group.name} activities={group.sets || []} />
-          ))}
+          </div>
+        ))}
       </div>
     );
   }
