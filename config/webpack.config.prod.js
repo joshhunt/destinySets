@@ -54,10 +54,7 @@ module.exports = {
   // You can exclude the *.map files from the build during deployment.
   devtool: 'source-map',
   // In production, we only want to load the polyfills and the app code.
-  entry: [
-    require.resolve('./polyfills'),
-    paths.appIndexJs,
-  ],
+  entry: [require.resolve('./polyfills'), paths.appIndexJs],
   output: {
     // The build folder.
     path: paths.appBuild,
@@ -85,7 +82,7 @@ module.exports = {
       // Support React Native Web
       // https://www.smashingmagazine.com/2016/08/a-glimpse-into-the-future-with-react-native-for-web/
       'react-native': 'react-native-web',
-      'app': paths.appSrc,
+      app: paths.appSrc,
     },
   },
 
@@ -132,8 +129,14 @@ module.exports = {
         test: /\.(js|jsx)$/,
         include: paths.appSrc,
         loader: 'babel',
-
       },
+
+      {
+        test: /(copy\-text\-to\-clipboard)/,
+        include: /node_modules/,
+        loader: 'babel',
+      },
+
       // The notation here is somewhat confusing.
       // "postcss" loader applies autoprefixer to our CSS.
       // "css" loader resolves paths in CSS and adds assets as dependencies.
@@ -148,12 +151,18 @@ module.exports = {
       // in the main CSS file.
       {
         test: /\.styl$/,
-        loader: ExtractTextPlugin.extract('style', 'css?importLoaders=2&modules!postcss!stylus')
+        loader: ExtractTextPlugin.extract(
+          'style',
+          'css?importLoaders=2&modules!postcss!stylus'
+        ),
         // Note: this won't work without `new ExtractTextPlugin()` in `plugins`.
       },
       {
         test: /\.css$/,
-        loader: ExtractTextPlugin.extract('style', 'css?importLoaders=2!postcss')
+        loader: ExtractTextPlugin.extract(
+          'style',
+          'css?importLoaders=2!postcss'
+        ),
         // Note: this won't work without `new ExtractTextPlugin()` in `plugins`.
       },
       // JSON is not enabled by default in Webpack but both Node and Browserify
@@ -182,7 +191,7 @@ module.exports = {
           'last 4 versions',
           'Firefox ESR',
           'not ie < 9', // React doesn't support IE8 anyway
-        ]
+        ],
       }),
     ];
   },
@@ -192,7 +201,7 @@ module.exports = {
     // In production, it will be an empty string unless you specify "homepage"
     // in `package.json`, in which case it will be the pathname of that URL.
     new InterpolateHtmlPlugin({
-      PUBLIC_URL: publicUrl
+      PUBLIC_URL: publicUrl,
     }),
     // Generates an `index.html` file with the <script> injected.
     new HtmlWebpackPlugin({
@@ -208,17 +217,22 @@ module.exports = {
         keepClosingSlash: true,
         minifyJS: true,
         minifyCSS: true,
-        minifyURLs: true
-      }
+        minifyURLs: true,
+      },
     }),
     // Makes some environment variables available to the JS code, for example:
     // if (process.env.NODE_ENV === 'production') { ... }. See `./env.js`.
     // It is absolutely essential that NODE_ENV was set to production here.
     // Otherwise React will be compiled in the very slow development mode.
-    new webpack.DefinePlugin(Object.assign({
-      __DESTINY_API_KEY__: JSON.stringify(appConfig.apiKey),
-      __DESTINY_AUTH_URL__: JSON.stringify(appConfig.authUrl),
-    }, env)),
+    new webpack.DefinePlugin(
+      Object.assign(
+        {
+          __DESTINY_API_KEY__: JSON.stringify(appConfig.apiKey),
+          __DESTINY_AUTH_URL__: JSON.stringify(appConfig.authUrl),
+        },
+        env
+      )
+    ),
     // This helps ensure the builds are consistent if source hasn't changed:
     new webpack.optimize.OccurrenceOrderPlugin(),
     // Try to dedupe duplicated modules, if any:
@@ -227,15 +241,15 @@ module.exports = {
     new webpack.optimize.UglifyJsPlugin({
       compress: {
         screw_ie8: true, // React doesn't support IE8
-        warnings: false
+        warnings: false,
       },
       mangle: {
-        screw_ie8: true
+        screw_ie8: true,
       },
       output: {
         comments: false,
-        screw_ie8: true
-      }
+        screw_ie8: true,
+      },
     }),
     // Note: this won't work without ExtractTextPlugin.extract(..) in `loaders`.
     new ExtractTextPlugin('static/css/[name].[contenthash:8].css'),
@@ -243,8 +257,8 @@ module.exports = {
     // to their corresponding output file so that tools can pick it up without
     // having to parse `index.html`.
     new ManifestPlugin({
-      fileName: 'asset-manifest.json'
-    })
+      fileName: 'asset-manifest.json',
+    }),
   ],
   // Some libraries import Node modules but don't use them in the browser.
   // Tell Webpack to provide empty mocks for them so importing them works.
