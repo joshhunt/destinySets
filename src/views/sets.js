@@ -346,6 +346,26 @@ module.exports = [
       },
 
       {
+        name: 'Vanguard Research Gear',
+        description:
+          'Weapons and armor obtained by  assisting Ikora Rey with her research.',
+        sections: [
+          {
+            title: 'Hunter armor',
+            items: [385045066, 555828571, 3741528736, 4224076198, 4248632159],
+          },
+          {
+            title: 'Titan armor',
+            items: [89175653, 185326970, 1490387264, 2682045448, 4081859017],
+          },
+          {
+            title: 'Warlock armor',
+            items: [868792277, 1532009197, 2615512594, 3081969019, 4285708584],
+          },
+        ],
+      },
+
+      {
         name: 'Crucible Engram',
         description: 'Contains a reward for your efforts in the Crucible.',
         sections: [

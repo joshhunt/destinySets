@@ -16,14 +16,30 @@ const CLASS_TYPE = {
 };
 
 const SET_ITEM_HASHES = [
-  1368565477,
-  1574678248,
-  1665207901,
-  2684789946,
-  2977071352,
+  // 1368565477,
+  // 1574678248,
+  // 1665207901,
+  // 2684789946,
+  // 2977071352,
 ];
 
-const ITEM_HASHES = [];
+const ITEM_HASHES = [
+  385045066, // Frumious Vest
+  555828571, // Frumious Cloak
+  3741528736, // Frumious Strides
+  4224076198, // Frumious Grips
+  4248632159, // Frumious Mask
+  89175653, // Noble Constant Mark
+  185326970, // Noble Constant Type 2
+  1490387264, // Noble Constant Type 2
+  2682045448, // Noble Constant Type 2
+  4081859017, // Noble Constant Type 2
+  868792277, // Ego Talon IV
+  1532009197, // Ego Talon IV
+  2615512594, // Ego Talon IV
+  3081969019, // Ego Talon IV
+  4285708584, // Ego Talon Bond
+];
 
 fetch('https://destiny.plumbing/2/en/raw/DestinyInventoryItemDefinition.json')
   .then(r => r.json())
@@ -48,8 +64,8 @@ fetch('https://destiny.plumbing/2/en/raw/DestinyInventoryItemDefinition.json')
       }, []);
     }
 
-    console.log(sampleItem);
-    console.log(setItems);
+    // console.log(sampleItem);
+    // console.log(setItems);
 
     setItems = uniq(setItems, item => item.hash);
 
@@ -69,7 +85,9 @@ fetch('https://destiny.plumbing/2/en/raw/DestinyInventoryItemDefinition.json')
       { title: 'Titan armor', items: sectionItems[TITAN] },
       { title: 'Warlock armor', items: sectionItems[WARLOCK] },
     ]
-      .filter(({ items }) => items.length > 0)
+      .filter(({ items }) => {
+        return items && items.length > 0;
+      })
       .map(section => {
         const items = section.items.map(item => item.hash);
         return {

@@ -86,6 +86,24 @@ class DataExplorer extends Component {
   onItemClick(item, ev) {
     ev && ev.preventDefault();
 
+    if (localStorage && localStorage.getItem('collectMode')) {
+      if (!window.collection) {
+        window.collection = [];
+      }
+
+      window.collection.push(item);
+
+      const toStr = window.collection.map(item => {
+        return `${item.hash}, // ${item.displayProperties.name}`;
+      });
+
+      window.collectionStr = toStr.join('\n');
+
+      console.log(`\n\n${window.collectionStr}`);
+
+      return;
+    }
+
     if (item.secondarySpecial) {
       this.setState({ headerBg: item.secondarySpecial });
     }
@@ -221,10 +239,18 @@ class DataExplorer extends Component {
           legacy={false}
         />
 
-        <p className={styles.beta}>
-          This page is in beta and is for developers and those who are super
-          curious. Search is limited, may be slow, and buggy.
-        </p>
+        {localStorage && localStorage.getItem('collectMode') ? (
+          <p className={styles.beta} style={{ opacity: 1, fontSize: 20 }}>
+            <strong>
+              <em>Collect mode is on.</em>
+            </strong>
+          </p>
+        ) : (
+          <p className={styles.beta}>
+            This page is in beta and is for developers and those who are super
+            curious. Search is limited, may be slow, and buggy.
+          </p>
+        )}
 
         <div className={styles.searchBox}>
           Search item
