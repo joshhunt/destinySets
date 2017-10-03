@@ -16,34 +16,19 @@ const CLASS_TYPE = {
 };
 
 const SET_ITEM_HASHES = [
-  // 1368565477,
-  // 1574678248,
-  // 1665207901,
-  // 2684789946,
-  // 2977071352,
+  959144972, // Bright Engram
+  1798676003, // Bright Engram
+  3215463713, // Bright Engram
+  3712099029, // Bright Engram
 ];
 
-const ITEM_HASHES = [
-  385045066, // Frumious Vest
-  555828571, // Frumious Cloak
-  3741528736, // Frumious Strides
-  4224076198, // Frumious Grips
-  4248632159, // Frumious Mask
-  89175653, // Noble Constant Mark
-  185326970, // Noble Constant Type 2
-  1490387264, // Noble Constant Type 2
-  2682045448, // Noble Constant Type 2
-  4081859017, // Noble Constant Type 2
-  868792277, // Ego Talon IV
-  1532009197, // Ego Talon IV
-  2615512594, // Ego Talon IV
-  3081969019, // Ego Talon IV
-  4285708584, // Ego Talon Bond
-];
+const ITEM_HASHES = [];
 
 fetch('https://destiny.plumbing/2/en/raw/DestinyInventoryItemDefinition.json')
   .then(r => r.json())
   .then(itemDefs => {
+    console.log('Loaded items:', Object.keys(itemDefs).length);
+
     let sampleItem;
     let setItems;
 
@@ -56,6 +41,17 @@ fetch('https://destiny.plumbing/2/en/raw/DestinyInventoryItemDefinition.json')
 
       setItems = SET_ITEM_HASHES.reduce((acc, setItemHash) => {
         const setItem = itemDefs[setItemHash];
+
+        if (!setItem) {
+          console.log('Unable to find item', setItemHash);
+          return acc;
+        }
+
+        if (!setItem.gearset) {
+          console.log('Item has no gearset', setItemHash);
+          return acc;
+        }
+
         const items = setItem.gearset.itemList
           .map(itemHash => itemDefs[itemHash])
           .filter(Boolean);

@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
-import DataViewer from './DataView';
+import { find } from 'lodash';
+import copy from 'copy-text-to-clipboard';
 
 import * as destiny from 'app/lib/destiny';
 import { getDefinition } from 'app/lib/manifestData';
 
+import sortItemsIntoSections from './sortItemsIntoSections';
+import DataViewer from './DataView';
 import DATA_SOURCES from './definitionSources';
 import Item from 'app/components/Item';
 import Header from 'app/components/Header';
@@ -37,6 +40,11 @@ class DataExplorer extends Component {
     selectedItems: [],
     numLoaded: 0,
     totalToLoad: DATA_SOURCES.length,
+    collectMode: false,
+  };
+
+  toggleCollectMode = () => {
+    this.setState({ collectMode: !this.state.collectMode });
   };
 
   componentDidMount() {
@@ -86,21 +94,25 @@ class DataExplorer extends Component {
   onItemClick(item, ev) {
     ev && ev.preventDefault();
 
-    if (localStorage && localStorage.getItem('collectMode')) {
+    if (this.state.collectMode) {
       if (!window.collection) {
         window.collection = [];
       }
 
       window.collection.push(item);
 
-      const toStr = window.collection.map(item => {
-        return `${item.hash}, // ${item.displayProperties.name}`;
+      const sections = sortItemsIntoSections(window.collection);
+
+      let jason = JSON.stringify(sections, null, 2);
+
+      jason.match(/(\d{5,})(,?)/g).forEach(match => {
+        const hash = +match.match(/\d+/)[0];
+        const item = find(window.collection, item => item.hash === hash);
+        const newline = match + ' // ' + item.displayProperties.name;
+        jason = jason.replace(match, newline);
       });
 
-      window.collectionStr = toStr.join('\n');
-
-      console.log(`\n\n${window.collectionStr}`);
-
+      copy(jason);
       return;
     }
 
@@ -151,6 +163,7 @@ class DataExplorer extends Component {
     }
 
     const searchAsNum = parseInt(text, 10);
+    const maxItems = text.length > 4 ? 1000 : MAX_ITEMS;
 
     const filteredItems = this.allItems
       .filter(item => {
@@ -166,7 +179,7 @@ class DataExplorer extends Component {
           item.hash === searchAsNum
         );
       })
-      .slice(0, MAX_ITEMS);
+      .slice(0, maxItems);
 
     this.setState({ items: filteredItems });
   }
@@ -212,6 +225,7 @@ class DataExplorer extends Component {
       dataStack,
       numLoaded,
       totalToLoad,
+      collectMode,
     } = this.state;
 
     if (error) {
@@ -239,18 +253,24 @@ class DataExplorer extends Component {
           legacy={false}
         />
 
-        {localStorage && localStorage.getItem('collectMode') ? (
-          <p className={styles.beta} style={{ opacity: 1, fontSize: 20 }}>
-            <strong>
-              <em>Collect mode is on.</em>
-            </strong>
-          </p>
-        ) : (
-          <p className={styles.beta}>
-            This page is in beta and is for developers and those who are super
-            curious. Search is limited, may be slow, and buggy.
-          </p>
-        )}
+        <div onClick={this.toggleCollectMode}>
+          {collectMode ? (
+            <p className={styles.beta} style={{ opacity: 1, fontSize: 20 }}>
+              <strong>
+                <em>
+                  Collect mode is on.<br />
+                  Sets will be copied to your clipboard as items are clicked.
+                  Click here again to turn off.
+                </em>
+              </strong>
+            </p>
+          ) : (
+            <p className={styles.beta}>
+              This page is in beta and is for developers and those who are super
+              curious. Search is limited, may be slow, and buggy.
+            </p>
+          )}
+        </div>
 
         <div className={styles.searchBox}>
           Search item
@@ -270,18 +290,11 @@ class DataExplorer extends Component {
               onClick={this.onItemClick.bind(this, item)}
               className={styles.item}
               key={item.hash}
+              supressTooltip={this.state.collectMode}
               item={item}
             />
           ))}
         </div>
-
-        {/*<pre>
-          {items.map(item => (
-            <span style={{ display: 'block' }}>
-              {item.hash}, // {item.displayProperties.name}
-            </span>
-          ))}
-        </pre>*/}
 
         {dataStack.length > 0 && (
           <div className={styles.dataViews}>

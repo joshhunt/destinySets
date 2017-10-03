@@ -25,7 +25,9 @@ export default class Item extends Component {
   };
 
   showTooltip = () => {
-    this.setState({ isTooltipActive: true });
+    if (!this.props.supressTooltip) {
+      this.setState({ isTooltipActive: true });
+    }
   };
   hideTooltip = () => {
     this.setState({ isTooltipActive: false });
