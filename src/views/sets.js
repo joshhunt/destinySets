@@ -488,6 +488,106 @@ module.exports = [
           },
         ],
       },
+      {
+        name: 'Hunter Specific Sets',
+        description: 'Other sets of Purple Gear obtained from Engrams',
+        sections: [
+          {
+            title: 'Dead End Cure 2.1',
+            items: [
+              3125909492,
+              1998314509,
+              316000947,
+              2669113551,
+            ]
+          },
+          {
+            title: 'Errant Knight 1.0',
+            items: [
+              2550994842,
+              493299171,
+              1024867629,
+              2414278933,
+            ]
+          },
+          {
+            title: 'Road Complex AA1',
+            items: [
+              269552461,
+              922218300,
+              1415533220,
+              308026950,
+            ]
+          }
+        ]
+      },
+      {
+        name: 'Titan Specific Sets',
+        description: 'Other sets of Purple Gear obtained from Engrams',
+        sections: [
+          {
+            title: 'Kerak Type 2',
+            items: [
+              160388292,
+              107582877,
+              2696303651,
+              2048751167,
+            ]
+          },
+          {
+            title: 'Devastation Complex',
+            items: [
+              3725654227,
+              1260134370,
+              2932121030,
+              3304280092,
+            ]
+          },
+          {
+            title: 'Retro-Grade TG2',
+            items: [
+              2525344810,
+              2530905971,
+              1364856221,
+              2265859909,
+            ]
+          },
+        ]
+      },
+      {
+        name: 'Warlock Specific Sets',
+        description: 'Other sets of Purple Gear obtained from Engrams',
+        sections: [
+          {
+            title: 'Hero Camo',
+            items: [
+              2791527489,
+              3629447000,
+              3884999792,
+              1664611474,
+            ]
+          },
+          {
+            title: 'High-Minded Complex',
+            items: [
+              993844472,
+              410671183,
+              1457647945,
+              1749589787,
+            ]
+          },
+          {
+            title: 'Philomath',
+            items: [
+              2542514983,
+              489114030,
+              683173058,
+              2996649640,
+              373203219,
+            ]
+          }
+        ]
+      }
     ],
   },
 ];
