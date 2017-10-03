@@ -315,16 +315,17 @@ module.exports = [
           {
             title: 'Weapons',
             items: [
-              1644162710,
-              339163900,
-              1960218487,
-              3445437901,
-              3582424018,
-              3967155859,
-              2290863050,
-              1200414607,
-              2168486467,
-              137879537,
+              1644162710, // Origin Story
+              1960218487, // Nameless Midnight
+              1200414607, // The Showrunner
+              3582424018, // Deadpan Delivery
+              3967155859, // The Last Dance
+              1351035691, // Daedalus Code
+              339163900, // Nightshade
+              137879537, // Curtain Call
+              2290863050, // Persuader
+              3445437901, // Main Ingredient
+              2168486467, // Wicked Sister
             ],
           },
 
