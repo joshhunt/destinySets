@@ -373,13 +373,15 @@ module.exports = [
           {
             title: 'Weapons',
             items: [
-              1048266744,
-              4193877020,
-              962412079,
-              1773600468,
-              2660862359,
-              2621637518,
-              1325579289,
+              3336215727, // Martyr's Make
+              4193877020, // Does Not Compute
+              1048266744, // Better Devils
+              1325579289, // Retrofuturist
+              962412079, // Last Perdition
+              4174481098, // Steel Sybil Z-14
+              2660862359, // Gentleman Vagabond
+              1773600468, // Critical Sass
+              2621637518, // Play of the Game
             ],
           },
           {
@@ -473,17 +475,66 @@ module.exports = [
           {
             title: 'Weapons',
             items: [
-              3778520451,
-              339343291,
-              925326392,
-              3860697508,
-              2703340117,
-              2398848320,
-              3666954563,
-              1533499360,
-              566976652,
-              896923850,
-              3748713778,
+              3778520451, // Galliard-42
+              3778520450, // Halfdan-D
+              273396910, // Frontier Justice
+              925326393, // Manannan SR4
+              925326392, // Tango-45
+              925326394, // Black Scorpion-4sr
+              3860697510, // Imset HC4
+              3860697508, // Minuet-42
+              1533499360, // Athelflad-D
+              1533499361, // Etana SI4
+              1533499362, // Urchin-3si
+              566976652, // Resonance-42
+              566976653, // Antiope-D
+              566976654, // Phosphorus MG4
+              339343291, // Cadenza-43
+              339343290, // Nergal PR4
+              3748713779, // Morrigan-D
+              3748713778, // Pentatonic-48
+              3666954562, // Veleda-D
+              3666954561, // Copperhead-4sn
+              3666954563, // Elegy-49
+              2703340117, // Somerled-D
+              2398848320, // Erentil FR4
+              896923850, // Acantha-D
+            ],
+          },
+        ],
+      },
+
+      {
+        name: 'Bright Engram, Eververse',
+        sections: [
+          {
+            title: 'Hunter armor',
+            items: [
+              1869779952, // Mask of Optimacy
+              1625986881, // Arms of Optimacy
+              369186071, // Vest of Optimacy
+              2696374963, // Legs of Optimacy
+              2497505510, // Cloak of Optimacy
+            ],
+          },
+          {
+            title: 'Titan armor',
+            items: [
+              1638376198, // Helm of Optimacy
+              652336087, // Arms of Optimacy
+              415074081, // Plate of Optimacy
+              2460870905, // Legs of Optimacy
+              1197579132, // Mark of Optimacy
+            ],
+          },
+          {
+            title: 'Warlock armor',
+            items: [
+              2956899553, // Hood of Optimacy
+              3794819064, // Arms of Optimacy
+              199852048, // Robes of Optimacy
+              1830086706, // Legs of Optimacy
+              3421974605, // Bond of Optimacy
             ],
           },
         ],
