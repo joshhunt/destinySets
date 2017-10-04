@@ -159,7 +159,7 @@ module.exports = [
         name: 'European Dead Zone Gear',
         description:
           'Weapons and armor obtained by performing tasks for Devrim Kay in the EDZ.',
-        small: true,
+        small: false,
         sections: [
           {
             title: 'Weapons',
@@ -196,7 +196,7 @@ module.exports = [
         name: 'Echo Mesa, Io Gear',
         description:
           'Weapons and armor obtained by performing tasks for Asher Mir on Io.',
-        small: true,
+        small: false,
         sections: [
           {
             title: 'Weapons',
@@ -230,7 +230,7 @@ module.exports = [
         name: 'New Pacific Arcology Gear',
         description:
           'Weapons and armor obtained by performing tasks for Sloane on Titan.',
-        small: true,
+        small: false,
         sections: [
           {
             title: 'Weapons',
@@ -270,7 +270,7 @@ module.exports = [
         name: 'Arcadian Valley, Nessus Gear',
         description:
           'Weapons and armor obtained by performing tasks for Failsafe on Nessus.',
-        small: true,
+        small: false,
         sections: [
           {
             title: 'Weapons',
@@ -305,7 +305,7 @@ module.exports = [
   },
 
   {
-    name: 'Other',
+    name: 'Vendor',
     sets: [
       {
         name: 'Vanguard Tactician Gear',
@@ -435,13 +435,13 @@ module.exports = [
           {
             title: 'Titan armor',
             items: [
-              2391227800,
+              2391227801,
               1863012880,
               934145080,
               2221648234,
               3624606676,
 
-              2391227801,
+              2391227800,
               1863012881,
               934145081,
               2221648235,
@@ -452,16 +452,16 @@ module.exports = [
             title: 'Warlock armor',
             items: [
               2964441920,
-              530515216,
-              891933382,
-              4232174818,
-              1607431126,
-
-              2964441921,
               530515217,
               891933383,
               4232174819,
               1607431127,
+
+              2964441921,
+              530515216,
+              891933382,
+              4232174818,
+              1607431126,
             ],
           },
         ],
@@ -539,110 +539,71 @@ module.exports = [
           },
         ],
       },
+    ],
+  },
+
+  {
+    name: 'Engram Sets',
+    sets: [
       {
         name: 'Hunter Specific Sets',
-        description: 'Other sets of Purple Gear obtained from Engrams',
+        description: 'Other legendary gear obtained from Engrams',
+        small: true,
         sections: [
           {
             title: 'Dead End Cure 2.1',
-            items: [
-              3125909492,
-              1998314509,
-              316000947,
-              2669113551,
-              2521426922,
-            ]
+            items: [3125909492, 1998314509, 316000947, 2669113551, 2521426922],
           },
           {
             title: 'Errant Knight 1.0',
-            items: [
-              2550994842,
-              493299171,
-              1024867629,
-              2414278933,
-              3433746208              
-            ]
+            items: [2550994842, 493299171, 1024867629, 2414278933, 3433746208],
           },
           {
             title: 'Road Complex AA1',
-            items: [
-              269552461,
-              922218300,
-              1415533220,
-              308026950,
-            ]
-          }
-        ]
+            items: [269552461, 922218300, 1415533220, 308026950],
+          },
+        ],
       },
+
       {
         name: 'Titan Specific Sets',
-        description: 'Other sets of Purple Gear obtained from Engrams',
+        description: 'Other legendary gear obtained from Engrams',
+        small: true,
         sections: [
           {
             title: 'Kerak Type 2',
-            items: [
-              160388292,
-              107582877,
-              2696303651,
-              2048751167,
-            ]
-          },
-          {
-            title: 'Devastation Complex',
-            items: [
-              3725654227,
-              1260134370,
-              2932121030,
-              3304280092,
-            ]
+            items: [160388292, 107582877, 2696303651, 2048751167],
           },
           {
             title: 'Retro-Grade TG2',
-            items: [
-              2525344810,
-              2530905971,
-              1364856221,
-              2265859909,
-              2826844112,
-            ]
+            items: [2525344810, 2530905971, 1364856221, 2265859909, 2826844112],
           },
-        ]
+          {
+            title: 'Devastation Complex',
+            items: [3725654227, 1260134370, 2932121030, 3304280092],
+          },
+        ],
       },
+
       {
         name: 'Warlock Specific Sets',
-        description: 'Other sets of Purple Gear obtained from Engrams',
+        description: 'Other legendary gear obtained from Engrams',
+        small: true,
         sections: [
           {
             title: 'Hero Camo',
-            items: [
-              2791527489,
-              3629447000,
-              3884999792,
-              1664611474,
-              2770578349
-            ]
-          },
-          {
-            title: 'High-Minded Complex',
-            items: [
-              993844472,
-              410671183,
-              1457647945,
-              1749589787,
-            ]
+            items: [2791527489, 3629447000, 3884999792, 1664611474, 2770578349],
           },
           {
             title: 'Philomath',
-            items: [
-              2542514983,
-              489114030,
-              683173058,
-              2996649640,
-              373203219,
-            ]
-          }
-        ]
-      }
+            items: [2542514983, 489114030, 683173058, 2996649640, 373203219],
+          },
+          {
+            title: 'High-Minded Complex',
+            items: [993844472, 410671183, 1457647945, 1749589787],
+          },
+        ],
+      },
     ],
   },
 ];
