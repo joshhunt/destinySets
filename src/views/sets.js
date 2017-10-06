@@ -21,16 +21,28 @@ module.exports = [
             ],
           },
           {
-            title: 'Hunter armor',
+            title: 'Hunter Armor',
             items: [2013109092, 1960303677, 407863747, 30962015, 3984534842],
           },
           {
-            title: 'Titan armor',
+            title: 'Hunter Armor - Prestige Mode',
+            items: [2013109093, 1960303676, 407863746, 30962014, 3984534843],
+          },
+          {
+            title: 'Titan Armor',
             items: [1413589586, 1879942843, 1876645653, 288406317, 574137192],
           },
           {
-            title: 'Warlock armor',
+            title: 'Titan Armor - Prestige Mode',
+            items: [1413589587, 1879942842, 1876645652, 288406316, 574137193],
+          },
+          {
+            title: 'Warlock Armor',
             items: [2700598111, 2676042150, 3592548938, 2193494688, 3763332443],
+          },
+          {
+            title: 'Warlock Armor - Prestige Mode',
+            items: [2700598110, 2676042151, 3592548939, 2193494689, 3763332442],
           },
         ],
       },
@@ -43,7 +55,7 @@ module.exports = [
       {
         name: 'Dead Orbit Arsenal',
         description:
-          'Armor obtained by working with Dead Orbit in their mission to push beyond the solar system.',
+          'Weapons and armor obtained by working with Dead Orbit in their mission to push beyond the solar system.',
         small: true,
         sections: [
           {
@@ -64,15 +76,15 @@ module.exports = [
             ],
           },
           {
-            title: 'Hunter armor',
+            title: 'Hunter Armor',
             items: [132368575, 66235782, 3146241834, 3920232320, 3783059515],
           },
           {
-            title: 'Titan armor',
+            title: 'Titan Armor',
             items: [1978760489, 4065136800, 387100392, 2760076378, 2089197765],
           },
           {
-            title: 'Warlock armor',
+            title: 'Warlock Armor',
             items: [3299588760, 3763392361, 2873960175, 4055334203, 4121118846],
           },
         ],
@@ -80,7 +92,7 @@ module.exports = [
       {
         name: 'New Monarchy Arsenal',
         description:
-          'Weapons obtained by working with New Monarchy to strengthen the Last City.',
+          'Weapons and armor obtained by working with New Monarchy to strengthen the Last City.',
         small: true,
         sections: [
           {
@@ -100,15 +112,15 @@ module.exports = [
             ],
           },
           {
-            title: 'Hunter armor',
+            title: 'Hunter Armor',
             items: [755928510, 25798127, 3323316553, 600401425, 342618372],
           },
           {
-            title: 'Titan armor',
+            title: 'Titan Armor',
             items: [3059968532, 1890693805, 2154427219, 2603069551, 106359434],
           },
           {
-            title: 'Warlock armor',
+            title: 'Warlock Armor',
             items: [316745113, 4083497488, 2436244536, 147165546, 831738837],
           },
         ],
@@ -116,7 +128,7 @@ module.exports = [
       {
         name: 'Future War Cult Arsenal',
         description:
-          'Weapons obtained by working with Future War Cult to prepare for the wars to come.',
+          'Weapons and armor obtained by working with Future War Cult to prepare for the wars to come.',
         small: true,
         sections: [
           {
@@ -136,15 +148,15 @@ module.exports = [
             ],
           },
           {
-            title: 'Hunter armor',
+            title: 'Hunter Armor',
             items: [1763431309, 2415993980, 1355893732, 1418921862, 2524181305],
           },
           {
-            title: 'Titan armor',
+            title: 'Titan Armor',
             items: [1187431263, 1162875302, 3671665226, 680327840, 3842448731],
           },
           {
-            title: 'Warlock armor',
+            title: 'Warlock Armor',
             items: [2401598772, 807866445, 3656154099, 1478665487, 1566612778],
           },
         ],
@@ -184,7 +196,6 @@ module.exports = [
             title: 'Titan Armor',
             items: [3080875433, 872284448, 10307688, 3862191322, 1712405061],
           },
-
           {
             title: 'Warlock Armor',
             items: [3764013786, 1664741411, 2724176749, 4051755349, 1304122208],
@@ -212,15 +223,15 @@ module.exports = [
             ],
           },
           {
-            title: 'Hunter Armour',
+            title: 'Hunter Armor',
             items: [2715114534, 1729074423, 1085797441, 3537609113, 1868302492],
           },
           {
-            title: 'Titan armor',
+            title: 'Titan Armor',
             items: [1370341044, 4071576013, 2523633779, 447407759, 434092458],
           },
           {
-            title: 'Warlock armor',
+            title: 'Warlock Armor',
             items: [1554079989, 229923140, 3388454204, 2160569198, 845354673],
           },
         ],
@@ -252,15 +263,15 @@ module.exports = [
             ],
           },
           {
-            title: 'Hunter Armour',
+            title: 'Hunter Armor',
             items: [1607012852, 479417869, 2380978355, 1150216911, 291437034],
           },
           {
-            title: 'Titan armor',
+            title: 'Titan Armor',
             items: [2930137294, 3955340735, 1847610489, 2876590849, 3586337076],
           },
           {
-            title: 'Warlock armor',
+            title: 'Warlock Armor',
             items: [2575848725, 1251692004, 2400621276, 2757777294, 3686454865],
           },
         ],
@@ -288,15 +299,15 @@ module.exports = [
             ],
           },
           {
-            title: 'Hunter Armour',
+            title: 'Hunter Armor',
             items: [3026265798, 2423003287, 2462524641, 3807183801, 3669590332],
           },
           {
-            title: 'Titan armor',
+            title: 'Titan Armor',
             items: [1010733668, 957928253, 177493699, 3323553887, 3754164794],
           },
           {
-            title: 'Warlock armor',
+            title: 'Warlock Armor',
             items: [2811068561, 1427620200, 2359639520, 2528959426, 1669675549],
           },
         ],
@@ -349,18 +360,18 @@ module.exports = [
       {
         name: 'Vanguard Research Gear',
         description:
-          'Weapons and armor obtained by  assisting Ikora Rey with her research.',
+          'Weapons and armor obtained by assisting Ikora Rey with her research.',
         sections: [
           {
-            title: 'Hunter armor',
+            title: 'Hunter Armor',
             items: [385045066, 555828571, 3741528736, 4224076198, 4248632159],
           },
           {
-            title: 'Titan armor',
+            title: 'Titan Armor',
             items: [89175653, 185326970, 1490387264, 2682045448, 4081859017],
           },
           {
-            title: 'Warlock armor',
+            title: 'Warlock Armor',
             items: [868792277, 1532009197, 2615512594, 3081969019, 4285708584],
           },
         ],
@@ -385,15 +396,15 @@ module.exports = [
             ],
           },
           {
-            title: 'Hunter armor',
+            title: 'Hunter Armor',
             items: [3223280471, 2296691422, 2718495762, 3140634552, 3313736739],
           },
           {
-            title: 'Titan armor',
+            title: 'Titan Armor',
             items: [2191401041, 849529384, 2815422368, 1484937602, 1742680797],
           },
           {
-            title: 'Warlock armor',
+            title: 'Warlock Armor',
             items: [1764274932, 636679949, 1333087155, 1307478991, 3538513130],
           },
         ],
@@ -417,7 +428,7 @@ module.exports = [
             ],
           },
           {
-            title: 'Hunter armor',
+            title: 'Hunter Armor',
             items: [
               400025383,
               2641591726,
@@ -433,7 +444,7 @@ module.exports = [
             ],
           },
           {
-            title: 'Titan armor',
+            title: 'Titan Armor',
             items: [
               2391227801,
               1863012880,
@@ -449,7 +460,7 @@ module.exports = [
             ],
           },
           {
-            title: 'Warlock armor',
+            title: 'Warlock Armor',
             items: [
               2964441920,
               530515217,
@@ -508,7 +519,7 @@ module.exports = [
         name: 'Bright Engram, Eververse',
         sections: [
           {
-            title: 'Hunter armor',
+            title: 'Hunter Armor',
             items: [
               1869779952, // Mask of Optimacy
               1625986881, // Arms of Optimacy
@@ -518,7 +529,7 @@ module.exports = [
             ],
           },
           {
-            title: 'Titan armor',
+            title: 'Titan Armor',
             items: [
               1638376198, // Helm of Optimacy
               652336087, // Arms of Optimacy
@@ -528,7 +539,7 @@ module.exports = [
             ],
           },
           {
-            title: 'Warlock armor',
+            title: 'Warlock Armor',
             items: [
               2956899553, // Hood of Optimacy
               3794819064, // Arms of Optimacy
@@ -547,7 +558,7 @@ module.exports = [
     sets: [
       {
         name: 'Hunter Specific Sets',
-        description: 'Other legendary gear obtained from Engrams',
+        description: 'Other legendary gear obtained from Engrams.',
         small: true,
         sections: [
           {
@@ -571,7 +582,7 @@ module.exports = [
 
       {
         name: 'Titan Specific Sets',
-        description: 'Other legendary gear obtained from Engrams',
+        description: 'Other legendary gear obtained from Engrams.',
         small: true,
         sections: [
           {
@@ -595,7 +606,7 @@ module.exports = [
 
       {
         name: 'Warlock Specific Sets',
-        description: 'Other legendary gear obtained from Engrams',
+        description: 'Other legendary gear obtained from Engrams.',
         small: true,
         sections: [
           {
