@@ -4,51 +4,9 @@ import cx from 'classnames';
 
 import styles from './styles.styl';
 
-export default class Item extends React.Component {
-  constructor(props) {
-    super(props);
-
-    const fallback = '{ "warlock": true, "titan": true, "hunter": true }';
-    const prevFilterJSON = localStorage.getItem('filter') || fallback;
-    const filter = JSON.parse(prevFilterJSON);
-
-    this.state = {
-      filterMenuOpen: false,
-      filter,
-    };
-  }
-
-  componentDidMount() {
-    this.props.onFilterChange && this.props.onFilterChange(this.state.filter);
-  }
-
-  onFilterChange = ev => {
-    const filter = {
-      ...this.state.filter,
-      [ev.target.name]: ev.target.checked,
-    };
-
-    localStorage.setItem('filter', JSON.stringify(filter));
-
-    this.setState({ ...this.state, filter });
-    this.props.onFilterChange && this.props.onFilterChange(filter);
-  };
-
-  toggleFilterMenu = () => {
-    this.setState({
-      ...this.state,
-      filterMenuOpen: !this.state.filterMenuOpen,
-    });
-  };
-
+export default class Header extends React.Component {
   render() {
-    const { legacy, bg } = this.props;
-    const { filterMenuOpen } = this.state;
-    const filterButtonClassName = cx(
-      styles.navItem,
-      styles.filterButton,
-      filterMenuOpen && styles.active
-    );
+    const { className, bg } = this.props;
 
     const style = {};
 
@@ -57,12 +15,11 @@ export default class Item extends React.Component {
     }
 
     return (
-      <div className={styles.root}>
+      <div className={cx(className, styles.root)}>
         <div className={styles.header} style={style}>
           <div className={styles.main}>
             <Link to="/" className={styles.siteName}>
-              Destiny Sets{' '}
-              <span className={styles.version}>{legacy ? '1' : '2'}</span>
+              Destiny Sets <span className={styles.version}>2</span>
             </Link>
 
             <Link
