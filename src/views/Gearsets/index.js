@@ -11,16 +11,17 @@ import ActivityList from 'app/components/ActivityList';
 import ProfileSwitcher from 'app/components/MembershipSelector';
 import DestinyAuthProvider from 'app/lib/DestinyAuthProvider';
 
+import {
+  HUNTER,
+  TITAN,
+  WARLOCK,
+  WEAPON,
+  ARMOR,
+} from 'app/views/DataExplorer/definitionSources';
+
 import styles from './styles.styl';
 
 import newSets from '../sets.js';
-
-const WEAPON = 1;
-const ARMOR = 20;
-
-const TITAN = 0;
-const HUNTER = 1;
-const WARLOCK = 2;
 
 const log = (msg, data) => {
   console.log(`%c${msg}:`, 'font-weight: bold', data);
@@ -62,7 +63,13 @@ class Gearsets extends Component {
     },
   };
 
+  inventory = [];
+
   componentDidMount() {
+    try {
+      this.inventory = JSON.parse(localStorage.getItem('inventory'));
+    } catch (e) {}
+
     const itemDefPromise = getDefinition('DestinyInventoryItemDefinition');
     const vendorDefPromise = getDefinition('DestinyVendorDefinition');
 
@@ -114,6 +121,8 @@ class Gearsets extends Component {
     let inventory = [...(this.inventory || [])];
     profileKioskItems && inventory.push(...profileKioskItems);
     charKioskItems && inventory.push(...charKioskItems);
+
+    localStorage.setItem('inventory', JSON.stringify(inventory));
 
     const itemList = hahses => {
       return hahses
@@ -339,7 +348,10 @@ class Gearsets extends Component {
         )}
 
         {!this.props.isAuthenticated && (
-          <LoginUpsell>See the items you've already collected.</LoginUpsell>
+          <LoginUpsell>
+            Log in to use your inventory to automatically check off items you've
+            obtained
+          </LoginUpsell>
         )}
 
         <div className={styles.subnav}>

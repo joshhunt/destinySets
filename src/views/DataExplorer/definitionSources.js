@@ -1,5 +1,19 @@
 const src = (url, name, ...fields) => ({ url, name, fields });
 
+export const TITAN = 0;
+export const HUNTER = 1;
+export const WARLOCK = 2;
+
+// itemCategoryHashes
+export const CLASS_ITEMS = 49;
+export const WEAPON = 1;
+export const EMBLEM = 19;
+export const ARMOR = 20;
+export const GHOST = 39;
+export const SHADER = 41;
+export const SHIP = 42;
+export const SPARROW = 43;
+
 export default [
   src(
     'DestinyInventoryItemDefinition',

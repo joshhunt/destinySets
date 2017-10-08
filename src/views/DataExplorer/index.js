@@ -5,33 +5,20 @@ import copy from 'copy-text-to-clipboard';
 import * as destiny from 'app/lib/destiny';
 import { getDefinition } from 'app/lib/manifestData';
 
-import sortItemsIntoSections from './sortItemsIntoSections';
-import DataViewer from './DataView';
-import CollectionSidebar from './CollectionSidebar';
-import DATA_SOURCES from './definitionSources';
 import Item from 'app/components/Item';
 import Header from 'app/components/Header';
 import Loading from 'app/views/Loading';
 
+import sortItemsIntoSections from './sortItemsIntoSections';
+import DataViewer from './DataView';
+import CollectionSidebar from './CollectionSidebar';
+import filterItems, { fancySearchTerms } from './filterItems';
+
+import DATA_SOURCES from './definitionSources';
+
 import DestinyAuthProvider from 'app/lib/DestinyAuthProvider';
 
 import styles from './styles.styl';
-
-const MAX_ITEMS = 50;
-
-function getRandom(arr, n) {
-  var result = new Array(n),
-    len = arr.length,
-    taken = new Array(len);
-  if (n > len)
-    throw new RangeError('getRandom: more elements taken than available');
-  while (n--) {
-    var x = Math.floor(Math.random() * len);
-    result[n] = arr[x in taken ? taken[x] : x];
-    taken[x] = --len;
-  }
-  return result;
-}
 
 class DataExplorer extends Component {
   state = {
@@ -45,12 +32,17 @@ class DataExplorer extends Component {
   };
 
   collection = [];
+  inventory = [];
 
   toggleCollectMode = () => {
     this.setState({ collectMode: !this.state.collectMode });
   };
 
   componentDidMount() {
+    try {
+      this.inventory = JSON.parse(localStorage.getItem('inventory'));
+    } catch (e) {}
+
     const dataPromises = DATA_SOURCES.map(src => getDefinition(src.url));
 
     dataPromises.forEach(p =>
@@ -74,17 +66,15 @@ class DataExplorer extends Component {
           return acc;
         }, {});
 
-        this.allItems = Object.values(this.data.itemHash.defs);
-
-        const items = getRandom(
-          this.allItems.filter(item => !item.redacted),
-          MAX_ITEMS
-        );
-
-        this.setState({
-          loading: false,
-          items,
+        this.allItems = Object.values(this.data.itemHash.defs).map(item => {
+          return {
+            $obtained: this.inventory.includes(item.hash),
+            ...item,
+          };
         });
+
+        this.setState({ loading: false });
+        this.onFilterChange();
       })
       .catch(err => {
         console.error(err);
@@ -131,67 +121,6 @@ class DataExplorer extends Component {
     });
   }
 
-  updateFilter(text) {
-    const filterItems = func => {
-      const items = this.allItems.filter(func);
-      this.setState({ items });
-    };
-
-    if (text.length === 0) {
-      const items = getRandom(
-        this.allItems.filter(item => !item.redacted),
-        MAX_ITEMS
-      );
-
-      this.setState({ items });
-      return;
-    }
-
-    if (text.length < 3) {
-      return null;
-    }
-
-    const search = text.toLowerCase();
-
-    if (search === 'is:transmat') {
-      return filterItems(
-        item =>
-          item.itemTypeDisplayName &&
-          item.itemTypeDisplayName.includes &&
-          item.itemTypeDisplayName.includes('Transmat Effect')
-      );
-    }
-
-    if (search === 'is:exotic') {
-      return filterItems(item => item.inventory.tierTypeName === 'Exotic');
-    }
-
-    if (search === 'is:legendary') {
-      return filterItems(item => item.inventory.tierTypeName === 'Legendary');
-    }
-
-    const searchAsNum = parseInt(text, 10);
-    const maxItems = text.length > 4 ? 1000 : MAX_ITEMS;
-
-    const filteredItems = this.allItems
-      .filter(item => {
-        const name = (item.displayProperties.name || '').toLowerCase();
-        const description = (item.displayProperties.description || '')
-          .toLowerCase();
-        const itemType = (item.itemTypeDisplayName || '').toLowerCase();
-
-        return (
-          name.includes(search) ||
-          description.includes(search) ||
-          itemType.includes(search) ||
-          item.hash === searchAsNum
-        );
-      })
-      .slice(0, maxItems);
-
-    this.setState({ items: filteredItems });
-  }
-
   removeItemFromCollection = itemHash => {
     this.collection = this.collection.filter(({ hash }) => {
       return hash !== itemHash;
@@ -212,7 +141,13 @@ class DataExplorer extends Component {
   };
 
   onFilterChange = ev => {
-    this.updateFilter(ev.target.value);
+    const search = ev ? ev.target.value : '';
+    const filteredItems = filterItems(search, this.allItems);
+
+    filteredItems &&
+      this.setState({
+        items: filteredItems,
+      });
   };
 
   pushItem = item => {
@@ -282,8 +217,9 @@ class DataExplorer extends Component {
                 </p>
               ) : (
                 <p className={styles.beta}>
-                  This page is in beta and is for developers and those who are
-                  super curious. Search is limited, may be slow, and buggy.
+                  Explore the entire Destiny 2 database.<br />Search by name or
+                  item hash, or by chainable search expressions:{' '}
+                  {fancySearchTerms.join(', ')}
                 </p>
               )}
             </div>
