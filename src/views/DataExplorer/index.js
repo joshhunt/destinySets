@@ -40,7 +40,7 @@ class DataExplorer extends Component {
 
   componentDidMount() {
     try {
-      this.inventory = JSON.parse(localStorage.getItem('inventory'));
+      this.inventory = JSON.parse(localStorage.getItem('inventory')) || [];
     } catch (e) {}
 
     const dataPromises = DATA_SOURCES.map(src => getDefinition(src.url));
