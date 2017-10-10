@@ -387,30 +387,30 @@ module.exports = [
           {
             title: 'Hunter armor',
             items: [
-              1526005320, // Iron Truage Boots
-              3737894478, // Iron Truage Grips
               1496224967, // Iron Truage Casque
+              3737894478, // Iron Truage Grips
               831464034, // Iron Truage Vest
+              1526005320, // Iron Truage Boots
               479917491, // Mantle of Efrideet
             ],
           },
           {
             title: 'Titan armor',
             items: [
-              691332172, // Iron Truage Gauntlets
-              1337167606, // Iron Truage Greaves
-              3865618708, // Iron Truage Plate
               1804445917, // Iron Truage Helm
+              691332172, // Iron Truage Gauntlets
+              3865618708, // Iron Truage Plate
+              1337167606, // Iron Truage Greaves
               738938985, // Radegast's Iron Sash
             ],
           },
           {
             title: 'Warlock armor',
             items: [
-              124696333, // Iron Truage Vestments
-              2674485749, // Iron Truage Legs
               2811201658, // Iron Truage Hood
               287471683, // Iron Truage Gloves
+              124696333, // Iron Truage Vestments
+              2674485749, // Iron Truage Legs
               2999505920, // Timur's Iron Bond
             ],
           },
