@@ -367,6 +367,56 @@ module.exports = [
       },
 
       {
+        name: 'Iron Banner',
+        description:
+          'Weapons and armor obtained by honoring the heroes of old in the Iron Banner Crucible tournament.',
+        sections: [
+          {
+            title: 'Weapons',
+            items: [
+              3890960908, // The Guiding Sight
+              4425887, // The Time-Worn Spire
+              1189790632, // The Steady Hand
+              2014642399, // The Forward Path
+              2909905776, // The Hero's Burden
+              3424403076, // The Fool's Remedy
+              2961807684, // The Wizened Rebuke
+            ],
+          },
+          {
+            title: 'Hunter armor',
+            items: [
+              1526005320, // Iron Truage Boots
+              3737894478, // Iron Truage Grips
+              1496224967, // Iron Truage Casque
+              831464034, // Iron Truage Vest
+              479917491, // Mantle of Efrideet
+            ],
+          },
+          {
+            title: 'Titan armor',
+            items: [
+              691332172, // Iron Truage Gauntlets
+              1337167606, // Iron Truage Greaves
+              3865618708, // Iron Truage Plate
+              1804445917, // Iron Truage Helm
+              738938985, // Radegast's Iron Sash
+            ],
+          },
+          {
+            title: 'Warlock armor',
+            items: [
+              124696333, // Iron Truage Vestments
+              2674485749, // Iron Truage Legs
+              2811201658, // Iron Truage Hood
+              287471683, // Iron Truage Gloves
+              2999505920, // Timur's Iron Bond
+            ],
+          },
+        ],
+      },
+
+      {
         name: 'Crucible Engram',
         description: 'Contains a reward for your efforts in the Crucible.',
         sections: [
