@@ -8,11 +8,42 @@ $durationDelay = $duration / 10
   opacity: .8
   margin: 20px auto 15px auto
 
-
 .subnav
-  margin: 15px 0
-  font-size: 0
+  margin: 15px 15px
+  display: flex
+  justify-content: space-between
+  align-items: center
+  flex-wrap: wrap
 
+.navsections
+  margin: 0 -15px
+
+.toggleFilters
+  color: rgba(white, .9)
+  cursor: pointer
+  padding: 5px 10px
+  transition: all 150ms ease-in-out
+
+  &:hover
+    background: rgba(white, .07)
+
+.filtersActive
+  background: rgba(white, .07)
+
+.filters
+  flex: 1 0 100%
+  display: flex
+  flex-direction: row-reverse
+
+.filterInner
+  background: rgba(white, .07)
+  padding: 10px 15px
+
+.neg
+  margin: 0 -10px
+
+.filterOpt
+  margin: 0 10px
 
 .subnavItem
   display: inline-block

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { sortBy } from 'lodash';
+import cx from 'classnames';
 
 import { getDefinition } from 'app/lib/manifestData';
 
@@ -15,6 +16,8 @@ import {
   TITAN,
   WARLOCK,
 } from 'app/views/DataExplorer/definitionSources';
+
+const HIDE_COLLECTED = -100;
 
 import { fancySearch } from 'app/views/DataExplorer/filterItems';
 import sortItemsIntoSections from 'app/views/DataExplorer/sortItemsIntoSections';
@@ -51,19 +54,33 @@ function collectItemsFromKiosks(kiosks, itemDefs, vendorDefs) {
   return hashes;
 }
 
-class Gearsets extends Component {
-  state = {
-    loading: true,
-    items: [],
-    selectedItems: [],
-    filter: {
-      [TITAN]: true,
-      [HUNTER]: true,
-      [WARLOCK]: true,
-    },
-  };
+const defaultFilter = {
+  [TITAN]: true,
+  [HUNTER]: true,
+  [WARLOCK]: true,
+  [HIDE_COLLECTED]: false,
+};
 
+class Gearsets extends Component {
   inventory = [];
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      loading: true,
+      items: [],
+      selectedItems: [],
+      displayFilters: false,
+    };
+
+    try {
+      this.state.filter =
+        JSON.parse(localStorage.getItem('filters')) || defaultFilter;
+    } catch (e) {
+      console.log(e);
+      this.state.filter = defaultFilter;
+    }
+  }
 
   componentDidMount() {
     try {
@@ -142,7 +159,7 @@ class Gearsets extends Component {
         .filter(Boolean);
     };
 
-    const groups = newSets.map(group => {
+    this.rawGroups = newSets.map(group => {
       const sets = group.sets.map(set => {
         const preSections = set.fancySearchTerm
           ? sortItemsIntoSections(fancySearch(set.fancySearchTerm, items))
@@ -169,24 +186,41 @@ class Gearsets extends Component {
       };
     });
 
+    const filteredGroups = this.filterGroups(this.rawGroups);
+
+    const emblem = itemDefs[this.emblemHash];
+    const emblemBg = emblem && emblem.secondarySpecial;
+
+    this.setState({
+      emblemBg,
+      loading: false,
+      groups: filteredGroups,
+    });
+  };
+
+  filterGroups = (rawGroups, filter = this.state.filter) => {
     // fuck me, this is bad. filter all the items
-    const finalGroups = groups.reduce((groupAcc, _group) => {
+    const finalGroups = rawGroups.reduce((groupAcc, _group) => {
       const sets = _group.sets.reduce((setAcc, _set) => {
         const sections = _set.sections.reduce((sectionAcc, _section) => {
           const items = _section.items.filter(item => {
+            if (filter[HIDE_COLLECTED] && item.$obtained) {
+              return false;
+            }
+
             if (item.classType === 3) {
               return true;
             }
 
-            if (this.state.filter[HUNTER] && item.classType === HUNTER) {
+            if (filter[HUNTER] && item.classType === HUNTER) {
               return true;
             }
 
-            if (this.state.filter[TITAN] && item.classType === TITAN) {
+            if (filter[TITAN] && item.classType === TITAN) {
               return true;
             }
 
-            if (this.state.filter[WARLOCK] && item.classType === WARLOCK) {
+            if (filter[WARLOCK] && item.classType === WARLOCK) {
               return true;
             }
 
@@ -223,23 +257,7 @@ class Gearsets extends Component {
       return groupAcc;
     }, []);
 
-    const emblem = itemDefs[this.emblemHash];
-    let emblemBg;
-    if (emblem) {
-      emblemBg = emblem.secondarySpecial;
-    }
-
-    this.setState({
-      groups: [
-        ...finalGroups,
-        // {
-        //   name: 'raw',
-        //   sets: rawSets,
-        // },
-      ],
-      emblemBg,
-      loading: false,
-    });
+    return finalGroups;
   };
 
   fetchCharacters = (props = this.props) => {
@@ -304,8 +322,34 @@ class Gearsets extends Component {
     });
   };
 
+  toggleFilter = () => {
+    this.setState({ displayFilters: !this.state.displayFilters });
+  };
+
+  toggleFilterValue = filterValue => {
+    const newFilter = {
+      ...this.state.filter,
+      [filterValue]: !this.state.filter[filterValue],
+    };
+    const filteredGroups = this.filterGroups(this.rawGroups, newFilter);
+
+    localStorage.setItem('filters', JSON.stringify(newFilter));
+
+    this.setState({
+      groups: filteredGroups,
+      filter: newFilter,
+    });
+  };
+
   render() {
-    const { loading, profile, profiles, groups, emblemBg } = this.state;
+    const {
+      loading,
+      profile,
+      profiles,
+      groups,
+      emblemBg,
+      displayFilters,
+    } = this.state;
 
     if (loading) {
       return <Loading>Loading...</Loading>;
@@ -328,46 +372,72 @@ class Gearsets extends Component {
         )}
 
         <div className={styles.subnav}>
-          {(groups || []).map((group, index) => (
-            <a
-              className={styles.subnavItem}
-              key={index}
-              href={`#group_${index}`}
-            >
-              {group.name}
-            </a>
-          ))}
-        </div>
+          <div className={styles.navsections}>
+            {(groups || []).map((group, index) => (
+              <a
+                className={styles.subnavItem}
+                key={index}
+                href={`#group_${index}`}
+              >
+                {group.name}
+              </a>
+            ))}
+          </div>
 
-        {/*
-        <div
-          style={{
-            margin: 50,
-            padding: 0,
-            background: '#20262d',
-            display: 'inline-block',
-            borderRadius: 3,
-          }}
-        >
-          {groups && (
-            <ItemTooltip item={groups[0].sets[0].sections[0].items[0]} />
+          <div
+            className={cx(
+              styles.toggleFilters,
+              displayFilters && styles.filtersActive
+            )}
+            onClick={this.toggleFilter}
+          >
+            Filters <i className="fa fa-caret-down" aria-hidden="true" />
+          </div>
+
+          {displayFilters && (
+            <div className={styles.filters}>
+              <div className={styles.filterInner}>
+                <div className={styles.neg}>
+                  <label className={styles.filterOpt}>
+                    <input
+                      type="checkbox"
+                      checked={this.state.filter[HUNTER]}
+                      onChange={() => this.toggleFilterValue(HUNTER)}
+                    />{' '}
+                    Hunter
+                  </label>
+
+                  <label className={styles.filterOpt}>
+                    <input
+                      type="checkbox"
+                      checked={this.state.filter[TITAN]}
+                      onChange={() => this.toggleFilterValue(TITAN)}
+                    />{' '}
+                    Titan
+                  </label>
+
+                  <label className={styles.filterOpt}>
+                    <input
+                      type="checkbox"
+                      checked={this.state.filter[WARLOCK]}
+                      onChange={() => this.toggleFilterValue(WARLOCK)}
+                    />{' '}
+                    Warlock
+                  </label>
+
+                  <label className={styles.filterOpt}>
+                    <input
+                      type="checkbox"
+                      checked={this.state.filter[HIDE_COLLECTED]}
+                      onChange={() => this.toggleFilterValue(HIDE_COLLECTED)}
+                    />{' '}
+                    Hide collected
+                  </label>
+                </div>
+              </div>
+            </div>
           )}
         </div>
-
-        <div
-          style={{
-            margin: 50,
-            padding: 0,
-            background: '#20262d',
-            display: 'inline-block',
-            borderRadius: 3,
-          }}
-        >
-          {groups && (
-            <ItemTooltip item={groups[1].sets[0].sections[0].items[0]} />
-          )}
-        </div>
-        */}
 
         {(groups || []).map((group, index) => (
           <div key={index} id={`group_${index}`}>
