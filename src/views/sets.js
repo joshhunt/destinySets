@@ -611,7 +611,11 @@ module.exports = [
           },
           {
             title: 'Road Complex AA1',
-            items: [269552461, 922218300, 1415533220, 308026950],
+            items: [269552461, 922218300, 1415533220, 308026950, 2159363321],
+          },
+          {
+            title: 'Icarus Drifter - PS4 Exclusive',
+            items: [155832748, 3646674533, 3066593211, 3569443559, 1847870034],
           },
         ],
       },
@@ -623,7 +627,7 @@ module.exports = [
         sections: [
           {
             title: 'Kerak Type 2',
-            items: [160388292, 107582877, 2696303651, 2048751167],
+            items: [160388292, 107582877, 2696303651, 2048751167, 1978110490],
           },
           {
             title: 'Retro-Grade TG2',
@@ -631,7 +635,11 @@ module.exports = [
           },
           {
             title: 'Devastation Complex',
-            items: [3725654227, 1260134370, 2932121030, 3304280092],
+            items: [3725654227, 1260134370, 2932121030, 3304280092, 3250112431],
+          },
+          {
+            title: 'Terra Concord - PS4 Exclusive',
+            items: [690335398, 3999262583, 3291075521, 1512829977, 4073580572],
           },
         ],
       },
@@ -651,7 +659,167 @@ module.exports = [
           },
           {
             title: 'High-Minded Complex',
-            items: [993844472, 410671183, 1457647945, 1749589787],
+            items: [993844472, 410671183, 1457647945, 1749589787, 2082184158],
+          },
+          {
+            title: 'Tesseract Trace - PS4 Exclusive',
+            items: [2811180959, 3169402598, 4092393610, 2728535008, 434243995],
+          },
+        ],
+      },
+    ],
+  },
+  {
+    name: 'Shells, Sparrows and Ships',
+    sets: [
+      {
+        name: 'Ghost Shells',
+        description: 'Legendary ghost shells from various sources.',
+        small: true,
+        sections: [
+          {
+            title: 'Bright Engrams, Eververse',
+            items: [
+              2833999140, // Lambda Shell
+              2833999141, // Avalon Shell
+              2833999142, // Tower Shell
+              2833999143, // Blue Moon Shell
+              2833999136, // Number Two Shell
+              2833999137, // Starfire Shell
+              2833999138, // Jagged Shell
+              2833999139, // Kingfisher Shell
+              2833999148, // Graylight Shell
+              2833999149, // Heraldic Shell
+              261110031, // Hunter Shell
+              261110030, // Warlock Shell
+              261110029, // Competitive Shell
+              261110028, // Lotus Shell
+              261110027, // Titan Shell
+              261110026, // Honeycomb Shell
+              261110025, // Two of Diamonds Shell
+              261110024, // Bold Shell
+              261110023, // Half-Submerged Shell
+              261110022, // Interchange Shell
+              277887714, // Crescent Shell
+              277887715, // Hemisphere Shell
+              277887712, // Aggressive Shell
+              277887713, // Twilight Shell
+              277887718, // Vertical Shell
+             ],
+          },
+          {
+            title: 'Other Legendary Ghosts',
+            items: [
+              997920961, // Last City Shell
+              1843730201, // Kill-Tracker Ghost
+            ],
+          },
+        ],
+      },
+      {
+        name: 'Sparrows',
+        description: 'Sparrows from various sources.',
+        small: true,
+        sections: [
+          {
+            title: 'Bright Engrams, Eververse',
+            items: [
+              // Exotic
+              807458183, // Vanishing Point
+              807458182, // Dinas Emrys
+              807458181, // Hastilude
+              // Legendary
+              3889183914, // Fast Track
+              3889183915, // Crucible Courser
+              3889183912, // Athwart the Void
+              3889183913, // Aeon Plume
+              3889183918, // Wavechaser
+              3889183919, // Soul Velocity
+              3889183916, // Angel Bloom
+              3889183917, // Speedpunk
+              3889183906, // Chronoglass
+              3889183907, // Wind Shrike
+              2546958593, // October Dash
+              2546958592, // Sagittarius
+              2546958595, // Noble Steed
+              2546958594, // Telluride
+              2546958597, // Skedaddle
+              2546958596, // Lunadove
+              2546958599, // Hightail
+              2546958598, // Wave-Maker
+              // Rare
+              904825093, // Wayfarer Delta
+              904825092, // Wayfarer Tri
+              904825095, // On Guard
+              904825094, // Warbird
+              904825089, // Hyperion
+              904825088, // Dead-End Pro
+             ],
+          },
+          {
+            title: 'Amanda Holliday',
+            items: [
+              238898903, // Wayfarer Zero
+              238898902, // Starchaser Zero
+              238898901, // Moonrider Zero
+              3875012143, // Athena Victorious
+            ],
+          },
+        ],
+      },
+      {
+        name: 'Ships',
+        description: 'Ships from various sources.',
+        small: true,
+        sections: [
+          {
+            title: 'Bright Engrams, Eververse',
+            items: [
+              // Exotic
+              2503134037, // Eriana's Vengeance
+              838210459, // Symmetry Flight
+              4209989368, // Takanome Wings
+              96858972, // Ego and Squid
+              3213307847, // The Bandwagon
+              1104161649, // Rose and Bone
+              // Legendary
+              2503134032, // BreakPoint
+              2503134033, // City Apex
+              2503134038, // Cardinal One
+              2503134039, // Talon Blue
+              2503134036, // Shadowed Dawn
+              2503134042, // Helios Strain
+              2503134043, // Starling Bolt
+              838210457, // Imprint
+              838210456, // Alessa
+              4209989372, // Dead Fall
+              4209989373, // Sojourner
+              4209989370, // Captain Nemo
+              4209989371, // Alexandria
+              4209989369, // Absolute/MN
+              4209989366, // Amplitude/PT
+              4209989367, // Cartesian/KO
+              96858973, // Ordinate/VD
+              3213307843, // Leonid MV
+              3213307842, // Zenith SV
+              3213307845, // Eos Rapture
+              3213307844, // Space-Age Lancelot
+              3213307846, // Spectral Gain
+              3213307849, // Verona Mesh
+              3213307848, // High Line
+              1104161648, // Tidal Dawn
+             ],
+          },
+          {
+            title: 'Amanda Holliday',
+            items: [
+              4209989374, // Nautilus Zero
+              4209989375, // Odyssey Zero
+              2503134034, // Echo Zero
+              2503134035, // Vector Zero
+              3213307841, // Minerva Zero
+              3213307840, // Leopard Zero
+            ],
           },
         ],
       },
