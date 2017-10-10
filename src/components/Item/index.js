@@ -3,7 +3,7 @@ import cx from 'classnames';
 
 import ItemTooltip from 'app/components/ItemTooltip';
 
-import ToolTip from 'react-portal-tooltip';
+import ToolTip from 'app/components/ReactPortalTooltip';
 
 import styles from './styles.styl';
 
@@ -95,6 +95,7 @@ export default class Item extends Component {
           arrow="center"
           parent={`#item${item.hash}`}
           className={styles.tooltip}
+          tooltipTimeout={200}
         >
           <ItemTooltip key={item.hash} item={item} />
         </ToolTip>
