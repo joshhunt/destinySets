@@ -370,6 +370,51 @@ module.exports = [
     name: 'Vendor',
     sets: [
       {
+        name: 'Trials of the Nine',
+        description:
+          'Weapons and armor obtained by competing in the Trials of the Nine.',
+        sections: [
+          {
+            title: 'Weapons',
+            items: [
+              174804902,
+              1187594590,
+              1825472717,
+              1879212552,
+              1909527966,
+              2094938673,
+              2850415209,
+              3854037061,
+            ],
+          },
+          {
+            title: 'Hunter Armor',
+            items: [400025383, 2641591726, 548290754, 854160040, 238320914],
+          },
+          {
+            title: 'Hunter Armor - Flawless',
+            items: [400025382, 2641591727, 548290755, 854160041, 238320915],
+          },
+          {
+            title: 'Titan Armor',
+            items: [2391227801, 1863012880, 934145080, 2221648234, 3624606676],
+          },
+          {
+            title: 'Titan Armor - Flawless',
+            items: [2391227800, 1863012881, 934145081, 2221648235, 3624606677],
+          },
+          {
+            title: 'Warlock Armor',
+            items: [2964441920, 530515217, 891933383, 4232174819, 1607431127],
+          },
+          {
+            title: 'Warlock Armor - Flawless',
+            items: [2964441921, 530515216, 891933382, 4232174818, 1607431126],
+          },
+        ],
+      },
+
+      {
         name: 'Vanguard Tactician Gear',
         description:
           'Weapons and armor obtained by carrying out special operations for Zavala.',
@@ -461,49 +506,6 @@ module.exports = [
         ],
       },
 
-      {
-        name: 'Trials of the Nine',
-        description: 'Gear obtained by competing in the Trials of the Nine.',
-        sections: [
-          {
-            title: 'Weapons',
-            items: [
-              174804902,
-              1187594590,
-              1825472717,
-              1879212552,
-              1909527966,
-              2094938673,
-              2850415209,
-              3854037061,
-            ],
-          },
-          {
-            title: 'Hunter Armor',
-            items: [400025383, 2641591726, 548290754, 854160040, 238320914],
-          },
-          {
-            title: 'Hunter Armor - Flawless',
-            items: [400025382, 2641591727, 548290755, 854160041, 238320915],
-          },
-          {
-            title: 'Titan Armor',
-            items: [2391227801, 1863012880, 934145080, 2221648234, 3624606676],
-          },
-          {
-            title: 'Titan Armor - Flawless',
-            items: [2391227800, 1863012881, 934145081, 2221648235, 3624606677],
-          },
-          {
-            title: 'Warlock Armor',
-            items: [2964441920, 530515217, 891933383, 4232174819, 1607431127],
-          },
-          {
-            title: 'Warlock Armor - Flawless',
-            items: [2964441921, 530515216, 891933382, 4232174818, 1607431126],
-          },
-        ],
-      },
       {
         name: 'Gunsmith Arsenal',
         description:
