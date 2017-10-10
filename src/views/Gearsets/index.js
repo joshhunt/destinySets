@@ -7,7 +7,6 @@ import Header from 'app/components/Header';
 import Loading from 'app/views/Loading';
 import LoginUpsell from 'app/components/LoginUpsell';
 import ActivityList from 'app/components/ActivityList';
-import ProfileSwitcher from 'app/components/MembershipSelector';
 import DestinyAuthProvider from 'app/lib/DestinyAuthProvider';
 
 import {
@@ -144,18 +143,12 @@ class Gearsets extends Component {
 
     const groups = newSets.map(group => {
       const sets = group.sets.map(set => {
-        let maxItems = 0;
-
         const preSections = set.fancySearchTerm
           ? sortItemsIntoSections(fancySearch(set.fancySearchTerm, items))
           : set.sections;
 
         const sections = preSections.map(section => {
           const items = itemList(section.items);
-
-          if (items.length > maxItems) {
-            maxItems = items.length;
-          }
 
           return {
             ...section,
@@ -165,7 +158,6 @@ class Gearsets extends Component {
 
         return {
           ...set,
-          maxItems,
           sections,
         };
       });
@@ -249,13 +241,22 @@ class Gearsets extends Component {
 
     destiny.getCurrentProfiles().then(profiles => {
       log('Profiles', profiles);
-      this.setState({ accountLoading: false });
+      this.setState({ profiles, accountLoading: false });
 
-      if (profiles.length > 1) {
-        this.setState({
-          selectProfile: true,
-          profiles,
+      const lsValue = localStorage.getItem('selectedAccount') || '';
+      const [membershipId, membershipType] = lsValue.split('|');
+
+      if (membershipId && membershipType) {
+        const prevProfile = profiles.find(profile => {
+          return (
+            profile.profile.data.userInfo.membershipId.toString() ===
+              membershipId &&
+            profile.profile.data.userInfo.membershipType.toString() ===
+              membershipType
+          );
         });
+
+        this.switchProfile(prevProfile);
       } else {
         this.switchProfile(profiles[0]);
       }
@@ -264,6 +265,11 @@ class Gearsets extends Component {
 
   switchProfile = profile => {
     log('Active Profile', profile);
+
+    const token = `${profile.profile.data.userInfo.membershipId}|${profile
+      .profile.data.userInfo.membershipType}`;
+
+    localStorage.setItem('selectedAccount', token);
 
     // TODO: don't put profile on here for kisosks
     this.profile = profile;
@@ -282,7 +288,7 @@ class Gearsets extends Component {
   };
 
   render() {
-    const { loading, selectProfile, profiles, groups } = this.state;
+    const { loading, profile, profiles, groups } = this.state;
 
     if (loading) {
       return <Loading>Loading...</Loading>;
@@ -290,11 +296,11 @@ class Gearsets extends Component {
 
     return (
       <div className={styles.root}>
-        <Header onFilterChange={() => {}} legacy={false} />
-
-        {selectProfile && (
-          <ProfileSwitcher profiles={profiles} onSelect={this.switchProfile} />
-        )}
+        <Header
+          profile={profile}
+          profiles={profiles}
+          onChangeProfile={this.switchProfile}
+        />
 
         {!this.props.isAuthenticated && (
           <LoginUpsell>

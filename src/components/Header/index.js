@@ -4,9 +4,31 @@ import cx from 'classnames';
 
 import styles from './styles.styl';
 
+const PLATFORM = {
+  1: 'Xbox',
+  2: 'PlayStation',
+  4: 'PC (Blizzard)',
+  10: 'TigerDemon',
+  254: 'BungieNext',
+};
+
 export default class Header extends React.Component {
+  state = {
+    accountSwitcherActive: false,
+  };
+
+  toggleAccountSwitcher = () => {
+    this.setState({
+      accountSwitcherActive: !this.state.accountSwitcherActive,
+    });
+  };
+
+  switchProfile = newProfile => {
+    this.props.onChangeProfile(newProfile);
+  };
+
   render() {
-    const { className, bg } = this.props;
+    const { className, bg, profile } = this.props;
 
     const style = {};
 
@@ -35,11 +57,48 @@ export default class Header extends React.Component {
               className={styles.navItem}
               activeClassName={styles.active}
             >
-              Data Explorer
+              Data <span className={styles.longName}>Explorer</span>
             </Link>
           </div>
 
           <div className={styles.social}>
+            {profile && (
+              <div
+                className={styles.accountSwitcher}
+                onClick={this.toggleAccountSwitcher}
+              >
+                <div className={styles.account}>
+                  <div className={styles.displayName}>
+                    {profile.profile.data.userInfo.displayName}
+                  </div>
+                  <div className={styles.platform}>
+                    {PLATFORM[profile.profile.data.userInfo.membershipType]}
+                  </div>
+                </div>
+                <div className={styles.switchButton}>
+                  <i className="fa fa-caret-down" aria-hidden="true" />
+                </div>
+
+                {this.state.accountSwitcherActive && (
+                  <div className={styles.accountsDropdown}>
+                    {this.props.profiles.map(prof => (
+                      <div
+                        className={cx(styles.account, styles.dropdownAccount)}
+                        onClick={() => this.switchProfile(prof)}
+                      >
+                        <div className={styles.displayName}>
+                          {prof.profile.data.userInfo.displayName}
+                        </div>
+                        <div className={styles.platform}>
+                          {PLATFORM[prof.profile.data.userInfo.membershipType]}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+            )}
+
             <a
               className={styles.socialItem}
               target="_blank"
