@@ -20,6 +20,7 @@ export default function ActivityList({
           <div
             className={cx(styles.activityWrapper, {
               [styles.narrow]: activity.small,
+              [styles.big]: activity.big,
             })}
             key={index}
           >

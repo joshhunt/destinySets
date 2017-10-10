@@ -188,6 +188,7 @@ class Gearsets extends Component {
 
     const exoticSet = {
       name: 'Exotics',
+      big: true,
       sections: [
         { title: 'Weapons', items: exoticsByType.weapon },
         { title: 'Hunter armor', items: exoticsByType[HUNTER] },
@@ -225,7 +226,8 @@ class Gearsets extends Component {
     });
 
     // assuming 0th group is the 'featured' on
-    groups[0].sets.unshift(exoticSet);
+    // groups[0].sets.unshift(exoticSet);
+    groups[groups.length - 1].sets.push(exoticSet);
 
     // fuck me, this is bad. filter all the items
     const finalGroups = groups.reduce((groupAcc, _group) => {
