@@ -655,6 +655,13 @@ module.exports = [
           },
         ],
       },
+
+      {
+        name: 'Exotics',
+        big: true,
+        fancySearchTerm: 'is:exotic is:gear',
+        sections: [],
+      },
     ],
   },
 ];

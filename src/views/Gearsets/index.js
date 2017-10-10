@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { groupBy } from 'lodash';
 
 import { getDefinition } from 'app/lib/manifestData';
 
@@ -15,9 +14,10 @@ import {
   HUNTER,
   TITAN,
   WARLOCK,
-  WEAPON,
-  ARMOR,
 } from 'app/views/DataExplorer/definitionSources';
+
+import { fancySearch } from 'app/views/DataExplorer/filterItems';
+import sortItemsIntoSections from 'app/views/DataExplorer/sortItemsIntoSections';
 
 import styles from './styles.styl';
 
@@ -142,66 +142,17 @@ class Gearsets extends Component {
         .filter(Boolean);
     };
 
-    // const rawSets = items
-    //   .filter(item => item.gearset)
-    //   .map(item => {
-    //     return {
-    //       name: item.displayProperties.name,
-    //       description: item.hash + ' - ' + item.displayProperties.description,
-    //       sections: [
-    //         {
-    //           title: 'Drops',
-    //           items: itemList(item.gearset.itemList),
-    //         },
-    //       ],
-    //     };
-    //   })
-    //   .sort((setA, setB) => {
-    //     return setB.name.localeCompare(setA.name);
-    //   });
-
-    const exotics = items
-      .filter(item => {
-        return (
-          item.inventory.tierTypeName === 'Exotic' &&
-          item.itemCategoryHashes.length > 1 &&
-          (item.itemCategoryHashes.includes(WEAPON) ||
-            item.itemCategoryHashes.includes(ARMOR))
-        );
-      })
-      .map(item => {
-        return {
-          ...item,
-          $obtained: inventory.includes(item.hash),
-        };
-      });
-
-    const exoticsByType = groupBy(exotics, item => {
-      if (item.itemCategoryHashes.includes(WEAPON)) {
-        return 'weapon';
-      } else if (item.itemCategoryHashes.includes(ARMOR)) {
-        return item.classType;
-      } else {
-        return 'lolidk';
-      }
-    });
-
-    const exoticSet = {
-      name: 'Exotics',
-      big: true,
-      sections: [
-        { title: 'Weapons', items: exoticsByType.weapon },
-        { title: 'Hunter armor', items: exoticsByType[HUNTER] },
-        { title: 'Titan armor', items: exoticsByType[TITAN] },
-        { title: 'Warlock armor', items: exoticsByType[WARLOCK] },
-      ],
-    };
-
     const groups = newSets.map(group => {
       const sets = group.sets.map(set => {
         let maxItems = 0;
-        const sections = set.sections.map(section => {
+
+        const preSections = set.fancySearchTerm
+          ? sortItemsIntoSections(fancySearch(set.fancySearchTerm, items))
+          : set.sections;
+
+        const sections = preSections.map(section => {
           const items = itemList(section.items);
+
           if (items.length > maxItems) {
             maxItems = items.length;
           }
@@ -224,10 +175,6 @@ class Gearsets extends Component {
         sets,
       };
     });
-
-    // assuming 0th group is the 'featured' on
-    // groups[0].sets.unshift(exoticSet);
-    groups[groups.length - 1].sets.push(exoticSet);
 
     // fuck me, this is bad. filter all the items
     const finalGroups = groups.reduce((groupAcc, _group) => {

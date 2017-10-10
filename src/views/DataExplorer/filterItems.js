@@ -72,6 +72,13 @@ export const fancySearchFns = {
     return items.filter(itemCategory(ARMOR));
   },
 
+  'is:gear': items => {
+    return items.filter(item => {
+      const categories = item.itemCategoryHashes || [];
+      return categories.includes(ARMOR) || categories.includes(WEAPON);
+    });
+  },
+
   'is:ghost': items => {
     return items.filter(itemCategory(GHOST));
   },
@@ -122,7 +129,7 @@ export const fancySearchFns = {
 
 export const fancySearchTerms = Object.keys(fancySearchFns);
 
-function fancySearch(search, allItems) {
+export function fancySearch(search, allItems) {
   const queries = search.split(' ').filter(s => s.includes(':'));
 
   const filteredItems = queries.reduce((items, query) => {
