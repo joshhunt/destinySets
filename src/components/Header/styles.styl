@@ -1,6 +1,7 @@
 $baseColour = rgba(11, 13, 16, 1.0)
 $bgColour = lighten($baseColour, 4%)
 $filterColour = lighten($baseColour, 10%)
+$activeBg = rgba(white, .1)
 $edgePadding = 15px
 
 .header
@@ -32,7 +33,7 @@ $edgePadding = 15px
   align-items: center
 
   &:hover
-    background: rgba(white, .05)
+    background: $activeBg
 
   &.active
     position: relative
@@ -89,42 +90,6 @@ $edgePadding = 15px
   @media screen and (min-width: 680px)
     display: inline
 
-.filter
-  padding: 0 10px
-  background: $filterColour
-  transition: all 150ms ease-in-out
-  height: 0
-  overflow: hidden
-
-.filterOpen
-  height: 44px
-
-.filterButton
-  background: $bgColour
-  text-color: inherit
-  border: none
-  font-size: inherit
-  color: #dadada
-  cursor: pointer
-  font-size: .9em
-  outline: none !important
-  margin-right: 15px
-
-  &.active
-    background: lighten($baseColour, 10%)
-
-    &:after
-      display: none !important
-
-.filterItem
-  padding: 10px
-  display: inline-block
-  transition: all 150ms ease-in-out
-
-  &:hover
-    background: lighten($filterColour, 7%)
-
-
 // account switcher stuff
 .accountSwitcher
   display: flex
@@ -135,7 +100,7 @@ $edgePadding = 15px
   position: relative
 
   &:hover
-    background: rgba(white, .05)
+    background: $activeBg
 
 .displayName
   font-size: .85em
@@ -162,4 +127,4 @@ $edgePadding = 15px
   font-size: 18px
 
   &:hover
-    background: rgba(white, .05)
+    background: $activeBg
