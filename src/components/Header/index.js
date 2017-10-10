@@ -49,7 +49,7 @@ export default class Header extends React.Component {
               className={styles.navItem}
               activeClassName={styles.active}
             >
-              Sets
+              <span>Sets</span>
             </Link>
 
             <Link
@@ -57,7 +57,10 @@ export default class Header extends React.Component {
               className={styles.navItem}
               activeClassName={styles.active}
             >
-              Data <span className={styles.longName}>Explorer</span>
+              <span>
+                Data
+                <span className={styles.longName}> Explorer</span>
+              </span>
             </Link>
           </div>
 
@@ -81,8 +84,9 @@ export default class Header extends React.Component {
 
                 {this.state.accountSwitcherActive && (
                   <div className={styles.accountsDropdown}>
-                    {this.props.profiles.map(prof => (
+                    {this.props.profiles.map((prof, index) => (
                       <div
+                        key={index}
                         className={cx(styles.account, styles.dropdownAccount)}
                         onClick={() => this.switchProfile(prof)}
                       >

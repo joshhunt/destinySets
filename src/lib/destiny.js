@@ -1,3 +1,5 @@
+import { sortBy } from 'lodash';
+
 const API_KEY = __DESTINY_API_KEY__;
 
 const DESTINY_2 = 1;
@@ -111,9 +113,14 @@ export function getCurrentProfiles() {
       );
     })
     .then(profiles => {
-      return profiles
-        .filter(Boolean)
-        .filter(profile => profile.profile.data.versionsOwned === DESTINY_2);
+      return sortBy(
+        profiles
+          .filter(Boolean)
+          .filter(profile => profile.profile.data.versionsOwned === DESTINY_2),
+        profile => {
+          return new Date(profile.profile.data.dateLastPlayed).getTime();
+        }
+      ).reverse();
     });
 }
 

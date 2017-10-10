@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { sortBy } from 'lodash';
 
 import { getDefinition } from 'app/lib/manifestData';
 
@@ -222,6 +223,12 @@ class Gearsets extends Component {
       return groupAcc;
     }, []);
 
+    const emblem = itemDefs[this.emblemHash];
+    let emblemBg;
+    if (emblem) {
+      emblemBg = emblem.secondarySpecial;
+    }
+
     this.setState({
       groups: [
         ...finalGroups,
@@ -230,6 +237,7 @@ class Gearsets extends Component {
         //   sets: rawSets,
         // },
       ],
+      emblemBg,
       loading: false,
     });
   };
@@ -242,6 +250,7 @@ class Gearsets extends Component {
     destiny.getCurrentProfiles().then(profiles => {
       log('Profiles', profiles);
       this.setState({ profiles, accountLoading: false });
+      window.profiles = profiles;
 
       const lsValue = localStorage.getItem('selectedAccount') || '';
       const [membershipId, membershipType] = lsValue.split('|');
@@ -281,6 +290,14 @@ class Gearsets extends Component {
       this.processSets(...result);
     });
 
+    const recentCharacter = sortBy(
+      Object.values(profile.characters.data),
+      character => {
+        return new Date(character.dateLastPlayed).getTime();
+      }
+    ).reverse()[0];
+    this.emblemHash = recentCharacter.emblemHash;
+
     this.setState({
       accountSelected: true,
       profile,
@@ -288,7 +305,7 @@ class Gearsets extends Component {
   };
 
   render() {
-    const { loading, profile, profiles, groups } = this.state;
+    const { loading, profile, profiles, groups, emblemBg } = this.state;
 
     if (loading) {
       return <Loading>Loading...</Loading>;
@@ -297,6 +314,7 @@ class Gearsets extends Component {
     return (
       <div className={styles.root}>
         <Header
+          bg={emblemBg}
           profile={profile}
           profiles={profiles}
           onChangeProfile={this.switchProfile}
