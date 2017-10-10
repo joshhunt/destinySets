@@ -11,6 +11,8 @@ import LoginUpsell from 'app/components/LoginUpsell';
 import ActivityList from 'app/components/ActivityList';
 import DestinyAuthProvider from 'app/lib/DestinyAuthProvider';
 
+import { saveInventory } from 'app/lib/firebase';
+
 import {
   HUNTER,
   TITAN,
@@ -138,6 +140,11 @@ class Gearsets extends Component {
     let inventory = [...(this.inventory || [])];
     profileKioskItems && inventory.push(...profileKioskItems);
     charKioskItems && inventory.push(...charKioskItems);
+
+    if (this.profile) {
+      const profileId = this.profile.profile.data.userInfo.membershipId;
+      saveInventory(profileId, inventory);
+    }
 
     localStorage.setItem('inventory', JSON.stringify(inventory));
 

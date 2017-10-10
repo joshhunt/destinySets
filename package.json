@@ -54,6 +54,7 @@
     "copy-text-to-clipboard": "^1.0.3",
     "dexie": "^1.5.1",
     "expand-home-dir": "0.0.3",
+    "firebase": "^4.5.0",
     "isomorphic-fetch": "^2.2.1",
     "pushstate-server": "2.1.0",
     "query-string": "4.2.3",
