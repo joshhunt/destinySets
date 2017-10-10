@@ -374,13 +374,14 @@ module.exports = [
           {
             title: 'Weapons',
             items: [
-              3890960908, // The Guiding Sight
-              4425887, // The Time-Worn Spire
-              1189790632, // The Steady Hand
               2014642399, // The Forward Path
-              2909905776, // The Hero's Burden
+              4425887, // The Time-Worn Spire
+              3890960908, // The Guiding Sight
+              1189790632, // The Steady Hand
               3424403076, // The Fool's Remedy
               2961807684, // The Wizened Rebuke
+              2909905776, // The Hero's Burden
+              807192446, // The Day's Fury
             ],
           },
           {
