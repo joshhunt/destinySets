@@ -24,6 +24,7 @@ export default [
     'previewItemOverrideHash',
     'itemList',
     'emblemHash',
+    'plugHash',
     'questlineItemHash'
   ),
 

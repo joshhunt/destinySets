@@ -20,7 +20,7 @@ const componentItemInstances = 300;
 // const componentItemPerks = 302;
 // const componentItemRenderData = 303;
 // const componentItemStats = 304;
-// const componentItemSockets = 305;
+const componentItemSockets = 305;
 // const componentItemTalentGrids = 306;
 const componentItemCommonData = 307;
 // const componentItemPlugStates = 308;
@@ -38,6 +38,7 @@ const COMPONENTS = [
   componentCharacterEquipment,
   componentItemInstances,
   componentItemCommonData,
+  componentItemSockets,
   componentKiosks,
 ];
 
@@ -139,26 +140,39 @@ export function getCurrentProfile() {
   });
 }
 
-export function collectItemsFromProfile(profile) {
+export function collectItemsFromProfile(profile, verbose = false) {
   const {
     characterInventories,
     profileInventory,
     characterEquipment,
+    itemComponents,
   } = profile;
+
+  function mapItem(item) {
+    if (!verbose) {
+      return item.itemHash;
+    }
+
+    return {
+      ...item,
+      $instance: itemComponents.instances.data[item.itemInstanceId],
+      $sockets: itemComponents.sockets.data[item.itemInstanceId],
+    };
+  }
 
   const charItems = Object.values(
     characterInventories.data
   ).reduce((acc, { items }) => {
-    return acc.concat(items.map(item => item.itemHash));
+    return acc.concat(items.map(mapItem));
   }, []);
 
   const equippedItems = Object.values(
     characterEquipment.data
   ).reduce((acc, { items }) => {
-    return acc.concat(items.map(item => item.itemHash));
+    return acc.concat(items.map(mapItem));
   }, []);
 
-  const profileItems = profileInventory.data.items.map(item => item.itemHash);
+  const profileItems = profileInventory.data.items.map(mapItem);
 
   return charItems.concat(profileItems, equippedItems);
 }

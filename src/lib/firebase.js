@@ -11,8 +11,9 @@ export default firebase.initializeApp({
 
 const db = firebase.database();
 
-export function saveInventory(profileId, inventory) {
+export function saveInventory(profileId, inventory, ghosts) {
   db.ref('profile/' + profileId).set({
     combined: inventory,
+    ghosts,
   });
 }

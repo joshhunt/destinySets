@@ -143,7 +143,18 @@ class Gearsets extends Component {
 
     if (this.profile) {
       const profileId = this.profile.profile.data.userInfo.membershipId;
-      saveInventory(profileId, inventory);
+      const ghosts = destiny
+        .collectItemsFromProfile(this.profile, true)
+        .filter(item => item.bucketHash === 4023194814) // dodgy way to get all ghosts
+        .map(item => {
+          return {
+            itemHash: item.itemHash,
+            itemInstanceId: item.itemInstanceId,
+            sockets: item.$sockets.sockets.map(s => s.plugHash).filter(Boolean),
+          };
+        });
+
+      saveInventory(profileId, inventory, ghosts);
     }
 
     localStorage.setItem('inventory', JSON.stringify(inventory));
