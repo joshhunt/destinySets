@@ -85,9 +85,9 @@ class Gearsets extends Component {
   }
 
   componentDidMount() {
-    try {
-      this.inventory = JSON.parse(localStorage.getItem('inventory'));
-    } catch (e) {}
+    // try {
+    //   this.inventory = JSON.parse(localStorage.getItem('inventory'));
+    // } catch (e) {}
 
     const itemDefPromise = getDefinition('DestinyInventoryItemDefinition');
     const vendorDefPromise = getDefinition('DestinyVendorDefinition');
