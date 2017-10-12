@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { sortBy } from 'lodash';
 import cx from 'classnames';
+import copy from 'copy-text-to-clipboard';
 
 import { getDefinition } from 'app/lib/manifestData';
 
@@ -19,14 +20,16 @@ import {
   WARLOCK,
 } from 'app/views/DataExplorer/definitionSources';
 
-const HIDE_COLLECTED = -100;
-
 import { fancySearch } from 'app/views/DataExplorer/filterItems';
 import sortItemsIntoSections from 'app/views/DataExplorer/sortItemsIntoSections';
 
 import styles from './styles.styl';
 
 import newSets from '../sets.js';
+import consoleExclusives from '../consoleExclusives.js';
+
+const HIDE_COLLECTED = -100;
+const HIDE_PS4_EXCLUSIVES = -101;
 
 const log = (msg, data) => {
   console.log(`%c${msg}:`, 'font-weight: bold', data);
@@ -85,9 +88,9 @@ class Gearsets extends Component {
   }
 
   componentDidMount() {
-    // try {
-    //   this.inventory = JSON.parse(localStorage.getItem('inventory'));
-    // } catch (e) {}
+    try {
+      this.inventory = JSON.parse(localStorage.getItem('inventory'));
+    } catch (e) {}
 
     const itemDefPromise = getDefinition('DestinyInventoryItemDefinition');
     const vendorDefPromise = getDefinition('DestinyVendorDefinition');
@@ -229,6 +232,13 @@ class Gearsets extends Component {
       const sets = _group.sets.reduce((setAcc, _set) => {
         const sections = _set.sections.reduce((sectionAcc, _section) => {
           const items = _section.items.filter(item => {
+            // if (
+            //   filter[HIDE_PS4_EXCLUSIVES] &&
+            //   consoleExclusives.ps4.includes(item.hash)
+            // ) {
+            //   return false;
+            // }
+
             if (filter[HIDE_COLLECTED] && item.$obtained) {
               return false;
             }
@@ -366,6 +376,11 @@ class Gearsets extends Component {
     });
   };
 
+  copyDebug = () => {
+    const { itemComponents, ...debugProfile } = this.profile;
+    copy(JSON.stringify(debugProfile));
+  };
+
   render() {
     const {
       loading,
@@ -469,6 +484,10 @@ class Gearsets extends Component {
             <ActivityList title={group.name} activities={group.sets || []} />
           </div>
         ))}
+
+        <div className={styles.debug}>
+          <button onClick={this.copyDebug}>Copy debug info</button>
+        </div>
       </div>
     );
   }
