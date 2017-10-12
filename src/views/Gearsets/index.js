@@ -141,20 +141,27 @@ class Gearsets extends Component {
     profileKioskItems && inventory.push(...profileKioskItems);
     charKioskItems && inventory.push(...charKioskItems);
 
-    if (this.profile) {
-      const profileId = this.profile.profile.data.userInfo.membershipId;
-      const ghosts = destiny
-        .collectItemsFromProfile(this.profile, true)
-        .filter(item => item.bucketHash === 4023194814) // dodgy way to get all ghosts
-        .map(item => {
-          return {
-            itemHash: item.itemHash,
-            itemInstanceId: item.itemInstanceId,
-            sockets: item.$sockets.sockets.map(s => s.plugHash).filter(Boolean),
-          };
-        });
+    try {
+      if (this.profile) {
+        const profileId = this.profile.profile.data.userInfo.membershipId;
+        const ghosts = destiny
+          .collectItemsFromProfile(this.profile, true)
+          .filter(item => item.bucketHash === 4023194814) // dodgy way to get all ghosts
+          .map(item => {
+            return {
+              itemHash: item.itemHash,
+              itemInstanceId: item.itemInstanceId,
+              sockets: item.$sockets.sockets
+                .map(s => s.plugHash)
+                .filter(Boolean),
+            };
+          });
 
-      saveInventory(profileId, inventory, ghosts);
+        saveInventory(profileId, inventory, ghosts);
+      }
+    } catch (e) {
+      console.error('Error with inventory telemetry');
+      console.error(e);
     }
 
     localStorage.setItem('inventory', JSON.stringify(inventory));
