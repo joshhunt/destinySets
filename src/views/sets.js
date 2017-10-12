@@ -538,6 +538,7 @@ module.exports = [
               2703340117, // Somerled-D
               2398848320, // Erentil FR4
               896923850, // Acantha-D
+              3778520449, // Jiangshi AR4
             ],
           },
         ],
