@@ -140,6 +140,54 @@ export function getCurrentProfile() {
   });
 }
 
+function collectKioskItems(kiosks, itemDefs, vendorDefs) {
+  const hashes = [];
+
+  Object.keys(kiosks).forEach(vendorHash => {
+    const vendor = vendorDefs[vendorHash];
+    const kiosk = kiosks[vendorHash];
+
+    const kioskItems = kiosk
+      .map(kioskEntry => {
+        const vendorItem = vendor.itemList.find(
+          i => i.vendorItemIndex === kioskEntry.index
+        );
+        const item = itemDefs[vendorItem.itemHash];
+
+        return kioskEntry.canAcquire ? item.hash : null;
+      })
+      .filter(Boolean);
+
+    hashes.push(...kioskItems);
+  });
+
+  return hashes;
+}
+
+export function collectItemsFromKiosks(profile, itemDefs, vendorDefs) {
+  const profileKioskItems = collectKioskItems(
+    profile.profileKiosks.data.kioskItems,
+    itemDefs,
+    vendorDefs
+  );
+
+  const charKioskItems = Object.values(
+    profile.characterKiosks.data
+  ).reduce((acc, charKiosk) => {
+    const itemHashes = collectKioskItems(
+      charKiosk.kioskItems,
+      itemDefs,
+      vendorDefs
+    );
+
+    acc.push(...itemHashes);
+
+    return acc;
+  }, []);
+
+  return profileKioskItems.concat(charKioskItems);
+}
+
 export function collectItemsFromProfile(profile, verbose = false) {
   const {
     characterInventories,

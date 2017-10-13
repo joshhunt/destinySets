@@ -1,5 +1,23 @@
 import { forEach } from 'lodash';
 
+export function mapItems(itemHashes, itemDefs, inventory) {
+  return itemHashes
+    .map(itemHash => {
+      const item = itemDefs[itemHash];
+
+      if (!item) {
+        console.warn('Unable to find item definition for ' + itemHash);
+        return null;
+      }
+
+      return {
+        $obtained: inventory.includes(item.hash),
+        ...item,
+      };
+    })
+    .filter(Boolean);
+}
+
 export function logItems(profile, itemDefs) {
   window.DEBUG_profile = profile;
   window.DEBUG_itemDefs = itemDefs;
@@ -47,14 +65,4 @@ export function logItems(profile, itemDefs) {
         .name} [${item.itemTypeDisplayName}]`
     );
   });
-
-  // const equippedItems = Object.values(
-  //   characterEquipment.data
-  // ).reduce((acc, { items }) => {
-  //   return acc.concat(items.map(mapItem));
-  // }, []);
-
-  // const profileItems = profileInventory.data.items.map(mapItem);
-
-  // return charItems.concat(profileItems, equippedItems);
 }

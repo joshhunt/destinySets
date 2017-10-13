@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { sortBy } from 'lodash';
+import { sortBy, cloneDeep } from 'lodash';
 import cx from 'classnames';
 import copy from 'copy-text-to-clipboard';
 
@@ -12,9 +12,9 @@ import LoginUpsell from 'app/components/LoginUpsell';
 import ActivityList from 'app/components/ActivityList';
 import DestinyAuthProvider from 'app/lib/DestinyAuthProvider';
 
-// import { logItems } from './debug';
+import { mapItems, logItems } from './items';
 
-import { saveInventory } from 'app/lib/telemetry';
+import * as telemetry from 'app/lib/telemetry';
 
 import {
   HUNTER,
@@ -37,28 +37,11 @@ const log = (msg, data) => {
   console.log(`%c${msg}:`, 'font-weight: bold', data);
 };
 
-function collectItemsFromKiosks(kiosks, itemDefs, vendorDefs) {
-  const hashes = [];
-
-  for (let vendorHash in kiosks) {
-    const vendor = vendorDefs[vendorHash];
-    const kiosk = kiosks[vendorHash];
-
-    const kioskItems = kiosk.map(kioskEntry => {
-      const vendorItem = vendor.itemList.find(
-        i => i.vendorItemIndex === kioskEntry.index
-      );
-      const item = itemDefs[vendorItem.itemHash];
-
-      if (kioskEntry.canAcquire) {
-        return item.hash;
-      }
-    });
-
-    hashes.push(...kioskItems);
-  }
-
-  return hashes;
+function merge(base, extra) {
+  return {
+    ...base,
+    ...extra,
+  };
 }
 
 const defaultFilter = {
@@ -91,7 +74,7 @@ class Gearsets extends Component {
 
   componentDidMount() {
     try {
-      this.inventory = JSON.parse(localStorage.getItem('inventory'));
+      this.inventory = JSON.parse(localStorage.getItem('inventory')) || [];
     } catch (e) {}
 
     const itemDefPromise = getDefinition('DestinyInventoryItemDefinition');
@@ -113,62 +96,17 @@ class Gearsets extends Component {
   processSets = (itemDefs, vendorDefs) => {
     const items = Object.values(itemDefs);
 
-    let profileKioskItems;
-    let charKioskItems;
+    const kioskItems = this.profile
+      ? destiny.collectItemsFromKiosks(this.profile, itemDefs, vendorDefs)
+      : [];
 
-    // TODO: clean this up, move to destiny.js?
-    if (this.profile) {
-      profileKioskItems = collectItemsFromKiosks(
-        this.profile.profileKiosks.data.kioskItems,
-        itemDefs,
-        vendorDefs
-      );
-
-      charKioskItems = Object.values(
-        this.profile.characterKiosks.data
-      ).reduce((acc, charKiosk) => {
-        const itemHashes = collectItemsFromKiosks(
-          charKiosk.kioskItems,
-          itemDefs,
-          vendorDefs
-        );
-
-        acc.push(...itemHashes);
-
-        return acc;
-      }, []);
-
-      log('Profile kiosk items', profileKioskItems);
-      log('Character kiosk items', charKioskItems);
-    }
-
-    let inventory = [...(this.inventory || [])];
-    profileKioskItems && inventory.push(...profileKioskItems);
-    charKioskItems && inventory.push(...charKioskItems);
+    const inventory = [...this.inventory, ...kioskItems];
 
     // this.profile && itemDefs && logItems(this.profile, itemDefs);
 
-    this.profile && saveInventory(this.profile, inventory);
+    this.profile && telemetry.saveInventory(this.profile, inventory);
 
     localStorage.setItem('inventory', JSON.stringify(inventory));
-
-    const itemList = hahses => {
-      return hahses
-        .map(itemHash => {
-          const item = itemDefs[itemHash];
-
-          if (!item) {
-            console.warn('Unable to find item definition for ' + itemHash);
-            return null;
-          }
-
-          return {
-            $obtained: inventory.includes(item.hash),
-            ...item,
-          };
-        })
-        .filter(Boolean);
-    };
 
     this.rawGroups = newSets.map(group => {
       const sets = group.sets.map(set => {
@@ -177,33 +115,23 @@ class Gearsets extends Component {
           : set.sections;
 
         const sections = preSections.map(section => {
-          const items = itemList(section.items);
+          const items = mapItems(section.items, itemDefs, inventory);
 
-          return {
-            ...section,
-            items,
-          };
+          return merge(section, { items });
         });
 
-        return {
-          ...set,
-          sections,
-        };
+        return merge(set, { sections });
       });
 
-      return {
-        ...group,
-        sets,
-      };
+      return merge(group, { sets });
     });
 
     const filteredGroups = this.filterGroups(this.rawGroups);
 
     const emblem = itemDefs[this.emblemHash];
-    const emblemBg = emblem && emblem.secondarySpecial;
 
     this.setState({
-      emblemBg,
+      emblemBg: emblem && emblem.secondarySpecial,
       loading: false,
       groups: filteredGroups,
     });
