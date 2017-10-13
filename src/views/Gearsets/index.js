@@ -12,7 +12,9 @@ import LoginUpsell from 'app/components/LoginUpsell';
 import ActivityList from 'app/components/ActivityList';
 import DestinyAuthProvider from 'app/lib/DestinyAuthProvider';
 
-import { saveInventory } from 'app/lib/firebase';
+// import { logItems } from './debug';
+
+import { saveInventory } from 'app/lib/telemetry';
 
 import {
   HUNTER,
@@ -144,28 +146,9 @@ class Gearsets extends Component {
     profileKioskItems && inventory.push(...profileKioskItems);
     charKioskItems && inventory.push(...charKioskItems);
 
-    try {
-      if (this.profile) {
-        const profileId = this.profile.profile.data.userInfo.membershipId;
-        const ghosts = destiny
-          .collectItemsFromProfile(this.profile, true)
-          .filter(item => item.bucketHash === 4023194814) // dodgy way to get all ghosts
-          .map(item => {
-            return {
-              itemHash: item.itemHash,
-              itemInstanceId: item.itemInstanceId,
-              sockets: item.$sockets.sockets
-                .map(s => s.plugHash)
-                .filter(Boolean),
-            };
-          });
+    // this.profile && itemDefs && logItems(this.profile, itemDefs);
 
-        saveInventory(profileId, inventory, ghosts);
-      }
-    } catch (e) {
-      console.error('Error with inventory telemetry');
-      console.error(e);
-    }
+    this.profile && saveInventory(this.profile, inventory);
 
     localStorage.setItem('inventory', JSON.stringify(inventory));
 
