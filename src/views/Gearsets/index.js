@@ -1,18 +1,19 @@
 import React, { Component } from 'react';
-import { sortBy, cloneDeep } from 'lodash';
+import { sortBy } from 'lodash';
 import cx from 'classnames';
 import copy from 'copy-text-to-clipboard';
 
 import { getDefinition } from 'app/lib/manifestData';
 
 import * as destiny from 'app/lib/destiny';
+import * as ls from 'app/lib/ls';
 import Header from 'app/components/Header';
 import Loading from 'app/views/Loading';
 import LoginUpsell from 'app/components/LoginUpsell';
 import ActivityList from 'app/components/ActivityList';
 import DestinyAuthProvider from 'app/lib/DestinyAuthProvider';
 
-import { mapItems, logItems } from './items';
+import { mapItems /*, logItems */ } from './utils';
 
 import * as telemetry from 'app/lib/telemetry';
 
@@ -30,25 +31,18 @@ import styles from './styles.styl';
 import newSets from '../sets.js';
 import consoleExclusives from '../consoleExclusives.js';
 
-const HIDE_COLLECTED = -100;
 const HIDE_PS4_EXCLUSIVES = -101;
-
-const log = (msg, data) => {
-  console.log(`%c${msg}:`, 'font-weight: bold', data);
-};
+const SHOW_COLLECTED = -102;
 
 function merge(base, extra) {
-  return {
-    ...base,
-    ...extra,
-  };
+  return { ...base, ...extra };
 }
 
 const defaultFilter = {
   [TITAN]: true,
   [HUNTER]: true,
   [WARLOCK]: true,
-  [HIDE_COLLECTED]: false,
+  [SHOW_COLLECTED]: true,
 };
 
 class Gearsets extends Component {
@@ -61,26 +55,17 @@ class Gearsets extends Component {
       items: [],
       selectedItems: [],
       displayFilters: false,
+      filter: ls.getFilters() || defaultFilter,
     };
-
-    try {
-      this.state.filter =
-        JSON.parse(localStorage.getItem('filters')) || defaultFilter;
-    } catch (e) {
-      console.log(e);
-      this.state.filter = defaultFilter;
-    }
   }
 
   componentDidMount() {
-    try {
-      this.inventory = JSON.parse(localStorage.getItem('inventory')) || [];
-    } catch (e) {}
+    this.inventory = ls.getInventory();
 
-    const itemDefPromise = getDefinition('DestinyInventoryItemDefinition');
-    const vendorDefPromise = getDefinition('DestinyVendorDefinition');
-
-    this.dataPromise = Promise.all([itemDefPromise, vendorDefPromise]);
+    this.dataPromise = Promise.all([
+      getDefinition('DestinyInventoryItemDefinition'),
+      getDefinition('DestinyVendorDefinition'),
+    ]);
 
     this.dataPromise.then(result => {
       this.processSets(...result);
@@ -106,7 +91,7 @@ class Gearsets extends Component {
 
     this.profile && telemetry.saveInventory(this.profile, inventory);
 
-    localStorage.setItem('inventory', JSON.stringify(inventory));
+    ls.saveInventory(inventory);
 
     this.rawGroups = newSets.map(group => {
       const sets = group.sets.map(set => {
@@ -150,8 +135,8 @@ class Gearsets extends Component {
             //   return false;
             // }
 
-            if (filter[HIDE_COLLECTED] && item.$obtained) {
-              return false;
+            if (filter[SHOW_COLLECTED] && item.$obtained) {
+              return true;
             }
 
             if (item.classType === 3) {
@@ -212,43 +197,31 @@ class Gearsets extends Component {
     }
 
     destiny.getCurrentProfiles().then(profiles => {
-      log('Profiles', profiles);
-      this.setState({ profiles, accountLoading: false });
-      window.profiles = profiles;
+      this.setState({ profiles });
 
-      const lsValue = localStorage.getItem('selectedAccount') || '';
-      const [membershipId, membershipType] = lsValue.split('|');
+      const { id, type } = ls.getPreviousAccount();
 
-      if (membershipId && membershipType) {
-        const prevProfile = profiles.find(profile => {
-          return (
-            profile.profile.data.userInfo.membershipId.toString() ===
-              membershipId &&
-            profile.profile.data.userInfo.membershipType.toString() ===
-              membershipType
-          );
-        });
-
-        this.switchProfile(prevProfile);
-      } else {
-        this.switchProfile(profiles[0]);
+      if (!(id && type)) {
+        return this.switchProfile(profiles[0]);
       }
+
+      const prevProfile = profiles.find(profile => {
+        return (
+          profile.profile.data.userInfo.membershipId === id &&
+          profile.profile.data.userInfo.membershipType === type
+        );
+      });
+
+      this.switchProfile(prevProfile || profiles[0]);
     });
   };
 
-  switchProfile = profile => {
-    log('Active Profile', profile);
+  switchProfile = (profile, dontSave) => {
+    const { membershipId, membershipType } = profile.profile.data.userInfo;
+    ls.savePreviousAccount(membershipId, membershipType);
 
-    const token = `${profile.profile.data.userInfo.membershipId}|${profile
-      .profile.data.userInfo.membershipType}`;
-
-    localStorage.setItem('selectedAccount', token);
-
-    // TODO: don't put profile on here for kisosks
     this.profile = profile;
     this.inventory = destiny.collectItemsFromProfile(profile);
-
-    log('Inventory', this.inventory);
 
     this.dataPromise.then(result => {
       this.processSets(...result);
@@ -262,10 +235,7 @@ class Gearsets extends Component {
     ).reverse()[0];
     this.emblemHash = recentCharacter.emblemHash;
 
-    this.setState({
-      accountSelected: true,
-      profile,
-    });
+    this.setState({ profile });
   };
 
   toggleFilter = () => {
@@ -279,7 +249,7 @@ class Gearsets extends Component {
     };
     const filteredGroups = this.filterGroups(this.rawGroups, newFilter);
 
-    localStorage.setItem('filters', JSON.stringify(newFilter));
+    ls.saveFilters(newFilter);
 
     this.setState({
       groups: filteredGroups,
@@ -379,10 +349,10 @@ class Gearsets extends Component {
                   <label className={styles.filterOpt}>
                     <input
                       type="checkbox"
-                      checked={this.state.filter[HIDE_COLLECTED]}
-                      onChange={() => this.toggleFilterValue(HIDE_COLLECTED)}
+                      checked={this.state.filter[SHOW_COLLECTED]}
+                      onChange={() => this.toggleFilterValue(SHOW_COLLECTED)}
                     />{' '}
-                    Hide collected
+                    Show collected
                   </label>
                 </div>
               </div>
