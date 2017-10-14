@@ -98,7 +98,7 @@ class Gearsets extends Component {
 
     // this.profile && itemDefs && logItems(this.profile, itemDefs);
 
-    this.profile && telemetry.saveInventory(this.profile, inventory);
+    // this.profile && telemetry.saveInventory(this.profile, inventory);
 
     ls.saveInventory(inventory);
 
