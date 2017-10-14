@@ -15,8 +15,17 @@ $durationDelay = $duration / 10
   align-items: center
   flex-wrap: wrap
 
+  // mobile styling
+  @media screen and (max-width: 679px)
+    display: block
+
 .navsections
   margin: 0 -15px
+
+  // mobile styling
+  @media screen and (max-width: 679px)
+    overflow: scroll
+    white-space: nowrap
 
 .toggleFilters
   color: rgba(white, .9)
@@ -27,6 +36,10 @@ $durationDelay = $duration / 10
   &:hover
     background: rgba(white, .07)
 
+  // mobile styling
+  @media screen and (max-width: 679px)
+    display: inline-block
+
 .filtersActive
   background: rgba(white, .07)
 
@@ -34,6 +47,10 @@ $durationDelay = $duration / 10
   flex: 1 0 100%
   display: flex
   flex-direction: row-reverse
+
+  // mobile styling
+  @media screen and (max-width: 679px)
+    display: block
 
 .filterInner
   background: rgba(white, .07)
@@ -44,6 +61,8 @@ $durationDelay = $duration / 10
 
 .filterOpt
   margin: 0 10px
+  white-space: nowrap
+  display: inline-block
 
 .subnavItem
   display: inline-block
