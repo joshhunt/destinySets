@@ -33,6 +33,10 @@ export function getInventory() {
   return get(INVENTORY, []);
 }
 
+export function removeInventory() {
+  return localStorage.removeItem(INVENTORY);
+}
+
 export function saveFilters(filters) {
   save(FILTERS, filters);
 }

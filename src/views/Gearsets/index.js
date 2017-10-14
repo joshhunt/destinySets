@@ -132,14 +132,6 @@ class Gearsets extends Component {
   };
 
   filterGroups = (rawGroups, filter = this.state.filter) => {
-    console.log('filter:', filter);
-
-    console.log('SHOW_PS4_EXCLUSIVES:', filter[SHOW_PS4_EXCLUSIVES]);
-    console.log('SHOW_COLLECTED:', filter[SHOW_COLLECTED]);
-    console.log('TITAN:', filter[TITAN]);
-    console.log('HUNTER:', filter[HUNTER]);
-    console.log('WARLOCK:', filter[WARLOCK]);
-
     // fuck me, this is bad. filter all the items
     const finalGroups = rawGroups.reduce((groupAcc, _group) => {
       const sets = _group.sets.reduce((setAcc, _set) => {
@@ -237,6 +229,7 @@ class Gearsets extends Component {
     this.profile = undefined;
     ls.removePreviousAccount();
     ls.removeAuth();
+    ls.removeInventory();
     location.reload();
   }
 
