@@ -14,6 +14,12 @@ export const SHADER = 41;
 export const SHIP = 42;
 export const SPARROW = 43;
 
+export const XBOX = 1;
+export const PLAYSTATION = 2;
+export const PC_BLIZZARD = 4;
+export const TIGERDEMON = 10;
+export const BUNGIENEXT = 254;
+
 export default [
   src(
     'DestinyInventoryItemDefinition',

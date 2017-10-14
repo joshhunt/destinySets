@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { sortBy, isNull } from 'lodash';
+import { sortBy } from 'lodash';
 import cx from 'classnames';
 import copy from 'copy-text-to-clipboard';
 
@@ -21,6 +21,7 @@ import {
   HUNTER,
   TITAN,
   WARLOCK,
+  PLAYSTATION,
 } from 'app/views/DataExplorer/definitionSources';
 
 import { fancySearch } from 'app/views/DataExplorer/filterItems';
@@ -31,12 +32,20 @@ import styles from './styles.styl';
 import newSets from '../sets.js';
 import consoleExclusives from '../consoleExclusives.js';
 
-const HIDE_PS4_EXCLUSIVES = -101;
+const SHOW_PS4_EXCLUSIVES = -101;
 const SHOW_COLLECTED = -102;
 
 function merge(base, extra) {
   return { ...base, ...extra };
 }
+
+const FILTERS = [
+  [TITAN, 'Titan'],
+  [HUNTER, 'Hunter'],
+  [WARLOCK, 'Warlock'],
+  [SHOW_COLLECTED, 'Collected'],
+  [SHOW_PS4_EXCLUSIVES, 'PS4 exclusives'],
+];
 
 const defaultFilter = {
   [TITAN]: true,
@@ -123,17 +132,25 @@ class Gearsets extends Component {
   };
 
   filterGroups = (rawGroups, filter = this.state.filter) => {
+    console.log('filter:', filter);
+
+    console.log('SHOW_PS4_EXCLUSIVES:', filter[SHOW_PS4_EXCLUSIVES]);
+    console.log('SHOW_COLLECTED:', filter[SHOW_COLLECTED]);
+    console.log('TITAN:', filter[TITAN]);
+    console.log('HUNTER:', filter[HUNTER]);
+    console.log('WARLOCK:', filter[WARLOCK]);
+
     // fuck me, this is bad. filter all the items
     const finalGroups = rawGroups.reduce((groupAcc, _group) => {
       const sets = _group.sets.reduce((setAcc, _set) => {
         const sections = _set.sections.reduce((sectionAcc, _section) => {
           const items = _section.items.filter(item => {
-            // if (
-            //   filter[HIDE_PS4_EXCLUSIVES] &&
-            //   consoleExclusives.ps4.includes(item.hash)
-            // ) {
-            //   return false;
-            // }
+            if (
+              !filter[SHOW_PS4_EXCLUSIVES] &&
+              consoleExclusives.ps4.includes(item.hash)
+            ) {
+              return false;
+            }
 
             if (filter[SHOW_COLLECTED] && item.$obtained) {
               return true;
@@ -234,10 +251,6 @@ class Gearsets extends Component {
     this.profile = profile;
     this.inventory = destiny.collectItemsFromProfile(profile);
 
-    this.dataPromise.then(result => {
-      this.processSets(...result);
-    });
-
     const recentCharacter = sortBy(
       Object.values(profile.characters.data),
       character => {
@@ -246,7 +259,17 @@ class Gearsets extends Component {
     ).reverse()[0];
     this.emblemHash = recentCharacter.emblemHash;
 
-    this.setState({ profile });
+    this.setState({
+      profile,
+      filter: {
+        ...this.state.filter,
+        [SHOW_PS4_EXCLUSIVES]: membershipType === PLAYSTATION,
+      },
+    });
+
+    this.dataPromise.then(result => {
+      this.processSets(...result);
+    });
   };
 
   toggleFilter = () => {
@@ -330,41 +353,16 @@ class Gearsets extends Component {
             <div className={styles.filters}>
               <div className={styles.filterInner}>
                 <div className={styles.neg}>
-                  <label className={styles.filterOpt}>
-                    <input
-                      type="checkbox"
-                      checked={this.state.filter[HUNTER]}
-                      onChange={() => this.toggleFilterValue(HUNTER)}
-                    />{' '}
-                    Hunter
-                  </label>
-
-                  <label className={styles.filterOpt}>
-                    <input
-                      type="checkbox"
-                      checked={this.state.filter[TITAN]}
-                      onChange={() => this.toggleFilterValue(TITAN)}
-                    />{' '}
-                    Titan
-                  </label>
-
-                  <label className={styles.filterOpt}>
-                    <input
-                      type="checkbox"
-                      checked={this.state.filter[WARLOCK]}
-                      onChange={() => this.toggleFilterValue(WARLOCK)}
-                    />{' '}
-                    Warlock
-                  </label>
-
-                  <label className={styles.filterOpt}>
-                    <input
-                      type="checkbox"
-                      checked={this.state.filter[SHOW_COLLECTED]}
-                      onChange={() => this.toggleFilterValue(SHOW_COLLECTED)}
-                    />{' '}
-                    Show collected
-                  </label>
+                  {FILTERS.map(([filterId, filterLabel]) => (
+                    <label className={styles.filterOpt}>
+                      <input
+                        type="checkbox"
+                        checked={this.state.filter[filterId]}
+                        onChange={() => this.toggleFilterValue(filterId)}
+                      />{' '}
+                      {filterLabel}
+                    </label>
+                  ))}
                 </div>
               </div>
             </div>
