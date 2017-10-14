@@ -1,6 +1,7 @@
 const INVENTORY = '$inventory';
 const FILTERS = '$filters';
 const ACCOUNT = '$account';
+const AUTH = '$auth';
 
 function get(key, defaultx) {
   const lsValue = localStorage.getItem(key);
@@ -46,4 +47,20 @@ export function savePreviousAccount(id, type) {
 
 export function getPreviousAccount(id, type) {
   return get(ACCOUNT, {});
+}
+
+export function removePreviousAccount() {
+  localStorage.removeItem(ACCOUNT);
+}
+
+export function saveAuth(authData) {
+  save(AUTH, authData);
+}
+
+export function getAuth() {
+  return get(AUTH);
+}
+
+export function removeAuth() {
+  localStorage.removeItem(AUTH);
 }

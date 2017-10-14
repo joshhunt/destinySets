@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { sortBy } from 'lodash';
+import { sortBy, isNull } from 'lodash';
 import cx from 'classnames';
 import copy from 'copy-text-to-clipboard';
 
@@ -216,7 +216,18 @@ class Gearsets extends Component {
     });
   };
 
-  switchProfile = (profile, dontSave) => {
+  logout() {
+    this.profile = undefined;
+    ls.removePreviousAccount();
+    ls.removeAuth();
+    location.reload();
+  }
+
+  switchProfile = profile => {
+    if (profile && profile.logout) {
+      return this.logout();
+    }
+
     const { membershipId, membershipType } = profile.profile.data.userInfo;
     ls.savePreviousAccount(membershipId, membershipType);
 

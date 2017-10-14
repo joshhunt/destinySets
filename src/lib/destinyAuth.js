@@ -1,5 +1,6 @@
 import queryString from 'query-string';
 import { getDestiny } from 'app/lib/destiny';
+import * as ls from 'app/lib/ls';
 
 function handleNewAuthData(data) {
   const authResponse = data;
@@ -22,7 +23,8 @@ function handleNewAuthData(data) {
     refreshTokenExpiry: refreshTokenExpiry,
   };
 
-  localStorage.setItem('authData', JSON.stringify(authData));
+  ls.saveAuth(authData);
+
   window.AUTH_DATA = authData;
 
   return Promise.resolve();
@@ -31,15 +33,15 @@ function handleNewAuthData(data) {
 function handleError(err, cb) {
   console.error('Auth error:');
   console.error(err);
-  localStorage.setItem('oldAuthData', localStorage.getItem('authData'));
-  localStorage.removeItem('authData');
+  ls.removeAuth();
   cb(err);
 }
 
 export default function(cb) {
   const queryParams = queryString.parse(location.search);
 
-  const prevAuthData = JSON.parse(localStorage.getItem('authData') || 'null');
+  const prevAuthData = ls.getAuth();
+
   const accessTokenIsValid =
     prevAuthData && Date.now() < new Date(prevAuthData.accessTokenExpiry);
   const refreshTokenIsValid =

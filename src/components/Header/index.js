@@ -98,6 +98,17 @@ export default class Header extends React.Component {
                         </div>
                       </div>
                     ))}
+
+                    <div
+                      onClick={() => this.switchProfile({ logout: true })}
+                      className={cx(
+                        styles.account,
+                        styles.logOut,
+                        styles.dropdownAccount
+                      )}
+                    >
+                      Log out
+                    </div>
                   </div>
                 )}
               </div>
