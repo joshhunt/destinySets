@@ -21,6 +21,10 @@ const tooltipStyle = {
 
 export default class Item extends Component {
   shouldComponentUpdate(nextProps, nextState) {
+    if (this.state !== nextState) {
+      return true;
+    }
+
     if (
       this.props.hash !== nextProps.hash ||
       this.props.$obtained !== nextProps.$obtained
