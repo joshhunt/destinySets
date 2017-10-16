@@ -1,11 +1,11 @@
-import React, { PureComponent } from 'react';
+import React, { Component } from 'react';
 import cx from 'classnames';
 
 import Item from '../Item';
 
 import styles from './styles.styl';
 
-export default class ItemList extends PureComponent {
+export default class ItemList extends Component {
   render() {
     const { className, drops, sections, tinyItems } = this.props;
 
