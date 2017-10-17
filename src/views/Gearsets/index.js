@@ -131,7 +131,9 @@ class Gearsets extends Component {
     });
   };
 
-  filterGroups = (rawGroups, filter = this.state.filter) => {
+  filterGroups = (rawGroups, _filter) => {
+    const filter = _filter || this.state.filter;
+
     // fuck me, this is bad. filter all the items
     const finalGroups = rawGroups.reduce((groupAcc, _group) => {
       const sets = _group.sets.reduce((setAcc, _set) => {
@@ -144,8 +146,8 @@ class Gearsets extends Component {
               return false;
             }
 
-            if (filter[SHOW_COLLECTED] && item.$obtained) {
-              return true;
+            if (!filter[SHOW_COLLECTED] && item.$obtained) {
+              return false;
             }
 
             if (item.classType === 3) {
