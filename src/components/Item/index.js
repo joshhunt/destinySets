@@ -20,20 +20,20 @@ const tooltipStyle = {
 };
 
 export default class Item extends Component {
-  shouldComponentUpdate(nextProps, nextState) {
-    if (this.state !== nextState) {
-      return true;
-    }
+  // shouldComponentUpdate(nextProps, nextState) {
+  //   if (this.state !== nextState) {
+  //     return true;
+  //   }
 
-    if (
-      this.props.hash !== nextProps.hash ||
-      this.props.$obtained !== nextProps.$obtained
-    ) {
-      return true;
-    } else {
-      return false;
-    }
-  }
+  //   if (
+  //     this.props.hash !== nextProps.hash ||
+  //     this.props.$obtained !== nextProps.$obtained
+  //   ) {
+  //     return true;
+  //   } else {
+  //     return false;
+  //   }
+  // }
 
   state = {
     isTooltipActive: false,
