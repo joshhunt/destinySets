@@ -41,7 +41,7 @@ export function cachedGet(path, id) {
     const key = id + path;
 
     const fetchData = () => {
-      const url = `https://destiny.plumbing/2${path}?id=${id}`;
+      const url = `https://destiny.plumbing${path}?id=${id}`;
       return destiny.get(url).then(data => {
         db.dataCache.put({ key, data });
 
