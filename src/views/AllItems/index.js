@@ -9,7 +9,7 @@ import Item from 'app/components/Item';
 import Loading from 'app/views/Loading';
 import styles from './styles.styl';
 
-const ITEM_URLS = ['https://destiny.plumbing/2/en/items/All.json'];
+const ITEM_URLS = ['https://destiny.plumbing/en/items/All.json'];
 
 export default class AllItems extends Component {
   state = {

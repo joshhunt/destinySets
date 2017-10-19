@@ -45,7 +45,7 @@ const CUSTOM_ACTIVITY_NAME = {
 };
 
 const DATA_URL_FOR_VARIATION = {
-  raid: 'https://destiny.plumbing/2/en/collections/combinedRaidDrops.json',
+  raid: 'https://destiny.plumbing/en/collections/combinedRaidDrops.json',
 };
 
 class Drops extends Component {

@@ -20,7 +20,7 @@ function getManifest() {
   // return Promise.resolve({ id: 'ae3b053c99a4838ede0db0f9340498e1' });
 
   if (!manifestPromise) {
-    manifestPromise = destiny.get('https://destiny.plumbing/2/index.json');
+    manifestPromise = destiny.get('https://destiny.plumbing/index.json');
   }
 
   return manifestPromise;
