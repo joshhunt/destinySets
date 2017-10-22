@@ -13,10 +13,7 @@ export default function Footer({ item }) {
       Having issues or need help?{' '}
       <a href="https://twitter.com/joshhunt">Contact me on twitter</a> <br />
       Destiny is a registered trademark of Bungie. Data and images sourced from
-      Bungie. Loot tables{' '}
-      <a href="https://lowlidev.com.au/destiny/" target="_blank">
-        originally from lowlines
-      </a>.
+      Bungie.
     </div>
   );
 }

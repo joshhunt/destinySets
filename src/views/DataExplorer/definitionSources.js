@@ -13,6 +13,7 @@ export const GHOST = 39;
 export const SHADER = 41;
 export const SHIP = 42;
 export const SPARROW = 43;
+export const EMOTES = 44;
 
 export const XBOX = 1;
 export const PLAYSTATION = 2;

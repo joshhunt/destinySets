@@ -1,11 +1,16 @@
 import { uniqBy, groupBy } from 'lodash';
 
-const WEAPON = 1;
-const ARMOR = 20;
-
-const TITAN = 0;
-const HUNTER = 1;
-const WARLOCK = 2;
+import {
+  HUNTER,
+  TITAN,
+  WARLOCK,
+  WEAPON,
+  ARMOR,
+  GHOST,
+  EMOTES,
+  SHIP,
+  SPARROW,
+} from './definitionSources';
 
 export default function sortItems(_items, verbose = false) {
   const items = uniqBy(_items, item => item.hash);
@@ -13,6 +18,14 @@ export default function sortItems(_items, verbose = false) {
   const sectionItems = groupBy(items, item => {
     if (item.itemCategoryHashes.includes(WEAPON)) {
       return 'weapon';
+    } else if (item.itemCategoryHashes.includes(GHOST)) {
+      return 'ghosts';
+    } else if (item.itemCategoryHashes.includes(EMOTES)) {
+      return 'emotes';
+    } else if (item.itemCategoryHashes.includes(SHIP)) {
+      return 'ships';
+    } else if (item.itemCategoryHashes.includes(SPARROW)) {
+      return 'sparrows';
     } else if (item.itemCategoryHashes.includes(ARMOR)) {
       return item.classType;
     } else {
@@ -20,11 +33,17 @@ export default function sortItems(_items, verbose = false) {
     }
   });
 
+  console.log(sectionItems);
+
   const sections = [
     { title: 'Weapons', items: sectionItems.weapon },
     { title: 'Hunter armor', items: sectionItems[HUNTER] },
     { title: 'Titan armor', items: sectionItems[TITAN] },
     { title: 'Warlock armor', items: sectionItems[WARLOCK] },
+    { title: 'Emotes', items: sectionItems.emotes },
+    { title: 'Ghosts', items: sectionItems.ghosts },
+    { title: 'Ships', items: sectionItems.ships },
+    { title: 'Sparrows', items: sectionItems.sparrows },
     { title: 'Other', items: sectionItems.other },
   ]
     .filter(({ items }) => {

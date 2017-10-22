@@ -8,6 +8,7 @@ import { getDefinition } from 'app/lib/manifestData';
 import * as destiny from 'app/lib/destiny';
 import * as ls from 'app/lib/ls';
 import Header from 'app/components/Header';
+import Footer from 'app/components/Footer';
 import Loading from 'app/views/Loading';
 import LoginUpsell from 'app/components/LoginUpsell';
 import ActivityList from 'app/components/ActivityList';
@@ -378,6 +379,8 @@ class Gearsets extends Component {
         <div className={styles.debug}>
           <button onClick={this.copyDebug}>Copy debug info</button>
         </div>
+
+        <Footer />
       </div>
     );
   }

@@ -110,7 +110,7 @@ export default class Item extends Component {
           arrow="center"
           parent={`#item${item.hash}`}
           className={styles.tooltip}
-          tooltipTimeout={200}
+          tooltipTimeout={0}
         >
           <ItemTooltip key={item.hash} item={item} />
         </ToolTip>
