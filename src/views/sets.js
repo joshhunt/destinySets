@@ -639,7 +639,7 @@ module.exports = [
         small: true,
         sections: [
           {
-            title: 'Hero Camo',
+            title: 'Heiro Camo',
             items: [2791527489, 3629447000, 3884999792, 1664611474, 2770578349],
           },
           {
