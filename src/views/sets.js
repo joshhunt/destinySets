@@ -664,6 +664,13 @@ module.exports = [
         sections: [],
       },
 
+      // {
+      //   name: 'Everything.',
+      //   big: true,
+      //   fancySearchTerm: 'is:collectable',
+      //   sections: [],
+      // },
+
       {
         name: 'Eververse',
         big: true,

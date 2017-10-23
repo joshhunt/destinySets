@@ -1,4 +1,4 @@
-import { get as _get } from 'lodash';
+import { get as _get, intersection } from 'lodash';
 
 import sets from '../sets.js';
 
@@ -51,7 +51,28 @@ const classType = value => item => item.classType === value && !item.redacted;
 const itemCategory = value => item =>
   (item.itemCategoryHashes || []).includes(value);
 
+const isWeapon = itemCategory(WEAPON);
+const isArmor = itemCategory(ARMOR);
+const isLegendary = tierTypeName('Legendary');
+const isExotic = tierTypeName('Exotic');
+
+const COLLECTABLE = [WEAPON, ARMOR, GHOST, SPARROW, SHIP, SHADER, EMBLEM];
+
 export const fancySearchFns = {
+  'is:collectable': items => {
+    return items.filter(item => {
+      if (!item.itemCategoryHashes) {
+        return false;
+      }
+
+      if (isWeapon(item) || isArmor(item)) {
+        return isLegendary(item) || isExotic(item);
+      }
+
+      return !!intersection(item.itemCategoryHashes, COLLECTABLE).length;
+    });
+  },
+
   'is:hunter': items => {
     return items.filter(classType(HUNTER));
   },
@@ -65,11 +86,11 @@ export const fancySearchFns = {
   },
 
   'is:weapon': items => {
-    return items.filter(itemCategory(WEAPON));
+    return items.filter(isWeapon);
   },
 
   'is:armor': items => {
-    return items.filter(itemCategory(ARMOR));
+    return items.filter(isArmor);
   },
 
   'is:gear': items => {
