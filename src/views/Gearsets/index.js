@@ -126,10 +126,7 @@ class Gearsets extends Component {
         const sections = preSections.map(section => {
           const preItems =
             section.items ||
-            fancySearch(section.fancySearchTerm, allItems, {
-              hashOnly: true
-            }).map(i => i.hash);
-          console.log('preItems:', preItems);
+            fancySearch(section.fancySearchTerm, allItems).map(i => i.hash);
           const items = mapItems(preItems, itemDefs, inventory);
 
           return merge(section, { items });
