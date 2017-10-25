@@ -8,7 +8,8 @@ export default class AppRouter extends Component {
   render() {
     return (
       <Router history={browserHistory}>
-        <Route path="/" component={Gearsets} variation="raid" />
+        <Route path="/" component={Gearsets} variation="sets" />
+        <Route path="/all-items" component={Gearsets} variation="allItems" />
         <Route path="/data" component={DataExplorer} />
       </Router>
     );

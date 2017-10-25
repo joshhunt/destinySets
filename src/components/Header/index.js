@@ -9,17 +9,17 @@ const PLATFORM = {
   2: 'PlayStation',
   4: 'PC (Blizzard)',
   10: 'TigerDemon',
-  254: 'BungieNext',
+  254: 'BungieNext'
 };
 
 export default class Header extends React.Component {
   state = {
-    accountSwitcherActive: false,
+    accountSwitcherActive: false
   };
 
   toggleAccountSwitcher = () => {
     this.setState({
-      accountSwitcherActive: !this.state.accountSwitcherActive,
+      accountSwitcherActive: !this.state.accountSwitcherActive
     });
   };
 
@@ -50,6 +50,14 @@ export default class Header extends React.Component {
               activeClassName={styles.active}
             >
               <span>Sets</span>
+            </Link>
+
+            <Link
+              to="/all-items"
+              className={styles.navItem}
+              activeClassName={styles.active}
+            >
+              <span>All Items</span>
             </Link>
 
             <Link

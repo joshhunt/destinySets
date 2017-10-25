@@ -15,6 +15,10 @@ export const SHIP = 42;
 export const SPARROW = 43;
 export const EMOTES = 44;
 
+export const KINETIC_WEAPON = 2;
+export const ENERGY_WEAPON = 3;
+export const POWER_WEAPON = 4;
+
 export const XBOX = 1;
 export const PLAYSTATION = 2;
 export const PC_BLIZZARD = 4;
@@ -100,5 +104,5 @@ export default [
 
   src('DestinySocketTypeDefinition', 'SocketType', 'socketTypeHash'),
 
-  src('DestinyTalentGridDefinition', 'TalentGrid', 'talentGridHash'),
+  src('DestinyTalentGridDefinition', 'TalentGrid', 'talentGridHash')
 ];

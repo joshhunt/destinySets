@@ -22,7 +22,7 @@ import {
   HUNTER,
   TITAN,
   WARLOCK,
-  PLAYSTATION,
+  PLAYSTATION
 } from 'app/views/DataExplorer/definitionSources';
 
 import { fancySearch } from 'app/views/DataExplorer/filterItems';
@@ -30,7 +30,8 @@ import sortItemsIntoSections from 'app/views/DataExplorer/sortItemsIntoSections'
 
 import styles from './styles.styl';
 
-import newSets from '../sets.js';
+import setsSets from '../sets.js';
+import allItemsSets from '../allItems.js';
 import consoleExclusives from '../consoleExclusives.js';
 
 const SHOW_PS4_EXCLUSIVES = -101;
@@ -40,19 +41,24 @@ function merge(base, extra) {
   return { ...base, ...extra };
 }
 
+const VARIATIONS = {
+  sets: setsSets,
+  allItems: allItemsSets
+};
+
 const FILTERS = [
   [TITAN, 'Titan'],
   [HUNTER, 'Hunter'],
   [WARLOCK, 'Warlock'],
   [SHOW_COLLECTED, 'Collected'],
-  [SHOW_PS4_EXCLUSIVES, 'PS4 exclusives'],
+  [SHOW_PS4_EXCLUSIVES, 'PS4 exclusives']
 ];
 
 const defaultFilter = {
   [TITAN]: true,
   [HUNTER]: true,
   [WARLOCK]: true,
-  [SHOW_COLLECTED]: true,
+  [SHOW_COLLECTED]: true
 };
 
 class Gearsets extends Component {
@@ -65,7 +71,7 @@ class Gearsets extends Component {
       items: [],
       selectedItems: [],
       displayFilters: false,
-      filter: ls.getFilters() || defaultFilter,
+      filter: ls.getFilters() || defaultFilter
     };
   }
 
@@ -74,7 +80,7 @@ class Gearsets extends Component {
 
     this.dataPromise = Promise.all([
       getDefinition('DestinyInventoryItemDefinition'),
-      getDefinition('DestinyVendorDefinition'),
+      getDefinition('DestinyVendorDefinition')
     ]);
 
     this.dataPromise.then(result => {
@@ -86,10 +92,18 @@ class Gearsets extends Component {
     if (!this.props.isAuthenticated && newProps.isAuthenticated) {
       this.fetchCharacters(newProps);
     }
+
+    if (this.props.route !== newProps.route) {
+      this.dataPromise.then(result => {
+        this.processSets(...result);
+      });
+    }
   }
 
   processSets = (itemDefs, vendorDefs) => {
-    const items = Object.values(itemDefs);
+    const sets = VARIATIONS[this.props.route.variation];
+
+    const allItems = Object.values(itemDefs);
 
     const kioskItems = this.profile
       ? destiny.collectItemsFromKiosks(this.profile, itemDefs, vendorDefs)
@@ -103,14 +117,20 @@ class Gearsets extends Component {
 
     ls.saveInventory(inventory);
 
-    this.rawGroups = newSets.map(group => {
+    this.rawGroups = sets.map(group => {
       const sets = group.sets.map(set => {
         const preSections = set.fancySearchTerm
-          ? sortItemsIntoSections(fancySearch(set.fancySearchTerm, items))
+          ? sortItemsIntoSections(fancySearch(set.fancySearchTerm, allItems))
           : set.sections;
 
         const sections = preSections.map(section => {
-          const items = mapItems(section.items, itemDefs, inventory);
+          const preItems =
+            section.items ||
+            fancySearch(section.fancySearchTerm, allItems, {
+              hashOnly: true
+            }).map(i => i.hash);
+          console.log('preItems:', preItems);
+          const items = mapItems(preItems, itemDefs, inventory);
 
           return merge(section, { items });
         });
@@ -128,7 +148,7 @@ class Gearsets extends Component {
     this.setState({
       emblemBg: emblem && emblem.secondarySpecial,
       loading: false,
-      groups: filteredGroups,
+      groups: filteredGroups
     });
   };
 
@@ -178,7 +198,7 @@ class Gearsets extends Component {
           if (items.length > 0) {
             sectionAcc.push({
               ..._section,
-              items,
+              items
             });
           }
 
@@ -188,7 +208,7 @@ class Gearsets extends Component {
         if (sections.length > 0) {
           setAcc.push({
             ..._set,
-            sections,
+            sections
           });
         }
 
@@ -198,7 +218,7 @@ class Gearsets extends Component {
       if (sets.length > 0) {
         groupAcc.push({
           ..._group,
-          sets: sets,
+          sets: sets
         });
       }
 
@@ -264,8 +284,8 @@ class Gearsets extends Component {
       profile,
       filter: {
         ...this.state.filter,
-        [SHOW_PS4_EXCLUSIVES]: membershipType === PLAYSTATION,
-      },
+        [SHOW_PS4_EXCLUSIVES]: membershipType === PLAYSTATION
+      }
     });
 
     this.dataPromise.then(result => {
@@ -280,7 +300,7 @@ class Gearsets extends Component {
   toggleFilterValue = filterValue => {
     const newFilter = {
       ...this.state.filter,
-      [filterValue]: !this.state.filter[filterValue],
+      [filterValue]: !this.state.filter[filterValue]
     };
     const filteredGroups = this.filterGroups(this.rawGroups, newFilter);
 
@@ -288,7 +308,7 @@ class Gearsets extends Component {
 
     this.setState({
       groups: filteredGroups,
-      filter: newFilter,
+      filter: newFilter
     });
   };
 
@@ -304,7 +324,7 @@ class Gearsets extends Component {
       profiles,
       groups,
       emblemBg,
-      displayFilters,
+      displayFilters
     } = this.state;
 
     if (loading) {

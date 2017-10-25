@@ -14,6 +14,10 @@ import {
   SHIP,
   SHADER,
   EMBLEM,
+  EMOTES,
+  KINETIC_WEAPON,
+  ENERGY_WEAPON,
+  POWER_WEAPON
 } from './definitionSources';
 
 const get = (obj, term, opt) => _get(obj, term, '').toLowerCase();
@@ -89,6 +93,10 @@ export const fancySearchFns = {
     return items.filter(isWeapon);
   },
 
+  'is:kinetic': items => items.filter(itemCategory(KINETIC_WEAPON)),
+  'is:energy': items => items.filter(itemCategory(ENERGY_WEAPON)),
+  'is:power': items => items.filter(itemCategory(POWER_WEAPON)),
+
   'is:armor': items => {
     return items.filter(isArmor);
   },
@@ -116,6 +124,10 @@ export const fancySearchFns = {
     return items.filter(itemCategory(SHADER));
   },
 
+  'is:emote': items => {
+    return items.filter(itemCategory(EMOTES));
+  },
+
   'is:emblem': items => {
     return items.filter(itemCategory(EMBLEM));
   },
@@ -140,17 +152,29 @@ export const fancySearchFns = {
   },
 
   'is:exotic': items => {
-    return items.filter(tierTypeName('Exotic'));
+    return items.filter(isExotic);
   },
 
   'is:legendary': items => {
-    return items.filter(tierTypeName('Legendary'));
+    return items.filter(isLegendary);
   },
+
+  'is:uncommon': items => {
+    return items.filter(tierTypeName('Uncommon'));
+  },
+
+  'is:rare': items => {
+    return items.filter(tierTypeName('Rare'));
+  },
+
+  'is:common': items => {
+    return items.filter(tierTypeName('Common'));
+  }
 };
 
 export const fancySearchTerms = Object.keys(fancySearchFns);
 
-export function fancySearch(search, allItems) {
+export function fancySearch(search, allItems, opts = { hashOnly: false }) {
   const queries = search.split(' ').filter(s => s.includes(':'));
 
   const filteredItems = queries.reduce((items, query) => {
