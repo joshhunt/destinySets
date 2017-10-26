@@ -158,9 +158,9 @@ class Gearsets extends Component {
         const sections = _set.sections.reduce((sectionAcc, _section) => {
           const items = _section.items.filter(item => {
             // Exclude the 'Legend of Acrius' exotic quest item
-            if (item.hash === 1744115122) {
-              return false;
-            }
+            // if (item.hash === 1744115122) {
+            //   return false;
+            // }
 
             if (
               !filter[SHOW_PS4_EXCLUSIVES] &&
