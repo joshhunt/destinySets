@@ -353,7 +353,7 @@ class Gearsets extends Component {
               target="_blank"
               rel="noopener noreferrer"
             >
-              get in touch on Twitter
+              Get in touch on Twitter
             </a>{' '}
             and tell me what you think!
           </p>
