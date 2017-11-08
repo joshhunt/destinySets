@@ -615,12 +615,12 @@ module.exports = [
         small: true,
         sections: [
           {
-            title: 'Kerak Type 2',
-            items: [160388292, 107582877, 2696303651, 2048751167, 1978110490]
-          },
-          {
             title: 'Retro-Grade TG2',
             items: [2525344810, 2530905971, 1364856221, 2265859909, 2826844112]
+          },
+          {
+            title: 'Kerak Type 2',
+            items: [160388292, 107582877, 2696303651, 2048751167, 1978110490]
           },
           {
             title: 'Devastation Complex',
