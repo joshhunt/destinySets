@@ -41,7 +41,8 @@ export default class Header extends React.Component {
         <div className={styles.header} style={style}>
           <div className={styles.main}>
             <Link to="/" className={styles.siteName}>
-              Destiny Sets <span className={styles.version}>2</span>
+              D<span className={styles.longName}>estiny Sets </span>
+              <span className={styles.version}>2</span>
             </Link>
 
             <Link
@@ -62,13 +63,10 @@ export default class Header extends React.Component {
 
             <Link
               to="/data"
-              className={styles.navItem}
+              className={cx(styles.navItem, styles.longName)}
               activeClassName={styles.active}
             >
-              <span>
-                Data
-                <span className={styles.longName}> Explorer</span>
-              </span>
+              <span>Data Explorer</span>
             </Link>
           </div>
 
