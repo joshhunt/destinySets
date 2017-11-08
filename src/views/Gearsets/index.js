@@ -344,6 +344,29 @@ class Gearsets extends Component {
           </LoginUpsell>
         )}
 
+        <div className={styles.poll}>
+          <p>
+            Hey - I'm looking into how I could recoup (at least some of) the
+            costs of running this site and I would love your opionion.{' '}
+            <a
+              href="https://twitter.com/joshhunt/status/928348993561726977"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              get in touch on Twitter
+            </a>{' '}
+            and tell me what you think!
+          </p>
+
+          <a
+            className={styles.voteOnTwitter}
+            href="https://twitter.com/joshhunt/status/928348993561726977"
+            target="_blank"
+          >
+            Vote on Twitter
+          </a>
+        </div>
+
         <div className={styles.subnav}>
           <div className={styles.navsections}>
             {(groups || []).map((group, index) => (
