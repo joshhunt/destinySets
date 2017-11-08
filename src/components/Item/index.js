@@ -7,16 +7,26 @@ import ToolTip from 'app/components/ReactPortalTooltip';
 
 import styles from './styles.styl';
 
+function isMobile() {
+  return (
+    window &&
+    window.navigator &&
+    /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+      window.navigator.userAgent
+    )
+  );
+}
+
 const tooltipStyle = {
   style: {
     background: '#20262d',
     padding: 0,
-    boxShadow: '0px 2px 3px rgba(0,0,0,.5)',
+    boxShadow: '0px 2px 3px rgba(0,0,0,.5)'
   },
   arrowStyle: {
     color: '#20262d',
-    borderColor: false,
-  },
+    borderColor: false
+  }
 };
 
 export default class Item extends Component {
@@ -36,11 +46,11 @@ export default class Item extends Component {
   // }
 
   state = {
-    isTooltipActive: false,
+    isTooltipActive: false
   };
 
   showTooltip = () => {
-    if (!this.props.supressTooltip) {
+    if (!this.props.supressTooltip && !isMobile()) {
       this.setState({ isTooltipActive: true });
     }
   };
@@ -56,14 +66,14 @@ export default class Item extends Component {
     const dtrProps = {
       href: dtrLink,
       target: '_blank',
-      'data-dtr-tooltip': 'no-show',
+      'data-dtr-tooltip': 'no-show'
     };
 
     const rootClassName = cx(styles.root, {
       [styles.small]: small,
       [styles.tiny]: tiny,
       [styles.obtained]: item.$obtained,
-      [styles.forSale]: item.forSale,
+      [styles.forSale]: item.forSale
     });
 
     const { name, icon: _icon } = item.displayProperties;
