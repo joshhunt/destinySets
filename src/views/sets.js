@@ -1,106 +1,5 @@
 module.exports = [
   {
-    name: 'Featured',
-    sets: [
-      {
-        name: 'Iron Banner',
-        description:
-          'Weapons and armor obtained by honoring the heroes of old in the Iron Banner Crucible tournament.',
-        sections: [
-          {
-            title: 'Weapons',
-            items: [
-              2014642399, // The Forward Path
-              4425887, // The Time-Worn Spire
-              3890960908, // The Guiding Sight
-              1189790632, // The Steady Hand
-              3424403076, // The Fool's Remedy
-              2961807684, // The Wizened Rebuke
-              2909905776, // The Hero's Burden
-              807192446 // The Day's Fury
-            ]
-          },
-          {
-            title: 'Hunter armor',
-            items: [
-              1496224967, // Iron Truage Casque
-              3737894478, // Iron Truage Grips
-              831464034, // Iron Truage Vest
-              1526005320, // Iron Truage Boots
-              479917491 // Mantle of Efrideet
-            ]
-          },
-          {
-            title: 'Titan armor',
-            items: [
-              1804445917, // Iron Truage Helm
-              691332172, // Iron Truage Gauntlets
-              3865618708, // Iron Truage Plate
-              1337167606, // Iron Truage Greaves
-              738938985 // Radegast's Iron Sash
-            ]
-          },
-          {
-            title: 'Warlock armor',
-            items: [
-              2811201658, // Iron Truage Hood
-              287471683, // Iron Truage Gloves
-              124696333, // Iron Truage Vestments
-              2674485749, // Iron Truage Legs
-              2999505920 // Timur's Iron Bond
-            ]
-          }
-        ]
-      },
-
-      {
-        name: 'Leviathan Armor',
-        description:
-          'Armor obtained by increasing your reputation with Emperor Calus.',
-        sections: [
-          {
-            title: 'Weapons',
-            items: [
-              2505533224,
-              3325744914,
-              3906942101,
-              1128225405,
-              3954531357,
-              3380742308,
-              3691881271,
-              1018072983
-            ]
-          },
-          {
-            title: 'Hunter Armor',
-            items: [2013109092, 1960303677, 407863747, 30962015, 3984534842]
-          },
-          {
-            title: 'Hunter Armor - Prestige Mode',
-            items: [2013109093, 1960303676, 407863746, 30962014, 3984534843]
-          },
-          {
-            title: 'Titan Armor',
-            items: [1413589586, 1879942843, 1876645653, 288406317, 574137192]
-          },
-          {
-            title: 'Titan Armor - Prestige Mode',
-            items: [1413589587, 1879942842, 1876645652, 288406316, 574137193]
-          },
-          {
-            title: 'Warlock Armor',
-            items: [2700598111, 2676042150, 3592548938, 2193494688, 3763332443]
-          },
-          {
-            title: 'Warlock Armor - Prestige Mode',
-            items: [2700598110, 2676042151, 3592548939, 2193494689, 3763332442]
-          }
-        ]
-      }
-    ]
-  },
-
-  {
     name: 'Factions',
     sets: [
       {
@@ -209,6 +108,107 @@ module.exports = [
           {
             title: 'Warlock Armor',
             items: [2401598772, 807866445, 3656154099, 1478665487, 1566612778]
+          }
+        ]
+      }
+    ]
+  },
+
+  {
+    name: 'Endgame',
+    sets: [
+      {
+        name: 'Iron Banner',
+        description:
+          'Weapons and armor obtained by honoring the heroes of old in the Iron Banner Crucible tournament.',
+        sections: [
+          {
+            title: 'Weapons',
+            items: [
+              2014642399, // The Forward Path
+              4425887, // The Time-Worn Spire
+              3890960908, // The Guiding Sight
+              1189790632, // The Steady Hand
+              3424403076, // The Fool's Remedy
+              2961807684, // The Wizened Rebuke
+              2909905776, // The Hero's Burden
+              807192446 // The Day's Fury
+            ]
+          },
+          {
+            title: 'Hunter armor',
+            items: [
+              1496224967, // Iron Truage Casque
+              3737894478, // Iron Truage Grips
+              831464034, // Iron Truage Vest
+              1526005320, // Iron Truage Boots
+              479917491 // Mantle of Efrideet
+            ]
+          },
+          {
+            title: 'Titan armor',
+            items: [
+              1804445917, // Iron Truage Helm
+              691332172, // Iron Truage Gauntlets
+              3865618708, // Iron Truage Plate
+              1337167606, // Iron Truage Greaves
+              738938985 // Radegast's Iron Sash
+            ]
+          },
+          {
+            title: 'Warlock armor',
+            items: [
+              2811201658, // Iron Truage Hood
+              287471683, // Iron Truage Gloves
+              124696333, // Iron Truage Vestments
+              2674485749, // Iron Truage Legs
+              2999505920 // Timur's Iron Bond
+            ]
+          }
+        ]
+      },
+
+      {
+        name: 'Leviathan Armor',
+        description:
+          'Armor obtained by increasing your reputation with Emperor Calus.',
+        sections: [
+          {
+            title: 'Weapons',
+            items: [
+              2505533224,
+              3325744914,
+              3906942101,
+              1128225405,
+              3954531357,
+              3380742308,
+              3691881271,
+              1018072983
+            ]
+          },
+          {
+            title: 'Hunter Armor',
+            items: [2013109092, 1960303677, 407863747, 30962015, 3984534842]
+          },
+          {
+            title: 'Hunter Armor - Prestige Mode',
+            items: [2013109093, 1960303676, 407863746, 30962014, 3984534843]
+          },
+          {
+            title: 'Titan Armor',
+            items: [1413589586, 1879942843, 1876645653, 288406317, 574137192]
+          },
+          {
+            title: 'Titan Armor - Prestige Mode',
+            items: [1413589587, 1879942842, 1876645652, 288406316, 574137193]
+          },
+          {
+            title: 'Warlock Armor',
+            items: [2700598111, 2676042150, 3592548938, 2193494688, 3763332443]
+          },
+          {
+            title: 'Warlock Armor - Prestige Mode',
+            items: [2700598110, 2676042151, 3592548939, 2193494689, 3763332442]
           }
         ]
       }
