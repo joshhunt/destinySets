@@ -56,7 +56,24 @@ $twitter = #47A0EA
     overflow: scroll
     white-space: nowrap
 
+.filterFlex
+  display: flex
+  margin-right: -10px
+
+  // mobile styling
+  @media screen and (max-width: 679px)
+    margin-left: -10px
+
+.filteredOut
+  padding: 5px 10px
+  color: #808080
+
+  // mobile styling
+  @media screen and (max-width: 679px)
+    order: 9
+
 .toggleFilters
+  // margin-left: -10px
   color: rgba(white, .9)
   cursor: pointer
   padding: 5px 10px
@@ -80,6 +97,12 @@ $twitter = #47A0EA
   // mobile styling
   @media screen and (max-width: 679px)
     display: block
+
+  margin-right: -10px
+
+  // mobile styling
+  @media screen and (max-width: 679px)
+    margin-left: -10px
 
 .filterInner
   background: rgba(white, .07)

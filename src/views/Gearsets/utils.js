@@ -1,4 +1,4 @@
-import { forEach } from 'lodash';
+import { forEach, flatMap } from 'lodash';
 
 export function mapItems(itemHashes, itemDefs, inventory) {
   return itemHashes
@@ -12,7 +12,7 @@ export function mapItems(itemHashes, itemDefs, inventory) {
 
       return {
         $obtained: inventory.includes(item.hash),
-        ...item,
+        ...item
       };
     })
     .filter(Boolean);
@@ -25,7 +25,7 @@ export function logItems(profile, itemDefs) {
   const {
     characterInventories,
     profileInventory,
-    characterEquipment,
+    characterEquipment
   } = profile;
 
   forEach(characterInventories.data, ({ items }, characterId) => {
@@ -64,5 +64,15 @@ export function logItems(profile, itemDefs) {
       ` - ${itemHash}: ${item.displayProperties
         .name} [${item.itemTypeDisplayName}]`
     );
+  });
+}
+
+export function flatMapSetItems(sets) {
+  return flatMap(sets, setsList => {
+    return flatMap(setsList.sets, set => {
+      return flatMap(set.sections, setSection => {
+        return setSection.items;
+      });
+    });
   });
 }

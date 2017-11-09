@@ -14,7 +14,7 @@ import LoginUpsell from 'app/components/LoginUpsell';
 import ActivityList from 'app/components/ActivityList';
 import DestinyAuthProvider from 'app/lib/DestinyAuthProvider';
 
-import { mapItems /*, logItems */ } from './utils';
+import { mapItems, flatMapSetItems /*, logItems */ } from './utils';
 
 // import * as telemetry from 'app/lib/telemetry';
 
@@ -58,7 +58,8 @@ const defaultFilter = {
   [TITAN]: true,
   [HUNTER]: true,
   [WARLOCK]: true,
-  [SHOW_COLLECTED]: true
+  [SHOW_COLLECTED]: true,
+  [SHOW_PS4_EXCLUSIVES]: true
 };
 
 class Gearsets extends Component {
@@ -138,22 +139,22 @@ class Gearsets extends Component {
       return merge(group, { sets });
     });
 
-    const filteredGroups = this.filterGroups(this.rawGroups);
+    this.filterGroups(this.rawGroups);
 
     const emblem = itemDefs[this.emblemHash];
 
     this.setState({
       emblemBg: emblem && emblem.secondarySpecial,
-      loading: false,
-      groups: filteredGroups
+      loading: false
     });
   };
 
   filterGroups = (rawGroups, _filter) => {
     const filter = _filter || this.state.filter;
+    const totalItems = flatMapSetItems(rawGroups).length;
 
     // fuck me, this is bad. filter all the items
-    const finalGroups = rawGroups.reduce((groupAcc, _group) => {
+    const filteredGroups = rawGroups.reduce((groupAcc, _group) => {
       const sets = _group.sets.reduce((setAcc, _set) => {
         const sections = _set.sections.reduce((sectionAcc, _section) => {
           const items = _section.items.filter(item => {
@@ -222,7 +223,12 @@ class Gearsets extends Component {
       return groupAcc;
     }, []);
 
-    return finalGroups;
+    const displayedItems = flatMapSetItems(filteredGroups).length;
+
+    this.setState({
+      groups: filteredGroups,
+      hiddenItemsCount: totalItems - displayedItems
+    });
   };
 
   fetchCharacters = (props = this.props) => {
@@ -299,12 +305,12 @@ class Gearsets extends Component {
       ...this.state.filter,
       [filterValue]: !this.state.filter[filterValue]
     };
-    const filteredGroups = this.filterGroups(this.rawGroups, newFilter);
+
+    this.filterGroups(this.rawGroups, newFilter);
 
     ls.saveFilters(newFilter);
 
     this.setState({
-      groups: filteredGroups,
       filter: newFilter
     });
   };
@@ -321,7 +327,8 @@ class Gearsets extends Component {
       profiles,
       groups,
       emblemBg,
-      displayFilters
+      displayFilters,
+      hiddenItemsCount
     } = this.state;
 
     if (loading) {
@@ -380,14 +387,23 @@ class Gearsets extends Component {
             ))}
           </div>
 
-          <div
-            className={cx(
-              styles.toggleFilters,
-              displayFilters && styles.filtersActive
+          <div className={styles.filterFlex}>
+            {profile &&
+            hiddenItemsCount > 0 && (
+              <div className={styles.filteredOut}>
+                {hiddenItemsCount} items hidden by filters
+              </div>
             )}
-            onClick={this.toggleFilter}
-          >
-            Filters <i className="fa fa-caret-down" aria-hidden="true" />
+
+            <div
+              className={cx(
+                styles.toggleFilters,
+                displayFilters && styles.filtersActive
+              )}
+              onClick={this.toggleFilter}
+            >
+              Filters <i className="fa fa-caret-down" aria-hidden="true" />
+            </div>
           </div>
 
           {displayFilters && (
