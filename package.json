@@ -68,7 +68,8 @@
     "scroll-to-element": "^2.0.0",
     "stylus": "0.54.5",
     "stylus-loader": "2.4.0",
-    "walk-object": "^4.0.0"
+    "walk-object": "^4.0.0",
+    "webpack-visualizer-plugin": "^0.1.11"
   },
   "scripts": {
     "start": "node scripts/start.js",

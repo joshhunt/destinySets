@@ -1,19 +1,8 @@
-import * as firebase from 'firebase';
-
 import * as destiny from 'app/lib/destiny';
 
 const GHOST_BUCKET = 4023194814;
 
-export default firebase.initializeApp({
-  apiKey: 'AIzaSyDA_n6Ix4o6K2vW4zlFFmWk2XCzqPesDZo',
-  authDomain: 'destinysets.firebaseapp.com',
-  databaseURL: 'https://destinysets.firebaseio.com',
-  projectId: 'destinysets',
-  storageBucket: 'destinysets.appspot.com',
-  messagingSenderId: '621939283066'
-});
-
-const db = firebase.database();
+let db;
 
 function saveInventoryToFirebase(profileId, inventory, ghosts) {
   db.ref('profile/' + profileId).set({
@@ -23,22 +12,39 @@ function saveInventoryToFirebase(profileId, inventory, ghosts) {
 }
 
 export function saveInventory(profile, inventory) {
-  try {
-    const profileId = profile.profile.data.userInfo.membershipId;
-    const ghosts = destiny
-      .collectItemsFromProfile(profile, true)
-      .filter(item => item.bucketHash === GHOST_BUCKET && item.$sockets) // dodgy way to get all ghosts
-      .map(item => {
-        return {
-          itemHash: item.itemHash,
-          itemInstanceId: item.itemInstanceId,
-          sockets: item.$sockets.sockets.map(s => s.plugHash).filter(Boolean)
-        };
+  require.ensure(['firebase'], function() {
+    const firebase = require('firebase');
+
+    if (!db) {
+      firebase.initializeApp({
+        apiKey: 'AIzaSyDA_n6Ix4o6K2vW4zlFFmWk2XCzqPesDZo',
+        authDomain: 'destinysets.firebaseapp.com',
+        databaseURL: 'https://destinysets.firebaseio.com',
+        projectId: 'destinysets',
+        storageBucket: 'destinysets.appspot.com',
+        messagingSenderId: '621939283066'
       });
 
-    saveInventoryToFirebase(profileId, inventory, ghosts);
-  } catch (e) {
-    console.error('Error with inventory telemetry');
-    console.error(e);
-  }
+      db = firebase.database();
+    }
+
+    try {
+      const profileId = profile.profile.data.userInfo.membershipId;
+      const ghosts = destiny
+        .collectItemsFromProfile(profile, true)
+        .filter(item => item.bucketHash === GHOST_BUCKET && item.$sockets) // dodgy way to get all ghosts
+        .map(item => {
+          return {
+            itemHash: item.itemHash,
+            itemInstanceId: item.itemInstanceId,
+            sockets: item.$sockets.sockets.map(s => s.plugHash).filter(Boolean)
+          };
+        });
+
+      saveInventoryToFirebase(profileId, inventory, ghosts);
+    } catch (e) {
+      console.error('Error with inventory telemetry');
+      console.error(e);
+    }
+  });
 }

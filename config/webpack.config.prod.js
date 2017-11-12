@@ -7,6 +7,7 @@ var InterpolateHtmlPlugin = require('react-dev-utils/InterpolateHtmlPlugin');
 var url = require('url');
 var paths = require('./paths');
 var getClientEnvironment = require('./env');
+var Visualizer = require('webpack-visualizer-plugin');
 
 const appConfig = require('../appConfig').prod;
 
@@ -64,7 +65,7 @@ module.exports = {
     filename: 'static/js/[name].[chunkhash:8].js',
     chunkFilename: 'static/js/[name].[chunkhash:8].chunk.js',
     // We inferred the "public path" (such as / or /my-project) from homepage.
-    publicPath: publicPath,
+    publicPath: publicPath
   },
   resolve: {
     // This allows you to set a fallback for where Webpack should look for modules.
@@ -82,8 +83,8 @@ module.exports = {
       // Support React Native Web
       // https://www.smashingmagazine.com/2016/08/a-glimpse-into-the-future-with-react-native-for-web/
       'react-native': 'react-native-web',
-      app: paths.appSrc,
-    },
+      app: paths.appSrc
+    }
   },
 
   module: {
@@ -116,25 +117,25 @@ module.exports = {
           /\.styl$/,
           /\.json$/,
           /\.css$/,
-          /\.svg$/,
+          /\.svg$/
         ],
         loader: 'url',
         query: {
           limit: 10000,
-          name: 'static/media/[name].[hash:8].[ext]',
-        },
+          name: 'static/media/[name].[hash:8].[ext]'
+        }
       },
       // Process JS with Babel.
       {
         test: /\.(js|jsx)$/,
         include: paths.appSrc,
-        loader: 'babel',
+        loader: 'babel'
       },
 
       {
         test: /(copy\-text\-to\-clipboard)/,
         include: /node_modules/,
-        loader: 'babel',
+        loader: 'babel'
       },
 
       // The notation here is somewhat confusing.
@@ -154,7 +155,7 @@ module.exports = {
         loader: ExtractTextPlugin.extract(
           'style',
           'css?importLoaders=2&modules!postcss!stylus'
-        ),
+        )
         // Note: this won't work without `new ExtractTextPlugin()` in `plugins`.
       },
       {
@@ -162,24 +163,24 @@ module.exports = {
         loader: ExtractTextPlugin.extract(
           'style',
           'css?importLoaders=2!postcss'
-        ),
+        )
         // Note: this won't work without `new ExtractTextPlugin()` in `plugins`.
       },
       // JSON is not enabled by default in Webpack but both Node and Browserify
       // allow it implicitly so we also enable it.
       {
         test: /\.json$/,
-        loader: 'json',
+        loader: 'json'
       },
       // "file" loader for svg
       {
         test: /\.svg$/,
         loader: 'file',
         query: {
-          name: 'static/media/[name].[hash:8].[ext]',
-        },
-      },
-    ],
+          name: 'static/media/[name].[hash:8].[ext]'
+        }
+      }
+    ]
   },
 
   // We use PostCSS for autoprefixing only.
@@ -190,18 +191,20 @@ module.exports = {
           '>1%',
           'last 4 versions',
           'Firefox ESR',
-          'not ie < 9', // React doesn't support IE8 anyway
-        ],
-      }),
+          'not ie < 9' // React doesn't support IE8 anyway
+        ]
+      })
     ];
   },
   plugins: [
+    new Visualizer(),
+
     // Makes the public URL available as %PUBLIC_URL% in index.html, e.g.:
     // <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
     // In production, it will be an empty string unless you specify "homepage"
     // in `package.json`, in which case it will be the pathname of that URL.
     new InterpolateHtmlPlugin({
-      PUBLIC_URL: publicUrl,
+      PUBLIC_URL: publicUrl
     }),
     // Generates an `index.html` file with the <script> injected.
     new HtmlWebpackPlugin({
@@ -217,8 +220,8 @@ module.exports = {
         keepClosingSlash: true,
         minifyJS: true,
         minifyCSS: true,
-        minifyURLs: true,
-      },
+        minifyURLs: true
+      }
     }),
     // Makes some environment variables available to the JS code, for example:
     // if (process.env.NODE_ENV === 'production') { ... }. See `./env.js`.
@@ -228,7 +231,7 @@ module.exports = {
       Object.assign(
         {
           __DESTINY_API_KEY__: JSON.stringify(appConfig.apiKey),
-          __DESTINY_AUTH_URL__: JSON.stringify(appConfig.authUrl),
+          __DESTINY_AUTH_URL__: JSON.stringify(appConfig.authUrl)
         },
         env
       )
@@ -241,15 +244,15 @@ module.exports = {
     new webpack.optimize.UglifyJsPlugin({
       compress: {
         screw_ie8: true, // React doesn't support IE8
-        warnings: false,
+        warnings: false
       },
       mangle: {
-        screw_ie8: true,
+        screw_ie8: true
       },
       output: {
         comments: false,
-        screw_ie8: true,
-      },
+        screw_ie8: true
+      }
     }),
     // Note: this won't work without ExtractTextPlugin.extract(..) in `loaders`.
     new ExtractTextPlugin('static/css/[name].[contenthash:8].css'),
@@ -257,14 +260,14 @@ module.exports = {
     // to their corresponding output file so that tools can pick it up without
     // having to parse `index.html`.
     new ManifestPlugin({
-      fileName: 'asset-manifest.json',
-    }),
+      fileName: 'asset-manifest.json'
+    })
   ],
   // Some libraries import Node modules but don't use them in the browser.
   // Tell Webpack to provide empty mocks for them so importing them works.
   node: {
     fs: 'empty',
     net: 'empty',
-    tls: 'empty',
-  },
+    tls: 'empty'
+  }
 };

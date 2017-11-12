@@ -39,7 +39,7 @@ const COMPONENTS = [
   componentItemInstances,
   componentItemCommonData,
   componentItemSockets,
-  componentKiosks,
+  componentKiosks
 ];
 
 export function get(url, opts) {
@@ -193,7 +193,7 @@ export function collectItemsFromProfile(profile, verbose = false) {
     characterInventories,
     profileInventory,
     characterEquipment,
-    itemComponents,
+    itemComponents
   } = profile;
 
   function mapItem(item) {
@@ -204,7 +204,7 @@ export function collectItemsFromProfile(profile, verbose = false) {
     return {
       ...item,
       $instance: itemComponents.instances.data[item.itemInstanceId],
-      $sockets: itemComponents.sockets.data[item.itemInstanceId],
+      $sockets: itemComponents.sockets.data[item.itemInstanceId]
     };
   }
 
