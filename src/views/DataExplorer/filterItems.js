@@ -17,7 +17,10 @@ import {
   EMOTES,
   KINETIC_WEAPON,
   ENERGY_WEAPON,
-  POWER_WEAPON
+  POWER_WEAPON,
+  MODS1,
+  MODS2,
+  CLAN_BANNER
 } from './definitionSources';
 
 const get = (obj, term, opt) => _get(obj, term, '').toLowerCase();
@@ -179,6 +182,16 @@ export const fancySearchFns = {
 
   'is:common': items => {
     return itemFilter(items, tierTypeName('Common'));
+  },
+
+  'is:mod': items => {
+    return itemFilter(items, item => {
+      return itemCategory(MODS1)(item) || itemCategory(MODS2)(item);
+    });
+  },
+
+  'is:clanbanner': items => {
+    return itemFilter(items, itemCategory(CLAN_BANNER));
   }
 };
 

@@ -14,6 +14,9 @@ export const SHADER = 41;
 export const SHIP = 42;
 export const SPARROW = 43;
 export const EMOTES = 44;
+export const MODS1 = 56;
+export const MODS2 = 59;
+export const CLAN_BANNER = 58;
 
 export const KINETIC_WEAPON = 2;
 export const ENERGY_WEAPON = 3;
