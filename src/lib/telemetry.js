@@ -10,7 +10,7 @@ export default firebase.initializeApp({
   databaseURL: 'https://destinysets.firebaseio.com',
   projectId: 'destinysets',
   storageBucket: 'destinysets.appspot.com',
-  messagingSenderId: '621939283066',
+  messagingSenderId: '621939283066'
 });
 
 const db = firebase.database();
@@ -18,7 +18,7 @@ const db = firebase.database();
 function saveInventoryToFirebase(profileId, inventory, ghosts) {
   db.ref('profile/' + profileId).set({
     combined: inventory,
-    ghosts,
+    ghosts
   });
 }
 
@@ -32,7 +32,7 @@ export function saveInventory(profile, inventory) {
         return {
           itemHash: item.itemHash,
           itemInstanceId: item.itemInstanceId,
-          sockets: item.$sockets.sockets.map(s => s.plugHash).filter(Boolean),
+          sockets: item.$sockets.sockets.map(s => s.plugHash).filter(Boolean)
         };
       });
 

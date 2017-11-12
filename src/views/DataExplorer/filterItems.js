@@ -62,9 +62,19 @@ const isExotic = tierTypeName('Exotic');
 
 const COLLECTABLE = [WEAPON, ARMOR, GHOST, SPARROW, SHIP, SHADER, EMBLEM];
 
+const itemFilter = (items, fn) => {
+  return items.filter(item => {
+    return (
+      item.displayProperties.name &&
+      item.displayProperties.name.length > 0 &&
+      fn(item)
+    );
+  });
+};
+
 export const fancySearchFns = {
   'is:collectable': items => {
-    return items.filter(item => {
+    return itemFilter(items, item => {
       if (!item.itemCategoryHashes) {
         return false;
       }
@@ -78,62 +88,62 @@ export const fancySearchFns = {
   },
 
   'is:hunter': items => {
-    return items.filter(classType(HUNTER));
+    return itemFilter(items, classType(HUNTER));
   },
 
   'is:titan': items => {
-    return items.filter(classType(TITAN));
+    return itemFilter(items, classType(TITAN));
   },
 
   'is:warlock': items => {
-    return items.filter(classType(WARLOCK));
+    return itemFilter(items, classType(WARLOCK));
   },
 
   'is:weapon': items => {
-    return items.filter(isWeapon);
+    return itemFilter(items, isWeapon);
   },
 
-  'is:kinetic': items => items.filter(itemCategory(KINETIC_WEAPON)),
-  'is:energy': items => items.filter(itemCategory(ENERGY_WEAPON)),
-  'is:power': items => items.filter(itemCategory(POWER_WEAPON)),
+  'is:kinetic': items => itemFilter(items, itemCategory(KINETIC_WEAPON)),
+  'is:energy': items => itemFilter(items, itemCategory(ENERGY_WEAPON)),
+  'is:power': items => itemFilter(items, itemCategory(POWER_WEAPON)),
 
   'is:armor': items => {
     return items.filter(isArmor);
   },
 
   'is:gear': items => {
-    return items.filter(item => {
+    return itemFilter(items, item => {
       const categories = item.itemCategoryHashes || [];
       return categories.includes(ARMOR) || categories.includes(WEAPON);
     });
   },
 
   'is:ghost': items => {
-    return items.filter(itemCategory(GHOST));
+    return itemFilter(items, itemCategory(GHOST));
   },
 
   'is:sparrow': items => {
-    return items.filter(itemCategory(SPARROW));
+    return itemFilter(items, itemCategory(SPARROW));
   },
 
   'is:ship': items => {
-    return items.filter(itemCategory(SHIP));
+    return itemFilter(items, itemCategory(SHIP));
   },
 
   'is:shader': items => {
-    return items.filter(itemCategory(SHADER));
+    return itemFilter(items, itemCategory(SHADER));
   },
 
   'is:emote': items => {
-    return items.filter(itemCategory(EMOTES));
+    return itemFilter(items, itemCategory(EMOTES));
   },
 
   'is:emblem': items => {
-    return items.filter(itemCategory(EMBLEM));
+    return itemFilter(items, itemCategory(EMBLEM));
   },
 
   'is:classitem': items => {
-    return items.filter(itemCategory(CLASS_ITEMS));
+    return itemFilter(items, itemCategory(CLASS_ITEMS));
   },
 
   'is:notinset': items => {
@@ -152,23 +162,23 @@ export const fancySearchFns = {
   },
 
   'is:exotic': items => {
-    return items.filter(isExotic);
+    return itemFilter(items, isExotic);
   },
 
   'is:legendary': items => {
-    return items.filter(isLegendary);
+    return itemFilter(items, isLegendary);
   },
 
   'is:uncommon': items => {
-    return items.filter(tierTypeName('Uncommon'));
+    return itemFilter(items, tierTypeName('Uncommon'));
   },
 
   'is:rare': items => {
-    return items.filter(tierTypeName('Rare'));
+    return itemFilter(items, tierTypeName('Rare'));
   },
 
   'is:common': items => {
-    return items.filter(tierTypeName('Common'));
+    return itemFilter(items, tierTypeName('Common'));
   }
 };
 

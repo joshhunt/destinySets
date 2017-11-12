@@ -10,6 +10,8 @@ export default function ActivityList({
   title,
   activities,
   tinyItems,
+  countStyle,
+  toggleCountStyle
 }) {
   return (
     <div className={cx(className, styles.root)}>
@@ -20,7 +22,7 @@ export default function ActivityList({
           <div
             className={cx(styles.activityWrapper, {
               [styles.narrow]: activity.small,
-              [styles.big]: activity.big,
+              [styles.big]: activity.big
             })}
             key={index}
           >
@@ -28,6 +30,8 @@ export default function ActivityList({
               className={styles.activity}
               activity={activity}
               tinyItems={tinyItems}
+              countStyle={countStyle}
+              toggleCountStyle={toggleCountStyle}
             />
           </div>
         ))}

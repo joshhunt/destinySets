@@ -7,7 +7,13 @@ import getTypeClass from './getTypeClass';
 import styles from './styles.styl';
 
 export default function Activity(props) {
-  const { className, activity, tinyItems } = props;
+  const {
+    className,
+    activity,
+    tinyItems,
+    toggleCountStyle,
+    countStyle
+  } = props;
 
   if (!activity) return null;
 
@@ -19,6 +25,8 @@ export default function Activity(props) {
     activityTypeName,
     sections,
     type,
+    itemCount,
+    obtainedCount
   } = activity;
 
   return (
@@ -31,9 +39,20 @@ export default function Activity(props) {
     >
       <div className={styles.header}>
         <div className={styles.activityName}>
-          {name}
-          {description && <p className={styles.description}>{description}</p>}
+          <div className={styles.name}>{name}</div>
+
+          <div className={styles.count} onClick={toggleCountStyle}>
+            {countStyle ? (
+              <span>{Math.floor(itemCount / obtainedCount * 100)}%</span>
+            ) : (
+              <span>
+                {itemCount} / {obtainedCount}
+              </span>
+            )}
+          </div>
         </div>
+
+        {description && <p className={styles.description}>{description}</p>}
       </div>
 
       {pgcrImage && (

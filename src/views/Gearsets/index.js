@@ -16,7 +16,7 @@ import DestinyAuthProvider from 'app/lib/DestinyAuthProvider';
 
 import { mapItems, flatMapSetItems /*, logItems */ } from './utils';
 
-// import * as telemetry from 'app/lib/telemetry';
+import * as telemetry from 'app/lib/telemetry';
 
 import {
   HUNTER,
@@ -68,6 +68,7 @@ class Gearsets extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      countStyle: true,
       loading: true,
       items: [],
       selectedItems: [],
@@ -114,7 +115,7 @@ class Gearsets extends Component {
 
     // this.profile && itemDefs && logItems(this.profile, itemDefs);
 
-    // this.profile && telemetry.saveInventory(this.profile, inventory);
+    this.profile && telemetry.saveInventory(this.profile, inventory);
 
     ls.saveInventory(inventory);
 
@@ -141,10 +142,10 @@ class Gearsets extends Component {
 
     this.filterGroups(this.rawGroups);
 
-    const emblem = itemDefs[this.emblemHash];
+    // const emblem = itemDefs[this.emblemHash];
 
     this.setState({
-      emblemBg: emblem && emblem.secondarySpecial,
+      // emblemBg: emblem && emblem.secondarySpecial,
       loading: false
     });
   };
@@ -153,9 +154,15 @@ class Gearsets extends Component {
     const filter = _filter || this.state.filter;
     const totalItems = flatMapSetItems(rawGroups).length;
 
+    let totalItemCount = 0;
+    let totalObtainedCount = 0;
+
     // fuck me, this is bad. filter all the items
     const filteredGroups = rawGroups.reduce((groupAcc, _group) => {
       const sets = _group.sets.reduce((setAcc, _set) => {
+        let setItemCount = 0;
+        let setObtainedCount = 0;
+
         const sections = _set.sections.reduce((sectionAcc, _section) => {
           const items = _section.items.filter(item => {
             // Exclude the 'Legend of Acrius' exotic quest item
@@ -193,10 +200,21 @@ class Gearsets extends Component {
             return false;
           });
 
+          const obtainedCount = items.length;
+          const itemCount = items.filter(i => i.$obtained).length;
+
+          totalItemCount += itemCount;
+          totalObtainedCount += obtainedCount;
+
+          setItemCount += itemCount;
+          setObtainedCount += obtainedCount;
+
           if (items.length > 0) {
             sectionAcc.push({
               ..._section,
-              items
+              items,
+              itemCount,
+              obtainedCount
             });
           }
 
@@ -206,7 +224,9 @@ class Gearsets extends Component {
         if (sections.length > 0) {
           setAcc.push({
             ..._set,
-            sections
+            sections,
+            itemCount: setItemCount,
+            obtainedCount: setObtainedCount
           });
         }
 
@@ -226,6 +246,8 @@ class Gearsets extends Component {
     const displayedItems = flatMapSetItems(filteredGroups).length;
 
     this.setState({
+      itemCount: totalItemCount,
+      obtainedCount: totalObtainedCount,
       groups: filteredGroups,
       hiddenItemsCount: totalItems - displayedItems
     });
@@ -315,6 +337,12 @@ class Gearsets extends Component {
     });
   };
 
+  toggleCountStyle = () => {
+    this.setState({
+      countStyle: !this.state.countStyle
+    });
+  };
+
   copyDebug = () => {
     const { itemComponents, ...debugProfile } = this.profile;
     copy(JSON.stringify(debugProfile));
@@ -328,7 +356,10 @@ class Gearsets extends Component {
       groups,
       emblemBg,
       displayFilters,
-      hiddenItemsCount
+      hiddenItemsCount,
+      countStyle,
+      itemCount,
+      obtainedCount
     } = this.state;
 
     if (loading) {
@@ -351,7 +382,7 @@ class Gearsets extends Component {
           </LoginUpsell>
         )}
 
-        <div className={styles.poll}>
+        {/*<div className={styles.info}>
           <p>
             Hey - I'm looking into how I could recoup (at least some of) the
             costs of running this site and I would love your opionion.{' '}
@@ -372,7 +403,7 @@ class Gearsets extends Component {
           >
             Vote on Twitter
           </a>
-        </div>
+        </div>*/}
 
         <div className={styles.subnav}>
           <div className={styles.navsections}>
@@ -394,6 +425,19 @@ class Gearsets extends Component {
                 {hiddenItemsCount} items hidden by filters
               </div>
             )}
+
+            <div className={styles.itemCountWrapper}>
+              <div className={styles.itemCount} onClick={this.toggleCountStyle}>
+                Collected{' '}
+                {countStyle ? (
+                  <span>{Math.floor(itemCount / obtainedCount * 100)}%</span>
+                ) : (
+                  <span>
+                    {itemCount} / {obtainedCount}
+                  </span>
+                )}
+              </div>
+            </div>
 
             <div
               className={cx(
@@ -428,7 +472,12 @@ class Gearsets extends Component {
 
         {(groups || []).map((group, index) => (
           <div key={index} id={`group_${index}`}>
-            <ActivityList title={group.name} activities={group.sets || []} />
+            <ActivityList
+              title={group.name}
+              activities={group.sets || []}
+              toggleCountStyle={this.toggleCountStyle}
+              countStyle={countStyle}
+            />
           </div>
         ))}
 
