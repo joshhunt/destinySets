@@ -354,6 +354,8 @@ class Gearsets extends Component {
   };
 
   switchLang = newLang => {
+    ga('send', 'event', 'switch-lang', newLang.code);
+
     ls.saveLanguage(newLang);
 
     this.setState({
