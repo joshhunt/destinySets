@@ -7,6 +7,7 @@ import { getDefinition } from 'app/lib/manifestData';
 
 import * as destiny from 'app/lib/destiny';
 import * as ls from 'app/lib/ls';
+import { getDefaultLanguage, getBrowserLocale } from 'app/lib/i18n';
 import Header from 'app/components/Header';
 import Footer from 'app/components/Footer';
 import Loading from 'app/views/Loading';
@@ -89,6 +90,17 @@ class Gearsets extends Component {
   }
 
   fetchDefintionsWithLangage(langCode) {
+    ga(
+      'send',
+      'event',
+      'lang-debug',
+      [
+        `loaded:${langCode}`,
+        `default:${getDefaultLanguage().code}`,
+        `browser:${getBrowserLocale()}`
+      ].join('|')
+    );
+
     this.dataPromise = Promise.all([
       getDefinition('DestinyInventoryItemDefinition', langCode),
       getDefinition('DestinyVendorDefinition', langCode)

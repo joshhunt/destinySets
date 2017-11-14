@@ -1,4 +1,7 @@
 import { keyBy } from 'lodash';
+import browserLocale from 'browser-locale';
+
+const locale = require('browser-locale')().toLowerCase();
 
 export const ENGLISH = {
   code: 'en',
@@ -72,3 +75,21 @@ export const languages = [
 ];
 
 export const languageByCode = keyBy(languages, lang => lang.code);
+
+export function getBrowserLocale() {
+  return browserLocale().toLowerCase();
+}
+
+export function getDefaultLanguage() {
+  let shortLocale = DEFAULT_LANG.code;
+  let fullLocale = DEFAULT_LANG.code;
+
+  try {
+    fullLocale = getBrowserLocale();
+    shortLocale = getBrowserLocale().split('-')[0];
+  } catch (e) {}
+
+  return (
+    languageByCode[fullLocale] || languageByCode[shortLocale] || DEFAULT_LANG
+  );
+}

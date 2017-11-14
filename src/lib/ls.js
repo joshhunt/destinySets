@@ -4,7 +4,7 @@ const ACCOUNT = '$account';
 const LANGUAGE = '$lang';
 const AUTH = '$auth';
 
-import { DEFAULT_LANG } from './i18n';
+import { getDefaultLanguage } from './i18n';
 
 function get(key, defaultx) {
   const lsValue = localStorage.getItem(key);
@@ -33,7 +33,7 @@ export function saveLanguage(langCode) {
 }
 
 export function getLanguage() {
-  return get(LANGUAGE, DEFAULT_LANG.code);
+  return get(LANGUAGE, getDefaultLanguage());
 }
 
 export function saveInventory(inventory) {
