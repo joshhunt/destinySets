@@ -3,6 +3,7 @@ import { find } from 'lodash';
 import copy from 'copy-text-to-clipboard';
 
 import * as destiny from 'app/lib/destiny';
+import * as ls from 'app/lib/ls';
 import { getDefinition } from 'app/lib/manifestData';
 
 import Item from 'app/components/Item';
@@ -28,7 +29,7 @@ class DataExplorer extends Component {
     selectedItems: [],
     numLoaded: 0,
     totalToLoad: DATA_SOURCES.length,
-    collectMode: false,
+    collectMode: false
   };
 
   collection = [];
@@ -43,12 +44,15 @@ class DataExplorer extends Component {
       this.inventory = JSON.parse(localStorage.getItem('inventory')) || [];
     } catch (e) {}
 
-    const dataPromises = DATA_SOURCES.map(src => getDefinition(src.url));
+    const lang = ls.getLanguage();
+    const dataPromises = DATA_SOURCES.map(src =>
+      getDefinition(src.url, lang.code)
+    );
 
     dataPromises.forEach(p =>
       p.then(() => {
         this.setState({
-          numLoaded: this.state.numLoaded + 1,
+          numLoaded: this.state.numLoaded + 1
         });
       })
     );
@@ -69,7 +73,7 @@ class DataExplorer extends Component {
         this.allItems = Object.values(this.data.itemHash.defs).map(item => {
           return {
             $obtained: this.inventory.includes(item.hash),
-            ...item,
+            ...item
           };
         });
 
@@ -79,7 +83,7 @@ class DataExplorer extends Component {
       .catch(err => {
         console.error(err);
         this.setState({
-          error: true,
+          error: true
         });
       });
   }
@@ -117,7 +121,7 @@ class DataExplorer extends Component {
 
     this.setState({
       collectSections: verboseSections,
-      collectSectionsStr: jason,
+      collectSectionsStr: jason
     });
   }
 
@@ -146,7 +150,7 @@ class DataExplorer extends Component {
 
     filteredItems &&
       this.setState({
-        items: filteredItems,
+        items: filteredItems
       });
   };
 
@@ -177,7 +181,7 @@ class DataExplorer extends Component {
       numLoaded,
       totalToLoad,
       collectMode,
-      collectSections,
+      collectSections
     } = this.state;
 
     if (error) {
@@ -273,13 +277,13 @@ class DataExplorer extends Component {
           </div>
 
           {collectMode &&
-          collectSections && (
-            <CollectionSidebar
-              removeItem={this.removeItemFromCollection}
-              className={styles.sidebar}
-              sections={this.state.collectSections}
-            />
-          )}
+            collectSections && (
+              <CollectionSidebar
+                removeItem={this.removeItemFromCollection}
+                className={styles.sidebar}
+                sections={this.state.collectSections}
+              />
+            )}
         </div>
       </div>
     );

@@ -1,0 +1,74 @@
+import { keyBy } from 'lodash';
+
+export const ENGLISH = {
+  code: 'en',
+  name: 'English'
+};
+
+export const FRENCH = {
+  code: 'fr',
+  name: 'French'
+};
+
+export const GERMAN = {
+  code: 'de',
+  name: 'German'
+};
+
+export const ITALIAN = {
+  code: 'it',
+  name: 'Italian'
+};
+
+export const JAPANESE = {
+  code: 'ja',
+  name: 'Japanese'
+};
+
+export const PORTUGUESE = {
+  code: 'pt-br',
+  name: 'Portuguese (Brazil)'
+};
+
+export const SPANISH = {
+  code: 'es',
+  name: 'Spanish'
+};
+
+export const SPANISH_LATIN = {
+  code: 'es-mx',
+  name: 'Spanish (Latin America)'
+};
+
+export const RUSSIAN = {
+  code: 'ru',
+  name: 'Russian'
+};
+
+export const POLISH = {
+  code: 'pl',
+  name: 'Polish'
+};
+
+export const CHINESE = {
+  code: 'zh-cht',
+  name: 'Chinese'
+};
+
+export const DEFAULT_LANG = ENGLISH;
+
+export const languages = [
+  ENGLISH,
+  FRENCH,
+  GERMAN,
+  ITALIAN,
+  JAPANESE,
+  PORTUGUESE,
+  SPANISH,
+  SPANISH_LATIN,
+  RUSSIAN,
+  POLISH,
+  CHINESE
+];
+
+export const languageByCode = keyBy(languages, lang => lang.code);

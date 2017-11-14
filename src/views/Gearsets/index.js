@@ -79,10 +79,19 @@ class Gearsets extends Component {
 
   componentDidMount() {
     this.inventory = ls.getInventory();
+    const lang = ls.getLanguage();
 
+    this.fetchDefintionsWithLangage(lang.code);
+
+    this.setState({
+      activeLanguage: lang
+    });
+  }
+
+  fetchDefintionsWithLangage(langCode) {
     this.dataPromise = Promise.all([
-      getDefinition('DestinyInventoryItemDefinition'),
-      getDefinition('DestinyVendorDefinition')
+      getDefinition('DestinyInventoryItemDefinition', langCode),
+      getDefinition('DestinyVendorDefinition', langCode)
     ]);
 
     this.dataPromise.then(result => {
@@ -146,7 +155,8 @@ class Gearsets extends Component {
 
     this.setState({
       // emblemBg: emblem && emblem.secondarySpecial,
-      loading: false
+      loading: false,
+      shit: null
     });
   };
 
@@ -343,6 +353,17 @@ class Gearsets extends Component {
     });
   };
 
+  switchLang = newLang => {
+    ls.saveLanguage(newLang);
+
+    this.setState({
+      shit: 'poo',
+      activeLanguage: newLang
+    });
+
+    this.fetchDefintionsWithLangage(newLang.code);
+  };
+
   copyDebug = () => {
     const { itemComponents, ...debugProfile } = this.profile;
     copy(JSON.stringify(debugProfile));
@@ -359,7 +380,9 @@ class Gearsets extends Component {
       hiddenItemsCount,
       countStyle,
       itemCount,
-      obtainedCount
+      obtainedCount,
+      activeLanguage,
+      shit
     } = this.state;
 
     if (loading) {
@@ -373,6 +396,8 @@ class Gearsets extends Component {
           profile={profile}
           profiles={profiles}
           onChangeProfile={this.switchProfile}
+          onChangeLang={this.switchLang}
+          activeLanguage={activeLanguage}
         />
 
         {!this.props.isAuthenticated && (
@@ -380,6 +405,10 @@ class Gearsets extends Component {
             Log in to use your inventory to automatically check off items you've
             obtained
           </LoginUpsell>
+        )}
+
+        {shit && (
+          <div className={styles.info}>Loading {activeLanguage.name}...</div>
         )}
 
         {/*<div className={styles.info}>
@@ -420,11 +449,11 @@ class Gearsets extends Component {
 
           <div className={styles.filterFlex}>
             {profile &&
-            hiddenItemsCount > 0 && (
-              <div className={styles.filteredOut}>
-                {hiddenItemsCount} items hidden by filters
-              </div>
-            )}
+              hiddenItemsCount > 0 && (
+                <div className={styles.filteredOut}>
+                  {hiddenItemsCount} items hidden by filters
+                </div>
+              )}
 
             <div className={styles.itemCountWrapper}>
               <div className={styles.itemCount} onClick={this.toggleCountStyle}>

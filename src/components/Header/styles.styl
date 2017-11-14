@@ -92,8 +92,7 @@ $edgePadding = 15px
   @media screen and (min-width: 680px)
     display: inline
 
-// account switcher stuff
-.accountSwitcher
+._dropdownMenuRoot
   display: flex
   align-items: center
   cursor: pointer
@@ -103,6 +102,38 @@ $edgePadding = 15px
 
   &:hover
     background: $activeBg
+
+._dropdownMenuDropdown
+  position: absolute
+  top: 100%
+  right: 0
+  background: #13161B
+  box-shadow: 0 3px 3px rgba(0,0,0,.5);
+
+._dropdownMenuOption
+  cursor: pointer
+  padding: 7px 10px
+  transition: all 150ms ease-in-out
+
+  &:hover
+    background: $activeBg
+
+.languageSwitcher
+  composes: _dropdownMenuRoot
+  padding-top: 15px
+  padding-bottom: 15px
+
+.langDropdown
+  composes: _dropdownMenuDropdown
+
+.langOption
+  composes: _dropdownMenuOption
+  font-size: .85em
+  white-space: nowrap
+
+// account switcher stuff
+.accountSwitcher
+  composes: _dropdownMenuRoot
 
 .displayName
   font-size: .85em
@@ -117,15 +148,7 @@ $edgePadding = 15px
   padding-left: 10px
 
 .accountsDropdown
-  position: absolute
-  top: 100%
-  right: 0
-  background: #13161B
+  composes: _dropdownMenuDropdown
 
 .dropdownAccount
-  cursor: pointer
-  padding: 7px 10px
-  transition: all 150ms ease-in-out
-
-  &:hover
-    background: $activeBg
+  composes: _dropdownMenuOption

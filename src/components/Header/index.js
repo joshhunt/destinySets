@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router';
 import cx from 'classnames';
 
+import { languages, languageByCode } from 'app/lib/i18n';
 import styles from './styles.styl';
 
 const PLATFORM = {
@@ -14,12 +15,21 @@ const PLATFORM = {
 
 export default class Header extends React.Component {
   state = {
-    accountSwitcherActive: false
+    accountSwitcherActive: false,
+    langSwitcherActive: false
   };
 
   toggleAccountSwitcher = () => {
     this.setState({
+      langSwitcherActive: false,
       accountSwitcherActive: !this.state.accountSwitcherActive
+    });
+  };
+
+  toggleLangSwitcher = () => {
+    this.setState({
+      accountSwitcherActive: false,
+      langSwitcherActive: !this.state.langSwitcherActive
     });
   };
 
@@ -27,8 +37,13 @@ export default class Header extends React.Component {
     this.props.onChangeProfile(newProfile);
   };
 
+  setLang = lang => {
+    this.props.onChangeLang(lang);
+  };
+
   render() {
-    const { className, bg, profile } = this.props;
+    const { className, bg, profile, activeLanguage } = this.props;
+    const { langSwitcherActive, accountSwitcherActive } = this.state;
 
     const style = {};
 
@@ -71,6 +86,34 @@ export default class Header extends React.Component {
           </div>
 
           <div className={styles.social}>
+            <div
+              className={styles.languageSwitcher}
+              onClick={this.toggleLangSwitcher}
+            >
+              <div className={styles.currentLang}>
+                <span className={styles.displayName}>
+                  {activeLanguage && languageByCode[activeLanguage.code].name}
+                </span>
+              </div>
+              <div className={styles.switchButton}>
+                <i className="fa fa-caret-down" aria-hidden="true" />
+              </div>
+
+              {langSwitcherActive && (
+                <div className={styles.langDropdown}>
+                  {languages.map(lang => (
+                    <div
+                      key={lang.code}
+                      className={styles.langOption}
+                      onClick={() => this.setLang(lang)}
+                    >
+                      {lang.name}
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+
             {profile && (
               <div
                 className={styles.accountSwitcher}
@@ -88,7 +131,7 @@ export default class Header extends React.Component {
                   <i className="fa fa-caret-down" aria-hidden="true" />
                 </div>
 
-                {this.state.accountSwitcherActive && (
+                {accountSwitcherActive && (
                   <div className={styles.accountsDropdown}>
                     {this.props.profiles.map((prof, index) => (
                       <div

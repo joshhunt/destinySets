@@ -1,7 +1,10 @@
 const INVENTORY = '$inventory';
 const FILTERS = '$filters';
 const ACCOUNT = '$account';
+const LANGUAGE = '$lang';
 const AUTH = '$auth';
+
+import { DEFAULT_LANG } from './i18n';
 
 function get(key, defaultx) {
   const lsValue = localStorage.getItem(key);
@@ -23,6 +26,14 @@ function get(key, defaultx) {
 function save(key, value) {
   const jason = JSON.stringify(value);
   localStorage.setItem(key, jason);
+}
+
+export function saveLanguage(langCode) {
+  save(LANGUAGE, langCode);
+}
+
+export function getLanguage() {
+  return get(LANGUAGE, DEFAULT_LANG.code);
 }
 
 export function saveInventory(inventory) {

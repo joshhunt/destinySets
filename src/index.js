@@ -13,7 +13,7 @@ import 'autotrack/lib/plugins/url-change-tracker';
 try {
   const locale = require('browser-locale')().toLowerCase();
   console.log({ locale });
-  ga('send', 'locale', locale);
+  ga('send', 'event', 'locale', locale);
 } catch (e) {}
 
 ReactDOM.render(<AppRouter />, document.getElementById('root'));
