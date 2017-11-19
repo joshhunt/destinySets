@@ -22,6 +22,12 @@ export const KINETIC_WEAPON = 2;
 export const ENERGY_WEAPON = 3;
 export const POWER_WEAPON = 4;
 
+export const LEGENDARY = 4008398120;
+export const EXOTIC = 2759499571;
+export const UNCOMMON = 2395677314;
+export const RARE = 2127292149;
+export const COMMON = 3340296461;
+
 export const XBOX = 1;
 export const PLAYSTATION = 2;
 export const PC_BLIZZARD = 4;

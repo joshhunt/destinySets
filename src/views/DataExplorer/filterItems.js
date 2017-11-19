@@ -1,4 +1,5 @@
-import { get as _get, intersection } from 'lodash';
+import { intersection } from 'lodash';
+import _get from 'lodash/get';
 
 import sets from '../sets.js';
 
@@ -20,7 +21,12 @@ import {
   POWER_WEAPON,
   MODS1,
   MODS2,
-  CLAN_BANNER
+  CLAN_BANNER,
+  LEGENDARY,
+  EXOTIC,
+  UNCOMMON,
+  RARE,
+  COMMON
 } from './definitionSources';
 
 const get = (obj, term, opt) => _get(obj, term, '').toLowerCase();
@@ -37,8 +43,6 @@ sets.forEach(category => {
   });
 });
 
-console.log('SET_ITEMS:', SET_ITEMS);
-
 function getRandom(arr, n) {
   var result = new Array(n),
     len = arr.length,
@@ -53,15 +57,15 @@ function getRandom(arr, n) {
   return result;
 }
 
-const tierTypeName = value => item => item.inventory.tierTypeName === value;
+const tierType = hash => item => item.inventory.tierTypeHash === hash;
 const classType = value => item => item.classType === value && !item.redacted;
 const itemCategory = value => item =>
   (item.itemCategoryHashes || []).includes(value);
 
 const isWeapon = itemCategory(WEAPON);
 const isArmor = itemCategory(ARMOR);
-const isLegendary = tierTypeName('Legendary');
-const isExotic = tierTypeName('Exotic');
+const isLegendary = tierType(LEGENDARY);
+const isExotic = tierType(EXOTIC);
 
 const COLLECTABLE = [WEAPON, ARMOR, GHOST, SPARROW, SHIP, SHADER, EMBLEM];
 
@@ -173,15 +177,15 @@ export const fancySearchFns = {
   },
 
   'is:uncommon': items => {
-    return itemFilter(items, tierTypeName('Uncommon'));
+    return itemFilter(items, tierType(UNCOMMON));
   },
 
   'is:rare': items => {
-    return itemFilter(items, tierTypeName('Rare'));
+    return itemFilter(items, tierType(RARE));
   },
 
   'is:common': items => {
-    return itemFilter(items, tierTypeName('Common'));
+    return itemFilter(items, tierType(COMMON));
   },
 
   'is:mod': items => {

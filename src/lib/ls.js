@@ -41,7 +41,8 @@ export function saveInventory(inventory) {
 }
 
 export function getInventory() {
-  return get(INVENTORY, []);
+  // return get(INVENTORY, []);
+  return [];
 }
 
 export function removeInventory() {

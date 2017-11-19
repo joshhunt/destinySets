@@ -1,6 +1,7 @@
 import { sortBy } from 'lodash';
 
 const API_KEY = __DESTINY_API_KEY__;
+const XUR_URL = 'https://d392b4140pqfjy.cloudfront.net/xur';
 
 const DESTINY_2 = 1;
 
@@ -94,15 +95,11 @@ export function log(prom) {
   prom.then(result => console.log(result)).catch(err => console.error(err));
 }
 
-export function dev(...args) {
-  log(getDestiny(...args));
-}
-
 export function getProfile({ membershipType, membershipId }, components) {
   return getDestiny(
-    `/Platform/Destiny2/${membershipType}/Profile/${membershipId}/?components=${components.join(
-      ','
-    )}`
+    `/Platform/Destiny2/${membershipType}/Profile/${
+      membershipId
+    }/?components=${components.join(',')}`
   );
 }
 
@@ -140,7 +137,7 @@ export function getCurrentProfile() {
   });
 }
 
-function collectKioskItems(kiosks, itemDefs, vendorDefs) {
+export function collectKioskItems(kiosks, itemDefs, vendorDefs) {
   const hashes = [];
 
   Object.keys(kiosks).forEach(vendorHash => {
@@ -152,6 +149,17 @@ function collectKioskItems(kiosks, itemDefs, vendorDefs) {
         const vendorItem = vendor.itemList.find(
           i => i.vendorItemIndex === kioskEntry.index
         );
+
+        if (!vendorItem) {
+          console.error(
+            `Was not able to find vendorItem for kiosk ${
+              vendorHash
+            } / kioskEntry.index ${kioskEntry.index}`
+          );
+
+          return null;
+        }
+
         const item = itemDefs[vendorItem.itemHash];
 
         return kioskEntry.canAcquire ? item.hash : null;
@@ -171,19 +179,20 @@ export function collectItemsFromKiosks(profile, itemDefs, vendorDefs) {
     vendorDefs
   );
 
-  const charKioskItems = Object.values(
-    profile.characterKiosks.data
-  ).reduce((acc, charKiosk) => {
-    const itemHashes = collectKioskItems(
-      charKiosk.kioskItems,
-      itemDefs,
-      vendorDefs
-    );
+  const charKioskItems = Object.values(profile.characterKiosks.data).reduce(
+    (acc, charKiosk) => {
+      const itemHashes = collectKioskItems(
+        charKiosk.kioskItems,
+        itemDefs,
+        vendorDefs
+      );
 
-    acc.push(...itemHashes);
+      acc.push(...itemHashes);
 
-    return acc;
-  }, []);
+      return acc;
+    },
+    []
+  );
 
   return profileKioskItems.concat(charKioskItems);
 }
@@ -208,19 +217,34 @@ export function collectItemsFromProfile(profile, verbose = false) {
     };
   }
 
-  const charItems = Object.values(
-    characterInventories.data
-  ).reduce((acc, { items }) => {
-    return acc.concat(items.map(mapItem));
-  }, []);
+  const charItems = Object.values(characterInventories.data).reduce(
+    (acc, { items }) => {
+      return acc.concat(items.map(mapItem));
+    },
+    []
+  );
 
-  const equippedItems = Object.values(
-    characterEquipment.data
-  ).reduce((acc, { items }) => {
-    return acc.concat(items.map(mapItem));
-  }, []);
+  const equippedItems = Object.values(characterEquipment.data).reduce(
+    (acc, { items }) => {
+      return acc.concat(items.map(mapItem));
+    },
+    []
+  );
 
   const profileItems = profileInventory.data.items.map(mapItem);
 
   return charItems.concat(profileItems, equippedItems);
 }
+
+export function dev(...args) {
+  log(getDestiny(...args));
+}
+
+export function xur() {
+  return get(XUR_URL).then(xurData => {
+    const isLive = window.location.href.includes('forceXur') || xurData.isLive;
+    return isLive ? xurData.itemsHashes : [];
+  });
+}
+
+window.dev = dev;

@@ -7,6 +7,12 @@ import ToolTip from 'app/components/ReactPortalTooltip';
 
 import styles from './styles.styl';
 
+const CLASS_TYPE = {
+  0: 'Titan',
+  1: 'Hunter',
+  2: 'Warlock'
+};
+
 function isMobile() {
   return (
     window &&
@@ -105,11 +111,10 @@ export default class Item extends Component {
             </a>
           </div>
           <div className={styles.type}>
-            {dev ? (
-              item.itemHash
-            ) : (
-              item.itemTypeName || item.itemTypeDisplayName
-            )}
+            {CLASS_TYPE[item.classType]}{' '}
+            {dev
+              ? item.itemHash
+              : item.itemTypeName || item.itemTypeDisplayName}
           </div>
         </div>
 

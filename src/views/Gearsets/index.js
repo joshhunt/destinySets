@@ -10,14 +10,15 @@ import * as ls from 'app/lib/ls';
 import { getDefaultLanguage, getBrowserLocale } from 'app/lib/i18n';
 import Header from 'app/components/Header';
 import Footer from 'app/components/Footer';
+import Xur from 'app/components/Xur';
 import Loading from 'app/views/Loading';
 import LoginUpsell from 'app/components/LoginUpsell';
 import ActivityList from 'app/components/ActivityList';
 import DestinyAuthProvider from 'app/lib/DestinyAuthProvider';
 
-import { mapItems, flatMapSetItems /*, logItems */ } from './utils';
+import { mapItems, flatMapSetItems, logItems } from './utils';
 
-import * as telemetry from 'app/lib/telemetry';
+// import * as telemetry from 'app/lib/telemetry';
 
 import {
   HUNTER,
@@ -109,6 +110,11 @@ class Gearsets extends Component {
     this.dataPromise.then(result => {
       this.processSets(...result);
     });
+
+    Promise.all([this.dataPromise, destiny.xur()]).then(([data, xurItems]) => {
+      this.xurItems = xurItems;
+      this.processSets(...data);
+    });
   }
 
   componentWillReceiveProps(newProps) {
@@ -124,6 +130,9 @@ class Gearsets extends Component {
   }
 
   processSets = (itemDefs, vendorDefs) => {
+    const xurHashes = this.xurItems || [];
+    // this.profile = require('/Users/joshhunt/Downloads/8dsNBgMD.json');
+
     const sets = VARIATIONS[this.props.route.variation];
 
     const allItems = Object.values(itemDefs);
@@ -134,9 +143,14 @@ class Gearsets extends Component {
 
     const inventory = [...this.inventory, ...kioskItems];
 
-    // this.profile && itemDefs && logItems(this.profile, itemDefs);
+    try {
+      this.profile && itemDefs && logItems(this.profile, itemDefs, vendorDefs);
+    } catch (e) {
+      console.error('Unable to log profile');
+      console.log(e);
+    }
 
-    this.profile && telemetry.saveInventory(this.profile, inventory);
+    // this.profile && telemetry.saveInventory(this.profile, inventory);
 
     ls.saveInventory(inventory);
 
@@ -163,10 +177,13 @@ class Gearsets extends Component {
 
     this.filterGroups(this.rawGroups);
 
-    // const emblem = itemDefs[this.emblemHash];
+    const xurItems = xurHashes
+      .filter(hash => !inventory.includes(Number(hash)))
+      .map(hash => itemDefs[hash]);
 
     this.setState({
-      // emblemBg: emblem && emblem.secondarySpecial,
+      xurItems,
+      hasInventory: inventory.length > 0,
       loading: false,
       shit: null
     });
@@ -396,7 +413,9 @@ class Gearsets extends Component {
       itemCount,
       obtainedCount,
       activeLanguage,
-      shit
+      shit,
+      xurItems,
+      hasInventory
     } = this.state;
 
     if (loading) {
@@ -424,29 +443,6 @@ class Gearsets extends Component {
         {shit && (
           <div className={styles.info}>Loading {activeLanguage.name}...</div>
         )}
-
-        {/*<div className={styles.info}>
-          <p>
-            Hey - I'm looking into how I could recoup (at least some of) the
-            costs of running this site and I would love your opionion.{' '}
-            <a
-              href="https://twitter.com/joshhunt/status/928348993561726977"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Get in touch on Twitter
-            </a>{' '}
-            and tell me what you think!
-          </p>
-
-          <a
-            className={styles.voteOnTwitter}
-            href="https://twitter.com/joshhunt/status/928348993561726977"
-            target="_blank"
-          >
-            Vote on Twitter
-          </a>
-        </div>*/}
 
         <div className={styles.subnav}>
           <div className={styles.navsections}>
@@ -512,6 +508,8 @@ class Gearsets extends Component {
             </div>
           )}
         </div>
+
+        {hasInventory && <Xur items={xurItems} />}
 
         {(groups || []).map((group, index) => (
           <div key={index} id={`group_${index}`}>

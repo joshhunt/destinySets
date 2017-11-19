@@ -3,9 +3,25 @@ import cx from 'classnames';
 
 import styles from './styles.styl';
 
+import {
+  LEGENDARY,
+  EXOTIC,
+  UNCOMMON,
+  RARE,
+  COMMON
+} from 'app/views/DataExplorer/definitionSources';
+
+const TIER_STYLE = {
+  [EXOTIC]: styles.exotic,
+  [LEGENDARY]: styles.legendary,
+  [UNCOMMON]: styles.common,
+  [RARE]: styles.rare,
+  [COMMON]: styles.basic
+};
+
 class FancyImage extends Component {
   state = {
-    loaded: false,
+    loaded: false
   };
 
   onLoad = () => {
@@ -16,7 +32,7 @@ class FancyImage extends Component {
     const { className, ...props } = this.props;
     const styles = {
       opacity: 0,
-      transition: 'opacity 300ms ease-in-out',
+      transition: 'opacity 300ms ease-in-out'
     };
 
     if (this.state.loaded) {
@@ -35,11 +51,11 @@ class FancyImage extends Component {
 }
 
 export default function ItemTooltip({ item }) {
-  const tier = (item.inventory.tierTypeName || '').toLowerCase();
+  const tier = item.inventory.tierTypeHash || '';
   const icon = item.displayProperties.icon || '/img/misc/missing_icon_d2.png';
 
   return (
-    <div className={cx(styles.tooltip, styles[tier])}>
+    <div className={cx(styles.tooltip, TIER_STYLE[tier])}>
       <div className={styles.header}>
         <div className={styles.img}>
           <FancyImage src={`https://bungie.net${icon}`} />
