@@ -236,6 +236,68 @@ export function collectItemsFromProfile(profile, verbose = false) {
   return charItems.concat(profileItems, equippedItems);
 }
 
+function mergeInstancedItem(_allItems, item, itemComponents) {
+  const allItems = { ..._allItems };
+
+  if (!allItems[item.itemHash]) {
+    allItems[item.itemHash] = [];
+  }
+
+  const instancedItem = {
+    ...item,
+    $instanceData: itemComponents[item.itemInstanceId]
+  };
+
+  allItems[item.itemHash].push(instancedItem);
+
+  return allItems;
+}
+
+export function collectInventory(profile) {
+  console.log('Collecting inventory for', profile);
+
+  const {
+    characterInventories,
+    profileInventory,
+    characterEquipment,
+    itemComponents
+  } = profile;
+
+  console.log('itemComponents:', itemComponents);
+
+  let allItems = {};
+
+  Object.values(characterInventories.data).forEach(({ items }) => {
+    items.forEach(item => {
+      allItems = mergeInstancedItem(
+        allItems,
+        item,
+        itemComponents.instances.data
+      );
+    });
+  });
+
+  Object.values(characterEquipment.data).forEach(({ items }) => {
+    items.forEach(item => {
+      allItems = mergeInstancedItem(
+        allItems,
+        item,
+        itemComponents.instances.data
+      );
+    });
+  });
+
+  profileInventory.data.items.forEach(item => {
+    allItems = mergeInstancedItem(
+      allItems,
+      item,
+      itemComponents.instances.data
+    );
+  });
+
+  return allItems;
+}
+
 export function dev(...args) {
   log(getDestiny(...args));
 }

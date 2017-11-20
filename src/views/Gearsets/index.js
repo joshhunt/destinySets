@@ -16,7 +16,8 @@ import LoginUpsell from 'app/components/LoginUpsell';
 import ActivityList from 'app/components/ActivityList';
 import DestinyAuthProvider from 'app/lib/DestinyAuthProvider';
 
-import { mapItems, flatMapSetItems, logItems } from './utils';
+import { flatMapSetItems } from './utils';
+import processSets from './processSets';
 
 // import * as telemetry from 'app/lib/telemetry';
 
@@ -27,13 +28,8 @@ import {
   PLAYSTATION
 } from 'app/views/DataExplorer/definitionSources';
 
-import { fancySearch } from 'app/views/DataExplorer/filterItems';
-import sortItemsIntoSections from 'app/views/DataExplorer/sortItemsIntoSections';
-
 import styles from './styles.styl';
 
-import setsSets from '../sets.js';
-import allItemsSets from '../allItems.js';
 import consoleExclusives from '../consoleExclusives.js';
 
 const SHOW_PS4_EXCLUSIVES = -101;
@@ -42,11 +38,6 @@ const SHOW_COLLECTED = -102;
 function merge(base, extra) {
   return { ...base, ...extra };
 }
-
-const VARIATIONS = {
-  sets: setsSets,
-  allItems: allItemsSets
-};
 
 const FILTERS = [
   [TITAN, 'Titan'],
@@ -65,8 +56,6 @@ const defaultFilter = {
 };
 
 class Gearsets extends Component {
-  inventory = [];
-
   constructor(props) {
     super(props);
     this.state = {
@@ -80,7 +69,6 @@ class Gearsets extends Component {
   }
 
   componentDidMount() {
-    this.inventory = ls.getInventory();
     const lang = ls.getLanguage();
 
     this.fetchDefintionsWithLangage(lang.code);
@@ -91,7 +79,7 @@ class Gearsets extends Component {
   }
 
   fetchDefintionsWithLangage(langCode) {
-    ga(
+    window.ga(
       'send',
       'event',
       'lang-debug',
@@ -130,63 +118,17 @@ class Gearsets extends Component {
   }
 
   processSets = (itemDefs, vendorDefs) => {
-    const xurHashes = this.xurItems || [];
-    // this.profile = require('/Users/joshhunt/Downloads/8dsNBgMD.json');
-
-    const sets = VARIATIONS[this.props.route.variation];
-
-    const allItems = Object.values(itemDefs);
-
-    const kioskItems = this.profile
-      ? destiny.collectItemsFromKiosks(this.profile, itemDefs, vendorDefs)
-      : [];
-
-    const inventory = [...this.inventory, ...kioskItems];
-
-    try {
-      this.profile && itemDefs && logItems(this.profile, itemDefs, vendorDefs);
-    } catch (e) {
-      console.error('Unable to log profile');
-      console.log(e);
-    }
-
-    // this.profile && telemetry.saveInventory(this.profile, inventory);
-
-    ls.saveInventory(inventory);
-
-    this.rawGroups = sets.map(group => {
-      const sets = group.sets.map(set => {
-        const preSections = set.fancySearchTerm
-          ? sortItemsIntoSections(fancySearch(set.fancySearchTerm, allItems))
-          : set.sections;
-
-        const sections = preSections.map(section => {
-          const preItems =
-            section.items ||
-            fancySearch(section.fancySearchTerm, allItems).map(i => i.hash);
-          const items = mapItems(preItems, itemDefs, inventory);
-
-          return merge(section, { items });
-        });
-
-        return merge(set, { sections });
-      });
-
-      return merge(group, { sets });
-    });
-
-    this.filterGroups(this.rawGroups);
-
-    const xurItems = xurHashes
-      .filter(hash => !inventory.includes(Number(hash)))
-      .map(hash => itemDefs[hash]);
-
-    this.setState({
-      xurItems,
-      hasInventory: inventory.length > 0,
-      loading: false,
-      shit: null
-    });
+    console.log('with profile:', this.profile);
+    processSets(
+      {
+        itemDefs,
+        vendorDefs,
+        profile: this.profile,
+        variation: this.props.route.variation,
+        xurItems: this.xurItems
+      },
+      this.setState.bind(this)
+    );
   };
 
   filterGroups = (rawGroups, _filter) => {
@@ -334,7 +276,6 @@ class Gearsets extends Component {
     ls.savePreviousAccount(membershipId, membershipType);
 
     this.profile = profile;
-    this.inventory = destiny.collectItemsFromProfile(profile);
 
     const recentCharacter = sortBy(
       Object.values(profile.characters.data),

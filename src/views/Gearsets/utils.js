@@ -11,22 +11,14 @@ const RARITY_COLORS = {
   exotic: '#ceae33'
 };
 
-export function mapItems(itemHashes, itemDefs, inventory) {
-  return itemHashes
-    .map(itemHash => {
-      const item = itemDefs[itemHash];
-
-      if (!item) {
-        console.warn('Unable to find item definition for ' + itemHash);
-        return null;
-      }
-
-      return {
-        $obtained: inventory.includes(item.hash),
-        ...item
-      };
-    })
-    .filter(Boolean);
+export function flatMapSetItems(sets) {
+  return flatMap(sets, setsList => {
+    return flatMap(setsList.sets, set => {
+      return flatMap(set.sections, setSection => {
+        return setSection.items;
+      });
+    });
+  });
 }
 
 export function logItems(profile, itemDefs, vendorDefs) {
@@ -108,14 +100,4 @@ export function logItems(profile, itemDefs, vendorDefs) {
   }, []);
 
   console.groupEnd();
-}
-
-export function flatMapSetItems(sets) {
-  return flatMap(sets, setsList => {
-    return flatMap(setsList.sets, set => {
-      return flatMap(set.sections, setSection => {
-        return setSection.items;
-      });
-    });
-  });
 }
