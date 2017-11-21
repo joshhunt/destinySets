@@ -118,20 +118,19 @@ class Gearsets extends Component {
   }
 
   processSets = (itemDefs, vendorDefs) => {
-    console.log('with profile:', this.profile);
-    processSets(
-      {
-        itemDefs,
-        vendorDefs,
-        profile: this.profile,
-        variation: this.props.route.variation,
-        xurItems: this.xurItems
-      },
-      payload => {
-        console.log('recieving payload', payload);
-        this.setState(payload);
-      }
-    );
+    const processPayload = {
+      itemDefs,
+      vendorDefs,
+      profile: this.profile,
+      variation: this.props.route.variation,
+      xurItems: this.xurItems
+    };
+    processSets(processPayload, ({ rawGroups, ...state }) => {
+      this.rawGroups = rawGroups;
+
+      this.filterGroups(rawGroups);
+      this.setState(state);
+    });
   };
 
   filterGroups = (rawGroups, _filter) => {

@@ -2,7 +2,7 @@ import { merge, mapValues, isArray, isNumber, cloneDeep } from 'lodash';
 
 import { fancySearch } from 'app/views/DataExplorer/filterItems';
 import sortItemsIntoSections from 'app/views/DataExplorer/sortItemsIntoSections';
-import * as destiny from 'app/lib/destiny';
+import collectInventory from 'app/lib/collectInventory';
 import * as ls from 'app/lib/ls';
 import { logItems } from './utils';
 import setsSets from '../sets.js';
@@ -51,10 +51,8 @@ export default function processSets(args, dataCallback) {
   // const inventory = destiny.collectItemsFromProfile(profile);
   // const inventory = [...inventory, ...kioskItems];
 
-  const inventory = (profile && destiny.collectInventory(profile)) || {};
+  const inventory = (profile && collectInventory(profile, vendorDefs)) || {};
   const inventoryHashes = Object.keys(inventory);
-
-  console.log('%cInventory', 'font-weight: bold', inventory);
 
   try {
     profile && itemDefs && logItems(profile, itemDefs, vendorDefs);
@@ -65,8 +63,6 @@ export default function processSets(args, dataCallback) {
 
   ls.saveInventory(mapValues(inventory, () => ({ $fromLocalStorage: true })));
 
-  console.log({ inventory, inventoryHashes });
-
   const rawGroups = sets.map(group => {
     const sets = group.sets.map(set => {
       const preSections = set.fancySearchTerm
@@ -75,7 +71,6 @@ export default function processSets(args, dataCallback) {
 
       const sections = preSections.map(section => {
         if (!isArray(section.items) || !isNumber(section.items[0])) {
-          console.log('section', JSON.parse(JSON.stringify(section)));
           throw new Error('Section not in correct format');
         }
 
@@ -94,36 +89,33 @@ export default function processSets(args, dataCallback) {
     return merge(group, { sets });
   });
 
-  // filterGroups(rawGroups);
-
   const xurItemsGood = xurHashes
     .filter(hash => !inventoryHashes.includes(Number(hash)))
     .map(hash => itemDefs[hash]);
 
   const payload = {
     rawGroups,
-    groups: rawGroups,
     xurItems: xurItemsGood,
     hasInventory: inventoryHashes.length > 0,
     loading: false,
     shit: null
   };
 
-  console.groupCollapsed('Raw groups:');
-  rawGroups.forEach(group => {
-    console.groupCollapsed(group.name);
-    group.sets.forEach(set => {
-      console.group(set.name);
-      set.sections.forEach(section => {
-        console.groupCollapsed(section.title);
-        section.items.forEach(item => console.log(item));
-        console.groupEnd();
-      });
-      console.groupEnd();
-    });
-    console.groupEnd();
-  });
-  console.groupEnd();
+  // console.groupCollapsed('Raw groups:');
+  // rawGroups.forEach(group => {
+  //   console.groupCollapsed(group.name);
+  //   group.sets.forEach(set => {
+  //     console.group(set.name);
+  //     set.sections.forEach(section => {
+  //       console.groupCollapsed(section.title);
+  //       section.items.forEach(item => console.log(item));
+  //       console.groupEnd();
+  //     });
+  //     console.groupEnd();
+  //   });
+  //   console.groupEnd();
+  // });
+  // console.groupEnd();
 
   dataCallback(payload);
 }

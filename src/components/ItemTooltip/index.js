@@ -19,6 +19,14 @@ const TIER_STYLE = {
   [COMMON]: styles.basic
 };
 
+const LOCATION_MAP = {
+  characterEquipment: 'Equipped',
+  characterInventory: 'Inventory',
+  profileInventory: 'In vault',
+  profileKiosk: 'Profile kiosk',
+  characterKiosk: 'Character kiosk'
+};
+
 class FancyImage extends Component {
   state = {
     loaded: false
@@ -53,8 +61,6 @@ class FancyImage extends Component {
 export default function ItemTooltip({ item }) {
   const tier = item.inventory.tierTypeHash || '';
   const icon = item.displayProperties.icon || '/img/misc/missing_icon_d2.png';
-
-  console.log('item:', item);
 
   return (
     <div className={cx(styles.tooltip, TIER_STYLE[tier])}>
@@ -101,9 +107,3 @@ export default function ItemTooltip({ item }) {
     </div>
   );
 }
-
-const LOCATION_MAP = {
-  characterEquipment: 'Equipped',
-  characterInventory: 'Inventory',
-  profileInventory: 'In vault'
-};

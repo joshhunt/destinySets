@@ -198,6 +198,10 @@ export function collectItemsFromKiosks(profile, itemDefs, vendorDefs) {
 }
 
 export function collectItemsFromProfile(profile, verbose = false) {
+  console.warn(
+    'destiny.collectItemsFromProfile is deprecated. Use collectInventory instead'
+  );
+
   const {
     characterInventories,
     profileInventory,
@@ -235,81 +239,6 @@ export function collectItemsFromProfile(profile, verbose = false) {
 
   return charItems.concat(profileItems, equippedItems);
 }
-
-function mergeInstancedItem(_allItems, item, itemComponents, extraData = {}) {
-  const allItems = { ..._allItems };
-
-  if (!allItems[item.itemHash]) {
-    allItems[item.itemHash] = [];
-  }
-
-  const instancedItem = {
-    ...item,
-    ...extraData,
-    $instanceData: itemComponents[item.itemInstanceId]
-  };
-
-  allItems[item.itemHash].push(instancedItem);
-
-  return allItems;
-}
-
-export function collectInventory(profile) {
-  console.log('Collecting inventory for', profile);
-
-  const {
-    characterInventories,
-    profileInventory,
-    characterEquipment,
-    itemComponents
-  } = profile;
-
-  console.log('profile:', profile);
-
-  let allItems = {};
-
-  Object.keys(characterInventories.data).forEach(characterHash => {
-    const { items } = characterInventories.data[characterHash];
-    items.forEach(item => {
-      allItems = mergeInstancedItem(
-        allItems,
-        item,
-        itemComponents.instances.data,
-        {
-          $characterHash: characterHash,
-          $location: 'characterInventory'
-        }
-      );
-    });
-  });
-
-  Object.keys(characterEquipment.data).forEach(characterHash => {
-    const { items } = characterEquipment.data[characterHash];
-    items.forEach(item => {
-      allItems = mergeInstancedItem(
-        allItems,
-        item,
-        itemComponents.instances.data,
-        {
-          $characterHash: characterHash,
-          $location: 'characterEquipment'
-        }
-      );
-    });
-  });
-
-  profileInventory.data.items.forEach(item => {
-    allItems = mergeInstancedItem(
-      allItems,
-      item,
-      itemComponents.instances.data,
-      { $location: 'profileInventory' }
-    );
-  });
-
-  return allItems;
-}
-
 export function dev(...args) {
   log(getDestiny(...args));
 }
