@@ -54,6 +54,8 @@ export default function ItemTooltip({ item }) {
   const tier = item.inventory.tierTypeHash || '';
   const icon = item.displayProperties.icon || '/img/misc/missing_icon_d2.png';
 
+  console.log('item:', item);
+
   return (
     <div className={cx(styles.tooltip, TIER_STYLE[tier])}>
       <div className={styles.header}>
@@ -82,7 +84,26 @@ export default function ItemTooltip({ item }) {
             />
           </div>
         )}
+
+        {item.$inventory && (
+          <div className={styles.inventory}>
+            <ul>
+              {item.$inventory.map((inv, i) => (
+                <li key={i}>
+                  {LOCATION_MAP[inv.$location] || 'unknown location'}{' '}
+                  {inv.$characterHash && `on character ${inv.$characterHash}`}
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
       </div>
     </div>
   );
 }
+
+const LOCATION_MAP = {
+  characterEquipment: 'Equipped',
+  characterInventory: 'Inventory',
+  profileInventory: 'In vault'
+};

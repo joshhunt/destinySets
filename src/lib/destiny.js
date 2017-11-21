@@ -236,7 +236,7 @@ export function collectItemsFromProfile(profile, verbose = false) {
   return charItems.concat(profileItems, equippedItems);
 }
 
-function mergeInstancedItem(_allItems, item, itemComponents) {
+function mergeInstancedItem(_allItems, item, itemComponents, extraData = {}) {
   const allItems = { ..._allItems };
 
   if (!allItems[item.itemHash]) {
@@ -245,6 +245,7 @@ function mergeInstancedItem(_allItems, item, itemComponents) {
 
   const instancedItem = {
     ...item,
+    ...extraData,
     $instanceData: itemComponents[item.itemInstanceId]
   };
 
@@ -263,26 +264,36 @@ export function collectInventory(profile) {
     itemComponents
   } = profile;
 
-  console.log('itemComponents:', itemComponents);
+  console.log('profile:', profile);
 
   let allItems = {};
 
-  Object.values(characterInventories.data).forEach(({ items }) => {
+  Object.keys(characterInventories.data).forEach(characterHash => {
+    const { items } = characterInventories.data[characterHash];
     items.forEach(item => {
       allItems = mergeInstancedItem(
         allItems,
         item,
-        itemComponents.instances.data
+        itemComponents.instances.data,
+        {
+          $characterHash: characterHash,
+          $location: 'characterInventory'
+        }
       );
     });
   });
 
-  Object.values(characterEquipment.data).forEach(({ items }) => {
+  Object.keys(characterEquipment.data).forEach(characterHash => {
+    const { items } = characterEquipment.data[characterHash];
     items.forEach(item => {
       allItems = mergeInstancedItem(
         allItems,
         item,
-        itemComponents.instances.data
+        itemComponents.instances.data,
+        {
+          $characterHash: characterHash,
+          $location: 'characterEquipment'
+        }
       );
     });
   });
@@ -291,7 +302,8 @@ export function collectInventory(profile) {
     allItems = mergeInstancedItem(
       allItems,
       item,
-      itemComponents.instances.data
+      itemComponents.instances.data,
+      { $location: 'profileInventory' }
     );
   });
 

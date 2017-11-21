@@ -32,7 +32,12 @@ export function logItems(profile, itemDefs, vendorDefs) {
 
     console.log(
       `%c${tier} ${item.itemTypeDisplayName.toLowerCase()}`,
-      `font-weight: bold; background: ${RARITY_COLORS[tier]}; color: white`,
+      [
+        'font-weight: bold',
+        `background: ${RARITY_COLORS[tier]}`,
+        'color: white',
+        'padding: 0 2px'
+      ].join(';'),
       `${item.displayProperties.name} [${item.hash}]`
     );
   }

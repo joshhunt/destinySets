@@ -1,4 +1,4 @@
-import { merge, mapValues } from 'lodash';
+import { merge, mapValues, isArray, isNumber, cloneDeep } from 'lodash';
 
 import { fancySearch } from 'app/views/DataExplorer/filterItems';
 import sortItemsIntoSections from 'app/views/DataExplorer/sortItemsIntoSections';
@@ -14,7 +14,6 @@ const VARIATIONS = {
 };
 
 export function mapItems(itemHashes, itemDefs, inventory) {
-  console.log('mapItems', { itemHashes, itemDefs, inventory });
   return itemHashes
     .map(itemHash => {
       const item = itemDefs[itemHash];
@@ -24,8 +23,11 @@ export function mapItems(itemHashes, itemDefs, inventory) {
         return null;
       }
 
+      const inventoryItem = inventory[itemHash];
+
       return {
-        $obtained: inventory.includes(item.hash),
+        $obtained: !!inventoryItem,
+        $inventory: inventoryItem,
         ...item
       };
     })
@@ -35,15 +37,15 @@ export function mapItems(itemHashes, itemDefs, inventory) {
 export default function processSets(args, dataCallback) {
   const { itemDefs, vendorDefs, profile, variation, xurItems } = args;
 
-  const sets = VARIATIONS[variation];
+  const sets = cloneDeep(VARIATIONS[variation]);
 
   const xurHashes = xurItems || [];
 
   const allItems = Object.values(itemDefs);
 
-  const kioskItems = profile
-    ? destiny.collectItemsFromKiosks(profile, itemDefs, vendorDefs)
-    : [];
+  // const kioskItems = profile
+  //   ? destiny.collectItemsFromKiosks(profile, itemDefs, vendorDefs)
+  //   : [];
 
   // const lsInventory = ls.getInventory();
   // const inventory = destiny.collectItemsFromProfile(profile);
@@ -63,6 +65,8 @@ export default function processSets(args, dataCallback) {
 
   ls.saveInventory(mapValues(inventory, () => ({ $fromLocalStorage: true })));
 
+  console.log({ inventory, inventoryHashes });
+
   const rawGroups = sets.map(group => {
     const sets = group.sets.map(set => {
       const preSections = set.fancySearchTerm
@@ -70,12 +74,16 @@ export default function processSets(args, dataCallback) {
         : set.sections;
 
       const sections = preSections.map(section => {
-        console.log('section', JSON.parse(JSON.stringify(section)));
+        if (!isArray(section.items) || !isNumber(section.items[0])) {
+          console.log('section', JSON.parse(JSON.stringify(section)));
+          throw new Error('Section not in correct format');
+        }
+
         const preItems =
           section.items ||
           fancySearch(section.fancySearchTerm, allItems).map(i => i.hash);
 
-        const items = mapItems(preItems, itemDefs, inventoryHashes);
+        const items = mapItems(preItems, itemDefs, inventory, inventoryHashes);
 
         return merge(section, { items });
       });
@@ -92,11 +100,30 @@ export default function processSets(args, dataCallback) {
     .filter(hash => !inventoryHashes.includes(Number(hash)))
     .map(hash => itemDefs[hash]);
 
-  dataCallback({
+  const payload = {
     rawGroups,
+    groups: rawGroups,
     xurItems: xurItemsGood,
     hasInventory: inventoryHashes.length > 0,
     loading: false,
     shit: null
+  };
+
+  console.groupCollapsed('Raw groups:');
+  rawGroups.forEach(group => {
+    console.groupCollapsed(group.name);
+    group.sets.forEach(set => {
+      console.group(set.name);
+      set.sections.forEach(section => {
+        console.groupCollapsed(section.title);
+        section.items.forEach(item => console.log(item));
+        console.groupEnd();
+      });
+      console.groupEnd();
+    });
+    console.groupEnd();
   });
+  console.groupEnd();
+
+  dataCallback(payload);
 }

@@ -127,7 +127,10 @@ class Gearsets extends Component {
         variation: this.props.route.variation,
         xurItems: this.xurItems
       },
-      this.setState.bind(this)
+      payload => {
+        console.log('recieving payload', payload);
+        this.setState(payload);
+      }
     );
   };
 
@@ -450,7 +453,7 @@ class Gearsets extends Component {
           )}
         </div>
 
-        {hasInventory && <Xur items={xurItems} />}
+        {/*hasInventory && <Xur items={xurItems} />*/}
 
         {(groups || []).map((group, index) => (
           <div key={index} id={`group_${index}`}>
