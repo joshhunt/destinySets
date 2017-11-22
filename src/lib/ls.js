@@ -1,4 +1,5 @@
 const INVENTORY = '$inventory';
+const CLOUD_INVENTORY = '$cloudinventory';
 const FILTERS = '$filters';
 const ACCOUNT = '$account';
 const LANGUAGE = '$lang';
@@ -41,8 +42,15 @@ export function saveInventory(inventory) {
 }
 
 export function getInventory() {
-  // return get(INVENTORY, []);
-  return [];
+  return get(INVENTORY, []);
+}
+
+export function saveCloudInventory(inventory) {
+  save(CLOUD_INVENTORY, inventory);
+}
+
+export function getCloudInventory() {
+  return get(CLOUD_INVENTORY, []);
 }
 
 export function removeInventory() {

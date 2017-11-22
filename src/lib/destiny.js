@@ -5,29 +5,15 @@ const XUR_URL = 'https://d392b4140pqfjy.cloudfront.net/xur';
 
 const DESTINY_2 = 1;
 
-// const componentNone = 0;
 const componentProfiles = 100;
-// const componentVendorReceipts = 101;
 const componentProfileInventories = 102;
-// const componentProfileCurrencies = 103;
 const componentCharacters = 200;
 const componentCharacterInventories = 201;
-// const componentCharacterProgressions = 202;
-// const componentCharacterRenderData = 203;
 const componentCharacterActivities = 204;
 const componentCharacterEquipment = 205;
 const componentItemInstances = 300;
-// const componentItemObjectives = 301;
-// const componentItemPerks = 302;
-// const componentItemRenderData = 303;
-// const componentItemStats = 304;
 const componentItemSockets = 305;
-// const componentItemTalentGrids = 306;
 const componentItemCommonData = 307;
-// const componentItemPlugStates = 308;
-// const componentVendors = 400;
-// const componentVendorCategories = 401;
-// const componentVendorSales = 402;
 const componentKiosks = 500;
 
 const COMPONENTS = [
@@ -137,108 +123,6 @@ export function getCurrentProfile() {
   });
 }
 
-export function collectKioskItems(kiosks, itemDefs, vendorDefs) {
-  const hashes = [];
-
-  Object.keys(kiosks).forEach(vendorHash => {
-    const vendor = vendorDefs[vendorHash];
-    const kiosk = kiosks[vendorHash];
-
-    const kioskItems = kiosk
-      .map(kioskEntry => {
-        const vendorItem = vendor.itemList.find(
-          i => i.vendorItemIndex === kioskEntry.index
-        );
-
-        if (!vendorItem) {
-          console.error(
-            `Was not able to find vendorItem for kiosk ${
-              vendorHash
-            } / kioskEntry.index ${kioskEntry.index}`
-          );
-
-          return null;
-        }
-
-        const item = itemDefs[vendorItem.itemHash];
-
-        return kioskEntry.canAcquire ? item.hash : null;
-      })
-      .filter(Boolean);
-
-    hashes.push(...kioskItems);
-  });
-
-  return hashes;
-}
-
-export function collectItemsFromKiosks(profile, itemDefs, vendorDefs) {
-  const profileKioskItems = collectKioskItems(
-    profile.profileKiosks.data.kioskItems,
-    itemDefs,
-    vendorDefs
-  );
-
-  const charKioskItems = Object.values(profile.characterKiosks.data).reduce(
-    (acc, charKiosk) => {
-      const itemHashes = collectKioskItems(
-        charKiosk.kioskItems,
-        itemDefs,
-        vendorDefs
-      );
-
-      acc.push(...itemHashes);
-
-      return acc;
-    },
-    []
-  );
-
-  return profileKioskItems.concat(charKioskItems);
-}
-
-export function collectItemsFromProfile(profile, verbose = false) {
-  console.warn(
-    'destiny.collectItemsFromProfile is deprecated. Use collectInventory instead'
-  );
-
-  const {
-    characterInventories,
-    profileInventory,
-    characterEquipment,
-    itemComponents
-  } = profile;
-
-  function mapItem(item) {
-    if (!verbose) {
-      return item.itemHash;
-    }
-
-    return {
-      ...item,
-      $instance: itemComponents.instances.data[item.itemInstanceId],
-      $sockets: itemComponents.sockets.data[item.itemInstanceId]
-    };
-  }
-
-  const charItems = Object.values(characterInventories.data).reduce(
-    (acc, { items }) => {
-      return acc.concat(items.map(mapItem));
-    },
-    []
-  );
-
-  const equippedItems = Object.values(characterEquipment.data).reduce(
-    (acc, { items }) => {
-      return acc.concat(items.map(mapItem));
-    },
-    []
-  );
-
-  const profileItems = profileInventory.data.items.map(mapItem);
-
-  return charItems.concat(profileItems, equippedItems);
-}
 export function dev(...args) {
   log(getDestiny(...args));
 }

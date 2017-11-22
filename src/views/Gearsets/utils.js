@@ -49,7 +49,7 @@ export function logItems(profile, itemDefs, vendorDefs) {
     return item.inventory.tierTypeName || '';
   }
 
-  function logItems(itemHashList) {
+  function _logItems(itemHashList) {
     itemHashList
       .map(h => itemDefs[h])
       .sort((i1, i2) => {
@@ -74,22 +74,22 @@ export function logItems(profile, itemDefs, vendorDefs) {
 
   forEach(characterInventories.data, ({ items }, characterId) => {
     console.groupCollapsed('Character inventory', characterId);
-    logItems(items.map(({ itemHash }) => itemHash));
+    _logItems(items.map(({ itemHash }) => itemHash));
     console.groupEnd();
   });
 
   forEach(characterEquipment.data, ({ items }, characterId) => {
     console.groupCollapsed('Character equipped', characterId);
-    logItems(items.map(({ itemHash }) => itemHash));
+    _logItems(items.map(({ itemHash }) => itemHash));
     console.groupEnd();
   });
 
   console.groupCollapsed('Profile inventory (vault)');
-  logItems(profileInventory.data.items.map(({ itemHash }) => itemHash));
+  _logItems(profileInventory.data.items.map(({ itemHash }) => itemHash));
   console.groupEnd();
 
   console.groupCollapsed('Profile Kiosk');
-  logItems(
+  _logItems(
     collectKioskItems(
       profile.profileKiosks.data.kioskItems,
       itemDefs,
@@ -100,9 +100,27 @@ export function logItems(profile, itemDefs, vendorDefs) {
 
   Object.values(profile.characterKiosks.data).forEach(charKiosk => {
     console.groupCollapsed('Character kiosk');
-    logItems(collectKioskItems(charKiosk.kioskItems, itemDefs, vendorDefs));
+    _logItems(collectKioskItems(charKiosk.kioskItems, itemDefs, vendorDefs));
     console.groupEnd();
   }, []);
 
+  console.groupEnd();
+}
+
+export function logSets(msg, rawGroups) {
+  console.groupCollapsed(msg);
+  rawGroups.forEach(group => {
+    console.groupCollapsed(group.name);
+    group.sets.forEach(set => {
+      console.group(set.name);
+      set.sections.forEach(section => {
+        console.groupCollapsed(section.title);
+        section.items.forEach(item => console.log(item));
+        console.groupEnd();
+      });
+      console.groupEnd();
+    });
+    console.groupEnd();
+  });
   console.groupEnd();
 }

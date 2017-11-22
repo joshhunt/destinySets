@@ -9,67 +9,10 @@ module.exports = [
           {
             title: 'Weapons',
             items: [
-              1345867570, // Sweet Business
-              2907129557, // Sunshot
-              2907129556, // Sturm
-              1345867571, // Coldheart
-              1331482397, // MIDA Multi-Tool
-              2362471601, // Rat King
-              1744115122, // Legend of Acrius
-              1508896098, // The Wardcliff Coil
-              4124984448, // Hard Light
-              3628991659, // Vigilance Wing
               4190156464, // Merciless
               4255268456, // Skyburner's Oath
+              2362471601, // Rat King
               3580904581 // Tractor Cannon
-            ]
-          },
-          {
-            title: 'Hunter armor',
-            items: [
-              419976108, // The Dragon's Shadow
-              419976110, // Raiden Flux
-              1245809812, // Lucky Pants
-              1667080810, // Celestial Nighthawk
-              1667080811, // Knucklehead Radar
-              1245809813, // Orpheus Rig
-              419976111, // Lucky Raspberry
-              1667080809, // Foetracer
-              1245809814, // St0mp-EE5
-              4284305243, // Mechaneer's Tricksleeves
-              4284305242 // Young Ahamkara's Spine
-            ]
-          },
-          {
-            title: 'Titan armor',
-            items: [
-              197761152, // Mask of the Quiet One
-              197761153, // An Insurmountable Skullfort
-              458095282, // Hallowfire Heart
-              1035680664, // ACD/0 Feedback Fence
-              458095280, // Crest of Alpha Lupi
-              458095281, // Actium War Rig
-              1035680666, // Synthoceps
-              1035680665, // Doom Fang Pauldron
-              3790373072, // Dunemarchers
-              3790373074, // Lion Rampant
-              3790373075 // Peacekeepers
-            ]
-          },
-          {
-            title: 'Warlock armor',
-            items: [
-              1862800746, // Karnstein Armlets
-              2523259393, // Nezarec's Sin
-              2782999717, // Starfire Protocol
-              2954558333, // Transversive Steps
-              2954558332, // Lunafaction Boots
-              2523259394, // Skull of Dire Ahamkara
-              1862800747, // Sunbracers
-              1862800745, // Winter's Guile
-              2523259392, // Eye of Another World
-              2782999716, // Wings of Sacred Dawn
-              2523259395 // Crown of Tempests
             ]
           }
         ]

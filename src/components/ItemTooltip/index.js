@@ -91,18 +91,27 @@ export default function ItemTooltip({ item }) {
           </div>
         )}
 
-        {item.$inventory && (
+        {item.$dismantled && (
           <div className={styles.inventory}>
             <ul>
-              {item.$inventory.map((inv, i) => (
-                <li key={i}>
-                  {LOCATION_MAP[inv.$location] || 'unknown location'}{' '}
-                  {inv.$characterHash && `on character ${inv.$characterHash}`}
-                </li>
-              ))}
+              <li>Dismantled</li>
             </ul>
           </div>
         )}
+
+        {item.$inventory &&
+          !item.$dismantled && (
+            <div className={styles.inventory}>
+              <ul>
+                {item.$inventory.map((inv, i) => (
+                  <li key={i}>
+                    {LOCATION_MAP[inv.$location] || 'unknown location'}{' '}
+                    {inv.$characterHash && `on character ${inv.$characterHash}`}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
       </div>
     </div>
   );

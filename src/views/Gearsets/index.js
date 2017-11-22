@@ -7,6 +7,7 @@ import { getDefinition } from 'app/lib/manifestData';
 
 import * as destiny from 'app/lib/destiny';
 import * as ls from 'app/lib/ls';
+import * as cloudStorage from 'app/lib/cloudStorage';
 import { getDefaultLanguage, getBrowserLocale } from 'app/lib/i18n';
 import Header from 'app/components/Header';
 import Footer from 'app/components/Footer';
@@ -34,10 +35,6 @@ import consoleExclusives from '../consoleExclusives.js';
 
 const SHOW_PS4_EXCLUSIVES = -101;
 const SHOW_COLLECTED = -102;
-
-function merge(base, extra) {
-  return { ...base, ...extra };
-}
 
 const FILTERS = [
   [TITAN, 'Titan'],
@@ -95,9 +92,7 @@ class Gearsets extends Component {
       getDefinition('DestinyVendorDefinition', langCode)
     ]);
 
-    this.dataPromise.then(result => {
-      this.processSets(...result);
-    });
+    this.scheduleProcessSets();
 
     Promise.all([this.dataPromise, destiny.xur()]).then(([data, xurItems]) => {
       this.xurItems = xurItems;
@@ -111,22 +106,29 @@ class Gearsets extends Component {
     }
 
     if (this.props.route !== newProps.route) {
-      this.dataPromise.then(result => {
-        this.processSets(...result);
-      });
+      this.scheduleProcessSets();
     }
+  }
+
+  scheduleProcessSets() {
+    this.dataPromise.then(result => {
+      this.processSets(...result);
+    });
   }
 
   processSets = (itemDefs, vendorDefs) => {
     const processPayload = {
       itemDefs,
       vendorDefs,
+      cloudInventory: this.cloudInventory,
       profile: this.profile,
       variation: this.props.route.variation,
       xurItems: this.xurItems
     };
-    processSets(processPayload, ({ rawGroups, ...state }) => {
+    processSets(processPayload, ({ rawGroups, inventory, ...state }) => {
       this.rawGroups = rawGroups;
+
+      Object.keys(inventory).length && cloudStorage.setInventory(inventory);
 
       this.filterGroups(rawGroups);
       this.setState(state);
@@ -241,6 +243,15 @@ class Gearsets extends Component {
       return;
     }
 
+    cloudStorage.getInventory().then(cloudInventory => {
+      console.log(
+        'no but actually cloudInventory resolved with',
+        cloudInventory
+      );
+      this.cloudInventory = cloudInventory;
+      this.scheduleProcessSets();
+    });
+
     destiny.getCurrentProfiles().then(profiles => {
       this.setState({ profiles });
 
@@ -295,9 +306,7 @@ class Gearsets extends Component {
       }
     });
 
-    this.dataPromise.then(result => {
-      this.processSets(...result);
-    });
+    this.scheduleProcessSets();
   };
 
   toggleFilter = () => {

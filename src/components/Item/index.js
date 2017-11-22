@@ -79,6 +79,7 @@ export default class Item extends Component {
       [styles.small]: small,
       [styles.tiny]: tiny,
       [styles.obtained]: item.$obtained,
+      [styles.dismantled]: item.$obtained && item.$dismantled,
       [styles.forSale]: item.forSale
     });
 

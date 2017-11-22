@@ -131,5 +131,8 @@ export default function collectInventory(profile, vendorDefs) {
 
   allItems = collectItemsFromKiosks(profile, vendorDefs, allItems);
 
+  // delete allItems[4255268456];
+  // delete allItems['4255268456'];
+
   return allItems;
 }
