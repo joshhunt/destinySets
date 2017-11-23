@@ -8,6 +8,7 @@ import { getDefinition } from 'app/lib/manifestData';
 import * as destiny from 'app/lib/destiny';
 import * as ls from 'app/lib/ls';
 import * as cloudStorage from 'app/lib/cloudStorage';
+import googleAuth, { signIn as googleSignIn } from 'app/lib/googleDriveAuth';
 import { getDefaultLanguage, getBrowserLocale } from 'app/lib/i18n';
 import Header from 'app/components/Header';
 import Footer from 'app/components/Footer';
@@ -72,6 +73,18 @@ class Gearsets extends Component {
 
     this.setState({
       activeLanguage: lang
+    });
+
+    this.setState({
+      googleAuthLoaded: false
+    });
+
+    googleAuth(({ signedIn }) => {
+      this.setState({
+        googleAuthLoaded: true,
+        googleAuthSignedIn: signedIn
+      });
+      console.log('Google auth signedIn:', signedIn);
     });
   }
 
@@ -238,6 +251,10 @@ class Gearsets extends Component {
     });
   };
 
+  googleAuthLogIn = () => {
+    googleSignIn();
+  };
+
   fetchCharacters = (props = this.props) => {
     if (!props.isAuthenticated) {
       return;
@@ -335,7 +352,7 @@ class Gearsets extends Component {
   };
 
   switchLang = newLang => {
-    ga('send', 'event', 'switch-lang', newLang.code);
+    window.ga('send', 'event', 'switch-lang', newLang.code);
 
     ls.saveLanguage(newLang);
 
@@ -367,7 +384,9 @@ class Gearsets extends Component {
       activeLanguage,
       shit,
       xurItems,
-      hasInventory
+      hasInventory,
+      googleAuthLoaded,
+      googleAuthSignedIn
     } = this.state;
 
     if (loading) {
@@ -395,6 +414,11 @@ class Gearsets extends Component {
         {shit && (
           <div className={styles.info}>Loading {activeLanguage.name}...</div>
         )}
+
+        {googleAuthLoaded &&
+          !googleAuthSignedIn && (
+            <button onClick={this.googleAuthLogIn}>Sign in with Google</button>
+          )}
 
         <div className={styles.subnav}>
           <div className={styles.navsections}>

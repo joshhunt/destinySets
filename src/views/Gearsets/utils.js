@@ -1,5 +1,4 @@
 import { forEach, flatMap, isObject } from 'lodash';
-import { collectKioskItems } from 'app/lib/destiny';
 
 const RARITY_COLORS = {
   legendary: '#522f65',
@@ -88,21 +87,21 @@ export function logItems(profile, itemDefs, vendorDefs) {
   _logItems(profileInventory.data.items.map(({ itemHash }) => itemHash));
   console.groupEnd();
 
-  console.groupCollapsed('Profile Kiosk');
-  _logItems(
-    collectKioskItems(
-      profile.profileKiosks.data.kioskItems,
-      itemDefs,
-      vendorDefs
-    )
-  );
-  console.groupEnd();
+  // console.groupCollapsed('Profile Kiosk');
+  // _logItems(
+  //   collectKioskItems(
+  //     profile.profileKiosks.data.kioskItems,
+  //     itemDefs,
+  //     vendorDefs
+  //   )
+  // );
+  // console.groupEnd();
 
-  Object.values(profile.characterKiosks.data).forEach(charKiosk => {
-    console.groupCollapsed('Character kiosk');
-    _logItems(collectKioskItems(charKiosk.kioskItems, itemDefs, vendorDefs));
-    console.groupEnd();
-  }, []);
+  // Object.values(profile.characterKiosks.data).forEach(charKiosk => {
+  //   console.groupCollapsed('Character kiosk');
+  //   _logItems(collectKioskItems(charKiosk.kioskItems, itemDefs, vendorDefs));
+  //   console.groupEnd();
+  // }, []);
 
   console.groupEnd();
 }

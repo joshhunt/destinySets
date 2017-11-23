@@ -29,12 +29,6 @@ export function mapItems(itemHashes, itemDefs, inventory) {
 
       const inventoryItem = inventory[itemHash];
 
-      console.log(
-        `%c${itemHash}`,
-        'font-weight: bold; color: blue',
-        inventoryItem
-      );
-
       return {
         $obtained: !!inventoryItem,
         $dismantled: inventoryItem && inventoryItem[0].$dismantled,
@@ -46,19 +40,10 @@ export function mapItems(itemHashes, itemDefs, inventory) {
 }
 
 function mergeCloudInventory(currentInventory, cloudInventory) {
-  console.log('%cMerging cloud inventory', 'font-weight: bold', {
-    currentInventory,
-    cloudInventory
-  });
   const inventory = { ...currentInventory };
 
   Object.keys(cloudInventory).forEach(cloudItemHash => {
     if (!currentInventory[cloudItemHash]) {
-      console.log(
-        `%cFound item in cloud inventory`,
-        'font-weight: bold; color: orange',
-        cloudItemHash
-      );
       inventory[cloudItemHash] = [
         { $dismantled: true },
         ...cloudInventory[cloudItemHash]
@@ -94,7 +79,6 @@ export default function processSets(args, dataCallback) {
   // const inventory = [...inventory, ...kioskItems];
 
   let inventory = (profile && collectInventory(profile, vendorDefs)) || {};
-  console.log('do we have cloudInventory?', cloudInventory);
   if (cloudInventory && profile) {
     inventory = mergeCloudInventory(inventory, cloudInventory);
   }
@@ -103,12 +87,11 @@ export default function processSets(args, dataCallback) {
     profile && itemDefs && logItems(profile, itemDefs, vendorDefs);
   } catch (e) {
     console.error('Unable to log profile');
-    console.log(e);
+    console.error(e);
   }
 
   ls.saveInventory(mapValues(inventory, () => ({ $fromLocalStorage: true })));
 
-  console.groupCollapsed('mapItem');
   const rawGroups = sets.map(group => {
     const sets = group.sets.map(set => {
       const preSections = set.fancySearchTerm
@@ -134,7 +117,6 @@ export default function processSets(args, dataCallback) {
 
     return merge(group, { sets });
   });
-  console.groupEnd();
 
   const xurItemsGood = xurHashes
     .filter(hash => inventory[Number(hash)])
