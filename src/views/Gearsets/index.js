@@ -8,13 +8,17 @@ import { getDefinition } from 'app/lib/manifestData';
 import * as destiny from 'app/lib/destiny';
 import * as ls from 'app/lib/ls';
 import * as cloudStorage from 'app/lib/cloudStorage';
-import googleAuth, { signIn as googleSignIn } from 'app/lib/googleDriveAuth';
+import googleAuth, {
+  signIn as googleSignIn,
+  signOut as googleSignOut
+} from 'app/lib/googleDriveAuth';
 import { getDefaultLanguage, getBrowserLocale } from 'app/lib/i18n';
 import Header from 'app/components/Header';
 import Footer from 'app/components/Footer';
 import Xur from 'app/components/Xur';
 import Loading from 'app/views/Loading';
 import LoginUpsell from 'app/components/LoginUpsell';
+import GoogleLoginUpsell from 'app/components/GoogleLoginUpsell';
 import ActivityList from 'app/components/ActivityList';
 import DestinyAuthProvider from 'app/lib/DestinyAuthProvider';
 
@@ -85,6 +89,17 @@ class Gearsets extends Component {
         googleAuthSignedIn: signedIn
       });
       console.log('Google auth signedIn:', signedIn);
+
+      signedIn &&
+        !this.cloudInventory &&
+        cloudStorage.getInventory().then(cloudInventory => {
+          console.log(
+            'no but actually cloudInventory resolved with',
+            cloudInventory
+          );
+          this.cloudInventory = cloudInventory;
+          this.scheduleProcessSets();
+        });
     });
   }
 
@@ -138,10 +153,20 @@ class Gearsets extends Component {
       variation: this.props.route.variation,
       xurItems: this.xurItems
     };
-    processSets(processPayload, ({ rawGroups, inventory, ...state }) => {
+    processSets(processPayload, result => {
+      if (!result) {
+        return null;
+      }
+
+      const { rawGroups, inventory, saveCloudInventory, ...state } = result;
       this.rawGroups = rawGroups;
 
-      Object.keys(inventory).length && cloudStorage.setInventory(inventory);
+      console.log(
+        `%cSave cloud inventory? ${saveCloudInventory}`,
+        'font-weight: bold; color: blue'
+      );
+
+      saveCloudInventory && cloudStorage.setInventory(inventory);
 
       this.filterGroups(rawGroups);
       this.setState(state);
@@ -255,19 +280,14 @@ class Gearsets extends Component {
     googleSignIn();
   };
 
+  googleAuthSignOut = () => {
+    googleSignOut();
+  };
+
   fetchCharacters = (props = this.props) => {
     if (!props.isAuthenticated) {
       return;
     }
-
-    cloudStorage.getInventory().then(cloudInventory => {
-      console.log(
-        'no but actually cloudInventory resolved with',
-        cloudInventory
-      );
-      this.cloudInventory = cloudInventory;
-      this.scheduleProcessSets();
-    });
 
     destiny.getCurrentProfiles().then(profiles => {
       this.setState({ profiles });
@@ -401,6 +421,9 @@ class Gearsets extends Component {
           profiles={profiles}
           onChangeProfile={this.switchProfile}
           onChangeLang={this.switchLang}
+          isGoogleAuthenticated={googleAuthSignedIn}
+          onGoogleLogin={this.googleAuthLogIn}
+          onGoogleSignout={this.googleAuthSignOut}
           activeLanguage={activeLanguage}
         />
 
@@ -416,8 +439,11 @@ class Gearsets extends Component {
         )}
 
         {googleAuthLoaded &&
+          this.props.isAuthenticated &&
           !googleAuthSignedIn && (
-            <button onClick={this.googleAuthLogIn}>Sign in with Google</button>
+            <GoogleLoginUpsell onClick={this.googleAuthLogIn}>
+              Login with Google to track dismantled apps
+            </GoogleLoginUpsell>
           )}
 
         <div className={styles.subnav}>

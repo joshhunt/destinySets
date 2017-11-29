@@ -1,25 +1,5 @@
 module.exports = [
   {
-    name: 'Development',
-    sets: [
-      {
-        name: 'Exotics',
-        big: true,
-        sections: [
-          {
-            title: 'Weapons',
-            items: [
-              4190156464, // Merciless
-              4255268456, // Skyburner's Oath
-              2362471601, // Rat King
-              3580904581 // Tractor Cannon
-            ]
-          }
-        ]
-      }
-    ]
-  },
-  {
     name: 'Factions',
     sets: [
       {

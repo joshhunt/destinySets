@@ -42,7 +42,14 @@ export default class Header extends React.Component {
   };
 
   render() {
-    const { className, bg, profile, activeLanguage } = this.props;
+    const {
+      className,
+      bg,
+      profile,
+      activeLanguage,
+      isGoogleAuthenticated,
+      onGoogleSignout
+    } = this.props;
     const { langSwitcherActive, accountSwitcherActive } = this.state;
 
     const style = {};
@@ -147,6 +154,19 @@ export default class Header extends React.Component {
                         </div>
                       </div>
                     ))}
+
+                    {isGoogleAuthenticated && (
+                      <div
+                        onClick={onGoogleSignout}
+                        className={cx(
+                          styles.account,
+                          styles.logOut,
+                          styles.dropdownAccount
+                        )}
+                      >
+                        Disconnect Google
+                      </div>
+                    )}
 
                     <div
                       onClick={() => this.switchProfile({ logout: true })}

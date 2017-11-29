@@ -1,9 +1,11 @@
-const INVENTORY = '$inventory';
+const INVENTORY = '$inventory2';
 const CLOUD_INVENTORY = '$cloudinventory';
 const FILTERS = '$filters';
 const ACCOUNT = '$account';
+const GDRIVE_FILE_ID = '$googleDriveFileId';
 const LANGUAGE = '$lang';
 const AUTH = '$auth';
+const GOOGLE_LOGIN_UPSELL = 'googleLoginUpsell';
 
 import { getDefaultLanguage } from './i18n';
 
@@ -43,6 +45,14 @@ export function saveInventory(inventory) {
 
 export function getInventory() {
   return get(INVENTORY, []);
+}
+
+export function saveGoogleLoginUpsell(bool) {
+  save(GOOGLE_LOGIN_UPSELL, bool);
+}
+
+export function getGoogleLoginUpsell() {
+  return get(GOOGLE_LOGIN_UPSELL, false);
 }
 
 export function saveCloudInventory(inventory) {
@@ -87,4 +97,12 @@ export function getAuth() {
 
 export function removeAuth() {
   localStorage.removeItem(AUTH);
+}
+
+export function getGoogleDriveInventoryFileId() {
+  return get(GDRIVE_FILE_ID, null);
+}
+
+export function saveGoogleDriveInventoryFileId(fileId) {
+  save(GDRIVE_FILE_ID, fileId);
 }
