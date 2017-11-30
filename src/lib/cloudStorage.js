@@ -3,22 +3,36 @@ const gapi = window.gapi;
 import * as ls from 'app/lib/ls';
 import { ready } from 'app/lib/googleDriveAuth';
 
-const FILE_NAME = 'inventory.json';
+const log = require('app/lib/log')('cloudStorage');
+const fileIdLog = require('app/lib/log')('cloudStorage:getFileId');
+
 let __fileId;
 
-function getFileId() {
-  const fileId = __fileId; // || ls.getGoogleDriveInventoryFileId();
+function getFileId({ profile }) {
+  const lsFileId = ls.getGoogleDriveInventoryFileId();
+  const fileId = __fileId || lsFileId;
   if (fileId) {
-    console.info('[FILE ID] Already have fileId', fileId);
+    lsFileId
+      ? fileIdLog('Already have fileID from localStorage of ' + fileId)
+      : fileIdLog('Already have fileID of ' + fileId);
+
     return Promise.resolve(fileId);
   }
 
-  const fileName = FILE_NAME;
+  const profileData = profile.data.userInfo;
+  const namePrefix =
+    localStorage.googleDriveInventoryNamePrefix || window.DESTINYSETS_ENV;
+  const fileName = `inventory-${namePrefix}-${profileData.membershipType}-${
+    profileData.membershipId
+  }.json`;
+
+  fileIdLog('Inventory filename is ' + fileName);
 
   return gapi.client.drive.files
     .list({ spaces: 'appDataFolder' })
     .then(resp => {
-      console.log('[FILE ID] resp', resp);
+      fileIdLog('Google Drive file listing', { resp });
+
       if (!resp.result || !resp.result.files) {
         throw new Error('Invalid file listing from Google Drive');
       }
@@ -27,12 +41,12 @@ function getFileId() {
       const file = files.find(f => f.name === fileName);
 
       if (file) {
-        console.info('[FILE ID] Found file', file);
+        fileIdLog('Found file', file);
         return file.id;
       }
 
       // couldn't find the file, lets create a new one.
-      console.info("[FILE ID] Couldn't find the file, lets create a new one.");
+      fileIdLog("Didn't find file, creating new one");
       return gapi.client.drive.files
         .create({
           name: fileName,
@@ -42,7 +56,7 @@ function getFileId() {
           parents: ['appDataFolder']
         })
         .then(file => {
-          console.log('created file:', file);
+          fileIdLog('Created file', file);
           return file.result.id;
         });
     })
@@ -53,17 +67,15 @@ function getFileId() {
     });
 }
 
-export function setInventory(inventory) {
-  console.log('%cSetting cloud inventory', 'font-weight: bold', inventory);
+export function setInventory(inventory, profile) {
+  log('Setting cloud inventory', { inventory, profile });
   ls.saveCloudInventory(inventory);
 
   return ready
-    .then(() => getFileId())
+    .then(() => getFileId(profile))
     .then(fileId => {
-      console.log(
-        `%cSaving inventory to Google Drive ID ${fileId}`,
-        'font-weight: bold'
-      );
+      log('Saving cloud inventory with fileID', fileId);
+
       return gapi.client.request({
         path: `/upload/drive/v3/files/${fileId}`,
         method: 'PATCH',
@@ -74,20 +86,19 @@ export function setInventory(inventory) {
         body: JSON.stringify(inventory)
       });
     })
-    .then((...resp) => {
-      console.log('Successfully saved to Google Drive', ...resp);
+    .then(resp => {
+      log('Successfully saved to Google Drive', { resp });
     })
     .catch(err => {
-      console.error('Error saving to Google Drive');
-      console.error(err);
+      log('ERROR saving to Google Drive', err);
     });
 }
 
-export function getInventory() {
+export function getInventory(profile) {
   return ready
-    .then(() => getFileId())
+    .then(() => getFileId(profile))
     .then(fileId => {
-      console.log('[GET INVENTORY] Fetching file ID', fileId);
+      log('Getting cloud inventory for file ID ', fileId);
       return gapi.client.drive.files.get({
         fileId: fileId,
         alt: 'media',
@@ -95,7 +106,7 @@ export function getInventory() {
       });
     })
     .then(result => {
-      console.log('[GET INVENTORY] Resolving inventoryFile', result);
+      log('Resolving cloud inventory', { result });
       return result.result;
     });
 }

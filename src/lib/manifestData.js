@@ -2,16 +2,18 @@ import Dexie from 'dexie';
 
 import * as destiny from 'app/lib/destiny';
 
+const log = require('app/lib/log')('manifestData');
+
 const oldDb = new Dexie('destinySetsCache');
 oldDb.version(1).stores({
-  dataCache: '&key, data',
+  dataCache: '&key, data'
 });
 
 oldDb.delete();
 
 const db = new Dexie('destinyManifest');
 db.version(1).stores({
-  dataCache: '&key, data',
+  dataCache: '&key, data'
 });
 
 let manifestPromise;
@@ -52,16 +54,15 @@ export function cachedGet(path, id) {
     db.dataCache
       .get(key)
       .then(cachedData => {
-        console.log(`Loaded ${path} from cache`);
-
         if (cachedData) {
+          log(`Loaded ${path} from cache`);
           resolve(cachedData.data);
         } else {
           fetchData();
         }
       })
       .catch(err => {
-        console.error('Error loading data from cache:');
+        log('ERROR: Error loading data from cache');
         console.error(err);
         fetchData();
       })

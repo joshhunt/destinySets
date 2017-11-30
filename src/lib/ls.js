@@ -1,11 +1,13 @@
-const INVENTORY = '$inventory2';
-const CLOUD_INVENTORY = '$cloudinventory';
-const FILTERS = '$filters';
-const ACCOUNT = '$account';
-const GDRIVE_FILE_ID = '$googleDriveFileId';
-const LANGUAGE = '$lang';
-const AUTH = '$auth';
-const GOOGLE_LOGIN_UPSELL = 'googleLoginUpsell';
+const keys = {
+  INVENTORY: '$inventory2',
+  CLOUD_INVENTORY: '$cloudinventory',
+  FILTERS: '$filters',
+  ACCOUNT: '$account',
+  LANGUAGE: '$lang',
+  AUTH: '$auth',
+  GDRIVE_FILE_ID: '$googleDriveFileId' + window.DESTINYSETS_ENV,
+  GOOGLE_LOGIN_UPSELL: '$googleLoginUpsell'
+};
 
 import { getDefaultLanguage } from './i18n';
 
@@ -32,77 +34,81 @@ function save(key, value) {
 }
 
 export function saveLanguage(langCode) {
-  save(LANGUAGE, langCode);
+  save(keys.LANGUAGE, langCode);
 }
 
 export function getLanguage() {
-  return get(LANGUAGE, getDefaultLanguage());
+  return get(keys.LANGUAGE, getDefaultLanguage());
 }
 
 export function saveInventory(inventory) {
-  save(INVENTORY, inventory);
+  save(keys.INVENTORY, inventory);
 }
 
 export function getInventory() {
-  return get(INVENTORY, []);
+  return get(keys.INVENTORY, []);
 }
 
 export function saveGoogleLoginUpsell(bool) {
-  save(GOOGLE_LOGIN_UPSELL, bool);
+  save(keys.GOOGLE_LOGIN_UPSELL, bool);
 }
 
 export function getGoogleLoginUpsell() {
-  return get(GOOGLE_LOGIN_UPSELL, false);
+  return get(keys.GOOGLE_LOGIN_UPSELL, false);
 }
 
 export function saveCloudInventory(inventory) {
-  save(CLOUD_INVENTORY, inventory);
+  save(keys.CLOUD_INVENTORY, inventory);
 }
 
 export function getCloudInventory() {
-  return get(CLOUD_INVENTORY, []);
+  return get(keys.CLOUD_INVENTORY, []);
 }
 
 export function removeInventory() {
-  return localStorage.removeItem(INVENTORY);
+  return localStorage.removeItem(keys.INVENTORY);
 }
 
 export function saveFilters(filters) {
-  save(FILTERS, filters);
+  save(keys.FILTERS, filters);
 }
 
 export function getFilters() {
-  return get(FILTERS);
+  return get(keys.FILTERS);
 }
 
 export function savePreviousAccount(id, type) {
-  save(ACCOUNT, { id, type });
+  save(keys.ACCOUNT, { id, type });
 }
 
 export function getPreviousAccount(id, type) {
-  return get(ACCOUNT, {});
+  return get(keys.ACCOUNT, {});
 }
 
 export function removePreviousAccount() {
-  localStorage.removeItem(ACCOUNT);
+  localStorage.removeItem(keys.ACCOUNT);
 }
 
 export function saveAuth(authData) {
-  save(AUTH, authData);
+  save(keys.AUTH, authData);
 }
 
 export function getAuth() {
-  return get(AUTH);
+  return get(keys.AUTH);
 }
 
 export function removeAuth() {
-  localStorage.removeItem(AUTH);
+  localStorage.removeItem(keys.AUTH);
 }
 
 export function getGoogleDriveInventoryFileId() {
-  return get(GDRIVE_FILE_ID, null);
+  return get(keys.GDRIVE_FILE_ID, null);
 }
 
 export function saveGoogleDriveInventoryFileId(fileId) {
-  save(GDRIVE_FILE_ID, fileId);
+  save(keys.GDRIVE_FILE_ID, fileId);
+}
+
+export function clearAll() {
+  Object.keys(keys).forEach(k => localStorage.removeItem(k));
 }

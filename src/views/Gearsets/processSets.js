@@ -1,12 +1,15 @@
-import { mapValues, isArray, isNumber, cloneDeep } from 'lodash';
+import { isArray, cloneDeep } from 'lodash';
 
 import { fancySearch } from 'app/views/DataExplorer/filterItems';
 import sortItemsIntoSections from 'app/views/DataExplorer/sortItemsIntoSections';
 import collectInventory from 'app/lib/collectInventory';
 import * as ls from 'app/lib/ls';
-import { logItems, logSets } from './utils';
+
+// import { logItems, logSets } from './utils';
 import setsSets from '../sets.js';
 import allItemsSets from '../allItems.js';
+
+const log = require('app/lib/log')('processSets');
 
 const VARIATIONS = {
   sets: setsSets,
@@ -23,7 +26,7 @@ export function mapItems(itemHashes, itemDefs, inventory) {
       const item = itemDefs[itemHash];
 
       if (!item) {
-        console.warn('Unable to find item definition for ' + itemHash);
+        log('WARNING: Unable to find item definition for ' + itemHash);
         return null;
       }
 
@@ -64,11 +67,9 @@ export default function processSets(args, dataCallback) {
     cloudInventory
   } = args;
 
-  console.log('Process sets with', { profile, cloudInventory });
-
-  if ((profile && !cloudInventory) || (!profile && cloudInventory)) {
-    return dataCallback(false);
-  }
+  // if ((profile && !cloudInventory) || (!profile && cloudInventory)) {
+  //   return dataCallback(false);
+  // }
 
   const sets = cloneDeep(VARIATIONS[variation]);
 
@@ -76,33 +77,26 @@ export default function processSets(args, dataCallback) {
 
   const allItems = Object.values(itemDefs);
 
-  // const kioskItems = profile
-  //   ? destiny.collectItemsFromKiosks(profile, itemDefs, vendorDefs)
-  //   : [];
-
-  // const lsInventory = ls.getInventory();
-  // const inventory = destiny.collectItemsFromProfile(profile);
-  // const inventory = [...inventory, ...kioskItems];
-
   let inventory = (profile && collectInventory(profile, vendorDefs)) || {};
   let usingLocalStorageInventory = false;
   const localStorageInventory = ls.getInventory();
-  console.log('ls test', {
+
+  log('Processing sets with', {
     inventory,
-    localStorageInventory
+    localStorageInventory,
+    cloudInventory
   });
 
   if (!Object.keys(inventory).length > 0 && localStorageInventory) {
     usingLocalStorageInventory = true;
     inventory = localStorageInventory;
-    console.log(
-      `%cUsing local storage`,
-      'font-weight: bold; color: blue',
-      inventory
-    );
+    log('Using local storage inventory');
   } else if (cloudInventory && profile) {
+    log('Using cloud inventory');
     inventory = mergeCloudInventory(inventory, cloudInventory);
   }
+
+  log('Using inventory of ' + Object.keys(inventory).length + ' items');
 
   // try {
   //   profile && itemDefs && logItems(profile, itemDefs, vendorDefs);
@@ -110,8 +104,6 @@ export default function processSets(args, dataCallback) {
   //   console.error('Unable to log profile');
   //   console.error(e);
   // }
-
-  // ls.saveInventory(mapValues(inventory, () => ({ $fromLocalStorage: true })));
 
   const rawGroups = sets.map(group => {
     const sets = group.sets.map(set => {
@@ -147,6 +139,11 @@ export default function processSets(args, dataCallback) {
     ls.saveInventory(inventory);
   }
 
+  console.group('saveCloudInventory?');
+  log(`!usingLocalStorageInventory: ${!usingLocalStorageInventory}`);
+  log(`!!Object.keys(inventory).length: ${!!Object.keys(inventory).length}`);
+  console.groupEnd();
+
   const payload = {
     rawGroups,
     inventory,
@@ -154,9 +151,7 @@ export default function processSets(args, dataCallback) {
     hasInventory: Object.keys(inventory).length > 0,
     loading: false,
     saveCloudInventory:
-      !usingLocalStorageInventory &&
-      Object.keys(inventory).length &&
-      !!cloudInventory,
+      !usingLocalStorageInventory && !!Object.keys(inventory).length,
     shit: null
   };
 

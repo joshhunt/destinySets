@@ -5,6 +5,8 @@ const XUR_URL = 'https://d392b4140pqfjy.cloudfront.net/xur';
 
 const DESTINY_2 = 1;
 
+const log = require('app/lib/log')('http');
+
 const componentProfiles = 100;
 const componentProfileInventories = 102;
 const componentCharacters = 200;
@@ -51,10 +53,10 @@ export function getDestiny(_pathname, opts = {}, postBody) {
       typeof postBody === 'string' ? postBody : JSON.stringify(postBody);
   }
 
-  console.info(`[REQUEST]%c ${pathname}`, 'color: blue', opts);
+  log(`REQUEST: ${pathname}`, opts);
 
   return get(url, opts).then(resp => {
-    console.info(`[RESULT]%c  ${pathname}`, 'color: blue', resp);
+    log(`RESPONSE: ${pathname}`, resp);
 
     if (resp.ErrorStatus === 'DestinyAccountNotFound') {
       return null;
@@ -75,10 +77,6 @@ export function getDestiny(_pathname, opts = {}, postBody) {
 
     return result;
   });
-}
-
-export function log(prom) {
-  prom.then(result => console.log(result)).catch(err => console.error(err));
 }
 
 export function getProfile({ membershipType, membershipId }, components) {
@@ -123,15 +121,9 @@ export function getCurrentProfile() {
   });
 }
 
-export function dev(...args) {
-  log(getDestiny(...args));
-}
-
 export function xur() {
   return get(XUR_URL).then(xurData => {
     const isLive = window.location.href.includes('forceXur') || xurData.isLive;
     return isLive ? xurData.itemsHashes : [];
   });
 }
-
-window.dev = dev;

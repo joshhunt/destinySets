@@ -27,6 +27,8 @@ import processSets from './processSets';
 
 // import * as telemetry from 'app/lib/telemetry';
 
+const log = require('app/lib/log')('gearsets');
+
 import {
   HUNTER,
   TITAN,
@@ -66,6 +68,7 @@ class Gearsets extends Component {
       items: [],
       selectedItems: [],
       displayFilters: false,
+      googleAuthLoaded: false,
       filter: ls.getFilters() || defaultFilter
     };
   }
@@ -77,29 +80,6 @@ class Gearsets extends Component {
 
     this.setState({
       activeLanguage: lang
-    });
-
-    this.setState({
-      googleAuthLoaded: false
-    });
-
-    googleAuth(({ signedIn }) => {
-      this.setState({
-        googleAuthLoaded: true,
-        googleAuthSignedIn: signedIn
-      });
-      console.log('Google auth signedIn:', signedIn);
-
-      signedIn &&
-        !this.cloudInventory &&
-        cloudStorage.getInventory().then(cloudInventory => {
-          console.log(
-            'no but actually cloudInventory resolved with',
-            cloudInventory
-          );
-          this.cloudInventory = cloudInventory;
-          this.scheduleProcessSets();
-        });
     });
   }
 
@@ -161,12 +141,14 @@ class Gearsets extends Component {
       const { rawGroups, inventory, saveCloudInventory, ...state } = result;
       this.rawGroups = rawGroups;
 
-      console.log(
-        `%cSave cloud inventory? ${saveCloudInventory}`,
-        'font-weight: bold; color: blue'
-      );
-
-      saveCloudInventory && cloudStorage.setInventory(inventory);
+      if (
+        this.state.googleAuthSignedIn &&
+        saveCloudInventory &&
+        this.hasRecievedInventory
+      ) {
+        log('Saving cloud inventory', { inventory });
+        cloudStorage.setInventory(inventory, this.profile);
+      }
 
       this.filterGroups(rawGroups);
       this.setState(state);
@@ -311,9 +293,7 @@ class Gearsets extends Component {
 
   logout() {
     this.profile = undefined;
-    ls.removePreviousAccount();
-    ls.removeAuth();
-    ls.removeInventory();
+    ls.clearAll();
     location.reload();
   }
 
@@ -321,6 +301,22 @@ class Gearsets extends Component {
     if (profile && profile.logout) {
       return this.logout();
     }
+
+    googleAuth(({ signedIn }) => {
+      this.setState({
+        googleAuthLoaded: true,
+        googleAuthSignedIn: signedIn
+      });
+      log('Google auth signedIn:', signedIn);
+
+      signedIn &&
+        !this.cloudInventory &&
+        cloudStorage.getInventory(profile).then(cloudInventory => {
+          this.hasRecievedInventory = true;
+          this.cloudInventory = cloudInventory;
+          this.scheduleProcessSets();
+        });
+    });
 
     const { membershipId, membershipType } = profile.profile.data.userInfo;
     ls.savePreviousAccount(membershipId, membershipType);
