@@ -132,8 +132,18 @@ export default function processSets(args, dataCallback) {
   });
 
   const xurItemsGood = xurHashes
-    .filter(hash => inventory[Number(hash)])
+    .filter(hash => {
+      const found = inventory[Number(hash)];
+      log(`Found item for xur item hash ${hash} ${!!found}`, found);
+      return !found;
+    })
     .map(hash => itemDefs[hash]);
+
+  log('Xur items', {
+    xurItemsGood,
+    inventory,
+    xurHashes
+  });
 
   if (!usingLocalStorageInventory) {
     ls.saveInventory(inventory);

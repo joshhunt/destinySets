@@ -381,6 +381,7 @@ class Gearsets extends Component {
   };
 
   copyDebug = () => {
+    localStorage.debug = localStorage.debug || 'destinySets:*';
     const { itemComponents, ...debugProfile } = this.profile;
     copy(JSON.stringify(debugProfile));
   };
@@ -507,7 +508,7 @@ class Gearsets extends Component {
           )}
         </div>
 
-        {/*hasInventory && <Xur items={xurItems} />*/}
+        {hasInventory && <Xur items={xurItems} />}
 
         {(groups || []).map((group, index) => (
           <div key={index} id={`group_${index}`}>

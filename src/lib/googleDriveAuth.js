@@ -43,6 +43,13 @@ function initClient(cb) {
 
     // Listen for sign-in state changes.
     gapi.auth2.getAuthInstance().isSignedIn.listen(_signedInState => {
+      window.ga(
+        'send',
+        'event',
+        'googleAuth',
+        'sign-in-status-changed',
+        _signedInState
+      );
       cb({
         signedIn: _signedInState
       });
@@ -51,11 +58,13 @@ function initClient(cb) {
 }
 
 export function signIn(event) {
+  window.ga('send', 'event', 'googleAuth', 'sign-in');
   // Ideally the button should only show up after gapi.client.init finishes, so that this
   // handler won't be called before OAuth is initialized.
   gapi.auth2.getAuthInstance().signIn();
 }
 
 export function signOut(event) {
+  window.ga('send', 'event', 'googleAuth', 'sign-out');
   gapi.auth2.getAuthInstance().signOut();
 }
