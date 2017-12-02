@@ -8,7 +8,8 @@ var getClientEnvironment = require('./env');
 var paths = require('./paths');
 var Visualizer = require('webpack-visualizer-plugin');
 
-const appConfig = require('../appConfig').dev;
+const rootAppConfig = require('../appConfig');
+const appConfig = rootAppConfig.dev;
 
 // Webpack uses `publicPath` to determine where the app is being served from.
 // In development, we always serve from the root. This makes config easier.
@@ -209,6 +210,8 @@ module.exports = {
     new webpack.DefinePlugin(
       Object.assign(
         {
+          __DESTINY_BETA_API_KEY__: JSON.stringify(rootAppConfig.beta.apiKey),
+          __DESTINY_BETA_AUTH_URL__: JSON.stringify(rootAppConfig.beta.authUrl),
           __DESTINY_API_KEY__: JSON.stringify(appConfig.apiKey),
           __DESTINY_AUTH_URL__: JSON.stringify(appConfig.authUrl)
         },

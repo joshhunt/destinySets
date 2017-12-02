@@ -1,6 +1,5 @@
 import { sortBy } from 'lodash';
 
-const API_KEY = __DESTINY_API_KEY__;
 const XUR_URL = 'https://d392b4140pqfjy.cloudfront.net/xur';
 
 const DESTINY_2 = 1;
@@ -39,8 +38,13 @@ export function getDestiny(_pathname, opts = {}, postBody) {
   const url = `https://www.bungie.net${_pathname}`;
   const { pathname } = new URL(url);
 
+  const apiKey =
+    window.DESTINYSETS_ENV === 'beta'
+      ? __DESTINY_BETA_API_KEY__
+      : __DESTINY_API_KEY__;
+
   opts.headers = opts.headers || {};
-  opts.headers['x-api-key'] = API_KEY;
+  opts.headers['x-api-key'] = apiKey;
 
   if (window.AUTH_DATA) {
     opts.headers['Authorization'] = `Bearer ${window.AUTH_DATA.accessToken}`;

@@ -17,6 +17,14 @@ if (location.href.includes('localhost')) {
   window.DESTINYSETS_ENV = 'beta';
 }
 
+if (localStorage.forceDestinySetsEnv) {
+  console.warn(
+    'WARNING: Forcing window.DESTINYSETS_ENV to ' +
+      localStorage.forceDestinySetsEnv
+  );
+  window.DESTINYSETS_ENV = localStorage.forceDestinySetsEnv;
+}
+
 if (window.DESTINYSETS_ENV !== 'prod') {
   localStorage.debug = localStorage.debug || 'destinySets:*';
 }

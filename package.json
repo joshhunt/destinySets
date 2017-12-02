@@ -80,19 +80,22 @@
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
-    "deploy": "yarn run build && env AWS_PROFILE=money aws s3 sync dist/ s3://destinysets.com/ --region=ap-southeast-2 --acl public-read",
+    "deploy":
+      "yarn run build && env AWS_PROFILE=money aws s3 sync dist/ s3://destinysets.com/ --region=ap-southeast-2 --acl public-read",
+    "deploy-beta":
+      "yarn run build && env AWS_PROFILE=money aws s3 sync dist/ s3://beta.destinysets.com/ --region=ap-southeast-2 --acl public-read",
     "generate-strike-data": "node generateData.js",
     "test": "echo 'No tests lol'"
   },
   "babel": {
-    "plugins": [
-      "lodash"
-    ],
-    "presets": [
-      "react-app"
-    ]
+    "plugins": ["lodash"],
+    "presets": ["react-app"]
   },
   "eslintConfig": {
-    "extends": "react-app"
+    "extends": "react-app",
+    "globals": {
+      "__DESTINY_BETA_API_KEY__": true,
+      "__DESTINY_API_KEY__": true
+    }
   }
 }
