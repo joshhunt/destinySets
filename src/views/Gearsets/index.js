@@ -439,7 +439,8 @@ class Gearsets extends Component {
           this.props.isAuthenticated &&
           !googleAuthSignedIn && (
             <GoogleLoginUpsell onClick={this.googleAuthLogIn}>
-              Login with Google to track dismantled apps
+              BETA: Login with Google to store you inventory over time in Google
+              Drive and track dismantled items.
             </GoogleLoginUpsell>
           )}
 

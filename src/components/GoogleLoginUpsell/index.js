@@ -27,6 +27,8 @@ export default class GoogleLoginUpsell extends Component {
 
     return (
       <div className={styles.loginUpsell}>
+        <h2 className={styles.heading}>Track dismantled items!</h2>
+
         {children && <p className={styles.text}>{children}</p>}
 
         <button onClick={onClick} className={styles.button}>
