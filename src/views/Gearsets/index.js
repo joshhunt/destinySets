@@ -12,7 +12,6 @@ import googleAuth, {
   signIn as googleSignIn,
   signOut as googleSignOut
 } from 'app/lib/googleDriveAuth';
-import { getDefaultLanguage, getBrowserLocale } from 'app/lib/i18n';
 import Header from 'app/components/Header';
 import Footer from 'app/components/Footer';
 import Xur from 'app/components/Xur';
@@ -84,17 +83,6 @@ class Gearsets extends Component {
   }
 
   fetchDefintionsWithLangage(langCode) {
-    window.ga(
-      'send',
-      'event',
-      'lang-debug',
-      [
-        `loaded:${langCode}`,
-        `default:${getDefaultLanguage().code}`,
-        `browser:${getBrowserLocale()}`
-      ].join('|')
-    );
-
     this.dataPromise = Promise.all([
       getDefinition('DestinyInventoryItemDefinition', langCode),
       getDefinition('DestinyVendorDefinition', langCode)
@@ -368,8 +356,6 @@ class Gearsets extends Component {
   };
 
   switchLang = newLang => {
-    window.ga('send', 'event', 'switch-lang', newLang.code);
-
     ls.saveLanguage(newLang);
 
     this.setState({
@@ -382,8 +368,7 @@ class Gearsets extends Component {
 
   copyDebug = () => {
     localStorage.debug = localStorage.debug || 'destinySets:*';
-    const { itemComponents, ...debugProfile } = this.profile;
-    copy(JSON.stringify(debugProfile));
+    copy(JSON.stringify(this.profile));
   };
 
   render() {

@@ -2,7 +2,13 @@ import React from 'react';
 import { Link } from 'react-router';
 import cx from 'classnames';
 
-import { languages, languageByCode } from 'app/lib/i18n';
+import {
+  languages,
+  languageByCode,
+  getDefaultLanguage,
+  getBrowserLocale
+} from 'app/lib/i18n';
+import { trackEvent } from 'app/lib/analytics';
 import styles from './styles.styl';
 
 const PLATFORM = {
@@ -38,6 +44,15 @@ export default class Header extends React.Component {
   };
 
   setLang = lang => {
+    trackEvent(
+      'switch-lang',
+      [
+        `loaded:${lang.code}`,
+        `default:${getDefaultLanguage().code}`,
+        `browser:${getBrowserLocale()}`
+      ].join('|')
+    );
+
     this.props.onChangeLang(lang);
   };
 

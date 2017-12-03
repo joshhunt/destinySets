@@ -61,3 +61,4 @@ legacyData.json
 appConfig.js
 newset.json
 crowdin.yml
+deploy.sh
