@@ -92,14 +92,18 @@ export function getProfile({ membershipType, membershipId }, components) {
 }
 
 export function getCurrentProfiles() {
+  let bungieNetUser;
+
   return getDestiny('/Platform/User/GetMembershipsForCurrentUser/')
     .then(body => {
+      bungieNetUser = body.bungieNetUser;
+
       return Promise.all(
         body.destinyMemberships.map(ship => getProfile(ship, COMPONENTS))
       );
     })
     .then(profiles => {
-      return sortBy(
+      const sortedProfiles = sortBy(
         profiles
           .filter(Boolean)
           .filter(profile => profile.profile.data.versionsOwned === DESTINY_2),
@@ -107,6 +111,11 @@ export function getCurrentProfiles() {
           return new Date(profile.profile.data.dateLastPlayed).getTime();
         }
       ).reverse();
+
+      return {
+        profiles: sortedProfiles,
+        bungieNetUser
+      };
     });
 }
 

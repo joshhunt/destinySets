@@ -259,8 +259,25 @@ class Gearsets extends Component {
       return;
     }
 
-    destiny.getCurrentProfiles().then(profiles => {
+    destiny.getCurrentProfiles().then(({ profiles, bungieNetUser }) => {
       this.setState({ profiles });
+
+      let fullName = [];
+      if (bungieNetUser.xboxDisplayName) {
+        fullName.push('XBOX: ' + bungieNetUser.xboxDisplayName);
+      }
+
+      if (bungieNetUser.psnDisplayName) {
+        fullName.push('PSN: ' + bungieNetUser.psnDisplayName);
+      }
+
+      window.rg4js &&
+        window.rg4js('setUser', {
+          identifier: `${bungieNetUser.membershipId}`,
+          isAnonymous: false,
+          firstName: bungieNetUser.displayName,
+          fullName: fullName.join(', ')
+        });
 
       const { id, type } = ls.getPreviousAccount();
 

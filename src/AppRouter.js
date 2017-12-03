@@ -5,7 +5,8 @@ import Gearsets from './views/Gearsets';
 import DataExplorer from './views/DataExplorer';
 
 const onEnter = () => {
-  window.rg4js('trackEvent', { type: 'pageView', path: location.pathname });
+  window.rg4js &&
+    window.rg4js('trackEvent', { type: 'pageView', path: location.pathname });
 };
 
 export default class AppRouter extends Component {
