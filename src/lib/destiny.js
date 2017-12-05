@@ -2,8 +2,6 @@ import { sortBy } from 'lodash';
 
 const XUR_URL = 'https://d392b4140pqfjy.cloudfront.net/xur';
 
-const DESTINY_2 = 1;
-
 const log = require('app/lib/log')('http');
 
 const componentProfiles = 100;
@@ -103,14 +101,17 @@ export function getCurrentProfiles() {
       );
     })
     .then(profiles => {
+      log('profiles:', profiles);
       const sortedProfiles = sortBy(
         profiles
           .filter(Boolean)
-          .filter(profile => profile.profile.data.versionsOwned === DESTINY_2),
+          .filter(profile => profile.profile.data.versionsOwned !== 0),
         profile => {
           return new Date(profile.profile.data.dateLastPlayed).getTime();
         }
       ).reverse();
+
+      log('sortedProfiles:', sortedProfiles);
 
       return {
         profiles: sortedProfiles,

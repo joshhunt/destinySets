@@ -110,5 +110,7 @@ export function saveGoogleDriveInventoryFileId(fileId) {
 }
 
 export function clearAll() {
-  Object.keys(keys).forEach(k => localStorage.removeItem(k));
+  Object.values(keys).forEach(k => {
+    localStorage.removeItem(k);
+  });
 }
