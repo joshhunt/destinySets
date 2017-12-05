@@ -223,6 +223,18 @@ module.exports = [
         small: false,
         sections: [
           {
+            title: 'Lost Prophecy weapons',
+            items: [
+              472169727, // Garden Progeny 1
+              3991544423, // The Conqueror 2
+              3285365666, // Jack Queen King 3
+              2091737595, // Traveler's Judgment 5
+              3991544422, // Sol Pariah 6
+              3285365667, // West of Sunfall 7
+              161537637 // Infinite Paths 8
+            ]
+          },
+          {
             title: 'Hunter armor',
             items: [
               952071004, // Kairos Function Mask
