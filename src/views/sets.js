@@ -706,7 +706,7 @@ module.exports = [
       },
 
       {
-        name: 'Eververse',
+        name: 'Eververse, Season 1',
         big: true,
         sections: [
           {
