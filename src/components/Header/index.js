@@ -2,7 +2,13 @@ import React from 'react';
 import { Link } from 'react-router';
 import cx from 'classnames';
 
-import { languages, languageByCode } from 'app/lib/i18n';
+import {
+  languages,
+  languageByCode,
+  getDefaultLanguage,
+  getBrowserLocale
+} from 'app/lib/i18n';
+import { trackEvent } from 'app/lib/analytics';
 import styles from './styles.styl';
 
 const PLATFORM = {
@@ -38,11 +44,27 @@ export default class Header extends React.Component {
   };
 
   setLang = lang => {
+    trackEvent(
+      'switch-lang',
+      [
+        `loaded:${lang.code}`,
+        `default:${getDefaultLanguage().code}`,
+        `browser:${getBrowserLocale()}`
+      ].join('|')
+    );
+
     this.props.onChangeLang(lang);
   };
 
   render() {
-    const { className, bg, profile, activeLanguage } = this.props;
+    const {
+      className,
+      bg,
+      profile,
+      activeLanguage,
+      isGoogleAuthenticated,
+      onGoogleSignout
+    } = this.props;
     const { langSwitcherActive, accountSwitcherActive } = this.state;
 
     const style = {};
@@ -147,6 +169,19 @@ export default class Header extends React.Component {
                         </div>
                       </div>
                     ))}
+
+                    {isGoogleAuthenticated && (
+                      <div
+                        onClick={onGoogleSignout}
+                        className={cx(
+                          styles.account,
+                          styles.logOut,
+                          styles.dropdownAccount
+                        )}
+                      >
+                        Disconnect Google
+                      </div>
+                    )}
 
                     <div
                       onClick={() => this.switchProfile({ logout: true })}

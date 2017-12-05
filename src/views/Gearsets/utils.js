@@ -1,5 +1,4 @@
 import { forEach, flatMap, isObject } from 'lodash';
-import { collectKioskItems } from 'app/lib/destiny';
 
 const RARITY_COLORS = {
   legendary: '#522f65',
@@ -11,22 +10,14 @@ const RARITY_COLORS = {
   exotic: '#ceae33'
 };
 
-export function mapItems(itemHashes, itemDefs, inventory) {
-  return itemHashes
-    .map(itemHash => {
-      const item = itemDefs[itemHash];
-
-      if (!item) {
-        console.warn('Unable to find item definition for ' + itemHash);
-        return null;
-      }
-
-      return {
-        $obtained: inventory.includes(item.hash),
-        ...item
-      };
-    })
-    .filter(Boolean);
+export function flatMapSetItems(sets) {
+  return flatMap(sets, setsList => {
+    return flatMap(setsList.sets, set => {
+      return flatMap(set.sections, setSection => {
+        return setSection.items;
+      });
+    });
+  });
 }
 
 export function logItems(profile, itemDefs, vendorDefs) {
@@ -40,7 +31,12 @@ export function logItems(profile, itemDefs, vendorDefs) {
 
     console.log(
       `%c${tier} ${item.itemTypeDisplayName.toLowerCase()}`,
-      `font-weight: bold; background: ${RARITY_COLORS[tier]}; color: white`,
+      [
+        'font-weight: bold',
+        `background: ${RARITY_COLORS[tier]}`,
+        'color: white',
+        'padding: 0 2px'
+      ].join(';'),
       `${item.displayProperties.name} [${item.hash}]`
     );
   }
@@ -52,7 +48,7 @@ export function logItems(profile, itemDefs, vendorDefs) {
     return item.inventory.tierTypeName || '';
   }
 
-  function logItems(itemHashList) {
+  function _logItems(itemHashList) {
     itemHashList
       .map(h => itemDefs[h])
       .sort((i1, i2) => {
@@ -77,45 +73,53 @@ export function logItems(profile, itemDefs, vendorDefs) {
 
   forEach(characterInventories.data, ({ items }, characterId) => {
     console.groupCollapsed('Character inventory', characterId);
-    logItems(items.map(({ itemHash }) => itemHash));
+    _logItems(items.map(({ itemHash }) => itemHash));
     console.groupEnd();
   });
 
   forEach(characterEquipment.data, ({ items }, characterId) => {
     console.groupCollapsed('Character equipped', characterId);
-    logItems(items.map(({ itemHash }) => itemHash));
+    _logItems(items.map(({ itemHash }) => itemHash));
     console.groupEnd();
   });
 
   console.groupCollapsed('Profile inventory (vault)');
-  logItems(profileInventory.data.items.map(({ itemHash }) => itemHash));
+  _logItems(profileInventory.data.items.map(({ itemHash }) => itemHash));
   console.groupEnd();
 
-  console.groupCollapsed('Profile Kiosk');
-  logItems(
-    collectKioskItems(
-      profile.profileKiosks.data.kioskItems,
-      itemDefs,
-      vendorDefs
-    )
-  );
-  console.groupEnd();
+  // console.groupCollapsed('Profile Kiosk');
+  // _logItems(
+  //   collectKioskItems(
+  //     profile.profileKiosks.data.kioskItems,
+  //     itemDefs,
+  //     vendorDefs
+  //   )
+  // );
+  // console.groupEnd();
 
-  Object.values(profile.characterKiosks.data).forEach(charKiosk => {
-    console.groupCollapsed('Character kiosk');
-    logItems(collectKioskItems(charKiosk.kioskItems, itemDefs, vendorDefs));
-    console.groupEnd();
-  }, []);
+  // Object.values(profile.characterKiosks.data).forEach(charKiosk => {
+  //   console.groupCollapsed('Character kiosk');
+  //   _logItems(collectKioskItems(charKiosk.kioskItems, itemDefs, vendorDefs));
+  //   console.groupEnd();
+  // }, []);
 
   console.groupEnd();
 }
 
-export function flatMapSetItems(sets) {
-  return flatMap(sets, setsList => {
-    return flatMap(setsList.sets, set => {
-      return flatMap(set.sections, setSection => {
-        return setSection.items;
+export function logSets(msg, rawGroups) {
+  console.groupCollapsed(msg);
+  rawGroups.forEach(group => {
+    console.groupCollapsed(group.name);
+    group.sets.forEach(set => {
+      console.group(set.name);
+      set.sections.forEach(section => {
+        console.groupCollapsed(section.title);
+        section.items.forEach(item => console.log(item));
+        console.groupEnd();
       });
+      console.groupEnd();
     });
+    console.groupEnd();
   });
+  console.groupEnd();
 }

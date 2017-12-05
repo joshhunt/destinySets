@@ -9,7 +9,8 @@ var paths = require('./paths');
 var getClientEnvironment = require('./env');
 var Visualizer = require('webpack-visualizer-plugin');
 
-const appConfig = require('../appConfig').prod;
+const rootAppConfig = require('../appConfig');
+const appConfig = rootAppConfig.prod;
 
 function ensureSlash(path, needsSlash) {
   var hasSlash = path.endsWith('/');
@@ -230,6 +231,8 @@ module.exports = {
     new webpack.DefinePlugin(
       Object.assign(
         {
+          __DESTINY_BETA_API_KEY__: JSON.stringify(rootAppConfig.beta.apiKey),
+          __DESTINY_BETA_AUTH_URL__: JSON.stringify(rootAppConfig.beta.authUrl),
           __DESTINY_API_KEY__: JSON.stringify(appConfig.apiKey),
           __DESTINY_AUTH_URL__: JSON.stringify(appConfig.authUrl)
         },

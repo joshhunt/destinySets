@@ -21,7 +21,9 @@ export default function Xur({ items }) {
         </h2>
 
         <div className={styles.items}>
-          {items.map(item => <Item className={styles.item} item={item} />)}
+          {items.map((item, i) => (
+            <Item className={styles.item} item={item} key={i} />
+          ))}
         </div>
 
         <p>

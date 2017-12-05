@@ -19,6 +19,14 @@ const TIER_STYLE = {
   [COMMON]: styles.basic
 };
 
+const LOCATION_MAP = {
+  characterEquipment: 'Equipped',
+  characterInventory: 'Inventory',
+  profileInventory: 'In vault',
+  profileKiosk: 'Profile kiosk',
+  characterKiosk: 'Character kiosk'
+};
+
 class FancyImage extends Component {
   state = {
     loaded: false
@@ -82,6 +90,28 @@ export default function ItemTooltip({ item }) {
             />
           </div>
         )}
+
+        {item.$dismantled && (
+          <div className={styles.inventory}>
+            <ul>
+              <li>Dismantled</li>
+            </ul>
+          </div>
+        )}
+
+        {item.$inventory &&
+          !item.$dismantled && (
+            <div className={styles.inventory}>
+              <ul>
+                {item.$inventory.map((inv, i) => (
+                  <li key={i}>
+                    {LOCATION_MAP[inv.$location] || 'unknown location'}{' '}
+                    {inv.$characterHash && `on character ${inv.$characterHash}`}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
       </div>
     </div>
   );

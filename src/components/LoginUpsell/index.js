@@ -11,7 +11,7 @@ export default function LoginUpsell({ children }) {
 
       {children && <p>{children}</p>}
 
-      <a className={styles.authLink} href={authUrl}>
+      <a className={styles.authLink} href={authUrl()}>
         Authorize with Bungie.net
       </a>
     </div>

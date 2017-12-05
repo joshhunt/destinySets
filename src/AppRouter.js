@@ -4,13 +4,28 @@ import { Router, Route, browserHistory } from 'react-router';
 import Gearsets from './views/Gearsets';
 import DataExplorer from './views/DataExplorer';
 
+const onEnter = () => {
+  window.rg4js &&
+    window.rg4js('trackEvent', { type: 'pageView', path: location.pathname });
+};
+
 export default class AppRouter extends Component {
   render() {
     return (
       <Router history={browserHistory}>
-        <Route path="/" component={Gearsets} variation="sets" />
-        <Route path="/all-items" component={Gearsets} variation="allItems" />
-        <Route path="/data" component={DataExplorer} />
+        <Route
+          path="/"
+          component={Gearsets}
+          variation="sets"
+          onEnter={onEnter}
+        />
+        <Route
+          path="/all-items"
+          component={Gearsets}
+          variation="allItems"
+          onEnter={onEnter}
+        />
+        <Route path="/data" component={DataExplorer} onEnter={onEnter} />
       </Router>
     );
   }

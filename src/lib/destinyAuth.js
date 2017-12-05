@@ -20,7 +20,7 @@ function handleNewAuthData(data) {
     accessTokenExpiry: accessTokenExpiry,
 
     refreshToken: authResponse.refreshToken.value,
-    refreshTokenExpiry: refreshTokenExpiry,
+    refreshTokenExpiry: refreshTokenExpiry
   };
 
   ls.saveAuth(authData);
@@ -50,7 +50,7 @@ export default function(cb) {
   console.log({
     prevAuthData,
     accessTokenIsValid,
-    refreshTokenIsValid,
+    refreshTokenIsValid
   });
 
   if (accessTokenIsValid) {
@@ -83,7 +83,7 @@ export default function(cb) {
       '/Platform/App/GetAccessTokensFromCode/',
       {},
       {
-        code: queryParams.code,
+        code: queryParams.code
       }
     )
       .then(handleNewAuthData)
@@ -97,4 +97,8 @@ export default function(cb) {
   }
 }
 
-export const authUrl = __DESTINY_AUTH_URL__;
+export function authUrl() {
+  return window.DESTINYSETS_ENV === 'beta'
+    ? __DESTINY_BETA_AUTH_URL__
+    : __DESTINY_AUTH_URL__;
+}

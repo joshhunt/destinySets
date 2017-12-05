@@ -197,7 +197,7 @@ function addMiddleware(devServer) {
       // Modern browsers include text/html into `accept` header when navigating.
       // However API calls like `fetch()` won’t generally accept text/html.
       // If this heuristic doesn’t work well for you, don’t use `proxy`.
-      htmlAcceptHeaders: proxy ? ['text/html'] : ['text/html', '*/*'],
+      htmlAcceptHeaders: proxy ? ['text/html'] : ['text/html', '*/*']
     })
   );
   if (proxy) {
@@ -240,7 +240,7 @@ function addMiddleware(devServer) {
       onError: onProxyError(proxy),
       secure: false,
       changeOrigin: true,
-      ws: true,
+      ws: true
     });
     devServer.use(mayProxy, hpm);
 
@@ -292,14 +292,14 @@ function runDevServer(host, port, protocol) {
     // Reportedly, this avoids CPU overload on some systems.
     // https://github.com/facebookincubator/create-react-app/issues/293
     watchOptions: {
-      ignored: /node_modules/,
+      ignored: /node_modules/
     },
     // Enable HTTPS if the HTTPS environment variable is set to 'true'
-    // https: {
-    //   key: fs.readFileSync(expandHomeDir('~/.localhost-ssl/key.pem')),
-    //   cert: fs.readFileSync(expandHomeDir('~/.localhost-ssl/cert.pem')),
-    // },
-    host: host,
+    https: {
+      key: fs.readFileSync(expandHomeDir('~/.localhost-ssl/key.pem')),
+      cert: fs.readFileSync(expandHomeDir('~/.localhost-ssl/cert.pem'))
+    },
+    host: host
   });
 
   // Our custom middleware proxies requests to /index.html or a remote API.

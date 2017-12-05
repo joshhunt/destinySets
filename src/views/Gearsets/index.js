@@ -7,18 +7,26 @@ import { getDefinition } from 'app/lib/manifestData';
 
 import * as destiny from 'app/lib/destiny';
 import * as ls from 'app/lib/ls';
-import { getDefaultLanguage, getBrowserLocale } from 'app/lib/i18n';
+import * as cloudStorage from 'app/lib/cloudStorage';
+import googleAuth, {
+  signIn as googleSignIn,
+  signOut as googleSignOut
+} from 'app/lib/googleDriveAuth';
 import Header from 'app/components/Header';
 import Footer from 'app/components/Footer';
 import Xur from 'app/components/Xur';
 import Loading from 'app/views/Loading';
 import LoginUpsell from 'app/components/LoginUpsell';
+import GoogleLoginUpsell from 'app/components/GoogleLoginUpsell';
 import ActivityList from 'app/components/ActivityList';
 import DestinyAuthProvider from 'app/lib/DestinyAuthProvider';
 
-import { mapItems, flatMapSetItems, logItems } from './utils';
+import { flatMapSetItems } from './utils';
+import processSets from './processSets';
 
 // import * as telemetry from 'app/lib/telemetry';
+
+const log = require('app/lib/log')('gearsets');
 
 import {
   HUNTER,
@@ -27,26 +35,12 @@ import {
   PLAYSTATION
 } from 'app/views/DataExplorer/definitionSources';
 
-import { fancySearch } from 'app/views/DataExplorer/filterItems';
-import sortItemsIntoSections from 'app/views/DataExplorer/sortItemsIntoSections';
-
 import styles from './styles.styl';
 
-import setsSets from '../sets.js';
-import allItemsSets from '../allItems.js';
 import consoleExclusives from '../consoleExclusives.js';
 
 const SHOW_PS4_EXCLUSIVES = -101;
 const SHOW_COLLECTED = -102;
-
-function merge(base, extra) {
-  return { ...base, ...extra };
-}
-
-const VARIATIONS = {
-  sets: setsSets,
-  allItems: allItemsSets
-};
 
 const FILTERS = [
   [TITAN, 'Titan'],
@@ -65,8 +59,6 @@ const defaultFilter = {
 };
 
 class Gearsets extends Component {
-  inventory = [];
-
   constructor(props) {
     super(props);
     this.state = {
@@ -75,12 +67,12 @@ class Gearsets extends Component {
       items: [],
       selectedItems: [],
       displayFilters: false,
+      googleAuthLoaded: false,
       filter: ls.getFilters() || defaultFilter
     };
   }
 
   componentDidMount() {
-    this.inventory = ls.getInventory();
     const lang = ls.getLanguage();
 
     this.fetchDefintionsWithLangage(lang.code);
@@ -91,25 +83,12 @@ class Gearsets extends Component {
   }
 
   fetchDefintionsWithLangage(langCode) {
-    ga(
-      'send',
-      'event',
-      'lang-debug',
-      [
-        `loaded:${langCode}`,
-        `default:${getDefaultLanguage().code}`,
-        `browser:${getBrowserLocale()}`
-      ].join('|')
-    );
-
     this.dataPromise = Promise.all([
       getDefinition('DestinyInventoryItemDefinition', langCode),
       getDefinition('DestinyVendorDefinition', langCode)
     ]);
 
-    this.dataPromise.then(result => {
-      this.processSets(...result);
-    });
+    this.scheduleProcessSets();
 
     Promise.all([this.dataPromise, destiny.xur()]).then(([data, xurItems]) => {
       this.xurItems = xurItems;
@@ -123,69 +102,44 @@ class Gearsets extends Component {
     }
 
     if (this.props.route !== newProps.route) {
-      this.dataPromise.then(result => {
-        this.processSets(...result);
-      });
+      this.scheduleProcessSets();
     }
   }
 
-  processSets = (itemDefs, vendorDefs) => {
-    const xurHashes = this.xurItems || [];
-    // this.profile = require('/Users/joshhunt/Downloads/8dsNBgMD.json');
-
-    const sets = VARIATIONS[this.props.route.variation];
-
-    const allItems = Object.values(itemDefs);
-
-    const kioskItems = this.profile
-      ? destiny.collectItemsFromKiosks(this.profile, itemDefs, vendorDefs)
-      : [];
-
-    const inventory = [...this.inventory, ...kioskItems];
-
-    try {
-      this.profile && itemDefs && logItems(this.profile, itemDefs, vendorDefs);
-    } catch (e) {
-      console.error('Unable to log profile');
-      console.log(e);
-    }
-
-    // this.profile && telemetry.saveInventory(this.profile, inventory);
-
-    ls.saveInventory(inventory);
-
-    this.rawGroups = sets.map(group => {
-      const sets = group.sets.map(set => {
-        const preSections = set.fancySearchTerm
-          ? sortItemsIntoSections(fancySearch(set.fancySearchTerm, allItems))
-          : set.sections;
-
-        const sections = preSections.map(section => {
-          const preItems =
-            section.items ||
-            fancySearch(section.fancySearchTerm, allItems).map(i => i.hash);
-          const items = mapItems(preItems, itemDefs, inventory);
-
-          return merge(section, { items });
-        });
-
-        return merge(set, { sections });
-      });
-
-      return merge(group, { sets });
+  scheduleProcessSets() {
+    this.dataPromise.then(result => {
+      this.processSets(...result);
     });
+  }
 
-    this.filterGroups(this.rawGroups);
+  processSets = (itemDefs, vendorDefs) => {
+    const processPayload = {
+      itemDefs,
+      vendorDefs,
+      cloudInventory: this.cloudInventory,
+      profile: this.profile,
+      variation: this.props.route.variation,
+      xurItems: this.xurItems
+    };
+    processSets(processPayload, result => {
+      if (!result) {
+        return null;
+      }
 
-    const xurItems = xurHashes
-      .filter(hash => !inventory.includes(Number(hash)))
-      .map(hash => itemDefs[hash]);
+      const { rawGroups, inventory, saveCloudInventory, ...state } = result;
+      this.rawGroups = rawGroups;
 
-    this.setState({
-      xurItems,
-      hasInventory: inventory.length > 0,
-      loading: false,
-      shit: null
+      if (
+        this.state.googleAuthSignedIn &&
+        saveCloudInventory &&
+        this.hasRecievedInventory
+      ) {
+        log('Saving cloud inventory', { inventory });
+        cloudStorage.setInventory(inventory, this.profile);
+      }
+
+      this.filterGroups(rawGroups);
+      this.setState(state);
     });
   };
 
@@ -292,13 +246,38 @@ class Gearsets extends Component {
     });
   };
 
+  googleAuthLogIn = () => {
+    googleSignIn();
+  };
+
+  googleAuthSignOut = () => {
+    googleSignOut();
+  };
+
   fetchCharacters = (props = this.props) => {
     if (!props.isAuthenticated) {
       return;
     }
 
-    destiny.getCurrentProfiles().then(profiles => {
+    destiny.getCurrentProfiles().then(({ profiles, bungieNetUser }) => {
       this.setState({ profiles });
+
+      let fullName = [];
+      if (bungieNetUser.xboxDisplayName) {
+        fullName.push('XBOX: ' + bungieNetUser.xboxDisplayName);
+      }
+
+      if (bungieNetUser.psnDisplayName) {
+        fullName.push('PSN: ' + bungieNetUser.psnDisplayName);
+      }
+
+      window.rg4js &&
+        window.rg4js('setUser', {
+          identifier: `${bungieNetUser.membershipId}`,
+          isAnonymous: false,
+          firstName: bungieNetUser.displayName,
+          fullName: fullName.join(', ')
+        });
 
       const { id, type } = ls.getPreviousAccount();
 
@@ -319,9 +298,7 @@ class Gearsets extends Component {
 
   logout() {
     this.profile = undefined;
-    ls.removePreviousAccount();
-    ls.removeAuth();
-    ls.removeInventory();
+    ls.clearAll();
     location.reload();
   }
 
@@ -330,11 +307,26 @@ class Gearsets extends Component {
       return this.logout();
     }
 
+    googleAuth(({ signedIn }) => {
+      this.setState({
+        googleAuthLoaded: true,
+        googleAuthSignedIn: signedIn
+      });
+      log('Google auth signedIn:', signedIn);
+
+      signedIn &&
+        !this.cloudInventory &&
+        cloudStorage.getInventory(profile).then(cloudInventory => {
+          this.hasRecievedInventory = true;
+          this.cloudInventory = cloudInventory;
+          this.scheduleProcessSets();
+        });
+    });
+
     const { membershipId, membershipType } = profile.profile.data.userInfo;
     ls.savePreviousAccount(membershipId, membershipType);
 
     this.profile = profile;
-    this.inventory = destiny.collectItemsFromProfile(profile);
 
     const recentCharacter = sortBy(
       Object.values(profile.characters.data),
@@ -352,9 +344,7 @@ class Gearsets extends Component {
       }
     });
 
-    this.dataPromise.then(result => {
-      this.processSets(...result);
-    });
+    this.scheduleProcessSets();
   };
 
   toggleFilter = () => {
@@ -383,8 +373,6 @@ class Gearsets extends Component {
   };
 
   switchLang = newLang => {
-    ga('send', 'event', 'switch-lang', newLang.code);
-
     ls.saveLanguage(newLang);
 
     this.setState({
@@ -396,8 +384,8 @@ class Gearsets extends Component {
   };
 
   copyDebug = () => {
-    const { itemComponents, ...debugProfile } = this.profile;
-    copy(JSON.stringify(debugProfile));
+    localStorage.debug = localStorage.debug || 'destinySets:*';
+    copy(JSON.stringify(this.profile));
   };
 
   render() {
@@ -415,7 +403,9 @@ class Gearsets extends Component {
       activeLanguage,
       shit,
       xurItems,
-      hasInventory
+      hasInventory,
+      googleAuthLoaded,
+      googleAuthSignedIn
     } = this.state;
 
     if (loading) {
@@ -430,6 +420,9 @@ class Gearsets extends Component {
           profiles={profiles}
           onChangeProfile={this.switchProfile}
           onChangeLang={this.switchLang}
+          isGoogleAuthenticated={googleAuthSignedIn}
+          onGoogleLogin={this.googleAuthLogIn}
+          onGoogleSignout={this.googleAuthSignOut}
           activeLanguage={activeLanguage}
         />
 
@@ -443,6 +436,15 @@ class Gearsets extends Component {
         {shit && (
           <div className={styles.info}>Loading {activeLanguage.name}...</div>
         )}
+
+        {googleAuthLoaded &&
+          this.props.isAuthenticated &&
+          !googleAuthSignedIn && (
+            <GoogleLoginUpsell onClick={this.googleAuthLogIn}>
+              BETA: Login with Google to store you inventory over time in Google
+              Drive and track dismantled items.
+            </GoogleLoginUpsell>
+          )}
 
         <div className={styles.subnav}>
           <div className={styles.navsections}>
