@@ -706,131 +706,127 @@ module.exports = [
       },
 
       {
-        name: 'Eververse, Season 1',
+        name: 'Eververse, Season 2',
         big: true,
         sections: [
           {
-            title: 'Ghosts',
-            items: [
-              2833999140, // Lambda Shell
-              2833999141, // Avalon Shell
-              2833999142, // Tower Shell
-              2833999143, // Blue Moon Shell
-              2833999136, // Number Two Shell
-              2833999137, // Starfire Shell
-              2833999138, // Jagged Shell
-              2833999139, // Kingfisher Shell
-              2833999148, // Graylight Shell
-              2833999149, // Heraldic Shell
-              261110023, // Half-Submerged Shell
-              261110022, // Interchange Shell
-              261110024, // Bold Shell
-              261110025, // Two of Diamonds Shell
-              261110026, // Honeycomb Shell
-              261110027, // Titan Shell
-              261110028, // Lotus Shell
-              261110030, // Warlock Shell
-              261110031, // Hunter Shell
-              261110029, // Competitive Shell
-              277887714, // Crescent Shell
-              277887715, // Hemisphere Shell
-              277887712, // Aggressive Shell
-              277887713, // Twilight Shell
-              277887718 // Vertical Shell
-            ]
-          },
-          {
             title: 'Emotes',
             items: [
-              93029343, // Salty
-              93029342, // Flip Out
-              292778444, // Spicy Ramen
-              454583975, // Six Shooter
-              2543806755, // Funky Dance
-              412299646, // Dancehall
-              664042851, // Cranking Dance
-              938804347, // Odd Dance
-              3129418034, // Taunt Dance
-              3872116425, // Confused
-              1120064792, // Flowing Dance
-              718136887, // Bureaucratic Walk
-              2741695224, // Floss Dance
-              1061186327, // Shuffle Dance
-              4223882778, // Shoulder Dance
-              2649911453, // Dancy Dance
-              1177179936, // Play Dead
-              1954221115, // You're the Guardian
-              2870168892, // Sneaky
-              4187524534, // Don the Hat
-              3199368173, // Huddle Up
-              3811760832, // Gallop
-              1294717622, // Sick
-              2526538979, // Get Up
-              3526028978, // Sadness
-              333041308 // Good Idea
+              1368499525,
+              3633235162,
+              4019835247,
+              903864129,
+              1949295586,
+              2299313708,
+              2923026987,
+              3829550655,
+              4260536069,
+              871309441,
+              2078267281,
+              2574501094,
+              3117256915,
+              3877511792
             ]
           },
           {
-            title: 'Sparrows',
+            title: 'Ghosts',
             items: [
-              807458183, // Vanishing Point
-              807458182, // Dinas Emrys
-              807458181, // Hastilude
-              3889183914, // Fast Track
-              3889183915, // Crucible Courser
-              3889183912, // Athwart the Void
-              3889183913, // Aeon Plume
-              3889183918, // Wavechaser
-              3889183919, // Soul Velocity
-              3889183916, // Angel Bloom
-              3889183917, // Speedpunk
-              3889183906, // Chronoglass
-              3889183907, // Wind Shrike
-              2546958593, // October Dash
-              2546958592, // Sagittarius
-              2546958594, // Telluride
-              2546958597, // Skedaddle
-              2546958596, // Lunadove
-              2546958599, // Hightail
-              2546958598, // Wave-Maker
-              904825093, // Wayfarer Delta
-              904825092, // Wayfarer Tri
-              904825094, // Warbird
-              904825089, // Hyperion
-              904825088 // Dead-End Pro
+              3681086675,
+              3681086674,
+              3681086673,
+              3681086672,
+              1271045323,
+              1271045322,
+              1271045319,
+              1271045318,
+              1271045317,
+              1271045316,
+              1271045315,
+              1271045314,
+              1271045313,
+              1271045312,
+              89965919,
+              89965918,
+              89965911,
+              89965910,
+              89965909,
+              89965908,
+              89965907,
+              89965906,
+              89965905,
+              89965904
             ]
           },
           {
             title: 'Ships',
             items: [
-              2503134037, // Eriana's Vengeance
-              838210459, // Symmetry Flight
-              4209989368, // Takanome Wings
-              96858972, // Ego and Squid
-              3213307847, // The Bandwagon
-              1104161649, // Rose and Bone
-              2503134032, // BreakPoint
-              2503134038, // Cardinal One
-              2503134039, // Talon Blue
-              2503134036, // Shadowed Dawn
-              2503134042, // Helios Strain
-              838210457, // Imprint
-              838210456, // Alessa
-              4209989372, // Dead Fall
-              4209989373, // Sojourner
-              4209989370, // Captain Nemo
-              4209989371, // Alexandria
-              4209989369, // Absolute/MN
-              4209989366, // Amplitude/PT
-              96858973, // Ordinate/VD
-              4209989367, // Cartesian/KO
-              3213307843, // Leonid MV
-              3213307842, // Zenith SV
-              3213307845, // Eos Rapture
-              3213307844, // Space-Age Lancelot
-              3213307846, // Spectral Gain
-              3213307849, // Verona Mesh
-              3213307848 // High Line
+              292872936,
+              292872937,
+              292872938,
+              292872939,
+              292872940,
+              292872941,
+              2924982631,
+              2924982630,
+              2924982629,
+              2924982628,
+              658724916,
+              658724917,
+              658724918,
+              658724919,
+              658724924,
+              658724925,
+              709057677,
+              530012779,
+              530012780,
+              530012781,
+              530012782,
+              530012783,
+              658724912,
+              658724913,
+              658724914,
+              658724915,
+              530012772,
+              530012773,
+              530012776,
+              530012777,
+              530012778
+            ]
+          },
+          {
+            title: 'Sparrows',
+            items: [
+              3081894947,
+              3081894946,
+              3081894944,
+              3610177565,
+              3610177564,
+              3610177559,
+              3610177558,
+              3610177557,
+              3610177556,
+              3538153295,
+              3588486148,
+              3588486149,
+              3588486150,
+              3588486151,
+              3610177552,
+              3610177553,
+              3610177554,
+              3610177555,
+              3538153294,
+              3538153293,
+              3538153292,
+              3538153291,
+              3538153290,
+              3538153289,
+              3538153288,
+              3538153285,
+              3538153284,
+              1220495183,
+              1220495182,
+              1220495181,
+              1220495180
             ]
           }
         ]
