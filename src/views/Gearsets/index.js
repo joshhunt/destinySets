@@ -58,6 +58,15 @@ const defaultFilter = {
   [SHOW_PS4_EXCLUSIVES]: true
 };
 
+const ITEM_BLACKLIST = [
+  1744115122, // Legend of Acrius ...
+  460724140, // Jade Rabbit quest item
+  546372301, // Jade Rabbit quest item
+  2896466320, // Jade Rabbit quest item
+  2978016230, // Jade Rabbit quest item
+  3229272315 // Jade Rabbit quest item
+];
+
 class Gearsets extends Component {
   constructor(props) {
     super(props);
@@ -84,7 +93,13 @@ class Gearsets extends Component {
 
   fetchDefintionsWithLangage(langCode) {
     this.dataPromise = Promise.all([
-      getDefinition('DestinyInventoryItemDefinition', langCode),
+      getDefinition('DestinyInventoryItemDefinition', langCode).then(defs => {
+        ITEM_BLACKLIST.forEach(defHash => {
+          delete defs[defHash];
+        });
+
+        return defs;
+      }),
       getDefinition('DestinyVendorDefinition', langCode)
     ]);
 
@@ -158,11 +173,6 @@ class Gearsets extends Component {
 
         const sections = _set.sections.reduce((sectionAcc, _section) => {
           const items = _section.items.filter(item => {
-            // Exclude the 'Legend of Acrius' exotic quest item
-            if (item.hash === 1744115122) {
-              return false;
-            }
-
             if (
               !filter[SHOW_PS4_EXCLUSIVES] &&
               consoleExclusives.ps4.includes(item.hash)
