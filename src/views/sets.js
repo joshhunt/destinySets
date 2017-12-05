@@ -228,10 +228,13 @@ module.exports = [
               472169727, // Garden Progeny 1
               3991544423, // The Conqueror 2
               3285365666, // Jack Queen King 3
+              161537636, // Machina Dei 4
               2091737595, // Traveler's Judgment 5
               3991544422, // Sol Pariah 6
               3285365667, // West of Sunfall 7
-              161537637 // Infinite Paths 8
+              161537637, // Infinite Paths 8
+              3188460622, // Null Calamity 9
+              1490571337 // Future Safe 10
             ]
           },
           {
