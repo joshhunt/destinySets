@@ -217,6 +217,44 @@ module.exports = [
     name: 'Planetary Sets',
     sets: [
       {
+        name: 'Mercury Gear',
+        description:
+          'Gear obtained by performing tasks for Brother Vance on Mercury.',
+        small: false,
+        sections: [
+          {
+            title: 'Hunter armor',
+            items: [
+              952071004, // Kairos Function Mask
+              2348421845, // Kairos Function Grips
+              2638643915, // Kairos Function Vest
+              3924544055, // Kairos Function Boots
+              995360226 // Kairos Function Cloak
+            ]
+          },
+          {
+            title: 'Titan armor',
+            items: [
+              1768175752, // Kairos Function Helm
+              1115510041, // Kairos Function Gauntlets
+              578519423, // Kairos Function Plate
+              4007592459, // Kairos Function Greaves
+              2250032270 // Kairos Function Mark
+            ]
+          },
+          {
+            title: 'Warlock armor',
+            items: [
+              2062911883, // Kairos Function Crown
+              385169146, // Kairos Function Wraps
+              2926606926, // Kairos Function Robes
+              2066098484, // Kairos Function Boots
+              3669055767 // Kairos Function Bond
+            ]
+          }
+        ]
+      },
+      {
         name: 'European Dead Zone Gear',
         description:
           'Weapons and armor obtained by performing tasks for Devrim Kay in the EDZ.',
