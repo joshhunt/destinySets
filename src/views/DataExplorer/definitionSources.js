@@ -18,6 +18,12 @@ export const MODS1 = 56;
 export const MODS2 = 59;
 export const CLAN_BANNER = 58;
 
+export const HELMET = 45;
+export const ARMS = 46;
+export const CHEST = 47;
+export const LEGS = 48;
+export const CLASS_ITEM = 49;
+
 export const KINETIC_WEAPON = 2;
 export const ENERGY_WEAPON = 3;
 export const POWER_WEAPON = 4;

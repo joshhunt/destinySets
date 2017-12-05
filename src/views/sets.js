@@ -596,36 +596,36 @@ module.exports = [
       },
 
       {
-        name: 'Bright Engram, Eververse',
+        name: 'Bright Engram, Eververse Season 2',
         sections: [
           {
-            title: 'Hunter Armor',
+            title: 'Hunter armor',
             items: [
-              1869779952, // Mask of Optimacy
-              1625986881, // Arms of Optimacy
-              369186071, // Vest of Optimacy
-              2696374963, // Legs of Optimacy
-              2497505510 // Cloak of Optimacy
+              2277597261, // Omega Mechanos Mask
+              2930263100, // Omega Mechanos Grasps
+              3203735972, // Omega Mechanos Vest
+              2316071750, // Omega Mechanos Strides
+              3947566073 // Omega Mechanos Cloak
             ]
           },
           {
-            title: 'Titan Armor',
+            title: 'Titan armor',
             items: [
-              1638376198, // Helm of Optimacy
-              652336087, // Arms of Optimacy
-              415074081, // Plate of Optimacy
-              2460870905, // Legs of Optimacy
-              1197579132 // Mark of Optimacy
+              3838590505, // Omega Mechanos Helm
+              1629999520, // Omega Mechanos Gauntlets
+              2574287336, // Omega Mechanos Plate
+              324939098, // Omega Mechanos Greaves
+              4276384709 // Omega Mechanos Mark
             ]
           },
           {
-            title: 'Warlock Armor',
+            title: 'Warlock armor',
             items: [
-              2956899553, // Hood of Optimacy
-              3794819064, // Arms of Optimacy
-              199852048, // Robes of Optimacy
-              1830086706, // Legs of Optimacy
-              3421974605 // Bond of Optimacy
+              903593458, // Omega Mechanos Crown
+              1328369883, // Omega Mechanos Gloves
+              153589813, // Omega Mechanos Robes
+              4073377357, // Omega Mechanos Boots
+              3146151688 // Omega Mechanos Bond
             ]
           }
         ]

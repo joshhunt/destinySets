@@ -36,12 +36,42 @@ module.exports = [
   },
 
   {
-    name: 'Cosmetics',
+    name: 'Eververse',
     sets: [
       {
         name: 'Eververse, Season 1',
         big: true,
         sections: [
+          {
+            title: 'Hunter Armor',
+            items: [
+              1869779952, // Mask of Optimacy
+              1625986881, // Arms of Optimacy
+              369186071, // Vest of Optimacy
+              2696374963, // Legs of Optimacy
+              2497505510 // Cloak of Optimacy
+            ]
+          },
+          {
+            title: 'Titan Armor',
+            items: [
+              1638376198, // Helm of Optimacy
+              652336087, // Arms of Optimacy
+              415074081, // Plate of Optimacy
+              2460870905, // Legs of Optimacy
+              1197579132 // Mark of Optimacy
+            ]
+          },
+          {
+            title: 'Warlock Armor',
+            items: [
+              2956899553, // Hood of Optimacy
+              3794819064, // Arms of Optimacy
+              199852048, // Robes of Optimacy
+              1830086706, // Legs of Optimacy
+              3421974605 // Bond of Optimacy
+            ]
+          },
           {
             title: 'Ghosts',
             items: [
@@ -167,8 +197,13 @@ module.exports = [
             ]
           }
         ]
-      },
+      }
+    ]
+  },
 
+  {
+    name: 'Cosmetics',
+    sets: [
       {
         name: 'Emblems',
         big: true,
