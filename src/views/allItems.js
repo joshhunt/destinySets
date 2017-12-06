@@ -251,6 +251,13 @@ module.exports = [
         big: true,
         fancySearchTerm: 'is:emote',
         sections: []
+      },
+
+      {
+        name: 'Ornaments',
+        big: true,
+        fancySearchTerm: 'is:ornament',
+        sections: []
       }
     ]
   },

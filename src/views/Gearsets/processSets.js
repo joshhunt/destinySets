@@ -1,4 +1,4 @@
-import { isArray, cloneDeep } from 'lodash';
+import { isArray, cloneDeep, has } from 'lodash';
 
 import { fancySearch } from 'app/views/DataExplorer/filterItems';
 import sortItemsIntoSections from 'app/views/DataExplorer/sortItemsIntoSections';
@@ -42,6 +42,10 @@ export function mapItems(itemHashes, itemDefs, inventory) {
     .filter(Boolean);
 }
 
+function cleanUpCloudInventory(cloudInventory) {
+  return cloudInventory.filter(c => !has(c, '$dismantled'));
+}
+
 function mergeCloudInventory(currentInventory, cloudInventory) {
   const inventory = { ...currentInventory };
 
@@ -49,7 +53,7 @@ function mergeCloudInventory(currentInventory, cloudInventory) {
     if (!currentInventory[cloudItemHash]) {
       inventory[cloudItemHash] = [
         { $dismantled: true },
-        ...cloudInventory[cloudItemHash]
+        ...cleanUpCloudInventory(cloudInventory[cloudItemHash])
       ];
     }
   });

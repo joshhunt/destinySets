@@ -194,6 +194,15 @@ export const fancySearchFns = {
     });
   },
 
+  'is:ornament': items => {
+    return itemFilter(items, item => {
+      return (
+        (itemCategory(MODS1)(item) || itemCategory(MODS2)(item)) &&
+        item.itemTypeDisplayName.toLowerCase().includes('ornament')
+      );
+    });
+  },
+
   'is:clanbanner': items => {
     return itemFilter(items, itemCategory(CLAN_BANNER));
   }
