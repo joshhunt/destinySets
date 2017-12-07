@@ -129,7 +129,9 @@ export default function collectInventory(profile, vendorDefs) {
     );
   });
 
-  allItems = collectItemsFromKiosks(profile, vendorDefs, allItems);
+  if (vendorDefs) {
+    allItems = collectItemsFromKiosks(profile, vendorDefs, allItems);
+  }
 
   return allItems;
 }

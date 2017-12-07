@@ -1,17 +1,15 @@
-import * as destiny from 'app/lib/destiny';
-
-const GHOST_BUCKET = 4023194814;
+import { flatMap } from 'lodash';
+import collectInventory from 'app/lib/collectInventory';
 
 let db;
 
-function saveInventoryToFirebase(profileId, inventory, ghosts) {
-  db.ref('profile/' + profileId).set({
-    combined: inventory,
+function saveInventoryToFirebase(profileId, ghosts) {
+  db.ref('data/' + profileId).set({
     ghosts
   });
 }
 
-export function saveInventory(profile, inventory) {
+export function saveInventory(profile, itemDefs) {
   require.ensure(['firebase'], function() {
     const firebase = require('firebase');
 
@@ -19,7 +17,7 @@ export function saveInventory(profile, inventory) {
       firebase.initializeApp({
         apiKey: 'AIzaSyDA_n6Ix4o6K2vW4zlFFmWk2XCzqPesDZo',
         authDomain: 'destinysets.firebaseapp.com',
-        databaseURL: 'https://destinysets.firebaseio.com',
+        databaseURL: 'https://destinysets-2.firebaseio.com',
         projectId: 'destinysets',
         storageBucket: 'destinysets.appspot.com',
         messagingSenderId: '621939283066'
@@ -28,23 +26,34 @@ export function saveInventory(profile, inventory) {
       db = firebase.database();
     }
 
-    try {
-      const profileId = profile.profile.data.userInfo.membershipId;
-      const ghosts = destiny
-        .collectItemsFromProfile(profile, true)
-        .filter(item => item.bucketHash === GHOST_BUCKET && item.$sockets) // dodgy way to get all ghosts
-        .map(item => {
-          return {
-            itemHash: item.itemHash,
-            itemInstanceId: item.itemInstanceId,
-            sockets: item.$sockets.sockets.map(s => s.plugHash).filter(Boolean)
-          };
-        });
+    const profileId = profile.profile.data.userInfo.membershipId;
+    const inventoryInstances = Object.values(collectInventory(profile));
 
-      saveInventoryToFirebase(profileId, inventory, ghosts);
-    } catch (e) {
-      console.error('Error with inventory telemetry');
-      console.error(e);
-    }
+    const ghosts = flatMap(inventoryInstances, itemInventorySet => {
+      const item = itemDefs[itemInventorySet[0].itemHash];
+
+      if (!(item.itemCategoryHashes && item.itemCategoryHashes.includes(39))) {
+        return [];
+      }
+
+      return itemInventorySet.map(({ itemHash, itemInstanceId, $location }) => {
+        const sockets = profile.itemComponents.sockets.data[itemInstanceId] || {
+          sockets: []
+        };
+        return {
+          itemHash,
+          itemInstanceId,
+          location: $location,
+          sockets: sockets.sockets.filter(s => s.plugHash).map(s => ({
+            plugHash: s.plugHash,
+            isEnabled: s.isEnabled
+          }))
+        };
+      });
+    });
+
+    console.log('ghosts:', ghosts);
+
+    saveInventoryToFirebase(profileId, ghosts);
   });
 }

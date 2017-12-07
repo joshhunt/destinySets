@@ -20,11 +20,12 @@ import LoginUpsell from 'app/components/LoginUpsell';
 import GoogleLoginUpsell from 'app/components/GoogleLoginUpsell';
 import ActivityList from 'app/components/ActivityList';
 import DestinyAuthProvider from 'app/lib/DestinyAuthProvider';
+import plz from 'app/lib/plz';
 
 import { flatMapSetItems } from './utils';
 import processSets from './processSets';
 
-// import * as telemetry from 'app/lib/telemetry';
+import * as telemetry from 'app/lib/telemetry';
 
 const log = require('app/lib/log')('gearsets');
 
@@ -355,6 +356,12 @@ class Gearsets extends Component {
     });
 
     this.scheduleProcessSets();
+
+    plz(() =>
+      this.dataPromise.then(([itemDefs]) => {
+        telemetry.saveInventory(profile, itemDefs);
+      })
+    );
   };
 
   toggleFilter = () => {
