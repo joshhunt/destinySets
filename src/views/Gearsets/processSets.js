@@ -153,10 +153,10 @@ export default function processSets(args, dataCallback) {
     ls.saveInventory(inventory);
   }
 
-  console.group('saveCloudInventory?');
-  log(`!usingLocalStorageInventory: ${!usingLocalStorageInventory}`);
-  log(`!!Object.keys(inventory).length: ${!!Object.keys(inventory).length}`);
-  console.groupEnd();
+  const saveCloudInventory =
+    !usingLocalStorageInventory && !!Object.keys(inventory).length;
+
+  log(`saveCloudInventory: ${saveCloudInventory}`);
 
   const payload = {
     rawGroups,
@@ -164,8 +164,7 @@ export default function processSets(args, dataCallback) {
     xurItems: xurItemsGood,
     hasInventory: Object.keys(inventory).length > 0,
     loading: false,
-    saveCloudInventory:
-      !usingLocalStorageInventory && !!Object.keys(inventory).length,
+    saveCloudInventory,
     shit: null
   };
 

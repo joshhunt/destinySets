@@ -15,7 +15,7 @@ export default class AllItems extends Component {
   state = {
     loading: true,
     items: [],
-    selectedItems: [],
+    selectedItems: []
   };
 
   constructor(props) {
@@ -33,7 +33,7 @@ export default class AllItems extends Component {
 
       this.setState({
         loading: false,
-        items: this.allItems,
+        items: this.allItems
       });
     });
   }

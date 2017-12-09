@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import cx from 'classnames';
+import { shallowCompareWithoutFunctions } from 'shallow-compare-without-functions';
 
 import ItemTooltip from 'app/components/ItemTooltip';
 
@@ -36,20 +37,28 @@ const tooltipStyle = {
 };
 
 export default class Item extends Component {
-  // shouldComponentUpdate(nextProps, nextState) {
-  //   if (this.state !== nextState) {
-  //     return true;
-  //   }
+  shouldComponentUpdate(nextProps, nextState) {
+    const shouldUpdate = shallowCompareWithoutFunctions(
+      this,
+      nextProps,
+      nextState
+    );
 
-  //   if (
-  //     this.props.hash !== nextProps.hash ||
-  //     this.props.$obtained !== nextProps.$obtained
-  //   ) {
-  //     return true;
-  //   } else {
-  //     return false;
-  //   }
-  // }
+    const nextItem = nextProps.item;
+    const item = this.props.item;
+
+    const itemChanged =
+      item.$inventory !== nextItem.$inventory ||
+      item.$dismantled !== nextItem.$dismantled ||
+      item.$obtained !== nextItem.$obtained ||
+      item.hash !== nextItem.hash;
+
+    if (shouldUpdate || itemChanged) {
+      return true;
+    } else {
+      return false;
+    }
+  }
 
   state = {
     isTooltipActive: false

@@ -55,6 +55,7 @@
     "browser-locale": "^1.0.3",
     "classnames": "2.2.5",
     "copy-text-to-clipboard": "^1.0.3",
+    "deep-equal": "^1.0.1",
     "dexie": "^1.5.1",
     "expand-home-dir": "0.0.3",
     "firebase": "^4.5.0",
@@ -62,34 +63,38 @@
     "os-tmpdir": "^1.0.2",
     "pushstate-server": "2.1.0",
     "query-string": "4.2.3",
-    "react": "15.4.1",
-    "react-dom": "15.4.1",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
     "react-ga": "^2.1.2",
     "react-hint": "^2.0.2",
-    "react-json-tree": "^0.10.9",
-    "react-list": "0.8.0",
-    "react-router": "3.0.0",
+    "react-json-tree": "^0.11.0",
+    "react-list": "^0.8.8",
+    "react-router": "3.2.0",
     "request": "^2.83.0",
     "scroll-to-element": "^2.0.0",
+    "shallow-compare-without-functions": "^0.0.2",
     "slug": "^0.9.1",
     "stylus": "0.54.5",
     "stylus-loader": "2.4.0",
     "walk-object": "^4.0.0",
-    "webpack-visualizer-plugin": "^0.1.11"
+    "webpack-visualizer-plugin": "^0.1.11",
+    "why-did-you-update": "^0.1.0"
   },
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
-    "deploy":
-      "yarn run build && env AWS_PROFILE=money aws s3 sync dist/ s3://destinysets.com/ --region=ap-southeast-2 --acl public-read",
-    "deploy-beta":
-      "yarn run build && env AWS_PROFILE=money aws s3 sync dist/ s3://beta.destinysets.com/ --region=ap-southeast-2 --acl public-read",
+    "deploy": "yarn run build && env AWS_PROFILE=money aws s3 sync dist/ s3://destinysets.com/ --region=ap-southeast-2 --acl public-read",
+    "deploy-beta": "yarn run build && env AWS_PROFILE=money aws s3 sync dist/ s3://beta.destinysets.com/ --region=ap-southeast-2 --acl public-read",
     "generate-strike-data": "node generateData.js",
     "test": "echo 'No tests lol'"
   },
   "babel": {
-    "plugins": ["lodash"],
-    "presets": ["react-app"]
+    "plugins": [
+      "lodash"
+    ],
+    "presets": [
+      "react-app"
+    ]
   },
   "eslintConfig": {
     "extends": "react-app",

@@ -10,6 +10,11 @@ import './index.styl';
 import 'autotrack/lib/plugins/clean-url-tracker';
 import 'autotrack/lib/plugins/url-change-tracker';
 
+if (process.env.NODE_ENV !== 'production') {
+  const { whyDidYouUpdate } = require('why-did-you-update');
+  whyDidYouUpdate(React);
+}
+
 window.DESTINYSETS_ENV = 'prod';
 if (location.href.includes('localhost')) {
   window.DESTINYSETS_ENV = 'dev';
