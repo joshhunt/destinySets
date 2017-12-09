@@ -106,10 +106,13 @@ class Gearsets extends Component {
 
     this.scheduleProcessSets();
 
-    Promise.all([this.dataPromise, destiny.xur()]).then(([data, xurItems]) => {
-      this.xurItems = xurItems;
-      this.processSets(...data);
-    });
+    Promise.all([this.dataPromise, destiny.xur()]).then(
+      ([data, { xurItems, xurExtraText }]) => {
+        this.setState({ xurExtraText });
+        this.xurItems = xurItems;
+        this.processSets(...data);
+      }
+    );
   }
 
   componentWillReceiveProps(newProps) {
@@ -422,6 +425,7 @@ class Gearsets extends Component {
       xurItems,
       hasInventory,
       googleAuthLoaded,
+      xurExtraText,
       googleAuthSignedIn
     } = this.state;
 
@@ -528,7 +532,7 @@ class Gearsets extends Component {
           )}
         </div>
 
-        {hasInventory && <Xur items={xurItems} />}
+        {hasInventory && <Xur items={xurItems} extraText={xurExtraText} />}
 
         {(groups || []).map((group, index) => (
           <div key={index} id={`group_${index}`}>

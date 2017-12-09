@@ -6,7 +6,7 @@ import Item from 'app/components/Item';
 
 import styles from './styles.styl';
 
-export default function Xur({ items }) {
+export default function Xur({ items, extraText }) {
   if (!items.length) {
     return null;
   }
@@ -26,17 +26,21 @@ export default function Xur({ items }) {
           ))}
         </div>
 
-        <p>
-          Visit the Xûr Megathread on{' '}
-          <a
-            href="https://reddit.com/r/destinythegame"
-            target="_blank"
-            rel="noopener"
-          >
-            /r/DestinyTheGame
-          </a>{' '}
-          to find where he's been spotted this week.
-        </p>
+        {extraText ? (
+          <p>{extraText}</p>
+        ) : (
+          <p>
+            Visit the Xûr Megathread on{' '}
+            <a
+              href="https://reddit.com/r/destinythegame"
+              target="_blank"
+              rel="noopener"
+            >
+              /r/DestinyTheGame
+            </a>{' '}
+            to find where he's been spotted this week.
+          </p>
+        )}
       </div>
     </div>
   );
