@@ -52,8 +52,6 @@ export function saveInventory(profile, itemDefs) {
       });
     });
 
-    console.log('ghosts:', ghosts);
-
     saveInventoryToFirebase(profileId, ghosts);
   });
 }

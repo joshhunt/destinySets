@@ -71,14 +71,8 @@ export default function processSets(args, dataCallback) {
     cloudInventory
   } = args;
 
-  // if ((profile && !cloudInventory) || (!profile && cloudInventory)) {
-  //   return dataCallback(false);
-  // }
-
   const sets = cloneDeep(VARIATIONS[variation]);
-
   const xurHashes = xurItems || [];
-
   const allItems = Object.values(itemDefs);
 
   let inventory = (profile && collectInventory(profile, vendorDefs)) || {};
@@ -101,13 +95,6 @@ export default function processSets(args, dataCallback) {
   }
 
   log('Using inventory of ' + Object.keys(inventory).length + ' items');
-
-  // try {
-  //   profile && itemDefs && logItems(profile, itemDefs, vendorDefs);
-  // } catch (e) {
-  //   console.error('Unable to log profile');
-  //   console.error(e);
-  // }
 
   const rawGroups = sets.map(group => {
     const sets = group.sets.map(set => {
@@ -153,10 +140,9 @@ export default function processSets(args, dataCallback) {
     ls.saveInventory(inventory);
   }
 
-  console.group('saveCloudInventory?');
-  log(`!usingLocalStorageInventory: ${!usingLocalStorageInventory}`);
-  log(`!!Object.keys(inventory).length: ${!!Object.keys(inventory).length}`);
-  console.groupEnd();
+  const saveCloudInventory =
+    !usingLocalStorageInventory && !!Object.keys(inventory).length;
+  log(`saveCloudInventory: ${saveCloudInventory}`);
 
   const payload = {
     rawGroups,
@@ -164,12 +150,9 @@ export default function processSets(args, dataCallback) {
     xurItems: xurItemsGood,
     hasInventory: Object.keys(inventory).length > 0,
     loading: false,
-    saveCloudInventory:
-      !usingLocalStorageInventory && !!Object.keys(inventory).length,
+    saveCloudInventory,
     shit: null
   };
-
-  // logSets('Raw groups:', rawGroups);
 
   dataCallback(payload);
 }
