@@ -72,7 +72,7 @@ Promise.all([getFirebaseData(), getDefs('DestinyInventoryItemDefinition')])
       .values()
       .flatMap(profile => profile.ghosts)
       .filter(g => g.sockets)
-      .filter(g => dlcGhosts.includes(g.itemHash))
+      .filter(g => dlcGhosts.includes(g.itemHash)) // Limit only to Season 2 Ghosts
       .groupBy(ghost => ghost.itemHash)
       .mapValues((ghostInstances, ghostHash) => {
         return chain(ghostInstances)
@@ -83,11 +83,6 @@ Promise.all([getFirebaseData(), getDefs('DestinyInventoryItemDefinition')])
               .filter(plugHash => {
                 return !itemDefs[plugHash].itemCategoryHashes.includes(41); // exlucde shader
               })
-              // .sort((a, b) => {
-              //   return itemDefs[a].displayProperties.name.localeCompare(
-              //     itemDefs[b].displayProperties.name
-              //   );
-              // })
               .join('|');
 
             if (variantKey.length < 1) {
@@ -135,6 +130,7 @@ Promise.all([getFirebaseData(), getDefs('DestinyInventoryItemDefinition')])
       .value();
 
     console.log(ghostsByPlanet);
+    console.log('');
 
     // Log each shell and its plugs
     forEach(ghostPlugData, (plugCounts, ghostHash) => {
