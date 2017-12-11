@@ -13,7 +13,7 @@ export default function Xur({ items, extraText }) {
 
   return (
     <div className={styles.root}>
-      <img className={styles.xurImage} src={xur} />
+      <img className={styles.xurImage} src={xur} alt="" />
 
       <div className={styles.main}>
         <h2 className={styles.heading}>
@@ -34,7 +34,7 @@ export default function Xur({ items, extraText }) {
             <a
               href="https://reddit.com/r/destinythegame"
               target="_blank"
-              rel="noopener"
+              rel="noopener noreferrer"
             >
               /r/DestinyTheGame
             </a>{' '}

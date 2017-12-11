@@ -97,7 +97,7 @@ export default class Item extends Component {
             <img
               className={styles.image}
               src={`https://www.bungie.net${icon}`}
-              role="presentation"
+              alt=""
               id={`item${item.hash}`}
               onMouseEnter={this.showTooltip}
               onMouseLeave={this.hideTooltip}

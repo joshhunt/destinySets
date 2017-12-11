@@ -201,6 +201,7 @@ export default class Header extends React.Component {
             <a
               className={styles.socialItem}
               target="_blank"
+              rel="noopener noreferrer"
               href="https://twitter.com/joshhunt"
             >
               <i className="fa fa-twitter" />
@@ -208,6 +209,7 @@ export default class Header extends React.Component {
             <a
               className={styles.socialItem}
               target="_blank"
+              rel="noopener noreferrer"
               href="https://github.com/joshhunt/destinySets"
             >
               <i className="fa fa-github" />

@@ -41,6 +41,7 @@ class FancyImage extends Component {
 
     return (
       <img
+        alt=""
         className={cx(className)}
         style={styles}
         {...props}

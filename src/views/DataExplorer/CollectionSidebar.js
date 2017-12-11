@@ -17,6 +17,7 @@ export default class DataView extends Component {
               {section.items.map(item => (
                 <div className={s.item}>
                   <img
+                    alt=""
                     className={s.itemImage}
                     src={`https://www.bungie.net${item.displayProperties.icon}`}
                   />
@@ -29,7 +30,7 @@ export default class DataView extends Component {
                     className={s.removeItem}
                     onClick={() => removeItem(item.hash)}
                   >
-                    <img className={s.cross} src={cross} />
+                    <img className={s.cross} src={cross} alt="Close" />
                   </div>
                 </div>
               ))}
