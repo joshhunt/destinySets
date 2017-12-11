@@ -36,10 +36,7 @@ export function getDestiny(_pathname, opts = {}, postBody) {
   const url = `https://www.bungie.net${_pathname}`;
   const { pathname } = new URL(url);
 
-  const apiKey =
-    window.DESTINYSETS_ENV === 'beta'
-      ? process.env.BETA_API_KEY
-      : process.env.API_KEY;
+  const apiKey = process.env.REACT_APP_API_KEY;
 
   opts.headers = opts.headers || {};
   opts.headers['x-api-key'] = apiKey;
