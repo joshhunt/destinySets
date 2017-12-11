@@ -1,8 +1,6 @@
 import { keyBy } from 'lodash';
 import browserLocale from 'browser-locale';
 
-const locale = require('browser-locale')().toLowerCase();
-
 export const ENGLISH = {
   code: 'en',
   name: 'English'

@@ -15,7 +15,7 @@ export default class DataView extends Component {
       return (
         <span>
           <a href={imageUrl} target="_blank">
-            <img className={s.jsonImage} src={imageUrl} />
+            <img className={s.jsonImage} src={imageUrl} alt="preview" />
           </a>
         </span>
       );
@@ -34,9 +34,9 @@ export default class DataView extends Component {
 
     if (!item) {
       return (
-        <span
-          className={s.jsonNonLinkedValue}
-        >{`<${defsForHash.name} ${prettyValue}>`}</span>
+        <span className={s.jsonNonLinkedValue}>{`<${defsForHash.name} ${
+          prettyValue
+        }>`}</span>
       );
     }
 
@@ -73,11 +73,11 @@ export default class DataView extends Component {
         </h2>
 
         {item.displayProperties &&
-        item.displayProperties.description && (
-          <p className={s.itemDescription}>
-            {item.displayProperties.description}
-          </p>
-        )}
+          item.displayProperties.description && (
+            <p className={s.itemDescription}>
+              {item.displayProperties.description}
+            </p>
+          )}
 
         <JSONTree data={item} valueRenderer={this.valueRenderer} />
       </div>

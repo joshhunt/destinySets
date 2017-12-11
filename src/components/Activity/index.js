@@ -59,7 +59,7 @@ export default function Activity(props) {
         <img
           className={styles.image}
           src={'https://bungie.net' + pgcrImage}
-          role="presentation"
+          alt=""
         />
       )}
 

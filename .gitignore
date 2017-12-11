@@ -64,3 +64,4 @@ crowdin.yml
 deploy.sh
 firebaseCreds.json
 .env.*
+build

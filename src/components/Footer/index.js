@@ -6,7 +6,7 @@ export default function Footer({ item }) {
   return (
     <div className={styles.footer}>
       Made with love by{' '}
-      <a href="http://joshhunt.is" target="_blank">
+      <a href="http://joshhunt.is" target="_blank" rel="noopener noreferrer">
         Josh Hunt
       </a>{' '}
       for Destiny fans. <br />
