@@ -31,11 +31,11 @@ import processSets from './processSets';
 
 import * as telemetry from 'app/lib/telemetry';
 
-const log = require('app/lib/log')('gearsets');
-
 import { PLAYSTATION } from 'app/views/DataExplorer/definitionSources';
 
 import styles from './styles.styl';
+
+const log = require('app/lib/log')('gearsets');
 
 const ITEM_BLACKLIST = [
   1744115122, // Legend of Acrius ...
@@ -192,7 +192,7 @@ class Gearsets extends Component {
   logout() {
     this.profile = undefined;
     ls.clearAll();
-    location.reload();
+    window.location.reload();
   }
 
   switchProfile = profile => {

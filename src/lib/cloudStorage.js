@@ -1,7 +1,7 @@
-const gapi = window.gapi;
-
 import * as ls from 'app/lib/ls';
 import { ready } from 'app/lib/googleDriveAuth';
+
+const gapi = window.gapi;
 
 const log = require('app/lib/log')('cloudStorage');
 const fileIdLog = require('app/lib/log')('cloudStorage:getFileId');

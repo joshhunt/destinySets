@@ -38,8 +38,8 @@ export function getDestiny(_pathname, opts = {}, postBody) {
 
   const apiKey =
     window.DESTINYSETS_ENV === 'beta'
-      ? __DESTINY_BETA_API_KEY__
-      : __DESTINY_API_KEY__;
+      ? process.env.BETA_API_KEY
+      : process.env.API_KEY;
 
   opts.headers = opts.headers || {};
   opts.headers['x-api-key'] = apiKey;

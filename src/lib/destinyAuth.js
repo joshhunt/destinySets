@@ -38,7 +38,7 @@ function handleError(err, cb) {
 }
 
 export default function(cb) {
-  const queryParams = queryString.parse(location.search);
+  const queryParams = queryString.parse(window.location.search);
 
   const prevAuthData = ls.getAuth();
 
@@ -99,6 +99,6 @@ export default function(cb) {
 
 export function authUrl() {
   return window.DESTINYSETS_ENV === 'beta'
-    ? __DESTINY_BETA_AUTH_URL__
-    : __DESTINY_AUTH_URL__;
+    ? process.env.BETA_AUTH_URL
+    : process.env.AUTH_URL;
 }

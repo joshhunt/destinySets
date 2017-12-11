@@ -1,3 +1,5 @@
+import { getDefaultLanguage } from './i18n';
+
 const keys = {
   INVENTORY: '$inventory2',
   CLOUD_INVENTORY: '$cloudinventory',
@@ -8,8 +10,6 @@ const keys = {
   GDRIVE_FILE_ID: '$googleDriveFileId' + window.DESTINYSETS_ENV,
   GOOGLE_LOGIN_UPSELL: '$googleLoginUpsell'
 };
-
-import { getDefaultLanguage } from './i18n';
 
 function get(key, defaultx) {
   const lsValue = localStorage.getItem(key);
