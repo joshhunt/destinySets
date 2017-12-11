@@ -13,8 +13,6 @@ import 'autotrack/lib/plugins/url-change-tracker';
 window.DESTINYSETS_ENV = 'prod';
 if (window.location.href.includes('localhost')) {
   window.DESTINYSETS_ENV = 'dev';
-} else if (window.location.href.includes('beta')) {
-  window.DESTINYSETS_ENV = 'beta';
 }
 
 if (localStorage.forceDestinySetsEnv) {

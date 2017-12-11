@@ -63,3 +63,4 @@ newset.json
 crowdin.yml
 deploy.sh
 firebaseCreds.json
+.env.*

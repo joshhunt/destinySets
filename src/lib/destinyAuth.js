@@ -98,7 +98,5 @@ export default function(cb) {
 }
 
 export function authUrl() {
-  return window.DESTINYSETS_ENV === 'beta'
-    ? process.env.BETA_AUTH_URL
-    : process.env.AUTH_URL;
+  return process.env.REACT_APP_AUTH_URL;
 }
