@@ -312,11 +312,7 @@ module.exports = [
               731147177,
               2502422772,
               1983332560,
-              3312073054,
-              // Curse of Osiris
-              2414612776, // New City
-              3216383791, // Home for the Lost
-              2295941920, // Belfry Bounty
+              3312073054
             ]
           },
           {
@@ -520,9 +516,9 @@ module.exports = [
               3445437901, // Main Ingredient
               2168486467, // Wicked Sister
               // Curse of Osiris
+              3393130645, // Positive Outlook
               2957542878, // Living Memory
               1927800278, // Eternal Blazon
-              3393130645, // Positive Outlook
               3551104348, // Double-Edged Answer
             ]
           },
@@ -636,17 +632,20 @@ module.exports = [
               896923850, // Acantha-D
               3778520449, // Jiangshi AR4
               // Curse of Osiris
+              2414612776, // New City
+              3216383791, // Home for the Lost
+              2295941920, // Belfry Bounty
               2414612777, // Atalanta-D
-              2812672356, // Vertical Orbit QSm
-              228424224, // Impromptu-49
-              2812672357, // Eulogy SI4
-              3434629515, // Metronome-52
-              3920811074, // Medley-45
               1411084669, // Zenobia-D
+              2812672357, // Eulogy SI4
               2149166938, // Classical-42
-              2149166939, // Countess SA/2
+              3920811074, // Medley-45
               2295941921, // Maestro-46
+              228424224, // Impromptu-49
+              3434629515, // Metronome-52
+              2149166939, // Countess SA/2
               3005879472, // Conjecture TSc
+              2812672356, // Vertical Orbit QSm
               3005879473, // Crooked Fang-4fr
               4105447486, // Nox Veneris II
               4105447487, // Elatha FR4
