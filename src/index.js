@@ -1,14 +1,10 @@
 import 'isomorphic-fetch';
-// import 'babel-polyfill';
 
 import React from 'react';
 import ReactDOM from 'react-dom';
 
 import AppRouter from './AppRouter';
 import './index.styl';
-
-import 'autotrack/lib/plugins/clean-url-tracker';
-import 'autotrack/lib/plugins/url-change-tracker';
 
 window.DESTINYSETS_ENV = 'prod';
 if (window.location.href.includes('localhost')) {

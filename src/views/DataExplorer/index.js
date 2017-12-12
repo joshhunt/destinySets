@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { find } from 'lodash';
-import copy from 'copy-text-to-clipboard';
 
 import * as destiny from 'app/lib/destiny';
 import * as ls from 'app/lib/ls';
@@ -9,6 +8,7 @@ import { getDefinition } from 'app/lib/manifestData';
 import Item from 'app/components/Item';
 import Header from 'app/components/Header';
 import Loading from 'app/views/Loading';
+import copy from 'app/lib/copyToClipboard';
 
 import sortItemsIntoSections from './sortItemsIntoSections';
 import DataViewer from './DataView';

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { sortBy } from 'lodash';
 import cx from 'classnames';
-import copy from 'copy-text-to-clipboard';
+import copy from 'app/lib/copyToClipboard';
 
 import { getDefinition } from 'app/lib/manifestData';
 

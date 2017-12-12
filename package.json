@@ -6,7 +6,6 @@
     "autotrack": "^2.4.1",
     "browser-locale": "^1.0.3",
     "classnames": "^2.2.5",
-    "copy-text-to-clipboard": "^1.0.4",
     "dexie": "^2.0.1",
     "firebase": "^4.8.0",
     "lodash": "^4.17.4",
@@ -20,6 +19,8 @@
     "start": "react-app-rewired start",
     "build": "react-app-rewired build",
     "test": "react-app-rewired test --env=jsdom",
+    "generate-autotrack":
+      "autotrack -o public/autotrack.build.js -p clean-url-tracker,url-change-tracker",
     "eject": "react-scripts eject"
   },
   "devDependencies": {
