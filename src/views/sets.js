@@ -18,13 +18,6 @@ module.exports = [
               2961807684, // The Wizened Rebuke
               2909905776, // The Hero's Burden
               807192446, // The Day's Fury
-              // Cusrse of Osiris
-              1369487074, // Orimund's Anvil
-              3649055823, // Crimil's Dagger
-              622058944, // Jorum's Claw
-              3005104939, // Frostmire's Hex
-              94729174, // Gunnora's Axe
-              1870979911, // Orewing's Maul
             ]
           },
           {
@@ -129,12 +122,6 @@ module.exports = [
               2625782212, // Haunted Earth
               2625782213, // Contingency Plan
               3252697558, // Truthteller
-              // Curse of Osiris
-              1523647826, // Eternal Slumber
-              1587779165, // Radiant Stardust
-              1842303080, // Hollow Earth
-              1813667283, // Dead-Ender
-              2738174948, // Distant Tumulus
 
             ]
           },
@@ -171,13 +158,6 @@ module.exports = [
               227548887,
               3239754990,
               2276266837,
-              // Curse of Osiris
-              1650442173, // Loquitor IV
-              1760543913, // Legal Action II
-              1531295694, // Adverse Possession IX
-              1443049976, // Interference VI
-              2478247171, // Quitclaim Shotgun III
-
             ]
           },
           {
@@ -213,12 +193,6 @@ module.exports = [
               2581162758, // Enigma's Draw
               3329842376, // Memory Interdict
               4145119417, // Heart of Time
-              // Curse of Osiris
-              1099433612, // The Doubt
-              3826803617, // The Dream
-              2817949113, // The Defiant
-              3929685100, // The Deicide
-              4272442416, // THe Domino
             ]
           },
           {
@@ -461,12 +435,6 @@ module.exports = [
               2094938673,
               2850415209,
               3854037061,
-              // Curse of Osiris
-              1503609584, // The Last Breath
-              2516360525, // Purpose
-              325519402, // Darkest Before
-              2071412133, // A Cold Sweat
-
             ]
           },
           {
@@ -515,11 +483,6 @@ module.exports = [
               2290863050, // Persuader
               3445437901, // Main Ingredient
               2168486467, // Wicked Sister
-              // Curse of Osiris
-              3393130645, // Positive Outlook
-              2957542878, // Living Memory
-              1927800278, // Eternal Blazon
-              3551104348, // Double-Edged Answer
             ]
           },
 
@@ -576,11 +539,6 @@ module.exports = [
               2660862359, // Gentleman Vagabond
               1773600468, // Critical Sass
               2621637518, // Play of the Game
-              // Curse of Osiris
-              1674742470, // Autumn Wind
-              468276817, // Nature of the Beast
-              1084788061, // Swift Solstice
-              2792181427, // Tiebreaker
             ]
           },
           {
@@ -631,26 +589,6 @@ module.exports = [
               2398848320, // Erentil FR4
               896923850, // Acantha-D
               3778520449, // Jiangshi AR4
-              // Curse of Osiris
-              2414612776, // New City
-              3216383791, // Home for the Lost
-              2295941920, // Belfry Bounty
-              2414612777, // Atalanta-D
-              1411084669, // Zenobia-D
-              2812672357, // Eulogy SI4
-              2149166938, // Classical-42
-              3920811074, // Medley-45
-              2295941921, // Maestro-46
-              228424224, // Impromptu-49
-              3434629515, // Metronome-52
-              2149166939, // Countess SA/2
-              3005879472, // Conjecture TSc
-              2812672356, // Vertical Orbit QSm
-              3005879473, // Crooked Fang-4fr
-              4105447486, // Nox Veneris II
-              4105447487, // Elatha FR4
-              4213221671, // Sunrise GL4
-
             ]
           }
         ]
