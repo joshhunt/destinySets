@@ -17,7 +17,14 @@ module.exports = [
               3424403076, // The Fool's Remedy
               2961807684, // The Wizened Rebuke
               2909905776, // The Hero's Burden
-              807192446 // The Day's Fury
+              807192446, // The Day's Fury
+              // Cusrse of Osiris
+              1369487074, // Orimund's Anvil
+              3649055823, // Crimil's Dagger
+              622058944, // Jorum's Claw
+              3005104939, // Frostmire's Hex
+              94729174, // Gunnora's Axe
+              1870979911, // Orewing's Maul
             ]
           },
           {
@@ -115,14 +122,20 @@ module.exports = [
               582335600, // Dire Promise
               48361213, // Eleventh Hour
               1277015089, // Gravity Slingshot
-
               // Misc weapons
               48361212, // Controlling Vision
               472847207, // Guiding Star
               1459443448, // Escape Velocity
               2625782212, // Haunted Earth
               2625782213, // Contingency Plan
-              3252697558 // Truthteller
+              3252697558, // Truthteller
+              // Curse of Osiris
+              1523647826, // Eternal Slumber
+              1587779165, // Radiant Stardust
+              1842303080, // Hollow Earth
+              1813667283, // Dead-Ender
+              2738174948, // Distant Tumulus
+
             ]
           },
           {
@@ -152,13 +165,19 @@ module.exports = [
               3435238842,
               3889907763,
               1988218406,
-
               // misc
               3435238843,
               2693941407,
               227548887,
               3239754990,
-              2276266837
+              2276266837,
+              // Curse of Osiris
+              1650442173, // Loquitor IV
+              1760543913, // Legal Action II
+              1531295694, // Adverse Possession IX
+              1443049976, // Interference VI
+              2478247171, // Quitclaim Shotgun III
+
             ]
           },
           {
@@ -188,13 +207,18 @@ module.exports = [
               3854359821, // The Number
               1342668638, // Pleiades Corrector
               3272713429, // Eye of Foresight
-
               // other misc weapons
               1006783454, // Timelines' Vertex
               1339362514, // Stochastic Variable
               2581162758, // Enigma's Draw
               3329842376, // Memory Interdict
-              4145119417 // Heart of Time
+              4145119417, // Heart of Time
+              // Curse of Osiris
+              1099433612, // The Doubt
+              3826803617, // The Dream
+              2817949113, // The Defiant
+              3929685100, // The Deicide
+              4272442416, // THe Domino
             ]
           },
           {
@@ -234,7 +258,8 @@ module.exports = [
               3285365667, // West of Sunfall 7
               161537637, // Infinite Paths 8
               3188460622, // Null Calamity 9
-              1490571337 // Future Safe 10
+              1490571337, // Future Safe 10
+              2248667690, // Perfect Paradox
             ]
           },
           {
@@ -287,7 +312,11 @@ module.exports = [
               731147177,
               2502422772,
               1983332560,
-              3312073054
+              3312073054,
+              // Curse of Osiris
+              2414612776, // New City
+              3216383791, // Home for the Lost
+              2295941920, // Belfry Bounty
             ]
           },
           {
@@ -435,7 +464,13 @@ module.exports = [
               1909527966,
               2094938673,
               2850415209,
-              3854037061
+              3854037061,
+              // Curse of Osiris
+              1503609584, // The Last Breath
+              2516360525, // Purpose
+              325519402, // Darkest Before
+              2071412133, // A Cold Sweat
+
             ]
           },
           {
@@ -483,7 +518,12 @@ module.exports = [
               137879537, // Curtain Call
               2290863050, // Persuader
               3445437901, // Main Ingredient
-              2168486467 // Wicked Sister
+              2168486467, // Wicked Sister
+              // Curse of Osiris
+              2957542878, // Living Memory
+              1927800278, // Eternal Blazon
+              3393130645, // Positive Outlook
+              3551104348, // Double-Edged Answer
             ]
           },
 
@@ -539,7 +579,12 @@ module.exports = [
               4174481098, // Steel Sybil Z-14
               2660862359, // Gentleman Vagabond
               1773600468, // Critical Sass
-              2621637518 // Play of the Game
+              2621637518, // Play of the Game
+              // Curse of Osiris
+              1674742470, // Autumn Wind
+              468276817, // Nature of the Beast
+              1084788061, // Swift Solstice
+              2792181427, // Tiebreaker
             ]
           },
           {
@@ -589,7 +634,24 @@ module.exports = [
               2703340117, // Somerled-D
               2398848320, // Erentil FR4
               896923850, // Acantha-D
-              3778520449 // Jiangshi AR4
+              3778520449, // Jiangshi AR4
+              // Curse of Osiris
+              2414612777, // Atalanta-D
+              2812672356, // Vertical Orbit QSm
+              228424224, // Impromptu-49
+              2812672357, // Eulogy SI4
+              3434629515, // Metronome-52
+              3920811074, // Medley-45
+              1411084669, // Zenobia-D
+              2149166938, // Classical-42
+              2149166939, // Countess SA/2
+              2295941921, // Maestro-46
+              3005879472, // Conjecture TSc
+              3005879473, // Crooked Fang-4fr
+              4105447486, // Nox Veneris II
+              4105447487, // Elatha FR4
+              4213221671, // Sunrise GL4
+
             ]
           }
         ]
