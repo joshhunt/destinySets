@@ -67,7 +67,7 @@ export default class Item extends Component {
   render() {
     const { className, onClick, item, dev, small, tiny } = this.props;
 
-    const dtrLink = `http://db.destinytracker.com/d2/en/items/${item.hash}`;
+    const dtrLink = `https://www.bungie.net/en/Explore/Detail/Item/${item.hash}`;
 
     const dtrProps = {
       href: dtrLink,
