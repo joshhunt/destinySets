@@ -246,7 +246,7 @@ export default class FixedHeader extends Component {
           sidebarClassName={sidebarStyles.sidebar}
           styles={{
             root: {
-              'pointer-events': this.state.sidebarOpen ? 'initial' : 'none'
+              pointerEvents: this.state.sidebarOpen ? 'initial' : 'none'
             }
           }}
         >
