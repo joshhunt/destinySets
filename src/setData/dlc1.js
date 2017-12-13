@@ -290,6 +290,12 @@ module.exports = [
           {
             title: 'Ghosts',
             items: [
+              573576346, // Sagira's Shell
+              1558857466, // Electronica Shell
+              1558857468, // Fast Lane Shell
+              1558857469, // Fire Victorious Shell
+              1558857470, // Star Map Shell
+              1558857471, // Cosmos Shell
               3681086675,
               3681086674,
               3681086673,
