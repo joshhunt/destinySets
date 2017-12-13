@@ -57,6 +57,10 @@ class DataExplorer extends Component {
       })
     );
 
+    window.__dataExplorerExploreProfiles = () => {
+      this.onItemClick(window.__PROFILES);
+    };
+
     Promise.all(dataPromises)
       .then(results => {
         this.data = results.reduce((acc, defs, index) => {

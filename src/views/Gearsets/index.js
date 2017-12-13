@@ -153,6 +153,7 @@ class Gearsets extends Component {
     }
 
     destiny.getCurrentProfiles().then(({ profiles, bungieNetUser }) => {
+      window.__PROFILES = profiles;
       this.setState({ profiles });
 
       let fullName = [];

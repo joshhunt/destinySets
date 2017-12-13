@@ -90,6 +90,24 @@ export default function collectInventory(profile, vendorDefs) {
 
   let allItems = {};
 
+  Object.keys(profile.itemComponents.sockets.data).forEach(instanceId => {
+    const { sockets } = profile.itemComponents.sockets.data[instanceId];
+    sockets.forEach(socket => {
+      if (socket.reusablePlugHashes) {
+        socket.reusablePlugHashes.forEach(plugHash => {
+          allItems[plugHash] = [
+            {
+              itemHash: plugHash,
+              $hostItemInstanceHash: instanceId,
+              $location: '$reusablePlugHashes',
+              $instanceData: []
+            }
+          ];
+        });
+      }
+    });
+  });
+
   Object.keys(characterInventories.data).forEach(characterHash => {
     const { items } = characterInventories.data[characterHash];
     items.forEach(item => {
