@@ -1,6 +1,7 @@
 const path = require('path');
 const { merge } = require('lodash');
 const { getLoader } = require('react-app-rewired');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = function override(config, env) {
   console.log('env:', env);
@@ -38,20 +39,22 @@ module.exports = function override(config, env) {
 
     stylusRules = {
       test: /\.styl$/,
-      use: [
-        cssExtractTextLoader,
-        {
-          loader: 'css-loader',
-          options: {
-            sourceMap: true,
-            modules: true,
-            importLoaders: 2,
-            localIdentName: '[folder]--[local]--[hash:base64:2]'
-          }
-        },
-        { loader: 'postcss-loader', options: { sourceMap: true } },
-        { loader: 'stylus-loader', options: { sourceMap: true } }
-      ]
+      use: ExtractTextPlugin.extract({
+        fallback: 'style-loader',
+        use: [
+          {
+            loader: 'css-loader',
+            options: {
+              sourceMap: true,
+              modules: true,
+              importLoaders: 2,
+              localIdentName: '[folder]--[local]--[hash:base64:2]'
+            }
+          },
+          { loader: 'postcss-loader', options: { sourceMap: true } },
+          { loader: 'stylus-loader', options: { sourceMap: true } }
+        ]
+      })
     };
   }
 

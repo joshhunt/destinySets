@@ -19,6 +19,7 @@
     "start": "react-app-rewired start",
     "build": "react-app-rewired build",
     "test": "react-app-rewired test --env=jsdom",
+    "serve": "serve -s build",
     "generate-autotrack":
       "autotrack -o public/autotrack.build.js -p clean-url-tracker,url-change-tracker",
     "eject": "react-scripts eject"
