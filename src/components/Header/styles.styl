@@ -4,6 +4,16 @@ $filterColour = lighten($baseColour, 10%)
 $activeBg = rgba(white, .1)
 $edgePadding = 15px
 
+.fixedHeader
+  position: fixed
+  top: 0
+  left: 0
+  right: 0
+  z-index: 9
+
+.fakeHeader
+  visibility: hidden
+
 .header
   background: $bgColour
   display: flex
@@ -14,6 +24,7 @@ $edgePadding = 15px
   position: relative
   background-position: center
   background-size: cover
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
 
 .main
   display: flex

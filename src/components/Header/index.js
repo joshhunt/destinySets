@@ -9,15 +9,8 @@ import {
   getBrowserLocale
 } from 'app/lib/i18n';
 import { trackEvent } from 'app/lib/analytics';
+import ProfileSwitcher from './ProfileSwitcher';
 import styles from './styles.styl';
-
-const PLATFORM = {
-  1: 'Xbox',
-  2: 'PlayStation',
-  4: 'PC (Blizzard)',
-  10: 'TigerDemon',
-  254: 'BungieNext'
-};
 
 function NavLink({ children, className, ...props }) {
   return (
@@ -31,7 +24,7 @@ function NavLink({ children, className, ...props }) {
   );
 }
 
-export default class Header extends React.Component {
+class Header extends React.Component {
   state = {
     accountSwitcherActive: false,
     langSwitcherActive: false
@@ -73,6 +66,7 @@ export default class Header extends React.Component {
       className,
       bg,
       profile,
+      profiles,
       activeLanguage,
       isGoogleAuthenticated,
       onGoogleSignout
@@ -133,65 +127,15 @@ export default class Header extends React.Component {
             </div>
 
             {profile && (
-              <div
-                className={styles.accountSwitcher}
-                onClick={this.toggleAccountSwitcher}
-              >
-                <div className={styles.account}>
-                  <div className={styles.displayName}>
-                    {profile.profile.data.userInfo.displayName}
-                  </div>
-                  <div className={styles.platform}>
-                    {PLATFORM[profile.profile.data.userInfo.membershipType]}
-                  </div>
-                </div>
-                <div className={styles.switchButton}>
-                  <i className="fa fa-caret-down" aria-hidden="true" />
-                </div>
-
-                {accountSwitcherActive && (
-                  <div className={styles.accountsDropdown}>
-                    {this.props.profiles.map((prof, index) => (
-                      <div
-                        key={index}
-                        className={cx(styles.account, styles.dropdownAccount)}
-                        onClick={() => this.switchProfile(prof)}
-                      >
-                        <div className={styles.displayName}>
-                          {prof.profile.data.userInfo.displayName}
-                        </div>
-                        <div className={styles.platform}>
-                          {PLATFORM[prof.profile.data.userInfo.membershipType]}
-                        </div>
-                      </div>
-                    ))}
-
-                    {isGoogleAuthenticated && (
-                      <div
-                        onClick={onGoogleSignout}
-                        className={cx(
-                          styles.account,
-                          styles.logOut,
-                          styles.dropdownAccount
-                        )}
-                      >
-                        Disconnect Google
-                      </div>
-                    )}
-
-                    <div
-                      onClick={() => this.switchProfile({ logout: true })}
-                      className={cx(
-                        styles.account,
-                        styles.logOut,
-                        styles.dropdownAccount
-                      )}
-                    >
-                      Log out
-                    </div>
-                  </div>
-                )}
-              </div>
+              <ProfileSwitcher
+                profile={profile}
+                profiles={profiles}
+                accountSwitcherActive={accountSwitcherActive}
+                isGoogleAuthenticated={isGoogleAuthenticated}
+                onGoogleSignout={onGoogleSignout}
+                toggleAccountSwitcher={this.toggleAccountSwitcher}
+                switchProfile={this.switchProfile}
+              />
             )}
 
             <a
@@ -215,4 +159,13 @@ export default class Header extends React.Component {
       </div>
     );
   }
+}
+
+export default function FixedHeader(props) {
+  return (
+    <div className={styles.headerContainer}>
+      <Header {...props} className={styles.fixedHeader} />
+      <Header {...props} className={styles.fakeHeader} />
+    </div>
+  );
 }
