@@ -1,6 +1,9 @@
-import React from 'react';
+/* eslint-disable jsx-a11y/href-no-hash */
+
+import React, { Component } from 'react';
 import { Link } from 'react-router';
 import cx from 'classnames';
+import Sidebar from 'react-sidebar';
 
 import {
   languages,
@@ -11,6 +14,7 @@ import {
 import { trackEvent } from 'app/lib/analytics';
 import ProfileSwitcher from './ProfileSwitcher';
 import styles from './styles.styl';
+import sidebarStyles from './sidebar.styl';
 
 function NavLink({ children, className, ...props }) {
   return (
@@ -82,9 +86,23 @@ class Header extends React.Component {
     return (
       <div className={cx(className, styles.root)}>
         <div className={styles.header} style={style}>
+          <div className={styles.mobile}>
+            <button
+              className={styles.hambuger}
+              onClick={() => this.props.onSetSidebarOpen(true)}
+            >
+              <i className="fa fa-bars" />
+            </button>
+
+            <a href="#" className={styles.siteName}>
+              Destiny Sets
+              <span className={styles.version}>2</span>
+            </a>
+          </div>
+
           <div className={styles.main}>
             <Link to="/" className={styles.siteName}>
-              D<span className={styles.longName}>estiny Sets </span>
+              Destiny Sets
               <span className={styles.version}>2</span>
             </Link>
 
@@ -161,11 +179,70 @@ class Header extends React.Component {
   }
 }
 
-export default function FixedHeader(props) {
-  return (
-    <div className={styles.headerContainer}>
-      <Header {...props} className={styles.fixedHeader} />
-      <Header {...props} className={styles.fakeHeader} />
-    </div>
-  );
+export default class FixedHeader extends Component {
+  state = {
+    sidebarOpen: false
+  };
+
+  onSetSidebarOpen = open => {
+    this.setState({ sidebarOpen: open });
+  };
+
+  closeSidebar = () => {
+    console.log('xxxxxx');
+    this.setState({ sidebarOpen: false });
+
+    window.setTimeout(() => {
+      this.setState({ sidebarOpen: false });
+    }, 1);
+  };
+
+  render() {
+    const sidebarContent = (
+      <div className={sidebarStyles.root}>
+        <Link to="/" className={styles.siteName}>
+          Destiny Sets
+          <span className={styles.version}>2</span>
+        </Link>
+
+        <NavLink onClick={this.closeSidebar} to="/">
+          Sets
+        </NavLink>
+        <NavLink onClick={this.closeSidebar} to="/curse-of-osiris">
+          Curse of Osiris
+        </NavLink>
+        <NavLink onClick={this.closeSidebar} to="/all-items">
+          All Items
+        </NavLink>
+
+        <NavLink
+          onClick={this.closeSidebar}
+          to="/data"
+          className={styles.longName}
+        >
+          Data Explorer
+        </NavLink>
+      </div>
+    );
+
+    return (
+      <div className={styles.headerContainer}>
+        <Header
+          {...this.props}
+          onSetSidebarOpen={this.onSetSidebarOpen}
+          className={styles.fixedHeader}
+        />
+        <Header {...this.props} className={styles.fakeHeader} />
+
+        <Sidebar
+          sidebar={sidebarContent}
+          open={this.state.sidebarOpen}
+          onSetOpen={this.onSetSidebarOpen}
+          sidebarClassName={sidebarStyles.sidebar}
+        >
+          {' '}
+        </Sidebar>
+      </div>
+    );
+  }
 }

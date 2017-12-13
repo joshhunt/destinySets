@@ -9,7 +9,7 @@ $edgePadding = 15px
   top: 0
   left: 0
   right: 0
-  z-index: 9
+  z-index: 1
 
 .fakeHeader
   visibility: hidden
@@ -88,20 +88,8 @@ $edgePadding = 15px
   &:hover
     opacity: 1
 
-  @media screen and (max-width: 680px)
+  @media screen and (max-width: 850px)
     display: none
-
-.shortName
-  display: inline
-
-  @media screen and (min-width: 680px)
-    display: none
-
-.longName
-  display: none
-
-  @media screen and (min-width: 680px)
-    display: inline
 
 ._dropdownMenuRoot
   display: flex
@@ -164,3 +152,25 @@ $edgePadding = 15px
 
 .dropdownAccount
   composes: _dropdownMenuOption
+
+.mobile
+  display: none
+
+.hambuger
+  appearance: none
+  background: none
+  border-radius: none
+  border: none
+  color: white
+  font-size: 20px
+  padding: 5px 15px
+  margin-left: -15px
+  outline: none
+
+@media screen and (max-width: 850px)
+  .mobile
+    display: flex
+    align-items: center
+
+  .main
+    display: none
