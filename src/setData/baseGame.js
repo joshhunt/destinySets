@@ -54,9 +54,9 @@ module.exports = [
       },
 
       {
-        name: 'Leviathan Armor',
+        name: 'Leviathan Raid',
         description:
-          'Armor obtained by increasing your reputation with Emperor Calus.',
+          'Gear obtained by playing the Leviathan raid and increasing your reputation with Emperor Calus.',
         sections: [
           {
             title: 'Weapons',
@@ -470,7 +470,7 @@ module.exports = [
 
       {
         name: 'Crucible Engram',
-        description: 'Contains a reward for your efforts in the Crucible.',
+        description: 'Rewards for your efforts in the Crucible.',
         sections: [
           {
             title: 'Weapons',

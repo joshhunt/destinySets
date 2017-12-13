@@ -19,6 +19,51 @@ module.exports = [
             ]
           }
         ]
+      },
+      {
+        name: 'Eater of Worlds, Raid Lair',
+        description:
+          'Gear obtained by playing the Eater of Worlds raid lair and increasing your reputation with Emperor Calus.',
+        sections: [
+          {
+            title: 'Weapons',
+            items: [
+              3886263130, // I Am Alive
+              2707464805 // Zenith of Your Kind
+            ]
+          },
+
+          {
+            title: 'Hunter armor',
+            items: [
+              253344425, // Mask of Feltroc
+              2339720736, // Grips of Feltroc
+              2976612200, // Vest of Feltroc
+              1034660314, // Boots of Feltroc
+              383742277 // Cloak of Feltroc
+            ]
+          },
+          {
+            title: 'Titan armor',
+            items: [
+              1991039861, // Mask of Nohr
+              666883012, // Gauntlets of Nohr
+              1242139836, // Plate of Nohr
+              2597529070, // Greaves of Nohr
+              2994007601 // Mark of Nohr
+            ]
+          },
+          {
+            title: 'Warlock armor',
+            items: [
+              796914932, // Mask of Sekris
+              3964287245, // Wraps of Sekris
+              2329031091, // Robes of Sekris
+              340118991, // Boots of Sekris
+              239489770 // Bond of Sekris
+            ]
+          }
+        ]
       }
     ]
   },
@@ -182,7 +227,7 @@ module.exports = [
 
       {
         name: 'Crucible Engram',
-        description: 'Contains a reward for your efforts in the Crucible.',
+        description: 'Rewards for your efforts in the Crucible.',
         sections: [
           {
             title: 'Weapons',
