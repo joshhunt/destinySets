@@ -1,7 +1,7 @@
 import { intersection } from 'lodash';
 import _get from 'lodash/get';
 
-import sets from '../sets.js';
+import setPages from 'app/setData';
 
 import {
   HUNTER,
@@ -35,10 +35,12 @@ const MAX_ITEMS = 50;
 
 let SET_ITEMS = [];
 
-sets.forEach(category => {
-  category.sets.forEach(set => {
-    set.sections.forEach(section => {
-      SET_ITEMS = SET_ITEMS.concat(section.items);
+setPages.forEach(sets => {
+  sets.setData.forEach(category => {
+    category.sets.forEach(set => {
+      set.sections.forEach(section => {
+        SET_ITEMS = SET_ITEMS.concat(section.items);
+      });
     });
   });
 });

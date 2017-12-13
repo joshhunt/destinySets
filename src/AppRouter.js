@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Router, Route, browserHistory } from 'react-router';
 
+import sets from 'app/setData';
 import Gearsets from './views/Gearsets';
 import DataExplorer from './views/DataExplorer';
 
@@ -17,23 +18,26 @@ export default class AppRouter extends Component {
     return (
       <Router history={browserHistory}>
         <Route
-          path="/"
+          path={sets[0].path}
           component={Gearsets}
-          variation="sets"
+          setData={sets[0].setData}
           onEnter={onEnter}
         />
+
         <Route
-          path="/curse-of-osiris"
+          path={sets[1].path}
           component={Gearsets}
-          variation="setsCoo"
+          setData={sets[1].setData}
           onEnter={onEnter}
         />
+
         <Route
-          path="/all-items"
+          path={sets[2].path}
           component={Gearsets}
-          variation="allItems"
+          setData={sets[2].setData}
           onEnter={onEnter}
         />
+
         <Route path="/data" component={DataExplorer} onEnter={onEnter} />
       </Router>
     );

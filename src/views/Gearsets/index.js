@@ -115,7 +115,7 @@ class Gearsets extends Component {
       vendorDefs,
       cloudInventory: this.cloudInventory,
       profile: this.profile,
-      variation: this.props.route.variation,
+      setData: this.props.route.setData,
       xurItems: this.xurItems
     };
 

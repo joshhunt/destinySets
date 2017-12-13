@@ -15,11 +15,11 @@ module.exports = [
               622058944, // Jorum's Claw
               3005104939, // Frostmire's Hex
               94729174, // Gunnora's Axe
-              1870979911, // Orewing's Maul
+              1870979911 // Orewing's Maul
             ]
-          },
+          }
         ]
-      },
+      }
     ]
   },
   {
@@ -38,10 +38,9 @@ module.exports = [
               1587779165, // Radiant Stardust
               1842303080, // Hollow Earth
               1813667283, // Dead-Ender
-              2738174948, // Distant Tumulus
-
+              2738174948 // Distant Tumulus
             ]
-          },
+          }
         ]
       },
       {
@@ -57,10 +56,9 @@ module.exports = [
               1760543913, // Legal Action II
               1531295694, // Adverse Possession IX
               1443049976, // Interference VI
-              2478247171, // Quitclaim Shotgun III
-
+              2478247171 // Quitclaim Shotgun III
             ]
-          },
+          }
         ]
       },
       {
@@ -76,9 +74,9 @@ module.exports = [
               3826803617, // The Dream
               2817949113, // The Defiant
               3929685100, // The Deicide
-              4272442416, // THe Domino
+              4272442416 // THe Domino
             ]
-          },
+          }
         ]
       }
     ]
@@ -105,7 +103,7 @@ module.exports = [
               161537637, // Infinite Paths 8
               3188460622, // Null Calamity 9
               1490571337, // Future Safe 10
-              2248667690, // Perfect Paradox
+              2248667690 // Perfect Paradox
             ]
           },
           {
@@ -139,8 +137,7 @@ module.exports = [
             ]
           }
         ]
-      },
-
+      }
     ]
   },
 
@@ -159,10 +156,9 @@ module.exports = [
               1503609584, // The Last Breath
               2516360525, // Purpose
               325519402, // Darkest Before
-              2071412133, // A Cold Sweat
-
+              2071412133 // A Cold Sweat
             ]
-          },
+          }
         ]
       },
 
@@ -178,9 +174,9 @@ module.exports = [
               3393130645, // Positive Outlook
               2957542878, // Living Memory
               1927800278, // Eternal Blazon
-              3551104348, // Double-Edged Answer
+              3551104348 // Double-Edged Answer
             ]
-          },
+          }
         ]
       },
 
@@ -195,9 +191,9 @@ module.exports = [
               1674742470, // Autumn Wind
               468276817, // Nature of the Beast
               1084788061, // Swift Solstice
-              2792181427, // Tiebreaker
+              2792181427 // Tiebreaker
             ]
-          },
+          }
         ]
       },
 
@@ -227,14 +223,20 @@ module.exports = [
               3005879473, // Crooked Fang-4fr
               4105447486, // Nox Veneris II
               4105447487, // Elatha FR4
-              4213221671, // Sunrise GL4
+              4213221671 // Sunrise GL4
             ]
           }
         ]
-      },
+      }
+    ]
+  },
 
+  {
+    name: 'Other',
+    sets: [
       {
-        name: 'Bright Engram, Eververse Season 2',
+        name: 'Eververse, Season 2',
+        big: true,
         sections: [
           {
             title: 'Hunter armor',
@@ -265,19 +267,7 @@ module.exports = [
               4073377357, // Omega Mechanos Boots
               3146151688 // Omega Mechanos Bond
             ]
-          }
-        ]
-      }
-    ]
-  },
-
-  {
-    name: 'Other',
-    sets: [
-      {
-        name: 'Eververse, Season 2',
-        big: true,
-        sections: [
+          },
           {
             title: 'Emotes',
             items: [

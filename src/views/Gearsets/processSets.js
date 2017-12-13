@@ -1,4 +1,4 @@
-import { isArray, cloneDeep, has } from 'lodash';
+import { isArray, has } from 'lodash';
 
 import { fancySearch } from 'app/views/DataExplorer/filterItems';
 import sortItemsIntoSections from 'app/views/DataExplorer/sortItemsIntoSections';
@@ -6,17 +6,8 @@ import collectInventory from 'app/lib/collectInventory';
 import * as ls from 'app/lib/ls';
 
 // import { logItems, logSets } from './utils';
-import setsSets from '../sets.js';
-import cooSets from '../sets-coo.js';
-import allItemsSets from '../allItems.js';
 
 const log = require('app/lib/log')('processSets');
-
-const VARIATIONS = {
-  sets: setsSets,
-  setsCoo: cooSets,
-  allItems: allItemsSets
-};
 
 function merge(base, extra) {
   return { ...base, ...extra };
@@ -68,12 +59,12 @@ export default function processSets(args, dataCallback) {
     itemDefs,
     vendorDefs,
     profile,
-    variation,
     xurItems,
+    setData,
     cloudInventory
   } = args;
 
-  const sets = cloneDeep(VARIATIONS[variation]);
+  const sets = setData;
   const xurHashes = xurItems || [];
   const allItems = Object.values(itemDefs);
 

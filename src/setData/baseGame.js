@@ -17,7 +17,7 @@ module.exports = [
               3424403076, // The Fool's Remedy
               2961807684, // The Wizened Rebuke
               2909905776, // The Hero's Burden
-              807192446, // The Day's Fury
+              807192446 // The Day's Fury
             ]
           },
           {
@@ -121,8 +121,7 @@ module.exports = [
               1459443448, // Escape Velocity
               2625782212, // Haunted Earth
               2625782213, // Contingency Plan
-              3252697558, // Truthteller
-
+              3252697558 // Truthteller
             ]
           },
           {
@@ -157,7 +156,7 @@ module.exports = [
               2693941407,
               227548887,
               3239754990,
-              2276266837,
+              2276266837
             ]
           },
           {
@@ -192,7 +191,7 @@ module.exports = [
               1339362514, // Stochastic Variable
               2581162758, // Enigma's Draw
               3329842376, // Memory Interdict
-              4145119417, // Heart of Time
+              4145119417 // Heart of Time
             ]
           },
           {
@@ -214,60 +213,6 @@ module.exports = [
   {
     name: 'Planetary Sets',
     sets: [
-      {
-        name: 'Mercury Gear',
-        description:
-          'Gear obtained by performing tasks for Brother Vance on Mercury.',
-        small: false,
-        sections: [
-          {
-            title: 'Lost Prophecy weapons',
-            items: [
-              472169727, // Garden Progeny 1
-              3991544423, // The Conqueror 2
-              3285365666, // Jack Queen King 3
-              161537636, // Machina Dei 4
-              2091737595, // Traveler's Judgment 5
-              3991544422, // Sol Pariah 6
-              3285365667, // West of Sunfall 7
-              161537637, // Infinite Paths 8
-              3188460622, // Null Calamity 9
-              1490571337, // Future Safe 10
-              2248667690, // Perfect Paradox
-            ]
-          },
-          {
-            title: 'Hunter armor',
-            items: [
-              952071004, // Kairos Function Mask
-              2348421845, // Kairos Function Grips
-              2638643915, // Kairos Function Vest
-              3924544055, // Kairos Function Boots
-              995360226 // Kairos Function Cloak
-            ]
-          },
-          {
-            title: 'Titan armor',
-            items: [
-              1768175752, // Kairos Function Helm
-              1115510041, // Kairos Function Gauntlets
-              578519423, // Kairos Function Plate
-              4007592459, // Kairos Function Greaves
-              2250032270 // Kairos Function Mark
-            ]
-          },
-          {
-            title: 'Warlock armor',
-            items: [
-              2062911883, // Kairos Function Crown
-              385169146, // Kairos Function Wraps
-              2926606926, // Kairos Function Robes
-              2066098484, // Kairos Function Boots
-              3669055767 // Kairos Function Bond
-            ]
-          }
-        ]
-      },
       {
         name: 'European Dead Zone Gear',
         description:
@@ -434,7 +379,7 @@ module.exports = [
               1909527966,
               2094938673,
               2850415209,
-              3854037061,
+              3854037061
             ]
           },
           {
@@ -482,7 +427,7 @@ module.exports = [
               137879537, // Curtain Call
               2290863050, // Persuader
               3445437901, // Main Ingredient
-              2168486467, // Wicked Sister
+              2168486467 // Wicked Sister
             ]
           },
 
@@ -538,7 +483,7 @@ module.exports = [
               4174481098, // Steel Sybil Z-14
               2660862359, // Gentleman Vagabond
               1773600468, // Critical Sass
-              2621637518, // Play of the Game
+              2621637518 // Play of the Game
             ]
           },
           {
@@ -588,43 +533,7 @@ module.exports = [
               2703340117, // Somerled-D
               2398848320, // Erentil FR4
               896923850, // Acantha-D
-              3778520449, // Jiangshi AR4
-            ]
-          }
-        ]
-      },
-
-      {
-        name: 'Bright Engram, Eververse Season 2',
-        sections: [
-          {
-            title: 'Hunter armor',
-            items: [
-              2277597261, // Omega Mechanos Mask
-              2930263100, // Omega Mechanos Grasps
-              3203735972, // Omega Mechanos Vest
-              2316071750, // Omega Mechanos Strides
-              3947566073 // Omega Mechanos Cloak
-            ]
-          },
-          {
-            title: 'Titan armor',
-            items: [
-              3838590505, // Omega Mechanos Helm
-              1629999520, // Omega Mechanos Gauntlets
-              2574287336, // Omega Mechanos Plate
-              324939098, // Omega Mechanos Greaves
-              4276384709 // Omega Mechanos Mark
-            ]
-          },
-          {
-            title: 'Warlock armor',
-            items: [
-              903593458, // Omega Mechanos Crown
-              1328369883, // Omega Mechanos Gloves
-              153589813, // Omega Mechanos Robes
-              4073377357, // Omega Mechanos Boots
-              3146151688 // Omega Mechanos Bond
+              3778520449 // Jiangshi AR4
             ]
           }
         ]
@@ -708,127 +617,161 @@ module.exports = [
       },
 
       {
-        name: 'Eververse, Season 2',
+        name: 'Eververse, Season 1',
         big: true,
         sections: [
           {
-            title: 'Emotes',
+            title: 'Hunter Armor',
             items: [
-              1368499525,
-              3633235162,
-              4019835247,
-              903864129,
-              1949295586,
-              2299313708,
-              2923026987,
-              3829550655,
-              4260536069,
-              871309441,
-              2078267281,
-              2574501094,
-              3117256915,
-              3877511792
+              1869779952, // Mask of Optimacy
+              1625986881, // Arms of Optimacy
+              369186071, // Vest of Optimacy
+              2696374963, // Legs of Optimacy
+              2497505510 // Cloak of Optimacy
+            ]
+          },
+          {
+            title: 'Titan Armor',
+            items: [
+              1638376198, // Helm of Optimacy
+              652336087, // Arms of Optimacy
+              415074081, // Plate of Optimacy
+              2460870905, // Legs of Optimacy
+              1197579132 // Mark of Optimacy
+            ]
+          },
+          {
+            title: 'Warlock Armor',
+            items: [
+              2956899553, // Hood of Optimacy
+              3794819064, // Arms of Optimacy
+              199852048, // Robes of Optimacy
+              1830086706, // Legs of Optimacy
+              3421974605 // Bond of Optimacy
             ]
           },
           {
             title: 'Ghosts',
             items: [
-              3681086675,
-              3681086674,
-              3681086673,
-              3681086672,
-              1271045323,
-              1271045322,
-              1271045319,
-              1271045318,
-              1271045317,
-              1271045316,
-              1271045315,
-              1271045314,
-              1271045313,
-              1271045312,
-              89965919,
-              89965918,
-              89965911,
-              89965910,
-              89965909,
-              89965908,
-              89965907,
-              89965906,
-              89965905,
-              89965904
+              2833999140, // Lambda Shell
+              2833999141, // Avalon Shell
+              2833999142, // Tower Shell
+              2833999143, // Blue Moon Shell
+              2833999136, // Number Two Shell
+              2833999137, // Starfire Shell
+              2833999138, // Jagged Shell
+              2833999139, // Kingfisher Shell
+              2833999148, // Graylight Shell
+              2833999149, // Heraldic Shell
+              261110023, // Half-Submerged Shell
+              261110022, // Interchange Shell
+              261110024, // Bold Shell
+              261110025, // Two of Diamonds Shell
+              261110026, // Honeycomb Shell
+              261110027, // Titan Shell
+              261110028, // Lotus Shell
+              261110030, // Warlock Shell
+              261110031, // Hunter Shell
+              261110029, // Competitive Shell
+              277887714, // Crescent Shell
+              277887715, // Hemisphere Shell
+              277887712, // Aggressive Shell
+              277887713, // Twilight Shell
+              277887718 // Vertical Shell
             ]
           },
           {
-            title: 'Ships',
+            title: 'Emotes',
             items: [
-              292872936,
-              292872937,
-              292872938,
-              292872939,
-              292872940,
-              292872941,
-              2924982631,
-              2924982630,
-              2924982629,
-              2924982628,
-              658724916,
-              658724917,
-              658724918,
-              658724919,
-              658724924,
-              658724925,
-              709057677,
-              530012779,
-              530012780,
-              530012781,
-              530012782,
-              530012783,
-              658724912,
-              658724913,
-              658724914,
-              658724915,
-              530012772,
-              530012773,
-              530012776,
-              530012777,
-              530012778
+              93029343, // Salty
+              93029342, // Flip Out
+              292778444, // Spicy Ramen
+              454583975, // Six Shooter
+              2543806755, // Funky Dance
+              412299646, // Dancehall
+              664042851, // Cranking Dance
+              938804347, // Odd Dance
+              3129418034, // Taunt Dance
+              3872116425, // Confused
+              1120064792, // Flowing Dance
+              718136887, // Bureaucratic Walk
+              2741695224, // Floss Dance
+              1061186327, // Shuffle Dance
+              4223882778, // Shoulder Dance
+              2649911453, // Dancy Dance
+              1177179936, // Play Dead
+              1954221115, // You're the Guardian
+              2870168892, // Sneaky
+              4187524534, // Don the Hat
+              3199368173, // Huddle Up
+              3811760832, // Gallop
+              1294717622, // Sick
+              2526538979, // Get Up
+              3526028978, // Sadness
+              333041308 // Good Idea
             ]
           },
           {
             title: 'Sparrows',
             items: [
-              3081894947,
-              3081894946,
-              3081894944,
-              3610177565,
-              3610177564,
-              3610177559,
-              3610177558,
-              3610177557,
-              3610177556,
-              3538153295,
-              3588486148,
-              3588486149,
-              3588486150,
-              3588486151,
-              3610177552,
-              3610177553,
-              3610177554,
-              3610177555,
-              3538153294,
-              3538153293,
-              3538153292,
-              3538153291,
-              3538153290,
-              3538153289,
-              3538153288,
-              3538153285,
-              3538153284,
-              1220495183,
-              1220495182,
-              1220495181,
-              1220495180
+              807458183, // Vanishing Point
+              807458182, // Dinas Emrys
+              807458181, // Hastilude
+              3889183914, // Fast Track
+              3889183915, // Crucible Courser
+              3889183912, // Athwart the Void
+              3889183913, // Aeon Plume
+              3889183918, // Wavechaser
+              3889183919, // Soul Velocity
+              3889183916, // Angel Bloom
+              3889183917, // Speedpunk
+              3889183906, // Chronoglass
+              3889183907, // Wind Shrike
+              2546958593, // October Dash
+              2546958592, // Sagittarius
+              2546958594, // Telluride
+              2546958597, // Skedaddle
+              2546958596, // Lunadove
+              2546958599, // Hightail
+              2546958598, // Wave-Maker
+              904825093, // Wayfarer Delta
+              904825092, // Wayfarer Tri
+              904825094, // Warbird
+              904825089, // Hyperion
+              904825088 // Dead-End Pro
+            ]
+          },
+          {
+            title: 'Ships',
+            items: [
+              2503134037, // Eriana's Vengeance
+              838210459, // Symmetry Flight
+              4209989368, // Takanome Wings
+              96858972, // Ego and Squid
+              3213307847, // The Bandwagon
+              1104161649, // Rose and Bone
+              2503134032, // BreakPoint
+              2503134038, // Cardinal One
+              2503134039, // Talon Blue
+              2503134036, // Shadowed Dawn
+              2503134042, // Helios Strain
+              838210457, // Imprint
+              838210456, // Alessa
+              4209989372, // Dead Fall
+              4209989373, // Sojourner
+              4209989370, // Captain Nemo
+              4209989371, // Alexandria
+              4209989369, // Absolute/MN
+              4209989366, // Amplitude/PT
+              96858973, // Ordinate/VD
+              4209989367, // Cartesian/KO
+              3213307843, // Leonid MV
+              3213307842, // Zenith SV
+              3213307845, // Eos Rapture
+              3213307844, // Space-Age Lancelot
+              3213307846, // Spectral Gain
+              3213307849, // Verona Mesh
+              3213307848 // High Line
             ]
           }
         ]
