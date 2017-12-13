@@ -23,6 +23,12 @@ export default class AppRouter extends Component {
           onEnter={onEnter}
         />
         <Route
+          path="/curse-of-osiris"
+          component={Gearsets}
+          variation="setsCoo"
+          onEnter={onEnter}
+        />
+        <Route
           path="/all-items"
           component={Gearsets}
           variation="allItems"

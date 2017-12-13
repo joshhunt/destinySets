@@ -19,6 +19,18 @@ const PLATFORM = {
   254: 'BungieNext'
 };
 
+function NavLink({ children, className, ...props }) {
+  return (
+    <Link
+      {...props}
+      className={cx(className, styles.navItem)}
+      activeClassName={styles.active}
+    >
+      <span>{children}</span>
+    </Link>
+  );
+}
+
 export default class Header extends React.Component {
   state = {
     accountSwitcherActive: false,
@@ -82,29 +94,13 @@ export default class Header extends React.Component {
               <span className={styles.version}>2</span>
             </Link>
 
-            <Link
-              to="/"
-              className={styles.navItem}
-              activeClassName={styles.active}
-            >
-              <span>Sets</span>
-            </Link>
+            <NavLink to="/">Sets</NavLink>
+            <NavLink to="/curse-of-osiris">Curse of Osiris</NavLink>
+            <NavLink to="/all-items">All Items</NavLink>
 
-            <Link
-              to="/all-items"
-              className={styles.navItem}
-              activeClassName={styles.active}
-            >
-              <span>All Items</span>
-            </Link>
-
-            <Link
-              to="/data"
-              className={cx(styles.navItem, styles.longName)}
-              activeClassName={styles.active}
-            >
-              <span>Data Explorer</span>
-            </Link>
+            <NavLink to="/data" className={styles.longName}>
+              Data Explorer
+            </NavLink>
           </div>
 
           <div className={styles.social}>

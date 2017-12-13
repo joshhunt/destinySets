@@ -7,12 +7,14 @@ import * as ls from 'app/lib/ls';
 
 // import { logItems, logSets } from './utils';
 import setsSets from '../sets.js';
+import cooSets from '../sets-coo.js';
 import allItemsSets from '../allItems.js';
 
 const log = require('app/lib/log')('processSets');
 
 const VARIATIONS = {
   sets: setsSets,
+  setsCoo: cooSets,
   allItems: allItemsSets
 };
 
