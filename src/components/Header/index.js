@@ -16,6 +16,25 @@ import ProfileSwitcher from './ProfileSwitcher';
 import styles from './styles.styl';
 import sidebarStyles from './sidebar.styl';
 
+const NAV_LINKS = [
+  {
+    to: '/',
+    label: 'Base'
+  },
+  {
+    to: '/curse-of-osiris',
+    label: 'Curse of Osiris'
+  },
+  {
+    to: '/all-items',
+    label: 'All Items'
+  },
+  {
+    to: '/data',
+    label: 'Data Explorer'
+  }
+];
+
 function NavLink({ children, className, ...props }) {
   return (
     <Link
@@ -106,13 +125,11 @@ class Header extends React.Component {
               <span className={styles.version}>2</span>
             </Link>
 
-            <NavLink to="/">Sets</NavLink>
-            <NavLink to="/curse-of-osiris">Curse of Osiris</NavLink>
-            <NavLink to="/all-items">All Items</NavLink>
-
-            <NavLink to="/data" className={styles.longName}>
-              Data Explorer
-            </NavLink>
+            {NAV_LINKS.map(({ to, label }) => (
+              <NavLink key={to} to={to}>
+                {label}
+              </NavLink>
+            ))}
           </div>
 
           <div className={styles.social}>
@@ -205,23 +222,11 @@ export default class FixedHeader extends Component {
           <span className={styles.version}>2</span>
         </Link>
 
-        <NavLink onClick={this.closeSidebar} to="/">
-          Sets
-        </NavLink>
-        <NavLink onClick={this.closeSidebar} to="/curse-of-osiris">
-          Curse of Osiris
-        </NavLink>
-        <NavLink onClick={this.closeSidebar} to="/all-items">
-          All Items
-        </NavLink>
-
-        <NavLink
-          onClick={this.closeSidebar}
-          to="/data"
-          className={styles.longName}
-        >
-          Data Explorer
-        </NavLink>
+        {NAV_LINKS.map(({ to, label }, index) => (
+          <NavLink key={to} onClick={this.closeSidebar} to={to}>
+            {label}
+          </NavLink>
+        ))}
       </div>
     );
 
@@ -239,6 +244,11 @@ export default class FixedHeader extends Component {
           open={this.state.sidebarOpen}
           onSetOpen={this.onSetSidebarOpen}
           sidebarClassName={sidebarStyles.sidebar}
+          styles={{
+            root: {
+              'pointer-events': this.state.sidebarOpen ? 'initial' : 'none'
+            }
+          }}
         >
           {' '}
         </Sidebar>
