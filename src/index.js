@@ -2,6 +2,7 @@ import 'isomorphic-fetch';
 
 import React from 'react';
 import ReactDOM from 'react-dom';
+import 'app/lib/autotrack.build';
 
 import AppRouter from './AppRouter';
 import './index.styl';
