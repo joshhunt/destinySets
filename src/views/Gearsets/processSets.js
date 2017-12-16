@@ -92,13 +92,17 @@ export default function processSets(args, dataCallback) {
   const rawGroups = sets.map(group => {
     const sets = group.sets.map(set => {
       const preSections = set.fancySearchTerm
-        ? sortItemsIntoSections(fancySearch(set.fancySearchTerm, allItems))
+        ? sortItemsIntoSections(
+            fancySearch(set.fancySearchTerm, { item: allItems })
+          )
         : set.sections;
 
       const sections = preSections.map(section => {
         const preItems =
           section.items ||
-          fancySearch(section.fancySearchTerm, allItems).map(i => i.hash);
+          fancySearch(section.fancySearchTerm, { item: allItems }).map(
+            i => i.hash
+          );
 
         if (!isArray(preItems)) {
           throw new Error('Section not in correct format');

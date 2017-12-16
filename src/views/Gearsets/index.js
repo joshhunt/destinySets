@@ -28,10 +28,8 @@ import filterSets, {
   SHOW_PS4_EXCLUSIVES
 } from './filterSets';
 import processSets from './processSets';
-
 import * as telemetry from 'app/lib/telemetry';
-
-import { PLAYSTATION } from 'app/views/DataExplorer/definitionSources';
+import { PLAYSTATION } from 'app/lib/destinyEnums';
 
 import styles from './styles.styl';
 
@@ -165,16 +163,7 @@ class Gearsets extends Component {
         fullName.push('PSN: ' + bungieNetUser.psnDisplayName);
       }
 
-      window.rg4js &&
-        window.rg4js('setUser', {
-          identifier: `${bungieNetUser.membershipId}`,
-          isAnonymous: false,
-          firstName: bungieNetUser.displayName,
-          fullName: fullName.join(', ')
-        });
-
       const { id, type } = ls.getPreviousAccount();
-
       if (!(id && type)) {
         return this.switchProfile(profiles[0]);
       }

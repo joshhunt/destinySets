@@ -1,49 +1,15 @@
-const src = (url, name, ...fields) => ({ url, name, fields });
+import { isArray } from 'lodash';
 
-export const TITAN = 0;
-export const HUNTER = 1;
-export const WARLOCK = 2;
+const src = (url, name, fields) => {
+  if (!isArray(fields)) {
+    console.log('url is fucked', url);
+  }
 
-// itemCategoryHashes
-export const CLASS_ITEMS = 49;
-export const WEAPON = 1;
-export const EMBLEM = 19;
-export const ARMOR = 20;
-export const GHOST = 39;
-export const SHADER = 41;
-export const SHIP = 42;
-export const SPARROW = 43;
-export const EMOTES = 44;
-export const MODS1 = 56;
-export const MODS2 = 59;
-export const CLAN_BANNER = 58;
-
-export const HELMET = 45;
-export const ARMS = 46;
-export const CHEST = 47;
-export const LEGS = 48;
-export const CLASS_ITEM = 49;
-
-export const KINETIC_WEAPON = 2;
-export const ENERGY_WEAPON = 3;
-export const POWER_WEAPON = 4;
-
-export const LEGENDARY = 4008398120;
-export const EXOTIC = 2759499571;
-export const UNCOMMON = 2395677314;
-export const RARE = 2127292149;
-export const COMMON = 3340296461;
-
-export const XBOX = 1;
-export const PLAYSTATION = 2;
-export const PC_BLIZZARD = 4;
-export const TIGERDEMON = 10;
-export const BUNGIENEXT = 254;
+  return { url, name, fields };
+};
 
 export default [
-  src(
-    'DestinyInventoryItemDefinition',
-    'Item',
+  src('DestinyInventoryItemDefinition', 'item', [
     'itemHash',
     'singleInitialItemHash',
     'plugItemHash',
@@ -52,72 +18,62 @@ export default [
     'emblemHash',
     'plugHash',
     'questlineItemHash'
-  ),
+  ]),
 
-  src(
-    'DestinyInventoryBucketDefinition',
-    'InventoryBucket',
+  src('DestinyInventoryBucketDefinition', 'inventoryBucket', [
     'bucketHash',
     'bucketTypeHash',
     'recoveryBucketTypeHash'
-  ),
+  ]),
 
-  src('DestinyItemTierTypeDefinition', 'ItemTierType', 'tierTypeHash'),
+  src('DestinyItemTierTypeDefinition', 'itemTierType', ['tierTypeHash']),
 
-  src('DestinyStatDefinition', 'Stat', 'statHash', 'statTypeHash'),
+  src('DestinyStatDefinition', 'stat', ['statHash', 'statTypeHash']),
 
-  src('DestinyStatGroupDefinition', 'StatGroup', 'statGroupHash'),
+  src('DestinyStatGroupDefinition', 'statGroup', ['statGroupHash']),
 
-  src('DestinyLoreDefinition', 'Lore', 'loreHash'),
+  src('DestinyLoreDefinition', 'lore', ['loreHash']),
 
-  src('DestinyVendorDefinition', 'Vendor', 'kioskItems', 'vendorHash'),
+  src('DestinyVendorDefinition', 'vendor', ['kioskItems', 'vendorHash']),
 
-  src('DestinyRaceDefinition', 'Race', 'raceHash'),
-  src('DestinyGenderDefinition', 'Gender', 'genderHash'),
-  src('DestinyClassDefinition', 'Class', 'classHash'),
+  src('DestinyRaceDefinition', 'race', ['raceHash']),
+  src('DestinyGenderDefinition', 'gender', ['genderHash']),
+  src('DestinyClassDefinition', 'class', ['classHash']),
 
-  src(
-    'DestinyActivityModeDefinition',
-    'ActivityMode',
+  src('DestinyActivityModeDefinition', 'activityMode', [
     'currentActivityModeHash',
     'currentActivityModeHashes'
-  ),
+  ]),
 
-  src(
-    'DestinyActivityDefinition',
-    'Activity',
+  src('DestinyActivityDefinition', 'activity', [
     'activityHash',
     'currentActivityHash',
     'currentPlaylistActivityHash'
-  ),
+  ]),
 
-  src('DestinyProgressionDefinition', 'Progress', 'progressionHash'),
+  src('DestinyProgressionDefinition', 'progress', ['progressionHash']),
 
-  src('DestinyDamageTypeDefinition', 'DamageType', 'damageTypeHash'),
+  src('DestinyDamageTypeDefinition', 'damageType', ['damageTypeHash']),
 
-  src('DestinySandboxPerkDefinition', 'Perk', 'perkHash'),
+  src('DestinySandboxPerkDefinition', 'perk', ['perkHash']),
 
   src(
     'DestinyProgressionLevelRequirementDefinition',
     'ProgressionLevelRequirement',
-    'progressionLevelRequirementHash'
+    ['progressionLevelRequirementHash']
   ),
 
-  src(
-    'DestinyItemCategoryDefinition',
-    'ItemCategory',
+  src('DestinyItemCategoryDefinition', 'itemCategory', [
     'categoryHash',
     'itemCategoryHashes',
     'groupedCategoryHashes'
-  ),
+  ]),
 
-  src(
-    'DestinySocketCategoryDefinition',
-    'SocketCategory',
+  src('DestinySocketCategoryDefinition', 'socketCategory', [
     'socketCategoryHash'
-  ),
+  ]),
 
-  src('DestinySocketTypeDefinition', 'SocketType', 'socketTypeHash'),
+  src('DestinySocketTypeDefinition', 'socketType', ['socketTypeHash']),
 
-  src('DestinyTalentGridDefinition', 'TalentGrid', 'talentGridHash')
+  src('DestinyTalentGridDefinition', 'talentGrid', ['talentGridHash'])
 ];

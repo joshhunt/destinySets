@@ -1,4 +1,4 @@
-import { intersection } from 'lodash';
+import { intersection, mapValues } from 'lodash';
 import _get from 'lodash/get';
 
 import setPages from 'app/setData';
@@ -27,7 +27,7 @@ import {
   UNCOMMON,
   RARE,
   COMMON
-} from './definitionSources';
+} from 'app/lib/destinyEnums';
 
 const get = (obj, term, opt) => _get(obj, term, '').toLowerCase();
 
@@ -82,7 +82,7 @@ const itemFilter = (items, fn) => {
 };
 
 export const fancySearchFns = {
-  'is:collectable': items => {
+  'is:collectable': ({ item: items }) => {
     return itemFilter(items, item => {
       if (!item.itemCategoryHashes) {
         return false;
@@ -96,72 +96,75 @@ export const fancySearchFns = {
     });
   },
 
-  'is:hunter': items => {
+  'is:hunter': ({ item: items }) => {
     return itemFilter(items, classType(HUNTER));
   },
 
-  'is:titan': items => {
+  'is:titan': ({ item: items }) => {
     return itemFilter(items, classType(TITAN));
   },
 
-  'is:warlock': items => {
+  'is:warlock': ({ item: items }) => {
     return itemFilter(items, classType(WARLOCK));
   },
 
-  'is:weapon': items => {
+  'is:weapon': ({ item: items }) => {
     return itemFilter(items, isWeapon);
   },
 
-  'is:kinetic': items => itemFilter(items, itemCategory(KINETIC_WEAPON)),
-  'is:energy': items => itemFilter(items, itemCategory(ENERGY_WEAPON)),
-  'is:power': items => itemFilter(items, itemCategory(POWER_WEAPON)),
+  'is:kinetic': ({ item: items }) =>
+    itemFilter(items, itemCategory(KINETIC_WEAPON)),
+  'is:energy': ({ item: items }) =>
+    itemFilter(items, itemCategory(ENERGY_WEAPON)),
+  'is:power': ({ item: items }) =>
+    itemFilter(items, itemCategory(POWER_WEAPON)),
 
-  'is:armor': items => {
+  'is:armor': ({ item: items }) => {
     return items.filter(isArmor);
   },
 
-  'is:gear': items => {
+  'is:gear': ({ item: items }) => {
     return itemFilter(items, item => {
       const categories = item.itemCategoryHashes || [];
       return categories.includes(ARMOR) || categories.includes(WEAPON);
     });
   },
 
-  'is:ghost': items => {
+  'is:ghost': ({ item: items }) => {
     return itemFilter(items, itemCategory(GHOST));
   },
 
-  'is:sparrow': items => {
+  'is:sparrow': ({ item: items }) => {
     return itemFilter(items, itemCategory(SPARROW));
   },
 
-  'is:ship': items => {
+  'is:ship': ({ item: items }) => {
     return itemFilter(items, itemCategory(SHIP));
   },
 
-  'is:shader': items => {
+  'is:shader': ({ item: items }) => {
     return itemFilter(items, itemCategory(SHADER));
   },
 
-  'is:emote': items => {
+  'is:emote': ({ item: items }) => {
     return itemFilter(items, itemCategory(EMOTES));
   },
 
-  'is:emblem': items => {
+  'is:emblem': ({ item: items }) => {
     return itemFilter(items, itemCategory(EMBLEM));
   },
 
-  'is:classitem': items => {
+  'is:classitem': ({ item: items }) => {
     return itemFilter(items, itemCategory(CLASS_ITEMS));
   },
 
-  'is:notinset': items => {
+  'is:notinset': ({ item: items }) => {
     return items.filter(item => {
       return !SET_ITEMS.includes(item.hash);
     });
   },
 
-  'is:transmat': items => {
+  'is:transmat': ({ item: items }) => {
     return items.filter(item => {
       const itdn = get(item, 'itemTypeDisplayName');
       const result = itdn.includes('transmat effect');
@@ -170,33 +173,33 @@ export const fancySearchFns = {
     });
   },
 
-  'is:exotic': items => {
+  'is:exotic': ({ item: items }) => {
     return itemFilter(items, isExotic);
   },
 
-  'is:legendary': items => {
+  'is:legendary': ({ item: items }) => {
     return itemFilter(items, isLegendary);
   },
 
-  'is:uncommon': items => {
+  'is:uncommon': ({ item: items }) => {
     return itemFilter(items, tierType(UNCOMMON));
   },
 
-  'is:rare': items => {
+  'is:rare': ({ item: items }) => {
     return itemFilter(items, tierType(RARE));
   },
 
-  'is:common': items => {
+  'is:common': ({ item: items }) => {
     return itemFilter(items, tierType(COMMON));
   },
 
-  'is:mod': items => {
+  'is:mod': ({ item: items }) => {
     return itemFilter(items, item => {
       return itemCategory(MODS1)(item) || itemCategory(MODS2)(item);
     });
   },
 
-  'is:ornament': items => {
+  'is:ornament': ({ item: items }) => {
     return itemFilter(items, item => {
       return (
         (itemCategory(MODS1)(item) || itemCategory(MODS2)(item)) &&
@@ -205,14 +208,14 @@ export const fancySearchFns = {
     });
   },
 
-  'is:clanbanner': items => {
+  'is:clanbanner': ({ item: items }) => {
     return itemFilter(items, itemCategory(CLAN_BANNER));
   }
 };
 
 export const fancySearchTerms = Object.keys(fancySearchFns);
 
-export function fancySearch(search, allItems, opts = { hashOnly: false }) {
+export function fancySearch(search, defs, opts = { hashOnly: false }) {
   const queries = search.split(' ').filter(s => s.includes(':'));
 
   const filteredItems = queries.reduce((items, query) => {
@@ -222,19 +225,22 @@ export function fancySearch(search, allItems, opts = { hashOnly: false }) {
       return items;
     }
 
-    return searchFunc(items, query);
-  }, allItems);
+    console.log('defs:', defs);
+    return searchFunc(defs, query);
+  }, defs.items);
 
-  if (filteredItems.length === allItems.length) {
+  if (filteredItems.length === defs.items.length) {
     return null;
   }
 
   return filteredItems;
 }
 
-export default function filterItems(searchTerm, allItems) {
+export default function filterDefinitions(searchTerm, _defs) {
+  const defs = mapValues(_defs, obj => Object.values(obj));
+
   if (searchTerm.length === 0) {
-    return getRandom(allItems.filter(item => !item.redacted), MAX_ITEMS);
+    return getRandom(defs.item.filter(item => !item.redacted), MAX_ITEMS);
   }
 
   if (searchTerm.length < 3) {
@@ -244,13 +250,13 @@ export default function filterItems(searchTerm, allItems) {
   const search = searchTerm.toLowerCase();
 
   if (search.includes(':')) {
-    return fancySearch(search, allItems);
+    return fancySearch(search, defs);
   }
 
   const searchAsNum = parseInt(searchTerm, 10);
   const maxItems = searchTerm.length > 4 ? 1000 : MAX_ITEMS;
 
-  const filteredItems = allItems
+  const filteredItems = defs.item
     .filter(item => {
       const name = get(item, 'displayProperties.name');
       const description = get(item, 'displayProperties.description');
