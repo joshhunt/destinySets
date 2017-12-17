@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { find } from 'lodash';
+import { find, mapValues } from 'lodash';
 
 import * as ls from 'app/lib/ls';
 import { getDefinition } from 'app/lib/manifestData';
@@ -61,9 +61,10 @@ class DataExplorer extends Component {
         const { defs, defsByField } = results.reduce(
           (acc, defs, index) => {
             const src = DATA_SOURCES[index];
-            const blob = { name: src.name, defs };
+            const typedDefs = mapValues(defs, d => ({ $type: src.name, ...d }));
+            const blob = { name: src.name, defs: typedDefs };
 
-            acc.defs[src.name] = defs;
+            acc.defs[src.name] = typedDefs;
 
             src.fields.forEach(field => {
               acc.defsByField[field] = blob;
@@ -76,6 +77,8 @@ class DataExplorer extends Component {
 
         this.defs = defs;
         this.defsByField = defsByField;
+
+        window.__DEFINITIONS = defs;
 
         this.setState({ loading: false });
         this.onFilterChange();
@@ -139,7 +142,9 @@ class DataExplorer extends Component {
 
     filteredItems &&
       this.setState({
-        items: filteredItems
+        items: filteredItems.sort(
+          (a, b) => (a.isDisplayable || a.redacted ? 1 : -1)
+        )
       });
   };
 
@@ -211,8 +216,8 @@ class DataExplorer extends Component {
               ) : (
                 <p className={styles.beta}>
                   Explore the entire Destiny 2 database.<br />Search by name or
-                  item hash, or by chainable search expressions:{' '}
-                  {fancySearchTerms.join(', ')}
+                  item hash, or by chainable search expressions. See bottom of
+                  page for terms.
                 </p>
               )}
             </div>
@@ -228,16 +233,23 @@ class DataExplorer extends Component {
             </div>
 
             <div className={styles.itemList}>
-              {items.map(item => (
+              {items.map((item, index) => (
                 <Item
                   onClick={this.onItemClick.bind(this, item)}
                   className={styles.item}
-                  key={item.hash}
+                  key={index}
                   supressTooltip={this.state.collectMode}
                   item={item}
                 />
               ))}
             </div>
+
+            <p className={styles.beta}>
+              {fancySearchTerms.join(', ')}
+              <br />
+              <br />
+              {DATA_SOURCES.map(d => `data:${d.name}`).join(', ')}
+            </p>
 
             {dataStack.length > 0 && (
               <div className={styles.dataViews}>

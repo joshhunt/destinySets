@@ -83,7 +83,7 @@ export default class Item extends Component {
       [styles.forSale]: item.forSale
     });
 
-    const { name, icon: _icon } = item.displayProperties;
+    const { name, icon: _icon } = item.displayProperties || { name: 'no name' };
     const icon = _icon || '/img/misc/missing_icon_d2.png';
 
     return (

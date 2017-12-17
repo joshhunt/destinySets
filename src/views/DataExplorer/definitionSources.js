@@ -1,12 +1,4 @@
-import { isArray } from 'lodash';
-
-const src = (url, name, fields) => {
-  if (!isArray(fields)) {
-    console.log('url is fucked', url);
-  }
-
-  return { url, name, fields };
-};
+const src = (url, name, fields) => ({ url, name, fields });
 
 export default [
   src('DestinyInventoryItemDefinition', 'item', [
@@ -75,5 +67,24 @@ export default [
 
   src('DestinySocketTypeDefinition', 'socketType', ['socketTypeHash']),
 
-  src('DestinyTalentGridDefinition', 'talentGrid', ['talentGridHash'])
+  src('DestinyTalentGridDefinition', 'talentGrid', ['talentGridHash']),
+
+  src('DestinyEnemyRaceDefinition', 'enemyRace', []),
+  src('DestinyPlaceDefinition', 'place', []),
+  src('DestinyActivityTypeDefinition', 'activityType', []),
+  src('DestinyFactionDefinition', 'faction', []),
+  src('DestinyVendorCategoryDefinition', 'vendorCategory', []),
+  src('DestinyRewardSourceDefinition', 'rewardSource', []),
+  src('DestinyMedalTierDefinition', 'medalTier', []),
+  src('DestinyActivityGraphDefinition', 'activityGraph', []),
+  src('DestinyBondDefinition', 'bond', []),
+  src('DestinyDestinationDefinition', 'destination', []),
+  src('DestinyEquipmentSlotDefinition', 'equipmentSlot', []),
+  src('DestinyLocationDefinition', 'location', []),
+  src('DestinyObjectiveDefinition', 'objective', ['objectiveHashes']),
+  src('DestinySackRewardItemListDefinition', 'sackRewardItemList', []),
+  src('DestinyMilestoneDefinition', 'milestone', []),
+  src('DestinyActivityModifierDefinition', 'activityModifier', []),
+  src('DestinyReportReasonCategoryDefinition', 'reportReasonCategory', []),
+  src('DestinyHistoricalStatsDefinition', 'historicalStats', [])
 ];
