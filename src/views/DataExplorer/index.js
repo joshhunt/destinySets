@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { find } from 'lodash';
 
-import * as destiny from 'app/lib/destiny';
 import * as ls from 'app/lib/ls';
 import { getDefinition } from 'app/lib/manifestData';
 
@@ -13,7 +12,7 @@ import copy from 'app/lib/copyToClipboard';
 import sortItemsIntoSections from './sortItemsIntoSections';
 import DataViewer from './DataView';
 import CollectionSidebar from './CollectionSidebar';
-import filterItems, { fancySearchTerms } from './filterItems';
+import filterDefinitions, { fancySearchTerms } from './filterItems';
 
 import DATA_SOURCES from './definitionSources';
 
@@ -57,29 +56,26 @@ class DataExplorer extends Component {
       })
     );
 
-    window.__dataExplorerExploreProfiles = () => {
-      this.onItemClick(window.__PROFILES);
-    };
-
     Promise.all(dataPromises)
       .then(results => {
-        this.data = results.reduce((acc, defs, index) => {
-          const src = DATA_SOURCES[index];
-          const blob = { name: src.name, defs };
+        const { defs, defsByField } = results.reduce(
+          (acc, defs, index) => {
+            const src = DATA_SOURCES[index];
+            const blob = { name: src.name, defs };
 
-          src.fields.forEach(field => {
-            acc[field] = blob;
-          });
+            acc.defs[src.name] = defs;
 
-          return acc;
-        }, {});
+            src.fields.forEach(field => {
+              acc.defsByField[field] = blob;
+            });
 
-        this.allItems = Object.values(this.data.itemHash.defs).map(item => {
-          return {
-            $obtained: this.inventory.includes(item.hash),
-            ...item
-          };
-        });
+            return acc;
+          },
+          { defs: {}, defsByField: {} }
+        );
+
+        this.defs = defs;
+        this.defsByField = defsByField;
 
         this.setState({ loading: false });
         this.onFilterChange();
@@ -137,20 +133,9 @@ class DataExplorer extends Component {
     this.updateCollection();
   };
 
-  loadProfile = () => {
-    if (!this.props.isAuthenticated) {
-      alert('Not authenticated yet. Please wait!');
-      return;
-    }
-
-    destiny.getCurrentProfiles().then(profiles => {
-      this.pushItem(profiles);
-    });
-  };
-
   onFilterChange = ev => {
     const search = ev ? ev.target.value : '';
-    const filteredItems = filterItems(search, this.allItems);
+    const filteredItems = filterDefinitions(search, this.defs);
 
     filteredItems &&
       this.setState({
@@ -242,8 +227,6 @@ class DataExplorer extends Component {
               />
             </div>
 
-            {/*<button onClick={this.loadProfile}>View Profile</button>*/}
-
             <div className={styles.itemList}>
               {items.map(item => (
                 <Item
@@ -269,7 +252,7 @@ class DataExplorer extends Component {
                     <div className={styles.dataSlideInner}>
                       <DataViewer
                         className={styles.dataView}
-                        data={this.data}
+                        data={this.defsByField}
                         item={data}
                         onItemClick={this.pushItem}
                       />

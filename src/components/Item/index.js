@@ -119,17 +119,19 @@ export default class Item extends Component {
           </div>
         </div>
 
-        <ToolTip
-          style={tooltipStyle}
-          active={this.state.isTooltipActive}
-          position="right"
-          arrow="center"
-          parent={`#item${item.hash}`}
-          className={styles.tooltip}
-          tooltipTimeout={0}
-        >
-          <ItemTooltip key={item.hash} item={item} />
-        </ToolTip>
+        {item.inventory && (
+          <ToolTip
+            style={tooltipStyle}
+            active={this.state.isTooltipActive}
+            position="right"
+            arrow="center"
+            parent={`#item${item.hash}`}
+            className={styles.tooltip}
+            tooltipTimeout={0}
+          >
+            <ItemTooltip key={item.hash} item={item} />
+          </ToolTip>
+        )}
       </div>
     );
   }

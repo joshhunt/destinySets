@@ -5,6 +5,10 @@ import { isString } from 'lodash';
 
 import s from './dataViewStyles.styl';
 
+function toTitleCase(str) {
+  return str.charAt(0).toUpperCase() + str.substr(1);
+}
+
 export default class DataView extends Component {
   valueRenderer = (prettyValue, rawValue, ...itemPath) => {
     const [fieldName, parentFieldName] = itemPath;
@@ -49,7 +53,9 @@ export default class DataView extends Component {
       <span
         onClick={this.onItemClick.bind(this, item)}
         className={s.jsonLinkedValue}
-      >{`<${defsForHash.name} ${displayName} ${prettyValue}>`}</span>
+      >{`<${toTitleCase(defsForHash.name)} ${displayName} ${
+        prettyValue
+      }>`}</span>
     );
   };
 

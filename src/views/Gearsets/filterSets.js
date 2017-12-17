@@ -1,10 +1,6 @@
 import { flatMapSetItems } from './utils';
 
-import {
-  HUNTER,
-  TITAN,
-  WARLOCK
-} from 'app/views/DataExplorer/definitionSources';
+import { HUNTER, TITAN, WARLOCK } from 'app/lib/destinyEnums';
 
 import consoleExclusives from '../consoleExclusives.js';
 

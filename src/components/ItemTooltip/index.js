@@ -9,7 +9,7 @@ import {
   UNCOMMON,
   RARE,
   COMMON
-} from 'app/views/DataExplorer/definitionSources';
+} from 'app/lib/destinyEnums';
 
 const TIER_STYLE = {
   [EXOTIC]: styles.exotic,

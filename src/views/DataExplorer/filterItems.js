@@ -1,4 +1,4 @@
-import { intersection } from 'lodash';
+import { intersection, mapValues, flatMap } from 'lodash';
 import _get from 'lodash/get';
 
 import setPages from 'app/setData';
@@ -27,7 +27,7 @@ import {
   UNCOMMON,
   RARE,
   COMMON
-} from './definitionSources';
+} from 'app/lib/destinyEnums';
 
 const get = (obj, term, opt) => _get(obj, term, '').toLowerCase();
 
@@ -212,7 +212,7 @@ export const fancySearchFns = {
 
 export const fancySearchTerms = Object.keys(fancySearchFns);
 
-export function fancySearch(search, allItems, opts = { hashOnly: false }) {
+export function fancySearch(search, defs, opts = { hashOnly: false }) {
   const queries = search.split(' ').filter(s => s.includes(':'));
 
   const filteredItems = queries.reduce((items, query) => {
@@ -223,18 +223,29 @@ export function fancySearch(search, allItems, opts = { hashOnly: false }) {
     }
 
     return searchFunc(items, query);
-  }, allItems);
+  }, defs.item);
 
-  if (filteredItems.length === allItems.length) {
+  if (filteredItems.length === defs.item.length) {
     return null;
   }
 
   return filteredItems;
 }
 
-export default function filterItems(searchTerm, allItems) {
+function listForDefinition(search, defs) {
+  const match = search.match(/data:(\w+)/);
+  if (!(match && match[1])) {
+    return [];
+  }
+
+  return defs[match[1]];
+}
+
+export default function filterDefinitions(searchTerm, _defs) {
+  const defs = mapValues(_defs, obj => Object.values(obj));
+
   if (searchTerm.length === 0) {
-    return getRandom(allItems.filter(item => !item.redacted), MAX_ITEMS);
+    return getRandom(defs.item.filter(item => !item.redacted), MAX_ITEMS);
   }
 
   if (searchTerm.length < 3) {
@@ -243,27 +254,35 @@ export default function filterItems(searchTerm, allItems) {
 
   const search = searchTerm.toLowerCase();
 
+  if (search.includes('data:')) {
+    return listForDefinition(search, defs);
+  }
+
   if (search.includes(':')) {
-    return fancySearch(search, allItems);
+    return fancySearch(search, defs);
   }
 
   const searchAsNum = parseInt(searchTerm, 10);
   const maxItems = searchTerm.length > 4 ? 1000 : MAX_ITEMS;
 
-  const filteredItems = allItems
-    .filter(item => {
-      const name = get(item, 'displayProperties.name');
-      const description = get(item, 'displayProperties.description');
-      const itemType = get(item, 'itemTypeDisplayName');
+  const filteredItems = flatMap(Object.values(defs), dataList => {
+    return dataList
+      .filter(item => {
+        const name = get(item, 'displayProperties.name');
+        const description = get(item, 'displayProperties.description');
+        const itemType = get(item, 'itemTypeDisplayName');
+        const vendorIdentifier = get(item, 'vendorIdentifier');
 
-      return (
-        name.includes(search) ||
-        description.includes(search) ||
-        itemType.includes(search) ||
-        item.hash === searchAsNum
-      );
-    })
-    .slice(0, maxItems);
+        return (
+          name.includes(search) ||
+          description.includes(search) ||
+          itemType.includes(search) ||
+          vendorIdentifier.includes(search) ||
+          item.hash === searchAsNum
+        );
+      })
+      .slice(0, maxItems);
+  });
 
   return filteredItems;
 }

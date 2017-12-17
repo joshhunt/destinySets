@@ -17,7 +17,7 @@ import {
   CHEST,
   LEGS,
   CLASS_ITEM
-} from './definitionSources';
+} from 'app/lib/destinyEnums';
 
 const tierTypeNameValue = {
   Common: 4,
