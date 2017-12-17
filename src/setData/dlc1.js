@@ -12,29 +12,29 @@ module.exports = [
             items: [
               3346055334, // Eater of Worlds Ornament
               2519280691, // Eater of Worlds Ornament
+              3179514973, // Eater of Worlds Ornament
               2899660517, // Eater of Worlds Ornament
-              1928662068, // Eater of Worlds Ornament
-              3179514973 // Eater of Worlds Ornament
+              1928662068 // Eater of Worlds Ornament
             ]
           },
           {
             title: 'Titan Ornaments',
             items: [
               3036703920, // Eater of Worlds Ornament
-              2380365371, // Eater of Worlds Ornament
-              3991114670, // Eater of Worlds Ornament
               3093970453, // Eater of Worlds Ornament
-              1815512839 // Eater of Worlds Ornament
+              2380365371, // Eater of Worlds Ornament
+              1815512839, // Eater of Worlds Ornament
+              3991114670 // Eater of Worlds Ornament
             ]
           },
           {
             title: 'Warlock Ornaments',
             items: [
               1397648181, // Eater of Worlds Ornament
-              2837735361, // Eater of Worlds Ornament
+              1575703224, // Eater of Worlds Ornament
               3163954768, // Eater of Worlds Ornament
               4135965162, // Eater of Worlds Ornament
-              1575703224 // Eater of Worlds Ornament
+              2837735361 // Eater of Worlds Ornament
             ]
           }
         ]
