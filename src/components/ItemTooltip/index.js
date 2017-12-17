@@ -54,6 +54,8 @@ class FancyImage extends Component {
 export default function ItemTooltip({ item }) {
   const tier = item.inventory.tierTypeHash || '';
   const icon = item.displayProperties.icon || '/img/misc/missing_icon_d2.png';
+  const name =
+    (item.displayProperties && item.displayProperties.name) || 'no name';
 
   return (
     <div className={cx(styles.tooltip, TIER_STYLE[tier])}>
@@ -62,7 +64,7 @@ export default function ItemTooltip({ item }) {
           <FancyImage src={`https://bungie.net${icon}`} />
         </div>
         <div className={styles.headerContent}>
-          <div className={styles.title}>{item.displayProperties.name}</div>
+          <div className={styles.title}>{name}</div>
           <div className={styles.subtitle}>
             <span>{item.itemTypeDisplayName}</span>
             <span>{item.inventory.tierTypeName}</span>
