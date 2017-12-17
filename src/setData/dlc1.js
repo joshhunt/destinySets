@@ -3,19 +3,38 @@ module.exports = [
     name: 'Endgame',
     sets: [
       {
-        name: 'Iron Banner',
+        name: 'Leviathan Raid',
         description:
-          'Weapons and armor obtained by honoring the heroes of old in the Iron Banner Crucible tournament.',
+          'Ornaments obtained by completing challenges in The Leviathan',
         sections: [
           {
-            title: 'Weapons',
+            title: 'Hunter Ornaments',
             items: [
-              1369487074, // Orimund's Anvil
-              3649055823, // Crimil's Dagger
-              622058944, // Jorum's Claw
-              3005104939, // Frostmire's Hex
-              94729174, // Gunnora's Axe
-              1870979911 // Orewing's Maul
+              3346055334, // Eater of Worlds Ornament
+              2519280691, // Eater of Worlds Ornament
+              2899660517, // Eater of Worlds Ornament
+              1928662068, // Eater of Worlds Ornament
+              3179514973 // Eater of Worlds Ornament
+            ]
+          },
+          {
+            title: 'Titan Ornaments',
+            items: [
+              3036703920, // Eater of Worlds Ornament
+              2380365371, // Eater of Worlds Ornament
+              3991114670, // Eater of Worlds Ornament
+              3093970453, // Eater of Worlds Ornament
+              1815512839 // Eater of Worlds Ornament
+            ]
+          },
+          {
+            title: 'Warlock Ornaments',
+            items: [
+              1397648181, // Eater of Worlds Ornament
+              2837735361, // Eater of Worlds Ornament
+              3163954768, // Eater of Worlds Ornament
+              4135965162, // Eater of Worlds Ornament
+              1575703224 // Eater of Worlds Ornament
             ]
           }
         ]
@@ -61,6 +80,24 @@ module.exports = [
               2329031091, // Robes of Sekris
               340118991, // Boots of Sekris
               239489770 // Bond of Sekris
+            ]
+          }
+        ]
+      },
+      {
+        name: 'Iron Banner',
+        description:
+          'Weapons and armor obtained by honoring the heroes of old in the Iron Banner Crucible tournament.',
+        sections: [
+          {
+            title: 'Weapons',
+            items: [
+              1369487074, // Orimund's Anvil
+              3649055823, // Crimil's Dagger
+              622058944, // Jorum's Claw
+              3005104939, // Frostmire's Hex
+              94729174, // Gunnora's Axe
+              1870979911 // Orewing's Maul
             ]
           }
         ]
