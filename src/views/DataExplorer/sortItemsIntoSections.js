@@ -48,7 +48,12 @@ export default function sortItems(_items, verbose = false) {
 
   const _sectionItems = groupBy(items, item => {
     // this works in english only
-    if (item.itemTypeDisplayName.toLowerCase().includes('ornament')) {
+    if (
+      item.inventory &&
+      item.inventory.stackUniqueLabel &&
+      item.itemTypeDisplayName &&
+      item.itemTypeDisplayName.toLowerCase().includes('ornament')
+    ) {
       if (item.inventory.stackUniqueLabel.includes('warlock')) {
         return WARLOCK;
       } else if (item.inventory.stackUniqueLabel.includes('titan')) {

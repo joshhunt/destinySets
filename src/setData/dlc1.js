@@ -101,6 +101,23 @@ module.exports = [
             ]
           }
         ]
+      },
+      {
+        name: 'Trials of the Nine',
+        description:
+          'Weapons and armor obtained by competing in the Trials of the Nine.',
+        sections: [
+          {
+            title: 'Weapons',
+            items: [
+              // Curse of Osiris
+              1503609584, // The Last Breath
+              2516360525, // Purpose
+              325519402, // Darkest Before
+              2071412133 // A Cold Sweat
+            ]
+          }
+        ]
       }
     ]
   },
@@ -164,7 +181,7 @@ module.exports = [
     ]
   },
   {
-    name: 'Planetary Sets',
+    name: 'Other',
     sets: [
       {
         name: 'Mercury Gear',
@@ -216,29 +233,6 @@ module.exports = [
               2926606926, // Kairos Function Robes
               2066098484, // Kairos Function Boots
               3669055767 // Kairos Function Bond
-            ]
-          }
-        ]
-      }
-    ]
-  },
-
-  {
-    name: 'Vendor',
-    sets: [
-      {
-        name: 'Trials of the Nine',
-        description:
-          'Weapons and armor obtained by competing in the Trials of the Nine.',
-        sections: [
-          {
-            title: 'Weapons',
-            items: [
-              // Curse of Osiris
-              1503609584, // The Last Breath
-              2516360525, // Purpose
-              325519402, // Darkest Before
-              2071412133 // A Cold Sweat
             ]
           }
         ]
@@ -309,13 +303,7 @@ module.exports = [
             ]
           }
         ]
-      }
-    ]
-  },
-
-  {
-    name: 'Other',
-    sets: [
+      },
       {
         name: 'Eververse, Season 2',
         big: true,
