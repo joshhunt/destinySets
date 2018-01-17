@@ -110,6 +110,12 @@ export default class Item extends Component {
         className={cx(rootClassName, className)}
         data-class={item.dClass}
       >
+        {globalItemCount && (
+          <div className={styles.countOverlay}>
+            {Math.round(this.state.globalItemCount * 100)}%
+          </div>
+        )}
+
         <div className={styles.accessory}>
           <a className={styles.link} {...dtrProps}>
             <img

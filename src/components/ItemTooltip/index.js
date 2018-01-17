@@ -87,9 +87,9 @@ export default function ItemTooltip({ item, globalItemCount }) {
         )}
 
         {globalItemCount && (
-          <div className={styles.inventory}>
-            Global obtained count: {globalItemCount}
-          </div>
+          <p className={styles.inventory}>
+            {Math.round(globalItemCount * 100)}% of DestinySets users have this.
+          </p>
         )}
 
         {item.$dismantled && (
