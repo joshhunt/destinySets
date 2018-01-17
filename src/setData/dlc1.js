@@ -14,8 +14,8 @@ module.exports = [
               2519280691, // Eater of Worlds Ornament
               3179514973, // Eater of Worlds Ornament
               2899660517, // Eater of Worlds Ornament
-              1928662068 // Eater of Worlds Ornament
-            ]
+              1928662068, // Eater of Worlds Ornament
+            ],
           },
           {
             title: 'Titan Ornaments',
@@ -24,8 +24,8 @@ module.exports = [
               3093970453, // Eater of Worlds Ornament
               2380365371, // Eater of Worlds Ornament
               1815512839, // Eater of Worlds Ornament
-              3991114670 // Eater of Worlds Ornament
-            ]
+              3991114670, // Eater of Worlds Ornament
+            ],
           },
           {
             title: 'Warlock Ornaments',
@@ -34,10 +34,10 @@ module.exports = [
               1575703224, // Eater of Worlds Ornament
               3163954768, // Eater of Worlds Ornament
               4135965162, // Eater of Worlds Ornament
-              2837735361 // Eater of Worlds Ornament
-            ]
-          }
-        ]
+              2837735361, // Eater of Worlds Ornament
+            ],
+          },
+        ],
       },
       {
         name: 'Eater of Worlds, Raid Lair',
@@ -48,8 +48,8 @@ module.exports = [
             title: 'Weapons',
             items: [
               3886263130, // I Am Alive
-              2707464805 // Zenith of Your Kind
-            ]
+              2707464805, // Zenith of Your Kind
+            ],
           },
 
           {
@@ -59,8 +59,8 @@ module.exports = [
               2339720736, // Grips of Feltroc
               2976612200, // Vest of Feltroc
               1034660314, // Boots of Feltroc
-              383742277 // Cloak of Feltroc
-            ]
+              383742277, // Cloak of Feltroc
+            ],
           },
           {
             title: 'Titan armor',
@@ -69,8 +69,8 @@ module.exports = [
               666883012, // Gauntlets of Nohr
               1242139836, // Plate of Nohr
               2597529070, // Greaves of Nohr
-              2994007601 // Mark of Nohr
-            ]
+              2994007601, // Mark of Nohr
+            ],
           },
           {
             title: 'Warlock armor',
@@ -79,10 +79,10 @@ module.exports = [
               3964287245, // Wraps of Sekris
               2329031091, // Robes of Sekris
               340118991, // Boots of Sekris
-              239489770 // Bond of Sekris
-            ]
-          }
-        ]
+              239489770, // Bond of Sekris
+            ],
+          },
+        ],
       },
       {
         name: 'Iron Banner',
@@ -97,10 +97,10 @@ module.exports = [
               622058944, // Jorum's Claw
               3005104939, // Frostmire's Hex
               94729174, // Gunnora's Axe
-              1870979911 // Orewing's Maul
-            ]
-          }
-        ]
+              1870979911, // Orewing's Maul
+            ],
+          },
+        ],
       },
       {
         name: 'Trials of the Nine',
@@ -114,20 +114,20 @@ module.exports = [
               1503609584, // The Last Breath
               2516360525, // Purpose
               325519402, // Darkest Before
-              2071412133 // A Cold Sweat
-            ]
-          }
-        ]
-      }
-    ]
+              2071412133, // A Cold Sweat
+            ],
+          },
+        ],
+      },
+    ],
   },
   {
     name: 'Factions',
     sets: [
       {
         name: 'Dead Orbit Arsenal',
-        description:
-          'Weapons and armor obtained by working with Dead Orbit in their mission to push beyond the solar system.',
+        description: 'These items are not (yet) dropping from Faction Rally',
+        // 'Weapons and armor obtained by working with Dead Orbit in their mission to push beyond the solar system. Note: these items are not (yet) dropping from Faction Rally',
         small: true,
         sections: [
           {
@@ -137,15 +137,15 @@ module.exports = [
               1587779165, // Radiant Stardust
               1842303080, // Hollow Earth
               1813667283, // Dead-Ender
-              2738174948 // Distant Tumulus
-            ]
-          }
-        ]
+              2738174948, // Distant Tumulus
+            ],
+          },
+        ],
       },
       {
         name: 'New Monarchy Arsenal',
-        description:
-          'Weapons and armor obtained by working with New Monarchy to strengthen the Last City.',
+        description: 'These items are not (yet) dropping from Faction Rally',
+        // 'Weapons and armor obtained by working with New Monarchy to strengthen the Last City.  Note: these items are not (yet) dropping from Faction Rally',
         small: true,
         sections: [
           {
@@ -155,15 +155,15 @@ module.exports = [
               1760543913, // Legal Action II
               1531295694, // Adverse Possession IX
               1443049976, // Interference VI
-              2478247171 // Quitclaim Shotgun III
-            ]
-          }
-        ]
+              2478247171, // Quitclaim Shotgun III
+            ],
+          },
+        ],
       },
       {
         name: 'Future War Cult Arsenal',
-        description:
-          'Weapons and armor obtained by working with Future War Cult to prepare for the wars to come.',
+        description: 'These items are not (yet) dropping from Faction Rally',
+        // 'Weapons and armor obtained by working with Future War Cult to prepare for the wars to come.  Note: these items are not (yet) dropping from Faction Rally',
         small: true,
         sections: [
           {
@@ -173,12 +173,12 @@ module.exports = [
               3826803617, // The Dream
               2817949113, // The Defiant
               3929685100, // The Deicide
-              4272442416 // THe Domino
-            ]
-          }
-        ]
-      }
-    ]
+              4272442416, // THe Domino
+            ],
+          },
+        ],
+      },
+    ],
   },
   {
     name: 'Other',
@@ -202,8 +202,8 @@ module.exports = [
               161537637, // Infinite Paths 8
               3188460622, // Null Calamity 9
               1490571337, // Future Safe 10
-              2248667690 // Perfect Paradox
-            ]
+              2248667690, // Perfect Paradox
+            ],
           },
           {
             title: 'Hunter armor',
@@ -212,8 +212,8 @@ module.exports = [
               2348421845, // Kairos Function Grips
               2638643915, // Kairos Function Vest
               3924544055, // Kairos Function Boots
-              995360226 // Kairos Function Cloak
-            ]
+              995360226, // Kairos Function Cloak
+            ],
           },
           {
             title: 'Titan armor',
@@ -222,8 +222,8 @@ module.exports = [
               1115510041, // Kairos Function Gauntlets
               578519423, // Kairos Function Plate
               4007592459, // Kairos Function Greaves
-              2250032270 // Kairos Function Mark
-            ]
+              2250032270, // Kairos Function Mark
+            ],
           },
           {
             title: 'Warlock armor',
@@ -232,10 +232,10 @@ module.exports = [
               385169146, // Kairos Function Wraps
               2926606926, // Kairos Function Robes
               2066098484, // Kairos Function Boots
-              3669055767 // Kairos Function Bond
-            ]
-          }
-        ]
+              3669055767, // Kairos Function Bond
+            ],
+          },
+        ],
       },
 
       {
@@ -250,10 +250,10 @@ module.exports = [
               3393130645, // Positive Outlook
               2957542878, // Living Memory
               1927800278, // Eternal Blazon
-              3551104348 // Double-Edged Answer
-            ]
-          }
-        ]
+              3551104348, // Double-Edged Answer
+            ],
+          },
+        ],
       },
 
       {
@@ -267,10 +267,10 @@ module.exports = [
               1674742470, // Autumn Wind
               468276817, // Nature of the Beast
               1084788061, // Swift Solstice
-              2792181427 // Tiebreaker
-            ]
-          }
-        ]
+              2792181427, // Tiebreaker
+            ],
+          },
+        ],
       },
 
       {
@@ -299,10 +299,10 @@ module.exports = [
               3005879473, // Crooked Fang-4fr
               4105447486, // Nox Veneris II
               4105447487, // Elatha FR4
-              4213221671 // Sunrise GL4
-            ]
-          }
-        ]
+              4213221671, // Sunrise GL4
+            ],
+          },
+        ],
       },
       {
         name: 'Eververse, Season 2',
@@ -315,8 +315,8 @@ module.exports = [
               2930263100, // Omega Mechanos Grasps
               3203735972, // Omega Mechanos Vest
               2316071750, // Omega Mechanos Strides
-              3947566073 // Omega Mechanos Cloak
-            ]
+              3947566073, // Omega Mechanos Cloak
+            ],
           },
           {
             title: 'Titan armor',
@@ -325,8 +325,8 @@ module.exports = [
               1629999520, // Omega Mechanos Gauntlets
               2574287336, // Omega Mechanos Plate
               324939098, // Omega Mechanos Greaves
-              4276384709 // Omega Mechanos Mark
-            ]
+              4276384709, // Omega Mechanos Mark
+            ],
           },
           {
             title: 'Warlock armor',
@@ -335,8 +335,8 @@ module.exports = [
               1328369883, // Omega Mechanos Gloves
               153589813, // Omega Mechanos Robes
               4073377357, // Omega Mechanos Boots
-              3146151688 // Omega Mechanos Bond
-            ]
+              3146151688, // Omega Mechanos Bond
+            ],
           },
           {
             title: 'Emotes',
@@ -354,8 +354,8 @@ module.exports = [
               2078267281,
               2574501094,
               3117256915,
-              3877511792
-            ]
+              3877511792,
+            ],
           },
           {
             title: 'Ghosts',
@@ -389,8 +389,8 @@ module.exports = [
               89965907,
               89965906,
               89965905,
-              89965904
-            ]
+              89965904,
+            ],
           },
           {
             title: 'Ships',
@@ -425,8 +425,8 @@ module.exports = [
               530012773,
               530012776,
               530012777,
-              530012778
-            ]
+              530012778,
+            ],
           },
           {
             title: 'Sparrows',
@@ -461,11 +461,11 @@ module.exports = [
               1220495183,
               1220495182,
               1220495181,
-              1220495180
-            ]
-          }
-        ]
-      }
-    ]
-  }
+              1220495180,
+            ],
+          },
+        ],
+      },
+    ],
+  },
 ];
