@@ -8,7 +8,7 @@ import {
   EXOTIC,
   UNCOMMON,
   RARE,
-  COMMON
+  COMMON,
 } from 'app/lib/destinyEnums';
 
 const TIER_STYLE = {
@@ -16,12 +16,12 @@ const TIER_STYLE = {
   [LEGENDARY]: styles.legendary,
   [UNCOMMON]: styles.common,
   [RARE]: styles.rare,
-  [COMMON]: styles.basic
+  [COMMON]: styles.basic,
 };
 
 class FancyImage extends Component {
   state = {
-    loaded: false
+    loaded: false,
   };
 
   onLoad = () => {
@@ -32,7 +32,7 @@ class FancyImage extends Component {
     const { className, ...props } = this.props;
     const styles = {
       opacity: 0,
-      transition: 'opacity 300ms ease-in-out'
+      transition: 'opacity 300ms ease-in-out',
     };
 
     if (this.state.loaded) {
@@ -51,7 +51,7 @@ class FancyImage extends Component {
   }
 }
 
-export default function ItemTooltip({ item }) {
+export default function ItemTooltip({ item, globalItemCount }) {
   const tier = item.inventory.tierTypeHash || '';
   const icon = item.displayProperties.icon || '/img/misc/missing_icon_d2.png';
   const name =
@@ -83,6 +83,12 @@ export default function ItemTooltip({ item }) {
               className={styles.screenshot}
               src={`https://bungie.net${item.screenshot}`}
             />
+          </div>
+        )}
+
+        {globalItemCount && (
+          <div className={styles.inventory}>
+            Global obtained count: {globalItemCount}
           </div>
         )}
 

@@ -4,6 +4,7 @@
   margin-bottom: 15px
 
   &.obtained
+  &.globallyObtained
     opacity: .35
 
   &.small
@@ -29,11 +30,15 @@
     color: white
     letter-spacing: -2px
 
+  .globallyObtained &:after
   .obtained &:after
     content: '✓'
     display: flex
     background: #27ae60
     color: white
+
+  .globallyObtained &:after
+    background: #3498db
 
   .forSale &:after
     content: '$'

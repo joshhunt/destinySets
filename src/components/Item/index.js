@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import cx from 'classnames';
 
 import ItemTooltip from 'app/components/ItemTooltip';
+import { getInventoryStats } from 'app/lib/telemetry';
 
 import ToolTip from 'app/components/ReactPortalTooltip';
 
@@ -10,7 +11,7 @@ import styles from './styles.styl';
 const CLASS_TYPE = {
   0: 'Titan',
   1: 'Hunter',
-  2: 'Warlock'
+  2: 'Warlock',
 };
 
 function isMobile() {
@@ -18,7 +19,7 @@ function isMobile() {
     window &&
     window.navigator &&
     /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-      window.navigator.userAgent
+      window.navigator.userAgent,
     )
   );
 }
@@ -27,12 +28,12 @@ const tooltipStyle = {
   style: {
     background: '#20262d',
     padding: 0,
-    boxShadow: '0px 2px 3px rgba(0,0,0,.5)'
+    boxShadow: '0px 2px 3px rgba(0,0,0,.5)',
   },
   arrowStyle: {
     color: '#20262d',
-    borderColor: false
-  }
+    borderColor: false,
+  },
 };
 
 export default class Item extends Component {
@@ -52,8 +53,20 @@ export default class Item extends Component {
   // }
 
   state = {
-    isTooltipActive: false
+    isTooltipActive: false,
   };
+
+  componentDidMount() {
+    getInventoryStats().then(stats => {
+      if (!stats) {
+        return null;
+      }
+
+      this.setState({
+        globalItemCount: stats[this.props.item.hash],
+      });
+    });
+  }
 
   showTooltip = () => {
     if (!this.props.supressTooltip && !isMobile()) {
@@ -72,15 +85,20 @@ export default class Item extends Component {
     const dtrProps = {
       href: dtrLink,
       target: '_blank',
-      'data-dtr-tooltip': 'no-show'
+      'data-dtr-tooltip': 'no-show',
     };
+
+    const globalItemCount = !!this.state.globalItemCount;
+    const obtained = !globalItemCount && item.$obtained;
+    const dismantled = !globalItemCount && (item.$obtained && item.$dismantled);
 
     const rootClassName = cx(styles.root, {
       [styles.small]: small,
       [styles.tiny]: tiny,
-      [styles.obtained]: item.$obtained,
-      [styles.dismantled]: item.$obtained && item.$dismantled,
-      [styles.forSale]: item.forSale
+      [styles.globallyObtained]: globalItemCount,
+      [styles.obtained]: obtained,
+      [styles.dismantled]: dismantled,
+      [styles.forSale]: item.forSale,
     });
 
     const { name, icon: _icon } = item.displayProperties || { name: 'no name' };
@@ -129,7 +147,11 @@ export default class Item extends Component {
             className={styles.tooltip}
             tooltipTimeout={0}
           >
-            <ItemTooltip key={item.hash} item={item} />
+            <ItemTooltip
+              key={item.hash}
+              item={item}
+              globalItemCount={this.state.globalItemCount}
+            />
           </ToolTip>
         )}
       </div>

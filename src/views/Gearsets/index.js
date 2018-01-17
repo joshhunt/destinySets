@@ -10,7 +10,7 @@ import * as ls from 'app/lib/ls';
 import * as cloudStorage from 'app/lib/cloudStorage';
 import googleAuth, {
   signIn as googleSignIn,
-  signOut as googleSignOut
+  signOut as googleSignOut,
 } from 'app/lib/googleDriveAuth';
 import Header from 'app/components/Header';
 import Footer from 'app/components/Footer';
@@ -25,7 +25,7 @@ import plz from 'app/lib/plz';
 import filterSets, {
   DEFAULT_FILTER,
   FILTERS,
-  SHOW_PS4_EXCLUSIVES
+  SHOW_PS4_EXCLUSIVES,
 } from './filterSets';
 import processSets from './processSets';
 import * as telemetry from 'app/lib/telemetry';
@@ -41,7 +41,7 @@ const ITEM_BLACKLIST = [
   546372301, // Jade Rabbit quest item
   2896466320, // Jade Rabbit quest item
   2978016230, // Jade Rabbit quest item
-  3229272315 // Jade Rabbit quest item
+  3229272315, // Jade Rabbit quest item
 ];
 
 class Gearsets extends Component {
@@ -54,7 +54,7 @@ class Gearsets extends Component {
       selectedItems: [],
       displayFilters: false,
       googleAuthLoaded: false,
-      filter: ls.getFilters() || DEFAULT_FILTER
+      filter: ls.getFilters() || DEFAULT_FILTER,
     };
   }
 
@@ -64,7 +64,7 @@ class Gearsets extends Component {
     this.fetchDefintionsWithLangage(lang.code);
 
     this.setState({
-      activeLanguage: lang
+      activeLanguage: lang,
     });
   }
 
@@ -77,7 +77,7 @@ class Gearsets extends Component {
 
         return defs;
       }),
-      getDefinition('DestinyVendorDefinition', langCode)
+      getDefinition('DestinyVendorDefinition', langCode),
     ]);
 
     this.scheduleProcessSets();
@@ -87,7 +87,7 @@ class Gearsets extends Component {
         this.setState({ xurExtraText });
         this.xurItems = xurItems;
         this.processSets(...data);
-      }
+      },
     );
   }
 
@@ -114,7 +114,7 @@ class Gearsets extends Component {
       cloudInventory: this.cloudInventory,
       profile: this.profile,
       setData: this.props.route.setData,
-      xurItems: this.xurItems
+      xurItems: this.xurItems,
     };
 
     processSets(processPayload, result => {
@@ -193,7 +193,7 @@ class Gearsets extends Component {
     googleAuth(({ signedIn }) => {
       this.setState({
         googleAuthLoaded: true,
-        googleAuthSignedIn: signedIn
+        googleAuthSignedIn: signedIn,
       });
       log('Google auth signedIn:', signedIn);
 
@@ -215,7 +215,7 @@ class Gearsets extends Component {
       Object.values(profile.characters.data),
       character => {
         return new Date(character.dateLastPlayed).getTime();
-      }
+      },
     ).reverse()[0];
     this.emblemHash = recentCharacter.emblemHash;
 
@@ -223,17 +223,13 @@ class Gearsets extends Component {
       profile,
       filter: {
         ...this.state.filter,
-        [SHOW_PS4_EXCLUSIVES]: membershipType === PLAYSTATION
-      }
+        [SHOW_PS4_EXCLUSIVES]: membershipType === PLAYSTATION,
+      },
     });
 
     this.scheduleProcessSets();
 
-    plz(() =>
-      this.dataPromise.then(([itemDefs]) => {
-        telemetry.saveInventory(profile, itemDefs);
-      })
-    );
+    plz(() => telemetry.saveInventory(profile));
   };
 
   toggleFilter = () => {
@@ -243,7 +239,7 @@ class Gearsets extends Component {
   toggleFilterValue = filterValue => {
     const newFilter = {
       ...this.state.filter,
-      [filterValue]: !this.state.filter[filterValue]
+      [filterValue]: !this.state.filter[filterValue],
     };
 
     this.filterGroups(newFilter);
@@ -251,13 +247,13 @@ class Gearsets extends Component {
     ls.saveFilters(newFilter);
 
     this.setState({
-      filter: newFilter
+      filter: newFilter,
     });
   };
 
   toggleCountStyle = () => {
     this.setState({
-      countStyle: !this.state.countStyle
+      countStyle: !this.state.countStyle,
     });
   };
 
@@ -266,7 +262,7 @@ class Gearsets extends Component {
 
     this.setState({
       shit: 'poo',
-      activeLanguage: newLang
+      activeLanguage: newLang,
     });
 
     this.fetchDefintionsWithLangage(newLang.code);
@@ -295,7 +291,7 @@ class Gearsets extends Component {
       hasInventory,
       googleAuthLoaded,
       xurExtraText,
-      googleAuthSignedIn
+      googleAuthSignedIn,
     } = this.state;
 
     if (loading) {
@@ -373,7 +369,7 @@ class Gearsets extends Component {
             <div
               className={cx(
                 styles.toggleFilters,
-                displayFilters && styles.filtersActive
+                displayFilters && styles.filtersActive,
               )}
               onClick={this.toggleFilter}
             >
