@@ -1,4 +1,4 @@
-import { uniqBy, groupBy, sortBy, mapValues } from 'lodash';
+import { get, uniqBy, groupBy, sortBy, mapValues } from 'lodash';
 
 import {
   HUNTER,
@@ -16,7 +16,7 @@ import {
   ARMS,
   CHEST,
   LEGS,
-  CLASS_ITEM
+  CLASS_ITEM,
 } from 'app/lib/destinyEnums';
 
 const tierTypeNameValue = {
@@ -24,11 +24,32 @@ const tierTypeNameValue = {
   Uncommon: 3,
   Rare: 2,
   Legendary: 1,
-  Exotic: 0
+  Exotic: 0,
 };
+
+export const isOrnament = item =>
+  item.inventory &&
+  item.inventory.stackUniqueLabel &&
+  item.itemTypeDisplayName &&
+  item.itemTypeDisplayName.toLowerCase().includes('ornament');
 
 function sortArmor(items) {
   return sortBy(items, item => {
+    const plugCategoryIdentifier = get(item, 'plug.plugCategoryIdentifier');
+    if (isOrnament(item) && plugCategoryIdentifier) {
+      if (plugCategoryIdentifier.includes('head')) {
+        return 1;
+      } else if (plugCategoryIdentifier.includes('arms')) {
+        return 2;
+      } else if (plugCategoryIdentifier.includes('chest')) {
+        return 3;
+      } else if (plugCategoryIdentifier.includes('legs')) {
+        return 4;
+      } else if (plugCategoryIdentifier.includes('class')) {
+        return 5;
+      }
+    }
+
     if (item.itemCategoryHashes.includes(HELMET)) {
       return 1;
     } else if (item.itemCategoryHashes.includes(ARMS)) {
@@ -48,12 +69,7 @@ export default function sortItems(_items, verbose = false) {
 
   const _sectionItems = groupBy(items, item => {
     // this works in english only
-    if (
-      item.inventory &&
-      item.inventory.stackUniqueLabel &&
-      item.itemTypeDisplayName &&
-      item.itemTypeDisplayName.toLowerCase().includes('ornament')
-    ) {
+    if (isOrnament(item)) {
       if (item.inventory.stackUniqueLabel.includes('warlock')) {
         return WARLOCK;
       } else if (item.inventory.stackUniqueLabel.includes('titan')) {
@@ -101,7 +117,7 @@ export default function sortItems(_items, verbose = false) {
     { title: 'Sparrows', items: sectionItems.sparrows },
     { title: 'Emblems', items: sectionItems.emblems },
     { title: 'Shaders', items: sectionItems.shaders },
-    { title: 'Other', items: sectionItems.other }
+    { title: 'Other', items: sectionItems.other },
   ]
     .filter(({ items }) => {
       return items && items.length > 0;
@@ -114,7 +130,7 @@ export default function sortItems(_items, verbose = false) {
       const items = section.items.map(item => item.hash);
       return {
         title: section.title,
-        items
+        items,
       };
     });
 

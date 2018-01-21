@@ -12,7 +12,7 @@ export const FILTERS = [
   [HUNTER, 'Hunter'],
   [WARLOCK, 'Warlock'],
   [SHOW_COLLECTED, 'Collected'],
-  [SHOW_PS4_EXCLUSIVES, 'PS4 exclusives']
+  [SHOW_PS4_EXCLUSIVES, 'PS4 exclusives'],
 ];
 
 export const DEFAULT_FILTER = {
@@ -20,7 +20,32 @@ export const DEFAULT_FILTER = {
   [HUNTER]: true,
   [WARLOCK]: true,
   [SHOW_COLLECTED]: true,
-  [SHOW_PS4_EXCLUSIVES]: true
+  [SHOW_PS4_EXCLUSIVES]: true,
+};
+
+export const isOrnament = item =>
+  item.inventory &&
+  item.inventory.stackUniqueLabel &&
+  item.plug &&
+  item.plug.plugCategoryIdentifier &&
+  item.plug.plugCategoryIdentifier.includes('skins');
+
+const getItemClass = item => {
+  if (item.classType === 3 && isOrnament(item)) {
+    if (item.plug.plugCategoryIdentifier.includes('hunter')) {
+      return HUNTER;
+    }
+
+    if (item.plug.plugCategoryIdentifier.includes('warlock')) {
+      return WARLOCK;
+    }
+
+    if (item.plug.plugCategoryIdentifier.includes('titan')) {
+      return TITAN;
+    }
+  }
+
+  return item.classType;
 };
 
 export default function filterSets({ rawGroups, filter }) {
@@ -48,19 +73,19 @@ export default function filterSets({ rawGroups, filter }) {
             return false;
           }
 
-          if (item.classType === 3) {
+          if (getItemClass(item) === 3) {
             return true;
           }
 
-          if (filter[HUNTER] && item.classType === HUNTER) {
+          if (filter[HUNTER] && getItemClass(item) === HUNTER) {
             return true;
           }
 
-          if (filter[TITAN] && item.classType === TITAN) {
+          if (filter[TITAN] && getItemClass(item) === TITAN) {
             return true;
           }
 
-          if (filter[WARLOCK] && item.classType === WARLOCK) {
+          if (filter[WARLOCK] && getItemClass(item) === WARLOCK) {
             return true;
           }
 
@@ -81,7 +106,7 @@ export default function filterSets({ rawGroups, filter }) {
             ..._section,
             items,
             itemCount,
-            obtainedCount
+            obtainedCount,
           });
         }
 
@@ -93,7 +118,7 @@ export default function filterSets({ rawGroups, filter }) {
           ..._set,
           sections,
           itemCount: setItemCount,
-          obtainedCount: setObtainedCount
+          obtainedCount: setObtainedCount,
         });
       }
 
@@ -103,7 +128,7 @@ export default function filterSets({ rawGroups, filter }) {
     if (sets.length > 0) {
       groupAcc.push({
         ..._group,
-        sets: sets
+        sets: sets,
       });
     }
 
@@ -116,6 +141,6 @@ export default function filterSets({ rawGroups, filter }) {
     itemCount: totalItemCount,
     obtainedCount: totalObtainedCount,
     groups: filteredGroups,
-    hiddenItemsCount: totalItems - displayedItems
+    hiddenItemsCount: totalItems - displayedItems,
   };
 }

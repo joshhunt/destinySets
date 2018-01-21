@@ -140,6 +140,36 @@ module.exports = [
               2738174948, // Distant Tumulus
             ],
           },
+          {
+            title: 'Hunter ornaments',
+            items: [
+              3546479780, // Extinction Orbit Ornament
+              1708353857, // Extinction Orbit Ornament
+              1305565959, // Extinction Orbit Ornament
+              3102957363, // Extinction Orbit Ornament
+              3276897698, // Extinction Orbit Ornament
+            ],
+          },
+          {
+            title: 'Titan ornaments',
+            items: [
+              2296027354, // Extinction Orbit Ornament
+              1818340511, // Extinction Orbit Ornament
+              1635989913, // Extinction Orbit Ornament
+              3906414993, // Extinction Orbit Ornament
+              1936477944, // Extinction Orbit Ornament
+            ],
+          },
+          {
+            title: 'Warlock ornaments',
+            items: [
+              1575996367, // Extinction Orbit Ornament
+              467764322, // Extinction Orbit Ornament
+              3377623014, // Extinction Orbit Ornament
+              3352318036, // Extinction Orbit Ornament
+              2798463723, // Extinction Orbit Ornament
+            ],
+          },
         ],
       },
       {
@@ -158,6 +188,36 @@ module.exports = [
               2478247171, // Quitclaim Shotgun III
             ],
           },
+          {
+            title: 'Hunter armor',
+            items: [
+              2452991419, // Sovereign Lion Ornament
+              2793184550, // Sovereign Lion Ornament
+              1288520202, // Sovereign Lion Ornament
+              3027542136, // Sovereign Lion Ornament
+              1591021015, // Sovereign Lion Ornament
+            ],
+          },
+          {
+            title: 'Titan armor',
+            items: [
+              2289919437, // Sovereign Lion Ornament
+              850238384, // Sovereign Lion Ornament
+              1499088216, // Sovereign Lion Ornament
+              2022320962, // Sovereign Lion Ornament
+              3354422473, // Sovereign Lion Ornament
+            ],
+          },
+          {
+            title: 'Warlock armor',
+            items: [
+              1681122628, // Sovereign Lion Ornament
+              784268641, // Sovereign Lion Ornament
+              833941159, // Sovereign Lion Ornament
+              4179399763, // Sovereign Lion Ornament
+              2603702210, // Sovereign Lion Ornament
+            ],
+          },
         ],
       },
       {
@@ -174,6 +234,36 @@ module.exports = [
               2817949113, // The Defiant
               3929685100, // The Deicide
               4272442416, // THe Domino
+            ],
+          },
+          {
+            title: 'Hunter armor',
+            items: [
+              1660740824, // War Simulator Ornament
+              2314916765, // War Simulator Ornament
+              569008147, // War Simulator Ornament
+              3487273615, // War Simulator Ornament
+              3399222854, // War Simulator Ornament
+            ],
+          },
+          {
+            title: 'Titan armor',
+            items: [
+              4081389478, // War Simulator Ornament
+              3254614835, // War Simulator Ornament
+              3166431581, // War Simulator Ornament
+              3634994661, // War Simulator Ornament
+              1915578676, // War Simulator Ornament
+            ],
+          },
+          {
+            title: 'Warlock armor',
+            items: [
+              3590187517, // War Simulator Ornament
+              2215343712, // War Simulator Ornament
+              712844712, // War Simulator Ornament
+              3323147154, // War Simulator Ornament
+              855531161, // War Simulator Ornament
             ],
           },
         ],
@@ -251,6 +341,36 @@ module.exports = [
               2957542878, // Living Memory
               1927800278, // Eternal Blazon
               3551104348, // Double-Edged Answer
+            ],
+          },
+          {
+            title: 'Hunter armor',
+            items: [
+              2795289891, // On the Offense Ornament
+              4188739374, // On the Offense Ornament
+              1409959426, // On the Offense Ornament
+              2951536384, // On the Offense Ornament
+              2541644975, // On the Offense Ornament
+            ],
+          },
+          {
+            title: 'Titan armor',
+            items: [
+              1269036705, // Take Shelter Ornament
+              1776321292, // Take Shelter Ornament
+              1214682004, // Take Shelter Ornament
+              28479854, // Take Shelter Ornament
+              552112621, // Take Shelter Ornament
+            ],
+          },
+          {
+            title: 'Warlock armor',
+            items: [
+              2520561932, // Xenos Shore Ornament
+              137367657, // Xenos Shore Ornament
+              2033661183, // Xenos Shore Ornament
+              995614939, // Xenos Shore Ornament
+              2491110586, // Xenos Shore Ornament
             ],
           },
         ],

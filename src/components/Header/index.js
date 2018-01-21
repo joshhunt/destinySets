@@ -9,9 +9,11 @@ import {
   languages,
   languageByCode,
   getDefaultLanguage,
-  getBrowserLocale
+  getBrowserLocale,
 } from 'app/lib/i18n';
 import { trackEvent } from 'app/lib/analytics';
+
+import logo from 'app/logo.png';
 import ProfileSwitcher from './ProfileSwitcher';
 import styles from './styles.styl';
 import sidebarStyles from './sidebar.styl';
@@ -19,20 +21,20 @@ import sidebarStyles from './sidebar.styl';
 const NAV_LINKS = [
   {
     to: '/',
-    label: 'Base'
+    label: 'Base',
   },
   {
     to: '/curse-of-osiris',
-    label: 'Curse of Osiris'
+    label: 'Curse of Osiris',
   },
   {
     to: '/all-items',
-    label: 'All Items'
+    label: 'All Items',
   },
   {
     to: '/data',
-    label: 'Data Explorer'
-  }
+    label: 'Data Explorer',
+  },
 ];
 
 function NavLink({ children, className, ...props }) {
@@ -50,20 +52,20 @@ function NavLink({ children, className, ...props }) {
 class Header extends React.Component {
   state = {
     accountSwitcherActive: false,
-    langSwitcherActive: false
+    langSwitcherActive: false,
   };
 
   toggleAccountSwitcher = () => {
     this.setState({
       langSwitcherActive: false,
-      accountSwitcherActive: !this.state.accountSwitcherActive
+      accountSwitcherActive: !this.state.accountSwitcherActive,
     });
   };
 
   toggleLangSwitcher = () => {
     this.setState({
       accountSwitcherActive: false,
-      langSwitcherActive: !this.state.langSwitcherActive
+      langSwitcherActive: !this.state.langSwitcherActive,
     });
   };
 
@@ -77,8 +79,8 @@ class Header extends React.Component {
       [
         `loaded:${lang.code}`,
         `default:${getDefaultLanguage().code}`,
-        `browser:${getBrowserLocale()}`
-      ].join('|')
+        `browser:${getBrowserLocale()}`,
+      ].join('|'),
     );
 
     this.props.onChangeLang(lang);
@@ -92,7 +94,7 @@ class Header extends React.Component {
       profiles,
       activeLanguage,
       isGoogleAuthenticated,
-      onGoogleSignout
+      onGoogleSignout,
     } = this.props;
     const { langSwitcherActive, accountSwitcherActive } = this.state;
 
@@ -121,8 +123,11 @@ class Header extends React.Component {
 
           <div className={styles.main}>
             <Link to="/" className={styles.siteName}>
-              Destiny Sets
-              <span className={styles.version}>2</span>
+              <img src={logo} className={styles.logo} alt="" />
+              <span>
+                Destiny Sets
+                <span className={styles.version}>2</span>
+              </span>
             </Link>
 
             {NAV_LINKS.map(({ to, label }) => (
@@ -198,7 +203,7 @@ class Header extends React.Component {
 
 export default class FixedHeader extends Component {
   state = {
-    sidebarOpen: false
+    sidebarOpen: false,
   };
 
   onSetSidebarOpen = open => {
@@ -246,8 +251,8 @@ export default class FixedHeader extends Component {
           sidebarClassName={sidebarStyles.sidebar}
           styles={{
             root: {
-              pointerEvents: this.state.sidebarOpen ? 'initial' : 'none'
-            }
+              pointerEvents: this.state.sidebarOpen ? 'initial' : 'none',
+            },
           }}
         >
           {' '}
