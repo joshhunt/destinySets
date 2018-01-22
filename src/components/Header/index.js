@@ -18,6 +18,8 @@ import ProfileSwitcher from './ProfileSwitcher';
 import styles from './styles.styl';
 import sidebarStyles from './sidebar.styl';
 
+const SHOW_LOGO = window.location.search.includes('logo');
+
 const NAV_LINKS = [
   {
     to: '/',
@@ -123,7 +125,7 @@ class Header extends React.Component {
 
           <div className={styles.main}>
             <Link to="/" className={styles.siteName}>
-              <img src={logo} className={styles.logo} alt="" />
+              {SHOW_LOGO && <img src={logo} className={styles.logo} alt="" />}
               <span>
                 Destiny Sets
                 <span className={styles.version}>2</span>
