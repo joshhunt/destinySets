@@ -4,6 +4,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router';
 import cx from 'classnames';
 import Sidebar from 'react-sidebar';
+import DonateButton, { DONATION_LINK } from 'app/components/DonateButton';
 
 import {
   languages,
@@ -37,6 +38,36 @@ const NAV_LINKS = [
     to: '/data',
     label: 'Data Explorer',
   },
+];
+
+const SOCIAL = [
+  <a
+    key="paypal"
+    className={styles.socialItem}
+    target="_blank"
+    rel="noopener noreferrer"
+    href={DONATION_LINK}
+  >
+    <i className="fa fa-paypal" />
+  </a>,
+  <a
+    key="twitter"
+    className={styles.socialItem}
+    target="_blank"
+    rel="noopener noreferrer"
+    href="https://twitter.com/joshhunt"
+  >
+    <i className="fa fa-twitter" />
+  </a>,
+  <a
+    key="github"
+    className={styles.socialItem}
+    target="_blank"
+    rel="noopener noreferrer"
+    href="https://github.com/joshhunt/destinySets"
+  >
+    <i className="fa fa-github" />
+  </a>,
 ];
 
 function NavLink({ children, className, ...props }) {
@@ -119,17 +150,13 @@ class Header extends React.Component {
 
             <a href="#" className={styles.siteName}>
               Destiny Sets
-              <span className={styles.version}>2</span>
             </a>
           </div>
 
           <div className={styles.main}>
             <Link to="/" className={styles.siteName}>
               {SHOW_LOGO && <img src={logo} className={styles.logo} alt="" />}
-              <span>
-                Destiny Sets
-                <span className={styles.version}>2</span>
-              </span>
+              <span>Destiny Sets</span>
             </Link>
 
             {NAV_LINKS.map(({ to, label }) => (
@@ -180,22 +207,7 @@ class Header extends React.Component {
               />
             )}
 
-            <a
-              className={styles.socialItem}
-              target="_blank"
-              rel="noopener noreferrer"
-              href="https://twitter.com/joshhunt"
-            >
-              <i className="fa fa-twitter" />
-            </a>
-            <a
-              className={styles.socialItem}
-              target="_blank"
-              rel="noopener noreferrer"
-              href="https://github.com/joshhunt/destinySets"
-            >
-              <i className="fa fa-github" />
-            </a>
+            {SOCIAL}
           </div>
         </div>
       </div>
@@ -228,12 +240,15 @@ export default class FixedHeader extends Component {
           Destiny Sets
           <span className={styles.version}>2</span>
         </Link>
-
         {NAV_LINKS.map(({ to, label }, index) => (
           <NavLink key={to} onClick={this.closeSidebar} to={to}>
             {label}
           </NavLink>
         ))}
+        <br />
+        <div className={styles.mobileSocials}>{SOCIAL}</div>
+        <br />
+        <DonateButton />
       </div>
     );
 

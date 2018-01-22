@@ -15,7 +15,7 @@ $edgePadding = 15px
   visibility: hidden
 
 .logo
-  height: 25px
+  height: 24px
   margin-right: 10px
 
 .header
@@ -85,6 +85,8 @@ $edgePadding = 15px
   display: flex
   align-items: center
 
+
+
 .socialItem
   font-size: 20px
   padding: 0 7px
@@ -96,7 +98,17 @@ $edgePadding = 15px
     opacity: 1
 
   @media screen and (max-width: 850px)
-    display: none
+    font-size: 24px
+
+    .header &
+      display: none
+
+.mobileSocials
+  display: flex
+
+  > *
+    flex: 1
+    text-align: center
 
 ._dropdownMenuRoot
   display: flex

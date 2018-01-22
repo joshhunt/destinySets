@@ -2,14 +2,19 @@ import React from 'react';
 
 import styles from './styles.styl';
 
+import DonateButton from 'app/components/DonateButton';
+
 export default function Footer({ item }) {
   return (
     <div className={styles.footer}>
+      <DonateButton />
+      <br />
       Made with love by{' '}
       <a href="http://joshhunt.is" target="_blank" rel="noopener noreferrer">
         Josh Hunt
       </a>{' '}
-      for Destiny fans. <br />
+      for Destiny fans.
+      <br />
       Having issues or need help?{' '}
       <a href="https://twitter.com/joshhunt">Contact me on twitter</a> or{' '}
       <a href="https://github.com/joshhunt/destinySets">
