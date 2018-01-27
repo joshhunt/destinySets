@@ -14,14 +14,10 @@ import {
 } from 'app/lib/i18n';
 import { trackEvent } from 'app/lib/analytics';
 
-import logo from 'app/logo.png';
-import logoGap from 'app/logo_gap.png';
+import logo from 'app/logo.svg';
 import ProfileSwitcher from './ProfileSwitcher';
 import styles from './styles.styl';
 import sidebarStyles from './sidebar.styl';
-
-const SHOW_LOGO = window.location.search.includes('logo');
-const SHOW_LOGO_GAP = window.location.search.includes('logap');
 
 const NAV_LINKS = [
   {
@@ -157,10 +153,7 @@ class Header extends React.Component {
 
           <div className={styles.main}>
             <Link to="/" className={styles.siteName}>
-              {SHOW_LOGO && <img src={logo} className={styles.logo} alt="" />}
-              {SHOW_LOGO_GAP && (
-                <img src={logoGap} className={styles.logo} alt="" />
-              )}
+              <img src={logo} className={styles.logo} alt="" />
               <span>Destiny Sets</span>
             </Link>
 
