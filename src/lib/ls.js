@@ -8,7 +8,8 @@ const keys = {
   LANGUAGE: '$lang',
   AUTH: '$auth',
   GDRIVE_FILE_ID: '$googleDriveFileId' + window.DESTINYSETS_ENV,
-  GOOGLE_LOGIN_UPSELL: '$googleLoginUpsell'
+  GOOGLE_LOGIN_UPSELL: '$googleLoginUpsell',
+  VISIT_COUNT: '$visitCount',
 };
 
 function get(key, defaultx) {
@@ -95,6 +96,14 @@ export function saveAuth(authData) {
 
 export function getAuth() {
   return get(keys.AUTH);
+}
+
+export function saveVisitCount(count) {
+  save(keys.VISIT_COUNT, count);
+}
+
+export function getVisitCount() {
+  return parseInt(get(keys.VISIT_COUNT, 0), 10);
 }
 
 export function removeAuth() {

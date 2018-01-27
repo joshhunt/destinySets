@@ -11,6 +11,8 @@ import {
   COMMON,
 } from 'app/lib/destinyEnums';
 
+import ItemStats from 'app/components/ItemStats';
+
 const TIER_STYLE = {
   [EXOTIC]: styles.exotic,
   [LEGENDARY]: styles.legendary,
@@ -57,6 +59,8 @@ export default function ItemTooltip({ item, globalItemCount }) {
   const name =
     (item.displayProperties && item.displayProperties.name) || 'no name';
 
+  const stats = item.$stats || [];
+
   return (
     <div className={cx(styles.tooltip, TIER_STYLE[tier])}>
       <div className={styles.header}>
@@ -85,6 +89,8 @@ export default function ItemTooltip({ item, globalItemCount }) {
             />
           </div>
         )}
+
+        {stats.length ? <ItemStats stats={stats} /> : null}
 
         {globalItemCount && (
           <p className={styles.inventory}>

@@ -1,3 +1,6 @@
+const ORNAMENT_DISCLAIMER =
+  "For ornaments to be tracked, their respective item must be in your inventory. Some ornaments may incorrect show you've obtained them when you still need to complete an objective";
+
 module.exports = [
   {
     name: 'Endgame',
@@ -9,6 +12,10 @@ module.exports = [
         sections: [
           {
             title: 'Hunter Ornaments',
+            tooltip: {
+              text: ORNAMENT_DISCLAIMER,
+              style: 'help',
+            },
             items: [
               3346055334, // Eater of Worlds Ornament
               2519280691, // Eater of Worlds Ornament

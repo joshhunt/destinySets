@@ -7,9 +7,6 @@ $padding = 10px
 .body
   padding: 0 $padding
 
-:global(.ToolTipPortal)
-  pointer-events: none
-
 .header
   display: flex
   align-items: center
@@ -64,3 +61,11 @@ $padding = 10px
 .basic .header
   background: #c3bcb4
   color: #1e242b
+
+:global(.ToolTipPortal)
+  pointer-events: none
+
+// :global .ToolTipPortal > *
+//   display: block !important
+//   visibility: visible !important
+//   opacity: 1 !important

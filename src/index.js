@@ -1,10 +1,12 @@
 import 'isomorphic-fetch';
+import 'app/lib/autotrack.build';
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import 'app/lib/autotrack.build';
+import { trackEvent } from 'app/lib/analytics';
 
 import AppRouter from './AppRouter';
+import * as ls from 'app/lib/ls';
 import './index.styl';
 
 window.DESTINYSETS_ENV = 'prod';
@@ -15,7 +17,7 @@ if (window.location.href.includes('localhost')) {
 if (localStorage.forceDestinySetsEnv) {
   console.warn(
     'WARNING: Forcing window.DESTINYSETS_ENV to ' +
-      localStorage.forceDestinySetsEnv
+      localStorage.forceDestinySetsEnv,
   );
   window.DESTINYSETS_ENV = localStorage.forceDestinySetsEnv;
 }
@@ -25,3 +27,6 @@ if (window.DESTINYSETS_ENV !== 'prod') {
 }
 
 ReactDOM.render(<AppRouter />, document.getElementById('root'));
+
+ls.saveVisitCount(ls.getVisitCount() + 1);
+trackEvent('visit-count', ls.getVisitCount());

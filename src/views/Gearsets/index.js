@@ -78,6 +78,7 @@ class Gearsets extends Component {
         return defs;
       }),
       getDefinition('DestinyVendorDefinition', langCode),
+      getDefinition('DestinyStatDefinition', langCode),
     ]);
 
     this.scheduleProcessSets();
@@ -107,10 +108,11 @@ class Gearsets extends Component {
     });
   }
 
-  processSets = (itemDefs, vendorDefs) => {
+  processSets = (itemDefs, vendorDefs, statDefs) => {
     const processPayload = {
       itemDefs,
       vendorDefs,
+      statDefs,
       cloudInventory: this.cloudInventory,
       profile: this.profile,
       setData: this.props.route.setData,

@@ -1,5 +1,6 @@
-import { isArray, has } from 'lodash';
+import { isArray, has, get } from 'lodash';
 
+import { NUMERICAL_STATS, STAT_BLACKLIST } from 'app/lib/destinyEnums';
 import { fancySearch } from 'app/views/DataExplorer/filterItems';
 import sortItemsIntoSections from 'app/views/DataExplorer/sortItemsIntoSections';
 import collectInventory from 'app/lib/collectInventory';
@@ -13,7 +14,7 @@ function merge(base, extra) {
   return { ...base, ...extra };
 }
 
-export function mapItems(itemHashes, itemDefs, inventory) {
+export function mapItems(itemHashes, itemDefs, statDefs, inventory) {
   return itemHashes
     .map(itemHash => {
       const item = itemDefs[itemHash];
@@ -25,11 +26,48 @@ export function mapItems(itemHashes, itemDefs, inventory) {
 
       const inventoryItem = inventory[itemHash];
 
+      const stats = Object.values(get(item, 'stats.stats', {}))
+        .map(stat => {
+          const statDef = statDefs[stat.statHash];
+
+          if (!statDef) {
+            log(
+              `WARNING: Unable to find stat definition ${
+                stat.statHash
+              } on item ${itemHash}`,
+            );
+
+            return null;
+          }
+
+          if (!statDef.displayProperties.name) {
+            return null;
+          }
+
+          if (STAT_BLACKLIST.includes(stat.statHash)) {
+            return null;
+          }
+
+          return {
+            ...stat,
+            $stat: statDef,
+          };
+        })
+        .filter(Boolean)
+        .sort(a => {
+          if (NUMERICAL_STATS.includes(a.statHash)) {
+            return -1;
+          } else {
+            return 1;
+          }
+        });
+
       return {
         $obtained: !!inventoryItem,
         $dismantled: inventoryItem && inventoryItem[0].$dismantled,
         $inventory: inventoryItem,
-        ...item
+        $stats: stats,
+        ...item,
       };
     })
     .filter(Boolean);
@@ -46,7 +84,7 @@ function mergeCloudInventory(currentInventory, cloudInventory) {
     if (!currentInventory[cloudItemHash]) {
       inventory[cloudItemHash] = [
         { $dismantled: true },
-        ...cleanUpCloudInventory(cloudInventory[cloudItemHash])
+        ...cleanUpCloudInventory(cloudInventory[cloudItemHash]),
       ];
     }
   });
@@ -58,10 +96,11 @@ export default function processSets(args, dataCallback) {
   const {
     itemDefs,
     vendorDefs,
+    statDefs,
     profile,
     xurItems,
     setData,
-    cloudInventory
+    cloudInventory,
   } = args;
 
   const sets = setData;
@@ -75,7 +114,7 @@ export default function processSets(args, dataCallback) {
   log('Processing sets with', {
     inventory,
     localStorageInventory,
-    cloudInventory
+    cloudInventory,
   });
 
   if (!Object.keys(inventory).length > 0 && localStorageInventory) {
@@ -93,7 +132,7 @@ export default function processSets(args, dataCallback) {
     const sets = group.sets.map(set => {
       const preSections = set.fancySearchTerm
         ? sortItemsIntoSections(
-            fancySearch(set.fancySearchTerm, { item: allItems })
+            fancySearch(set.fancySearchTerm, { item: allItems }),
           )
         : set.sections;
 
@@ -101,14 +140,14 @@ export default function processSets(args, dataCallback) {
         const preItems =
           section.items ||
           fancySearch(section.fancySearchTerm, { item: allItems }).map(
-            i => i.hash
+            i => i.hash,
           );
 
         if (!isArray(preItems)) {
           throw new Error('Section not in correct format');
         }
 
-        const items = mapItems(preItems, itemDefs, inventory);
+        const items = mapItems(preItems, itemDefs, statDefs, inventory);
 
         return merge(section, { items });
       });
@@ -130,7 +169,7 @@ export default function processSets(args, dataCallback) {
   log('Xur items', {
     xurItemsGood,
     inventory,
-    xurHashes
+    xurHashes,
   });
 
   if (!usingLocalStorageInventory) {
@@ -148,7 +187,7 @@ export default function processSets(args, dataCallback) {
     hasInventory: Object.keys(inventory).length > 0,
     loading: false,
     saveCloudInventory,
-    shit: null
+    shit: null,
   };
 
   dataCallback(payload);

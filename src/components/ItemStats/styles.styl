@@ -1,0 +1,49 @@
+.root
+  display: table
+  margin-bottom: 15px
+  margin-top: 5px
+
+.item
+  margin-bottom: 10px
+  position: relative
+  display: table-row
+
+.name
+  text-align: right
+  white-space: nowrap
+
+.name
+.valueCell
+  font-size: .9em
+  vertical-align: middle
+  display: table-cell
+
+.valueCell
+  width: 100%
+  padding-left: 15px
+
+.bar
+  position: relative
+  height: 15px
+  overflow: hidden
+  background: #13161B
+
+  .numerical &
+    background: none
+
+.barFill
+  height: 100%
+  background: rgb(80, 82, 93)
+
+  .numerical &
+    display: none
+
+.value
+  position: absolute
+  top: 0
+  bottom: 0
+  left: 4px
+  display: flex
+  align-items: center
+  line-height: 1
+  font-size: 13px
