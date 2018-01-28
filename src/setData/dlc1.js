@@ -107,6 +107,15 @@ module.exports = [
               1870979911, // Orewing's Maul
             ],
           },
+          {
+            title: 'Others',
+            items: [
+              3681086673, // Iron Companionship Shell (Ghost shell)
+              1220495181, // Iron Gallop (Sparrow)
+              2924982629, // Iron Pendragon (Ship)
+              2919429251, // Iron Hero Sigil (Emblem)
+            ],
+          },
         ],
       },
       {
@@ -133,8 +142,8 @@ module.exports = [
     sets: [
       {
         name: 'Dead Orbit Arsenal',
-        description: 'These items are not (yet) dropping from Faction Rally',
-        // 'Weapons and armor obtained by working with Dead Orbit in their mission to push beyond the solar system. Note: these items are not (yet) dropping from Faction Rally',
+        description:
+          'Weapons and armor obtained by working with Dead Orbit in their mission to push beyond the solar system.',
         small: true,
         sections: [
           {
@@ -181,8 +190,8 @@ module.exports = [
       },
       {
         name: 'New Monarchy Arsenal',
-        description: 'These items are not (yet) dropping from Faction Rally',
-        // 'Weapons and armor obtained by working with New Monarchy to strengthen the Last City.  Note: these items are not (yet) dropping from Faction Rally',
+        description:
+          'Weapons and armor obtained by working with New Monarchy to strengthen the Last City.',
         small: true,
         sections: [
           {
@@ -229,8 +238,8 @@ module.exports = [
       },
       {
         name: 'Future War Cult Arsenal',
-        description: 'These items are not (yet) dropping from Faction Rally',
-        // 'Weapons and armor obtained by working with Future War Cult to prepare for the wars to come.  Note: these items are not (yet) dropping from Faction Rally',
+        description:
+          'Weapons and armor obtained by working with Future War Cult to prepare for the wars to come.',
         small: true,
         sections: [
           {
@@ -240,7 +249,7 @@ module.exports = [
               3826803617, // The Dream
               2817949113, // The Defiant
               3929685100, // The Deicide
-              4272442416, // THe Domino
+              4272442416, // The Domino
             ],
           },
           {
@@ -431,6 +440,7 @@ module.exports = [
           },
         ],
       },
+
       {
         name: 'Eververse, Season 2',
         big: true,
@@ -587,8 +597,108 @@ module.exports = [
               3538153284,
               1220495183,
               1220495182,
-              1220495181,
               1220495180,
+            ],
+          },
+        ],
+      },
+      {
+        name: 'The Dawning',
+        big: true,
+        sections: [
+          {
+            title: 'Hunter armor',
+            items: [
+              316740353, // Winterhart Mask
+              1154659864, // Winterhart Grips
+              3909352274, // Winterhart Strides
+              2661272173, // Winterhart Cloak
+              2661272172, // Warm Winter Cloak
+            ],
+          },
+          {
+            title: 'Titan armor',
+            items: [
+              3956230125, // Winterhart Helm
+              779962716, // Winterhart Gauntlets
+              3306267716, // Winterhart Plate
+              4036178150, // Winterhart Greaves
+              221164697, // Winterhart Mark
+            ],
+          },
+          {
+            title: 'Warlock armor',
+            items: [
+              3734501342, // Winterhart Cover
+              2538439951, // Winterhart Gloves
+              270671209, // Winterhart Robes
+              1584837156, // Winterhart Bond
+              1584837157, // Festive Winter Bond
+            ],
+          },
+          {
+            title: 'Emotes',
+            items: [
+              215596672, // Giving
+              1873273984, // Honest Dance
+              889413643, // Excited Dance
+              2593080269, // Icecapade
+            ],
+          },
+          {
+            title: 'Ghosts',
+            items: [
+              3287805175, // Dulcinea Shell
+              3287805177, // Pomegranate Shell
+              3287805178, // Circular Time Shell
+              3287805176, // Dawning Bauble Shell
+              3287805174, // Wild Hunt Shell
+              1816495538, // Sweet Memories Shell
+              1397284432, // Jasper Dawn Shell
+              3287805183, // Infinite Hand Shell
+              3287805180, // Joyous Hunt Shell
+              3287805179, // Jasper Dawn Shell
+              3287805181, // Sweet Memories Shell
+              1051903593, // Dawning Bauble Shell
+            ],
+          },
+          {
+            title: 'Ships',
+            items: [
+              317465075, // A History of Starlight
+              317465074, // Cerulean Flash
+              3140833552, // Dragonfly Strident
+              3140833555, // Alta Clara
+              3140833557, // Carmina Commencing
+              3140833559, // Regent Redeemer
+              3177119978, // Carmina Commencing
+              3140833553, // Brilliant Narcissus
+              1602334068, // Regent Redeemer
+              3140833558, // Breath of Stars
+              3140833556, // Winter Blade
+              3140833554, // Joyfire
+              3729709035, // Joyfire
+            ],
+          },
+          {
+            title: 'Sparrows',
+            items: [
+              3105953707, // Chill of Winter
+              3105953706, // Holiday Cheer
+              63024229, // Star of Dark Nights
+              1984190529, // Magikon
+              1423305598, // December Muse
+              1423305590, // Shimmering Iris
+              1423305588, // Insectus Invictus
+              1423305586, // Acumen Maxer
+              3161524490, // Rupture
+              1423305599, // Viperdiamond
+              1423305591, // Verità Scelta
+              1423305589, // Rupture
+              1423305587, // Subito Mk. 9
+              1423305585, // Rocket-Propelled Bobsled
+              3569791559, // Shimmering Iris
+              1423305584, // Magikon
             ],
           },
         ],
