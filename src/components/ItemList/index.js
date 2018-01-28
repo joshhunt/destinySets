@@ -71,8 +71,12 @@ const fmtName = perkName => {
     return 'Heavy';
   }
 
+  if (perkName === 'Survivalist Hunter Armor') {
+    return 'Survivalist';
+  }
+
   if (
-    perkName === 'Restorative Hunter Armor' ||
+    perkName === 'Survivalist Hunter Armor' || // Doesnt exist
     perkName === 'Restorative Warlock Armor' ||
     perkName === 'Restorative Titan Armor'
   ) {
