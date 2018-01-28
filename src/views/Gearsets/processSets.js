@@ -8,6 +8,45 @@ import * as ls from 'app/lib/ls';
 
 // import { logItems, logSets } from './utils';
 
+const INTRINSIC = [
+  270846462,
+  609567286,
+  1008588205,
+  1097155916,
+  1097521167,
+  1204269313,
+  1248391073,
+  1466306887,
+  1531403410,
+  1728041517,
+  1779420771,
+  1895044987,
+  2000319334,
+  2114652868,
+  2287852220,
+  2604400628,
+  2823081959,
+  2936258449,
+  2951930089,
+  3003456207,
+  3156820619,
+  3262209356,
+  3364488990,
+  3404948861,
+  3551200371,
+  3563749202,
+  3590894000,
+  3686266706,
+  3715888615,
+  3768545060,
+  3800753361,
+  3838406119,
+  3979417222,
+  4015706356,
+  4163227370,
+  4198375581,
+];
+
 const log = require('app/lib/log')('processSets');
 
 function merge(base, extra) {
@@ -62,10 +101,20 @@ export function mapItems(itemHashes, itemDefs, statDefs, inventory) {
           }
         });
 
+      const intrinsicStatPerk = get(item, 'sockets.socketEntries', []).find(
+        entry => INTRINSIC.includes(entry.singleInitialItemHash),
+      );
+      let intrinsicStatPerkDef;
+      if (intrinsicStatPerk) {
+        intrinsicStatPerkDef =
+          itemDefs[intrinsicStatPerk.singleInitialItemHash];
+      }
+
       return {
         $obtained: !!inventoryItem,
         $dismantled: inventoryItem && inventoryItem[0].$dismantled,
         $inventory: inventoryItem,
+        $intrinsicStatPerk: intrinsicStatPerkDef,
         $stats: stats,
         ...item,
       };
