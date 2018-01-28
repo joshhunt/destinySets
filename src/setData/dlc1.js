@@ -157,7 +157,7 @@ module.exports = [
             ],
           },
           {
-            title: 'Hunter ornaments',
+            title: 'Hunter Ornaments',
             items: [
               3546479780, // Extinction Orbit Ornament
               1708353857, // Extinction Orbit Ornament
@@ -167,7 +167,7 @@ module.exports = [
             ],
           },
           {
-            title: 'Titan ornaments',
+            title: 'Titan Ornaments',
             items: [
               2296027354, // Extinction Orbit Ornament
               1818340511, // Extinction Orbit Ornament
@@ -177,7 +177,7 @@ module.exports = [
             ],
           },
           {
-            title: 'Warlock ornaments',
+            title: 'Warlock Ornaments',
             items: [
               1575996367, // Extinction Orbit Ornament
               467764322, // Extinction Orbit Ornament
@@ -205,7 +205,7 @@ module.exports = [
             ],
           },
           {
-            title: 'Hunter armor',
+            title: 'Hunter Ornaments',
             items: [
               2452991419, // Sovereign Lion Ornament
               2793184550, // Sovereign Lion Ornament
@@ -215,7 +215,7 @@ module.exports = [
             ],
           },
           {
-            title: 'Titan armor',
+            title: 'Titan Ornaments',
             items: [
               2289919437, // Sovereign Lion Ornament
               850238384, // Sovereign Lion Ornament
@@ -225,7 +225,7 @@ module.exports = [
             ],
           },
           {
-            title: 'Warlock armor',
+            title: 'Warlock Ornaments',
             items: [
               1681122628, // Sovereign Lion Ornament
               784268641, // Sovereign Lion Ornament
@@ -253,7 +253,7 @@ module.exports = [
             ],
           },
           {
-            title: 'Hunter armor',
+            title: 'Hunter Ornaments',
             items: [
               1660740824, // War Simulator Ornament
               2314916765, // War Simulator Ornament
@@ -263,7 +263,7 @@ module.exports = [
             ],
           },
           {
-            title: 'Titan armor',
+            title: 'Titan Ornaments',
             items: [
               4081389478, // War Simulator Ornament
               3254614835, // War Simulator Ornament
@@ -273,7 +273,7 @@ module.exports = [
             ],
           },
           {
-            title: 'Warlock armor',
+            title: 'Warlock Ornaments',
             items: [
               3590187517, // War Simulator Ornament
               2215343712, // War Simulator Ornament
@@ -360,7 +360,7 @@ module.exports = [
             ],
           },
           {
-            title: 'Hunter armor',
+            title: 'Hunter Ornaments',
             items: [
               2795289891, // On the Offense Ornament
               4188739374, // On the Offense Ornament
@@ -370,7 +370,7 @@ module.exports = [
             ],
           },
           {
-            title: 'Titan armor',
+            title: 'Titan Ornaments',
             items: [
               1269036705, // Take Shelter Ornament
               1776321292, // Take Shelter Ornament
@@ -380,7 +380,7 @@ module.exports = [
             ],
           },
           {
-            title: 'Warlock armor',
+            title: 'Warlock Ornaments',
             items: [
               2520561932, // Xenos Shore Ornament
               137367657, // Xenos Shore Ornament
