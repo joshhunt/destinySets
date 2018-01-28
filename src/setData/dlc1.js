@@ -651,15 +651,15 @@ module.exports = [
               3287805175, // Dulcinea Shell
               3287805177, // Pomegranate Shell
               3287805178, // Circular Time Shell
-              3287805176, // Dawning Bauble Shell
               3287805174, // Wild Hunt Shell
-              1816495538, // Sweet Memories Shell
-              1397284432, // Jasper Dawn Shell
               3287805183, // Infinite Hand Shell
               3287805180, // Joyous Hunt Shell
-              3287805179, // Jasper Dawn Shell
-              3287805181, // Sweet Memories Shell
+              3287805176, // Dawning Bauble Shell
               1051903593, // Dawning Bauble Shell
+              1816495538, // Sweet Memories Shell
+              3287805181, // Sweet Memories Shell
+              1397284432, // Jasper Dawn Shell
+              3287805179, // Jasper Dawn Shell
             ],
           },
           {
@@ -669,13 +669,13 @@ module.exports = [
               317465074, // Cerulean Flash
               3140833552, // Dragonfly Strident
               3140833555, // Alta Clara
-              3140833557, // Carmina Commencing
-              3140833559, // Regent Redeemer
-              3177119978, // Carmina Commencing
               3140833553, // Brilliant Narcissus
-              1602334068, // Regent Redeemer
               3140833558, // Breath of Stars
               3140833556, // Winter Blade
+              3177119978, // Carmina Commencing
+              3140833557, // Carmina Commencing
+              3140833559, // Regent Redeemer
+              1602334068, // Regent Redeemer
               3140833554, // Joyfire
               3729709035, // Joyfire
             ],
@@ -686,18 +686,18 @@ module.exports = [
               3105953707, // Chill of Winter
               3105953706, // Holiday Cheer
               63024229, // Star of Dark Nights
-              1984190529, // Magikon
               1423305598, // December Muse
-              1423305590, // Shimmering Iris
               1423305588, // Insectus Invictus
               1423305586, // Acumen Maxer
-              3161524490, // Rupture
               1423305599, // Viperdiamond
               1423305591, // Verità Scelta
-              1423305589, // Rupture
               1423305587, // Subito Mk. 9
               1423305585, // Rocket-Propelled Bobsled
+              3161524490, // Rupture
+              1423305589, // Rupture
+              1423305590, // Shimmering Iris
               3569791559, // Shimmering Iris
+              1984190529, // Magikon
               1423305584, // Magikon
             ],
           },
