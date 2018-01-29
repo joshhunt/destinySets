@@ -4,6 +4,7 @@ import { Router, Route, browserHistory } from 'react-router';
 import sets from 'app/setData';
 import Gearsets from './views/Gearsets';
 import DataExplorer from './views/DataExplorer';
+import Diff from './views/Diff';
 
 export default class AppRouter extends Component {
   render() {
@@ -28,6 +29,7 @@ export default class AppRouter extends Component {
         />
 
         <Route path="/data" component={DataExplorer} />
+        <Route path="/diff" component={Diff} />
       </Router>
     );
   }
