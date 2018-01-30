@@ -37,7 +37,7 @@ export function saveInventory(profile) {
       firebase.initializeApp({
         apiKey: 'AIzaSyDA_n6Ix4o6K2vW4zlFFmWk2XCzqPesDZo',
         authDomain: 'destinysets.firebaseapp.com',
-        databaseURL: 'https://destinysets-56ee0.firebaseio.com',
+        databaseURL: 'https://destinysets-1da95.firebaseio.com',
         projectId: 'destinysets',
         storageBucket: 'destinysets.appspot.com',
         messagingSenderId: '621939283066',

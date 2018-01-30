@@ -8,10 +8,10 @@ module.exports = [
       {
         name: 'Leviathan Raid',
         description:
-          'Ornaments obtained by completing challenges in The Leviathan',
+          'Ornaments and collectables obtained by completing challenges in The Leviathan',
         sections: [
           {
-            title: 'Others',
+            title: 'Final Encounter',
             items: [113124080],
           },
           {
@@ -55,6 +55,10 @@ module.exports = [
         description:
           'Gear obtained by playing the Eater of Worlds raid lair and increasing your reputation with Emperor Calus.',
         sections: [
+          {
+            title: 'Final Encounter',
+            items: [113124080],
+          },
           {
             title: 'Weapons',
             items: [
@@ -408,6 +412,37 @@ module.exports = [
               468276817, // Nature of the Beast
               1084788061, // Swift Solstice
               2792181427, // Tiebreaker
+            ],
+          },
+
+          {
+            title: 'Hunter armor',
+            items: [
+              2806246104, // Soaring Sword Ornament
+              3460422045, // Soaring Sword Ornament
+              2646135315, // Soaring Sword Ornament
+              337811599, // Soaring Sword Ornament
+              1181382726, // Soaring Sword Ornament
+            ],
+          },
+          {
+            title: 'Titan armor',
+            items: [
+              2908316342, // Phoenix Battle Ornament
+              3955222467, // Phoenix Battle Ornament
+              3440657549, // Phoenix Battle Ornament
+              2685752725, // Phoenix Battle Ornament
+              1617637028, // Phoenix Battle Ornament
+            ],
+          },
+          {
+            title: 'Warlock armor',
+            items: [
+              2516513295, // Ankaa Friend Ornament
+              121382562, // Ankaa Friend Ornament
+              2521913126, // Ankaa Friend Ornament
+              3980640404, // Ankaa Friend Ornament
+              36130859, // Ankaa Friend Ornament
             ],
           },
         ],
