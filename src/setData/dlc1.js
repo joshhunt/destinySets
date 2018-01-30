@@ -11,6 +11,10 @@ module.exports = [
           'Ornaments obtained by completing challenges in The Leviathan',
         sections: [
           {
+            title: 'Others',
+            items: [113124080],
+          },
+          {
             title: 'Hunter Ornaments',
             tooltip: {
               text: ORNAMENT_DISCLAIMER,
