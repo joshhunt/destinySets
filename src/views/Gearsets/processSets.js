@@ -213,7 +213,8 @@ export default function processSets(args, dataCallback) {
       log(`Found item for xur item hash ${hash} ${!!found}`, found);
       return !found;
     })
-    .map(hash => itemDefs[hash]);
+    .map(hash => itemDefs[hash])
+    .filter(Boolean);
 
   log('Xur items', {
     xurItemsGood,
@@ -228,6 +229,8 @@ export default function processSets(args, dataCallback) {
   const saveCloudInventory =
     !usingLocalStorageInventory && !!Object.keys(inventory).length;
   log(`saveCloudInventory: ${saveCloudInventory}`);
+
+  console.log('rawGroups:', rawGroups);
 
   const payload = {
     rawGroups,

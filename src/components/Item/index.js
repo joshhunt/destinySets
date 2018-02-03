@@ -105,11 +105,7 @@ export default class Item extends Component {
     const icon = _icon || '/img/misc/missing_icon_d2.png';
 
     return (
-      <div
-        onClick={onClick}
-        className={cx(rootClassName, className)}
-        data-class={item.dClass}
-      >
+      <div onClick={onClick} className={cx(rootClassName, className)}>
         {globalItemCount && (
           <div className={styles.countOverlay}>
             {Math.round(this.state.globalItemCount * 100)}%

@@ -3,11 +3,16 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "apollo-cache-inmemory": "^1.1.7",
+    "apollo-client": "^2.2.2",
+    "apollo-link-http": "^1.3.2",
     "autotrack": "^2.4.1",
     "browser-locale": "^1.0.3",
     "classnames": "^2.2.5",
     "dexie": "^2.0.1",
     "firebase": "^4.8.0",
+    "graphql": "^0.12.3",
+    "graphql-tag": "^2.6.1",
     "lodash": "^4.17.4",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
@@ -21,10 +26,8 @@
     "build": "react-app-rewired build",
     "test": "react-app-rewired test --env=jsdom",
     "serve": "serve -s build",
-    "deploy":
-      "yarn run build && env AWS_PROFILE=money aws s3 sync build/ s3://destinysets.com/ --region=ap-southeast-2 --acl public-read",
-    "generate-autotrack":
-      "autotrack -o public/autotrack.build.js -p clean-url-tracker,url-change-tracker",
+    "deploy": "yarn run build && env AWS_PROFILE=money aws s3 sync build/ s3://destinysets.com/ --region=ap-southeast-2 --acl public-read",
+    "generate-autotrack": "autotrack -o public/autotrack.build.js -p clean-url-tracker,url-change-tracker",
     "eject": "react-scripts eject"
   },
   "devDependencies": {

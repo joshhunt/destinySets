@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import { sortBy } from 'lodash';
 import cx from 'classnames';
-import copy from 'app/lib/copyToClipboard';
 
 import { getDefinition } from 'app/lib/manifestData';
 
 import * as destiny from 'app/lib/destiny';
 import * as ls from 'app/lib/ls';
 import * as cloudStorage from 'app/lib/cloudStorage';
+import copy from 'app/lib/copyToClipboard';
 import googleAuth, {
   signIn as googleSignIn,
   signOut as googleSignOut,
@@ -20,6 +20,7 @@ import LoginUpsell from 'app/components/LoginUpsell';
 import GoogleLoginUpsell from 'app/components/GoogleLoginUpsell';
 import ActivityList from 'app/components/ActivityList';
 import DestinyAuthProvider from 'app/lib/DestinyAuthProvider';
+import getItems from 'app/lib/getItems';
 
 import filterSets, {
   DEFAULT_FILTER,
@@ -67,14 +68,25 @@ class Gearsets extends Component {
   }
 
   fetchDefintionsWithLangage(langCode) {
-    this.dataPromise = Promise.all([
-      getDefinition('DestinyInventoryItemDefinition', langCode).then(defs => {
-        ITEM_BLACKLIST.forEach(defHash => {
-          delete defs[defHash];
+    let setItems = [];
+    this.props.route.setData.forEach(category => {
+      category.sets.forEach(set => {
+        set.sections.forEach(section => {
+          setItems = setItems.concat(section.items);
         });
+      });
+    });
 
-        return defs;
-      }),
+    this.dataPromise = Promise.all([
+      getItems(setItems),
+
+      // getDefinition('DestinyInventoryItemDefinition', langCode).then(defs => {
+      //   ITEM_BLACKLIST.forEach(defHash => {
+      //     delete defs[defHash];
+      //   });
+      //
+      //   return defs;
+      // }),
       getDefinition('DestinyVendorDefinition', langCode),
       getDefinition('DestinyStatDefinition', langCode),
     ]);
@@ -107,6 +119,8 @@ class Gearsets extends Component {
   }
 
   processSets = (itemDefs, vendorDefs, statDefs) => {
+    console.log('itemDefs:', itemDefs);
+
     const processPayload = {
       itemDefs,
       vendorDefs,
@@ -135,6 +149,9 @@ class Gearsets extends Component {
       }
 
       this.filterGroups();
+
+      console.log('Setting state', state);
+
       this.setState(state);
     });
   };
