@@ -5,7 +5,6 @@ import { createHttpLink } from 'apollo-link-http';
 import { InMemoryCache } from 'apollo-cache-inmemory';
 
 const customFetch = (uri, options) => {
-  console.log('this is custom fetch');
   const { body, ...newOptions } = options;
   const parsedBody = JSON.parse(body);
   const command = omitBy(parsedBody, isEmpty);
@@ -20,8 +19,8 @@ const customFetch = (uri, options) => {
 };
 
 const link = createHttpLink({
-  // uri: 'https://api.destiny.plumbing/graphql',
-  uri: 'https://localhost:3000/graphql',
+  uri: 'https://api.destiny.plumbing/graphql',
+  // uri: 'https://localhost:3000/graphql',
   fetchOptions: { method: 'GET' },
   fetch: customFetch,
 });

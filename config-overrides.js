@@ -4,11 +4,9 @@ const { getLoader } = require('react-app-rewired');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = function override(config, env) {
-  console.log('env:', env);
-
   const cssLoader = getLoader(
     config.module.rules,
-    rule => String(rule.test) === String(/\.css$/)
+    rule => String(rule.test) === String(/\.css$/),
   );
 
   let stylusRules;
@@ -24,12 +22,12 @@ module.exports = function override(config, env) {
             sourceMap: true,
             modules: true,
             importLoaders: 2,
-            localIdentName: '[folder]--[local]--[hash:base64:2]'
-          }
+            localIdentName: '[folder]--[local]--[hash:base64:2]',
+          },
         },
         { loader: 'postcss-loader', options: { sourceMap: true } },
-        { loader: 'stylus-loader', options: { sourceMap: true } }
-      ]
+        { loader: 'stylus-loader', options: { sourceMap: true } },
+      ],
     };
   } else {
     const cssExtractTextLoader = cssLoader.loader[0];
@@ -48,13 +46,13 @@ module.exports = function override(config, env) {
               sourceMap: true,
               modules: true,
               importLoaders: 2,
-              localIdentName: '[folder]--[local]--[hash:base64:2]'
-            }
+              localIdentName: '[folder]--[local]--[hash:base64:2]',
+            },
           },
           { loader: 'postcss-loader', options: { sourceMap: true } },
-          { loader: 'stylus-loader', options: { sourceMap: true } }
-        ]
-      })
+          { loader: 'stylus-loader', options: { sourceMap: true } },
+        ],
+      }),
     };
   }
 
@@ -71,8 +69,8 @@ module.exports = function override(config, env) {
   return merge(config, {
     resolve: {
       alias: {
-        app: path.resolve(__dirname, 'src')
-      }
-    }
+        app: path.resolve(__dirname, 'src'),
+      },
+    },
   });
 };

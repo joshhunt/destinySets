@@ -2,18 +2,24 @@ import Dexie from 'dexie';
 
 import * as destiny from 'app/lib/destiny';
 
-const log = require('app/lib/log')('manifestData');
+const log = require('app/lib/log')('db');
 
 const oldDb = new Dexie('destinySetsCache');
 oldDb.version(1).stores({
-  dataCache: '&key, data'
+  dataCache: '&key, data',
 });
-
 oldDb.delete();
 
-const db = new Dexie('destinyManifest');
+const oldDb2 = new Dexie('destinyManifest');
+oldDb2.version(1).stores({
+  dataCache: '&key, data',
+});
+oldDb2.delete();
+
+const db = new Dexie('destinyManifest2');
 db.version(1).stores({
-  dataCache: '&key, data'
+  items: '&key, data',
+  manifests: '&key, data',
 });
 
 let manifestPromise;
@@ -28,13 +34,55 @@ function getManifest() {
   return manifestPromise;
 }
 
-function cleanUp(id) {
-  db.dataCache
+export function getItemsFromCache(queryHash) {
+  return getManifest()
+    .then(({ id }) => {
+      const key = `${queryHash}|${id}`;
+      return db.items.get(key);
+    })
+    .then(cachedItems => {
+      return (cachedItems || {}).data || {};
+    });
+}
+
+export function storeItemsInCache(queryHash, newItemDefs) {
+  return Promise.all([getManifest(), getItemsFromCache(queryHash)]).then(
+    ([{ id }, oldItemDefs]) => {
+      const key = `${queryHash}|${id}`;
+      const itemDefs = {
+        ...oldItemDefs,
+        ...newItemDefs,
+      };
+
+      const promise = db.items.put({ key, data: itemDefs });
+
+      promise.then(() => {
+        cleanUpCachedItems(key);
+      });
+
+      return promise;
+    },
+  );
+}
+
+function cleanUpCachedItems(id) {
+  db.items
+    .toCollection()
+    .primaryKeys()
+    .then(keys => {
+      const toDelete = keys.filter(key => key !== id);
+      toDelete.length && log(`Deleting old cached items`, toDelete);
+      return db.items.bulkDelete(toDelete);
+    });
+}
+
+function cleanUpCachedManifests(id) {
+  db.manifests
     .toCollection()
     .primaryKeys()
     .then(keys => {
       const toDelete = keys.filter(key => !key.includes(id));
-      return db.dataCache.bulkDelete(toDelete);
+      return db.manifests.bulkDelete(toDelete);
     });
 }
 
@@ -45,13 +93,13 @@ export function cachedGet(path, id) {
     const fetchData = () => {
       const url = `https://destiny.plumbing${path}?id=${id}`;
       return destiny.get(url).then(data => {
-        db.dataCache.put({ key, data });
+        db.manifests.put({ key, data });
 
         resolve(data);
       });
     };
 
-    db.dataCache
+    db.manifests
       .get(key)
       .then(cachedData => {
         if (cachedData) {
@@ -67,7 +115,7 @@ export function cachedGet(path, id) {
         fetchData();
       })
       .finally(() => {
-        cleanUp(id);
+        cleanUpCachedManifests(id);
       });
   });
 }

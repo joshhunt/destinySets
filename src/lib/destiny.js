@@ -25,7 +25,7 @@ const COMPONENTS = [
   componentItemInstances,
   componentItemCommonData,
   componentItemSockets,
-  componentKiosks
+  componentKiosks,
 ];
 
 export function get(url, opts) {
@@ -68,7 +68,7 @@ export function getDestiny(_pathname, opts = {}, postBody) {
           ' - ' +
           resp.Message +
           '\nURL: ' +
-          url
+          url,
       );
     }
 
@@ -80,9 +80,9 @@ export function getDestiny(_pathname, opts = {}, postBody) {
 
 export function getProfile({ membershipType, membershipId }, components) {
   return getDestiny(
-    `/Platform/Destiny2/${membershipType}/Profile/${
-      membershipId
-    }/?components=${components.join(',')}`
+    `/Platform/Destiny2/${membershipType}/Profile/${membershipId}/?components=${components.join(
+      ',',
+    )}`,
   );
 }
 
@@ -94,7 +94,7 @@ export function getCurrentProfiles() {
       bungieNetUser = body.bungieNetUser;
 
       return Promise.all(
-        body.destinyMemberships.map(ship => getProfile(ship, COMPONENTS))
+        body.destinyMemberships.map(ship => getProfile(ship, COMPONENTS)),
       );
     })
     .then(profiles => {
@@ -105,14 +105,14 @@ export function getCurrentProfiles() {
           .filter(profile => profile.profile.data.versionsOwned !== 0),
         profile => {
           return new Date(profile.profile.data.dateLastPlayed).getTime();
-        }
+        },
       ).reverse();
 
       log('sortedProfiles:', sortedProfiles);
 
       return {
         profiles: sortedProfiles,
-        bungieNetUser
+        bungieNetUser,
       };
     });
 }
@@ -132,8 +132,14 @@ export function getCurrentProfile() {
   });
 }
 
+let xurPromise;
+
 export function xur() {
-  return get(XUR_URL).then(xurData => {
+  if (!xurPromise) {
+    xurPromise = get(XUR_URL);
+  }
+
+  return xurPromise.then(xurData => {
     const isLive = window.location.href.includes('forceXur') || xurData.isLive;
     return isLive
       ? { xurItems: xurData.itemHashes, xurExtraText: xurData.extraText }

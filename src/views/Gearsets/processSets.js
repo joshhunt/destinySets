@@ -59,7 +59,7 @@ export function mapItems(itemHashes, itemDefs, statDefs, inventory) {
       const item = itemDefs[itemHash];
 
       if (!item) {
-        log('WARNING: Unable to find item definition for ' + itemHash);
+        console.warn('WARNING: Unable to find item definition for ' + itemHash);
         return null;
       }
 
@@ -229,8 +229,6 @@ export default function processSets(args, dataCallback) {
   const saveCloudInventory =
     !usingLocalStorageInventory && !!Object.keys(inventory).length;
   log(`saveCloudInventory: ${saveCloudInventory}`);
-
-  console.log('rawGroups:', rawGroups);
 
   const payload = {
     rawGroups,

@@ -20,7 +20,7 @@ import LoginUpsell from 'app/components/LoginUpsell';
 import GoogleLoginUpsell from 'app/components/GoogleLoginUpsell';
 import ActivityList from 'app/components/ActivityList';
 import DestinyAuthProvider from 'app/lib/DestinyAuthProvider';
-import getItems from 'app/lib/getItems';
+import { getItemsForSet } from 'app/lib/itemStore';
 
 import filterSets, {
   DEFAULT_FILTER,
@@ -59,7 +59,6 @@ class Gearsets extends Component {
 
   componentDidMount() {
     const lang = ls.getLanguage();
-
     this.fetchDefintionsWithLangage(lang.code);
 
     this.setState({
@@ -67,26 +66,9 @@ class Gearsets extends Component {
     });
   }
 
-  fetchDefintionsWithLangage(langCode) {
-    let setItems = [];
-    this.props.route.setData.forEach(category => {
-      category.sets.forEach(set => {
-        set.sections.forEach(section => {
-          setItems = setItems.concat(section.items);
-        });
-      });
-    });
-
+  fetchDefintionsWithLangage(langCode, props = this.props) {
     this.dataPromise = Promise.all([
-      getItems(setItems),
-
-      // getDefinition('DestinyInventoryItemDefinition', langCode).then(defs => {
-      //   ITEM_BLACKLIST.forEach(defHash => {
-      //     delete defs[defHash];
-      //   });
-      //
-      //   return defs;
-      // }),
+      getItemsForSet(props.route.setData, langCode),
       getDefinition('DestinyVendorDefinition', langCode),
       getDefinition('DestinyStatDefinition', langCode),
     ]);
@@ -108,7 +90,9 @@ class Gearsets extends Component {
     }
 
     if (this.props.route !== newProps.route) {
-      this.scheduleProcessSets();
+      this.setState({ loading: true });
+      const lang = ls.getLanguage();
+      this.fetchDefintionsWithLangage(lang.code, newProps);
     }
   }
 
@@ -119,8 +103,6 @@ class Gearsets extends Component {
   }
 
   processSets = (itemDefs, vendorDefs, statDefs) => {
-    console.log('itemDefs:', itemDefs);
-
     const processPayload = {
       itemDefs,
       vendorDefs,
@@ -149,8 +131,6 @@ class Gearsets extends Component {
       }
 
       this.filterGroups();
-
-      console.log('Setting state', state);
 
       this.setState(state);
     });

@@ -9,10 +9,10 @@ function handleNewAuthData(data) {
   const refreshTokenExpiry = new Date();
 
   accessTokenExpiry.setSeconds(
-    accessTokenExpiry.getSeconds() + authResponse.accessToken.expires
+    accessTokenExpiry.getSeconds() + authResponse.accessToken.expires,
   );
   refreshTokenExpiry.setSeconds(
-    refreshTokenExpiry.getSeconds() + authResponse.refreshToken.expires
+    refreshTokenExpiry.getSeconds() + authResponse.refreshToken.expires,
   );
 
   const authData = {
@@ -20,7 +20,7 @@ function handleNewAuthData(data) {
     accessTokenExpiry: accessTokenExpiry,
 
     refreshToken: authResponse.refreshToken.value,
-    refreshTokenExpiry: refreshTokenExpiry
+    refreshTokenExpiry: refreshTokenExpiry,
   };
 
   ls.saveAuth(authData);
@@ -47,12 +47,6 @@ export default function(cb) {
   const refreshTokenIsValid =
     prevAuthData && Date.now() < new Date(prevAuthData.refreshTokenExpiry);
 
-  console.log({
-    prevAuthData,
-    accessTokenIsValid,
-    refreshTokenIsValid
-  });
-
   if (accessTokenIsValid) {
     console.info('Access token is valid, running main()');
     window.AUTH_DATA = prevAuthData;
@@ -64,7 +58,7 @@ export default function(cb) {
     getDestiny(
       '/Platform/App/GetAccessTokensFromRefreshToken/',
       {},
-      { refreshToken: prevAuthData.refreshToken }
+      { refreshToken: prevAuthData.refreshToken },
     )
       .then(handleNewAuthData)
       .then(() => {
@@ -83,8 +77,8 @@ export default function(cb) {
       '/Platform/App/GetAccessTokensFromCode/',
       {},
       {
-        code: queryParams.code
-      }
+        code: queryParams.code,
+      },
     )
       .then(handleNewAuthData)
       .then(() => cb(null, true))

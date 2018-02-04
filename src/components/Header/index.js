@@ -223,7 +223,6 @@ export default class FixedHeader extends Component {
   };
 
   closeSidebar = () => {
-    console.log('xxxxxx');
     this.setState({ sidebarOpen: false });
 
     window.setTimeout(() => {

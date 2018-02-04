@@ -31,6 +31,4 @@ axios
         perkMapping[item.hash] = item.perks[0].perkHash;
       }
     });
-
-    console.log(perkMapping);
   });
