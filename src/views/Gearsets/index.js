@@ -68,13 +68,15 @@ class Gearsets extends Component {
 
   fetchDefintionsWithLangage(langCode) {
     this.dataPromise = Promise.all([
-      getDefinition('DestinyInventoryItemDefinition', langCode).then(defs => {
-        ITEM_BLACKLIST.forEach(defHash => {
-          delete defs[defHash];
-        });
+      getDefinition('reducedCollectableInventoryItems', langCode, false).then(
+        defs => {
+          ITEM_BLACKLIST.forEach(defHash => {
+            delete defs[defHash];
+          });
 
-        return defs;
-      }),
+          return defs;
+        },
+      ),
       getDefinition('DestinyVendorDefinition', langCode),
       getDefinition('DestinyStatDefinition', langCode),
     ]);

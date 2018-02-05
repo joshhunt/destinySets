@@ -6,14 +6,14 @@ const log = require('app/lib/log')('manifestData');
 
 const oldDb = new Dexie('destinySetsCache');
 oldDb.version(1).stores({
-  dataCache: '&key, data'
+  dataCache: '&key, data',
 });
 
 oldDb.delete();
 
 const db = new Dexie('destinyManifest');
 db.version(1).stores({
-  dataCache: '&key, data'
+  dataCache: '&key, data',
 });
 
 let manifestPromise;
@@ -72,8 +72,14 @@ export function cachedGet(path, id) {
   });
 }
 
-export function getDefinition(name, language = 'en') {
-  const path = `/${language}/raw/${name}.json`;
+export function getDefinition(name, language = 'en', raw = true) {
+  let path;
+  if (raw) {
+    path = `/${language}/raw/${name}.json`;
+  } else {
+    path = `/${language}/${name}.json`;
+  }
+
   return getManifest().then(({ id }) => {
     return cachedGet(path, id);
   });
