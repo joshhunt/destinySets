@@ -21,8 +21,9 @@
     "build": "react-app-rewired build",
     "test": "react-app-rewired test --env=jsdom",
     "serve": "serve -s build",
-    "deploy":
-      "yarn run build && env AWS_PROFILE=money aws s3 sync build/ s3://destinysets.com/ --region=ap-southeast-2 --acl public-read",
+    "deploy": "yarn run build && yarn run upload",
+    "upload":
+      "env AWS_PROFILE=money aws s3 sync build/ s3://destinysets.com/ --region=ap-southeast-2 --acl public-read",
     "generate-autotrack":
       "autotrack -o public/autotrack.build.js -p clean-url-tracker,url-change-tracker",
     "eject": "react-scripts eject"
