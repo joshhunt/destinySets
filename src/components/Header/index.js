@@ -5,13 +5,9 @@ import { Link } from 'react-router';
 import cx from 'classnames';
 import Sidebar from 'react-sidebar';
 import DonateButton, { DONATION_LINK } from 'app/components/DonateButton';
+import LanguageSwitcher from './LanguageSwitcher';
 
-import {
-  languages,
-  languageByCode,
-  getDefaultLanguage,
-  getBrowserLocale,
-} from 'app/lib/i18n';
+import { getDefaultLanguage, getBrowserLocale } from 'app/lib/i18n';
 import { trackEvent } from 'app/lib/analytics';
 
 import logo from 'app/logo.svg';
@@ -83,7 +79,6 @@ function NavLink({ children, className, ...props }) {
 class Header extends React.Component {
   state = {
     accountSwitcherActive: false,
-    langSwitcherActive: false,
   };
 
   toggleAccountSwitcher = () => {
@@ -93,28 +88,8 @@ class Header extends React.Component {
     });
   };
 
-  toggleLangSwitcher = () => {
-    this.setState({
-      accountSwitcherActive: false,
-      langSwitcherActive: !this.state.langSwitcherActive,
-    });
-  };
-
   switchProfile = newProfile => {
     this.props.onChangeProfile(newProfile);
-  };
-
-  setLang = lang => {
-    trackEvent(
-      'switch-lang',
-      [
-        `loaded:${lang.code}`,
-        `default:${getDefaultLanguage().code}`,
-        `browser:${getBrowserLocale()}`,
-      ].join('|'),
-    );
-
-    this.props.onChangeLang(lang);
   };
 
   render() {
@@ -126,8 +101,11 @@ class Header extends React.Component {
       activeLanguage,
       isGoogleAuthenticated,
       onGoogleSignout,
+      toggleLangSwitcher,
+      setLang,
+      langSwitcherActive,
     } = this.props;
-    const { langSwitcherActive, accountSwitcherActive } = this.state;
+    const { accountSwitcherActive } = this.state;
 
     const style = {};
 
@@ -147,7 +125,8 @@ class Header extends React.Component {
             </button>
 
             <a href="#" className={styles.siteName}>
-              Destiny Sets
+              <img src={logo} className={styles.logo} alt="" />
+              <span>Destiny Sets</span>
             </a>
           </div>
 
@@ -165,33 +144,12 @@ class Header extends React.Component {
           </div>
 
           <div className={styles.social}>
-            <div
-              className={styles.languageSwitcher}
-              onClick={this.toggleLangSwitcher}
-            >
-              <div className={styles.currentLang}>
-                <span className={styles.displayName}>
-                  {activeLanguage && languageByCode[activeLanguage.code].name}
-                </span>
-              </div>
-              <div className={styles.switchButton}>
-                <i className="fa fa-caret-down" aria-hidden="true" />
-              </div>
-
-              {langSwitcherActive && (
-                <div className={styles.langDropdown}>
-                  {languages.map(lang => (
-                    <div
-                      key={lang.code}
-                      className={styles.langOption}
-                      onClick={() => this.setLang(lang)}
-                    >
-                      {lang.name}
-                    </div>
-                  ))}
-                </div>
-              )}
-            </div>
+            <LanguageSwitcher
+              activeLanguage={activeLanguage}
+              langSwitcherActive={langSwitcherActive}
+              toggleLangSwitcher={toggleLangSwitcher}
+              setLang={setLang}
+            />
 
             {profile && (
               <ProfileSwitcher
@@ -216,6 +174,7 @@ class Header extends React.Component {
 export default class FixedHeader extends Component {
   state = {
     sidebarOpen: false,
+    langSwitcherActive: false,
   };
 
   onSetSidebarOpen = open => {
@@ -223,7 +182,6 @@ export default class FixedHeader extends Component {
   };
 
   closeSidebar = () => {
-    console.log('xxxxxx');
     this.setState({ sidebarOpen: false });
 
     window.setTimeout(() => {
@@ -231,21 +189,62 @@ export default class FixedHeader extends Component {
     }, 1);
   };
 
+  toggleLangSwitcher = () => {
+    this.setState({
+      accountSwitcherActive: false,
+      langSwitcherActive: !this.state.langSwitcherActive,
+    });
+  };
+
+  setLang = lang => {
+    trackEvent(
+      'switch-lang',
+      [
+        `loaded:${lang.code}`,
+        `default:${getDefaultLanguage().code}`,
+        `browser:${getBrowserLocale()}`,
+      ].join('|'),
+    );
+
+    this.setState({
+      sidebarOpen: false,
+    });
+
+    this.props.onChangeLang(lang);
+  };
+
   render() {
+    const { activeLanguage } = this.props;
+
     const sidebarContent = (
       <div className={sidebarStyles.root}>
-        <Link to="/" className={styles.siteName}>
-          Destiny Sets
-          <span className={styles.version}>2</span>
+        <Link
+          to="/"
+          className={styles.siteName}
+          onClick={() => this.onSetSidebarOpen(false)}
+        >
+          <img src={logo} className={styles.logo} alt="" />
+          <span>Destiny Sets</span>
         </Link>
+
         {NAV_LINKS.map(({ to, label }, index) => (
           <NavLink key={to} onClick={this.closeSidebar} to={to}>
             {label}
           </NavLink>
         ))}
+
+        <LanguageSwitcher
+          displayInline={true}
+          activeLanguage={activeLanguage}
+          langSwitcherActive={this.state.langSwitcherActive}
+          toggleLangSwitcher={this.toggleLangSwitcher}
+          setLang={this.setLang}
+        />
+
         <br />
         <div className={styles.mobileSocials}>{SOCIAL}</div>
         <br />
+
         <DonateButton />
       </div>
     );
@@ -256,6 +255,9 @@ export default class FixedHeader extends Component {
           {...this.props}
           onSetSidebarOpen={this.onSetSidebarOpen}
           className={styles.fixedHeader}
+          toggleLangSwitcher={this.toggleLangSwitcher}
+          setLang={this.setLang}
+          langSwitcherActive={this.state.langSwitcherActive}
         />
         <Header {...this.props} className={styles.fakeHeader} />
 

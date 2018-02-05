@@ -9,7 +9,7 @@ $edgePadding = 15px
   top: 0
   left: 0
   right: 0
-  z-index: 10
+  z-index: 1
 
 .fakeHeader
   visibility: hidden
@@ -136,19 +136,6 @@ $edgePadding = 15px
 
   &:hover
     background: $activeBg
-
-.languageSwitcher
-  composes: _dropdownMenuRoot
-  padding-top: 15px
-  padding-bottom: 15px
-
-.langDropdown
-  composes: _dropdownMenuDropdown
-
-.langOption
-  composes: _dropdownMenuOption
-  font-size: .85em
-  white-space: nowrap
 
 // account switcher stuff
 .accountSwitcher
