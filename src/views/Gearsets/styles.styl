@@ -40,7 +40,7 @@ $twitter = #47A0EA
   margin: 15px 15px
   display: flex
   justify-content: space-between
-  align-items: center
+  align-items: flex-start
   flex-wrap: wrap
 
   // mobile styling
@@ -55,66 +55,6 @@ $twitter = #47A0EA
     -webkit-overflow-scrolling: touch
     overflow: scroll
     white-space: nowrap
-
-.filterFlex
-  display: flex
-  margin-right: -10px
-
-  // mobile styling
-  @media screen and (max-width: 679px)
-    margin-left: -10px
-
-.filteredOut
-  padding: 5px 10px
-  color: #808080
-
-  // mobile styling
-  @media screen and (max-width: 679px)
-    order: 2
-
-.toggleFilters
-  // margin-left: -10px
-  color: rgba(white, .9)
-  cursor: pointer
-  padding: 5px 10px
-  transition: all 150ms ease-in-out
-
-  &:hover
-    background: rgba(white, .07)
-
-  // mobile styling
-  @media screen and (max-width: 679px)
-    display: inline-block
-
-.filtersActive
-  background: rgba(white, .07)
-
-.filters
-  flex: 1 0 100%
-  display: flex
-  flex-direction: row-reverse
-
-  // mobile styling
-  @media screen and (max-width: 679px)
-    display: block
-
-  margin-right: -10px
-
-  // mobile styling
-  @media screen and (max-width: 679px)
-    margin-left: -10px
-
-.filterInner
-  background: rgba(white, .07)
-  padding: 10px 15px
-
-.neg
-  margin: 0 -10px
-
-.filterOpt
-  margin: 0 10px
-  white-space: nowrap
-  display: inline-block
 
 .subnavItem
   display: inline-block
@@ -165,16 +105,3 @@ $twitter = #47A0EA
 
     &:hover
       background: lighten(#13161B, 20%)
-
-.itemCountWrapper
-  display: flex
-  align-items: center
-
-  // mobile styling
-  @media screen and (max-width: 679px)
-    order: 3
-
-.itemCount
-  color: rgba(white, .9)
-  padding: 2px 5px
-  cursor: pointer

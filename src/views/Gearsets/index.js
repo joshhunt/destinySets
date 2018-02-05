@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { sortBy } from 'lodash';
-import cx from 'classnames';
 import copy from 'app/lib/copyToClipboard';
 
 import { getDefinition } from 'app/lib/manifestData';
@@ -19,6 +18,7 @@ import Loading from 'app/views/Loading';
 import LoginUpsell from 'app/components/LoginUpsell';
 import GoogleLoginUpsell from 'app/components/GoogleLoginUpsell';
 import ActivityList from 'app/components/ActivityList';
+import FilterBar from 'app/components/FilterBar';
 import DestinyAuthProvider from 'app/lib/DestinyAuthProvider';
 
 import filterSets, {
@@ -345,55 +345,20 @@ class Gearsets extends Component {
             ))}
           </div>
 
-          <div className={styles.filterFlex}>
-            {profile &&
-              hiddenItemsCount > 0 && (
-                <div className={styles.filteredOut}>
-                  {hiddenItemsCount} items hidden by filters
-                </div>
-              )}
-
-            <div className={styles.itemCountWrapper}>
-              <div className={styles.itemCount} onClick={this.toggleCountStyle}>
-                Collected{' '}
-                {countStyle ? (
-                  <span>{Math.floor(itemCount / obtainedCount * 100)}%</span>
-                ) : (
-                  <span>
-                    {itemCount} / {obtainedCount}
-                  </span>
-                )}
-              </div>
-            </div>
-
-            <div
-              className={cx(
-                styles.toggleFilters,
-                displayFilters && styles.filtersActive,
-              )}
-              onClick={this.toggleFilter}
-            >
-              Filters <i className="fa fa-caret-down" aria-hidden="true" />
-            </div>
-          </div>
-
-          {displayFilters && (
-            <div className={styles.filters}>
-              <div className={styles.filterInner}>
-                <div className={styles.neg}>
-                  {FILTERS.map(([filterId, filterLabel]) => (
-                    <label className={styles.filterOpt}>
-                      <input
-                        type="checkbox"
-                        checked={this.state.filter[filterId]}
-                        onChange={() => this.toggleFilterValue(filterId)}
-                      />{' '}
-                      {filterLabel}
-                    </label>
-                  ))}
-                </div>
-              </div>
-            </div>
+          {this.props.isAuthenticated && (
+            <FilterBar
+              filters={FILTERS}
+              filterValues={this.state.filter}
+              profile={profile}
+              hiddenItemsCount={hiddenItemsCount}
+              itemCount={itemCount}
+              obtainedCount={obtainedCount}
+              countStyle={countStyle}
+              displayFilters={displayFilters}
+              toggleFilter={this.toggleFilter}
+              toggleCountStyle={this.toggleCountStyle}
+              toggleFilterValue={this.toggleFilterValue}
+            />
           )}
         </div>
 
