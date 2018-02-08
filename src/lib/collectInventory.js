@@ -8,7 +8,7 @@ function mergeInstancedItem(_allItems, item, itemComponents, extraData = {}) {
   const instancedItem = {
     ...item,
     ...extraData,
-    $instanceData: itemComponents[item.itemInstanceId]
+    $instanceData: itemComponents[item.itemInstanceId],
   };
 
   allItems[item.itemHash].push(instancedItem);
@@ -25,14 +25,14 @@ function collectKioskItems(kiosks, vendorDefs, _allItems, extraData) {
 
     kiosk.forEach(kioskEntry => {
       const vendorItem = vendor.itemList.find(
-        i => i.vendorItemIndex === kioskEntry.index
+        i => i.vendorItemIndex === kioskEntry.index,
       );
 
       if (!vendorItem) {
         console.error(
-          `Was not able to find vendorItem for kiosk ${
-            vendorHash
-          } / kioskEntry.index ${kioskEntry.index}`
+          `Was not able to find vendorItem for kiosk ${vendorHash} / kioskEntry.index ${
+            kioskEntry.index
+          }`,
         );
 
         return null;
@@ -46,7 +46,7 @@ function collectKioskItems(kiosks, vendorDefs, _allItems, extraData) {
         allItems,
         { itemHash: vendorItem.itemHash },
         {},
-        extraData
+        extraData,
       );
     });
   });
@@ -63,15 +63,15 @@ function collectItemsFromKiosks(profile, vendorDefs, _allItems) {
     vendorDefs,
     allItems,
     {
-      $location: 'profileKiosk'
-    }
+      $location: 'profileKiosk',
+    },
   );
 
   Object.keys(characterKiosks.data).forEach(characterHash => {
     const kiosk = characterKiosks.data[characterHash];
     allItems = collectKioskItems(kiosk.kioskItems, vendorDefs, allItems, {
       $characterHash: characterHash,
-      $location: 'characterKiosk'
+      $location: 'characterKiosk',
     });
   });
 
@@ -85,24 +85,35 @@ export default function collectInventory(profile, vendorDefs) {
     characterInventories,
     profileInventory,
     characterEquipment,
-    itemComponents
+    itemComponents,
   } = profile;
 
+  console.log('profile:', profile);
+
   let allItems = {};
+  const plugData = {};
 
   Object.keys(profile.itemComponents.sockets.data).forEach(instanceId => {
     const { sockets } = profile.itemComponents.sockets.data[instanceId];
     sockets.forEach(socket => {
-      if (socket.reusablePlugHashes) {
-        socket.reusablePlugHashes.forEach(plugHash => {
-          allItems[plugHash] = [
-            {
-              itemHash: plugHash,
-              $hostItemInstanceHash: instanceId,
-              $location: '$reusablePlugHashes',
-              $instanceData: []
-            }
-          ];
+      if (socket.reusablePlugs) {
+        socket.reusablePlugs.forEach(itemPlug => {
+          plugData[itemPlug.plugItemHash] = {
+            itemHash: itemPlug.plugItemHash,
+            $hostItemInstanceHash: instanceId,
+            $instanceData: itemPlug,
+          };
+
+          if (itemPlug.canInsert) {
+            allItems[itemPlug.plugItemHash] = [
+              {
+                itemHash: itemPlug.plugItemHash,
+                $hostItemInstanceHash: instanceId,
+                $location: '$reusablePlugHashes',
+                $instanceData: [itemPlug],
+              },
+            ];
+          }
         });
       }
     });
@@ -117,8 +128,8 @@ export default function collectInventory(profile, vendorDefs) {
         itemComponents.instances.data,
         {
           $characterHash: characterHash,
-          $location: 'characterInventory'
-        }
+          $location: 'characterInventory',
+        },
       );
     });
   });
@@ -132,8 +143,8 @@ export default function collectInventory(profile, vendorDefs) {
         itemComponents.instances.data,
         {
           $characterHash: characterHash,
-          $location: 'characterEquipment'
-        }
+          $location: 'characterEquipment',
+        },
       );
     });
   });
@@ -143,7 +154,7 @@ export default function collectInventory(profile, vendorDefs) {
       allItems,
       item,
       itemComponents.instances.data,
-      { $location: 'profileInventory' }
+      { $location: 'profileInventory' },
     );
   });
 
@@ -151,5 +162,5 @@ export default function collectInventory(profile, vendorDefs) {
     allItems = collectItemsFromKiosks(profile, vendorDefs, allItems);
   }
 
-  return allItems;
+  return { inventory: allItems, plugData };
 }

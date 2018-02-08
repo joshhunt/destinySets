@@ -12,6 +12,7 @@ import {
 } from 'app/lib/destinyEnums';
 
 import ItemStats from 'app/components/ItemStats';
+import Objectives from 'app/components/Objectives';
 
 const TIER_STYLE = {
   [EXOTIC]: styles.exotic,
@@ -104,6 +105,13 @@ export default function ItemTooltip({ item, globalItemCount }) {
               <li>Dismantled</li>
             </ul>
           </div>
+        )}
+
+        {item.$objectives && (
+          <Objectives
+            className={styles.objectives}
+            objectives={item.$objectives}
+          />
         )}
       </div>
     </div>

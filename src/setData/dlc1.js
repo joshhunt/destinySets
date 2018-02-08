@@ -116,6 +116,36 @@ module.exports = [
             ],
           },
           {
+            title: 'Hunter armor',
+            items: [
+              967086398, // Iron Pledge Ornament
+              2845443115, // Iron Pledge Ornament
+              4064021125, // Iron Pledge Ornament
+              2409736861, // Iron Pledge Ornament
+              1167898172, // Iron Pledge Ornament
+            ],
+          },
+          {
+            title: 'Titan armor',
+            items: [
+              3913452440, // Iron Pledge Ornament
+              208020061, // Iron Pledge Ornament
+              479059411, // Iron Pledge Ornament
+              3922308175, // Iron Pledge Ornament
+              2851718150, // Iron Pledge Ornament
+            ],
+          },
+          {
+            title: 'Warlock armor',
+            items: [
+              3388638931, // Iron Pledge Ornament
+              1355065950, // Iron Pledge Ornament
+              3045190354, // Iron Pledge Ornament
+              2984447248, // Iron Pledge Ornament
+              2455333439, // Iron Pledge Ornament
+            ],
+          },
+          {
             title: 'Others',
             items: [
               3681086673, // Iron Companionship Shell (Ghost shell)

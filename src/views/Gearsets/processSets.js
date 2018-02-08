@@ -53,7 +53,47 @@ function merge(base, extra) {
   return { ...base, ...extra };
 }
 
-export function mapItems(itemHashes, itemDefs, statDefs, inventory) {
+function getStats(item, statDefs) {
+  return Object.values(get(item, 'stats.stats', {}))
+    .map(stat => {
+      const statDef = statDefs[stat.statHash];
+
+      if (!statDef) {
+        log(
+          `WARNING: Unable to find stat definition ${stat.statHash} on item ${
+            item.hash
+          }`,
+        );
+
+        return null;
+      }
+
+      if (
+        !statDef.displayProperties.name ||
+        STAT_BLACKLIST.includes(stat.statHash)
+      ) {
+        return null;
+      }
+
+      return {
+        ...stat,
+        $stat: statDef,
+      };
+    })
+    .filter(Boolean)
+    .sort(a => {
+      return NUMERICAL_STATS.includes(a.statHash) ? -1 : 1;
+    });
+}
+
+export function mapItems(
+  itemHashes,
+  itemDefs,
+  statDefs,
+  objectiveDefs,
+  inventory,
+  plugData,
+) {
   return itemHashes
     .map(itemHash => {
       const item = itemDefs[itemHash];
@@ -65,41 +105,18 @@ export function mapItems(itemHashes, itemDefs, statDefs, inventory) {
 
       const inventoryItem = inventory[itemHash];
 
-      const stats = Object.values(get(item, 'stats.stats', {}))
-        .map(stat => {
-          const statDef = statDefs[stat.statHash];
+      let objectives;
+      const thisPlug = plugData[itemHash];
+      if (thisPlug && thisPlug.$instanceData) {
+        objectives = thisPlug.$instanceData.plugObjectives
+          .map(objective => ({
+            $objective: objectiveDefs[objective.objectiveHash],
+            ...objective,
+          }))
+          .filter(objective => objective.$objective);
+      }
 
-          if (!statDef) {
-            log(
-              `WARNING: Unable to find stat definition ${
-                stat.statHash
-              } on item ${itemHash}`,
-            );
-
-            return null;
-          }
-
-          if (!statDef.displayProperties.name) {
-            return null;
-          }
-
-          if (STAT_BLACKLIST.includes(stat.statHash)) {
-            return null;
-          }
-
-          return {
-            ...stat,
-            $stat: statDef,
-          };
-        })
-        .filter(Boolean)
-        .sort(a => {
-          if (NUMERICAL_STATS.includes(a.statHash)) {
-            return -1;
-          } else {
-            return 1;
-          }
-        });
+      const stats = getStats(item, statDefs);
 
       const intrinsicStatPerk = get(item, 'sockets.socketEntries', []).find(
         entry => INTRINSIC.includes(entry.singleInitialItemHash),
@@ -110,12 +127,23 @@ export function mapItems(itemHashes, itemDefs, statDefs, inventory) {
           itemDefs[intrinsicStatPerk.singleInitialItemHash];
       }
 
+      const isPlug =
+        inventoryItem &&
+        inventoryItem[inventoryItem.length - 1].$location ===
+          '$reusablePlugHashes';
+
+      const isDismantled = inventoryItem && inventoryItem[0].$dismantled;
+      const hasInventoryItems = !!inventoryItem;
+
       return {
-        $obtained: !!inventoryItem,
-        $dismantled: inventoryItem && inventoryItem[0].$dismantled,
+        $obtained: isPlug
+          ? hasInventoryItems && !isDismantled
+          : hasInventoryItems,
+        $dismantled: isPlug ? false : isDismantled,
         $inventory: inventoryItem,
         $intrinsicStatPerk: intrinsicStatPerkDef,
         $stats: stats,
+        $objectives: objectives,
         ...item,
       };
     })
@@ -146,6 +174,7 @@ export default function processSets(args, dataCallback) {
     itemDefs,
     vendorDefs,
     statDefs,
+    objectiveDefs,
     profile,
     xurItems,
     setData,
@@ -156,9 +185,13 @@ export default function processSets(args, dataCallback) {
   const xurHashes = xurItems || [];
   const allItems = Object.values(itemDefs);
 
-  let inventory = (profile && collectInventory(profile, vendorDefs)) || {};
+  let { inventory, plugData } =
+    (profile && collectInventory(profile, vendorDefs)) || {};
   let usingLocalStorageInventory = false;
   const localStorageInventory = ls.getInventory();
+
+  inventory = inventory || {};
+  plugData = plugData || {};
 
   log('Processing sets with', {
     inventory,
@@ -171,7 +204,7 @@ export default function processSets(args, dataCallback) {
     inventory = localStorageInventory;
     log('Using local storage inventory');
   } else if (cloudInventory && profile) {
-    log('Using cloud inventory');
+    log('Using cloud inventory', cloudInventory);
     inventory = mergeCloudInventory(inventory, cloudInventory);
   }
 
@@ -196,7 +229,14 @@ export default function processSets(args, dataCallback) {
           throw new Error('Section not in correct format');
         }
 
-        const items = mapItems(preItems, itemDefs, statDefs, inventory);
+        const items = mapItems(
+          preItems,
+          itemDefs,
+          statDefs,
+          objectiveDefs,
+          inventory,
+          plugData,
+        );
 
         return merge(section, { items });
       });

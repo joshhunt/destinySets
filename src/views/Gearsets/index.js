@@ -68,17 +68,25 @@ class Gearsets extends Component {
 
   fetchDefintionsWithLangage(langCode) {
     this.dataPromise = Promise.all([
-      getDefinition('reducedCollectableInventoryItems', langCode, false).then(
-        defs => {
-          ITEM_BLACKLIST.forEach(defHash => {
-            delete defs[defHash];
-          });
+      // getDefinition('reducedCollectableInventoryItems', langCode, false).then(
+      //   defs => {
+      //     ITEM_BLACKLIST.forEach(defHash => {
+      //       delete defs[defHash];
+      //     });
+      //
+      //     return defs;
+      //   },
+      // ),
+      getDefinition('DestinyInventoryItemDefinition', langCode).then(defs => {
+        ITEM_BLACKLIST.forEach(defHash => {
+          delete defs[defHash];
+        });
 
-          return defs;
-        },
-      ),
+        return defs;
+      }),
       getDefinition('DestinyVendorDefinition', langCode),
       getDefinition('DestinyStatDefinition', langCode),
+      getDefinition('DestinyObjectiveDefinition', langCode),
     ]);
 
     this.scheduleProcessSets();
@@ -108,11 +116,12 @@ class Gearsets extends Component {
     });
   }
 
-  processSets = (itemDefs, vendorDefs, statDefs) => {
+  processSets = (itemDefs, vendorDefs, statDefs, objectiveDefs) => {
     const processPayload = {
       itemDefs,
       vendorDefs,
       statDefs,
+      objectiveDefs,
       cloudInventory: this.cloudInventory,
       profile: this.profile,
       setData: this.props.route.setData,
