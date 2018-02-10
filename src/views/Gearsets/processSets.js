@@ -107,7 +107,11 @@ export function mapItems(
 
       let objectives;
       const thisPlug = plugData[itemHash];
-      if (thisPlug && thisPlug.$instanceData) {
+      if (
+        thisPlug &&
+        thisPlug.$instanceData &&
+        thisPlug.$instanceData.plugObjectives
+      ) {
         objectives = thisPlug.$instanceData.plugObjectives
           .map(objective => ({
             $objective: objectiveDefs[objective.objectiveHash],

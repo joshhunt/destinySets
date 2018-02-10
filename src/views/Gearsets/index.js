@@ -68,22 +68,15 @@ class Gearsets extends Component {
 
   fetchDefintionsWithLangage(langCode) {
     this.dataPromise = Promise.all([
-      // getDefinition('reducedCollectableInventoryItems', langCode, false).then(
-      //   defs => {
-      //     ITEM_BLACKLIST.forEach(defHash => {
-      //       delete defs[defHash];
-      //     });
-      //
-      //     return defs;
-      //   },
-      // ),
-      getDefinition('DestinyInventoryItemDefinition', langCode).then(defs => {
-        ITEM_BLACKLIST.forEach(defHash => {
-          delete defs[defHash];
-        });
+      getDefinition('reducedCollectableInventoryItems', langCode, false).then(
+        defs => {
+          ITEM_BLACKLIST.forEach(defHash => {
+            delete defs[defHash];
+          });
 
-        return defs;
-      }),
+          return defs;
+        },
+      ),
       getDefinition('DestinyVendorDefinition', langCode),
       getDefinition('DestinyStatDefinition', langCode),
       getDefinition('DestinyObjectiveDefinition', langCode),
@@ -128,7 +121,11 @@ class Gearsets extends Component {
       xurItems: this.xurItems,
     };
 
+    performance.mark('processSets Start');
+    console.log('pre:', window.performance.now());
     processSets(processPayload, result => {
+      performance.mark('processSets end');
+      console.log('post:', window.performance.now());
       if (!result) {
         return null;
       }
