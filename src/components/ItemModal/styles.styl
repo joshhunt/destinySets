@@ -1,0 +1,94 @@
+.root
+  content: 'hi'
+  background: #20262d
+  box-shadow: 0 2px 10px 0 rgba(black, 1)
+  width: 100%
+  max-width: 450px
+  padding: 0 15px
+  overflow: auto
+  border-radius: 4px
+  position: relative
+
+.screenshot
+  display: block
+  width: calc(100% + 30px)
+  max-height: 200px
+  object-fit: cover
+  object-position: center
+  margin: 0 -15px
+  margin-bottom: 0
+  transition: 200ms ease-in-out all
+
+  &:hover
+    max-height: 266px
+
+.icon
+  width: 60px
+  height: 60px
+  display: flex
+  margin-right: 15px
+
+.itemTop
+  display: flex
+  margin: 0 -15px
+  padding: 10px 15px;
+
+.itemInfo
+  flex: 1
+  font-size: 20px
+
+.itemType
+  color: rgba(white, .75)
+  font-size: .8em
+
+.objectiveTitle
+  font-size: 1.1em
+  margin-bottom: 5px
+
+.close
+  background: none
+  padding: 15px
+  outline: none !important
+  cursor: pointer
+  appearance: none
+  border: none
+  position: absolute
+  top: 0
+  right: 0
+  font-size: 20px
+  color: white
+
+.button
+  background: lighten(#21262D, 10%)
+  color: #D4D6D7
+  border: none
+  border-radius: 3px
+  appearance: none
+  font-size: 16px
+  margin-top: 5px
+  margin-bottom: 15px
+  padding: 3px 10px
+  outline: none !important
+  transition: 150ms ease-in-out all
+  cursor: pointer
+
+  &:hover
+    background: lighten(#21262D, 15%)
+  &:active
+    background: lighten(#21262D, 5%)
+
+.exotic
+  background: #ceae33
+
+.legendary
+  background: #522f65
+
+.rare
+  background: #5076a3
+
+.common
+  background: #366f3c
+
+.basic
+  background: #c3bcb4
+  color: #1e242b

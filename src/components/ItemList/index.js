@@ -110,7 +110,7 @@ const getIntrinsic = items => {
 
 export default class ItemList extends Component {
   render() {
-    const { className, drops, sections, tinyItems } = this.props;
+    const { className, drops, sections, tinyItems, onItemClick } = this.props;
 
     return (
       <div className={cx(className, styles.root)}>
@@ -118,6 +118,7 @@ export default class ItemList extends Component {
           <div className={styles.drops}>
             {drops.map(item => (
               <Item
+                onClick={onItemClick}
                 className={styles.item}
                 key={item.hash}
                 item={item}
@@ -147,6 +148,7 @@ export default class ItemList extends Component {
                   <div className={styles.sectionItems}>
                     {section.items.map(item => (
                       <Item
+                        onClick={onItemClick}
                         key={item.itemHash || item.hash}
                         item={item}
                         small={true}

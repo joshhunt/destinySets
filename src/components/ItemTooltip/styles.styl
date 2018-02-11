@@ -1,11 +1,26 @@
 $padding = 10px
 
+mobile()
+  @media screen and (max-width: 679px)
+    {block}
+
+
 .tooltip
   width: 320px
   font-size: 15px
+  background: #20262d
+  position: relative
+
+  &.small
+    padding-bottom: .1px
+    margin-bottom: 15px
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.3)
 
 .body
   padding: 0 $padding
+
+  .small &
+    font-size: 14px
 
 .header
   display: flex
@@ -16,20 +31,35 @@ $padding = 10px
   width: 70px
   height: 70px
 
+  .small &
+    width: 40px
+    height: 40px
+
 .headerContent
   margin: 0 $padding
   flex: 1
 
+  .small &
+    padding: 4px 0
+    padding-top: 2px
+
 .title
-  font-size: 18px
+  font-size: 15px
 
 .subtitle
   opacity: .8
   display: flex
   justify-content: space-between
+  font-size: 13px
+  line-height: 1
 
 .description
   margin: $padding 0
+
+  .small &
+    +mobile()
+      font-size: 0
+      margin: 0 0 10px 0
 
 .screenshotWrapper
   position: relative
@@ -45,6 +75,26 @@ $padding = 10px
   bottom: 0
   width: 100%
   display: block
+
+
+.closeButton
+  display: none
+
+  .small &
+    display: block
+    line-height: 1
+    padding: 10px
+    padding-top: 1px
+    background: none
+    outline: none !important
+    cursor: pointer
+    appearance: none
+    border: none
+    position: absolute
+    top: 0
+    right: 0
+    font-size: 20px
+    color: white
 
 .exotic .header
   background: #ceae33

@@ -93,8 +93,11 @@ export function mapItems(
   objectiveDefs,
   inventory,
   plugData,
+  trackedHashes,
 ) {
-  return itemHashes
+  const trackedItems = [];
+
+  const items = itemHashes
     .map(itemHash => {
       const item = itemDefs[itemHash];
 
@@ -139,7 +142,7 @@ export function mapItems(
       const isDismantled = inventoryItem && inventoryItem[0].$dismantled;
       const hasInventoryItems = !!inventoryItem;
 
-      return {
+      const finalItem = {
         $obtained: isPlug
           ? hasInventoryItems && !isDismantled
           : hasInventoryItems,
@@ -150,8 +153,19 @@ export function mapItems(
         $objectives: objectives,
         ...item,
       };
+
+      if (trackedHashes.includes(itemHash)) {
+        trackedItems.push(finalItem);
+      }
+
+      return finalItem;
     })
     .filter(Boolean);
+
+  return {
+    items,
+    trackedItems,
+  };
 }
 
 function cleanUpCloudInventory(cloudInventory) {
@@ -183,6 +197,7 @@ export default function processSets(args, dataCallback) {
     xurItems,
     setData,
     cloudInventory,
+    trackedHashes,
   } = args;
 
   const sets = setData;
@@ -196,6 +211,8 @@ export default function processSets(args, dataCallback) {
 
   inventory = inventory || {};
   plugData = plugData || {};
+
+  const allTrackedItems = [];
 
   log('Processing sets with', {
     inventory,
@@ -233,14 +250,17 @@ export default function processSets(args, dataCallback) {
           throw new Error('Section not in correct format');
         }
 
-        const items = mapItems(
+        const { items, trackedItems } = mapItems(
           preItems,
           itemDefs,
           statDefs,
           objectiveDefs,
           inventory,
           plugData,
+          trackedHashes,
         );
+
+        allTrackedItems.push(...trackedItems);
 
         return merge(section, { items });
       });
@@ -276,6 +296,7 @@ export default function processSets(args, dataCallback) {
   const payload = {
     rawGroups,
     inventory,
+    trackedItems: allTrackedItems,
     xurItems: xurItemsGood,
     hasInventory: Object.keys(inventory).length > 0,
     loading: false,

@@ -2,6 +2,22 @@ $duration = 500ms
 $durationDelay = $duration / 10
 $twitter = #47A0EA
 
+mobile()
+  @media screen and (max-width: 679px)
+    {block}
+
+.trackedItems
+  position: fixed
+  right: 16px
+  bottom: 0
+  color: white
+  z-index: 999
+
+  +mobile()
+    left: 16px
+    display: flex
+    flex-direction: column
+    align-items: center
 
 .info
   max-width: 800px
@@ -28,7 +44,6 @@ $twitter = #47A0EA
   margin: 10px 0
   color: white
   display: none
-
 
 .beta
   text-align: center
@@ -62,7 +77,6 @@ $twitter = #47A0EA
   font-weight: bold
   margin: 0 15px
   color: darken(#FFFFFF, 50%)
-  // animation: appear $duration
   animation-fill-mode: both
   text-decoration: none
   transition: 150ms ease-in-out
@@ -76,8 +90,6 @@ $twitter = #47A0EA
 
   &.active
     color: #FFFFFF
-
-
 
 @keyframes appear
   from

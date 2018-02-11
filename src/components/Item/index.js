@@ -77,8 +77,12 @@ export default class Item extends Component {
     this.setState({ isTooltipActive: false });
   };
 
+  onClick = ev => {
+    this.props.onClick && this.props.onClick(ev, this.props.item);
+  };
+
   render() {
-    const { className, onClick, item, dev, small, tiny } = this.props;
+    const { className, item, dev, small, tiny } = this.props;
 
     const dtrLink = `http://db.destinytracker.com/d2/en/items/${item.hash}`;
 
@@ -106,7 +110,7 @@ export default class Item extends Component {
 
     return (
       <div
-        onClick={onClick}
+        onClick={this.onClick}
         className={cx(rootClassName, className)}
         data-class={item.dClass}
       >

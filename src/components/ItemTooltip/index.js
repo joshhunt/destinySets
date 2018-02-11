@@ -1,5 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
 import cx from 'classnames';
+
+import FancyImage from 'app/components/FancyImage';
 
 import styles from './styles.styl';
 
@@ -22,39 +24,7 @@ const TIER_STYLE = {
   [COMMON]: styles.basic,
 };
 
-class FancyImage extends Component {
-  state = {
-    loaded: false,
-  };
-
-  onLoad = () => {
-    this.setState({ loaded: true });
-  };
-
-  render() {
-    const { className, ...props } = this.props;
-    const styles = {
-      opacity: 0,
-      transition: 'opacity 300ms ease-in-out',
-    };
-
-    if (this.state.loaded) {
-      styles.opacity = 1;
-    }
-
-    return (
-      <img
-        alt=""
-        className={cx(className)}
-        style={styles}
-        {...props}
-        onLoad={this.onLoad}
-      />
-    );
-  }
-}
-
-export default function ItemTooltip({ item, globalItemCount }) {
+export default function ItemTooltip({ item, small, dismiss, globalItemCount }) {
   const tier = item.inventory.tierTypeHash || '';
   const icon = item.displayProperties.icon || '/img/misc/missing_icon_d2.png';
   const name =
@@ -63,8 +33,16 @@ export default function ItemTooltip({ item, globalItemCount }) {
   const stats = item.$stats || [];
 
   return (
-    <div className={cx(styles.tooltip, TIER_STYLE[tier])}>
+    <div
+      className={cx(styles.tooltip, TIER_STYLE[tier], small && styles.small)}
+    >
       <div className={styles.header}>
+        {dismiss && (
+          <button className={styles.closeButton} onClick={() => dismiss(item)}>
+            ×
+          </button>
+        )}
+
         <div className={styles.img}>
           <FancyImage src={`https://bungie.net${icon}`} />
         </div>

@@ -12,7 +12,8 @@ export default function Activity(props) {
     activity,
     tinyItems,
     toggleCountStyle,
-    countStyle
+    countStyle,
+    onItemClick,
   } = props;
 
   if (!activity) return null;
@@ -26,7 +27,7 @@ export default function Activity(props) {
     sections,
     type,
     itemCount,
-    obtainedCount
+    obtainedCount,
   } = activity;
 
   return (
@@ -34,7 +35,7 @@ export default function Activity(props) {
       className={cx(
         className,
         styles.root,
-        getTypeClass(activityTypeName || type)
+        getTypeClass(activityTypeName || type),
       )}
     >
       <div className={styles.header}>
@@ -68,6 +69,7 @@ export default function Activity(props) {
         drops={drops}
         sections={sections}
         tinyItems={tinyItems}
+        onItemClick={onItemClick}
       />
     </div>
   );

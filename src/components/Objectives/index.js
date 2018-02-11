@@ -1,4 +1,5 @@
 import React from 'react';
+import cx from 'classnames';
 
 import styles from './styles.styl';
 
@@ -19,10 +20,10 @@ function ObjectiveValue({ objective }) {
 }
 
 export default function Objectives(props) {
-  const { className, objectives } = props;
+  const { className, objectives, bigger } = props;
 
   return (
-    <div className={className}>
+    <div className={cx(className, bigger && styles.bigger)}>
       {objectives.map(objective => (
         <div className={styles.objective} key={objective.objectiveHash}>
           <div

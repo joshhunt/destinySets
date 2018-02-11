@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import { sortBy } from 'lodash';
-import copy from 'app/lib/copyToClipboard';
+import Modal from 'react-modal';
 
 import { getDefinition } from 'app/lib/manifestData';
 
+import copy from 'app/lib/copyToClipboard';
 import * as destiny from 'app/lib/destiny';
 import * as ls from 'app/lib/ls';
 import * as cloudStorage from 'app/lib/cloudStorage';
@@ -19,6 +20,8 @@ import LoginUpsell from 'app/components/LoginUpsell';
 import GoogleLoginUpsell from 'app/components/GoogleLoginUpsell';
 import ActivityList from 'app/components/ActivityList';
 import FilterBar from 'app/components/FilterBar';
+import ItemModal from 'app/components/ItemModal';
+import ItemTooltip from 'app/components/ItemTooltip';
 import DestinyAuthProvider from 'app/lib/DestinyAuthProvider';
 
 import filterSets, {
@@ -33,23 +36,46 @@ import styles from './styles.styl';
 
 const log = require('app/lib/log')('gearsets');
 
+const MODAL_STYLES = {
+  overlay: {
+    backgroundColor: 'rgba(0, 0, 0, 0.75)',
+    marginTop: 56,
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  content: {
+    position: 'static',
+    background: 'none',
+    border: 'none',
+  },
+};
+
 const ITEM_BLACKLIST = [
-  1744115122, // Legend of Acrius ...
-  460724140, // Jade Rabbit quest item
-  546372301, // Jade Rabbit quest item
-  2896466320, // Jade Rabbit quest item
-  2978016230, // Jade Rabbit quest item
-  3229272315, // Jade Rabbit quest item
+  1744115122, // Legend of Acrius quest item
+  460724140, // Jade Rabbit dupe
+  546372301, // Jade Rabbit dupe
+  2896466320, // Jade Rabbit dupe
+  2978016230, // Jade Rabbit dupe
+  3229272315, // Jade Rabbit dupe
 ];
 
 class Gearsets extends Component {
+  trackedHashes = [];
+
   constructor(props) {
     super(props);
+
+    this.trackedHashes = ls.getTrackedItems();
+
     this.state = {
+      itemModal: undefined,
       countStyle: true,
       loading: true,
       items: [],
       selectedItems: [],
+      trackedItems: [],
+      trackedHashes: [],
       displayFilters: false,
       googleAuthLoaded: false,
       filter: ls.getFilters() || DEFAULT_FILTER,
@@ -77,6 +103,7 @@ class Gearsets extends Component {
           return defs;
         },
       ),
+      // getDefinition('DestinyInventoryItemDefinition', langCode),
       getDefinition('DestinyVendorDefinition', langCode),
       getDefinition('DestinyStatDefinition', langCode),
       getDefinition('DestinyObjectiveDefinition', langCode),
@@ -115,17 +142,14 @@ class Gearsets extends Component {
       vendorDefs,
       statDefs,
       objectiveDefs,
+      trackedHashes: this.trackedHashes,
       cloudInventory: this.cloudInventory,
       profile: this.profile,
       setData: this.props.route.setData,
       xurItems: this.xurItems,
     };
 
-    performance.mark('processSets Start');
-    console.log('pre:', window.performance.now());
     processSets(processPayload, result => {
-      performance.mark('processSets end');
-      console.log('post:', window.performance.now());
       if (!result) {
         return null;
       }
@@ -159,8 +183,7 @@ class Gearsets extends Component {
     }
 
     destiny.getCurrentProfiles().then(({ profiles, bungieNetUser }) => {
-      window.__PROFILES = profiles;
-      this.setState({ profiles });
+      this.setState({ profiles, lastUpdate: new Date() });
 
       let fullName = [];
       if (bungieNetUser.xboxDisplayName) {
@@ -279,6 +302,55 @@ class Gearsets extends Component {
     copy(JSON.stringify(this.profile));
   };
 
+  onItemClick = (ev, item) => {
+    ev.preventDefault();
+    console.log('clicked', item);
+    this.setState({
+      itemModal: item,
+    });
+  };
+
+  closeModal = () => {
+    this.setState({
+      itemModal: null,
+    });
+  };
+
+  setUpPolling = () => {
+    if (this.trackedHashes.length && !this.pollId) {
+      // poll
+      this.pollId = window.setInterval(() => {
+        this.fetchCharacters();
+      }, 30 * 1000);
+    }
+
+    if (!this.trackedHashes.length && this.pollId) {
+      // unpoll
+      window.clearInterval(this.pollId);
+    }
+  };
+
+  trackOrnament = itemHash => {
+    this.trackedHashes = [...this.trackedHashes, itemHash];
+    this.scheduleProcessSets();
+    ls.saveTrackedItems(this.trackedHashes);
+    this.setUpPolling();
+  };
+
+  removeOrnament = item => {
+    this.trackedHashes = this.trackedHashes.filter(hash => {
+      return hash !== item.hash;
+    });
+
+    const newTrackedItems = this.state.trackedItems.filter(trackedItem => {
+      return trackedItem.hash !== item.hash;
+    });
+
+    ls.saveTrackedItems(this.trackedHashes);
+    this.setState({ trackedItems: newTrackedItems });
+    this.setUpPolling();
+  };
+
   render() {
     const {
       loading,
@@ -298,6 +370,8 @@ class Gearsets extends Component {
       googleAuthLoaded,
       xurExtraText,
       googleAuthSignedIn,
+      itemModal,
+      trackedItems,
     } = this.state;
 
     if (loading) {
@@ -338,6 +412,18 @@ class Gearsets extends Component {
             </GoogleLoginUpsell>
           )}
 
+        {trackedItems.length > 0 && (
+          <div className={styles.trackedItems}>
+            {trackedItems.map(item => (
+              <ItemTooltip
+                item={item}
+                small={true}
+                dismiss={this.removeOrnament}
+              />
+            ))}
+          </div>
+        )}
+
         <div className={styles.subnav}>
           <div className={styles.navsections}>
             {(groups || []).map((group, index) => (
@@ -373,6 +459,7 @@ class Gearsets extends Component {
         {(groups || []).map((group, index) => (
           <div key={index} id={`group_${index}`}>
             <ActivityList
+              onItemClick={this.onItemClick}
               title={group.name}
               activities={group.sets || []}
               toggleCountStyle={this.toggleCountStyle}
@@ -384,6 +471,19 @@ class Gearsets extends Component {
         <div className={styles.debug}>
           <button onClick={this.copyDebug}>Copy debug info</button>
         </div>
+
+        <Modal
+          isOpen={!!itemModal}
+          onRequestClose={this.closeModal}
+          contentLabel="Modal"
+          style={MODAL_STYLES}
+        >
+          <ItemModal
+            item={itemModal}
+            onRequestClose={this.closeModal}
+            trackOrnament={this.trackOrnament}
+          />
+        </Modal>
 
         <Footer />
       </div>
