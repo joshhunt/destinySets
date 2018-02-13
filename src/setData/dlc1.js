@@ -672,8 +672,61 @@ module.exports = [
         ],
       },
       {
+        name: 'Crimson Days',
+        big: false,
+        sections: [
+          {
+            title: 'Emotes',
+            items: [
+              518566750, // Heart Sign
+              1334842411, // Vengeful Dance
+              1605596084, // Amour Dance
+              3802876271, // Flaunting Dance
+            ],
+          },
+          {
+            title: 'Ghosts',
+            items: [
+              263371512, // Entwining Heart Shell
+              263371513, // Garland Shell
+              263371515, // True Conifer Shell
+              263371514, // Propulsive Heart Shell
+              263371516, // Amo Ludere Shell
+              263371517, // Electric Heart Shell
+              263371519, // Radiant Sunflake Shell
+              263371518, // Tirastrella Shell
+            ],
+          },
+          {
+            title: 'Sparrows',
+            items: [
+              3587167050, // Undefeated
+              3587167051, // Undeterred
+              1623653768, // Last Love
+              1623653770, // Heartbreaker
+              1623653769, // First Love
+              1623653771, // Battleheart
+            ],
+          },
+          {
+            title: 'Emblems',
+            items: [
+              1782320603, // Fire of the Crimson Days
+            ],
+          },
+          {
+            title: 'Shaders',
+            items: [
+              167651268, // Crimson Passion
+              2112889975, // Crimson Valor
+              1052553862, // Crimson Valor
+            ],
+          },
+        ],
+      },
+      {
         name: 'The Dawning',
-        big: true,
+        big: false,
         sections: [
           {
             title: 'Hunter armor',
