@@ -1,5 +1,4 @@
 /* eslint-disable jsx-a11y/href-no-hash */
-
 import React, { Component } from 'react';
 import { Link } from 'react-router';
 import cx from 'classnames';
@@ -11,6 +10,7 @@ import { getDefaultLanguage, getBrowserLocale } from 'app/lib/i18n';
 import { trackEvent } from 'app/lib/analytics';
 
 import logo from 'app/logo.svg';
+import crimsonDaysHeader from 'app/crimsonDaysHeader.jpg';
 import ProfileSwitcher from './ProfileSwitcher';
 import styles from './styles.styl';
 import sidebarStyles from './sidebar.styl';
@@ -107,7 +107,9 @@ class Header extends React.Component {
     } = this.props;
     const { accountSwitcherActive } = this.state;
 
-    const style = {};
+    const style = {
+      backgroundImage: `url(${crimsonDaysHeader})`,
+    };
 
     if (bg) {
       style.backgroundImage = `url(https://bungie.net${bg})`;

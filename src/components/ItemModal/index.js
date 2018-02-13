@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import cx from 'classnames';
 
-import FancyImage from 'app/components/FancyImage';
 import Objectives from 'app/components/Objectives';
 
 import {
