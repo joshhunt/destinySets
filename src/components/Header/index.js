@@ -10,7 +10,7 @@ import { getDefaultLanguage, getBrowserLocale } from 'app/lib/i18n';
 import { trackEvent } from 'app/lib/analytics';
 
 import logo from 'app/logo.svg';
-import crimsonDaysHeader from 'app/crimsonDaysHeader.jpg';
+// import crimsonDaysHeader from 'app/crimsonDaysHeader.jpg';
 import ProfileSwitcher from './ProfileSwitcher';
 import styles from './styles.styl';
 import sidebarStyles from './sidebar.styl';
@@ -108,7 +108,7 @@ class Header extends React.Component {
     const { accountSwitcherActive } = this.state;
 
     const style = {
-      backgroundImage: `url(${crimsonDaysHeader})`,
+      // backgroundImage: `url(${crimsonDaysHeader})`,
     };
 
     if (bg) {
