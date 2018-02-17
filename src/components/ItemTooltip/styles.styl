@@ -26,6 +26,9 @@ mobile()
   display: flex
   align-items: center
 
+  .small &
+    margin-bottom: 10px
+
 .img img
   display: block
   width: 70px
@@ -57,9 +60,7 @@ mobile()
   margin: $padding 0
 
   .small &
-    +mobile()
-      font-size: 0
-      margin: 0 0 10px 0
+    display: none
 
 .screenshotWrapper
   position: relative

@@ -171,6 +171,37 @@ module.exports = [
               2071412133, // A Cold Sweat
             ],
           },
+
+          {
+            title: 'Hunter ornaments',
+            items: [
+              3000782857, // Trials Prestige Ornament
+              3907623580, // Trials Prestige Ornament
+              1480689066, // Trials Prestige Ornament
+              3491371766, // Trials Prestige Ornament
+              85546655, // Trials Prestige Ornament
+            ],
+          },
+          {
+            title: 'Titan ornaments',
+            items: [
+              3042323431, // Trials Prestige Ornament
+              1309834898, // Trials Prestige Ornament
+              3047754372, // Trials Prestige Ornament
+              3675824124, // Trials Prestige Ornament
+              1717767197, // Trials Prestige Ornament
+            ],
+          },
+          {
+            title: 'Warlock ornaments',
+            items: [
+              2338851618, // Trials Prestige Ornament
+              4105027183, // Trials Prestige Ornament
+              2666197459, // Trials Prestige Ornament
+              3026479209, // Trials Prestige Ornament
+              2394332958, // Trials Prestige Ornament
+            ],
+          },
         ],
       },
     ],

@@ -31,6 +31,7 @@ export default class ItemModal extends Component {
   render() {
     const {
       trackOrnament,
+      onRequestClose,
       item: {
         hash,
         displayProperties,
@@ -50,7 +51,7 @@ export default class ItemModal extends Component {
 
     return (
       <div className={styles.root}>
-        <button className={styles.close}>
+        <button className={styles.close} onClick={onRequestClose}>
           <i className="fa fa-close" />
         </button>
 
