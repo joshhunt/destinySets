@@ -378,14 +378,6 @@ class Gearsets extends Component {
       return <Loading>Loading...</Loading>;
     }
 
-    let friendgameLink = 'https://friendgame.report';
-
-    if (profile) {
-      friendgameLink += `/${profile.profile.data.userInfo.membershipType}/${
-        profile.profile.data.userInfo.membershipId
-      }`;
-    }
-
     return (
       <div className={styles.root}>
         <Header
@@ -463,20 +455,6 @@ class Gearsets extends Component {
         </div>
 
         {hasInventory && <Xur items={xurItems} extraText={xurExtraText} />}
-
-        <a href={friendgameLink} className={styles.crimsonBanner}>
-          <p>
-            Who&apos;s your Crimson Double's match? Go to{' '}
-            <a href={friendgameLink}>friendgame.report</a> to find out
-          </p>
-
-          <div className={styles.inner}>
-            <div>
-              Who&apos;s your Crimson Double's match? Go to{' '}
-              <a href={friendgameLink}>friendgame.report</a> to find out
-            </div>
-          </div>
-        </a>
 
         {(groups || []).map((group, index) => (
           <div key={index} id={`group_${index}`}>
