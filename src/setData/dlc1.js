@@ -748,10 +748,20 @@ module.exports = [
           {
             title: 'Shaders',
             items: [
-              167651268, // Crimson Passion
-              2112889975, // Crimson Valor
-              1052553862, // Crimson Valor
+              1052553863, // Crimson Passion - Bright Dust dismantle
+              1052553862, // Crimson Valor - Bright Dust dismantle
+              167651268, // Crimson Passion - Legendary Marks dismantle
+              2112889975, // Crimson Valor - Legendary Marks dismantle
             ],
+          },
+          {
+            title: 'Weapon Ornaments',
+            items: [
+              3373357626, // Prism for Prometheus Lens
+              2433900295, // Carina Nebula for Graviton Lance
+              3171649853, // Go About Your Business for Sweet Business
+              669267835,  // Dieselpunk for The Wardcliffe Coil
+            ]
           },
         ],
       },
