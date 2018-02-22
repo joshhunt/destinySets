@@ -750,8 +750,6 @@ module.exports = [
             items: [
               1052553863, // Crimson Passion - Bright Dust dismantle
               1052553862, // Crimson Valor - Bright Dust dismantle
-              167651268, // Crimson Passion - Legendary Marks dismantle
-              2112889975, // Crimson Valor - Legendary Marks dismantle
             ],
           },
           {
