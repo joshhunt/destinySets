@@ -691,6 +691,10 @@ module.exports = [
         small: true,
         sections: [
           {
+            title: 'Class Sword',
+            items: [1180270692,], // Quickfang
+          },
+          {
             title: 'Dead End Cure 2.1',
             items: [3125909492, 1998314509, 316000947, 2669113551, 2521426922],
           },
@@ -725,6 +729,10 @@ module.exports = [
         small: true,
         sections: [
           {
+            title: 'Class Sword',
+            items: [1180270694,], // Crown-Splitter
+          },
+          {
             title: 'Retro-Grade TG2',
             items: [2525344810, 2530905971, 1364856221, 2265859909, 2826844112],
           },
@@ -758,6 +766,10 @@ module.exports = [
         description: 'Other legendary gear obtained from Engrams.',
         small: true,
         sections: [
+          {
+            title: 'Class Sword',
+            items: [1180270693,], // Eternity's Edge
+          },
           {
             title: 'Heiro Camo',
             items: [2791527489, 3629447000, 3884999792, 1664611474, 2770578349],
