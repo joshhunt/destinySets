@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import cx from 'classnames';
 
+import getItemExtraInfo from 'app/lib/getItemExtraInfo';
 import Objectives from 'app/components/Objectives';
 
 import {
@@ -8,7 +9,7 @@ import {
   EXOTIC,
   UNCOMMON,
   RARE,
-  COMMON,
+  COMMON
 } from 'app/lib/destinyEnums';
 
 import styles from './styles.styl';
@@ -18,13 +19,13 @@ const TIER_STYLE = {
   [LEGENDARY]: styles.legendary,
   [UNCOMMON]: styles.common,
   [RARE]: styles.rare,
-  [COMMON]: styles.basic,
+  [COMMON]: styles.basic
 };
 
 const CLASS_TYPE = {
   0: 'Titan',
   1: 'Hunter',
-  2: 'Warlock',
+  2: 'Warlock'
 };
 
 export default class ItemModal extends Component {
@@ -41,9 +42,11 @@ export default class ItemModal extends Component {
         itemTypeName,
         itemTypeDisplayName,
         $objectives,
-        objectives,
-      },
+        objectives
+      }
     } = this.props;
+
+    const extraInfo = getItemExtraInfo(this.props.item);
 
     const tier = inventory.tierTypeHash || '';
     const icon = displayProperties.icon || '/img/misc/missing_icon_d2.png';
@@ -85,13 +88,11 @@ export default class ItemModal extends Component {
           <p className={styles.description}>{displayProperties.description}</p>
         )}
 
-        {objectives &&
-          !$objectives && (
-            <p className={styles.missingObjectives}>
-              Get the base item somewhere in your inventory to see objective
-              progress
-            </p>
-          )}
+        {extraInfo.map(info => (
+          <div key={info} className={styles.extraInfo}>
+            {info}
+          </div>
+        ))}
 
         {$objectives && (
           <div>
