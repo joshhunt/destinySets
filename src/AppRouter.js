@@ -29,6 +29,7 @@ export default class AppRouter extends Component {
         />
 
         <Route path="/data" component={DataExplorer} />
+        <Route path="/data/:itemHash" component={DataExplorer} />
         <Route path="/diff" component={Diff} />
       </Router>
     );

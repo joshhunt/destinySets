@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import cx from 'classnames';
+import { Link } from 'react-router';
 
 import getItemExtraInfo from 'app/lib/getItemExtraInfo';
 import Objectives from 'app/components/Objectives';
 
 import {
+  EMBLEM,
   LEGENDARY,
   EXOTIC,
   UNCOMMON,
@@ -41,7 +43,10 @@ export default class ItemModal extends Component {
         classType,
         itemTypeName,
         itemTypeDisplayName,
-        $objectives
+        $objectives,
+        itemCategoryHashes,
+        secondaryIcon,
+        backgroundColor
       }
     } = this.props;
 
@@ -50,6 +55,13 @@ export default class ItemModal extends Component {
     const tier = inventory.tierTypeHash || '';
     const icon = displayProperties.icon || '/img/misc/missing_icon_d2.png';
     const name = (displayProperties && displayProperties.name) || 'no name';
+
+    const dtrLink = `http://db.destinytracker.com/d2/en/items/${hash}`;
+
+    const isEmblem = itemCategoryHashes.includes(EMBLEM);
+    const showEmblem = secondaryIcon && isEmblem;
+
+    const { red, green, blue } = backgroundColor || {};
 
     return (
       <div className={styles.root}>
@@ -67,11 +79,19 @@ export default class ItemModal extends Component {
           </div>
         )}
 
-        <div className={cx(styles.itemTop, TIER_STYLE[tier])}>
+        <div
+          className={cx(styles.itemTop, !showEmblem && TIER_STYLE[tier])}
+          style={{
+            backgroundImage:
+              showEmblem && `url(https://bungie.net${secondaryIcon})`,
+            backgroundColor: showEmblem && `rgb(${red}, ${green}, ${blue})`
+          }}
+        >
           <img
             className={styles.icon}
             src={`https://bungie.net${icon}`}
             alt=""
+            style={{ opacity: showEmblem ? 0 : 1 }}
           />
 
           <div className={styles.itemInfo}>
@@ -86,6 +106,18 @@ export default class ItemModal extends Component {
         {displayProperties.description && (
           <p className={styles.description}>{displayProperties.description}</p>
         )}
+
+        <ul className={styles.viewItemLinks}>
+          <li>
+            <a href={dtrLink} target="_blank" rel="noopener noreferrer">
+              View on DestinyTracker
+            </a>
+          </li>
+
+          <li>
+            <Link to={`/data/${hash}`}>View in Data Explorer</Link>
+          </li>
+        </ul>
 
         {extraInfo.map(info => (
           <div key={info} className={styles.extraInfo}>

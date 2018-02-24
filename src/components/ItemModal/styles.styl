@@ -1,8 +1,12 @@
+// These two must be 119:24 for optimal emblem background
+$width = 450px
+$headerHeight = $width * (24/119)
+
 .root
   background: #20262d
   box-shadow: 0 2px 10px 0 rgba(black, 1)
-  width: 100%
-  max-width: 450px
+  width: $width
+  max-width: 100%
   padding: 0 15px
   overflow: auto
   border-radius: 4px
@@ -29,8 +33,13 @@
 
 .itemTop
   display: flex
-  margin: 0 -15px
-  padding: 10px 15px;
+  margin: 0 -15px 15px -15px
+  padding: 10px 15px
+  height: $headerHeight
+  align-items: center
+  background-size: cover
+  background-position: center left
+  background-repeat: no-repeat
 
 .itemInfo
   flex: 1
@@ -63,6 +72,20 @@
   font-size: .9em
   font-style: italic
   margin-bottom: 15px
+
+.viewItemLinks
+  margin: 0 -8px 15px -8px
+  padding: 0
+  font-size: .9em
+
+.viewItemLinks li
+  display: inline-block
+  margin: 0 8px
+  padding: 0
+  list-style: none
+
+.viewItemLinks a
+  color: white !important
 
 .button
   background: lighten(#21262D, 10%)
