@@ -25,14 +25,17 @@ mobile()
 .header
   display: flex
   align-items: center
+  background-size: cover
+  background-position: center left
+  background-repeat: no-repeat
 
   .small &
     margin-bottom: 10px
 
 .img img
   display: block
-  width: 70px
-  height: 70px
+  width: 65px
+  height: 65px
 
   .small &
     width: 40px
@@ -97,20 +100,26 @@ mobile()
     font-size: 20px
     color: white
 
+.extraInfo
+  opacity: .8
+  font-size: .9em
+  font-style: italic
+  margin-bottom: $padding
+
 .exotic .header
-  background: #ceae33
+  background-color: #ceae33
 
 .legendary .header
-  background: #522f65
+  background-color: #522f65
 
 .rare .header
-  background: #5076a3
+  background-color: #5076a3
 
 .common .header
-  background: #366f3c
+  background-color: #366f3c
 
 .basic .header
-  background: #c3bcb4
+  background-color: #c3bcb4
   color: #1e242b
 
 :global(.ToolTipPortal)
