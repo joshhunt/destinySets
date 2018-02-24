@@ -114,8 +114,15 @@ class Gearsets extends Component {
   }
 
   scheduleProcessSets() {
+    if (this.processSetsScheduled) {
+      return;
+    }
+
+    this.processSetsScheduled = true;
+
     this.dataPromise.then(result => {
       this.processSets(...result);
+      this.processSetsScheduled = false;
     });
   }
 

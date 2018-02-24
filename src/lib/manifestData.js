@@ -6,14 +6,14 @@ const log = require('app/lib/log')('manifestData');
 
 const oldDb = new Dexie('destinySetsCache');
 oldDb.version(1).stores({
-  dataCache: '&key, data',
+  dataCache: '&key, data'
 });
 
 oldDb.delete();
 
 const db = new Dexie('destinyManifest');
 db.version(1).stores({
-  dataCache: '&key, data',
+  dataCache: '&key, data'
 });
 
 let manifestPromise;
@@ -40,7 +40,7 @@ function cleanUp(id) {
 
 export function cachedGet(path, id) {
   return new Promise((resolve, reject) => {
-    const key = id + path;
+    const key = [id, path].join(':');
 
     const fetchData = () => {
       const url = `https://destiny.plumbing${path}?id=${id}`;
