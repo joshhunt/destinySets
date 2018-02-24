@@ -10,7 +10,7 @@ import * as ls from 'app/lib/ls';
 import * as cloudStorage from 'app/lib/cloudStorage';
 import googleAuth, {
   signIn as googleSignIn,
-  signOut as googleSignOut,
+  signOut as googleSignOut
 } from 'app/lib/googleDriveAuth';
 import Header from 'app/components/Header';
 import Footer from 'app/components/Footer';
@@ -27,7 +27,7 @@ import DestinyAuthProvider from 'app/lib/DestinyAuthProvider';
 import filterSets, {
   DEFAULT_FILTER,
   FILTERS,
-  SHOW_PS4_EXCLUSIVES,
+  SHOW_PS4_EXCLUSIVES
 } from './filterSets';
 import processSets from './processSets';
 import { PLAYSTATION } from 'app/lib/destinyEnums';
@@ -42,23 +42,14 @@ const MODAL_STYLES = {
     marginTop: 56,
     display: 'flex',
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'center'
   },
   content: {
     position: 'static',
     background: 'none',
-    border: 'none',
-  },
+    border: 'none'
+  }
 };
-
-const ITEM_BLACKLIST = [
-  1744115122, // Legend of Acrius quest item
-  460724140, // Jade Rabbit dupe
-  546372301, // Jade Rabbit dupe
-  2896466320, // Jade Rabbit dupe
-  2978016230, // Jade Rabbit dupe
-  3229272315, // Jade Rabbit dupe
-];
 
 class Gearsets extends Component {
   trackedHashes = [];
@@ -78,7 +69,7 @@ class Gearsets extends Component {
       trackedHashes: [],
       displayFilters: false,
       googleAuthLoaded: false,
-      filter: ls.getFilters() || DEFAULT_FILTER,
+      filter: ls.getFilters() || DEFAULT_FILTER
     };
   }
 
@@ -88,25 +79,17 @@ class Gearsets extends Component {
     this.fetchDefintionsWithLangage(lang.code);
 
     this.setState({
-      activeLanguage: lang,
+      activeLanguage: lang
     });
   }
 
   fetchDefintionsWithLangage(langCode) {
     this.dataPromise = Promise.all([
-      getDefinition('reducedCollectableInventoryItems', langCode, false).then(
-        defs => {
-          ITEM_BLACKLIST.forEach(defHash => {
-            delete defs[defHash];
-          });
-
-          return defs;
-        },
-      ),
+      getDefinition('reducedCollectableInventoryItems', langCode, false),
       // getDefinition('DestinyInventoryItemDefinition', langCode),
       getDefinition('DestinyVendorDefinition', langCode),
       getDefinition('DestinyStatDefinition', langCode),
-      getDefinition('DestinyObjectiveDefinition', langCode),
+      getDefinition('DestinyObjectiveDefinition', langCode)
     ]);
 
     this.scheduleProcessSets();
@@ -116,7 +99,7 @@ class Gearsets extends Component {
         this.setState({ xurExtraText });
         this.xurItems = xurItems;
         this.processSets(...data);
-      },
+      }
     );
   }
 
@@ -146,7 +129,7 @@ class Gearsets extends Component {
       cloudInventory: this.cloudInventory,
       profile: this.profile,
       setData: this.props.route.setData,
-      xurItems: this.xurItems,
+      xurItems: this.xurItems
     };
 
     processSets(processPayload, result => {
@@ -185,24 +168,15 @@ class Gearsets extends Component {
     destiny.getCurrentProfiles().then(({ profiles, bungieNetUser }) => {
       this.setState({ profiles, lastUpdate: new Date() });
 
-      let fullName = [];
-      if (bungieNetUser.xboxDisplayName) {
-        fullName.push('XBOX: ' + bungieNetUser.xboxDisplayName);
-      }
-
-      if (bungieNetUser.psnDisplayName) {
-        fullName.push('PSN: ' + bungieNetUser.psnDisplayName);
-      }
-
       const { id, type } = ls.getPreviousAccount();
       if (!(id && type)) {
         return this.switchProfile(profiles[0]);
       }
 
-      const prevProfile = profiles.find(profile => {
+      const prevProfile = profiles.find(({ profile }) => {
         return (
-          profile.profile.data.userInfo.membershipId === id &&
-          profile.profile.data.userInfo.membershipType === type
+          profile.data.userInfo.membershipId === id &&
+          profile.data.userInfo.membershipType === type
         );
       });
 
@@ -224,7 +198,7 @@ class Gearsets extends Component {
     googleAuth(({ signedIn }) => {
       this.setState({
         googleAuthLoaded: true,
-        googleAuthSignedIn: signedIn,
+        googleAuthSignedIn: signedIn
       });
       log('Google auth signedIn:', signedIn);
 
@@ -246,7 +220,7 @@ class Gearsets extends Component {
       Object.values(profile.characters.data),
       character => {
         return new Date(character.dateLastPlayed).getTime();
-      },
+      }
     ).reverse()[0];
     this.emblemHash = recentCharacter.emblemHash;
 
@@ -254,8 +228,8 @@ class Gearsets extends Component {
       profile,
       filter: {
         ...this.state.filter,
-        [SHOW_PS4_EXCLUSIVES]: membershipType === PLAYSTATION,
-      },
+        [SHOW_PS4_EXCLUSIVES]: membershipType === PLAYSTATION
+      }
     });
 
     this.scheduleProcessSets();
@@ -268,7 +242,7 @@ class Gearsets extends Component {
   toggleFilterValue = filterValue => {
     const newFilter = {
       ...this.state.filter,
-      [filterValue]: !this.state.filter[filterValue],
+      [filterValue]: !this.state.filter[filterValue]
     };
 
     this.filterGroups(newFilter);
@@ -276,13 +250,13 @@ class Gearsets extends Component {
     ls.saveFilters(newFilter);
 
     this.setState({
-      filter: newFilter,
+      filter: newFilter
     });
   };
 
   toggleCountStyle = () => {
     this.setState({
-      countStyle: !this.state.countStyle,
+      countStyle: !this.state.countStyle
     });
   };
 
@@ -291,7 +265,7 @@ class Gearsets extends Component {
 
     this.setState({
       shit: 'poo',
-      activeLanguage: newLang,
+      activeLanguage: newLang
     });
 
     this.fetchDefintionsWithLangage(newLang.code);
@@ -304,28 +278,25 @@ class Gearsets extends Component {
 
   onItemClick = (ev, item) => {
     ev.preventDefault();
-    console.log('clicked', item);
     this.setState({
-      itemModal: item,
+      itemModal: item
     });
   };
 
   closeModal = () => {
     this.setState({
-      itemModal: null,
+      itemModal: null
     });
   };
 
   setUpPolling = () => {
     if (this.trackedHashes.length && !this.pollId) {
-      // poll
       this.pollId = window.setInterval(() => {
         this.fetchCharacters();
       }, 30 * 1000);
     }
 
     if (!this.trackedHashes.length && this.pollId) {
-      // unpoll
       window.clearInterval(this.pollId);
     }
   };
@@ -338,13 +309,11 @@ class Gearsets extends Component {
   };
 
   removeOrnament = item => {
-    this.trackedHashes = this.trackedHashes.filter(hash => {
-      return hash !== item.hash;
-    });
+    this.trackedHashes = this.trackedHashes.filter(hash => hash !== item.hash);
 
-    const newTrackedItems = this.state.trackedItems.filter(trackedItem => {
-      return trackedItem.hash !== item.hash;
-    });
+    const newTrackedItems = this.state.trackedItems.filter(
+      trackedItem => trackedItem.hash !== item.hash
+    );
 
     ls.saveTrackedItems(this.trackedHashes);
     this.setState({ trackedItems: newTrackedItems });
@@ -371,7 +340,7 @@ class Gearsets extends Component {
       xurExtraText,
       googleAuthSignedIn,
       itemModal,
-      trackedItems,
+      trackedItems
     } = this.state;
 
     if (loading) {
