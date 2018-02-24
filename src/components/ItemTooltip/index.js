@@ -3,85 +3,25 @@ import cx from 'classnames';
 
 import getItemExtraInfo from 'app/lib/getItemExtraInfo';
 import FancyImage from 'app/components/FancyImage';
+import ItemBanner from 'app/components/ItemBanner';
 
 import styles from './styles.styl';
 
-import {
-  LEGENDARY,
-  EMBLEM,
-  EXOTIC,
-  UNCOMMON,
-  RARE,
-  COMMON
-} from 'app/lib/destinyEnums';
+import { EMBLEM } from 'app/lib/destinyEnums';
 
 import ItemStats from 'app/components/ItemStats';
 import Objectives from 'app/components/Objectives';
 
-const TIER_STYLE = {
-  [EXOTIC]: styles.exotic,
-  [LEGENDARY]: styles.legendary,
-  [UNCOMMON]: styles.common,
-  [RARE]: styles.rare,
-  [COMMON]: styles.basic
-};
-
 export default function ItemTooltip({ item, small, dismiss, globalItemCount }) {
-  const {
-    inventory,
-    displayProperties,
-    screenshot,
-    secondaryIcon,
-    itemCategoryHashes,
-    backgroundColor
-  } = item;
-
-  const tier = inventory.tierTypeHash || '';
-  const icon = displayProperties.icon || '/img/misc/missing_icon_d2.png';
-  const name = (displayProperties && displayProperties.name) || 'no name';
-  const { red, green, blue } = backgroundColor || {};
+  const { displayProperties, screenshot, itemCategoryHashes } = item;
 
   const isEmblem = itemCategoryHashes.includes(EMBLEM);
-  const showEmblem = secondaryIcon && isEmblem;
-
+  const extraInfo = getItemExtraInfo(item);
   const stats = item.$stats || [];
 
-  const extraInfo = getItemExtraInfo(item);
-
   return (
-    <div
-      className={cx(
-        styles.tooltip,
-        !showEmblem && TIER_STYLE[tier],
-        small && styles.small
-      )}
-    >
-      <div
-        className={styles.header}
-        style={{
-          backgroundImage:
-            showEmblem && `url(https://bungie.net${secondaryIcon})`,
-          backgroundColor: showEmblem && `rgb(${red}, ${green}, ${blue})`
-        }}
-      >
-        {dismiss && (
-          <button className={styles.closeButton} onClick={() => dismiss(item)}>
-            ×
-          </button>
-        )}
-
-        <div className={styles.img} style={{ opacity: showEmblem ? 0 : 1 }}>
-          <FancyImage src={`https://bungie.net${icon}`} />
-        </div>
-
-        <div className={styles.headerContent}>
-          <div className={styles.title}>{name}</div>
-          <div className={styles.subtitle}>
-            <span>{item.itemTypeDisplayName}</span>
-            <span>{inventory.tierTypeName}</span>
-          </div>
-        </div>
-      </div>
+    <div className={cx(styles.tooltip, small && styles.small)}>
+      <ItemBanner className={styles.header} item={item} />
 
       <div className={styles.body}>
         {displayProperties.description &&
