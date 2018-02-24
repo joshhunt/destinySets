@@ -772,6 +772,7 @@ module.exports = [
             items: [
               316740353, // Winterhart Mask
               1154659864, // Winterhart Grips
+              3309556272, // Winterhart Vest
               3909352274, // Winterhart Strides
               2661272173, // Winterhart Cloak
               2661272172, // Warm Winter Cloak
@@ -785,6 +786,7 @@ module.exports = [
               3306267716, // Winterhart Plate
               4036178150, // Winterhart Greaves
               221164697, // Winterhart Mark
+              221164696, // Quilted Winter Mark
             ],
           },
           {
@@ -793,6 +795,7 @@ module.exports = [
               3734501342, // Winterhart Cover
               2538439951, // Winterhart Gloves
               270671209, // Winterhart Robes
+              3154516913, // Winterhart Boots
               1584837156, // Winterhart Bond
               1584837157, // Festive Winter Bond
             ],
