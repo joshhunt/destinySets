@@ -6,8 +6,6 @@ import sortItemsIntoSections from 'app/views/DataExplorer/sortItemsIntoSections'
 import collectInventory from 'app/lib/collectInventory';
 import * as ls from 'app/lib/ls';
 
-// import { logItems, logSets } from './utils';
-
 const INTRINSIC = [
   270846462,
   609567286,
@@ -44,7 +42,7 @@ const INTRINSIC = [
   3979417222,
   4015706356,
   4163227370,
-  4198375581,
+  4198375581
 ];
 
 const log = require('app/lib/log')('processSets');
@@ -53,7 +51,7 @@ function merge(base, extra) {
   return { ...base, ...extra };
 }
 
-function getStats(item, statDefs) {
+function statsForItem(item, statDefs) {
   return Object.values(get(item, 'stats.stats', {}))
     .map(stat => {
       const statDef = statDefs[stat.statHash];
@@ -62,7 +60,7 @@ function getStats(item, statDefs) {
         log(
           `WARNING: Unable to find stat definition ${stat.statHash} on item ${
             item.hash
-          }`,
+          }`
         );
 
         return null;
@@ -77,13 +75,27 @@ function getStats(item, statDefs) {
 
       return {
         ...stat,
-        $stat: statDef,
+        $stat: statDef
       };
     })
     .filter(Boolean)
     .sort(a => {
       return NUMERICAL_STATS.includes(a.statHash) ? -1 : 1;
     });
+}
+
+function objectivesForItem(item, plugData, objectiveDefs) {
+  const thisPlug = plugData[item.hash];
+  if (!get(thisPlug, '$instanceData.plugObjectives')) {
+    return;
+  }
+
+  return thisPlug.$instanceData.plugObjectives
+    .map(objective => ({
+      $objective: objectiveDefs[objective.objectiveHash],
+      ...objective
+    }))
+    .filter(objective => objective.$objective);
 }
 
 export function mapItems(
@@ -93,7 +105,7 @@ export function mapItems(
   objectiveDefs,
   inventory,
   plugData,
-  trackedHashes,
+  trackedHashes
 ) {
   const trackedItems = [];
 
@@ -108,25 +120,11 @@ export function mapItems(
 
       const inventoryItem = inventory[itemHash];
 
-      let objectives;
-      const thisPlug = plugData[itemHash];
-      if (
-        thisPlug &&
-        thisPlug.$instanceData &&
-        thisPlug.$instanceData.plugObjectives
-      ) {
-        objectives = thisPlug.$instanceData.plugObjectives
-          .map(objective => ({
-            $objective: objectiveDefs[objective.objectiveHash],
-            ...objective,
-          }))
-          .filter(objective => objective.$objective);
-      }
-
-      const stats = getStats(item, statDefs);
+      const stats = statsForItem(item, statDefs);
+      const objectives = objectivesForItem(item, plugData, objectiveDefs);
 
       const intrinsicStatPerk = get(item, 'sockets.socketEntries', []).find(
-        entry => INTRINSIC.includes(entry.singleInitialItemHash),
+        entry => INTRINSIC.includes(entry.singleInitialItemHash)
       );
       let intrinsicStatPerkDef;
       if (intrinsicStatPerk) {
@@ -136,8 +134,7 @@ export function mapItems(
 
       const isPlug =
         inventoryItem &&
-        inventoryItem[inventoryItem.length - 1].$location ===
-          '$reusablePlugHashes';
+        inventoryItem.find(it => it.$location === '$reusablePlugHashes');
 
       const isDismantled = inventoryItem && inventoryItem[0].$dismantled;
       const hasInventoryItems = !!inventoryItem;
@@ -151,12 +148,10 @@ export function mapItems(
         $intrinsicStatPerk: intrinsicStatPerkDef,
         $stats: stats,
         $objectives: objectives,
-        ...item,
+        ...item
       };
 
-      if (trackedHashes.includes(itemHash)) {
-        trackedItems.push(finalItem);
-      }
+      trackedHashes.includes(itemHash) && trackedItems.push(finalItem);
 
       return finalItem;
     })
@@ -164,7 +159,7 @@ export function mapItems(
 
   return {
     items,
-    trackedItems,
+    trackedItems
   };
 }
 
@@ -179,7 +174,7 @@ function mergeCloudInventory(currentInventory, cloudInventory) {
     if (!currentInventory[cloudItemHash]) {
       inventory[cloudItemHash] = [
         { $dismantled: true },
-        ...cleanUpCloudInventory(cloudInventory[cloudItemHash]),
+        ...cleanUpCloudInventory(cloudInventory[cloudItemHash])
       ];
     }
   });
@@ -197,7 +192,7 @@ export default function processSets(args, dataCallback) {
     xurItems,
     setData,
     cloudInventory,
-    trackedHashes,
+    trackedHashes
   } = args;
 
   const sets = setData;
@@ -217,7 +212,7 @@ export default function processSets(args, dataCallback) {
   log('Processing sets with', {
     inventory,
     localStorageInventory,
-    cloudInventory,
+    cloudInventory
   });
 
   if (!Object.keys(inventory).length > 0 && localStorageInventory) {
@@ -235,7 +230,7 @@ export default function processSets(args, dataCallback) {
     const sets = group.sets.map(set => {
       const preSections = set.fancySearchTerm
         ? sortItemsIntoSections(
-            fancySearch(set.fancySearchTerm, { item: allItems }),
+            fancySearch(set.fancySearchTerm, { item: allItems })
           )
         : set.sections;
 
@@ -243,7 +238,7 @@ export default function processSets(args, dataCallback) {
         const preItems =
           section.items ||
           fancySearch(section.fancySearchTerm, { item: allItems }).map(
-            i => i.hash,
+            i => i.hash
           );
 
         if (!isArray(preItems)) {
@@ -257,7 +252,7 @@ export default function processSets(args, dataCallback) {
           objectiveDefs,
           inventory,
           plugData,
-          trackedHashes,
+          trackedHashes
         );
 
         allTrackedItems.push(...trackedItems);
@@ -282,7 +277,7 @@ export default function processSets(args, dataCallback) {
   log('Xur items', {
     xurItemsGood,
     inventory,
-    xurHashes,
+    xurHashes
   });
 
   if (!usingLocalStorageInventory) {
@@ -301,7 +296,7 @@ export default function processSets(args, dataCallback) {
     hasInventory: Object.keys(inventory).length > 0,
     loading: false,
     saveCloudInventory,
-    shit: null,
+    shit: null
   };
 
   dataCallback(payload);
