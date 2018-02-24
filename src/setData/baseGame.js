@@ -50,6 +50,13 @@ module.exports = [
               2999505920, // Timur's Iron Bond
             ],
           },
+          {
+            title: 'Emblems',
+            items: [
+              3373303016, // Felwinter Frost
+              3373303017, // Shades of Radegast
+            ],
+          },
         ],
       },
 
@@ -95,6 +102,17 @@ module.exports = [
             title: 'Warlock Armor - Prestige Mode',
             items: [2700598110, 2676042151, 3592548939, 2193494689, 3763332442],
           },
+          {
+            title: 'Emblems',
+            items: [
+              3257147585, // Embrace His Name
+              2107367383, // Glory to the Emperor
+              1667199810, // Good Dog
+              2984066626, // Splish Splash
+              1625974211, // Two Enter, One Leaves
+              812824526,  // Take the Throne
+            ],
+          },
         ],
       },
     ],
@@ -136,6 +154,12 @@ module.exports = [
             title: 'Warlock Armor',
             items: [3299588760, 3763392361, 2873960175, 4055334203, 4121118846],
           },
+          {
+            title: 'Emblems',
+            items: [
+              802191383, // Total Eclipse
+            ],
+          },
         ],
       },
       {
@@ -171,6 +195,12 @@ module.exports = [
             title: 'Warlock Armor',
             items: [316745113, 4083497488, 2436244536, 147165546, 831738837],
           },
+          {
+            title: 'Emblems',
+            items: [
+              802191381, // Regency
+            ],
+          },
         ],
       },
       {
@@ -205,6 +235,12 @@ module.exports = [
           {
             title: 'Warlock Armor',
             items: [2401598772, 807866445, 3656154099, 1478665487, 1566612778],
+          },
+          {
+            title: 'Emblems',
+            items: [
+              802191382, // Battle Colors
+            ],
           },
         ],
       },
@@ -247,6 +283,14 @@ module.exports = [
             title: 'Warlock Armor',
             items: [3764013786, 1664741411, 2724176749, 4051755349, 1304122208],
           },
+          {
+            title: 'Emblems',
+            items: [
+              3541326821, // Dead Zone Camo
+              3541326820, // Kay's Command
+              3541326823, // Trostland Terminus
+            ],
+          },
         ],
       },
 
@@ -281,6 +325,14 @@ module.exports = [
           {
             title: 'Warlock Armor',
             items: [1554079989, 229923140, 3388454204, 2160569198, 845354673],
+          },
+          {
+            title: 'Emblems',
+            items: [
+              31953747, // Ballet Lover
+              31953744, // Holy Ground
+              31953746, // Traveler's Flight
+            ],
           },
         ],
       },
@@ -323,6 +375,14 @@ module.exports = [
             title: 'Warlock Armor',
             items: [2575848725, 1251692004, 2400621276, 2757777294, 3686454865],
           },
+          {
+            title: 'Emblems',
+            items: [
+              3785035698, // Cargo Bay Cross
+              3785035696, // New Pacific Access
+              3785035697, // Solarium Yellow
+            ],
+          },
         ],
       },
 
@@ -359,6 +419,14 @@ module.exports = [
           {
             title: 'Warlock Armor',
             items: [2811068561, 1427620200, 2359639520, 2528959426, 1669675549],
+          },
+          {
+            title: 'Emblems',
+            items: [
+              2484637938, // Exodus Access
+              2484637936, // Jacobson's Staff
+              2484637939, // Tangled Anchor
+            ],
           },
         ],
       },
@@ -410,6 +478,13 @@ module.exports = [
             title: 'Warlock Armor - Flawless',
             items: [2964441921, 530515216, 891933382, 4232174818, 1607431127],
           },
+          {
+            title: 'Emblems',
+            items: [
+              19962737, // Chasing Perfection
+              2029506313, // You Are Worthy
+            ],
+          },
         ],
       },
 
@@ -449,6 +524,14 @@ module.exports = [
             title: 'Warlock Armor',
             items: [1540376513, 2378296024, 34846448, 413460498, 3215392301],
           },
+          {
+            title: 'Emblems',
+            items: [
+              2010554576, // At the Vanguard
+              2010554578, // Make Us Proud
+              2010554579, // Push Forward
+            ],
+          },
         ],
       },
 
@@ -468,6 +551,14 @@ module.exports = [
           {
             title: 'Warlock Armor',
             items: [2615512594, 3081969019, 868792277, 1532009197, 4285708584],
+          },
+          {
+            title: 'Emblems',
+            items: [
+              1724152706, // Red Legion Aegis
+              1724152705, // Red Legion Logistics
+              1724152704, // WAR Vault 5
+            ],
           },
         ],
       },
@@ -501,6 +592,14 @@ module.exports = [
           {
             title: 'Warlock Armor',
             items: [1764274932, 636679949, 1333087155, 1307478991, 3538513130],
+          },
+          {
+            title: 'Emblems',
+            items: [
+              4242592195, // Fight Forever
+              4242592192, // Give Them War
+              4242592193, // One Path to Victory
+            ],
           },
         ],
       },
@@ -540,8 +639,46 @@ module.exports = [
               3778520449, // Jiangshi AR4
             ],
           },
+          {
+            title: 'Emblems',
+            items: [
+              3605230072, // Hakke Upgrade
+              3605230074, // Omolon Upgrade
+              3605230073, // SUROS Upgrade
+              3605230075, // VEIST Upgrade
+            ],
+          },
         ],
       },
+      {
+        name: 'Flashpoint Gear',
+        description:
+          "Gear from Cayde-6's weekly Flashpoint.",
+        sections: [
+          {
+            title: 'Emblems - Flashpoint High Value Targets',
+            items: [
+              1173929375, // C-T-A-T-O-D-L
+              1173929374, // Gone Hunting
+            ]
+          },
+          {
+            title: 'Emblems - Cayde-6 Treasure Chests',
+            items: [
+              1409726989, // Arcology Interface
+              1409726986, // Ace of Spade
+              1409726979, // Against the Dark
+              1409726990, // Coordinate Mathematics
+              1409726985, // Ghost Board
+              1409726987, // Jade Rabbit Redux
+              1409726991, // Spark of the Machine
+              1409726988, // Try the Special
+              1409726984, // Telstar Graphics
+              1409726978, // Way of the Wolf
+            ]
+          },
+        ],
+      }
     ],
   },
 
@@ -553,6 +690,10 @@ module.exports = [
         description: 'Other legendary gear obtained from Engrams.',
         small: true,
         sections: [
+          {
+            title: 'Class Sword',
+            items: [1180270692,], // Quickfang
+          },
           {
             title: 'Dead End Cure 2.1',
             items: [3125909492, 1998314509, 316000947, 2669113551, 2521426922],
@@ -569,6 +710,16 @@ module.exports = [
             title: 'Icarus Drifter - PS4 Exclusive',
             items: [155832748, 3646674533, 3066593211, 3569443559, 1847870034],
           },
+          {
+            title: 'Emblems',
+            items: [
+              1907674138, // Hunter's Wit
+              3635192014, // Hunter's Hoard
+              844563491,  // Slinger's Sight
+              2054118356, // Strider's Slash
+              621113310,  // Stalker's Shot
+            ],
+          },
         ],
       },
 
@@ -577,6 +728,10 @@ module.exports = [
         description: 'Other legendary gear obtained from Engrams.',
         small: true,
         sections: [
+          {
+            title: 'Class Sword',
+            items: [1180270694,], // Crown-Splitter
+          },
           {
             title: 'Retro-Grade TG2',
             items: [2525344810, 2530905971, 1364856221, 2265859909, 2826844112],
@@ -593,6 +748,16 @@ module.exports = [
             title: 'Terra Concord - PS4 Exclusive',
             items: [690335398, 3999262583, 3291075521, 1512829977, 4073580572],
           },
+          {
+            title: 'Emblems',
+            items: [
+              1907674139, // Titan's Pride
+              3941202506, // Titan's Triumph
+              3828080585, // Breaker's Blaze
+              2967682030, // Striker's Slam
+              3338748564, // Sentinel's Shove
+            ],
+          },
         ],
       },
 
@@ -601,6 +766,10 @@ module.exports = [
         description: 'Other legendary gear obtained from Engrams.',
         small: true,
         sections: [
+          {
+            title: 'Class Sword',
+            items: [1180270693,], // Eternity's Edge
+          },
           {
             title: 'Heiro Camo',
             items: [2791527489, 3629447000, 3884999792, 1664611474, 2770578349],
@@ -616,6 +785,16 @@ module.exports = [
           {
             title: 'Tesseract Trace - PS4 Exclusive',
             items: [2811180959, 3169402598, 4092393610, 2728535008, 434243995],
+          },
+          {
+            title: 'Emblems',
+            items: [
+              1907674137, // Warlock's Flight
+              3564452901, // Warlock's Wisdom
+              1530147650, // Blade's Blast
+              3778092977, // Storm's Surge
+              46275857,   // Walker's Warp
+            ],
           },
         ],
       },
