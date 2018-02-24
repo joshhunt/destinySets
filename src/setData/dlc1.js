@@ -255,6 +255,14 @@ module.exports = [
               2798463723, // Extinction Orbit Ornament
             ],
           },
+          {
+            title: 'Extras',
+            items: [
+              3681086672, // Deep Space Shell (Ghost)
+              2924982628, // Distant Pulsar (Ship)
+              1220495180, // Pale Horse (Sparrow)
+            ],
+          },
         ],
       },
       {
@@ -303,6 +311,14 @@ module.exports = [
               2603702210, // Sovereign Lion Ornament
             ],
           },
+          {
+            title: 'Extras',
+            items: [
+              3681086674, // Leonine Shell (Ghost)
+              2924982630, // Leonine Carrack (Ship)
+              1220495182, // Leonine Courser (Sparrow)
+            ],
+          },
         ],
       },
       {
@@ -349,6 +365,14 @@ module.exports = [
               712844712, // War Simulator Ornament
               3323147154, // War Simulator Ornament
               855531161, // War Simulator Ornament
+            ],
+          },
+          {
+            title: 'Extras',
+            items: [
+              3681086675, // Wars to Come Shell (Ghost)
+              2924982631, // Bonegrip (Ship)
+              1220495183, // Truth Scraper (Sparrow)
             ],
           },
         ],
