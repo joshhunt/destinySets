@@ -10,8 +10,14 @@ export default function getItemExtraInfo(item) {
       );
 
   if (objectives && !$objectives) {
+    const baseItem = item.$baseItem
+      ? `"${item.$baseItem.displayProperties.name}"`
+      : 'the base item';
+
     extraInfo.push(
-      'Collect the base item and have it on a character to see Ornament status and objectives'
+      `Collect ${
+        baseItem
+      } and have it on a character to see Ornament status and objectives.`
     );
   }
 

@@ -139,6 +139,9 @@ export function mapItems(
       const isDismantled = inventoryItem && inventoryItem[0].$dismantled;
       const hasInventoryItems = !!inventoryItem;
 
+      const baseItemHash = item.plug && item.plug.previewItemOverrideHash;
+      const baseItem = itemDefs[baseItemHash];
+
       const finalItem = {
         $obtained: isPlug
           ? hasInventoryItems && !isDismantled
@@ -148,6 +151,7 @@ export function mapItems(
         $intrinsicStatPerk: intrinsicStatPerkDef,
         $stats: stats,
         $objectives: objectives,
+        $baseItem: baseItem,
         ...item
       };
 

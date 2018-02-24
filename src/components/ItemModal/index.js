@@ -41,8 +41,7 @@ export default class ItemModal extends Component {
         classType,
         itemTypeName,
         itemTypeDisplayName,
-        $objectives,
-        objectives
+        $objectives
       }
     } = this.props;
 
