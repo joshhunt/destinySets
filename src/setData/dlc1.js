@@ -255,6 +255,15 @@ module.exports = [
               2798463723, // Extinction Orbit Ornament
             ],
           },
+          {
+            title: 'Extras',
+            items: [
+              3681086672, // Deep Space Shell (Ghost)
+              2924982628, // Distant Pulsar (Ship)
+              1220495180, // Pale Horse (Sparrow)
+              745759694, // Escape This Dead Orbit (CoO Emblem)
+            ],
+          },
         ],
       },
       {
@@ -303,6 +312,15 @@ module.exports = [
               2603702210, // Sovereign Lion Ornament
             ],
           },
+          {
+            title: 'Extras',
+            items: [
+              3681086674, // Leonine Shell (Ghost)
+              2924982630, // Leonine Carrack (Ship)
+              1220495182, // Leonine Courser (Sparrow)
+              745759692, // Sigil of the New Monarch (CoO Emblem)
+            ],
+          },
         ],
       },
       {
@@ -349,6 +367,15 @@ module.exports = [
               712844712, // War Simulator Ornament
               3323147154, // War Simulator Ornament
               855531161, // War Simulator Ornament
+            ],
+          },
+          {
+            title: 'Extras',
+            items: [
+              3681086675, // Wars to Come Shell (Ghost)
+              2924982631, // Bonegrip (Ship)
+              1220495183, // Truth Scraper (Sparrow)
+              745759695, // Future War Cultist (CoO Emblem)
             ],
           },
         ],
@@ -408,6 +435,12 @@ module.exports = [
               2926606926, // Kairos Function Robes
               2066098484, // Kairos Function Boots
               3669055767, // Kairos Function Bond
+            ],
+          },
+          {
+            title: 'Extras',
+            items: [
+              573576346, // Sagira's Shell
             ],
           },
         ],
@@ -578,126 +611,114 @@ module.exports = [
           {
             title: 'Emotes',
             items: [
-              1368499525,
-              3633235162,
-              4019835247,
-              903864129,
-              1949295586,
-              2299313708,
-              2923026987,
-              3829550655,
-              4260536069,
-              871309441,
-              2078267281,
-              2574501094,
-              3117256915,
-              3877511792,
+              3633235162, // Selfie
+              4019835247, // Mic Drop
+              1368499525, // Sweeping
+              4260536069, // Timely Dance
+              3829550655, // Trendy Dance
+              2923026987, // Odder Dance
+              903864129, // Overnight Dance
+              2299313708, // Disco Dance
+              1949295586, // Grooving Dance
+              3117256915, // Call Me
+              2574501094, // Can-Do Attitude
+              2078267281, // Cool, Dude
+              3877511792, // Humbug
+              871309441, // Victory Taunt
             ],
           },
           {
             title: 'Ghosts',
             items: [
-              573576346, // Sagira's Shell
-              1558857466, // Electronica Shell
-              1558857468, // Fast Lane Shell
-              1558857469, // Fire Victorious Shell
               1558857470, // Star Map Shell
               1558857471, // Cosmos Shell
-              3681086675,
-              3681086674,
-              3681086673,
-              3681086672,
-              1271045323,
-              1271045322,
-              1271045319,
-              1271045318,
-              1271045317,
-              1271045316,
-              1271045315,
-              1271045314,
-              1271045313,
-              1271045312,
-              89965919,
-              89965918,
-              89965911,
-              89965910,
-              89965909,
-              89965908,
-              89965907,
-              89965906,
-              89965905,
-              89965904,
+              1558857468, // Fast Lane Shell
+              1558857469, // Fire Victorious Shell
+              1558857466, // Electronica Shell
+              1271045315, // Flaming Arrow Shell
+              1271045314, // Unearthly Koi Shell
+              1271045313, // Commanding Star Shell
+              1271045312, // Gray Tiger Shell
+              1271045319, // Dolphin Wave Shell 
+              1271045318, // Triumphal Shell
+              1271045317, // Infinite Blue Shell
+              1271045316, // Garter Snake Shell
+              1271045323, // Abacus Shell
+              1271045322, // Symphonic Shell
+              89965910, // Kaleidoscope Shell
+              89965911, // In Fine Omnium Shell
+              89965908, // Captaincy Shell
+              89965909, // Precious Metals Shell
+              89965906, // Viceroy Shell
+              89965907, // Upward Climber Shell
+              89965904, // Pintail Ghost
+              89965905, // Iris Map Shell
+              89965918, // Orchid Shell
+              89965919, // Yellowspear Shell
             ],
           },
           {
             title: 'Ships',
             items: [
-              292872936,
-              292872937,
-              292872938,
-              292872939,
-              292872940,
-              292872941,
-              2924982631,
-              2924982630,
-              2924982629,
-              2924982628,
-              658724916,
-              658724917,
-              658724918,
-              658724919,
-              658724924,
-              658724925,
-              709057677,
-              530012779,
-              530012780,
-              530012781,
-              530012782,
-              530012783,
-              658724912,
-              658724913,
-              658724914,
-              658724915,
-              530012772,
-              530012773,
-              530012776,
-              530012777,
-              530012778,
+              292872936, // Sails of Osiris
+              292872937, // Saint-14's Gray Pigeon
+              292872938, // Kabr's Glass Aegis
+              292872939, // Asher Mir's One-Way Ticket
+              292872940, // Ikora's Resolve 
+              292872941, // The Sundaresh Experiment 13-R 
+              530012781, // Star Scion
+              530012780, // Galactic Hum
+              530012783, // Arrowhawk
+              530012782, // Dragonquin
+              530012777, // Nebula Bloom
+              530012776, // Rubente Dextra
+              530012779, // Andromeda Gleaming
+              530012778, // Edge of the Worlds
+              530012773, // Sailing Shield
+              530012772, // Armcoat
+              658724916, // Mainsail Royal
+              658724917, // Bassanio
+              658724918, // Spun Sidhe
+              658724919, // Neverfall
+              658724912, // Antonio
+              658724913, // Runereed
+              658724914, // Wanderlonging
+              658724915, // Infinite Visage 
+              658724924, // Hardtop Regent 
+              658724925, // Amethystine 
+              709057677, // Fantail Regent
             ],
           },
           {
             title: 'Sparrows',
             items: [
-              3081894947,
-              3081894946,
-              3081894944,
-              3610177565,
-              3610177564,
-              3610177559,
-              3610177558,
-              3610177557,
-              3610177556,
-              3538153295,
-              3588486148,
-              3588486149,
-              3588486150,
-              3588486151,
-              3610177552,
-              3610177553,
-              3610177554,
-              3610177555,
-              3538153294,
-              3538153293,
-              3538153292,
-              3538153291,
-              3538153290,
-              3538153289,
-              3538153288,
-              3538153285,
-              3538153284,
-              1220495183,
-              1220495182,
-              1220495180,
+              3081894946, // SV-112 Predator
+              3081894947, // Concentric Dawn
+              3081894944, // Curse of Foresight 
+              3610177557, // Avalon Courser
+              3610177556, // Angel Lazuli
+              3610177559, // Twintail Locust 
+              3610177558, // Soul Sylph
+              3610177553, // Striped Abandon
+              3610177552, // Solaris Celestina 
+              3610177555, // Twinfang
+              3610177554, // Data Stream 
+              3610177565, // Lunaria Lumina 
+              3610177564, // Cavalcade 
+              3538153292, // Directoria Sagitta
+              3538153293, // Arondight
+              3538153294, // Oculus Angulon 
+              3538153295, // Ridgerunner Rex 
+              3538153288, // Tropidon V
+              3538153289, // Velos Knight
+              3538153290, // Annabel Lee
+              3538153291, // Marbled Orb Weaver
+              3538153284, // Solo Stand
+              3538153285, // Sharklight
+              3588486149, // Aldebaran 
+              3588486148, // Machina Macro
+              3588486151, // Frago Junium
+              3588486150, // Vox Imperative
             ],
           },
         ],
