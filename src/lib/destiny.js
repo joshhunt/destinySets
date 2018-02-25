@@ -1,6 +1,6 @@
 import { sortBy } from 'lodash';
 
-const XUR_URL = 'https://d392b4140pqfjy.cloudfront.net/xur';
+const XUR_URL = 'https://api.destiny.plumbing/xur';
 
 const log = require('app/lib/log')('http');
 
@@ -136,7 +136,7 @@ export function xur() {
   return get(XUR_URL).then(xurData => {
     const isLive = window.location.href.includes('forceXur') || xurData.isLive;
     return isLive
-      ? { xurItems: xurData.itemHashes, xurExtraText: xurData.extraText }
+      ? { xurItems: xurData.itemHashes, xurLocation: xurData.location }
       : [];
   });
 }
