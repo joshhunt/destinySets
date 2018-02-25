@@ -261,6 +261,7 @@ module.exports = [
               3681086672, // Deep Space Shell (Ghost)
               2924982628, // Distant Pulsar (Ship)
               1220495180, // Pale Horse (Sparrow)
+              745759694, // Escape This Dead Orbit (CoO Emblem)
             ],
           },
         ],
@@ -317,6 +318,7 @@ module.exports = [
               3681086674, // Leonine Shell (Ghost)
               2924982630, // Leonine Carrack (Ship)
               1220495182, // Leonine Courser (Sparrow)
+              745759692, // Sigil of the New Monarch (CoO Emblem)
             ],
           },
         ],
@@ -373,6 +375,7 @@ module.exports = [
               3681086675, // Wars to Come Shell (Ghost)
               2924982631, // Bonegrip (Ship)
               1220495183, // Truth Scraper (Sparrow)
+              745759695, // Future War Cultist (CoO Emblem)
             ],
           },
         ],
