@@ -21,7 +21,7 @@ export default function ItemTooltip({ item, small, dismiss, globalItemCount }) {
 
   return (
     <div className={cx(styles.tooltip, small && styles.small)}>
-      <ItemBanner className={styles.header} item={item} />
+      <ItemBanner className={styles.header} item={item} onClose={dismiss} />
 
       <div className={styles.body}>
         {displayProperties.description &&

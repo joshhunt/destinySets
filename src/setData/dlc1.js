@@ -139,7 +139,7 @@ module.exports = [
             ]
           },
           {
-            title: 'Others',
+            title: 'Extras',
             items: [
               3681086673, // Iron Companionship Shell (Ghost shell)
               1220495181, // Iron Gallop (Sparrow)

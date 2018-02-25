@@ -29,7 +29,7 @@ const CLASS_TYPE = {
   [WARLOCK]: 'Warlock'
 };
 
-export default function ItemBanner({ className, item }) {
+export default function ItemBanner({ className, item, onClose }) {
   const {
     displayProperties,
     inventory,
@@ -50,7 +50,7 @@ export default function ItemBanner({ className, item }) {
 
   return (
     <div
-      className={cx(className, styles.itemTop, !showEmblem && TIER_STYLE[tier])}
+      className={cx(className, styles.root, !showEmblem && TIER_STYLE[tier])}
       style={{
         backgroundImage:
           showEmblem && `url(https://bungie.net${secondaryIcon})`,
@@ -64,9 +64,18 @@ export default function ItemBanner({ className, item }) {
         style={{ opacity: showEmblem ? 0 : 1 }}
       />
 
-      <div className={styles.itemInfo}>
-        <div className={styles.name}>{displayProperties.name}</div>
-        <div className={styles.itemType}>
+      <div className={styles.body}>
+        <div className={styles.main}>
+          <div>{displayProperties.name}</div>
+          {onClose && (
+            <div>
+              <button className={styles.close} onClick={() => onClose(item)}>
+                <i className="fa fa-close" />
+              </button>
+            </div>
+          )}
+        </div>
+        <div className={styles.sub}>
           <div>
             {' '}
             {CLASS_TYPE[classType]} {itemTypeName || itemTypeDisplayName}
