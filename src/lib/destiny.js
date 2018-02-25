@@ -14,8 +14,6 @@ const componentItemInstances = 300;
 const componentItemSockets = 305;
 const componentItemCommonData = 307;
 const componentKiosks = 500;
-
-const componentVendors = 400;
 const componentVendorSales = 402;
 
 const PROFILE_COMPONENTS = [
