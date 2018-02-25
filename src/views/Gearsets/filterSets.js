@@ -1,6 +1,6 @@
 import { flatMapSetItems } from './utils';
 
-import { HUNTER, TITAN, WARLOCK } from 'app/lib/destinyEnums';
+import { EMBLEM, HUNTER, TITAN, WARLOCK } from 'app/lib/destinyEnums';
 
 import consoleExclusives from '../consoleExclusives.js';
 
@@ -12,7 +12,7 @@ export const FILTERS = [
   [HUNTER, 'Hunter'],
   [WARLOCK, 'Warlock'],
   [SHOW_COLLECTED, 'Collected'],
-  [SHOW_PS4_EXCLUSIVES, 'PS4 exclusives'],
+  [SHOW_PS4_EXCLUSIVES, 'PS4 exclusives']
 ];
 
 export const DEFAULT_FILTER = {
@@ -20,7 +20,7 @@ export const DEFAULT_FILTER = {
   [HUNTER]: true,
   [WARLOCK]: true,
   [SHOW_COLLECTED]: true,
-  [SHOW_PS4_EXCLUSIVES]: true,
+  [SHOW_PS4_EXCLUSIVES]: true
 };
 
 export const isOrnament = item =>
@@ -31,6 +31,20 @@ export const isOrnament = item =>
   item.plug.plugCategoryIdentifier.includes('skins');
 
 const getItemClass = item => {
+  if (item.itemCategoryHashes.includes(EMBLEM)) {
+    if (item.inventory.stackUniqueLabel.includes('hunter')) {
+      return HUNTER;
+    }
+
+    if (item.inventory.stackUniqueLabel.includes('warlock')) {
+      return WARLOCK;
+    }
+
+    if (item.inventory.stackUniqueLabel.includes('titan')) {
+      return TITAN;
+    }
+  }
+
   if (item.classType === 3 && isOrnament(item)) {
     if (item.plug.plugCategoryIdentifier.includes('hunter')) {
       return HUNTER;
@@ -106,7 +120,7 @@ export default function filterSets({ rawGroups, filter }) {
             ..._section,
             items,
             itemCount,
-            obtainedCount,
+            obtainedCount
           });
         }
 
@@ -118,7 +132,7 @@ export default function filterSets({ rawGroups, filter }) {
           ..._set,
           sections,
           itemCount: setItemCount,
-          obtainedCount: setObtainedCount,
+          obtainedCount: setObtainedCount
         });
       }
 
@@ -128,7 +142,7 @@ export default function filterSets({ rawGroups, filter }) {
     if (sets.length > 0) {
       groupAcc.push({
         ..._group,
-        sets: sets,
+        sets: sets
       });
     }
 
@@ -141,6 +155,6 @@ export default function filterSets({ rawGroups, filter }) {
     itemCount: totalItemCount,
     obtainedCount: totalObtainedCount,
     groups: filteredGroups,
-    hiddenItemsCount: totalItems - displayedItems,
+    hiddenItemsCount: totalItems - displayedItems
   };
 }

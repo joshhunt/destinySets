@@ -1,70 +1,41 @@
 import React from 'react';
 import cx from 'classnames';
 
+import getItemExtraInfo from 'app/lib/getItemExtraInfo';
 import FancyImage from 'app/components/FancyImage';
+import ItemBanner from 'app/components/ItemBanner';
 
 import styles from './styles.styl';
 
-import {
-  LEGENDARY,
-  EXOTIC,
-  UNCOMMON,
-  RARE,
-  COMMON,
-} from 'app/lib/destinyEnums';
+import { EMBLEM } from 'app/lib/destinyEnums';
 
 import ItemStats from 'app/components/ItemStats';
 import Objectives from 'app/components/Objectives';
 
-const TIER_STYLE = {
-  [EXOTIC]: styles.exotic,
-  [LEGENDARY]: styles.legendary,
-  [UNCOMMON]: styles.common,
-  [RARE]: styles.rare,
-  [COMMON]: styles.basic,
-};
-
 export default function ItemTooltip({ item, small, dismiss, globalItemCount }) {
-  const tier = item.inventory.tierTypeHash || '';
-  const icon = item.displayProperties.icon || '/img/misc/missing_icon_d2.png';
-  const name =
-    (item.displayProperties && item.displayProperties.name) || 'no name';
+  const { displayProperties, screenshot, itemCategoryHashes } = item;
 
+  const isEmblem = itemCategoryHashes.includes(EMBLEM);
+  const extraInfo = getItemExtraInfo(item);
   const stats = item.$stats || [];
 
   return (
-    <div
-      className={cx(styles.tooltip, TIER_STYLE[tier], small && styles.small)}
-    >
-      <div className={styles.header}>
-        {dismiss && (
-          <button className={styles.closeButton} onClick={() => dismiss(item)}>
-            ×
-          </button>
-        )}
-
-        <div className={styles.img}>
-          <FancyImage src={`https://bungie.net${icon}`} />
-        </div>
-        <div className={styles.headerContent}>
-          <div className={styles.title}>{name}</div>
-          <div className={styles.subtitle}>
-            <span>{item.itemTypeDisplayName}</span>
-            <span>{item.inventory.tierTypeName}</span>
-          </div>
-        </div>
-      </div>
+    <div className={cx(styles.tooltip, small && styles.small)}>
+      <ItemBanner className={styles.header} item={item} />
 
       <div className={styles.body}>
-        <p className={styles.description}>
-          <em>{item.displayProperties.description}</em>
-        </p>
+        {displayProperties.description &&
+          displayProperties.description.split('\n').map(para => (
+            <p key={para} className={styles.description}>
+              {para}
+            </p>
+          ))}
 
-        {item.screenshot && (
+        {screenshot && (
           <div className={styles.screenshotWrapper}>
             <FancyImage
               className={styles.screenshot}
-              src={`https://bungie.net${item.screenshot}`}
+              src={`https://bungie.net${screenshot}`}
             />
           </div>
         )}
@@ -77,13 +48,12 @@ export default function ItemTooltip({ item, small, dismiss, globalItemCount }) {
           </p>
         )}
 
-        {item.$dismantled && (
-          <div className={styles.inventory}>
-            <ul>
-              <li>Dismantled</li>
-            </ul>
-          </div>
-        )}
+        {!isEmblem &&
+          extraInfo.map(info => (
+            <div key={info} className={styles.extraInfo}>
+              {info}
+            </div>
+          ))}
 
         {item.$objectives && (
           <Objectives

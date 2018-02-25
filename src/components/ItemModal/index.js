@@ -1,53 +1,23 @@
 import React, { Component } from 'react';
-import cx from 'classnames';
+import { Link } from 'react-router';
 
+import getItemExtraInfo from 'app/lib/getItemExtraInfo';
 import Objectives from 'app/components/Objectives';
-
-import {
-  LEGENDARY,
-  EXOTIC,
-  UNCOMMON,
-  RARE,
-  COMMON,
-} from 'app/lib/destinyEnums';
+import ItemBanner from 'app/components/ItemBanner';
 
 import styles from './styles.styl';
-
-const TIER_STYLE = {
-  [EXOTIC]: styles.exotic,
-  [LEGENDARY]: styles.legendary,
-  [UNCOMMON]: styles.common,
-  [RARE]: styles.rare,
-  [COMMON]: styles.basic,
-};
-
-const CLASS_TYPE = {
-  0: 'Titan',
-  1: 'Hunter',
-  2: 'Warlock',
-};
 
 export default class ItemModal extends Component {
   render() {
     const {
       trackOrnament,
       onRequestClose,
-      item: {
-        hash,
-        displayProperties,
-        screenshot,
-        inventory,
-        classType,
-        itemTypeName,
-        itemTypeDisplayName,
-        $objectives,
-        objectives,
-      },
+      item: { hash, displayProperties, screenshot, $objectives }
     } = this.props;
 
-    const tier = inventory.tierTypeHash || '';
-    const icon = displayProperties.icon || '/img/misc/missing_icon_d2.png';
-    const name = (displayProperties && displayProperties.name) || 'no name';
+    const extraInfo = getItemExtraInfo(this.props.item);
+
+    const dtrLink = `http://db.destinytracker.com/d2/en/items/${hash}`;
 
     return (
       <div className={styles.root}>
@@ -65,33 +35,29 @@ export default class ItemModal extends Component {
           </div>
         )}
 
-        <div className={cx(styles.itemTop, TIER_STYLE[tier])}>
-          <img
-            className={styles.icon}
-            src={`https://bungie.net${icon}`}
-            alt=""
-          />
-
-          <div className={styles.itemInfo}>
-            <div className={styles.itemName}>{name}</div>
-            <div className={styles.itemType}>
-              {' '}
-              {CLASS_TYPE[classType]} {itemTypeName || itemTypeDisplayName}
-            </div>
-          </div>
-        </div>
+        <ItemBanner className={styles.itemTop} item={this.props.item} />
 
         {displayProperties.description && (
           <p className={styles.description}>{displayProperties.description}</p>
         )}
 
-        {objectives &&
-          !$objectives && (
-            <p className={styles.missingObjectives}>
-              Get the base item somewhere in your inventory to see objective
-              progress
-            </p>
-          )}
+        <ul className={styles.viewItemLinks}>
+          <li>
+            <a href={dtrLink} target="_blank" rel="noopener noreferrer">
+              View on DestinyTracker
+            </a>
+          </li>
+
+          <li>
+            <Link to={`/data/${hash}`}>View in Data Explorer</Link>
+          </li>
+        </ul>
+
+        {extraInfo.map(info => (
+          <div key={info} className={styles.extraInfo}>
+            {info}
+          </div>
+        ))}
 
         {$objectives && (
           <div>

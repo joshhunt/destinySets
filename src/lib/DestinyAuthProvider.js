@@ -1,17 +1,18 @@
 import React, { Component } from 'react';
 import destinyAuth from 'app/lib/destinyAuth';
 
-export default function DestinyAuthProvider(WrappedComponent, onlyRenderWhenAuthed) {
-
+export default function DestinyAuthProvider(
+  WrappedComponent,
+  onlyRenderWhenAuthed
+) {
   return class DestinyAuthProviderWrapper extends Component {
     state = {
       isAuthenticated: false,
-      authLoaded: false,
+      authLoaded: false
     };
 
     componentDidMount() {
       destinyAuth((err, isAuthenticated) => {
-        console.info('DestinyAuthProvider', { err, isAuthenticated })
         if (err) {
           throw err;
         }
@@ -22,20 +23,24 @@ export default function DestinyAuthProvider(WrappedComponent, onlyRenderWhenAuth
 
     render() {
       if (onlyRenderWhenAuthed) {
-        return this.state.isAuthenticated
-          ? (<WrappedComponent
-              {...this.props}
-              authLoaded={this.state.authLoaded}
-              isAuthenticated={this.state.isAuthenticated}
-            />)
-          : <em>Loading...</em>
+        return this.state.isAuthenticated ? (
+          <WrappedComponent
+            {...this.props}
+            authLoaded={this.state.authLoaded}
+            isAuthenticated={this.state.isAuthenticated}
+          />
+        ) : (
+          <em>Loading...</em>
+        );
       }
 
-      return (<WrappedComponent
-                {...this.props}
-                authLoaded={this.state.authLoaded}
-                isAuthenticated={this.state.isAuthenticated}
-              />)
+      return (
+        <WrappedComponent
+          {...this.props}
+          authLoaded={this.state.authLoaded}
+          isAuthenticated={this.state.isAuthenticated}
+        />
+      );
     }
-  }
+  };
 }

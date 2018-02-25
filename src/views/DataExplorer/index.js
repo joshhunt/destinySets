@@ -50,9 +50,7 @@ class DataExplorer extends Component {
 
     dataPromises.forEach(p =>
       p.then(() => {
-        this.setState({
-          numLoaded: this.state.numLoaded + 1
-        });
+        this.setState({ numLoaded: this.state.numLoaded + 1 });
       })
     );
 
@@ -78,10 +76,15 @@ class DataExplorer extends Component {
         this.defs = defs;
         this.defsByField = defsByField;
 
-        window.__DEFINITIONS = defs;
-
         this.setState({ loading: false });
         this.onFilterChange();
+
+        const itemDefs = defs.item;
+        const itemHash = this.props.routeParams.itemHash;
+
+        if (itemHash && itemDefs[itemHash]) {
+          this.pushItem(itemDefs[itemHash]);
+        }
       })
       .catch(err => {
         console.error(err);

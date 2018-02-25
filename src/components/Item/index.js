@@ -11,15 +11,18 @@ import styles from './styles.styl';
 const CLASS_TYPE = {
   0: 'Titan',
   1: 'Hunter',
-  2: 'Warlock',
+  2: 'Warlock'
 };
+
+// const supers = ['⁰', '¹', '²', '³', '⁴', '⁵', '⁶', '⁷', '⁸', '⁹'];
+// const subs = ['₀', '₁', '₂', '₃', '₄', '₅', '₆', '₇', '₈', '₉'];
 
 function isMobile() {
   return (
     window &&
     window.navigator &&
     /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-      window.navigator.userAgent,
+      window.navigator.userAgent
     )
   );
 }
@@ -28,12 +31,12 @@ const tooltipStyle = {
   style: {
     background: '#20262d',
     padding: 0,
-    boxShadow: '0px 2px 3px rgba(0,0,0,.5)',
+    boxShadow: '0px 2px 3px rgba(0,0,0,.5)'
   },
   arrowStyle: {
     color: '#20262d',
-    borderColor: false,
-  },
+    borderColor: false
+  }
 };
 
 export default class Item extends Component {
@@ -53,7 +56,7 @@ export default class Item extends Component {
   // }
 
   state = {
-    isTooltipActive: false,
+    isTooltipActive: false
   };
 
   componentDidMount() {
@@ -63,7 +66,7 @@ export default class Item extends Component {
       }
 
       this.setState({
-        globalItemCount: stats[this.props.item.hash],
+        globalItemCount: stats[this.props.item.hash]
       });
     });
   }
@@ -89,7 +92,7 @@ export default class Item extends Component {
     const dtrProps = {
       href: dtrLink,
       target: '_blank',
-      'data-dtr-tooltip': 'no-show',
+      'data-dtr-tooltip': 'no-show'
     };
 
     const globalItemCount = !!this.state.globalItemCount;
@@ -102,7 +105,7 @@ export default class Item extends Component {
       [styles.globallyObtained]: globalItemCount,
       [styles.obtained]: obtained,
       [styles.dismantled]: dismantled,
-      [styles.forSale]: item.forSale,
+      [styles.forSale]: item.forSale
     });
 
     const { name, icon: _icon } = item.displayProperties || { name: 'no name' };

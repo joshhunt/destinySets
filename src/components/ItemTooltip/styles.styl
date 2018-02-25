@@ -23,38 +23,11 @@ mobile()
     font-size: 14px
 
 .header
-  display: flex
-  align-items: center
+  font-size: 15px
 
   .small &
     margin-bottom: 10px
-
-.img img
-  display: block
-  width: 70px
-  height: 70px
-
-  .small &
-    width: 40px
-    height: 40px
-
-.headerContent
-  margin: 0 $padding
-  flex: 1
-
-  .small &
-    padding: 4px 0
-    padding-top: 2px
-
-.title
-  font-size: 15px
-
-.subtitle
-  opacity: .8
-  display: flex
-  justify-content: space-between
-  font-size: 13px
-  line-height: 1
+    padding: 0 10px 0 0
 
 .description
   margin: $padding 0
@@ -97,21 +70,11 @@ mobile()
     font-size: 20px
     color: white
 
-.exotic .header
-  background: #ceae33
-
-.legendary .header
-  background: #522f65
-
-.rare .header
-  background: #5076a3
-
-.common .header
-  background: #366f3c
-
-.basic .header
-  background: #c3bcb4
-  color: #1e242b
+.extraInfo
+  opacity: .8
+  font-size: .9em
+  font-style: italic
+  margin-bottom: $padding
 
 :global(.ToolTipPortal)
   pointer-events: none
