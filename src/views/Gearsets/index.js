@@ -95,8 +95,8 @@ class Gearsets extends Component {
     this.scheduleProcessSets();
 
     Promise.all([this.dataPromise, destiny.xur()]).then(
-      ([data, { xurItems, xurExtraText }]) => {
-        this.setState({ xurExtraText });
+      ([data, { xurItems, xurLocation }]) => {
+        this.setState({ xurLocation });
         this.xurItems = xurItems;
         this.processSets(...data);
       }
@@ -341,11 +341,11 @@ class Gearsets extends Component {
       obtainedCount,
       activeLanguage,
       shit,
-      xurItems,
       hasInventory,
       googleAuthLoaded,
-      xurExtraText,
       googleAuthSignedIn,
+      xurItems,
+      xurLocation,
       itemModal,
       trackedItems
     } = this.state;
@@ -430,7 +430,7 @@ class Gearsets extends Component {
           )}
         </div>
 
-        {hasInventory && <Xur items={xurItems} extraText={xurExtraText} />}
+        {hasInventory && <Xur items={xurItems} location={xurLocation} />}
 
         {(groups || []).map((group, index) => (
           <div key={index} id={`group_${index}`}>

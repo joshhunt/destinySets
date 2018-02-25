@@ -1,6 +1,6 @@
 import { sortBy } from 'lodash';
 
-const XUR_URL = 'https://d392b4140pqfjy.cloudfront.net/xur';
+const XUR_URL = 'https://api.destiny.plumbing/xur';
 
 const log = require('app/lib/log')('http');
 
@@ -14,8 +14,9 @@ const componentItemInstances = 300;
 const componentItemSockets = 305;
 const componentItemCommonData = 307;
 const componentKiosks = 500;
+const componentVendorSales = 402;
 
-const COMPONENTS = [
+const PROFILE_COMPONENTS = [
   componentProfiles,
   componentProfileInventories,
   componentCharacters,
@@ -26,6 +27,12 @@ const COMPONENTS = [
   componentItemCommonData,
   componentItemSockets,
   componentKiosks
+];
+
+const VENDORS_COMPONENTS = [
+  componentVendorSales,
+  componentItemInstances,
+  componentItemSockets
 ];
 
 export function get(url, opts) {
@@ -86,6 +93,52 @@ export function getProfile({ membershipType, membershipId }, components) {
   );
 }
 
+export function getVendors(
+  { membershipType, membershipId },
+  characterId,
+  components
+) {
+  return getDestiny(
+    `/Platform/Destiny2/${membershipType}/Profile/${membershipId}/Character/${
+      characterId
+    }/Vendors/?components=${components.join(',')}`
+  )
+    .then(data => ({
+      [characterId]: data
+    }))
+    .catch(err => {
+      console.error('Error fetching vendors for', {
+        membershipType,
+        membershipId,
+        characterId
+      });
+
+      console.error(err);
+      return null;
+    });
+}
+
+export function getProfileAndVendors(membership) {
+  let profile;
+
+  return getProfile(membership, PROFILE_COMPONENTS)
+    .then(_profile => {
+      profile = _profile;
+
+      const promise = Promise.all(
+        Object.keys(profile.characters.data).map(characterId => {
+          return getVendors(membership, characterId, VENDORS_COMPONENTS);
+        })
+      );
+
+      return promise;
+    })
+    .then(vendors => {
+      profile.$vendors = Object.assign({}, ...vendors);
+      return profile;
+    });
+}
+
 export function getCurrentProfiles() {
   let bungieNetUser;
 
@@ -94,11 +147,12 @@ export function getCurrentProfiles() {
       bungieNetUser = body.bungieNetUser;
 
       return Promise.all(
-        body.destinyMemberships.map(ship => getProfile(ship, COMPONENTS))
+        body.destinyMemberships.map(ship => getProfileAndVendors(ship))
       );
     })
     .then(profiles => {
       log('profiles:', profiles);
+
       const sortedProfiles = sortBy(
         profiles
           .filter(Boolean)
@@ -136,7 +190,7 @@ export function xur() {
   return get(XUR_URL).then(xurData => {
     const isLive = window.location.href.includes('forceXur') || xurData.isLive;
     return isLive
-      ? { xurItems: xurData.itemHashes, xurExtraText: xurData.extraText }
+      ? { xurItems: xurData.itemHashes, xurLocation: xurData.location }
       : [];
   });
 }

@@ -6,7 +6,7 @@ import Item from 'app/components/Item';
 
 import styles from './styles.styl';
 
-export default function Xur({ items, extraText }) {
+export default function Xur({ items, location }) {
   if (!items.length) {
     return null;
   }
@@ -26,19 +26,12 @@ export default function Xur({ items, extraText }) {
           ))}
         </div>
 
-        {extraText ? (
-          <p>{extraText}</p>
-        ) : (
+        {location && (
           <p>
-            Visit the Xûr Megathread on{' '}
-            <a
-              href="https://reddit.com/r/destinythegame"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              /r/DestinyTheGame
-            </a>{' '}
-            to find where he's been spotted this week.
+            This week Xur has been spotted in{' '}
+            <strong>
+              {location.region}, {location.planet}
+            </strong>.
           </p>
         )}
       </div>
