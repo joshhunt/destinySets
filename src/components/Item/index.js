@@ -40,21 +40,6 @@ const tooltipStyle = {
 };
 
 export default class Item extends Component {
-  // shouldComponentUpdate(nextProps, nextState) {
-  //   if (this.state !== nextState) {
-  //     return true;
-  //   }
-
-  //   if (
-  //     this.props.hash !== nextProps.hash ||
-  //     this.props.$obtained !== nextProps.$obtained
-  //   ) {
-  //     return true;
-  //   } else {
-  //     return false;
-  //   }
-  // }
-
   state = {
     isTooltipActive: false
   };
@@ -76,6 +61,7 @@ export default class Item extends Component {
       this.setState({ isTooltipActive: true });
     }
   };
+
   hideTooltip = () => {
     this.setState({ isTooltipActive: false });
   };
@@ -98,6 +84,7 @@ export default class Item extends Component {
     const globalItemCount = !!this.state.globalItemCount;
     const obtained = !globalItemCount && item.$obtained;
     const dismantled = !globalItemCount && (item.$obtained && item.$dismantled);
+    const showOrnamentProgress = !obtained && item.$objectives;
 
     const rootClassName = cx(styles.root, {
       [styles.small]: small,
@@ -105,7 +92,8 @@ export default class Item extends Component {
       [styles.globallyObtained]: globalItemCount,
       [styles.obtained]: obtained,
       [styles.dismantled]: dismantled,
-      [styles.forSale]: item.forSale
+      [styles.forSale]: item.forSale,
+      [styles.showOrnamentProgress]: showOrnamentProgress
     });
 
     const { name, icon: _icon } = item.displayProperties || { name: 'no name' };

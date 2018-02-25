@@ -91,6 +91,32 @@ export default function collectInventory(profile, vendorDefs) {
   let allItems = {};
   const plugData = {};
 
+  Object.values(profile.$vendors).forEach(vendors => {
+    Object.values(vendors.itemComponents).forEach(itemComponents => {
+      Object.values(itemComponents.sockets).forEach(socket => {
+        Object.values(socket).forEach(ss => {
+          Object.values(ss.sockets).forEach(sss => {
+            console.log(sss);
+            if (!sss.reusablePlugs) {
+              return;
+            }
+            Object.values(sss.reusablePlugs).forEach(plug => {
+              if (plug.canInsert) {
+                allItems[plug.plugItemHash] = [
+                  {
+                    itemHash: plug.plugItemHash,
+                    $location: '$vendor',
+                    $instanceData: [plug]
+                  }
+                ];
+              }
+            });
+          });
+        });
+      });
+    });
+  });
+
   Object.keys(profile.itemComponents.sockets.data).forEach(instanceId => {
     const { sockets } = profile.itemComponents.sockets.data[instanceId];
     sockets.forEach(socket => {
