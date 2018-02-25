@@ -11,6 +11,7 @@ import { EMBLEM } from 'app/lib/destinyEnums';
 
 import ItemStats from 'app/components/ItemStats';
 import Objectives from 'app/components/Objectives';
+import StatTrack from 'app/components/StatTrack';
 
 export default function ItemTooltip({ item, small, dismiss, globalItemCount }) {
   const { displayProperties, screenshot, itemCategoryHashes } = item;
@@ -59,6 +60,13 @@ export default function ItemTooltip({ item, small, dismiss, globalItemCount }) {
           <Objectives
             className={styles.objectives}
             objectives={item.$objectives}
+          />
+        )}
+
+        {item.$statTrack && (
+          <StatTrack
+            className={styles.objectives}
+            statTrack={item.$statTrack}
           />
         )}
       </div>

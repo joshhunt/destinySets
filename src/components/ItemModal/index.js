@@ -3,6 +3,7 @@ import { Link } from 'react-router';
 
 import getItemExtraInfo from 'app/lib/getItemExtraInfo';
 import Objectives from 'app/components/Objectives';
+import StatTrack from 'app/components/StatTrack';
 import ItemBanner from 'app/components/ItemBanner';
 
 import styles from './styles.styl';
@@ -12,10 +13,12 @@ export default class ItemModal extends Component {
     const {
       trackOrnament,
       onRequestClose,
-      item: { hash, displayProperties, screenshot, $objectives }
+      item: { hash, displayProperties, screenshot, $objectives, $statTrack }
     } = this.props;
 
     const extraInfo = getItemExtraInfo(this.props.item);
+
+    console.log($statTrack)
 
     const dtrLink = `http://db.destinytracker.com/d2/en/items/${hash}`;
 
@@ -79,6 +82,22 @@ export default class ItemModal extends Component {
             </button>
           </div>
         )}
+
+        {$statTrack && (
+          <div>
+            <h3 className={styles.objectiveTitle}>
+              {$statTrack.$objective.progressDescription}
+            </h3>
+
+            <StatTrack
+              className={styles.objectives}
+              statTrack={$statTrack}
+              bigger={true}
+            />
+
+          </div>
+        )}
+
       </div>
     );
   }

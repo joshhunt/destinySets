@@ -16,7 +16,7 @@ function mergeInstancedItem(_allItems, item, itemComponents, extraData = {}) {
   return allItems;
 }
 
-function collectKioskItems(kiosks, vendorDefs, _allItems, extraData) {
+function collectKioskItems(kiosks, vendorDefs, _allItems, extraData, statTrackData) {
   let allItems = _allItems;
 
   Object.keys(kiosks).forEach(vendorHash => {
@@ -42,6 +42,13 @@ function collectKioskItems(kiosks, vendorDefs, _allItems, extraData) {
         return null;
       }
 
+      if (kioskEntry.flavorObjective) {
+        statTrackData[vendorItem.itemHash] = {
+          itemHash: vendorItem.itemHash,
+          $instanceData: kioskEntry
+        }
+      }
+
       allItems = mergeInstancedItem(
         allItems,
         { itemHash: vendorItem.itemHash },
@@ -54,7 +61,7 @@ function collectKioskItems(kiosks, vendorDefs, _allItems, extraData) {
   return allItems;
 }
 
-function collectItemsFromKiosks(profile, vendorDefs, _allItems) {
+function collectItemsFromKiosks(profile, vendorDefs, _allItems, statTrackData) {
   const { characterKiosks, profileKiosks } = profile;
   let allItems = _allItems;
 
@@ -64,7 +71,8 @@ function collectItemsFromKiosks(profile, vendorDefs, _allItems) {
     allItems,
     {
       $location: 'profileKiosk'
-    }
+    },
+    statTrackData
   );
 
   Object.keys(characterKiosks.data).forEach(characterHash => {
@@ -72,7 +80,7 @@ function collectItemsFromKiosks(profile, vendorDefs, _allItems) {
     allItems = collectKioskItems(kiosk.kioskItems, vendorDefs, allItems, {
       $characterHash: characterHash,
       $location: 'characterKiosk'
-    });
+    }, statTrackData);
   });
 
   // return profileKioskItems.concat(charKioskItems);
@@ -90,6 +98,7 @@ export default function collectInventory(profile, vendorDefs) {
 
   let allItems = {};
   const plugData = {};
+  let statTrackData = {};
 
   Object.keys(profile.itemComponents.sockets.data).forEach(instanceId => {
     const { sockets } = profile.itemComponents.sockets.data[instanceId];
@@ -157,8 +166,9 @@ export default function collectInventory(profile, vendorDefs) {
   });
 
   if (vendorDefs) {
-    allItems = collectItemsFromKiosks(profile, vendorDefs, allItems);
+    allItems = collectItemsFromKiosks(profile, vendorDefs, allItems, statTrackData);
+
   }
 
-  return { inventory: allItems, plugData };
+  return { inventory: allItems, plugData, statTrackData };
 }
