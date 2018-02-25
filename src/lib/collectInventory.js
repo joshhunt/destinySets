@@ -96,7 +96,6 @@ export default function collectInventory(profile, vendorDefs) {
       Object.values(itemComponents.sockets).forEach(socket => {
         Object.values(socket).forEach(ss => {
           Object.values(ss.sockets).forEach(sss => {
-            console.log(sss);
             if (!sss.reusablePlugs) {
               return;
             }
