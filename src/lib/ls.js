@@ -10,11 +10,50 @@ const keys = {
   GDRIVE_FILE_ID: '$googleDriveFileId' + window.DESTINYSETS_ENV,
   GOOGLE_LOGIN_UPSELL: '$googleLoginUpsell',
   VISIT_COUNT: '$visitCount',
-  TRACKED_ITEMS: '$trackedItems',
+  TRACKED_ITEMS: '$trackedItems'
 };
 
+let LOCAL_STORAGE;
+
+// Set up a default 'in memory' reimplementation of localStorage
+const localStoragePolyfill = {
+  _data: {},
+  getItem(key) {
+    return this._data.hasOwnProperty(key) ? this._data[key] : null;
+  },
+
+  setItem(key, value) {
+    this._data[key] = value;
+  },
+
+  removeItem(key) {
+    delete this._data[key];
+  },
+
+  clear() {
+    this._data = {};
+  }
+};
+
+function init() {
+  const testKey = '_testKey';
+
+  // We can't reliably feature detect for localStorage, the only
+  // way is just to try to use it and see what happens
+  try {
+    window.localStorage.setItem(testKey, 1);
+    window.localStorage.removeItem(testKey);
+    LOCAL_STORAGE = window.localStorage;
+  } catch (e) {
+    console.log('Local storage unavailable, using fallback');
+    LOCAL_STORAGE = localStoragePolyfill;
+  }
+}
+
+init();
+
 function get(key, defaultx) {
-  const lsValue = localStorage.getItem(key);
+  const lsValue = LOCAL_STORAGE.getItem(key);
 
   if (!lsValue) {
     return defaultx;
@@ -32,7 +71,7 @@ function get(key, defaultx) {
 
 function save(key, value) {
   const jason = JSON.stringify(value);
-  localStorage.setItem(key, jason);
+  LOCAL_STORAGE.setItem(key, jason);
 }
 
 export function saveLanguage(langCode) {
@@ -132,3 +171,5 @@ export function clearAll() {
     localStorage.removeItem(k);
   });
 }
+
+export const localStorage = LOCAL_STORAGE;
