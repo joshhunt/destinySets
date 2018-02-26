@@ -8,10 +8,6 @@ module.exports = [
           'Ornaments and collectables obtained by completing challenges in The Leviathan',
         sections: [
           {
-            title: 'Final Encounter',
-            items: [113124080]
-          },
-          {
             title: 'Hunter Ornaments',
             items: [
               3346055334, // Eater of Worlds Ornament
@@ -40,6 +36,12 @@ module.exports = [
               4135965162, // Eater of Worlds Ornament
               2837735361 // Eater of Worlds Ornament
             ]
+          },
+          {
+            title: 'Extras',
+            items: [
+              113124080 // Contender's Shell (Ghost)
+            ]
           }
         ]
       },
@@ -48,10 +50,6 @@ module.exports = [
         description:
           'Gear obtained by playing the Eater of Worlds raid lair and increasing your reputation with Emperor Calus.',
         sections: [
-          {
-            title: 'Final Encounter',
-            items: [113124080]
-          },
           {
             title: 'Weapons',
             items: [
@@ -88,6 +86,13 @@ module.exports = [
               2329031091, // Robes of Sekris
               340118991, // Boots of Sekris
               239489770 // Bond of Sekris
+            ]
+          },
+          {
+            title: 'Extras',
+            items: [
+              113124080, // Contender's Shell (Ghost)
+              4261480751, // Emperor's Envy (Emblem)
             ]
           }
         ]
@@ -433,7 +438,10 @@ module.exports = [
           {
             title: 'Extras',
             items: [
-              573576346 // Sagira's Shell
+              573576346, // Sagira's Shell
+              2939572584, // Secrets of the Vex (Emblem)
+              2939572585, // Vex Destroyer (Emblem)
+              2939572590 // Vex Scholar (Emblem)
             ]
           }
         ]
