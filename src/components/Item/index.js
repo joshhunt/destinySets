@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import cx from 'classnames';
 
 import ItemTooltip from 'app/components/ItemTooltip';
-import { getInventoryStats } from 'app/lib/telemetry';
 
 import ToolTip from 'app/components/ReactPortalTooltip';
 
@@ -13,9 +12,6 @@ const CLASS_TYPE = {
   1: 'Hunter',
   2: 'Warlock'
 };
-
-// const supers = ['⁰', '¹', '²', '³', '⁴', '⁵', '⁶', '⁷', '⁸', '⁹'];
-// const subs = ['₀', '₁', '₂', '₃', '₄', '₅', '₆', '₇', '₈', '₉'];
 
 function isMobile() {
   return (
@@ -40,36 +36,9 @@ const tooltipStyle = {
 };
 
 export default class Item extends Component {
-  // shouldComponentUpdate(nextProps, nextState) {
-  //   if (this.state !== nextState) {
-  //     return true;
-  //   }
-
-  //   if (
-  //     this.props.hash !== nextProps.hash ||
-  //     this.props.$obtained !== nextProps.$obtained
-  //   ) {
-  //     return true;
-  //   } else {
-  //     return false;
-  //   }
-  // }
-
   state = {
     isTooltipActive: false
   };
-
-  componentDidMount() {
-    getInventoryStats().then(stats => {
-      if (!stats) {
-        return null;
-      }
-
-      this.setState({
-        globalItemCount: stats[this.props.item.hash]
-      });
-    });
-  }
 
   showTooltip = () => {
     if (!this.props.supressTooltip && !isMobile()) {

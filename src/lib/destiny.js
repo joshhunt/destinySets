@@ -1,5 +1,7 @@
 import { sortBy } from 'lodash';
 
+import { setUser } from 'app/lib/telemetry';
+
 const XUR_URL = 'https://api.destiny.plumbing/xur';
 
 const log = require('app/lib/log')('http');
@@ -92,6 +94,8 @@ export function getCurrentProfiles() {
   return getDestiny('/Platform/User/GetMembershipsForCurrentUser/')
     .then(body => {
       bungieNetUser = body.bungieNetUser;
+
+      setUser(bungieNetUser);
 
       return Promise.all(
         body.destinyMemberships.map(ship =>

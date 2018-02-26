@@ -1,80 +1,37 @@
-import collectInventory from 'app/lib/collectInventory';
+import * as ls from 'app/lib/ls';
 
-let db;
+function getNameFromBungieProfile(bungieNetProfile) {
+  const { psnDisplayName, xboxDisplayName, uniqueName } = bungieNetProfile;
 
-let inventoryStatsPromise;
+  const nameArr = [
+    psnDisplayName && `psn:${psnDisplayName}`,
+    xboxDisplayName && `xbox:${psnDisplayName}`
+  ].filter(Boolean);
 
-const DISPLAY_INVENTORY_STATS = window.location.search.includes(
-  'inventoryStats',
-);
-
-function saveToFirebase(prefix, profileId, data) {
-  const key = `${prefix}/profiles/${profileId}`;
-  db.ref(key).set(data);
-}
-
-export function getInventoryStats() {
-  const url = 'https://api.destiny.plumbing/inventory-stats';
-
-  if (!DISPLAY_INVENTORY_STATS) {
-    return Promise.resolve(null);
+  if (!nameArr.length) {
+    nameArr.push(uniqueName);
   }
 
-  if (!inventoryStatsPromise) {
-    inventoryStatsPromise = fetch(url)
-      .then(r => r.json())
-      .then(data => data.inventory);
-  }
+  const name = nameArr.join(' ');
 
-  return inventoryStatsPromise;
+  return name;
 }
 
-export function saveInventory(profile) {
-  require.ensure(['firebase'], function() {
-    const firebase = require('firebase');
+export function setUser(bungieNetProfile) {
+  const { membershipId } = bungieNetProfile;
+  const { ga, Raven } = window;
 
-    if (!db) {
-      firebase.initializeApp({
-        apiKey: 'AIzaSyDA_n6Ix4o6K2vW4zlFFmWk2XCzqPesDZo',
-        authDomain: 'destinysets.firebaseapp.com',
-        databaseURL: 'https://destinysets-1da95.firebaseio.com',
-        projectId: 'destinysets',
-        storageBucket: 'destinysets.appspot.com',
-        messagingSenderId: '621939283066',
-      });
+  ls.saveUID(membershipId);
 
-      db = firebase.database();
-    }
+  const uid = ls.getUID();
+  const name = getNameFromBungieProfile(bungieNetProfile);
 
-    const profileId = profile.profile.data.userInfo.membershipId;
-    const inventory = collectInventory(profile);
-    // const inventoryInstances = Object.values(inventory);
+  ga && ga('set', '&uid', uid);
+  ga && ga('set', 'userId', uid);
 
-    // const ghosts = flatMap(inventoryInstances, itemInventorySet => {
-    //   const item = itemDefs[itemInventorySet[0].itemHash];
-    //
-    //   if (!(item.itemCategoryHashes && item.itemCategoryHashes.includes(39))) {
-    //     return [];
-    //   }
-    //
-    //   return itemInventorySet.map(({ itemHash, itemInstanceId, $location }) => {
-    //     const sockets = profile.itemComponents.sockets.data[itemInstanceId] || {
-    //       sockets: [],
-    //     };
-    //     return {
-    //       itemHash,
-    //       itemInstanceId,
-    //       location: $location,
-    //       sockets: sockets.sockets.filter(s => s.plugHash).map(s => ({
-    //         plugHash: s.plugHash,
-    //         isEnabled: s.isEnabled,
-    //       })),
-    //     };
-    //   });
-    // });
-
-    saveToFirebase('simpleInventory', profileId, {
-      data: Object.keys(inventory),
+  Raven &&
+    Raven.setUserContext({
+      id: uid,
+      username: name
     });
-  });
 }

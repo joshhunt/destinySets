@@ -3,7 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@sentry/cli": "^1.30.0",
     "autotrack": "^2.4.1",
+    "babel-polyfill": "^6.26.0",
     "browser-locale": "^1.0.3",
     "classnames": "^2.2.5",
     "dexie": "^2.0.1",

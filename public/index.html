@@ -23,8 +23,26 @@
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" >
     <link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
 
+
+    <script>
+      window.__withUID = function(cb) {
+        try {
+          const uid = localStorage.uid && JSON.parse(localStorage.getItem('uid'));
+          if (uid) {
+            cb(uid);
+          }
+        } catch (e) {}
+      }
+    </script>
+
     <script>
       window.Raven.config('https://e243bfd31f3b4c02a3450417272f4393@sentry.io/294574').install()
+
+      window.__withUID(function (uid) {
+        window.Raven.setUserContext({
+          id: uid,
+        });
+      });
     </script>
 
     <script>
@@ -49,8 +67,11 @@
     'ga'
   );
 
-  ga('create', 'UA-89978211-1', 'auto', {
-    userId: localStorage.getItem('uid')
+  ga('create', 'UA-89978211-1', 'auto');
+
+  window.__withUID(function (uid) {
+    ga('set', '&uid', uid);
+    ga('set', 'userId', uid);
   });
 
   ga('require', 'cleanUrlTracker', { stripQuery: true });
