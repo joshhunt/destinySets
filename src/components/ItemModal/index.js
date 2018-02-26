@@ -44,6 +44,16 @@ export default class ItemModal extends Component {
           <p className={styles.description}>{displayProperties.description}</p>
         )}
 
+        {$statTrack && (
+          <div>
+            <StatTrack
+              className={styles.objectives}
+              statTrack={$statTrack}
+              description={true}
+              />
+          </div>
+        )}
+
         <ul className={styles.viewItemLinks}>
           <li>
             <a href={dtrLink} target="_blank" rel="noopener noreferrer">
@@ -80,21 +90,6 @@ export default class ItemModal extends Component {
             >
               Track objective progress
             </button>
-          </div>
-        )}
-
-        {$statTrack && (
-          <div>
-            <h3 className={styles.objectiveTitle}>
-              {$statTrack.$objective.progressDescription}
-            </h3>
-
-            <StatTrack
-              className={styles.objectives}
-              statTrack={$statTrack}
-              bigger={true}
-            />
-
           </div>
         )}
 
