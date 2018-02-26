@@ -13,6 +13,7 @@
 
     <title>Destiny Sets</title>
 
+    <script src="https://cdn.ravenjs.com/3.22.3/raven.min.js" crossorigin="anonymous"></script>
     <meta name="google-site-verification" content="5bAaEIC4wr4ty_rtU5IZ6fl-I1Zh-4monu1OXOu1AZ4" />
     <script src="https://apis.google.com/js/api.js"></script>
   </head>
@@ -21,6 +22,10 @@
 
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" >
     <link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
+
+    <script>
+      window.Raven.config('https://e243bfd31f3b4c02a3450417272f4393@sentry.io/294574').install()
+    </script>
 
     <script>
     if (window.location.hostname === 'destinysets.com') {
