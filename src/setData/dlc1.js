@@ -201,7 +201,39 @@ module.exports = [
             ]
           }
         ]
-      }
+      },
+      {
+        name: 'Cooperative',
+        description: 'Gear from stories, strikes, and public spaces.',
+        sections: [
+          {
+            title: 'Curse of Osiris Story',
+            items: [
+              2939572586, // Hero of the Infinite
+            ],
+          },
+          {
+            title: 'Nightfall Strike',
+            items: [
+              2939572588, // Master Gardener
+              2939572591, // Master Cartographer
+            ],
+          },
+          {
+            title: 'Public Spaces',
+            items: [
+              2939572589, // Crossroads Emblem
+              2939572578, // Mercury Treasure Seeker
+            ],
+          },
+          {
+            title: 'Adventures',
+            items: [
+              4261480748, // Transit of Mercury
+            ],
+          },
+        ],
+      },
     ]
   },
   {
@@ -381,7 +413,7 @@ module.exports = [
     ]
   },
   {
-    name: 'Other',
+    name: 'Vendor',
     sets: [
       {
         name: 'Mercury Gear',
@@ -574,7 +606,218 @@ module.exports = [
           }
         ]
       },
-
+    ],
+  },
+  {
+    name: 'Holiday',
+    sets:[
+      {
+        name: 'The Dawning',
+        big: false,
+        sections: [
+          {
+            title: 'Hunter armor',
+            items: [
+              316740353, // Winterhart Mask
+              1154659864, // Winterhart Grips
+              3309556272, // Winterhart Vest
+              3909352274, // Winterhart Strides
+              2661272173, // Winterhart Cloak
+              2661272172 // Warm Winter Cloak
+            ]
+          },
+          {
+            title: 'Titan armor',
+            items: [
+              3956230125, // Winterhart Helm
+              779962716, // Winterhart Gauntlets
+              3306267716, // Winterhart Plate
+              4036178150, // Winterhart Greaves
+              221164697, // Winterhart Mark
+              221164696 // Quilted Winter Mark
+            ]
+          },
+          {
+            title: 'Warlock armor',
+            items: [
+              3734501342, // Winterhart Cover
+              2538439951, // Winterhart Gloves
+              270671209, // Winterhart Robes
+              3154516913, // Winterhart Boots
+              1584837156, // Winterhart Bond
+              1584837157 // Festive Winter Bond
+            ]
+          },
+          {
+            title: 'Emotes',
+            items: [
+              215596672, // Giving
+              1873273984, // Honest Dance
+              889413643, // Excited Dance
+              2593080269 // Icecapade
+            ]
+          },
+          {
+            title: 'Ghosts',
+            items: [
+              3287805175, // Dulcinea Shell
+              3287805177, // Pomegranate Shell
+              3287805178, // Circular Time Shell
+              3287805174, // Wild Hunt Shell
+              3287805183, // Infinite Hand Shell
+              3287805180, // Joyous Hunt Shell
+              3287805176, // Dawning Bauble Shell
+              1051903593, // Dawning Bauble Shell
+              1816495538, // Sweet Memories Shell
+              3287805181, // Sweet Memories Shell
+              1397284432, // Jasper Dawn Shell
+              3287805179 // Jasper Dawn Shell
+            ]
+          },
+          {
+            title: 'Ships',
+            items: [
+              317465075, // A History of Starlight
+              317465074, // Cerulean Flash
+              3140833552, // Dragonfly Strident
+              3140833555, // Alta Clara
+              3140833553, // Brilliant Narcissus
+              3140833558, // Breath of Stars
+              3140833556, // Winter Blade
+              3177119978, // Carmina Commencing
+              3140833557, // Carmina Commencing
+              3140833559, // Regent Redeemer
+              1602334068, // Regent Redeemer
+              3140833554, // Joyfire
+              3729709035 // Joyfire
+            ]
+          },
+          {
+            title: 'Sparrows',
+            items: [
+              3105953707, // Chill of Winter
+              3105953706, // Holiday Cheer
+              63024229, // Star of Dark Nights
+              1423305598, // December Muse
+              1423305588, // Insectus Invictus
+              1423305586, // Acumen Maxer
+              1423305599, // Viperdiamond
+              1423305591, // Verità Scelta
+              1423305587, // Subito Mk. 9
+              1423305585, // Rocket-Propelled Bobsled
+              3161524490, // Rupture
+              1423305589, // Rupture
+              1423305590, // Shimmering Iris
+              3569791559, // Shimmering Iris
+              1984190529, // Magikon
+              1423305584 // Magikon
+            ],
+          },
+          {
+            title: 'Emblems',
+            items: [
+              3639894194, // Light of the Dawning
+            ],
+          },
+        ],
+      },
+      {
+        name: 'Crimson Days',
+        big: false,
+        sections: [
+          {
+            title: 'Emotes',
+            items: [
+              518566750, // Heart Sign
+              1334842411, // Vengeful Dance
+              1605596084, // Amour Dance
+              3802876271 // Flaunting Dance
+            ]
+          },
+          {
+            title: 'Ghosts',
+            items: [
+              263371512, // Entwining Heart Shell
+              263371513, // Garland Shell
+              263371515, // True Conifer Shell
+              263371514, // Propulsive Heart Shell
+              263371516, // Amo Ludere Shell
+              263371517, // Electric Heart Shell
+              263371519, // Radiant Sunflake Shell
+              263371518 // Tirastrella Shell
+            ]
+          },
+          {
+            title: 'Sparrows',
+            items: [
+              3587167050, // Undefeated
+              3587167051, // Undeterred
+              1623653768, // Last Love
+              1623653770, // Heartbreaker
+              1623653769, // First Love
+              1623653771 // Battleheart
+            ]
+          },
+          {
+            title: 'Emblems',
+            items: [
+              1782320603 // Fire of the Crimson Days
+            ]
+          },
+          {
+            title: 'Shaders',
+            items: [
+              1052553863, // Crimson Passion - Bright Dust dismantle
+              1052553862 // Crimson Valor - Bright Dust dismantle
+            ]
+          },
+          {
+            title: 'Weapon Ornaments',
+            items: [
+              3373357626, // Prism for Prometheus Lens
+              2433900295, // Carina Nebula for Graviton Lance
+              3171649853, // Go About Your Business for Sweet Business
+              669267835 // Dieselpunk for The Wardcliffe Coil
+            ]
+          }
+        ]
+      },
+    ],
+  },
+  {
+    name: 'Other',
+    sets: [
+      {
+        name: 'Promotional Emblems',
+        description: 'Emblems obtained from live events and promotional give aways',
+        sections: [
+          {
+            title: 'Bungie Store',
+            items: [
+              4132147345, // Heretic
+            ],
+          },
+          {
+            title: 'Comic',
+            items: [
+              1940590820, // The Visionary
+            ],
+          },
+          {
+            title: 'Bundled with Products',
+            items: [
+              4132147351, // Recurrent Resplendence
+              4182480235, // Hellspawn
+            ],
+          },
+          {
+            title: 'Refer-A-Friend',
+            items: [
+              4132147352, // The Consensus
+            ],
+          },
+        ],
+      },
       {
         name: 'Eververse, Season 2',
         big: true,
@@ -724,171 +967,6 @@ module.exports = [
           }
         ]
       },
-      {
-        name: 'Crimson Days',
-        big: false,
-        sections: [
-          {
-            title: 'Emotes',
-            items: [
-              518566750, // Heart Sign
-              1334842411, // Vengeful Dance
-              1605596084, // Amour Dance
-              3802876271 // Flaunting Dance
-            ]
-          },
-          {
-            title: 'Ghosts',
-            items: [
-              263371512, // Entwining Heart Shell
-              263371513, // Garland Shell
-              263371515, // True Conifer Shell
-              263371514, // Propulsive Heart Shell
-              263371516, // Amo Ludere Shell
-              263371517, // Electric Heart Shell
-              263371519, // Radiant Sunflake Shell
-              263371518 // Tirastrella Shell
-            ]
-          },
-          {
-            title: 'Sparrows',
-            items: [
-              3587167050, // Undefeated
-              3587167051, // Undeterred
-              1623653768, // Last Love
-              1623653770, // Heartbreaker
-              1623653769, // First Love
-              1623653771 // Battleheart
-            ]
-          },
-          {
-            title: 'Emblems',
-            items: [
-              1782320603 // Fire of the Crimson Days
-            ]
-          },
-          {
-            title: 'Shaders',
-            items: [
-              1052553863, // Crimson Passion - Bright Dust dismantle
-              1052553862 // Crimson Valor - Bright Dust dismantle
-            ]
-          },
-          {
-            title: 'Weapon Ornaments',
-            items: [
-              3373357626, // Prism for Prometheus Lens
-              2433900295, // Carina Nebula for Graviton Lance
-              3171649853, // Go About Your Business for Sweet Business
-              669267835 // Dieselpunk for The Wardcliffe Coil
-            ]
-          }
-        ]
-      },
-      {
-        name: 'The Dawning',
-        big: false,
-        sections: [
-          {
-            title: 'Hunter armor',
-            items: [
-              316740353, // Winterhart Mask
-              1154659864, // Winterhart Grips
-              3309556272, // Winterhart Vest
-              3909352274, // Winterhart Strides
-              2661272173, // Winterhart Cloak
-              2661272172 // Warm Winter Cloak
-            ]
-          },
-          {
-            title: 'Titan armor',
-            items: [
-              3956230125, // Winterhart Helm
-              779962716, // Winterhart Gauntlets
-              3306267716, // Winterhart Plate
-              4036178150, // Winterhart Greaves
-              221164697, // Winterhart Mark
-              221164696 // Quilted Winter Mark
-            ]
-          },
-          {
-            title: 'Warlock armor',
-            items: [
-              3734501342, // Winterhart Cover
-              2538439951, // Winterhart Gloves
-              270671209, // Winterhart Robes
-              3154516913, // Winterhart Boots
-              1584837156, // Winterhart Bond
-              1584837157 // Festive Winter Bond
-            ]
-          },
-          {
-            title: 'Emotes',
-            items: [
-              215596672, // Giving
-              1873273984, // Honest Dance
-              889413643, // Excited Dance
-              2593080269 // Icecapade
-            ]
-          },
-          {
-            title: 'Ghosts',
-            items: [
-              3287805175, // Dulcinea Shell
-              3287805177, // Pomegranate Shell
-              3287805178, // Circular Time Shell
-              3287805174, // Wild Hunt Shell
-              3287805183, // Infinite Hand Shell
-              3287805180, // Joyous Hunt Shell
-              3287805176, // Dawning Bauble Shell
-              1051903593, // Dawning Bauble Shell
-              1816495538, // Sweet Memories Shell
-              3287805181, // Sweet Memories Shell
-              1397284432, // Jasper Dawn Shell
-              3287805179 // Jasper Dawn Shell
-            ]
-          },
-          {
-            title: 'Ships',
-            items: [
-              317465075, // A History of Starlight
-              317465074, // Cerulean Flash
-              3140833552, // Dragonfly Strident
-              3140833555, // Alta Clara
-              3140833553, // Brilliant Narcissus
-              3140833558, // Breath of Stars
-              3140833556, // Winter Blade
-              3177119978, // Carmina Commencing
-              3140833557, // Carmina Commencing
-              3140833559, // Regent Redeemer
-              1602334068, // Regent Redeemer
-              3140833554, // Joyfire
-              3729709035 // Joyfire
-            ]
-          },
-          {
-            title: 'Sparrows',
-            items: [
-              3105953707, // Chill of Winter
-              3105953706, // Holiday Cheer
-              63024229, // Star of Dark Nights
-              1423305598, // December Muse
-              1423305588, // Insectus Invictus
-              1423305586, // Acumen Maxer
-              1423305599, // Viperdiamond
-              1423305591, // Verità Scelta
-              1423305587, // Subito Mk. 9
-              1423305585, // Rocket-Propelled Bobsled
-              3161524490, // Rupture
-              1423305589, // Rupture
-              1423305590, // Shimmering Iris
-              3569791559, // Shimmering Iris
-              1984190529, // Magikon
-              1423305584 // Magikon
-            ]
-          }
-        ]
-      }
-    ]
-  }
+    ],
+  },
 ];

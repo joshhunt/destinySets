@@ -3,6 +3,61 @@ module.exports = [
     name: 'Endgame',
     sets: [
       {
+        name: 'Leviathan Raid',
+        description:
+          'Gear obtained by playing the Leviathan raid and increasing your reputation with Emperor Calus.',
+        sections: [
+          {
+            title: 'Weapons',
+            items: [
+              2505533224,
+              3325744914,
+              3906942101,
+              1128225405,
+              3954531357,
+              3380742308,
+              3691881271,
+              1018072983,
+            ],
+          },
+          {
+            title: 'Hunter Armor',
+            items: [2013109092, 1960303677, 407863747, 30962015, 3984534842],
+          },
+          {
+            title: 'Hunter Armor - Prestige Mode',
+            items: [2013109093, 1960303676, 407863746, 30962014, 3984534843],
+          },
+          {
+            title: 'Titan Armor',
+            items: [1413589586, 1879942843, 1876645653, 288406317, 574137192],
+          },
+          {
+            title: 'Titan Armor - Prestige Mode',
+            items: [1413589587, 1879942842, 1876645652, 288406316, 574137193],
+          },
+          {
+            title: 'Warlock Armor',
+            items: [2700598111, 2676042150, 3592548938, 2193494688, 3763332443],
+          },
+          {
+            title: 'Warlock Armor - Prestige Mode',
+            items: [2700598110, 2676042151, 3592548939, 2193494689, 3763332442],
+          },
+          {
+            title: 'Emblems',
+            items: [
+              3257147585, // Embrace His Name
+              2107367383, // Glory to the Emperor
+              1667199810, // Good Dog
+              2984066626, // Splish Splash
+              1625974211, // Two Enter, One Leaves
+              812824526,  // Take the Throne
+            ],
+          },
+        ],
+      },
+      {
         name: 'Iron Banner',
         description:
           'Weapons and armor obtained by honoring the heroes of old in the Iron Banner Crucible tournament.',
@@ -61,56 +116,89 @@ module.exports = [
       },
 
       {
-        name: 'Leviathan Raid',
+        name: 'Trials of the Nine',
         description:
-          'Gear obtained by playing the Leviathan raid and increasing your reputation with Emperor Calus.',
+          'Weapons and armor obtained by competing in the Trials of the Nine.',
         sections: [
           {
             title: 'Weapons',
             items: [
-              2505533224,
-              3325744914,
-              3906942101,
-              1128225405,
-              3954531357,
-              3380742308,
-              3691881271,
-              1018072983,
+              174804902,
+              1187594590,
+              1825472717,
+              1879212552,
+              1909527966,
+              2094938673,
+              2850415209,
+              3854037061,
             ],
           },
           {
             title: 'Hunter Armor',
-            items: [2013109092, 1960303677, 407863747, 30962015, 3984534842],
+            items: [400025383, 2641591726, 548290754, 854160040, 238320915],
           },
           {
-            title: 'Hunter Armor - Prestige Mode',
-            items: [2013109093, 1960303676, 407863746, 30962014, 3984534843],
+            title: 'Hunter Armor - Flawless',
+            items: [400025382, 2641591727, 548290755, 854160041, 238320914],
           },
           {
             title: 'Titan Armor',
-            items: [1413589586, 1879942843, 1876645653, 288406317, 574137192],
+            items: [2391227801, 1863012880, 934145080, 2221648234, 3624606677],
           },
           {
-            title: 'Titan Armor - Prestige Mode',
-            items: [1413589587, 1879942842, 1876645652, 288406316, 574137193],
+            title: 'Titan Armor - Flawless',
+            items: [2391227800, 1863012881, 934145081, 2221648235, 3624606676],
           },
           {
             title: 'Warlock Armor',
-            items: [2700598111, 2676042150, 3592548938, 2193494688, 3763332443],
+            items: [2964441920, 530515217, 891933383, 4232174819, 1607431126],
           },
           {
-            title: 'Warlock Armor - Prestige Mode',
-            items: [2700598110, 2676042151, 3592548939, 2193494689, 3763332442],
+            title: 'Warlock Armor - Flawless',
+            items: [2964441921, 530515216, 891933382, 4232174818, 1607431127],
           },
           {
             title: 'Emblems',
             items: [
-              3257147585, // Embrace His Name
-              2107367383, // Glory to the Emperor
-              1667199810, // Good Dog
-              2984066626, // Splish Splash
-              1625974211, // Two Enter, One Leaves
-              812824526,  // Take the Throne
+              19962737, // Chasing Perfection
+              2029506313, // You Are Worthy
+            ],
+          },
+        ],
+      },
+      {
+        name: 'Cooperative',
+        description: 'Gear from stories, strikes, and public spaces.',
+        sections: [
+          {
+            title: 'The Red War Story',
+            items: [
+              3635192014, // Hunter's Hoard
+              3941202506, // Titan's Triumph
+              3564452901, // Warlock's Wisdom
+            ],
+          },
+          {
+            title: 'Nightfall Strike',
+            items: [
+              2390666069, // High-Risk, High-Reward
+            ],
+          },
+          {
+            title: 'Public Spaces',
+            items: [
+              3010885351, // Rally the Flag
+              1306912441, // Lost Sector of Earth
+              2429353554, // Lost Sector of Titan
+              2101024358, // Lost Sector of Nessus
+              1245806754, // Lost Sector of Io
+            ],
+          },
+          {
+            title: 'Mentoring',
+            items: [
+              3115055261, // Gather Your Fireteam
+              481345527, // Mentor of Light
             ],
           },
         ],
@@ -437,58 +525,6 @@ module.exports = [
     name: 'Vendor',
     sets: [
       {
-        name: 'Trials of the Nine',
-        description:
-          'Weapons and armor obtained by competing in the Trials of the Nine.',
-        sections: [
-          {
-            title: 'Weapons',
-            items: [
-              174804902,
-              1187594590,
-              1825472717,
-              1879212552,
-              1909527966,
-              2094938673,
-              2850415209,
-              3854037061,
-            ],
-          },
-          {
-            title: 'Hunter Armor',
-            items: [400025383, 2641591726, 548290754, 854160040, 238320915],
-          },
-          {
-            title: 'Hunter Armor - Flawless',
-            items: [400025382, 2641591727, 548290755, 854160041, 238320914],
-          },
-          {
-            title: 'Titan Armor',
-            items: [2391227801, 1863012880, 934145080, 2221648234, 3624606677],
-          },
-          {
-            title: 'Titan Armor - Flawless',
-            items: [2391227800, 1863012881, 934145081, 2221648235, 3624606676],
-          },
-          {
-            title: 'Warlock Armor',
-            items: [2964441920, 530515217, 891933383, 4232174819, 1607431126],
-          },
-          {
-            title: 'Warlock Armor - Flawless',
-            items: [2964441921, 530515216, 891933382, 4232174818, 1607431127],
-          },
-          {
-            title: 'Emblems',
-            items: [
-              19962737, // Chasing Perfection
-              2029506313, // You Are Worthy
-            ],
-          },
-        ],
-      },
-
-      {
         name: 'Vanguard Tactician Gear',
         description:
           'Weapons and armor obtained by carrying out special operations for Zavala.',
@@ -683,7 +719,7 @@ module.exports = [
   },
 
   {
-    name: 'Other',
+    name: 'World Gear',
     sets: [
       {
         name: 'Hunter Specific Sets',
@@ -714,7 +750,6 @@ module.exports = [
             title: 'Emblems',
             items: [
               1907674138, // Hunter's Wit
-              3635192014, // Hunter's Hoard
               844563491,  // Slinger's Sight
               2054118356, // Strider's Slash
               621113310,  // Stalker's Shot
@@ -752,7 +787,6 @@ module.exports = [
             title: 'Emblems',
             items: [
               1907674139, // Titan's Pride
-              3941202506, // Titan's Triumph
               3828080585, // Breaker's Blaze
               2967682030, // Striker's Slam
               3338748564, // Sentinel's Shove
@@ -790,7 +824,6 @@ module.exports = [
             title: 'Emblems',
             items: [
               1907674137, // Warlock's Flight
-              3564452901, // Warlock's Wisdom
               1530147650, // Blade's Blast
               3778092977, // Storm's Surge
               46275857,   // Walker's Warp
@@ -798,7 +831,70 @@ module.exports = [
           },
         ],
       },
-
+    ],
+  },
+  {
+    name: 'Other',
+    sets: [
+      {
+        name: 'Promotional Emblems',
+        description: 'Emblems obtained from live events, promotional give aways, and D1 Veteran rewards.',
+        sections: [
+          {
+            title: 'D1 Veteran',
+            description: 'Acknowledging acheivements from Destiny 1',
+            items: [
+              4077939641, // Lore Scholar
+              4077939647, // Laurel Triumphant
+              4077939646, // Laurea Prima II
+              4077939645, // Slayer of Oryx
+              4077939644, // Heard the Call
+              4077939643, // Young Wolf
+              4077939642, // Saladin's Pride
+            ]
+          },
+          {
+            title: 'Bungie Store',
+            items: [
+              4132147344, // Stand Together
+              4132147348, // Darkest Day
+            ],
+          },
+          {
+            title: 'Special Events',
+            items: [
+              1940590816, // The First Wave
+              1940590821, // Confluence of Light
+              4182480224, // Lens of Fate
+              4182480236, // Sign of Mutual Combat
+            ]
+          },
+          {
+            title: 'Bundled with Products',
+            items: [
+              1940590817, // Emperor's Shadows
+              1940590822, // Resonant Chord
+              4182480233, // Planet of Peace
+              4132147349, // Meridian of Destiny
+              4182480232, // Brick by Brick
+              4182480234, // Cutting Edge
+            ]
+          },
+          {
+            title: 'Forums',
+            items: [
+              4182480225, // Symposium Shield
+              4182480239, // Vigilant Console
+            ],
+          },
+          {
+            title: 'Trial Version',
+            items: [
+              2537840254, // A Guardian Rises
+            ],
+          },
+        ],
+      },
       {
         name: 'Eververse, Season 1',
         big: true,
