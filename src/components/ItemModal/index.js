@@ -18,8 +18,6 @@ export default class ItemModal extends Component {
 
     const extraInfo = getItemExtraInfo(this.props.item);
 
-    console.log($statTrack)
-
     const dtrLink = `http://db.destinytracker.com/d2/en/items/${hash}`;
 
     return (
@@ -47,9 +45,7 @@ export default class ItemModal extends Component {
         {$statTrack && (
           <div>
             <StatTrack
-              className={styles.objectives}
               statTrack={$statTrack}
-              description={true}
               />
           </div>
         )}

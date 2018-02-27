@@ -65,7 +65,7 @@ export default function ItemTooltip({ item, small, dismiss, globalItemCount }) {
 
         {item.$statTrack && (
           <StatTrack
-            className={styles.objectives}
+            className={styles.statTrack}
             statTrack={item.$statTrack}
           />
         )}
