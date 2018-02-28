@@ -23,6 +23,10 @@ module.exports = [
           {
             title: 'Power',
             fancySearchTerm: 'is:legendary is:weapon is:power'
+          },
+          {
+            title: 'Ghosts',
+            fancySearchTerm: 'is:legendary is:ghost'
           }
         ]
       },

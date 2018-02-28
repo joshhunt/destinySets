@@ -26,7 +26,7 @@ import {
   EXOTIC,
   UNCOMMON,
   RARE,
-  COMMON,
+  COMMON
 } from 'app/lib/destinyEnums';
 
 const get = (obj, term, opt) => _get(obj, term, '').toLowerCase();
@@ -89,7 +89,7 @@ const DDDD = [
   215596672,
   889413643,
   1873273984,
-  2593080269,
+  2593080269
 ];
 
 const MAX_ITEMS = 50;
@@ -184,7 +184,11 @@ export const fancySearchFns = {
   'is:gear': items => {
     return itemFilter(items, item => {
       const categories = item.itemCategoryHashes || [];
-      return categories.includes(ARMOR) || categories.includes(WEAPON);
+      return (
+        categories.includes(ARMOR) ||
+        categories.includes(WEAPON) ||
+        categories.includes(GHOST)
+      );
     });
   },
 
@@ -274,7 +278,7 @@ export const fancySearchFns = {
     return itemFilter(items, item => {
       return DDDD.includes(item.hash);
     });
-  },
+  }
 };
 
 export const fancySearchTerms = Object.keys(fancySearchFns);

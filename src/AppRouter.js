@@ -28,6 +28,12 @@ export default class AppRouter extends Component {
           setData={sets[2].setData}
         />
 
+        <Route
+          path={sets[3].path}
+          component={Gearsets}
+          setData={sets[3].setData}
+        />
+
         <Route path="/data" component={DataExplorer} />
         <Route path="/data/:itemHash" component={DataExplorer} />
         <Route path="/diff" component={Diff} />

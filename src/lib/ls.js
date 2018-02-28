@@ -10,7 +10,8 @@ const keys = {
   GDRIVE_FILE_ID: '$googleDriveFileId' + window.DESTINYSETS_ENV,
   GOOGLE_LOGIN_UPSELL: '$googleLoginUpsell',
   VISIT_COUNT: '$visitCount',
-  TRACKED_ITEMS: '$trackedItems'
+  TRACKED_ITEMS: '$trackedItems',
+  UID: 'uid'
 };
 
 let LOCAL_STORAGE;
@@ -164,6 +165,14 @@ export function getTrackedItems() {
 
 export function saveTrackedItems(items) {
   save(keys.TRACKED_ITEMS, items);
+}
+
+export function getUID() {
+  return get(keys.UID, null);
+}
+
+export function saveUID(uid) {
+  save(keys.UID, uid);
 }
 
 export function clearAll() {

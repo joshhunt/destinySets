@@ -1,10 +1,11 @@
 const path = require('path');
 const { merge } = require('lodash');
-const { getLoader } = require('react-app-rewired');
+const { getLoader, injectBabelPlugin } = require('react-app-rewired');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const WebpackVisualizerPlugin = require('webpack-visualizer-plugin');
 
 module.exports = function override(config, env) {
-  console.log('env:', env);
+  config = injectBabelPlugin('lodash', config);
 
   const cssLoader = getLoader(
     config.module.rules,
@@ -12,6 +13,8 @@ module.exports = function override(config, env) {
   );
 
   let stylusRules;
+
+  config.plugins.push(new WebpackVisualizerPlugin());
 
   if (env === 'development') {
     stylusRules = {

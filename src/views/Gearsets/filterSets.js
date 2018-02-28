@@ -31,7 +31,10 @@ export const isOrnament = item =>
   item.plug.plugCategoryIdentifier.includes('skins');
 
 const getItemClass = item => {
-  if (item.itemCategoryHashes.includes(EMBLEM)) {
+  if (
+    item.itemCategoryHashes.includes(EMBLEM) &&
+    item.inventory.stackUniqueLabel
+  ) {
     if (item.inventory.stackUniqueLabel.includes('hunter')) {
       return HUNTER;
     }
