@@ -202,38 +202,6 @@ module.exports = [
           }
         ]
       },
-      {
-        name: 'Cooperative',
-        description: 'Gear from stories, strikes, and public spaces.',
-        sections: [
-          {
-            title: 'Curse of Osiris Story',
-            items: [
-              2939572586, // Hero of the Infinite
-            ],
-          },
-          {
-            title: 'Nightfall Strike',
-            items: [
-              2939572588, // Master Gardener
-              2939572591, // Master Cartographer
-            ],
-          },
-          {
-            title: 'Public Spaces',
-            items: [
-              2939572589, // Crossroads Emblem
-              2939572578, // Mercury Treasure Seeker
-            ],
-          },
-          {
-            title: 'Adventures',
-            items: [
-              4261480748, // Transit of Mercury
-            ],
-          },
-        ],
-      },
     ]
   },
   {
@@ -468,15 +436,24 @@ module.exports = [
             ]
           },
           {
-            title: 'Extras',
+            title: 'Ghosts',
             items: [
               573576346, // Sagira's Shell
+            ],
+          },
+          {
+            title: 'Achievement Emblems',
+            items: [
+              2939572586, // Hero of the Infinite
               2939572584, // Secrets of the Vex (Emblem)
               2939572585, // Vex Destroyer (Emblem)
-              2939572590 // Vex Scholar (Emblem)
-            ]
-          }
-        ]
+              2939572590, // Vex Scholar (Emblem)
+              2939572578, // Mercury Treasure Seeker
+              2939572589, // Crossroads Emblem
+              4261480748, // Transit of Mercury
+            ],
+          },
+        ],
       },
 
       {
@@ -522,9 +499,28 @@ module.exports = [
               2033661183, // Xenos Shore Ornament
               995614939, // Xenos Shore Ornament
               2491110586 // Xenos Shore Ornament
-            ]
-          }
-        ]
+            ],
+          },
+          {
+            title: 'Achievement Emblems',
+            items: [
+              2939572588, // Master Gardener
+              2939572591, // Master Cartographer
+            ],
+          },
+          {
+            title: 'Nightfall Emblems',
+            items: [
+              2764373298, // The Inverted Spire
+              997563763,  // The Arms Dealer
+              148664963,  // Savathûn's Song
+              2726018197, // Exodus Crash
+              10493725,   // The Pyramidion
+              893502917,  // A Garden World
+              2933984410, // Tree of Possibilities
+            ],
+          },
+        ],
       },
 
       {
@@ -570,9 +566,15 @@ module.exports = [
               2521913126, // Ankaa Friend Ornament
               3980640404, // Ankaa Friend Ornament
               36130859 // Ankaa Friend Ornament
-            ]
-          }
-        ]
+            ],
+          },
+          {
+            title: 'Emblems',
+            items: [
+              969863968, // Victorious Veteran
+            ],
+          },
+        ],
       },
 
       {

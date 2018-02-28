@@ -166,43 +166,6 @@ module.exports = [
           },
         ],
       },
-      {
-        name: 'Cooperative',
-        description: 'Gear from stories, strikes, and public spaces.',
-        sections: [
-          {
-            title: 'The Red War Story',
-            items: [
-              3635192014, // Hunter's Hoard
-              3941202506, // Titan's Triumph
-              3564452901, // Warlock's Wisdom
-            ],
-          },
-          {
-            title: 'Nightfall Strike',
-            items: [
-              2390666069, // High-Risk, High-Reward
-            ],
-          },
-          {
-            title: 'Public Spaces',
-            items: [
-              3010885351, // Rally the Flag
-              1306912441, // Lost Sector of Earth
-              2429353554, // Lost Sector of Titan
-              2101024358, // Lost Sector of Nessus
-              1245806754, // Lost Sector of Io
-            ],
-          },
-          {
-            title: 'Mentoring',
-            items: [
-              3115055261, // Gather Your Fireteam
-              481345527, // Mentor of Light
-            ],
-          },
-        ],
-      },
     ],
   },
   {
@@ -374,6 +337,7 @@ module.exports = [
           {
             title: 'Emblems',
             items: [
+              1321546045, // European Dead Zone
               3541326821, // Dead Zone Camo
               3541326820, // Kay's Command
               3541326823, // Trostland Terminus
@@ -417,6 +381,7 @@ module.exports = [
           {
             title: 'Emblems',
             items: [
+              3451625162, // Echo Mesa
               31953747, // Ballet Lover
               31953744, // Holy Ground
               31953746, // Traveler's Flight
@@ -466,6 +431,7 @@ module.exports = [
           {
             title: 'Emblems',
             items: [
+              426147374, // New Pacific Arcology
               3785035698, // Cargo Bay Cross
               3785035696, // New Pacific Access
               3785035697, // Solarium Yellow
@@ -511,6 +477,7 @@ module.exports = [
           {
             title: 'Emblems',
             items: [
+              1599898966, // Arcadian Valley
               2484637938, // Exodus Access
               2484637936, // Jacobson's Staff
               2484637939, // Tangled Anchor
@@ -568,6 +535,14 @@ module.exports = [
               2010554579, // Push Forward
             ],
           },
+          {
+            title: 'Achievement Emblems - Strikes',
+            items: [
+              2390666069, // High-Risk, High-Reward
+              3115055261, // Gather Your Fireteam
+              481345527, // Mentor of Light
+            ],
+          },
         ],
       },
 
@@ -596,6 +571,15 @@ module.exports = [
               1724152704, // WAR Vault 5
             ],
           },
+          {
+            title: 'Achievement Emblems - The Red War Story',
+            items: [
+              3635192014, // Hunter's Hoard
+              3941202506, // Titan's Triumph
+              3564452901, // Warlock's Wisdom
+            ],
+          },
+
         ],
       },
 
@@ -711,6 +695,12 @@ module.exports = [
               1409726988, // Try the Special
               1409726984, // Telstar Graphics
               1409726978, // Way of the Wolf
+            ]
+          },
+          {
+            title: 'Achievement Emblems - Public Spaces',
+            items: [
+              3010885351, // Rally the Flag
             ]
           },
         ],
