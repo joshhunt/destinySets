@@ -14,7 +14,11 @@ module.exports = function override(config, env) {
 
   let stylusRules;
 
-  config.plugins.push(new WebpackVisualizerPlugin());
+  config.plugins.push(
+    new WebpackVisualizerPlugin({
+      filename: './build/stats.html'
+    })
+  );
 
   if (env === 'development') {
     stylusRules = {
