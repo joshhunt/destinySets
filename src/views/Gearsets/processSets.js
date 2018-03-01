@@ -98,6 +98,14 @@ function objectivesForItem(item, plugData, objectiveDefs) {
     .filter(objective => objective.$objective);
 }
 
+function statTrackForItem(item, statTrackData, objectiveDefs) {
+  const thisStatTrack = statTrackData[item.hash];
+  if (!get(thisStatTrack, '$instanceData.flavorObjective')) {
+    return;
+  }
+  return {...thisStatTrack, $objective: objectiveDefs[thisStatTrack.$instanceData.flavorObjective.objectiveHash]}
+}
+
 export function mapItems(
   itemHashes,
   itemDefs,
@@ -105,6 +113,7 @@ export function mapItems(
   objectiveDefs,
   inventory,
   plugData,
+  statTrackData,
   trackedHashes
 ) {
   const trackedItems = [];
@@ -122,6 +131,7 @@ export function mapItems(
 
       const stats = statsForItem(item, statDefs);
       const objectives = objectivesForItem(item, plugData, objectiveDefs);
+      const statTrack = statTrackForItem(item, statTrackData, objectiveDefs);
 
       const intrinsicStatPerk = get(item, 'sockets.socketEntries', []).find(
         entry => INTRINSIC.includes(entry.singleInitialItemHash)
@@ -151,6 +161,7 @@ export function mapItems(
         $intrinsicStatPerk: intrinsicStatPerkDef,
         $stats: stats,
         $objectives: objectives,
+        $statTrack: statTrack,
         $baseItem: baseItem,
         ...item
       };
@@ -203,13 +214,14 @@ export default function processSets(args, dataCallback) {
   const xurHashes = xurItems || [];
   const allItems = Object.values(itemDefs);
 
-  let { inventory, plugData } =
+  let { inventory, plugData, statTrackData } =
     (profile && collectInventory(profile, vendorDefs)) || {};
   let usingLocalStorageInventory = false;
   const localStorageInventory = ls.getInventory();
 
   inventory = inventory || {};
   plugData = plugData || {};
+  statTrackData = statTrackData || {};
 
   const allTrackedItems = [];
 
@@ -256,6 +268,7 @@ export default function processSets(args, dataCallback) {
           objectiveDefs,
           inventory,
           plugData,
+          statTrackData,
           trackedHashes
         );
 
