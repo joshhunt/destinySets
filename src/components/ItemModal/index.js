@@ -3,6 +3,7 @@ import { Link } from 'react-router';
 
 import getItemExtraInfo from 'app/lib/getItemExtraInfo';
 import Objectives from 'app/components/Objectives';
+import StatTrack from 'app/components/StatTrack';
 import ItemBanner from 'app/components/ItemBanner';
 
 import styles from './styles.styl';
@@ -12,7 +13,7 @@ export default class ItemModal extends Component {
     const {
       trackOrnament,
       onRequestClose,
-      item: { hash, displayProperties, screenshot, $objectives }
+      item: { hash, displayProperties, screenshot, $objectives, $statTrack }
     } = this.props;
 
     const extraInfo = getItemExtraInfo(this.props.item);
@@ -39,6 +40,14 @@ export default class ItemModal extends Component {
 
         {displayProperties.description && (
           <p className={styles.description}>{displayProperties.description}</p>
+        )}
+
+        {$statTrack && (
+          <div>
+            <StatTrack
+              statTrack={$statTrack}
+              />
+          </div>
         )}
 
         <ul className={styles.viewItemLinks}>
@@ -79,6 +88,7 @@ export default class ItemModal extends Component {
             </button>
           </div>
         )}
+
       </div>
     );
   }
