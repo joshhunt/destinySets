@@ -444,6 +444,8 @@ module.exports = [
           {
             title: 'Achievement Emblems',
             items: [
+              1312472209, // Fields of Glass
+              4261480749, // Prophetic Arsenal
               2939572586, // Hero of the Infinite
               2939572584, // Secrets of the Vex (Emblem)
               2939572585, // Vex Destroyer (Emblem)
@@ -794,9 +796,11 @@ module.exports = [
         description: 'Emblems obtained from live events and promotional give aways',
         sections: [
           {
-            title: 'Bungie Store',
+            title: 'Bungie Store Bonuses',
             items: [
               4132147345, // Heretic
+              4132147348, // Darkest Day
+              4132147344, // Stand Together
             ],
           },
           {
@@ -810,6 +814,11 @@ module.exports = [
             items: [
               4132147351, // Recurrent Resplendence
               4182480235, // Hellspawn
+              4182480234, // Cutting Edge
+              4182480232, // Brick by Brick
+              4132147349, // Meridian of Destiny
+              1940590822, // Resonant Chord
+              4182480233, // Planet of Peace
             ],
           },
           {
