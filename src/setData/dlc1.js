@@ -444,18 +444,19 @@ module.exports = [
           {
             title: 'Emblems',
             items: [
-              1312472209, // Fields of Mercury
+              1312472209, // Fields of Glass
+              2939572589, // Crossroads Emblem
+              4261480748, // Transit of Mercury
             ],
           },
           {
             title: 'Achievement Emblems - Curse of Osiris',
             items: [
               2939572586, // Hero of the Infinite
+              4261480749, // Prophetic Arsenal
               2939572584, // Secrets of the Vex (Emblem)
               2939572585, // Vex Destroyer (Emblem)
               2939572590, // Vex Scholar (Emblem)
-              2939572589, // Crossroads Emblem
-              4261480748, // Transit of Mercury
             ],
           },
         ],
