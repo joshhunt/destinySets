@@ -796,11 +796,9 @@ module.exports = [
         description: 'Emblems obtained from live events and promotional give aways',
         sections: [
           {
-            title: 'Bungie Store Bonuses',
+            title: 'Bungie Store',
             items: [
               4132147345, // Heretic
-              4132147348, // Darkest Day
-              4132147344, // Stand Together
             ],
           },
           {
@@ -814,11 +812,6 @@ module.exports = [
             items: [
               4132147351, // Recurrent Resplendence
               4182480235, // Hellspawn
-              4182480234, // Cutting Edge
-              4182480232, // Brick by Brick
-              4132147349, // Meridian of Destiny
-              1940590822, // Resonant Chord
-              4182480233, // Planet of Peace
             ],
           },
           {
