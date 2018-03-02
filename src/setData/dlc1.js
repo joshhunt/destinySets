@@ -816,6 +816,7 @@ module.exports = [
             items: [
               4132147351, // Recurrent Resplendence
               4182480235, // Hellspawn
+              1940590825, // Sonic Simulation
             ],
           },
           {
