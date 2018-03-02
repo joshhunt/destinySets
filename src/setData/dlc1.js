@@ -450,7 +450,7 @@ module.exports = [
             ],
           },
           {
-            title: 'Achievement Emblems - Curse of Osiris',
+            title: 'Achievement Emblems',
             items: [
               2939572586, // Hero of the Infinite
               4261480749, // Prophetic Arsenal
