@@ -6,15 +6,13 @@ module.exports = [
         name: 'Leviathan Raid',
         description:
           'Gear obtained by playing the Leviathan raid and increasing your reputation with Emperor Calus.',
-        sections:
+        sections: [
           {
             title: 'Weapons',
             items: [
               2505533224,
               3325744914,
               3906942101,
-              1128225405,
-              3954531357,
               3380742308,
               3691881271,
               1018072983
