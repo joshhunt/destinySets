@@ -9,6 +9,18 @@ function toTitleCase(str) {
   return str.charAt(0).toUpperCase() + str.substr(1);
 }
 
+function getNameForItem(item) {
+  let foundName;
+
+  if (item.displayProperties && item.displayProperties.name) {
+    foundName = item.displayProperties.name;
+  } else if (item.progressDescription) {
+    foundName = item.progressDescription;
+  }
+
+  return foundName ? `"${foundName}"` : '';
+}
+
 export default class DataView extends Component {
   valueRenderer = (prettyValue, rawValue, ...itemPath) => {
     const [fieldName, parentFieldName] = itemPath;
@@ -34,7 +46,6 @@ export default class DataView extends Component {
     }
 
     const item = defsForHash.defs[rawValue] || {};
-    const { displayProperties } = item;
 
     if (!item) {
       return (
@@ -44,10 +55,7 @@ export default class DataView extends Component {
       );
     }
 
-    const displayName =
-      displayProperties && displayProperties.name
-        ? `"${displayProperties.name}"`
-        : '';
+    const displayName = getNameForItem(item);
 
     return (
       <span

@@ -81,7 +81,10 @@ export default [
   src('DestinyDestinationDefinition', 'destination', []),
   src('DestinyEquipmentSlotDefinition', 'equipmentSlot', []),
   src('DestinyLocationDefinition', 'location', []),
-  src('DestinyObjectiveDefinition', 'objective', ['objectiveHashes']),
+  src('DestinyObjectiveDefinition', 'objective', [
+    'objectiveHashes',
+    'emblemObjectiveHash'
+  ]),
   src('DestinySackRewardItemListDefinition', 'sackRewardItemList', []),
   src('DestinyMilestoneDefinition', 'milestone', []),
   src('DestinyActivityModifierDefinition', 'activityModifier', []),
