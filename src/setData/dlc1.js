@@ -442,15 +442,21 @@ module.exports = [
             ],
           },
           {
+            title: 'Emblems',
+            items: [
+              1312472209, // Fields of Glass
+              2939572589, // Crossroads Emblem
+              4261480748, // Transit of Mercury
+            ],
+          },
+          {
             title: 'Achievement Emblems',
             items: [
               2939572586, // Hero of the Infinite
+              4261480749, // Prophetic Arsenal
               2939572584, // Secrets of the Vex (Emblem)
               2939572585, // Vex Destroyer (Emblem)
               2939572590, // Vex Scholar (Emblem)
-              2939572578, // Mercury Treasure Seeker
-              2939572589, // Crossroads Emblem
-              4261480748, // Transit of Mercury
             ],
           },
         ],
@@ -810,6 +816,8 @@ module.exports = [
             items: [
               4132147351, // Recurrent Resplendence
               4182480235, // Hellspawn
+              1940590825, // Sonic Simulation
+              1940590823, // Carrhae
             ],
           },
           {
