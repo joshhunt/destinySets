@@ -8,6 +8,7 @@ import copy from 'app/lib/copyToClipboard';
 import * as destiny from 'app/lib/destiny';
 import * as ls from 'app/lib/ls';
 import * as cloudStorage from 'app/lib/cloudStorage';
+import { trackError } from 'app/lib/telemetry';
 import googleAuth, {
   signIn as googleSignIn,
   signOut as googleSignOut
@@ -17,6 +18,7 @@ import Footer from 'app/components/Footer';
 import Xur from 'app/components/Xur';
 import Loading from 'app/views/Loading';
 import LoginUpsell from 'app/components/LoginUpsell';
+import ErrorBanner from 'app/components/ErrorBanner';
 import GoogleLoginUpsell from 'app/components/GoogleLoginUpsell';
 import ActivityList from 'app/components/ActivityList';
 import FilterBar from 'app/components/FilterBar';
@@ -139,26 +141,33 @@ class Gearsets extends Component {
       xurItems: this.xurItems
     };
 
-    processSets(processPayload, result => {
-      if (!result) {
-        return null;
-      }
+    let result;
+    try {
+      result = processSets(processPayload);
+    } catch (err) {
+      trackError(err);
+      this.setState({ error: err, loading: false });
+      return null;
+    }
 
-      const { rawGroups, inventory, saveCloudInventory, ...state } = result;
-      this.rawGroups = rawGroups;
+    if (!result) {
+      return null;
+    }
 
-      if (
-        this.state.googleAuthSignedIn &&
-        saveCloudInventory &&
-        this.hasRecievedInventory
-      ) {
-        log('Saving cloud inventory', { inventory });
-        cloudStorage.setInventory(inventory, this.profile);
-      }
+    const { rawGroups, inventory, saveCloudInventory, ...state } = result;
+    this.rawGroups = rawGroups;
 
-      this.filterGroups();
-      this.setState(state);
-    });
+    if (
+      this.state.googleAuthSignedIn &&
+      saveCloudInventory &&
+      this.hasRecievedInventory
+    ) {
+      log('Saving cloud inventory', { inventory });
+      cloudStorage.setInventory(inventory, this.profile);
+    }
+
+    this.filterGroups();
+    this.setState(state);
   };
 
   filterGroups = _filter => {
@@ -285,15 +294,15 @@ class Gearsets extends Component {
 
   onItemClick = (ev, item) => {
     ev.preventDefault();
-    this.setState({
-      itemModal: item
-    });
+    this.setState({ itemModal: item });
   };
 
   closeModal = () => {
-    this.setState({
-      itemModal: null
-    });
+    this.setState({ itemModal: null });
+  };
+
+  dismissError = () => {
+    this.setState({ error: null });
   };
 
   setUpPolling = () => {
@@ -347,7 +356,8 @@ class Gearsets extends Component {
       xurItems,
       xurLocation,
       itemModal,
-      trackedItems
+      trackedItems,
+      error
     } = this.state;
 
     if (loading) {
@@ -430,6 +440,7 @@ class Gearsets extends Component {
           )}
         </div>
 
+        {error && <ErrorBanner error={error} onClose={this.dismissError} />}
         {hasInventory && <Xur items={xurItems} location={xurLocation} />}
 
         {(groups || []).map((group, index) => (

@@ -103,7 +103,11 @@ function statTrackForItem(item, statTrackData, objectiveDefs) {
   if (!get(thisStatTrack, '$instanceData.flavorObjective')) {
     return;
   }
-  return {...thisStatTrack, $objective: objectiveDefs[thisStatTrack.$instanceData.flavorObjective.objectiveHash]}
+  return {
+    ...thisStatTrack,
+    $objective:
+      objectiveDefs[thisStatTrack.$instanceData.flavorObjective.objectiveHash]
+  };
 }
 
 export function mapItems(
@@ -197,7 +201,7 @@ function mergeCloudInventory(currentInventory, cloudInventory) {
   return inventory;
 }
 
-export default function processSets(args, dataCallback) {
+export default function processSets(args) {
   const {
     itemDefs,
     vendorDefs,
@@ -316,5 +320,5 @@ export default function processSets(args, dataCallback) {
     shit: null
   };
 
-  dataCallback(payload);
+  return payload;
 }

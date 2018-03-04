@@ -47,12 +47,6 @@ export default function(cb) {
   const refreshTokenIsValid =
     prevAuthData && Date.now() < new Date(prevAuthData.refreshTokenExpiry);
 
-  console.log({
-    prevAuthData,
-    accessTokenIsValid,
-    refreshTokenIsValid
-  });
-
   if (accessTokenIsValid) {
     console.info('Access token is valid, running main()');
     window.AUTH_DATA = prevAuthData;

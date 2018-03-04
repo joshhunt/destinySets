@@ -35,3 +35,30 @@ export function setUser(bungieNetProfile) {
       username: name
     });
 }
+
+export function trackError(err) {
+  const { Raven } = window;
+
+  if (!Raven) {
+    return null;
+  }
+
+  Raven.captureException(err);
+}
+
+export function errorPrompt(ev) {
+  if (ev && ev.preventDefault) {
+    ev.preventDefault();
+  }
+
+  const { Raven } = window;
+
+  if (!Raven) {
+    window.alert(
+      'Unable to load error library. Maybe an adblocker interferred?'
+    );
+    return null;
+  }
+
+  Raven.showReportDialog();
+}
