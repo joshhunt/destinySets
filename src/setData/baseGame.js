@@ -17,32 +17,32 @@ module.exports = [
               3954531357,
               3380742308,
               3691881271,
-              1018072983,
-            ],
+              1018072983
+            ]
           },
           {
             title: 'Hunter Armor',
-            items: [2013109092, 1960303677, 407863747, 30962015, 3984534842],
+            items: [2013109092, 1960303677, 407863747, 30962015, 3984534842]
           },
           {
             title: 'Hunter Armor - Prestige Mode',
-            items: [2013109093, 1960303676, 407863746, 30962014, 3984534843],
+            items: [2013109093, 1960303676, 407863746, 30962014, 3984534843]
           },
           {
             title: 'Titan Armor',
-            items: [1413589586, 1879942843, 1876645653, 288406317, 574137192],
+            items: [1413589586, 1879942843, 1876645653, 288406317, 574137192]
           },
           {
             title: 'Titan Armor - Prestige Mode',
-            items: [1413589587, 1879942842, 1876645652, 288406316, 574137193],
+            items: [1413589587, 1879942842, 1876645652, 288406316, 574137193]
           },
           {
             title: 'Warlock Armor',
-            items: [2700598111, 2676042150, 3592548938, 2193494688, 3763332443],
+            items: [2700598111, 2676042150, 3592548938, 2193494688, 3763332443]
           },
           {
             title: 'Warlock Armor - Prestige Mode',
-            items: [2700598110, 2676042151, 3592548939, 2193494689, 3763332442],
+            items: [2700598110, 2676042151, 3592548939, 2193494689, 3763332442]
           },
           {
             title: 'Emblems',
@@ -52,10 +52,10 @@ module.exports = [
               1667199810, // Good Dog
               2984066626, // Splish Splash
               1625974211, // Two Enter, One Leaves
-              812824526,  // Take the Throne
-            ],
-          },
-        ],
+              812824526 // Take the Throne
+            ]
+          }
+        ]
       },
       {
         name: 'Iron Banner',
@@ -72,8 +72,8 @@ module.exports = [
               3424403076, // The Fool's Remedy
               2961807684, // The Wizened Rebuke
               2909905776, // The Hero's Burden
-              807192446, // The Day's Fury
-            ],
+              807192446 // The Day's Fury
+            ]
           },
           {
             title: 'Hunter armor',
@@ -82,8 +82,8 @@ module.exports = [
               3737894478, // Iron Truage Grips
               831464034, // Iron Truage Vest
               1526005320, // Iron Truage Boots
-              479917491, // Mantle of Efrideet
-            ],
+              479917491 // Mantle of Efrideet
+            ]
           },
           {
             title: 'Titan armor',
@@ -92,8 +92,8 @@ module.exports = [
               691332172, // Iron Truage Gauntlets
               3865618708, // Iron Truage Plate
               1337167606, // Iron Truage Greaves
-              738938985, // Radegast's Iron Sash
-            ],
+              738938985 // Radegast's Iron Sash
+            ]
           },
           {
             title: 'Warlock armor',
@@ -102,17 +102,17 @@ module.exports = [
               287471683, // Iron Truage Gloves
               124696333, // Iron Truage Vestments
               2674485749, // Iron Truage Legs
-              2999505920, // Timur's Iron Bond
-            ],
+              2999505920 // Timur's Iron Bond
+            ]
           },
           {
             title: 'Emblems',
             items: [
               3373303016, // Felwinter Frost
-              3373303017, // Shades of Radegast
-            ],
-          },
-        ],
+              3373303017 // Shades of Radegast
+            ]
+          }
+        ]
       },
 
       {
@@ -130,43 +130,43 @@ module.exports = [
               1909527966,
               2094938673,
               2850415209,
-              3854037061,
-            ],
+              3854037061
+            ]
           },
           {
             title: 'Hunter Armor',
-            items: [400025383, 2641591726, 548290754, 854160040, 238320915],
+            items: [400025383, 2641591726, 548290754, 854160040, 238320915]
           },
           {
             title: 'Hunter Armor - Flawless',
-            items: [400025382, 2641591727, 548290755, 854160041, 238320914],
+            items: [400025382, 2641591727, 548290755, 854160041, 238320914]
           },
           {
             title: 'Titan Armor',
-            items: [2391227801, 1863012880, 934145080, 2221648234, 3624606677],
+            items: [2391227801, 1863012880, 934145080, 2221648234, 3624606677]
           },
           {
             title: 'Titan Armor - Flawless',
-            items: [2391227800, 1863012881, 934145081, 2221648235, 3624606676],
+            items: [2391227800, 1863012881, 934145081, 2221648235, 3624606676]
           },
           {
             title: 'Warlock Armor',
-            items: [2964441920, 530515217, 891933383, 4232174819, 1607431126],
+            items: [2964441920, 530515217, 891933383, 4232174819, 1607431126]
           },
           {
             title: 'Warlock Armor - Flawless',
-            items: [2964441921, 530515216, 891933382, 4232174818, 1607431127],
+            items: [2964441921, 530515216, 891933382, 4232174818, 1607431127]
           },
           {
             title: 'Emblems',
             items: [
               19962737, // Chasing Perfection
-              2029506313, // You Are Worthy
-            ],
-          },
-        ],
-      },
-    ],
+              2029506313 // You Are Worthy
+            ]
+          }
+        ]
+      }
+    ]
   },
   {
     name: 'Factions',
@@ -190,28 +190,28 @@ module.exports = [
               1459443448, // Escape Velocity
               2625782212, // Haunted Earth
               2625782213, // Contingency Plan
-              3252697558, // Truthteller
-            ],
+              3252697558 // Truthteller
+            ]
           },
           {
             title: 'Hunter Armor',
-            items: [132368575, 66235782, 3146241834, 3920232320, 3783059515],
+            items: [132368575, 66235782, 3146241834, 3920232320, 3783059515]
           },
           {
             title: 'Titan Armor',
-            items: [1978760489, 4065136800, 387100392, 2760076378, 2089197765],
+            items: [1978760489, 4065136800, 387100392, 2760076378, 2089197765]
           },
           {
             title: 'Warlock Armor',
-            items: [3299588760, 3763392361, 2873960175, 4055334203, 4121118846],
+            items: [3299588760, 3763392361, 2873960175, 4055334203, 4121118846]
           },
           {
             title: 'Emblems',
             items: [
-              802191383, // Total Eclipse
-            ],
-          },
-        ],
+              802191383 // Total Eclipse
+            ]
+          }
+        ]
       },
       {
         name: 'New Monarchy Arsenal',
@@ -231,28 +231,28 @@ module.exports = [
               2693941407,
               227548887,
               3239754990,
-              2276266837,
-            ],
+              2276266837
+            ]
           },
           {
             title: 'Hunter Armor',
-            items: [755928510, 25798127, 3323316553, 600401425, 342618372],
+            items: [755928510, 25798127, 3323316553, 600401425, 342618372]
           },
           {
             title: 'Titan Armor',
-            items: [3059968532, 1890693805, 2154427219, 2603069551, 106359434],
+            items: [3059968532, 1890693805, 2154427219, 2603069551, 106359434]
           },
           {
             title: 'Warlock Armor',
-            items: [316745113, 4083497488, 2436244536, 147165546, 831738837],
+            items: [316745113, 4083497488, 2436244536, 147165546, 831738837]
           },
           {
             title: 'Emblems',
             items: [
-              802191381, // Regency
-            ],
-          },
-        ],
+              802191381 // Regency
+            ]
+          }
+        ]
       },
       {
         name: 'Future War Cult Arsenal',
@@ -272,30 +272,30 @@ module.exports = [
               1339362514, // Stochastic Variable
               2581162758, // Enigma's Draw
               3329842376, // Memory Interdict
-              4145119417, // Heart of Time
-            ],
+              4145119417 // Heart of Time
+            ]
           },
           {
             title: 'Hunter Armor',
-            items: [1763431309, 2415993980, 1355893732, 1418921862, 2524181305],
+            items: [1763431309, 2415993980, 1355893732, 1418921862, 2524181305]
           },
           {
             title: 'Titan Armor',
-            items: [1187431263, 1162875302, 3671665226, 680327840, 3842448731],
+            items: [1187431263, 1162875302, 3671665226, 680327840, 3842448731]
           },
           {
             title: 'Warlock Armor',
-            items: [2401598772, 807866445, 3656154099, 1478665487, 1566612778],
+            items: [2401598772, 807866445, 3656154099, 1478665487, 1566612778]
           },
           {
             title: 'Emblems',
             items: [
-              802191382, // Battle Colors
-            ],
-          },
-        ],
-      },
-    ],
+              802191382 // Battle Colors
+            ]
+          }
+        ]
+      }
+    ]
   },
   {
     name: 'Planetary Sets',
@@ -319,20 +319,20 @@ module.exports = [
               2502422772,
               1983332560,
               3312073054,
-              1291586825, // Eystein-D
-            ],
+              1291586825 // Eystein-D
+            ]
           },
           {
             title: 'Hunter Armor',
-            items: [3973359167, 3907226374, 2729740202, 3466255616, 3366557883],
+            items: [3973359167, 3907226374, 2729740202, 3466255616, 3366557883]
           },
           {
             title: 'Titan Armor',
-            items: [3080875433, 872284448, 10307688, 3862191322, 1712405061],
+            items: [3080875433, 872284448, 10307688, 3862191322, 1712405061]
           },
           {
             title: 'Warlock Armor',
-            items: [3764013786, 1664741411, 2724176749, 4051755349, 1304122208],
+            items: [3764013786, 1664741411, 2724176749, 4051755349, 1304122208]
           },
           {
             title: 'Emblems',
@@ -340,10 +340,10 @@ module.exports = [
               1321546045, // European Dead Zone
               3541326821, // Dead Zone Camo
               3541326820, // Kay's Command
-              3541326823, // Trostland Terminus
-            ],
-          },
-        ],
+              3541326823 // Trostland Terminus
+            ]
+          }
+        ]
       },
 
       {
@@ -363,20 +363,20 @@ module.exports = [
               2502422775,
               417474226,
               1983332562,
-              2517599010,
-            ],
+              2517599010
+            ]
           },
           {
             title: 'Hunter Armor',
-            items: [2715114534, 1729074423, 1085797441, 3537609113, 1868302492],
+            items: [2715114534, 1729074423, 1085797441, 3537609113, 1868302492]
           },
           {
             title: 'Titan Armor',
-            items: [1370341044, 4071576013, 2523633779, 447407759, 434092458],
+            items: [1370341044, 4071576013, 2523633779, 447407759, 434092458]
           },
           {
             title: 'Warlock Armor',
-            items: [1554079989, 229923140, 3388454204, 2160569198, 845354673],
+            items: [1554079989, 229923140, 3388454204, 2160569198, 845354673]
           },
           {
             title: 'Emblems',
@@ -384,10 +384,10 @@ module.exports = [
               3451625162, // Echo Mesa
               31953747, // Ballet Lover
               31953744, // Holy Ground
-              31953746, // Traveler's Flight
-            ],
-          },
-        ],
+              31953746 // Traveler's Flight
+            ]
+          }
+        ]
       },
 
       {
@@ -413,20 +413,20 @@ module.exports = [
 
               2502422774,
               417474224,
-              515224227,
-            ],
+              515224227
+            ]
           },
           {
             title: 'Hunter Armor',
-            items: [1607012852, 479417869, 2380978355, 1150216911, 291437034],
+            items: [1607012852, 479417869, 2380978355, 1150216911, 291437034]
           },
           {
             title: 'Titan Armor',
-            items: [2930137294, 3955340735, 1847610489, 2876590849, 3586337076],
+            items: [2930137294, 3955340735, 1847610489, 2876590849, 3586337076]
           },
           {
             title: 'Warlock Armor',
-            items: [2575848725, 1251692004, 2400621276, 2757777294, 3686454865],
+            items: [2575848725, 1251692004, 2400621276, 2757777294, 3686454865]
           },
           {
             title: 'Emblems',
@@ -434,10 +434,10 @@ module.exports = [
               426147374, // New Pacific Arcology
               3785035698, // Cargo Bay Cross
               3785035696, // New Pacific Access
-              3785035697, // Solarium Yellow
-            ],
-          },
-        ],
+              3785035697 // Solarium Yellow
+            ]
+          }
+        ]
       },
 
       {
@@ -459,20 +459,20 @@ module.exports = [
               2502422773,
               417474225,
               1983332561,
-              2535939781,
-            ],
+              2535939781
+            ]
           },
           {
             title: 'Hunter Armor',
-            items: [3026265798, 2423003287, 2462524641, 3807183801, 3669590332],
+            items: [3026265798, 2423003287, 2462524641, 3807183801, 3669590332]
           },
           {
             title: 'Titan Armor',
-            items: [1010733668, 957928253, 177493699, 3323553887, 3754164794],
+            items: [1010733668, 957928253, 177493699, 3323553887, 3754164794]
           },
           {
             title: 'Warlock Armor',
-            items: [2811068561, 1427620200, 2359639520, 2528959426, 1669675549],
+            items: [2811068561, 1427620200, 2359639520, 2528959426, 1669675549]
           },
           {
             title: 'Emblems',
@@ -480,12 +480,12 @@ module.exports = [
               1599898966, // Arcadian Valley
               2484637938, // Exodus Access
               2484637936, // Jacobson's Staff
-              2484637939, // Tangled Anchor
-            ],
-          },
-        ],
-      },
-    ],
+              2484637939 // Tangled Anchor
+            ]
+          }
+        ]
+      }
+    ]
   },
 
   {
@@ -509,41 +509,41 @@ module.exports = [
               137879537, // Curtain Call
               2290863050, // Persuader
               3445437901, // Main Ingredient
-              2168486467, // Wicked Sister
-            ],
+              2168486467 // Wicked Sister
+            ]
           },
 
           {
             title: 'Hunter Armor',
-            items: [3198744410, 1099472035, 406401261, 3486485973, 3281314016],
+            items: [3198744410, 1099472035, 406401261, 3486485973, 3281314016]
           },
 
           {
             title: 'Titan Armor',
-            items: [3873435116, 3027732901, 1667528443, 3375062567, 24244626],
+            items: [3873435116, 3027732901, 1667528443, 3375062567, 24244626]
           },
 
           {
             title: 'Warlock Armor',
-            items: [1540376513, 2378296024, 34846448, 413460498, 3215392301],
+            items: [1540376513, 2378296024, 34846448, 413460498, 3215392301]
           },
           {
             title: 'Emblems',
             items: [
               2010554576, // At the Vanguard
               2010554578, // Make Us Proud
-              2010554579, // Push Forward
-            ],
+              2010554579 // Push Forward
+            ]
           },
           {
             title: 'Achievement Emblems - Strikes',
             items: [
               2390666069, // High-Risk, High-Reward
               3115055261, // Gather Your Fireteam
-              481345527, // Mentor of Light
-            ],
-          },
-        ],
+              481345527 // Mentor of Light
+            ]
+          }
+        ]
       },
 
       {
@@ -553,34 +553,33 @@ module.exports = [
         sections: [
           {
             title: 'Hunter Armor',
-            items: [4248632159, 4224076198, 385045066, 3741528736, 555828571],
+            items: [4248632159, 4224076198, 385045066, 3741528736, 555828571]
           },
           {
             title: 'Titan Armor',
-            items: [4081859017, 1490387264, 2682045448, 185326970, 89175653],
+            items: [4081859017, 1490387264, 2682045448, 185326970, 89175653]
           },
           {
             title: 'Warlock Armor',
-            items: [2615512594, 3081969019, 868792277, 1532009197, 4285708584],
+            items: [2615512594, 3081969019, 868792277, 1532009197, 4285708584]
           },
           {
             title: 'Emblems',
             items: [
               1724152706, // Red Legion Aegis
               1724152705, // Red Legion Logistics
-              1724152704, // WAR Vault 5
-            ],
+              1724152704 // WAR Vault 5
+            ]
           },
           {
             title: 'Achievement Emblems - The Red War Story',
             items: [
               3635192014, // Hunter's Hoard
               3941202506, // Titan's Triumph
-              3564452901, // Warlock's Wisdom
-            ],
-          },
-
-        ],
+              3564452901 // Warlock's Wisdom
+            ]
+          }
+        ]
       },
 
       {
@@ -598,30 +597,30 @@ module.exports = [
               4174481098, // Steel Sybil Z-14
               2660862359, // Gentleman Vagabond
               1773600468, // Critical Sass
-              2621637518, // Play of the Game
-            ],
+              2621637518 // Play of the Game
+            ]
           },
           {
             title: 'Hunter Armor',
-            items: [3223280471, 2296691422, 2718495762, 3140634552, 3313736739],
+            items: [3223280471, 2296691422, 2718495762, 3140634552, 3313736739]
           },
           {
             title: 'Titan Armor',
-            items: [2191401041, 849529384, 2815422368, 1484937602, 1742680797],
+            items: [2191401041, 849529384, 2815422368, 1484937602, 1742680797]
           },
           {
             title: 'Warlock Armor',
-            items: [1764274932, 636679949, 1333087155, 1307478991, 3538513130],
+            items: [1764274932, 636679949, 1333087155, 1307478991, 3538513130]
           },
           {
             title: 'Emblems',
             items: [
               4242592195, // Fight Forever
               4242592192, // Give Them War
-              4242592193, // One Path to Victory
-            ],
-          },
-        ],
+              4242592193 // One Path to Victory
+            ]
+          }
+        ]
       },
 
       {
@@ -656,8 +655,8 @@ module.exports = [
               2703340117, // Somerled-D
               2398848320, // Erentil FR4
               896923850, // Acantha-D
-              3778520449, // Jiangshi AR4
-            ],
+              3778520449 // Jiangshi AR4
+            ]
           },
           {
             title: 'Emblems',
@@ -665,21 +664,20 @@ module.exports = [
               3605230072, // Hakke Upgrade
               3605230074, // Omolon Upgrade
               3605230073, // SUROS Upgrade
-              3605230075, // VEIST Upgrade
-            ],
-          },
-        ],
+              3605230075 // VEIST Upgrade
+            ]
+          }
+        ]
       },
       {
         name: 'Flashpoint Gear',
-        description:
-          "Gear from Cayde-6's weekly Flashpoint.",
+        description: "Gear from Cayde-6's weekly Flashpoint.",
         sections: [
           {
             title: 'Emblems - Flashpoint High Value Targets',
             items: [
               1173929375, // C-T-A-T-O-D-L
-              1173929374, // Gone Hunting
+              1173929374 // Gone Hunting
             ]
           },
           {
@@ -694,18 +692,18 @@ module.exports = [
               1409726991, // Spark of the Machine
               1409726988, // Try the Special
               1409726984, // Telstar Graphics
-              1409726978, // Way of the Wolf
+              1409726978 // Way of the Wolf
             ]
           },
           {
             title: 'Achievement Emblems - Public Spaces',
             items: [
-              3010885351, // Rally the Flag
+              3010885351 // Rally the Flag
             ]
-          },
-        ],
+          }
+        ]
       }
-    ],
+    ]
   },
 
   {
@@ -717,35 +715,35 @@ module.exports = [
         small: true,
         sections: [
           {
-            title: 'Class Sword',
-            items: [1180270692,], // Quickfang
+            title: 'Weapons',
+            items: [1180270692] // Quickfang
           },
           {
             title: 'Dead End Cure 2.1',
-            items: [3125909492, 1998314509, 316000947, 2669113551, 2521426922],
+            items: [3125909492, 1998314509, 316000947, 2669113551, 2521426922]
           },
           {
             title: 'Errant Knight 1.0',
-            items: [2550994842, 493299171, 1024867629, 2414278933, 3433746208],
+            items: [2550994842, 493299171, 1024867629, 2414278933, 3433746208]
           },
           {
             title: 'Road Complex AA1',
-            items: [269552461, 922218300, 1415533220, 308026950, 2159363321],
+            items: [269552461, 922218300, 1415533220, 308026950, 2159363321]
           },
           {
             title: 'Icarus Drifter - PS4 Exclusive',
-            items: [155832748, 3646674533, 3066593211, 3569443559, 1847870034],
+            items: [155832748, 3646674533, 3066593211, 3569443559, 1847870034]
           },
           {
             title: 'Emblems',
             items: [
               1907674138, // Hunter's Wit
-              844563491,  // Slinger's Sight
+              844563491, // Slinger's Sight
               2054118356, // Strider's Slash
-              621113310,  // Stalker's Shot
-            ],
-          },
-        ],
+              621113310 // Stalker's Shot
+            ]
+          }
+        ]
       },
 
       {
@@ -754,24 +752,24 @@ module.exports = [
         small: true,
         sections: [
           {
-            title: 'Class Sword',
-            items: [1180270694,], // Crown-Splitter
+            title: 'Weapons',
+            items: [1180270694] // Crown-Splitter
           },
           {
             title: 'Retro-Grade TG2',
-            items: [2525344810, 2530905971, 1364856221, 2265859909, 2826844112],
+            items: [2525344810, 2530905971, 1364856221, 2265859909, 2826844112]
           },
           {
             title: 'Kerak Type 2',
-            items: [160388292, 107582877, 2696303651, 2048751167, 1978110490],
+            items: [160388292, 107582877, 2696303651, 2048751167, 1978110490]
           },
           {
             title: 'Devastation Complex',
-            items: [3725654227, 1260134370, 2932121030, 3304280092, 3250112431],
+            items: [3725654227, 1260134370, 2932121030, 3304280092, 3250112431]
           },
           {
             title: 'Terra Concord - PS4 Exclusive',
-            items: [690335398, 3999262583, 3291075521, 1512829977, 4073580572],
+            items: [690335398, 3999262583, 3291075521, 1512829977, 4073580572]
           },
           {
             title: 'Emblems',
@@ -779,10 +777,10 @@ module.exports = [
               1907674139, // Titan's Pride
               3828080585, // Breaker's Blaze
               2967682030, // Striker's Slam
-              3338748564, // Sentinel's Shove
-            ],
-          },
-        ],
+              3338748564 // Sentinel's Shove
+            ]
+          }
+        ]
       },
 
       {
@@ -791,24 +789,24 @@ module.exports = [
         small: true,
         sections: [
           {
-            title: 'Class Sword',
-            items: [1180270693,], // Eternity's Edge
+            title: 'Weapons',
+            items: [1180270693] // Eternity's Edge
           },
           {
             title: 'Heiro Camo',
-            items: [2791527489, 3629447000, 3884999792, 1664611474, 2770578349],
+            items: [2791527489, 3629447000, 3884999792, 1664611474, 2770578349]
           },
           {
             title: 'Philomath',
-            items: [2542514983, 489114030, 683173058, 2996649640, 373203219],
+            items: [2542514983, 489114030, 683173058, 2996649640, 373203219]
           },
           {
             title: 'High-Minded Complex',
-            items: [993844472, 1457647945, 410671183, 1749589787, 2082184158],
+            items: [993844472, 1457647945, 410671183, 1749589787, 2082184158]
           },
           {
             title: 'Tesseract Trace - PS4 Exclusive',
-            items: [2811180959, 3169402598, 4092393610, 2728535008, 434243995],
+            items: [2811180959, 3169402598, 4092393610, 2728535008, 434243995]
           },
           {
             title: 'Emblems',
@@ -816,19 +814,20 @@ module.exports = [
               1907674137, // Warlock's Flight
               1530147650, // Blade's Blast
               3778092977, // Storm's Surge
-              46275857,   // Walker's Warp
-            ],
-          },
-        ],
-      },
-    ],
+              46275857 // Walker's Warp
+            ]
+          }
+        ]
+      }
+    ]
   },
   {
     name: 'Other',
     sets: [
       {
         name: 'Promotional Emblems',
-        description: 'Emblems obtained from live events, promotional give aways, and D1 Veteran rewards.',
+        description:
+          'Emblems obtained from live events, promotional give aways, and D1 Veteran rewards.',
         sections: [
           {
             title: 'D1 Veteran',
@@ -840,15 +839,15 @@ module.exports = [
               4077939645, // Slayer of Oryx
               4077939644, // Heard the Call
               4077939643, // Young Wolf
-              4077939642, // Saladin's Pride
+              4077939642 // Saladin's Pride
             ]
           },
           {
             title: 'Bungie Store',
             items: [
               4132147344, // Stand Together
-              4132147348, // Darkest Day
-            ],
+              4132147348 // Darkest Day
+            ]
           },
           {
             title: 'Special Events',
@@ -856,7 +855,7 @@ module.exports = [
               1940590816, // The First Wave
               1940590821, // Confluence of Light
               4182480224, // Lens of Fate
-              4182480236, // Sign of Mutual Combat
+              4182480236 // Sign of Mutual Combat
             ]
           },
           {
@@ -867,23 +866,23 @@ module.exports = [
               4182480233, // Planet of Peace
               4132147349, // Meridian of Destiny
               4182480232, // Brick by Brick
-              4182480234, // Cutting Edge
+              4182480234 // Cutting Edge
             ]
           },
           {
             title: 'Forums',
             items: [
               4182480225, // Symposium Shield
-              4182480239, // Vigilant Console
-            ],
+              4182480239 // Vigilant Console
+            ]
           },
           {
             title: 'Trial Version',
             items: [
-              2537840254, // A Guardian Rises
-            ],
-          },
-        ],
+              2537840254 // A Guardian Rises
+            ]
+          }
+        ]
       },
       {
         name: 'Eververse, Season 1',
@@ -896,8 +895,8 @@ module.exports = [
               1625986881, // Arms of Optimacy
               369186071, // Vest of Optimacy
               2696374963, // Legs of Optimacy
-              2497505510, // Cloak of Optimacy
-            ],
+              2497505510 // Cloak of Optimacy
+            ]
           },
           {
             title: 'Titan Armor',
@@ -906,8 +905,8 @@ module.exports = [
               652336087, // Arms of Optimacy
               415074081, // Plate of Optimacy
               2460870905, // Legs of Optimacy
-              1197579132, // Mark of Optimacy
-            ],
+              1197579132 // Mark of Optimacy
+            ]
           },
           {
             title: 'Warlock Armor',
@@ -916,8 +915,8 @@ module.exports = [
               3794819064, // Arms of Optimacy
               199852048, // Robes of Optimacy
               1830086706, // Legs of Optimacy
-              3421974605, // Bond of Optimacy
-            ],
+              3421974605 // Bond of Optimacy
+            ]
           },
           {
             title: 'Ghosts',
@@ -946,8 +945,8 @@ module.exports = [
               277887715, // Hemisphere Shell
               277887712, // Aggressive Shell
               277887713, // Twilight Shell
-              277887718, // Vertical Shell
-            ],
+              277887718 // Vertical Shell
+            ]
           },
           {
             title: 'Emotes',
@@ -977,8 +976,8 @@ module.exports = [
               1294717622, // Sick
               2526538979, // Get Up
               3526028978, // Sadness
-              333041308, // Good Idea
-            ],
+              333041308 // Good Idea
+            ]
           },
           {
             title: 'Sparrows',
@@ -1007,8 +1006,8 @@ module.exports = [
               904825092, // Wayfarer Tri
               904825094, // Warbird
               904825089, // Hyperion
-              904825088, // Dead-End Pro
-            ],
+              904825088 // Dead-End Pro
+            ]
           },
           {
             title: 'Ships',
@@ -1040,11 +1039,11 @@ module.exports = [
               3213307844, // Space-Age Lancelot
               3213307846, // Spectral Gain
               3213307849, // Verona Mesh
-              3213307848, // High Line
-            ],
-          },
-        ],
-      },
-    ],
-  },
+              3213307848 // High Line
+            ]
+          }
+        ]
+      }
+    ]
+  }
 ];
