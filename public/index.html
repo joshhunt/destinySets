@@ -36,7 +36,8 @@
     </script>
 
     <script>
-      window.Raven.config('https://e243bfd31f3b4c02a3450417272f4393@sentry.io/294574').install()
+      var dsn = 'https://e243bfd31f3b4c02a3450417272f4393@sentry.io/294574'
+      Raven.config(window.location.href.indexOf('localhost') > -1 ? false : dsn).install()
 
       window.__withUID(function (uid) {
         window.Raven.setUserContext({

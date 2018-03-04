@@ -30,7 +30,17 @@ export const isOrnament = item =>
   item.plug.plugCategoryIdentifier &&
   item.plug.plugCategoryIdentifier.includes('skins');
 
+const CLASS_OVERRIDE = {
+  1907674137: WARLOCK,
+  1907674138: HUNTER,
+  1907674139: TITAN
+};
+
 const getItemClass = item => {
+  if (CLASS_OVERRIDE.hasOwnProperty(item.hash)) {
+    return CLASS_OVERRIDE[item.hash];
+  }
+
   if (
     item.itemCategoryHashes.includes(EMBLEM) &&
     item.inventory.stackUniqueLabel
