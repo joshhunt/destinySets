@@ -18,20 +18,20 @@ import sidebarStyles from './sidebar.styl';
 const NAV_LINKS = [
   {
     to: '/',
-    label: 'Base',
+    label: 'Base'
   },
   {
     to: '/curse-of-osiris',
-    label: 'Curse of Osiris',
+    label: 'Curse of Osiris'
   },
   {
     to: '/all-items',
-    label: 'All Items',
+    label: 'All Items'
   },
   {
     to: '/data',
-    label: 'Data Explorer',
-  },
+    label: 'Data Explorer'
+  }
 ];
 
 const SOCIAL = [
@@ -61,7 +61,7 @@ const SOCIAL = [
     href="https://github.com/joshhunt/destinySets"
   >
     <i className="fa fa-github" />
-  </a>,
+  </a>
 ];
 
 function NavLink({ children, className, ...props }) {
@@ -78,13 +78,13 @@ function NavLink({ children, className, ...props }) {
 
 class Header extends React.Component {
   state = {
-    accountSwitcherActive: false,
+    accountSwitcherActive: false
   };
 
   toggleAccountSwitcher = () => {
     this.setState({
       langSwitcherActive: false,
-      accountSwitcherActive: !this.state.accountSwitcherActive,
+      accountSwitcherActive: !this.state.accountSwitcherActive
     });
   };
 
@@ -103,7 +103,7 @@ class Header extends React.Component {
       onGoogleSignout,
       toggleLangSwitcher,
       setLang,
-      langSwitcherActive,
+      langSwitcherActive
     } = this.props;
     const { accountSwitcherActive } = this.state;
 
@@ -146,12 +146,14 @@ class Header extends React.Component {
           </div>
 
           <div className={styles.social}>
-            <LanguageSwitcher
-              activeLanguage={activeLanguage}
-              langSwitcherActive={langSwitcherActive}
-              toggleLangSwitcher={toggleLangSwitcher}
-              setLang={setLang}
-            />
+            {setLang && (
+              <LanguageSwitcher
+                activeLanguage={activeLanguage}
+                langSwitcherActive={langSwitcherActive}
+                toggleLangSwitcher={toggleLangSwitcher}
+                setLang={setLang}
+              />
+            )}
 
             {profile && (
               <ProfileSwitcher
@@ -176,7 +178,7 @@ class Header extends React.Component {
 export default class FixedHeader extends Component {
   state = {
     sidebarOpen: false,
-    langSwitcherActive: false,
+    langSwitcherActive: false
   };
 
   onSetSidebarOpen = open => {
@@ -194,7 +196,7 @@ export default class FixedHeader extends Component {
   toggleLangSwitcher = () => {
     this.setState({
       accountSwitcherActive: false,
-      langSwitcherActive: !this.state.langSwitcherActive,
+      langSwitcherActive: !this.state.langSwitcherActive
     });
   };
 
@@ -204,19 +206,19 @@ export default class FixedHeader extends Component {
       [
         `loaded:${lang.code}`,
         `default:${getDefaultLanguage().code}`,
-        `browser:${getBrowserLocale()}`,
-      ].join('|'),
+        `browser:${getBrowserLocale()}`
+      ].join('|')
     );
 
     this.setState({
-      sidebarOpen: false,
+      sidebarOpen: false
     });
 
     this.props.onChangeLang(lang);
   };
 
   render() {
-    const { activeLanguage } = this.props;
+    const { activeLanguage, onChangeLang } = this.props;
 
     const sidebarContent = (
       <div className={sidebarStyles.root}>
@@ -235,13 +237,15 @@ export default class FixedHeader extends Component {
           </NavLink>
         ))}
 
-        <LanguageSwitcher
-          displayInline={true}
-          activeLanguage={activeLanguage}
-          langSwitcherActive={this.state.langSwitcherActive}
-          toggleLangSwitcher={this.toggleLangSwitcher}
-          setLang={this.setLang}
-        />
+        {onChangeLang && (
+          <LanguageSwitcher
+            displayInline={true}
+            activeLanguage={activeLanguage}
+            langSwitcherActive={this.state.langSwitcherActive}
+            toggleLangSwitcher={this.toggleLangSwitcher}
+            setLang={this.setLang}
+          />
+        )}
 
         <br />
         <div className={styles.mobileSocials}>{SOCIAL}</div>
@@ -258,7 +262,7 @@ export default class FixedHeader extends Component {
           onSetSidebarOpen={this.onSetSidebarOpen}
           className={styles.fixedHeader}
           toggleLangSwitcher={this.toggleLangSwitcher}
-          setLang={this.setLang}
+          setLang={onChangeLang && this.setLang}
           langSwitcherActive={this.state.langSwitcherActive}
         />
         <Header {...this.props} className={styles.fakeHeader} />
@@ -270,8 +274,8 @@ export default class FixedHeader extends Component {
           sidebarClassName={sidebarStyles.sidebar}
           styles={{
             root: {
-              pointerEvents: this.state.sidebarOpen ? 'initial' : 'none',
-            },
+              pointerEvents: this.state.sidebarOpen ? 'initial' : 'none'
+            }
           }}
         >
           {' '}

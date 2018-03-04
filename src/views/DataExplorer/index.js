@@ -203,7 +203,6 @@ class DataExplorer extends Component {
         <Header
           className={styles.header}
           bg={this.state.headerBg}
-          onFilterChange={() => {}}
           legacy={false}
         />
 
