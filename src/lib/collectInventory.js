@@ -16,7 +16,13 @@ function mergeInstancedItem(_allItems, item, itemComponents, extraData = {}) {
   return allItems;
 }
 
-function collectKioskItems(kiosks, vendorDefs, _allItems, extraData, statTrackData) {
+function collectKioskItems(
+  kiosks,
+  vendorDefs,
+  _allItems,
+  extraData,
+  statTrackData
+) {
   let allItems = _allItems;
 
   Object.keys(kiosks).forEach(vendorHash => {
@@ -46,7 +52,7 @@ function collectKioskItems(kiosks, vendorDefs, _allItems, extraData, statTrackDa
         statTrackData[vendorItem.itemHash] = {
           itemHash: vendorItem.itemHash,
           $instanceData: kioskEntry
-        }
+        };
       }
 
       allItems = mergeInstancedItem(
@@ -77,10 +83,16 @@ function collectItemsFromKiosks(profile, vendorDefs, _allItems, statTrackData) {
 
   Object.keys(characterKiosks.data).forEach(characterHash => {
     const kiosk = characterKiosks.data[characterHash];
-    allItems = collectKioskItems(kiosk.kioskItems, vendorDefs, allItems, {
-      $characterHash: characterHash,
-      $location: 'characterKiosk'
-    }, statTrackData);
+    allItems = collectKioskItems(
+      kiosk.kioskItems,
+      vendorDefs,
+      allItems,
+      {
+        $characterHash: characterHash,
+        $location: 'characterKiosk'
+      },
+      statTrackData
+    );
   });
 
   // return profileKioskItems.concat(charKioskItems);
@@ -166,8 +178,12 @@ export default function collectInventory(profile, vendorDefs) {
   });
 
   if (vendorDefs) {
-    allItems = collectItemsFromKiosks(profile, vendorDefs, allItems, statTrackData);
-
+    allItems = collectItemsFromKiosks(
+      profile,
+      vendorDefs,
+      allItems,
+      statTrackData
+    );
   }
 
   return { inventory: allItems, plugData, statTrackData };

@@ -44,9 +44,7 @@ export default class ItemModal extends Component {
 
         {$statTrack && (
           <div>
-            <StatTrack
-              statTrack={$statTrack}
-              />
+            <StatTrack statTrack={$statTrack} />
           </div>
         )}
 
@@ -88,7 +86,6 @@ export default class ItemModal extends Component {
             </button>
           </div>
         )}
-
       </div>
     );
   }

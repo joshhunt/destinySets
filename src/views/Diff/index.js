@@ -10,20 +10,20 @@ export default class Diff extends Component {
   state = {
     loading: true,
     newItems: [],
-    unclassifiedItems: [],
+    unclassifiedItems: []
   };
 
   componentDidMount() {
     const p = Promise.all([
       fetch(
-        'https://destiny.plumbing/en/diff/DestinyInventoryItemDefinition/friendly.json',
+        'https://destiny.plumbing/en/diff/DestinyInventoryItemDefinition/friendly.json'
       ).then(res => res.json()),
 
       fetch(
-        'https://destiny.plumbing/en/raw/DestinyInventoryItemDefinition.json',
+        'https://destiny.plumbing/en/raw/DestinyInventoryItemDefinition.json'
       ).then(res => res.json()),
 
-      fetch('https://destiny.plumbing').then(res => res.json()),
+      fetch('https://destiny.plumbing').then(res => res.json())
     ]);
 
     p.then(([diff, itemDefs, manifestIndex]) => {
@@ -34,7 +34,7 @@ export default class Diff extends Component {
         lastUpdated: new Date(manifestIndex.lastUpdated),
         loading: false,
         newItems,
-        unclassifiedItems,
+        unclassifiedItems
       });
     });
   }

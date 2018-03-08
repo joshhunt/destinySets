@@ -12,7 +12,7 @@ export default function ActivityList({
   tinyItems,
   countStyle,
   toggleCountStyle,
-  onItemClick,
+  onItemClick
 }) {
   return (
     <div className={cx(className, styles.root)}>
@@ -23,7 +23,7 @@ export default function ActivityList({
           <div
             className={cx(styles.activityWrapper, {
               [styles.narrow]: activity.small,
-              [styles.big]: activity.big,
+              [styles.big]: activity.big
             })}
             key={index}
           >

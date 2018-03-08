@@ -16,6 +16,6 @@ module.exports = {
     4092393610, // Tesseract Trace IV
     434243995, // Hodiocentrist Bond
     3141979347, // Borealis
-    2503134033, // City Apex ship
-  ],
+    2503134033 // City Apex ship
+  ]
 };

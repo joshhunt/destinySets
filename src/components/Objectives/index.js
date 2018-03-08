@@ -31,8 +31,8 @@ export default function Objectives(props) {
             style={{
               width: `${Math.min(
                 objective.progress / objective.$objective.completionValue * 100,
-                100,
-              )}%`,
+                100
+              )}%`
             }}
           />
 

@@ -11,13 +11,13 @@ export default function LanguageSwitcher(props) {
     activeLanguage,
     langSwitcherActive,
     toggleLangSwitcher,
-    setLang,
+    setLang
   } = props;
   return (
     <div
       className={cx(
         styles.languageSwitcher,
-        displayInline && styles.displayInline,
+        displayInline && styles.displayInline
       )}
       onClick={toggleLangSwitcher}
     >

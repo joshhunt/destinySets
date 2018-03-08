@@ -92,7 +92,7 @@ module.exports = [
             title: 'Extras',
             items: [
               113124080, // Contender's Shell (Ghost)
-              4261480751, // Emperor's Envy (Emblem)
+              4261480751 // Emperor's Envy (Emblem)
             ]
           }
         ]
@@ -201,7 +201,7 @@ module.exports = [
             ]
           }
         ]
-      },
+      }
     ]
   },
   {
@@ -438,16 +438,16 @@ module.exports = [
           {
             title: 'Ghosts',
             items: [
-              573576346, // Sagira's Shell
-            ],
+              573576346 // Sagira's Shell
+            ]
           },
           {
             title: 'Emblems',
             items: [
               1312472209, // Fields of Glass
               2939572589, // Crossroads Emblem
-              4261480748, // Transit of Mercury
-            ],
+              4261480748 // Transit of Mercury
+            ]
           },
           {
             title: 'Achievement Emblems',
@@ -456,10 +456,10 @@ module.exports = [
               4261480749, // Prophetic Arsenal
               2939572584, // Secrets of the Vex (Emblem)
               2939572585, // Vex Destroyer (Emblem)
-              2939572590, // Vex Scholar (Emblem)
-            ],
-          },
-        ],
+              2939572590 // Vex Scholar (Emblem)
+            ]
+          }
+        ]
       },
 
       {
@@ -505,28 +505,28 @@ module.exports = [
               2033661183, // Xenos Shore Ornament
               995614939, // Xenos Shore Ornament
               2491110586 // Xenos Shore Ornament
-            ],
+            ]
           },
           {
             title: 'Achievement Emblems',
             items: [
               2939572588, // Master Gardener
-              2939572591, // Master Cartographer
-            ],
+              2939572591 // Master Cartographer
+            ]
           },
           {
             title: 'Nightfall Emblems',
             items: [
               2764373298, // The Inverted Spire
-              997563763,  // The Arms Dealer
-              148664963,  // Savathûn's Song
+              997563763, // The Arms Dealer
+              148664963, // Savathûn's Song
               2726018197, // Exodus Crash
-              10493725,   // The Pyramidion
-              893502917,  // A Garden World
-              2933984410, // Tree of Possibilities
-            ],
-          },
-        ],
+              10493725, // The Pyramidion
+              893502917, // A Garden World
+              2933984410 // Tree of Possibilities
+            ]
+          }
+        ]
       },
 
       {
@@ -572,15 +572,15 @@ module.exports = [
               2521913126, // Ankaa Friend Ornament
               3980640404, // Ankaa Friend Ornament
               36130859 // Ankaa Friend Ornament
-            ],
+            ]
           },
           {
             title: 'Emblems',
             items: [
-              969863968, // Victorious Veteran
-            ],
-          },
-        ],
+              969863968 // Victorious Veteran
+            ]
+          }
+        ]
       },
 
       {
@@ -613,12 +613,12 @@ module.exports = [
             ]
           }
         ]
-      },
-    ],
+      }
+    ]
   },
   {
     name: 'Holiday',
-    sets:[
+    sets: [
       {
         name: 'The Dawning',
         big: false,
@@ -719,15 +719,15 @@ module.exports = [
               3569791559, // Shimmering Iris
               1984190529, // Magikon
               1423305584 // Magikon
-            ],
+            ]
           },
           {
             title: 'Emblems',
             items: [
-              3639894194, // Light of the Dawning
-            ],
-          },
-        ],
+              3639894194 // Light of the Dawning
+            ]
+          }
+        ]
       },
       {
         name: 'Crimson Days',
@@ -789,27 +789,28 @@ module.exports = [
             ]
           }
         ]
-      },
-    ],
+      }
+    ]
   },
   {
     name: 'Other',
     sets: [
       {
         name: 'Promotional Emblems',
-        description: 'Emblems obtained from live events and promotional give aways',
+        description:
+          'Emblems obtained from live events and promotional give aways',
         sections: [
           {
             title: 'Bungie Store',
             items: [
-              4132147345, // Heretic
-            ],
+              4132147345 // Heretic
+            ]
           },
           {
             title: 'Comic',
             items: [
-              1940590820, // The Visionary
-            ],
+              1940590820 // The Visionary
+            ]
           },
           {
             title: 'Bundled with Products',
@@ -817,16 +818,16 @@ module.exports = [
               4132147351, // Recurrent Resplendence
               4182480235, // Hellspawn
               1940590825, // Sonic Simulation
-              1940590823, // Carrhae
-            ],
+              1940590823 // Carrhae
+            ]
           },
           {
             title: 'Refer-A-Friend',
             items: [
-              4132147352, // The Consensus
-            ],
-          },
-        ],
+              4132147352 // The Consensus
+            ]
+          }
+        ]
       },
       {
         name: 'Eververse, Season 2',
@@ -976,7 +977,7 @@ module.exports = [
             ]
           }
         ]
-      },
-    ],
-  },
+      }
+    ]
+  }
 ];

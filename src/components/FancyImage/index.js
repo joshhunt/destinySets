@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 export default class FancyImage extends Component {
   state = {
-    loaded: false,
+    loaded: false
   };
 
   onLoad = () => {
@@ -13,7 +13,7 @@ export default class FancyImage extends Component {
     const { className, ...props } = this.props;
     const styles = {
       opacity: 0,
-      transition: 'opacity 300ms ease-in-out',
+      transition: 'opacity 300ms ease-in-out'
     };
 
     if (this.state.loaded) {

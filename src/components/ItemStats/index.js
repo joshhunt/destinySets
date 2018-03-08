@@ -12,7 +12,7 @@ export default function ItemStats({ stats }) {
         <div
           className={cx(
             styles.item,
-            NUMERICAL_STATS.includes(statHash) && styles.numerical,
+            NUMERICAL_STATS.includes(statHash) && styles.numerical
           )}
           key={statHash}
         >

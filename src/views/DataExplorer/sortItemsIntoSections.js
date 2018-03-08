@@ -16,7 +16,7 @@ import {
   ARMS,
   CHEST,
   LEGS,
-  CLASS_ITEM,
+  CLASS_ITEM
 } from 'app/lib/destinyEnums';
 
 const tierTypeNameValue = {
@@ -24,7 +24,7 @@ const tierTypeNameValue = {
   Uncommon: 3,
   Rare: 2,
   Legendary: 1,
-  Exotic: 0,
+  Exotic: 0
 };
 
 export const isOrnament = item =>
@@ -117,7 +117,7 @@ export default function sortItems(_items, verbose = false) {
     { title: 'Sparrows', items: sectionItems.sparrows },
     { title: 'Emblems', items: sectionItems.emblems },
     { title: 'Shaders', items: sectionItems.shaders },
-    { title: 'Other', items: sectionItems.other },
+    { title: 'Other', items: sectionItems.other }
   ]
     .filter(({ items }) => {
       return items && items.length > 0;
@@ -130,7 +130,7 @@ export default function sortItems(_items, verbose = false) {
       const items = section.items.map(item => item.hash);
       return {
         title: section.title,
-        items,
+        items
       };
     });
 

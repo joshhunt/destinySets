@@ -5,16 +5,16 @@ import Loading from 'app/views/Loading';
 
 export default class App extends Component {
   state = {
-    authReady: false,
+    authReady: false
   };
 
   componentDidMount() {
-    destinyAuth((err) => {
+    destinyAuth(err => {
       if (err) {
         throw err;
       }
 
-      this.setState({authReady: true});
+      this.setState({ authReady: true });
     });
   }
 
@@ -22,7 +22,7 @@ export default class App extends Component {
     if (this.state.authReady) {
       return this.props.children;
     } else {
-      return (<Loading>Authenticating...</Loading>);
+      return <Loading>Authenticating...</Loading>;
     }
   }
 }

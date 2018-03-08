@@ -17,7 +17,7 @@ export default function FilterBar(props) {
 
     toggleFilter,
     toggleCountStyle,
-    toggleFilterValue,
+    toggleFilterValue
   } = props;
   return (
     <div className={cx(className, styles.root)}>
@@ -46,7 +46,7 @@ export default function FilterBar(props) {
         <div
           className={cx(
             styles.toggleFilters,
-            displayFilters && styles.filtersActive,
+            displayFilters && styles.filtersActive
           )}
           onClick={toggleFilter}
         >
