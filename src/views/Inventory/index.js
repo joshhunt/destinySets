@@ -16,7 +16,6 @@ import {
 import Section from 'app/components/NewSection';
 
 import { inventorySelector } from './selectors';
-import { ItemHash, Objective } from './testComponents';
 import styles from './styles.styl';
 
 const timeout = dur => result =>
@@ -50,13 +49,7 @@ class Inventory extends Component {
   }
 
   render() {
-    const {
-      items,
-      objectives,
-      itemDefs,
-      objectiveDefs,
-      route: { setData }
-    } = this.props;
+    const { itemDefs, objectiveDefs, route: { setData } } = this.props;
 
     return (
       <div className={styles.root}>

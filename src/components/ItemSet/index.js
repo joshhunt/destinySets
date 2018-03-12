@@ -33,9 +33,7 @@ function ItemSet({ name, sections, itemDefs }) {
 const mapStateToProps = () => {
   const selectedItemDefsSelector = makeSelectedItemDefsSelector();
   return (state, ownProps) => {
-    console.log('ItemSet for', ownProps.name);
     return {
-      hello: 'world',
       itemDefs: selectedItemDefsSelector(state, ownProps)
     };
   };
