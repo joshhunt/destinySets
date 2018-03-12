@@ -74,7 +74,7 @@ class Inventory extends Component {
           <Section key={index} name={name} sets={sets} />
         ))}
 
-        <hr />
+        {/*<hr />
         <h1>Profile</h1>
         <h2>Items</h2>
         <div className={styles.itemList}>
@@ -97,7 +97,7 @@ class Inventory extends Component {
               objective={objective}
               objectiveDefs={objectiveDefs}
             />
-          ))}
+          ))}*/}
       </div>
     );
   }
