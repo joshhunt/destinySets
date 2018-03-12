@@ -8,7 +8,7 @@ module.exports = [
           'Ornaments and collectables obtained by completing challenges in The Leviathan',
         sections: [
           {
-            title: 'Hunter Ornaments',
+            name: 'Hunter Ornaments',
             items: [
               3346055334, // Eater of Worlds Ornament
               2519280691, // Eater of Worlds Ornament
@@ -18,7 +18,7 @@ module.exports = [
             ]
           },
           {
-            title: 'Titan Ornaments',
+            name: 'Titan Ornaments',
             items: [
               3036703920, // Eater of Worlds Ornament
               3093970453, // Eater of Worlds Ornament
@@ -28,7 +28,7 @@ module.exports = [
             ]
           },
           {
-            title: 'Warlock Ornaments',
+            name: 'Warlock Ornaments',
             items: [
               1397648181, // Eater of Worlds Ornament
               1575703224, // Eater of Worlds Ornament
@@ -38,7 +38,7 @@ module.exports = [
             ]
           },
           {
-            title: 'Extras',
+            name: 'Extras',
             items: [
               113124080 // Contender's Shell (Ghost)
             ]
@@ -51,7 +51,7 @@ module.exports = [
           'Gear obtained by playing the Eater of Worlds raid lair and increasing your reputation with Emperor Calus.',
         sections: [
           {
-            title: 'Weapons',
+            name: 'Weapons',
             items: [
               3886263130, // I Am Alive
               2707464805 // Zenith of Your Kind
@@ -59,7 +59,7 @@ module.exports = [
           },
 
           {
-            title: 'Hunter armor',
+            name: 'Hunter armor',
             items: [
               253344425, // Mask of Feltroc
               2339720736, // Grips of Feltroc
@@ -69,7 +69,7 @@ module.exports = [
             ]
           },
           {
-            title: 'Titan armor',
+            name: 'Titan armor',
             items: [
               1991039861, // Mask of Nohr
               666883012, // Gauntlets of Nohr
@@ -79,7 +79,7 @@ module.exports = [
             ]
           },
           {
-            title: 'Warlock armor',
+            name: 'Warlock armor',
             items: [
               796914932, // Mask of Sekris
               3964287245, // Wraps of Sekris
@@ -89,7 +89,7 @@ module.exports = [
             ]
           },
           {
-            title: 'Extras',
+            name: 'Extras',
             items: [
               113124080, // Contender's Shell (Ghost)
               4261480751 // Emperor's Envy (Emblem)
@@ -103,7 +103,7 @@ module.exports = [
           'Weapons and armor obtained by honoring the heroes of old in the Iron Banner Crucible tournament.',
         sections: [
           {
-            title: 'Weapons',
+            name: 'Weapons',
             items: [
               1369487074, // Orimund's Anvil
               3649055823, // Crimil's Dagger
@@ -114,7 +114,7 @@ module.exports = [
             ]
           },
           {
-            title: 'Hunter armor',
+            name: 'Hunter armor',
             items: [
               967086398, // Iron Pledge Ornament
               2845443115, // Iron Pledge Ornament
@@ -124,7 +124,7 @@ module.exports = [
             ]
           },
           {
-            title: 'Titan armor',
+            name: 'Titan armor',
             items: [
               3913452440, // Iron Pledge Ornament
               208020061, // Iron Pledge Ornament
@@ -134,7 +134,7 @@ module.exports = [
             ]
           },
           {
-            title: 'Warlock armor',
+            name: 'Warlock armor',
             items: [
               3388638931, // Iron Pledge Ornament
               1355065950, // Iron Pledge Ornament
@@ -144,7 +144,7 @@ module.exports = [
             ]
           },
           {
-            title: 'Extras',
+            name: 'Extras',
             items: [
               3681086673, // Iron Companionship Shell (Ghost shell)
               1220495181, // Iron Gallop (Sparrow)
@@ -160,7 +160,7 @@ module.exports = [
           'Weapons and armor obtained by competing in the Trials of the Nine.',
         sections: [
           {
-            title: 'Weapons',
+            name: 'Weapons',
             items: [
               // Curse of Osiris
               1503609584, // The Last Breath
@@ -169,64 +169,35 @@ module.exports = [
               2071412133 // A Cold Sweat
             ]
           },
+
           {
-            title: 'Hunter Ornaments',
+            name: 'Hunter ornaments',
             items: [
-              1698264996, // Trials Head Ornament
-              4155106369, // Trials Arms Ornament
-              3799317511, // Trials Chest Ornament
-              1254742579, // Trials Legs Ornament
-              1475681954  // Trials Class Ornament
+              3000782857, // Trials Prestige Ornament
+              3907623580, // Trials Prestige Ornament
+              1480689066, // Trials Prestige Ornament
+              3491371766, // Trials Prestige Ornament
+              85546655 // Trials Prestige Ornament
             ]
           },
           {
-            title: 'Hunter Flawless Ornaments',
+            name: 'Titan ornaments',
             items: [
-              3000782857, // Trials Prestige Head Ornament
-              3907623580, // Trials Prestige Arms Ornament
-              1480689066, // Trials Prestige Chest Ornament
-              3491371766, // Trials Prestige Legs Ornament
-              85546655 // Trials Prestige Class Ornament
+              3042323431, // Trials Prestige Ornament
+              1309834898, // Trials Prestige Ornament
+              3047754372, // Trials Prestige Ornament
+              3675824124, // Trials Prestige Ornament
+              1717767197 // Trials Prestige Ornament
             ]
           },
           {
-            title: 'Titan Ornaments',
+            name: 'Warlock ornaments',
             items: [
-              62776458,   // Trials Head Ornament
-              2194111759, // Trials Arms Ornament
-              3647777257, // Trials Chest Ornament
-              3964883617, // Trials Legs Ornament
-              4275895304  // Trials Class Ornament
-            ]
-          },
-          {
-            title: 'Titan Flawless Ornaments',
-            items: [
-              3042323431, // Trials Prestige Head Ornament
-              1309834898, // Trials Prestige Arms Ornament
-              3047754372, // Trials Prestige Chest Ornament
-              3675824124, // Trials Prestige Legs Ornament
-              1717767197 // Trials Prestige Class Ornament
-            ]
-          },
-          {
-            title: 'Warlock Ornaments',
-            items: [
-              948716319,  // Trials Head Ornament
-              2984392562, // Trials Arms Ornament
-              607756182,  // Trials Chest Ornament
-              2426456324, // Trials Legs Ornament
-              3828657371  // Trials Class Ornament
-            ]
-          },
-          {
-            title: 'Warlock Flawless Ornaments',
-            items: [
-              2338851618, // Trials Prestige Head Ornament
-              4105027183, // Trials Prestige Arms Ornament
-              2666197459, // Trials Prestige Chest Ornament
-              3026479209, // Trials Prestige Legs Ornament
-              2394332958 // Trials Prestige Class Ornament
+              2338851618, // Trials Prestige Ornament
+              4105027183, // Trials Prestige Ornament
+              2666197459, // Trials Prestige Ornament
+              3026479209, // Trials Prestige Ornament
+              2394332958 // Trials Prestige Ornament
             ]
           }
         ]
@@ -243,7 +214,7 @@ module.exports = [
         small: true,
         sections: [
           {
-            title: 'Weapons',
+            name: 'Weapons',
             items: [
               1523647826, // Eternal Slumber
               1587779165, // Radiant Stardust
@@ -253,7 +224,7 @@ module.exports = [
             ]
           },
           {
-            title: 'Hunter Ornaments',
+            name: 'Hunter Ornaments',
             items: [
               3546479780, // Extinction Orbit Ornament
               1708353857, // Extinction Orbit Ornament
@@ -263,7 +234,7 @@ module.exports = [
             ]
           },
           {
-            title: 'Titan Ornaments',
+            name: 'Titan Ornaments',
             items: [
               2296027354, // Extinction Orbit Ornament
               1818340511, // Extinction Orbit Ornament
@@ -273,7 +244,7 @@ module.exports = [
             ]
           },
           {
-            title: 'Warlock Ornaments',
+            name: 'Warlock Ornaments',
             items: [
               1575996367, // Extinction Orbit Ornament
               467764322, // Extinction Orbit Ornament
@@ -283,7 +254,7 @@ module.exports = [
             ]
           },
           {
-            title: 'Extras',
+            name: 'Extras',
             items: [
               3681086672, // Deep Space Shell (Ghost)
               2924982628, // Distant Pulsar (Ship)
@@ -300,7 +271,7 @@ module.exports = [
         small: true,
         sections: [
           {
-            title: 'Weapons',
+            name: 'Weapons',
             items: [
               1650442173, // Loquitor IV
               1760543913, // Legal Action II
@@ -310,7 +281,7 @@ module.exports = [
             ]
           },
           {
-            title: 'Hunter Ornaments',
+            name: 'Hunter Ornaments',
             items: [
               2452991419, // Sovereign Lion Ornament
               2793184550, // Sovereign Lion Ornament
@@ -320,7 +291,7 @@ module.exports = [
             ]
           },
           {
-            title: 'Titan Ornaments',
+            name: 'Titan Ornaments',
             items: [
               2289919437, // Sovereign Lion Ornament
               850238384, // Sovereign Lion Ornament
@@ -330,7 +301,7 @@ module.exports = [
             ]
           },
           {
-            title: 'Warlock Ornaments',
+            name: 'Warlock Ornaments',
             items: [
               1681122628, // Sovereign Lion Ornament
               784268641, // Sovereign Lion Ornament
@@ -340,7 +311,7 @@ module.exports = [
             ]
           },
           {
-            title: 'Extras',
+            name: 'Extras',
             items: [
               3681086674, // Leonine Shell (Ghost)
               2924982630, // Leonine Carrack (Ship)
@@ -357,7 +328,7 @@ module.exports = [
         small: true,
         sections: [
           {
-            title: 'Weapons',
+            name: 'Weapons',
             items: [
               1099433612, // The Doubt
               3826803617, // The Dream
@@ -367,7 +338,7 @@ module.exports = [
             ]
           },
           {
-            title: 'Hunter Ornaments',
+            name: 'Hunter Ornaments',
             items: [
               1660740824, // War Simulator Ornament
               2314916765, // War Simulator Ornament
@@ -377,7 +348,7 @@ module.exports = [
             ]
           },
           {
-            title: 'Titan Ornaments',
+            name: 'Titan Ornaments',
             items: [
               4081389478, // War Simulator Ornament
               3254614835, // War Simulator Ornament
@@ -387,7 +358,7 @@ module.exports = [
             ]
           },
           {
-            title: 'Warlock Ornaments',
+            name: 'Warlock Ornaments',
             items: [
               3590187517, // War Simulator Ornament
               2215343712, // War Simulator Ornament
@@ -397,7 +368,7 @@ module.exports = [
             ]
           },
           {
-            title: 'Extras',
+            name: 'Extras',
             items: [
               3681086675, // Wars to Come Shell (Ghost)
               2924982631, // Bonegrip (Ship)
@@ -419,7 +390,7 @@ module.exports = [
         small: false,
         sections: [
           {
-            title: 'Lost Prophecy weapons',
+            name: 'Lost Prophecy weapons',
             items: [
               472169727, // Garden Progeny 1
               3991544423, // The Conqueror 2
@@ -435,7 +406,7 @@ module.exports = [
             ]
           },
           {
-            title: 'Hunter armor',
+            name: 'Hunter armor',
             items: [
               952071004, // Kairos Function Mask
               2348421845, // Kairos Function Grips
@@ -445,7 +416,7 @@ module.exports = [
             ]
           },
           {
-            title: 'Titan armor',
+            name: 'Titan armor',
             items: [
               1768175752, // Kairos Function Helm
               1115510041, // Kairos Function Gauntlets
@@ -455,7 +426,7 @@ module.exports = [
             ]
           },
           {
-            title: 'Warlock armor',
+            name: 'Warlock armor',
             items: [
               2062911883, // Kairos Function Crown
               385169146, // Kairos Function Wraps
@@ -465,13 +436,13 @@ module.exports = [
             ]
           },
           {
-            title: 'Ghosts',
+            name: 'Ghosts',
             items: [
               573576346 // Sagira's Shell
             ]
           },
           {
-            title: 'Emblems',
+            name: 'Emblems',
             items: [
               1312472209, // Fields of Glass
               2939572589, // Crossroads Emblem
@@ -479,7 +450,7 @@ module.exports = [
             ]
           },
           {
-            title: 'Achievement Emblems',
+            name: 'Achievement Emblems',
             items: [
               2939572586, // Hero of the Infinite
               4261480749, // Prophetic Arsenal
@@ -497,7 +468,7 @@ module.exports = [
           'Weapons and armor obtained by carrying out special operations for Zavala.',
         sections: [
           {
-            title: 'Weapons',
+            name: 'Weapons',
             items: [
               // Curse of Osiris
               3393130645, // Positive Outlook
@@ -507,7 +478,7 @@ module.exports = [
             ]
           },
           {
-            title: 'Hunter Ornaments',
+            name: 'Hunter Ornaments',
             items: [
               2795289891, // On the Offense Ornament
               4188739374, // On the Offense Ornament
@@ -517,7 +488,7 @@ module.exports = [
             ]
           },
           {
-            title: 'Titan Ornaments',
+            name: 'Titan Ornaments',
             items: [
               1269036705, // Take Shelter Ornament
               1776321292, // Take Shelter Ornament
@@ -527,7 +498,7 @@ module.exports = [
             ]
           },
           {
-            title: 'Warlock Ornaments',
+            name: 'Warlock Ornaments',
             items: [
               2520561932, // Xenos Shore Ornament
               137367657, // Xenos Shore Ornament
@@ -537,10 +508,22 @@ module.exports = [
             ]
           },
           {
-            title: 'Achievement Emblems',
+            name: 'Achievement Emblems',
             items: [
               2939572588, // Master Gardener
               2939572591 // Master Cartographer
+            ]
+          },
+          {
+            name: 'Nightfall Emblems',
+            items: [
+              2764373298, // The Inverted Spire
+              997563763, // The Arms Dealer
+              148664963, // Savathûn's Song
+              2726018197, // Exodus Crash
+              10493725, // The Pyramidion
+              893502917, // A Garden World
+              2933984410 // Tree of Possibilities
             ]
           }
         ]
@@ -551,7 +534,7 @@ module.exports = [
         description: 'Rewards for your efforts in the Crucible.',
         sections: [
           {
-            title: 'Weapons',
+            name: 'Weapons',
             items: [
               // Curse of Osiris
               1674742470, // Autumn Wind
@@ -562,7 +545,7 @@ module.exports = [
           },
 
           {
-            title: 'Hunter armor',
+            name: 'Hunter armor',
             items: [
               2806246104, // Soaring Sword Ornament
               3460422045, // Soaring Sword Ornament
@@ -572,7 +555,7 @@ module.exports = [
             ]
           },
           {
-            title: 'Titan armor',
+            name: 'Titan armor',
             items: [
               2908316342, // Phoenix Battle Ornament
               3955222467, // Phoenix Battle Ornament
@@ -582,7 +565,7 @@ module.exports = [
             ]
           },
           {
-            title: 'Warlock armor',
+            name: 'Warlock armor',
             items: [
               2516513295, // Ankaa Friend Ornament
               121382562, // Ankaa Friend Ornament
@@ -592,7 +575,7 @@ module.exports = [
             ]
           },
           {
-            title: 'Emblems',
+            name: 'Emblems',
             items: [
               969863968 // Victorious Veteran
             ]
@@ -606,7 +589,7 @@ module.exports = [
           'Weapons obtained by increasing your standing with Banshee-44, the Gunsmith.',
         sections: [
           {
-            title: 'Weapons',
+            name: 'Weapons',
             items: [
               // Curse of Osiris
               2414612776, // New City
@@ -641,7 +624,7 @@ module.exports = [
         big: false,
         sections: [
           {
-            title: 'Hunter armor',
+            name: 'Hunter armor',
             items: [
               316740353, // Winterhart Mask
               1154659864, // Winterhart Grips
@@ -652,7 +635,7 @@ module.exports = [
             ]
           },
           {
-            title: 'Titan armor',
+            name: 'Titan armor',
             items: [
               3956230125, // Winterhart Helm
               779962716, // Winterhart Gauntlets
@@ -663,7 +646,7 @@ module.exports = [
             ]
           },
           {
-            title: 'Warlock armor',
+            name: 'Warlock armor',
             items: [
               3734501342, // Winterhart Cover
               2538439951, // Winterhart Gloves
@@ -674,7 +657,7 @@ module.exports = [
             ]
           },
           {
-            title: 'Emotes',
+            name: 'Emotes',
             items: [
               215596672, // Giving
               1873273984, // Honest Dance
@@ -683,7 +666,7 @@ module.exports = [
             ]
           },
           {
-            title: 'Ghosts',
+            name: 'Ghosts',
             items: [
               3287805175, // Dulcinea Shell
               3287805177, // Pomegranate Shell
@@ -700,7 +683,7 @@ module.exports = [
             ]
           },
           {
-            title: 'Ships',
+            name: 'Ships',
             items: [
               317465075, // A History of Starlight
               317465074, // Cerulean Flash
@@ -718,7 +701,7 @@ module.exports = [
             ]
           },
           {
-            title: 'Sparrows',
+            name: 'Sparrows',
             items: [
               3105953707, // Chill of Winter
               3105953706, // Holiday Cheer
@@ -739,7 +722,7 @@ module.exports = [
             ]
           },
           {
-            title: 'Emblems',
+            name: 'Emblems',
             items: [
               3639894194 // Light of the Dawning
             ]
@@ -751,7 +734,7 @@ module.exports = [
         big: false,
         sections: [
           {
-            title: 'Emotes',
+            name: 'Emotes',
             items: [
               518566750, // Heart Sign
               1334842411, // Vengeful Dance
@@ -760,7 +743,7 @@ module.exports = [
             ]
           },
           {
-            title: 'Ghosts',
+            name: 'Ghosts',
             items: [
               263371512, // Entwining Heart Shell
               263371513, // Garland Shell
@@ -773,7 +756,7 @@ module.exports = [
             ]
           },
           {
-            title: 'Sparrows',
+            name: 'Sparrows',
             items: [
               3587167050, // Undefeated
               3587167051, // Undeterred
@@ -784,20 +767,20 @@ module.exports = [
             ]
           },
           {
-            title: 'Emblems',
+            name: 'Emblems',
             items: [
               1782320603 // Fire of the Crimson Days
             ]
           },
           {
-            title: 'Shaders',
+            name: 'Shaders',
             items: [
               1052553863, // Crimson Passion - Bright Dust dismantle
               1052553862 // Crimson Valor - Bright Dust dismantle
             ]
           },
           {
-            title: 'Weapon Ornaments',
+            name: 'Weapon Ornaments',
             items: [
               3373357626, // Prism for Prometheus Lens
               2433900295, // Carina Nebula for Graviton Lance
@@ -818,19 +801,19 @@ module.exports = [
           'Emblems obtained from live events and promotional give aways',
         sections: [
           {
-            title: 'Bungie Store',
+            name: 'Bungie Store',
             items: [
               4132147345 // Heretic
             ]
           },
           {
-            title: 'Comic',
+            name: 'Comic',
             items: [
               1940590820 // The Visionary
             ]
           },
           {
-            title: 'Bundled with Products',
+            name: 'Bundled with Products',
             items: [
               4132147351, // Recurrent Resplendence
               4182480235, // Hellspawn
@@ -839,7 +822,7 @@ module.exports = [
             ]
           },
           {
-            title: 'Refer-A-Friend',
+            name: 'Refer-A-Friend',
             items: [
               4132147352 // The Consensus
             ]
@@ -851,7 +834,7 @@ module.exports = [
         big: true,
         sections: [
           {
-            title: 'Hunter armor',
+            name: 'Hunter armor',
             items: [
               2277597261, // Omega Mechanos Mask
               2930263100, // Omega Mechanos Grasps
@@ -861,7 +844,7 @@ module.exports = [
             ]
           },
           {
-            title: 'Titan armor',
+            name: 'Titan armor',
             items: [
               3838590505, // Omega Mechanos Helm
               1629999520, // Omega Mechanos Gauntlets
@@ -871,7 +854,7 @@ module.exports = [
             ]
           },
           {
-            title: 'Warlock armor',
+            name: 'Warlock armor',
             items: [
               903593458, // Omega Mechanos Crown
               1328369883, // Omega Mechanos Gloves
@@ -881,7 +864,7 @@ module.exports = [
             ]
           },
           {
-            title: 'Emotes',
+            name: 'Emotes',
             items: [
               3633235162, // Selfie
               4019835247, // Mic Drop
@@ -900,7 +883,7 @@ module.exports = [
             ]
           },
           {
-            title: 'Ghosts',
+            name: 'Ghosts',
             items: [
               1558857470, // Star Map Shell
               1558857471, // Cosmos Shell
@@ -930,7 +913,7 @@ module.exports = [
             ]
           },
           {
-            title: 'Ships',
+            name: 'Ships',
             items: [
               292872936, // Sails of Osiris
               292872937, // Saint-14's Gray Pigeon
@@ -962,7 +945,7 @@ module.exports = [
             ]
           },
           {
-            title: 'Sparrows',
+            name: 'Sparrows',
             items: [
               3081894946, // SV-112 Predator
               3081894947, // Concentric Dawn

@@ -4,22 +4,29 @@ import 'app/lib/autotrack.build';
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { trackEvent } from 'app/lib/analytics';
+import { AppContainer } from 'react-hot-loader';
 
+import './setupEnv';
+import { trackEvent } from 'app/lib/analytics';
 import AppRouter from './AppRouter';
 import * as ls from 'app/lib/ls';
 import './index.styl';
 
-window.DESTINYSETS_ENV = 'prod';
-if (window.location.href.includes('localhost')) {
-  window.DESTINYSETS_ENV = 'dev';
-}
+const render = App => {
+  ReactDOM.render(
+    <AppContainer>
+      <App />
+    </AppContainer>,
+    document.getElementById('root')
+  );
+};
 
-if (window.DESTINYSETS_ENV !== 'prod') {
-  localStorage.debug = localStorage.debug || 'destinySets:*';
-}
-
-ReactDOM.render(<AppRouter />, document.getElementById('root'));
+render(AppRouter);
 
 ls.saveVisitCount(ls.getVisitCount() + 1);
 trackEvent('visit-count', ls.getVisitCount());
+
+// Webpack Hot Module Replacement API
+if (module.hot) {
+  module.hot.accept('./AppRouter', () => render(AppRouter));
+}

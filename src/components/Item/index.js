@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import cx from 'classnames';
 
-import ItemTooltip from 'app/components/ItemTooltip';
+// import ItemTooltip from 'app/components/ItemTooltip';
 
-import ToolTip from 'app/components/ReactPortalTooltip';
+// import ToolTip from 'app/components/ReactPortalTooltip';
 
 import styles from './styles.styl';
 
@@ -23,17 +23,17 @@ function isMobile() {
   );
 }
 
-const tooltipStyle = {
-  style: {
-    background: '#20262d',
-    padding: 0,
-    boxShadow: '0px 2px 3px rgba(0,0,0,.5)'
-  },
-  arrowStyle: {
-    color: '#20262d',
-    borderColor: false
-  }
-};
+// const tooltipStyle = {
+//   style: {
+//     background: '#20262d',
+//     padding: 0,
+//     boxShadow: '0px 2px 3px rgba(0,0,0,.5)'
+//   },
+//   arrowStyle: {
+//     color: '#20262d',
+//     borderColor: false
+//   }
+// };
 
 export default class Item extends Component {
   state = {
@@ -105,21 +105,23 @@ export default class Item extends Component {
           </a>
         </div>
 
-        <div className={styles.main}>
-          <div className={styles.name}>
-            <a className={styles.link} {...dtrProps}>
-              {name}
-            </a>
+        {!small && (
+          <div className={styles.main}>
+            <div className={styles.name}>
+              <a className={styles.link} {...dtrProps}>
+                {name}
+              </a>
+            </div>
+            <div className={styles.type}>
+              {CLASS_TYPE[item.classType]}{' '}
+              {dev
+                ? item.itemHash
+                : item.itemTypeName || item.itemTypeDisplayName}
+            </div>
           </div>
-          <div className={styles.type}>
-            {CLASS_TYPE[item.classType]}{' '}
-            {dev
-              ? item.itemHash
-              : item.itemTypeName || item.itemTypeDisplayName}
-          </div>
-        </div>
+        )}
 
-        {item.inventory && (
+        {/*item.inventory && (
           <ToolTip
             style={tooltipStyle}
             active={this.state.isTooltipActive}
@@ -135,7 +137,7 @@ export default class Item extends Component {
               globalItemCount={this.state.globalItemCount}
             />
           </ToolTip>
-        )}
+        )*/}
       </div>
     );
   }

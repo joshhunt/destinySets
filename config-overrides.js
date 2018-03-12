@@ -1,11 +1,14 @@
 const path = require('path');
 const { merge } = require('lodash');
 const { getLoader, injectBabelPlugin } = require('react-app-rewired');
+const rewireReactHotLoader = require('react-app-rewire-hot-loader');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const WebpackVisualizerPlugin = require('webpack-visualizer-plugin');
 
 module.exports = function override(config, env) {
-  config = injectBabelPlugin('lodash', config);
+  // config = injectBabelPlugin('lodash', config);
+
+  config = rewireReactHotLoader(config, env);
 
   const cssLoader = getLoader(
     config.module.rules,
