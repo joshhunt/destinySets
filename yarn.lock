@@ -6472,6 +6472,10 @@ popper.js@^1.12.9:
   version "1.14.0"
   resolved "https://registry.yarnpkg.com/popper.js/-/popper.js-1.14.0.tgz#3d73132100c83bfdc5fabb4769be925f57e59dc2"
 
+popper.js@^1.14.1:
+  version "1.14.1"
+  resolved "https://registry.yarnpkg.com/popper.js/-/popper.js-1.14.1.tgz#b8815e5cda6f62fc2042e47618649f75866e6753"
+
 portfinder@^1.0.9:
   version "1.0.13"
   resolved "https://registry.yarnpkg.com/portfinder/-/portfinder-1.0.13.tgz#bb32ecd87c27104ae6ee44b5a3ccbf0ebb1aede9"
@@ -7092,6 +7096,13 @@ react-modal@^3.1.13:
     exenv "^1.2.0"
     prop-types "^15.5.10"
     warning "^3.0.0"
+
+react-popper@^0.8.2:
+  version "0.8.2"
+  resolved "https://registry.yarnpkg.com/react-popper/-/react-popper-0.8.2.tgz#092095ff13933211d3856d9f325511ec3a42f12c"
+  dependencies:
+    popper.js "^1.12.9"
+    prop-types "^15.6.0"
 
 react-redux@^5.0.7:
   version "5.0.7"

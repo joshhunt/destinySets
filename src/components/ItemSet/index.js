@@ -5,7 +5,7 @@ import Item from 'app/components/NewItem';
 import { makeSelectedItemDefsSelector, inventorySelector } from './selectors';
 import styles from './styles.styl';
 
-function ItemSet({ name, sections, inventory, itemDefs }) {
+function ItemSet({ name, sections, inventory, itemDefs, setPopper }) {
   return (
     <div className={styles.root}>
       <div className={styles.inner}>
@@ -22,6 +22,7 @@ function ItemSet({ name, sections, inventory, itemDefs }) {
                   className={styles.item}
                   hash={itemHash}
                   item={itemDefs[itemHash]}
+                  setPopper={setPopper}
                   inventoryEntry={inventory.items && inventory.items[itemHash]}
                 />
               ))}

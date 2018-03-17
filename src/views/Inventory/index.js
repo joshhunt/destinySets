@@ -16,7 +16,9 @@ import * as destiny from 'app/lib/destiny';
 import { getDefinition } from 'app/lib/manifestData';
 
 import Section from 'app/components/NewSection';
+import Popper from 'app/components/Popper';
 import FilterBar from 'app/components/NewFilterBar';
+import ItemTooltip from 'app/components/ItemTooltip';
 
 import { filteredSetDataSelector } from './selectors';
 import styles from './styles.styl';
@@ -26,6 +28,11 @@ const timeout = dur => result =>
   new Promise(resolve => setTimeout(() => resolve(result), dur));
 
 class Inventory extends Component {
+  state = {
+    popperItemHash: null,
+    popperElement: null
+  };
+
   componentWillReceiveProps(newProps) {
     if (!this.props.isAuthenticated && newProps.isAuthenticated) {
       this.fetch(newProps);
@@ -54,8 +61,17 @@ class Inventory extends Component {
     this.fetch(this.props, false);
   };
 
+  setPopper = (hash, item, inventoryEntry, element) => {
+    if (!hash) {
+      this.setState({ popper: null });
+    } else {
+      this.setState({ popper: { hash, item, inventoryEntry, element } });
+    }
+  };
+
   render() {
     const { itemDefs, objectiveDefs, filters, filteredSetData } = this.props;
+    const { popper } = this.state;
 
     return (
       <div className={styles.root}>
@@ -87,8 +103,19 @@ class Inventory extends Component {
         />
 
         {filteredSetData.map(({ sets, name }, index) => (
-          <Section key={index} name={name} sets={sets} />
+          <Section
+            key={index}
+            name={name}
+            sets={sets}
+            setPopper={this.setPopper}
+          />
         ))}
+
+        {popper && (
+          <Popper key={popper.hash} element={popper.element}>
+            <ItemTooltip item={popper.item} />
+          </Popper>
+        )}
       </div>
     );
   }
