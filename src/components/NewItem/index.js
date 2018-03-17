@@ -1,10 +1,9 @@
 import React from 'react';
 import cx from 'classnames';
-import LazyLoad from 'react-lazyload';
 
 import styles from './styles.styl';
 
-export default function Item({ className, hash, item }) {
+export default function Item({ className, hash, item, inventoryEntry }) {
   if (!item) {
     return <div className={cx(className, styles.placeholder)} />;
   }
@@ -12,14 +11,22 @@ export default function Item({ className, hash, item }) {
   const icon = item.displayProperties.icon || '/img/misc/missing_icon_d2.png';
 
   return (
-    <div className={cx(className, styles.root)}>
-      <LazyLoad placeholder={<div className={styles.placeholder} />}>
-        <img
-          src={`https://www.bungie.net${icon}`}
-          className={styles.image}
-          alt=""
-        />
-      </LazyLoad>
+    <div
+      className={cx(className, styles.root, inventoryEntry && styles.obtained)}
+    >
+      <img
+        src={`https://www.bungie.net${icon}`}
+        className={styles.image}
+        alt=""
+      />
+
+      {inventoryEntry && (
+        <div className={styles.obtainedTick}>
+          <span role="img" aria-label="Obtained">
+            ✅
+          </span>
+        </div>
+      )}
     </div>
   );
 }

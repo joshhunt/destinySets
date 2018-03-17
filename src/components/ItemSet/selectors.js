@@ -1,4 +1,5 @@
 import { createSelector } from 'reselect';
+import getFromProfile from 'app/lib/getFromProfile';
 
 const itemDefsSelector = state => state.app.itemDefs;
 const propsSectionsSelector = (state, props) => props.sections;
@@ -11,7 +12,7 @@ export const makeSelectedItemDefsSelector = () => {
       const items = {};
 
       if (!itemDefs) {
-        return items;
+        return {};
       }
 
       sections.forEach(section => {
@@ -24,3 +25,18 @@ export const makeSelectedItemDefsSelector = () => {
     }
   );
 };
+
+const profileSelector = state => state.app.profile;
+const vendorDefsSelector = state => state.app.vendorDefs;
+
+export const inventorySelector = createSelector(
+  profileSelector,
+  vendorDefsSelector,
+  (profile, vendorDefs) => {
+    if (!(profile && vendorDefs)) {
+      return {};
+    }
+
+    return getFromProfile(profile, vendorDefs);
+  }
+);

@@ -107,17 +107,17 @@ export default function sortItems(_items, verbose = false) {
   });
 
   const sections = [
-    { title: 'Weapons', items: sectionItems.weapon },
-    { title: 'Hunter armor', items: sortArmor(sectionItems[HUNTER]) },
-    { title: 'Titan armor', items: sortArmor(sectionItems[TITAN]) },
-    { title: 'Warlock armor', items: sortArmor(sectionItems[WARLOCK]) },
-    { title: 'Emotes', items: sectionItems.emotes },
-    { title: 'Ghosts', items: sectionItems.ghosts },
-    { title: 'Ships', items: sectionItems.ships },
-    { title: 'Sparrows', items: sectionItems.sparrows },
-    { title: 'Emblems', items: sectionItems.emblems },
-    { title: 'Shaders', items: sectionItems.shaders },
-    { title: 'Other', items: sectionItems.other }
+    { name: 'Weapons', items: sectionItems.weapon },
+    { name: 'Hunter armor', items: sortArmor(sectionItems[HUNTER]) },
+    { name: 'Titan armor', items: sortArmor(sectionItems[TITAN]) },
+    { name: 'Warlock armor', items: sortArmor(sectionItems[WARLOCK]) },
+    { name: 'Emotes', items: sectionItems.emotes },
+    { name: 'Ghosts', items: sectionItems.ghosts },
+    { name: 'Ships', items: sectionItems.ships },
+    { name: 'Sparrows', items: sectionItems.sparrows },
+    { name: 'Emblems', items: sectionItems.emblems },
+    { name: 'Shaders', items: sectionItems.shaders },
+    { name: 'Other', items: sectionItems.other }
   ]
     .filter(({ items }) => {
       return items && items.length > 0;
@@ -129,7 +129,7 @@ export default function sortItems(_items, verbose = false) {
 
       const items = section.items.map(item => item.hash);
       return {
-        title: section.title,
+        ...section,
         items
       };
     });

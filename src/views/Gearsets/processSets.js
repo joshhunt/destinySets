@@ -1,8 +1,8 @@
 import { isArray, has, get } from 'lodash';
 
 import { NUMERICAL_STATS, STAT_BLACKLIST } from 'app/lib/destinyEnums';
-import { fancySearch } from 'app/views/DataExplorer/filterItems';
-import sortItemsIntoSections from 'app/views/DataExplorer/sortItemsIntoSections';
+import fancySearch from 'app/lib/fancySearch';
+import sortItemsIntoSections from 'app/lib/sortItemsIntoSections';
 import collectInventory from 'app/lib/collectInventory';
 import * as ls from 'app/lib/ls';
 

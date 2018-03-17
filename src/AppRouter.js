@@ -45,9 +45,21 @@ export default class AppRouter extends Component {
           <Route path="/diff" component={Diff} />
 
           <Route
-            path="/inventory"
+            path={'/new' + sets[0].path}
+            component={Inventory}
+            setData={sets[0].setData}
+          />
+
+          <Route
+            path={'/new' + sets[1].path}
             component={Inventory}
             setData={sets[1].setData}
+          />
+
+          <Route
+            path={'/new' + sets[2].path}
+            component={Inventory}
+            setData={sets[2].setData}
           />
         </Router>
       </Provider>

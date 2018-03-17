@@ -1,8 +1,8 @@
-import { flatMapSetItems } from './utils';
-
 import { EMBLEM, HUNTER, TITAN, WARLOCK } from 'app/lib/destinyEnums';
+import CLASS_OVERRIDES from 'app/data/classOverrides';
+import CONSOLE_EXCLUSIVES from 'app/data/consoleExclusives';
 
-import consoleExclusives from '../consoleExclusives.js';
+import { flatMapSetItems } from './utils';
 
 export const SHOW_PS4_EXCLUSIVES = -101;
 export const SHOW_COLLECTED = -102;
@@ -30,15 +30,9 @@ export const isOrnament = item =>
   item.plug.plugCategoryIdentifier &&
   item.plug.plugCategoryIdentifier.includes('skins');
 
-const CLASS_OVERRIDE = {
-  1907674137: WARLOCK,
-  1907674138: HUNTER,
-  1907674139: TITAN
-};
-
 const getItemClass = item => {
-  if (CLASS_OVERRIDE.hasOwnProperty(item.hash)) {
-    return CLASS_OVERRIDE[item.hash];
+  if (CLASS_OVERRIDES.hasOwnProperty(item.hash)) {
+    return CLASS_OVERRIDES[item.hash];
   }
 
   if (
@@ -91,7 +85,7 @@ export default function filterSets({ rawGroups, filter }) {
         const items = _section.items.filter(item => {
           if (
             !filter[SHOW_PS4_EXCLUSIVES] &&
-            consoleExclusives.ps4.includes(item.hash)
+            CONSOLE_EXCLUSIVES.ps4.includes(item.hash)
           ) {
             return false;
           }

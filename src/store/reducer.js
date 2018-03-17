@@ -1,27 +1,51 @@
-const SET_PROFILE = 'Set Profile';
-const SET_DEFINITIONS = 'Set Definitions';
+import { HUNTER, TITAN, WARLOCK } from 'app/lib/destinyEnums';
 
-export default function reducer(store = {}, action) {
+const SET_PROFILE = 'Set profile';
+const SET_DEFINITIONS = 'Set definitions';
+const TOGGLE_FILTER_KEY = 'Toggle filter value';
+
+const INITIAL_STORE = {
+  filters: {
+    [HUNTER]: false,
+    [TITAN]: false,
+    [WARLOCK]: true
+  }
+};
+
+export default function reducer(state = INITIAL_STORE, action) {
   switch (action.type) {
     case SET_PROFILE:
       return {
-        ...store,
+        ...state,
         profile: action.profile
       };
 
     case SET_DEFINITIONS:
       return {
-        ...store,
+        ...state,
         [action.name]: action.defs
       };
 
+    case TOGGLE_FILTER_KEY:
+      return {
+        ...state,
+        filters: {
+          ...state.filters,
+          [action.filterKey]: !state.filters[action.filterKey]
+        }
+      };
+
     default:
-      return store;
+      return state;
   }
 }
 
 export function setProfile(profile) {
   return { type: SET_PROFILE, profile };
+}
+
+export function toggleFilterKey(filterKey) {
+  return { type: TOGGLE_FILTER_KEY, filterKey };
 }
 
 function setDefs(name, defs) {
