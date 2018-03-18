@@ -1,32 +1,36 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import cx from 'classnames';
 
+import { EMBLEM } from 'app/lib/destinyEnums';
 import getItemExtraInfo from 'app/lib/getItemExtraInfo';
 import FancyImage from 'app/components/FancyImage';
 import ItemBanner from 'app/components/ItemBanner';
-
-import styles from './styles.styl';
-
-import { EMBLEM } from 'app/lib/destinyEnums';
-
 import ItemStats from 'app/components/ItemStats';
 import Objectives from 'app/components/Objectives';
 import StatTrack from 'app/components/StatTrack';
 
-export default function ItemTooltip({
+import { makeItemStatsSelector, statDefsSelector } from './selectors';
+import styles from './styles.styl';
+
+function ItemTooltip({
   item,
   small,
   dismiss,
   objectives,
-  objectiveDefs
+  objectiveDefs,
+  stats,
+  statDefs
 }) {
   const { displayProperties, screenshot, itemCategoryHashes } = item;
 
   const isEmblem = itemCategoryHashes.includes(EMBLEM);
   const extraInfo = getItemExtraInfo(item);
-  const stats = item.$stats || [];
 
-  console.log({ objectives, item });
+  console.log({
+    stats,
+    statDefs
+  });
 
   return (
     <div className={cx(styles.tooltip, small && styles.small)}>
@@ -41,15 +45,17 @@ export default function ItemTooltip({
           ))}
 
         {screenshot && (
-          <div className={styles.screenshotWrapper}>
-            <FancyImage
-              className={styles.screenshot}
-              src={`https://bungie.net${screenshot}`}
-            />
+          <div className={styles.screenshowWrapperWrapper}>
+            <div className={styles.screenshotWrapper}>
+              <FancyImage
+                className={styles.screenshot}
+                src={`https://bungie.net${screenshot}`}
+              />
+            </div>
           </div>
         )}
 
-        {stats.length ? <ItemStats stats={stats} /> : null}
+        {stats && <ItemStats stats={stats} statDefs={statDefs} />}
 
         {!isEmblem &&
           extraInfo.map(info => (
@@ -65,10 +71,6 @@ export default function ItemTooltip({
             objectiveData={objectives}
             objectiveDefs={objectiveDefs}
           />
-        )}
-
-        {item.$statTrack && (
-          <StatTrack className={styles.statTrack} statTrack={item.$statTrack} />
         )}
 
         {item.emblemObjectiveHash && (
@@ -92,3 +94,16 @@ export default function ItemTooltip({
     </div>
   );
 }
+
+const mapStateToProps = () => {
+  const itemStatsSelector = makeItemStatsSelector();
+
+  return (state, ownProps) => {
+    return {
+      statDefs: statDefsSelector(state),
+      stats: itemStatsSelector(state, ownProps)
+    };
+  };
+};
+
+export default connect(mapStateToProps)(ItemTooltip);

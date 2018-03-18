@@ -8,8 +8,8 @@ export default function StatTrack(props) {
   value = +value.toFixed(2);
 
   return (
-    <p className={className}>
+    <div className={className}>
       {value} {'//'} {def.progressDescription}
-    </p>
+    </div>
   );
 }

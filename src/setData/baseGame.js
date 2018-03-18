@@ -382,13 +382,13 @@ module.exports = [
             name: 'Emblems',
             items: [
               3451625162, // Echo Mesa
-              31953747, // Ballet Lover
-              31953744, // Holy Ground
-              31953746, // Traveler's Flight
               313685908,
               313685909,
               313685910,
-              313685911
+              313685911,
+              31953747, // Ballet Lover
+              31953744, // Holy Ground
+              31953746 // Traveler's Flight
             ]
           }
         ]

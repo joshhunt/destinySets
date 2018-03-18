@@ -1,6 +1,7 @@
 import { HUNTER, TITAN, WARLOCK } from 'app/lib/destinyEnums';
 
-const SET_PROFILE = 'Set profile';
+const SET_PROFILE = 'Set profile data';
+const SET_VENDORS = 'Set vendor data';
 const SET_DEFINITIONS = 'Set definitions';
 const TOGGLE_FILTER_KEY = 'Toggle filter value';
 
@@ -18,6 +19,12 @@ export default function reducer(state = INITIAL_STORE, action) {
       return {
         ...state,
         profile: action.profile
+      };
+
+    case SET_VENDORS:
+      return {
+        ...state,
+        vendors: action.vendors
       };
 
     case SET_DEFINITIONS:
@@ -44,6 +51,10 @@ export function setProfile(profile) {
   return { type: SET_PROFILE, profile };
 }
 
+export function setVendors(vendors) {
+  return { type: SET_VENDORS, vendors };
+}
+
 export function toggleFilterKey(filterKey) {
   return { type: TOGGLE_FILTER_KEY, filterKey };
 }
@@ -55,3 +66,4 @@ function setDefs(name, defs) {
 export const setVendorDefs = setDefs.bind(null, 'vendorDefs');
 export const setItemDefs = setDefs.bind(null, 'itemDefs');
 export const setObjectiveDefs = setDefs.bind(null, 'objectiveDefs');
+export const setStatDefs = setDefs.bind(null, 'statDefs');

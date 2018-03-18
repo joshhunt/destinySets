@@ -56,6 +56,14 @@ function objectivesFromSockets(data) {
   return mapSockets(data, socket => socket.plugObjectives);
 }
 
+function objectivesFromVendors(data) {
+  return chain(data).flatMap(character =>
+    flatMap(character.itemComponents, vendor =>
+      flatMap(vendor.plugStates.data, plugStates => plugStates.plugObjectives)
+    )
+  );
+}
+
 function fromVendorSockets(data) {
   return chain(data)
     .flatMap(character =>
@@ -86,8 +94,8 @@ function mergeItems(acc, [items, itemLocation]) {
   return acc;
 }
 
-export default function getFromProfile(profile, vendorDefs) {
-  const items = [
+export function inventoryFromProfile(profile, vendorDefs) {
+  return [
     [fromCharacter(profile.characterEquipment.data), 'characterEquipment'],
     [fromCharacter(profile.characterInventories.data), 'characterInventories'],
     [
@@ -98,15 +106,17 @@ export default function getFromProfile(profile, vendorDefs) {
     [fromSockets(profile.itemComponents.sockets.data), 'itemSockets'],
     [fromVendorSockets(profile.$vendors.data), 'vendorSockets']
   ].reduce(mergeItems);
+}
 
-  const objectives = keyBy(
+export function objectivesFromProfile(profile) {
+  window.__profile = profile;
+  return keyBy(
     [
       ...flavorObjectivesFromKiosk(profile.profileKiosks.data),
       ...objectivesFromSockets(profile.itemComponents.sockets.data),
-      ...flatMap(profile.itemComponents.objectives.data, obj => obj.objectives)
+      ...flatMap(profile.itemComponents.objectives.data, obj => obj.objectives),
+      ...objectivesFromVendors(profile.$vendors.data)
     ],
     'objectiveHash'
   );
-
-  return { items, objectives };
 }

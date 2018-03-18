@@ -1,20 +1,20 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router';
-
 import { connect } from 'react-redux';
+import { Link } from 'react-router';
 
 import {
   setProfile,
   setVendorDefs,
   setItemDefs,
   setObjectiveDefs,
+  setStatDefs,
   toggleFilterKey
 } from 'app/store/reducer';
 
 import DestinyAuthProvider from 'app/lib/DestinyAuthProvider';
 import * as destiny from 'app/lib/destiny';
 import { getDefinition } from 'app/lib/manifestData';
-import { inventorySelector } from 'app/components/ItemSet/selectors';
+import { objectivesSelector } from 'app/components/ItemSet/selectors';
 
 import Section from 'app/components/NewSection';
 import Popper from 'app/components/Popper';
@@ -40,14 +40,16 @@ class Inventory extends Component {
     }
   }
 
-  fetch(props = this.props, useCache = true) {
-    window.__CACHE_API = useCache;
+  fetch(props = this.props) {
+    window.__CACHE_API = true;
 
     destiny
       .getCurrentProfiles()
       .then(({ profiles }) => props.setProfile(profiles[0]));
 
     getDefinition('DestinyVendorDefinition', 'en').then(props.setVendorDefs);
+
+    getDefinition('DestinyStatDefinition', 'en').then(props.setStatDefs);
 
     // getDefinition('reducedCollectableInventoryItems', 'en', false)
     getDefinition('DestinyInventoryItemDefinition', 'en')
@@ -60,7 +62,12 @@ class Inventory extends Component {
   }
 
   clearCache = () => {
-    this.fetch(this.props, false);
+    Object.keys(window.localStorage).forEach(lsKey => {
+      if (lsKey.includes('apiCache|')) {
+        window.localStorage.removeItem(lsKey);
+      }
+    });
+    this.fetch(this.props);
   };
 
   setPopper = (hash, item, inventoryEntry, element) => {
@@ -77,7 +84,7 @@ class Inventory extends Component {
       objectiveDefs,
       filters,
       filteredSetData,
-      inventory
+      objectives
     } = this.props;
     const { popper } = this.state;
 
@@ -119,15 +126,17 @@ class Inventory extends Component {
           />
         ))}
 
-        {popper && (
-          <Popper key={popper.hash} element={popper.element}>
-            <ItemTooltip
-              item={popper.item}
-              objectives={inventory.objectives}
-              objectiveDefs={objectiveDefs}
-            />
-          </Popper>
-        )}
+        {popper &&
+          objectives && (
+            <Popper key={popper.hash} element={popper.element}>
+              <ItemTooltip
+                itemHash={popper.item.hash}
+                item={popper.item}
+                objectives={objectives}
+                objectiveDefs={objectiveDefs}
+              />
+            </Popper>
+          )}
       </div>
     );
   }
@@ -138,8 +147,9 @@ const mapStateToProps = (state, ownProps) => {
     itemDefs: state.app.itemDefs,
     filters: state.app.filters,
     objectiveDefs: state.app.objectiveDefs,
+    // TODO: this uses props, so we need to 'make' a selector like in ItemSet
     filteredSetData: filteredSetDataSelector(state, ownProps),
-    inventory: inventorySelector(state)
+    objectives: objectivesSelector(state)
   };
 };
 
@@ -148,6 +158,7 @@ const mapDispatchToActions = {
   setVendorDefs,
   setItemDefs,
   setObjectiveDefs,
+  setStatDefs,
   toggleFilterKey
 };
 

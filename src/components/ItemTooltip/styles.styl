@@ -19,6 +19,7 @@ mobile()
 
 .body
   padding: 0 $padding
+  overflow: auto
 
   .small &
     font-size: 14px
@@ -36,11 +37,13 @@ mobile()
   .small &
     display: none
 
+.screenshowWrapperWrapper
+  padding-bottom: $padding
+
 .screenshotWrapper
   position: relative
   width: 100%
   padding-bottom: ((9/16) * 100%)
-  margin-bottom: $padding
 
 .screenshot
   position: absolute

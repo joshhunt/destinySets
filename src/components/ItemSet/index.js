@@ -1,13 +1,21 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import cx from 'classnames';
 
 import Item from 'app/components/NewItem';
 import { makeSelectedItemDefsSelector, inventorySelector } from './selectors';
 import styles from './styles.styl';
 
-function ItemSet({ name, sections, inventory, itemDefs, setPopper }) {
+function ItemSet({
+  className,
+  name,
+  sections,
+  inventory,
+  itemDefs,
+  setPopper
+}) {
   return (
-    <div className={styles.root}>
+    <div className={cx(className, styles.root)}>
       <div className={styles.inner}>
         <h3 className={styles.title}>{name}</h3>
 
@@ -23,7 +31,7 @@ function ItemSet({ name, sections, inventory, itemDefs, setPopper }) {
                   hash={itemHash}
                   item={itemDefs[itemHash]}
                   setPopper={setPopper}
-                  inventoryEntry={inventory.items && inventory.items[itemHash]}
+                  inventoryEntry={inventory && inventory[itemHash]}
                 />
               ))}
             </div>

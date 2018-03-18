@@ -7,7 +7,9 @@ function ObjectiveValue({ objective, def }) {
   const { valueStyle, completionValue } = def;
   let value;
   if (valueStyle === 2) {
-    value = <input type="checkbox" checked={objective.progress >= 1} />;
+    value = (
+      <input type="checkbox" checked={objective.progress >= 1} readOnly />
+    );
   } else {
     value = (
       <span>

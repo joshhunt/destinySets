@@ -40,6 +40,7 @@ export const getItemClass = item => {
     return classFromString(stackUniqueLabel);
   }
 
+  // TODO: Ornaments might provide this better now
   if (item.classType === 3 && isOrnament(item)) {
     return classFromString(plugCategoryIdentifier);
   }

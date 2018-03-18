@@ -13,6 +13,7 @@ export default function Section({ name, sets, setPopper }) {
         {sets.map((set, index) => (
           <LazyLoad height={100} key={index}>
             <ItemSet
+              className={styles.set}
               name={set.name}
               sections={set.sections}
               setPopper={setPopper}
