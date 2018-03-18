@@ -14,6 +14,7 @@ import {
 import DestinyAuthProvider from 'app/lib/DestinyAuthProvider';
 import * as destiny from 'app/lib/destiny';
 import { getDefinition } from 'app/lib/manifestData';
+import { inventorySelector } from 'app/components/ItemSet/selectors';
 
 import Section from 'app/components/NewSection';
 import Popper from 'app/components/Popper';
@@ -48,7 +49,8 @@ class Inventory extends Component {
 
     getDefinition('DestinyVendorDefinition', 'en').then(props.setVendorDefs);
 
-    getDefinition('reducedCollectableInventoryItems', 'en', false)
+    // getDefinition('reducedCollectableInventoryItems', 'en', false)
+    getDefinition('DestinyInventoryItemDefinition', 'en')
       // .then(timeout(2 * 1000))
       .then(props.setItemDefs);
 
@@ -70,7 +72,13 @@ class Inventory extends Component {
   };
 
   render() {
-    const { itemDefs, objectiveDefs, filters, filteredSetData } = this.props;
+    const {
+      itemDefs,
+      objectiveDefs,
+      filters,
+      filteredSetData,
+      inventory
+    } = this.props;
     const { popper } = this.state;
 
     return (
@@ -113,7 +121,11 @@ class Inventory extends Component {
 
         {popper && (
           <Popper key={popper.hash} element={popper.element}>
-            <ItemTooltip item={popper.item} />
+            <ItemTooltip
+              item={popper.item}
+              objectives={inventory.objectives}
+              objectiveDefs={objectiveDefs}
+            />
           </Popper>
         )}
       </div>
@@ -126,7 +138,8 @@ const mapStateToProps = (state, ownProps) => {
     itemDefs: state.app.itemDefs,
     filters: state.app.filters,
     objectiveDefs: state.app.objectiveDefs,
-    filteredSetData: filteredSetDataSelector(state, ownProps)
+    filteredSetData: filteredSetDataSelector(state, ownProps),
+    inventory: inventorySelector(state)
   };
 };
 

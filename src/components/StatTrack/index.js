@@ -1,18 +1,15 @@
 import React from 'react';
 
 export default function StatTrack(props) {
-  const { className, statTrack } = props;
+  const { className, objective, def } = props;
 
   let value =
-    statTrack.$instanceData.flavorObjective.progress /
-    statTrack.$objective.completionValue;
+    ((objective || { progress: 0 }).progress || 0) / def.completionValue;
   value = +value.toFixed(2);
-
-  let desc = statTrack.$objective.progressDescription;
 
   return (
     <p className={className}>
-      {value} {'//'} {desc}
+      {value} {'//'} {def.progressDescription}
     </p>
   );
 }

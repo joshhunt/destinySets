@@ -3,8 +3,8 @@ import cx from 'classnames';
 
 import styles from './styles.styl';
 
-function ObjectiveValue({ objective }) {
-  const { valueStyle, completionValue } = objective.$objective;
+function ObjectiveValue({ objective, def }) {
+  const { valueStyle, completionValue } = def;
   let value;
   if (valueStyle === 2) {
     value = <input type="checkbox" checked={objective.progress >= 1} />;
@@ -20,29 +20,34 @@ function ObjectiveValue({ objective }) {
 }
 
 export default function Objectives(props) {
-  const { className, objectives, bigger } = props;
+  const { className, objectives, objectiveData, objectiveDefs, bigger } = props;
 
   return (
     <div className={cx(className, bigger && styles.bigger)}>
-      {objectives.map(objective => (
-        <div className={styles.objective} key={objective.objectiveHash}>
-          <div
-            className={styles.objectiveTrack}
-            style={{
-              width: `${Math.min(
-                objective.progress / objective.$objective.completionValue * 100,
-                100
-              )}%`
-            }}
-          />
+      {objectives.map(objectiveHash => {
+        const objective = objectiveData[objectiveHash] || { progress: 0 };
+        const def = objectiveDefs[objectiveHash];
 
-          <div className={styles.objectiveText}>
-            <div>{objective.$objective.progressDescription}</div>
+        return (
+          <div className={styles.objective} key={objectiveHash}>
+            <div
+              className={styles.objectiveTrack}
+              style={{
+                width: `${Math.min(
+                  objective.progress / def.completionValue * 100,
+                  100
+                )}%`
+              }}
+            />
 
-            <ObjectiveValue objective={objective} />
+            <div className={styles.objectiveText}>
+              <div>{def.progressDescription}</div>
+
+              <ObjectiveValue objective={objective} def={def} />
+            </div>
           </div>
-        </div>
-      ))}
+        );
+      })}
     </div>
   );
 }
