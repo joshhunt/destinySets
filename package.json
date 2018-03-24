@@ -5,11 +5,13 @@
   "dependencies": {
     "@d8660091/react-popper": "^0.7.1",
     "autotrack": "^2.4.1",
+    "axios": "^0.18.0",
     "babel-polyfill": "^6.26.0",
     "browser-locale": "^1.0.3",
     "classnames": "^2.2.5",
     "dexie": "^2.0.1",
     "firebase": "^4.8.0",
+    "image-size": "^0.6.2",
     "immer": "^1.2.0",
     "lodash": "^4.17.4",
     "popper.js": "^1.14.1",

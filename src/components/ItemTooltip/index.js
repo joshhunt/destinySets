@@ -24,7 +24,7 @@ function ItemTooltip({
 }) {
   const { displayProperties, screenshot, itemCategoryHashes } = item;
 
-  const isEmblem = itemCategoryHashes.includes(EMBLEM);
+  const isEmblem = (itemCategoryHashes || []).includes(EMBLEM);
   const extraInfo = getItemExtraInfo(item);
 
   console.log({
