@@ -513,18 +513,6 @@ module.exports = [
               2939572588, // Master Gardener
               2939572591 // Master Cartographer
             ]
-          },
-          {
-            title: 'Nightfall Emblems',
-            items: [
-              2764373298, // The Inverted Spire
-              997563763, // The Arms Dealer
-              148664963, // Savathûn's Song
-              2726018197, // Exodus Crash
-              10493725, // The Pyramidion
-              893502917, // A Garden World
-              2933984410 // Tree of Possibilities
-            ]
           }
         ]
       },

@@ -13,7 +13,7 @@ module.exports = [
           //   items: [10307688]
           // },
           {
-            title: 'Emblems',
+            title: 'Nightfall Emblems',
             items: [
               2764373298, // The Inverted Spire
               4238775804, // Operation Radiolarian Cascade
@@ -34,7 +34,7 @@ module.exports = [
           //   items: [2013109093]
           // },
           {
-            title: 'Emblems',
+            title: 'Nightfall Emblems',
             items: [
               10493725, // The Pyramidion
               1078226395, // Operation Intrepid
@@ -55,7 +55,7 @@ module.exports = [
           //   items: [2048751167]
           // },
           {
-            title: 'Emblems',
+            title: 'Nightfall Emblems',
             items: [
               2726018197, // Exodus Crash
               769740914, // Better Failsafe Than Sorry
@@ -76,7 +76,7 @@ module.exports = [
           //   items: [2062911883]
           // },
           {
-            title: 'Emblems',
+            title: 'Nightfall Emblems',
             items: [
               997563763, // The Arms Dealer
               2399682325, // Outlawed and Unsanctioned
@@ -97,7 +97,7 @@ module.exports = [
           //   items: [2013109092]
           // },
           {
-            title: 'Emblems',
+            title: 'Nightfall Emblems',
             items: [
               148664963, // Savathûn's Song
               4040838277, // Search and Rescue
@@ -138,7 +138,7 @@ module.exports = [
           //   ]
           // },
           {
-            title: 'Emblems',
+            title: 'Nightfall Emblems',
             items: [
               2933984410, // Tree of Probabilities
               2178159623, // No More Lasers
@@ -161,7 +161,7 @@ module.exports = [
           //   ]
           // },
           {
-            title: 'Emblems',
+            title: 'Nightfall Emblems',
             items: [
               893502917, // A Garden World
               1505307650, // Blast from the Past
