@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { has } from 'lodash';
 import cx from 'classnames';
 
 import { CLASS_ITEMS } from 'app/lib/destinyEnums';
@@ -108,6 +109,9 @@ const getIntrinsic = items => {
   return first.$intrinsicStatPerk;
 };
 
+const bigItems = section =>
+  has(section, 'bigItems') ? section.bigItems : false;
+
 export default class ItemList extends Component {
   render() {
     const { className, drops, sections, tinyItems, onItemClick } = this.props;
@@ -136,14 +140,16 @@ export default class ItemList extends Component {
                   className={cx(styles.section, tinyItems && styles.inline)}
                   key={index}
                 >
-                  <div className={styles.sectionName}>
-                    <span className={styles.name}>{section.title}</span>
-                    {intrinsic ? (
-                      <div className={styles.intrinsic} alt="omg help">
-                        {fmtName(intrinsic.displayProperties.name)}
-                      </div>
-                    ) : null}
-                  </div>
+                  {section.title && (
+                    <div className={styles.sectionName}>
+                      <span className={styles.name}>{section.title}</span>
+                      {intrinsic ? (
+                        <div className={styles.intrinsic} alt="omg help">
+                          {fmtName(intrinsic.displayProperties.name)}
+                        </div>
+                      ) : null}
+                    </div>
+                  )}
 
                   <div className={styles.sectionItems}>
                     {section.items.map(item => (
@@ -151,7 +157,8 @@ export default class ItemList extends Component {
                         onClick={onItemClick}
                         key={item.itemHash || item.hash}
                         item={item}
-                        small={true}
+                        small={!bigItems(section)}
+                        className={styles.item}
                       />
                     ))}
                   </div>

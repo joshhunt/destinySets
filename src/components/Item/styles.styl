@@ -7,6 +7,10 @@
   &.small
     display: inline-block
 
+  &.obtained
+  &.globallyObtained
+    opacity: .35
+
 .countOverlay
   position: absolute
   top: 0
@@ -25,10 +29,6 @@
   flex: 0 1 auto
   position: relative
   color: white
-
-  .obtained &
-  .globallyObtained &
-    opacity: .35
 
   &:after
     position: absolute
@@ -92,11 +92,6 @@
   color: inherit !important
 
 .small
-  margin: 5px
-
-  &:last-of-type
-    padding-right: 0
-
   .main
     display: none
 

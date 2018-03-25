@@ -2,6 +2,7 @@ import baseGame from './baseGame';
 import dlc1 from './dlc1';
 import allItems from './allItems';
 import newemblems from './newemblems';
+import strikeGear from './strikeGear';
 
 export default [
   {
@@ -15,6 +16,10 @@ export default [
   {
     path: '/all-items',
     setData: allItems
+  },
+  {
+    path: '/strike-gear',
+    setData: strikeGear
   },
   {
     path: '/newemblems',

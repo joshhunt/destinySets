@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import cx from 'classnames';
 
 import ItemList from '../ItemList';
@@ -30,6 +30,26 @@ export default function Activity(props) {
     obtainedCount
   } = activity;
 
+  const header = (
+    <Fragment>
+      <div className={styles.activityName}>
+        <div className={styles.name}>{name}</div>
+
+        <div className={styles.count} onClick={toggleCountStyle}>
+          {countStyle ? (
+            <span>{Math.floor(itemCount / obtainedCount * 100)}%</span>
+          ) : (
+            <span>
+              {itemCount} / {obtainedCount}
+            </span>
+          )}
+        </div>
+      </div>
+
+      {description && <p className={styles.description}>{description}</p>}
+    </Fragment>
+  );
+
   return (
     <div
       className={cx(
@@ -38,30 +58,18 @@ export default function Activity(props) {
         getTypeClass(activityTypeName || type)
       )}
     >
-      <div className={styles.header}>
-        <div className={styles.activityName}>
-          <div className={styles.name}>{name}</div>
+      {pgcrImage ? (
+        <div className={styles.aspectImageWrapper}>
+          <img
+            className={styles.aspectImage}
+            src={'https://bungie.net' + pgcrImage}
+            alt=""
+          />
 
-          <div className={styles.count} onClick={toggleCountStyle}>
-            {countStyle ? (
-              <span>{Math.floor(itemCount / obtainedCount * 100)}%</span>
-            ) : (
-              <span>
-                {itemCount} / {obtainedCount}
-              </span>
-            )}
-          </div>
+          <div className={styles.imageHeader}>{header}</div>
         </div>
-
-        {description && <p className={styles.description}>{description}</p>}
-      </div>
-
-      {pgcrImage && (
-        <img
-          className={styles.image}
-          src={'https://bungie.net' + pgcrImage}
-          alt=""
-        />
+      ) : (
+        <div className={styles.header}>{header}</div>
       )}
 
       <ItemList

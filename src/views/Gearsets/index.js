@@ -40,6 +40,7 @@ const log = require('app/lib/log')('gearsets');
 
 const MODAL_STYLES = {
   overlay: {
+    zIndex: 10000,
     backgroundColor: 'rgba(0, 0, 0, 0.75)',
     marginTop: 56,
     display: 'flex',
@@ -47,6 +48,7 @@ const MODAL_STYLES = {
     justifyContent: 'center'
   },
   content: {
+    zIndex: 10001,
     position: 'static',
     background: 'none',
     border: 'none'
@@ -378,85 +380,87 @@ class Gearsets extends Component {
           activeLanguage={activeLanguage}
         />
 
-        {!this.props.isAuthenticated && (
-          <LoginUpsell>
-            Log in to use your inventory to automatically check off items you've
-            obtained
-          </LoginUpsell>
-        )}
-
-        {shit && (
-          <div className={styles.info}>Loading {activeLanguage.name}...</div>
-        )}
-
-        {googleAuthLoaded &&
-          this.props.isAuthenticated &&
-          !googleAuthSignedIn && (
-            <GoogleLoginUpsell onClick={googleSignIn}>
-              BETA: Login with Google to store you inventory over time in Google
-              Drive and track dismantled items.
-            </GoogleLoginUpsell>
+        <div className={styles.main}>
+          {!this.props.isAuthenticated && (
+            <LoginUpsell>
+              Log in to use your inventory to automatically check off items
+              you've obtained
+            </LoginUpsell>
           )}
 
-        {trackedItems.length > 0 && (
-          <div className={styles.trackedItems}>
-            {trackedItems.map(item => (
-              <ItemTooltip
-                item={item}
-                small={true}
-                dismiss={this.removeOrnament}
+          {shit && (
+            <div className={styles.info}>Loading {activeLanguage.name}...</div>
+          )}
+
+          {googleAuthLoaded &&
+            this.props.isAuthenticated &&
+            !googleAuthSignedIn && (
+              <GoogleLoginUpsell onClick={googleSignIn}>
+                BETA: Login with Google to store you inventory over time in
+                Google Drive and track dismantled items.
+              </GoogleLoginUpsell>
+            )}
+
+          {trackedItems.length > 0 && (
+            <div className={styles.trackedItems}>
+              {trackedItems.map(item => (
+                <ItemTooltip
+                  item={item}
+                  small={true}
+                  dismiss={this.removeOrnament}
+                />
+              ))}
+            </div>
+          )}
+
+          <div className={styles.subnav}>
+            <div className={styles.navsections}>
+              {(groups || []).map((group, index) => (
+                <a
+                  className={styles.subnavItem}
+                  key={index}
+                  href={`#group_${index}`}
+                >
+                  {group.name}
+                </a>
+              ))}
+            </div>
+
+            {this.props.isAuthenticated && (
+              <FilterBar
+                filters={FILTERS}
+                filterValues={this.state.filter}
+                profile={profile}
+                hiddenItemsCount={hiddenItemsCount}
+                itemCount={itemCount}
+                obtainedCount={obtainedCount}
+                countStyle={countStyle}
+                displayFilters={displayFilters}
+                toggleFilter={this.toggleFilter}
+                toggleCountStyle={this.toggleCountStyle}
+                toggleFilterValue={this.toggleFilterValue}
               />
-            ))}
-          </div>
-        )}
-
-        <div className={styles.subnav}>
-          <div className={styles.navsections}>
-            {(groups || []).map((group, index) => (
-              <a
-                className={styles.subnavItem}
-                key={index}
-                href={`#group_${index}`}
-              >
-                {group.name}
-              </a>
-            ))}
+            )}
           </div>
 
-          {this.props.isAuthenticated && (
-            <FilterBar
-              filters={FILTERS}
-              filterValues={this.state.filter}
-              profile={profile}
-              hiddenItemsCount={hiddenItemsCount}
-              itemCount={itemCount}
-              obtainedCount={obtainedCount}
-              countStyle={countStyle}
-              displayFilters={displayFilters}
-              toggleFilter={this.toggleFilter}
-              toggleCountStyle={this.toggleCountStyle}
-              toggleFilterValue={this.toggleFilterValue}
-            />
-          )}
-        </div>
+          {error && <ErrorBanner error={error} onClose={this.dismissError} />}
+          {hasInventory && <Xur items={xurItems} location={xurLocation} />}
 
-        {error && <ErrorBanner error={error} onClose={this.dismissError} />}
-        {hasInventory && <Xur items={xurItems} location={xurLocation} />}
+          {(groups || []).map((group, index) => (
+            <div key={index} id={`group_${index}`}>
+              <ActivityList
+                onItemClick={this.onItemClick}
+                title={group.name}
+                activities={group.sets || []}
+                toggleCountStyle={this.toggleCountStyle}
+                countStyle={countStyle}
+              />
+            </div>
+          ))}
 
-        {(groups || []).map((group, index) => (
-          <div key={index} id={`group_${index}`}>
-            <ActivityList
-              onItemClick={this.onItemClick}
-              title={group.name}
-              activities={group.sets || []}
-              toggleCountStyle={this.toggleCountStyle}
-              countStyle={countStyle}
-            />
+          <div className={styles.debug}>
+            <button onClick={this.copyDebug}>Copy debug info</button>
           </div>
-        ))}
-
-        <div className={styles.debug}>
-          <button onClick={this.copyDebug}>Copy debug info</button>
         </div>
 
         <Modal
