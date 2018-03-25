@@ -139,10 +139,11 @@ export function getCurrentProfile() {
 }
 
 export function xur() {
-  return get(XUR_URL).then(xurData => {
-    const isLive = window.location.href.includes('forceXur') || xurData.isLive;
-    return isLive
-      ? { xurItems: xurData.itemHashes, xurLocation: xurData.location }
-      : [];
-  });
+  return Promise.resolve({});
+  // return get(XUR_URL).then(xurData => {
+  //   const isLive = window.location.href.includes('forceXur') || xurData.isLive;
+  //   return isLive
+  //     ? { xurItems: xurData.itemHashes, xurLocation: xurData.location }
+  //     : [];
+  // });
 }

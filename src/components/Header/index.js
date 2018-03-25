@@ -25,6 +25,10 @@ const NAV_LINKS = [
     label: 'Curse of Osiris'
   },
   {
+    to: '/strike-gear',
+    label: 'Strikes'
+  },
+  {
     to: '/all-items',
     label: 'All Items'
   },
