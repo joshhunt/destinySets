@@ -3,10 +3,14 @@ import cx from 'classnames';
 
 import styles from './styles.styl';
 
-function ObjectiveValue({ objective, def }) {
+function ObjectiveValue({ objective, def, trackedStatStyle }) {
   const { valueStyle, completionValue } = def;
   let value;
-  if (valueStyle === 2) {
+  if (trackedStatStyle) {
+    value =
+      ((objective || { progress: 0 }).progress || 0) / def.completionValue;
+    value = value.toLocaleString();
+  } else if (valueStyle === 2) {
     value = (
       <input type="checkbox" checked={objective.progress >= 1} readOnly />
     );
@@ -27,11 +31,11 @@ export default function Objectives(props) {
     objectives,
     profileObjectives,
     objectiveDefs,
-    bigger
+    trackedStatStyle
   } = props;
 
   return (
-    <div className={cx(className, bigger && styles.bigger)}>
+    <div className={cx(className, trackedStatStyle && styles.trackedStat)}>
       {objectives.map(objectiveHash => {
         const objective = profileObjectives[objectiveHash] || { progress: 0 };
         const def = objectiveDefs[objectiveHash];
@@ -51,7 +55,11 @@ export default function Objectives(props) {
             <div className={styles.objectiveText}>
               <div>{def.progressDescription}</div>
 
-              <ObjectiveValue objective={objective} def={def} />
+              <ObjectiveValue
+                objective={objective}
+                def={def}
+                trackedStatStyle={trackedStatStyle}
+              />
             </div>
           </div>
         );

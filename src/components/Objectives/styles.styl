@@ -3,34 +3,37 @@
 //
 .objective
   margin-bottom: 10px
-  height: 20px
   position: relative
-  background: #13161B
+  background: lighten(#16191E, 2%)
+  padding: 5px 8px
 
-  .bigger &
-    height: 27px
+  .trackedStat &
+    margin-bottom: 0
+    // background: lighten(#16191E, 2%)
 
 .objectiveTrack
-  position: relative
+  position: absolute
+  top: 0
+  bottom: 0
+  left: 0
   height: 100%
   width: 0
   z-index: 1
   background: rgb(80, 82, 93)
 
+  .trackedStat &
+    display: none
+
 .objectiveText
-  position: absolute
-  top: 0
-  right: 0
-  left: 0
-  bottom: 0
+  position: relative
   display: flex
   justify-content: space-between
   align-items: center
-  padding: 0 5px
-  font-size: 14px
-  line-height: 1
+  line-height: 1.2
   z-index: 2
 
-  .bigger &
-    font-size: 16px
-    padding: 0 7px
+  & > :first-child
+    padding-right: 30px
+
+  & > :last-child
+    font-weight: 600

@@ -3,9 +3,9 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router';
 import Modal from 'react-modal';
 
+import { EMBLEM } from 'app/lib/destinyEnums';
 import getItemExtraInfo from 'app/lib/getItemExtraInfo';
 import Objectives from 'app/components/Objectives';
-import StatTrack from 'app/components/StatTrack';
 import ItemBanner from 'app/components/ItemBanner';
 
 import {
@@ -13,7 +13,8 @@ import {
   objectiveDefsSelector,
   statDefsSelector,
   makeItemStatsSelector,
-  profileObjectivesSelector
+  profileObjectivesSelector,
+  makeItemInventoryEntrySelector
 } from 'app/store/selectors';
 
 import styles from './styles.styl';
@@ -23,11 +24,23 @@ class ItemModalContent extends Component {
     const {
       trackOrnament,
       onRequestClose,
-      item: { hash, displayProperties, screenshot, $objectives, $statTrack }
+      item,
+      itemInventoryEntry,
+      profileObjectives,
+      objectiveDefs
     } = this.props;
 
-    const extraInfo = getItemExtraInfo(this.props.item);
+    const { hash, displayProperties, screenshot, itemCategoryHashes } = item;
+
     const dtrLink = `http://db.destinytracker.com/d2/en/items/${hash}`;
+
+    const isEmblem = (itemCategoryHashes || []).includes(EMBLEM);
+    const extraInfo = getItemExtraInfo(item, itemInventoryEntry);
+
+    const objectiveHashes = [
+      item.emblemObjectiveHash,
+      ...((item.objectives || {}).objectiveHashes || [])
+    ].filter(Boolean);
 
     return (
       <div className={styles.root}>
@@ -51,12 +64,6 @@ class ItemModalContent extends Component {
           <p className={styles.description}>{displayProperties.description}</p>
         )}
 
-        {$statTrack && (
-          <div>
-            <StatTrack statTrack={$statTrack} />
-          </div>
-        )}
-
         <ul className={styles.viewItemLinks}>
           <li>
             <a href={dtrLink} target="_blank" rel="noopener noreferrer">
@@ -69,13 +76,7 @@ class ItemModalContent extends Component {
           </li>
         </ul>
 
-        {extraInfo.map(info => (
-          <div key={info} className={styles.extraInfo}>
-            {info}
-          </div>
-        ))}
-
-        {$objectives && (
+        {objectiveHashes.length ? (
           <div>
             <h3 className={styles.objectiveTitle}>
               Complete Objectives to Unlock
@@ -83,8 +84,10 @@ class ItemModalContent extends Component {
 
             <Objectives
               className={styles.objectives}
-              objectives={$objectives}
-              bigger={true}
+              trackedStatStyle={isEmblem}
+              objectives={objectiveHashes}
+              profileObjectives={profileObjectives}
+              objectiveDefs={objectiveDefs}
             />
 
             <button
@@ -94,7 +97,13 @@ class ItemModalContent extends Component {
               Track objective progress
             </button>
           </div>
-        )}
+        ) : null}
+
+        {extraInfo.map((info, index) => (
+          <div key={index} className={styles.extraInfo}>
+            {info}
+          </div>
+        ))}
       </div>
     );
   }
@@ -115,7 +124,7 @@ const MODAL_STYLES = {
   }
 };
 
-function ItemModalWrapper({ itemHash, item, isOpen, onRequestClose }) {
+function ItemModalWrapper({ isOpen, onRequestClose, ...props }) {
   return (
     <Modal
       isOpen={isOpen}
@@ -123,9 +132,9 @@ function ItemModalWrapper({ itemHash, item, isOpen, onRequestClose }) {
       contentLabel="Modal"
       style={MODAL_STYLES}
     >
-      {item && (
+      {props.item && (
         <ItemModalContent
-          item={item}
+          {...props}
           onRequestClose={onRequestClose}
           trackOrnament={() => console.log('TODO: Track ornament')}
         />
@@ -137,6 +146,7 @@ function ItemModalWrapper({ itemHash, item, isOpen, onRequestClose }) {
 const mapStateToProps = () => {
   const itemStatsSelector = makeItemStatsSelector();
   const itemSelector = makeItemSelector();
+  const itemInventoryEntrySelector = makeItemInventoryEntrySelector();
 
   return (state, ownProps) => {
     return {
@@ -144,7 +154,8 @@ const mapStateToProps = () => {
       objectiveDefs: objectiveDefsSelector(state),
       statDefs: statDefsSelector(state),
       stats: itemStatsSelector(state, ownProps),
-      item: itemSelector(state, ownProps)
+      item: itemSelector(state, ownProps),
+      itemInventoryEntry: itemInventoryEntrySelector(state, ownProps)
     };
   };
 };

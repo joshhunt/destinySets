@@ -8,14 +8,14 @@ import FancyImage from 'app/components/FancyImage';
 import ItemBanner from 'app/components/ItemBanner';
 import ItemStats from 'app/components/ItemStats';
 import Objectives from 'app/components/Objectives';
-import StatTrack from 'app/components/StatTrack';
 
 import {
   makeItemSelector,
   objectiveDefsSelector,
   statDefsSelector,
   makeItemStatsSelector,
-  profileObjectivesSelector
+  profileObjectivesSelector,
+  makeItemInventoryEntrySelector
 } from 'app/store/selectors';
 import styles from './styles.styl';
 
@@ -26,12 +26,18 @@ function ItemTooltip({
   profileObjectives,
   objectiveDefs,
   stats,
-  statDefs
+  statDefs,
+  itemInventoryEntry
 }) {
   const { displayProperties, screenshot, itemCategoryHashes } = item;
 
   const isEmblem = (itemCategoryHashes || []).includes(EMBLEM);
-  const extraInfo = getItemExtraInfo(item);
+  const extraInfo = getItemExtraInfo(item, itemInventoryEntry);
+
+  const objectiveHashes = [
+    item.emblemObjectiveHash,
+    ...((item.objectives || {}).objectiveHashes || [])
+  ].filter(Boolean);
 
   return (
     <div className={cx(styles.tooltip, small && styles.small)}>
@@ -46,51 +52,31 @@ function ItemTooltip({
           ))}
 
         {screenshot && (
-          <div className={styles.screenshowWrapperWrapper}>
-            <div className={styles.screenshotWrapper}>
-              <FancyImage
-                className={styles.screenshot}
-                src={`https://bungie.net${screenshot}`}
-              />
-            </div>
+          <div className={styles.screenshotWrapper}>
+            <FancyImage
+              className={styles.screenshot}
+              src={`https://bungie.net${screenshot}`}
+            />
           </div>
         )}
 
         {stats && <ItemStats stats={stats} statDefs={statDefs} />}
 
-        {!isEmblem &&
-          extraInfo.map(info => (
-            <div key={info} className={styles.extraInfo}>
-              {info}
-            </div>
-          ))}
-
-        {item.objectives && (
+        {objectiveHashes.length ? (
           <Objectives
             className={styles.objectives}
-            objectives={item.objectives.objectiveHashes}
+            trackedStatStyle={isEmblem}
+            objectives={objectiveHashes}
             profileObjectives={profileObjectives}
             objectiveDefs={objectiveDefs}
           />
-        )}
+        ) : null}
 
-        {item.emblemObjectiveHash && (
-          <StatTrack
-            className={styles.statTrack}
-            objective={profileObjectives[item.emblemObjectiveHash]}
-            def={objectiveDefs[item.emblemObjectiveHash]}
-          />
-        )}
-
-        {item.objectives &&
-          item.objectives.objectiveHashes.map(objectiveHash => (
-            <StatTrack
-              key={objectiveHash}
-              className={styles.statTrack}
-              objective={profileObjectives[objectiveHash]}
-              def={objectiveDefs[objectiveHash]}
-            />
-          ))}
+        {extraInfo.map((info, index) => (
+          <div key={index} className={styles.extraInfo}>
+            {info}
+          </div>
+        ))}
       </div>
     </div>
   );
@@ -99,6 +85,7 @@ function ItemTooltip({
 const mapStateToProps = () => {
   const itemStatsSelector = makeItemStatsSelector();
   const itemSelector = makeItemSelector();
+  const itemInventoryEntrySelector = makeItemInventoryEntrySelector();
 
   return (state, ownProps) => {
     return {
@@ -106,7 +93,8 @@ const mapStateToProps = () => {
       objectiveDefs: objectiveDefsSelector(state),
       statDefs: statDefsSelector(state),
       stats: itemStatsSelector(state, ownProps),
-      item: itemSelector(state, ownProps)
+      item: itemSelector(state, ownProps),
+      itemInventoryEntry: itemInventoryEntrySelector(state, ownProps)
     };
   };
 };

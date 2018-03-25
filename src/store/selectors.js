@@ -9,6 +9,10 @@ import { NUMERICAL_STATS, STAT_BLACKLIST } from 'app/lib/destinyEnums';
 export const itemDefsSelector = state => state.app.itemDefs;
 export const objectiveDefsSelector = state => state.app.objectiveDefs;
 export const statDefsSelector = state => state.app.statDefs;
+
+const profileSelector = state => state.app.profile;
+const vendorDefsSelector = state => state.app.vendorDefs;
+
 const propsSectionsSelector = (state, props) => props.sections;
 
 export const itemHashPropSelector = (state, props) => props.itemHash;
@@ -89,9 +93,6 @@ export const makeSelectedItemDefsSelector = () => {
   );
 };
 
-const profileSelector = state => state.app.profile;
-const vendorDefsSelector = state => state.app.vendorDefs;
-
 export const inventorySelector = createSelector(
   profileSelector,
   vendorDefsSelector,
@@ -114,3 +115,13 @@ export const profileObjectivesSelector = createSelector(
     return objectivesFromProfile(profile);
   }
 );
+
+export const makeItemInventoryEntrySelector = () => {
+  return createSelector(
+    inventorySelector,
+    itemHashPropSelector,
+    (inventory, itemHash) => {
+      return inventory ? inventory[itemHash] : null;
+    }
+  );
+};

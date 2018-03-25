@@ -109,7 +109,11 @@ export const filteredSetDataSelector = createSelector(
 
           set.sections = set.sections.filter(({ items }) => items.length > 0);
         });
+
+        group.sets = group.sets.filter(({ sections }) => sections.length > 0);
       });
+
+      draft.setData = draft.setData.filter(({ sets }) => sets.length > 0);
     });
 
     return result.setData;

@@ -1,45 +1,42 @@
-export default function getItemExtraInfo(item) {
-  const { objectives, $dismantled, $inventory, $objectives } = item;
-
+export default function getItemExtraInfo(item, _itemInventoryEntry) {
+  const itemInventoryEntry = _itemInventoryEntry || {
+    instances: [],
+    obtained: false
+  };
   const extraInfo = [];
 
-  $dismantled
+  itemInventoryEntry.dismantled
     ? extraInfo.push('Dismantled')
     : extraInfo.push(
-        ...($inventory || []).map(getFriendlyItemLocation).filter(Boolean)
+        ...itemInventoryEntry.instances
+          .map(getFriendlyItemLocation)
+          .filter(Boolean)
       );
 
-  if (objectives && !$objectives) {
-    const baseItem = item.$baseItem
-      ? `"${item.$baseItem.displayProperties.name}"`
-      : 'the base item';
+  // if (objectives && !$objectives) {
+  //   const baseItem = item.$baseItem
+  //     ? `"${item.$baseItem.displayProperties.name}"`
+  //     : 'the base item';
 
-    extraInfo.push(
-      `Collect ${
-        baseItem
-      } and have it on a character to see Ornament status and objectives.`
-    );
-  }
+  //   extraInfo.push(
+  //     `Collect ${
+  //       baseItem
+  //     } and have it on a character to see Ornament status and objectives.`
+  //   );
+  // }
 
   return extraInfo;
 }
 
+const LOCATIONS = {
+  characterEquipment: 'Equipped on character',
+  characterInventories: 'On character',
+  characterKiosks: 'Unlocked in Kiosk',
+  profileKiosks: 'Unlocked in Kiosk',
+  itemSockets: 'itemSockets',
+  vendorSockets: 'vendorSockets'
+};
+
 export function getFriendlyItemLocation(instance) {
-  switch (instance.$location) {
-    case 'profileInventory':
-      return 'In Vault';
-
-    case 'profileKiosk':
-    case 'characterKiosk':
-      return 'Unlocked in Kiosk';
-
-    case 'characterInventory':
-      return 'On Character';
-
-    case 'characterEquipment':
-      return 'Equipped on Character';
-
-    default:
-      return null;
-  }
+  return LOCATIONS[instance.location] || instance.location;
 }
