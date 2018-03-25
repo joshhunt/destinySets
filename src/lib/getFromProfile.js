@@ -94,7 +94,14 @@ function mergeItems(acc, [items, itemLocation]) {
   return acc;
 }
 
+let inventoryFromProfileCount = 0;
 export function inventoryFromProfile(profile, vendorDefs) {
+  inventoryFromProfileCount += 1;
+  console.log(
+    'Running inventoryFromProfile for the',
+    inventoryFromProfileCount,
+    'time'
+  );
   return [
     [fromCharacter(profile.characterEquipment.data), 'characterEquipment'],
     [fromCharacter(profile.characterInventories.data), 'characterInventories'],
@@ -108,8 +115,14 @@ export function inventoryFromProfile(profile, vendorDefs) {
   ].reduce(mergeItems);
 }
 
+let objectivesFromProfileCount = 0;
 export function objectivesFromProfile(profile) {
-  window.__profile = profile;
+  objectivesFromProfileCount += 1;
+  console.log(
+    'Running objectivesFromProfile for the',
+    objectivesFromProfileCount,
+    'time'
+  );
   return keyBy(
     [
       ...flavorObjectivesFromKiosk(profile.profileKiosks.data),

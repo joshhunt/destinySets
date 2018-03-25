@@ -1,14 +1,24 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import { Link } from 'react-router';
+import Modal from 'react-modal';
 
 import getItemExtraInfo from 'app/lib/getItemExtraInfo';
 import Objectives from 'app/components/Objectives';
 import StatTrack from 'app/components/StatTrack';
 import ItemBanner from 'app/components/ItemBanner';
 
+import {
+  makeItemSelector,
+  objectiveDefsSelector,
+  statDefsSelector,
+  makeItemStatsSelector,
+  profileObjectivesSelector
+} from 'app/store/selectors';
+
 import styles from './styles.styl';
 
-export default class ItemModal extends Component {
+class ItemModalContent extends Component {
   render() {
     const {
       trackOrnament,
@@ -17,7 +27,6 @@ export default class ItemModal extends Component {
     } = this.props;
 
     const extraInfo = getItemExtraInfo(this.props.item);
-
     const dtrLink = `http://db.destinytracker.com/d2/en/items/${hash}`;
 
     return (
@@ -90,3 +99,54 @@ export default class ItemModal extends Component {
     );
   }
 }
+
+const MODAL_STYLES = {
+  overlay: {
+    backgroundColor: 'rgba(0, 0, 0, 0.75)',
+    marginTop: 0,
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center'
+  },
+  content: {
+    position: 'static',
+    background: 'none',
+    border: 'none'
+  }
+};
+
+function ItemModalWrapper({ itemHash, item, isOpen, onRequestClose }) {
+  return (
+    <Modal
+      isOpen={isOpen}
+      onRequestClose={onRequestClose}
+      contentLabel="Modal"
+      style={MODAL_STYLES}
+    >
+      {item && (
+        <ItemModalContent
+          item={item}
+          onRequestClose={onRequestClose}
+          trackOrnament={() => console.log('TODO: Track ornament')}
+        />
+      )}
+    </Modal>
+  );
+}
+
+const mapStateToProps = () => {
+  const itemStatsSelector = makeItemStatsSelector();
+  const itemSelector = makeItemSelector();
+
+  return (state, ownProps) => {
+    return {
+      profileObjectives: profileObjectivesSelector(state),
+      objectiveDefs: objectiveDefsSelector(state),
+      statDefs: statDefsSelector(state),
+      stats: itemStatsSelector(state, ownProps),
+      item: itemSelector(state, ownProps)
+    };
+  };
+};
+
+export default connect(mapStateToProps)(ItemModalWrapper);

@@ -22,12 +22,18 @@ function ObjectiveValue({ objective, def }) {
 }
 
 export default function Objectives(props) {
-  const { className, objectives, objectiveData, objectiveDefs, bigger } = props;
+  const {
+    className,
+    objectives,
+    profileObjectives,
+    objectiveDefs,
+    bigger
+  } = props;
 
   return (
     <div className={cx(className, bigger && styles.bigger)}>
       {objectives.map(objectiveHash => {
-        const objective = objectiveData[objectiveHash] || { progress: 0 };
+        const objective = profileObjectives[objectiveHash] || { progress: 0 };
         const def = objectiveDefs[objectiveHash];
 
         return (

@@ -10,14 +10,20 @@ import ItemStats from 'app/components/ItemStats';
 import Objectives from 'app/components/Objectives';
 import StatTrack from 'app/components/StatTrack';
 
-import { makeItemStatsSelector, statDefsSelector } from './selectors';
+import {
+  makeItemSelector,
+  objectiveDefsSelector,
+  statDefsSelector,
+  makeItemStatsSelector,
+  profileObjectivesSelector
+} from 'app/store/selectors';
 import styles from './styles.styl';
 
 function ItemTooltip({
   item,
   small,
   dismiss,
-  objectives,
+  profileObjectives,
   objectiveDefs,
   stats,
   statDefs
@@ -26,11 +32,6 @@ function ItemTooltip({
 
   const isEmblem = (itemCategoryHashes || []).includes(EMBLEM);
   const extraInfo = getItemExtraInfo(item);
-
-  console.log({
-    stats,
-    statDefs
-  });
 
   return (
     <div className={cx(styles.tooltip, small && styles.small)}>
@@ -68,7 +69,7 @@ function ItemTooltip({
           <Objectives
             className={styles.objectives}
             objectives={item.objectives.objectiveHashes}
-            objectiveData={objectives}
+            profileObjectives={profileObjectives}
             objectiveDefs={objectiveDefs}
           />
         )}
@@ -76,7 +77,7 @@ function ItemTooltip({
         {item.emblemObjectiveHash && (
           <StatTrack
             className={styles.statTrack}
-            objective={objectives[item.emblemObjectiveHash]}
+            objective={profileObjectives[item.emblemObjectiveHash]}
             def={objectiveDefs[item.emblemObjectiveHash]}
           />
         )}
@@ -86,7 +87,7 @@ function ItemTooltip({
             <StatTrack
               key={objectiveHash}
               className={styles.statTrack}
-              objective={objectives[objectiveHash]}
+              objective={profileObjectives[objectiveHash]}
               def={objectiveDefs[objectiveHash]}
             />
           ))}
@@ -97,11 +98,15 @@ function ItemTooltip({
 
 const mapStateToProps = () => {
   const itemStatsSelector = makeItemStatsSelector();
+  const itemSelector = makeItemSelector();
 
   return (state, ownProps) => {
     return {
+      profileObjectives: profileObjectivesSelector(state),
+      objectiveDefs: objectiveDefsSelector(state),
       statDefs: statDefsSelector(state),
-      stats: itemStatsSelector(state, ownProps)
+      stats: itemStatsSelector(state, ownProps),
+      item: itemSelector(state, ownProps)
     };
   };
 };

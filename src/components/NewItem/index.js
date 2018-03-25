@@ -5,13 +5,18 @@ import styles from './styles.styl';
 
 export default class Item extends Component {
   onMouseEnter = () => {
-    const { setPopper, hash, item, inventoryEntry } = this.props;
-    setPopper && setPopper(hash, item, inventoryEntry, this.ref);
+    const { setPopper, itemHash } = this.props;
+    setPopper && setPopper(itemHash, this.ref);
   };
 
   onMouseLeave = () => {
     const { setPopper } = this.props;
     setPopper && setPopper(null);
+  };
+
+  onClick = () => {
+    const { onItemClick, itemHash } = this.props;
+    onItemClick && onItemClick(itemHash);
   };
 
   getRef = ref => {
@@ -31,6 +36,7 @@ export default class Item extends Component {
       <div
         onMouseEnter={this.onMouseEnter}
         onMouseLeave={this.onMouseLeave}
+        onClick={this.onClick}
         ref={this.getRef}
         className={cx(
           className,

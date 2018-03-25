@@ -3,7 +3,10 @@ import { connect } from 'react-redux';
 import cx from 'classnames';
 
 import Item from 'app/components/NewItem';
-import { makeSelectedItemDefsSelector, inventorySelector } from './selectors';
+import {
+  makeSelectedItemDefsSelector,
+  inventorySelector
+} from 'app/store/selectors';
 import styles from './styles.styl';
 
 function ItemSet({
@@ -12,7 +15,8 @@ function ItemSet({
   sections,
   inventory,
   itemDefs,
-  setPopper
+  setPopper,
+  setModal
 }) {
   return (
     <div className={cx(className, styles.root)}>
@@ -28,10 +32,11 @@ function ItemSet({
                 <Item
                   key={itemHash}
                   className={styles.item}
-                  hash={itemHash}
+                  itemHash={itemHash}
                   item={itemDefs[itemHash]}
                   setPopper={setPopper}
                   inventoryEntry={inventory && inventory[itemHash]}
+                  onItemClick={setModal}
                 />
               ))}
             </div>

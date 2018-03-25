@@ -44,10 +44,13 @@ export const inventorySelector = createSelector(
   }
 );
 
-export const objectivesSelector = createSelector(profileSelector, profile => {
-  if (!profile) {
-    return null;
-  }
+export const objectiveInventorySelector = createSelector(
+  profileSelector,
+  profile => {
+    if (!profile) {
+      return null;
+    }
 
-  return objectivesFromProfile(profile);
-});
+    return objectivesFromProfile(profile);
+  }
+);

@@ -14,12 +14,12 @@ import {
 import DestinyAuthProvider from 'app/lib/DestinyAuthProvider';
 import * as destiny from 'app/lib/destiny';
 import { getDefinition } from 'app/lib/manifestData';
-import { objectivesSelector } from 'app/components/ItemSet/selectors';
 
 import Section from 'app/components/NewSection';
 import Popper from 'app/components/Popper';
 import FilterBar from 'app/components/NewFilterBar';
 import ItemTooltip from 'app/components/ItemTooltip';
+import ItemModal from 'app/components/ItemModal';
 
 import { filteredSetDataSelector } from './selectors';
 import styles from './styles.styl';
@@ -70,23 +70,19 @@ class Inventory extends Component {
     this.fetch(this.props);
   };
 
-  setPopper = (hash, item, inventoryEntry, element) => {
-    if (!hash) {
-      this.setState({ popper: null });
-    } else {
-      this.setState({ popper: { hash, item, inventoryEntry, element } });
-    }
+  setPopper = (itemHash, element) => {
+    itemHash
+      ? this.setState({ itemTooltip: { itemHash, element } })
+      : this.setState({ itemTooltip: null });
+  };
+
+  setModal = itemHash => {
+    this.setState({ itemModal: itemHash });
   };
 
   render() {
-    const {
-      itemDefs,
-      objectiveDefs,
-      filters,
-      filteredSetData,
-      objectives
-    } = this.props;
-    const { popper } = this.state;
+    const { itemDefs, objectiveDefs, filters, filteredSetData } = this.props;
+    const { itemTooltip, itemModal } = this.state;
 
     return (
       <div className={styles.root}>
@@ -123,20 +119,21 @@ class Inventory extends Component {
             name={name}
             sets={sets}
             setPopper={this.setPopper}
+            setModal={this.setModal}
           />
         ))}
 
-        {popper &&
-          objectives && (
-            <Popper key={popper.hash} element={popper.element}>
-              <ItemTooltip
-                itemHash={popper.item.hash}
-                item={popper.item}
-                objectives={objectives}
-                objectiveDefs={objectiveDefs}
-              />
-            </Popper>
-          )}
+        {itemTooltip && (
+          <Popper key={itemTooltip.hash} element={itemTooltip.element}>
+            <ItemTooltip itemHash={itemTooltip.itemHash} />
+          </Popper>
+        )}
+
+        <ItemModal
+          itemHash={itemModal}
+          isOpen={!!itemModal}
+          onRequestClose={() => this.setModal(null)}
+        />
       </div>
     );
   }
@@ -148,8 +145,7 @@ const mapStateToProps = (state, ownProps) => {
     filters: state.app.filters,
     objectiveDefs: state.app.objectiveDefs,
     // TODO: this uses props, so we need to 'make' a selector like in ItemSet
-    filteredSetData: filteredSetDataSelector(state, ownProps),
-    objectives: objectivesSelector(state)
+    filteredSetData: filteredSetDataSelector(state, ownProps)
   };
 };
 

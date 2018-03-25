@@ -5,6 +5,7 @@ import 'app/lib/autotrack.build';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { AppContainer } from 'react-hot-loader';
+import ReactModal from 'react-modal';
 
 import './setupEnv';
 import { trackEvent } from 'app/lib/analytics';
@@ -22,6 +23,7 @@ const render = App => {
 };
 
 render(AppRouter);
+ReactModal.setAppElement('#root');
 
 ls.saveVisitCount(ls.getVisitCount() + 1);
 trackEvent('visit-count', ls.getVisitCount());
