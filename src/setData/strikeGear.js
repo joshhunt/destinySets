@@ -7,11 +7,11 @@ module.exports = [
         small: true,
         pgcrImage: '/img/destiny_content/pgcr/strike_inverted_spire.jpg',
         sections: [
-          // {
-          //   title: 'Gear',
-          //   bigItems: true,
-          //   items: [10307688]
-          // },
+          {
+            title: 'Gear',
+            bigItems: true,
+            items: [953357968] // Trichromatica
+          },
           {
             title: 'Nightfall Emblems',
             items: [
@@ -28,11 +28,11 @@ module.exports = [
         small: true,
         pgcrImage: '/img/destiny_content/pgcr/strike_the_pyramdion.jpg',
         sections: [
-          // {
-          //   title: 'Gear',
-          //   bigItems: true,
-          //   items: [2013109093]
-          // },
+          {
+            title: 'Gear',
+            bigItems: true,
+            items: [990416096] // Silicon Neuroma
+          },
           {
             title: 'Nightfall Emblems',
             items: [
@@ -131,7 +131,7 @@ module.exports = [
         small: true,
         sections: [
           {
-            title: 'Weapons',
+            title: 'Gear',
             bigItems: true,
             items: [
               4238497225 // D.F.A.
@@ -153,13 +153,13 @@ module.exports = [
         pgcrImage: '/img/destiny_content/pgcr/rituals_a_garden_world.jpg',
         small: true,
         sections: [
-          // {
-          //   title: 'Titan armor',
-          //   bigItems: true,
-          //   items: [
-          //     4071576013 // Gensym Knight Gauntlets
-          //   ]
-          // },
+          {
+            title: 'Gear',
+            bigItems: true,
+            items: [
+              1174053886 // Universal Wavefunction
+            ]
+          },
           {
             title: 'Nightfall Emblems',
             items: [
