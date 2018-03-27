@@ -49,11 +49,11 @@ module.exports = [
         small: true,
         pgcrImage: '/img/destiny_content/pgcr/strike_exodus_crash.jpg',
         sections: [
-          // {
-          //   title: 'Gear',
-          //   bigItems: true,
-          //   items: [2048751167]
-          // },
+          {
+            title: 'Gear',
+            bigItems: true,
+            items: [2757144093] // Impact Velocity
+          },
           {
             title: 'Nightfall Emblems',
             items: [
@@ -70,11 +70,11 @@ module.exports = [
         small: true,
         pgcrImage: '/img/destiny_content/pgcr/strike_the_arms_dealer.jpg',
         sections: [
-          // {
-          //   title: 'Gear',
-          //   bigItems: true,
-          //   items: [2062911883]
-          // },
+          {
+            title: 'Gear',
+            bigItems: true,
+            items: [2757144092] // Tilt Fuse
+          },
           {
             title: 'Nightfall Emblems',
             items: [
@@ -91,11 +91,11 @@ module.exports = [
         small: true,
         pgcrImage: '/img/destiny_content/pgcr/strike_savanthuns_song.jpg',
         sections: [
-          // {
-          //   title: 'Gear',
-          //   bigItems: true,
-          //   items: [2013109092]
-          // },
+          {
+            title: 'Gear',
+            bigItems: true,
+            items: [1457979868] // Duty Bound
+          },
           {
             title: 'Nightfall Emblems',
             items: [
@@ -130,13 +130,13 @@ module.exports = [
           '/img/destiny_content/pgcr/campaign_tree_of_probabilities.jpg',
         small: true,
         sections: [
-          // {
-          //   title: 'Weapons',
-          //   bigItems: true,
-          //   items: [
-          //     4425887 // The Time-Worn Spire
-          //   ]
-          // },
+          {
+            title: 'Weapons',
+            bigItems: true,
+            items: [
+              4238497225 // D.F.A.
+            ]
+          },
           {
             title: 'Nightfall Emblems',
             items: [
