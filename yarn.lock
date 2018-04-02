@@ -367,6 +367,40 @@
   version "0.2.5"
   resolved "https://registry.yarnpkg.com/@firebase/webchannel-wrapper/-/webchannel-wrapper-0.2.5.tgz#11ccb45505cb56d4bc0a9a09712b14585248e784"
 
+"@fortawesome/fontawesome-common-types@^0.1.3":
+  version "0.1.3"
+  resolved "https://npm.fontawesome.com/7F10CA2F-21F6-4CEE-84B6-D37F1A7FCFF6/@fortawesome/fontawesome-common-types/-/fontawesome-common-types-0.1.3.tgz#8475e0f2d1ad1f858c4ec2e76ed9a2456a09ad83"
+
+"@fortawesome/fontawesome-pro-light@^5.0.9":
+  version "5.0.9"
+  resolved "https://npm.fontawesome.com/7F10CA2F-21F6-4CEE-84B6-D37F1A7FCFF6/@fortawesome/fontawesome-pro-light/-/fontawesome-pro-light-5.0.9.tgz#47ccd35d2f22d07441bee12689b1eae2894853ed"
+  dependencies:
+    "@fortawesome/fontawesome-common-types" "^0.1.3"
+
+"@fortawesome/fontawesome-pro-regular@^5.0.9":
+  version "5.0.9"
+  resolved "https://npm.fontawesome.com/7F10CA2F-21F6-4CEE-84B6-D37F1A7FCFF6/@fortawesome/fontawesome-pro-regular/-/fontawesome-pro-regular-5.0.9.tgz#74d318aef6ed1cad6b0a335f43ab4603b1d255ff"
+  dependencies:
+    "@fortawesome/fontawesome-common-types" "^0.1.3"
+
+"@fortawesome/fontawesome-pro-solid@^5.0.9":
+  version "5.0.9"
+  resolved "https://npm.fontawesome.com/7F10CA2F-21F6-4CEE-84B6-D37F1A7FCFF6/@fortawesome/fontawesome-pro-solid/-/fontawesome-pro-solid-5.0.9.tgz#5a4f2a7def2afe9b61b3c8067d39d528908f3a1c"
+  dependencies:
+    "@fortawesome/fontawesome-common-types" "^0.1.3"
+
+"@fortawesome/fontawesome@^1.1.5":
+  version "1.1.5"
+  resolved "https://npm.fontawesome.com/7F10CA2F-21F6-4CEE-84B6-D37F1A7FCFF6/@fortawesome/fontawesome/-/fontawesome-1.1.5.tgz#c7cfafdd3364245626293cc670357f9fb8487170"
+  dependencies:
+    "@fortawesome/fontawesome-common-types" "^0.1.3"
+
+"@fortawesome/react-fontawesome@^0.0.18":
+  version "0.0.18"
+  resolved "https://npm.fontawesome.com/7F10CA2F-21F6-4CEE-84B6-D37F1A7FCFF6/@fortawesome/react-fontawesome/-/react-fontawesome-0.0.18.tgz#4e0eb1cf9797715a67bb7705ae084fa0a410f185"
+  dependencies:
+    humps "^2.0.1"
+
 "@ladjs/time-require@^0.1.4":
   version "0.1.4"
   resolved "https://registry.yarnpkg.com/@ladjs/time-require/-/time-require-0.1.4.tgz#5c615d75fd647ddd5de9cf6922649558856b21a1"
@@ -4418,6 +4452,10 @@ hullabaloo-config-manager@^2.0.0-beta.3:
     pirates "^3.0.2"
     pkg-dir "^2.0.0"
     resolve-from "^4.0.0"
+
+humps@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/humps/-/humps-2.0.1.tgz#dd02ea6081bd0568dc5d073184463957ba9ef9aa"
 
 iconv-lite@0.4.19, iconv-lite@^0.4.17, iconv-lite@^0.4.5, iconv-lite@~0.4.13:
   version "0.4.19"

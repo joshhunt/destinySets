@@ -4,6 +4,11 @@
   "private": true,
   "dependencies": {
     "@d8660091/react-popper": "^0.7.1",
+    "@fortawesome/fontawesome": "^1.1.5",
+    "@fortawesome/fontawesome-pro-light": "^5.0.9",
+    "@fortawesome/fontawesome-pro-regular": "^5.0.9",
+    "@fortawesome/fontawesome-pro-solid": "^5.0.9",
+    "@fortawesome/react-fontawesome": "^0.0.18",
     "autotrack": "^2.4.1",
     "axios": "^0.18.0",
     "babel-polyfill": "^6.26.0",

@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import cx from 'classnames';
 
+import Icon from 'app/components/Icon';
+
 import styles from './styles.styl';
 
 export default class Item extends Component {
@@ -53,7 +55,7 @@ export default class Item extends Component {
         {inventoryEntry && (
           <div className={styles.obtainedTick}>
             <span role="img" aria-label="Obtained">
-              ✅
+              <Icon icon="check" />
             </span>
           </div>
         )}
