@@ -54,9 +54,7 @@ export default class Item extends Component {
 
         {inventoryEntry && (
           <div className={styles.obtainedTick}>
-            <span role="img" aria-label="Obtained">
-              <Icon icon="check" />
-            </span>
+            <Icon icon="check" />
           </div>
         )}
       </div>

@@ -1,5 +1,3 @@
-$size = 40px
-
 .root
   content: 'hello'
   position: relative
@@ -9,79 +7,21 @@ $size = 40px
 
 .image
   display: block
-  width: $size
-  height: $size
+  width: 44px
+  height: auto
   background: rgba(#D2D2D2, 0.1)
 
 .placeholder
   composes: image
   background: rgba(#D2D2D2, 0.1)
 
-
 .obtainedTick
   position: absolute
-  top: -4px;
-  right: -9px
+  top: -5px
+  right: @top
   line-height: 1
   text-align: left
-
-
-.arrow {
-  width: 0;
-  height: 0;
-  border-style: solid;
-  position: absolute;
-  margin: 5px;
-}
-
-// [data-placement^="top"] {
-//   margin-bottom: 5px;
-// }
-
-// [data-placement^="top"] .arrow {
-//   border-width: 5px 5px 0 5px;
-//   border-color: #222 transparent transparent transparent;
-//   bottom: -5px;
-//   left: calc(50% - 5px);
-//   margin-top: 0;
-//   margin-bottom: 0;
-// }
-
-// .popper[data-placement^="bottom"] {
-//   margin-top: 5px;
-// }
-
-// [data-placement^="bottom"] .arrow {
-//   border-width: 0 5px 5px 5px;
-//   border-color: transparent transparent #222 transparent;
-//   top: -5px;
-//   left: calc(50% - 5px);
-//   margin-top: 0;
-//   margin-bottom: 0;
-// }
-
-// [data-placement^="right"] {
-//   margin-left: 5px;
-// }
-
-// [data-placement^="right"] .arrow {
-//   border-width: 5px 5px 5px 0;
-//   border-color: transparent #222 transparent transparent;
-//   left: -5px;
-//   top: calc(50% - 5px);
-//   margin-left: 0;
-//   margin-right: 0;
-// }
-
-// [data-placement^="left"] {
-//   margin-right: 5px;
-// }
-
-// [data-placement^="left"] .arrow {
-//   border-width: 5px 0 5px 5px;
-//   border-color: transparent transparent transparent #222;
-//   right: -5px;
-//   top: calc(50% - 5px);
-//   margin-left: 0;
-//   margin-right: 0;
-// }
+  background: #44bd32
+  border-radius: 50%
+  font-size: 12px
+  padding: 3px
