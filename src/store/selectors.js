@@ -6,6 +6,7 @@ import {
 } from 'app/lib/getFromProfile';
 import { NUMERICAL_STATS, STAT_BLACKLIST } from 'app/lib/destinyEnums';
 
+export const cloudInventorySelector = state => state.app.cloudInventory;
 export const itemDefsSelector = state => state.app.itemDefs;
 export const objectiveDefsSelector = state => state.app.objectiveDefs;
 export const statDefsSelector = state => state.app.statDefs;
@@ -96,7 +97,9 @@ export const makeSelectedItemDefsSelector = () => {
 export const inventorySelector = createSelector(
   profileSelector,
   vendorDefsSelector,
-  (profile, vendorDefs) => {
+  cloudInventorySelector,
+  (profile, vendorDefs, cloudInventory) => {
+    // return cloudInventory;
     if (!(profile && vendorDefs)) {
       return null;
     }

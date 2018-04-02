@@ -1,6 +1,7 @@
 import { HUNTER, TITAN, WARLOCK } from 'app/lib/destinyEnums';
 
 const SET_PROFILE = 'Set profile data';
+const SET_CLOUD_INVENTORY = 'Set cloud inventory';
 const SET_VENDORS = 'Set vendor data';
 const SET_DEFINITIONS = 'Set definitions';
 const TOGGLE_FILTER_KEY = 'Toggle filter value';
@@ -19,6 +20,12 @@ export default function reducer(state = INITIAL_STORE, action) {
       return {
         ...state,
         profile: action.profile
+      };
+
+    case SET_CLOUD_INVENTORY:
+      return {
+        ...state,
+        cloudInventory: action.cloudInventory
       };
 
     case SET_VENDORS:
@@ -49,6 +56,10 @@ export default function reducer(state = INITIAL_STORE, action) {
 
 export function setProfile(profile) {
   return { type: SET_PROFILE, profile };
+}
+
+export function setCloudInventory(cloudInventory) {
+  return { type: SET_CLOUD_INVENTORY, cloudInventory };
 }
 
 export function setVendors(vendors) {

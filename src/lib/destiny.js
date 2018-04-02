@@ -229,13 +229,13 @@ export function getCurrentProfilesWithCache(cb) {
   const cached = ls.getProfiles();
 
   if (cached) {
-    cb(null, cached);
+    cb(null, cached, true);
   }
 
   getCurrentProfiles()
     .then(resp => {
       ls.saveProfiles(resp);
-      cb(null, resp);
+      cb(null, resp, false);
     })
     .catch(err => cb(err));
 }

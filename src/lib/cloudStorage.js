@@ -1,4 +1,5 @@
 import * as ls from 'app/lib/ls';
+import { mapValues } from 'lodash';
 import { ready } from 'app/lib/googleDriveAuth';
 
 const gapi = window.gapi;
@@ -107,6 +108,27 @@ export function getInventory(profile) {
     })
     .then(result => {
       log('Resolving cloud inventory', { result });
-      return result.result;
+      const data = result.result;
+
+      // Check if we need to migrate from the old format to new format
+      if (data.new) {
+        return data.new.inventory;
+      }
+
+      // Yup, we need to migrate
+      console.log('migrating...', data);
+      const migratedInventory = mapValues(data, (instancesArray, itemHash) => {
+        return {
+          itemHash,
+          obtained: true,
+          instances: instancesArray.map(instance => ({
+            location: instance.$location
+          }))
+        };
+      });
+
+      // return result.result;
+
+      return migratedInventory;
     });
 }

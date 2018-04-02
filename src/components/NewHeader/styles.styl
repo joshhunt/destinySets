@@ -1,0 +1,51 @@
+$baseColour = rgba(11, 13, 16, 1.0)
+$bgColour = lighten($baseColour, 4%)
+$filterColour = lighten($baseColour, 10%)
+$activeBg = rgba(white, .07)
+$padding = 15px
+
+.root
+  content: 'root'
+  background: $bgColour
+  margin: -15px -15px 0 -15px
+  line-height: 1
+  margin-bottom: $padding
+  display: flex
+  align-items: center
+  padding: 0 $padding
+
+.siteName
+  font-size: 22px
+  display: flex
+  align-items: center
+
+.logo
+  width: 22px
+  height: auto
+  margin-right: 12px
+
+.links
+  flex: 1
+  margin-left: $padding
+
+.link
+  display: inline-block
+  padding: 18px 10px
+  color: inherit
+  text-decoration: none
+
+  &:hover
+    background: $activeBg
+
+  &.active
+    position: relative
+
+    &:after
+      display: block
+      content: ''
+      position absolute
+      bottom: 0
+      right: 0
+      left: 0
+      height: 3px
+      background: rgba(white, .2)

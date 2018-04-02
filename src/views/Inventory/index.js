@@ -4,6 +4,7 @@ import { Link } from 'react-router';
 
 import {
   setProfile,
+  setCloudInventory,
   setVendorDefs,
   setItemDefs,
   setObjectiveDefs,
@@ -11,10 +12,14 @@ import {
   toggleFilterKey
 } from 'app/store/reducer';
 
+import googleAuth from 'app/lib/googleDriveAuth';
+
 import DestinyAuthProvider from 'app/lib/DestinyAuthProvider';
 import * as destiny from 'app/lib/destiny';
+import * as cloudStorage from 'app/lib/cloudStorage';
 import { getDefinition } from 'app/lib/manifestData';
 
+import Header from 'app/components/NewHeader';
 import Section from 'app/components/NewSection';
 import Popper from 'app/components/Popper';
 import FilterBar from 'app/components/NewFilterBar';
@@ -43,8 +48,20 @@ class Inventory extends Component {
   fetch(props = this.props) {
     window.__CACHE_API = false;
 
-    destiny.getCurrentProfilesWithCache((err, { profiles }) => {
-      return props.setProfile(profiles[0]);
+    destiny.getCurrentProfilesWithCache((err, { profiles }, isCached) => {
+      const profile = profiles[0];
+
+      !isCached &&
+        googleAuth(({ signedIn }) => {
+          signedIn &&
+            cloudStorage.getInventory(profile).then(cloudInventory => {
+              console.log('got cloud inventory', cloudInventory);
+              window.__cloudInventory = cloudInventory;
+              props.setCloudInventory(cloudInventory);
+            });
+        });
+
+      return props.setProfile(profile);
     });
 
     getDefinition('DestinyVendorDefinition', 'en').then(props.setVendorDefs);
@@ -86,6 +103,8 @@ class Inventory extends Component {
 
     return (
       <div className={styles.root}>
+        <Header />
+
         <div className={styles.nav}>
           <Link className={styles.nav} to="/new/">
             Base
@@ -151,6 +170,7 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToActions = {
   setProfile,
+  setCloudInventory,
   setVendorDefs,
   setItemDefs,
   setObjectiveDefs,
