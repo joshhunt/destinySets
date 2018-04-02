@@ -116,7 +116,6 @@ export function getInventory(profile) {
       }
 
       // Yup, we need to migrate
-      console.log('migrating...', data);
       const migratedInventory = mapValues(data, (instancesArray, itemHash) => {
         return {
           itemHash,
@@ -126,6 +125,16 @@ export function getInventory(profile) {
           }))
         };
       });
+
+      // Test
+      migratedInventory[1338] = {
+        itemHash: 1338,
+        obtained: true,
+        instances: [{ location: 'fakeItemFromCloudStoragee' }]
+      };
+
+      delete migratedInventory.inventory;
+      delete migratedInventory.plugData;
 
       // return result.result;
 

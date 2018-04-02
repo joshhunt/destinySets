@@ -3,6 +3,7 @@
   position: relative
 
 .obtained
+.dismantled
   opacity: .25
 
 .image
@@ -15,7 +16,7 @@
   composes: image
   background: rgba(#D2D2D2, 0.1)
 
-.obtainedTick
+.tick
   position: absolute
   top: -5px
   right: @top
@@ -25,3 +26,6 @@
   border-radius: 50%
   font-size: 12px
   padding: 3px
+
+  .dismantled &
+    background: #7f8fa6

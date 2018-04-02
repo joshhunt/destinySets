@@ -1,4 +1,5 @@
 import { createSelector } from 'reselect';
+import { difference } from 'lodash';
 
 import {
   inventoryFromProfile,
@@ -94,17 +95,41 @@ export const makeSelectedItemDefsSelector = () => {
   );
 };
 
-export const inventorySelector = createSelector(
+export const currentInventorySelector = createSelector(
   profileSelector,
   vendorDefsSelector,
-  cloudInventorySelector,
-  (profile, vendorDefs, cloudInventory) => {
-    // return cloudInventory;
+  (profile, vendorDefs) => {
     if (!(profile && vendorDefs)) {
       return null;
     }
 
     return inventoryFromProfile(profile, vendorDefs);
+  }
+);
+
+export const inventorySelector = createSelector(
+  currentInventorySelector,
+  cloudInventorySelector,
+  (currentInventory, cloudInventory) => {
+    if (!(currentInventory && cloudInventory)) {
+      return currentInventory;
+    }
+
+    const deletedItems = difference(
+      Object.keys(cloudInventory),
+      Object.keys(currentInventory)
+    );
+
+    const inventory = { ...currentInventory };
+    deletedItems.forEach(deletedHash => {
+      inventory[deletedHash] = {
+        itemHash: deletedHash,
+        dismantled: true,
+        instances: { location: 'cloudInventory' }
+      };
+    });
+
+    return inventory;
   }
 );
 

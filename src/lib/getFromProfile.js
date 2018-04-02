@@ -107,6 +107,13 @@ export function inventoryFromProfile(profile, vendorDefs) {
     [fromVendorSockets(profile.$vendors.data), 'vendorSockets']
   ].reduce(mergeItems, {});
 
+  // Test
+  inventory[1337] = {
+    itemHash: 1337,
+    obtained: true,
+    instances: [{ location: 'fakeItemFromProfile' }]
+  };
+
   window.__inventory = inventory;
 
   return inventory;

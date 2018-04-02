@@ -43,7 +43,8 @@ export default class Item extends Component {
         className={cx(
           className,
           styles.root,
-          inventoryEntry && styles.obtained
+          inventoryEntry && inventoryEntry.obtained && styles.obtained,
+          inventoryEntry && inventoryEntry.dismantled && styles.dismantled
         )}
       >
         <img
@@ -53,7 +54,7 @@ export default class Item extends Component {
         />
 
         {inventoryEntry && (
-          <div className={styles.obtainedTick}>
+          <div className={styles.tick}>
             <Icon icon="check" />
           </div>
         )}

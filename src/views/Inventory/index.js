@@ -55,7 +55,6 @@ class Inventory extends Component {
         googleAuth(({ signedIn }) => {
           signedIn &&
             cloudStorage.getInventory(profile).then(cloudInventory => {
-              console.log('got cloud inventory', cloudInventory);
               window.__cloudInventory = cloudInventory;
               props.setCloudInventory(cloudInventory);
             });
