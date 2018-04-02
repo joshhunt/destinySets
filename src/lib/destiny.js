@@ -1,6 +1,7 @@
 import { sortBy } from 'lodash';
 
 import { setUser } from 'app/lib/telemetry';
+import * as ls from 'app/lib/ls';
 
 const XUR_URL = 'https://api.destiny.plumbing/xur';
 
@@ -222,6 +223,21 @@ export function getCurrentProfiles() {
         bungieNetUser
       };
     });
+}
+
+export function getCurrentProfilesWithCache(cb) {
+  const cached = ls.getProfiles();
+
+  if (cached) {
+    cb(null, cached);
+  }
+
+  getCurrentProfiles()
+    .then(resp => {
+      ls.saveProfiles(resp);
+      cb(null, resp);
+    })
+    .catch(err => cb(err));
 }
 
 export function getCurrentProfile() {

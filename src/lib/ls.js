@@ -11,7 +11,9 @@ const keys = {
   GOOGLE_LOGIN_UPSELL: '$googleLoginUpsell',
   VISIT_COUNT: '$visitCount',
   TRACKED_ITEMS: '$trackedItems',
-  UID: 'uid'
+  UID: 'uid',
+
+  DESTINY_PROFILE: 'd2Profile'
 };
 
 let LOCAL_STORAGE;
@@ -173,6 +175,15 @@ export function getUID() {
 
 export function saveUID(uid) {
   save(keys.UID, uid);
+}
+
+//
+export function saveProfiles(profilese) {
+  save(keys.DESTINY_PROFILE, profilese);
+}
+
+export function getProfiles() {
+  return get(keys.DESTINY_PROFILE);
 }
 
 export function clearAll() {

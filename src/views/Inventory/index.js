@@ -41,11 +41,11 @@ class Inventory extends Component {
   }
 
   fetch(props = this.props) {
-    window.__CACHE_API = true;
+    window.__CACHE_API = false;
 
-    destiny
-      .getCurrentProfiles()
-      .then(({ profiles }) => props.setProfile(profiles[0]));
+    destiny.getCurrentProfilesWithCache((err, { profiles }) => {
+      return props.setProfile(profiles[0]);
+    });
 
     getDefinition('DestinyVendorDefinition', 'en').then(props.setVendorDefs);
 
