@@ -7,8 +7,12 @@ const ITEM_BLACKLIST = [
   1608119540 // Default emblem
 ];
 
+function itemMapper(item) {
+  return item.itemHash;
+}
+
 function fromCharacter(data) {
-  return flatMap(data, character => character.items.map(item => item.itemHash));
+  return flatMap(data, character => character.items.map(itemMapper));
 }
 
 const flavorObjectivesFromKiosk = data =>
@@ -98,6 +102,7 @@ export function inventoryFromProfile(profile, vendorDefs) {
   const inventory = [
     [fromCharacter(profile.characterEquipment.data), 'characterEquipment'],
     [fromCharacter(profile.characterInventories.data), 'characterInventories'],
+    [profile.profileInventory.data.items.map(itemMapper), 'profileInventory'],
     [
       fromCharacterKiosks(profile.characterKiosks.data, vendorDefs),
       'characterKiosks'

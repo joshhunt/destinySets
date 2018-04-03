@@ -31,6 +31,7 @@ export default function getItemExtraInfo(item, _itemInventoryEntry) {
 const LOCATIONS = {
   characterEquipment: 'Equipped on character',
   characterInventories: 'On character',
+  profileInventory: 'In vault',
   characterKiosks: 'Unlocked in Kiosk',
   profileKiosks: 'Unlocked in Kiosk',
   itemSockets: 'itemSockets',
