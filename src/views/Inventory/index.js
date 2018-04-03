@@ -40,16 +40,24 @@ class Inventory extends Component {
   };
 
   componentWillReceiveProps(newProps) {
-    if (!this.props.isAuthenticated && newProps.isAuthenticated) {
+    // if (!this.props.isAuthenticated && newProps.isAuthenticated) {
+    if (!this.alreeadyFetched) {
+      this.alreeadyFetched = true;
       this.fetch(newProps);
     }
+    // }
   }
 
   fetch(props = this.props) {
+    console.log('running fetch...');
     window.__CACHE_API = false;
 
-    destiny.getCurrentProfilesWithCache((err, { profiles }, isCached) => {
-      const profile = profiles[0];
+    destiny.getCurrentProfilesWithCache((err, data, isCached) => {
+      if (err) {
+        return;
+      }
+
+      const profile = data.profiles[0];
 
       !isCached &&
         googleAuth(({ signedIn }) => {
