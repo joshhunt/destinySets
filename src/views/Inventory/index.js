@@ -20,6 +20,7 @@ import * as cloudStorage from 'app/lib/cloudStorage';
 import { getDefinition } from 'app/lib/manifestData';
 
 import Header from 'app/components/NewHeader';
+import LoginUpsell from 'app/components/LoginUpsell';
 import Section from 'app/components/NewSection';
 import Popper from 'app/components/Popper';
 import FilterBar from 'app/components/NewFilterBar';
@@ -119,6 +120,13 @@ class Inventory extends Component {
     return (
       <div className={styles.root}>
         <Header />
+
+        {!this.props.isAuthenticated && (
+          <LoginUpsell>
+            Connect your Bungie.net acccount to automatically track items you've
+            collected and dismantled.
+          </LoginUpsell>
+        )}
 
         <FilterBar filters={filters} toggleFilter={this.toggleFilter} />
 
