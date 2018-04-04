@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router';
 
 import {
   setProfile,
@@ -114,22 +113,12 @@ class Inventory extends Component {
   };
 
   render() {
-    const { itemDefs, objectiveDefs, filters, filteredSetData } = this.props;
+    const { filters, filteredSetData } = this.props;
     const { itemTooltip, itemModal } = this.state;
 
     return (
       <div className={styles.root}>
         <Header />
-
-        <div className={styles.debug} onClick={this.clearCache}>
-          <div className={itemDefs ? styles.green : styles.red}>
-            itemDefs: {itemDefs ? 'Loaded' : 'Not Loaded'}
-          </div>
-
-          <div className={objectiveDefs ? styles.green : styles.red}>
-            objectiveDefs: {objectiveDefs ? 'Loaded' : 'Not Loaded'}
-          </div>
-        </div>
 
         <FilterBar filters={filters} toggleFilter={this.toggleFilter} />
 
@@ -161,9 +150,7 @@ class Inventory extends Component {
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    itemDefs: state.app.itemDefs,
     filters: state.app.filters,
-    objectiveDefs: state.app.objectiveDefs,
     // TODO: this uses props, so we need to 'make' a selector like in ItemSet
     filteredSetData: filteredSetDataSelector(state, ownProps)
   };
