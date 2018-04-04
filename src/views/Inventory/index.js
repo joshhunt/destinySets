@@ -112,18 +112,6 @@ class Inventory extends Component {
       <div className={styles.root}>
         <Header />
 
-        <div className={styles.nav}>
-          <Link className={styles.nav} to="/new/">
-            Base
-          </Link>
-          <Link className={styles.nav} to="/new/curse-of-osiris">
-            Season 2
-          </Link>
-          <Link className={styles.nav} to="/new/all-items">
-            All Items
-          </Link>
-        </div>
-
         <div className={styles.debug} onClick={this.clearCache}>
           <div className={itemDefs ? styles.green : styles.red}>
             itemDefs: {itemDefs ? 'Loaded' : 'Not Loaded'}

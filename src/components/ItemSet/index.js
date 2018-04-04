@@ -12,6 +12,7 @@ import styles from './styles.styl';
 function ItemSet({
   className,
   name,
+  description,
   sections,
   inventory,
   itemDefs,
@@ -21,7 +22,10 @@ function ItemSet({
   return (
     <div className={cx(className, styles.root)}>
       <div className={styles.inner}>
-        <h3 className={styles.title}>{name}</h3>
+        <div className={styles.header}>
+          <h3 className={styles.title}>{name}</h3>
+          {description && <p>{description}</p>}
+        </div>
 
         {sections.map((section, index) => (
           <div key={index} className={styles.section}>

@@ -35,7 +35,7 @@ function getManifest() {
         // TODO: fail appropraitely if no manifest is cached
         log('Manifest request failed, using previously cached');
         const id = data[0].split(':')[0];
-        return { id };
+        return { id, isStale: true };
       });
   }
 

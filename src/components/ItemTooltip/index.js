@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { uniq } from 'lodash';
 import cx from 'classnames';
 
 import { EMBLEM } from 'app/lib/destinyEnums';
@@ -34,10 +35,12 @@ function ItemTooltip({
   const isEmblem = (itemCategoryHashes || []).includes(EMBLEM);
   const extraInfo = getItemExtraInfo(item, itemInventoryEntry);
 
-  const objectiveHashes = [
-    item.emblemObjectiveHash,
-    ...((item.objectives || {}).objectiveHashes || [])
-  ].filter(Boolean);
+  const objectiveHashes = uniq(
+    [
+      item.emblemObjectiveHash,
+      ...((item.objectives || {}).objectiveHashes || [])
+    ].filter(Boolean)
+  );
 
   return (
     <div className={cx(styles.tooltip, small && styles.small)}>
