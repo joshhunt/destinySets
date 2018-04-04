@@ -19,8 +19,6 @@ db.version(1).stores({
 let manifestPromise;
 
 function getManifest() {
-  // return Promise.resolve({ id: 'ae3b053c99a4838ede0db0f9340498e1' });
-
   if (!manifestPromise) {
     manifestPromise = destiny
       .get('https://destiny.plumbing/index.json')

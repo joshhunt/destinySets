@@ -3,6 +3,9 @@ export const HUNTER = 1;
 export const WARLOCK = 2;
 export const NO_CLASS = 3;
 
+export const FILTER_SHOW_COLLECTED = 'showCollected';
+export const FILTER_SHOW_PS4_EXCLUSIVES = 'ps4Exclusives';
+
 // itemCategoryHashes
 export const CLASS_ITEMS = 49;
 export const WEAPON = 1;

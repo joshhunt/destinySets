@@ -1,13 +1,21 @@
 import React from 'react';
 
-import { HUNTER, TITAN, WARLOCK } from 'app/lib/destinyEnums';
+import {
+  HUNTER,
+  TITAN,
+  WARLOCK,
+  FILTER_SHOW_COLLECTED,
+  FILTER_SHOW_PS4_EXCLUSIVES
+} from 'app/lib/destinyEnums';
 
 import styles from './styles.styl';
 
 const FILTER_NAMES = {
   [HUNTER]: 'Hunter',
   [TITAN]: 'Titan',
-  [WARLOCK]: 'Warlock'
+  [WARLOCK]: 'Warlock',
+  [FILTER_SHOW_COLLECTED]: 'Collected items',
+  [FILTER_SHOW_PS4_EXCLUSIVES]: 'PS4 Exclusives'
 };
 
 export default function FilterBar({ filters, toggleFilter }) {
@@ -16,10 +24,10 @@ export default function FilterBar({ filters, toggleFilter }) {
       {Object.keys(filters).map(key => (
         <div
           key={key}
-          className={filters[key] ? styles.filterTrue : styles.filterFalse}
+          className={filters[key] ? styles.filterEnabled : styles.filterItem}
           onClick={() => toggleFilter(key)}
         >
-          {FILTER_NAMES[key]}: {filters[key] ? 'true' : 'false'}
+          {FILTER_NAMES[key]}
         </div>
       ))}
     </div>

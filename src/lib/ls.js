@@ -3,7 +3,7 @@ import { getDefaultLanguage } from './i18n';
 const keys = {
   INVENTORY: '$inventory2',
   CLOUD_INVENTORY: '$cloudinventory',
-  FILTERS: '$filters',
+  FILTERS: '$filters2',
   ACCOUNT: '$account',
   LANGUAGE: '$lang',
   AUTH: '$auth',

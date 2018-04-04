@@ -15,6 +15,7 @@ import {
 import googleAuth from 'app/lib/googleDriveAuth';
 
 import DestinyAuthProvider from 'app/lib/DestinyAuthProvider';
+import * as ls from 'app/lib/ls';
 import * as destiny from 'app/lib/destiny';
 import * as cloudStorage from 'app/lib/cloudStorage';
 import { getDefinition } from 'app/lib/manifestData';
@@ -41,11 +42,15 @@ class Inventory extends Component {
 
   componentWillReceiveProps(newProps) {
     // if (!this.props.isAuthenticated && newProps.isAuthenticated) {
-    if (!this.alreeadyFetched) {
-      this.alreeadyFetched = true;
+    if (!this.alreadyFetched) {
+      this.alreadyFetched = true;
       this.fetch(newProps);
     }
     // }
+
+    if (this.props.filters !== newProps.filters) {
+      ls.saveFilters(newProps.filters);
+    }
   }
 
   fetch(props = this.props) {
@@ -104,6 +109,10 @@ class Inventory extends Component {
     this.setState({ itemModal: itemHash });
   };
 
+  toggleFilter = key => {
+    this.props.toggleFilterKey(key);
+  };
+
   render() {
     const { itemDefs, objectiveDefs, filters, filteredSetData } = this.props;
     const { itemTooltip, itemModal } = this.state;
@@ -122,10 +131,7 @@ class Inventory extends Component {
           </div>
         </div>
 
-        <FilterBar
-          filters={filters}
-          toggleFilter={this.props.toggleFilterKey}
-        />
+        <FilterBar filters={filters} toggleFilter={this.toggleFilter} />
 
         {filteredSetData.map(({ sets, name }, index) => (
           <Section

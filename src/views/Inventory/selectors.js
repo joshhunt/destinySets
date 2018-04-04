@@ -1,22 +1,38 @@
 import { createSelector } from 'reselect';
 import immer from 'immer';
 
-import { HUNTER, TITAN, WARLOCK } from 'app/lib/destinyEnums';
+import {
+  HUNTER,
+  TITAN,
+  WARLOCK,
+  FILTER_SHOW_COLLECTED,
+  FILTER_SHOW_PS4_EXCLUSIVES
+} from 'app/lib/destinyEnums';
+import CONSOLE_EXCLUSIVES from 'app/data/consoleExclusives';
+
+import { inventorySelector } from 'app/store/selectors';
+
 import { getItemClass } from 'app/lib/destinyUtils';
 import fancySearch from 'app/lib/fancySearch';
 import { default as sortItems } from 'app/lib/sortItemsIntoSections';
 
-function filterItem(item, filters) {
-  // if (
-  //   !filter[SHOW_PS4_EXCLUSIVES] &&
-  //   consoleExclusives.ps4.includes(item.hash)
-  // ) {
-  //   return false;
-  // }
+function filterItem(item, inventory, filters) {
+  if (
+    !filters[FILTER_SHOW_PS4_EXCLUSIVES] &&
+    CONSOLE_EXCLUSIVES.ps4.includes(item.hash)
+  ) {
+    return false;
+  }
 
-  // if (!filter[SHOW_COLLECTED] && item.$obtained) {
-  //   return false;
-  // }
+  if (!filters[FILTER_SHOW_COLLECTED] && inventory) {
+    const inventoryEntry = inventory[item.hash];
+    if (
+      inventoryEntry &&
+      (inventoryEntry.obtained || inventoryEntry.dismantlede)
+    ) {
+      return false;
+    }
+  }
 
   const itemClass = getItemClass(item);
 
@@ -90,8 +106,9 @@ const setDataSelector = createSelector(
 export const filteredSetDataSelector = createSelector(
   filtersSelector,
   setDataSelector,
+  inventorySelector,
   itemDefsSelector,
-  (filters, setData, itemDefs) => {
+  (filters, setData, inventory, itemDefs) => {
     if (!itemDefs) {
       return setData;
     }
@@ -103,7 +120,7 @@ export const filteredSetDataSelector = createSelector(
           set.sections.forEach(section => {
             section.items = section.items.filter(itemHash => {
               const item = itemDefs[itemHash];
-              return filterItem(item, filters);
+              return filterItem(item, inventory, filters);
             });
           });
 

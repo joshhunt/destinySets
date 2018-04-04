@@ -1,17 +1,28 @@
-import { HUNTER, TITAN, WARLOCK } from 'app/lib/destinyEnums';
+import {
+  HUNTER,
+  TITAN,
+  WARLOCK,
+  FILTER_SHOW_COLLECTED,
+  FILTER_SHOW_PS4_EXCLUSIVES
+} from 'app/lib/destinyEnums';
 
 const SET_PROFILE = 'Set profile data';
 const SET_CLOUD_INVENTORY = 'Set cloud inventory';
 const SET_VENDORS = 'Set vendor data';
 const SET_DEFINITIONS = 'Set definitions';
 const TOGGLE_FILTER_KEY = 'Toggle filter value';
+const SET_BULK_FILTERS = 'Set bulk filters';
+
+export const DEFAULT_FILTER = {
+  [TITAN]: true,
+  [HUNTER]: true,
+  [WARLOCK]: true,
+  [FILTER_SHOW_COLLECTED]: true,
+  [FILTER_SHOW_PS4_EXCLUSIVES]: true
+};
 
 const INITIAL_STORE = {
-  filters: {
-    [HUNTER]: false,
-    [TITAN]: false,
-    [WARLOCK]: true
-  }
+  filters: DEFAULT_FILTER
 };
 
 export default function reducer(state = INITIAL_STORE, action) {
@@ -49,6 +60,12 @@ export default function reducer(state = INITIAL_STORE, action) {
         }
       };
 
+    case SET_BULK_FILTERS:
+      return {
+        ...state,
+        filters: { ...state.filters, ...action.filters }
+      };
+
     default:
       return state;
   }
@@ -68,6 +85,10 @@ export function setVendors(vendors) {
 
 export function toggleFilterKey(filterKey) {
   return { type: TOGGLE_FILTER_KEY, filterKey };
+}
+
+export function setBulkFilters(filters) {
+  return { type: SET_BULK_FILTERS, filters };
 }
 
 function setDefs(name, defs) {
