@@ -22,13 +22,17 @@ export default function FilterBar({ filters, toggleFilter }) {
   return (
     <div className={styles.root}>
       {Object.keys(filters).map(key => (
-        <div
+        <label
           key={key}
           className={filters[key] ? styles.filterEnabled : styles.filterItem}
-          onClick={() => toggleFilter(key)}
         >
+          <input
+            type="checkbox"
+            checked={filters[key]}
+            onChange={() => toggleFilter(key)}
+          />{' '}
           {FILTER_NAMES[key]}
-        </div>
+        </label>
       ))}
     </div>
   );
