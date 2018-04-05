@@ -1,19 +1,28 @@
 /* eslint-disable jsx-a11y/href-no-hash */
 import React from 'react';
 import { Link } from 'react-router';
+
 import logo from 'app/logo.svg';
-// import LanguageSwitcher from './LanguageSwitcher';
+import { DONATION_LINK } from 'app/components/DonateButton';
+import Icon from 'app/components/Icon';
+import ProfileDropdown from './ProfileDropdown';
 
 import styles from './styles.styl';
 
 const link = (name, to) => ({ name, to });
 const LINKS = [
-  link('Base', '/new/'),
-  link('Curse of Osiris', '/new/curse-of-osiris'),
-  link('All Items', '/new/all-items')
+  link('Base', '/'),
+  link('Curse of Osiris', '/curse-of-osiris'),
+  link('All Items', '/all-items')
 ];
 
-export default function Header() {
+const SOCIALS = [
+  link('paypal', DONATION_LINK),
+  link('twitter', 'https://twitter.com/joshhunt'),
+  link('github', 'https://github.com/joshhunt/destinySets')
+];
+
+export default function Header({ currentProfile, allProfiles, switchProfile }) {
   return (
     <div className={styles.root}>
       <div className={styles.siteName}>
@@ -35,7 +44,25 @@ export default function Header() {
       </div>
 
       <div className={styles.etc}>
-        <div>Destiny Sets</div>
+        {currentProfile && (
+          <ProfileDropdown
+            currentProfile={currentProfile}
+            allProfiles={allProfiles}
+            switchProfile={switchProfile}
+          />
+        )}
+
+        {SOCIALS.map(({ name, to }) => (
+          <a
+            key={to}
+            className={styles.socialLink}
+            href={to}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Icon icon={name} brand />
+          </a>
+        ))}
       </div>
     </div>
   );

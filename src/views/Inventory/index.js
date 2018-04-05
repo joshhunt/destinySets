@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import {
-  setProfile,
+  setProfiles,
+  switchProfile,
   setCloudInventory,
   setVendorDefs,
   setItemDefs,
@@ -73,7 +74,10 @@ class Inventory extends Component {
             });
         });
 
-      return props.setProfile(profile);
+      return props.setProfiles({
+        currentProfile: profile,
+        allProfiles: data.profiles
+      });
     });
 
     getDefinition('DestinyVendorDefinition', 'en').then(props.setVendorDefs);
@@ -90,19 +94,8 @@ class Inventory extends Component {
     );
   }
 
-  clearCache = () => {
-    Object.keys(window.localStorage).forEach(lsKey => {
-      if (lsKey.includes('apiCache|')) {
-        window.localStorage.removeItem(lsKey);
-      }
-    });
-    this.fetch(this.props);
-  };
-
   setPopper = (itemHash, element) => {
-    itemHash
-      ? this.setState({ itemTooltip: { itemHash, element } })
-      : this.setState({ itemTooltip: null });
+    this.setState({ itemTooltip: itemHash ? { itemHash, element } : null });
   };
 
   setModal = itemHash => {
@@ -114,12 +107,16 @@ class Inventory extends Component {
   };
 
   render() {
-    const { filters, filteredSetData } = this.props;
+    const { filters, filteredSetData, profile, allProfiles } = this.props;
     const { itemTooltip, itemModal } = this.state;
 
     return (
       <div className={styles.root}>
-        <Header />
+        <Header
+          currentProfile={profile}
+          allProfiles={allProfiles}
+          switchProfile={this.props.switchProfile}
+        />
 
         {!this.props.isAuthenticated && (
           <LoginUpsell>
@@ -159,13 +156,16 @@ class Inventory extends Component {
 const mapStateToProps = (state, ownProps) => {
   return {
     filters: state.app.filters,
+    profile: state.app.profile,
+    allProfiles: state.app.allProfiles,
     // TODO: this uses props, so we need to 'make' a selector like in ItemSet
     filteredSetData: filteredSetDataSelector(state, ownProps)
   };
 };
 
 const mapDispatchToActions = {
-  setProfile,
+  setProfiles,
+  switchProfile,
   setCloudInventory,
   setVendorDefs,
   setItemDefs,

@@ -8,7 +8,7 @@ import {
   FILTER_SHOW_PS4_EXCLUSIVES
 } from 'app/lib/destinyEnums';
 
-const SET_PROFILE = 'Set profile data';
+const SET_PROFILES = 'Set profiles';
 const SET_CLOUD_INVENTORY = 'Set cloud inventory';
 const SET_VENDORS = 'Set vendor data';
 const SET_DEFINITIONS = 'Set definitions';
@@ -39,10 +39,12 @@ function proxyifyDefs(defs, prevKeys = []) {
     get: (obj, prop) => {
       const keys = [...prevKeys, prop];
       const keysOfInterest = keys.slice(1).join('.');
+
       if (!ITEM_DEF_KEYS.includes(keysOfInterest)) {
         ITEM_DEF_KEYS.push(keysOfInterest);
         console.log('Item defs', ITEM_DEF_KEYS);
       }
+
       const value = obj[prop];
 
       if (isArray(value)) {
@@ -66,10 +68,10 @@ function proxyifyDefs(defs, prevKeys = []) {
 
 export default function reducer(state = INITIAL_STORE, action) {
   switch (action.type) {
-    case SET_PROFILE:
+    case SET_PROFILES:
       return {
         ...state,
-        profile: action.profile
+        ...action.payload
       };
 
     case SET_CLOUD_INVENTORY:
@@ -111,8 +113,23 @@ export default function reducer(state = INITIAL_STORE, action) {
   }
 }
 
-export function setProfile(profile) {
-  return { type: SET_PROFILE, profile };
+export function setProfiles({ currentProfile, allProfiles }) {
+  return {
+    type: SET_PROFILES,
+    payload: {
+      profile: currentProfile,
+      allProfiles
+    }
+  };
+}
+
+export function switchProfile(newProfile) {
+  return {
+    type: SET_PROFILES,
+    payload: {
+      profile: newProfile
+    }
+  };
 }
 
 export function setCloudInventory(cloudInventory) {

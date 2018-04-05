@@ -220,13 +220,14 @@ class Gearsets extends Component {
       });
       log('Google auth signedIn:', signedIn);
 
-      signedIn &&
-        !this.cloudInventory &&
-        cloudStorage.getInventory(profile).then(cloudInventory => {
-          this.hasRecievedInventory = true;
-          this.cloudInventory = cloudInventory;
-          this.scheduleProcessSets();
-        });
+      // Disabled because it's been changed for refactor
+      // signedIn &&
+      //   !this.cloudInventory &&
+      //   cloudStorage.getInventory(profile).then(cloudInventory => {
+      //     this.hasRecievedInventory = true;
+      //     this.cloudInventory = cloudInventory;
+      //     this.scheduleProcessSets();
+      //   });
     });
 
     const { membershipId, membershipType } = profile.profile.data.userInfo;

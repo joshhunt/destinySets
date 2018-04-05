@@ -24,7 +24,7 @@ function ItemSet({
       <div className={styles.inner}>
         <div className={styles.header}>
           <h3 className={styles.title}>{name}</h3>
-          {description && <p>{description}</p>}
+          {description && <p className={styles.desc}>{description}</p>}
         </div>
 
         {sections.map((section, index) => (

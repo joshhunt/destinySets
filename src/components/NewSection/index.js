@@ -11,7 +11,7 @@ export default function Section({ name, sets, setPopper, setModal }) {
       <h2 className={styles.title}>{name}</h2>
       <div className={styles.list}>
         {sets.map((set, index) => (
-          <LazyLoad height={100} key={index}>
+          <LazyLoad key={index}>
             <ItemSet
               className={styles.set}
               name={set.name}

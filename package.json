@@ -5,6 +5,7 @@
   "dependencies": {
     "@d8660091/react-popper": "^0.7.1",
     "@fortawesome/fontawesome": "^1.1.5",
+    "@fortawesome/fontawesome-free-brands": "^5.0.9",
     "@fortawesome/fontawesome-pro-light": "^5.0.9",
     "@fortawesome/fontawesome-pro-regular": "^5.0.9",
     "@fortawesome/fontawesome-pro-solid": "^5.0.9",

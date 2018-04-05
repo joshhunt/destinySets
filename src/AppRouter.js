@@ -18,25 +18,25 @@ export default class AppRouter extends Component {
         <Router history={browserHistory}>
           <Route
             path={sets[0].path}
-            component={Gearsets}
+            component={Inventory}
             setData={sets[0].setData}
           />
 
           <Route
             path={sets[1].path}
-            component={Gearsets}
+            component={Inventory}
             setData={sets[1].setData}
           />
 
           <Route
             path={sets[2].path}
-            component={Gearsets}
+            component={Inventory}
             setData={sets[2].setData}
           />
 
           <Route
             path={sets[3].path}
-            component={Gearsets}
+            component={Inventory}
             setData={sets[3].setData}
           />
 
@@ -45,20 +45,20 @@ export default class AppRouter extends Component {
           <Route path="/diff" component={Diff} />
 
           <Route
-            path={'/new' + sets[0].path}
-            component={Inventory}
+            path={'/old' + sets[0].path}
+            component={Gearsets}
             setData={sets[0].setData}
           />
 
           <Route
-            path={'/new' + sets[1].path}
-            component={Inventory}
+            path={'/old' + sets[1].path}
+            component={Gearsets}
             setData={sets[1].setData}
           />
 
           <Route
-            path={'/new' + sets[2].path}
-            component={Inventory}
+            path={'/old' + sets[2].path}
+            component={Gearsets}
             setData={sets[2].setData}
           />
         </Router>
