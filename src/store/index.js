@@ -1,6 +1,6 @@
 import { createStore, combineReducers } from 'redux';
 import * as ls from 'app/lib/ls';
-import { setBulkFilters } from 'app/store/reducer';
+import { setBulkFilters, setLanguage } from 'app/store/reducer';
 
 import reducer from './reducer';
 
@@ -20,5 +20,7 @@ if (prevFilters) {
   console.log('restore filters:', prevFilters);
   store.dispatch(setBulkFilters(prevFilters));
 }
+
+store.dispatch(setLanguage(ls.getLanguage()));
 
 export default store;

@@ -14,6 +14,7 @@ const SET_VENDORS = 'Set vendor data';
 const SET_DEFINITIONS = 'Set definitions';
 const TOGGLE_FILTER_KEY = 'Toggle filter value';
 const SET_BULK_FILTERS = 'Set bulk filters';
+const SET_LANGUAGE = 'Set language';
 
 export const DEFAULT_FILTER = {
   [TITAN]: true,
@@ -108,6 +109,12 @@ export default function reducer(state = INITIAL_STORE, action) {
         filters: { ...state.filters, ...action.filters }
       };
 
+    case SET_LANGUAGE:
+      return {
+        ...state,
+        language: action.language
+      };
+
     default:
       return state;
   }
@@ -146,6 +153,10 @@ export function toggleFilterKey(filterKey) {
 
 export function setBulkFilters(filters) {
   return { type: SET_BULK_FILTERS, filters };
+}
+
+export function setLanguage(language) {
+  return { type: SET_LANGUAGE, language };
 }
 
 function setDefs(name, defs) {

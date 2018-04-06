@@ -129,10 +129,6 @@ export function getPreviousAccount(id, type) {
   return get(keys.ACCOUNT, {});
 }
 
-export function removePreviousAccount() {
-  localStorage.removeItem(keys.ACCOUNT);
-}
-
 export function saveAuth(authData) {
   save(keys.AUTH, authData);
 }

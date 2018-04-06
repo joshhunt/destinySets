@@ -7,6 +7,7 @@ import {
   setCloudInventory,
   setVendorDefs,
   setItemDefs,
+  setLanguage,
   setObjectiveDefs,
   setStatDefs,
   toggleFilterKey
@@ -41,6 +42,10 @@ class Inventory extends Component {
     popperElement: null
   };
 
+  componentDidMount() {
+    this.fetchDefinitions(this.props.language);
+  }
+
   componentWillReceiveProps(newProps) {
     // if (!this.props.isAuthenticated && newProps.isAuthenticated) {
     if (!this.alreadyFetched) {
@@ -51,6 +56,10 @@ class Inventory extends Component {
 
     if (this.props.filters !== newProps.filters) {
       ls.saveFilters(newProps.filters);
+    }
+
+    if (this.props.language !== newProps.language) {
+      this.fetchDefinitions(newProps.language);
     }
   }
 
@@ -63,8 +72,16 @@ class Inventory extends Component {
         return;
       }
 
-      const profile = data.profiles[0];
+      const { id, type } = ls.getPreviousAccount();
+      const profile =
+        data.profiles.find(profile => {
+          return (
+            profile.profile.data.userInfo.membershipId === id &&
+            profile.profile.data.userInfo.membershipType === type
+          );
+        }) || data.profiles[0];
 
+      // TODO: Improve this - get google auth asap
       !isCached &&
         googleAuth(({ signedIn }) => {
           signedIn &&
@@ -79,18 +96,27 @@ class Inventory extends Component {
         allProfiles: data.profiles
       });
     });
+  }
 
-    getDefinition('DestinyVendorDefinition', 'en').then(props.setVendorDefs);
+  fetchDefinitions(language) {
+    const {
+      setVendorDefs,
+      setStatDefs,
+      setItemDefs,
+      setObjectiveDefs
+    } = this.props;
 
-    getDefinition('DestinyStatDefinition', 'en').then(props.setStatDefs);
+    getDefinition('DestinyVendorDefinition', language.code).then(setVendorDefs);
 
-    // getDefinition('reducedCollectableInventoryItems', 'en', false)
-    getDefinition('DestinyInventoryItemDefinition', 'en')
+    getDefinition('DestinyStatDefinition', language.code).then(setStatDefs);
+
+    // getDefinition('reducedCollectableInventoryItems', language.code, false)
+    getDefinition('DestinyInventoryItemDefinition', language.code)
       // .then(timeout(2 * 1000))
-      .then(props.setItemDefs);
+      .then(setItemDefs);
 
-    getDefinition('DestinyObjectiveDefinition', 'en').then(
-      props.setObjectiveDefs
+    getDefinition('DestinyObjectiveDefinition', language.code).then(
+      setObjectiveDefs
     );
   }
 
@@ -106,8 +132,25 @@ class Inventory extends Component {
     this.props.toggleFilterKey(key);
   };
 
+  switchProfile = profile => {
+    const { membershipId, membershipType } = profile.profile.data.userInfo;
+    ls.savePreviousAccount(membershipId, membershipType);
+    this.props.switchProfile(profile);
+  };
+
+  setLanguage = language => {
+    ls.saveLanguage(language);
+    this.props.setLanguage(language);
+  };
+
   render() {
-    const { filters, filteredSetData, profile, allProfiles } = this.props;
+    const {
+      filters,
+      filteredSetData,
+      profile,
+      allProfiles,
+      language
+    } = this.props;
     const { itemTooltip, itemModal } = this.state;
 
     return (
@@ -115,7 +158,9 @@ class Inventory extends Component {
         <Header
           currentProfile={profile}
           allProfiles={allProfiles}
-          switchProfile={this.props.switchProfile}
+          switchProfile={this.switchProfile}
+          language={language}
+          setLanguage={this.setLanguage}
         />
 
         {!this.props.isAuthenticated && (
@@ -158,6 +203,7 @@ const mapStateToProps = (state, ownProps) => {
     filters: state.app.filters,
     profile: state.app.profile,
     allProfiles: state.app.allProfiles,
+    language: state.app.language,
     // TODO: this uses props, so we need to 'make' a selector like in ItemSet
     filteredSetData: filteredSetDataSelector(state, ownProps)
   };
@@ -171,7 +217,8 @@ const mapDispatchToActions = {
   setItemDefs,
   setObjectiveDefs,
   setStatDefs,
-  toggleFilterKey
+  toggleFilterKey,
+  setLanguage
 };
 
 export default DestinyAuthProvider(

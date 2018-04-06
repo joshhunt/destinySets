@@ -20,6 +20,20 @@ const PLATFORM = {
   [BUNGIENEXT]: 'BungieNext'
 };
 
+const ICONS = {
+  [XBOX]: 'xbox',
+  [PLAYSTATION]: 'playstation',
+  [PC_BLIZZARD]: 'windows'
+};
+
+function Platform({ membershipType }) {
+  return (
+    <Fragment>
+      <Icon icon={ICONS[membershipType]} brand /> {PLATFORM[membershipType]}
+    </Fragment>
+  );
+}
+
 export default class ProfileDropdown extends Component {
   renderContent = () => {
     return (
@@ -32,7 +46,9 @@ export default class ProfileDropdown extends Component {
           >
             {profile.profile.data.userInfo.displayName}
             <div className={styles.small}>
-              {PLATFORM[profile.profile.data.userInfo.membershipType]}
+              <Platform
+                membershipType={profile.profile.data.userInfo.membershipType}
+              />
             </div>
           </div>
         ))}
@@ -54,11 +70,11 @@ export default class ProfileDropdown extends Component {
           </div>
 
           <div className={styles.small}>
-            {
-              PLATFORM[
+            <Platform
+              membershipType={
                 this.props.currentProfile.profile.data.userInfo.membershipType
-              ]
-            }
+              }
+            />
           </div>
         </div>
 
