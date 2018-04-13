@@ -1,6 +1,7 @@
-import { sortBy } from 'lodash';
+import { sortBy, has } from 'lodash';
 
 import { setUser } from 'app/lib/telemetry';
+import { getEnsuredAccessToken } from 'app/lib/destinyAuth';
 import * as ls from 'app/lib/ls';
 
 const XUR_URL = 'https://api.destiny.plumbing/xur';
@@ -87,6 +88,10 @@ export function get(url, opts) {
   return fetch(url, opts).then(res => res.json());
 }
 
+function getEnsuredAccessTokenNoop() {
+  return Promise.resolve(null);
+}
+
 export function getDestiny(_pathname, opts = {}, postBody) {
   const url = `https://www.bungie.net${_pathname}`;
   const { pathname } = new URL(url);
@@ -104,45 +109,57 @@ export function getDestiny(_pathname, opts = {}, postBody) {
   opts.headers = opts.headers || {};
   opts.headers['x-api-key'] = apiKey;
 
-  if (window.AUTH_DATA) {
-    opts.headers['Authorization'] = `Bearer ${window.AUTH_DATA.accessToken}`;
-  }
+  const authTokenFn = opts._noAuth
+    ? getEnsuredAccessTokenNoop
+    : getEnsuredAccessToken;
 
-  if (postBody) {
-    opts.method = 'POST';
-    opts.headers['Content-Type'] = 'application/json';
-    opts.body =
-      typeof postBody === 'string' ? postBody : JSON.stringify(postBody);
-  }
+  return authTokenFn()
+    .then(accessToken => {
+      if (accessToken) {
+        opts.headers['Authorization'] = `Bearer ${accessToken}`;
+      }
 
-  log(`REQUEST: ${pathname}`, opts);
+      if (postBody) {
+        opts.method = 'POST';
+        if (typeof postBody === 'string') {
+          opts.headers['Content-Type'] = 'application/x-www-form-urlencoded';
+          opts.body = postBody;
+        } else {
+          opts.headers['Content-Type'] = 'application/json';
+          opts.body = JSON.stringify(postBody);
+        }
+      }
 
-  return get(url, opts).then(resp => {
-    log(`RESPONSE: ${pathname}`, resp);
+      log(`REQUEST: ${pathname}`, opts);
 
-    if (resp.ErrorStatus === 'DestinyAccountNotFound') {
-      return null;
-    }
+      return get(url, opts);
+    })
+    .then(resp => {
+      log(`RESPONSE: ${pathname}`, resp);
 
-    if (resp.ErrorCode !== 1) {
-      throw new Error(
-        'Bungie API Error ' +
-          resp.ErrorStatus +
-          ' - ' +
-          resp.Message +
-          '\nURL: ' +
-          url
-      );
-    }
+      if (resp.ErrorStatus === 'DestinyAccountNotFound') {
+        return null;
+      }
 
-    const result = resp.Response || resp;
+      if (has(resp, 'ErrorCode') && resp.ErrorCode !== 1) {
+        throw new Error(
+          'Bungie API Error ' +
+            resp.ErrorStatus +
+            ' - ' +
+            resp.Message +
+            '\nURL: ' +
+            url
+        );
+      }
 
-    if (window.__CACHE_API) {
-      localStorage.setItem(lsCacheKey, JSON.stringify(result));
-    }
+      const result = resp.Response || resp;
 
-    return result;
-  });
+      if (window.__CACHE_API) {
+        localStorage.setItem(lsCacheKey, JSON.stringify(result));
+      }
+
+      return result;
+    });
 }
 
 export function getVendors(membership, characterId) {
@@ -223,6 +240,18 @@ export function getCurrentProfiles() {
         bungieNetUser
       };
     });
+}
+
+export function getLastProfile(data) {
+  const { id, type } = ls.getPreviousAccount();
+  return (
+    data.profiles.find(profile => {
+      return (
+        profile.profile.data.userInfo.membershipId === id &&
+        profile.profile.data.userInfo.membershipType === type
+      );
+    }) || data.profiles[0]
+  );
 }
 
 export function getCurrentProfilesWithCache(cb) {

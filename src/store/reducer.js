@@ -120,12 +120,13 @@ export default function reducer(state = INITIAL_STORE, action) {
   }
 }
 
-export function setProfiles({ currentProfile, allProfiles }) {
+export function setProfiles({ currentProfile, allProfiles, isCached }) {
   return {
     type: SET_PROFILES,
     payload: {
       profile: currentProfile,
-      allProfiles
+      allProfiles,
+      isCached
     }
   };
 }

@@ -32,6 +32,8 @@ import ItemModal from 'app/components/ItemModal';
 import { filteredSetDataSelector } from './selectors';
 import styles from './styles.styl';
 
+const log = require('app/lib/log')('<Inventory />');
+
 // eslint-disable-next-line
 const timeout = dur => result =>
   new Promise(resolve => setTimeout(() => resolve(result), dur));
@@ -47,12 +49,25 @@ class Inventory extends Component {
   }
 
   componentWillReceiveProps(newProps) {
-    // if (!this.props.isAuthenticated && newProps.isAuthenticated) {
-    if (!this.alreadyFetched) {
-      this.alreadyFetched = true;
-      this.fetch(newProps);
+    const { isAuthenticated, authLoaded } = newProps;
+
+    const authChanged =
+      isAuthenticated !== this.props.isAuthenticated ||
+      authLoaded !== this.props.authLoaded;
+
+    if (authChanged) {
+      log('Auth has changed', { isAuthenticated, authLoaded });
+      if (!isAuthenticated && authLoaded) {
+        ls.removeAuth();
+      }
+
+      if (isAuthenticated && authLoaded) {
+        if (!this.alreadyFetched) {
+          this.alreadyFetched = true;
+          this.fetch(newProps);
+        }
+      }
     }
-    // }
 
     if (this.props.filters !== newProps.filters) {
       ls.saveFilters(newProps.filters);
@@ -64,32 +79,20 @@ class Inventory extends Component {
   }
 
   fetch(props = this.props) {
-    console.log('running fetch...');
+    console.log('Fetching...');
     window.__CACHE_API = false;
 
-    destiny.getCurrentProfilesWithCache((err, data, isCached) => {
-      if (err) {
-        return;
-      }
-
-      const { id, type } = ls.getPreviousAccount();
-      const profile =
-        data.profiles.find(profile => {
-          return (
-            profile.profile.data.userInfo.membershipId === id &&
-            profile.profile.data.userInfo.membershipType === type
-          );
-        }) || data.profiles[0];
+    destiny.getCurrentProfile().then(data => {
+      const profile = destiny.getLastProfile(data);
 
       // TODO: Improve this - get google auth asap
-      !isCached &&
-        googleAuth(({ signedIn }) => {
-          signedIn &&
-            cloudStorage.getInventory(profile).then(cloudInventory => {
-              window.__cloudInventory = cloudInventory;
-              props.setCloudInventory(cloudInventory);
-            });
-        });
+      googleAuth(({ signedIn }) => {
+        signedIn &&
+          cloudStorage.getInventory(profile).then(cloudInventory => {
+            window.__cloudInventory = cloudInventory;
+            props.setCloudInventory(cloudInventory);
+          });
+      });
 
       return props.setProfiles({
         currentProfile: profile,

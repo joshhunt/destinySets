@@ -6,7 +6,7 @@ const keys = {
   FILTERS: '$filters2',
   ACCOUNT: '$account',
   LANGUAGE: '$lang',
-  AUTH: '$auth',
+  AUTH: '$auth2',
   GDRIVE_FILE_ID: '$googleDriveFileId' + window.DESTINYSETS_ENV,
   GOOGLE_LOGIN_UPSELL: '$googleLoginUpsell',
   VISIT_COUNT: '$visitCount',
@@ -137,16 +137,16 @@ export function getAuth() {
   return get(keys.AUTH);
 }
 
+export function removeAuth() {
+  localStorage.removeItem(keys.AUTH);
+}
+
 export function saveVisitCount(count) {
   save(keys.VISIT_COUNT, count);
 }
 
 export function getVisitCount() {
   return parseInt(get(keys.VISIT_COUNT, 0), 10);
-}
-
-export function removeAuth() {
-  localStorage.removeItem(keys.AUTH);
 }
 
 export function getGoogleDriveInventoryFileId() {

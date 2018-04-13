@@ -11,7 +11,11 @@ import './setupEnv';
 import { trackEvent } from 'app/lib/analytics';
 import AppRouter from './AppRouter';
 import * as ls from 'app/lib/ls';
+import 'app/lib/destinyAuth';
 import './index.styl';
+
+const isAuthRefreshiFrame =
+  window.self !== window.top && window.parent.__HIDDEN_IFRAME_REFRESH_AUTH;
 
 const render = App => {
   ReactDOM.render(
@@ -22,13 +26,17 @@ const render = App => {
   );
 };
 
-render(AppRouter);
-ReactModal.setAppElement('#root');
+if (!isAuthRefreshiFrame) {
+  render(AppRouter);
+  ReactModal.setAppElement('#root');
 
-ls.saveVisitCount(ls.getVisitCount() + 1);
-trackEvent('visit-count', ls.getVisitCount());
+  ls.saveVisitCount(ls.getVisitCount() + 1);
+  trackEvent('visit-count', ls.getVisitCount());
 
-// Webpack Hot Module Replacement API
-if (module.hot) {
-  module.hot.accept('./AppRouter', () => render(AppRouter));
+  // Webpack Hot Module Replacement API
+  if (module.hot) {
+    module.hot.accept('./AppRouter', () => render(AppRouter));
+  }
+} else {
+  console.log('Page is iFramed');
 }
