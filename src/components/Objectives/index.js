@@ -26,13 +26,17 @@ function ObjectiveValue({ objective, def, trackedStatStyle }) {
 }
 
 export default function Objectives(props) {
-  const { className, objectives, objectiveDefs, trackedStatStyle } = props;
+  const {
+    className,
+    objectives,
+    objectiveDefs,
+    profileObjectives,
+    trackedStatStyle
+  } = props;
 
   if (!(objectives && objectiveDefs)) {
     return null;
   }
-
-  const profileObjectives = props.profileObjectives || {};
 
   return (
     <div className={cx(className, trackedStatStyle && styles.trackedStat)}>

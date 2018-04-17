@@ -137,7 +137,7 @@ export const profileObjectivesSelector = createSelector(
   profileSelector,
   profile => {
     if (!profile) {
-      return null;
+      return {};
     }
 
     return objectivesFromProfile(profile);
