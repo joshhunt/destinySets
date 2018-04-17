@@ -67,6 +67,15 @@ class Inventory extends Component {
           this.fetch(newProps);
         }
       }
+
+      if (!isAuthenticated && authLoaded) {
+        ls.clearAll();
+        this.props.setProfiles({
+          currentProfile: null,
+          allProfiles: null,
+          isCached: false
+        });
+      }
     }
 
     if (this.props.filters !== newProps.filters) {
@@ -82,7 +91,8 @@ class Inventory extends Component {
     console.log('Fetching...');
     window.__CACHE_API = false;
 
-    destiny.getCurrentProfile().then(data => {
+    destiny.getCurrentProfiles().then(data => {
+      log('got current profile', data);
       const profile = destiny.getLastProfile(data);
 
       // TODO: Improve this - get google auth asap
@@ -94,9 +104,11 @@ class Inventory extends Component {
           });
       });
 
+      log('isCached: false');
       return props.setProfiles({
         currentProfile: profile,
-        allProfiles: data.profiles
+        allProfiles: data.profiles,
+        isCached: false
       });
     });
   }
@@ -152,13 +164,15 @@ class Inventory extends Component {
       filteredSetData,
       profile,
       allProfiles,
-      language
+      language,
+      isCached
     } = this.props;
     const { itemTooltip, itemModal } = this.state;
 
     return (
       <div className={styles.root}>
         <Header
+          isCached={isCached}
           currentProfile={profile}
           allProfiles={allProfiles}
           switchProfile={this.switchProfile}
@@ -205,6 +219,7 @@ const mapStateToProps = (state, ownProps) => {
   return {
     filters: state.app.filters,
     profile: state.app.profile,
+    isCached: state.app.isCached,
     allProfiles: state.app.allProfiles,
     language: state.app.language,
     // TODO: this uses props, so we need to 'make' a selector like in ItemSet

@@ -9,6 +9,8 @@ const fileIdLog = require('app/lib/log')('cloudStorage:getFileId');
 
 let __fileId;
 
+const CURRENT_VERSION = 'new';
+
 function getFileId({ profile }) {
   const lsFileId = ls.getGoogleDriveInventoryFileId();
   const fileId = __fileId || lsFileId;

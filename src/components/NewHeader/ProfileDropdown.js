@@ -26,7 +26,15 @@ const ICONS = {
   [PC_BLIZZARD]: 'windows'
 };
 
-function Platform({ membershipType }) {
+function Platform({ isCached, membershipType }) {
+  if (isCached) {
+    return (
+      <Fragment>
+        <Icon icon="spinner-third" spin /> Loading inventory...
+      </Fragment>
+    );
+  }
+
   return (
     <Fragment>
       <Icon icon={ICONS[membershipType]} brand /> {PLATFORM[membershipType]}
@@ -58,21 +66,21 @@ export default class ProfileDropdown extends Component {
   };
 
   render() {
+    const { isCached, currentProfile } = this.props;
     return (
       <DropdownMenu
-        className={styles.root}
+        className={isCached ? styles.cachedRoot : styles.root}
         renderContent={this.renderContent}
         contentClassName={styles.dropdown}
       >
         <div className={styles.main}>
-          <div>
-            {this.props.currentProfile.profile.data.userInfo.displayName}
-          </div>
+          <div>{currentProfile.profile.data.userInfo.displayName}</div>
 
           <div className={styles.small}>
             <Platform
+              isCached={isCached}
               membershipType={
-                this.props.currentProfile.profile.data.userInfo.membershipType
+                currentProfile.profile.data.userInfo.membershipType
               }
             />
           </div>

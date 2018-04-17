@@ -24,6 +24,7 @@ const SOCIALS = [
 ];
 
 export default function Header({
+  isCached,
   currentProfile,
   allProfiles,
   switchProfile,
@@ -51,12 +52,13 @@ export default function Header({
       </div>
 
       <div className={styles.etc}>
-        {language && (
+        {/*language && (
           <LanguageDropdown language={language} setLanguage={setLanguage} />
-        )}
+        )*/}
 
         {currentProfile && (
           <ProfileDropdown
+            isCached={isCached}
             currentProfile={currentProfile}
             allProfiles={allProfiles}
             switchProfile={switchProfile}

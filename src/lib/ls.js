@@ -173,13 +173,16 @@ export function saveUID(uid) {
   save(keys.UID, uid);
 }
 
-//
 export function saveProfiles(profilese) {
   save(keys.DESTINY_PROFILE, profilese);
 }
 
 export function getProfiles() {
   return get(keys.DESTINY_PROFILE);
+}
+
+export function removeProfiles() {
+  return localStorage.removeItem(keys.DESTINY_PROFILE);
 }
 
 export function clearAll() {
@@ -189,3 +192,4 @@ export function clearAll() {
 }
 
 export const localStorage = LOCAL_STORAGE;
+window.__clearAllLs = clearAll;

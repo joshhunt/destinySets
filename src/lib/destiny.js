@@ -166,9 +166,9 @@ export function getVendors(membership, characterId) {
   const { membershipType, membershipId } = membership;
 
   return getDestiny(
-    `/Platform/Destiny2/${membershipType}/Profile/${membershipId}/Character/${
-      characterId
-    }/Vendors/?components=${VENDOR_COMPONENTS.join(',')}`
+    `/Platform/Destiny2/${membershipType}/Profile/${membershipId}/Character/${characterId}/Vendors/?components=${VENDOR_COMPONENTS.join(
+      ','
+    )}`
   ).catch(err => {
     console.error('Error fetching vendors for', {
       membershipType,
@@ -183,9 +183,9 @@ export function getVendors(membership, characterId) {
 
 export function getProfile({ membershipType, membershipId }) {
   return getDestiny(
-    `/Platform/Destiny2/${membershipType}/Profile/${
-      membershipId
-    }/?components=${PROFILE_COMPONENTS.join(',')}`
+    `/Platform/Destiny2/${membershipType}/Profile/${membershipId}/?components=${PROFILE_COMPONENTS.join(
+      ','
+    )}`
   );
 }
 
@@ -235,10 +235,14 @@ export function getCurrentProfiles() {
 
       log('sortedProfiles:', sortedProfiles);
 
-      return {
+      const payload = {
         profiles: sortedProfiles,
         bungieNetUser
       };
+
+      ls.saveProfiles(payload);
+
+      return payload;
     });
 }
 
@@ -263,24 +267,24 @@ export function getCurrentProfilesWithCache(cb) {
 
   getCurrentProfiles()
     .then(resp => {
-      ls.saveProfiles(resp);
       cb(null, resp, false);
     })
     .catch(err => cb(err));
 }
 
 export function getCurrentProfile() {
-  return getCurrentProfiles().then(profiles => {
-    const latestChars = profiles.sort((profileA, profileB) => {
+  return getCurrentProfiles().then(data => {
+    const latestProfile = data.profiles.sort((profileA, profileB) => {
       return (
         new Date(profileB.profile.data.dateLastPlayed) -
         new Date(profileA.profile.data.dateLastPlayed)
       );
     })[0];
 
-    // TODO: validate that all fields got their data
+    log('latestProfile:', latestProfile);
 
-    return latestChars;
+    // TODO: validate that all fields got their data
+    return latestProfile;
   });
 }
 
