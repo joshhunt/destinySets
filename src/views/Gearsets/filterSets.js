@@ -1,6 +1,6 @@
 import { EMBLEM, HUNTER, TITAN, WARLOCK } from 'app/lib/destinyEnums';
-import CLASS_OVERRIDES from 'app/data/classOverrides';
-import CONSOLE_EXCLUSIVES from 'app/data/consoleExclusives';
+import CLASS_OVERRIDES from 'app/extraData/classOverrides';
+import CONSOLE_EXCLUSIVES from 'app/extraData/consoleExclusives';
 
 import { flatMapSetItems } from './utils';
 

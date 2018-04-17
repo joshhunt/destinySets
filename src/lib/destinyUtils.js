@@ -1,6 +1,6 @@
 import { EMBLEM, HUNTER, TITAN, WARLOCK, NO_CLASS } from 'app/lib/destinyEnums';
 import { getLower } from 'app/lib/utils';
-import CLASS_OVERRIDES from 'app/data/classOverrides';
+import CLASS_OVERRIDES from 'app/extraData/classOverrides';
 
 // TODO: we can just use itemCategoryHashes for this now?
 export const isOrnament = item =>

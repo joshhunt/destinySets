@@ -6,7 +6,7 @@ import logo from 'app/logo.svg';
 import { DONATION_LINK } from 'app/components/DonateButton';
 import Icon from 'app/components/Icon';
 import ProfileDropdown from './ProfileDropdown';
-import LanguageDropdown from './LanguageDropdown';
+// import LanguageDropdown from './LanguageDropdown';
 
 import styles from './styles.styl';
 

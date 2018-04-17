@@ -8,7 +8,7 @@ import {
   FILTER_SHOW_COLLECTED,
   FILTER_SHOW_PS4_EXCLUSIVES
 } from 'app/lib/destinyEnums';
-import CONSOLE_EXCLUSIVES from 'app/data/consoleExclusives';
+import CONSOLE_EXCLUSIVES from 'app/extraData/consoleExclusives';
 
 import { inventorySelector } from 'app/store/selectors';
 
