@@ -6,7 +6,6 @@ import { Provider } from 'react-redux';
 
 import store from './store';
 import sets from './setData';
-import Gearsets from './views/Gearsets';
 import DataExplorer from './views/DataExplorer';
 import Diff from './views/Diff';
 import Inventory from './views/Inventory';
@@ -43,24 +42,6 @@ export default class AppRouter extends Component {
           <Route path="/data" component={DataExplorer} />
           <Route path="/data/:itemHash" component={DataExplorer} />
           <Route path="/diff" component={Diff} />
-
-          <Route
-            path={'/old' + sets[0].path}
-            component={Gearsets}
-            setData={sets[0].setData}
-          />
-
-          <Route
-            path={'/old' + sets[1].path}
-            component={Gearsets}
-            setData={sets[1].setData}
-          />
-
-          <Route
-            path={'/old' + sets[2].path}
-            component={Gearsets}
-            setData={sets[2].setData}
-          />
         </Router>
       </Provider>
     );
