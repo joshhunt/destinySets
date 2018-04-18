@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router';
 import { connect } from 'react-redux';
 
 import {
@@ -88,7 +89,6 @@ class Inventory extends Component {
   }
 
   fetch(props = this.props) {
-    console.log('Fetching...');
     window.__CACHE_API = false;
 
     destiny.getCurrentProfiles().then(data => {
@@ -198,6 +198,10 @@ class Inventory extends Component {
             setModal={this.setModal}
           />
         ))}
+
+        <p>
+          <Link to="/debug">Debug</Link>
+        </p>
 
         {itemTooltip && (
           <Popper key={itemTooltip.hash} element={itemTooltip.element}>

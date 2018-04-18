@@ -11,6 +11,7 @@
     "@fortawesome/fontawesome-pro-solid": "^5.0.9",
     "@fortawesome/react-fontawesome": "^0.0.18",
     "@zalando/oauth2-client-js": "^0.0.18",
+    "async": "^2.6.0",
     "autotrack": "^2.4.1",
     "axios": "^0.18.0",
     "babel-polyfill": "^6.26.0",

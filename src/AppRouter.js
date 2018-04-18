@@ -9,12 +9,15 @@ import sets from './setData';
 import DataExplorer from './views/DataExplorer';
 import Diff from './views/Diff';
 import Inventory from './views/Inventory';
+import Debug from './views/Debug';
 
 export default class AppRouter extends Component {
   render() {
     return (
       <Provider store={store}>
         <Router history={browserHistory}>
+          <Route path="/debug" component={Debug} />
+
           <Route
             path={sets[0].path}
             component={Inventory}

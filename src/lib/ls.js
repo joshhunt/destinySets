@@ -12,6 +12,7 @@ const keys = {
   VISIT_COUNT: '$visitCount',
   TRACKED_ITEMS: '$trackedItems',
   UID: 'uid',
+  DEBUGID: 'debugid',
 
   DESTINY_PROFILE: 'd2Profile'
 };
@@ -171,6 +172,19 @@ export function getUID() {
 
 export function saveUID(uid) {
   save(keys.UID, uid);
+}
+
+export function getDebugId() {
+  return get(
+    keys.DEBUGID,
+    Math.random()
+      .toString(36)
+      .substr(2, 7)
+  );
+}
+
+export function saveDebugId(debugID) {
+  save(keys.DEBUGID, debugID);
 }
 
 export function saveProfiles(profilese) {

@@ -48,3 +48,11 @@ export const STAT_BLACKLIST = [
   1935470627, // Power
   3897883278 // Defense
 ];
+
+export const PLATFORMS = {
+  [XBOX]: 'Xbox',
+  [PLAYSTATION]: 'PlayStation',
+  [PC_BLIZZARD]: 'PC (Battle.net)',
+  [TIGERDEMON]: 'TigerDemon',
+  [BUNGIENEXT]: 'BungieNext'
+};

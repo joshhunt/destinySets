@@ -17,6 +17,36 @@ function getNameFromBungieProfile(bungieNetProfile) {
   return name;
 }
 
+let db;
+function getFirebaseDb() {
+  if (db) {
+    return Promise.resolve(db);
+  }
+
+  return import('firebase').then(firebase => {
+    firebase.initializeApp({
+      apiKey: 'AIzaSyDA_n6Ix4o6K2vW4zlFFmWk2XCzqPesDZo',
+      authDomain: 'destinysets.firebaseapp.com',
+      databaseURL: 'https://destinysets-new.firebaseio.com',
+      projectId: 'destinysets',
+      storageBucket: 'destinysets.appspot.com',
+      messagingSenderId: '621939283066'
+    });
+
+    db = firebase.database();
+
+    return db;
+  });
+}
+
+export function saveDebugInfo(debugData) {
+  return getFirebaseDb().then(db => {
+    const key = `debug/${debugData.debugId}`;
+    console.log('telem with', { key, debugData });
+    return db.ref(key).set(debugData);
+  });
+}
+
 export function setUser(bungieNetProfile) {
   const { membershipId } = bungieNetProfile;
   const { ga, Raven } = window;
