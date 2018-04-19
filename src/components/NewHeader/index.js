@@ -29,7 +29,8 @@ export default function Header({
   allProfiles,
   switchProfile,
   language,
-  setLanguage
+  setLanguage,
+  logout
 }) {
   return (
     <div className={styles.root}>
@@ -62,6 +63,7 @@ export default function Header({
             currentProfile={currentProfile}
             allProfiles={allProfiles}
             switchProfile={switchProfile}
+            logout={logout}
           />
         )}
 

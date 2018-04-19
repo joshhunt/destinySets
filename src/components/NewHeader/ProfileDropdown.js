@@ -60,7 +60,9 @@ export default class ProfileDropdown extends Component {
             </div>
           </div>
         ))}
-        <div className={styles.dropdownItem}>Log out</div>
+        <div className={styles.dropdownItem} onClick={this.props.logout}>
+          Log out
+        </div>
       </Fragment>
     );
   };

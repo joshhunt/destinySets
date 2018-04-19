@@ -10,7 +10,6 @@ import {
 
 const SET_PROFILES = 'Set profiles';
 const SET_CLOUD_INVENTORY = 'Set cloud inventory';
-const SET_VENDORS = 'Set vendor data';
 const SET_DEFINITIONS = 'Set definitions';
 const TOGGLE_FILTER_KEY = 'Toggle filter value';
 const SET_BULK_FILTERS = 'Set bulk filters';
@@ -81,12 +80,6 @@ export default function reducer(state = INITIAL_STORE, action) {
         cloudInventory: action.cloudInventory
       };
 
-    case SET_VENDORS:
-      return {
-        ...state,
-        vendors: action.vendors
-      };
-
     case SET_DEFINITIONS:
       return {
         ...state,
@@ -142,10 +135,6 @@ export function switchProfile(newProfile) {
 
 export function setCloudInventory(cloudInventory) {
   return { type: SET_CLOUD_INVENTORY, cloudInventory };
-}
-
-export function setVendors(vendors) {
-  return { type: SET_VENDORS, vendors };
 }
 
 export function toggleFilterKey(filterKey) {

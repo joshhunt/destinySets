@@ -153,6 +153,16 @@ class Inventory extends Component {
     this.props.switchProfile(profile);
   };
 
+  logout = () => {
+    ls.clearAll();
+    this.props.setProfiles({
+      currentProfile: null,
+      allProfiles: null,
+      isCached: false
+    });
+    this.props.setCloudInventory(null);
+  };
+
   setLanguage = language => {
     ls.saveLanguage(language);
     this.props.setLanguage(language);
@@ -178,6 +188,7 @@ class Inventory extends Component {
           switchProfile={this.switchProfile}
           language={language}
           setLanguage={this.setLanguage}
+          logout={this.logout}
         />
 
         {!this.props.isAuthenticated && (
