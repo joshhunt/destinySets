@@ -57,6 +57,19 @@ export default function Header({
           <LanguageDropdown language={language} setLanguage={setLanguage} />
         )*/}
 
+        <div className={styles.googleDriveWrapper}>
+          <button
+            className={styles.googleDrive}
+            onClick={() => window.alert('not yet - work in progress!')}
+          >
+            <Icon icon="google-drive" brand /> Connect Google Drive Sync
+          </button>
+
+          <div className={styles.googleDriveExplain}>
+            Sync your inventory with Google Drive to track dismantled items.
+          </div>
+        </div>
+
         {currentProfile && (
           <ProfileDropdown
             isCached={isCached}

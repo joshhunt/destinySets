@@ -96,13 +96,13 @@ class Inventory extends Component {
       const profile = destiny.getLastProfile(data);
 
       // TODO: Improve this - get google auth asap
-      // googleAuth(({ signedIn }) => {
-      //   signedIn &&
-      //     cloudStorage.getInventory(profile).then(cloudInventory => {
-      //       window.__cloudInventory = cloudInventory;
-      //       props.setCloudInventory(cloudInventory);
-      //     });
-      // });
+      googleAuth(({ signedIn }) => {
+        signedIn &&
+          cloudStorage.getInventory(profile).then(cloudInventory => {
+            window.__cloudInventory = cloudInventory;
+            props.setCloudInventory(cloudInventory);
+          });
+      });
 
       log('isCached: false');
       return props.setProfiles({

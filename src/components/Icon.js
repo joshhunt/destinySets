@@ -11,7 +11,9 @@ fontawesome.library.add(
   require('@fortawesome/fontawesome-free-brands/faTwitter'),
   require('@fortawesome/fontawesome-free-brands/faPlaystation'),
   require('@fortawesome/fontawesome-free-brands/faXbox'),
-  require('@fortawesome/fontawesome-free-brands/faWindows')
+  require('@fortawesome/fontawesome-free-brands/faWindows'),
+  require('@fortawesome/fontawesome-free-brands/faGoogle'),
+  require('@fortawesome/fontawesome-free-brands/faGoogleDrive')
 );
 
 export default function Icon({ icon, brand, spin }) {
