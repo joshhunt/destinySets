@@ -6,7 +6,7 @@ import logo from 'app/logo.svg';
 import { DONATION_LINK } from 'app/components/DonateButton';
 import Icon from 'app/components/Icon';
 import ProfileDropdown from './ProfileDropdown';
-// import LanguageDropdown from './LanguageDropdown';
+import LanguageDropdown from './LanguageDropdown';
 
 import styles from './styles.styl';
 
@@ -30,7 +30,11 @@ export default function Header({
   switchProfile,
   language,
   setLanguage,
-  logout
+  logout,
+  googleAuthSignedIn,
+  displayGoogleAuthButton,
+  googleSignIn,
+  googleSignOut
 }) {
   return (
     <div className={styles.root}>
@@ -53,22 +57,21 @@ export default function Header({
       </div>
 
       <div className={styles.etc}>
-        {/*language && (
-          <LanguageDropdown language={language} setLanguage={setLanguage} />
-        )*/}
+        {displayGoogleAuthButton && (
+          <div className={styles.googleDriveWrapper}>
+            <button onClick={googleSignIn} className={styles.googleDrive}>
+              <Icon icon="google-drive" brand /> Connect Google Drive
+            </button>
 
-        <div className={styles.googleDriveWrapper}>
-          <button
-            className={styles.googleDrive}
-            onClick={() => window.alert('not yet - work in progress!')}
-          >
-            <Icon icon="google-drive" brand /> Connect Google Drive
-          </button>
-
-          <div className={styles.googleDriveExplain}>
-            Sync your inventory with Google Drive to track dismantled items.
+            <div className={styles.googleDriveExplain}>
+              Sync your inventory with Google Drive to track dismantled items.
+            </div>
           </div>
-        </div>
+        )}
+
+        {language && (
+          <LanguageDropdown language={language} setLanguage={setLanguage} />
+        )}
 
         {currentProfile && (
           <ProfileDropdown
@@ -77,6 +80,8 @@ export default function Header({
             allProfiles={allProfiles}
             switchProfile={switchProfile}
             logout={logout}
+            googleSignOut={googleSignOut}
+            googleAuthSignedIn={googleAuthSignedIn}
           />
         )}
 

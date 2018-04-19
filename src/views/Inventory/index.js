@@ -14,8 +14,10 @@ import {
   toggleFilterKey
 } from 'app/store/reducer';
 
-import googleAuth from 'app/lib/googleDriveAuth';
-
+import googleAuth, {
+  signIn as googleSignIn,
+  signOut as googleSignOut
+} from 'app/lib/googleDriveAuth';
 import DestinyAuthProvider from 'app/lib/DestinyAuthProvider';
 import * as ls from 'app/lib/ls';
 import * as destiny from 'app/lib/destiny';
@@ -95,8 +97,12 @@ class Inventory extends Component {
       log('got current profile', data);
       const profile = destiny.getLastProfile(data);
 
-      // TODO: Improve this - get google auth asap
       googleAuth(({ signedIn }) => {
+        this.setState({
+          googleAuthLoaded: true,
+          googleAuthSignedIn: signedIn
+        });
+
         signedIn &&
           cloudStorage.getInventory(profile).then(cloudInventory => {
             window.__cloudInventory = cloudInventory;
@@ -175,9 +181,15 @@ class Inventory extends Component {
       profile,
       allProfiles,
       language,
-      isCached
+      isCached,
+      isAuthenticated
     } = this.props;
-    const { itemTooltip, itemModal } = this.state;
+    const {
+      itemTooltip,
+      itemModal,
+      googleAuthLoaded,
+      googleAuthSignedIn
+    } = this.state;
 
     return (
       <div className={styles.root}>
@@ -189,9 +201,15 @@ class Inventory extends Component {
           language={language}
           setLanguage={this.setLanguage}
           logout={this.logout}
+          googleSignIn={googleSignIn}
+          googleSignOut={googleSignOut}
+          googleAuthSignedIn={googleAuthSignedIn}
+          displayGoogleAuthButton={
+            googleAuthLoaded && isAuthenticated && !googleAuthSignedIn
+          }
         />
 
-        {!this.props.isAuthenticated && (
+        {!isAuthenticated && (
           <LoginUpsell>
             Connect your Bungie.net acccount to automatically track items you've
             collected and dismantled.
