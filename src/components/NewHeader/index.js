@@ -62,7 +62,7 @@ export default function Header({
             className={styles.googleDrive}
             onClick={() => window.alert('not yet - work in progress!')}
           >
-            <Icon icon="google-drive" brand /> Connect Google Drive Sync
+            <Icon icon="google-drive" brand /> Connect Google Drive
           </button>
 
           <div className={styles.googleDriveExplain}>
