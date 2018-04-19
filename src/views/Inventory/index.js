@@ -169,6 +169,11 @@ class Inventory extends Component {
     this.props.setCloudInventory(null);
   };
 
+  googleSignOut = () => {
+    googleSignOut();
+    this.props.setCloudInventory(null);
+  };
+
   setLanguage = language => {
     ls.saveLanguage(language);
     this.props.setLanguage(language);
@@ -184,6 +189,7 @@ class Inventory extends Component {
       isCached,
       isAuthenticated
     } = this.props;
+
     const {
       itemTooltip,
       itemModal,
@@ -202,7 +208,7 @@ class Inventory extends Component {
           setLanguage={this.setLanguage}
           logout={this.logout}
           googleSignIn={googleSignIn}
-          googleSignOut={googleSignOut}
+          googleSignOut={this.googleSignOut}
           googleAuthSignedIn={googleAuthSignedIn}
           displayGoogleAuthButton={
             googleAuthLoaded && isAuthenticated && !googleAuthSignedIn

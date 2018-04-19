@@ -66,7 +66,7 @@ export default class ProfileDropdown extends Component {
             className={styles.dropdownItem}
             onClick={this.props.googleSignOut}
           >
-            <Icon icon="google-drive" /> Disconnect Google Drive
+            <Icon icon="google-drive" brand /> Disconnect Google Drive
           </div>
         )}
 
