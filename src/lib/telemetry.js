@@ -35,8 +35,14 @@ function getFirebaseDb() {
 
     db = firebase.database();
 
+    window.__db = db;
+
     return db;
   });
+}
+
+export function getDebugProfile(debugId) {
+  return getFirebaseDb(db => {});
 }
 
 export function saveDebugInfo(debugData) {

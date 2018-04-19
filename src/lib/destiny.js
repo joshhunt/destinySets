@@ -1,7 +1,9 @@
+import queryString from 'query-string';
 import { sortBy, has } from 'lodash';
 
 import { setUser } from 'app/lib/telemetry';
 import { getEnsuredAccessToken } from 'app/lib/destinyAuth';
+import { getDebugProfile } from 'app/lib/telemetry';
 import * as ls from 'app/lib/ls';
 
 const XUR_URL = 'https://api.destiny.plumbing/xur';
@@ -195,6 +197,12 @@ export function getExtendedProfile(ship) {
     .then(_profile => {
       profile = _profile;
 
+      console.log('** The problematic profile: ', profile);
+
+      if (!profile) {
+        console.error('Profile is empty. wtf!', { ship, profile });
+      }
+
       return Promise.all(
         Object.keys(profile.characters.data).map(characterId => {
           return getVendors(ship, characterId);
@@ -213,6 +221,12 @@ export function getExtendedProfile(ship) {
 
 export function getCurrentProfiles() {
   let bungieNetUser;
+
+  const queryParams = queryString.parse(window.location.search);
+
+  if (queryParams.debugId) {
+    return getDebugProfile(queryParams.debugId);
+  }
 
   return getDestiny('/Platform/User/GetMembershipsForCurrentUser/')
     .then(body => {
