@@ -197,10 +197,9 @@ export function getExtendedProfile(ship) {
     .then(_profile => {
       profile = _profile;
 
-      console.log('** The problematic profile: ', profile);
-
       if (!profile) {
-        console.error('Profile is empty. wtf!', { ship, profile });
+        log('Empty profile, ignoring', { ship });
+        return null;
       }
 
       return Promise.all(
@@ -210,6 +209,10 @@ export function getExtendedProfile(ship) {
       );
     })
     .then(characterVendors => {
+      if (!characterVendors) {
+        return null;
+      }
+
       profile.$vendors = { data: {} };
       Object.keys(profile.characters.data).forEach((characterId, index) => {
         profile.$vendors.data[characterId] = characterVendors[index];
