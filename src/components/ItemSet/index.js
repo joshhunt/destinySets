@@ -36,8 +36,8 @@ function ItemSet({
               )}
             </h4>
 
-            {section.itemGroups.map(itemList => (
-              <div className={styles.itemList}>
+            {section.itemGroups.map((itemList, index2) => (
+              <div className={styles.itemList} key={index2}>
                 {itemList.map(itemHash => (
                   <Item
                     key={itemHash}
