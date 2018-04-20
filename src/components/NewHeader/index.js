@@ -5,6 +5,7 @@ import { Link } from 'react-router';
 import logo from 'app/logo.svg';
 import { DONATION_LINK } from 'app/components/DonateButton';
 import Icon from 'app/components/Icon';
+import GoogleAuthButton from 'app/components/GoogleAuthButton';
 import ProfileDropdown from './ProfileDropdown';
 import LanguageDropdown from './LanguageDropdown';
 
@@ -59,15 +60,7 @@ export default function Header({
 
         <div className={styles.etc}>
           {displayGoogleAuthButton && (
-            <div className={styles.googleDriveWrapper}>
-              <button onClick={googleSignIn} className={styles.googleDrive}>
-                <Icon icon="google-drive" brand /> Connect Google Drive
-              </button>
-
-              <div className={styles.googleDriveExplain}>
-                Sync your inventory with Google Drive to track dismantled items.
-              </div>
-            </div>
+            <GoogleAuthButton onClick={googleSignIn} />
           )}
 
           {language && (

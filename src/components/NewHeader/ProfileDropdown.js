@@ -30,7 +30,7 @@ function Platform({ isCached, membershipType }) {
   if (isCached) {
     return (
       <Fragment>
-        <Icon icon="spinner-third" spin /> Loading inventory...
+        <Icon icon="spinner-third" spin /> Updating inventory...
       </Fragment>
     );
   }

@@ -8,7 +8,7 @@ const keys = {
   LANGUAGE: '$lang',
   AUTH: '$auth2',
   GDRIVE_FILE_ID: '$googleDriveFileId' + window.DESTINYSETS_ENV,
-  GOOGLE_LOGIN_UPSELL: '$googleLoginUpsell',
+  GOOGLE_LOGIN_TOOLTIP: '$hideGoogleLoginTooltip',
   VISIT_COUNT: '$visitCount',
   TRACKED_ITEMS: '$trackedItems',
   UID: 'uid',
@@ -94,12 +94,12 @@ export function getInventory() {
   return get(keys.INVENTORY, []);
 }
 
-export function saveGoogleLoginUpsell(bool) {
-  save(keys.GOOGLE_LOGIN_UPSELL, bool);
+export function saveHideGoogleLoginTooltip(bool) {
+  save(keys.GOOGLE_LOGIN_TOOLTIP, bool);
 }
 
-export function getGoogleLoginUpsell() {
-  return get(keys.GOOGLE_LOGIN_UPSELL, false);
+export function getHideGoogleLoginTooltip() {
+  return get(keys.GOOGLE_LOGIN_TOOLTIP, false);
 }
 
 export function saveCloudInventory(inventory) {
