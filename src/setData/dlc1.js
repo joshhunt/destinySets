@@ -171,27 +171,63 @@ module.exports = [
           },
           {
             name: 'Hunter Ornaments',
-            items: [1698264996, 4155106369, 3799317511, 1254742579, 1475681954]
+            items: [
+              1698264996, // Trials Head Ornament
+              4155106369, // Trials Arms Ornament
+              3799317511, // Trials Chest Ornament
+              1254742579, // Trials Legs Ornament
+              1475681954 // Trials Class Ornament
+            ]
           },
           {
             name: 'Hunter Flawless Ornaments',
-            items: [3000782857, 3907623580, 1480689066, 3491371766, 85546655]
+            items: [
+              3000782857, // Trials Prestige Head Ornament
+              3907623580, // Trials Prestige Arms Ornament
+              1480689066, // Trials Prestige Chest Ornament
+              3491371766, // Trials Prestige Legs Ornament
+              85546655 // Trials Prestige Class Ornament
+            ]
           },
           {
             name: 'Titan Ornaments',
-            items: [62776458, 2194111759, 3647777257, 3964883617, 4275895304]
+            items: [
+              62776458, // Trials Head Ornament
+              2194111759, // Trials Arms Ornament
+              3647777257, // Trials Chest Ornament
+              3964883617, // Trials Legs Ornament
+              4275895304 // Trials Class Ornament
+            ]
           },
           {
             name: 'Titan Flawless Ornaments',
-            items: [3042323431, 1309834898, 3047754372, 3675824124, 1717767197]
+            items: [
+              3042323431, // Trials Prestige Head Ornament
+              1309834898, // Trials Prestige Arms Ornament
+              3047754372, // Trials Prestige Chest Ornament
+              3675824124, // Trials Prestige Legs Ornament
+              1717767197 // Trials Prestige Class Ornament
+            ]
           },
           {
             name: 'Warlock Ornaments',
-            items: [948716319, 2984392562, 607756182, 2426456324, 3828657371]
+            items: [
+              948716319, // Trials Head Ornament
+              2984392562, // Trials Arms Ornament
+              607756182, // Trials Chest Ornament
+              2426456324, // Trials Legs Ornament
+              3828657371 // Trials Class Ornament
+            ]
           },
           {
             name: 'Warlock Flawless Ornaments',
-            items: [2338851618, 4105027183, 2666197459, 3026479209, 2394332958]
+            items: [
+              2338851618, // Trials Prestige Head Ornament
+              4105027183, // Trials Prestige Arms Ornament
+              2666197459, // Trials Prestige Chest Ornament
+              3026479209, // Trials Prestige Legs Ornament
+              2394332958 // Trials Prestige Class Ornament
+            ]
           }
         ]
       }

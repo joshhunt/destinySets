@@ -18,28 +18,30 @@ export default class AppRouter extends Component {
         <Router history={browserHistory}>
           <Route path="/debug" component={Debug} />
 
+          <Route path="/" component={Inventory} setData={sets.allSeasons} />
+
           <Route
-            path={sets[0].path}
+            path="/season-1"
             component={Inventory}
-            setData={sets[0].setData}
+            setData={sets.baseGame}
           />
 
           <Route
-            path={sets[1].path}
+            path="/curse-of-osiris"
             component={Inventory}
-            setData={sets[1].setData}
+            setData={sets.dlc1}
           />
 
           <Route
-            path={sets[2].path}
+            path="/strikes"
             component={Inventory}
-            setData={sets[2].setData}
+            setData={sets.strikeGear}
           />
 
           <Route
-            path={sets[3].path}
+            path="/all-items"
             component={Inventory}
-            setData={sets[3].setData}
+            setData={sets.allItems}
           />
 
           <Route path="/data" component={DataExplorer} />
