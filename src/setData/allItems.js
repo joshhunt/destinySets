@@ -5,7 +5,8 @@ module.exports = [
       {
         name: 'Exotics',
         big: true,
-        query: 'is:exotic is:gear'
+        query: 'is:exotic is:gear',
+        sections: []
       },
       {
         name: 'Weapons',
@@ -32,7 +33,8 @@ module.exports = [
       {
         name: 'Armor',
         big: true,
-        query: 'is:legendary is:armor'
+        query: 'is:legendary is:armor',
+        sections: []
       }
     ]
   },
@@ -85,13 +87,15 @@ module.exports = [
       {
         name: 'Emotes',
         big: true,
-        query: 'is:emote'
+        query: 'is:emote',
+        sections: []
       },
 
       {
         name: 'Ornaments',
         big: true,
-        query: 'is:ornament'
+        query: 'is:ornament',
+        sections: []
       }
     ]
   },
@@ -101,12 +105,14 @@ module.exports = [
     sets: [
       {
         name: 'Sparrows',
-        query: 'is:sparrow'
+        query: 'is:sparrow',
+        sections: []
       },
 
       {
         name: 'Ships',
-        query: 'is:ship'
+        query: 'is:ship',
+        sections: []
       }
     ]
   }
