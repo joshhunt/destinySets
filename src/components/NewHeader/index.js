@@ -15,6 +15,7 @@ const link = (name, to) => ({ name, to });
 const LINKS = [
   link('Base', '/'),
   link('Curse of Osiris', '/curse-of-osiris'),
+  link('Strikes', '/strike-gear'),
   link('All Items', '/all-items')
 ];
 
