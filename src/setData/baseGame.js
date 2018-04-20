@@ -101,12 +101,7 @@ module.exports = [
             ]
           }
         ]
-      }
-    ]
-  },
-  {
-    name: 'Endgame',
-    sets: [
+      },
       {
         name: 'Leviathan Raid',
         description:
@@ -114,6 +109,7 @@ module.exports = [
         sections: [
           {
             name: 'Weapons',
+            season: 1,
             items: [
               2505533224,
               3325744914,
@@ -126,28 +122,31 @@ module.exports = [
             ]
           },
           {
-            name: 'Hunter Armor',
-            items: [2013109092, 1960303677, 407863747, 30962015, 3984534842]
+            name: 'Armor',
+            season: 1,
+            itemGroups: [
+              [2013109092, 1960303677, 407863747, 30962015, 3984534842], // Hunter
+              [1413589586, 1879942843, 1876645653, 288406317, 574137192], // Titan
+              [2700598111, 2676042150, 3592548938, 2193494688, 3763332443] // Warlock
+            ]
           },
           {
-            name: 'Hunter Armor - Prestige Mode',
-            items: [2013109093, 1960303676, 407863746, 30962014, 3984534843]
+            name: 'Armor - Prestige Mode',
+            season: 1,
+            itemGroups: [
+              [2013109093, 1960303676, 407863746, 30962014, 3984534843], // Hunter
+              [1413589587, 1879942842, 1876645652, 288406316, 574137193], // Titan
+              [2700598110, 2676042151, 3592548939, 2193494689, 3763332442] // Warlock
+            ]
           },
           {
-            name: 'Titan Armor',
-            items: [1413589586, 1879942843, 1876645653, 288406317, 574137192]
-          },
-          {
-            name: 'Titan Armor - Prestige Mode',
-            items: [1413589587, 1879942842, 1876645652, 288406316, 574137193]
-          },
-          {
-            name: 'Warlock Armor',
-            items: [2700598111, 2676042150, 3592548938, 2193494688, 3763332443]
-          },
-          {
-            name: 'Warlock Armor - Prestige Mode',
-            items: [2700598110, 2676042151, 3592548939, 2193494689, 3763332442]
+            name: 'Ornaments',
+            season: 2,
+            itemGroups: [
+              [3346055334, 2519280691, 3179514973, 2899660517, 1928662068], // Hunter Eater of Worlds Ornament
+              [3036703920, 3093970453, 2380365371, 1815512839, 3991114670], // Titan Eater of Worlds Ornament
+              [1397648181, 1575703224, 3163954768, 4135965162, 2837735361] // Warlock Eater of Worlds Ornament
+            ]
           },
           {
             name: 'Emblems',
@@ -161,7 +160,12 @@ module.exports = [
             ]
           }
         ]
-      },
+      }
+    ]
+  },
+  {
+    name: 'Endgame',
+    sets: [
       {
         name: 'Trials of the Nine',
         description:
