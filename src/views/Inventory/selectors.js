@@ -74,9 +74,11 @@ const setDataSelector = createSelector(
     const itemDefsArray = Object.values(itemDefs || {});
 
     const newSetData = setData.map(group => {
-      const sets = group.sets.map(set => {
+      const sets = group.sets.map(_set => {
+        let set = { ..._set };
+
         if (set.query) {
-          return {
+          set = {
             ...set,
             sections: sortItems(query(set.query, itemDefsArray))
           };
