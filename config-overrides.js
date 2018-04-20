@@ -7,7 +7,7 @@ const WebpackVisualizerPlugin = require('webpack-visualizer-plugin');
 const { UnusedFilesWebpackPlugin } = require('unused-files-webpack-plugin');
 
 module.exports = function override(config, env) {
-  // config = injectBabelPlugin('lodash', config);
+  config = injectBabelPlugin('lodash', config);
 
   config = rewireReactHotLoader(config, env);
 
@@ -18,11 +18,13 @@ module.exports = function override(config, env) {
 
   let stylusRules;
 
-  config.plugins.push(
-    new UnusedFilesWebpackPlugin({
-      patterns: ['src/**/*.*']
-    })
-  );
+  if (false) {
+    config.plugins.push(
+      new UnusedFilesWebpackPlugin({
+        patterns: ['src/**/*.*']
+      })
+    );
+  }
 
   config.plugins.push(
     new WebpackVisualizerPlugin({

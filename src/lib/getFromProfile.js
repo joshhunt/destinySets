@@ -1,5 +1,4 @@
-import { chain, flatMap, keyBy } from 'lodash';
-
+import { keyBy } from 'lodash';
 import fp from 'lodash/fp';
 
 const ITEM_BLACKLIST = [
@@ -12,7 +11,7 @@ function itemMapper(item) {
 }
 
 function fromCharacter(data) {
-  return flatMap(data, character => character.items.map(itemMapper));
+  return fp.flatMap(character => character.items.map(itemMapper), data);
 }
 
 const flavorObjectivesFromKiosk = data =>
@@ -38,21 +37,21 @@ function fromKiosks(data, vendorDefs) {
 }
 
 function fromCharacterKiosks(data, vendorDefs) {
-  return flatMap(data, character => fromKiosks(character, vendorDefs));
+  return fp.flatMap(character => fromKiosks(character, vendorDefs), data);
 }
 
 function mapSockets(data, fn) {
-  return chain(data)
-    .flatMap(({ sockets }) => flatMap(sockets, socket => fn(socket)))
-    .compact()
-    .value();
+  return fp.flow(
+    fp.flatMap(({ sockets }) => fp.flatMap(socket => fn(socket), sockets)),
+    fp.compact
+  )(data);
 }
 
 function fromSockets(data) {
   return mapSockets(data, socket =>
-    flatMap(socket.reusablePlugs, plugItem => {
+    fp.flatMap(plugItem => {
       return plugItem.canInsert ? plugItem.plugItemHash : null;
-    })
+    }, socket.reusablePlugs)
   );
 }
 
@@ -61,21 +60,35 @@ function objectivesFromSockets(data) {
 }
 
 function objectivesFromVendors(data) {
-  return chain(data).flatMap(character =>
-    flatMap(character.itemComponents, vendor =>
-      flatMap(vendor.plugStates.data, plugStates => plugStates.plugObjectives)
-    )
+  // return fp.flow(
+  //   fp.flatMap(character => character.itemComponents),
+  //   fp.flatMap(vendor => vendor.plugStates.data),
+  //   fp.flatMap(plugStates => plugStates.plugObjectives)
+  // )(data);
+
+  return fp.flatMap(
+    character =>
+      fp.flatMap(
+        vendor =>
+          fp.flatMap(
+            plugStates => plugStates.plugObjectives,
+            vendor.plugStates.data
+          ),
+        character.itemComponents
+      ),
+    data
   );
 }
 
 function fromVendorSockets(data) {
-  return chain(data)
-    .flatMap(character =>
-      flatMap(character.itemComponents, vendor =>
-        fromSockets(vendor.sockets.data)
-      )
-    )
-    .value();
+  return fp.flatMap(
+    character =>
+      fp.flatMap(
+        vendor => fromSockets(vendor.sockets.data),
+        character.itemComponents
+      ),
+    data
+  );
 }
 
 function mergeItems(acc, [items, itemLocation]) {
@@ -129,7 +142,10 @@ export function objectivesFromProfile(profile) {
     [
       ...flavorObjectivesFromKiosk(profile.profileKiosks.data),
       ...objectivesFromSockets(profile.itemComponents.sockets.data),
-      ...flatMap(profile.itemComponents.objectives.data, obj => obj.objectives),
+      ...fp.flatMap(
+        obj => obj.objectives,
+        profile.itemComponents.objectives.data
+      ),
       ...objectivesFromVendors(profile.$vendors.data)
     ],
     'objectiveHash'
