@@ -115,7 +115,8 @@ const MODAL_STYLES = {
     marginTop: 0,
     display: 'flex',
     alignItems: 'center',
-    justifyContent: 'center'
+    justifyContent: 'center',
+    zIndex: 10
   },
   content: {
     position: 'static',
