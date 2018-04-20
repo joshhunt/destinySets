@@ -82,13 +82,24 @@ const setDataSelector = createSelector(
           };
         }
 
-        const sections = set.sections.map(section => {
+        const sections = set.sections.map(_section => {
+          let section = { ..._section };
+
           if (section.query) {
             const queriedItems = query(section.query, itemDefsArray).map(
               item => item.hash
             );
-            return { ...section, items: queriedItems };
+            section = { ...section, items: queriedItems };
           }
+
+          if (!section.itemGroups) {
+            section = {
+              ...section,
+              itemGroups: [...(section.itemGroup || []), section.items]
+            };
+          }
+
+          delete section.items;
 
           return section;
         });
@@ -118,19 +129,25 @@ export const filteredSetDataSelector = createSelector(
       draft.setData.forEach(group => {
         group.sets.forEach(set => {
           set.sections.forEach(section => {
-            section.items = section.items.filter(itemHash => {
-              const item = itemDefs[itemHash];
-              return filterItem(item, inventory, filters);
-            });
+            section.itemGroups = section.itemGroups
+              .map(itemList => {
+                return itemList.filter(itemHash => {
+                  const item = itemDefs[itemHash];
+                  return filterItem(item, inventory, filters);
+                });
+              })
+              .filter(itemList => itemList.length);
           });
 
-          set.sections = set.sections.filter(({ items }) => items.length > 0);
+          set.sections = set.sections.filter(
+            ({ itemGroups }) => itemGroups.length
+          );
         });
 
-        group.sets = group.sets.filter(({ sections }) => sections.length > 0);
+        group.sets = group.sets.filter(({ sections }) => sections.length);
       });
 
-      draft.setData = draft.setData.filter(({ sets }) => sets.length > 0);
+      draft.setData = draft.setData.filter(({ sets }) => sets.length);
     });
 
     return result.setData;

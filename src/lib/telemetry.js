@@ -23,7 +23,10 @@ function getFirebaseDb() {
     return Promise.resolve(db);
   }
 
-  return import('firebase').then(firebase => {
+  return Promise.all(
+    import(/* webpackChunkName: "firebase" */ 'firebase/app'),
+    import(/* webpackChunkName: "firebase" */ 'firebase/database')
+  ).then(([firebase]) => {
     firebase.initializeApp({
       apiKey: 'AIzaSyDA_n6Ix4o6K2vW4zlFFmWk2XCzqPesDZo',
       authDomain: 'destinysets.firebaseapp.com',

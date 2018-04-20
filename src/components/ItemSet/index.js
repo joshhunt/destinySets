@@ -29,21 +29,28 @@ function ItemSet({
 
         {sections.map((section, index) => (
           <div key={index} className={styles.section}>
-            <h4 className={styles.sectionName}>{section.name}</h4>
+            <h4 className={styles.sectionName}>
+              {section.name}{' '}
+              {section.season && (
+                <span className={styles.seasonLabel}>S{section.season}</span>
+              )}
+            </h4>
 
-            <div className={styles.itemList}>
-              {section.items.map(itemHash => (
-                <Item
-                  key={itemHash}
-                  className={styles.item}
-                  itemHash={itemHash}
-                  item={itemDefs[itemHash]}
-                  setPopper={setPopper}
-                  inventoryEntry={inventory && inventory[itemHash]}
-                  onItemClick={setModal}
-                />
-              ))}
-            </div>
+            {section.itemGroups.map(itemList => (
+              <div className={styles.itemList}>
+                {itemList.map(itemHash => (
+                  <Item
+                    key={itemHash}
+                    className={styles.item}
+                    itemHash={itemHash}
+                    item={itemDefs[itemHash]}
+                    setPopper={setPopper}
+                    inventoryEntry={inventory && inventory[itemHash]}
+                    onItemClick={setModal}
+                  />
+                ))}
+              </div>
+            ))}
           </div>
         ))}
       </div>

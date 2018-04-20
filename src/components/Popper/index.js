@@ -54,7 +54,7 @@ export default class PopperWrapper extends Component {
     }
 
     return createPortal(
-      <div ref={this.getRef} style={style}>
+      <div ref={this.getRef} style={{ ...style, zIndex: 99999 }}>
         {this.props.children}
         <div style={arrowStyles} />
       </div>,

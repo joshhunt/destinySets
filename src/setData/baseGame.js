@@ -1,5 +1,110 @@
 module.exports = [
   {
+    name: 'Combined',
+    sets: [
+      {
+        name: 'Iron Banner',
+        description:
+          'Weapons and armor obtained by honoring the heroes of old in the Iron Banner Crucible tournament.',
+        sections: [
+          {
+            name: 'Weapons',
+            season: 1,
+            items: [
+              2014642399, // The Forward Path
+              4425887, // The Time-Worn Spire
+              3890960908, // The Guiding Sight
+              1189790632, // The Steady Hand
+              3424403076, // The Fool's Remedy
+              2961807684, // The Wizened Rebuke
+              2909905776, // The Hero's Burden
+              807192446 // The Day's Fury
+            ]
+          },
+          {
+            name: 'Weapons',
+            season: 2,
+            items: [
+              1369487074, // Orimund's Anvil
+              3649055823, // Crimil's Dagger
+              622058944, // Jorum's Claw
+              3005104939, // Frostmire's Hex
+              94729174, // Gunnora's Axe
+              1870979911 // Orewing's Maul
+            ]
+          },
+          {
+            name: 'Armor',
+            season: 1,
+            itemGroups: [
+              [
+                1496224967, // Hunter Iron Truage Casque
+                3737894478, // Hunter Iron Truage Grips
+                831464034, // Hunter Iron Truage Vest
+                1526005320, // Hunter Iron Truage Boots
+                479917491 // Hunter Mantle of Efrideet
+              ],
+              [
+                1804445917, // Titan Iron Truage Helm
+                691332172, // Titan Iron Truage Gauntlets
+                3865618708, // Titan Iron Truage Plate
+                1337167606, // Titan Iron Truage Greaves
+                738938985 // Titan Radegast's Iron Sash
+              ],
+              [
+                2811201658, // Warlock Iron Truage Hood
+                287471683, // Warlock Iron Truage Gloves
+                124696333, // Warlock Iron Truage Vestments
+                2674485749, // Warlock Iron Truage Legs
+                2999505920 // Warlock Timur's Iron Bond
+              ]
+            ]
+          },
+          {
+            name: 'Ornaments',
+            season: 2,
+            itemGroups: [
+              [
+                967086398, // Hunter Iron Pledge Ornament
+                2845443115, // Hunter Iron Pledge Ornament
+                4064021125, // Hunter Iron Pledge Ornament
+                2409736861, // Hunter Iron Pledge Ornament
+                1167898172 // Hunter Iron Pledge Ornament
+              ],
+
+              [
+                3913452440, // Titan Iron Pledge Ornament
+                208020061, // Titan Iron Pledge Ornament
+                479059411, // Titan Iron Pledge Ornament
+                3922308175, // Titan Iron Pledge Ornament
+                2851718150 // Titan Iron Pledge Ornament
+              ],
+
+              [
+                3388638931, // Warlock Iron Pledge Ornament
+                1355065950, // Warlock Iron Pledge Ornament
+                3045190354, // Warlock Iron Pledge Ornament
+                2984447248, // Warlock Iron Pledge Ornament
+                2455333439 // Warlock Iron Pledge Ornament
+              ]
+            ]
+          },
+          {
+            name: 'Extras',
+            items: [
+              3373303016, // Felwinter Frost
+              3373303017, // Shades of Radegast
+              3681086673, // Iron Companionship Shell (Ghost shell)
+              1220495181, // Iron Gallop (Sparrow)
+              2924982629, // Iron Pendragon (Ship)
+              2919429251 // Iron Hero Sigil (Emblem)
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
     name: 'Endgame',
     sets: [
       {
@@ -57,64 +162,6 @@ module.exports = [
           }
         ]
       },
-      {
-        name: 'Iron Banner',
-        description:
-          'Weapons and armor obtained by honoring the heroes of old in the Iron Banner Crucible tournament.',
-        sections: [
-          {
-            name: 'Weapons',
-            items: [
-              2014642399, // The Forward Path
-              4425887, // The Time-Worn Spire
-              3890960908, // The Guiding Sight
-              1189790632, // The Steady Hand
-              3424403076, // The Fool's Remedy
-              2961807684, // The Wizened Rebuke
-              2909905776, // The Hero's Burden
-              807192446 // The Day's Fury
-            ]
-          },
-          {
-            name: 'Hunter armor',
-            items: [
-              1496224967, // Iron Truage Casque
-              3737894478, // Iron Truage Grips
-              831464034, // Iron Truage Vest
-              1526005320, // Iron Truage Boots
-              479917491 // Mantle of Efrideet
-            ]
-          },
-          {
-            name: 'Titan armor',
-            items: [
-              1804445917, // Iron Truage Helm
-              691332172, // Iron Truage Gauntlets
-              3865618708, // Iron Truage Plate
-              1337167606, // Iron Truage Greaves
-              738938985 // Radegast's Iron Sash
-            ]
-          },
-          {
-            name: 'Warlock armor',
-            items: [
-              2811201658, // Iron Truage Hood
-              287471683, // Iron Truage Gloves
-              124696333, // Iron Truage Vestments
-              2674485749, // Iron Truage Legs
-              2999505920 // Timur's Iron Bond
-            ]
-          },
-          {
-            name: 'Emblems',
-            items: [
-              3373303016, // Felwinter Frost
-              3373303017 // Shades of Radegast
-            ]
-          }
-        ]
-      },
-
       {
         name: 'Trials of the Nine',
         description:

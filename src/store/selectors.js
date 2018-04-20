@@ -85,9 +85,16 @@ export const makeSelectedItemDefsSelector = () => {
       }
 
       sections.forEach(section => {
-        section.items.forEach(itemHash => {
+        (section.items || []).forEach(itemHash => {
           items[itemHash] = itemDefs[itemHash];
         });
+
+        section.itemGroups &&
+          section.itemGroups.forEach(itemList => {
+            itemList.forEach(itemHash => {
+              items[itemHash] = itemDefs[itemHash];
+            });
+          });
       });
 
       return items;
