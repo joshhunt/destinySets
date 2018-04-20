@@ -4,6 +4,7 @@ const { getLoader, injectBabelPlugin } = require('react-app-rewired');
 const rewireReactHotLoader = require('react-app-rewire-hot-loader');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const WebpackVisualizerPlugin = require('webpack-visualizer-plugin');
+const { UnusedFilesWebpackPlugin } = require('unused-files-webpack-plugin');
 
 module.exports = function override(config, env) {
   // config = injectBabelPlugin('lodash', config);
@@ -16,6 +17,12 @@ module.exports = function override(config, env) {
   );
 
   let stylusRules;
+
+  config.plugins.push(
+    new UnusedFilesWebpackPlugin({
+      patterns: ['src/**/*.*']
+    })
+  );
 
   config.plugins.push(
     new WebpackVisualizerPlugin({
