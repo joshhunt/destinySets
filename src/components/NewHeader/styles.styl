@@ -5,13 +5,21 @@ $activeBg = rgba(white, .07)
 $padding = 15px
 
 .root
+  height: 52px
+
+.fixed
+  z-index: 2
   background: $bgColour
-  margin: -15px -15px 0 -15px
   line-height: 1
   margin-bottom: $padding
   display: flex
   align-items: center
   padding: 0 $padding
+  position: fixed
+  top: 0
+  left: 0
+  right: 0
+  box-shadow: 0 0 20px -5px rgba(black, 0.75)
 
 .siteName
   font-size: 22px

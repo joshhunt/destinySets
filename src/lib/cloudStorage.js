@@ -9,6 +9,8 @@ const fileIdLog = require('app/lib/log')('cloudStorage:getFileId');
 
 let __fileId;
 
+const CURRENT_VERSION = 'new';
+
 function getFileId({ profile }) {
   const lsFileId = ls.getGoogleDriveInventoryFileId();
   const fileId = __fileId || lsFileId;
@@ -72,6 +74,13 @@ export function setInventory(inventory, profile) {
   log('Setting cloud inventory', { inventory, profile });
   ls.saveCloudInventory(inventory);
 
+  const payload = {
+    version: CURRENT_VERSION,
+    inventory
+  };
+
+  log('Payload to save is', { payload });
+
   return ready
     .then(() => getFileId(profile))
     .then(fileId => {
@@ -84,7 +93,7 @@ export function setInventory(inventory, profile) {
           uploadType: 'media',
           alt: 'json'
         },
-        body: JSON.stringify(inventory)
+        body: JSON.stringify(payload)
       });
     })
     .then(resp => {
@@ -110,10 +119,15 @@ export function getInventory(profile) {
       log('Resolving cloud inventory', { result });
       const data = result.result;
 
+      // const data = require('./fakedata');
+
       // Check if we need to migrate from the old format to new format
-      if (data.new) {
-        return data.new.inventory;
+      if (data.version === CURRENT_VERSION) {
+        log('Inventory is CURRENT_VERSION');
+        return data.inventory;
       }
+
+      log('Inventory needs migrating');
 
       // Yup, we need to migrate
       const migratedInventory = mapValues(data, (instancesArray, itemHash) => {
@@ -126,17 +140,8 @@ export function getInventory(profile) {
         };
       });
 
-      // Test
-      migratedInventory[1338] = {
-        itemHash: 1338,
-        obtained: true,
-        instances: [{ location: 'fakeItemFromCloudStoragee' }]
-      };
-
       delete migratedInventory.inventory;
       delete migratedInventory.plugData;
-
-      // return result.result;
 
       return migratedInventory;
     });

@@ -58,9 +58,7 @@ function initClient(cb) {
 
     const signInState = gapi.auth2.getAuthInstance().isSignedIn.get();
 
-    cb({
-      signedIn: signInState
-    });
+    cb({ signedIn: signInState });
 
     // Listen for sign-in state changes.
     gapi.auth2.getAuthInstance().isSignedIn.listen(_signedInState => {

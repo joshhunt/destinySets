@@ -13,6 +13,7 @@ import {
   setStatDefs,
   toggleFilterKey
 } from 'app/store/reducer';
+import { inventorySelector } from 'app/store/selectors';
 
 import googleAuth, {
   signIn as googleSignIn,
@@ -88,6 +89,27 @@ class Inventory extends Component {
     if (this.props.language !== newProps.language) {
       this.fetchDefinitions(newProps.language);
     }
+
+    const inventoryHasChanged =
+      this.props.isCached !== newProps.isCached ||
+      this.props.haveCloudInventory !== newProps.haveCloudInventory;
+
+    if (inventoryHasChanged) {
+      log('Inventory has changed, in some way!', newProps);
+    }
+
+    if (
+      inventoryHasChanged &&
+      !newProps.isCached &&
+      newProps.haveCloudInventory &&
+      newProps.inventory
+    ) {
+      log(
+        'Have final inventory, apparently. Saving new cloudInventory',
+        newProps
+      );
+      cloudStorage.setInventory(newProps.inventory, newProps.profile);
+    }
   }
 
   fetch(props = this.props) {
@@ -110,7 +132,6 @@ class Inventory extends Component {
           });
       });
 
-      log('isCached: false');
       return props.setProfiles({
         currentProfile: profile,
         allProfiles: data.profiles,
@@ -262,7 +283,9 @@ const mapStateToProps = (state, ownProps) => {
     allProfiles: state.app.allProfiles,
     language: state.app.language,
     // TODO: this uses props, so we need to 'make' a selector like in ItemSet
-    filteredSetData: filteredSetDataSelector(state, ownProps)
+    filteredSetData: filteredSetDataSelector(state, ownProps),
+    inventory: inventorySelector(state),
+    haveCloudInventory: !!state.app.cloudInventory
   };
 };
 
