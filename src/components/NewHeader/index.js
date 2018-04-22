@@ -91,7 +91,7 @@ function Sidebar({
 }
 
 export default class Header extends Component {
-  state = { isOverflowing: true, sidebarActive: false };
+  state = { isOverflowing: false, sidebarActive: false };
 
   componentDidMount() {
     window.addEventListener('resize', this.onResize);
