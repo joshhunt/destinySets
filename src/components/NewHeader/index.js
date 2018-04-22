@@ -17,7 +17,8 @@ const LINKS = [
   link('Base', '/season-1'),
   link('Curse of Osiris', '/curse-of-osiris'),
   link('Strikes', '/strike-gear'),
-  link('All Items', '/all-items')
+  link('All Items', '/all-items'),
+  link('Data Explorer', '/data')
 ];
 
 const SOCIALS = [

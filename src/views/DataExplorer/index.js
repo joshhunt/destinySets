@@ -5,7 +5,7 @@ import * as ls from 'app/lib/ls';
 import { getDefinition } from 'app/lib/manifestData';
 
 import Item from 'app/components/Item';
-import Header from 'app/components/Header';
+import Header from 'app/components/NewHeader';
 import Loading from 'app/views/Loading';
 
 import copy from 'app/lib/copyToClipboard';
@@ -202,11 +202,7 @@ class DataExplorer extends Component {
 
     return (
       <div className={styles.root} data-id="root">
-        <Header
-          className={styles.header}
-          bg={this.state.headerBg}
-          legacy={false}
-        />
+        <Header />
 
         <div className={styles.view}>
           <div className={styles.main}>

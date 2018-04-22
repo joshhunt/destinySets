@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Header from 'app/components/Header';
+import Header from 'app/components/NewHeader';
 import styles from './styles.styl';
 
 export default function Loading({ children }) {

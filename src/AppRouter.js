@@ -6,10 +6,15 @@ import { Provider } from 'react-redux';
 
 import store from './store';
 import sets from './setData';
-import DataExplorer from './views/DataExplorer';
 import Diff from './views/Diff';
 import Inventory from './views/Inventory';
 import Debug from './views/Debug';
+
+import makeSplitComponent from './makeSplitComponent';
+
+const DataExplorer = makeSplitComponent(() =>
+  import(/* webpackChunkName: "DataExplorer" */ './views/DataExplorer')
+);
 
 export default class AppRouter extends Component {
   render() {
