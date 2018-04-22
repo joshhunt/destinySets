@@ -25,6 +25,7 @@ export default class LanguageDropdown extends Component {
   render() {
     return (
       <DropdownMenu
+        inline={this.props.inline}
         className={styles.root}
         renderContent={this.renderContent}
         contentClassName={styles.dropdownWide}

@@ -7,6 +7,7 @@ fontawesome.library.add(
   require('@fortawesome/fontawesome-pro-regular/faCheck'),
   require('@fortawesome/fontawesome-pro-regular/faChevronDown'),
   require('@fortawesome/fontawesome-pro-regular/faSpinnerThird'),
+  require('@fortawesome/fontawesome-pro-regular/faBars'),
 
   require('@fortawesome/fontawesome-free-brands/faPaypal'),
   require('@fortawesome/fontawesome-free-brands/faGithub'),
@@ -17,10 +18,10 @@ fontawesome.library.add(
   require('@fortawesome/fontawesome-free-brands/faGoogleDrive')
 );
 
-export default function Icon({ icon, brand, ...props }) {
+export default function Icon({ icon, name, brand, ...props }) {
   let prefix = 'far';
   if (brand) {
     prefix = 'fab';
   }
-  return <FontAwesomeIcon icon={[prefix, icon]} {...props} />;
+  return <FontAwesomeIcon icon={[prefix, icon || name]} {...props} />;
 }

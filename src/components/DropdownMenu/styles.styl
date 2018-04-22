@@ -1,7 +1,16 @@
 .root
   position: relative
 
+.inline
+  content: 'inline'
+
 .content
   position: absolute
   top: 100%
   right: 0
+
+  .inline &
+    position: static
+    width: 100%
+    box-shadow: none
+    background: rgba(white, .05)

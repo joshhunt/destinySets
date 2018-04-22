@@ -1,6 +1,7 @@
 /* eslint-disable jsx-a11y/href-no-hash */
-import React from 'react';
+import React, { Component, Fragment } from 'react';
 import { Link } from 'react-router';
+import cx from 'classnames';
 
 import logo from 'app/logo.svg';
 import { DONATION_LINK } from 'app/components/DonateButton';
@@ -10,6 +11,10 @@ import ProfileDropdown from './ProfileDropdown';
 import LanguageDropdown from './LanguageDropdown';
 
 import styles from './styles.styl';
+
+function isOverflowing(el) {
+  return el.scrollHeight > el.clientHeight || el.scrollWidth > el.clientWidth;
+}
 
 const link = (name, to) => ({ name, to });
 const LINKS = [
@@ -27,74 +32,171 @@ const SOCIALS = [
   link('github', 'https://github.com/joshhunt/destinySets')
 ];
 
-export default function Header({
-  isCached,
-  currentProfile,
-  allProfiles,
-  switchProfile,
+const SiteName = () => (
+  <div className={styles.siteName}>
+    <img src={logo} className={styles.logo} alt="" />
+    <div>Destiny Sets</div>
+  </div>
+);
+
+const SiteLinks = () => (
+  <Fragment>
+    <div className={styles.dummyLink} />
+    {LINKS.map(({ name, to }) => (
+      <Link
+        key={to}
+        className={styles.link}
+        activeClassName={styles.active}
+        to={to}
+      >
+        {name}
+      </Link>
+    ))}
+  </Fragment>
+);
+
+function Sidebar({
   language,
   setLanguage,
-  logout,
-  googleAuthSignedIn,
   displayGoogleAuthButton,
   googleSignIn,
-  googleSignOut
+  toggleSidebar
 }) {
   return (
-    <div className={styles.root}>
-      <div className={styles.fixed}>
-        <div className={styles.siteName}>
-          <img src={logo} className={styles.logo} alt="" />
-          <div>Destiny Sets</div>
+    <div className={styles.sidebar}>
+      <div className={styles.sidebarInner}>
+        <div className={styles.sidebarTop}>
+          <SiteName />
+          <button className={styles.toggleSidebar} onClick={toggleSidebar}>
+            <Icon icon="times" />
+          </button>
         </div>
 
-        <div className={styles.links}>
-          {LINKS.map(({ name, to }) => (
-            <Link
-              key={to}
-              className={styles.link}
-              activeClassName={styles.active}
-              to={to}
-            >
-              {name}
-            </Link>
-          ))}
-        </div>
+        <SiteLinks />
 
-        <div className={styles.etc}>
-          {displayGoogleAuthButton && (
-            <GoogleAuthButton onClick={googleSignIn} />
-          )}
+        <div className={styles.hr} />
 
-          {language && (
-            <LanguageDropdown language={language} setLanguage={setLanguage} />
-          )}
-
-          {currentProfile && (
-            <ProfileDropdown
-              isCached={isCached}
-              currentProfile={currentProfile}
-              allProfiles={allProfiles}
-              switchProfile={switchProfile}
-              logout={logout}
-              googleSignOut={googleSignOut}
-              googleAuthSignedIn={googleAuthSignedIn}
-            />
-          )}
-
-          {SOCIALS.map(({ name, to }) => (
-            <a
-              key={to}
-              className={styles.socialLink}
-              href={to}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Icon icon={name} brand />
-            </a>
-          ))}
-        </div>
+        {language && (
+          <LanguageDropdown
+            inline={true}
+            language={language}
+            setLanguage={setLanguage}
+          />
+        )}
+        <br />
+        {displayGoogleAuthButton && <GoogleAuthButton onClick={googleSignIn} />}
       </div>
     </div>
   );
+}
+
+export default class Header extends Component {
+  state = { isOverflowing: true, sidebarActive: false };
+
+  componentDidMount() {
+    window.addEventListener('resize', this.onResize);
+  }
+
+  onResize = () => {
+    if (this.state.isOverflowing) {
+      return;
+    }
+
+    if (isOverflowing(this.linksRef)) {
+      this.setState({ isOverflowing: true });
+      console.log('OVERFLWOING!');
+    }
+  };
+
+  setLinksRef = ref => {
+    this.linksRef = ref;
+  };
+
+  toggleSidebar = () => {
+    this.setState({ sidebarActive: !this.state.sidebarActive });
+  };
+
+  render() {
+    const {
+      isCached,
+      currentProfile,
+      allProfiles,
+      switchProfile,
+      language,
+      setLanguage,
+      logout,
+      googleAuthSignedIn,
+      displayGoogleAuthButton,
+      googleSignIn,
+      googleSignOut
+    } = this.props;
+
+    const { isOverflowing, sidebarActive } = this.state;
+
+    return (
+      <div
+        className={cx(
+          styles.root,
+          isOverflowing && styles.isOverflowing,
+          sidebarActive && styles.sidebarActive
+        )}
+      >
+        <Sidebar {...this.props} toggleSidebar={this.toggleSidebar} />
+
+        <div className={styles.fixed}>
+          {isOverflowing && (
+            <button
+              className={styles.toggleSidebar}
+              onClick={this.toggleSidebar}
+            >
+              <Icon icon="bars" />
+            </button>
+          )}
+
+          <SiteName />
+
+          <div className={styles.links} ref={this.setLinksRef}>
+            <SiteLinks />
+          </div>
+
+          <div className={styles.etc}>
+            {displayGoogleAuthButton &&
+              !isOverflowing && <GoogleAuthButton onClick={googleSignIn} />}
+
+            {language &&
+              !isOverflowing && (
+                <LanguageDropdown
+                  language={language}
+                  setLanguage={setLanguage}
+                />
+              )}
+
+            {currentProfile && (
+              <ProfileDropdown
+                isCached={isCached}
+                currentProfile={currentProfile}
+                allProfiles={allProfiles}
+                switchProfile={switchProfile}
+                logout={logout}
+                googleSignOut={googleSignOut}
+                googleAuthSignedIn={googleAuthSignedIn}
+              />
+            )}
+
+            {SOCIALS.map(({ name, to }) => (
+              <a
+                key={to}
+                className={styles.socialLink}
+                href={to}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Icon icon={name} brand />
+              </a>
+            ))}
+          </div>
+        </div>
+      </div>
+    );
+  }
 }

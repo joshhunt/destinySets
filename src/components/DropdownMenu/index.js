@@ -13,16 +13,24 @@ export default class DropdownMenu extends Component {
   };
 
   render() {
+    const {
+      inline,
+      children,
+      className,
+      contentClassName,
+      renderContent
+    } = this.props;
+
     return (
       <div
-        className={cx(styles.root, this.props.className)}
+        className={cx(styles.root, inline && styles.inline, className)}
         onClick={this.toggleDropdown}
       >
-        {this.props.children}
+        {children}
 
         {this.state.visible && (
-          <div className={cx(styles.content, this.props.contentClassName)}>
-            {this.props.renderContent()}
+          <div className={cx(styles.content, contentClassName)}>
+            {renderContent()}
           </div>
         )}
       </div>

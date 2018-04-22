@@ -38,7 +38,7 @@ export default class AppRouter extends Component {
           />
 
           <Route
-            path="/strikes"
+            path="/strike-gear"
             component={Inventory}
             setData={sets.strikeGear}
           />
