@@ -11,7 +11,8 @@ import {
   setLanguage,
   setObjectiveDefs,
   setStatDefs,
-  toggleFilterKey
+  toggleFilterKey,
+  removeTrackedItem
 } from 'app/store/reducer';
 import { inventorySelector } from 'app/store/selectors';
 
@@ -38,6 +39,8 @@ import styles from './styles.styl';
 
 const log = require('app/lib/log')('<Inventory />');
 
+const FETCH_INTERVAL = 30 * 1000;
+
 // eslint-disable-next-line
 const timeout = dur => result =>
   new Promise(resolve => setTimeout(() => resolve(result), dur));
@@ -50,6 +53,12 @@ class Inventory extends Component {
 
   componentDidMount() {
     this.fetchDefinitions(this.props.language);
+    this.potentiallyScheduleFetchProfile();
+  }
+
+  componentWillUnmount() {
+    window.clearInterval(this.intervalId);
+    this.intervalId = null;
   }
 
   componentWillReceiveProps(newProps) {
@@ -90,6 +99,10 @@ class Inventory extends Component {
       this.fetchDefinitions(newProps.language);
     }
 
+    if (this.props.trackedItems !== newProps.trackedItems) {
+      this.potentiallyScheduleFetchProfile(newProps);
+    }
+
     const inventoryHasChanged =
       this.props.isCached !== newProps.isCached ||
       this.props.haveCloudInventory !== newProps.haveCloudInventory;
@@ -112,13 +125,31 @@ class Inventory extends Component {
     }
   }
 
-  fetch(props = this.props) {
-    window.__CACHE_API = false;
+  potentiallyScheduleFetchProfile = (props = this.props) => {
+    if (!this.intervalId && props.trackedItems.length > 0) {
+      this.intervalId = window.setInterval(() => {
+        this.fetchProfile();
+      }, FETCH_INTERVAL);
+    }
+  };
 
-    destiny.getCurrentProfiles().then(data => {
+  fetchProfile(props = this.props) {
+    return destiny.getCurrentProfiles().then(data => {
       log('got current profile', data);
       const profile = destiny.getLastProfile(data);
 
+      props.setProfiles({
+        currentProfile: profile,
+        allProfiles: data.profiles,
+        isCached: false
+      });
+
+      return profile;
+    });
+  }
+
+  fetch = (props = this.props) => {
+    this.fetchProfile(props).then(profile => {
       googleAuth(({ signedIn }) => {
         this.setState({
           googleAuthLoaded: true,
@@ -133,16 +164,10 @@ class Inventory extends Component {
               props.setCloudInventory(cloudInventory);
             });
       });
-
-      return props.setProfiles({
-        currentProfile: profile,
-        allProfiles: data.profiles,
-        isCached: false
-      });
     });
-  }
+  };
 
-  fetchDefinitions(language) {
+  fetchDefinitions({ code: lang }) {
     const {
       setVendorDefs,
       setStatDefs,
@@ -150,31 +175,20 @@ class Inventory extends Component {
       setObjectiveDefs
     } = this.props;
 
-    getDefinition('DestinyVendorDefinition', language.code).then(setVendorDefs);
+    getDefinition('DestinyVendorDefinition', lang).then(setVendorDefs);
+    getDefinition('DestinyStatDefinition', lang).then(setStatDefs);
+    getDefinition('DestinyObjectiveDefinition', lang).then(setObjectiveDefs);
 
-    getDefinition('DestinyStatDefinition', language.code).then(setStatDefs);
-
-    // getDefinition('reducedCollectableInventoryItems', language.code, false)
-    getDefinition('DestinyInventoryItemDefinition', language.code)
-      // .then(timeout(2 * 1000))
-      .then(setItemDefs);
-
-    getDefinition('DestinyObjectiveDefinition', language.code).then(
-      setObjectiveDefs
-    );
+    // getDefinition('reducedCollectableInventoryItems', lang, false)
+    getDefinition('DestinyInventoryItemDefinition', lang).then(setItemDefs);
   }
 
-  setPopper = (itemHash, element) => {
+  setPopper = (itemHash, element) =>
     this.setState({ itemTooltip: itemHash ? { itemHash, element } : null });
-  };
 
-  setModal = itemHash => {
-    this.setState({ itemModal: itemHash });
-  };
-
-  toggleFilter = key => {
-    this.props.toggleFilterKey(key);
-  };
+  setModal = itemHash => this.setState({ itemModal: itemHash });
+  toggleFilter = key => this.props.toggleFilterKey(key);
+  removeTrackedItem = item => this.props.removeTrackedItem(item.hash);
 
   switchProfile = profile => {
     const { membershipId, membershipType } = profile.profile.data.userInfo;
@@ -210,7 +224,8 @@ class Inventory extends Component {
       allProfiles,
       language,
       isCached,
-      isAuthenticated
+      isAuthenticated,
+      trackedItems
     } = this.props;
 
     const {
@@ -267,6 +282,19 @@ class Inventory extends Component {
           </Popper>
         )}
 
+        {trackedItems.length > 0 && (
+          <div className={styles.trackedItems}>
+            {trackedItems.map(hash => (
+              <ItemTooltip
+                key={hash}
+                itemHash={hash}
+                small={true}
+                dismiss={this.removeTrackedItem}
+              />
+            ))}
+          </div>
+        )}
+
         <ItemModal
           itemHash={itemModal}
           isOpen={!!itemModal}
@@ -285,6 +313,7 @@ const mapStateToProps = (state, ownProps) => {
     allProfiles: state.app.allProfiles,
     language: state.app.language,
     itemDefs: state.app.itemDefs,
+    trackedItems: state.app.trackedItems,
     // TODO: this uses props, so we need to 'make' a selector like in ItemSet
     filteredSetData: filteredSetDataSelector(state, ownProps),
     inventory: inventorySelector(state),
@@ -301,7 +330,8 @@ const mapDispatchToActions = {
   setObjectiveDefs,
   setStatDefs,
   toggleFilterKey,
-  setLanguage
+  setLanguage,
+  removeTrackedItem
 };
 
 export default DestinyAuthProvider(

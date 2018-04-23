@@ -14,7 +14,8 @@ const SET_DEFINITIONS = 'Set definitions';
 const TOGGLE_FILTER_KEY = 'Toggle filter value';
 const SET_BULK_FILTERS = 'Set bulk filters';
 const SET_LANGUAGE = 'Set language';
-const TRACK_ORNAMENTS = 'Add tracked ornament';
+const ADD_TRACK_ITEMS = 'Add tracked item';
+const REMOVE_TRACKED_ITEM = 'Remove tracked item';
 
 export const DEFAULT_FILTER = {
   [TITAN]: true,
@@ -26,7 +27,7 @@ export const DEFAULT_FILTER = {
 
 const INITIAL_STORE = {
   filters: DEFAULT_FILTER,
-  ornaments: []
+  trackedItems: []
 };
 
 const ITEM_DEF_KEYS = [];
@@ -110,10 +111,16 @@ export default function reducer(state = INITIAL_STORE, action) {
         language: action.language
       };
 
-    case TRACK_ORNAMENTS:
+    case ADD_TRACK_ITEMS:
       return {
         ...state,
-        ornaments: [...state.ornament, ...action.ornaments]
+        trackedItems: [...state.trackedItems, ...action.itemHashes]
+      };
+
+    case REMOVE_TRACKED_ITEM:
+      return {
+        ...state,
+        trackedItems: state.trackedItems.filter(h => h !== action.itemHash)
       };
 
     default:
@@ -157,13 +164,17 @@ export function setLanguage(language) {
   return { type: SET_LANGUAGE, language };
 }
 
-export function trackOrnaments(ornaments) {
-  console.log('tracking ornaments', ornaments);
-  return { type: TRACK_ORNAMENTS, ornaments };
+export function trackOrnaments(itemHashes) {
+  console.log('tracking itemHashes', itemHashes);
+  return { type: ADD_TRACK_ITEMS, itemHashes };
 }
 
-export function trackOrnament(ornament) {
-  return trackOrnaments([ornament]);
+export function trackOrnament(itemHash) {
+  return trackOrnaments([itemHash]);
+}
+
+export function removeTrackedItem(itemHash) {
+  return { type: REMOVE_TRACKED_ITEM, itemHash };
 }
 
 function setDefs(name, defs) {

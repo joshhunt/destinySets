@@ -30,6 +30,10 @@ function ItemTooltip({
   statDefs,
   itemInventoryEntry
 }) {
+  if (!item) {
+    return null;
+  }
+
   const { displayProperties, screenshot, itemCategoryHashes } = item;
 
   const isEmblem = (itemCategoryHashes || []).includes(EMBLEM);
