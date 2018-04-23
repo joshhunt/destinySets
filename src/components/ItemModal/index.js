@@ -8,6 +8,8 @@ import getItemExtraInfo from 'app/lib/getItemExtraInfo';
 import Objectives from 'app/components/Objectives';
 import ItemBanner from 'app/components/ItemBanner';
 
+import { trackOrnament as trackOrnamentAction } from 'app/store/reducer';
+
 import {
   makeItemSelector,
   objectiveDefsSelector,
@@ -125,7 +127,7 @@ const MODAL_STYLES = {
   }
 };
 
-function ItemModalWrapper({ isOpen, onRequestClose, ...props }) {
+function ItemModalWrapper({ isOpen, onRequestClose, trackOrnament, ...props }) {
   return (
     <Modal
       isOpen={isOpen}
@@ -137,7 +139,7 @@ function ItemModalWrapper({ isOpen, onRequestClose, ...props }) {
         <ItemModalContent
           {...props}
           onRequestClose={onRequestClose}
-          trackOrnament={() => console.log('TODO: Track ornament')}
+          trackOrnament={trackOrnament}
         />
       )}
     </Modal>
@@ -161,4 +163,8 @@ const mapStateToProps = () => {
   };
 };
 
-export default connect(mapStateToProps)(ItemModalWrapper);
+const mapDispatchToActions = {
+  trackOrnament: trackOrnamentAction
+};
+
+export default connect(mapStateToProps, mapDispatchToActions)(ItemModalWrapper);

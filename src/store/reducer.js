@@ -14,6 +14,7 @@ const SET_DEFINITIONS = 'Set definitions';
 const TOGGLE_FILTER_KEY = 'Toggle filter value';
 const SET_BULK_FILTERS = 'Set bulk filters';
 const SET_LANGUAGE = 'Set language';
+const TRACK_ORNAMENTS = 'Add tracked ornament';
 
 export const DEFAULT_FILTER = {
   [TITAN]: true,
@@ -24,7 +25,8 @@ export const DEFAULT_FILTER = {
 };
 
 const INITIAL_STORE = {
-  filters: DEFAULT_FILTER
+  filters: DEFAULT_FILTER,
+  ornaments: []
 };
 
 const ITEM_DEF_KEYS = [];
@@ -108,6 +110,12 @@ export default function reducer(state = INITIAL_STORE, action) {
         language: action.language
       };
 
+    case TRACK_ORNAMENTS:
+      return {
+        ...state,
+        ornaments: [...state.ornament, ...action.ornaments]
+      };
+
     default:
       return state;
   }
@@ -147,6 +155,15 @@ export function setBulkFilters(filters) {
 
 export function setLanguage(language) {
   return { type: SET_LANGUAGE, language };
+}
+
+export function trackOrnaments(ornaments) {
+  console.log('tracking ornaments', ornaments);
+  return { type: TRACK_ORNAMENTS, ornaments };
+}
+
+export function trackOrnament(ornament) {
+  return trackOrnaments([ornament]);
 }
 
 function setDefs(name, defs) {

@@ -13,18 +13,6 @@ export default function getItemExtraInfo(item, _itemInventoryEntry) {
           .filter(Boolean)
       );
 
-  // if (objectives && !$objectives) {
-  //   const baseItem = item.$baseItem
-  //     ? `"${item.$baseItem.displayProperties.name}"`
-  //     : 'the base item';
-
-  //   extraInfo.push(
-  //     `Collect ${
-  //       baseItem
-  //     } and have it on a character to see Ornament status and objectives.`
-  //   );
-  // }
-
   return extraInfo;
 }
 
@@ -33,11 +21,11 @@ const LOCATIONS = {
   characterInventories: 'On character',
   profileInventory: 'In vault',
   characterKiosks: 'Unlocked in Kiosk',
-  profileKiosks: 'Unlocked in Kiosk',
-  itemSockets: 'itemSockets',
-  vendorSockets: 'vendorSockets'
+  profileKiosks: 'Unlocked in Kiosk'
+  // itemSockets: 'itemSockets',
+  // vendorSockets: 'vendorSockets'
 };
 
 export function getFriendlyItemLocation(instance) {
-  return LOCATIONS[instance.location] || instance.location;
+  return LOCATIONS[instance.location];
 }
