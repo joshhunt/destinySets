@@ -20,6 +20,8 @@ export const MODS1 = 56;
 export const MODS2 = 59;
 export const CLAN_BANNER = 58;
 
+export const ARMOR_MODS_ORNAMENTS = 1742617626;
+
 export const HELMET = 45;
 export const ARMS = 46;
 export const CHEST = 47;

@@ -126,10 +126,12 @@ class Inventory extends Component {
         });
 
         signedIn &&
-          cloudStorage.getInventory(profile).then(cloudInventory => {
-            window.__cloudInventory = cloudInventory;
-            props.setCloudInventory(cloudInventory);
-          });
+          cloudStorage
+            .getInventory(profile, this.props.itemDefs)
+            .then(cloudInventory => {
+              window.__cloudInventory = cloudInventory;
+              props.setCloudInventory(cloudInventory);
+            });
       });
 
       return props.setProfiles({
@@ -282,6 +284,7 @@ const mapStateToProps = (state, ownProps) => {
     isCached: state.app.isCached,
     allProfiles: state.app.allProfiles,
     language: state.app.language,
+    itemDefs: state.app.itemDefs,
     // TODO: this uses props, so we need to 'make' a selector like in ItemSet
     filteredSetData: filteredSetDataSelector(state, ownProps),
     inventory: inventorySelector(state),
