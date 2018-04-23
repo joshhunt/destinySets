@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Loading from 'app/views/Loading';
 
 import Item from 'app/components/Item';
-import Header from 'app/components/NewHeader';
+import Header from 'app/components/Header';
 
 import styles from './styles.styl';
 

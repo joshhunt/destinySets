@@ -25,9 +25,9 @@ import * as destiny from 'app/lib/destiny';
 import * as cloudStorage from 'app/lib/cloudStorage';
 import { getDefinition } from 'app/lib/manifestData';
 
-import Header from 'app/components/NewHeader';
+import Header from 'app/components/Header';
 import LoginUpsell from 'app/components/LoginUpsell';
-import Section from 'app/components/NewSection';
+import Section from 'app/components/Section';
 import Popper from 'app/components/Popper';
 import FilterBar from 'app/components/NewFilterBar';
 import ItemTooltip from 'app/components/ItemTooltip';

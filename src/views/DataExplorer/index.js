@@ -5,7 +5,7 @@ import * as ls from 'app/lib/ls';
 import { getDefinition } from 'app/lib/manifestData';
 
 import Item from 'app/components/Item';
-import Header from 'app/components/NewHeader';
+import Header from 'app/components/Header';
 import Loading from 'app/views/Loading';
 
 import copy from 'app/lib/copyToClipboard';
