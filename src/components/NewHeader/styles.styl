@@ -45,6 +45,9 @@ $height = 52px
   display: inline-block
   padding: 18px 10px
 
+  @media screen and (max-width: 500px)
+    display: none
+
 .dummyLink
   padding-left: 0
   padding-right: 0
@@ -92,12 +95,13 @@ $height = 52px
 
 .toggleSidebar
   background: none
+  margin-right: 5px
+  margin-left: -10px
   padding: 10px
   border: none
   appearance: none
   color: white
   font-size: 20px
-  margin-right: 10px
   cursor: pointer
 
 .sidebar
@@ -143,7 +147,7 @@ $height = 52px
     display: none
 
   .link
-    display: block
+    display: block !important // override media query
     width: 100%
     padding: 10px
     padding-left: 15px

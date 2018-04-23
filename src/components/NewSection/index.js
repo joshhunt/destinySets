@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import ItemSet from 'app/components/ItemSet';
 
 import styles from './styles.styl';
@@ -11,7 +11,7 @@ export default function Section({ name, sets, setPopper, setModal }) {
       <h2 className={styles.title}>{name}</h2>
       <div className={styles.list}>
         {sets.map((set, index) => (
-          <LazyLoad key={index}>
+          <Fragment key={index}>
             <ItemSet
               className={set.big ? styles.setBig : styles.set}
               name={set.name}
@@ -20,7 +20,7 @@ export default function Section({ name, sets, setPopper, setModal }) {
               setPopper={setPopper}
               setModal={setModal}
             />
-          </LazyLoad>
+          </Fragment>
         ))}
       </div>
     </div>

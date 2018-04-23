@@ -94,10 +94,18 @@ export default class Header extends Component {
   state = { isOverflowing: false, sidebarActive: false };
 
   componentDidMount() {
-    window.addEventListener('resize', this.onResize);
+    window.addEventListener('resize', this.checkOverflow);
   }
 
-  onResize = () => {
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.checkOverflow);
+  }
+
+  componentDidUpdate() {
+    this.checkOverflow();
+  }
+
+  checkOverflow = () => {
     if (this.state.isOverflowing) {
       return;
     }

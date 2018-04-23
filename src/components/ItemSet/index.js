@@ -36,21 +36,23 @@ function ItemSet({
               )}
             </h4>
 
-            {section.itemGroups.map((itemList, index2) => (
-              <div className={styles.itemList} key={index2}>
-                {itemList.map(itemHash => (
-                  <Item
-                    key={itemHash}
-                    className={styles.item}
-                    itemHash={itemHash}
-                    item={itemDefs[itemHash]}
-                    setPopper={setPopper}
-                    inventoryEntry={inventory && inventory[itemHash]}
-                    onItemClick={setModal}
-                  />
-                ))}
-              </div>
-            ))}
+            <div className={styles.itemListWrapper}>
+              {section.itemGroups.map((itemList, index2) => (
+                <div className={styles.itemList} key={index2}>
+                  {itemList.map(itemHash => (
+                    <Item
+                      key={itemHash}
+                      className={styles.item}
+                      itemHash={itemHash}
+                      item={itemDefs[itemHash]}
+                      setPopper={setPopper}
+                      inventoryEntry={inventory && inventory[itemHash]}
+                      onItemClick={setModal}
+                    />
+                  ))}
+                </div>
+              ))}
+            </div>
           </div>
         ))}
       </div>
