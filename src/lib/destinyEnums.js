@@ -20,7 +20,11 @@ export const MODS1 = 56;
 export const MODS2 = 59;
 export const CLAN_BANNER = 58;
 
+export const WEAPON_MODS_ORNAMENTS = 3124752623;
 export const ARMOR_MODS_ORNAMENTS = 1742617626;
+export const ARMOR_MODS_ORNAMENTS_HUNTER = 3683250363;
+export const ARMOR_MODS_ORNAMENTS_TITAN = 3229540061;
+export const ARMOR_MODS_ORNAMENTS_WARLOCK = 3684181176;
 
 export const HELMET = 45;
 export const ARMS = 46;

@@ -12,6 +12,8 @@ const isWeapon = itemCategory(enums.WEAPON);
 const isArmor = itemCategory(enums.ARMOR);
 const isLegendary = tierType(enums.LEGENDARY);
 const isExotic = tierType(enums.EXOTIC);
+const isArmorOrnament = itemCategory(enums.ARMOR_MODS_ORNAMENTS);
+const isWeaponOrnament = itemCategory(enums.WEAPON_MODS_ORNAMENTS);
 
 const COLLECTABLE = [
   enums.WEAPON,
@@ -154,10 +156,7 @@ export const fancySearchFns = {
 
   'is:ornament': items => {
     return itemFilter(items, item => {
-      return (
-        (itemCategory(enums.MODS1)(item) || itemCategory(enums.MODS2)(item)) &&
-        item.itemTypeDisplayName.toLowerCase().includes('ornament')
-      );
+      return isArmorOrnament(item) || isWeaponOrnament(item);
     });
   },
 

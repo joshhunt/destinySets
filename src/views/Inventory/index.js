@@ -179,8 +179,10 @@ class Inventory extends Component {
     getDefinition('DestinyStatDefinition', lang).then(setStatDefs);
     getDefinition('DestinyObjectiveDefinition', lang).then(setObjectiveDefs);
 
-    // getDefinition('reducedCollectableInventoryItems', lang, false)
-    getDefinition('DestinyInventoryItemDefinition', lang).then(setItemDefs);
+    getDefinition('reducedCollectableInventoryItems', lang, false).then(
+      setItemDefs
+    );
+    // getDefinition('DestinyInventoryItemDefinition', lang).then(setItemDefs);
   }
 
   setPopper = (itemHash, element) =>
