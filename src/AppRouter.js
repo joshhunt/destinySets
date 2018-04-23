@@ -49,6 +49,12 @@ export default class AppRouter extends Component {
             setData={sets.allItems}
           />
 
+          <Route
+            path="/all-items-deluxe"
+            component={Inventory}
+            setData={sets.allItemsDeluxe}
+          />
+
           <Route path="/data" component={DataExplorer} />
           <Route path="/data/:itemHash" component={DataExplorer} />
           <Route path="/diff" component={Diff} />
