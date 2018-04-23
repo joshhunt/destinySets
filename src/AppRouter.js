@@ -23,13 +23,13 @@ export default class AppRouter extends Component {
         <Router history={browserHistory}>
           <Route path="/debug" component={Debug} />
 
-          <Route path="/" component={Inventory} setData={sets.allSeasons} />
-
           <Route
-            path="/season-1"
+            path="/all-seasons"
             component={Inventory}
-            setData={sets.baseGame}
+            setData={sets.allSeasons}
           />
+
+          <Route path="/" component={Inventory} setData={sets.baseGame} />
 
           <Route
             path="/curse-of-osiris"

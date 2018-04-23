@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Loading from 'app/views/Loading';
 
 export default function makeSplitComponent(getComponent) {
   class AsyncComponent extends Component {
@@ -17,7 +18,7 @@ export default function makeSplitComponent(getComponent) {
         return <this.state.View {...this.props} />;
       }
 
-      return <div>Loading...</div>;
+      return <Loading>Loading...</Loading>;
     }
   }
 
