@@ -28,6 +28,7 @@ const INITIAL_STORE = {
 };
 
 const ITEM_DEF_KEYS = [];
+window.__ITEM_DEF_KEYS = ITEM_DEF_KEYS;
 const DEBUG_PROXIFY_ITEM_DEFS = false;
 
 function proxyifyDefs(defs, prevKeys = []) {
