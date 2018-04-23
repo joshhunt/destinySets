@@ -3,7 +3,7 @@ import ItemSet from 'app/components/ItemSet';
 
 import styles from './styles.styl';
 
-import LazyLoad from 'react-lazyload';
+// import LazyLoad from 'react-lazyload';
 
 export default function Section({ name, sets, setPopper, setModal }) {
   return (

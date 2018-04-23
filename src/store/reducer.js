@@ -64,7 +64,6 @@ function proxyifyDefs(defs, prevKeys = []) {
   });
 
   return p;
-  // return defs;
 }
 
 export default function reducer(state = INITIAL_STORE, action) {
