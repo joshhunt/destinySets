@@ -3,20 +3,40 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@d8660091/react-popper": "^0.7.1",
+    "@fortawesome/fontawesome": "^1.1.5",
+    "@fortawesome/fontawesome-free-brands": "^5.0.9",
+    "@fortawesome/fontawesome-pro-light": "^5.0.9",
+    "@fortawesome/fontawesome-pro-regular": "^5.0.9",
+    "@fortawesome/fontawesome-pro-solid": "^5.0.9",
+    "@fortawesome/react-fontawesome": "^0.0.18",
+    "@zalando/oauth2-client-js": "^0.0.18",
+    "async": "^2.6.0",
     "autotrack": "^2.4.1",
+    "axios": "^0.18.0",
     "babel-polyfill": "^6.26.0",
     "browser-locale": "^1.0.3",
     "classnames": "^2.2.5",
+    "client-oauth2": "^4.2.0",
     "dexie": "^2.0.1",
     "firebase": "^4.8.0",
+    "image-size": "^0.6.2",
+    "immer": "^1.2.0",
     "lodash": "^4.17.4",
+    "popper.js": "^1.14.1",
     "react": "^16.2.0",
+    "react-app-rewire-hot-loader": "^1.0.0",
     "react-dom": "^16.2.0",
+    "react-hot-loader": "^4.0.0",
     "react-json-tree": "^0.11.0",
+    "react-lazyload": "^2.3.0",
     "react-modal": "^3.1.13",
+    "react-popper": "^0.8.2",
+    "react-redux": "^5.0.7",
     "react-router": "3.2.0",
     "react-scripts": "1.0.17",
-    "react-sidebar": "^2.3.2"
+    "redux": "^3.7.2",
+    "reselect": "^3.0.1"
   },
   "scripts": {
     "start": "react-app-rewired start",
@@ -26,21 +46,23 @@
     "deploy": "yarn run build && yarn run upload",
     "upload": "env AWS_PROFILE=money aws s3 sync build/ s3://destinysets.com/ --region=ap-southeast-2 --acl public-read",
     "generate-autotrack": "autotrack -o public/autotrack.build.js -p clean-url-tracker,url-change-tracker",
-    "eject": "react-scripts eject",
-    "test": "ava"
+    "eject": "react-scripts eject"
   },
   "devDependencies": {
+    "@sentry/cli": "^1.30.0",
     "autoprefixer": "^7.2.2",
     "ava": "^1.0.0-beta.3",
+    "babel-plugin-lodash": "^3.3.2",
     "postcss-loader": "^2.0.9",
     "react-app-rewired": "1.3.8",
     "stylus": "^0.54.5",
     "stylus-loader": "3.0.2",
-    "webpack-visualizer-plugin": "^0.1.11",
-    "babel-plugin-lodash": "^3.3.2",
-    "@sentry/cli": "^1.30.0"
+    "unused-files-webpack-plugin": "^3.4.0",
+    "webpack-visualizer-plugin": "^0.1.11"
   },
   "ava": {
-    "files": ["tests/*.js" ]
+    "files": [
+      "tests/*.js"
+    ]
   }
 }

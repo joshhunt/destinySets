@@ -1,24 +1,48 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import { Link } from 'react-router';
+import Modal from 'react-modal';
 
+import { EMBLEM } from 'app/lib/destinyEnums';
 import getItemExtraInfo from 'app/lib/getItemExtraInfo';
 import Objectives from 'app/components/Objectives';
-import StatTrack from 'app/components/StatTrack';
 import ItemBanner from 'app/components/ItemBanner';
+
+import { trackOrnament as trackOrnamentAction } from 'app/store/reducer';
+
+import {
+  makeItemSelector,
+  objectiveDefsSelector,
+  statDefsSelector,
+  makeItemStatsSelector,
+  profileObjectivesSelector,
+  makeItemInventoryEntrySelector
+} from 'app/store/selectors';
 
 import styles from './styles.styl';
 
-export default class ItemModal extends Component {
+class ItemModalContent extends Component {
   render() {
     const {
       trackOrnament,
       onRequestClose,
-      item: { hash, displayProperties, screenshot, $objectives, $statTrack }
+      item,
+      itemInventoryEntry,
+      profileObjectives,
+      objectiveDefs
     } = this.props;
 
-    const extraInfo = getItemExtraInfo(this.props.item);
+    const { hash, displayProperties, screenshot, itemCategoryHashes } = item;
 
     const dtrLink = `http://db.destinytracker.com/d2/en/items/${hash}`;
+
+    const isEmblem = (itemCategoryHashes || []).includes(EMBLEM);
+    const extraInfo = getItemExtraInfo(item, itemInventoryEntry);
+
+    const objectiveHashes = [
+      item.emblemObjectiveHash,
+      ...((item.objectives || {}).objectiveHashes || [])
+    ].filter(Boolean);
 
     return (
       <div className={styles.root}>
@@ -42,12 +66,6 @@ export default class ItemModal extends Component {
           <p className={styles.description}>{displayProperties.description}</p>
         )}
 
-        {$statTrack && (
-          <div>
-            <StatTrack statTrack={$statTrack} />
-          </div>
-        )}
-
         <ul className={styles.viewItemLinks}>
           <li>
             <a href={dtrLink} target="_blank" rel="noopener noreferrer">
@@ -60,13 +78,7 @@ export default class ItemModal extends Component {
           </li>
         </ul>
 
-        {extraInfo.map(info => (
-          <div key={info} className={styles.extraInfo}>
-            {info}
-          </div>
-        ))}
-
-        {$objectives && (
+        {objectiveHashes.length ? (
           <div>
             <h3 className={styles.objectiveTitle}>
               Complete Objectives to Unlock
@@ -74,8 +86,10 @@ export default class ItemModal extends Component {
 
             <Objectives
               className={styles.objectives}
-              objectives={$objectives}
-              bigger={true}
+              trackedStatStyle={isEmblem}
+              objectives={objectiveHashes}
+              profileObjectives={profileObjectives}
+              objectiveDefs={objectiveDefs}
             />
 
             <button
@@ -85,8 +99,72 @@ export default class ItemModal extends Component {
               Track objective progress
             </button>
           </div>
-        )}
+        ) : null}
+
+        {extraInfo.map((info, index) => (
+          <div key={index} className={styles.extraInfo}>
+            {info}
+          </div>
+        ))}
       </div>
     );
   }
 }
+
+const MODAL_STYLES = {
+  overlay: {
+    backgroundColor: 'rgba(0, 0, 0, 0.75)',
+    marginTop: 0,
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    zIndex: 10
+  },
+  content: {
+    position: 'static',
+    background: 'none',
+    border: 'none'
+  }
+};
+
+function ItemModalWrapper({ isOpen, onRequestClose, trackOrnament, ...props }) {
+  return (
+    <Modal
+      isOpen={isOpen}
+      onRequestClose={onRequestClose}
+      contentLabel="Modal"
+      style={MODAL_STYLES}
+    >
+      {props.item && (
+        <ItemModalContent
+          {...props}
+          onRequestClose={onRequestClose}
+          trackOrnament={trackOrnament}
+        />
+      )}
+    </Modal>
+  );
+}
+
+const mapStateToProps = () => {
+  const itemStatsSelector = makeItemStatsSelector();
+  const itemSelector = makeItemSelector();
+  const itemInventoryEntrySelector = makeItemInventoryEntrySelector();
+
+  return (state, ownProps) => {
+    return {
+      profileObjectives: profileObjectivesSelector(state),
+      objectiveDefs: objectiveDefsSelector(state),
+      statDefs: statDefsSelector(state),
+      stats: itemStatsSelector(state, ownProps),
+      item: itemSelector(state, ownProps),
+      itemInventoryEntry: itemInventoryEntrySelector(state, ownProps)
+    };
+  };
+};
+
+const mapDispatchToActions = {
+  trackOrnament: trackOrnamentAction
+};
+
+export default connect(mapStateToProps, mapDispatchToActions)(ItemModalWrapper);

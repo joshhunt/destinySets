@@ -3,15 +3,18 @@ import { getDefaultLanguage } from './i18n';
 const keys = {
   INVENTORY: '$inventory2',
   CLOUD_INVENTORY: '$cloudinventory',
-  FILTERS: '$filters',
+  FILTERS: '$filters2',
   ACCOUNT: '$account',
   LANGUAGE: '$lang',
-  AUTH: '$auth',
+  AUTH: '$auth2',
   GDRIVE_FILE_ID: '$googleDriveFileId' + window.DESTINYSETS_ENV,
-  GOOGLE_LOGIN_UPSELL: '$googleLoginUpsell',
+  GOOGLE_LOGIN_TOOLTIP: '$hideGoogleLoginTooltip',
   VISIT_COUNT: '$visitCount',
   TRACKED_ITEMS: '$trackedItems',
-  UID: 'uid'
+  UID: 'uid',
+  DEBUGID: 'debugid',
+
+  DESTINY_PROFILE: 'd2Profile'
 };
 
 let LOCAL_STORAGE;
@@ -91,12 +94,12 @@ export function getInventory() {
   return get(keys.INVENTORY, []);
 }
 
-export function saveGoogleLoginUpsell(bool) {
-  save(keys.GOOGLE_LOGIN_UPSELL, bool);
+export function saveHideGoogleLoginTooltip(bool) {
+  save(keys.GOOGLE_LOGIN_TOOLTIP, bool);
 }
 
-export function getGoogleLoginUpsell() {
-  return get(keys.GOOGLE_LOGIN_UPSELL, false);
+export function getHideGoogleLoginTooltip() {
+  return get(keys.GOOGLE_LOGIN_TOOLTIP, false);
 }
 
 export function saveCloudInventory(inventory) {
@@ -127,10 +130,6 @@ export function getPreviousAccount(id, type) {
   return get(keys.ACCOUNT, {});
 }
 
-export function removePreviousAccount() {
-  localStorage.removeItem(keys.ACCOUNT);
-}
-
 export function saveAuth(authData) {
   save(keys.AUTH, authData);
 }
@@ -139,16 +138,16 @@ export function getAuth() {
   return get(keys.AUTH);
 }
 
+export function removeAuth() {
+  localStorage.removeItem(keys.AUTH);
+}
+
 export function saveVisitCount(count) {
   save(keys.VISIT_COUNT, count);
 }
 
 export function getVisitCount() {
   return parseInt(get(keys.VISIT_COUNT, 0), 10);
-}
-
-export function removeAuth() {
-  localStorage.removeItem(keys.AUTH);
 }
 
 export function getGoogleDriveInventoryFileId() {
@@ -175,6 +174,31 @@ export function saveUID(uid) {
   save(keys.UID, uid);
 }
 
+export function getDebugId() {
+  return get(
+    keys.DEBUGID,
+    Math.random()
+      .toString(36)
+      .substr(2, 7)
+  );
+}
+
+export function saveDebugId(debugID) {
+  save(keys.DEBUGID, debugID);
+}
+
+export function saveProfiles(profilese) {
+  save(keys.DESTINY_PROFILE, profilese);
+}
+
+export function getProfiles() {
+  return get(keys.DESTINY_PROFILE);
+}
+
+export function removeProfiles() {
+  return localStorage.removeItem(keys.DESTINY_PROFILE);
+}
+
 export function clearAll() {
   Object.values(keys).forEach(k => {
     localStorage.removeItem(k);
@@ -182,3 +206,4 @@ export function clearAll() {
 }
 
 export const localStorage = LOCAL_STORAGE;
+window.__clearAllLs = clearAll;

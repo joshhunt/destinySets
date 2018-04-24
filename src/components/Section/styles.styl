@@ -1,0 +1,30 @@
+.root
+  margin-bottom: 10px
+
+.title
+  margin-top: 0
+  margin-bottom: 0
+
+.list
+  display: flex
+  flex-wrap: wrap
+  justify-content: space-between
+  margin: 0 -10px
+
+.set
+  max-width: 50%
+  min-width: 450px
+  flex: 1 0 25%
+  padding: 10px
+  padding-bottom: 20px
+
+  @media screen and (max-width: 910px)
+    width: 100%
+    max-width: initial
+    min-width: 100%
+
+.setBig
+  composes: set
+  width: 100%
+  max-width: initial
+  flex-basis: 100%

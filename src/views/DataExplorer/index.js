@@ -7,12 +7,14 @@ import { getDefinition } from 'app/lib/manifestData';
 import Item from 'app/components/Item';
 import Header from 'app/components/Header';
 import Loading from 'app/views/Loading';
-import copy from 'app/lib/copyToClipboard';
 
-import sortItemsIntoSections from './sortItemsIntoSections';
+import copy from 'app/lib/copyToClipboard';
+import { fancySearchTerms } from 'app/lib/fancySearch';
+import sortItemsIntoSections from 'app/lib/sortItemsIntoSections';
+
 import DataViewer from './DataView';
 import CollectionSidebar from './CollectionSidebar';
-import filterDefinitions, { fancySearchTerms } from './filterItems';
+import filterDefinitions from './filterItems';
 
 import DATA_SOURCES from './definitionSources';
 
@@ -200,11 +202,7 @@ class DataExplorer extends Component {
 
     return (
       <div className={styles.root} data-id="root">
-        <Header
-          className={styles.header}
-          bg={this.state.headerBg}
-          legacy={false}
-        />
+        <Header />
 
         <div className={styles.view}>
           <div className={styles.main}>

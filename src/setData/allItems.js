@@ -5,7 +5,7 @@ module.exports = [
       {
         name: 'Exotics',
         big: true,
-        fancySearchTerm: 'is:exotic is:gear',
+        query: 'is:exotic is:gear',
         sections: []
       },
       {
@@ -13,27 +13,27 @@ module.exports = [
         big: true,
         sections: [
           {
-            title: 'Kinetic',
-            fancySearchTerm: 'is:legendary is:weapon is:kinetic'
+            name: 'Kinetic',
+            query: 'is:legendary is:weapon is:kinetic'
           },
           {
-            title: 'Energy',
-            fancySearchTerm: 'is:legendary is:weapon is:energy'
+            name: 'Energy',
+            query: 'is:legendary is:weapon is:energy'
           },
           {
-            title: 'Power',
-            fancySearchTerm: 'is:legendary is:weapon is:power'
+            name: 'Power',
+            query: 'is:legendary is:weapon is:power'
           },
           {
-            title: 'Ghosts',
-            fancySearchTerm: 'is:legendary is:ghost'
+            name: 'Ghosts',
+            query: 'is:legendary is:ghost'
           }
         ]
       },
       {
         name: 'Armor',
         big: true,
-        fancySearchTerm: 'is:legendary is:armor',
+        query: 'is:legendary is:armor',
         sections: []
       }
     ]
@@ -47,20 +47,20 @@ module.exports = [
         big: true,
         sections: [
           {
-            title: 'Legendary',
-            fancySearchTerm: 'is:legendary is:emblem'
+            name: 'Legendary',
+            query: 'is:legendary is:emblem'
           },
           {
-            title: 'Rare',
-            fancySearchTerm: 'is:rare is:emblem'
+            name: 'Rare',
+            query: 'is:rare is:emblem'
           },
           {
-            title: 'Uncommon',
-            fancySearchTerm: 'is:uncommon is:emblem'
+            name: 'Uncommon',
+            query: 'is:uncommon is:emblem'
           },
           {
-            title: 'Common',
-            fancySearchTerm: 'is:common is:emblem'
+            name: 'Common',
+            query: 'is:common is:emblem'
           }
         ]
       },
@@ -70,16 +70,16 @@ module.exports = [
         big: true,
         sections: [
           {
-            title: 'Legendary',
-            fancySearchTerm: 'is:legendary is:shader'
+            name: 'Legendary',
+            query: 'is:legendary is:shader'
           },
           {
-            title: 'Rare',
-            fancySearchTerm: 'is:rare is:shader'
+            name: 'Rare',
+            query: 'is:rare is:shader'
           },
           {
-            title: 'Uncommon',
-            fancySearchTerm: 'is:uncommon is:shader'
+            name: 'Uncommon',
+            query: 'is:uncommon is:shader'
           }
         ]
       },
@@ -87,14 +87,14 @@ module.exports = [
       {
         name: 'Emotes',
         big: true,
-        fancySearchTerm: 'is:emote',
+        query: 'is:emote',
         sections: []
       },
 
       {
         name: 'Ornaments',
         big: true,
-        fancySearchTerm: 'is:ornament',
+        query: 'is:ornament',
         sections: []
       }
     ]
@@ -105,13 +105,13 @@ module.exports = [
     sets: [
       {
         name: 'Sparrows',
-        fancySearchTerm: 'is:sparrow',
+        query: 'is:sparrow',
         sections: []
       },
 
       {
         name: 'Ships',
-        fancySearchTerm: 'is:ship',
+        query: 'is:ship',
         sections: []
       }
     ]

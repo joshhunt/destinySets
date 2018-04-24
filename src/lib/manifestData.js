@@ -19,10 +19,22 @@ db.version(1).stores({
 let manifestPromise;
 
 function getManifest() {
-  // return Promise.resolve({ id: 'ae3b053c99a4838ede0db0f9340498e1' });
-
   if (!manifestPromise) {
-    manifestPromise = destiny.get('https://destiny.plumbing/index.json');
+    manifestPromise = destiny
+      .get('https://destiny.plumbing/index.json')
+      .catch(() => {
+        return db.dataCache.toCollection().primaryKeys();
+      })
+      .then(data => {
+        if (data.id) {
+          return data;
+        }
+
+        // TODO: fail appropraitely if no manifest is cached
+        log('Manifest request failed, using previously cached');
+        const id = data[0].split(':')[0];
+        return { id, isStale: true };
+      });
   }
 
   return manifestPromise;

@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import destinyAuth from 'app/lib/destinyAuth';
 
+const log = require('app/lib/log')('authProvider');
+
 export default function DestinyAuthProvider(
   WrappedComponent,
   onlyRenderWhenAuthed
@@ -12,12 +14,14 @@ export default function DestinyAuthProvider(
     };
 
     componentDidMount() {
-      destinyAuth((err, isAuthenticated) => {
+      destinyAuth((err, { isAuthenticated, isFinal }) => {
+        log('Auth state update', { err, isAuthenticated, isFinal });
+
         if (err) {
           throw err;
         }
 
-        this.setState({ isAuthenticated, authLoaded: true });
+        this.setState({ isAuthenticated, authLoaded: isFinal });
       });
     }
 

@@ -7,12 +7,12 @@ import styles from './styles.styl';
 export default function LoginUpsell({ children }) {
   return (
     <div className={styles.loginUpsell}>
-      <h2 className={styles.heading}>Login for more</h2>
+      <h2 className={styles.heading}>Login for the good stuff</h2>
 
       {children && <p>{children}</p>}
 
       <a className={styles.authLink} href={authUrl()}>
-        Authorize with Bungie.net
+        Connect Bungie.net
       </a>
     </div>
   );

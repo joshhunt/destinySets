@@ -1,53 +1,61 @@
 $baseColour = rgba(11, 13, 16, 1.0)
 $bgColour = lighten($baseColour, 4%)
 $filterColour = lighten($baseColour, 10%)
-$activeBg = rgba(white, .1)
-$edgePadding = 15px
+$activeBg = rgba(white, .07)
+$padding = 15px
+$height = 52px
 
-.fixedHeader
+.root
+  height: $height
+
+.fixed
+  z-index: 2
+  background: $bgColour
+  line-height: 1
+  margin-bottom: $padding
+  display: flex
+  align-items: center
+  padding: 0 $padding
   position: fixed
   top: 0
   left: 0
   right: 0
-  z-index: 10
+  box-shadow: 0 0 20px -5px rgba(black, 0.75)
 
-.fakeHeader
-  visibility: hidden
+.siteName
+  font-size: 22px
+  display: flex
+  align-items: center
 
 .logo
-  height: 24px
-  margin-right: 10px
+  width: 22px
+  height: auto
+  margin-right: 12px
 
-.header
-  background: $bgColour
+.links
+  flex: 1
+  margin-left: $padding
+  height: $height
+  overflow: hidden
   display: flex
-  justify-content: space-between
-  align-items: center
-  padding: 0 $edgePadding
-  z-index: 1
-  position: relative
-  background-position: center
-  background-size: cover
-  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+  flex-wrap: wrap
 
-.main
-  display: flex
+.link
+.dummyLink
+  display: inline-block
+  padding: 18px 10px
 
-.version
-  font-size: .65em
-  opacity: .7
-  vertical-align: top
-  position: relative
-  top: -2px
+  @media screen and (max-width: 500px)
+    display: none
 
-.navItem
-  padding: 17px 15px 13px 15px
-  line-height: 22px
-  transition: all 150ms ease-in-out
+.dummyLink
+  padding-left: 0
+  padding-right: 0
+
+.link
   color: inherit
   text-decoration: none
-  display: flex
-  align-items: center
+  white-space: nowrap
 
   &:hover
     background: $activeBg
@@ -63,120 +71,107 @@ $edgePadding = 15px
       right: 0
       left: 0
       height: 3px
-      background: rgba(white, .3)
+      background: rgba(white, .2)
 
-.siteName
-  padding: $edgePadding
-  padding-left: 0
-  composes: navItem
-  font-weight: 400
-  font-size: 22px
-  margin: 0
-  display: block
-
-  &:hover
-    background: none
-
-  > *
-    vertical-align: middle
-
-.social
-  margin-right: -7px
+.etc
+  margin: 0 -8px
   display: flex
   align-items: center
 
-
-
-.socialItem
-  font-size: 20px
-  padding: 0 7px
+.socialLink
+  display: inline-block
+  margin: 0 8px
   opacity: .7
   transition: all 150ms ease-in-out
   color: white !important
+  font-size: 22px
 
   &:hover
     opacity: 1
 
-  @media screen and (max-width: 850px)
-    font-size: 24px
+.isOverflowing
+  .socialLink
+    display: none
 
-    .header &
-      display: none
-
-.mobileSocials
-  display: flex
-
-  > *
-    flex: 1
-    text-align: center
-
-._dropdownMenuRoot
-  display: flex
-  align-items: center
-  cursor: pointer
-  padding: 7px 10px
-  transition: all 150ms ease-in-out
-  position: relative
-
-  &:hover
-    background: $activeBg
-
-._dropdownMenuDropdown
-  position: absolute
-  top: 100%
-  right: 0
-  background: #13161B
-  box-shadow: 0 3px 3px rgba(0,0,0,.5);
-
-._dropdownMenuOption
-  cursor: pointer
-  padding: 7px 10px
-  transition: all 150ms ease-in-out
-  white-space: nowrap
-
-  &:hover
-    background: $activeBg
-
-// account switcher stuff
-.accountSwitcher
-  composes: _dropdownMenuRoot
-
-.displayName
-  font-size: .85em
-
-.platform
-  font-size: .7em
-
-.switchButton
+.toggleSidebar
   background: none
+  margin-right: 5px
+  margin-left: -10px
+  padding: 10px
   border: none
-  color: rgba(white, .8)
-  padding-left: 10px
-
-.accountsDropdown
-  composes: _dropdownMenuDropdown
-
-.dropdownAccount
-  composes: _dropdownMenuOption
-
-.mobile
-  display: none
-
-.hambuger
   appearance: none
-  background: none
-  border-radius: none
-  border: none
   color: white
   font-size: 20px
-  padding: 5px 15px
-  margin-left: -15px
-  outline: none
+  cursor: pointer
 
-@media screen and (max-width: 850px)
-  .mobile
-    display: flex
-    align-items: center
+.sidebar
+  position: fixed
+  z-index: 4
+  top: 0
+  bottom: 0
+  width: 100%
+  max-width: 300px
+  background: $bgColour
+  box-shadow: 0 0 20px -5px rgba(black, 0.75)
+  transition: 350ms transform ease-in-out
+  left: 0
 
-  .main
+  transform: translateX(-100%) // offscreen
+
+  &:before
+    pointer-events: none
+    content: ''
+    position: absolute
+    z-index: -1
+    top: 0
+    bottom: 0
+    background: rgba(#090B0E, 0)
+    width: 1000%
+    left: 100%
+    transition: 350ms background ease-in-out
+
+  .sidebarActive &
+    transform: translateX(0) // onscreen
+    pointer-events: initial
+
+    &:before
+      background: rgba(#090B0E, .7)
+
+  .siteName
+    margin-bottom: 15px
+
+  .toggleSidebar
+    margin: -12px 0 0 0
+
+  .dummyLink
     display: none
+
+  .link
+    display: block !important // override media query
+    width: 100%
+    padding: 10px
+    padding-left: 15px
+    margin-left: -5px
+    line-height: 1
+
+    &.active:after
+      right: initial
+      height: initial
+      top: 0
+      width: 3px
+
+.sidebarInner
+  height: 100%
+  overflow: scroll
+  padding: 9px $padding
+
+.hr
+  height: 1px
+  width: 100%
+  background: rgba(white, .2)
+  margin: 10px 0
+
+.sidebarTop
+  display: flex
+  justify-content: space-between
+  align-items: center

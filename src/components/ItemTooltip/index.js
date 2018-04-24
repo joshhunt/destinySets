@@ -1,24 +1,50 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { uniq } from 'lodash';
 import cx from 'classnames';
 
+import { EMBLEM } from 'app/lib/destinyEnums';
 import getItemExtraInfo from 'app/lib/getItemExtraInfo';
 import FancyImage from 'app/components/FancyImage';
 import ItemBanner from 'app/components/ItemBanner';
-
-import styles from './styles.styl';
-
-import { EMBLEM } from 'app/lib/destinyEnums';
-
 import ItemStats from 'app/components/ItemStats';
 import Objectives from 'app/components/Objectives';
-import StatTrack from 'app/components/StatTrack';
 
-export default function ItemTooltip({ item, small, dismiss, globalItemCount }) {
+import {
+  makeItemSelector,
+  objectiveDefsSelector,
+  statDefsSelector,
+  makeItemStatsSelector,
+  profileObjectivesSelector,
+  makeItemInventoryEntrySelector
+} from 'app/store/selectors';
+import styles from './styles.styl';
+
+function ItemTooltip({
+  item,
+  small,
+  dismiss,
+  profileObjectives,
+  objectiveDefs,
+  stats,
+  statDefs,
+  itemInventoryEntry
+}) {
+  if (!item) {
+    return null;
+  }
+
   const { displayProperties, screenshot, itemCategoryHashes } = item;
 
-  const isEmblem = itemCategoryHashes.includes(EMBLEM);
-  const extraInfo = getItemExtraInfo(item);
-  const stats = item.$stats || [];
+  const isEmblem = (itemCategoryHashes || []).includes(EMBLEM);
+  const extraInfo = getItemExtraInfo(item, itemInventoryEntry);
+
+  const objectiveHashes = uniq(
+    [
+      item.emblemObjectiveHash,
+      ...((item.objectives || {}).objectiveHashes || [])
+    ].filter(Boolean)
+  );
 
   return (
     <div className={cx(styles.tooltip, small && styles.small)}>
@@ -41,32 +67,43 @@ export default function ItemTooltip({ item, small, dismiss, globalItemCount }) {
           </div>
         )}
 
-        {stats.length ? <ItemStats stats={stats} /> : null}
+        {stats && <ItemStats stats={stats} statDefs={statDefs} />}
 
-        {globalItemCount && (
-          <p className={styles.inventory}>
-            {Math.round(globalItemCount * 100)}% of DestinySets users have this.
-          </p>
-        )}
-
-        {!isEmblem &&
-          extraInfo.map(info => (
-            <div key={info} className={styles.extraInfo}>
-              {info}
-            </div>
-          ))}
-
-        {item.$objectives && (
+        {objectiveHashes.length ? (
           <Objectives
             className={styles.objectives}
-            objectives={item.$objectives}
+            trackedStatStyle={isEmblem}
+            objectives={objectiveHashes}
+            profileObjectives={profileObjectives}
+            objectiveDefs={objectiveDefs}
           />
-        )}
+        ) : null}
 
-        {item.$statTrack && (
-          <StatTrack className={styles.statTrack} statTrack={item.$statTrack} />
-        )}
+        {extraInfo.map((info, index) => (
+          <div key={index} className={styles.extraInfo}>
+            {info}
+          </div>
+        ))}
       </div>
     </div>
   );
 }
+
+const mapStateToProps = () => {
+  const itemStatsSelector = makeItemStatsSelector();
+  const itemSelector = makeItemSelector();
+  const itemInventoryEntrySelector = makeItemInventoryEntrySelector();
+
+  return (state, ownProps) => {
+    return {
+      profileObjectives: profileObjectivesSelector(state),
+      objectiveDefs: objectiveDefsSelector(state),
+      statDefs: statDefsSelector(state),
+      stats: itemStatsSelector(state, ownProps),
+      item: itemSelector(state, ownProps),
+      itemInventoryEntry: itemInventoryEntrySelector(state, ownProps)
+    };
+  };
+};
+
+export default connect(mapStateToProps)(ItemTooltip);

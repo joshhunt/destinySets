@@ -1,15 +1,11 @@
 $padding = 10px
 
-mobile()
-  @media screen and (max-width: 679px)
-    {block}
-
-
 .tooltip
   width: 320px
   font-size: 15px
   background: #20262d
   position: relative
+  color: white
 
   &.small
     padding-bottom: .1px
@@ -18,6 +14,7 @@ mobile()
 
 .body
   padding: 0 $padding
+  overflow: auto
 
   .small &
     font-size: 14px
@@ -48,27 +45,10 @@ mobile()
   right: 0
   bottom: 0
   width: 100%
+  height: 100%
   display: block
-
-
-.closeButton
-  display: none
-
-  .small &
-    display: block
-    line-height: 1
-    padding: 10px
-    padding-top: 1px
-    background: none
-    outline: none !important
-    cursor: pointer
-    appearance: none
-    border: none
-    position: absolute
-    top: 0
-    right: 0
-    font-size: 20px
-    color: white
+  object-fit: cover
+  object-position: center
 
 .extraInfo
   opacity: .8
@@ -76,16 +56,9 @@ mobile()
   font-style: italic
   margin-bottom: $padding
 
-.statTrack
-  opacity: .8
-  font-size: .9em
-  font-style: italic
-  margin: $padding 0
+  &:only-child
+    margin-top: $padding
 
-:global(.ToolTipPortal)
-  pointer-events: none
-
-// :global .ToolTipPortal > *
-//   display: block !important
-//   visibility: visible !important
-//   opacity: 1 !important
+.objectives
+  margin-bottom: $padding
+  font-size: 14px

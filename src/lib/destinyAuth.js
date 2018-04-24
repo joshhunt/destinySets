@@ -1,96 +1,188 @@
 import queryString from 'query-string';
 import { getDestiny } from 'app/lib/destiny';
-import * as ls from 'app/lib/ls';
+import { saveAuth, getAuth } from 'app/lib/ls';
 
-function handleNewAuthData(data) {
-  const authResponse = data;
+const CLIENT_ID = process.env.REACT_APP_BUNGIE_CLIENT_ID;
 
-  const accessTokenExpiry = new Date();
-  const refreshTokenExpiry = new Date();
+const log = require('app/lib/log')('auth');
+const logiFrame = require('app/lib/log')('auth:iframe');
 
-  accessTokenExpiry.setSeconds(
-    accessTokenExpiry.getSeconds() + authResponse.accessToken.expires
-  );
-  refreshTokenExpiry.setSeconds(
-    refreshTokenExpiry.getSeconds() + authResponse.refreshToken.expires
-  );
+const isAuthRefreshiFrame =
+  window.self !== window.top && window.parent.__HIDDEN_IFRAME_REFRESH_AUTH;
 
-  const authData = {
-    accessToken: authResponse.accessToken.value,
-    accessTokenExpiry: accessTokenExpiry,
-
-    refreshToken: authResponse.refreshToken.value,
-    refreshTokenExpiry: refreshTokenExpiry
-  };
-
-  ls.saveAuth(authData);
-
-  window.AUTH_DATA = authData;
-
-  return Promise.resolve();
-}
-
-function handleError(err, cb) {
-  console.error('Auth error:');
-  console.error(err);
-  ls.removeAuth();
-  cb(err);
-}
-
-export default function(cb) {
+if (isAuthRefreshiFrame && window.parent.__recieveNewCodeFromIframe) {
+  logiFrame('In hidden auth iframe, checking location.search');
   const queryParams = queryString.parse(window.location.search);
 
-  const prevAuthData = ls.getAuth();
-
-  const accessTokenIsValid =
-    prevAuthData && Date.now() < new Date(prevAuthData.accessTokenExpiry);
-  const refreshTokenIsValid =
-    prevAuthData && Date.now() < new Date(prevAuthData.refreshTokenExpiry);
-
-  if (accessTokenIsValid) {
-    console.info('Access token is valid, running main()');
-    window.AUTH_DATA = prevAuthData;
-    cb(null, true);
-  } else if (!accessTokenIsValid && refreshTokenIsValid) {
-    console.info('Access token has expired, but refresh token is still valid.');
-    console.info('Using refresh token to get a new access token');
-
-    getDestiny(
-      '/Platform/App/GetAccessTokensFromRefreshToken/',
-      {},
-      { refreshToken: prevAuthData.refreshToken }
-    )
-      .then(handleNewAuthData)
-      .then(() => {
-        console.info('Successfully gotten new access token');
-        cb(null, true);
-      })
-      .catch(err => {
-        console.info('Failed to get new access token');
-        handleError(err, cb);
-      });
-  } else if (queryParams.code) {
-    window.history.replaceState({}, 'foo', '/');
-    console.info('Recieved auth code, getting access tokens');
-
-    getDestiny(
-      '/Platform/App/GetAccessTokensFromCode/',
-      {},
-      {
-        code: queryParams.code
-      }
-    )
-      .then(handleNewAuthData)
-      .then(() => cb(null, true))
-      .catch(err => handleError(err, cb));
-  } else {
-    // console.info('Requesting authorization from Bungie');
-    // const AUTH_URL = 'https://www.bungie.net/en/Application/Authorize/11145';
-    // window.location.href = AUTH_URL;
-    cb(null, false);
+  if (queryParams.code) {
+    logiFrame('Authorisation code present in URL in iframe', queryParams.code);
+    logiFrame('Passing to __recieveNewCodeFromIframe');
+    window.parent.__recieveNewCodeFromIframe(queryParams.code);
   }
 }
 
-export function authUrl() {
-  return process.env.REACT_APP_AUTH_URL;
+export function getTokenRequestUrl() {
+  return `https://www.bungie.net/en/OAuth/Authorize?client_id=${
+    CLIENT_ID
+  }&response_type=code`;
 }
+
+export const authUrl = getTokenRequestUrl;
+
+export function requestNewAccessToken(authCode) {
+  return getDestiny(
+    '/Platform/App/OAuth/Token/',
+    { _noAuth: true },
+    `client_id=${CLIENT_ID}&grant_type=authorization_code&code=${authCode}`
+  );
+}
+
+let getEnsuredAccessTokenPromise;
+export function getEnsuredAccessToken() {
+  if (getEnsuredAccessTokenPromise) {
+    return getEnsuredAccessTokenPromise;
+  }
+
+  getEnsuredAccessTokenPromise = _getEnsuredAccessToken();
+
+  getEnsuredAccessTokenPromise.then(() => {
+    getEnsuredAccessTokenPromise = null;
+  });
+
+  return getEnsuredAccessTokenPromise;
+}
+
+let attempts = 0;
+export function _getEnsuredAccessToken() {
+  return new Promise((resolve, reject) => {
+    const prevAccessToken = getAccessToken();
+
+    if (prevAccessToken) {
+      return resolve(prevAccessToken);
+    }
+
+    log(
+      'When trying to ensuree we have an access token, we found it was stale'
+    );
+
+    attempts += 1;
+
+    if (attempts > 2) {
+      reject(new Error('omg too many tries'));
+      return;
+    }
+
+    log('Creating hiddeen iframe');
+    window.__HIDDEN_IFRAME_REFRESH_AUTH = true;
+    const iframe = document.createElement('iframe');
+    iframe.src = getTokenRequestUrl();
+    document.body.appendChild(iframe);
+
+    window.__recieveNewCodeFromIframe = newCode => {
+      document.body.removeChild(iframe);
+      log('Got new code from iFrame', newCode);
+      log('Requesting new access token using above new code');
+
+      // TODO: error handling
+      requestNewAccessToken(newCode)
+        .then(handleNewAuthData)
+        .then(authData => {
+          resolve(authData.access_token);
+        });
+    };
+  });
+}
+
+export function getAccessToken() {
+  const authData = getAuth();
+
+  if (authData && new Date(authData.expiresDate) > Date.now()) {
+    log('We already have valid stuff in LS');
+    return authData.access_token;
+  }
+
+  return null;
+}
+
+function handleNewAuthData(authData) {
+  log('Handling new auth data', authData);
+
+  const expiry = new Date();
+  expiry.setSeconds(expiry.getSeconds() + authData.expires_in);
+  const betterAuthData = {
+    ...authData,
+    expiresDate: expiry
+  };
+
+  log('Expires on', expiry);
+  saveAuth(betterAuthData);
+
+  return authData;
+}
+
+export default function destinyAuth(_cb) {
+  const queryParams = queryString.parse(window.location.search);
+  log('Starting auth', queryParams);
+
+  const cb = (err, result) => {
+    log('callback called with', { err, result });
+    _cb(err, result);
+  };
+
+  if (queryParams.code) {
+    // TODO: replace the URL witout the code, rather than forcing /
+    window.history.replaceState({}, 'foo', '/');
+    log(
+      'Authorisation code present in URL, requesting new acceess code',
+      queryParams.code
+    );
+
+    requestNewAccessToken(queryParams.code)
+      .then(handleNewAuthData)
+      .then(authData => {
+        log('Successfully requested new access code, calling cb');
+        cb(null, { isAuthenticated: true, isFinal: true });
+      })
+      .catch(err => {
+        log('Error requesting new access code, calling cb');
+        cb(err, { isAuthenticated: false, isFinal: true });
+      });
+
+    return;
+  }
+
+  const prevAccessToken = getAccessToken();
+  if (prevAccessToken) {
+    log('Already authed from localStorage, calling cb');
+    cb(null, { isAuthenticated: true, isFinal: true });
+    return;
+  }
+
+  if (getAuth()) {
+    // Okay so we have auth stuff, but it's stale. Lets use an iframe to request new deets
+    let hasReturned = false;
+    log('Have previous auth data, preemptively calling cb');
+    cb(null, { isAuthenticated: true, isFinal: false });
+
+    const timeoutID = setTimeout(() => {
+      console.log('iFrame has timed out, calling cb');
+      // This is a bit of a misnomer - it might not _actually_ be final, but we pretend it is anyway
+      !hasReturned && cb(null, { isAuthenticated: false, isFinal: true });
+    }, 3 * 1000);
+
+    log('Ensuring we have a valid acccess token');
+    getEnsuredAccessToken().then(token => {
+      clearTimeout(timeoutID);
+      hasReturned = true;
+      log('Recieved valid acccess token, calling cb');
+      cb(null, { isAuthenticated: !!token, isFinal: true });
+    });
+  } else {
+    log('No previous auth data, calling cb');
+    cb(null, { isAuthenticated: false, isFinal: true });
+  }
+}
+
+window.__getTokenRequestUrl = getTokenRequestUrl;
+window.__requestNewAccessToken = requestNewAccessToken;
+window.__destinyAuth = destinyAuth;

@@ -1,36 +1,42 @@
-.languageSwitcher
-  composes: _dropdownMenuRoot from './styles.styl'
-  padding-top: 15px
-  padding-bottom: 15px
+$activeBg = rgba(white, .07)
 
-  @media screen and (max-width: 850px)
-    display: none
+.root
+  display: flex
+  flex-wrap: wrap
+  align-items: center
+  margin: 0 10px
+  padding: 9px 0
+  cursor: pointer
 
-.langDropdown
-  composes: _dropdownMenuDropdown from './styles.styl'
+.cachedRoot
+  composes: root
+  opacity: .5
 
-.langOption
-  composes: _dropdownMenuOption from './styles.styl'
-  font-size: .85em
+.main
+  font-size: .95em
+  flex: 1
+
+.small
+  font-size: .8em
+  margin-top: 6px
+
+.fakeButton
+  margin-left 10px
+
+.dropdown
+  background: #13161B
+  box-shadow: 0 3px 3px rgba(black, 0.5);
+  font-size: 14px
+  min-width: 120px
+
+.dropdownWide
+  composes: dropdown
+  min-width: 170px
+
+.dropdownItem
+  padding: 8px 15px
+  cursor: pointer
   white-space: nowrap
 
-.displayName
-  font-size: .85em
-
-.switchButton
-  background: none
-  border: none
-  color: rgba(white, .8)
-  padding-left: 10px
-
-.displayInline
-  display: flex !important
-  flex-wrap: wrap
-
   &:hover
-    background: inherit !important
-
-  .langDropdown
-    position: relative !important
-    width: 100%
-    box-shadow: none
+    background: $activeBg

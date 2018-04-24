@@ -8,12 +8,12 @@ module.exports = [
         pgcrImage: '/img/destiny_content/pgcr/strike_inverted_spire.jpg',
         sections: [
           {
-            title: 'Nightfall exclusive',
+            name: 'Nightfall exclusive',
             bigItems: true,
             items: [953357968] // Trichromatica
           },
           {
-            title: 'Nightfall emblems',
+            name: 'Nightfall emblems',
             items: [
               2764373298, // The Inverted Spire
               4238775804, // Operation Radiolarian Cascade
@@ -29,12 +29,12 @@ module.exports = [
         pgcrImage: '/img/destiny_content/pgcr/strike_the_pyramdion.jpg',
         sections: [
           {
-            title: 'Nightfall exclusive',
+            name: 'Nightfall exclusive',
             bigItems: true,
             items: [990416096] // Silicon Neuroma
           },
           {
-            title: 'Nightfall emblems',
+            name: 'Nightfall emblems',
             items: [
               10493725, // The Pyramidion
               1078226395, // Operation Intrepid
@@ -50,12 +50,12 @@ module.exports = [
         pgcrImage: '/img/destiny_content/pgcr/strike_exodus_crash.jpg',
         sections: [
           {
-            title: 'Nightfall exclusive',
+            name: 'Nightfall exclusive',
             bigItems: true,
             items: [2757144093] // Impact Velocity
           },
           {
-            title: 'Nightfall emblems',
+            name: 'Nightfall emblems',
             items: [
               2726018197, // Exodus Crash
               769740914, // Better Failsafe Than Sorry
@@ -71,12 +71,12 @@ module.exports = [
         pgcrImage: '/img/destiny_content/pgcr/strike_the_arms_dealer.jpg',
         sections: [
           {
-            title: 'Nightfall exclusive',
+            name: 'Nightfall exclusive',
             bigItems: true,
             items: [2757144092] // Tilt Fuse
           },
           {
-            title: 'Nightfall emblems',
+            name: 'Nightfall emblems',
             items: [
               997563763, // The Arms Dealer
               2399682325, // Outlawed and Unsanctioned
@@ -92,12 +92,12 @@ module.exports = [
         pgcrImage: '/img/destiny_content/pgcr/strike_savanthuns_song.jpg',
         sections: [
           {
-            title: 'Nightfall exclusive',
+            name: 'Nightfall exclusive',
             bigItems: true,
             items: [1457979868] // Duty Bound
           },
           {
-            title: 'Nightfall emblems',
+            name: 'Nightfall emblems',
             items: [
               148664963, // Savathûn's Song
               4040838277, // Search and Rescue
@@ -113,7 +113,7 @@ module.exports = [
         pgcrImage: '/img/destiny_content/pgcr/strike_lake_of_shadows.jpg',
         sections: [
           // {
-          //   title: 'Nightfall exclusive',
+          //   name: 'Nightfall exclusive',
           //   bigItems: true,
           //   items: [2082184158]
           // }
@@ -131,14 +131,14 @@ module.exports = [
         small: true,
         sections: [
           {
-            title: 'Nightfall exclusive',
+            name: 'Nightfall exclusive',
             bigItems: true,
             items: [
               4238497225 // D.F.A.
             ]
           },
           {
-            title: 'Nightfall emblems',
+            name: 'Nightfall emblems',
             items: [
               2933984410, // Tree of Probabilities
               2178159623, // No More Lasers
@@ -154,14 +154,14 @@ module.exports = [
         small: true,
         sections: [
           {
-            title: 'Nightfall exclusive',
+            name: 'Nightfall exclusive',
             bigItems: true,
             items: [
               1174053886 // Universal Wavefunction
             ]
           },
           {
-            title: 'Nightfall emblems',
+            name: 'Nightfall emblems',
             items: [
               893502917, // A Garden World
               1505307650, // Blast from the Past

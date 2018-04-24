@@ -1,0 +1,31 @@
+.root
+  content: 'hello'
+  position: relative
+
+.obtained
+.dismantled
+  opacity: .25
+
+.image
+  display: block
+  width: 44px
+  height: @width
+  background: rgba(#D2D2D2, 0.1)
+
+.placeholder
+  composes: image
+  background: rgba(#D2D2D2, 0.1)
+
+.tick
+  position: absolute
+  top: -5px
+  right: @top
+  line-height: 1
+  text-align: left
+  background: #44bd32
+  border-radius: 50%
+  font-size: 12px
+  padding: 3px
+
+  .dismantled &
+    background: #7f8fa6

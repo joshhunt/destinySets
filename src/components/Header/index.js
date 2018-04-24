@@ -1,289 +1,209 @@
 /* eslint-disable jsx-a11y/href-no-hash */
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import { Link } from 'react-router';
 import cx from 'classnames';
-import Sidebar from 'react-sidebar';
-import DonateButton, { DONATION_LINK } from 'app/components/DonateButton';
-import LanguageSwitcher from './LanguageSwitcher';
-
-import { getDefaultLanguage, getBrowserLocale } from 'app/lib/i18n';
-import { trackEvent } from 'app/lib/analytics';
 
 import logo from 'app/logo.svg';
-// import crimsonDaysHeader from 'app/crimsonDaysHeader.jpg';
-import ProfileSwitcher from './ProfileSwitcher';
+import { DONATION_LINK } from 'app/components/DonateButton';
+import Icon from 'app/components/Icon';
+import GoogleAuthButton from 'app/components/GoogleAuthButton';
+import ProfileDropdown from './ProfileDropdown';
+import LanguageDropdown from './LanguageDropdown';
+
 import styles from './styles.styl';
-import sidebarStyles from './sidebar.styl';
 
-const NAV_LINKS = [
-  {
-    to: '/',
-    label: 'Base'
-  },
-  {
-    to: '/curse-of-osiris',
-    label: 'Curse of Osiris'
-  },
-  {
-    to: '/strike-gear',
-    label: 'Strikes'
-  },
-  {
-    to: '/all-items',
-    label: 'All Items'
-  },
-  {
-    to: '/data',
-    label: 'Data Explorer'
-  }
+function isOverflowing(el) {
+  return el.scrollHeight > el.clientHeight || el.scrollWidth > el.clientWidth;
+}
+
+const link = (name, to) => ({ name, to });
+const LINKS = [
+  link('Base', '/'),
+  link('All Seasons', '/all-seasons'),
+  link('Curse of Osiris', '/curse-of-osiris'),
+  link('Strikes', '/strike-gear'),
+  link('All Items', '/all-items'),
+  link('Data Explorer', '/data')
 ];
 
-const SOCIAL = [
-  <a
-    key="paypal"
-    className={styles.socialItem}
-    target="_blank"
-    rel="noopener noreferrer"
-    href={DONATION_LINK}
-  >
-    <i className="fa fa-paypal" />
-  </a>,
-  <a
-    key="twitter"
-    className={styles.socialItem}
-    target="_blank"
-    rel="noopener noreferrer"
-    href="https://twitter.com/joshhunt"
-  >
-    <i className="fa fa-twitter" />
-  </a>,
-  <a
-    key="github"
-    className={styles.socialItem}
-    target="_blank"
-    rel="noopener noreferrer"
-    href="https://github.com/joshhunt/destinySets"
-  >
-    <i className="fa fa-github" />
-  </a>
+const SOCIALS = [
+  link('paypal', DONATION_LINK),
+  link('twitter', 'https://twitter.com/joshhunt'),
+  link('github', 'https://github.com/joshhunt/destinySets')
 ];
 
-function NavLink({ children, className, ...props }) {
+const SiteName = () => (
+  <div className={styles.siteName}>
+    <img src={logo} className={styles.logo} alt="" />
+    <div>Destiny Sets</div>
+  </div>
+);
+
+const SiteLinks = () => (
+  <Fragment>
+    <div className={styles.dummyLink} />
+    {LINKS.map(({ name, to }) => (
+      <Link
+        key={to}
+        className={styles.link}
+        activeClassName={styles.active}
+        to={to}
+      >
+        {name}
+      </Link>
+    ))}
+  </Fragment>
+);
+
+function Sidebar({
+  language,
+  setLanguage,
+  displayGoogleAuthButton,
+  googleSignIn,
+  toggleSidebar
+}) {
   return (
-    <Link
-      {...props}
-      className={cx(className, styles.navItem)}
-      activeClassName={styles.active}
-    >
-      <span>{children}</span>
-    </Link>
+    <div className={styles.sidebar}>
+      <div className={styles.sidebarInner}>
+        <div className={styles.sidebarTop}>
+          <SiteName />
+          <button className={styles.toggleSidebar} onClick={toggleSidebar}>
+            <Icon icon="times" />
+          </button>
+        </div>
+
+        <SiteLinks />
+
+        <div className={styles.hr} />
+
+        {language && (
+          <LanguageDropdown
+            inline={true}
+            language={language}
+            setLanguage={setLanguage}
+          />
+        )}
+        <br />
+        {displayGoogleAuthButton && <GoogleAuthButton onClick={googleSignIn} />}
+      </div>
+    </div>
   );
 }
 
-class Header extends React.Component {
-  state = {
-    accountSwitcherActive: false
+export default class Header extends Component {
+  state = { isOverflowing: false, sidebarActive: false };
+
+  componentDidMount() {
+    window.addEventListener('resize', this.checkOverflow);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.checkOverflow);
+  }
+
+  componentDidUpdate() {
+    this.checkOverflow();
+  }
+
+  checkOverflow = () => {
+    if (this.state.isOverflowing) {
+      return;
+    }
+
+    if (isOverflowing(this.linksRef)) {
+      this.setState({ isOverflowing: true });
+      console.log('OVERFLWOING!');
+    }
   };
 
-  toggleAccountSwitcher = () => {
-    this.setState({
-      langSwitcherActive: false,
-      accountSwitcherActive: !this.state.accountSwitcherActive
-    });
+  setLinksRef = ref => {
+    this.linksRef = ref;
   };
 
-  switchProfile = newProfile => {
-    this.props.onChangeProfile(newProfile);
+  toggleSidebar = () => {
+    this.setState({ sidebarActive: !this.state.sidebarActive });
   };
 
   render() {
     const {
-      className,
-      bg,
-      profile,
-      profiles,
-      activeLanguage,
-      isGoogleAuthenticated,
-      onGoogleSignout,
-      toggleLangSwitcher,
-      setLang,
-      langSwitcherActive
+      isCached,
+      currentProfile,
+      allProfiles,
+      switchProfile,
+      language,
+      setLanguage,
+      logout,
+      googleAuthSignedIn,
+      displayGoogleAuthButton,
+      googleSignIn,
+      googleSignOut
     } = this.props;
-    const { accountSwitcherActive } = this.state;
 
-    const style = {
-      // backgroundImage: `url(${crimsonDaysHeader})`,
-    };
-
-    if (bg) {
-      style.backgroundImage = `url(https://bungie.net${bg})`;
-    }
+    const { isOverflowing, sidebarActive } = this.state;
 
     return (
-      <div className={cx(className, styles.root)}>
-        <div className={styles.header} style={style}>
-          <div className={styles.mobile}>
-            <button
-              className={styles.hambuger}
-              onClick={() => this.props.onSetSidebarOpen(true)}
-            >
-              <i className="fa fa-bars" />
-            </button>
+      <div
+        className={cx(
+          styles.root,
+          isOverflowing && styles.isOverflowing,
+          sidebarActive && styles.sidebarActive
+        )}
+      >
+        <Sidebar {...this.props} toggleSidebar={this.toggleSidebar} />
 
-            <a href="#" className={styles.siteName}>
-              <img src={logo} className={styles.logo} alt="" />
-              <span>Destiny Sets</span>
-            </a>
+        <div className={styles.fixed}>
+          {isOverflowing && (
+            <button
+              className={styles.toggleSidebar}
+              onClick={this.toggleSidebar}
+            >
+              <Icon icon="bars" />
+            </button>
+          )}
+
+          <SiteName />
+
+          <div className={styles.links} ref={this.setLinksRef}>
+            <SiteLinks />
           </div>
 
-          <div className={styles.main}>
-            <Link to="/" className={styles.siteName}>
-              <img src={logo} className={styles.logo} alt="" />
-              <span>Destiny Sets</span>
-            </Link>
+          <div className={styles.etc}>
+            {displayGoogleAuthButton &&
+              !isOverflowing && <GoogleAuthButton onClick={googleSignIn} />}
 
-            {NAV_LINKS.map(({ to, label }) => (
-              <NavLink key={to} to={to}>
-                {label}
-              </NavLink>
+            {language &&
+              !isOverflowing && (
+                <LanguageDropdown
+                  language={language}
+                  setLanguage={setLanguage}
+                />
+              )}
+
+            {currentProfile && (
+              <ProfileDropdown
+                isCached={isCached}
+                currentProfile={currentProfile}
+                allProfiles={allProfiles}
+                switchProfile={switchProfile}
+                logout={logout}
+                googleSignOut={googleSignOut}
+                googleAuthSignedIn={googleAuthSignedIn}
+              />
+            )}
+
+            {SOCIALS.map(({ name, to }) => (
+              <a
+                key={to}
+                className={styles.socialLink}
+                href={to}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Icon icon={name} brand />
+              </a>
             ))}
           </div>
-
-          <div className={styles.social}>
-            {setLang && (
-              <LanguageSwitcher
-                activeLanguage={activeLanguage}
-                langSwitcherActive={langSwitcherActive}
-                toggleLangSwitcher={toggleLangSwitcher}
-                setLang={setLang}
-              />
-            )}
-
-            {profile && (
-              <ProfileSwitcher
-                profile={profile}
-                profiles={profiles}
-                accountSwitcherActive={accountSwitcherActive}
-                isGoogleAuthenticated={isGoogleAuthenticated}
-                onGoogleSignout={onGoogleSignout}
-                toggleAccountSwitcher={this.toggleAccountSwitcher}
-                switchProfile={this.switchProfile}
-              />
-            )}
-
-            {SOCIAL}
-          </div>
         </div>
-      </div>
-    );
-  }
-}
-
-export default class FixedHeader extends Component {
-  state = {
-    sidebarOpen: false,
-    langSwitcherActive: false
-  };
-
-  onSetSidebarOpen = open => {
-    this.setState({ sidebarOpen: open });
-  };
-
-  closeSidebar = () => {
-    this.setState({ sidebarOpen: false });
-
-    window.setTimeout(() => {
-      this.setState({ sidebarOpen: false });
-    }, 1);
-  };
-
-  toggleLangSwitcher = () => {
-    this.setState({
-      accountSwitcherActive: false,
-      langSwitcherActive: !this.state.langSwitcherActive
-    });
-  };
-
-  setLang = lang => {
-    trackEvent(
-      'switch-lang',
-      [
-        `loaded:${lang.code}`,
-        `default:${getDefaultLanguage().code}`,
-        `browser:${getBrowserLocale()}`
-      ].join('|')
-    );
-
-    this.setState({
-      sidebarOpen: false
-    });
-
-    this.props.onChangeLang(lang);
-  };
-
-  render() {
-    const { activeLanguage, onChangeLang } = this.props;
-
-    const sidebarContent = (
-      <div className={sidebarStyles.root}>
-        <Link
-          to="/"
-          className={styles.siteName}
-          onClick={() => this.onSetSidebarOpen(false)}
-        >
-          <img src={logo} className={styles.logo} alt="" />
-          <span>Destiny Sets</span>
-        </Link>
-
-        {NAV_LINKS.map(({ to, label }, index) => (
-          <NavLink key={to} onClick={this.closeSidebar} to={to}>
-            {label}
-          </NavLink>
-        ))}
-
-        {onChangeLang && (
-          <LanguageSwitcher
-            displayInline={true}
-            activeLanguage={activeLanguage}
-            langSwitcherActive={this.state.langSwitcherActive}
-            toggleLangSwitcher={this.toggleLangSwitcher}
-            setLang={this.setLang}
-          />
-        )}
-
-        <br />
-        <div className={styles.mobileSocials}>{SOCIAL}</div>
-        <br />
-
-        <DonateButton />
-      </div>
-    );
-
-    return (
-      <div className={styles.headerContainer}>
-        <Header
-          {...this.props}
-          onSetSidebarOpen={this.onSetSidebarOpen}
-          className={styles.fixedHeader}
-          toggleLangSwitcher={this.toggleLangSwitcher}
-          setLang={onChangeLang && this.setLang}
-          langSwitcherActive={this.state.langSwitcherActive}
-        />
-        <Header {...this.props} className={styles.fakeHeader} />
-
-        <Sidebar
-          sidebar={sidebarContent}
-          open={this.state.sidebarOpen}
-          onSetOpen={this.onSetSidebarOpen}
-          sidebarClassName={sidebarStyles.sidebar}
-          styles={{
-            root: {
-              pointerEvents: this.state.sidebarOpen ? 'initial' : 'none'
-            }
-          }}
-        >
-          {' '}
-        </Sidebar>
       </div>
     );
   }
