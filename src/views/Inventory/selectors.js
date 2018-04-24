@@ -28,7 +28,7 @@ function filterItem(item, inventory, filters) {
     const inventoryEntry = inventory[item.hash];
     if (
       inventoryEntry &&
-      (inventoryEntry.obtained || inventoryEntry.dismantlede)
+      (inventoryEntry.obtained || inventoryEntry.dismantled)
     ) {
       return false;
     }
