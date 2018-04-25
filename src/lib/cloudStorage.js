@@ -143,11 +143,6 @@ function removeKioskItemsMigration(inventory) {
   log('Running removeKioskItemsMigration', { inventory });
 
   return pickBy(inventory, (value, key) => {
-    // if (key === 481345527 || key === '481345527') {
-    //   // debugger;
-    //   value.instances = [{ location: 'profileKiosks' }];
-    // }
-
     const filtered = value.instances.filter(instance => {
       return !BLACKLISTED_LOCATIONS.includes(instance.location);
     });
