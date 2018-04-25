@@ -5,7 +5,7 @@ module.exports = [
       {
         name: 'The Inverted Spire',
         small: true,
-        pgcrImage: '/img/destiny_content/pgcr/strike_inverted_spire.jpg',
+        image: '/img/destiny_content/pgcr/strike_inverted_spire.jpg',
         sections: [
           {
             name: 'Nightfall exclusive',
@@ -26,7 +26,7 @@ module.exports = [
       {
         name: 'Pyramidion',
         small: true,
-        pgcrImage: '/img/destiny_content/pgcr/strike_the_pyramdion.jpg',
+        image: '/img/destiny_content/pgcr/strike_the_pyramdion.jpg',
         sections: [
           {
             name: 'Nightfall exclusive',
@@ -47,7 +47,7 @@ module.exports = [
       {
         name: 'Exodus Crash',
         small: true,
-        pgcrImage: '/img/destiny_content/pgcr/strike_exodus_crash.jpg',
+        image: '/img/destiny_content/pgcr/strike_exodus_crash.jpg',
         sections: [
           {
             name: 'Nightfall exclusive',
@@ -68,7 +68,7 @@ module.exports = [
       {
         name: 'The Arms Dealer',
         small: true,
-        pgcrImage: '/img/destiny_content/pgcr/strike_the_arms_dealer.jpg',
+        image: '/img/destiny_content/pgcr/strike_the_arms_dealer.jpg',
         sections: [
           {
             name: 'Nightfall exclusive',
@@ -89,7 +89,7 @@ module.exports = [
       {
         name: "Savathûn's Song",
         small: true,
-        pgcrImage: '/img/destiny_content/pgcr/strike_savanthuns_song.jpg',
+        image: '/img/destiny_content/pgcr/strike_savanthuns_song.jpg',
         sections: [
           {
             name: 'Nightfall exclusive',
@@ -110,7 +110,7 @@ module.exports = [
       {
         name: 'Lake of Shadows',
         small: true,
-        pgcrImage: '/img/destiny_content/pgcr/strike_lake_of_shadows.jpg',
+        image: '/img/destiny_content/pgcr/strike_lake_of_shadows.jpg',
         sections: [
           // {
           //   name: 'Nightfall exclusive',
@@ -126,8 +126,7 @@ module.exports = [
     sets: [
       {
         name: 'Tree Of Probabilities',
-        pgcrImage:
-          '/img/destiny_content/pgcr/campaign_tree_of_probabilities.jpg',
+        image: '/img/destiny_content/pgcr/campaign_tree_of_probabilities.jpg',
         small: true,
         sections: [
           {
@@ -150,7 +149,7 @@ module.exports = [
       },
       {
         name: 'A Garden World',
-        pgcrImage: '/img/destiny_content/pgcr/rituals_a_garden_world.jpg',
+        image: '/img/destiny_content/pgcr/rituals_a_garden_world.jpg',
         small: true,
         sections: [
           {

@@ -15,6 +15,7 @@ function ItemSet({
   description,
   sections,
   inventory,
+  image,
   itemDefs,
   setPopper,
   setModal
@@ -23,6 +24,12 @@ function ItemSet({
     <div className={cx(className, styles.root)}>
       <div className={styles.inner}>
         <div className={styles.header}>
+          {image && (
+            <img
+              className={styles.headerImage}
+              src={`https://www.bungie.net${image}`}
+            />
+          )}
           <h3 className={styles.title}>{name}</h3>
           {description && <p className={styles.desc}>{description}</p>}
         </div>

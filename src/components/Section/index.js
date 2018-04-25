@@ -17,6 +17,7 @@ export default function Section({ name, sets, setPopper, setModal }) {
               name={set.name}
               description={set.description}
               sections={set.sections}
+              image={set.image}
               setPopper={setPopper}
               setModal={setModal}
             />
