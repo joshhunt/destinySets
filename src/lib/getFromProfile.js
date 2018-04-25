@@ -1,6 +1,9 @@
 import { keyBy } from 'lodash';
 import fp from 'lodash/fp';
 
+import { getDebugId } from 'app/lib/ls';
+import { saveDebugInfo } from 'app/lib/telemetry';
+
 const ITEM_BLACKLIST = [
   4248210736, // Default shader
   1608119540 // Default emblem
@@ -66,18 +69,29 @@ function objectivesFromVendors(data) {
   //   fp.flatMap(plugStates => plugStates.plugObjectives)
   // )(data);
 
-  return fp.flatMap(
-    character =>
-      fp.flatMap(
-        vendor =>
-          fp.flatMap(
-            plugStates => plugStates.plugObjectives,
-            vendor.plugStates.data
-          ),
-        character.itemComponents
-      ),
-    data
-  );
+  return fp.flatMap(character => {
+    try {
+      if (!character.itemComponents) {
+        if (!window.localStorage.alreadySentDebugMissingItemComponents) {
+          saveDebugInfo({
+            debugId: `${getDebugId}_missingItemComponents`,
+            data
+          });
+
+          window.localStorage.setItem(
+            'alreadySentDebugMissingItemComponents',
+            'true'
+          );
+        }
+      }
+    } catch (e) {}
+
+    return fp.flatMap(vendor => {
+      return fp.flatMap(plugStates => {
+        return plugStates.plugObjectives;
+      }, vendor.plugStates.data);
+    }, character.itemComponents);
+  }, data);
 }
 
 function fromVendorSockets(data) {
