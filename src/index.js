@@ -1,5 +1,3 @@
-import 'isomorphic-fetch';
-import 'babel-polyfill';
 import 'app/lib/autotrack.build';
 
 import React from 'react';

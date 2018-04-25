@@ -9,6 +9,8 @@ const { UnusedFilesWebpackPlugin } = require('unused-files-webpack-plugin');
 module.exports = function override(config, env) {
   config = injectBabelPlugin('lodash', config);
 
+  config.entry.unshift('babel-polyfill');
+
   config = rewireReactHotLoader(config, env);
 
   const cssLoader = getLoader(
