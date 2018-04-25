@@ -1,5 +1,5 @@
 import * as ls from 'app/lib/ls';
-import { mapValues, pickBy } from 'lodash';
+import { mapValues, pickBy, isArray } from 'lodash';
 import { ready } from 'app/lib/googleDriveAuth';
 import { ARMOR_MODS_ORNAMENTS } from 'app/lib/destinyEnums';
 
@@ -12,6 +12,7 @@ let __fileId;
 
 const VERSION_NEW = 'new';
 const VERSION_NEW_2 = 'new-2';
+const VERSION_NEW_3 = 'new-3';
 
 function getFileId({ profile }) {
   const lsFileId = ls.getGoogleDriveInventoryFileId();
@@ -77,7 +78,7 @@ export function setInventory(inventory, profile) {
   ls.saveCloudInventory(inventory);
 
   const payload = {
-    version: VERSION_NEW_2,
+    version: VERSION_NEW_3,
     inventory
   };
 
@@ -107,7 +108,7 @@ export function setInventory(inventory, profile) {
 }
 
 function removeArmorOrnamentsMigration(inventory, itemDefs) {
-  log('Running removeArmorOrnamentsMigration');
+  log('Running removeArmorOrnamentsMigration', { inventory });
 
   return pickBy(inventory, (value, key) => {
     const item = itemDefs[key];
@@ -120,6 +121,38 @@ function removeArmorOrnamentsMigration(inventory, itemDefs) {
     }
 
     return true;
+  });
+}
+
+function normaliseInstancesData(inventory) {
+  log('Running normaliseInstancesData', { inventory });
+  return mapValues(inventory, inventoryItem => {
+    if (inventoryItem.instances && !isArray(inventoryItem.instances)) {
+      return {
+        ...inventoryItem,
+        instances: [inventoryItem.instances]
+      };
+    }
+
+    return inventoryItem;
+  });
+}
+
+const BLACKLISTED_LOCATIONS = ['profileKiosks', 'characterKiosks'];
+function removeKioskItemsMigration(inventory) {
+  log('Running removeKioskItemsMigration', { inventory });
+
+  return pickBy(inventory, (value, key) => {
+    // if (key === 481345527 || key === '481345527') {
+    //   // debugger;
+    //   value.instances = [{ location: 'profileKiosks' }];
+    // }
+
+    const filtered = value.instances.filter(instance => {
+      return !BLACKLISTED_LOCATIONS.includes(instance.location);
+    });
+
+    return filtered.length > 0;
   });
 }
 
@@ -139,14 +172,23 @@ export function getInventory(profile, itemDefs) {
       log('Resolving cloud inventory', { result });
       const data = result.result;
 
-      if (data.version === VERSION_NEW_2) {
+      log('Data is', data);
+
+      if (data.version === VERSION_NEW_3) {
         return data.inventory;
+      }
+
+      if (data.version === VERSION_NEW_2) {
+        return removeKioskItemsMigration(
+          normaliseInstancesData(data.inventory)
+        );
       }
 
       // Check if we need to migrate from the old format to new format
       if (data.version === VERSION_NEW) {
-        log('Inventory is VERSION_NEW');
-        return removeArmorOrnamentsMigration(data.inventory, itemDefs);
+        return normaliseInstancesData(
+          removeArmorOrnamentsMigration(data.inventory, itemDefs)
+        );
       }
 
       log('Inventory needs migrating');
@@ -165,6 +207,8 @@ export function getInventory(profile, itemDefs) {
       delete migratedInventory.inventory;
       delete migratedInventory.plugData;
 
-      return removeArmorOrnamentsMigration(migratedInventory);
+      return removeKioskItemsMigration(
+        normaliseInstancesData(removeArmorOrnamentsMigration(migratedInventory))
+      );
     });
 }

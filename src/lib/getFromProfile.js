@@ -31,10 +31,16 @@ function fromKiosks(data, vendorDefs) {
     fp.flatMap(([vendorHash, vendorItems]) => {
       const vendor = vendorDefs[vendorHash];
 
-      return vendorItems.map(vendorItem => {
-        const item = vendor.itemList[vendorItem.index];
-        return item.itemHash;
-      });
+      return vendorItems
+        .map(vendorItem => {
+          if (!vendorItem.canAcquire) {
+            return null;
+          }
+
+          const item = vendor.itemList[vendorItem.index];
+          return item.itemHash;
+        })
+        .filter(Boolean);
     })
   )(data.kioskItems);
 }

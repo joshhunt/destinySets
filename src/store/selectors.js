@@ -132,7 +132,7 @@ export const inventorySelector = createSelector(
       inventory[deletedHash] = {
         itemHash: deletedHash,
         dismantled: true,
-        instances: { location: 'cloudInventory' }
+        instances: [{ location: 'cloudInventory' }]
       };
     });
 
