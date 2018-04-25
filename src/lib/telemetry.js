@@ -23,10 +23,10 @@ function getFirebaseDb() {
     return Promise.resolve(db);
   }
 
-  const importPromise = Promise.all(
+  const importPromise = Promise.all([
     import(/* webpackChunkName: "firebase" */ 'firebase/app'),
     import(/* webpackChunkName: "firebase" */ 'firebase/database')
-  );
+  ]);
 
   importPromise.catch(err => {
     console.error('Error importing firebase', err);
