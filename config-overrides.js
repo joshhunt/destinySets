@@ -11,8 +11,6 @@ module.exports = function override(config, env) {
 
   config.entry.unshift('babel-polyfill');
 
-  config = rewireReactHotLoader(config, env);
-
   const cssLoader = getLoader(
     config.module.rules,
     rule => String(rule.test) === String(/\.css$/)
@@ -35,6 +33,8 @@ module.exports = function override(config, env) {
   );
 
   if (env === 'development') {
+    config = rewireReactHotLoader(config, env);
+
     stylusRules = {
       test: /\.styl$/,
       use: [

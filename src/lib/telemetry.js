@@ -23,10 +23,17 @@ function getFirebaseDb() {
     return Promise.resolve(db);
   }
 
-  return Promise.all(
+  const importPromise = Promise.all(
     import(/* webpackChunkName: "firebase" */ 'firebase/app'),
     import(/* webpackChunkName: "firebase" */ 'firebase/database')
-  ).then(([firebase]) => {
+  );
+
+  importPromise.catch(err => {
+    console.error('Error importing firebase', err);
+    console.error(err);
+  });
+
+  return importPromise.then(([firebase]) => {
     firebase.initializeApp({
       apiKey: 'AIzaSyDA_n6Ix4o6K2vW4zlFFmWk2XCzqPesDZo',
       authDomain: 'destinysets.firebaseapp.com',
@@ -49,11 +56,16 @@ export function getDebugProfile(debugId) {
 }
 
 export function saveDebugInfo(debugData) {
-  return getFirebaseDb().then(db => {
-    const key = `debug/${debugData.debugId}`;
-    console.log('telem with', { key, debugData });
-    return db.ref(key).set(debugData);
-  });
+  return getFirebaseDb()
+    .then(db => {
+      const key = `debug/${debugData.debugId}`;
+      console.log('telem with', { key, debugData });
+      return db.ref(key).set(debugData);
+    })
+    .catch(err => {
+      console.error('Unable to saveDebugInfo', err);
+      console.error(err);
+    });
 }
 
 export function setUser(bungieNetProfile) {
