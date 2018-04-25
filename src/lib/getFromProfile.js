@@ -84,7 +84,10 @@ function objectivesFromVendors(data) {
           );
         }
       }
-    } catch (e) {}
+    } catch (e) {
+      console.error('Error trying to debug missing item components');
+      console.error(e);
+    }
 
     return fp.flatMap(vendor => {
       return fp.flatMap(plugStates => {
