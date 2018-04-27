@@ -7,6 +7,7 @@ import { EMBLEM } from 'app/lib/destinyEnums';
 import getItemExtraInfo from 'app/lib/getItemExtraInfo';
 import Objectives from 'app/components/Objectives';
 import ItemBanner from 'app/components/ItemBanner';
+import ishtarSvg from 'app/ishar.svg';
 
 import { trackOrnament as trackOrnamentAction } from 'app/store/reducer';
 
@@ -74,15 +75,16 @@ class ItemModalContent extends Component {
           <p className={styles.description}>{displayProperties.description}</p>
         )}
 
-        <ul className={styles.viewItemLinks}>
-          {ishtarLink && (
-            <li>
-              <a href={ishtarLink} target="_blank" rel="noopener noreferrer">
-                View Lore on Ishtar Collective
-              </a>
-            </li>
-          )}
+        {ishtarLink && (
+          <p>
+            <img src={ishtarSvg} className={styles.ishtarLogo} />
+            <a href={ishtarLink} target="_blank" rel="noopener noreferrer">
+              <em>View Lore on Ishtar Collective</em>
+            </a>
+          </p>
+        )}
 
+        <ul className={styles.viewItemLinks}>
           <li>
             <a href={dtrLink} target="_blank" rel="noopener noreferrer">
               View on DestinyTracker

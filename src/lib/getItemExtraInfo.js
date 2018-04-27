@@ -3,6 +3,7 @@ export default function getItemExtraInfo(item, _itemInventoryEntry) {
     instances: [],
     obtained: false
   };
+
   const extraInfo = [];
 
   itemInventoryEntry.dismantled
@@ -22,8 +23,6 @@ const LOCATIONS = {
   profileInventory: 'In vault',
   characterKiosks: 'Unlocked in Kiosk',
   profileKiosks: 'Unlocked in Kiosk'
-  // itemSockets: 'itemSockets',
-  // vendorSockets: 'vendorSockets'
 };
 
 export function getFriendlyItemLocation(instance) {

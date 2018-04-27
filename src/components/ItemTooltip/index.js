@@ -34,10 +34,14 @@ function ItemTooltip({
     return null;
   }
 
-  const { displayProperties, screenshot, itemCategoryHashes } = item;
+  const { displayProperties, screenshot, itemCategoryHashes, loreHash } = item;
 
   const isEmblem = (itemCategoryHashes || []).includes(EMBLEM);
   const extraInfo = getItemExtraInfo(item, itemInventoryEntry);
+
+  if (loreHash) {
+    extraInfo.push('Lore available on Ishtar Collective, click for more info');
+  }
 
   const objectiveHashes = uniq(
     [
