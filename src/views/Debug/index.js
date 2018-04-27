@@ -46,7 +46,7 @@ class DebugView extends Component {
     this.queueLib = import('async/queue');
 
     googleAuth(({ signedIn }) => {
-      if (signedIn) {
+      if (signedIn && getGoogleDriveInventoryFileId()) {
         cloudStorage.listVersions().then(revisions => {
           this.setState({ cloudStorageRevisions: revisions });
         });
