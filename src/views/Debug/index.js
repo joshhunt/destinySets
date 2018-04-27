@@ -1,6 +1,7 @@
 import React, { Fragment, Component } from 'react';
 import { Link } from 'react-router';
 import { get } from 'lodash';
+import fp from 'lodash/fp';
 
 import DestinyAuthProvider from 'app/lib/DestinyAuthProvider';
 import { getDefinition } from 'app/lib/manifestData';
@@ -48,7 +49,12 @@ class DebugView extends Component {
     googleAuth(({ signedIn }) => {
       if (signedIn && getGoogleDriveInventoryFileId()) {
         cloudStorage.listVersions().then(revisions => {
-          this.setState({ cloudStorageRevisions: revisions });
+          const onePerDay = fp.flow(
+            fp.groupBy(rev => rev.modifiedTime.split('T')[0]),
+            fp.map(rev => ({ ...rev[0], date: new Date(rev[0].modifiedTime) }))
+          )(revisions);
+
+          this.setState({ cloudStorageRevisions: onePerDay });
         });
       }
     });
