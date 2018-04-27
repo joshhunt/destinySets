@@ -77,7 +77,7 @@ class ItemModalContent extends Component {
 
         {ishtarLink && (
           <p>
-            <img src={ishtarSvg} className={styles.ishtarLogo} />
+            <img alt="" src={ishtarSvg} className={styles.ishtarLogo} />
             <a href={ishtarLink} target="_blank" rel="noopener noreferrer">
               <em>View Lore on Ishtar Collective</em>
             </a>
