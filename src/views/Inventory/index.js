@@ -26,6 +26,7 @@ import * as cloudStorage from 'app/lib/cloudStorage';
 import { getDefinition } from 'app/lib/manifestData';
 
 import Header from 'app/components/Header';
+import Footer from 'app/components/Footer';
 import LoginUpsell from 'app/components/LoginUpsell';
 import Section from 'app/components/Section';
 import Popper from 'app/components/Popper';
@@ -273,6 +274,8 @@ class Inventory extends Component {
             setModal={this.setModal}
           />
         ))}
+
+        <Footer />
 
         {itemTooltip && (
           <Popper key={itemTooltip.hash} element={itemTooltip.element}>

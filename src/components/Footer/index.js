@@ -23,6 +23,8 @@ export default function Footer({ item }) {
       <br />
       Destiny is a registered trademark of Bungie. Data and images sourced from
       Bungie.
+      <br />
+      Copyright © World Class Development Ltd 2018
     </div>
   );
 }
