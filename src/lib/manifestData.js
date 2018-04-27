@@ -16,6 +16,8 @@ db.version(1).stores({
   dataCache: '&key, data'
 });
 
+const VERSION = 'v1';
+
 let manifestPromise;
 
 function getManifest() {
@@ -40,7 +42,9 @@ function getManifest() {
   return manifestPromise;
 }
 
-function cleanUp(id) {
+function cleanUp(_id) {
+  const id = [VERSION, _id].join(':');
+
   db.dataCache
     .toCollection()
     .primaryKeys()
@@ -52,10 +56,14 @@ function cleanUp(id) {
 
 export function cachedGet(path, id) {
   return new Promise((resolve, reject) => {
-    const key = [id, path].join(':');
+    const key = [VERSION, id, path].join(':');
+
+    log(`Requesting ${key}`);
 
     const fetchData = () => {
-      const url = `https://destiny.plumbing${path}?id=${id}`;
+      const p = `${path}?id=${id}${VERSION}`;
+      log(`Requesting ${p} from destiny.plumbing`);
+      const url = `https://destiny.plumbing${p}`;
       return destiny.get(url).then(data => {
         db.dataCache.put({ key, data });
 
@@ -67,9 +75,10 @@ export function cachedGet(path, id) {
       .get(key)
       .then(cachedData => {
         if (cachedData) {
-          log(`Loaded ${path} from cache`);
+          log(`Loaded ${key} from cache`);
           resolve(cachedData.data);
         } else {
+          log(`${key} is not in the cache`);
           fetchData();
         }
       })

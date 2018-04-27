@@ -32,9 +32,17 @@ class ItemModalContent extends Component {
       objectiveDefs
     } = this.props;
 
-    const { hash, displayProperties, screenshot, itemCategoryHashes } = item;
+    const {
+      hash,
+      displayProperties,
+      screenshot,
+      itemCategoryHashes,
+      loreHash
+    } = item;
 
     const dtrLink = `http://db.destinytracker.com/d2/en/items/${hash}`;
+    const ishtarLink =
+      loreHash && `http://www.ishtar-collective.net/entries/${loreHash}`;
 
     const isEmblem = (itemCategoryHashes || []).includes(EMBLEM);
     const extraInfo = getItemExtraInfo(item, itemInventoryEntry);
@@ -67,6 +75,14 @@ class ItemModalContent extends Component {
         )}
 
         <ul className={styles.viewItemLinks}>
+          {ishtarLink && (
+            <li>
+              <a href={ishtarLink} target="_blank" rel="noopener noreferrer">
+                View Lore on Ishtar Collective
+              </a>
+            </li>
+          )}
+
           <li>
             <a href={dtrLink} target="_blank" rel="noopener noreferrer">
               View on DestinyTracker
