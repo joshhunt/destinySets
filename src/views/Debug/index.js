@@ -6,8 +6,16 @@ import DestinyAuthProvider from 'app/lib/DestinyAuthProvider';
 import { getDefinition } from 'app/lib/manifestData';
 import * as destiny from 'app/lib/destiny';
 import { PLATFORMS } from 'app/lib/destinyEnums';
-import { getDebugId, saveDebugId, clearAll } from 'app/lib/ls';
+import {
+  getDebugId,
+  saveDebugId,
+  getGoogleDriveInventoryFileId,
+  clearAll
+} from 'app/lib/ls';
 import { saveDebugInfo } from 'app/lib/telemetry';
+
+import googleAuth from 'app/lib/googleDriveAuth';
+import * as cloudStorage from 'app/lib/cloudStorage';
 
 import styles from './styles.styl';
 
@@ -26,7 +34,8 @@ function debugQueueWorker(debugData, cb) {
 class DebugView extends Component {
   state = {
     auth: {},
-    defs: {}
+    defs: {},
+    cloudStorageRevisions: []
   };
 
   componentDidMount() {
@@ -35,6 +44,14 @@ class DebugView extends Component {
     this.fallbackDebugId = getDebugId();
     this.fetchDefinitions(this.props.language);
     this.queueLib = import('async/queue');
+
+    googleAuth(({ signedIn }) => {
+      if (signedIn) {
+        cloudStorage.listVersions().then(revisions => {
+          this.setState({ cloudStorageRevisions: revisions });
+        });
+      }
+    });
   }
 
   componentWillUpdate(nextProps, nextState) {
@@ -163,6 +180,26 @@ class DebugView extends Component {
     window.alert('Cleared all local data. Refresh for changes');
   }
 
+  expandCloudStorageRevision = rev => {
+    console.log('clicked revision', rev);
+
+    cloudStorage.getRevision(rev.id).then(result => {
+      rev.__data = result;
+      rev.__dataString = JSON.stringify(result);
+      this.forceUpdate();
+    });
+  };
+
+  cloudStorageRevertTo = data => {
+    if (
+      window.confirm(
+        "Warning: Only do this if you're absolutely sure you know what you're doing. You will probably loose data if you continue"
+      )
+    ) {
+      cloudStorage.setInventory(data, {}, true);
+    }
+  };
+
   render() {
     return (
       <div className={styles.root}>
@@ -245,6 +282,32 @@ class DebugView extends Component {
           <li>stats: {this.state.defs.DestinyStatDefinition}</li>
           <li>items: {this.state.defs.DestinyInventoryItemDefinition}</li>
           <li>objectives: {this.state.defs.DestinyObjectiveDefinition}</li>
+        </ul>
+
+        <h2>Google Drive inventory revisions</h2>
+        <ul>
+          {this.state.cloudStorageRevisions.map(rev => (
+            <li
+              key={rev.id}
+              onClick={() =>
+                !rev.__data && this.expandCloudStorageRevision(rev)
+              }
+            >
+              {rev.modifiedTime} [{rev.id}]
+              {rev.__data &&
+                rev.__data.version && (
+                  <code>version: {rev.__data.version}</code>
+                )}
+              {rev.__data && (
+                <div>
+                  <textarea value={rev.__dataString} readOnly />
+                  <button onClick={() => this.cloudStorageRevertTo(rev.__data)}>
+                    Revert to this
+                  </button>
+                </div>
+              )}
+            </li>
+          ))}
         </ul>
       </div>
     );

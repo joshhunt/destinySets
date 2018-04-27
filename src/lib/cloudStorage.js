@@ -73,14 +73,36 @@ function getFileId({ profile }) {
     });
 }
 
-export function setInventory(inventory, profile) {
+export function listVersions() {
+  return gapi.client.drive.revisions
+    .list({ fileId: JSON.parse(localStorage.$googleDriveFileIddev) })
+    .then(({ result }) => {
+      return result.revisions;
+    });
+}
+
+export function getRevision(revisionId) {
+  return gapi.client.drive.revisions
+    .get({
+      alt: 'media',
+      fileId: JSON.parse(localStorage.$googleDriveFileIddev),
+      revisionId
+    })
+    .then(({ result }) => {
+      return result;
+    });
+}
+
+export function setInventory(inventory, profile, raw = false) {
   log('Setting cloud inventory', { inventory, profile });
   ls.saveCloudInventory(inventory);
 
-  const payload = {
-    version: VERSION_NEW_3,
-    inventory
-  };
+  const payload = raw
+    ? inventory
+    : {
+        version: VERSION_NEW_3,
+        inventory
+      };
 
   log('Payload to save is', { payload });
 
@@ -203,7 +225,9 @@ export function getInventory(profile, itemDefs) {
       delete migratedInventory.plugData;
 
       return removeKioskItemsMigration(
-        normaliseInstancesData(removeArmorOrnamentsMigration(migratedInventory))
+        normaliseInstancesData(
+          removeArmorOrnamentsMigration(migratedInventory, itemDefs)
+        )
       );
     });
 }

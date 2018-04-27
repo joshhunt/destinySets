@@ -156,13 +156,12 @@ class Inventory extends Component {
           googleAuthSignedIn: signedIn
         });
 
-        signedIn &&
-          cloudStorage
-            .getInventory(profile, this.props.itemDefs)
-            .then(cloudInventory => {
-              window.__cloudInventory = cloudInventory;
-              props.setCloudInventory(cloudInventory);
-            });
+        this.itemDefsPromise.then(itemDefs => {
+          signedIn &&
+            cloudStorage
+              .getInventory(profile, itemDefs)
+              .then(props.setCloudInventory);
+        });
       });
     });
   };
@@ -179,10 +178,12 @@ class Inventory extends Component {
     getDefinition('DestinyStatDefinition', lang).then(setStatDefs);
     getDefinition('DestinyObjectiveDefinition', lang).then(setObjectiveDefs);
 
-    getDefinition('reducedCollectableInventoryItems', lang, false).then(
-      setItemDefs
+    this.itemDefsPromise = getDefinition(
+      'reducedCollectableInventoryItems',
+      lang,
+      false
     );
-    // getDefinition('DestinyInventoryItemDefinition', lang).then(setItemDefs);
+    this.itemDefsPromise.then(setItemDefs);
   }
 
   setPopper = (itemHash, element) =>
@@ -273,10 +274,6 @@ class Inventory extends Component {
             setModal={this.setModal}
           />
         ))}
-
-        <p>
-          <Link to="/debug">Debug</Link>
-        </p>
 
         {itemTooltip && (
           <Popper key={itemTooltip.hash} element={itemTooltip.element}>
