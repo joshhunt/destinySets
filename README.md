@@ -9,40 +9,48 @@ Prerequisites:
 * A fairly recent installation of Node - I use v8.9.3
 * Able to use Terminal/bash
 
-1. Copy `.env.local-sample` to `.env.local` and fill in `REACT_APP_API_KEY` and
-   `REACT_APP_AUTH_URL` with your Bungie.net API key and and auth URL (see below
-   for how to get these)
+1.  Copy `.env.local-sample` to `.env.local` and fill in `REACT_APP_BUNGIE_CLIENT_ID` and `REACT_APP_API_KEY` with your Bungie.net API key and and auth URL (see below for how to get these)
 
-2. Install dependencies with `npm install` (or `yarn install` if you have Yarn)
+2.  Install dependencies with `npm install` (or `yarn install` if you have Yarn)
 
-3. Run the local dev server with `npm start` (or `yarn install` if you have
-   Yarn)
+3.  Run the local dev server with `npm start` (or `yarn install` if you have
+    Yarn)
 
-4. You should see "Compiled successfully!", with instructions, and the site
-   should open in your browser.
+4.  You should see "Compiled successfully!", with instructions, and the site
+    should open in your browser.
 
-   * Note, as we're using HTTPS locally with a self-signed certificate, you'll
-     get a security warning. You'll need to 'proceed anyway' to continue.
+    * Note, as we're using HTTPS locally with a self-signed certificate, you'll
+      get a security warning. You'll need to 'proceed anyway' to continue.
 
 ## How to contribute to the set data
 
-1. Open the appropriate data file in `src/setData`
-2. Look at the structure of the data - it reflects the layout of each page on
-   the site. Ultimately, items on the pages are specified in the `items` array,
-   by their item hash (ID).
-3. Search for an item on the
-   [Data Explorer page on DestinySets.com](https://destinysets.com/data), click
-   the item and copy the `hash` - the number in the little box next to the
-   item's name in the overlay.
-   * e.g. The hash for "Contender's Shell" is `113124080`.
-4. Paste the hash into the appropriate items array in the data file you're
-   making the change to. Just make sure you keep the syntax valid, observing
-   commas, etc. It's also nice to include the little `// item name` comment at
-   the end of each line to make it easier for the next person
-5. Save the file and Submit the pull request via Github 🎉
+1.  Open the appropriate data file in `src/setData`
+2.  Look at the structure of the data - it reflects the layout of each page on
+    the site. Ultimately, items on the pages are specified in the `items` array,
+    by their item hash (ID).
+3.  Search for an item on the
+    [Data Explorer page on DestinySets.com](https://destinysets.com/data), click
+    the item and copy the `hash` - the number in the little box next to the
+    item's name in the overlay.
+    * e.g. The hash for "Contender's Shell" is `113124080`.
+4.  Paste the hash into the appropriate items array in the data file you're
+    making the change to. Just make sure you keep the syntax valid, observing
+    commas, etc. It's also nice to include the little `// item name` comment at
+    the end of each line to make it easier for the next person
+5.  Save the file and Submit the pull request via Github 🎉
 
 If you're adding multiple items in one set, the Data Explorer has a special mode
 to make it easier. Click the "Explore the entire Destiny 2 database..." text at
 the top to enable "Collect Mode". Now, as you click an item it'll appear in the
 sidebar, automatically categorised, and copied to your clipboard in a format
 appropriate for the data files.
+
+### Getting API Keys from bungie.net
+
+> TODO: write this better
+
+1.  New app at https://www.bungie.net/en/Application
+2.  oauth client type: public
+3.  redirect url: url the site is running at. for dev, this will probably be https://localhost:4000
+4.  check all scopes, except for "Administrate groups and clans..."
+5.  Origin Header: if it's just a key for local development, just enter `*` here
