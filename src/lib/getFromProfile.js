@@ -77,10 +77,10 @@ function objectivesFromVendors(data) {
 
   return fp.flatMap(character => {
     try {
-      if (!character.itemComponents) {
+      if (!(character && character.itemComponents)) {
         if (!window.localStorage.alreadySentDebugMissingItemComponents) {
           saveDebugInfo({
-            debugId: `${getDebugId}_missingItemComponents`,
+            debugId: `${getDebugId}_missingData`,
             data
           });
 
