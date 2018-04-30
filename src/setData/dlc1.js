@@ -590,12 +590,6 @@ module.exports = [
               3980640404, // Ankaa Friend Ornament
               36130859 // Ankaa Friend Ornament
             ]
-          },
-          {
-            name: 'Emblems',
-            items: [
-              969863968 // Victorious Veteran
-            ]
           }
         ]
       },
