@@ -803,43 +803,6 @@ module.exports = [
       }
     ]
   },
-  {
-    name: 'Other',
-    sets: [
-      {
-        name: 'Promotional Emblems',
-        description:
-          'Emblems obtained from live events and promotional give aways',
-        sections: [
-          {
-            name: 'Bungie Store',
-            items: [
-              4132147345 // Heretic
-            ]
-          },
-          {
-            name: 'Comic',
-            items: [
-              1940590820 // The Visionary
-            ]
-          },
-          {
-            name: 'Bundled with Products',
-            items: [
-              4132147351, // Recurrent Resplendence
-              4182480235, // Hellspawn
-              1940590825, // Sonic Simulation
-              1940590823 // Carrhae
-            ]
-          },
-          {
-            name: 'Refer-A-Friend',
-            items: [
-              4132147352 // The Consensus
-            ]
-          }
-        ]
-      },
       {
         name: 'Eververse, Season 2',
         big: true,
