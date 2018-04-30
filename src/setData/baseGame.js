@@ -899,7 +899,7 @@ module.exports = [
             items: [
               2537840254 // A Guardian Rises
             ]
-          },
+          }
         ]
       },
       {
