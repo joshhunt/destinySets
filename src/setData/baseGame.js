@@ -919,36 +919,6 @@ module.exports = [
             ]
           },
           {
-            name: 'Ghosts',
-            items: [
-              2833999140, // Lambda Shell
-              2833999141, // Avalon Shell
-              2833999142, // Tower Shell
-              2833999143, // Blue Moon Shell
-              2833999136, // Number Two Shell
-              2833999137, // Starfire Shell
-              2833999138, // Jagged Shell
-              2833999139, // Kingfisher Shell
-              2833999148, // Graylight Shell
-              2833999149, // Heraldic Shell
-              261110023, // Half-Submerged Shell
-              261110022, // Interchange Shell
-              261110024, // Bold Shell
-              261110025, // Two of Diamonds Shell
-              261110026, // Honeycomb Shell
-              261110027, // Titan Shell
-              261110028, // Lotus Shell
-              261110030, // Warlock Shell
-              261110031, // Hunter Shell
-              261110029, // Competitive Shell
-              277887714, // Crescent Shell
-              277887715, // Hemisphere Shell
-              277887712, // Aggressive Shell
-              277887713, // Twilight Shell
-              277887718 // Vertical Shell
-            ]
-          },
-          {
             name: 'Emotes',
             items: [
               93029343, // Salty
@@ -980,33 +950,33 @@ module.exports = [
             ]
           },
           {
-            name: 'Sparrows',
+            name: 'Ghosts',
             items: [
-              807458183, // Vanishing Point
-              807458182, // Dinas Emrys
-              807458181, // Hastilude
-              3889183914, // Fast Track
-              3889183915, // Crucible Courser
-              3889183912, // Athwart the Void
-              3889183913, // Aeon Plume
-              3889183918, // Wavechaser
-              3889183919, // Soul Velocity
-              3889183916, // Angel Bloom
-              3889183917, // Speedpunk
-              3889183906, // Chronoglass
-              3889183907, // Wind Shrike
-              2546958593, // October Dash
-              2546958592, // Sagittarius
-              2546958594, // Telluride
-              2546958597, // Skedaddle
-              2546958596, // Lunadove
-              2546958599, // Hightail
-              2546958598, // Wave-Maker
-              904825093, // Wayfarer Delta
-              904825092, // Wayfarer Tri
-              904825094, // Warbird
-              904825089, // Hyperion
-              904825088 // Dead-End Pro
+              2833999140, // Lambda Shell
+              2833999141, // Avalon Shell
+              2833999142, // Tower Shell
+              2833999143, // Blue Moon Shell
+              2833999136, // Number Two Shell
+              2833999137, // Starfire Shell
+              2833999138, // Jagged Shell
+              2833999139, // Kingfisher Shell
+              2833999148, // Graylight Shell
+              2833999149, // Heraldic Shell
+              261110023, // Half-Submerged Shell
+              261110022, // Interchange Shell
+              261110024, // Bold Shell
+              261110025, // Two of Diamonds Shell
+              261110026, // Honeycomb Shell
+              261110027, // Titan Shell
+              261110028, // Lotus Shell
+              261110030, // Warlock Shell
+              261110031, // Hunter Shell
+              261110029, // Competitive Shell
+              277887714, // Crescent Shell
+              277887715, // Hemisphere Shell
+              277887712, // Aggressive Shell
+              277887713, // Twilight Shell
+              277887718 // Vertical Shell
             ]
           },
           {
@@ -1041,7 +1011,38 @@ module.exports = [
               3213307849, // Verona Mesh
               3213307848 // High Line
             ]
-          }
+          },
+          {
+            name: 'Sparrows',
+            items: [
+              807458183, // Vanishing Point
+              807458182, // Dinas Emrys
+              807458181, // Hastilude
+              3889183914, // Fast Track
+              3889183915, // Crucible Courser
+              3889183912, // Athwart the Void
+              3889183913, // Aeon Plume
+              3889183918, // Wavechaser
+              3889183919, // Soul Velocity
+              3889183916, // Angel Bloom
+              3889183917, // Speedpunk
+              3889183906, // Chronoglass
+              3889183907, // Wind Shrike
+              2546958593, // October Dash
+              2546958592, // Sagittarius
+              2546958594, // Telluride
+              2546958597, // Skedaddle
+              2546958596, // Lunadove
+              2546958599, // Hightail
+              2546958598, // Wave-Maker
+              904825093, // Wayfarer Delta
+              904825092, // Wayfarer Tri
+              904825094, // Warbird
+              904825089, // Hyperion
+              904825088 // Dead-End Pro
+            ]
+          },
+          
         ]
       }
     ]
