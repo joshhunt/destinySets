@@ -76,7 +76,7 @@ module.exports = [
             ]
           },
           {
-            name: 'Hunter armor',
+            name: 'Hunter Armor',
             items: [
               1496224967, // Iron Truage Casque
               3737894478, // Iron Truage Grips
@@ -86,7 +86,7 @@ module.exports = [
             ]
           },
           {
-            name: 'Titan armor',
+            name: 'Titan Armor',
             items: [
               1804445917, // Iron Truage Helm
               691332172, // Iron Truage Gauntlets
@@ -96,7 +96,7 @@ module.exports = [
             ]
           },
           {
-            name: 'Warlock armor',
+            name: 'Warlock Armor',
             items: [
               2811201658, // Iron Truage Hood
               287471683, // Iron Truage Gloves
