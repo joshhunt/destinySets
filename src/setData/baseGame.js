@@ -617,7 +617,8 @@ module.exports = [
             items: [
               4242592195, // Fight Forever
               4242592192, // Give Them War
-              4242592193 // One Path to Victory
+              4242592193, // One Path to Victory
+              969863968 // Victorious Veteran
             ]
           }
         ]
