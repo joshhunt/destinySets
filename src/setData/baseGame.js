@@ -831,16 +831,18 @@ module.exports = [
           'Emblems obtained from live events, promotional give aways, and D1 Veteran rewards.',
         sections: [
           {
-            name: 'D1 Veteran',
-            description: 'Acknowledging acheivements from Destiny 1',
+            name: 'Bundled with Products',
             items: [
-              4077939641, // Lore Scholar
-              4077939647, // Laurel Triumphant
-              4077939646, // Laurea Prima II
-              4077939645, // Slayer of Oryx
-              4077939644, // Heard the Call
-              4077939643, // Young Wolf
-              4077939642 // Saladin's Pride
+              1940590817, // Emperor's Shadows
+              1940590822, // Resonant Chord
+              4182480233, // Planet of Peace
+              4132147349, // Meridian of Destiny
+              4182480232, // Brick by Brick
+              4182480234, // Cutting Edge
+              4132147351, // Recurrent Resplendence
+              4182480235, // Hellspawn
+              1940590825, // Sonic Simulation
+              1940590823 // Carrhae
             ]
           },
           {
@@ -858,27 +860,16 @@ module.exports = [
             ]
           },
           {
-            name: 'Special Events',
+            name: 'D1 Veteran',
+            description: 'Acknowledging acheivements from Destiny 1',
             items: [
-              1940590816, // The First Wave
-              1940590821, // Confluence of Light
-              4182480224, // Lens of Fate
-              4182480236 // Sign of Mutual Combat
-            ]
-          },
-          {
-            name: 'Bundled with Products',
-            items: [
-              1940590817, // Emperor's Shadows
-              1940590822, // Resonant Chord
-              4182480233, // Planet of Peace
-              4132147349, // Meridian of Destiny
-              4182480232, // Brick by Brick
-              4182480234, // Cutting Edge
-              4132147351, // Recurrent Resplendence
-              4182480235, // Hellspawn
-              1940590825, // Sonic Simulation
-              1940590823 // Carrhae
+              4077939641, // Lore Scholar
+              4077939647, // Laurel Triumphant
+              4077939646, // Laurea Prima II
+              4077939645, // Slayer of Oryx
+              4077939644, // Heard the Call
+              4077939643, // Young Wolf
+              4077939642 // Saladin's Pride
             ]
           },
           {
@@ -889,17 +880,26 @@ module.exports = [
             ]
           },
           {
+            name: 'Refer-A-Friend',
+            items: [
+              4132147352 // The Consensus
+            ]
+          },
+          {
+            name: 'Special Events',
+            items: [
+              1940590816, // The First Wave
+              1940590821, // Confluence of Light
+              4182480224, // Lens of Fate
+              4182480236 // Sign of Mutual Combat
+            ]
+          },
+          {
             name: 'Trial Version',
             items: [
               2537840254 // A Guardian Rises
             ]
           },
-          {
-            name: 'Refer-A-Friend',
-            items: [
-              4132147352 // The Consensus
-            ]
-          }
         ]
       },
       {
