@@ -847,7 +847,14 @@ module.exports = [
             name: 'Bungie Store',
             items: [
               4132147344, // Stand Together
-              4132147348 // Darkest Day
+              4132147348, // Darkest Day
+              4132147345 // Heretic
+            ]
+          },
+          {
+            name: 'Comic',
+            items: [
+              1940590820 // The Visionary
             ]
           },
           {
@@ -867,7 +874,11 @@ module.exports = [
               4182480233, // Planet of Peace
               4132147349, // Meridian of Destiny
               4182480232, // Brick by Brick
-              4182480234 // Cutting Edge
+              4182480234, // Cutting Edge
+              4132147351, // Recurrent Resplendence
+              4182480235, // Hellspawn
+              1940590825, // Sonic Simulation
+              1940590823 // Carrhae
             ]
           },
           {
@@ -881,6 +892,12 @@ module.exports = [
             name: 'Trial Version',
             items: [
               2537840254 // A Guardian Rises
+            ]
+          },
+          {
+            name: 'Refer-A-Friend',
+            items: [
+              4132147352 // The Consensus
             ]
           }
         ]
