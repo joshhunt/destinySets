@@ -59,7 +59,7 @@ module.exports = [
           },
 
           {
-            name: 'Hunter armor',
+            name: 'Hunter Armor',
             items: [
               253344425, // Mask of Feltroc
               2339720736, // Grips of Feltroc
@@ -69,7 +69,7 @@ module.exports = [
             ]
           },
           {
-            name: 'Titan armor',
+            name: 'Titan Armor',
             items: [
               1991039861, // Mask of Nohr
               666883012, // Gauntlets of Nohr
@@ -79,7 +79,7 @@ module.exports = [
             ]
           },
           {
-            name: 'Warlock armor',
+            name: 'Warlock Armor',
             items: [
               796914932, // Mask of Sekris
               3964287245, // Wraps of Sekris
@@ -114,7 +114,7 @@ module.exports = [
             ]
           },
           {
-            name: 'Hunter armor',
+            name: 'Hunter Armor',
             items: [
               967086398, // Iron Pledge Ornament
               2845443115, // Iron Pledge Ornament
@@ -124,7 +124,7 @@ module.exports = [
             ]
           },
           {
-            name: 'Titan armor',
+            name: 'Titan Armor',
             items: [
               3913452440, // Iron Pledge Ornament
               208020061, // Iron Pledge Ornament
@@ -134,7 +134,7 @@ module.exports = [
             ]
           },
           {
-            name: 'Warlock armor',
+            name: 'Warlock Armor',
             items: [
               3388638931, // Iron Pledge Ornament
               1355065950, // Iron Pledge Ornament
@@ -435,7 +435,7 @@ module.exports = [
             ]
           },
           {
-            name: 'Hunter armor',
+            name: 'Hunter Armor',
             items: [
               952071004, // Kairos Function Mask
               2348421845, // Kairos Function Grips
@@ -445,7 +445,7 @@ module.exports = [
             ]
           },
           {
-            name: 'Titan armor',
+            name: 'Titan Armor',
             items: [
               1768175752, // Kairos Function Helm
               1115510041, // Kairos Function Gauntlets
@@ -455,7 +455,7 @@ module.exports = [
             ]
           },
           {
-            name: 'Warlock armor',
+            name: 'Warlock Armor',
             items: [
               2062911883, // Kairos Function Crown
               385169146, // Kairos Function Wraps
@@ -562,7 +562,7 @@ module.exports = [
           },
 
           {
-            name: 'Hunter armor',
+            name: 'Hunter Ornaments',
             items: [
               2806246104, // Soaring Sword Ornament
               3460422045, // Soaring Sword Ornament
@@ -572,7 +572,7 @@ module.exports = [
             ]
           },
           {
-            name: 'Titan armor',
+            name: 'Titan Ornaments',
             items: [
               2908316342, // Phoenix Battle Ornament
               3955222467, // Phoenix Battle Ornament
@@ -582,7 +582,7 @@ module.exports = [
             ]
           },
           {
-            name: 'Warlock armor',
+            name: 'Warlock Ornaments',
             items: [
               2516513295, // Ankaa Friend Ornament
               121382562, // Ankaa Friend Ornament
@@ -641,7 +641,7 @@ module.exports = [
         big: false,
         sections: [
           {
-            name: 'Hunter armor',
+            name: 'Hunter Armor',
             items: [
               316740353, // Winterhart Mask
               1154659864, // Winterhart Grips
@@ -652,7 +652,7 @@ module.exports = [
             ]
           },
           {
-            name: 'Titan armor',
+            name: 'Titan Armor',
             items: [
               3956230125, // Winterhart Helm
               779962716, // Winterhart Gauntlets
@@ -663,7 +663,7 @@ module.exports = [
             ]
           },
           {
-            name: 'Warlock armor',
+            name: 'Warlock Armor',
             items: [
               3734501342, // Winterhart Cover
               2538439951, // Winterhart Gloves
@@ -851,7 +851,7 @@ module.exports = [
         big: true,
         sections: [
           {
-            name: 'Hunter armor',
+            name: 'Hunter Armor',
             items: [
               2277597261, // Omega Mechanos Mask
               2930263100, // Omega Mechanos Grasps
@@ -861,7 +861,7 @@ module.exports = [
             ]
           },
           {
-            name: 'Titan armor',
+            name: 'Titan Armor',
             items: [
               3838590505, // Omega Mechanos Helm
               1629999520, // Omega Mechanos Gauntlets
@@ -871,7 +871,7 @@ module.exports = [
             ]
           },
           {
-            name: 'Warlock armor',
+            name: 'Warlock Armor',
             items: [
               903593458, // Omega Mechanos Crown
               1328369883, // Omega Mechanos Gloves
