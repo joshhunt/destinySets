@@ -76,7 +76,7 @@ module.exports = [
             ]
           },
           {
-            name: 'Hunter armor',
+            name: 'Hunter Armor',
             items: [
               1496224967, // Iron Truage Casque
               3737894478, // Iron Truage Grips
@@ -86,7 +86,7 @@ module.exports = [
             ]
           },
           {
-            name: 'Titan armor',
+            name: 'Titan Armor',
             items: [
               1804445917, // Iron Truage Helm
               691332172, // Iron Truage Gauntlets
@@ -96,7 +96,7 @@ module.exports = [
             ]
           },
           {
-            name: 'Warlock armor',
+            name: 'Warlock Armor',
             items: [
               2811201658, // Iron Truage Hood
               287471683, // Iron Truage Gloves
@@ -617,7 +617,8 @@ module.exports = [
             items: [
               4242592195, // Fight Forever
               4242592192, // Give Them War
-              4242592193 // One Path to Victory
+              4242592193, // One Path to Victory
+              969863968 // Victorious Veteran
             ]
           }
         ]
@@ -830,6 +831,35 @@ module.exports = [
           'Emblems obtained from live events, promotional give aways, and D1 Veteran rewards.',
         sections: [
           {
+            name: 'Bundled with Products',
+            items: [
+              1940590817, // Emperor's Shadows
+              1940590822, // Resonant Chord
+              4182480233, // Planet of Peace
+              4132147349, // Meridian of Destiny
+              4182480232, // Brick by Brick
+              4182480234, // Cutting Edge
+              4132147351, // Recurrent Resplendence
+              4182480235, // Hellspawn
+              1940590825, // Sonic Simulation
+              1940590823 // Carrhae
+            ]
+          },
+          {
+            name: 'Bungie Store',
+            items: [
+              4132147344, // Stand Together
+              4132147348, // Darkest Day
+              4132147345 // Heretic
+            ]
+          },
+          {
+            name: 'Comic',
+            items: [
+              1940590820 // The Visionary
+            ]
+          },
+          {
             name: 'D1 Veteran',
             description: 'Acknowledging acheivements from Destiny 1',
             items: [
@@ -843,10 +873,16 @@ module.exports = [
             ]
           },
           {
-            name: 'Bungie Store',
+            name: 'Forums',
             items: [
-              4132147344, // Stand Together
-              4132147348 // Darkest Day
+              4182480225, // Symposium Shield
+              4182480239 // Vigilant Console
+            ]
+          },
+          {
+            name: 'Refer-A-Friend',
+            items: [
+              4132147352 // The Consensus
             ]
           },
           {
@@ -856,24 +892,6 @@ module.exports = [
               1940590821, // Confluence of Light
               4182480224, // Lens of Fate
               4182480236 // Sign of Mutual Combat
-            ]
-          },
-          {
-            name: 'Bundled with Products',
-            items: [
-              1940590817, // Emperor's Shadows
-              1940590822, // Resonant Chord
-              4182480233, // Planet of Peace
-              4132147349, // Meridian of Destiny
-              4182480232, // Brick by Brick
-              4182480234 // Cutting Edge
-            ]
-          },
-          {
-            name: 'Forums',
-            items: [
-              4182480225, // Symposium Shield
-              4182480239 // Vigilant Console
             ]
           },
           {
@@ -919,36 +937,6 @@ module.exports = [
             ]
           },
           {
-            name: 'Ghosts',
-            items: [
-              2833999140, // Lambda Shell
-              2833999141, // Avalon Shell
-              2833999142, // Tower Shell
-              2833999143, // Blue Moon Shell
-              2833999136, // Number Two Shell
-              2833999137, // Starfire Shell
-              2833999138, // Jagged Shell
-              2833999139, // Kingfisher Shell
-              2833999148, // Graylight Shell
-              2833999149, // Heraldic Shell
-              261110023, // Half-Submerged Shell
-              261110022, // Interchange Shell
-              261110024, // Bold Shell
-              261110025, // Two of Diamonds Shell
-              261110026, // Honeycomb Shell
-              261110027, // Titan Shell
-              261110028, // Lotus Shell
-              261110030, // Warlock Shell
-              261110031, // Hunter Shell
-              261110029, // Competitive Shell
-              277887714, // Crescent Shell
-              277887715, // Hemisphere Shell
-              277887712, // Aggressive Shell
-              277887713, // Twilight Shell
-              277887718 // Vertical Shell
-            ]
-          },
-          {
             name: 'Emotes',
             items: [
               93029343, // Salty
@@ -980,33 +968,33 @@ module.exports = [
             ]
           },
           {
-            name: 'Sparrows',
+            name: 'Ghosts',
             items: [
-              807458183, // Vanishing Point
-              807458182, // Dinas Emrys
-              807458181, // Hastilude
-              3889183914, // Fast Track
-              3889183915, // Crucible Courser
-              3889183912, // Athwart the Void
-              3889183913, // Aeon Plume
-              3889183918, // Wavechaser
-              3889183919, // Soul Velocity
-              3889183916, // Angel Bloom
-              3889183917, // Speedpunk
-              3889183906, // Chronoglass
-              3889183907, // Wind Shrike
-              2546958593, // October Dash
-              2546958592, // Sagittarius
-              2546958594, // Telluride
-              2546958597, // Skedaddle
-              2546958596, // Lunadove
-              2546958599, // Hightail
-              2546958598, // Wave-Maker
-              904825093, // Wayfarer Delta
-              904825092, // Wayfarer Tri
-              904825094, // Warbird
-              904825089, // Hyperion
-              904825088 // Dead-End Pro
+              2833999140, // Lambda Shell
+              2833999141, // Avalon Shell
+              2833999142, // Tower Shell
+              2833999143, // Blue Moon Shell
+              2833999136, // Number Two Shell
+              2833999137, // Starfire Shell
+              2833999138, // Jagged Shell
+              2833999139, // Kingfisher Shell
+              2833999148, // Graylight Shell
+              2833999149, // Heraldic Shell
+              261110023, // Half-Submerged Shell
+              261110022, // Interchange Shell
+              261110024, // Bold Shell
+              261110025, // Two of Diamonds Shell
+              261110026, // Honeycomb Shell
+              261110027, // Titan Shell
+              261110028, // Lotus Shell
+              261110030, // Warlock Shell
+              261110031, // Hunter Shell
+              261110029, // Competitive Shell
+              277887714, // Crescent Shell
+              277887715, // Hemisphere Shell
+              277887712, // Aggressive Shell
+              277887713, // Twilight Shell
+              277887718 // Vertical Shell
             ]
           },
           {
@@ -1041,7 +1029,38 @@ module.exports = [
               3213307849, // Verona Mesh
               3213307848 // High Line
             ]
-          }
+          },
+          {
+            name: 'Sparrows',
+            items: [
+              807458183, // Vanishing Point
+              807458182, // Dinas Emrys
+              807458181, // Hastilude
+              3889183914, // Fast Track
+              3889183915, // Crucible Courser
+              3889183912, // Athwart the Void
+              3889183913, // Aeon Plume
+              3889183918, // Wavechaser
+              3889183919, // Soul Velocity
+              3889183916, // Angel Bloom
+              3889183917, // Speedpunk
+              3889183906, // Chronoglass
+              3889183907, // Wind Shrike
+              2546958593, // October Dash
+              2546958592, // Sagittarius
+              2546958594, // Telluride
+              2546958597, // Skedaddle
+              2546958596, // Lunadove
+              2546958599, // Hightail
+              2546958598, // Wave-Maker
+              904825093, // Wayfarer Delta
+              904825092, // Wayfarer Tri
+              904825094, // Warbird
+              904825089, // Hyperion
+              904825088 // Dead-End Pro
+            ]
+          },
+          
         ]
       }
     ]
