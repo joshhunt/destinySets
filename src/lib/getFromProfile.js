@@ -1,8 +1,12 @@
 import { keyBy } from 'lodash';
 import fp from 'lodash/fp';
 
-import { getDebugId } from 'app/lib/ls';
-import { saveDebugInfo } from 'app/lib/telemetry';
+import {
+  getDebugId,
+  getProfileErrorReported,
+  saveProfileErrorReported
+} from 'app/lib/ls';
+import { saveDebugInfo, trackError } from 'app/lib/telemetry';
 
 const ITEM_BLACKLIST = [
   4248210736, // Default shader
@@ -69,32 +73,7 @@ function objectivesFromSockets(data) {
 }
 
 function objectivesFromVendors(data) {
-  // return fp.flow(
-  //   fp.flatMap(character => character.itemComponents),
-  //   fp.flatMap(vendor => vendor.plugStates.data),
-  //   fp.flatMap(plugStates => plugStates.plugObjectives)
-  // )(data);
-
   return fp.flatMap(character => {
-    try {
-      if (!(character && character.itemComponents)) {
-        if (!window.localStorage.alreadySentDebugMissingItemComponents) {
-          saveDebugInfo({
-            debugId: `${getDebugId}_missingData`,
-            data
-          });
-
-          window.localStorage.setItem(
-            'alreadySentDebugMissingItemComponents',
-            'true'
-          );
-        }
-      }
-    } catch (e) {
-      console.error('Error trying to debug missing item components');
-      console.error(e);
-    }
-
     return fp.flatMap(vendor => {
       return fp.flatMap(plugStates => {
         return plugStates.plugObjectives;
@@ -134,43 +113,75 @@ function mergeItems(acc, [items, itemLocation]) {
   return acc;
 }
 
+function reportError(err, name, profile) {
+  console.error(`Error in getFromProfile ${name}`);
+  console.error(err);
+
+  if (getProfileErrorReported()) {
+    return;
+  }
+
+  const error = err || new Error('Unknown error');
+
+  trackError(error);
+
+  saveDebugInfo(
+    {
+      debugId: getDebugId(),
+      profile: JSON.stringify(profile || { emptry: true }),
+      error: error.toString && error.toString(),
+      errorStack: error.stack
+    },
+    `caughtGetFromProfile/${name}`
+  );
+
+  saveProfileErrorReported(true);
+}
+
+function wrapForError(name, profile, fn) {
+  try {
+    return fn();
+  } catch (err) {
+    reportError(err, name, profile);
+  }
+}
+
 export function inventoryFromProfile(profile, vendorDefs) {
-  const inventory = [
-    [fromCharacter(profile.characterEquipment.data), 'characterEquipment'],
-    [fromCharacter(profile.characterInventories.data), 'characterInventories'],
-    [profile.profileInventory.data.items.map(itemMapper), 'profileInventory'],
-    [
-      fromCharacterKiosks(profile.characterKiosks.data, vendorDefs),
-      'characterKiosks'
-    ],
-    [fromKiosks(profile.profileKiosks.data, vendorDefs), 'profileKiosks'],
-    [fromSockets(profile.itemComponents.sockets.data), 'itemSockets'],
-    [fromVendorSockets(profile.$vendors.data), 'vendorSockets']
-  ].reduce(mergeItems, {});
+  return wrapForError('inventoryFromProfile', profile, () => {
+    const inventory = [
+      [fromCharacter(profile.characterEquipment.data), 'characterEquipment'],
+      [
+        fromCharacter(profile.characterInventories.data),
+        'characterInventories'
+      ],
+      [profile.profileInventory.data.items.map(itemMapper), 'profileInventory'],
+      [
+        fromCharacterKiosks(profile.characterKiosks.data, vendorDefs),
+        'characterKiosks'
+      ],
+      [fromKiosks(profile.profileKiosks.data, vendorDefs), 'profileKiosks'],
+      [fromSockets(profile.itemComponents.sockets.data), 'itemSockets'],
+      [fromVendorSockets(profile.$vendors.data), 'vendorSockets']
+    ].reduce(mergeItems, {});
 
-  // Test
-  inventory[1337] = {
-    itemHash: 1337,
-    obtained: true,
-    instances: [{ location: 'fakeItemFromProfile' }]
-  };
-
-  window.__inventory = inventory;
-
-  return inventory;
+    window.__inventory = inventory;
+    return inventory;
+  });
 }
 
 export function objectivesFromProfile(profile) {
-  return keyBy(
-    [
-      ...flavorObjectivesFromKiosk(profile.profileKiosks.data),
-      ...objectivesFromSockets(profile.itemComponents.sockets.data),
-      ...fp.flatMap(
-        obj => obj.objectives,
-        profile.itemComponents.objectives.data
-      ),
-      ...objectivesFromVendors(profile.$vendors.data)
-    ],
-    'objectiveHash'
-  );
+  return wrapForError('objectivesFromProfile', profile, () => {
+    return keyBy(
+      [
+        ...flavorObjectivesFromKiosk(profile.profileKiosks.data),
+        ...objectivesFromSockets(profile.itemComponents.sockets.data),
+        ...fp.flatMap(
+          obj => obj.objectives,
+          profile.itemComponents.objectives.data
+        ),
+        ...objectivesFromVendors(profile.$vendors.data)
+      ],
+      'objectiveHash'
+    );
+  });
 }

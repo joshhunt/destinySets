@@ -13,6 +13,7 @@ const keys = {
   TRACKED_ITEMS: '$trackedItems',
   UID: 'uid',
   DEBUGID: 'debugid',
+  PROFILE_ERROR_REPORTED: 'profileErrorReported',
 
   DESTINY_PROFILE: 'd2Profile'
 };
@@ -76,6 +77,14 @@ function get(key, defaultx) {
 function save(key, value) {
   const jason = JSON.stringify(value);
   LOCAL_STORAGE.setItem(key, jason);
+}
+
+export function getProfileErrorReported() {
+  return get(keys.PROFILE_ERROR_REPORTED, false);
+}
+
+export function saveProfileErrorReported(value = true) {
+  return save(keys.PROFILE_ERROR_REPORTED, value);
 }
 
 export function saveLanguage(langCode) {

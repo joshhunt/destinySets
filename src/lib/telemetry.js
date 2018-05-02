@@ -1,5 +1,7 @@
 import * as ls from 'app/lib/ls';
 
+const log = require('app/lib/log')('telemetry');
+
 function getNameFromBungieProfile(bungieNetProfile) {
   const { psnDisplayName, xboxDisplayName, uniqueName } = bungieNetProfile;
 
@@ -55,10 +57,11 @@ export function getDebugProfile(debugId) {
   return getFirebaseDb(db => {});
 }
 
-export function saveDebugInfo(debugData) {
+export function saveDebugInfo(debugData, pathPrefix = 'debug') {
+  log('Saving debug info', debugData);
   return getFirebaseDb()
     .then(db => {
-      const key = `debug/${debugData.debugId}`;
+      const key = `${pathPrefix}/${debugData.debugId}`;
       console.log('telem with', { key, debugData });
       return db.ref(key).set(debugData);
     })
