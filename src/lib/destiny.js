@@ -1,9 +1,7 @@
-import queryString from 'query-string';
 import { sortBy, has } from 'lodash';
 
 import { setUser } from 'app/lib/telemetry';
 import { getEnsuredAccessToken } from 'app/lib/destinyAuth';
-import { getDebugProfile } from 'app/lib/telemetry';
 import * as ls from 'app/lib/ls';
 
 const XUR_URL = 'https://api.destiny.plumbing/xur';
@@ -213,6 +211,7 @@ export function getExtendedProfile(ship) {
         return null;
       }
 
+      // TODO: why are vendors occasionally not returning for some people?
       profile.$vendors = { data: {} };
       Object.keys(profile.characters.data).forEach((characterId, index) => {
         profile.$vendors.data[characterId] = characterVendors[index];
@@ -224,12 +223,6 @@ export function getExtendedProfile(ship) {
 
 export function getCurrentProfiles() {
   let bungieNetUser;
-
-  const queryParams = queryString.parse(window.location.search);
-
-  if (queryParams.debugId) {
-    return getDebugProfile(queryParams.debugId);
-  }
 
   return getDestiny('/Platform/User/GetMembershipsForCurrentUser/')
     .then(body => {

@@ -73,24 +73,32 @@ function objectivesFromSockets(data) {
 }
 
 function objectivesFromVendors(data) {
-  return fp.flatMap(character => {
-    return fp.flatMap(vendor => {
-      return fp.flatMap(plugStates => {
-        return plugStates.plugObjectives;
-      }, vendor.plugStates.data);
-    }, character.itemComponents);
-  }, data);
+  return fp.flow(
+    fp.flatMap(character => {
+      return (
+        character &&
+        fp.flatMap(vendor => {
+          return fp.flatMap(plugStates => {
+            return plugStates.plugObjectives;
+          }, vendor.plugStates.data);
+        }, character.itemComponents)
+      );
+    }),
+    fp.compact
+  )(data);
 }
 
+const socketsFromVendors = fp.flatMap(vendor =>
+  fromSockets(vendor.sockets.data)
+);
+
 function fromVendorSockets(data) {
-  return fp.flatMap(
-    character =>
-      fp.flatMap(
-        vendor => fromSockets(vendor.sockets.data),
-        character.itemComponents
-      ),
-    data
-  );
+  return fp.flow(
+    fp.flatMap(
+      character => character && socketsFromVendors(character.itemComponents)
+    ),
+    fp.compact
+  )(data);
 }
 
 function mergeItems(acc, [items, itemLocation]) {
