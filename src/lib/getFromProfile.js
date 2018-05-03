@@ -125,13 +125,12 @@ function reportError(err, name, profile) {
   console.error(`Error in getFromProfile ${name}`);
   console.error(err);
 
+  const error = err || new Error('Unknown error');
+  trackError(error);
+
   if (getProfileErrorReported()) {
     return;
   }
-
-  const error = err || new Error('Unknown error');
-
-  trackError(error);
 
   saveDebugInfo(
     {
