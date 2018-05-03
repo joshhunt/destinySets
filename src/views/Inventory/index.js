@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import Scrollspy from 'react-scrollspy';
 
 import {
   setProfiles,
@@ -35,6 +34,7 @@ import Popper from 'app/components/Popper';
 import FilterBar from 'app/components/NewFilterBar';
 import ItemTooltip from 'app/components/ItemTooltip';
 import ItemModal from 'app/components/ItemModal';
+import SectionList from 'app/components/SectionList';
 
 import { filteredSetDataSelector } from './selectors';
 import styles from './styles.styl';
@@ -284,44 +284,15 @@ class Inventory extends Component {
           </LoginUpsell>
         )}
 
-        <div>
-          <Scrollspy
-            offset={-60}
-            items={['section-1', 'section-2', 'section-3']}
-            className={styles.testNav}
-            currentClassName={styles.testNavCurrent}
-          >
-            <li>
-              <a href="#section-1">section 1</a>
-            </li>
-            <li>
-              <a href="#section-2">section 2</a>
-            </li>
-            <li>
-              <a href="#section-3">section 3</a>
-            </li>
-          </Scrollspy>
-
-          <div>
-            <section className={styles.testSection} id="section-1">
-              section 1
-            </section>
-            <section className={styles.testSection} id="section-2">
-              section 2
-            </section>
-            <section className={styles.testSection} id="section-3">
-              section 3
-            </section>
-          </div>
-        </div>
-
+        <SectionList setData={filteredSetData} />
         <FilterBar filters={filters} toggleFilter={this.toggleFilter} />
 
-        {filteredSetData.map(({ sets, name }, index) => (
+        {filteredSetData.map(({ sets, slug, name }, index) => (
           <Section
             key={index}
             name={name}
             sets={sets}
+            slug={slug}
             setPopper={this.setPopper}
             setModal={this.setModal}
           />

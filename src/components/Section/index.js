@@ -5,10 +5,9 @@ import styles from './styles.styl';
 
 // import LazyLoad from 'react-lazyload';
 
-export default function Section({ name, sets, setPopper, setModal }) {
+export default function Section({ name, slug, sets, setPopper, setModal }) {
   return (
-    <div className={styles.root}>
-      <h2 className={styles.title}>{name}</h2>
+    <div className={styles.root} id={slug}>
       <div className={styles.list}>
         {sets.map((set, index) => (
           <Fragment key={index}>

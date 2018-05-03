@@ -1,0 +1,33 @@
+.root
+  content: 'root'
+  position: fixed
+  top: 60px
+  z-index: 2
+  background: #090b0f;
+  top: 52px;
+  left: 0;
+  right: 0;
+  padding: 5px 15px
+
+.list
+  margin: 0 -15px
+  padding: 0
+
+.item
+  font-size: 22px
+  opacity: .5
+  transition: 150ms ease-in-out opacity
+  display: inline-block
+  list-style: none
+  margin: 0 15px
+
+  &:not(.itemActive):hover
+    opacity: .75
+
+  a
+    color: inherit
+    text-decoration: none
+
+.itemActive
+  opacity: 1
+
