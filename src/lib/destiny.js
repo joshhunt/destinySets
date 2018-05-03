@@ -150,7 +150,7 @@ export function getDestiny(_pathname, opts = {}, postBody) {
           data: { url, ...resp }
         });
 
-        throw new Error(
+        const err = new Error(
           'Bungie API Error ' +
             resp.ErrorStatus +
             ' - ' +
@@ -158,6 +158,10 @@ export function getDestiny(_pathname, opts = {}, postBody) {
             '\nURL: ' +
             url
         );
+
+        trackError(err);
+
+        throw err;
       }
 
       const result = resp.Response || resp;
