@@ -8,6 +8,7 @@ import styles from './styles.styl';
 export default function Section({ name, slug, sets, setPopper, setModal }) {
   return (
     <div className={styles.root} id={slug}>
+      <h2 className={styles.title}>{name}</h2>
       <div className={styles.list}>
         {sets.map((set, index) => (
           <Fragment key={index}>
