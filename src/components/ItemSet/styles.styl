@@ -5,12 +5,23 @@ $padding = 10px;
   height: 100%
 
 .header
-  background:#283039
+  position: relative
+  background: #283039
   padding: $padding
 
 .headerImage
-  width: 100%
+  width: "calc(100% + (%s * 2))" % $padding
   display: block
+  margin: $padding * -1
+
+.headerImage + .headerText
+  position: absolute
+  bottom: 0
+  left: 0
+  right: 0
+  background: linear-gradient(to top, rgba(black, 1), rgba(black, 0))
+  padding: $padding
+  font-size: 18px
 
 .seasonLabel
   font-size: .75em

@@ -26,12 +26,15 @@ function ItemSet({
         <div className={styles.header}>
           {image && (
             <img
+              alt=""
               className={styles.headerImage}
               src={`https://www.bungie.net${image}`}
             />
           )}
-          <h3 className={styles.title}>{name}</h3>
-          {description && <p className={styles.desc}>{description}</p>}
+          <div className={styles.headerText}>
+            <h3 className={styles.title}>{name}</h3>
+            {description && <p className={styles.desc}>{description}</p>}
+          </div>
         </div>
 
         {sections.map((section, index) => (
