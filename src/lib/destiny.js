@@ -2,6 +2,7 @@ import { sortBy, has } from 'lodash';
 
 import { setUser } from 'app/lib/telemetry';
 import { getEnsuredAccessToken } from 'app/lib/destinyAuth';
+import { trackError } from 'app/lib/telemetry';
 import * as ls from 'app/lib/ls';
 
 const XUR_URL = 'https://api.destiny.plumbing/xur';
@@ -170,6 +171,8 @@ export function getVendors(membership, characterId) {
       ','
     )}`
   ).catch(err => {
+    trackError(err);
+
     console.error('Error fetching vendors for', {
       membershipType,
       membershipId,
