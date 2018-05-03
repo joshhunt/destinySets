@@ -1,18 +1,7 @@
 import React from 'react';
-import Scrollspy from 'react-scrollspy';
-import {
-  Link,
-  Element,
-  Events,
-  animateScroll as scroll,
-  scrollSpy,
-  scroller
-} from 'react-scroll';
-import { memoize } from 'lodash';
+import { Link } from 'react-scroll';
 
 import styles from './styles.styl';
-
-const getIds = memoize(setData => setData.map(({ slug }) => slug));
 
 export default function SectionList({ setData }) {
   return (
@@ -24,7 +13,7 @@ export default function SectionList({ setData }) {
               spy={true}
               smooth={true}
               to={slug}
-              offset={-100}
+              offset={-95}
               className={styles.item}
               activeClass={styles.itemActive}
             >

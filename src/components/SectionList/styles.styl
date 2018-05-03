@@ -7,19 +7,33 @@
   top: 52px;
   left: 0;
   right: 0;
-  padding: 5px 15px
+  padding: 0 15px
+  box-shadow: 0 0 20px -5px rgba(black, 0.75)
+
+  // &:after
+  //   content: ''
+  //   top: 100%
+  //   height: 5px
+  //   background: linear-gradient(to bottom, rgba(#090b0f, 1), rgba(#090b0f,0));
+  //   left: 0
+  //   right: 0
+  //   z-index: 3
+  //   position: absolute
 
 .list
   margin: 0 -15px
   padding: 0
 
 .item
-  font-size: 22px
-  opacity: .5
-  transition: 50ms ease-in-out opacity
+  position: relative
   display: inline-block
-  list-style: none
   margin: 0 15px
+  padding: 5px 0
+  font-size: 18px
+  opacity: .5
+  transition: 100ms ease-in-out opacity
+  list-style: none
+  cursor: pointer
 
   &:not(.itemActive):hover
     opacity: .75
@@ -28,6 +42,21 @@
     color: inherit
     text-decoration: none
 
+  &:after
+    transition: 100ms ease-in-out height
+    display: block
+    content: ''
+    position absolute
+    bottom: 0
+    right: 0
+    left: 0
+    height: 0
+    background: rgba(white, .2)
+
 .itemActive
   opacity: 1
+
+  &:after
+    height: 3px
+
 
