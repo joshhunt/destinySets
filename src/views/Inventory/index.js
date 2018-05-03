@@ -24,6 +24,7 @@ import * as ls from 'app/lib/ls';
 import * as destiny from 'app/lib/destiny';
 import * as cloudStorage from 'app/lib/cloudStorage';
 import { getDefinition } from 'app/lib/manifestData';
+import { getDebugProfile } from 'app/lib/telemetry';
 
 import Header from 'app/components/Header';
 import Footer from 'app/components/Footer';
@@ -134,6 +135,25 @@ class Inventory extends Component {
   };
 
   fetchProfile(props = this.props) {
+    const { debugProfile } = props.location.query;
+
+    if (debugProfile) {
+      const debugPath = debugProfile.includes('console.firebase.google.com')
+        ? debugProfile.split('destinysets-new/data/')[1]
+        : debugProfile;
+
+      log('Debug path', debugPath);
+
+      return getDebugProfile(debugPath).then(data => {
+        log('debug profile data', data);
+        props.setProfiles({
+          currentProfile: data,
+          allProfiles: [data],
+          isCached: false
+        });
+      });
+    }
+
     return destiny.getCurrentProfiles().then(data => {
       log('got current profile', data);
       const profile = destiny.getLastProfile(data);

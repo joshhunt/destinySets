@@ -53,8 +53,14 @@ function getFirebaseDb() {
   });
 }
 
-export function getDebugProfile(debugId) {
-  return getFirebaseDb(db => {});
+export function getDebugProfile(path) {
+  return getFirebaseDb()
+    .then(db => {
+      const ref = db.ref(path);
+      return ref.once('value');
+    })
+    .then(snapshot => snapshot.val())
+    .then(data => JSON.parse(data));
 }
 
 export function saveDebugInfo(debugData, pathPrefix = 'debug') {
