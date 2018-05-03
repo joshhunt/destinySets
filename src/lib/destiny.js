@@ -2,7 +2,7 @@ import { sortBy, has } from 'lodash';
 
 import { setUser } from 'app/lib/telemetry';
 import { getEnsuredAccessToken } from 'app/lib/destinyAuth';
-import { trackError } from 'app/lib/telemetry';
+import { trackError, trackBreadcrumb } from 'app/lib/telemetry';
 import * as ls from 'app/lib/ls';
 
 const XUR_URL = 'https://api.destiny.plumbing/xur';
@@ -143,6 +143,13 @@ export function getDestiny(_pathname, opts = {}, postBody) {
       }
 
       if (has(resp, 'ErrorCode') && resp.ErrorCode !== 1) {
+        trackBreadcrumb({
+          message: 'Bungie API Error',
+          category: 'api',
+          level: 'error',
+          data: { url, ...resp }
+        });
+
         throw new Error(
           'Bungie API Error ' +
             resp.ErrorStatus +
@@ -217,7 +224,9 @@ export function getExtendedProfile(ship) {
       // TODO: why are vendors occasionally not returning for some people?
       profile.$vendors = { data: {} };
       Object.keys(profile.characters.data).forEach((characterId, index) => {
-        profile.$vendors.data[characterId] = characterVendors[index];
+        if (characterVendors[index]) {
+          profile.$vendors.data[characterId] = characterVendors[index];
+        }
       });
 
       return profile;

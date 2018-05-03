@@ -106,6 +106,16 @@ export function trackError(err) {
   Raven.captureException(err);
 }
 
+export function trackBreadcrumb(data) {
+  const { Raven } = window;
+
+  if (!Raven) {
+    return null;
+  }
+
+  Raven.captureBreadcrumb(data);
+}
+
 export function errorPrompt(ev) {
   if (ev && ev.preventDefault) {
     ev.preventDefault();
