@@ -1,28 +1,25 @@
 .root
-  content: 'root'
+  height: 42px
+
+.fixed
   position: fixed
   top: 60px
+  display: flex
   z-index: 2
-  background: #090b0f;
-  top: 52px;
-  left: 0;
-  right: 0;
+  top: 52px
+  left: 0
+  right: 0
   padding: 0 15px
+  background: #090b0f
   box-shadow: 0 0 20px -5px rgba(black, 0.75)
 
-  // &:after
-  //   content: ''
-  //   top: 100%
-  //   height: 5px
-  //   background: linear-gradient(to bottom, rgba(#090b0f, 1), rgba(#090b0f,0));
-  //   left: 0
-  //   right: 0
-  //   z-index: 3
-  //   position: absolute
-
 .list
-  margin: 0 -15px
+  margin: 0 0 0 -15px
   padding: 0
+  white-space: nowrap
+  overflow: scroll
+  -webkit-overflow-scrolling: touch
+  flex: 1
 
 .item
   position: relative
@@ -58,5 +55,4 @@
 
   &:after
     height: 3px
-
 

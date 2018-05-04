@@ -31,7 +31,6 @@ import Footer from 'app/components/Footer';
 import LoginUpsell from 'app/components/LoginUpsell';
 import Section from 'app/components/Section';
 import Popper from 'app/components/Popper';
-import FilterBar from 'app/components/NewFilterBar';
 import ItemTooltip from 'app/components/ItemTooltip';
 import ItemModal from 'app/components/ItemModal';
 import SectionList from 'app/components/SectionList';
@@ -284,8 +283,11 @@ class Inventory extends Component {
           </LoginUpsell>
         )}
 
-        <SectionList setData={filteredSetData} />
-        <FilterBar filters={filters} toggleFilter={this.toggleFilter} />
+        <SectionList
+          setData={filteredSetData}
+          filters={filters}
+          toggleFilter={this.toggleFilter}
+        />
 
         {filteredSetData.map(({ sets, slug, name }, index) => (
           <Section
