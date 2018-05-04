@@ -150,13 +150,14 @@ export function getDestiny(_pathname, opts = {}, postBody) {
           data: { url, ...resp }
         });
 
+        const cleanedUrl = url.replace(/\/\d+\//g, '/_/');
         const err = new Error(
           'Bungie API Error ' +
             resp.ErrorStatus +
             ' - ' +
             resp.Message +
             '\nURL: ' +
-            url
+            cleanedUrl
         );
 
         trackError(err);
