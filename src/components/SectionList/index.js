@@ -31,7 +31,7 @@ export default class SectionList extends Component {
             ))}
           </ul>
 
-          <div>
+          <div className={styles.filter}>
             <FilterDropdown filters={filters} toggleFilter={toggleFilter} />
           </div>
         </div>
