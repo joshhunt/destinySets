@@ -26,15 +26,22 @@ export default class DropdownMenu extends Component {
       renderContent
     } = this.props;
 
+    const { visible } = this.state;
+
     return (
       <ClickOutside
-        className={cx(styles.root, inline && styles.inline, className)}
+        className={cx(
+          styles.root,
+          visible && styles.isOpen,
+          inline && styles.inline,
+          className
+        )}
         onClick={this.toggleDropdown}
         onClickOutside={this.clickedOutside}
       >
         {children}
 
-        {this.state.visible && (
+        {visible && (
           <div className={cx(styles.content, contentClassName)}>
             {renderContent()}
           </div>
