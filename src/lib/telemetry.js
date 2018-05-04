@@ -98,14 +98,14 @@ export function setUser(bungieNetProfile) {
     });
 }
 
-export function trackError(err) {
+export function trackError(...args) {
   const { Raven } = window;
 
   if (!Raven) {
     return null;
   }
 
-  Raven.captureException(err);
+  Raven.captureException(...args);
 }
 
 export function setExtraUserContext(data) {
