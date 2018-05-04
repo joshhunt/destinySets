@@ -31,9 +31,9 @@ import Footer from 'app/components/Footer';
 import LoginUpsell from 'app/components/LoginUpsell';
 import Section from 'app/components/Section';
 import Popper from 'app/components/Popper';
-import FilterBar from 'app/components/NewFilterBar';
 import ItemTooltip from 'app/components/ItemTooltip';
 import ItemModal from 'app/components/ItemModal';
+import SectionList from 'app/components/SectionList';
 
 import { filteredSetDataSelector } from './selectors';
 import styles from './styles.styl';
@@ -276,6 +276,12 @@ class Inventory extends Component {
           }
         />
 
+        <SectionList
+          setData={filteredSetData}
+          filters={filters}
+          toggleFilter={this.toggleFilter}
+        />
+
         {!isAuthenticated && (
           <LoginUpsell>
             Connect your Bungie.net acccount to automatically track items you've
@@ -283,13 +289,12 @@ class Inventory extends Component {
           </LoginUpsell>
         )}
 
-        <FilterBar filters={filters} toggleFilter={this.toggleFilter} />
-
-        {filteredSetData.map(({ sets, name }, index) => (
+        {filteredSetData.map(({ sets, slug, name }, index) => (
           <Section
             key={index}
             name={name}
             sets={sets}
+            slug={slug}
             setPopper={this.setPopper}
             setModal={this.setModal}
           />

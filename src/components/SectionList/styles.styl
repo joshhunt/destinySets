@@ -1,0 +1,73 @@
+.root
+  height: 42px
+
+.fixed
+  position: fixed
+  top: 60px
+  display: flex
+  z-index: 2
+  top: 52px
+  left: 0
+  right: 0
+  padding: 0 15px
+  background: #090b0f
+  box-shadow: 0 0 20px -5px rgba(black, 0.75)
+
+.list
+  margin: 0 0 0 -15px
+  padding: 0
+  white-space: nowrap
+  overflow: scroll
+  -webkit-overflow-scrolling: touch
+  flex: 1
+
+.item
+  position: relative
+  display: inline-block
+  margin: 0 15px
+  padding: 7px 0 8px 0
+  font-size: 18px
+  opacity: .5
+  transition: 100ms ease-in-out opacity
+  list-style: none
+  cursor: pointer
+
+  &:not(.itemActive):hover
+    opacity: .75
+
+  a, &
+    color: inherit
+    text-decoration: none
+
+  &:after
+    transition: 100ms ease-in-out height
+    display: block
+    content: ''
+    position absolute
+    bottom: 0
+    right: 0
+    left: 0
+    height: 0
+    background: rgba(white, .2)
+
+.itemActive
+  opacity: 1
+
+  &:after
+    height: 3px
+
+
+
+.filter
+  margin-left: 5px
+  padding-left: 5px
+  position: relative
+
+  &:after
+    content: ''
+    position: absolute
+    top: 8px
+    bottom: 8px
+    width:1px
+    background: rgba(white, .25)
+    left: 0
