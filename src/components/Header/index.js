@@ -112,7 +112,6 @@ export default class Header extends Component {
 
     if (isOverflowing(this.linksRef)) {
       this.setState({ isOverflowing: true });
-      console.log('OVERFLWOING!');
     }
   };
 
