@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import cx from 'classnames';
+import ClickOutside from 'react-click-outside';
 
 import styles from './styles.styl';
 
@@ -12,6 +13,10 @@ export default class DropdownMenu extends Component {
     this.setState({ visible: !this.state.visible });
   };
 
+  clickedOutside = () => {
+    this.state.visible && this.setState({ visible: false });
+  };
+
   render() {
     const {
       inline,
@@ -22,9 +27,10 @@ export default class DropdownMenu extends Component {
     } = this.props;
 
     return (
-      <div
+      <ClickOutside
         className={cx(styles.root, inline && styles.inline, className)}
         onClick={this.toggleDropdown}
+        onClickOutside={this.clickedOutside}
       >
         {children}
 
@@ -33,7 +39,7 @@ export default class DropdownMenu extends Component {
             {renderContent()}
           </div>
         )}
-      </div>
+      </ClickOutside>
     );
   }
 }
