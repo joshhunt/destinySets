@@ -276,18 +276,18 @@ class Inventory extends Component {
           }
         />
 
+        <SectionList
+          setData={filteredSetData}
+          filters={filters}
+          toggleFilter={this.toggleFilter}
+        />
+
         {!isAuthenticated && (
           <LoginUpsell>
             Connect your Bungie.net acccount to automatically track items you've
             collected and dismantled.
           </LoginUpsell>
         )}
-
-        <SectionList
-          setData={filteredSetData}
-          filters={filters}
-          toggleFilter={this.toggleFilter}
-        />
 
         {filteredSetData.map(({ sets, slug, name }, index) => (
           <Section
