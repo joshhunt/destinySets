@@ -65,6 +65,8 @@ export function getDebugProfile(path) {
 
 export function saveDebugInfo(debugData, pathPrefix = 'debug') {
   log('Saving debug info', debugData);
+  setExtraUserContext({ debugId: debugData.debugId });
+
   return getFirebaseDb()
     .then(db => {
       const key = `${pathPrefix}/${debugData.debugId}`;
@@ -104,6 +106,16 @@ export function trackError(err) {
   }
 
   Raven.captureException(err);
+}
+
+export function setExtraUserContext(data) {
+  const { Raven } = window;
+
+  if (!Raven) {
+    return null;
+  }
+
+  Raven.setExtraContext(data);
 }
 
 export function trackBreadcrumb(data) {

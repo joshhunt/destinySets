@@ -2,7 +2,7 @@ import { sortBy, has } from 'lodash';
 
 import { setUser } from 'app/lib/telemetry';
 import { getEnsuredAccessToken } from 'app/lib/destinyAuth';
-import { trackError, trackBreadcrumb } from 'app/lib/telemetry';
+import { trackError, trackBreadcrumb, saveDebugInfo } from 'app/lib/telemetry';
 import * as ls from 'app/lib/ls';
 
 const XUR_URL = 'https://api.destiny.plumbing/xur';
@@ -85,6 +85,10 @@ const VENDOR_COMPONENTS = [
   componentKiosks
 ];
 
+let DEBUG_STORE = {
+  profiles: []
+};
+
 export function get(url, opts) {
   return fetch(url, opts).then(res => res.json());
 }
@@ -160,6 +164,19 @@ export function getDestiny(_pathname, opts = {}, postBody) {
             cleanedUrl
         );
 
+        if (resp.ErrorStatus === 'DestinyCharacterNotFound') {
+          // TODO: remove this sometime later
+          const debugId = ls.getDebugId();
+          saveDebugInfo(
+            {
+              debugData: JSON.stringify(DEBUG_STORE),
+              resp: JSON.stringify(resp),
+              debugId
+            },
+            'DestinyCharacterNotFound'
+          );
+        }
+
         trackError(err);
 
         throw err;
@@ -210,6 +227,8 @@ export function getExtendedProfile(ship) {
     .then(_profile => {
       profile = _profile;
 
+      DEBUG_STORE.profiles.push(profile);
+
       if (!profile) {
         log('Empty profile, ignoring', { ship });
         return null;
@@ -244,6 +263,7 @@ export function getCurrentProfiles() {
   return getDestiny('/Platform/User/GetMembershipsForCurrentUser/')
     .then(body => {
       bungieNetUser = body.bungieNetUser;
+      DEBUG_STORE.membershipsForCurrentUser = body;
 
       setUser(bungieNetUser);
 
