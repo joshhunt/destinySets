@@ -7,6 +7,7 @@ import logo from 'app/logo.svg';
 import { DONATION_LINK } from 'app/components/DonateButton';
 import Icon from 'app/components/Icon';
 import GoogleAuthButton from 'app/components/GoogleAuthButton';
+import DonateButton from 'app/components/DonateButton';
 import ProfileDropdown from './ProfileDropdown';
 import LanguageDropdown from './LanguageDropdown';
 
@@ -55,6 +56,22 @@ const SiteLinks = () => (
   </Fragment>
 );
 
+const SocialLinks = () => (
+  <Fragment>
+    {SOCIALS.map(({ name, to }) => (
+      <a
+        key={to}
+        className={styles.socialLink}
+        href={to}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <Icon icon={name} brand />
+      </a>
+    ))}
+  </Fragment>
+);
+
 function Sidebar({
   language,
   setLanguage,
@@ -84,7 +101,16 @@ function Sidebar({
           />
         )}
         <br />
+
         {displayGoogleAuthButton && <GoogleAuthButton onClick={googleSignIn} />}
+
+        <div className={styles.sidebarExtra}>
+          <DonateButton />
+
+          <div>
+            <SocialLinks />
+          </div>
+        </div>
       </div>
     </div>
   );
@@ -190,17 +216,7 @@ export default class Header extends Component {
               />
             )}
 
-            {SOCIALS.map(({ name, to }) => (
-              <a
-                key={to}
-                className={styles.socialLink}
-                href={to}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Icon icon={name} brand />
-              </a>
-            ))}
+            <SocialLinks />
           </div>
         </div>
       </div>
