@@ -342,6 +342,15 @@ module.exports = [
               3541326820, // Kay's Command
               3541326823 // Trostland Terminus
             ]
+          },
+          {
+            name: 'Emblem Variants',
+            items: [
+              2664485240, // Shadow of the Shard
+              2664485241, // Red Legion Stronghold
+              2664485242, // Devrim's Perch
+              2664485243 // Humanity's Cradle
+            ]
           }
         ]
       },
@@ -385,6 +394,15 @@ module.exports = [
               31953747, // Ballet Lover
               31953744, // Holy Ground
               31953746 // Traveler's Flight
+            ]
+          },
+          {
+            name: 'Emblem Variants',
+            items: [
+              313685908, // Taken Resurgence
+              313685909, // Ignition Unsparked
+              313685910, // Traveler's Departure
+              313685911 // Asher's Asylum
             ]
           }
         ]
@@ -436,6 +454,15 @@ module.exports = [
               3785035696, // New Pacific Access
               3785035697 // Solarium Yellow
             ]
+          },
+          {
+            name: 'Emblem Variants',
+            items: [
+              594640136, // Hive Infestation
+              594640137, // Golden Age Tarnished
+              594640138, // Utopia Lost
+              594640139 // Sloane's Watchtower
+            ]
           }
         ]
       },
@@ -481,6 +508,15 @@ module.exports = [
               2484637938, // Exodus Access
               2484637936, // Jacobson's Staff
               2484637939 // Tangled Anchor
+            ]
+          },
+          {
+            name: 'Emblem Variants',
+            items: [
+              776878384, // Fallen Pillage
+              776878385, // Leviathan's Feast
+              776878386, // Machine Centaur
+              776878387 // Failsafe's Prison
             ]
           }
         ]
