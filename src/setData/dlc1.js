@@ -92,7 +92,8 @@ module.exports = [
             name: 'Extras',
             items: [
               113124080, // Contender's Shell (Ghost)
-              4261480751 // Emperor's Envy (Emblem)
+              4261480751, // Emperor's Envy (Emblem)
+              4242407217 // Calus's Elite (Shader)
             ]
           }
         ]
@@ -149,7 +150,8 @@ module.exports = [
               3681086673, // Iron Companionship Shell (Ghost shell)
               1220495181, // Iron Gallop (Sparrow)
               2924982629, // Iron Pendragon (Ship)
-              2919429251 // Iron Hero Sigil (Emblem)
+              2919429251, // Iron Hero Sigil (Emblem)
+              3784292658 // Ironwood (Shader)
             ]
           }
         ]
@@ -228,6 +230,12 @@ module.exports = [
               3026479209, // Trials Prestige Legs Ornament
               2394332958 // Trials Prestige Class Ornament
             ]
+          },
+          {
+            name: 'Extras',
+            items: [
+              3327512302 // Benevolence of the Nine (Shader)
+            ]
           }
         ]
       }
@@ -288,7 +296,8 @@ module.exports = [
               3681086672, // Deep Space Shell (Ghost)
               2924982628, // Distant Pulsar (Ship)
               1220495180, // Pale Horse (Sparrow)
-              745759694 // Escape This Dead Orbit (CoO Emblem)
+              745759694, // Escape This Dead Orbit (CoO Emblem)
+              1106615806 // Dead Orbit Resurrection (Shader)
             ]
           }
         ]
@@ -345,7 +354,8 @@ module.exports = [
               3681086674, // Leonine Shell (Ghost)
               2924982630, // Leonine Carrack (Ship)
               1220495182, // Leonine Courser (Sparrow)
-              745759692 // Sigil of the New Monarch (CoO Emblem)
+              745759692, // Sigil of the New Monarch (CoO Emblem)
+              3366113619 // New Monarchy Succession (Shader)
             ]
           }
         ]
@@ -402,7 +412,8 @@ module.exports = [
               3681086675, // Wars to Come Shell (Ghost)
               2924982631, // Bonegrip (Ship)
               1220495183, // Truth Scraper (Sparrow)
-              745759695 // Future War Cultist (CoO Emblem)
+              745759695, // Future War Cultist (CoO Emblem)
+              730976676 // War Cult Endgame (Shader)
             ]
           }
         ]
@@ -487,6 +498,15 @@ module.exports = [
               2939572585, // Vex Destroyer (Emblem)
               2939572590 // Vex Scholar (Emblem)
             ]
+          },
+          {
+            name: 'Shaders',
+            items: [
+              3042066428, // Kairos Black (Shader)
+              3042066430, // Kairos Gold (Shader)
+              3042066431, // Kairos Bronze (Shader)
+              3853609171 // Mercury Prophetic (Shader)
+            ]
           }
         ]
       },
@@ -542,6 +562,12 @@ module.exports = [
               2939572588, // Master Gardener
               2939572591 // Master Cartographer
             ]
+          },
+          {
+            name: 'Shaders',
+            items: [
+              822835819 // Vanguard Discipline
+            ]
           }
         ]
       },
@@ -589,6 +615,12 @@ module.exports = [
               2521913126, // Ankaa Friend Ornament
               3980640404, // Ankaa Friend Ornament
               36130859 // Ankaa Friend Ornament
+            ]
+          },
+          {
+            name: 'Shaders',
+            items: [
+              87646118 // Endless Glory
             ]
           }
         ]
@@ -736,6 +768,15 @@ module.exports = [
             name: 'Emblems',
             items: [
               3639894194 // Light of the Dawning
+            ]
+          },
+          {
+            name: 'Shaders',
+            items: [
+              3800267415, // Dawning Hope
+              3800267413, // Dawning Festiveness
+              3866715933, // Dawning Warmth
+              3800267414 // Dawning Brilliance
             ]
           }
         ]
@@ -951,6 +992,16 @@ module.exports = [
               3588486148, // Machina Macro
               3588486151, // Frago Junium
               3588486150 // Vox Imperative
+            ]
+          },
+          {
+            name: 'Shaders',
+            items: [
+              2395477994, // Mettalic Sunrise
+              2395477996, // Precursor Vex Chrome
+              2395477997, // Desert of Gold
+              2395477998, // Descendant Vex Chrome
+              2395477999 // Mercury Vex Chrome
             ]
           }
         ]
