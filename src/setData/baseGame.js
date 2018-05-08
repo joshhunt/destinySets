@@ -54,6 +54,13 @@ module.exports = [
               1625974211, // Two Enter, One Leaves
               812824526 // Take the Throne
             ]
+          },
+          {
+            name: 'Shaders',
+            items: [
+              1422712818, // Calus's Selected
+              1422712819 // Calus's Treasured
+            ]
           }
         ]
       },
@@ -111,6 +118,13 @@ module.exports = [
               3373303016, // Felwinter Frost
               3373303017 // Shades of Radegast
             ]
+          },
+          {
+            name: 'Shaders',
+            items: [
+              864505614, // Iron Wolf
+              864505615 // Iron Battalion
+            ]
           }
         ]
       },
@@ -163,6 +177,13 @@ module.exports = [
               19962737, // Chasing Perfection
               2029506313 // You Are Worthy
             ]
+          },
+          {
+            name: 'Shaders',
+            items: [
+              16277432, // Honors of the Nine
+              16277433 // Gift of the Nine
+            ]
           }
         ]
       }
@@ -210,6 +231,13 @@ module.exports = [
             items: [
               802191383 // Total Eclipse
             ]
+          },
+          {
+            name: 'Shaders',
+            items: [
+              1841451177, // Dead Orbit's Fate
+              1841451179 // Dead Orbit Camo
+            ]
           }
         ]
       },
@@ -251,6 +279,13 @@ module.exports = [
             items: [
               802191381 // Regency
             ]
+          },
+          {
+            name: 'Shaders',
+            items: [
+              1206746476, // New Monarchy Diamonds
+              1206746478 // New Monarchy Regalia
+            ]
           }
         ]
       },
@@ -291,6 +326,13 @@ module.exports = [
             name: 'Emblems',
             items: [
               802191382 // Battle Colors
+            ]
+          },
+          {
+            name: 'Shaders',
+            items: [
+              1045633725, // War Cult Rain
+              1045633727 // War Cult Camo
             ]
           }
         ]
@@ -346,6 +388,13 @@ module.exports = [
               3541326820, // Kay's Command
               3541326823 // Trostland Terminus
             ]
+          },
+          {
+            name: 'Shaders',
+            items: [
+              3921006352, // Dead Zone Foliage
+              3921006355 // Dead Zone Bark
+            ]
           }
         ]
       },
@@ -393,6 +442,13 @@ module.exports = [
               31953747, // Ballet Lover
               31953744, // Holy Ground
               31953746 // Traveler's Flight
+            ]
+          },
+          {
+            name: 'Shaders',
+            items: [
+              1489178153, // Echoes of Io
+              1489178154 // Flowers of Io
             ]
           }
         ]
@@ -448,6 +504,13 @@ module.exports = [
               3785035696, // New Pacific Access
               3785035697 // Solarium Yellow
             ]
+          },
+          {
+            name: 'Shaders',
+            items: [
+              1051938196, // New Pacific Sink
+              1051938199 // New Pacific Rush
+            ]
           }
         ]
       },
@@ -497,6 +560,13 @@ module.exports = [
               2484637938, // Exodus Access
               2484637936, // Jacobson's Staff
               2484637939 // Tangled Anchor
+            ]
+          },
+          {
+            name: 'Shaders',
+            items: [
+              3403116793, // Nessus Pursuit
+              3403116794 // Nessus Mirage
             ]
           }
         ]
@@ -549,6 +619,12 @@ module.exports = [
               2010554576, // At the Vanguard
               2010554578, // Make Us Proud
               2010554579 // Push Forward
+            ]
+          },
+          {
+            name: 'Shaders',
+            items: [
+              223308216 // Vanguard Magnus
             ]
           },
           {
@@ -636,6 +712,12 @@ module.exports = [
               4242592193, // One Path to Victory
               969863968 // Victorious Veteran
             ]
+          },
+          {
+            name: 'Shaders',
+            items: [
+              3875413893 // Crucible Glory
+            ]
           }
         ]
       },
@@ -682,6 +764,19 @@ module.exports = [
               3605230074, // Omolon Upgrade
               3605230073, // SUROS Upgrade
               3605230075 // VEIST Upgrade
+            ]
+          },
+          {
+            name: 'Shaders',
+            items: [
+              346878928, // VEIST Fieldscale
+              346878930, // VEIST Poison
+              700322568, // Omolon Meteor
+              700322570, // Omolon Camo
+              2307426896, // SUROS Tone
+              2307426898, // SUROS Modular
+              2737886288, // Häkke History
+              2737886290, // Häkke Camo
             ]
           }
         ]
@@ -1076,7 +1171,31 @@ module.exports = [
               904825088 // Dead-End Pro
             ]
           },
-          
+          {
+            name: 'Shaders',
+            items: [
+              1284563760, // Häkke History Polish
+              1284563761, // SUROS Modular Shine
+              1284563762, // Omolon Meteor Gloss
+              1284563763, // VEIST Poison Shimmer
+              1284563764, // Noble Constant Red
+              1284563765, // Vanguard Magnus Gloss
+              1284563766, // Frumious Blue
+              1284563767, // Midnight Talons
+              1284563774, // Tarnished Copper
+              1284563775, // Xenosilver
+              3205869472, // Golden Trace
+              3205869473, // Monochromatic
+              3205869474, // Cerulean Divide
+              3205869475, // Nebula Rose
+              3205869476, // Metro Shift
+              3205869477, // Dawn and Dusk
+              3205869478, // Arctic Pearl
+              3205869479, // Watermelon
+              3205869484, // Indigo Matrix
+              3205869485 // Bumblebee
+            ]
+          }
         ]
       }
     ]
