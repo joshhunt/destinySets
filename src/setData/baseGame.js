@@ -338,6 +338,10 @@ module.exports = [
             name: 'Emblems',
             items: [
               1321546045, // European Dead Zone
+              2664485240, // Shadow of the Shard
+              2664485241, // Red Legion Stronghold
+              2664485242, // Devrim's Perch
+              2664485243, // Humanity's Cradle
               3541326821, // Dead Zone Camo
               3541326820, // Kay's Command
               3541326823 // Trostland Terminus
@@ -382,6 +386,10 @@ module.exports = [
             name: 'Emblems',
             items: [
               3451625162, // Echo Mesa
+              313685908, // Taken Resurgence
+              313685909, // Ignition Unsparked
+              313685910, // Traveler's Departure
+              313685911, // Asher's Asylum
               31953747, // Ballet Lover
               31953744, // Holy Ground
               31953746 // Traveler's Flight
@@ -432,6 +440,10 @@ module.exports = [
             name: 'Emblems',
             items: [
               426147374, // New Pacific Arcology
+              594640136, // Hive Infestation
+              594640137, // Golden Age Tarnished
+              594640138, // Utopia Lost
+              594640139, // Sloane's Watchtower
               3785035698, // Cargo Bay Cross
               3785035696, // New Pacific Access
               3785035697 // Solarium Yellow
@@ -478,6 +490,10 @@ module.exports = [
             name: 'Emblems',
             items: [
               1599898966, // Arcadian Valley
+              776878384, // Fallen Pillage
+              776878385, // Leviathan's Feast
+              776878386, // Machine Centaur
+              776878387, // Failsafe's Prison
               2484637938, // Exodus Access
               2484637936, // Jacobson's Staff
               2484637939 // Tangled Anchor
