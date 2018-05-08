@@ -54,12 +54,14 @@ export default class Item extends Component {
   };
 
   render() {
-    const { className, item, dev, small, tiny } = this.props;
+    const { className, item, dev, small, tiny, linkToData } = this.props;
 
-    const dtrLink = `http://db.destinytracker.com/d2/en/items/${item.hash}`;
+    const itemLink = linkToData
+      ? `/data/${item.hash}`
+      : `http://db.destinytracker.com/d2/en/items/${item.hash}`;
 
     const dtrProps = {
-      href: dtrLink,
+      href: itemLink,
       target: '_blank',
       'data-dtr-tooltip': 'no-show'
     };

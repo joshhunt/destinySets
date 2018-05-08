@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router';
 
 import {
   setProfiles,
@@ -287,6 +288,21 @@ class Inventory extends Component {
             Connect your Bungie.net acccount to automatically track items you've
             collected and dismantled.
           </LoginUpsell>
+        )}
+
+        {this.props.route.showWarmindBanner && (
+          <div className={styles.info}>
+            Looking for new Warmind drops? While a{' '}
+            <Link to="/warmind" className={styles.secretLink}>
+              dedicated Warmind page
+            </Link>{' '}
+            is coming, you can see all the new items for Season 3 and Warmind
+            DLC on the{' '}
+            <Link to="/all-items" className={styles.link}>
+              All Items
+            </Link>{' '}
+            page.
+          </div>
         )}
 
         {filteredSetData.map(({ sets, slug, name }, index) => (

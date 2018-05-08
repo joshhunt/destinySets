@@ -29,7 +29,12 @@ export default class AppRouter extends Component {
             setData={sets.allSeasons}
           />
 
-          <Route path="/" component={Inventory} setData={sets.baseGame} />
+          <Route
+            path="/"
+            component={Inventory}
+            setData={sets.baseGame}
+            showWarmindBanner
+          />
 
           <Route
             path="/curse-of-osiris"

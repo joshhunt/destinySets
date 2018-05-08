@@ -18,3 +18,25 @@ mobile()
     display: flex
     flex-direction: column
     align-items: center
+
+
+.info
+  background: #B8B9BA
+  padding: 8px 15px
+  border-radius: 2px
+  color: #090B0F
+  margin-bottom: 50px
+
+
+.link
+  color: black !important
+
+.secretLink
+  composes: link
+  text-decoration: none
+  animation: pulse 2s infinite alternate both;
+
+@keyframes pulse {
+  from { opacity: .7 }
+  to { opacity: 1 }
+}
