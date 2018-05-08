@@ -11,9 +11,14 @@ import {
   setObjectiveDefs,
   setStatDefs,
   toggleFilterKey,
+  setXurData,
   removeTrackedItem
 } from 'app/store/reducer';
-import { inventorySelector } from 'app/store/selectors';
+import {
+  inventorySelector,
+  xurHasNewItemsSelector,
+  xurItemsSelector
+} from 'app/store/selectors';
 
 import googleAuth, {
   signIn as googleSignIn,
@@ -191,18 +196,17 @@ class Inventory extends Component {
       setVendorDefs,
       setStatDefs,
       setItemDefs,
-      setObjectiveDefs
+      setObjectiveDefs,
+      setXurData
     } = this.props;
 
+    destiny.xur().then(setXurData);
     getDefinition('DestinyVendorDefinition', lang).then(setVendorDefs);
     getDefinition('DestinyStatDefinition', lang).then(setStatDefs);
     getDefinition('DestinyObjectiveDefinition', lang).then(setObjectiveDefs);
 
-    this.itemDefsPromise = getDefinition(
-      'reducedCollectableInventoryItems',
-      lang,
-      false
-    );
+    const items = 'reducedCollectableInventoryItems';
+    this.itemDefsPromise = getDefinition(items, lang, false);
     this.itemDefsPromise.then(setItemDefs);
   }
 
@@ -248,7 +252,9 @@ class Inventory extends Component {
       language,
       isCached,
       isAuthenticated,
-      trackedItems
+      trackedItems,
+      xur,
+      xurHasNewItems
     } = this.props;
 
     const {
@@ -271,6 +277,8 @@ class Inventory extends Component {
           googleSignIn={googleSignIn}
           googleSignOut={this.googleSignOut}
           googleAuthSignedIn={googleAuthSignedIn}
+          xurHasNewItems={xurHasNewItems}
+          displayXur={!!xur.items}
           displayGoogleAuthButton={
             googleAuthLoaded && isAuthenticated && !googleAuthSignedIn
           }
@@ -343,7 +351,10 @@ const mapStateToProps = (state, ownProps) => {
     // TODO: this uses props, so we need to 'make' a selector like in ItemSet
     filteredSetData: filteredSetDataSelector(state, ownProps),
     inventory: inventorySelector(state),
-    haveCloudInventory: !!state.app.cloudInventory
+    haveCloudInventory: !!state.app.cloudInventory,
+    xurHasNewItems: xurHasNewItemsSelector(state),
+    xurItems: xurItemsSelector(state),
+    xur: state.app.xur
   };
 };
 
@@ -357,7 +368,8 @@ const mapDispatchToActions = {
   setStatDefs,
   toggleFilterKey,
   setLanguage,
-  removeTrackedItem
+  removeTrackedItem,
+  setXurData
 };
 
 export default DestinyAuthProvider(

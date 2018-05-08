@@ -4,6 +4,7 @@ import { Link } from 'react-router';
 import cx from 'classnames';
 
 import logo from 'app/logo.svg';
+import xur from 'app/assets/xur_icon.png';
 import { DONATION_LINK } from 'app/components/DonateButton';
 import Icon from 'app/components/Icon';
 import GoogleAuthButton from 'app/components/GoogleAuthButton';
@@ -43,6 +44,7 @@ const SiteName = () => (
 const SiteLinks = () => (
   <Fragment>
     <div className={styles.dummyLink} />
+
     {LINKS.map(({ name, to }) => (
       <Link
         key={to}
@@ -161,7 +163,9 @@ export default class Header extends Component {
       googleAuthSignedIn,
       displayGoogleAuthButton,
       googleSignIn,
-      googleSignOut
+      googleSignOut,
+      displayXur,
+      xurHasNewItems
     } = this.props;
 
     const { isOverflowing, sidebarActive } = this.state;
@@ -190,6 +194,19 @@ export default class Header extends Component {
 
           <div className={styles.links} ref={this.setLinksRef}>
             <SiteLinks />
+
+            {displayXur && (
+              <a
+                href="#"
+                className={cx(
+                  styles.xurLink,
+                  xurHasNewItems && styles.xurLinkNewItems
+                )}
+              >
+                <img className={styles.xurIcon} src={xur} alt="" />
+                Xûr
+              </a>
+            )}
           </div>
 
           <div className={styles.etc}>

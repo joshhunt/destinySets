@@ -25,11 +25,16 @@ function getManifest() {
     manifestPromise = destiny
       .get('https://destiny.plumbing/index.json')
       .catch(() => {
+        console.log('this caught here');
         return db.dataCache.toCollection().primaryKeys();
       })
       .then(data => {
         if (data.id) {
           return data;
+        }
+
+        if (!data[0]) {
+          throw new Error('Unable to getManifest, nothing cached');
         }
 
         // TODO: fail appropraitely if no manifest is cached
