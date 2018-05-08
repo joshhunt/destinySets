@@ -485,6 +485,10 @@ module.exports = [
             name: 'Emblems',
             items: [
               1312472209, // Fields of Glass
+              2276139500, // Infinite Possibilities
+              2276139501, // Vex Convergence
+              2276139502, // Vance's Temple
+              2276139503, // Burning Silicon
               2939572589, // Crossroads Emblem
               4261480748 // Transit of Mercury
             ]
