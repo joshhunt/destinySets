@@ -255,20 +255,34 @@ module.exports = [
           'Weapons and armor obtained by carrying out special operations for Zavala.',
         sections: [
           {
-            name: 'Weapons',
-            items: []
+            name: 'Hunter armor',
+            items: [
+              301260156, // Steadfast Hunter Ornament
+              1697714165, // Steadfast Hunter Ornament
+              2933221739, // Steadfast Hunter Ornament
+              3273836247, // Steadfast Hunter Ornament
+              1672921858 // Steadfast Hunter Ornament
+            ]
           },
           {
-            name: 'Hunter Ornaments',
-            items: []
+            name: 'Titan armor',
+            items: [
+              2170065560, // Steadfast Titan Ornament
+              2633869161, // Steadfast Titan Ornament
+              2942643951, // Steadfast Titan Ornament
+              2925811003, // Steadfast Titan Ornament
+              4189802622 // Steadfast Titan Ornament
+            ]
           },
           {
-            name: 'Titan Ornaments',
-            items: []
-          },
-          {
-            name: 'Warlock Ornaments',
-            items: []
+            name: 'Warlock armor',
+            items: [
+              4075989867, // Steadfast Warlock Ornament
+              2398247002, // Steadfast Warlock Ornament
+              547716782, // Steadfast Warlock Ornament
+              3654718868, // Steadfast Warlock Ornament
+              865811319 // Steadfast Warlock Ornament
+            ]
           }
         ]
       },
@@ -278,21 +292,34 @@ module.exports = [
         description: 'Rewards for your efforts in the Crucible.',
         sections: [
           {
-            name: 'Weapons',
-            items: []
-          },
-
-          {
-            name: 'Hunter Ornaments',
-            items: []
-          },
-          {
-            name: 'Titan Ornaments',
-            items: []
+            name: 'Hunter armor',
+            items: [
+              738275137, // Fire-Forged Hunter Head Ornament
+              1576194648, // Fire-Forged Hunter Arms Ornament
+              1058022768, // Fire-Forged Hunter Chest Ornament
+              3906326418, // Fire-Forged Hunter Leg Ornament
+              4238568621 // Fire-Forged Hunter Cloak Ornament
+            ]
           },
           {
-            name: 'Warlock Ornaments',
-            items: []
+            name: 'Titan armor',
+            items: [
+              1217364045, // Fire-Forged Titan Head Ornament
+              1870029884, // Fire-Forged Titan Arm Ornament
+              1131512228, // Fire-Forged Titan Chest Ornament
+              1255838534, // Fire-Forged Titan Leg Ornament
+              1875342329 // Fire-Forged Titan Mark Ornament
+            ]
+          },
+          {
+            name: 'Warlock armor',
+            items: [
+              3999699118, // Fire-Forged Warlock Head Ornament
+              730038303, // Fire-Forged Warlock Arm Ornament
+              699889753, // Fire-Forged Warlock Chest Ornament
+              3946152673, // Fire-Forged Warlock Leg Ornament
+              2438616340 // Fire-Forged Warlock Bond Ornament
+            ]
           }
         ]
       },
