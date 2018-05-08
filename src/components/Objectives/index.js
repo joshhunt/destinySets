@@ -42,7 +42,10 @@ export default function Objectives(props) {
     <div className={cx(className, trackedStatStyle && styles.trackedStat)}>
       {objectives.map(objectiveHash => {
         const objective = profileObjectives[objectiveHash] || { progress: 0 };
-        const def = objectiveDefs[objectiveHash];
+        const def = objectiveDefs[objectiveHash] || {
+          completionValue: 0,
+          progressDescription: 'Unknown'
+        }; // TODO: Better solution here for missing objective defs
 
         return (
           <div className={styles.objective} key={objectiveHash}>
