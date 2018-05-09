@@ -292,16 +292,22 @@ class Inventory extends Component {
 
         {this.props.route.showWarmindBanner && (
           <div className={styles.info}>
-            Looking for new Warmind drops? While a{' '}
-            <Link to="/warmind" className={styles.secretLink}>
-              dedicated Warmind page
-            </Link>{' '}
-            is coming, you can see all the new items for Season 3 and Warmind
-            DLC on the{' '}
-            <Link to="/all-items" className={styles.link}>
-              All Items
-            </Link>{' '}
-            page.
+            Warmind and Season 3 sets are still a work in progress. To
+            contibute, check out{' '}
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://github.com/joshhunt/destinySets"
+            >
+              Github
+            </a>, or send them directly on{' '}
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://twitter.com/joshhunt"
+            >
+              Twitter
+            </a>.
           </div>
         )}
 
