@@ -22,6 +22,7 @@ const LINKS = [
   link('Base', '/'),
   link('All Seasons', '/all-seasons'),
   link('Curse of Osiris', '/curse-of-osiris'),
+  link('Warmind', '/warmind'),
   link('Strikes', '/strike-gear'),
   link('All Items', '/all-items'),
   link('Data Explorer', '/data')

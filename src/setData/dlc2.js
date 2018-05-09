@@ -47,7 +47,10 @@ module.exports = [
         sections: [
           {
             name: 'Weapons',
-            items: []
+            items: [
+              2084611899, // Last of the Legion
+              4288031461 // The Emperor's Envy
+            ]
           },
 
           {
@@ -64,37 +67,14 @@ module.exports = [
           },
           {
             name: 'Extras',
-            items: []
+            items: [
+              1057119308, // Spire Star emblem
+              2543722797 // Calus's Shadow shader
+            ]
           }
         ]
       },
-      {
-        name: 'Iron Banner',
-        description:
-          'Weapons and armor obtained by honoring the heroes of old in the Iron Banner Crucible tournament.',
-        sections: [
-          {
-            name: 'Weapons',
-            items: []
-          },
-          {
-            name: 'Hunter Armor',
-            items: []
-          },
-          {
-            name: 'Titan Armor',
-            items: []
-          },
-          {
-            name: 'Warlock Armor',
-            items: []
-          },
-          {
-            name: 'Extras',
-            items: []
-          }
-        ]
-      },
+
       {
         name: 'Trials of the Nine',
         description:
@@ -102,7 +82,11 @@ module.exports = [
         sections: [
           {
             name: 'Weapons',
-            items: []
+            items: [
+              3950088638, // Motion to Suppress
+              3425561386, // Motion to Compel
+              1018777295 // Motion to Vacate
+            ]
           },
           {
             name: 'Hunter Ornaments',
@@ -127,95 +111,12 @@ module.exports = [
           {
             name: 'Warlock Flawless Ornaments',
             items: []
-          }
-        ]
-      }
-    ]
-  },
-  {
-    name: 'Factions',
-    sets: [
-      {
-        name: 'Dead Orbit Arsenal',
-        description:
-          'Weapons and armor obtained by working with Dead Orbit in their mission to push beyond the solar system.',
-        small: true,
-        sections: [
-          {
-            name: 'Weapons',
-            items: []
-          },
-          {
-            name: 'Hunter Ornaments',
-            items: []
-          },
-          {
-            name: 'Titan Ornaments',
-            items: []
-          },
-          {
-            name: 'Warlock Ornaments',
-            items: []
           },
           {
             name: 'Extras',
-            items: []
-          }
-        ]
-      },
-      {
-        name: 'New Monarchy Arsenal',
-        description:
-          'Weapons and armor obtained by working with New Monarchy to strengthen the Last City.',
-        small: true,
-        sections: [
-          {
-            name: 'Weapons',
-            items: []
-          },
-          {
-            name: 'Hunter Ornaments',
-            items: []
-          },
-          {
-            name: 'Titan Ornaments',
-            items: []
-          },
-          {
-            name: 'Warlock Ornaments',
-            items: []
-          },
-          {
-            name: 'Extras',
-            items: []
-          }
-        ]
-      },
-      {
-        name: 'Future War Cult Arsenal',
-        description:
-          'Weapons and armor obtained by working with Future War Cult to prepare for the wars to come.',
-        small: true,
-        sections: [
-          {
-            name: 'Weapons',
-            items: []
-          },
-          {
-            name: 'Hunter Ornaments',
-            items: []
-          },
-          {
-            name: 'Titan Ornaments',
-            items: []
-          },
-          {
-            name: 'Warlock Ornaments',
-            items: []
-          },
-          {
-            name: 'Extras',
-            items: []
+            items: [
+              3682795607 // Cognition of the Nine shader
+            ]
           }
         ]
       }
@@ -225,9 +126,8 @@ module.exports = [
     name: 'Vendor',
     sets: [
       {
-        name: 'Mars Gear',
-        description:
-          'Gear obtained by performing tasks for Ana Bray on Mars.',
+        name: 'Hellas Basin, Mars Gear',
+        description: 'Gear obtained by performing tasks for Ana Bray on Mars.',
         small: false,
         sections: [
           {
@@ -236,7 +136,7 @@ module.exports = [
               618554398, // Proelium FR3
               1159252500, // Vacuna SR4
               2433826056, // The Quickstep
-              276918162, // Hagakure
+              276918162 // Hagakure
             ]
           },
           {
@@ -274,8 +174,8 @@ module.exports = [
             items: [
               3866356643, // IKELOS_HC_v1.0.1
               1723472487, // IKELOS_SMG_v1.0.1
-              1887808042, // IKELOS_SG_v1.0.1 
-              847450546, // IKELOS_SR_v1.0.1
+              1887808042, // IKELOS_SG_v1.0.1
+              847450546 // IKELOS_SR_v1.0.1
             ]
           },
           {
@@ -293,9 +193,9 @@ module.exports = [
           {
             name: 'Shaders',
             items: [
-              235397502, // Arctic Dreamscape
+              235397502 // Arctic Dreamscape
             ]
-          },
+          }
         ]
       },
 
@@ -309,8 +209,8 @@ module.exports = [
             items: [
               819358961, // Spoiler Alert
               1720373217, // The Permanent Truth
-              1940885628, // Archimedes Truth 
-              2171006181, // Service Revolver
+              1940885628, // Archimedes Truth
+              2171006181 // Service Revolver
             ]
           },
           {
@@ -353,8 +253,8 @@ module.exports = [
             name: 'Extras',
             items: [
               1887457789, // Ambrite Complex Shell
-              123555424, // S-99 Bogtreader Steel 
-              806017499, // Zavala's Authority
+              123555424, // S-99 Bogtreader Steel
+              806017499 // Zavala's Authority
             ]
           }
         ]
@@ -364,6 +264,25 @@ module.exports = [
         name: 'Crucible Engram',
         description: 'Rewards for your efforts in the Crucible.',
         sections: [
+          {
+            name: 'Valor Rewards',
+            items: [
+              3529780349, // The Marine
+              1642781471, // Alchemical Dawn Shell
+              2525626415 // True Valor (Season 3)
+            ]
+          },
+          {
+            name: 'Glory Rewards',
+            items: [
+              2611861926, // Imminent Storm
+              4041111172, // The Button
+              191996029, // Redrix's Claymore
+              3190698551, // Wishbringer
+              2516883975, // Glory and Grandeur
+              2182330181 // True Glory (Season 3)
+            ]
+          },
           {
             name: 'Hunter Ornaments',
             items: [
@@ -394,31 +313,13 @@ module.exports = [
               2438616340 // Fire-Forged Warlock Bond Ornament
             ]
           },
-          {
-            name: 'Valor Rewards',
-            items: [
-              3529780349, // The Marine
-              1642781471, // Alchemical Dawn Shell
-              2525626415 // True Valor (Season 3)
-            ]
-          },
-          {
-            name: 'Glory Rewards',
-            items: [
-              2611861926, // Imminent Storm
-              4041111172, // The Button
-              191996029, // Redrix's Claymore
-              3190698551, // Wishbringer
-              2516883975, // Glory and Grandeur
-              2182330181 // True Glory (Season 3) 
-            ]
-          },
+
           {
             name: 'Shaders',
             items: [
               2361935691 // Crucible Triumph
             ]
-          },
+          }
         ]
       },
 

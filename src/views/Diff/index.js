@@ -53,7 +53,9 @@ export default class Diff extends Component {
         newItemsByType: [
           type('Weapons', fancySearch('is:weapon', { item: newItems })),
           type('Armor', fancySearch('is:armor', { item: newItems })),
-          type('Ornaments', fancySearch('is:ornament', { item: newItems }))
+          type('Ornaments', fancySearch('is:ornament', { item: newItems })),
+          type('Emblems', fancySearch('is:emblem', { item: newItems })),
+          type('Shaders', fancySearch('is:shader', { item: newItems }))
         ]
       });
     } else {
