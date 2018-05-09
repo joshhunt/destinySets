@@ -8,7 +8,7 @@ module.exports = [
           'Ornaments and collectables obtained by completing challenges in The Leviathan',
         sections: [
           {
-            name: 'Hunter armor',
+            name: 'Hunter Ornaments',
             items: [
               215292674, // Praetorian Ornament
               3849801323, // Praetorian Ornament
@@ -18,7 +18,7 @@ module.exports = [
             ]
           },
           {
-            name: 'Titan armor',
+            name: 'Titan Ornaments',
             items: [
               3188290238, // Praetorian Ornament
               2458159855, // Praetorian Ornament
@@ -28,7 +28,7 @@ module.exports = [
             ]
           },
           {
-            name: 'Warlock armor',
+            name: 'Warlock Ornaments',
             items: [
               3909176373, // Praetorian Ornament
               2543545988, // Praetorian Ornament
@@ -255,7 +255,16 @@ module.exports = [
           'Weapons and armor obtained by carrying out special operations for Zavala.',
         sections: [
           {
-            name: 'Hunter armor',
+            name: 'Weapons',
+            items: [
+              819358961, // Spoiler Alert
+              1720373217, // The Permanent Truth
+              1940885628, // Archimedes Truth 
+              2171006181, // Service Revolver
+            ]
+          },
+          {
+            name: 'Hunter Ornaments',
             items: [
               301260156, // Steadfast Hunter Ornament
               1697714165, // Steadfast Hunter Ornament
@@ -265,7 +274,7 @@ module.exports = [
             ]
           },
           {
-            name: 'Titan armor',
+            name: 'Titan Ornaments',
             items: [
               2170065560, // Steadfast Titan Ornament
               2633869161, // Steadfast Titan Ornament
@@ -275,13 +284,27 @@ module.exports = [
             ]
           },
           {
-            name: 'Warlock armor',
+            name: 'Warlock Ornaments',
             items: [
               4075989867, // Steadfast Warlock Ornament
               2398247002, // Steadfast Warlock Ornament
               547716782, // Steadfast Warlock Ornament
               3654718868, // Steadfast Warlock Ornament
               865811319 // Steadfast Warlock Ornament
+            ]
+          },
+          {
+            name: 'Shaders',
+            items: [
+              1400453406 // Vanguard Unity
+            ]
+          },
+          {
+            name: 'Extras',
+            items: [
+              1887457789, // Ambrite Complex Shell
+              123555424, // S-99 Bogtreader Steel 
+              806017499, // Zavala's Authority
             ]
           }
         ]
@@ -292,7 +315,7 @@ module.exports = [
         description: 'Rewards for your efforts in the Crucible.',
         sections: [
           {
-            name: 'Hunter armor',
+            name: 'Hunter Ornaments',
             items: [
               738275137, // Fire-Forged Hunter Head Ornament
               1576194648, // Fire-Forged Hunter Arms Ornament
@@ -302,7 +325,7 @@ module.exports = [
             ]
           },
           {
-            name: 'Titan armor',
+            name: 'Titan Ornaments',
             items: [
               1217364045, // Fire-Forged Titan Head Ornament
               1870029884, // Fire-Forged Titan Arm Ornament
@@ -312,7 +335,7 @@ module.exports = [
             ]
           },
           {
-            name: 'Warlock armor',
+            name: 'Warlock Ornaments',
             items: [
               3999699118, // Fire-Forged Warlock Head Ornament
               730038303, // Fire-Forged Warlock Arm Ornament
@@ -320,7 +343,32 @@ module.exports = [
               3946152673, // Fire-Forged Warlock Leg Ornament
               2438616340 // Fire-Forged Warlock Bond Ornament
             ]
-          }
+          },
+          {
+            name: 'Valor Rewards',
+            items: [
+              3529780349, // The Marine
+              1642781471, // Alchemical Dawn Shell
+              2525626415 // True Valor (Season 3)
+            ]
+          },
+          {
+            name: 'Glory Rewards',
+            items: [
+              2611861926, // Imminent Storm
+              4041111172, // The Button
+              191996029, // Redrix's Claymore
+              3190698551, // Wishbringer
+              2516883975, // Glory and Grandeur
+              2182330181 // True Glory (Season 3) 
+            ]
+          },
+          {
+            name: 'Shaders',
+            items: [
+              2361935691 // Crucible Triumph
+            ]
+          },
         ]
       },
 
