@@ -225,27 +225,77 @@ module.exports = [
     name: 'Vendor',
     sets: [
       {
-        name: 'Mercury Gear',
+        name: 'Mars Gear',
         description:
-          'Gear obtained by performing tasks for Brother Vance on Mercury.',
+          'Gear obtained by performing tasks for Ana Bray on Mars.',
         small: false,
         sections: [
           {
             name: 'Weapons',
-            items: []
+            items: [
+              618554398, // Proelium FR3
+              1159252500, // Vacuna SR4
+              2433826056, // The Quickstep
+              276918162, // Hagakure
+            ]
           },
           {
             name: 'Hunter Armor',
-            items: []
+            items: [
+              3792294545, // BrayTech Sn0Mask
+              2408846184, // BrayTech Survival Mitts
+              2656719840, // BrayTech Combat Vest
+              3510185410, // BrayTech Sn0Treads
+              1966755869 // BrayTech Winter Cloak
+            ]
           },
           {
             name: 'Titan Armor',
-            items: []
+            items: [
+              1751069659, // BrayTech Sn0Helm
+              3251824778, // BrayTech Thermal Grips
+              1002301118, // BrayTech Iron-Heart Engine
+              2291036836, // BrayTech Sn0Boots
+              756282439 // BrayTech Absolute Zero Mark
+            ]
           },
           {
             name: 'Warlock Armor',
-            items: []
-          }
+            items: [
+              198099636, // BrayTech Researcher's Hood
+              2899334605, // BrayTech Researcher's Gloves
+              2556748915, // BrayTech Researcher's Robes
+              3570133647, // BrayTech Researcher's Boots
+              467207594 // BrayTech Researcher's Bond
+            ]
+          },
+          {
+            name: 'Ikelos Weapons',
+            items: [
+              3866356643, // IKELOS_HC_v1.0.1
+              1723472487, // IKELOS_SMG_v1.0.1
+              1887808042, // IKELOS_SG_v1.0.1 
+              847450546, // IKELOS_SR_v1.0.1
+            ]
+          },
+          {
+            name: 'Emblems',
+            items: [
+              1210937132, // Hellas Basin
+              842157716, // Cradle of Invention
+              842157717, // Warmind's Fortress
+              842157718, // Relic of the Golden Age
+              842157719, // Wormslayer
+              1291068165, // IKELOS Imperative
+              1291068170 // Cold Comfort
+            ]
+          },
+          {
+            name: 'Shaders',
+            items: [
+              235397502, // Arctic Dreamscape
+            ]
+          },
         ]
       },
 
