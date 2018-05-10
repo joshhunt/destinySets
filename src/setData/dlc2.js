@@ -66,17 +66,11 @@ module.exports = [
             items: []
           },
           {
-            name: 'Emblems',
+            name: 'Extras',
             items: [
               1057119308, // Spire Star emblem
               2331063860, // Grind Underfoot emblem
               2331063861, // Together, For Glory! emblem
-              2543722797 // Calus's Shadow shader
-            ]
-          },
-          {
-            name: 'Shaders',
-            items: [
               2543722797 // Calus's Shadow shader
             ]
           }
@@ -233,7 +227,7 @@ module.exports = [
             ]
           },
           {
-            name: 'Emblems',
+            name: 'Extras',
             items: [
               1210937132, // Hellas Basin
               842157716, // Cradle of Invention
@@ -241,12 +235,7 @@ module.exports = [
               842157718, // Relic of the Golden Age
               842157719, // Wormslayer
               1291068170, // Cold Comfort
-              1291068171 // Data Mine
-            ]
-          },
-          {
-            name: 'Shaders',
-            items: [
+              1291068171, // Data Mine
               235397502 // Arctic Dreamscape
             ]
           }
