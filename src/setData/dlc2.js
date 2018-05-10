@@ -69,6 +69,8 @@ module.exports = [
             name: 'Extras',
             items: [
               1057119308, // Spire Star emblem
+              2331063860, // Grind Underfoot emblem
+              2331063861, // Together, For Glory! emblem
               2543722797 // Calus's Shadow shader
             ]
           }
@@ -116,6 +118,61 @@ module.exports = [
             name: 'Extras',
             items: [
               3682795607 // Cognition of the Nine shader
+            ]
+          }
+        ]
+      },
+      {
+        name: 'Escalation Protocol',
+        description:
+          'Gear obtained by completing Escalation Protocol.',
+        sections: [
+          {
+            name: 'Weapons',
+            items: [
+              3866356643, // IKELOS_HC_v1.0.1
+              1723472487, // IKELOS_SMG_v1.0.1
+              1887808042, // IKELOS_SG_v1.0.1
+              847450546 // IKELOS_SR_v1.0.1
+            ]
+          },
+
+          {
+            name: 'Hunter Armor',
+            items: [
+              3324158902, // Abhorrent Imperative Mask
+              191708423, // Abhorrent Imperative Grasps
+              4138580785, // Abhorrent Imperative Vest
+              3663938889, // Abhorrent Imperative Strides
+              2039043276 // Abhorrent Imperative Cloak 
+            ]
+          },
+          {
+            name: 'Titan Armor',
+            items: [
+              2193087628, // Midnight Exigent Helm
+              1388962117, // Midnight Exigent Gauntlets
+              2462354715, // Midnight Exigent Plate
+              1736188615, // Midnight Exigent Greaves
+              819174194 // Midnight Exigent Mark
+            ]
+          },
+          {
+            name: 'Warlock Armor',
+            items: [
+              1612891919, // Yuga Sundown Helmet
+              3768023958, // Yuga Sundown Gloves
+              4144095450, // Yuga Sundown Robes
+              685439088, // Yuga Sundown Boots
+              3792548907 // Yuga Sundown Bond
+            ]
+          },
+          {
+            name: 'Extras',
+            items: [
+              1291068165, // IKELOS Imperative
+              4052831236, // Activate ESCALATION emblem
+              3286479728 // GENOTYPENULL-ZERO shader
             ]
           }
         ]
@@ -170,29 +227,15 @@ module.exports = [
             ]
           },
           {
-            name: 'Ikelos Weapons',
-            items: [
-              3866356643, // IKELOS_HC_v1.0.1
-              1723472487, // IKELOS_SMG_v1.0.1
-              1887808042, // IKELOS_SG_v1.0.1
-              847450546 // IKELOS_SR_v1.0.1
-            ]
-          },
-          {
-            name: 'Emblems',
+            name: 'Extras',
             items: [
               1210937132, // Hellas Basin
               842157716, // Cradle of Invention
               842157717, // Warmind's Fortress
               842157718, // Relic of the Golden Age
               842157719, // Wormslayer
-              1291068165, // IKELOS Imperative
-              1291068170 // Cold Comfort
-            ]
-          },
-          {
-            name: 'Shaders',
-            items: [
+              1291068170, // Cold Comfort
+              1291068171, // Data Mine
               235397502 // Arctic Dreamscape
             ]
           }
@@ -244,17 +287,12 @@ module.exports = [
             ]
           },
           {
-            name: 'Shaders',
-            items: [
-              1400453406 // Vanguard Unity
-            ]
-          },
-          {
             name: 'Extras',
             items: [
               1887457789, // Ambrite Complex Shell
               123555424, // S-99 Bogtreader Steel
-              806017499 // Zavala's Authority
+              806017499, // Zavala's Authority
+              1400453406 // Vanguard Unity
             ]
           }
         ]
@@ -315,8 +353,10 @@ module.exports = [
           },
 
           {
-            name: 'Shaders',
+            name: 'Extras',
             items: [
+              29194593, // For Valor (Season 3)
+              2890977363, // For Glory (Season 3)
               2361935691 // Crucible Triumph
             ]
           }
@@ -340,7 +380,7 @@ module.exports = [
     name: 'Other',
     sets: [
       {
-        name: 'Eververse, Season 2',
+        name: 'Eververse, Season 3',
         big: true,
         sections: []
       }
