@@ -55,15 +55,33 @@ module.exports = [
 
           {
             name: 'Hunter Armor',
-            items: []
+            items: [
+              3440648382, // Equitis Shade Cowl
+              2710517999, // Equitis Shade Grips
+              2933666377, // Equitis Shade Rig
+              3285121297, // Equitis Shade Boots
+              4247935492 // Equitis Shade Cloak
+            ]
           },
           {
             name: 'Titan Armor',
-            items: []
+            items: [
+              855363300, // Turris Shade Helm
+              802557885, // Turris Shade Gauntlets
+              4135228483, // Turris Shade Plate
+              3168183519, // Turris Shade Greaves
+              3416932282 // Turris Shade Mark
+            ]
           },
           {
             name: 'Warlock Armor',
-            items: []
+            items: [
+              1675393889, // Insigne Shade Cover
+              2513313400, // Insigne Shade Gloves
+              1296628624, // Insigne Shade Robes
+              548581042, // Insigne Shade Boots
+              223783885 // Insigne Shade Bond
+            ]
           },
           {
             name: 'Extras',
