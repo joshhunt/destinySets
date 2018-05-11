@@ -294,8 +294,8 @@ module.exports = [
             name: 'Extras',
             items: [
               3681086672, // Deep Space Shell (Ghost)
-              2924982628, // Distant Pulsar (Ship)
               1220495180, // Pale Horse (Sparrow)
+              2924982628, // Distant Pulsar (Ship)
               745759694, // Escape This Dead Orbit (CoO Emblem)
               1106615806 // Dead Orbit Resurrection (Shader)
             ]
@@ -352,8 +352,8 @@ module.exports = [
             name: 'Extras',
             items: [
               3681086674, // Leonine Shell (Ghost)
-              2924982630, // Leonine Carrack (Ship)
               1220495182, // Leonine Courser (Sparrow)
+              2924982630, // Leonine Carrack (Ship)
               745759692, // Sigil of the New Monarch (CoO Emblem)
               3366113619 // New Monarchy Succession (Shader)
             ]
@@ -410,8 +410,8 @@ module.exports = [
             name: 'Extras',
             items: [
               3681086675, // Wars to Come Shell (Ghost)
-              2924982631, // Bonegrip (Ship)
               1220495183, // Truth Scraper (Sparrow)
+              2924982631, // Bonegrip (Ship)
               745759695, // Future War Cultist (CoO Emblem)
               730976676 // War Cult Endgame (Shader)
             ]
@@ -730,24 +730,6 @@ module.exports = [
             ]
           },
           {
-            name: 'Ships',
-            items: [
-              317465075, // A History of Starlight
-              317465074, // Cerulean Flash
-              3140833552, // Dragonfly Strident
-              3140833555, // Alta Clara
-              3140833553, // Brilliant Narcissus
-              3140833558, // Breath of Stars
-              3140833556, // Winter Blade
-              3177119978, // Carmina Commencing
-              3140833557, // Carmina Commencing
-              3140833559, // Regent Redeemer
-              1602334068, // Regent Redeemer
-              3140833554, // Joyfire
-              3729709035 // Joyfire
-            ]
-          },
-          {
             name: 'Sparrows',
             items: [
               3105953707, // Chill of Winter
@@ -766,6 +748,24 @@ module.exports = [
               3569791559, // Shimmering Iris
               1984190529, // Magikon
               1423305584 // Magikon
+            ]
+          },
+          {
+            name: 'Ships',
+            items: [
+              317465075, // A History of Starlight
+              317465074, // Cerulean Flash
+              3140833552, // Dragonfly Strident
+              3140833555, // Alta Clara
+              3140833553, // Brilliant Narcissus
+              3140833558, // Breath of Stars
+              3140833556, // Winter Blade
+              3177119978, // Carmina Commencing
+              3140833557, // Carmina Commencing
+              3140833559, // Regent Redeemer
+              1602334068, // Regent Redeemer
+              3140833554, // Joyfire
+              3729709035 // Joyfire
             ]
           },
           {
@@ -935,38 +935,6 @@ module.exports = [
             ]
           },
           {
-            name: 'Ships',
-            items: [
-              292872936, // Sails of Osiris
-              292872937, // Saint-14's Gray Pigeon
-              292872938, // Kabr's Glass Aegis
-              292872939, // Asher Mir's One-Way Ticket
-              292872940, // Ikora's Resolve
-              292872941, // The Sundaresh Experiment 13-R
-              530012781, // Star Scion
-              530012780, // Galactic Hum
-              530012783, // Arrowhawk
-              530012782, // Dragonquin
-              530012777, // Nebula Bloom
-              530012776, // Rubente Dextra
-              530012779, // Andromeda Gleaming
-              530012778, // Edge of the Worlds
-              530012773, // Sailing Shield
-              530012772, // Armcoat
-              658724916, // Mainsail Royal
-              658724917, // Bassanio
-              658724918, // Spun Sidhe
-              658724919, // Neverfall
-              658724912, // Antonio
-              658724913, // Runereed
-              658724914, // Wanderlonging
-              658724915, // Infinite Visage
-              658724924, // Hardtop Regent
-              658724925, // Amethystine
-              709057677 // Fantail Regent
-            ]
-          },
-          {
             name: 'Sparrows',
             items: [
               3081894946, // SV-112 Predator
@@ -996,6 +964,38 @@ module.exports = [
               3588486148, // Machina Macro
               3588486151, // Frago Junium
               3588486150 // Vox Imperative
+            ]
+          },
+          {
+            name: 'Ships',
+            items: [
+              292872936, // Sails of Osiris
+              292872937, // Saint-14's Gray Pigeon
+              292872938, // Kabr's Glass Aegis
+              292872939, // Asher Mir's One-Way Ticket
+              292872940, // Ikora's Resolve
+              292872941, // The Sundaresh Experiment 13-R
+              530012781, // Star Scion
+              530012780, // Galactic Hum
+              530012783, // Arrowhawk
+              530012782, // Dragonquin
+              530012777, // Nebula Bloom
+              530012776, // Rubente Dextra
+              530012779, // Andromeda Gleaming
+              530012778, // Edge of the Worlds
+              530012773, // Sailing Shield
+              530012772, // Armcoat
+              658724916, // Mainsail Royal
+              658724917, // Bassanio
+              658724918, // Spun Sidhe
+              658724919, // Neverfall
+              658724912, // Antonio
+              658724913, // Runereed
+              658724914, // Wanderlonging
+              658724915, // Infinite Visage
+              658724924, // Hardtop Regent
+              658724925, // Amethystine
+              709057677 // Fantail Regent
             ]
           },
           {

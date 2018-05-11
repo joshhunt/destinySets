@@ -1109,6 +1109,36 @@ module.exports = [
             ]
           },
           {
+            name: 'Sparrows',
+            items: [
+              807458183, // Vanishing Point
+              807458182, // Dinas Emrys
+              807458181, // Hastilude
+              3889183914, // Fast Track
+              3889183915, // Crucible Courser
+              3889183912, // Athwart the Void
+              3889183913, // Aeon Plume
+              3889183918, // Wavechaser
+              3889183919, // Soul Velocity
+              3889183916, // Angel Bloom
+              3889183917, // Speedpunk
+              3889183906, // Chronoglass
+              3889183907, // Wind Shrike
+              2546958593, // October Dash
+              2546958592, // Sagittarius
+              2546958594, // Telluride
+              2546958597, // Skedaddle
+              2546958596, // Lunadove
+              2546958599, // Hightail
+              2546958598, // Wave-Maker
+              904825093, // Wayfarer Delta
+              904825092, // Wayfarer Tri
+              904825094, // Warbird
+              904825089, // Hyperion
+              904825088 // Dead-End Pro
+            ]
+          },
+          {
             name: 'Ships',
             items: [
               2503134037, // Eriana's Vengeance
@@ -1139,36 +1169,6 @@ module.exports = [
               3213307846, // Spectral Gain
               3213307849, // Verona Mesh
               3213307848 // High Line
-            ]
-          },
-          {
-            name: 'Sparrows',
-            items: [
-              807458183, // Vanishing Point
-              807458182, // Dinas Emrys
-              807458181, // Hastilude
-              3889183914, // Fast Track
-              3889183915, // Crucible Courser
-              3889183912, // Athwart the Void
-              3889183913, // Aeon Plume
-              3889183918, // Wavechaser
-              3889183919, // Soul Velocity
-              3889183916, // Angel Bloom
-              3889183917, // Speedpunk
-              3889183906, // Chronoglass
-              3889183907, // Wind Shrike
-              2546958593, // October Dash
-              2546958592, // Sagittarius
-              2546958594, // Telluride
-              2546958597, // Skedaddle
-              2546958596, // Lunadove
-              2546958599, // Hightail
-              2546958598, // Wave-Maker
-              904825093, // Wayfarer Delta
-              904825092, // Wayfarer Tri
-              904825094, // Warbird
-              904825089, // Hyperion
-              904825088 // Dead-End Pro
             ]
           },
           {

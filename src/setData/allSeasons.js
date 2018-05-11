@@ -339,8 +339,8 @@ module.exports = [
                         items: [
                             802191383, // Total Eclipse
                             3681086672, // Deep Space Shell (Ghost)
-                            2924982628, // Distant Pulsar (Ship)
                             1220495180, // Pale Horse (Sparrow)
+                            2924982628, // Distant Pulsar (Ship)
                             745759694 // Escape This Dead Orbit (CoO Emblem)
                         ]
                     }
@@ -439,8 +439,8 @@ module.exports = [
                         items: [
                             802191381, // Regency
                             3681086674, // Leonine Shell (Ghost)
-                            2924982630, // Leonine Carrack (Ship)
                             1220495182, // Leonine Courser (Sparrow)
+                            2924982630, // Leonine Carrack (Ship)
                             745759692 // Sigil of the New Monarch (CoO Emblem)
                         ]
                     }
@@ -539,8 +539,8 @@ module.exports = [
                         items: [
                             802191382, // Battle Colors
                             3681086675, // Wars to Come Shell (Ghost)
-                            2924982631, // Bonegrip (Ship)
                             1220495183, // Truth Scraper (Sparrow)
+                            2924982631, // Bonegrip (Ship)
                             745759695 // Future War Cultist (CoO Emblem)
                         ]
                     }
@@ -995,73 +995,6 @@ module.exports = [
                         ]
                     },
                     {
-                        name: 'Ships',
-                        season: 1,
-                        items: [
-                            2503134037, // Eriana's Vengeance
-                            838210459, // Symmetry Flight
-                            4209989368, // Takanome Wings
-                            96858972, // Ego and Squid
-                            3213307847, // The Bandwagon
-                            1104161649, // Rose and Bone
-                            2503134032, // BreakPoint
-                            2503134038, // Cardinal One
-                            2503134039, // Talon Blue
-                            2503134036, // Shadowed Dawn
-                            2503134042, // Helios Strain
-                            838210457, // Imprint
-                            838210456, // Alessa
-                            4209989372, // Dead Fall
-                            4209989373, // Sojourner
-                            4209989370, // Captain Nemo
-                            4209989371, // Alexandria
-                            4209989369, // Absolute/MN
-                            4209989366, // Amplitude/PT
-                            96858973, // Ordinate/VD
-                            4209989367, // Cartesian/KO
-                            3213307843, // Leonid MV
-                            3213307842, // Zenith SV
-                            3213307845, // Eos Rapture
-                            3213307844, // Space-Age Lancelot
-                            3213307846, // Spectral Gain
-                            3213307849, // Verona Mesh
-                            3213307848 // High Line
-                        ]
-                    },
-                    {
-                        name: 'Ships',
-                        season: 2,
-                        items: [
-                            292872936, // Sails of Osiris
-                            292872937, // Saint-14's Gray Pigeon
-                            292872938, // Kabr's Glass Aegis
-                            292872939, // Asher Mir's One-Way Ticket
-                            292872940, // Ikora's Resolve
-                            292872941, // The Sundaresh Experiment 13-R
-                            530012781, // Star Scion
-                            530012780, // Galactic Hum
-                            530012783, // Arrowhawk
-                            530012782, // Dragonquin
-                            530012777, // Nebula Bloom
-                            530012776, // Rubente Dextra
-                            530012779, // Andromeda Gleaming
-                            530012778, // Edge of the Worlds
-                            530012773, // Sailing Shield
-                            530012772, // Armcoat
-                            658724916, // Mainsail Royal
-                            658724917, // Bassanio
-                            658724918, // Spun Sidhe
-                            658724919, // Neverfall
-                            658724912, // Antonio
-                            658724913, // Runereed
-                            658724914, // Wanderlonging
-                            658724915, // Infinite Visage
-                            658724924, // Hardtop Regent
-                            658724925, // Amethystine
-                            709057677 // Fantail Regent
-                        ]
-                    },
-                    {
                         name: 'Sparrows',
                         season: 1,
                         items: [
@@ -1125,6 +1058,73 @@ module.exports = [
                             3588486150 // Vox Imperative
                         ]
                     },
+                    {
+                          name: 'Ships',
+                          season: 1,
+                          items: [
+                              2503134037, // Eriana's Vengeance
+                              838210459, // Symmetry Flight
+                              4209989368, // Takanome Wings
+                              96858972, // Ego and Squid
+                              3213307847, // The Bandwagon
+                              1104161649, // Rose and Bone
+                              2503134032, // BreakPoint
+                              2503134038, // Cardinal One
+                              2503134039, // Talon Blue
+                              2503134036, // Shadowed Dawn
+                              2503134042, // Helios Strain
+                              838210457, // Imprint
+                              838210456, // Alessa
+                              4209989372, // Dead Fall
+                              4209989373, // Sojourner
+                              4209989370, // Captain Nemo
+                              4209989371, // Alexandria
+                              4209989369, // Absolute/MN
+                              4209989366, // Amplitude/PT
+                              96858973, // Ordinate/VD
+                              4209989367, // Cartesian/KO
+                              3213307843, // Leonid MV
+                              3213307842, // Zenith SV
+                              3213307845, // Eos Rapture
+                              3213307844, // Space-Age Lancelot
+                              3213307846, // Spectral Gain
+                              3213307849, // Verona Mesh
+                              3213307848 // High Line
+                          ]
+                      },
+                      {
+                          name: 'Ships',
+                          season: 2,
+                          items: [
+                              292872936, // Sails of Osiris
+                              292872937, // Saint-14's Gray Pigeon
+                              292872938, // Kabr's Glass Aegis
+                              292872939, // Asher Mir's One-Way Ticket
+                              292872940, // Ikora's Resolve
+                              292872941, // The Sundaresh Experiment 13-R
+                              530012781, // Star Scion
+                              530012780, // Galactic Hum
+                              530012783, // Arrowhawk
+                              530012782, // Dragonquin
+                              530012777, // Nebula Bloom
+                              530012776, // Rubente Dextra
+                              530012779, // Andromeda Gleaming
+                              530012778, // Edge of the Worlds
+                              530012773, // Sailing Shield
+                              530012772, // Armcoat
+                              658724916, // Mainsail Royal
+                              658724917, // Bassanio
+                              658724918, // Spun Sidhe
+                              658724919, // Neverfall
+                              658724912, // Antonio
+                              658724913, // Runereed
+                              658724914, // Wanderlonging
+                              658724915, // Infinite Visage
+                              658724924, // Hardtop Regent
+                              658724925, // Amethystine
+                              709057677 // Fantail Regent
+                          ]
+                      }
                 ]
             }
         ]
