@@ -437,22 +437,6 @@ module.exports = [
             ]
           },
           {
-            "name": "Ships",
-            "items": [
-              1748147690, // Lost Legend
-              1748147691, // Shadow Trespass
-              1748147688, // Holborn's Splint
-              3101966172, // Currus Gloriae XLII
-              3101966166, // Jadewyrm XLIV
-              1833943242, // Fleet Ska IX
-              1833943243, // Vor Pyl VIII
-              1833943240, // Ampulance LXXX
-              1833943246, // Kolla Mauler IX
-              1833943247, // Pitfall Souter E5D
-              1833943245 // Dusk Harrier
-            ]
-          },
-          {
             name: 'Sparrows',
             items: [
               777818278, // Eon Drive
@@ -466,6 +450,22 @@ module.exports = [
               2351197433, // Mad Son of Seychelles
               2351197434, // Alton's Ambush
               2351197435 // Flychaplain
+            ]
+          },
+          {
+            "name": "Ships",
+            "items": [
+              1748147690, // Lost Legend
+              1748147691, // Shadow Trespass
+              1748147688, // Holborn's Splint
+              3101966172, // Currus Gloriae XLII
+              3101966166, // Jadewyrm XLIV
+              1833943242, // Fleet Ska IX
+              1833943243, // Vor Pyl VIII
+              1833943240, // Ampulance LXXX
+              1833943246, // Kolla Mauler IX
+              1833943247, // Pitfall Souter E5D
+              1833943245 // Dusk Harrier
             ]
           },
           {
