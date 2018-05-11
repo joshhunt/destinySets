@@ -28,15 +28,10 @@ mobile()
   margin-bottom: 50px
 
 
-.link
-  color: black !important
+.errorInfo
+  composes: info
+  background: #e74c3c
+  color: white
 
-.secretLink
-  composes: link
-  text-decoration: none
-  animation: pulse 2s infinite alternate both;
-
-@keyframes pulse {
-  from { opacity: .7 }
-  to { opacity: 1 }
-}
+  a
+    color: white !important

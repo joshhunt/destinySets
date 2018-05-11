@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router';
 
 import {
   setProfiles,
@@ -50,7 +49,8 @@ const timeout = dur => result =>
 class Inventory extends Component {
   state = {
     popperItemHash: null,
-    popperElement: null
+    popperElement: null,
+    unexpectedError: false
   };
 
   componentDidMount() {
@@ -155,18 +155,28 @@ class Inventory extends Component {
       });
     }
 
-    return destiny.getCurrentProfiles().then(data => {
-      log('got current profile', data);
-      const profile = destiny.getLastProfile(data);
+    return destiny
+      .getCurrentProfiles()
+      .then(data => {
+        log('got current profile', data);
+        const profile = destiny.getLastProfile(data);
 
-      props.setProfiles({
-        currentProfile: profile,
-        allProfiles: data.profiles,
-        isCached: false
+        props.setProfiles({
+          currentProfile: profile,
+          allProfiles: data.profiles,
+          isCached: false
+        });
+
+        return profile;
+      })
+      .catch(err => {
+        console.error('Error fetching current profiles');
+        console.error(err);
+
+        if (err.data && err.data.ErrorCode === 1618) {
+          this.setState({ unexpectedError: true });
+        }
       });
-
-      return profile;
-    });
   }
 
   fetch = (props = this.props) => {
@@ -256,7 +266,8 @@ class Inventory extends Component {
       itemTooltip,
       itemModal,
       googleAuthLoaded,
-      googleAuthSignedIn
+      googleAuthSignedIn,
+      unexpectedError
     } = this.state;
 
     return (
@@ -288,6 +299,22 @@ class Inventory extends Component {
             Connect your Bungie.net acccount to automatically track items you've
             collected and dismantled.
           </LoginUpsell>
+        )}
+
+        {unexpectedError && (
+          <div className={styles.errorInfo}>
+            An unexpected error occurred while requesting your profile. This is
+            a known issue with Bungie's API and until resolved, players may
+            workaround the issue by signing into all characters, on all
+            platforms.{' '}
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://twitter.com/BungieHelp/status/994643009214955521"
+            >
+              Read more from @BungieHelp
+            </a>.
+          </div>
         )}
 
         {this.props.route.showWarmindBanner && (

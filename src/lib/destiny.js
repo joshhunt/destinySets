@@ -164,6 +164,8 @@ export function getDestiny(_pathname, opts = {}, postBody) {
             cleanedUrl
         );
 
+        err.data = resp;
+
         if (resp.ErrorStatus === 'DestinyCharacterNotFound') {
           // TODO: remove this sometime later
           const debugId = ls.getDebugId();
