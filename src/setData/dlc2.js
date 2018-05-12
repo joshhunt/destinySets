@@ -136,6 +136,7 @@ module.exports = [
             name: 'Extras',
             items: [
               3682795607, // Cognition of the Nine shader
+              2894506171, // Knight's Peace Shell
               1827800764, // Millennial Spadework Shell
               641129738, // Canine Rising
               1879447862, // Burningbrite Tyger
@@ -258,6 +259,7 @@ module.exports = [
               842157719, // Wormslayer
               1291068170, // Cold Comfort
               1291068171, // Data Mine
+              1273131832, // Warminded
               235397502 // Arctic Dreamscape
             ]
           }
