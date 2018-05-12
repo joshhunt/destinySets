@@ -259,6 +259,7 @@ module.exports = [
               842157719, // Wormslayer
               1291068170, // Cold Comfort
               1291068171, // Data Mine
+              1273131832, // Warminded
               235397502 // Arctic Dreamscape
             ]
           }
