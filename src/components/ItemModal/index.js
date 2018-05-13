@@ -7,6 +7,7 @@ import { EMBLEM } from 'app/lib/destinyEnums';
 import getItemExtraInfo from 'app/lib/getItemExtraInfo';
 import Objectives from 'app/components/Objectives';
 import ItemBanner from 'app/components/ItemBanner';
+import Icon from 'app/components/Icon';
 import ishtarSvg from 'app/ishar.svg';
 
 import { trackOrnament as trackOrnamentAction } from 'app/store/reducer';
@@ -56,7 +57,7 @@ class ItemModalContent extends Component {
     return (
       <div className={styles.root}>
         <button className={styles.close} onClick={onRequestClose}>
-          <i className="fa fa-close" />
+          <Icon icon="times" />
         </button>
 
         {screenshot && (

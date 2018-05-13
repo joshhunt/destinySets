@@ -1,6 +1,8 @@
 import React from 'react';
 import cx from 'classnames';
 
+import Icon from 'app/components/Icon';
+
 import styles from './styles.styl';
 
 export const DONATION_LINK = 'https://paypal.me/DestinySets';
@@ -13,7 +15,7 @@ export default function DonateButton({ className }) {
       rel="noopener noreferrer"
       href={DONATION_LINK}
     >
-      <i className="fa fa-paypal" /> Support and donate
+      <Icon className={styles.icon} icon="paypal" brand /> Support and donate
     </a>
   );
 }
