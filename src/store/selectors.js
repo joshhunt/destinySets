@@ -12,6 +12,7 @@ export const itemDefsSelector = state => state.app.itemDefs;
 export const objectiveDefsSelector = state => state.app.objectiveDefs;
 export const statDefsSelector = state => state.app.statDefs;
 
+const baseXurItemsSelector = state => state.app.xur.items;
 const profileSelector = state => state.app.profile;
 const vendorDefsSelector = state => state.app.vendorDefs;
 
@@ -137,6 +138,32 @@ export const inventorySelector = createSelector(
     });
 
     return inventory;
+  }
+);
+
+export const xurItemsSelector = createSelector(
+  inventorySelector,
+  baseXurItemsSelector,
+  (inventory, xurHashes) => {
+    if (!inventory) {
+      return { obtainedItems: [], newItems: xurHashes };
+    }
+
+    const obtainedItems = [];
+    const newItems = [];
+
+    xurHashes.forEach(itemHash => {
+      (inventory[itemHash] ? obtainedItems : newItems).push(itemHash);
+    });
+
+    return { obtainedItems, newItems };
+  }
+);
+
+export const xurHasNewItemsSelector = createSelector(
+  xurItemsSelector,
+  xurItems => {
+    return xurItems.newItems.length > 0;
   }
 );
 

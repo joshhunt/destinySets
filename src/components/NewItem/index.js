@@ -65,7 +65,7 @@ export default class Item extends Component {
   };
 
   render() {
-    const { className, item, inventoryEntry } = this.props;
+    const { className, item, inventoryEntry, extended } = this.props;
     const bgColor = getItemColor(item);
 
     if (!item) {
@@ -92,17 +92,22 @@ export default class Item extends Component {
           inventoryEntry && inventoryEntry.dismantled && styles.dismantled
         )}
       >
-        <img
-          src={`https://www.bungie.net${icon}`}
-          className={styles.image}
-          style={{ backgroundColor: bgColor }}
-          alt=""
-        />
+        <div className={styles.imageWrapper}>
+          <img
+            src={`https://www.bungie.net${icon}`}
+            className={styles.image}
+            style={{ backgroundColor: bgColor }}
+            alt=""
+          />
+          {inventoryEntry && (
+            <div className={styles.tick}>
+              <Icon icon="check" />
+            </div>
+          )}
+        </div>
 
-        {inventoryEntry && (
-          <div className={styles.tick}>
-            <Icon icon="check" />
-          </div>
+        {extended && (
+          <div className={styles.extended}>{item.displayProperties.name}</div>
         )}
       </div>
     );

@@ -1,6 +1,8 @@
 import React from 'react';
 import cx from 'classnames';
 
+import Icon from 'app/components/Icon';
+
 import {
   EMBLEM,
   LEGENDARY,
@@ -70,7 +72,7 @@ export default function ItemBanner({ className, item, onClose }) {
           {onClose && (
             <div>
               <button className={styles.close} onClick={() => onClose(item)}>
-                <i className="fa fa-close" />
+                <Icon icon="times" />
               </button>
             </div>
           )}

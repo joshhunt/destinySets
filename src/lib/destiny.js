@@ -345,8 +345,9 @@ export function xur() {
   return get(XUR_URL).then(xurData => {
     const isLive =
       window.location.href.indexOf('forceXur') > -1 || xurData.isLive;
-    return isLive
-      ? { xurItems: xurData.itemHashes, xurLocation: xurData.location }
-      : [];
+
+    return isLive && xurData.itemHashes.length > 0
+      ? { items: xurData.itemHashes, location: xurData.location }
+      : { items: [] };
   });
 }

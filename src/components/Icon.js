@@ -18,10 +18,16 @@ fontawesome.library.add(
   require('@fortawesome/fontawesome-free-brands/faGoogleDrive')
 );
 
-export default function Icon({ icon, name, brand, ...props }) {
+export default function Icon({ icon, name, brand, light, solid, ...props }) {
   let prefix = 'far';
+
   if (brand) {
     prefix = 'fab';
+  } else if (light) {
+    prefix = 'fal';
+  } else if (solid) {
+    prefix = 'fas';
   }
+
   return <FontAwesomeIcon icon={[prefix, icon || name]} {...props} />;
 }

@@ -11,9 +11,14 @@ import {
   setObjectiveDefs,
   setStatDefs,
   toggleFilterKey,
+  setXurData,
   removeTrackedItem
 } from 'app/store/reducer';
-import { inventorySelector } from 'app/store/selectors';
+import {
+  inventorySelector,
+  xurHasNewItemsSelector,
+  xurItemsSelector
+} from 'app/store/selectors';
 
 import googleAuth, {
   signIn as googleSignIn,
@@ -33,6 +38,7 @@ import Section from 'app/components/Section';
 import Popper from 'app/components/Popper';
 import ItemTooltip from 'app/components/ItemTooltip';
 import ItemModal from 'app/components/ItemModal';
+import XurModal from 'app/components/XurModal';
 import SectionList from 'app/components/SectionList';
 
 import { filteredSetDataSelector } from './selectors';
@@ -202,25 +208,25 @@ class Inventory extends Component {
       setVendorDefs,
       setStatDefs,
       setItemDefs,
-      setObjectiveDefs
+      setObjectiveDefs,
+      setXurData
     } = this.props;
 
+    destiny.xur().then(setXurData);
     getDefinition('DestinyVendorDefinition', lang).then(setVendorDefs);
     getDefinition('DestinyStatDefinition', lang).then(setStatDefs);
     getDefinition('DestinyObjectiveDefinition', lang).then(setObjectiveDefs);
 
-    this.itemDefsPromise = getDefinition(
-      'reducedCollectableInventoryItems',
-      lang,
-      false
-    );
+    const items = 'reducedCollectableInventoryItems';
+    this.itemDefsPromise = getDefinition(items, lang, false);
     this.itemDefsPromise.then(setItemDefs);
   }
 
   setPopper = (itemHash, element) =>
     this.setState({ itemTooltip: itemHash ? { itemHash, element } : null });
 
-  setModal = itemHash => this.setState({ itemModal: itemHash });
+  setItemModal = itemHash => this.setState({ itemModal: itemHash });
+  setXurModal = isOpen => this.setState({ xurModal: isOpen });
   toggleFilter = key => this.props.toggleFilterKey(key);
   removeTrackedItem = item => this.props.removeTrackedItem(item.hash);
 
@@ -259,12 +265,15 @@ class Inventory extends Component {
       language,
       isCached,
       isAuthenticated,
-      trackedItems
+      trackedItems,
+      xur,
+      xurHasNewItems
     } = this.props;
 
     const {
       itemTooltip,
       itemModal,
+      xurModal,
       googleAuthLoaded,
       googleAuthSignedIn,
       unexpectedError
@@ -283,6 +292,9 @@ class Inventory extends Component {
           googleSignIn={googleSignIn}
           googleSignOut={this.googleSignOut}
           googleAuthSignedIn={googleAuthSignedIn}
+          xurHasNewItems={xurHasNewItems}
+          openXurModal={this.setXurModal}
+          displayXur={!!xur.items.length}
           displayGoogleAuthButton={
             googleAuthLoaded && isAuthenticated && !googleAuthSignedIn
           }
@@ -345,7 +357,7 @@ class Inventory extends Component {
             sets={sets}
             slug={slug}
             setPopper={this.setPopper}
-            setModal={this.setModal}
+            setModal={this.setItemModal}
           />
         ))}
 
@@ -373,7 +385,12 @@ class Inventory extends Component {
         <ItemModal
           itemHash={itemModal}
           isOpen={!!itemModal}
-          onRequestClose={() => this.setModal(null)}
+          onRequestClose={() => this.setItemModal(null)}
+        />
+
+        <XurModal
+          isOpen={xurModal}
+          onRequestClose={() => this.setXurModal(false)}
         />
       </div>
     );
@@ -392,7 +409,10 @@ const mapStateToProps = (state, ownProps) => {
     // TODO: this uses props, so we need to 'make' a selector like in ItemSet
     filteredSetData: filteredSetDataSelector(state, ownProps),
     inventory: inventorySelector(state),
-    haveCloudInventory: !!state.app.cloudInventory
+    haveCloudInventory: !!state.app.cloudInventory,
+    xurHasNewItems: xurHasNewItemsSelector(state),
+    xurItems: xurItemsSelector(state),
+    xur: state.app.xur
   };
 };
 
@@ -406,7 +426,8 @@ const mapDispatchToActions = {
   setStatDefs,
   toggleFilterKey,
   setLanguage,
-  removeTrackedItem
+  removeTrackedItem,
+  setXurData
 };
 
 export default DestinyAuthProvider(

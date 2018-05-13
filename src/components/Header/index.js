@@ -4,12 +4,15 @@ import { Link } from 'react-router';
 import cx from 'classnames';
 
 import logo from 'app/logo.svg';
+import xur from 'app/assets/xur_icon.png';
 import { DONATION_LINK } from 'app/components/DonateButton';
 import Icon from 'app/components/Icon';
 import GoogleAuthButton from 'app/components/GoogleAuthButton';
 import DonateButton from 'app/components/DonateButton';
 import ProfileDropdown from './ProfileDropdown';
 import LanguageDropdown from './LanguageDropdown';
+
+import ClickOutside from 'react-click-outside';
 
 import styles from './styles.styl';
 
@@ -41,9 +44,10 @@ const SiteName = () => (
   </div>
 );
 
-const SiteLinks = () => (
+const SiteLinks = ({ displayXur, openXurModal, xurHasNewItems }) => (
   <Fragment>
     <div className={styles.dummyLink} />
+
     {LINKS.map(({ name, to }) => (
       <Link
         key={to}
@@ -54,6 +58,16 @@ const SiteLinks = () => (
         {name}
       </Link>
     ))}
+
+    {displayXur && (
+      <a
+        onClick={() => openXurModal(true)}
+        className={cx(styles.xurLink, xurHasNewItems && styles.xurLinkNewItems)}
+      >
+        <img className={styles.xurIcon} src={xur} alt="" />
+        Xûr
+      </a>
+    )}
   </Fragment>
 );
 
@@ -73,15 +87,29 @@ const SocialLinks = () => (
   </Fragment>
 );
 
+function sidebarClickOutside(toggleSidebar, isOpen, ev) {
+  if (isOpen) {
+    ev.preventDefault();
+    toggleSidebar();
+  }
+}
+
 function Sidebar({
+  isOpen,
   language,
   setLanguage,
   displayGoogleAuthButton,
   googleSignIn,
-  toggleSidebar
+  toggleSidebar,
+  displayXur,
+  openXurModal,
+  xurHasNewItems
 }) {
   return (
-    <div className={styles.sidebar}>
+    <ClickOutside
+      className={styles.sidebar}
+      onClickOutside={sidebarClickOutside.bind(null, toggleSidebar, isOpen)}
+    >
       <div className={styles.sidebarInner}>
         <div className={styles.sidebarTop}>
           <SiteName />
@@ -90,7 +118,11 @@ function Sidebar({
           </button>
         </div>
 
-        <SiteLinks />
+        <SiteLinks
+          displayXur={displayXur}
+          openXurModal={openXurModal}
+          xurHasNewItems={xurHasNewItems}
+        />
 
         <div className={styles.hr} />
 
@@ -113,7 +145,7 @@ function Sidebar({
           </div>
         </div>
       </div>
-    </div>
+    </ClickOutside>
   );
 }
 
@@ -162,7 +194,10 @@ export default class Header extends Component {
       googleAuthSignedIn,
       displayGoogleAuthButton,
       googleSignIn,
-      googleSignOut
+      googleSignOut,
+      displayXur,
+      xurHasNewItems,
+      openXurModal
     } = this.props;
 
     const { isOverflowing, sidebarActive } = this.state;
@@ -175,7 +210,13 @@ export default class Header extends Component {
           sidebarActive && styles.sidebarActive
         )}
       >
-        <Sidebar {...this.props} toggleSidebar={this.toggleSidebar} />
+        {isOverflowing && (
+          <Sidebar
+            {...this.props}
+            isOpen={sidebarActive}
+            toggleSidebar={this.toggleSidebar}
+          />
+        )}
 
         <div className={styles.fixed}>
           {isOverflowing && (
@@ -190,7 +231,11 @@ export default class Header extends Component {
           <SiteName />
 
           <div className={styles.links} ref={this.setLinksRef}>
-            <SiteLinks />
+            <SiteLinks
+              displayXur={displayXur}
+              openXurModal={openXurModal}
+              xurHasNewItems={xurHasNewItems}
+            />
           </div>
 
           <div className={styles.etc}>

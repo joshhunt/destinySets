@@ -16,6 +16,7 @@ const SET_BULK_FILTERS = 'Set bulk filters';
 const SET_LANGUAGE = 'Set language';
 const ADD_TRACK_ITEMS = 'Add tracked item';
 const REMOVE_TRACKED_ITEM = 'Remove tracked item';
+const SET_XUR_DATA = 'Set Xur data';
 
 export const DEFAULT_FILTER = {
   [TITAN]: true,
@@ -27,7 +28,11 @@ export const DEFAULT_FILTER = {
 
 const INITIAL_STORE = {
   filters: DEFAULT_FILTER,
-  trackedItems: []
+  trackedItems: [],
+  xur: {
+    items: [],
+    modalOpen: false
+  }
 };
 
 const ITEM_DEF_KEYS = [];
@@ -123,6 +128,12 @@ export default function reducer(state = INITIAL_STORE, action) {
         trackedItems: state.trackedItems.filter(h => h !== action.itemHash)
       };
 
+    case SET_XUR_DATA:
+      return {
+        ...state,
+        xur: { ...state.xur, ...action.xur }
+      };
+
     default:
       return state;
   }
@@ -175,6 +186,10 @@ export function trackOrnament(itemHash) {
 
 export function removeTrackedItem(itemHash) {
   return { type: REMOVE_TRACKED_ITEM, itemHash };
+}
+
+export function setXurData(xur) {
+  return { type: SET_XUR_DATA, xur };
 }
 
 function setDefs(name, defs) {

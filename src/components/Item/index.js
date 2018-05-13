@@ -1,10 +1,6 @@
 import React, { Component } from 'react';
 import cx from 'classnames';
 
-// import ItemTooltip from 'app/components/ItemTooltip';
-
-// import ToolTip from 'app/components/ReactPortalTooltip';
-
 import styles from './styles.styl';
 
 const CLASS_TYPE = {
@@ -22,18 +18,6 @@ function isMobile() {
     )
   );
 }
-
-// const tooltipStyle = {
-//   style: {
-//     background: '#20262d',
-//     padding: 0,
-//     boxShadow: '0px 2px 3px rgba(0,0,0,.5)'
-//   },
-//   arrowStyle: {
-//     color: '#20262d',
-//     borderColor: false
-//   }
-// };
 
 export default class Item extends Component {
   state = {
@@ -122,24 +106,6 @@ export default class Item extends Component {
             </div>
           </div>
         )}
-
-        {/*item.inventory && (
-          <ToolTip
-            style={tooltipStyle}
-            active={this.state.isTooltipActive}
-            position="right"
-            arrow="center"
-            parent={`#item${item.hash}`}
-            className={styles.tooltip}
-            tooltipTimeout={0}
-          >
-            <ItemTooltip
-              key={item.hash}
-              item={item}
-              globalItemCount={this.state.globalItemCount}
-            />
-          </ToolTip>
-        )*/}
       </div>
     );
   }
