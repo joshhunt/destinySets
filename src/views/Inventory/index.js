@@ -38,6 +38,7 @@ import Section from 'app/components/Section';
 import Popper from 'app/components/Popper';
 import ItemTooltip from 'app/components/ItemTooltip';
 import ItemModal from 'app/components/ItemModal';
+import XurModal from 'app/components/XurModal';
 import SectionList from 'app/components/SectionList';
 
 import { filteredSetDataSelector } from './selectors';
@@ -213,7 +214,8 @@ class Inventory extends Component {
   setPopper = (itemHash, element) =>
     this.setState({ itemTooltip: itemHash ? { itemHash, element } : null });
 
-  setModal = itemHash => this.setState({ itemModal: itemHash });
+  setItemModal = itemHash => this.setState({ itemModal: itemHash });
+  setXurModal = isOpen => this.setState({ xurModal: isOpen });
   toggleFilter = key => this.props.toggleFilterKey(key);
   removeTrackedItem = item => this.props.removeTrackedItem(item.hash);
 
@@ -260,6 +262,7 @@ class Inventory extends Component {
     const {
       itemTooltip,
       itemModal,
+      xurModal,
       googleAuthLoaded,
       googleAuthSignedIn
     } = this.state;
@@ -278,6 +281,7 @@ class Inventory extends Component {
           googleSignOut={this.googleSignOut}
           googleAuthSignedIn={googleAuthSignedIn}
           xurHasNewItems={xurHasNewItems}
+          openXurModal={this.setXurModal}
           displayXur={!!xur.items}
           displayGoogleAuthButton={
             googleAuthLoaded && isAuthenticated && !googleAuthSignedIn
@@ -304,7 +308,7 @@ class Inventory extends Component {
             sets={sets}
             slug={slug}
             setPopper={this.setPopper}
-            setModal={this.setModal}
+            setModal={this.setItemModal}
           />
         ))}
 
@@ -332,7 +336,12 @@ class Inventory extends Component {
         <ItemModal
           itemHash={itemModal}
           isOpen={!!itemModal}
-          onRequestClose={() => this.setModal(null)}
+          onRequestClose={() => this.setItemModal(null)}
+        />
+
+        <XurModal
+          isOpen={xurModal}
+          onRequestClose={() => this.setXurModal(false)}
         />
       </div>
     );

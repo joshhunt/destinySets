@@ -165,7 +165,8 @@ export default class Header extends Component {
       googleSignIn,
       googleSignOut,
       displayXur,
-      xurHasNewItems
+      xurHasNewItems,
+      openXurModal
     } = this.props;
 
     const { isOverflowing, sidebarActive } = this.state;
@@ -197,7 +198,7 @@ export default class Header extends Component {
 
             {displayXur && (
               <a
-                href="#"
+                onClick={() => openXurModal(true)}
                 className={cx(
                   styles.xurLink,
                   xurHasNewItems && styles.xurLinkNewItems
