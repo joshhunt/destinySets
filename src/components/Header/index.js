@@ -12,6 +12,8 @@ import DonateButton from 'app/components/DonateButton';
 import ProfileDropdown from './ProfileDropdown';
 import LanguageDropdown from './LanguageDropdown';
 
+import ClickOutside from 'react-click-outside';
+
 import styles from './styles.styl';
 
 function isOverflowing(el) {
@@ -84,7 +86,15 @@ const SocialLinks = () => (
   </Fragment>
 );
 
+function sidebarClickOutside(toggleSidebar, isOpen, ev) {
+  if (isOpen) {
+    ev.preventDefault();
+    toggleSidebar();
+  }
+}
+
 function Sidebar({
+  isOpen,
   language,
   setLanguage,
   displayGoogleAuthButton,
@@ -95,7 +105,10 @@ function Sidebar({
   xurHasNewItems
 }) {
   return (
-    <div className={styles.sidebar}>
+    <ClickOutside
+      className={styles.sidebar}
+      onClickOutside={sidebarClickOutside.bind(null, toggleSidebar, isOpen)}
+    >
       <div className={styles.sidebarInner}>
         <div className={styles.sidebarTop}>
           <SiteName />
@@ -131,7 +144,7 @@ function Sidebar({
           </div>
         </div>
       </div>
-    </div>
+    </ClickOutside>
   );
 }
 
@@ -196,7 +209,13 @@ export default class Header extends Component {
           sidebarActive && styles.sidebarActive
         )}
       >
-        <Sidebar {...this.props} toggleSidebar={this.toggleSidebar} />
+        {isOverflowing && (
+          <Sidebar
+            {...this.props}
+            isOpen={sidebarActive}
+            toggleSidebar={this.toggleSidebar}
+          />
+        )}
 
         <div className={styles.fixed}>
           {isOverflowing && (
