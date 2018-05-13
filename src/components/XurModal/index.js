@@ -33,7 +33,7 @@ class XurModalContent extends Component {
           <div>
             <h1 className={styles.heading}>Xûr is back</h1>
             <p>
-              Xûr is selling this wares this week in{' '}
+              Xûr is selling his wares this week in{' '}
               <strong>
                 {location.region}, {location.planet}
               </strong>
