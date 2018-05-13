@@ -282,7 +282,7 @@ class Inventory extends Component {
           googleAuthSignedIn={googleAuthSignedIn}
           xurHasNewItems={xurHasNewItems}
           openXurModal={this.setXurModal}
-          displayXur={!!xur.items}
+          displayXur={!!xur.items.length}
           displayGoogleAuthButton={
             googleAuthLoaded && isAuthenticated && !googleAuthSignedIn
           }

@@ -346,6 +346,6 @@ export function xur() {
 
     return isLive && xurData.itemHashes.length > 0
       ? { items: xurData.itemHashes, location: xurData.location }
-      : { items: null };
+      : { items: [] };
   });
 }

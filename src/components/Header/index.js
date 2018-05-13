@@ -41,7 +41,7 @@ const SiteName = () => (
   </div>
 );
 
-const SiteLinks = () => (
+const SiteLinks = ({ displayXur, openXurModal, xurHasNewItems }) => (
   <Fragment>
     <div className={styles.dummyLink} />
 
@@ -55,6 +55,16 @@ const SiteLinks = () => (
         {name}
       </Link>
     ))}
+
+    {displayXur && (
+      <a
+        onClick={() => openXurModal(true)}
+        className={cx(styles.xurLink, xurHasNewItems && styles.xurLinkNewItems)}
+      >
+        <img className={styles.xurIcon} src={xur} alt="" />
+        Xûr
+      </a>
+    )}
   </Fragment>
 );
 
@@ -79,7 +89,10 @@ function Sidebar({
   setLanguage,
   displayGoogleAuthButton,
   googleSignIn,
-  toggleSidebar
+  toggleSidebar,
+  displayXur,
+  openXurModal,
+  xurHasNewItems
 }) {
   return (
     <div className={styles.sidebar}>
@@ -91,7 +104,11 @@ function Sidebar({
           </button>
         </div>
 
-        <SiteLinks />
+        <SiteLinks
+          displayXur={displayXur}
+          openXurModal={openXurModal}
+          xurHasNewItems={xurHasNewItems}
+        />
 
         <div className={styles.hr} />
 
@@ -194,20 +211,11 @@ export default class Header extends Component {
           <SiteName />
 
           <div className={styles.links} ref={this.setLinksRef}>
-            <SiteLinks />
-
-            {displayXur && (
-              <a
-                onClick={() => openXurModal(true)}
-                className={cx(
-                  styles.xurLink,
-                  xurHasNewItems && styles.xurLinkNewItems
-                )}
-              >
-                <img className={styles.xurIcon} src={xur} alt="" />
-                Xûr
-              </a>
-            )}
+            <SiteLinks
+              displayXur={displayXur}
+              openXurModal={openXurModal}
+              xurHasNewItems={xurHasNewItems}
+            />
           </div>
 
           <div className={styles.etc}>
