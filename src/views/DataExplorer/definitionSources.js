@@ -93,5 +93,7 @@ export default [
   src('DestinyMilestoneDefinition', 'milestone', []),
   src('DestinyActivityModifierDefinition', 'activityModifier', []),
   src('DestinyReportReasonCategoryDefinition', 'reportReasonCategory', []),
-  src('DestinyHistoricalStatsDefinition', 'historicalStats', [])
+  src('DestinyHistoricalStatsDefinition', 'historicalStats', []),
+
+  src('DestinyPlugSetDefinition', 'plugSet', ['reusablePlugSetHash'])
 ];
