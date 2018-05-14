@@ -62,3 +62,9 @@ export const PLATFORMS = {
   [TIGERDEMON]: 'TigerDemon',
   [BUNGIENEXT]: 'BungieNext'
 };
+
+export const CLASSES = {
+  [WARLOCK]: 'Warlock',
+  [TITAN]: 'Titan',
+  [HUNTER]: 'Hunter'
+};

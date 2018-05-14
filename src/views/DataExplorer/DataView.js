@@ -3,7 +3,13 @@ import JSONTree from 'react-json-tree';
 import cx from 'classnames';
 import { isString } from 'lodash';
 
+import Vendor from './Vendor';
+
 import s from './dataViewStyles.styl';
+
+const CUSTOM_VIEWS = {
+  vendor: Vendor
+};
 
 function toTitleCase(str) {
   return str.charAt(0).toUpperCase() + str.substr(1);
@@ -49,9 +55,9 @@ export default class DataView extends Component {
 
     if (!item) {
       return (
-        <span className={s.jsonNonLinkedValue}>{`<${defsForHash.name} ${
-          prettyValue
-        }>`}</span>
+        <span className={s.jsonNonLinkedValue}>{`<${
+          defsForHash.name
+        } ${prettyValue}>`}</span>
       );
     }
 
@@ -61,19 +67,20 @@ export default class DataView extends Component {
       <span
         onClick={this.onItemClick.bind(this, item)}
         className={s.jsonLinkedValue}
-      >{`<${toTitleCase(defsForHash.name)} ${displayName} ${
-        prettyValue
-      }>`}</span>
+      >{`<${toTitleCase(
+        defsForHash.name
+      )} ${displayName} ${prettyValue}>`}</span>
     );
   };
 
-  onItemClick(item, ev) {
+  onItemClick = (item, ev) => {
     ev && ev.preventDefault();
     this.props.onItemClick(item);
-  }
+  };
 
   render() {
     const { className, item } = this.props;
+    const CustomView = CUSTOM_VIEWS[item.$type];
 
     return (
       <div className={cx(className, s.root)} ref={r => (this.ref = r)}>
@@ -92,6 +99,14 @@ export default class DataView extends Component {
               {item.displayProperties.description}
             </p>
           )}
+
+        {CustomView && (
+          <CustomView
+            data={item}
+            defs={this.props.data}
+            onItemClick={this.onItemClick}
+          />
+        )}
 
         <JSONTree data={item} valueRenderer={this.valueRenderer} />
       </div>

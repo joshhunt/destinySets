@@ -7,7 +7,8 @@ import {
   UNCOMMON,
   RARE,
   COMMON,
-  EMBLEM
+  EMBLEM,
+  CLASSES
 } from 'app/lib/destinyEnums';
 import Icon from 'app/components/Icon';
 
@@ -55,8 +56,13 @@ export default class Item extends Component {
     setPopper && setPopper(null);
   };
 
-  onClick = () => {
-    const { onItemClick, itemHash } = this.props;
+  onClick = ev => {
+    const { onClick, onItemClick, itemHash } = this.props;
+    if (onClick) {
+      onClick(ev);
+      return;
+    }
+
     onItemClick && onItemClick(itemHash);
   };
 
@@ -107,7 +113,13 @@ export default class Item extends Component {
         </div>
 
         {extended && (
-          <div className={styles.extended}>{item.displayProperties.name}</div>
+          <div className={styles.extended}>
+            <div>{item.displayProperties.name}</div>
+            <div className={styles.itemType}>
+              {CLASSES[item.classType]}{' '}
+              {item.itemTypeName || item.itemTypeDisplayName}
+            </div>
+          </div>
         )}
       </div>
     );
