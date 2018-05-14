@@ -56,8 +56,18 @@ function listForDefinition(search, defs) {
   return defs[match[1]];
 }
 
+function tryJson(string) {
+  try {
+    return JSON.parse(string);
+  } catch (e) {
+    return null;
+  }
+}
+
 export default function filterDefinitions(searchTerm, _defs) {
   const defs = mapValues(_defs, obj => Object.values(obj));
+
+  const hashSearchList = tryJson(searchTerm) || [];
 
   if (searchTerm.length === 0) {
     return getRandom(defs.item.filter(item => !item.redacted), MAX_ITEMS);
@@ -83,12 +93,14 @@ export default function filterDefinitions(searchTerm, _defs) {
   const filteredItems = flatMap(Object.values(defs), dataList => {
     return dataList
       .filter(item => {
+        const hash = _get(item, 'hash');
         const name = get(item, 'displayProperties.name');
         const description = get(item, 'displayProperties.description');
         const itemType = get(item, 'itemTypeDisplayName');
         const vendorIdentifier = get(item, 'vendorIdentifier');
 
         return (
+          hashSearchList.includes(hash) ||
           name.includes(search) ||
           description.includes(search) ||
           itemType.includes(search) ||
