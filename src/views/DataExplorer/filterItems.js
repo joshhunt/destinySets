@@ -1,4 +1,4 @@
-import { mapValues, flatMap } from 'lodash';
+import { mapValues, flatMap, isArray } from 'lodash';
 import _get from 'lodash/get';
 
 import fancySearch from 'app/lib/fancySearch';
@@ -67,7 +67,8 @@ function tryJson(string) {
 export default function filterDefinitions(searchTerm, _defs) {
   const defs = mapValues(_defs, obj => Object.values(obj));
 
-  const hashSearchList = tryJson(searchTerm) || [];
+  let hashSearchList = tryJson(searchTerm);
+  hashSearchList = isArray(hashSearchList) ? hashSearchList : [];
 
   if (searchTerm.length === 0) {
     return getRandom(defs.item.filter(item => !item.redacted), MAX_ITEMS);

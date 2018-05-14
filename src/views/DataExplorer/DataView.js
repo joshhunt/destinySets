@@ -47,13 +47,6 @@ export default class DataView extends Component {
     const defsForHash =
       this.props.data[fieldName] || this.props.data[parentFieldName];
 
-    console.log({
-      fieldName,
-      parentFieldName,
-      defsForHash,
-      data: this.props.data
-    });
-
     if (!defsForHash) {
       return prettyValue;
     }
