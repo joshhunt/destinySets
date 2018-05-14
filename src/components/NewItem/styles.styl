@@ -1,6 +1,9 @@
-.root
-  display: flex
+._root
   margin: 5px
+
+.root
+  composes: _root
+  display: flex
 
 .imageWrapper
   position: relative
@@ -16,7 +19,7 @@
   background: rgba(#D2D2D2, 0.1)
 
 .placeholder
-  composes: image
+  composes: _root image
   background: rgba(#D2D2D2, 0.1)
 
 .tick
