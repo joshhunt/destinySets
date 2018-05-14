@@ -139,15 +139,14 @@ module.exports = [
               2894506171, // Knight's Peace Shell
               1827800764, // Millennial Spadework Shell
               641129738, // Canine Rising
-              1879447862, // Burningbrite Tyger
+              1879447862 // Burningbrite Tyger
             ]
           }
         ]
       },
       {
         name: 'Escalation Protocol',
-        description:
-          'Gear obtained by completing Escalation Protocol.',
+        description: 'Gear obtained by completing Escalation Protocol.',
         sections: [
           {
             name: 'Weapons',
@@ -166,7 +165,7 @@ module.exports = [
               191708423, // Abhorrent Imperative Grasps
               4138580785, // Abhorrent Imperative Vest
               3663938889, // Abhorrent Imperative Strides
-              2039043276 // Abhorrent Imperative Cloak 
+              2039043276 // Abhorrent Imperative Cloak
             ]
           },
           {
@@ -404,16 +403,50 @@ module.exports = [
     name: 'Other',
     sets: [
       {
-        name: 'Eververse, Season 3',
-        big: true,
+        name: '"Insight" Armor - PS4 Exclusive',
         sections: [
-        {
+          {
+            name: 'Hunter armor',
+            items: [
+              1680657538, // Insight Rover Mask
+              1020198891, // Insight Rover Grips
+              369384485, // Insight Rover Vest
+              2111956477, // Insight Rover Boots
+              3786300792 // Clandestine Maneuvers
+            ]
+          },
+          {
+            name: 'Titan armor',
+            items: [
+              1192751404, // Insight Unyielding Helm
+              388625893, // Insight Unyielding Gauntlets
+              2185500219, // Insight Unyielding Plate
+              311394919, // Insight Unyielding Greaves
+              966777042 // Anti-Hero Victory
+            ]
+          },
+          {
+            name: 'Warlock armor',
+            items: [
+              2905154661, // Insight Vikti Hood
+              3685831476, // Insight Vikti Gloves
+              731888972, // Insight Vikti Robes
+              3973570110, // Insight Vikti Boots
+              3430647425 // Synaptic Construct
+            ]
+          }
+        ]
+      },
+      {
+        name: 'Eververse, Season 3',
+        sections: [
+          {
             name: 'Hunter Armor',
             items: [
               2089084848, // Qiao's Grin
               1886868481, // Qiao's Care
               2798295255, // Qiao's Heart
-              3381714035, // Qiao's Strides 
+              3381714035, // Qiao's Strides
               631647398 // Qiao's Passing
             ]
           },
@@ -424,7 +457,7 @@ module.exports = [
               2221552043, // Hardy's Control
               4234287845, // Hardy's Journey
               3696190397, // Hardy's Steps
-              2890202680 // Hardy's Orders 
+              2890202680 // Hardy's Orders
             ]
           },
           {
@@ -432,7 +465,7 @@ module.exports = [
             items: [
               2170939813, // Mihaylova's Triumph
               2910039924, // Mihaylova's Instruments
-              4141029260, // Mihaylova's Choice 
+              4141029260, // Mihaylova's Choice
               3197778558, // Mihaylova's Path
               2078786241 // Mihaylova's Tale
             ]
@@ -452,7 +485,7 @@ module.exports = [
               631626578, // Copperhead Supremacy Shell
               631626579, // Blaster Box
               631626580, // Speckled Giallo Shell
-              631626582, // Riveted Majesty Shell 
+              631626582, // Riveted Majesty Shell
               631626583 // Open Orchid Shell
             ]
           },
@@ -460,7 +493,7 @@ module.exports = [
             name: 'Sparrows',
             items: [
               777818278, // Eon Drive
-              777818276, // Vespulaser 
+              777818276, // Vespulaser
               777818274, // Azure Azazyel
               256118668, // Andes Peakhunter
               2351197436, // Glam Toboggan
@@ -473,8 +506,8 @@ module.exports = [
             ]
           },
           {
-            "name": "Ships",
-            "items": [
+            name: 'Ships',
+            items: [
               1748147690, // Lost Legend
               1748147691, // Shadow Trespass
               1748147688, // Holborn's Splint
@@ -489,8 +522,8 @@ module.exports = [
             ]
           },
           {
-            "name": "Shaders",
-            "items": [
+            name: 'Shaders',
+            items: [
               1017491633, // Molten Bronze
               1017491632, // Mars Sunset
               1017491635, // Cargulo Bristle
