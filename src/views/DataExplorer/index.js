@@ -264,7 +264,8 @@ class DataExplorer extends Component {
                     <div className={styles.dataSlideInner}>
                       <DataViewer
                         className={styles.dataView}
-                        data={this.defs}
+                        data={this.defsByField}
+                        defs={this.defs}
                         item={data}
                         onItemClick={this.pushItem}
                       />

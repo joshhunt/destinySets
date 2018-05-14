@@ -47,6 +47,13 @@ export default class DataView extends Component {
     const defsForHash =
       this.props.data[fieldName] || this.props.data[parentFieldName];
 
+    console.log({
+      fieldName,
+      parentFieldName,
+      defsForHash,
+      data: this.props.data
+    });
+
     if (!defsForHash) {
       return prettyValue;
     }
@@ -103,7 +110,7 @@ export default class DataView extends Component {
         {CustomView && (
           <CustomView
             data={item}
-            defs={this.props.data}
+            defs={this.props.defs}
             onItemClick={this.onItemClick}
           />
         )}

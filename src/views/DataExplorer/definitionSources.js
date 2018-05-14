@@ -26,7 +26,11 @@ export default [
 
   src('DestinyLoreDefinition', 'lore', ['loreHash']),
 
-  src('DestinyVendorDefinition', 'vendor', ['kioskItems', 'vendorHash']),
+  src('DestinyVendorDefinition', 'vendor', [
+    'kioskItems',
+    'vendorHash',
+    'previewVendorHash'
+  ]),
 
   src('DestinyRaceDefinition', 'race', ['raceHash']),
   src('DestinyGenderDefinition', 'gender', ['genderHash']),
