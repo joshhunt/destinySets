@@ -72,6 +72,13 @@ function objectivesFromSockets(data) {
   return mapSockets(data, socket => socket.plugObjectives);
 }
 
+const fromProfilePlugSets = fp.flow(
+  fp.flatMap(p => Object.values(p)),
+  fp.flatMap(p => p),
+  fp.filter(p => p.canInsert),
+  fp.map(p => p.plugItemHash)
+);
+
 function objectivesFromVendors(data) {
   return fp.flow(
     fp.flatMap(character => {
@@ -168,7 +175,8 @@ export function inventoryFromProfile(profile, vendorDefs) {
       ],
       [fromKiosks(profile.profileKiosks.data, vendorDefs), 'profileKiosks'],
       [fromSockets(profile.itemComponents.sockets.data), 'itemSockets'],
-      [fromVendorSockets(profile.$vendors.data), 'vendorSockets']
+      [fromVendorSockets(profile.$vendors.data), 'vendorSockets'],
+      [fromProfilePlugSets(profile.profilePlugSets.data), 'profilePlugSets']
     ].reduce(mergeItems, {});
 
     window.__inventory = inventory;
