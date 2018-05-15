@@ -26,8 +26,7 @@ function getFileId({ profile }) {
   }
 
   const profileData = profile.data.userInfo;
-  const namePrefix =
-    localStorage.googleDriveInventoryNamePrefix || window.DESTINYSETS_ENV;
+  const namePrefix = window.DESTINYSETS_ENV;
   const fileName = `inventory-${namePrefix}-${profileData.membershipType}-${
     profileData.membershipId
   }.json`;
@@ -75,7 +74,7 @@ function getFileId({ profile }) {
 
 export function listVersions() {
   return gapi.client.drive.revisions
-    .list({ fileId: JSON.parse(localStorage.$googleDriveFileIddev) })
+    .list({ fileId: ls.getGoogleDriveInventoryFileId() })
     .then(({ result }) => {
       return result.revisions;
     });
@@ -85,7 +84,7 @@ export function getRevision(revisionId) {
   return gapi.client.drive.revisions
     .get({
       alt: 'media',
-      fileId: JSON.parse(localStorage.$googleDriveFileIddev),
+      fileId: ls.getGoogleDriveInventoryFileId(),
       revisionId
     })
     .then(({ result }) => {

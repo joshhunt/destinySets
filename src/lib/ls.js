@@ -15,7 +15,8 @@ const keys = {
   DEBUGID: 'debugid',
   PROFILE_ERROR_REPORTED: 'profileErrorReported',
 
-  DESTINY_PROFILE: 'd2Profile'
+  DESTINY_PROFILE: 'd2Profile',
+  DEBUG: 'debug'
 };
 
 let LOCAL_STORAGE;
@@ -76,7 +77,17 @@ function get(key, defaultx) {
 
 function save(key, value) {
   const jason = JSON.stringify(value);
-  LOCAL_STORAGE.setItem(key, jason);
+
+  try {
+    LOCAL_STORAGE.setItem(key, jason);
+  } catch (err) {
+    console.error(
+      `Error writing ${key} to localStorage. Falling back to polyfill`
+    );
+    console.error(err);
+    LOCAL_STORAGE = localStoragePolyfill;
+    LOCAL_STORAGE.setItem(key, jason);
+  }
 }
 
 export function getProfileErrorReported() {
@@ -212,6 +223,21 @@ export function clearAll() {
   Object.values(keys).forEach(k => {
     localStorage.removeItem(k);
   });
+}
+
+export function cleanUp() {
+  const whitelistedKeys = Object.values(keys);
+  try {
+    Object.keys(localStorage).forEach(lsKey => {
+      if (!whitelistedKeys.includes(lsKey)) {
+        console.info('Pruning unwhitelisted key from localStorage', lsKey);
+        localStorage.removeItem(lsKey);
+      }
+    });
+  } catch (e) {
+    console.error('Error cleaning localStorage');
+    console.error(e);
+  }
 }
 
 export const localStorage = LOCAL_STORAGE;

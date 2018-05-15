@@ -215,14 +215,15 @@ module.exports = [
               1752585070, // BrayTech Winter Wolf
               717150101, // BrayTech RWP Mk. II
               1929278169, // BrayTech Osprey
-              159056377, // Requiem-45
               689453941, // The Frigid Jackal
+              1350102270, // Niflheim Frost
+              1798874854, // 18 Kelvins
+
+              159056377, // Requiem-45
               618554398, // Proelium FR3
               276918162, // Hagakure
-              1350102270, // Niflheim Frost
               4014434381, // Kibou AR3
-              541053086, // Telemachus-C
-              1798874854 // 18 Kelvins
+              541053086 // Telemachus-C
             ]
           },
           {

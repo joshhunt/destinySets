@@ -101,18 +101,8 @@ export function getDestiny(_pathname, opts = {}, postBody) {
   const url = `https://www.bungie.net${_pathname}`;
   const { pathname } = new URL(url);
 
-  const lsCacheKey = `__apiCache|${url}`;
-  if (window.__CACHE_API) {
-    const cached = localStorage.getItem(lsCacheKey);
-    if (cached) {
-      return Promise.resolve(JSON.parse(cached));
-    }
-  }
-
-  const apiKey = process.env.REACT_APP_API_KEY;
-
   opts.headers = opts.headers || {};
-  opts.headers['x-api-key'] = apiKey;
+  opts.headers['x-api-key'] = process.env.REACT_APP_API_KEY;
 
   const authTokenFn = opts._noAuth
     ? getEnsuredAccessTokenNoop
@@ -185,10 +175,6 @@ export function getDestiny(_pathname, opts = {}, postBody) {
       }
 
       const result = resp.Response || resp;
-
-      if (window.__CACHE_API) {
-        localStorage.setItem(lsCacheKey, JSON.stringify(result));
-      }
 
       return result;
     });
@@ -293,7 +279,12 @@ export function getCurrentProfiles() {
         bungieNetUser
       };
 
-      ls.saveProfiles(payload);
+      try {
+        ls.saveProfiles(payload);
+      } catch (err) {
+        console.error('Unable to save profiles to localStorage');
+        console.error(err);
+      }
 
       return payload;
     });

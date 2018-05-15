@@ -25,6 +25,8 @@ const render = App => {
 };
 
 if (!isAuthRefreshiFrame) {
+  ls.cleanUp();
+
   render(AppRouter);
   ReactModal.setAppElement('#root');
 

@@ -34,17 +34,12 @@ class DataExplorer extends Component {
   };
 
   collection = [];
-  inventory = [];
 
   toggleCollectMode = () => {
     this.setState({ collectMode: !this.state.collectMode });
   };
 
   componentDidMount() {
-    try {
-      this.inventory = JSON.parse(localStorage.getItem('inventory')) || [];
-    } catch (e) {}
-
     const lang = ls.getLanguage();
     const dataPromises = DATA_SOURCES.map(src =>
       getDefinition(src.url, lang.code)
