@@ -9,80 +9,45 @@ const XUR_URL = 'https://api.destiny.plumbing/xur';
 
 const log = require('app/lib/log')('http');
 
-const componentProfiles = 100;
-const componentVendorReceipts = 101;
-const componentProfileInventories = 102;
-const componentProfileCurrencies = 103;
-const componentCharacters = 200;
-const componentCharacterInventories = 201;
-const componentCharacterProgressions = 202;
-const componentCharacterRenderData = 203;
-const componentCharacterActivities = 204;
-const componentCharacterEquipment = 205;
-const componentItemInstances = 300;
-const componentItemObjectives = 301;
-const componentItemPerks = 302;
-const componentItemRenderData = 303;
-const componentItemStats = 304;
-const componentItemSockets = 305;
-const componentItemTalentGrids = 306;
-const componentItemCommonData = 307;
-const componentItemPlugStates = 308;
-const componentVendors = 400;
-const componentVendorCategories = 401;
-const componentVendorSales = 402;
-const componentKiosks = 500;
+const componentProfiles = 100; // eslint-disable-line
+const componentVendorReceipts = 101; // eslint-disable-line
+const componentProfileInventories = 102; // eslint-disable-line
+const componentProfileCurrencies = 103; // eslint-disable-line
+const componentCharacters = 200; // eslint-disable-line
+const componentCharacterInventories = 201; // eslint-disable-line
+const componentCharacterProgressions = 202; // eslint-disable-line
+const componentCharacterRenderData = 203; // eslint-disable-line
+const componentCharacterActivities = 204; // eslint-disable-line
+const componentCharacterEquipment = 205; // eslint-disable-line
+const componentItemInstances = 300; // eslint-disable-line
+const componentItemObjectives = 301; // eslint-disable-line
+const componentItemPerks = 302; // eslint-disable-line
+const componentItemRenderData = 303; // eslint-disable-line
+const componentItemStats = 304; // eslint-disable-line
+const componentItemSockets = 305; // eslint-disable-line
+const componentItemTalentGrids = 306; // eslint-disable-line
+const componentItemCommonData = 307; // eslint-disable-line
+const componentItemPlugStates = 308; // eslint-disable-line
+const componentVendors = 400; // eslint-disable-line
+const componentVendorCategories = 401; // eslint-disable-line
+const componentVendorSales = 402; // eslint-disable-line
+const componentKiosks = 500; // eslint-disable-line
 
 const PROFILE_COMPONENTS = [
   componentProfiles,
-  componentVendorReceipts,
   componentProfileInventories,
-  componentProfileCurrencies,
   componentCharacters,
   componentCharacterInventories,
-  componentCharacterProgressions,
-  componentCharacterRenderData,
-  componentCharacterActivities,
   componentCharacterEquipment,
-  componentItemInstances,
   componentItemObjectives,
-  componentItemPerks,
-  componentItemRenderData,
-  componentItemStats,
   componentItemSockets,
-  componentItemTalentGrids,
-  componentItemCommonData,
-  componentItemPlugStates,
-  componentVendors,
-  componentVendorCategories,
-  componentVendorSales,
   componentKiosks
 ];
 
 const VENDOR_COMPONENTS = [
-  componentProfiles,
-  componentVendorReceipts,
-  componentProfileInventories,
-  componentProfileCurrencies,
-  componentCharacters,
-  componentCharacterInventories,
-  componentCharacterProgressions,
-  componentCharacterRenderData,
-  componentCharacterActivities,
-  componentCharacterEquipment,
-  componentItemInstances,
-  componentItemObjectives,
-  componentItemPerks,
-  componentItemRenderData,
-  componentItemStats,
   componentItemSockets,
-  componentItemTalentGrids,
-  componentItemCommonData,
   componentItemPlugStates,
-  componentVendors,
-  componentVendorCategories,
-  componentVendorSales,
-  componentKiosks
+  componentVendorSales
 ];
 
 let DEBUG_STORE = {

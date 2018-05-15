@@ -15,7 +15,7 @@ const keys = {
   DEBUGID: 'debugid',
   PROFILE_ERROR_REPORTED: 'profileErrorReported',
 
-  DESTINY_PROFILE: 'd2Profile',
+  DESTINY_PROFILE: 'd2Profile2',
   DEBUG: 'debug'
 };
 

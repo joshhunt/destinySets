@@ -171,13 +171,22 @@ export function inventoryFromProfile(profile, vendorDefs) {
       [fromVendorSockets(profile.$vendors.data), 'vendorSockets']
     ].reduce(mergeItems, {});
 
+    console.log(
+      `%cInventory length: ${Object.keys(inventory).length}`,
+      'font-weight: bold'
+    );
+
+    if (Object.keys(inventory).length !== 771) {
+      console.error('Inventory length not correct!');
+    }
+
     window.__inventory = inventory;
     return inventory;
   });
 }
 
 export function objectivesFromProfile(profile) {
-  return wrapForError('objectivesFromProfile', profile, () => {
+  const toReturn = wrapForError('objectivesFromProfile', profile, () => {
     return keyBy(
       [
         ...flavorObjectivesFromKiosk(profile.profileKiosks.data),
@@ -191,4 +200,15 @@ export function objectivesFromProfile(profile) {
       'objectiveHash'
     );
   });
+
+  console.log(
+    `%cObjectives length: ${Object.keys(toReturn).length}`,
+    'font-weight: bold'
+  );
+
+  if (Object.keys(toReturn).length !== 121) {
+    console.error('Objectives length not correct!');
+  }
+
+  return toReturn;
 }
