@@ -82,8 +82,12 @@ $headerHeight = $width * (24/119)
 
   &:hover
     background: lighten(#21262D, 15%)
+
   &:active
     background: lighten(#21262D, 5%)
+
+  & + &
+    margin-left: 1em
 
 .exotic
   background: #ceae33
@@ -100,7 +104,6 @@ $headerHeight = $width * (24/119)
 .basic
   background: #c3bcb4
   color: #1e242b
-
 
 .ishtarLogo
   display: inline-block

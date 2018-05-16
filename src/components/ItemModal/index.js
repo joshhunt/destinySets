@@ -10,7 +10,10 @@ import ItemBanner from 'app/components/ItemBanner';
 import Icon from 'app/components/Icon';
 import ishtarSvg from 'app/ishar.svg';
 
-import { trackOrnament as trackOrnamentAction } from 'app/store/reducer';
+import {
+  trackOrnament as trackOrnamentAction,
+  toggleManuallyObtained as toggleManuallyObtainedAction
+} from 'app/store/reducer';
 
 import {
   makeItemSelector,
@@ -31,7 +34,8 @@ class ItemModalContent extends Component {
       item,
       itemInventoryEntry,
       profileObjectives,
-      objectiveDefs
+      objectiveDefs,
+      toggleManuallyObtained
     } = this.props;
 
     const {
@@ -97,7 +101,7 @@ class ItemModalContent extends Component {
           </li>
         </ul>
 
-        {objectiveHashes.length ? (
+        {!!objectiveHashes.length && (
           <div>
             <h3 className={styles.objectiveTitle}>
               Complete Objectives to Unlock
@@ -110,15 +114,38 @@ class ItemModalContent extends Component {
               profileObjectives={profileObjectives}
               objectiveDefs={objectiveDefs}
             />
+          </div>
+        )}
 
+        <div>
+          {!!objectiveHashes.length && (
             <button
               className={styles.button}
               onClick={() => trackOrnament(hash)}
             >
               Track objective progress
             </button>
-          </div>
-        ) : null}
+          )}
+
+          {!itemInventoryEntry && (
+            <button
+              className={styles.button}
+              onClick={() => toggleManuallyObtained(hash)}
+            >
+              Mark as collected
+            </button>
+          )}
+
+          {itemInventoryEntry &&
+            itemInventoryEntry.manuallyObtained && (
+              <button
+                className={styles.button}
+                onClick={() => toggleManuallyObtained(hash)}
+              >
+                Unmark as collected
+              </button>
+            )}
+        </div>
 
         {extraInfo.map((info, index) => (
           <div key={index} className={styles.extraInfo}>
@@ -183,7 +210,8 @@ const mapStateToProps = () => {
 };
 
 const mapDispatchToActions = {
-  trackOrnament: trackOrnamentAction
+  trackOrnament: trackOrnamentAction,
+  toggleManuallyObtained: toggleManuallyObtainedAction
 };
 
 export default connect(mapStateToProps, mapDispatchToActions)(ItemModalWrapper);

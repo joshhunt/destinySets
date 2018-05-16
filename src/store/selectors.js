@@ -8,6 +8,7 @@ import {
 import { NUMERICAL_STATS, STAT_BLACKLIST } from 'app/lib/destinyEnums';
 
 export const cloudInventorySelector = state => state.app.cloudInventory;
+export const manualInventorySelector = state => state.app.manualInventory;
 export const itemDefsSelector = state => state.app.itemDefs;
 export const objectiveDefsSelector = state => state.app.objectiveDefs;
 export const statDefsSelector = state => state.app.statDefs;
@@ -116,22 +117,39 @@ export const currentInventorySelector = createSelector(
 export const inventorySelector = createSelector(
   currentInventorySelector,
   cloudInventorySelector,
-  (currentInventory, cloudInventory) => {
-    if (!(currentInventory && cloudInventory)) {
+  manualInventorySelector,
+  (currentInventory, cloudInventory, manualInventory) => {
+    if (!currentInventory) {
       return currentInventory;
     }
 
-    const deletedItems = difference(
-      Object.keys(cloudInventory),
-      Object.keys(currentInventory)
+    const inventory = { ...currentInventory };
+
+    if (cloudInventory) {
+      const deletedItems = difference(
+        Object.keys(cloudInventory),
+        Object.keys(inventory)
+      );
+
+      deletedItems.forEach(hash => {
+        inventory[hash] = {
+          itemHash: hash,
+          dismantled: true,
+          instances: [{ location: 'cloudInventory' }]
+        };
+      });
+    }
+
+    const manualItems = difference(
+      Object.keys(manualInventory),
+      Object.keys(inventory)
     );
 
-    const inventory = { ...currentInventory };
-    deletedItems.forEach(deletedHash => {
-      inventory[deletedHash] = {
-        itemHash: deletedHash,
-        dismantled: true,
-        instances: [{ location: 'cloudInventory' }]
+    manualItems.forEach(hash => {
+      inventory[hash] = {
+        itemHash: hash,
+        manuallyObtained: true,
+        instances: [{ location: 'destinySetsManual' }]
       };
     });
 

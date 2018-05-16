@@ -95,7 +95,9 @@ export default class Item extends Component {
           className,
           styles.root,
           inventoryEntry && inventoryEntry.obtained && styles.obtained,
-          inventoryEntry && inventoryEntry.dismantled && styles.dismantled
+          inventoryEntry &&
+            (inventoryEntry.dismantled || inventoryEntry.manuallyObtained) &&
+            styles.dismantled
         )}
       >
         <div className={styles.imageWrapper}>

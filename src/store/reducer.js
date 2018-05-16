@@ -17,6 +17,7 @@ const SET_LANGUAGE = 'Set language';
 const ADD_TRACK_ITEMS = 'Add tracked item';
 const REMOVE_TRACKED_ITEM = 'Remove tracked item';
 const SET_XUR_DATA = 'Set Xur data';
+const TOGGLE_MANUALLY_OBTAINED = 'Toggle manually obtained';
 
 export const DEFAULT_FILTER = {
   [TITAN]: true,
@@ -32,7 +33,8 @@ const INITIAL_STORE = {
   xur: {
     items: [],
     modalOpen: false
-  }
+  },
+  manualInventory: {}
 };
 
 const ITEM_DEF_KEYS = [];
@@ -72,6 +74,27 @@ function proxyifyDefs(defs, prevKeys = []) {
   });
 
   return p;
+}
+
+function toggleManualInventory(manualInventory, itemHash) {
+  const newItem = manualInventory[itemHash]
+    ? null
+    : {
+        itemHash: itemHash,
+        instances: [{ location: 'destinySetsManual' }],
+        manuallyObtained: true
+      };
+
+  const ddd = {
+    ...manualInventory,
+    [itemHash]: newItem
+  };
+
+  if (!ddd[itemHash]) {
+    delete ddd[itemHash];
+  }
+
+  return ddd;
 }
 
 export default function reducer(state = INITIAL_STORE, action) {
@@ -134,6 +157,15 @@ export default function reducer(state = INITIAL_STORE, action) {
         xur: { ...state.xur, ...action.xur }
       };
 
+    case TOGGLE_MANUALLY_OBTAINED:
+      return {
+        ...state,
+        manualInventory: toggleManualInventory(
+          state.manualInventory,
+          action.itemHash
+        )
+      };
+
     default:
       return state;
   }
@@ -190,6 +222,10 @@ export function removeTrackedItem(itemHash) {
 
 export function setXurData(xur) {
   return { type: SET_XUR_DATA, xur };
+}
+
+export function toggleManuallyObtained(itemHash) {
+  return { type: TOGGLE_MANUALLY_OBTAINED, itemHash };
 }
 
 function setDefs(name, defs) {
