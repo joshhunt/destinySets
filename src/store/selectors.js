@@ -16,8 +16,6 @@ const baseXurItemsSelector = state => state.app.xur.items;
 const profileSelector = state => state.app.profile;
 const vendorDefsSelector = state => state.app.vendorDefs;
 
-const propsSectionsSelector = (state, props) => props.sections;
-
 export const itemHashPropSelector = (state, props) => props.itemHash;
 
 export const makeItemSelector = () => {
@@ -77,7 +75,7 @@ export const makeItemStatsSelector = () => {
 export const makeSelectedItemDefsSelector = () => {
   return createSelector(
     itemDefsSelector,
-    propsSectionsSelector,
+    (state, props) => props.set.sections,
     (itemDefs, sections) => {
       const items = {};
 

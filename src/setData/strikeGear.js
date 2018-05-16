@@ -4,7 +4,6 @@ module.exports = [
     sets: [
       {
         name: 'The Inverted Spire',
-        small: true,
         image: '/img/destiny_content/pgcr/strike_inverted_spire.jpg',
         sections: [
           {
@@ -25,7 +24,6 @@ module.exports = [
       },
       {
         name: 'Pyramidion',
-        small: true,
         image: '/img/destiny_content/pgcr/strike_the_pyramdion.jpg',
         sections: [
           {
@@ -46,7 +44,6 @@ module.exports = [
       },
       {
         name: 'Exodus Crash',
-        small: true,
         image: '/img/destiny_content/pgcr/strike_exodus_crash.jpg',
         sections: [
           {
@@ -67,7 +64,6 @@ module.exports = [
       },
       {
         name: 'The Arms Dealer',
-        small: true,
         image: '/img/destiny_content/pgcr/strike_the_arms_dealer.jpg',
         sections: [
           {
@@ -88,7 +84,6 @@ module.exports = [
       },
       {
         name: "Savathûn's Song",
-        small: true,
         image: '/img/destiny_content/pgcr/strike_savanthuns_song.jpg',
         sections: [
           {
@@ -109,7 +104,6 @@ module.exports = [
       },
       {
         name: 'Lake of Shadows',
-        small: true,
         image: '/img/destiny_content/pgcr/strike_lake_of_shadows.jpg',
         sections: [
           // {
@@ -127,7 +121,6 @@ module.exports = [
       {
         name: 'Tree Of Probabilities',
         image: '/img/destiny_content/pgcr/campaign_tree_of_probabilities.jpg',
-        small: true,
         sections: [
           {
             name: 'Nightfall exclusive',
@@ -150,7 +143,6 @@ module.exports = [
       {
         name: 'A Garden World',
         image: '/img/destiny_content/pgcr/rituals_a_garden_world.jpg',
-        small: true,
         sections: [
           {
             name: 'Nightfall exclusive',
@@ -166,6 +158,56 @@ module.exports = [
               1505307650, // Blast from the Past
               1505307651, // Pulling Out the Roots
               1505307649 // Odysseus's Offspring
+            ]
+          }
+        ]
+      }
+    ]
+  },
+
+  {
+    name: 'Warmind',
+    sets: [
+      {
+        name: 'Will of the Thousands',
+        image: '/img/destiny_content/pgcr/strike_xol.jpg',
+        sections: [
+          // {
+          //   name: 'Nightfall exclusive',
+          //   bigItems: true,
+          //   items: [
+          //     4238497225 // D.F.A.
+          //   ]
+          // },
+          {
+            name: 'Nightfall emblems',
+            items: [
+              3427785728, // Will of the Thousands
+              1456844009, // Feast of Worms
+              1456844010, // Death to the Deathless
+              1456844008 // Giantfall
+            ]
+          }
+        ]
+      },
+      {
+        name: 'Strange Terrain',
+        image: '/img/destiny_content/pgcr/strike_nokris.jpg',
+        sections: [
+          // {
+          //   name: 'Nightfall exclusive',
+          //   bigItems: true,
+          //   items: [
+          //     1174053886 // Universal Wavefunction
+          //   ]
+          // },
+          {
+            name: 'Nightfall emblems',
+            items: [
+              2136479687, // Strange Terrain
+              1901100185, // Maleficarum Interrupted
+              1901100187, // Bane of Nokris
+              1901100184 // Purifying Light
             ]
           }
         ]

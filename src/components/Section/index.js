@@ -14,10 +14,7 @@ export default function Section({ name, slug, sets, setPopper, setModal }) {
           <Fragment key={index}>
             <ItemSet
               className={set.big ? styles.setBig : styles.set}
-              name={set.name}
-              description={set.description}
-              sections={set.sections}
-              image={set.image}
+              set={set}
               setPopper={setPopper}
               setModal={setModal}
             />

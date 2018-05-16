@@ -69,6 +69,7 @@ export const fancySearchFns = {
   'is:kinetic': items => itemFilter(items, itemCategory(enums.KINETIC_WEAPON)),
   'is:energy': items => itemFilter(items, itemCategory(enums.ENERGY_WEAPON)),
   'is:power': items => itemFilter(items, itemCategory(enums.POWER_WEAPON)),
+  'is:dummy': items => itemFilter(items, itemCategory(enums.DUMMIES)),
 
   'is:armor': items => {
     return items.filter(isArmor);

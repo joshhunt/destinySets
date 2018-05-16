@@ -9,17 +9,8 @@ import {
 } from 'app/store/selectors';
 import styles from './styles.styl';
 
-function ItemSet({
-  className,
-  name,
-  description,
-  sections,
-  inventory,
-  image,
-  itemDefs,
-  setPopper,
-  setModal
-}) {
+function ItemSet({ className, inventory, itemDefs, setPopper, setModal, set }) {
+  const { name, description, sections, image } = set;
   return (
     <div className={cx(className, styles.root)}>
       <div className={styles.inner}>
@@ -58,6 +49,7 @@ function ItemSet({
                       setPopper={setPopper}
                       inventoryEntry={inventory && inventory[itemHash]}
                       onItemClick={setModal}
+                      extended={section.bigItems}
                     />
                   ))}
                 </div>

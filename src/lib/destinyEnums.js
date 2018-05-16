@@ -19,6 +19,7 @@ export const EMOTES = 44;
 export const MODS1 = 56;
 export const MODS2 = 59;
 export const CLAN_BANNER = 58;
+export const DUMMIES = 3109687656;
 
 export const WEAPON_MODS_ORNAMENTS = 3124752623;
 export const ARMOR_MODS_ORNAMENTS = 1742617626;
