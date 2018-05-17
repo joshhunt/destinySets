@@ -194,13 +194,13 @@ module.exports = [
         name: 'Strange Terrain',
         image: '/img/destiny_content/pgcr/strike_nokris.jpg',
         sections: [
-          // {
-          //   name: 'Nightfall exclusive',
-          //   bigItems: true,
-          //   items: [
-          //     1174053886 // Universal Wavefunction
-          //   ]
-          // },
+          {
+            name: 'Nightfall exclusive',
+            bigItems: true,
+            items: [
+              1929278169 // BrayTech Osprey
+            ]
+          },
           {
             name: 'Nightfall emblems',
             items: [
