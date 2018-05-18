@@ -961,7 +961,8 @@ module.exports = [
             items: [
               4132147344, // Stand Together
               4132147348, // Darkest Day
-              4132147345 // Heretic
+              4132147345, // Heretic
+              1940590824 // Tchaikovsky Admirer
             ]
           },
           {
