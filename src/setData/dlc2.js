@@ -86,10 +86,10 @@ module.exports = [
           {
             name: 'Extras',
             items: [
+              530754878, // Luxurious Toast emote
               1057119308, // Spire Star emblem
               2331063860, // Grind Underfoot emblem
               2331063861, // Together, For Glory! emblem
-              530754878, // Luxurious Toast emote
               2543722797 // Calus's Shadow shader
             ]
           }
