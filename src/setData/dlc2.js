@@ -95,7 +95,61 @@ module.exports = [
           }
         ]
       },
-
+       {
+        name: 'Iron Banner',
+        description:
+          'Weapons and armor obtained by honoring the heroes of old in the Iron Banner Crucible tournament.',
+        sections: [
+          {
+            name: 'Weapons',
+            items: [
+              982229638, // Allied Demand
+              3434507093, // Occluded Finality
+              4265183314, // Multimach CCX
+              701922966, // Finite Impactor
+              432716552, // Shining Sphere
+              1942069133 // Dark Decider
+            ]
+          },
+          {
+            name: 'Hunter Ornaments',
+            items: [
+              2076777678, // Weyloran's Iron Mask
+              968545635, // Gheleon's Iron Grips
+              3329028839, // Perun's Iron Cuirass
+              3853099349, // Haakon's Iron Strides
+              2749869546 // Efrideet's Iron Cloak
+            ]
+          },
+          {
+            name: 'Titan Ornaments',
+            items: [
+              2310582578, // Bretomart's Iron Helm 
+              3380383295, // Radegast's Iron Gauntlets
+              4108794419, // Silimar's Iron Plate
+              2460797681, // Tormod's Iron Greaves
+              1101861022 // Finnala's Iron Mark
+            ]
+          },
+          {
+            name: 'Warlock Ornaments',
+            items: [
+              3905287389, // Ashraven's Iron Hood
+              2490313400, // Skorri's Iron Gloves
+              1485406574, // Colovance's Iron Robes
+              3044759626, // Timur's Iron Boots
+              316161003 // Nirwen's Iron Bond 
+            ]
+          },
+          {
+            name: 'Extras',
+            items: [
+              1420718398, // Esfera Triumph
+              1069214754 // Visage of Skorri
+            ]
+          }
+        ]
+      },
       {
         name: 'Trials of the Nine',
         description:
@@ -269,6 +323,7 @@ module.exports = [
               842157718, // Relic of the Golden Age
               842157719, // Wormslayer
               1291068170, // Cold Comfort
+              1291068172, // Specter of the Gun
               1291068171, // Data Mine
               1273131832, // Warminded
               235397502 // Arctic Dreamscape
