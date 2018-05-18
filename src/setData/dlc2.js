@@ -89,6 +89,7 @@ module.exports = [
               1057119308, // Spire Star emblem
               2331063860, // Grind Underfoot emblem
               2331063861, // Together, For Glory! emblem
+              530754878, // Luxurious Toast emote
               2543722797 // Calus's Shadow shader
             ]
           }
@@ -135,11 +136,11 @@ module.exports = [
           {
             name: 'Extras',
             items: [
-              3682795607, // Cognition of the Nine shader
               2894506171, // Knight's Peace Shell
               1827800764, // Millennial Spadework Shell
               641129738, // Canine Rising
-              1879447862 // Burningbrite Tyger
+              1879447862, // Burningbrite Tyger
+              3682795607 // Cognition of the Nine shader
             ]
           }
         ]
