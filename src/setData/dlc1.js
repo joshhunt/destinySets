@@ -115,7 +115,7 @@ module.exports = [
             ]
           },
           {
-            name: 'Hunter Armor',
+            name: 'Hunter Ornaments',
             items: [
               967086398, // Iron Pledge Ornament
               2845443115, // Iron Pledge Ornament
@@ -125,7 +125,7 @@ module.exports = [
             ]
           },
           {
-            name: 'Titan Armor',
+            name: 'Titan Ornaments',
             items: [
               3913452440, // Iron Pledge Ornament
               208020061, // Iron Pledge Ornament
@@ -135,7 +135,7 @@ module.exports = [
             ]
           },
           {
-            name: 'Warlock Armor',
+            name: 'Warlock Ornaments',
             items: [
               3388638931, // Iron Pledge Ornament
               1355065950, // Iron Pledge Ornament
