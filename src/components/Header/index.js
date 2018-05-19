@@ -191,7 +191,7 @@ export default class Header extends Component {
       language,
       setLanguage,
       logout,
-      googleAuthSignedIn,
+      googleAuth,
       displayGoogleAuthButton,
       googleSignIn,
       googleSignOut,
@@ -258,7 +258,7 @@ export default class Header extends Component {
                 switchProfile={switchProfile}
                 logout={logout}
                 googleSignOut={googleSignOut}
-                googleAuthSignedIn={googleAuthSignedIn}
+                googleAuthSignedIn={googleAuth.signedIn}
               />
             )}
 

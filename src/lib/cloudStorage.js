@@ -92,18 +92,23 @@ export function getRevision(revisionId) {
     });
 }
 
-export function setInventory(inventory, profile, raw = false) {
-  log('Setting cloud inventory', { inventory, profile });
+let queueLibPromise;
+let saveQueue;
+
+function saveInventoryWorker(job, cb) {
+  const { inventory, profile, raw } = job;
+
+  log('Saving cloud inventory', { inventory, profile });
   ls.saveCloudInventory(inventory);
 
   const payload = raw
     ? inventory
     : {
         version: VERSION_NEW_3,
-        inventory
+        ...inventory
       };
 
-  log('Payload to save is', { payload });
+  log('Saving payload', { payload });
 
   return ready
     .then(() => getFileId(profile))
@@ -122,10 +127,39 @@ export function setInventory(inventory, profile, raw = false) {
     })
     .then(resp => {
       log('Successfully saved to Google Drive', { resp });
+      cb();
     })
     .catch(err => {
       log('ERROR saving to Google Drive', err);
+      cb(err);
     });
+}
+
+export function setInventory(_inventory, profile, raw = false) {
+  const inventory = {
+    ..._inventory,
+    inventory: pickBy(_inventory.inventory, inventoryEntry => {
+      if (inventoryEntry.manuallyObtained) {
+        return false;
+      } else {
+        return true;
+      }
+    })
+  };
+
+  if (!queueLibPromise) {
+    log('Requesting async/queue');
+    queueLibPromise = import('async/queue');
+  }
+
+  queueLibPromise.then(queueLib => {
+    if (!saveQueue) {
+      saveQueue = queueLib(saveInventoryWorker, 1);
+    }
+
+    log('Pushing into save queue');
+    saveQueue.push({ inventory, profile, raw });
+  });
 }
 
 function removeArmorOrnamentsMigration(inventory, itemDefs) {
@@ -147,7 +181,7 @@ function removeArmorOrnamentsMigration(inventory, itemDefs) {
 
 function normaliseInstancesData(inventory) {
   log('Running normaliseInstancesData', { inventory });
-  return mapValues(inventory, inventoryItem => {
+  const newInventory = mapValues(inventory, inventoryItem => {
     if (inventoryItem.instances && !isArray(inventoryItem.instances)) {
       return {
         ...inventoryItem,
@@ -157,19 +191,23 @@ function normaliseInstancesData(inventory) {
 
     return inventoryItem;
   });
+
+  return { inventory: newInventory };
 }
 
 const BLACKLISTED_LOCATIONS = ['profileKiosks', 'characterKiosks'];
-function removeKioskItemsMigration(inventory) {
+function removeKioskItemsMigration({ inventory }) {
   log('Running removeKioskItemsMigration', { inventory });
 
-  return pickBy(inventory, (value, key) => {
+  const newInventory = pickBy(inventory, (value, key) => {
     const filtered = value.instances.filter(instance => {
       return !BLACKLISTED_LOCATIONS.includes(instance.location);
     });
 
     return filtered.length > 0;
   });
+
+  return { inventory: newInventory };
 }
 
 export function getInventory(profile, itemDefs) {
@@ -191,7 +229,7 @@ export function getInventory(profile, itemDefs) {
       log('Data is', data);
 
       if (data.version === VERSION_NEW_3) {
-        return data.inventory;
+        return data;
       }
 
       if (data.version === VERSION_NEW_2) {

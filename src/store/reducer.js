@@ -18,6 +18,7 @@ const ADD_TRACK_ITEMS = 'Add tracked item';
 const REMOVE_TRACKED_ITEM = 'Remove tracked item';
 const SET_XUR_DATA = 'Set Xur data';
 const TOGGLE_MANUALLY_OBTAINED = 'Toggle manually obtained';
+const SET_GOOGLE_AUTH = 'Set Google auth data';
 
 export const DEFAULT_FILTER = {
   [TITAN]: true,
@@ -34,7 +35,11 @@ const INITIAL_STORE = {
     items: [],
     modalOpen: false
   },
-  manualInventory: {}
+  manualInventory: {},
+  googleAuth: {
+    loaded: false,
+    signedIn: false
+  }
 };
 
 const ITEM_DEF_KEYS = [];
@@ -105,10 +110,17 @@ export default function reducer(state = INITIAL_STORE, action) {
         ...action.payload
       };
 
+    case SET_GOOGLE_AUTH:
+      return {
+        ...state,
+        googleAuth: action.data
+      };
+
     case SET_CLOUD_INVENTORY:
       return {
         ...state,
-        cloudInventory: action.cloudInventory
+        cloudInventory: action.cloudInventory.inventory,
+        manualInventory: action.cloudInventory.manualInventory || {}
       };
 
     case SET_DEFINITIONS:
@@ -191,7 +203,12 @@ export function switchProfile(newProfile) {
   };
 }
 
+export function setGoogleAuth(data) {
+  return { type: SET_GOOGLE_AUTH, data };
+}
+
 export function setCloudInventory(cloudInventory) {
+  console.log('cloudInventory:', cloudInventory);
   return { type: SET_CLOUD_INVENTORY, cloudInventory };
 }
 

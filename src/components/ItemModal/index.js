@@ -35,7 +35,8 @@ class ItemModalContent extends Component {
       itemInventoryEntry,
       profileObjectives,
       objectiveDefs,
-      toggleManuallyObtained
+      toggleManuallyObtained,
+      googleAuth
     } = this.props;
 
     const {
@@ -52,6 +53,10 @@ class ItemModalContent extends Component {
 
     const isEmblem = (itemCategoryHashes || []).includes(EMBLEM);
     const extraInfo = getItemExtraInfo(item, itemInventoryEntry);
+
+    if (googleAuth.loaded && !googleAuth.signedIn) {
+      extraInfo.push('Connect Google Drive to manually mark as collected');
+    }
 
     const objectiveHashes = [
       item.emblemObjectiveHash,
@@ -127,14 +132,15 @@ class ItemModalContent extends Component {
             </button>
           )}
 
-          {!itemInventoryEntry && (
-            <button
-              className={styles.button}
-              onClick={() => toggleManuallyObtained(hash)}
-            >
-              Mark as collected
-            </button>
-          )}
+          {googleAuth.signedIn &&
+            !itemInventoryEntry && (
+              <button
+                className={styles.button}
+                onClick={() => toggleManuallyObtained(hash)}
+              >
+                Mark as collected
+              </button>
+            )}
 
           {itemInventoryEntry &&
             itemInventoryEntry.manuallyObtained && (
@@ -199,6 +205,7 @@ const mapStateToProps = () => {
 
   return (state, ownProps) => {
     return {
+      googleAuth: state.app.googleAuth,
       profileObjectives: profileObjectivesSelector(state),
       objectiveDefs: objectiveDefsSelector(state),
       statDefs: statDefsSelector(state),

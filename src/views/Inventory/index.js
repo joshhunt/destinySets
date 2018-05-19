@@ -12,7 +12,8 @@ import {
   setStatDefs,
   toggleFilterKey,
   setXurData,
-  removeTrackedItem
+  removeTrackedItem,
+  setGoogleAuth
 } from 'app/store/reducer';
 import {
   inventorySelector,
@@ -119,6 +120,17 @@ class Inventory extends Component {
       log('Inventory has changed, in some way!', newProps);
     }
 
+    if (this.props.manualInventory !== newProps.manualInventory) {
+      log('Manual inventory has changed, saving it');
+      cloudStorage.setInventory(
+        {
+          inventory: newProps.inventory,
+          manualInventory: newProps.manualInventory
+        },
+        newProps.profile
+      );
+    }
+
     if (
       inventoryHasChanged &&
       !newProps.isCached &&
@@ -129,7 +141,13 @@ class Inventory extends Component {
         'Have final inventory, apparently. Saving new cloudInventory',
         newProps
       );
-      cloudStorage.setInventory(newProps.inventory, newProps.profile);
+      cloudStorage.setInventory(
+        {
+          inventory: newProps.inventory,
+          manualInventory: newProps.manualInventory
+        },
+        newProps.profile
+      );
     }
   }
 
@@ -188,10 +206,12 @@ class Inventory extends Component {
   fetch = (props = this.props) => {
     this.fetchProfile(props).then(profile => {
       googleAuth(({ signedIn }) => {
-        this.setState({
-          googleAuthLoaded: true,
-          googleAuthSignedIn: signedIn
-        });
+        // this.setState({
+        //   googleAuthLoaded: true,
+        //   googleAuthSignedIn: signedIn
+        // });
+
+        this.props.setGoogleAuth({ loaded: true, signedIn });
 
         this.itemDefsPromise.then(itemDefs => {
           signedIn &&
@@ -267,15 +287,16 @@ class Inventory extends Component {
       isAuthenticated,
       trackedItems,
       xur,
-      xurHasNewItems
+      xurHasNewItems,
+      googleAuth
     } = this.props;
 
     const {
       itemTooltip,
       itemModal,
       xurModal,
-      googleAuthLoaded,
-      googleAuthSignedIn,
+      // googleAuthLoaded,
+      // googleAuthSignedIn,
       unexpectedError
     } = this.state;
 
@@ -291,12 +312,12 @@ class Inventory extends Component {
           logout={this.logout}
           googleSignIn={googleSignIn}
           googleSignOut={this.googleSignOut}
-          googleAuthSignedIn={googleAuthSignedIn}
           xurHasNewItems={xurHasNewItems}
           openXurModal={this.setXurModal}
           displayXur={!!xur.items.length}
+          googleAuth={googleAuth}
           displayGoogleAuthButton={
-            googleAuthLoaded && isAuthenticated && !googleAuthSignedIn
+            googleAuth.loaded && isAuthenticated && !googleAuth.signedIn
           }
         />
 
@@ -406,13 +427,15 @@ const mapStateToProps = (state, ownProps) => {
     language: state.app.language,
     itemDefs: state.app.itemDefs,
     trackedItems: state.app.trackedItems,
+    xur: state.app.xur,
+    googleAuth: state.app.googleAuth,
+    manualInventory: state.app.manualInventory,
     // TODO: this uses props, so we need to 'make' a selector like in ItemSet
     filteredSetData: filteredSetDataSelector(state, ownProps),
     inventory: inventorySelector(state),
     haveCloudInventory: !!state.app.cloudInventory,
     xurHasNewItems: xurHasNewItemsSelector(state),
-    xurItems: xurItemsSelector(state),
-    xur: state.app.xur
+    xurItems: xurItemsSelector(state)
   };
 };
 
@@ -427,7 +450,8 @@ const mapDispatchToActions = {
   toggleFilterKey,
   setLanguage,
   removeTrackedItem,
-  setXurData
+  setXurData,
+  setGoogleAuth
 };
 
 export default DestinyAuthProvider(
