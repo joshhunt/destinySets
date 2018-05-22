@@ -145,7 +145,8 @@ module.exports = [
             name: 'Extras',
             items: [
               1420718398, // Esfera Triumph
-              1069214754 // Visage of Skorri
+              1069214754, // Visage of Skorri
+              3449099425 // Iron to Steel 
             ]
           }
         ]
