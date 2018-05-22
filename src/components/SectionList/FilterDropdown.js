@@ -22,7 +22,15 @@ const FILTER_NAMES = {
 
 export default class FilterDropdown extends Component {
   renderContent = () => {
-    const { filters, toggleFilter } = this.props;
+    const { filters, toggleFilter: _toggleFilter } = this.props;
+
+    const toggleFilter = (...args) => {
+      console.log('calling toggle filter', args);
+      const err = new Error('test');
+      console.log(err.stack);
+      _toggleFilter(...args);
+    };
+
     return (
       <Fragment>
         {Object.keys(filters).map(key => (
@@ -47,6 +55,7 @@ export default class FilterDropdown extends Component {
   render() {
     return (
       <DropdownMenu
+        stayOpen
         inline={this.props.inline}
         className={styles.root}
         renderContent={this.renderContent}

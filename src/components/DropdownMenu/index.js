@@ -9,12 +9,22 @@ export default class DropdownMenu extends Component {
     visible: false
   };
 
-  toggleDropdown = () => {
+  toggleDropdown = ev => {
     this.setState({ visible: !this.state.visible });
   };
 
   clickedOutside = () => {
     this.state.visible && this.setState({ visible: false });
+  };
+
+  getRef = ref => {
+    this.contentRef = ref;
+  };
+
+  onContentClick = ev => {
+    if (this.props.stayOpen) {
+      ev.stopPropagation();
+    }
   };
 
   render() {
@@ -42,7 +52,10 @@ export default class DropdownMenu extends Component {
         {children}
 
         {visible && (
-          <div className={cx(styles.content, contentClassName)}>
+          <div
+            onClick={this.onContentClick}
+            className={cx(styles.content, contentClassName)}
+          >
             {renderContent()}
           </div>
         )}
