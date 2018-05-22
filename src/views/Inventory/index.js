@@ -10,7 +10,7 @@ import {
   setLanguage,
   setObjectiveDefs,
   setStatDefs,
-  toggleFilterKey,
+  setFilterItem,
   setXurData,
   removeTrackedItem,
   setGoogleAuth
@@ -247,7 +247,6 @@ class Inventory extends Component {
 
   setItemModal = itemHash => this.setState({ itemModal: itemHash });
   setXurModal = isOpen => this.setState({ xurModal: isOpen });
-  toggleFilter = key => this.props.toggleFilterKey(key);
   removeTrackedItem = item => this.props.removeTrackedItem(item.hash);
 
   switchProfile = profile => {
@@ -324,7 +323,7 @@ class Inventory extends Component {
         <SectionList
           setData={filteredSetData}
           filters={filters}
-          toggleFilter={this.toggleFilter}
+          setFilterItem={this.props.setFilterItem}
         />
 
         {!isAuthenticated && (
@@ -447,7 +446,7 @@ const mapDispatchToActions = {
   setItemDefs,
   setObjectiveDefs,
   setStatDefs,
-  toggleFilterKey,
+  setFilterItem,
   setLanguage,
   removeTrackedItem,
   setXurData,

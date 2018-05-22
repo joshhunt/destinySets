@@ -22,28 +22,17 @@ const FILTER_NAMES = {
 
 export default class FilterDropdown extends Component {
   renderContent = () => {
-    const { filters, toggleFilter: _toggleFilter } = this.props;
-
-    const toggleFilter = (...args) => {
-      console.log('calling toggle filter', args);
-      const err = new Error('test');
-      console.log(err.stack);
-      _toggleFilter(...args);
-    };
+    const { filters, setFilterItem } = this.props;
 
     return (
       <Fragment>
         {Object.keys(filters).map(key => (
-          <label
-            key={key}
-            className={styles.dropdownItem}
-            onClick={() => toggleFilter(key)}
-          >
+          <label key={key} className={styles.dropdownItem}>
             <input
               className={styles.checkbox}
               type="checkbox"
               checked={filters[key]}
-              readOnly
+              onChange={ev => setFilterItem(key, ev.target.checked)}
             />{' '}
             {FILTER_NAMES[key]}
           </label>

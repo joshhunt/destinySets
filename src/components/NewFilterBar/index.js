@@ -18,7 +18,7 @@ const FILTER_NAMES = {
   [FILTER_SHOW_PS4_EXCLUSIVES]: 'PS4 Exclusives'
 };
 
-export default function FilterBar({ filters, toggleFilter }) {
+export default function FilterBar({ filters, setFilterItem }) {
   return (
     <div className={styles.root}>
       {Object.keys(filters).map(key => (
@@ -27,7 +27,7 @@ export default function FilterBar({ filters, toggleFilter }) {
             className={styles.checkbox}
             type="checkbox"
             checked={filters[key]}
-            onChange={() => toggleFilter(key)}
+            onChange={() => setFilterItem(key)}
           />{' '}
           {FILTER_NAMES[key]}
         </label>
