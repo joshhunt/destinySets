@@ -9,7 +9,7 @@ export default class DropdownMenu extends Component {
     visible: false
   };
 
-  toggleDropdown = ev => {
+  toggleDropdown = () => {
     this.setState({ visible: !this.state.visible });
   };
 
@@ -17,14 +17,8 @@ export default class DropdownMenu extends Component {
     this.state.visible && this.setState({ visible: false });
   };
 
-  getRef = ref => {
-    this.contentRef = ref;
-  };
-
   onContentClick = ev => {
-    if (this.props.stayOpen) {
-      ev.stopPropagation();
-    }
+    this.props.stayOpen && ev.stopPropagation();
   };
 
   render() {
