@@ -11,7 +11,7 @@ import {
 const SET_PROFILES = 'Set profiles';
 const SET_CLOUD_INVENTORY = 'Set cloud inventory';
 const SET_DEFINITIONS = 'Set definitions';
-const TOGGLE_FILTER_KEY = 'Toggle filter value';
+const SET_FILTER_ITEM = 'Set filter item';
 const SET_BULK_FILTERS = 'Set bulk filters';
 const SET_LANGUAGE = 'Set language';
 const ADD_TRACK_ITEMS = 'Add tracked item';
@@ -130,12 +130,12 @@ export default function reducer(state = INITIAL_STORE, action) {
           action.name === 'itemDefs' ? proxyifyDefs(action.defs) : action.defs
       };
 
-    case TOGGLE_FILTER_KEY:
+    case SET_FILTER_ITEM:
       return {
         ...state,
         filters: {
           ...state.filters,
-          [action.filterKey]: !state.filters[action.filterKey]
+          [action.filterKey]: action.filterValue
         }
       };
 
@@ -212,8 +212,8 @@ export function setCloudInventory(cloudInventory) {
   return { type: SET_CLOUD_INVENTORY, cloudInventory };
 }
 
-export function toggleFilterKey(filterKey) {
-  return { type: TOGGLE_FILTER_KEY, filterKey };
+export function setFilterItem(filterKey, filterValue) {
+  return { type: SET_FILTER_ITEM, filterKey, filterValue };
 }
 
 export function setBulkFilters(filters) {

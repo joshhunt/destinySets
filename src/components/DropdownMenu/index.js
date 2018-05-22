@@ -17,6 +17,10 @@ export default class DropdownMenu extends Component {
     this.state.visible && this.setState({ visible: false });
   };
 
+  onContentClick = ev => {
+    this.props.stayOpen && ev.stopPropagation();
+  };
+
   render() {
     const {
       inline,
@@ -42,7 +46,10 @@ export default class DropdownMenu extends Component {
         {children}
 
         {visible && (
-          <div className={cx(styles.content, contentClassName)}>
+          <div
+            onClick={this.onContentClick}
+            className={cx(styles.content, contentClassName)}
+          >
             {renderContent()}
           </div>
         )}

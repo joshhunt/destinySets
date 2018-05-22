@@ -10,7 +10,7 @@ export default class SectionList extends Component {
   }
 
   render() {
-    const { setData, filters, toggleFilter } = this.props;
+    const { setData, filters, setFilterItem } = this.props;
 
     return (
       <div className={styles.root}>
@@ -32,7 +32,7 @@ export default class SectionList extends Component {
           </ul>
 
           <div className={styles.filter}>
-            <FilterDropdown filters={filters} toggleFilter={toggleFilter} />
+            <FilterDropdown filters={filters} setFilterItem={setFilterItem} />
           </div>
         </div>
       </div>
