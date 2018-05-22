@@ -144,7 +144,6 @@ module.exports = [
           {
             name: 'Extras',
             items: [
-              253898492, //Salute of the Lords
               1420718398, // Esfera Triumph
               1069214754, // Visage of Skorri
               3449099425 // Iron to Steel 
