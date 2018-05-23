@@ -1,6 +1,9 @@
-import * as common from './common';
+// @flow
 
-export default [
+import * as common from './common';
+import type { SetPage } from '../types';
+
+export default ([
   {
     name: 'Endgame',
     sets: [
@@ -107,44 +110,19 @@ export default [
         sections: [
           {
             name: 'Weapons',
-            items: [
-              1369487074, // Orimund's Anvil
-              3649055823, // Crimil's Dagger
-              622058944, // Jorum's Claw
-              3005104939, // Frostmire's Hex
-              94729174, // Gunnora's Axe
-              1870979911 // Orewing's Maul
-            ]
+            items: common.IRONBANNER_S2_WEAPONS
           },
           {
             name: 'Hunter Ornaments',
-            items: [
-              967086398, // Iron Pledge Ornament
-              2845443115, // Iron Pledge Ornament
-              4064021125, // Iron Pledge Ornament
-              2409736861, // Iron Pledge Ornament
-              1167898172 // Iron Pledge Ornament
-            ]
+            items: common.IRONBANNER_S2_ORNAMENTS_HUNTER
           },
           {
             name: 'Titan Ornaments',
-            items: [
-              3913452440, // Iron Pledge Ornament
-              208020061, // Iron Pledge Ornament
-              479059411, // Iron Pledge Ornament
-              3922308175, // Iron Pledge Ornament
-              2851718150 // Iron Pledge Ornament
-            ]
+            items: common.IRONBANNER_S2_ORNAMENTS_TITAN
           },
           {
             name: 'Warlock Ornaments',
-            items: [
-              3388638931, // Iron Pledge Ornament
-              1355065950, // Iron Pledge Ornament
-              3045190354, // Iron Pledge Ornament
-              2984447248, // Iron Pledge Ornament
-              2455333439 // Iron Pledge Ornament
-            ]
+            items: common.IRONBANNER_S2_ORNAMENTS_WARLOCK
           },
           {
             name: 'Extras',
@@ -999,4 +977,4 @@ export default [
       }
     ]
   }
-];
+]: SetPage);

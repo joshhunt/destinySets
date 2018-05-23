@@ -1,4 +1,8 @@
-export default [
+// @flow
+
+import type { SetPage } from '../types';
+
+export default ([
   {
     name: 'Base Game',
     sets: [
@@ -214,4 +218,4 @@ export default [
       }
     ]
   }
-];
+]: SetPage);

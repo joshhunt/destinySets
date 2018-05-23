@@ -1,6 +1,9 @@
-import * as common from './common';
+// @flow
 
-export default [
+import * as common from './common';
+import type { SetPage } from '../types';
+
+export default ([
   {
     name: 'Endgame',
     sets: [
@@ -73,46 +76,19 @@ export default [
         sections: [
           {
             name: 'Weapons',
-            items: [
-              2014642399, // The Forward Path
-              4425887, // The Time-Worn Spire
-              3890960908, // The Guiding Sight
-              1189790632, // The Steady Hand
-              3424403076, // The Fool's Remedy
-              2961807684, // The Wizened Rebuke
-              2909905776, // The Hero's Burden
-              807192446 // The Day's Fury
-            ]
+            items: common.IRONBANNER_S1_WEAPONS
           },
           {
             name: 'Hunter Armor',
-            items: [
-              1496224967, // Iron Truage Casque
-              3737894478, // Iron Truage Grips
-              831464034, // Iron Truage Vest
-              1526005320, // Iron Truage Boots
-              479917491 // Mantle of Efrideet
-            ]
+            items: common.IRONBANNER_S1_ARMOR_HUNTER
           },
           {
             name: 'Titan Armor',
-            items: [
-              1804445917, // Iron Truage Helm
-              691332172, // Iron Truage Gauntlets
-              3865618708, // Iron Truage Plate
-              1337167606, // Iron Truage Greaves
-              738938985 // Radegast's Iron Sash
-            ]
+            items: common.IRONBANNER_S1_ARMOR_TITAN
           },
           {
             name: 'Warlock Armor',
-            items: [
-              2811201658, // Iron Truage Hood
-              287471683, // Iron Truage Gloves
-              124696333, // Iron Truage Vestments
-              2674485749, // Iron Truage Legs
-              2999505920 // Timur's Iron Bond
-            ]
+            items: common.IRONBANNER_S1_ARMOR_WARLOCK
           },
           {
             name: 'Emblems',
@@ -975,7 +951,7 @@ export default [
           },
           {
             name: 'D1 Veteran',
-            description: 'Acknowledging acheivements from Destiny 1',
+            // description: 'Acknowledging acheivements from Destiny 1',
             items: [
               4077939641, // Lore Scholar
               4077939647, // Laurel Triumphant
@@ -1176,4 +1152,4 @@ export default [
       }
     ]
   }
-];
+]: SetPage);

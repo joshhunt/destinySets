@@ -1,3 +1,5 @@
+// @flow
+
 export default {
   allSeasons: require('./allSeasons').default,
   dlc1: require('./dlc1').default,
