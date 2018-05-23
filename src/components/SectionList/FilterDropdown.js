@@ -7,7 +7,9 @@ import {
   TITAN,
   WARLOCK,
   FILTER_SHOW_COLLECTED,
-  FILTER_SHOW_PS4_EXCLUSIVES
+  FILTER_SHOW_PS4_EXCLUSIVES,
+  FILTER_SEASON_2,
+  FILTER_SEASON_3
 } from 'app/lib/destinyEnums';
 
 import styles from 'app/components/Header/dropdownStyles.styl';
@@ -17,7 +19,9 @@ const FILTER_NAMES = {
   [TITAN]: 'Titan',
   [WARLOCK]: 'Warlock',
   [FILTER_SHOW_COLLECTED]: 'Collected items',
-  [FILTER_SHOW_PS4_EXCLUSIVES]: 'PS4 Exclusives'
+  [FILTER_SHOW_PS4_EXCLUSIVES]: 'PS4 Exclusives',
+  [FILTER_SEASON_2]: 'Season 2',
+  [FILTER_SEASON_3]: 'Season 3'
 };
 
 export default class FilterDropdown extends Component {

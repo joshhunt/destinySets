@@ -5,7 +5,9 @@ import {
   TITAN,
   WARLOCK,
   FILTER_SHOW_COLLECTED,
-  FILTER_SHOW_PS4_EXCLUSIVES
+  FILTER_SHOW_PS4_EXCLUSIVES,
+  FILTER_SEASON_2,
+  FILTER_SEASON_3
 } from 'app/lib/destinyEnums';
 
 const SET_PROFILES = 'Set profiles';
@@ -25,7 +27,9 @@ export const DEFAULT_FILTER = {
   [HUNTER]: true,
   [WARLOCK]: true,
   [FILTER_SHOW_COLLECTED]: true,
-  [FILTER_SHOW_PS4_EXCLUSIVES]: true
+  [FILTER_SHOW_PS4_EXCLUSIVES]: true,
+  [FILTER_SEASON_2]: true,
+  [FILTER_SEASON_3]: true
 };
 
 const INITIAL_STORE = {

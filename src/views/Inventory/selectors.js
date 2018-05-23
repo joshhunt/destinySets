@@ -6,7 +6,9 @@ import {
   TITAN,
   WARLOCK,
   FILTER_SHOW_COLLECTED,
-  FILTER_SHOW_PS4_EXCLUSIVES
+  FILTER_SHOW_PS4_EXCLUSIVES,
+  FILTER_SEASON_2,
+  FILTER_SEASON_3
 } from 'app/lib/destinyEnums';
 import CONSOLE_EXCLUSIVES from 'app/extraData/consoleExclusives';
 
@@ -138,6 +140,18 @@ export const filteredSetDataSelector = createSelector(
       draft.setData.forEach(group => {
         group.sets.forEach(set => {
           set.sections.forEach(section => {
+            console.log('section:', section.season);
+
+            if (section.season) {
+              if (!filters[FILTER_SEASON_2] && section.season === 2) {
+                section.itemGroups = [];
+              }
+
+              if (!filters[FILTER_SEASON_3] && section.season === 3) {
+                section.itemGroups = [];
+              }
+            }
+
             section.itemGroups = section.itemGroups
               .map(itemList => {
                 return itemList.filter(itemHash => {

@@ -3,8 +3,11 @@ export const HUNTER = 1;
 export const WARLOCK = 2;
 export const NO_CLASS = 3;
 
+// Custom to Destiny Sets - used for the filters
 export const FILTER_SHOW_COLLECTED = 'showCollected';
 export const FILTER_SHOW_PS4_EXCLUSIVES = 'ps4Exclusives';
+export const FILTER_SEASON_2 = 'season2';
+export const FILTER_SEASON_3 = 'season3';
 
 // itemCategoryHashes
 export const CLASS_ITEMS = 49;
