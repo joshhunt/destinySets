@@ -67,6 +67,7 @@ export default ([
           }
         ]
       },
+
       {
         name: 'Leviathan Raid',
         description:
@@ -135,34 +136,25 @@ export default ([
           {
             name: 'Weapons',
             season: 1,
-            items: [
-              174804902,
-              1187594590,
-              1825472717,
-              1879212552,
-              1909527966,
-              2094938673,
-              2850415209,
-              3854037061
-            ]
+            items: common.TRIALS_S1_WEAPONS
           },
           {
             name: 'Weapons',
             season: 2,
-            items: [
-              1503609584, // The Last Breath
-              2516360525, // Purpose
-              325519402, // Darkest Before
-              2071412133 // A Cold Sweat
-            ]
+            items: common.TRIALS_S2_WEAPONS
+          },
+          {
+            name: 'Weapons',
+            season: 3,
+            items: common.TRIALS_S3_WEAPONS
           },
           {
             name: 'Armor',
             season: 1,
             itemGroups: [
-              [400025383, 2641591726, 548290754, 854160040, 238320915], // Hunter
-              [2391227801, 1863012880, 934145080, 2221648234, 3624606677], // Titan
-              [2964441920, 530515217, 891933383, 4232174819, 1607431126] // Warlock
+              common.TRIALS_S1_ARMOR_HUNTER,
+              common.TRIALS_S1_ARMOR_TITAN,
+              common.TRIALS_S1_ARMOR_WARLOCK
             ]
           },
 
@@ -170,9 +162,9 @@ export default ([
             name: 'Armor - Flawless',
             season: 1,
             itemGroups: [
-              [400025382, 2641591727, 548290755, 854160041, 238320914], // Hunter
-              [2391227800, 1863012881, 934145081, 2221648235, 3624606676], // Titan
-              [2964441921, 530515216, 891933382, 4232174818, 1607431127] // Warlock
+              common.TRIALS_S1_ARMOR_FLAWLESS_HUNTER,
+              common.TRIALS_S1_ARMOR_FLAWLESS_TITAN,
+              common.TRIALS_S1_ARMOR_FLAWLESS_WARLOCK
             ]
           },
 
@@ -180,9 +172,9 @@ export default ([
             name: 'Ornaments',
             season: 2,
             itemGroups: [
-              [1698264996, 4155106369, 3799317511, 1254742579, 1475681954], // Hunter
-              [62776458, 2194111759, 3647777257, 3964883617, 4275895304], // Titan
-              [948716319, 2984392562, 607756182, 2426456324, 3828657371] // Warlock
+              common.TRIALS_S2_ORNAMENTS_HUNTER,
+              common.TRIALS_S2_ORNAMENTS_TITAN,
+              common.TRIALS_S2_ORNAMENTS_WARLOCK
             ]
           },
 
@@ -190,9 +182,9 @@ export default ([
             name: 'Ornaments - Flawless',
             season: 2,
             itemGroups: [
-              [3000782857, 3907623580, 1480689066, 3491371766, 85546655], // Hunter
-              [3042323431, 1309834898, 3047754372, 3675824124, 1717767197], // Titan
-              [2338851618, 4105027183, 2666197459, 3026479209, 2394332958] // Warlock
+              common.TRIALS_S2_ORNAMENTS_FLAWLESS_HUNTER,
+              common.TRIALS_S2_ORNAMENTS_FLAWLESS_TITAN,
+              common.TRIALS_S2_ORNAMENTS_FLAWLESS_WARLOCK
             ]
           },
 

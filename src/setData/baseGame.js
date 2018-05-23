@@ -69,6 +69,7 @@ export default ([
           }
         ]
       },
+
       {
         name: 'Iron Banner',
         description:
@@ -114,40 +115,31 @@ export default ([
         sections: [
           {
             name: 'Weapons',
-            items: [
-              174804902,
-              1187594590,
-              1825472717,
-              1879212552,
-              1909527966,
-              2094938673,
-              2850415209,
-              3854037061
-            ]
+            items: common.TRIALS_S1_WEAPONS
           },
           {
             name: 'Hunter Armor',
-            items: [400025383, 2641591726, 548290754, 854160040, 238320915]
+            items: common.TRIALS_S1_ARMOR_HUNTER
           },
           {
             name: 'Hunter Armor - Flawless',
-            items: [400025382, 2641591727, 548290755, 854160041, 238320914]
+            items: common.TRIALS_S1_ARMOR_FLAWLESS_HUNTER
           },
           {
             name: 'Titan Armor',
-            items: [2391227801, 1863012880, 934145080, 2221648234, 3624606677]
+            items: common.TRIALS_S1_ARMOR_TITAN
           },
           {
             name: 'Titan Armor - Flawless',
-            items: [2391227800, 1863012881, 934145081, 2221648235, 3624606676]
+            items: common.TRIALS_S1_ARMOR_FLAWLESS_TITAN
           },
           {
             name: 'Warlock Armor',
-            items: [2964441920, 530515217, 891933383, 4232174819, 1607431126]
+            items: common.TRIALS_S1_ARMOR_WARLOCK
           },
           {
             name: 'Warlock Armor - Flawless',
-            items: [2964441921, 530515216, 891933382, 4232174818, 1607431127]
+            items: common.TRIALS_S1_ARMOR_FLAWLESS_WARLOCK
           },
           {
             name: 'Emblems',

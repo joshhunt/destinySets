@@ -139,35 +139,7 @@ export default ([
         sections: [
           {
             name: 'Weapons',
-            items: [
-              3950088638, // Motion to Suppress
-              3425561386, // Motion to Compel
-              1018777295 // Motion to Vacate
-            ]
-          },
-          {
-            name: 'Hunter Ornaments',
-            items: []
-          },
-          {
-            name: 'Hunter Flawless Ornaments',
-            items: []
-          },
-          {
-            name: 'Titan Ornaments',
-            items: []
-          },
-          {
-            name: 'Titan Flawless Ornaments',
-            items: []
-          },
-          {
-            name: 'Warlock Ornaments',
-            items: []
-          },
-          {
-            name: 'Warlock Flawless Ornaments',
-            items: []
+            items: common.TRIALS_S3_WEAPONS
           },
           {
             name: 'Extras',
