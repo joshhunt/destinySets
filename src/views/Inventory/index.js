@@ -120,17 +120,6 @@ class Inventory extends Component {
       log('Inventory has changed, in some way!', newProps);
     }
 
-    if (this.props.manualInventory !== newProps.manualInventory) {
-      log('Manual inventory has changed, saving it');
-      cloudStorage.setInventory(
-        {
-          inventory: newProps.inventory,
-          manualInventory: newProps.manualInventory
-        },
-        newProps.profile
-      );
-    }
-
     if (
       inventoryHasChanged &&
       !newProps.isCached &&
@@ -141,6 +130,15 @@ class Inventory extends Component {
         'Have final inventory, apparently. Saving new cloudInventory',
         newProps
       );
+      cloudStorage.setInventory(
+        {
+          inventory: newProps.inventory,
+          manualInventory: newProps.manualInventory
+        },
+        newProps.profile
+      );
+    } else if (this.props.manualInventory !== newProps.manualInventory) {
+      log('Manual inventory has changed, saving it');
       cloudStorage.setInventory(
         {
           inventory: newProps.inventory,
