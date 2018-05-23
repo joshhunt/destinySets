@@ -19,6 +19,7 @@ const REMOVE_TRACKED_ITEM = 'Remove tracked item';
 const SET_XUR_DATA = 'Set Xur data';
 const TOGGLE_MANUALLY_OBTAINED = 'Toggle manually obtained';
 const SET_GOOGLE_AUTH = 'Set Google auth data';
+const FORGET_DISMANTLED_ITEM = 'Forget dismantled item';
 
 export const DEFAULT_FILTER = {
   [TITAN]: true,
@@ -102,6 +103,13 @@ function toggleManualInventory(manualInventory, itemHash) {
   return ddd;
 }
 
+function forgetDismantledDoWork(cloudInventory, itemHash) {
+  const newCloudInventory = { ...cloudInventory };
+  delete newCloudInventory[itemHash];
+
+  return newCloudInventory;
+}
+
 export default function reducer(state = INITIAL_STORE, action) {
   switch (action.type) {
     case SET_PROFILES:
@@ -178,6 +186,15 @@ export default function reducer(state = INITIAL_STORE, action) {
         )
       };
 
+    case FORGET_DISMANTLED_ITEM:
+      return {
+        ...state,
+        cloudInventory: forgetDismantledDoWork(
+          state.cloudInventory,
+          action.itemHash
+        )
+      };
+
     default:
       return state;
   }
@@ -243,6 +260,10 @@ export function setXurData(xur) {
 
 export function toggleManuallyObtained(itemHash) {
   return { type: TOGGLE_MANUALLY_OBTAINED, itemHash };
+}
+
+export function forgetDismantled(itemHash) {
+  return { type: FORGET_DISMANTLED_ITEM, itemHash };
 }
 
 function setDefs(name, defs) {

@@ -68,26 +68,38 @@ $headerHeight = $width * (24/119)
 
 .button
   background: lighten(#21262D, 10%)
+  border: 1px solid @background
   color: #D4D6D7
-  border: none
   border-radius: 3px
   appearance: none
   font-size: 16px
   margin-top: 5px
   margin-bottom: 15px
-  padding: 3px 10px
+  padding: 2px 10px
   outline: none !important
   transition: 150ms ease-in-out all
   cursor: pointer
 
   &:hover
     background: lighten(#21262D, 15%)
+    border-color: @background
 
   &:active
     background: lighten(#21262D, 5%)
+    border-color: @background
 
   & + &
     margin-left: 1em
+
+.mainButton
+  composes: button
+  border-color: #5d6573
+
+  &:hover
+    border-color: lighten(#5d6573, 15%)
+
+  &:active
+    border-color: lighten(#5d6573, 5%)
 
 .exotic
   background: #ceae33

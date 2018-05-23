@@ -137,7 +137,10 @@ class Inventory extends Component {
         },
         newProps.profile
       );
-    } else if (this.props.manualInventory !== newProps.manualInventory) {
+    } else if (
+      this.props.manualInventory !== newProps.manualInventory ||
+      this.props.cloudInventory !== newProps.cloudInventory
+    ) {
       log('Manual inventory has changed, saving it');
       cloudStorage.setInventory(
         {
@@ -431,6 +434,7 @@ const mapStateToProps = (state, ownProps) => {
     filteredSetData: filteredSetDataSelector(state, ownProps),
     inventory: inventorySelector(state),
     haveCloudInventory: !!state.app.cloudInventory,
+    cloudInventory: state.app.cloudInventory,
     xurHasNewItems: xurHasNewItemsSelector(state),
     xurItems: xurItemsSelector(state)
   };

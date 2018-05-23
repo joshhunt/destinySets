@@ -12,7 +12,8 @@ import ishtarSvg from 'app/ishar.svg';
 
 import {
   trackOrnament as trackOrnamentAction,
-  toggleManuallyObtained as toggleManuallyObtainedAction
+  toggleManuallyObtained as toggleManuallyObtainedAction,
+  forgetDismantled as forgetDismantledAction
 } from 'app/store/reducer';
 
 import {
@@ -36,6 +37,7 @@ class ItemModalContent extends Component {
       profileObjectives,
       objectiveDefs,
       toggleManuallyObtained,
+      forgetDismantled,
       googleAuth
     } = this.props;
 
@@ -125,12 +127,22 @@ class ItemModalContent extends Component {
         <div>
           {!!objectiveHashes.length && (
             <button
-              className={styles.button}
+              className={styles.mainButton}
               onClick={() => trackOrnament(hash)}
             >
               Track objective progress
             </button>
           )}
+
+          {itemInventoryEntry &&
+            itemInventoryEntry.dismantled && (
+              <button
+                className={styles.button}
+                onClick={() => forgetDismantled(hash)}
+              >
+                Forget dismantled
+              </button>
+            )}
 
           {googleAuth.signedIn &&
             !itemInventoryEntry && (
@@ -218,7 +230,8 @@ const mapStateToProps = () => {
 
 const mapDispatchToActions = {
   trackOrnament: trackOrnamentAction,
-  toggleManuallyObtained: toggleManuallyObtainedAction
+  toggleManuallyObtained: toggleManuallyObtainedAction,
+  forgetDismantled: forgetDismantledAction
 };
 
 export default connect(mapStateToProps, mapDispatchToActions)(ItemModalWrapper);
