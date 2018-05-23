@@ -1,4 +1,4 @@
-import { intersection } from 'lodash';
+import { intersection, overEvery } from 'lodash';
 
 import * as enums from 'app/lib/destinyEnums';
 import { getLower as get } from 'app/lib/utils';
@@ -25,12 +25,12 @@ const COLLECTABLE = [
   enums.EMBLEM
 ];
 
-const itemFilter = (items, fn) => {
+const itemFilter = (items, ...fns) => {
   return items.filter(item => {
     return (
       item.displayProperties.name &&
       item.displayProperties.name.length > 0 &&
-      fn(item)
+      overEvery(fns)(item)
     );
   });
 };
@@ -102,8 +102,16 @@ export const fancySearchFns = {
     return itemFilter(items, itemCategory(enums.SHADER));
   },
 
-  'is:emote': items => {
+  'is:oldemote': items => {
     return itemFilter(items, itemCategory(enums.EMOTES));
+  },
+
+  'is:emote': items => {
+    return itemFilter(
+      items,
+      itemCategory(enums.EMOTES),
+      itemCategory(enums.MODS2)
+    );
   },
 
   'is:emblem': items => {
