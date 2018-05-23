@@ -20,6 +20,7 @@
     "client-oauth2": "^4.2.0",
     "dexie": "^2.0.1",
     "firebase": "^4.8.0",
+    "flow-bin": "^0.72.0",
     "image-size": "^0.6.2",
     "immer": "^1.2.0",
     "install": "^0.11.0",
@@ -46,7 +47,7 @@
     "start": "react-app-rewired start",
     "build": "react-app-rewired build",
     "serve": "serve -s build",
-    "test": "ava",
+    "test": "flow && react-app-rewired test --env=jsdom",
     "deploy": "yarn run build && yarn run upload",
     "upload": "env AWS_PROFILE=money aws s3 sync build/ s3://destinysets.com/ --region=ap-southeast-2 --acl public-read",
     "generate-autotrack": "autotrack -o public/autotrack.build.js -p clean-url-tracker,url-change-tracker",
@@ -55,7 +56,6 @@
   "devDependencies": {
     "@sentry/cli": "^1.30.0",
     "autoprefixer": "^7.2.2",
-    "ava": "^1.0.0-beta.3",
     "babel-plugin-lodash": "^3.3.2",
     "postcss-loader": "^2.0.9",
     "react-app-rewired": "1.3.8",
@@ -63,10 +63,5 @@
     "stylus-loader": "3.0.2",
     "unused-files-webpack-plugin": "^3.4.0",
     "webpack-visualizer-plugin": "^0.1.11"
-  },
-  "ava": {
-    "files": [
-      "tests/*.js"
-    ]
   }
 }

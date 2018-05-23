@@ -1,4 +1,8 @@
-export default [
+// @flow
+
+import type { SetPage } from '../types';
+
+export default ([
   {
     name: 'Gear',
     sets: [
@@ -116,4 +120,4 @@ export default [
       }
     ]
   }
-];
+]: SetPage);

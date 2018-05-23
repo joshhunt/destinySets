@@ -1,4 +1,8 @@
-export default [
+// @flow
+
+import type { SetPage } from '../types';
+
+export default ([
   {
     name: 'Everything',
     sets: [
@@ -17,4 +21,4 @@ export default [
       }
     ]
   }
-];
+]: SetPage);

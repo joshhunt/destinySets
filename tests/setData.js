@@ -1,11 +1,7 @@
 import test from 'ava';
 
-const SETS = ['baseGame', 'allItems', 'dlc1'];
+import '../src/setData';
 
-SETS.forEach(setName => {
-  test(`setData '${setName}.js' should be valid javascript`, t => {
-    t.notThrows(() => {
-      require(`../src/setData/${setName}`);
-    });
-  });
+test(`all setData should be valid javascript`, t => {
+  t.pass();
 });

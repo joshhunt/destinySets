@@ -1,6 +1,9 @@
-import * as common from './common';
+// @flow
 
-export default [
+import * as common from './common';
+import type { SetPage } from '../types';
+
+export default ([
   {
     name: 'Endgame',
     sets: [
@@ -97,6 +100,7 @@ export default [
           }
         ]
       },
+
       {
         name: 'Iron Banner',
         description:
@@ -104,44 +108,19 @@ export default [
         sections: [
           {
             name: 'Weapons',
-            items: [
-              982229638, // Allied Demand
-              3434507093, // Occluded Finality
-              4265183314, // Multimach CCX
-              701922966, // Finite Impactor
-              432716552, // Shining Sphere
-              1942069133 // Dark Decider
-            ]
+            items: common.IRONBANNER_S3_WEAPONS
           },
           {
             name: 'Hunter Ornaments',
-            items: [
-              2076777678, // Weyloran's Iron Mask
-              968545635, // Gheleon's Iron Grips
-              3329028839, // Perun's Iron Cuirass
-              3853099349, // Haakon's Iron Strides
-              2749869546 // Efrideet's Iron Cloak
-            ]
+            items: common.IRONBANNER_S3_ORNAMENTS_HUNTER
           },
           {
             name: 'Titan Ornaments',
-            items: [
-              2310582578, // Bretomart's Iron Helm
-              3380383295, // Radegast's Iron Gauntlets
-              4108794419, // Silimar's Iron Plate
-              2460797681, // Tormod's Iron Greaves
-              1101861022 // Finnala's Iron Mark
-            ]
+            items: common.IRONBANNER_S3_ORNAMENTS_TITAN
           },
           {
             name: 'Warlock Ornaments',
-            items: [
-              3905287389, // Ashraven's Iron Hood
-              2490313400, // Skorri's Iron Gloves
-              1485406574, // Colovance's Iron Robes
-              3044759626, // Timur's Iron Boots
-              316161003 // Nirwen's Iron Bond
-            ]
+            items: common.IRONBANNER_S3_ORNAMENTS_WARLOCK
           },
           {
             name: 'Extras',
@@ -606,4 +585,4 @@ export default [
       }
     ]
   }
-];
+]: SetPage);

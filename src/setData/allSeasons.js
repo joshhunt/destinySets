@@ -1,6 +1,9 @@
-import * as common from './common';
+// @flow
 
-export default [
+import * as common from './common';
+import type { SetPage } from '../types';
+
+export default ([
   {
     name: 'Endgame',
     sets: [
@@ -12,83 +15,43 @@ export default [
           {
             name: 'Weapons',
             season: 1,
-            items: [
-              2014642399, // The Forward Path
-              4425887, // The Time-Worn Spire
-              3890960908, // The Guiding Sight
-              1189790632, // The Steady Hand
-              3424403076, // The Fool's Remedy
-              2961807684, // The Wizened Rebuke
-              2909905776, // The Hero's Burden
-              807192446 // The Day's Fury
-            ]
+            items: common.IRONBANNER_S1_WEAPONS
           },
           {
             name: 'Weapons',
             season: 2,
-            items: [
-              1369487074, // Orimund's Anvil
-              3649055823, // Crimil's Dagger
-              622058944, // Jorum's Claw
-              3005104939, // Frostmire's Hex
-              94729174, // Gunnora's Axe
-              1870979911 // Orewing's Maul
-            ]
+            items: common.IRONBANNER_S2_WEAPONS
+          },
+          {
+            name: 'Weapons',
+            season: 3,
+            items: common.IRONBANNER_S3_WEAPONS
           },
           {
             name: 'Armor',
             season: 1,
             itemGroups: [
-              [
-                1496224967, // Hunter Iron Truage Casque
-                3737894478, // Hunter Iron Truage Grips
-                831464034, // Hunter Iron Truage Vest
-                1526005320, // Hunter Iron Truage Boots
-                479917491 // Hunter Mantle of Efrideet
-              ],
-              [
-                1804445917, // Titan Iron Truage Helm
-                691332172, // Titan Iron Truage Gauntlets
-                3865618708, // Titan Iron Truage Plate
-                1337167606, // Titan Iron Truage Greaves
-                738938985 // Titan Radegast's Iron Sash
-              ],
-              [
-                2811201658, // Warlock Iron Truage Hood
-                287471683, // Warlock Iron Truage Gloves
-                124696333, // Warlock Iron Truage Vestments
-                2674485749, // Warlock Iron Truage Legs
-                2999505920 // Warlock Timur's Iron Bond
-              ]
+              common.IRONBANNER_S1_ARMOR_HUNTER,
+              common.IRONBANNER_S1_ARMOR_TITAN,
+              common.IRONBANNER_S1_ARMOR_WARLOCK
             ]
           },
           {
             name: 'Ornaments',
             season: 2,
             itemGroups: [
-              [
-                967086398, // Hunter Iron Pledge Ornament
-                2845443115, // Hunter Iron Pledge Ornament
-                4064021125, // Hunter Iron Pledge Ornament
-                2409736861, // Hunter Iron Pledge Ornament
-                1167898172 // Hunter Iron Pledge Ornament
-              ],
-
-              [
-                3913452440, // Titan Iron Pledge Ornament
-                208020061, // Titan Iron Pledge Ornament
-                479059411, // Titan Iron Pledge Ornament
-                3922308175, // Titan Iron Pledge Ornament
-                2851718150 // Titan Iron Pledge Ornament
-              ],
-
-              [
-                3388638931, // Warlock Iron Pledge Ornament
-                1355065950, // Warlock Iron Pledge Ornament
-                3045190354, // Warlock Iron Pledge Ornament
-                2984447248, // Warlock Iron Pledge Ornament
-                2455333439 // Warlock Iron Pledge Ornament
-              ]
+              common.IRONBANNER_S2_ORNAMENTS_HUNTER,
+              common.IRONBANNER_S2_ORNAMENTS_TITAN,
+              common.IRONBANNER_S2_ORNAMENTS_WARLOCK
+            ]
+          },
+          {
+            name: 'Ornaments',
+            season: 3,
+            itemGroups: [
+              common.IRONBANNER_S3_ORNAMENTS_HUNTER,
+              common.IRONBANNER_S3_ORNAMENTS_TITAN,
+              common.IRONBANNER_S3_ORNAMENTS_WARLOCK
             ]
           },
           {
@@ -1003,4 +966,4 @@ export default [
       }
     ]
   }
-];
+]: SetPage);
