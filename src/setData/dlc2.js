@@ -142,30 +142,6 @@ export default ([
             items: common.TRIALS_S3_WEAPONS
           },
           {
-            name: 'Hunter Ornaments',
-            items: []
-          },
-          {
-            name: 'Hunter Flawless Ornaments',
-            items: []
-          },
-          {
-            name: 'Titan Ornaments',
-            items: []
-          },
-          {
-            name: 'Titan Flawless Ornaments',
-            items: []
-          },
-          {
-            name: 'Warlock Ornaments',
-            items: []
-          },
-          {
-            name: 'Warlock Flawless Ornaments',
-            items: []
-          },
-          {
             name: 'Extras',
             items: [
               2894506171, // Knight's Peace Shell
