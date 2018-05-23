@@ -139,11 +139,7 @@ export default ([
         sections: [
           {
             name: 'Weapons',
-            items: [
-              3950088638, // Motion to Suppress
-              3425561386, // Motion to Compel
-              1018777295 // Motion to Vacate
-            ]
+            items: common.TRIALS_S3_WEAPONS
           },
           {
             name: 'Hunter Ornaments',
