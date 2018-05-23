@@ -1,4 +1,4 @@
-module.exports = [
+export default [
   {
     name: 'Gear',
     sets: [

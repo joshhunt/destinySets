@@ -1,4 +1,6 @@
-module.exports = [
+import * as common from './common';
+
+export default [
   {
     name: 'Endgame',
     sets: [
@@ -95,7 +97,7 @@ module.exports = [
           }
         ]
       },
-       {
+      {
         name: 'Iron Banner',
         description:
           'Weapons and armor obtained by honoring the heroes of old in the Iron Banner Crucible tournament.',
@@ -124,7 +126,7 @@ module.exports = [
           {
             name: 'Titan Ornaments',
             items: [
-              2310582578, // Bretomart's Iron Helm 
+              2310582578, // Bretomart's Iron Helm
               3380383295, // Radegast's Iron Gauntlets
               4108794419, // Silimar's Iron Plate
               2460797681, // Tormod's Iron Greaves
@@ -138,7 +140,7 @@ module.exports = [
               2490313400, // Skorri's Iron Gloves
               1485406574, // Colovance's Iron Robes
               3044759626, // Timur's Iron Boots
-              316161003 // Nirwen's Iron Bond 
+              316161003 // Nirwen's Iron Bond
             ]
           },
           {
@@ -146,7 +148,7 @@ module.exports = [
             items: [
               1420718398, // Esfera Triumph
               1069214754, // Visage of Skorri
-              3449099425 // Iron to Steel 
+              3449099425 // Iron to Steel
             ]
           }
         ]
@@ -540,24 +542,7 @@ module.exports = [
           },
           {
             name: 'Emotes',
-            items: [
-              3179188489, // Curtain Call
-              569940092, // Fireworks
-              3340490891, // Home Run
-              870041067, // Popcorn
-              2775819545, // Awaken the Warmind
-              1628538405, // Freaky Dance
-              159967058, // Hold On
-              2610757989, // Collaborative Dance
-              2041281101, // Celebratory Dance
-              285267633, // Synced Dance
-              3518794540, // Air Quotes
-              2284035163, // Applause
-              1073496778, // Opulent Clap
-              1008495915, // Shiver
-              1229016681, // Zeus-Like Physique
-              1348805779 // Impatience
-            ]
+            items: common.EVERVERSE_S3_EMOTES
           },
           {
             name: 'Ghosts',

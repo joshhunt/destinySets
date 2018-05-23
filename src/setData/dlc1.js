@@ -1,4 +1,6 @@
-module.exports = [
+import * as common from './common';
+
+export default [
   {
     name: 'Endgame',
     sets: [
@@ -706,10 +708,10 @@ module.exports = [
           {
             name: 'Emotes',
             items: [
-              215596672, // Giving
-              1873273984, // Honest Dance
-              889413643, // Excited Dance
-              2593080269 // Icecapade
+              3494199208, // Giving
+              367778392, // Honest Dance
+              80303715, // Excited Dance
+              2134318165 // Icecapade
             ]
           },
           {
@@ -792,10 +794,10 @@ module.exports = [
           {
             name: 'Emotes',
             items: [
-              518566750, // Heart Sign
-              1334842411, // Vengeful Dance
-              1605596084, // Amour Dance
-              3802876271 // Flaunting Dance
+              596833222, // Heart Sign
+              4097227155, // Vengeful Dance
+              3809722908, // Amour Dance
+              2764644855 // Flaunting Dance
             ]
           },
           {
@@ -849,7 +851,7 @@ module.exports = [
     ]
   },
   {
-    name: "Other", 
+    name: 'Other',
     sets: [
       {
         name: 'Eververse, Season 2',
@@ -887,22 +889,7 @@ module.exports = [
           },
           {
             name: 'Emotes',
-            items: [
-              3633235162, // Selfie
-              4019835247, // Mic Drop
-              1368499525, // Sweeping
-              4260536069, // Timely Dance
-              3829550655, // Trendy Dance
-              2923026987, // Odder Dance
-              903864129, // Overnight Dance
-              2299313708, // Disco Dance
-              1949295586, // Grooving Dance
-              3117256915, // Call Me
-              2574501094, // Can-Do Attitude
-              2078267281, // Cool, Dude
-              3877511792, // Humbug
-              871309441 // Victory Taunt
-            ]
+            items: common.EVERVERSE_S2_EMOTES
           },
           {
             name: 'Ghosts',
@@ -1013,4 +1000,3 @@ module.exports = [
     ]
   }
 ];
-

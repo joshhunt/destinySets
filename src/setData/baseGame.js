@@ -1,4 +1,6 @@
-module.exports = [
+import * as common from './common';
+
+export default [
   {
     name: 'Endgame',
     sets: [
@@ -776,7 +778,7 @@ module.exports = [
               2307426896, // SUROS Tone
               2307426898, // SUROS Modular
               2737886288, // Häkke History
-              2737886290, // Häkke Camo
+              2737886290 // Häkke Camo
             ]
           }
         ]
@@ -1050,34 +1052,7 @@ module.exports = [
           },
           {
             name: 'Emotes',
-            items: [
-              93029343, // Salty
-              93029342, // Flip Out
-              292778444, // Spicy Ramen
-              454583975, // Six Shooter
-              2543806755, // Funky Dance
-              412299646, // Dancehall
-              664042851, // Cranking Dance
-              938804347, // Odd Dance
-              3129418034, // Taunt Dance
-              3872116425, // Confused
-              1120064792, // Flowing Dance
-              718136887, // Bureaucratic Walk
-              2741695224, // Floss Dance
-              1061186327, // Shuffle Dance
-              4223882778, // Shoulder Dance
-              2649911453, // Dancy Dance
-              1177179936, // Play Dead
-              1954221115, // You're the Guardian
-              2870168892, // Sneaky
-              4187524534, // Don the Hat
-              3199368173, // Huddle Up
-              3811760832, // Gallop
-              1294717622, // Sick
-              2526538979, // Get Up
-              3526028978, // Sadness
-              333041308 // Good Idea
-            ]
+            items: common.EVERVERSE_S1_EMOTES
           },
           {
             name: 'Ghosts',
