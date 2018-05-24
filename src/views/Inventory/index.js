@@ -350,27 +350,6 @@ class Inventory extends Component {
           </div>
         )}
 
-        {this.props.route.showWarmindBanner && (
-          <div className={styles.info}>
-            Warmind and Season 3 sets are still a work in progress. To
-            contibute, check out{' '}
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
-              href="https://github.com/joshhunt/destinySets"
-            >
-              Github
-            </a>, or send them directly on{' '}
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
-              href="https://twitter.com/joshhunt"
-            >
-              Twitter
-            </a>.
-          </div>
-        )}
-
         {filteredSetData.map(({ sets, slug, name }, index) => (
           <Section
             key={index}

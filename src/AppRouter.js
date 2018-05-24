@@ -37,12 +37,7 @@ export default class AppRouter extends Component {
             setData={sets.dlc1}
           />
 
-          <Route
-            path="/warmind"
-            component={Inventory}
-            setData={sets.dlc2}
-            showWarmindBanner
-          />
+          <Route path="/warmind" component={Inventory} setData={sets.dlc2} />
 
           <Route
             path="/strike-gear"
