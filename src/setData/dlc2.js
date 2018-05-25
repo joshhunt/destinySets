@@ -200,6 +200,9 @@ export default ([
           {
             name: 'Extras',
             items: [
+              2731919245, // BLOCK-Z SHELL
+              3969205939, // PACIFIC DECEPTION
+              4268441917, // GROUNDSWELL NULLIFIER99
               1291068165, // IKELOS Imperative emblem
               4052831236, // Activate ESCALATION emblem
               2544513644, // Return TYRANT++ emblem
