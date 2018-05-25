@@ -279,8 +279,9 @@ export default ([
               842157717, // Warmind's Fortress
               842157718, // Relic of the Golden Age
               842157719, // Wormslayer
-              1291068170, // Cold Comfort
               1291068172, // Specter of the Gun
+              1291068170, // Cold Comfort
+              1273131835, // Arctic Arsenalist
               1291068171, // Data Mine
               1273131832, // Warminded
               235397502 // Arctic Dreamscape
