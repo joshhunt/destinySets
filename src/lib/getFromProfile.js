@@ -1,4 +1,4 @@
-import { keyBy } from 'lodash';
+import { keyBy, every } from 'lodash';
 import fp from 'lodash/fp';
 
 import {
@@ -111,6 +111,22 @@ function itemsFromVendorPlugStates(data) {
   )(data);
 }
 
+function failureStateFromVendorPlugStates(data) {
+  return fp.flow(
+    fp.flatMap(character => {
+      return (
+        character &&
+        fp.flatMap(vendor => {
+          return fp.flatMap(plugState => {
+            return plugState.canInsert ? null : plugState;
+          }, vendor.plugStates.data);
+        }, character.itemComponents)
+      );
+    }),
+    fp.compact
+  )(data);
+}
+
 const socketsFromVendors = fp.flatMap(vendor =>
   fromSockets(vendor.sockets.data)
 );
@@ -125,7 +141,14 @@ function fromVendorSockets(data) {
 }
 
 function mergeItems(acc, [items, itemLocation]) {
-  items.forEach(itemHash => {
+  items.forEach(_itemHash => {
+    let baseEntry = _itemHash;
+    if (!baseEntry.itemHash) {
+      baseEntry = { itemHash: _itemHash };
+    }
+
+    const { itemHash } = baseEntry;
+
     if (ITEM_BLACKLIST.includes(itemHash)) {
       return acc;
     }
@@ -133,6 +156,7 @@ function mergeItems(acc, [items, itemLocation]) {
     if (!acc[itemHash]) {
       acc[itemHash] = {
         itemHash,
+        extraInfo: baseEntry,
         obtained: true,
         instances: []
       };
@@ -202,7 +226,7 @@ export function inventoryFromProfile(profile, vendorDefs) {
 }
 
 export function objectivesFromProfile(profile) {
-  const toReturn = wrapForError('objectivesFromProfile', profile, () => {
+  const objectives = wrapForError('objectivesFromProfile', profile, () => {
     return keyBy(
       [
         ...flavorObjectivesFromKiosk(profile.profileKiosks.data),
@@ -217,5 +241,26 @@ export function objectivesFromProfile(profile) {
     );
   });
 
-  return toReturn;
+  window.__objectives = objectives;
+  return objectives;
+}
+
+export function relevantPlugDataFromProfile(profile) {
+  const ddd = failureStateFromVendorPlugStates(profile.$vendors.data)
+    .filter(plugState => {
+      return plugState.plugObjectives
+        ? every(plugState.plugObjectives, objective => objective.complete)
+        : true;
+    })
+    .reduce((acc, plugState) => {
+      acc = {
+        ...acc,
+        [plugState.plugItemHash]: plugState
+      };
+      return acc;
+    }, {});
+
+  console.log('Got some:', ddd);
+
+  return ddd;
 }

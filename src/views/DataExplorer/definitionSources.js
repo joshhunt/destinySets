@@ -82,7 +82,7 @@ export default [
   src('DestinyMedalTierDefinition', 'medalTier', []),
   src('DestinyActivityGraphDefinition', 'activityGraph', []),
   src('DestinyBondDefinition', 'bond', []),
-  src('DestinyDestinationDefinition', 'destination', []),
+  src('DestinyDestinationDefinition', 'destination', ['destinationHash']),
   src('DestinyEquipmentSlotDefinition', 'equipmentSlot', []),
   src('DestinyLocationDefinition', 'location', []),
   src('DestinyObjectiveDefinition', 'objective', [

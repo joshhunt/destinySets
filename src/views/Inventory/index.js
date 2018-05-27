@@ -63,6 +63,12 @@ class Inventory extends Component {
   componentDidMount() {
     this.fetchDefinitions(this.props.language);
     this.potentiallyScheduleFetchProfile();
+
+    window.setInterval(() => {
+      this.setState({
+        currentTime: Date.now()
+      });
+    }, 1000);
   }
 
   componentWillUnmount() {
@@ -196,6 +202,7 @@ class Inventory extends Component {
       .then(data => {
         log('got current profile', data);
         const profile = destiny.getLastProfile(data);
+        this.setState({ lastUpdated: Date.now() });
 
         props.setProfiles({
           currentProfile: profile,
@@ -249,8 +256,8 @@ class Inventory extends Component {
     getDefinition('DestinyStatDefinition', lang).then(setStatDefs);
     getDefinition('DestinyObjectiveDefinition', lang).then(setObjectiveDefs);
 
-    const items = 'reducedCollectableInventoryItems';
-    this.itemDefsPromise = getDefinition(items, lang, false);
+    const items = 'DestinyInventoryItemDefinition';
+    this.itemDefsPromise = getDefinition(items, lang);
     this.itemDefsPromise.then(setItemDefs);
   }
 
@@ -390,6 +397,13 @@ class Inventory extends Component {
                 dismiss={this.removeTrackedItem}
               />
             ))}
+
+            <p>
+              Last updated:{' '}
+              {Math.round(
+                (this.state.currentTime - this.state.lastUpdated) / 1000
+              )}
+            </p>
           </div>
         )}
 

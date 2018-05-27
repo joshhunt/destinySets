@@ -16,6 +16,7 @@ import {
   statDefsSelector,
   makeItemStatsSelector,
   profileObjectivesSelector,
+  relevantPlugDataSelector,
   makeItemInventoryEntrySelector
 } from 'app/store/selectors';
 import styles from './styles.styl';
@@ -25,6 +26,7 @@ function ItemTooltip({
   small,
   dismiss,
   profileObjectives,
+  relevantPlugData,
   objectiveDefs,
   stats,
   statDefs,
@@ -34,10 +36,25 @@ function ItemTooltip({
     return null;
   }
 
-  const { displayProperties, screenshot, itemCategoryHashes, loreHash } = item;
+  const {
+    displayProperties,
+    screenshot,
+    itemCategoryHashes,
+    loreHash,
+    hash
+  } = item;
 
   const isEmblem = (itemCategoryHashes || []).includes(EMBLEM);
   const extraInfo = getItemExtraInfo(item, itemInventoryEntry);
+
+  console.log('hash:', hash);
+  console.log('relevantPlugData:', relevantPlugData);
+
+  const plugFailureIndexes = relevantPlugData[hash]
+    ? relevantPlugData[hash].insertFailIndexes
+    : [];
+
+  console.log('plugFailureIndexes:', plugFailureIndexes);
 
   if (loreHash) {
     extraInfo.push('Lore available on Ishtar Collective, click for more info');
@@ -49,6 +66,24 @@ function ItemTooltip({
       ...((item.objectives || {}).objectiveHashes || [])
     ].filter(Boolean)
   );
+
+  let _objectiveHashes = [...objectiveHashes];
+  let _profileObjectives = { ...profileObjectives };
+  let _objectiveDefs = { ...objectiveDefs };
+
+  plugFailureIndexes.forEach(failureIndex => {
+    const key = `customPlugFailureIndex_${failureIndex}`;
+    _objectiveHashes.push(key);
+    _profileObjectives[key] = {
+      progress: 0
+    };
+
+    _objectiveDefs = {
+      valueStyle: 2,
+      completionValue: 1,
+      progressDescription: item.plug.insertionRules[failureIndex].failureMessage
+    };
+  });
 
   return (
     <div className={cx(styles.tooltip, small && styles.small)}>
@@ -77,9 +112,9 @@ function ItemTooltip({
           <Objectives
             className={styles.objectives}
             trackedStatStyle={isEmblem}
-            objectives={objectiveHashes}
-            profileObjectives={profileObjectives}
-            objectiveDefs={objectiveDefs}
+            objectives={_objectiveHashes}
+            profileObjectives={_profileObjectives}
+            objectiveDefs={_objectiveDefs}
           />
         ) : null}
 
@@ -102,6 +137,7 @@ const mapStateToProps = () => {
     return {
       profileObjectives: profileObjectivesSelector(state),
       objectiveDefs: objectiveDefsSelector(state),
+      relevantPlugData: relevantPlugDataSelector(state),
       statDefs: statDefsSelector(state),
       stats: itemStatsSelector(state, ownProps),
       item: itemSelector(state, ownProps),

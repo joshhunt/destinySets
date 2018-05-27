@@ -32,7 +32,10 @@ export default class DataView extends Component {
     const [fieldName, parentFieldName] = itemPath;
 
     if (isString(rawValue) && rawValue.match(/\.(png|jpg|jpeg)$/)) {
-      const imageUrl = `https://bungie.net${rawValue}`;
+      const imageUrl =
+        rawValue[0] === '/'
+          ? `https://bungie.net${rawValue}`
+          : `https://bungie.net/${rawValue}`;
 
       return (
         <span>

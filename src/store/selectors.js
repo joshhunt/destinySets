@@ -3,7 +3,8 @@ import { difference } from 'lodash';
 
 import {
   inventoryFromProfile,
-  objectivesFromProfile
+  objectivesFromProfile,
+  relevantPlugDataFromProfile
 } from 'app/lib/getFromProfile';
 import { NUMERICAL_STATS, STAT_BLACKLIST } from 'app/lib/destinyEnums';
 
@@ -191,6 +192,17 @@ export const profileObjectivesSelector = createSelector(
     }
 
     return objectivesFromProfile(profile);
+  }
+);
+
+export const relevantPlugDataSelector = createSelector(
+  profileSelector,
+  profile => {
+    if (!profile) {
+      return {};
+    }
+
+    return relevantPlugDataFromProfile(profile);
   }
 );
 
