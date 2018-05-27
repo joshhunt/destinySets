@@ -171,10 +171,21 @@ class Inventory extends Component {
       log('Debug path', debugPath);
 
       return getDebugProfile(debugPath).then(data => {
+        let currentProfile = data;
+        let allProfiles = [data];
+
         log('debug profile data', data);
+
+        if (data.profiles && data.bungieNetUser) {
+          currentProfile = data.profiles[0];
+          allProfiles = data.profiles;
+        }
+
+        log({ currentProfile, allProfiles });
+
         props.setProfiles({
-          currentProfile: data,
-          allProfiles: [data],
+          currentProfile,
+          allProfiles,
           isCached: false
         });
       });
