@@ -4,9 +4,7 @@ import fp from 'lodash/fp';
 import {
   getDebugId,
   getProfileErrorReported,
-  saveProfileErrorReported,
-  getVendorPlugStatesTestFlag,
-  saveVendorPlugStatesTestFlag
+  saveProfileErrorReported
 } from 'app/lib/ls';
 import { saveDebugInfo, trackError } from 'app/lib/telemetry';
 
