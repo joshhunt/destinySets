@@ -4,7 +4,9 @@ import fp from 'lodash/fp';
 import {
   getDebugId,
   getProfileErrorReported,
-  saveProfileErrorReported
+  saveProfileErrorReported,
+  getVendorPlugStatesTestFlag,
+  saveVendorPlugStatesTestFlag
 } from 'app/lib/ls';
 import { saveDebugInfo, trackError } from 'app/lib/telemetry';
 
@@ -85,8 +87,24 @@ function objectivesFromVendors(data) {
       return (
         character &&
         fp.flatMap(vendor => {
-          return fp.flatMap(plugStates => {
-            return plugStates.plugObjectives;
+          return fp.flatMap(plugState => {
+            return plugState.plugObjectives;
+          }, vendor.plugStates.data);
+        }, character.itemComponents)
+      );
+    }),
+    fp.compact
+  )(data);
+}
+
+function itemsFromVendorPlugStates(data) {
+  return fp.flow(
+    fp.flatMap(character => {
+      return (
+        character &&
+        fp.flatMap(vendor => {
+          return fp.flatMap(plugState => {
+            return plugState.canInsert ? plugState.plugItemHash : null;
           }, vendor.plugStates.data);
         }, character.itemComponents)
       );
@@ -176,7 +194,8 @@ export function inventoryFromProfile(profile, vendorDefs) {
       [fromKiosks(profile.profileKiosks.data, vendorDefs), 'profileKiosks'],
       [fromSockets(profile.itemComponents.sockets.data), 'itemSockets'],
       [fromVendorSockets(profile.$vendors.data), 'vendorSockets'],
-      [fromProfilePlugSets(profile.profilePlugSets.data), 'profilePlugSets']
+      [fromProfilePlugSets(profile.profilePlugSets.data), 'profilePlugSets'],
+      [itemsFromVendorPlugStates(profile.$vendors.data), 'vendorPlugStates']
     ].reduce(mergeItems, {});
 
     window.__inventory = inventory;
