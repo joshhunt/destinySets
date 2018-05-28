@@ -7,5 +7,6 @@ export default {
   baseGame: require('./baseGame').default,
   allItems: require('./allItems').default,
   allItemsDeluxe: require('./allItemsDeluxe').default,
-  strikeGear: require('./strikeGear').default
+  strikeGear: require('./strikeGear').default,
+  catalysts: require('./catalysts').default
 };

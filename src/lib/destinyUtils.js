@@ -29,6 +29,10 @@ function classFromString(str) {
 }
 
 export const getItemClass = item => {
+  if (!item) {
+    return NO_CLASS;
+  }
+
   if (CLASS_OVERRIDES.hasOwnProperty(item.hash)) {
     return CLASS_OVERRIDES[item.hash];
   }

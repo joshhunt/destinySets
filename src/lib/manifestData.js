@@ -16,7 +16,7 @@ db.version(1).stores({
   dataCache: '&key, data'
 });
 
-const VERSION = 'v1';
+const VERSION = 'v2';
 
 let manifestPromise;
 
