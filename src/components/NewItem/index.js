@@ -22,6 +22,18 @@ const TIER_COLOR = {
   [COMMON]: '#c3bcb4'
 };
 
+function isMobile() {
+  return (
+    window &&
+    window.navigator &&
+    /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+      window.navigator.userAgent
+    )
+  );
+}
+
+const IS_MOBILE = isMobile();
+
 function getItemColor(item) {
   if (!item) {
     return null;
@@ -48,7 +60,7 @@ function getItemColor(item) {
 export default class Item extends Component {
   onMouseEnter = () => {
     const { setPopper, itemHash } = this.props;
-    setPopper && setPopper(itemHash, this.ref);
+    !IS_MOBILE && setPopper && setPopper(itemHash, this.ref);
   };
 
   onMouseLeave = () => {
