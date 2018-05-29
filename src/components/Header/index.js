@@ -184,7 +184,7 @@ export default class Header extends Component {
 
   render() {
     const {
-      isCached,
+      profileCached,
       currentProfile,
       allProfiles,
       switchProfile,
@@ -252,7 +252,7 @@ export default class Header extends Component {
 
             {currentProfile && (
               <ProfileDropdown
-                isCached={isCached}
+                isCached={profileCached}
                 currentProfile={currentProfile}
                 allProfiles={allProfiles}
                 switchProfile={switchProfile}

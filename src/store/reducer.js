@@ -10,7 +10,6 @@ import {
 
 const SET_PROFILES = 'Set profiles';
 const SET_CLOUD_INVENTORY = 'Set cloud inventory';
-const SET_DEFINITIONS = 'Set definitions';
 const SET_FILTER_ITEM = 'Set filter item';
 const SET_BULK_FILTERS = 'Set bulk filters';
 const SET_LANGUAGE = 'Set language';
@@ -20,6 +19,7 @@ const SET_XUR_DATA = 'Set Xur data';
 const TOGGLE_MANUALLY_OBTAINED = 'Toggle manually obtained';
 const SET_GOOGLE_AUTH = 'Set Google auth data';
 const FORGET_DISMANTLED_ITEM = 'Forget dismantled item';
+export const SET_DEFINITIONS = 'Set definitions';
 
 export const DEFAULT_FILTER = {
   [TITAN]: true,
