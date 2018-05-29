@@ -6,7 +6,7 @@ import styles from './styles.styl';
 
 export default function LoginUpsell({ children }) {
   return (
-    <div className={styles.loginUpsell}>
+    <div className={styles.root}>
       <h2 className={styles.heading}>Login for the good stuff</h2>
 
       {children && <p>{children}</p>}

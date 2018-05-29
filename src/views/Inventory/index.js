@@ -15,6 +15,7 @@ import {
   removeTrackedItem,
   setGoogleAuth
 } from 'app/store/reducer';
+
 import {
   inventorySelector,
   xurHasNewItemsSelector,
@@ -25,14 +26,13 @@ import googleAuth, {
   signIn as googleSignIn,
   signOut as googleSignOut
 } from 'app/lib/googleDriveAuth';
-import DestinyAuthProvider from 'app/lib/DestinyAuthProvider';
+
 import * as ls from 'app/lib/ls';
 import * as destiny from 'app/lib/destiny';
 import * as cloudStorage from 'app/lib/cloudStorage';
 import { getDefinition } from 'app/lib/manifestData';
 import { getDebugProfile } from 'app/lib/telemetry';
 
-import Header from 'app/components/Header';
 import Footer from 'app/components/Footer';
 import LoginUpsell from 'app/components/LoginUpsell';
 import Section from 'app/components/Section';
@@ -71,35 +71,6 @@ class Inventory extends Component {
   }
 
   componentWillReceiveProps(newProps) {
-    const { isAuthenticated, authLoaded } = newProps;
-
-    const authChanged =
-      isAuthenticated !== this.props.isAuthenticated ||
-      authLoaded !== this.props.authLoaded;
-
-    if (authChanged) {
-      log('Auth has changed', { isAuthenticated, authLoaded });
-      if (!isAuthenticated && authLoaded) {
-        ls.removeAuth();
-      }
-
-      if (isAuthenticated && authLoaded) {
-        if (!this.alreadyFetched) {
-          this.alreadyFetched = true;
-          this.fetch(newProps);
-        }
-      }
-
-      if (!isAuthenticated && authLoaded) {
-        ls.clearAll();
-        this.props.setProfiles({
-          currentProfile: null,
-          allProfiles: null,
-          isCached: false
-        });
-      }
-    }
-
     if (this.props.filters !== newProps.filters) {
       ls.saveFilters(newProps.filters);
     }
@@ -288,62 +259,16 @@ class Inventory extends Component {
   };
 
   render() {
-    const {
-      filters,
-      filteredSetData,
-      profile,
-      allProfiles,
-      language,
-      isCached,
-      isAuthenticated,
-      trackedItems,
-      xur,
-      xurHasNewItems,
-      googleAuth
-    } = this.props;
-
-    const {
-      itemTooltip,
-      itemModal,
-      xurModal,
-      // googleAuthLoaded,
-      // googleAuthSignedIn,
-      unexpectedError
-    } = this.state;
+    const { filters, filteredSetData, trackedItems } = this.props;
+    const { itemTooltip, itemModal, xurModal, unexpectedError } = this.state;
 
     return (
       <div className={styles.root}>
-        <Header
-          isCached={isCached}
-          currentProfile={profile}
-          allProfiles={allProfiles}
-          switchProfile={this.switchProfile}
-          language={language}
-          setLanguage={this.setLanguage}
-          logout={this.logout}
-          googleSignIn={googleSignIn}
-          googleSignOut={this.googleSignOut}
-          xurHasNewItems={xurHasNewItems}
-          openXurModal={this.setXurModal}
-          displayXur={!!xur.items.length}
-          googleAuth={googleAuth}
-          displayGoogleAuthButton={
-            googleAuth.loaded && isAuthenticated && !googleAuth.signedIn
-          }
-        />
-
         <SectionList
           setData={filteredSetData}
           filters={filters}
           setFilterItem={this.props.setFilterItem}
         />
-
-        {!isAuthenticated && (
-          <LoginUpsell>
-            Connect your Bungie.net acccount to automatically track items you've
-            collected and dismantled.
-          </LoginUpsell>
-        )}
 
         {unexpectedError && (
           <div className={styles.errorInfo}>
@@ -445,6 +370,4 @@ const mapDispatchToActions = {
   setGoogleAuth
 };
 
-export default DestinyAuthProvider(
-  connect(mapStateToProps, mapDispatchToActions)(Inventory)
-);
+export default connect(mapStateToProps, mapDispatchToActions)(Inventory);
