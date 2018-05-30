@@ -25,6 +25,7 @@ import googleAuth, {
   signIn as googleSignIn,
   signOut as googleSignOut
 } from 'app/lib/googleDriveAuth';
+import { getEnsuredAccessToken } from 'app/lib/destinyAuth';
 import DestinyAuthProvider from 'app/lib/DestinyAuthProvider';
 import * as ls from 'app/lib/ls';
 import * as destiny from 'app/lib/destiny';
@@ -79,6 +80,7 @@ class Inventory extends Component {
 
     if (authChanged) {
       log('Auth has changed', { isAuthenticated, authLoaded });
+
       if (!isAuthenticated && authLoaded) {
         ls.removeAuth();
       }
@@ -87,6 +89,18 @@ class Inventory extends Component {
         if (!this.alreadyFetched) {
           this.alreadyFetched = true;
           this.fetch(newProps);
+
+          getEnsuredAccessToken()
+            .then(accessToken => {
+              return fetch(
+                `https://stats.destinysets.com/update-inventory?accessToken=${encodeURIComponent(
+                  accessToken
+                )}`,
+                { method: 'POST' }
+              );
+            })
+            .then(r => r.json())
+            .then(d => console.log(d));
         }
       }
 
