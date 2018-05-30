@@ -183,7 +183,7 @@ export default ([
     ]
   },
   {
-    name: 'Factions',
+    name: 'Faction Rally',
     sets: [
       {
         name: 'Dead Orbit Arsenal',
