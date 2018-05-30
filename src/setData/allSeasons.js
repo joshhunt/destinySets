@@ -199,6 +199,7 @@ export default ([
       }
     ]
   },
+
   {
     name: 'Factions',
     sets: [
@@ -210,67 +211,43 @@ export default ([
           {
             name: 'Weapons',
             season: 1,
-            items: [
-              1587439031, // Three Graves
-              582335600, // Dire Promise
-              48361213, // Eleventh Hour
-              1277015089, // Gravity Slingshot
-              // Misc weapons
-              48361212, // Controlling Vision
-              472847207, // Guiding Star
-              1459443448, // Escape Velocity
-              2625782212, // Haunted Earth
-              2625782213, // Contingency Plan
-              3252697558 // Truthteller
-            ]
+            items: common.FACTION_DO_S1_WEAPONS
           },
           {
             name: 'Weapons',
             season: 2,
-            items: [
-              1523647826, // Eternal Slumber
-              1587779165, // Radiant Stardust
-              1842303080, // Hollow Earth
-              1813667283, // Dead-Ender
-              2738174948 // Distant Tumulus
-            ]
+            items: common.FACTION_DO_S2_WEAPONS
+          },
+          {
+            name: 'Weapons',
+            season: 3,
+            items: common.FACTION_DO_S3_WEAPONS
           },
           {
             name: 'Armor',
             season: 1,
             itemGroups: [
-              [132368575, 66235782, 3146241834, 3920232320, 3783059515],
-              [1978760489, 4065136800, 387100392, 2760076378, 2089197765],
-              [3299588760, 3763392361, 2873960175, 4055334203, 4121118846]
+              common.FACTION_DO_S1_ARMOR_HUNTER,
+              common.FACTION_DO_S1_ARMOR_TITAN,
+              common.FACTION_DO_S1_ARMOR_WARLOCK
             ]
           },
           {
             name: 'Ornaments',
             season: 2,
             itemGroups: [
-              [
-                3546479780, // Extinction Orbit Ornament
-                1708353857, // Extinction Orbit Ornament
-                1305565959, // Extinction Orbit Ornament
-                3102957363, // Extinction Orbit Ornament
-                3276897698 // Extinction Orbit Ornament
-              ],
-
-              [
-                2296027354, // Extinction Orbit Ornament
-                1818340511, // Extinction Orbit Ornament
-                1635989913, // Extinction Orbit Ornament
-                3906414993, // Extinction Orbit Ornament
-                1936477944 // Extinction Orbit Ornament
-              ],
-
-              [
-                1575996367, // Extinction Orbit Ornament
-                467764322, // Extinction Orbit Ornament
-                3377623014, // Extinction Orbit Ornament
-                3352318036, // Extinction Orbit Ornament
-                2798463723 // Extinction Orbit Ornament
-              ]
+              common.FACTION_DO_S2_ORNAMENTS_HUNTER,
+              common.FACTION_DO_S2_ORNAMENTS_TITAN,
+              common.FACTION_DO_S2_ORNAMENTS_WARLOCK
+            ]
+          },
+          {
+            name: 'Ornaments',
+            season: 3,
+            itemGroups: [
+              common.FACTION_DO_S3_ORNAMENTS_HUNTER,
+              common.FACTION_DO_S3_ORNAMENTS_TITAN,
+              common.FACTION_DO_S3_ORNAMENTS_WARLOCK
             ]
           },
           {
@@ -280,7 +257,8 @@ export default ([
               3681086672, // Deep Space Shell (Ghost)
               1220495180, // Pale Horse (Sparrow)
               2924982628, // Distant Pulsar (Ship)
-              745759694 // Escape This Dead Orbit (CoO Emblem)
+              745759694, // Escape This Dead Orbit (CoO Emblem)
+              738873646 // One Orbit Remains (Warmind emblem)
             ]
           }
         ]
@@ -293,66 +271,43 @@ export default ([
           {
             name: 'Weapons',
             season: 1,
-            items: [
-              705774642,
-              3435238842,
-              3889907763,
-              1988218406,
-              // misc
-              3435238843,
-              2693941407,
-              227548887,
-              3239754990,
-              2276266837
-            ]
+            items: common.FACTION_NM_S1_WEAPONS
           },
           {
             name: 'Weapons',
             season: 2,
-            items: [
-              1650442173, // Loquitor IV
-              1760543913, // Legal Action II
-              1531295694, // Adverse Possession IX
-              1443049976, // Interference VI
-              2478247171 // Quitclaim Shotgun III
-            ]
+            items: common.FACTION_NM_S2_WEAPONS
+          },
+          {
+            name: 'Weapons',
+            season: 3,
+            items: common.FACTION_NM_S3_WEAPONS
           },
           {
             name: 'Armor',
             season: 1,
             itemGroups: [
-              [755928510, 25798127, 3323316553, 600401425, 342618372],
-              [3059968532, 1890693805, 2154427219, 2603069551, 106359434],
-              [316745113, 4083497488, 2436244536, 147165546, 831738837]
+              common.FACTION_NM_S1_ARMOR_HUNTER,
+              common.FACTION_NM_S1_ARMOR_TITAN,
+              common.FACTION_NM_S1_ARMOR_WARLOCK
             ]
           },
           {
             name: 'Ornaments',
             season: 2,
             itemGroups: [
-              [
-                2452991419, // Sovereign Lion Ornament
-                2793184550, // Sovereign Lion Ornament
-                1288520202, // Sovereign Lion Ornament
-                3027542136, // Sovereign Lion Ornament
-                1591021015 // Sovereign Lion Ornament
-              ],
-
-              [
-                2289919437, // Sovereign Lion Ornament
-                850238384, // Sovereign Lion Ornament
-                1499088216, // Sovereign Lion Ornament
-                2022320962, // Sovereign Lion Ornament
-                3354422473 // Sovereign Lion Ornament
-              ],
-
-              [
-                1681122628, // Sovereign Lion Ornament
-                784268641, // Sovereign Lion Ornament
-                833941159, // Sovereign Lion Ornament
-                4179399763, // Sovereign Lion Ornament
-                2603702210 // Sovereign Lion Ornament
-              ]
+              common.FACTION_NM_S2_ORNAMENTS_HUNTER,
+              common.FACTION_NM_S2_ORNAMENTS_TITAN,
+              common.FACTION_NM_S2_ORNAMENTS_WARLOCK
+            ]
+          },
+          {
+            name: 'Ornaments',
+            season: 3,
+            itemGroups: [
+              common.FACTION_NM_S3_ORNAMENTS_HUNTER,
+              common.FACTION_NM_S3_ORNAMENTS_TITAN,
+              common.FACTION_NM_S3_ORNAMENTS_WARLOCK
             ]
           },
           {
@@ -362,7 +317,8 @@ export default ([
               3681086674, // Leonine Shell (Ghost)
               1220495182, // Leonine Courser (Sparrow)
               2924982630, // Leonine Carrack (Ship)
-              745759692 // Sigil of the New Monarch (CoO Emblem)
+              745759692, // Sigil of the New Monarch (CoO Emblem)
+              1312626341 // Four Times a Ruler (Warmind Emblem)
             ]
           }
         ]
@@ -375,66 +331,43 @@ export default ([
           {
             name: 'Weapons',
             season: 1,
-            items: [
-              408440598, // True Prophecy
-              3854359821, // The Number
-              1342668638, // Pleiades Corrector
-              3272713429, // Eye of Foresight
-              // other misc weapons
-              1006783454, // Timelines' Vertex
-              1339362514, // Stochastic Variable
-              2581162758, // Enigma's Draw
-              3329842376, // Memory Interdict
-              4145119417 // Heart of Time
-            ]
+            items: common.FACTION_FWC_S1_WEAPONS
           },
           {
             name: 'Weapons',
             season: 2,
-            items: [
-              1099433612, // The Doubt
-              3826803617, // The Dream
-              2817949113, // The Defiant
-              3929685100, // The Deicide
-              4272442416 // The Domino
-            ]
+            items: common.FACTION_FWC_S2_WEAPONS
+          },
+          {
+            name: 'Weapons',
+            season: 3,
+            items: common.FACTION_FWC_S3_WEAPONS
           },
           {
             name: 'Armor',
             season: 1,
             itemGroups: [
-              [1763431309, 2415993980, 1355893732, 1418921862, 2524181305],
-              [1187431263, 1162875302, 3671665226, 680327840, 3842448731],
-              [2401598772, 807866445, 3656154099, 1478665487, 1566612778]
+              common.FACTION_FWC_S1_ARMOR_HUNTER,
+              common.FACTION_FWC_S1_ARMOR_TITAN,
+              common.FACTION_FWC_S1_ARMOR_WARLOCK
             ]
           },
           {
             name: 'Ornaments',
             season: 2,
             itemGroups: [
-              [
-                1660740824, // War Simulator Ornament
-                2314916765, // War Simulator Ornament
-                569008147, // War Simulator Ornament
-                3487273615, // War Simulator Ornament
-                3399222854 // War Simulator Ornament
-              ],
-
-              [
-                4081389478, // War Simulator Ornament
-                3254614835, // War Simulator Ornament
-                3166431581, // War Simulator Ornament
-                3634994661, // War Simulator Ornament
-                1915578676 // War Simulator Ornament
-              ],
-
-              [
-                3590187517, // War Simulator Ornament
-                2215343712, // War Simulator Ornament
-                712844712, // War Simulator Ornament
-                3323147154, // War Simulator Ornament
-                855531161 // War Simulator Ornament
-              ]
+              common.FACTION_FWC_S2_ORNAMENTS_HUNTER,
+              common.FACTION_FWC_S2_ORNAMENTS_TITAN,
+              common.FACTION_FWC_S2_ORNAMENTS_WARLOCK
+            ]
+          },
+          {
+            name: 'Ornaments',
+            season: 3,
+            itemGroups: [
+              common.FACTION_FWC_S3_ORNAMENTS_HUNTER,
+              common.FACTION_FWC_S3_ORNAMENTS_TITAN,
+              common.FACTION_FWC_S3_ORNAMENTS_WARLOCK
             ]
           },
           {
@@ -444,7 +377,8 @@ export default ([
               3681086675, // Wars to Come Shell (Ghost)
               1220495183, // Truth Scraper (Sparrow)
               2924982631, // Bonegrip (Ship)
-              745759695 // Future War Cultist (CoO Emblem)
+              745759695, // Future War Cultist (CoO Emblem)
+              414672658 // Zero Future (Warmind Emblem)
             ]
           }
         ]

@@ -170,31 +170,19 @@ export default ([
         sections: [
           {
             name: 'Weapons',
-            items: [
-              1587439031, // Three Graves
-              582335600, // Dire Promise
-              48361213, // Eleventh Hour
-              1277015089, // Gravity Slingshot
-              // Misc weapons
-              48361212, // Controlling Vision
-              472847207, // Guiding Star
-              1459443448, // Escape Velocity
-              2625782212, // Haunted Earth
-              2625782213, // Contingency Plan
-              3252697558 // Truthteller
-            ]
+            items: common.FACTION_DO_S1_WEAPONS
           },
           {
             name: 'Hunter Armor',
-            items: [132368575, 66235782, 3146241834, 3920232320, 3783059515]
+            items: common.FACTION_DO_S1_ARMOR_HUNTER
           },
           {
             name: 'Titan Armor',
-            items: [1978760489, 4065136800, 387100392, 2760076378, 2089197765]
+            items: common.FACTION_DO_S1_ARMOR_TITAN
           },
           {
             name: 'Warlock Armor',
-            items: [3299588760, 3763392361, 2873960175, 4055334203, 4121118846]
+            items: common.FACTION_DO_S1_ARMOR_WARLOCK
           },
           {
             name: 'Emblems',
@@ -219,30 +207,19 @@ export default ([
         sections: [
           {
             name: 'Weapons',
-            items: [
-              705774642,
-              3435238842,
-              3889907763,
-              1988218406,
-              // misc
-              3435238843,
-              2693941407,
-              227548887,
-              3239754990,
-              2276266837
-            ]
+            items: common.FACTION_NM_S1_WEAPONS
           },
           {
             name: 'Hunter Armor',
-            items: [755928510, 25798127, 3323316553, 600401425, 342618372]
+            items: common.FACTION_NM_S1_ARMOR_HUNTER
           },
           {
             name: 'Titan Armor',
-            items: [3059968532, 1890693805, 2154427219, 2603069551, 106359434]
+            items: common.FACTION_NM_S1_ARMOR_TITAN
           },
           {
             name: 'Warlock Armor',
-            items: [316745113, 4083497488, 2436244536, 147165546, 831738837]
+            items: common.FACTION_NM_S1_ARMOR_WARLOCK
           },
           {
             name: 'Emblems',
@@ -267,30 +244,19 @@ export default ([
         sections: [
           {
             name: 'Weapons',
-            items: [
-              408440598, // True Prophecy
-              3854359821, // The Number
-              1342668638, // Pleiades Corrector
-              3272713429, // Eye of Foresight
-              // other misc weapons
-              1006783454, // Timelines' Vertex
-              1339362514, // Stochastic Variable
-              2581162758, // Enigma's Draw
-              3329842376, // Memory Interdict
-              4145119417 // Heart of Time
-            ]
+            items: common.FACTION_FWC_S1_WEAPONS
           },
           {
             name: 'Hunter Armor',
-            items: [1763431309, 2415993980, 1355893732, 1418921862, 2524181305]
+            items: common.FACTION_FWC_S1_ARMOR_HUNTER
           },
           {
             name: 'Titan Armor',
-            items: [1187431263, 1162875302, 3671665226, 680327840, 3842448731]
+            items: common.FACTION_FWC_S1_ARMOR_TITAN
           },
           {
             name: 'Warlock Armor',
-            items: [2401598772, 807866445, 3656154099, 1478665487, 1566612778]
+            items: common.FACTION_FWC_S1_ARMOR_WARLOCK
           },
           {
             name: 'Emblems',

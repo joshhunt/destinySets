@@ -224,46 +224,25 @@ export default ([
         sections: [
           {
             name: 'Weapons',
-            items: [
-              905092001, // Anniella
-              1406475890 // Agamid
-            ]
+            items: common.FACTION_DO_S3_WEAPONS
           },
           {
             name: 'Hunter Ornaments',
-            items: [
-              2797913058, // Arach's Chosen Casque
-              3127350767, // Arach's Chosen Grips
-              537899715, // Arach's Chosen Vestments
-              949647553, // Arach's Chosen Flight
-              3733752686 // Cape of Last Departure
-            ]
+            items: common.FACTION_DO_S3_ORNAMENTS_HUNTER
           },
           {
             name: 'Titan Ornaments',
-            items: [
-              2380603182, // Arach's Chosen Helm
-              55853763, // Arach's Chosen Fists
-              3748455111, // Arach's Chosen Plate
-              2876184501, // Arach's Chosen Stand
-              659497546 // Mark of Last Departure
-            ]
+            items: common.FACTION_DO_S3_ORNAMENTS_TITAN
           },
           {
             name: 'Warlock Ornaments',
-            items: [
-              3170681623, // Arach's Chosen Veil
-              4125929890, // Arach's Chosen Gloves
-              3167890668, // Arach's Chosen Robes
-              2164210804, // Arach's Chosen Boots
-              3172679685 // Bond of Last Departure
-            ]
+            items: common.FACTION_DO_S3_ORNAMENTS_WARLOCK
           },
           {
             name: 'Extras',
             items: [
               3826233802, // Rotaro 33
-              738873646, // One Orbit Remains
+              738873646, // One Orbit Remains emblem
               996259007 // Dead Orbit Vision
             ]
           }
@@ -277,40 +256,19 @@ export default ([
         sections: [
           {
             name: 'Weapons',
-            items: [
-              516243773, // Beidenhander
-              625672050 // Jian 7 Rifle
-            ]
+            items: common.FACTION_NM_S3_WEAPONS
           },
           {
             name: 'Hunter Ornaments',
-            items: [
-              1601073057, // Executor's Will Casque
-              2465050180, // Executor's Will Grips
-              52736778, // Executor's Will Vest
-              2138283222, // Executor's Will Strides
-              797274431 // Cape of the Royal
-            ]
+            items: common.FACTION_NM_S3_ORNAMENTS_HUNTER
           },
           {
             name: 'Titan Ornaments',
-            items: [
-              3777022373, // Executor's Will Helm
-              1938896448, // Executor's Will Gauntlets
-              4019917318, // Executor's Will Plate
-              3333499954, // Executor's Will Greaves
-              1696281763 // Mark of the Royal
-            ]
+            items: common.FACTION_NM_S3_ORNAMENTS_TITAN
           },
           {
             name: 'Warlock Ornaments',
-            items: [
-              84296096, // Executor's Will Cover
-              591580685, // Executor's Will Gloves
-              505586837, // Executor's Will Robes
-              3138706543, // Executor's WIll Boots
-              4137984748 // Bond of the Royal
-            ]
+            items: common.FACTION_NM_S3_ORNAMENTS_WARLOCK
           },
           {
             name: 'Extras',
@@ -330,40 +288,19 @@ export default ([
         sections: [
           {
             name: 'Weapons',
-            items: [
-              210065223, // Magnum Shepherd
-              4095462486 // Pit Launcher
-            ]
+            items: common.FACTION_FWC_S3_WEAPONS
           },
           {
             name: 'Hunter Ornaments',
-            items: [
-              1632717232, // Superior's Vision Cowl
-              3908372701, // Superior's Vision Grips
-              2524583429, // Superior's Vision Cuirass
-              2385935391, // Superior's Vision Strides
-              1578878364 // Cape of Eternal War
-            ]
+            items: common.FACTION_FWC_S3_ORNAMENTS_HUNTER
           },
           {
             name: 'Titan Ornaments',
-            items: [
-              3190764700, // Superior's Vision Helm
-              1819905153, // Superior's Vision Gauntlets
-              3969308233, // Superior's Vision Plate
-              2283209395, // Superior's Vision Greaves
-              679252408 // Mark of Eternal War
-            ]
+            items: common.FACTION_FWC_S3_ORNAMENTS_TITAN
           },
           {
             name: 'Warlock Ornaments',
-            items: [
-              2412534419, // Superior's Vision Hood
-              2231492918, // Superior's Vision Gloves
-              1828609664, // Superior's Vision Robes
-              2038334920, // Superior's Vision Boots
-              1347816737 // Bond of Eternal War
-            ]
+            items: common.FACTION_FWC_S3_ORNAMENTS_WARLOCK
           },
           {
             name: 'Extras',
