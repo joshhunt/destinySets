@@ -127,8 +127,8 @@ export default function reducer(state = INITIAL_STORE, action) {
     case SET_CLOUD_INVENTORY:
       return {
         ...state,
-        cloudInventory: action.cloudInventory.inventory,
-        manualInventory: action.cloudInventory.manualInventory || {}
+        cloudInventory: (action.cloudInventory || {}).inventory,
+        manualInventory: (action.cloudInventory || {}).manualInventory || {}
       };
 
     case SET_DEFINITIONS:

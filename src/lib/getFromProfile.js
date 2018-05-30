@@ -6,7 +6,7 @@ import {
   getProfileErrorReported,
   saveProfileErrorReported
 } from 'app/lib/ls';
-import { saveDebugInfo, trackError } from 'app/lib/telemetry';
+import { saveDebugInfo, trackError, trackBreadcrumb } from 'app/lib/telemetry';
 
 const ITEM_BLACKLIST = [
   4248210736, // Default shader
@@ -42,6 +42,16 @@ function fromKiosks(data, vendorDefs) {
           }
 
           const item = vendor.itemList[vendorItem.index];
+
+          if (!item) {
+            trackBreadcrumb({
+              message: 'Missing item from vendorlist',
+              category: 'debug',
+              level: 'warning',
+              data: { vendorHash, vendorItemIndex: vendorItem.index }
+            });
+          }
+
           return item.itemHash;
         })
         .filter(Boolean);
