@@ -46,7 +46,7 @@ function getItemColor(item) {
   };
   const luminosity = red + green + blue;
   if (
-    item.itemCategoryHashes.includes(EMBLEM) &&
+    (item.itemCategoryHashes || []).includes(EMBLEM) &&
     luminosity > 10 &&
     luminosity < 735
   ) {

@@ -16,7 +16,7 @@ export default function Vendor({ data, defs, onItemClick }) {
           <h4 className={s.categoryHeading}>{cat.displayProperties.name}</h4>
 
           <div className={s.itemList}>
-            {itemsByDisplayCategory[catIndex].map(vendorItem => (
+            {(itemsByDisplayCategory[catIndex] || []).map(vendorItem => (
               <Item
                 onClick={ev => onItemClick(defs.item[vendorItem.itemHash], ev)}
                 key={vendorItem.itemHash}
