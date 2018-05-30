@@ -225,7 +225,7 @@ export default ([
           {
             name: 'Weapons',
             items: [
-              905092001, // Anniella 
+              905092001, // Anniella
               1406475890 // Agamid
             ]
           },
@@ -263,6 +263,7 @@ export default ([
             name: 'Extras',
             items: [
               3826233802, // Rotaro 33
+              738873646, // One Orbit Remains
               996259007 // Dead Orbit Vision
             ]
           }
@@ -278,7 +279,7 @@ export default ([
             name: 'Weapons',
             items: [
               516243773, // Beidenhander
-              625672050 // Jian 7 Rifle 
+              625672050 // Jian 7 Rifle
             ]
           },
           {
@@ -315,8 +316,8 @@ export default ([
             name: 'Extras',
             items: [
               3826233803, // Trirang Tox
+              1312626341, // Four Times a Ruler emblem
               2931044502 // New Monarchy Allegiance
-
             ]
           }
         ]
@@ -368,6 +369,7 @@ export default ([
             name: 'Extras',
             items: [
               308384258, // G-008 Ziphopper
+              414672658, // Zero Future emblem
               2296172971 // War Cult Scheme
             ]
           }
