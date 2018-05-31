@@ -204,6 +204,7 @@ export default ([
               3969205939, // PACIFIC DECEPTION
               4268441917, // GROUNDSWELL NULLIFIER99
               1291068165, // IKELOS Imperative emblem
+              1273131836, // Apparatus Belli emblem
               4052831236, // Activate ESCALATION emblem
               2544513644, // Return TYRANT++ emblem
               3286479728 // GENOTYPENULL-ZERO shader
