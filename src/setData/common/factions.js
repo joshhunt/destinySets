@@ -212,7 +212,8 @@ export const FACTION_FWC_S2_ORNAMENTS_WARLOCK = [
 
 export const FACTION_DO_S3_WEAPONS = [
   905092001, // Anniella
-  1406475890 // Agamid
+  1406475890, // Agamid
+  2928437919 // Basilisk
 ];
 
 export const FACTION_DO_S3_ORNAMENTS_HUNTER = [
@@ -239,7 +240,8 @@ export const FACTION_DO_S3_ORNAMENTS_WARLOCK = [
 
 export const FACTION_NM_S3_WEAPONS = [
   516243773, // Beidenhander
-  625672050 // Jian 7 Rifle
+  625672050, // Jian 7 Rifle
+  1392429335 // Broadsword Launcher
 ];
 
 export const FACTION_NM_S3_ORNAMENTS_HUNTER = [
@@ -266,7 +268,8 @@ export const FACTION_NM_S3_ORNAMENTS_WARLOCK = [
 
 export const FACTION_FWC_S3_WEAPONS = [
   210065223, // Magnum Shepherd
-  4095462486 // Pit Launcher
+  4095462486, // Pit Launcher
+  293505772 // The Vision
 ];
 
 export const FACTION_FWC_S3_ORNAMENTS_HUNTER = [
