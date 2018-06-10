@@ -6,16 +6,23 @@ import cross from './cross.svg';
 
 export default class DataView extends Component {
   render() {
-    const { className, sections, removeItem } = this.props;
+    const {
+      className,
+      sections,
+      removeItem,
+      addAllFromSearch,
+      copyAsArray,
+      onCopyAsArrayChanged
+    } = this.props;
 
     return (
       <div className={cx(className, s.root)}>
-        {sections.map(section => (
-          <div>
-            <h4 className={s.sectionTitle}>{section.title}</h4>
+        {sections.map((section, sectionIndex) => (
+          <div key={sectionIndex}>
+            <h4 className={s.sectionTitle}>{section.name}</h4>
             <div className={s.itemList}>
               {section.items.map(item => (
-                <div className={s.item}>
+                <div className={s.item} key={item.hash}>
                   <img
                     alt=""
                     className={s.itemImage}
@@ -41,6 +48,24 @@ export default class DataView extends Component {
         <p className={s.para}>
           Items are automatically copied to your clipboard
         </p>
+
+        {sections &&
+          sections.length === 1 && (
+            <p>
+              <label>
+                <input
+                  type="checkbox"
+                  value={copyAsArray}
+                  onChange={onCopyAsArrayChanged}
+                />{' '}
+                Copy as simple array{' '}
+              </label>
+            </p>
+          )}
+
+        <button className={s.addAllButton} onClick={addAllFromSearch}>
+          Add all from search
+        </button>
       </div>
     );
   }

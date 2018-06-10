@@ -107,11 +107,26 @@ class DataExplorer extends Component {
     this.setState({ dataStack: [item] });
   }
 
+  addAllFromSearch = ev => {
+    ev && ev.preventDefault();
+
+    if (this.state.collectMode) {
+      this.collection.push(...this.state.items);
+      this.updateCollection();
+      return;
+    }
+  };
+
   updateCollection() {
+    this.collection = this.collection.filter(item => {
+      return item.$type && item.$type !== 'item' ? false : true;
+    });
+
     const sections = sortItemsIntoSections(this.collection);
     const verboseSections = sortItemsIntoSections(this.collection, true);
 
-    let jason = JSON.stringify(sections, null, 2);
+    const objToCopy = this.state.copyAsArray ? sections[0].items : sections;
+    let jason = JSON.stringify(objToCopy, null, 2);
 
     (jason.match(/(\d{5,})(,?)/g) || []).forEach(match => {
       const hash = +match.match(/\d+/)[0];
@@ -121,6 +136,8 @@ class DataExplorer extends Component {
     });
 
     copy(jason);
+
+    console.log(jason);
 
     this.setState({
       collectSections: verboseSections,
@@ -164,6 +181,12 @@ class DataExplorer extends Component {
       newDataStack.pop();
       this.setState({ dataStack: newDataStack });
     }
+  };
+
+  handleCopyAsArrayChanged = ev => {
+    this.setState({ copyAsArray: ev.target.checked }, () => {
+      this.updateCollection();
+    });
   };
 
   render() {
@@ -271,14 +294,16 @@ class DataExplorer extends Component {
             )}
           </div>
 
-          {collectMode &&
-            collectSections && (
-              <CollectionSidebar
-                removeItem={this.removeItemFromCollection}
-                className={styles.sidebar}
-                sections={this.state.collectSections}
-              />
-            )}
+          {collectMode && (
+            <CollectionSidebar
+              removeItem={this.removeItemFromCollection}
+              className={styles.sidebar}
+              sections={collectSections || []}
+              addAllFromSearch={this.addAllFromSearch}
+              onCopyAsArrayChanged={this.handleCopyAsArrayChanged}
+              copyAsArray={this.state.copyAsArray}
+            />
+          )}
         </div>
       </div>
     );
