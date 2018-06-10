@@ -22,8 +22,8 @@ export default class AppRouter extends Component {
   render() {
     return (
       <Provider store={store}>
-        <App>
-          <Router history={browserHistory}>
+        <Router history={browserHistory}>
+          <Route component={App}>
             <Route path="/debug" component={Debug} />
 
             <Route
@@ -68,8 +68,8 @@ export default class AppRouter extends Component {
             <Route path="/data" component={DataExplorer} />
             <Route path="/data/:itemHash" component={DataExplorer} />
             <Route path="/diff" component={Diff} />
-          </Router>
-        </App>
+          </Route>
+        </Router>
       </Provider>
     );
   }

@@ -26,11 +26,23 @@ const ICONS = {
   [PC_BLIZZARD]: 'windows'
 };
 
-function Platform({ isCached, membershipType }) {
-  if (isCached) {
+function Platform({ authExpired, isLoading, profileCached, membershipType }) {
+  if (profileCached) {
     return (
       <Fragment>
-        <Icon icon="spinner-third" spin /> Updating inventory...
+        <Icon icon="spinner-third" spin /> Booting up...
+      </Fragment>
+    );
+  }
+
+  if (authExpired) {
+    return <Fragment>Login expired</Fragment>;
+  }
+
+  if (isLoading) {
+    return (
+      <Fragment>
+        <Icon icon="spinner-third" spin /> Loading...
       </Fragment>
     );
   }
@@ -78,10 +90,17 @@ export default class ProfileDropdown extends Component {
   };
 
   render() {
-    const { isCached, currentProfile } = this.props;
+    const {
+      authExpired,
+      currentProfile,
+      profileCached,
+      isLoading
+    } = this.props;
+    const showGrey = authExpired || profileCached || isLoading;
+
     return (
       <DropdownMenu
-        className={isCached ? styles.cachedRoot : styles.root}
+        className={showGrey ? styles.cachedRoot : styles.root}
         renderContent={this.renderContent}
         contentClassName={styles.dropdown}
       >
@@ -90,7 +109,8 @@ export default class ProfileDropdown extends Component {
 
           <div className={styles.small}>
             <Platform
-              isCached={isCached}
+              profileCached={profileCached}
+              authExpired={authExpired}
               membershipType={
                 currentProfile.profile.data.userInfo.membershipType
               }

@@ -184,7 +184,6 @@ export default class Header extends Component {
 
   render() {
     const {
-      profileCached,
       currentProfile,
       allProfiles,
       switchProfile,
@@ -197,7 +196,8 @@ export default class Header extends Component {
       googleSignOut,
       displayXur,
       xurHasNewItems,
-      openXurModal
+      openXurModal,
+      profileCached
     } = this.props;
 
     const { isOverflowing, sidebarActive } = this.state;
@@ -252,7 +252,7 @@ export default class Header extends Component {
 
             {currentProfile && (
               <ProfileDropdown
-                isCached={profileCached}
+                profileCached={profileCached}
                 currentProfile={currentProfile}
                 allProfiles={allProfiles}
                 switchProfile={switchProfile}
