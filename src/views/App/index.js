@@ -106,7 +106,6 @@ class App extends Component {
     const {
       auth,
       children,
-      profileCached,
       profile,
       allProfiles,
       googleAuth,
@@ -116,12 +115,12 @@ class App extends Component {
     return (
       <div className={styles.root}>
         <Header
-          profileCached={profileCached}
+          authExpired={!auth.isAuthed && profile}
           currentProfile={profile}
           allProfiles={allProfiles}
           googleAuth={googleAuth}
-          switchProfile={this.switchProfile}
           language={language}
+          switchProfile={this.switchProfile}
           setLanguage={this.setLanguage}
           logout={this.logout}
         />
@@ -142,7 +141,11 @@ class App extends Component {
 
         {!auth.isAuthed && (
           <div className={styles.auth}>
-            <LoginUpsell />
+            <LoginUpsell>
+              {profile
+                ? 'Login has expired.'
+                : 'You need to log in for the first time'}
+            </LoginUpsell>
           </div>
         )}
       </div>
