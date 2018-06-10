@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router';
+import { NavLink } from 'react-router-dom';
 import Modal from 'react-modal';
 
 import { EMBLEM } from 'app/lib/destinyEnums';
@@ -104,7 +104,7 @@ class ItemModalContent extends Component {
           </li>
 
           <li>
-            <Link to={`/data/${hash}`}>View in Data Explorer</Link>
+            <NavLink to={`/data/${hash}`}>View in Data Explorer</NavLink>
           </li>
         </ul>
 

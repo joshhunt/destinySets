@@ -73,7 +73,9 @@ function query(queryTerm, itemDefsArray) {
 }
 
 const filtersSelector = state => state.app.filters;
-const propsSetDataSelector = (state, props) => props.route.setData;
+const propsSetDataSelector = (state, props) => {
+  return props.setData;
+};
 const itemDefsSelector = state => state.app.itemDefs;
 
 const setDataSelector = createSelector(

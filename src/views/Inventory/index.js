@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router';
 
 import {
   setProfiles,
@@ -370,4 +371,6 @@ const mapDispatchToActions = {
   setGoogleAuth
 };
 
-export default connect(mapStateToProps, mapDispatchToActions)(Inventory);
+export default withRouter(
+  connect(mapStateToProps, mapDispatchToActions)(Inventory)
+);

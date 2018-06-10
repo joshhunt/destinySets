@@ -1,5 +1,5 @@
 import React, { Fragment, Component } from 'react';
-import { Link } from 'react-router';
+import { NavLink } from 'react-router-dom';
 import { get } from 'lodash';
 import fp from 'lodash/fp';
 
@@ -212,7 +212,7 @@ class DebugView extends Component {
         <h1>Debug</h1>
 
         <p>
-          <Link to="/">Return to homepage</Link>
+          <NavLink to="/">Return to homepage</NavLink>
         </p>
 
         {this.state.hasError && <div>There was an error!</div>}

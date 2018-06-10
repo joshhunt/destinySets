@@ -1,7 +1,7 @@
 // eslint-disable no-console
 import React, { Component } from 'react';
 import { isString } from 'lodash';
-import { Router, Route, Switch, browserHistory } from 'react-router';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { Provider } from 'react-redux';
 
 import App from './views/App';
@@ -18,64 +18,42 @@ const DataExplorer = makeSplitComponent(() =>
   import(/* webpackChunkName: "DataExplorer" */ './views/DataExplorer')
 );
 
+const InventoryRoute = ({ path, exact, setData }) => (
+  <Route
+    path={path}
+    exact={exact}
+    render={props => <Inventory {...props} setData={setData} />}
+  />
+);
+
 export default class AppRouter extends Component {
   render() {
     return (
       <Provider store={store}>
-        <Router history={browserHistory}>
+        <BrowserRouter>
           <App>
             <Switch>
-              <Route path="/debug" component={Debug} />
+              <InventoryRoute path="/" exact setData={sets.baseGame} />
+              <InventoryRoute path="/curse-of-osiris" setData={sets.dlc1} />
+              <InventoryRoute path="/warmind" setData={sets.dlc2} />
+              <InventoryRoute path="/catalysts" setData={sets.catalysts} />
+              <InventoryRoute path="/strike-gear" setData={sets.strikeGear} />
+              <InventoryRoute path="/all-seasons" setData={sets.allSeasons} />
+              <InventoryRoute path="/all-items" setData={sets.allItems} />
 
-              <Route
-                path="/all-seasons"
-                component={Inventory}
-                setData={sets.allSeasons}
-              />
-
-              <Route path="/" component={Inventory} setData={sets.baseGame} />
-
-              <Route
-                path="/curse-of-osiris"
-                component={Inventory}
-                setData={sets.dlc1}
-              />
-
-              <Route
-                path="/warmind"
-                component={Inventory}
-                setData={sets.dlc2}
-              />
-              <Route
-                path="/catalysts"
-                component={Inventory}
-                setData={sets.catalysts}
-              />
-
-              <Route
-                path="/strike-gear"
-                component={Inventory}
-                setData={sets.strikeGear}
-              />
-
-              <Route
-                path="/all-items"
-                component={Inventory}
-                setData={sets.allItems}
-              />
-
-              <Route
+              <InventoryRoute
                 path="/all-items-deluxe"
-                component={Inventory}
                 setData={sets.allItemsDeluxe}
               />
 
               <Route path="/data" component={DataExplorer} />
               <Route path="/data/:itemHash" component={DataExplorer} />
+
               <Route path="/diff" component={Diff} />
+              <Route path="/debug" component={Debug} />
             </Switch>
           </App>
-        </Router>
+        </BrowserRouter>
       </Provider>
     );
   }

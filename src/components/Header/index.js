@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/href-no-hash */
 import React, { Component, Fragment } from 'react';
-import { Link } from 'react-router';
+import { NavLink } from 'react-router-dom';
 import cx from 'classnames';
 
 import logo from 'app/logo.svg';
@@ -49,14 +49,14 @@ const SiteLinks = ({ displayXur, openXurModal, xurHasNewItems }) => (
     <div className={styles.dummyLink} />
 
     {LINKS.map(({ name, to }) => (
-      <Link
+      <NavLink
         key={to}
         className={styles.link}
         activeClassName={styles.active}
         to={to}
       >
         {name}
-      </Link>
+      </NavLink>
     ))}
 
     {displayXur && (
@@ -184,7 +184,7 @@ export default class Header extends Component {
 
   render() {
     const {
-      profileCached,
+      authExpired,
       currentProfile,
       allProfiles,
       switchProfile,
@@ -252,7 +252,7 @@ export default class Header extends Component {
 
             {currentProfile && (
               <ProfileDropdown
-                isCached={profileCached}
+                authExpired={authExpired}
                 currentProfile={currentProfile}
                 allProfiles={allProfiles}
                 switchProfile={switchProfile}
