@@ -12,7 +12,8 @@ import {
   setProfiles,
   setProfileLoading,
   setCloudInventory,
-  setGoogleAuth
+  setGoogleAuth,
+  setLanguage
 } from 'app/store/reducer';
 import { setAuthStatus } from 'app/store/auth';
 
@@ -129,8 +130,9 @@ class App extends Component {
     log('TODO: switchProfile');
   };
 
-  setLanguage = () => {
-    log('TODO: setLanguage');
+  setLanguage = language => {
+    ls.saveLanguage(language);
+    this.props.setLanguage(language);
   };
 
   logout = () => {
@@ -219,7 +221,8 @@ const mapDispatchToActions = {
   setProfiles,
   setProfileLoading,
   setCloudInventory,
-  setGoogleAuth
+  setGoogleAuth,
+  setLanguage
 };
 
 export default connect(mapStateToProps, mapDispatchToActions)(App);

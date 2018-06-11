@@ -129,40 +129,9 @@ class Inventory extends Component {
   };
 
   fetchProfile(props = this.props) {
-    const { debugProfile } = props.location.query;
-
-    if (debugProfile) {
-      const debugPath = debugProfile.includes('console.firebase.google.com')
-        ? debugProfile.split('destinysets-new/data/')[1]
-        : debugProfile;
-
-      log('Debug path', debugPath);
-
-      return getDebugProfile(debugPath).then(data => {
-        let currentProfile = data;
-        let allProfiles = [data];
-
-        log('debug profile data', data);
-
-        if (data.profiles && data.bungieNetUser) {
-          currentProfile = data.profiles[0];
-          allProfiles = data.profiles;
-        }
-
-        log({ currentProfile, allProfiles });
-
-        props.setProfiles({
-          currentProfile,
-          allProfiles,
-          isCached: false
-        });
-      });
-    }
-
     return destiny
       .getCurrentProfiles()
       .then(data => {
-        log('got current profile', data);
         const profile = destiny.getLastProfile(data);
 
         props.setProfiles({
@@ -176,32 +145,8 @@ class Inventory extends Component {
       .catch(err => {
         console.error('Error fetching current profiles');
         console.error(err);
-
-        if (err.data && err.data.ErrorCode === 1618) {
-          this.setState({ unexpectedError: true });
-        }
       });
   }
-
-  // fetch = (props = this.props) => {
-  //   this.fetchProfile(props).then(profile => {
-  //     googleAuth(({ signedIn }) => {
-  //       // this.setState({
-  //       //   googleAuthLoaded: true,
-  //       //   googleAuthSignedIn: signedIn
-  //       // });
-
-  //       this.props.setGoogleAuth({ loaded: true, signedIn });
-
-  //       this.itemDefsPromise.then(itemDefs => {
-  //         signedIn &&
-  //           cloudStorage
-  //             .getInventory(profile, itemDefs)
-  //             .then(props.setCloudInventory);
-  //       });
-  //     });
-  //   });
-  // };
 
   fetchDefinitions({ code: lang }) {
     const {
@@ -245,19 +190,9 @@ class Inventory extends Component {
     this.props.setCloudInventory(null);
   };
 
-  googleSignOut = () => {
-    // googleSignOut();
-    this.props.setCloudInventory(null);
-  };
-
-  setLanguage = language => {
-    ls.saveLanguage(language);
-    this.props.setLanguage(language);
-  };
-
   render() {
     const { filters, filteredSetData, trackedItems } = this.props;
-    const { itemTooltip, itemModal, xurModal, unexpectedError } = this.state;
+    const { itemTooltip, itemModal, xurModal } = this.state;
 
     return (
       <div className={styles.root}>
@@ -266,22 +201,6 @@ class Inventory extends Component {
           filters={filters}
           setFilterItem={this.props.setFilterItem}
         />
-
-        {unexpectedError && (
-          <div className={styles.errorInfo}>
-            An unexpected error occurred while requesting your profile. This is
-            a known issue with Bungie's API and until resolved, players may
-            workaround the issue by signing into all characters, on all
-            platforms.{' '}
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
-              href="https://twitter.com/BungieHelp/status/994643009214955521"
-            >
-              Read more from @BungieHelp
-            </a>.
-          </div>
-        )}
 
         {filteredSetData.map(({ sets, slug, name }, index) => (
           <Section
@@ -340,7 +259,6 @@ const mapStateToProps = (state, ownProps) => {
     itemDefs: state.definitions.itemDefs,
     trackedItems: state.app.trackedItems,
     xur: state.app.xur,
-    googleAuth: state.app.googleAuth,
     manualInventory: state.app.manualInventory,
     // TODO: this uses props, so we need to 'make' a selector like in ItemSet
     filteredSetData: filteredSetDataSelector(state, ownProps),
@@ -361,10 +279,8 @@ const mapDispatchToActions = {
   setObjectiveDefs,
   setStatDefs,
   setFilterItem,
-  setLanguage,
   removeTrackedItem,
-  setXurData,
-  setGoogleAuth
+  setXurData
 };
 
 export default connect(mapStateToProps, mapDispatchToActions)(Inventory);
