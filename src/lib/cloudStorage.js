@@ -138,7 +138,7 @@ function saveInventoryWorker(job, cb) {
     });
 }
 
-export function setInventory(_inventory, profile, raw = false) {
+export function saveInventory(_inventory, profile, raw = false) {
   const inventory = {
     ..._inventory,
     inventory: pickBy(_inventory.inventory, inventoryEntry => {

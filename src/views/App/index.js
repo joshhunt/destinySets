@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { pick } from 'lodash';
 
 import * as ls from 'app/lib/ls';
 import * as destiny from 'app/lib/destiny';
@@ -8,8 +9,11 @@ import { sendProfileStats } from 'app/lib/telemetry';
 import googleAuth from 'app/lib/googleDriveAuth';
 import destinyAuth from 'app/lib/destinyAuth';
 
+import { inventorySelector } from 'app/store/selectors';
+
 import {
   setProfiles,
+  switchProfile,
   setProfileLoading,
   setCloudInventory,
   setGoogleAuth,
@@ -40,14 +44,29 @@ class App extends Component {
   }
 
   componentDidMount() {
-    log('Mounted');
-
     destinyAuth(this.authDidUpdate);
   }
 
   componentDidUpdate(prevProps) {
-    if (this.props.itemDefs && !prevProps.itemDefs) {
+    const { props } = this;
+    const propChanged = key => props[key] !== prevProps[key];
+
+    const inventoryChanged =
+      propChanged('isCached') ||
+      propChanged('cloudInventory') ||
+      propChanged('manualInventory');
+
+    if (propChanged('itemDefs')) {
       this.itemDefsPromise.resolve(this.props.itemDefs);
+    }
+
+    if (inventoryChanged && !props.isCached && props.cloudInventory) {
+      log('Inventory has changed, saving new cloudInventory');
+
+      cloudStorage.saveInventory(
+        pick(props, ['inventory', 'manualInventory']),
+        props.profile
+      );
     }
   }
 
@@ -126,8 +145,10 @@ class App extends Component {
     });
   };
 
-  switchProfile = () => {
-    log('TODO: switchProfile');
+  switchProfile = profile => {
+    const { membershipId, membershipType } = profile.profile.data.userInfo;
+    ls.savePreviousAccount(membershipId, membershipType);
+    this.props.switchProfile(profile);
   };
 
   setLanguage = language => {
@@ -175,18 +196,6 @@ class App extends Component {
           logout={this.logout}
         />
 
-        {/*<Header
-          googleSignIn={googleSignIn}
-          googleSignOut={this.googleSignOut}
-          xurHasNewItems={xurHasNewItems}
-          openXurModal={this.setXurModal}
-          displayXur={!!xur.items.length}
-          googleAuth={googleAuth}
-          displayGoogleAuthButton={
-            googleAuth.loaded && isAuthenticated && !googleAuth.signedIn
-          }
-        />*/}
-
         <div>{children}</div>
 
         {!auth.isAuthed && (
@@ -212,13 +221,17 @@ const mapStateToProps = state => {
     allProfiles: state.app.allProfiles,
     googleAuth: state.app.googleAuth,
     language: state.app.language,
-    itemDefs: state.definitions.itemDefs
+    cloudInventory: state.app.cloudInventory,
+    itemDefs: state.definitions.itemDefs,
+    inventory: inventorySelector(state),
+    manualInventory: state.app.manualInventory
   };
 };
 
 const mapDispatchToActions = {
   setAuthStatus,
   setProfiles,
+  switchProfile,
   setProfileLoading,
   setCloudInventory,
   setGoogleAuth,

@@ -190,7 +190,6 @@ export function setGoogleAuth(data) {
 }
 
 export function setCloudInventory(cloudInventory) {
-  console.log('cloudInventory:', cloudInventory);
   return { type: SET_CLOUD_INVENTORY, cloudInventory };
 }
 

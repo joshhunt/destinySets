@@ -3,13 +3,9 @@ import { connect } from 'react-redux';
 
 import {
   setProfiles,
-  switchProfile,
-  setCloudInventory,
-  setLanguage,
   setFilterItem,
   setXurData,
-  removeTrackedItem,
-  setGoogleAuth
+  removeTrackedItem
 } from 'app/store/reducer';
 
 import {
@@ -29,7 +25,6 @@ import * as ls from 'app/lib/ls';
 import * as destiny from 'app/lib/destiny';
 import * as cloudStorage from 'app/lib/cloudStorage';
 import { getDefinition } from 'app/lib/manifestData';
-import { getDebugProfile } from 'app/lib/telemetry';
 
 import Footer from 'app/components/Footer';
 import Section from 'app/components/Section';
@@ -67,56 +62,19 @@ class Inventory extends Component {
     this.intervalId = null;
   }
 
-  componentWillReceiveProps(newProps) {
-    if (this.props.filters !== newProps.filters) {
-      ls.saveFilters(newProps.filters);
+  componentDidUpdate(oldProps) {
+    const { filters, language, trackedItems } = this.props;
+
+    if (filters !== oldProps.filters) {
+      ls.saveFilters(filters);
     }
 
-    if (this.props.language !== newProps.language) {
-      this.fetchDefinitions(newProps.language);
+    if (language !== oldProps.language) {
+      this.fetchDefinitions(language);
     }
 
-    if (this.props.trackedItems !== newProps.trackedItems) {
-      this.potentiallyScheduleFetchProfile(newProps);
-    }
-
-    const inventoryHasChanged =
-      this.props.isCached !== newProps.isCached ||
-      this.props.haveCloudInventory !== newProps.haveCloudInventory;
-
-    if (inventoryHasChanged) {
-      log('Inventory has changed, in some way!', newProps);
-    }
-
-    if (
-      inventoryHasChanged &&
-      !newProps.isCached &&
-      newProps.haveCloudInventory &&
-      newProps.inventory
-    ) {
-      log(
-        'Have final inventory, apparently. Saving new cloudInventory',
-        newProps
-      );
-      cloudStorage.setInventory(
-        {
-          inventory: newProps.inventory,
-          manualInventory: newProps.manualInventory
-        },
-        newProps.profile
-      );
-    } else if (
-      this.props.manualInventory !== newProps.manualInventory ||
-      this.props.cloudInventory !== newProps.cloudInventory
-    ) {
-      log('Manual inventory has changed, saving it');
-      cloudStorage.setInventory(
-        {
-          inventory: newProps.inventory,
-          manualInventory: newProps.manualInventory
-        },
-        newProps.profile
-      );
+    if (trackedItems !== oldProps.trackedItems) {
+      this.potentiallyScheduleFetchProfile(this.props);
     }
   }
 
@@ -173,22 +131,6 @@ class Inventory extends Component {
   setItemModal = itemHash => this.setState({ itemModal: itemHash });
   setXurModal = isOpen => this.setState({ xurModal: isOpen });
   removeTrackedItem = item => this.props.removeTrackedItem(item.hash);
-
-  switchProfile = profile => {
-    const { membershipId, membershipType } = profile.profile.data.userInfo;
-    ls.savePreviousAccount(membershipId, membershipType);
-    this.props.switchProfile(profile);
-  };
-
-  logout = () => {
-    ls.clearAll();
-    this.props.setProfiles({
-      currentProfile: null,
-      allProfiles: null,
-      isCached: false
-    });
-    this.props.setCloudInventory(null);
-  };
 
   render() {
     const { filters, filteredSetData, trackedItems } = this.props;
@@ -272,8 +214,6 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToActions = {
   setProfiles,
-  switchProfile,
-  setCloudInventory,
   setVendorDefs,
   setItemDefs,
   setObjectiveDefs,
