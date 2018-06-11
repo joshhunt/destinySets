@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import * as ls from 'app/lib/ls';
 import * as destiny from 'app/lib/destiny';
 import * as cloudStorage from 'app/lib/cloudStorage';
+import { sendProfileStats } from 'app/lib/telemetry';
 import googleAuth from 'app/lib/googleDriveAuth';
 import destinyAuth from 'app/lib/destinyAuth';
 
@@ -59,6 +60,7 @@ class App extends Component {
     if (isAuthenticated && isFinal && !this.alreadyFetched) {
       this.alreadyFetched = true;
       this.fetch();
+      sendProfileStats();
     }
 
     this.props.setAuthStatus({
