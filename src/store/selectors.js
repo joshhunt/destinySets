@@ -9,13 +9,13 @@ import { NUMERICAL_STATS, STAT_BLACKLIST } from 'app/lib/destinyEnums';
 
 export const cloudInventorySelector = state => state.app.cloudInventory;
 export const manualInventorySelector = state => state.app.manualInventory;
-export const itemDefsSelector = state => state.app.itemDefs;
-export const objectiveDefsSelector = state => state.app.objectiveDefs;
-export const statDefsSelector = state => state.app.statDefs;
+export const itemDefsSelector = state => state.definitions.itemDefs;
+export const objectiveDefsSelector = state => state.definitions.objectiveDefs;
+export const statDefsSelector = state => state.definitions.statDefs;
 
 const baseXurItemsSelector = state => state.app.xur.items;
 const profileSelector = state => state.app.profile;
-const vendorDefsSelector = state => state.app.vendorDefs;
+const vendorDefsSelector = state => state.definitions.vendorDefs;
 
 export const itemHashPropSelector = (state, props) => props.itemHash;
 

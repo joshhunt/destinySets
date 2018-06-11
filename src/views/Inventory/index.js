@@ -5,11 +5,7 @@ import {
   setProfiles,
   switchProfile,
   setCloudInventory,
-  setVendorDefs,
-  setItemDefs,
   setLanguage,
-  setObjectiveDefs,
-  setStatDefs,
   setFilterItem,
   setXurData,
   removeTrackedItem,
@@ -17,15 +13,17 @@ import {
 } from 'app/store/reducer';
 
 import {
+  setVendorDefs,
+  setItemDefs,
+  setObjectiveDefs,
+  setStatDefs
+} from 'app/store/definitions';
+
+import {
   inventorySelector,
   xurHasNewItemsSelector,
   xurItemsSelector
 } from 'app/store/selectors';
-
-import googleAuth, {
-  signIn as googleSignIn,
-  signOut as googleSignOut
-} from 'app/lib/googleDriveAuth';
 
 import * as ls from 'app/lib/ls';
 import * as destiny from 'app/lib/destiny';
@@ -34,7 +32,6 @@ import { getDefinition } from 'app/lib/manifestData';
 import { getDebugProfile } from 'app/lib/telemetry';
 
 import Footer from 'app/components/Footer';
-import LoginUpsell from 'app/components/LoginUpsell';
 import Section from 'app/components/Section';
 import Popper from 'app/components/Popper';
 import ItemTooltip from 'app/components/ItemTooltip';
@@ -186,25 +183,25 @@ class Inventory extends Component {
       });
   }
 
-  fetch = (props = this.props) => {
-    this.fetchProfile(props).then(profile => {
-      googleAuth(({ signedIn }) => {
-        // this.setState({
-        //   googleAuthLoaded: true,
-        //   googleAuthSignedIn: signedIn
-        // });
+  // fetch = (props = this.props) => {
+  //   this.fetchProfile(props).then(profile => {
+  //     googleAuth(({ signedIn }) => {
+  //       // this.setState({
+  //       //   googleAuthLoaded: true,
+  //       //   googleAuthSignedIn: signedIn
+  //       // });
 
-        this.props.setGoogleAuth({ loaded: true, signedIn });
+  //       this.props.setGoogleAuth({ loaded: true, signedIn });
 
-        this.itemDefsPromise.then(itemDefs => {
-          signedIn &&
-            cloudStorage
-              .getInventory(profile, itemDefs)
-              .then(props.setCloudInventory);
-        });
-      });
-    });
-  };
+  //       this.itemDefsPromise.then(itemDefs => {
+  //         signedIn &&
+  //           cloudStorage
+  //             .getInventory(profile, itemDefs)
+  //             .then(props.setCloudInventory);
+  //       });
+  //     });
+  //   });
+  // };
 
   fetchDefinitions({ code: lang }) {
     const {
@@ -249,7 +246,7 @@ class Inventory extends Component {
   };
 
   googleSignOut = () => {
-    googleSignOut();
+    // googleSignOut();
     this.props.setCloudInventory(null);
   };
 
@@ -340,7 +337,7 @@ const mapStateToProps = (state, ownProps) => {
     isCached: state.app.isCached,
     allProfiles: state.app.allProfiles,
     language: state.app.language,
-    itemDefs: state.app.itemDefs,
+    itemDefs: state.definitions.itemDefs,
     trackedItems: state.app.trackedItems,
     xur: state.app.xur,
     googleAuth: state.app.googleAuth,

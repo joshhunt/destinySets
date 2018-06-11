@@ -3,12 +3,20 @@ import { connect } from 'react-redux';
 
 import * as ls from 'app/lib/ls';
 import * as destiny from 'app/lib/destiny';
+import * as cloudStorage from 'app/lib/cloudStorage';
+import googleAuth from 'app/lib/googleDriveAuth';
 import destinyAuth from 'app/lib/destinyAuth';
+
+import {
+  setProfiles,
+  setProfileLoading,
+  setCloudInventory,
+  setGoogleAuth
+} from 'app/store/reducer';
+import { setAuthStatus } from 'app/store/auth';
+
 import Header from 'app/components/Header';
 import LoginUpsell from 'app/components/LoginUpsell';
-
-import { setProfiles } from 'app/store/reducer';
-import { setAuthStatus } from 'app/store/auth';
 
 import styles from './styles.styl';
 
@@ -18,10 +26,27 @@ class App extends Component {
   state = {};
   alreadyFetched = false;
 
+  constructor(props) {
+    super(props);
+
+    let _resolve;
+    this.itemDefsPromise = new Promise(resolve => {
+      _resolve = resolve;
+    });
+
+    this.itemDefsPromise.resolve = _resolve;
+  }
+
   componentDidMount() {
     log('Mounted');
 
     destinyAuth(this.authDidUpdate);
+  }
+
+  componentDidUpdate(prevProps) {
+    if (this.props.itemDefs && !prevProps.itemDefs) {
+      this.itemDefsPromise.resolve(this.props.itemDefs);
+    }
   }
 
   authDidUpdate = (err, { isAuthenticated, isFinal }) => {
@@ -52,7 +77,8 @@ class App extends Component {
         this.props.setProfiles({
           currentProfile: profile,
           allProfiles: data.profiles,
-          isCached: false
+          isCached: false,
+          profileLoading: false
         });
 
         return profile;
@@ -68,16 +94,32 @@ class App extends Component {
   }
 
   fetch = () => {
-    this.fetchProfile().then(profile => {
-      // googleAuth(({ signedIn }) => {
-      //   this.props.setGoogleAuth({ loaded: true, signedIn });
-      //   this.itemDefsPromise.then(itemDefs => {
-      //     signedIn &&
-      //       cloudStorage
-      //         .getInventory(profile, itemDefs)
-      //         .then(props.setCloudInventory);
-      //   });
-      // });
+    const profilePromise = this.fetchProfile();
+
+    // Create a promise that will resolve immediately with the
+    // pre-cached profile, or with the call to fetch the profile
+    const withProfile = this.props.profile
+      ? Promise.resolve(this.props.profile)
+      : profilePromise;
+
+    this.props.setProfileLoading(true);
+
+    googleAuth(({ signedIn }) => {
+      // If they log out
+      if (this.props.googleAuth.signedIn && !signedIn) {
+        this.props.setCloudInventory(null);
+      }
+
+      this.props.setGoogleAuth({ loaded: true, signedIn });
+
+      Promise.all([withProfile, this.itemDefsPromise]).then(
+        ([profile, itemDefs]) => {
+          signedIn &&
+            cloudStorage
+              .getInventory(profile, itemDefs)
+              .then(this.props.setCloudInventory);
+        }
+      );
     });
   };
 
@@ -99,7 +141,7 @@ class App extends Component {
     });
 
     this.props.setAuthStatus({ isAuthed: false, isLoaded: true });
-    // this.props.setCloudInventory(null); // TODO
+    this.props.setCloudInventory(null); // TODO
   };
 
   render() {
@@ -110,12 +152,14 @@ class App extends Component {
       allProfiles,
       googleAuth,
       language,
-      profileCached
+      profileCached,
+      profileLoading
     } = this.props;
 
     return (
       <div className={styles.root}>
         <Header
+          profileLoading={profileLoading}
           profileCached={profileCached}
           authExpired={!auth.isAuthed && profile}
           currentProfile={profile}
@@ -145,8 +189,8 @@ class App extends Component {
           <div className={styles.auth}>
             <LoginUpsell>
               {profile
-                ? 'Login has expired.'
-                : 'You need to log in for the first time'}
+                ? 'The connection with Bungie has expired. Please reconnect to update your inventory.'
+                : `Connect your Bungie.net acccount to automatically track items you've collected and dismantled.`}
             </LoginUpsell>
           </div>
         )}
@@ -160,12 +204,20 @@ const mapStateToProps = state => {
     auth: state.auth,
     profileCached: state.app.isCached,
     profile: state.app.profile,
+    profileLoading: state.app.profileLoading,
     allProfiles: state.app.allProfiles,
     googleAuth: state.app.googleAuth,
-    language: state.app.language
+    language: state.app.language,
+    itemDefs: state.definitions.itemDefs
   };
 };
 
-const mapDispatchToActions = { setAuthStatus, setProfiles };
+const mapDispatchToActions = {
+  setAuthStatus,
+  setProfiles,
+  setProfileLoading,
+  setCloudInventory,
+  setGoogleAuth
+};
 
 export default connect(mapStateToProps, mapDispatchToActions)(App);

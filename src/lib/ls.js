@@ -170,12 +170,12 @@ export function getVisitCount() {
   return parseInt(get(keys.VISIT_COUNT, 0), 10);
 }
 
-export function getGoogleDriveInventoryFileId() {
-  return get(keys.GDRIVE_FILE_ID, null);
+export function getGoogleDriveInventoryFileId(keySuffix) {
+  return get(keys.GDRIVE_FILE_ID + keySuffix, null);
 }
 
-export function saveGoogleDriveInventoryFileId(fileId) {
-  save(keys.GDRIVE_FILE_ID, fileId);
+export function saveGoogleDriveInventoryFileId(keySuffix, fileId) {
+  save(keys.GDRIVE_FILE_ID + keySuffix, fileId);
 }
 
 export function getTrackedItems() {
@@ -229,7 +229,8 @@ export function cleanUp() {
   const whitelistedKeys = Object.values(keys);
   try {
     Object.keys(localStorage).forEach(lsKey => {
-      if (!whitelistedKeys.includes(lsKey)) {
+      const isWhitelisted = whitelistedKeys.find(key => lsKey.includes(key));
+      if (!isWhitelisted) {
         console.info('Pruning unwhitelisted key from localStorage', lsKey);
         localStorage.removeItem(lsKey);
       }

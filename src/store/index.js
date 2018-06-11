@@ -1,12 +1,14 @@
 import { createStore, combineReducers } from 'redux';
 
-import reducer, { SET_DEFINITIONS } from './reducer';
+import app from './reducer';
+import definitions, { SET_DEFINITIONS } from './definitions';
 import auth from './auth';
 import preloadStore from './preloadStore';
 
 const rootReducer = combineReducers({
-  app: reducer,
-  auth
+  app,
+  auth,
+  definitions
 });
 
 const store = (window.__store = preloadStore(

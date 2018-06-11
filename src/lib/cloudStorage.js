@@ -14,8 +14,17 @@ const VERSION_NEW = 'new';
 const VERSION_NEW_2 = 'new-2';
 const VERSION_NEW_3 = 'new-3';
 
+function makeFileName(profile) {
+  const profileData = profile.data.userInfo;
+  const namePrefix = window.DESTINYSETS_ENV;
+  return `inventory-${namePrefix}-${profileData.membershipType}-${
+    profileData.membershipId
+  }.json`;
+}
+
 function getFileId({ profile }) {
-  const lsFileId = ls.getGoogleDriveInventoryFileId();
+  const fileName = makeFileName(profile);
+  const lsFileId = ls.getGoogleDriveInventoryFileId(fileName);
   const fileId = __fileId || lsFileId;
   if (fileId) {
     lsFileId
@@ -24,12 +33,6 @@ function getFileId({ profile }) {
 
     return Promise.resolve(fileId);
   }
-
-  const profileData = profile.data.userInfo;
-  const namePrefix = window.DESTINYSETS_ENV;
-  const fileName = `inventory-${namePrefix}-${profileData.membershipType}-${
-    profileData.membershipId
-  }.json`;
 
   fileIdLog('Inventory filename is ' + fileName);
 
@@ -67,7 +70,7 @@ function getFileId({ profile }) {
     })
     .then(_fileId => {
       __fileId = _fileId;
-      ls.saveGoogleDriveInventoryFileId(__fileId);
+      ls.saveGoogleDriveInventoryFileId(fileName, __fileId);
       return __fileId;
     });
 }

@@ -1,5 +1,3 @@
-import { isObject, isArray, isNumber } from 'lodash';
-
 import {
   HUNTER,
   TITAN,
@@ -19,7 +17,7 @@ const SET_XUR_DATA = 'Set Xur data';
 const TOGGLE_MANUALLY_OBTAINED = 'Toggle manually obtained';
 const SET_GOOGLE_AUTH = 'Set Google auth data';
 const FORGET_DISMANTLED_ITEM = 'Forget dismantled item';
-export const SET_DEFINITIONS = 'Set definitions';
+const PROFILE_LOADING_START = 'Loading profile - start';
 
 export const DEFAULT_FILTER = {
   [TITAN]: true,
@@ -42,45 +40,6 @@ const INITIAL_STORE = {
     signedIn: false
   }
 };
-
-const ITEM_DEF_KEYS = [];
-window.__ITEM_DEF_KEYS = ITEM_DEF_KEYS;
-const DEBUG_PROXIFY_ITEM_DEFS = false;
-
-function proxyifyDefs(defs, prevKeys = []) {
-  if (!DEBUG_PROXIFY_ITEM_DEFS) {
-    return defs;
-  }
-
-  const p = new Proxy(defs, {
-    get: (obj, prop) => {
-      const keys = [...prevKeys, prop];
-      const keysOfInterest = keys.slice(1).join('.');
-
-      if (!ITEM_DEF_KEYS.includes(keysOfInterest)) {
-        ITEM_DEF_KEYS.push(keysOfInterest);
-        console.log('Item defs', ITEM_DEF_KEYS);
-      }
-
-      const value = obj[prop];
-
-      if (isArray(value)) {
-        return value;
-      } else if (isObject(value)) {
-        const stuff = Object.keys(value).filter(k => !isNumber(k));
-        if (stuff.length) {
-          return proxyifyDefs(value, keys);
-        }
-
-        return value;
-      }
-
-      return value;
-    }
-  });
-
-  return p;
-}
 
 function toggleManualInventory(manualInventory, itemHash) {
   const newItem = manualInventory[itemHash]
@@ -118,6 +77,13 @@ export default function reducer(state = INITIAL_STORE, action) {
         ...action.payload
       };
 
+    case PROFILE_LOADING_START: {
+      return {
+        ...state,
+        profileLoading: action.payload
+      };
+    }
+
     case SET_GOOGLE_AUTH:
       return {
         ...state,
@@ -129,13 +95,6 @@ export default function reducer(state = INITIAL_STORE, action) {
         ...state,
         cloudInventory: (action.cloudInventory || {}).inventory,
         manualInventory: (action.cloudInventory || {}).manualInventory || {}
-      };
-
-    case SET_DEFINITIONS:
-      return {
-        ...state,
-        [action.name]:
-          action.name === 'itemDefs' ? proxyifyDefs(action.defs) : action.defs
       };
 
     case SET_FILTER_ITEM:
@@ -200,12 +159,18 @@ export default function reducer(state = INITIAL_STORE, action) {
   }
 }
 
-export function setProfiles({ currentProfile, allProfiles, isCached }) {
+export function setProfiles({
+  currentProfile,
+  allProfiles,
+  profileLoading,
+  isCached
+}) {
   return {
     type: SET_PROFILES,
     payload: {
       profile: currentProfile,
       allProfiles,
+      profileLoading,
       isCached
     }
   };
@@ -266,11 +231,6 @@ export function forgetDismantled(itemHash) {
   return { type: FORGET_DISMANTLED_ITEM, itemHash };
 }
 
-function setDefs(name, defs) {
-  return { type: SET_DEFINITIONS, name, defs };
+export function setProfileLoading(payload = true) {
+  return { type: PROFILE_LOADING_START, payload };
 }
-
-export const setVendorDefs = setDefs.bind(null, 'vendorDefs');
-export const setItemDefs = setDefs.bind(null, 'itemDefs');
-export const setObjectiveDefs = setDefs.bind(null, 'objectiveDefs');
-export const setStatDefs = setDefs.bind(null, 'statDefs');
