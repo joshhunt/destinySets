@@ -16,7 +16,8 @@ const keys = {
   PROFILE_ERROR_REPORTED: 'profileErrorReported',
 
   DESTINY_PROFILE: 'd2Profile2',
-  DEBUG: 'debug'
+  DEBUG: 'debug',
+  _FIREBASE: 'firebase:host:destinysets' // not actually used, but needed for whitelisting
 };
 
 let LOCAL_STORAGE;
