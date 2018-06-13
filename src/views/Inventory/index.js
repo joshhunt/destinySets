@@ -23,7 +23,6 @@ import {
 
 import * as ls from 'app/lib/ls';
 import * as destiny from 'app/lib/destiny';
-import * as cloudStorage from 'app/lib/cloudStorage';
 import { getDefinition } from 'app/lib/manifestData';
 
 import Footer from 'app/components/Footer';
@@ -36,8 +35,6 @@ import SectionList from 'app/components/SectionList';
 
 import { filteredSetDataSelector } from './selectors';
 import styles from './styles.styl';
-
-const log = require('app/lib/log')('<Inventory />');
 
 const FETCH_INTERVAL = 30 * 1000;
 

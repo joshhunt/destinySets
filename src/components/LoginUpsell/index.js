@@ -7,9 +7,7 @@ import styles from './styles.styl';
 export default function LoginUpsell({ children }) {
   return (
     <div className={styles.root}>
-      <h2 className={styles.heading}>Login for the good stuff</h2>
-
-      {children && <p>{children}</p>}
+      {children && <div className={styles.children}>{children}</div>}
 
       <a className={styles.authLink} href={authUrl()}>
         Connect Bungie.net
