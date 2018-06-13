@@ -202,7 +202,7 @@ class DebugView extends Component {
         "Warning: Only do this if you're absolutely sure you know what you're doing. You will probably loose data if you continue"
       )
     ) {
-      cloudStorage.setInventory(data, {}, true);
+      cloudStorage.saveInventory(data, {}, true);
     }
   };
 

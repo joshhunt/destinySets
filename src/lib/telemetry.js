@@ -1,4 +1,5 @@
 import * as ls from 'app/lib/ls';
+import { getEnsuredAccessToken } from 'app/lib/destinyAuth';
 
 const log = require('app/lib/log')('telemetry');
 
@@ -143,4 +144,22 @@ export function errorPrompt(ev) {
   }
 
   Raven.showReportDialog();
+}
+
+export function sendProfileStats() {
+  if (process.env.REACT_APP_PREVENT_STATS) {
+    return Promise.resolve();
+  }
+
+  return getEnsuredAccessToken()
+    .then(accessToken => {
+      return fetch(
+        `https://stats.destinysets.com/update-inventory?accessToken=${encodeURIComponent(
+          accessToken
+        )}`,
+        { method: 'POST' }
+      );
+    })
+    .then(r => r.json())
+    .then(d => log('Sent profile stats', d));
 }

@@ -4,11 +4,13 @@ import { isString } from 'lodash';
 import { Router, Route, browserHistory } from 'react-router';
 import { Provider } from 'react-redux';
 
-import store from './store';
-import sets from './setData';
+import App from './views/App';
 import Diff from './views/Diff';
 import Inventory from './views/Inventory';
 import Debug from './views/Debug';
+
+import store from './store';
+import sets from './setData';
 
 import makeSplitComponent from './makeSplitComponent';
 
@@ -21,50 +23,52 @@ export default class AppRouter extends Component {
     return (
       <Provider store={store}>
         <Router history={browserHistory}>
-          <Route path="/debug" component={Debug} />
+          <Route component={App}>
+            <Route path="/debug" component={Debug} />
 
-          <Route
-            path="/all-seasons"
-            component={Inventory}
-            setData={sets.allSeasons}
-          />
+            <Route
+              path="/all-seasons"
+              component={Inventory}
+              setData={sets.allSeasons}
+            />
 
-          <Route path="/" component={Inventory} setData={sets.baseGame} />
+            <Route path="/" component={Inventory} setData={sets.baseGame} />
 
-          <Route
-            path="/curse-of-osiris"
-            component={Inventory}
-            setData={sets.dlc1}
-          />
+            <Route
+              path="/curse-of-osiris"
+              component={Inventory}
+              setData={sets.dlc1}
+            />
 
-          <Route path="/warmind" component={Inventory} setData={sets.dlc2} />
-          <Route
-            path="/catalysts"
-            component={Inventory}
-            setData={sets.catalysts}
-          />
+            <Route path="/warmind" component={Inventory} setData={sets.dlc2} />
+            <Route
+              path="/catalysts"
+              component={Inventory}
+              setData={sets.catalysts}
+            />
 
-          <Route
-            path="/strike-gear"
-            component={Inventory}
-            setData={sets.strikeGear}
-          />
+            <Route
+              path="/strike-gear"
+              component={Inventory}
+              setData={sets.strikeGear}
+            />
 
-          <Route
-            path="/all-items"
-            component={Inventory}
-            setData={sets.allItems}
-          />
+            <Route
+              path="/all-items"
+              component={Inventory}
+              setData={sets.allItems}
+            />
 
-          <Route
-            path="/all-items-deluxe"
-            component={Inventory}
-            setData={sets.allItemsDeluxe}
-          />
+            <Route
+              path="/all-items-deluxe"
+              component={Inventory}
+              setData={sets.allItemsDeluxe}
+            />
 
-          <Route path="/data" component={DataExplorer} />
-          <Route path="/data/:itemHash" component={DataExplorer} />
-          <Route path="/diff" component={Diff} />
+            <Route path="/data" component={DataExplorer} />
+            <Route path="/data/:itemHash" component={DataExplorer} />
+            <Route path="/diff" component={Diff} />
+          </Route>
         </Router>
       </Provider>
     );

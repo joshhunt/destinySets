@@ -3,6 +3,11 @@ import React, { Component, Fragment } from 'react';
 import { Link } from 'react-router';
 import cx from 'classnames';
 
+import {
+  signIn as googleSignIn,
+  signOut as googleSignOut
+} from 'app/lib/googleDriveAuth';
+
 import logo from 'app/logo.svg';
 import xur from 'app/assets/xur_icon.png';
 import { DONATION_LINK } from 'app/components/DonateButton';
@@ -99,7 +104,6 @@ function Sidebar({
   language,
   setLanguage,
   displayGoogleAuthButton,
-  googleSignIn,
   toggleSidebar,
   displayXur,
   openXurModal,
@@ -184,7 +188,6 @@ export default class Header extends Component {
 
   render() {
     const {
-      isCached,
       currentProfile,
       allProfiles,
       switchProfile,
@@ -192,15 +195,16 @@ export default class Header extends Component {
       setLanguage,
       logout,
       googleAuth,
-      displayGoogleAuthButton,
-      googleSignIn,
-      googleSignOut,
       displayXur,
       xurHasNewItems,
-      openXurModal
+      openXurModal,
+      profileCached,
+      profileLoading
     } = this.props;
 
     const { isOverflowing, sidebarActive } = this.state;
+    const displayGoogleAuthButton =
+      currentProfile && googleAuth.loaded && !googleAuth.signedIn;
 
     return (
       <div
@@ -215,6 +219,7 @@ export default class Header extends Component {
             {...this.props}
             isOpen={sidebarActive}
             toggleSidebar={this.toggleSidebar}
+            displayGoogleAuthButton={displayGoogleAuthButton}
           />
         )}
 
@@ -252,7 +257,8 @@ export default class Header extends Component {
 
             {currentProfile && (
               <ProfileDropdown
-                isCached={isCached}
+                profileLoading={profileLoading}
+                profileCached={profileCached}
                 currentProfile={currentProfile}
                 allProfiles={allProfiles}
                 switchProfile={switchProfile}

@@ -3,6 +3,7 @@ import { getDestiny } from 'app/lib/destiny';
 import { saveAuth, getAuth } from 'app/lib/ls';
 
 const CLIENT_ID = process.env.REACT_APP_BUNGIE_CLIENT_ID;
+const REAUTH_TIMEOUT = 5 * 1000;
 
 const log = require('app/lib/log')('auth');
 const logiFrame = require('app/lib/log')('auth:iframe');
@@ -22,9 +23,7 @@ if (isAuthRefreshiFrame && window.parent.__recieveNewCodeFromIframe) {
 }
 
 export function getTokenRequestUrl() {
-  return `https://www.bungie.net/en/OAuth/Authorize?client_id=${
-    CLIENT_ID
-  }&response_type=code`;
+  return `https://www.bungie.net/en/OAuth/Authorize?client_id=${CLIENT_ID}&response_type=code`;
 }
 
 export const authUrl = getTokenRequestUrl;
@@ -76,6 +75,12 @@ export function _getEnsuredAccessToken() {
     window.__HIDDEN_IFRAME_REFRESH_AUTH = true;
     const iframe = document.createElement('iframe');
     iframe.src = getTokenRequestUrl();
+    iframe.style.width = '1px';
+    iframe.style.height = '1px';
+    iframe.style.border = 'none';
+    iframe.style.position = 'fixed';
+    iframe.style.top = '-100px';
+    iframe.style.left = '-100px';
     document.body.appendChild(iframe);
 
     window.__recieveNewCodeFromIframe = newCode => {
@@ -165,10 +170,10 @@ export default function destinyAuth(_cb) {
     cb(null, { isAuthenticated: true, isFinal: false });
 
     const timeoutID = setTimeout(() => {
-      console.log('iFrame has timed out, calling cb');
+      log('iFrame has timed out, calling cb');
       // This is a bit of a misnomer - it might not _actually_ be final, but we pretend it is anyway
       !hasReturned && cb(null, { isAuthenticated: false, isFinal: true });
-    }, 3 * 1000);
+    }, REAUTH_TIMEOUT);
 
     log('Ensuring we have a valid acccess token');
     getEnsuredAccessToken().then(token => {
