@@ -1,4 +1,5 @@
-import { createStore, combineReducers } from 'redux';
+import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
+import thunk from 'redux-thunk';
 
 import app from './reducer';
 import definitions, { SET_DEFINITIONS } from './definitions';
@@ -13,14 +14,16 @@ const rootReducer = combineReducers({
   definitions
 });
 
-const store = (window.__store = preloadStore(
-  createStore(
-    rootReducer,
-    window.__REDUX_DEVTOOLS_EXTENSION__ &&
-      window.__REDUX_DEVTOOLS_EXTENSION__({
+const composeEnhancers =
+  typeof window === 'object' && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
+    ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({
         actionsBlacklist: [SET_DEFINITIONS]
       })
-  )
-));
+    : compose;
+
+const enhancer = composeEnhancers(applyMiddleware(thunk));
+
+const store = preloadStore(createStore(rootReducer, enhancer));
+window.__store = store;
 
 export default store;

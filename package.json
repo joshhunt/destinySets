@@ -41,6 +41,7 @@
     "react-scripts": "1.0.17",
     "react-scroll": "^1.7.9",
     "redux": "^3.7.2",
+    "redux-thunk": "^2.3.0",
     "reselect": "^3.0.1"
   },
   "scripts": {

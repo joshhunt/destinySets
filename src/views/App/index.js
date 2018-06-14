@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import { pick } from 'lodash';
 
 import * as ls from 'app/lib/ls';
-import * as destiny from 'app/lib/destiny';
 import * as cloudStorage from 'app/lib/cloudStorage';
 import { sendProfileStats } from 'app/lib/telemetry';
 import googleAuth from 'app/lib/googleDriveAuth';
@@ -16,11 +15,7 @@ import {
   setGoogleAuth,
   setLanguage
 } from 'app/store/reducer';
-import {
-  setProfiles,
-  switchProfile,
-  setProfileLoading
-} from 'app/store/profile';
+import { setProfiles, switchProfile, fetchProfile } from 'app/store/profile';
 import { setAuthStatus } from 'app/store/auth';
 
 import Header from 'app/components/Header';
@@ -91,42 +86,14 @@ class App extends Component {
     });
   };
 
-  fetchProfile() {
-    return destiny
-      .getCurrentProfiles()
-      .then(data => {
-        log('got current profile', data);
-        const profile = destiny.getLastProfile(data);
-
-        this.props.setProfiles({
-          currentProfile: profile,
-          allProfiles: data.profiles,
-          isCached: false,
-          profileLoading: false
-        });
-
-        return profile;
-      })
-      .catch(err => {
-        console.error('Error fetching current profiles');
-        console.error(err);
-
-        if (err.data && err.data.ErrorCode === 1618) {
-          this.setState({ unexpectedError: true });
-        }
-      });
-  }
-
   fetch = () => {
-    const profilePromise = this.fetchProfile();
+    const profilePromise = this.props.fetchProfile();
 
     // Create a promise that will resolve immediately with the
     // pre-cached profile, or with the call to fetch the profile
     const withProfile = this.props.profile
       ? Promise.resolve(this.props.profile)
       : profilePromise;
-
-    this.props.setProfileLoading(true);
 
     googleAuth(({ signedIn }) => {
       // If they log out
@@ -234,10 +201,10 @@ const mapDispatchToActions = {
   setAuthStatus,
   setProfiles,
   switchProfile,
-  setProfileLoading,
   setCloudInventory,
   setGoogleAuth,
-  setLanguage
+  setLanguage,
+  fetchProfile
 };
 
 export default connect(mapStateToProps, mapDispatchToActions)(App);

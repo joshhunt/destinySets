@@ -6,7 +6,7 @@ import {
   setXurData,
   removeTrackedItem
 } from 'app/store/reducer';
-import { setProfiles } from 'app/store/profile';
+import { fetchProfile } from 'app/store/profile';
 
 import {
   setVendorDefs,
@@ -14,12 +14,6 @@ import {
   setObjectiveDefs,
   setStatDefs
 } from 'app/store/definitions';
-
-import {
-  inventorySelector,
-  xurHasNewItemsSelector,
-  xurItemsSelector
-} from 'app/store/selectors';
 
 import * as ls from 'app/lib/ls';
 import * as destiny from 'app/lib/destiny';
@@ -37,10 +31,6 @@ import { filteredSetDataSelector } from './selectors';
 import styles from './styles.styl';
 
 const FETCH_INTERVAL = 30 * 1000;
-
-// eslint-disable-next-line
-const timeout = dur => result =>
-  new Promise(resolve => setTimeout(() => resolve(result), dur));
 
 class Inventory extends Component {
   state = {
@@ -78,30 +68,10 @@ class Inventory extends Component {
   potentiallyScheduleFetchProfile = (props = this.props) => {
     if (!this.intervalId && props.trackedItems.length > 0) {
       this.intervalId = window.setInterval(() => {
-        this.fetchProfile();
+        props.fetchProfile();
       }, FETCH_INTERVAL);
     }
   };
-
-  fetchProfile(props = this.props) {
-    return destiny
-      .getCurrentProfiles()
-      .then(data => {
-        const profile = destiny.getLastProfile(data);
-
-        props.setProfiles({
-          currentProfile: profile,
-          allProfiles: data.profiles,
-          isCached: false
-        });
-
-        return profile;
-      })
-      .catch(err => {
-        console.error('Error fetching current profiles');
-        console.error(err);
-      });
-  }
 
   fetchDefinitions({ code: lang }) {
     const {
@@ -191,26 +161,14 @@ class Inventory extends Component {
 const mapStateToProps = (state, ownProps) => {
   return {
     filters: state.app.filters,
-    profile: state.profile.profile,
-    isCached: state.profile.isCached,
-    allProfiles: state.profile.allProfiles,
     language: state.app.language,
-    itemDefs: state.definitions.itemDefs,
     trackedItems: state.app.trackedItems,
-    xur: state.app.xur,
-    manualInventory: state.app.manualInventory,
-    haveCloudInventory: !!state.app.cloudInventory,
-    cloudInventory: state.app.cloudInventory,
-    // TODO: this uses props, so we need to 'make' a selector like in ItemSet
-    filteredSetData: filteredSetDataSelector(state, ownProps),
-    inventory: inventorySelector(state),
-    xurHasNewItems: xurHasNewItemsSelector(state),
-    xurItems: xurItemsSelector(state)
+    filteredSetData: filteredSetDataSelector(state, ownProps)
   };
 };
 
 const mapDispatchToActions = {
-  setProfiles,
+  fetchProfile,
   setVendorDefs,
   setItemDefs,
   setObjectiveDefs,
