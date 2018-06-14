@@ -3,11 +3,13 @@ import { createStore, combineReducers } from 'redux';
 import app from './reducer';
 import definitions, { SET_DEFINITIONS } from './definitions';
 import auth from './auth';
+import profile from './profile';
 import preloadStore from './preloadStore';
 
 const rootReducer = combineReducers({
   app,
   auth,
+  profile,
   definitions
 });
 

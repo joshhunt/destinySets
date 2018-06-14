@@ -6,7 +6,6 @@ import {
   FILTER_SHOW_PS4_EXCLUSIVES
 } from 'app/lib/destinyEnums';
 
-const SET_PROFILES = 'Set profiles';
 const SET_CLOUD_INVENTORY = 'Set cloud inventory';
 const SET_FILTER_ITEM = 'Set filter item';
 const SET_BULK_FILTERS = 'Set bulk filters';
@@ -17,7 +16,6 @@ const SET_XUR_DATA = 'Set Xur data';
 const TOGGLE_MANUALLY_OBTAINED = 'Toggle manually obtained';
 const SET_GOOGLE_AUTH = 'Set Google auth data';
 const FORGET_DISMANTLED_ITEM = 'Forget dismantled item';
-const PROFILE_LOADING_START = 'Loading profile - start';
 
 export const DEFAULT_FILTER = {
   [TITAN]: true,
@@ -71,19 +69,6 @@ function forgetDismantledDoWork(cloudInventory, itemHash) {
 
 export default function reducer(state = INITIAL_STORE, action) {
   switch (action.type) {
-    case SET_PROFILES:
-      return {
-        ...state,
-        ...action.payload
-      };
-
-    case PROFILE_LOADING_START: {
-      return {
-        ...state,
-        profileLoading: action.payload
-      };
-    }
-
     case SET_GOOGLE_AUTH:
       return {
         ...state,
@@ -159,32 +144,6 @@ export default function reducer(state = INITIAL_STORE, action) {
   }
 }
 
-export function setProfiles({
-  currentProfile,
-  allProfiles,
-  profileLoading,
-  isCached
-}) {
-  return {
-    type: SET_PROFILES,
-    payload: {
-      profile: currentProfile,
-      allProfiles,
-      profileLoading,
-      isCached
-    }
-  };
-}
-
-export function switchProfile(newProfile) {
-  return {
-    type: SET_PROFILES,
-    payload: {
-      profile: newProfile
-    }
-  };
-}
-
 export function setGoogleAuth(data) {
   return { type: SET_GOOGLE_AUTH, data };
 }
@@ -228,8 +187,4 @@ export function toggleManuallyObtained(itemHash) {
 
 export function forgetDismantled(itemHash) {
   return { type: FORGET_DISMANTLED_ITEM, itemHash };
-}
-
-export function setProfileLoading(payload = true) {
-  return { type: PROFILE_LOADING_START, payload };
 }

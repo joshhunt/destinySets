@@ -1,10 +1,6 @@
 import * as ls from 'app/lib/ls';
-import {
-  setBulkFilters,
-  setLanguage,
-  setProfiles,
-  trackOrnaments
-} from 'app/store/reducer';
+import { setBulkFilters, setLanguage, trackOrnaments } from 'app/store/reducer';
+import { setProfiles } from 'app/store/profile';
 import { getLastProfile } from 'app/lib/destiny';
 
 const log = require('app/lib/log')('authProvider');

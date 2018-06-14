@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import {
-  setProfiles,
   setFilterItem,
   setXurData,
   removeTrackedItem
 } from 'app/store/reducer';
+import { setProfiles } from 'app/store/profile';
 
 import {
   setVendorDefs,
@@ -191,19 +191,19 @@ class Inventory extends Component {
 const mapStateToProps = (state, ownProps) => {
   return {
     filters: state.app.filters,
-    profile: state.app.profile,
-    isCached: state.app.isCached,
-    allProfiles: state.app.allProfiles,
+    profile: state.profile.profile,
+    isCached: state.profile.isCached,
+    allProfiles: state.profile.allProfiles,
     language: state.app.language,
     itemDefs: state.definitions.itemDefs,
     trackedItems: state.app.trackedItems,
     xur: state.app.xur,
     manualInventory: state.app.manualInventory,
+    haveCloudInventory: !!state.app.cloudInventory,
+    cloudInventory: state.app.cloudInventory,
     // TODO: this uses props, so we need to 'make' a selector like in ItemSet
     filteredSetData: filteredSetDataSelector(state, ownProps),
     inventory: inventorySelector(state),
-    haveCloudInventory: !!state.app.cloudInventory,
-    cloudInventory: state.app.cloudInventory,
     xurHasNewItems: xurHasNewItemsSelector(state),
     xurItems: xurItemsSelector(state)
   };

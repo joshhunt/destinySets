@@ -12,13 +12,15 @@ import destinyAuth from 'app/lib/destinyAuth';
 import { inventorySelector } from 'app/store/selectors';
 
 import {
-  setProfiles,
-  switchProfile,
-  setProfileLoading,
   setCloudInventory,
   setGoogleAuth,
   setLanguage
 } from 'app/store/reducer';
+import {
+  setProfiles,
+  switchProfile,
+  setProfileLoading
+} from 'app/store/profile';
 import { setAuthStatus } from 'app/store/auth';
 
 import Header from 'app/components/Header';
@@ -215,10 +217,10 @@ class App extends Component {
 const mapStateToProps = state => {
   return {
     auth: state.auth,
-    profileCached: state.app.isCached,
-    profile: state.app.profile,
-    profileLoading: state.app.profileLoading,
-    allProfiles: state.app.allProfiles,
+    profileCached: state.profile.isCached,
+    profile: state.profile.profile,
+    profileLoading: state.profile.profileLoading,
+    allProfiles: state.profile.allProfiles,
     googleAuth: state.app.googleAuth,
     language: state.app.language,
     cloudInventory: state.app.cloudInventory,

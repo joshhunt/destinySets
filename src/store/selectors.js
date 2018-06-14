@@ -14,7 +14,7 @@ export const objectiveDefsSelector = state => state.definitions.objectiveDefs;
 export const statDefsSelector = state => state.definitions.statDefs;
 
 const baseXurItemsSelector = state => state.app.xur.items;
-const profileSelector = state => state.app.profile;
+const profileSelector = state => state.profile.profile;
 const vendorDefsSelector = state => state.definitions.vendorDefs;
 
 export const itemHashPropSelector = (state, props) => props.itemHash;
