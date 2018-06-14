@@ -3,11 +3,16 @@ import { connect } from 'react-redux';
 import cx from 'classnames';
 
 import Item from 'app/components/NewItem';
+import MasterworkCatalyst from 'app/components/MasterworkCatalyst';
 import {
   makeSelectedItemDefsSelector,
   inventorySelector
 } from 'app/store/selectors';
 import styles from './styles.styl';
+
+const ITEM_TYPE_COMPONENTS = {
+  exoticCatalysts: MasterworkCatalyst
+};
 
 function ItemSet({ className, inventory, itemDefs, setPopper, setModal, set }) {
   const { name, description, sections, image } = set;
@@ -40,18 +45,22 @@ function ItemSet({ className, inventory, itemDefs, setPopper, setModal, set }) {
             <div className={styles.itemListWrapper}>
               {section.itemGroups.map((itemList, index2) => (
                 <div className={styles.itemList} key={index2}>
-                  {itemList.map(itemHash => (
-                    <Item
-                      key={itemHash}
-                      className={styles.item}
-                      itemHash={itemHash}
-                      item={itemDefs[itemHash]}
-                      setPopper={setPopper}
-                      inventoryEntry={inventory && inventory[itemHash]}
-                      onItemClick={setModal}
-                      extended={section.bigItems}
-                    />
-                  ))}
+                  {itemList.map(itemHash => {
+                    const ItemComponent =
+                      ITEM_TYPE_COMPONENTS[section.type] || Item;
+                    return (
+                      <ItemComponent
+                        key={itemHash}
+                        className={styles.item}
+                        itemHash={itemHash}
+                        item={itemDefs[itemHash]}
+                        setPopper={setPopper}
+                        inventoryEntry={inventory && inventory[itemHash]}
+                        onItemClick={setModal}
+                        extended={section.bigItems}
+                      />
+                    );
+                  })}
                 </div>
               ))}
             </div>

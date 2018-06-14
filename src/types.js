@@ -8,6 +8,7 @@ export type SetSection = {|
   query?: string,
   season?: number,
   bigItems?: boolean,
+  type?: 'exoticCatalysts',
   itemGroups?: Array<Array<ItemHash>>
 |};
 

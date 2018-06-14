@@ -79,8 +79,9 @@ class Inventory extends Component {
     getDefinition('DestinyStatDefinition', lang).then(setStatDefs);
     getDefinition('DestinyObjectiveDefinition', lang).then(setObjectiveDefs);
 
-    const items = 'reducedCollectableInventoryItems';
-    this.itemDefsPromise = getDefinition(items, lang, false);
+    this.itemDefsPromise = this.props.location.query.fullItemDefs
+      ? getDefinition('reducedCollectableInventoryItems', lang, false)
+      : getDefinition('DestinyInventoryItemDefinition', lang);
     this.itemDefsPromise.then(setItemDefs);
   }
 
