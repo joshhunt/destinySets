@@ -2,26 +2,6 @@
 
 import type { SetPage } from '../types';
 
-// D.A.R.C.I
-// Crimson
-// Borealis
-// Tractor Cannon
-// Prometheus Lens
-// Coldheart
-// Wardcliff Coil
-// Merciless
-// Riskrunner
-// The Colony
-// Vigilance Wing
-// Jade Rabbit
-// MIDA Multi-Tool
-// Huckleberry
-// Skyburner’s Oath
-// Worldline Zero
-// Graviton Lance
-// Sweet Business
-// Sunshot
-
 export default ([
   {
     name: 'Stuff',
@@ -34,7 +14,9 @@ export default ([
             name: 'Weapons',
             type: 'exoticCatalysts',
             items: [
+              3413074534, // Polarice Lance
               3141979346, // D.A.R.C.I.
+              3628991658, // Graviton Lance
               3437746471, // Crimson
               3141979347, // Borealis
               3580904581, // Tractor Cannon
@@ -50,7 +32,6 @@ export default ([
               2286143274, // The Huckleberry
               4255268456, // Skyburner's Oath
               1864563948, // Worldline Zero
-              3628991658, // Graviton Lance
               1345867570, // Sweet Business
               2907129557 // Sunshot
             ]

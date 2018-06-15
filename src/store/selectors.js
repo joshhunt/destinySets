@@ -1,5 +1,6 @@
 import { createSelector } from 'reselect';
 import { difference } from 'lodash';
+import fp from 'lodash/fp';
 
 import {
   inventoryFromProfile,
@@ -200,6 +201,104 @@ export const makeItemInventoryEntrySelector = () => {
     itemHashPropSelector,
     (inventory, itemHash) => {
       return inventory ? inventory[itemHash] : null;
+    }
+  );
+};
+
+const itemSelector = (state, ownProps) => ownProps.item;
+
+const extractInstances = fp.flatMapDeep(
+  characterEquipment => characterEquipment.items
+);
+
+const itemInstancesSelector = createSelector(profileSelector, profile => {
+  console.log('Running itemInstancesSelector');
+
+  return fp.flow(
+    fp.concat(extractInstances(profile.characterEquipment.data)),
+    fp.concat(extractInstances(profile.characterInventories.data)),
+    fp.concat(profile.profileInventory.data.items),
+    fp.map(itemInstance => {
+      return {
+        ...itemInstance,
+        $sockets: (
+          profile.itemComponents.sockets.data[itemInstance.itemInstanceId] || {}
+        ).sockets
+      };
+    }),
+    fp.groupBy(component => component.itemHash)
+  )([]);
+});
+
+export const NO_DATA = -1;
+export const NO_CATALYST = 0;
+export const INACTIVE_CATALYST = 1;
+export const ACTIVE_CATALYST_INPROGRESS = 2;
+export const ACTIVE_CATALYST_COMPLETE = 3;
+export const MASTERWORK_UPGRADED = 4;
+
+export const makeCatalystSelector = () => {
+  return createSelector(
+    itemInstancesSelector,
+    itemDefsSelector,
+    itemSelector,
+    (equipment, itemDefs, item) => {
+      if (!item || !itemDefs) {
+        return null;
+      }
+
+      let status = NO_DATA;
+
+      const instances = equipment[item.hash] || [];
+
+      instances.forEach(instance => {
+        if (!instance.$sockets) {
+          return;
+        }
+
+        instance.$sockets.forEach(plug => {
+          if (!plug.reusablePlugs) {
+            return;
+          }
+
+          status = Math.max(status, NO_CATALYST);
+
+          plug.reusablePlugs.forEach(reusablePlug => {
+            const reusablePlugDef = itemDefs[reusablePlug.plugItemHash];
+            if (
+              reusablePlugDef.plug.uiPlugLabel === 'masterwork_interactable'
+            ) {
+              if (reusablePlugDef.plug.insertionRules.length) {
+                if (reusablePlug.canInsert) {
+                  status = Math.max(status, ACTIVE_CATALYST_COMPLETE);
+                } else {
+                  status = Math.max(status, ACTIVE_CATALYST_INPROGRESS);
+                }
+              } else {
+                status = Math.max(status, INACTIVE_CATALYST);
+              }
+            }
+          });
+        });
+      });
+
+      return {
+        status
+      };
+    }
+  );
+};
+
+export const makeItemInstanceSelector = () => {
+  return createSelector(
+    itemInstancesSelector,
+    itemSelector,
+    (equipment, item) => {
+      if (!item) {
+        return null;
+      }
+
+      return equipment[item.hash];
     }
   );
 };

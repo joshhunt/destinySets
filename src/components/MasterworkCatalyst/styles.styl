@@ -4,14 +4,44 @@
   flex: 1 0 25%
   padding: 10px
   padding-bottom: 20px
+  background: rgba(white, .05)
+  border: 1px solid rgba(white, .05)
 
   @media screen and (max-width: 910px)
     width: 100%
     max-width: initial
     min-width: 100%
 
+  code
+    font-family: monospace
+
+  ul
+    padding-left: 30px
+
+  & + &
+    border-left: none
+
 .screenshot
   display: block
   width: 100%
   height: auto
 
+.plugIcon
+  height: 1.5em
+  width: auto
+  vertical-align: middle
+  dispaly: inline-block
+  margin-right: .75ch
+
+.itemLink
+  color: inherit
+  text-decoration: none
+
+.instance + .instance
+  border-top: 1px solid rgba(white, .05)
+
+.red
+  color: red
+
+.green
+  color: green

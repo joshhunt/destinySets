@@ -1,102 +1,186 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { Link } from 'react-router';
 import cx from 'classnames';
-
-import {
-  LEGENDARY,
-  EXOTIC,
-  UNCOMMON,
-  RARE,
-  COMMON,
-  EMBLEM,
-  CLASSES
-} from 'app/lib/destinyEnums';
 
 import Icon from 'app/components/Icon';
 import BungieImage from 'app/components/BungieImage';
 import ItemBanner from 'app/components/ItemBanner';
+import {
+  makeCatalystSelector,
+  makeItemInstanceSelector,
+  itemDefsSelector,
+  objectiveDefsSelector,
+  NO_DATA,
+  NO_CATALYST,
+  INACTIVE_CATALYST,
+  ACTIVE_CATALYST_INPROGRESS,
+  ACTIVE_CATALYST_COMPLETE,
+  MASTERWORK_UPGRADED
+} from 'app/store/selectors';
 
 import s from './styles.styl';
 
-const TIER_COLOR = {
-  [EXOTIC]: '#ceae33',
-  [LEGENDARY]: '#522f65',
-  [UNCOMMON]: '#366f3c',
-  [RARE]: '#5076a3',
-  [COMMON]: '#c3bcb4'
+const ItemLink = ({ item, children }) => (
+  <Link className={s.itemLink} href={`/data/${item.hash}`}>
+    {children}
+  </Link>
+);
+
+const Bool = ({ bool, children }) => (
+  <span className={bool ? s.green : s.red}>{children}</span>
+);
+
+const MASTERWORK_STATUS = {
+  [NO_DATA]: 'No data',
+  [NO_CATALYST]: 'No catalyst',
+  [INACTIVE_CATALYST]: 'Catalyst needs inserting',
+  [ACTIVE_CATALYST_INPROGRESS]: 'Catalyst in progress',
+  [ACTIVE_CATALYST_COMPLETE]: 'Catalyst complete',
+  [MASTERWORK_UPGRADED]: 'Masterwork'
 };
 
-function isMobile() {
-  return (
-    window &&
-    window.navigator &&
-    /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-      window.navigator.userAgent
-    )
-  );
-}
-
-const IS_MOBILE = isMobile();
-
-function getItemColor(item) {
-  if (!item) {
-    return null;
-  }
-
-  const { red, green, blue } = item.backgroundColor || {
-    red: 0,
-    green: 0,
-    blue: 0
-  };
-  const luminosity = red + green + blue;
-  if (
-    (item.itemCategoryHashes || []).includes(EMBLEM) &&
-    luminosity > 10 &&
-    luminosity < 735
-  ) {
-    return `rgb(${red}, ${green}, ${blue})`;
-  } else {
-    // use rarity color
-    return TIER_COLOR[item.inventory.tierTypeHash];
-  }
-}
-
-export default class MasterworkCatalyst extends Component {
-  onClick = ev => {
-    const { onClick, onItemClick, itemHash } = this.props;
-    if (onClick) {
-      onClick(ev);
-      return;
-    }
-
-    onItemClick && onItemClick(itemHash);
-  };
-
-  getRef = ref => {
-    this.ref = ref;
-  };
-
+class MasterworkCatalyst extends Component {
   render() {
     const { className, item } = this.props;
-    const bgColor = getItemColor(item);
 
     if (!item) {
-      return (
-        <div
-          className={cx(className, s.placeholder)}
-          style={{ backgroundColor: bgColor }}
-        />
-      );
+      return <div className={cx(className, s.placeholder)} />;
     }
 
     return (
-      <div
-        onClick={this.onClick}
-        ref={this.getRef}
-        className={cx(className, s.root)}
-      >
+      <div className={cx(className, s.root)}>
         <BungieImage className={s.screenshot} src={item.screenshot} />
         <ItemBanner item={item} />
+
+        <p>status: {MASTERWORK_STATUS[this.props.catalystData.status]}</p>
+
+        {this.props.instances &&
+          this.props.instances.map(instance => {
+            return (
+              <div s={s.instance} key={instance.itemInstanceId}>
+                <ul>
+                  {instance.$sockets &&
+                    instance.$sockets.slice(-1).map((socket, index) => {
+                      const plugItem = this.props.itemDefs[socket.plugHash];
+
+                      if (!plugItem) {
+                        return (
+                          <li key={index}>
+                            <small>
+                              <em>empty</em>
+                            </small>
+                          </li>
+                        );
+                      }
+
+                      return (
+                        <li key={index}>
+                          <div>
+                            <BungieImage
+                              className={s.plugIcon}
+                              src={plugItem.displayProperties.icon}
+                            />
+                            <ItemLink item={plugItem}>
+                              {plugItem.displayProperties.name}
+                            </ItemLink>
+                          </div>
+
+                          {socket.reusablePlugs && (
+                            <ul>
+                              {socket.reusablePlugs.map((plug, index2) => {
+                                const reusablePlugItem = this.props.itemDefs[
+                                  plug.plugItemHash
+                                ];
+
+                                if (!reusablePlugItem) {
+                                  return (
+                                    <li key={index2}>
+                                      <small>
+                                        <em>empty</em>
+                                      </small>
+                                    </li>
+                                  );
+                                }
+
+                                return (
+                                  <li key={index2}>
+                                    <small>
+                                      <BungieImage
+                                        className={s.plugIcon}
+                                        src={
+                                          reusablePlugItem.displayProperties
+                                            .icon
+                                        }
+                                      />
+                                      <ItemLink item={reusablePlugItem}>
+                                        {
+                                          reusablePlugItem.displayProperties
+                                            .name
+                                        }
+                                      </ItemLink>{' '}
+                                      <small>
+                                        <Bool bool={plug.canInsert}>
+                                          {plug.canInsert
+                                            ? 'canInsert'
+                                            : 'cantInsert'}
+                                        </Bool>,{' '}
+                                        <Bool bool={plug.enabled}>
+                                          {plug.enabled
+                                            ? 'enabled'
+                                            : 'disabled'}
+                                        </Bool>
+                                      </small>
+                                      {plug.plugObjectives && (
+                                        <ul>
+                                          {plug.plugObjectives.map(
+                                            (objective, index3) => {
+                                              const objectiveDef = this.props
+                                                .objectiveDefs[
+                                                objective.objectiveHash
+                                              ];
+                                              return (
+                                                <li key={index3}>
+                                                  {
+                                                    objectiveDef.progressDescription
+                                                  }{' '}
+                                                  {objective.progress || 0} /{' '}
+                                                  {objectiveDef.completionValue}
+                                                </li>
+                                              );
+                                            }
+                                          )}
+                                        </ul>
+                                      )}
+                                    </small>
+                                  </li>
+                                );
+                              })}
+                            </ul>
+                          )}
+                        </li>
+                      );
+                    })}
+                </ul>
+              </div>
+            );
+          })}
       </div>
     );
   }
 }
+
+function mapStateToProps() {
+  const catalystSelector = makeCatalystSelector();
+  const itemInstanceSelector = makeItemInstanceSelector();
+  return (state, ownProps) => {
+    return {
+      instances: itemInstanceSelector(state, ownProps),
+      catalystData: catalystSelector(state, ownProps),
+      itemDefs: itemDefsSelector(state),
+      objectiveDefs: objectiveDefsSelector(state)
+    };
+  };
+}
+
+export default connect(mapStateToProps)(MasterworkCatalyst);
