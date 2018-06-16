@@ -171,14 +171,15 @@ export const filteredSetDataSelector = createSelector(
       draft.setData = draft.setData.filter(({ sets }) => sets.length);
     });
 
-    const itemsLeft = flatMap(result.setData, group =>
-      flatMap(group.sets, set =>
-        flatMap(set.sections, section => flatMap(section.itemGroups, x => x))
-      )
-    );
+    if (itemDefs) {
+      const itemsLeft = flatMap(result.setData, group =>
+        flatMap(group.sets, set =>
+          flatMap(set.sections, section => flatMap(section.itemGroups, x => x))
+        )
+      );
 
-    ls.saveTempFilterItemWhitelist(itemsLeft);
-    console.log('Just refiltered :)');
+      ls.saveTempFilterItemWhitelist(itemsLeft);
+    }
 
     return result.setData;
   }
