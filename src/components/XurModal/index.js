@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import Modal from 'react-modal';
 
 import {
   xurItemsSelector,
@@ -10,6 +9,7 @@ import {
 import { setXurModal } from 'app/store/xur';
 import Item from 'app/components/NewItem';
 import Icon from 'app/components/Icon';
+import Modal from 'app/components/Modal';
 
 import xur from './xur.png';
 import styles from './styles.styl';
@@ -67,31 +67,9 @@ class XurModalContent extends Component {
   }
 }
 
-const MODAL_STYLES = {
-  overlay: {
-    backgroundColor: 'rgba(0, 0, 0, 0.75)',
-    marginTop: 0,
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    zIndex: 10
-  },
-  content: {
-    position: 'static',
-    background: 'none',
-    border: 'none',
-    maxHeight: '100vh'
-  }
-};
-
 function XurModalWrapper({ isOpen, closeModal, ...props }) {
   return (
-    <Modal
-      isOpen={isOpen}
-      onRequestClose={closeModal}
-      contentLabel="Modal"
-      style={MODAL_STYLES}
-    >
+    <Modal isOpen={isOpen} onRequestClose={closeModal}>
       {isOpen && <XurModalContent {...props} onRequestClose={closeModal} />}
     </Modal>
   );

@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router';
-import Modal from 'react-modal';
 
 import { EMBLEM } from 'app/lib/destinyEnums';
 import getItemExtraInfo from 'app/lib/getItemExtraInfo';
 import Objectives from 'app/components/Objectives';
 import ItemBanner from 'app/components/ItemBanner';
+import Modal from 'app/components/Modal';
 import Icon from 'app/components/Icon';
 import ishtarSvg from 'app/ishar.svg';
 
@@ -175,30 +175,9 @@ class ItemModalContent extends Component {
   }
 }
 
-const MODAL_STYLES = {
-  overlay: {
-    backgroundColor: 'rgba(0, 0, 0, 0.75)',
-    marginTop: 0,
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    zIndex: 10
-  },
-  content: {
-    position: 'static',
-    background: 'none',
-    border: 'none'
-  }
-};
-
 function ItemModalWrapper({ isOpen, onRequestClose, trackOrnament, ...props }) {
   return (
-    <Modal
-      isOpen={isOpen}
-      onRequestClose={onRequestClose}
-      contentLabel="Modal"
-      style={MODAL_STYLES}
-    >
+    <Modal isOpen={isOpen} onRequestClose={onRequestClose}>
       {props.item && (
         <ItemModalContent
           {...props}
