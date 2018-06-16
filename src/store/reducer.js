@@ -154,7 +154,6 @@ export function setLanguage(language) {
 }
 
 export function trackOrnaments(itemHashes) {
-  console.log('tracking itemHashes', itemHashes);
   return { type: ADD_TRACK_ITEMS, itemHashes };
 }
 

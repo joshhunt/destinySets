@@ -137,8 +137,6 @@ class DataExplorer extends Component {
 
     copy(jason);
 
-    console.log(jason);
-
     this.setState({
       collectSections: verboseSections,
       collectSectionsStr: jason

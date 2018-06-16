@@ -6,10 +6,7 @@ export default function makeSplitComponent(getComponent) {
     state = { View: null };
     componentDidMount() {
       getComponent().then(module => {
-        console.log('loaded component', module);
-        this.setState({
-          View: module.default
-        });
+        this.setState({ View: module.default });
       });
     }
 

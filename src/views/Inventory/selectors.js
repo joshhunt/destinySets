@@ -133,10 +133,6 @@ export const filteredSetDataSelector = createSelector(
   inventorySelector,
   itemDefsSelector,
   (filters, setData, inventory, itemDefs) => {
-    // if (!itemDefs) {
-    //   return setData;
-    // }
-
     const prevWhitelistedItems = ls.getTempFilterItemWhitelist();
 
     // TODO: Can we memoize this or something to prevent making changes to sets that don't change?

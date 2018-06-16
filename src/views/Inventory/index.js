@@ -48,7 +48,6 @@ class Inventory extends Component {
 
     if (filters !== oldProps.filters) {
       ls.saveFilters(filters);
-      console.log('SAW THAT FILTERS CHANGED');
     }
 
     if (language !== oldProps.language) {
