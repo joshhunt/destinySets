@@ -7,8 +7,9 @@ import * as cloudStorage from 'app/lib/cloudStorage';
 import { sendProfileStats } from 'app/lib/telemetry';
 import googleAuth from 'app/lib/googleDriveAuth';
 import destinyAuth from 'app/lib/destinyAuth';
+import * as destiny from 'app/lib/destiny';
 
-import { inventorySelector } from 'app/store/selectors';
+import { inventorySelector, xurHasNewItemsSelector } from 'app/store/selectors';
 
 import {
   setCloudInventory,
@@ -17,9 +18,11 @@ import {
 } from 'app/store/reducer';
 import { setProfiles, switchProfile, fetchProfile } from 'app/store/profile';
 import { setAuthStatus } from 'app/store/auth';
+import { setXurData, setXurModal } from 'app/store/xur';
 
 import Header from 'app/components/Header';
 import LoginUpsell from 'app/components/LoginUpsell';
+import XurModal from 'app/components/XurModal';
 
 import styles from './styles.styl';
 
@@ -42,6 +45,8 @@ class App extends Component {
 
   componentDidMount() {
     destinyAuth(this.authDidUpdate);
+
+    destiny.xur().then(this.props.setXurData);
   }
 
   componentDidUpdate(prevProps) {
@@ -147,7 +152,10 @@ class App extends Component {
       googleAuth,
       language,
       profileCached,
-      profileLoading
+      profileLoading,
+      openXurModal,
+      xurItems,
+      xurHasNewItems
     } = this.props;
 
     return (
@@ -163,6 +171,9 @@ class App extends Component {
           switchProfile={this.switchProfile}
           setLanguage={this.setLanguage}
           logout={this.logout}
+          xurHasNewItems={xurHasNewItems}
+          displayXur={!!xurItems.length}
+          openXurModal={openXurModal}
         />
 
         <div>{children}</div>
@@ -176,6 +187,8 @@ class App extends Component {
             </LoginUpsell>
           </div>
         )}
+
+        <XurModal />
       </div>
     );
   }
@@ -193,9 +206,13 @@ const mapStateToProps = state => {
     cloudInventory: state.app.cloudInventory,
     itemDefs: state.definitions.itemDefs,
     inventory: inventorySelector(state),
-    manualInventory: state.app.manualInventory
+    manualInventory: state.app.manualInventory,
+    xurItems: state.xur.items,
+    xurHasNewItems: xurHasNewItemsSelector(state)
   };
 };
+
+const openXurModal = setXurModal.bind(null, true);
 
 const mapDispatchToActions = {
   setAuthStatus,
@@ -204,7 +221,9 @@ const mapDispatchToActions = {
   setCloudInventory,
   setGoogleAuth,
   setLanguage,
-  fetchProfile
+  fetchProfile,
+  setXurData,
+  openXurModal
 };
 
 export default connect(mapStateToProps, mapDispatchToActions)(App);

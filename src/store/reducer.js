@@ -12,7 +12,6 @@ const SET_BULK_FILTERS = 'Set bulk filters';
 const SET_LANGUAGE = 'Set language';
 const ADD_TRACK_ITEMS = 'Add tracked item';
 const REMOVE_TRACKED_ITEM = 'Remove tracked item';
-const SET_XUR_DATA = 'Set Xur data';
 const TOGGLE_MANUALLY_OBTAINED = 'Toggle manually obtained';
 const SET_GOOGLE_AUTH = 'Set Google auth data';
 const FORGET_DISMANTLED_ITEM = 'Forget dismantled item';
@@ -28,10 +27,6 @@ export const DEFAULT_FILTER = {
 const INITIAL_STORE = {
   filters: DEFAULT_FILTER,
   trackedItems: [],
-  xur: {
-    items: [],
-    modalOpen: false
-  },
   manualInventory: {},
   googleAuth: {
     loaded: false,
@@ -115,12 +110,6 @@ export default function reducer(state = INITIAL_STORE, action) {
         trackedItems: state.trackedItems.filter(h => h !== action.itemHash)
       };
 
-    case SET_XUR_DATA:
-      return {
-        ...state,
-        xur: { ...state.xur, ...action.xur }
-      };
-
     case TOGGLE_MANUALLY_OBTAINED:
       return {
         ...state,
@@ -175,10 +164,6 @@ export function trackOrnament(itemHash) {
 
 export function removeTrackedItem(itemHash) {
   return { type: REMOVE_TRACKED_ITEM, itemHash };
-}
-
-export function setXurData(xur) {
-  return { type: SET_XUR_DATA, xur };
 }
 
 export function toggleManuallyObtained(itemHash) {

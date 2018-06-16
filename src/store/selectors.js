@@ -13,7 +13,7 @@ export const itemDefsSelector = state => state.definitions.itemDefs;
 export const objectiveDefsSelector = state => state.definitions.objectiveDefs;
 export const statDefsSelector = state => state.definitions.statDefs;
 
-const baseXurItemsSelector = state => state.app.xur.items;
+const baseXurItemsSelector = state => state.xur.items;
 const profileSelector = state => state.profile.profile;
 const vendorDefsSelector = state => state.definitions.vendorDefs;
 

@@ -1,11 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import {
-  setFilterItem,
-  setXurData,
-  removeTrackedItem
-} from 'app/store/reducer';
+import { setFilterItem, removeTrackedItem } from 'app/store/reducer';
 import { fetchProfile } from 'app/store/profile';
 
 import {
@@ -16,7 +12,6 @@ import {
 } from 'app/store/definitions';
 
 import * as ls from 'app/lib/ls';
-import * as destiny from 'app/lib/destiny';
 import { getDefinition } from 'app/lib/manifestData';
 
 import Footer from 'app/components/Footer';
@@ -24,7 +19,6 @@ import Section from 'app/components/Section';
 import Popper from 'app/components/Popper';
 import ItemTooltip from 'app/components/ItemTooltip';
 import ItemModal from 'app/components/ItemModal';
-import XurModal from 'app/components/XurModal';
 import SectionList from 'app/components/SectionList';
 
 import { filteredSetDataSelector } from './selectors';
@@ -78,11 +72,9 @@ class Inventory extends Component {
       setVendorDefs,
       setStatDefs,
       setItemDefs,
-      setObjectiveDefs,
-      setXurData
+      setObjectiveDefs
     } = this.props;
 
-    destiny.xur().then(setXurData);
     getDefinition('DestinyVendorDefinition', lang).then(setVendorDefs);
     getDefinition('DestinyStatDefinition', lang).then(setStatDefs);
     getDefinition('DestinyObjectiveDefinition', lang).then(setObjectiveDefs);
@@ -96,12 +88,11 @@ class Inventory extends Component {
     this.setState({ itemTooltip: itemHash ? { itemHash, element } : null });
 
   setItemModal = itemHash => this.setState({ itemModal: itemHash });
-  setXurModal = isOpen => this.setState({ xurModal: isOpen });
   removeTrackedItem = item => this.props.removeTrackedItem(item.hash);
 
   render() {
     const { filters, filteredSetData, trackedItems } = this.props;
-    const { itemTooltip, itemModal, xurModal } = this.state;
+    const { itemTooltip, itemModal } = this.state;
 
     return (
       <div className={styles.root}>
@@ -148,11 +139,6 @@ class Inventory extends Component {
           isOpen={!!itemModal}
           onRequestClose={() => this.setItemModal(null)}
         />
-
-        <XurModal
-          isOpen={xurModal}
-          onRequestClose={() => this.setXurModal(false)}
-        />
       </div>
     );
   }
@@ -174,8 +160,7 @@ const mapDispatchToActions = {
   setObjectiveDefs,
   setStatDefs,
   setFilterItem,
-  removeTrackedItem,
-  setXurData
+  removeTrackedItem
 };
 
 export default connect(mapStateToProps, mapDispatchToActions)(Inventory);

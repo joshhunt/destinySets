@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Modal from 'react-modal';
+
 import {
   xurItemsSelector,
   itemDefsSelector,
   inventorySelector
 } from 'app/store/selectors';
+import { setXurModal } from 'app/store/xur';
 import Item from 'app/components/NewItem';
 import Icon from 'app/components/Icon';
 
@@ -82,15 +84,15 @@ const MODAL_STYLES = {
   }
 };
 
-function XurModalWrapper({ isOpen, onRequestClose, ...props }) {
+function XurModalWrapper({ isOpen, closeModal, ...props }) {
   return (
     <Modal
       isOpen={isOpen}
-      onRequestClose={onRequestClose}
+      onRequestClose={closeModal}
       contentLabel="Modal"
       style={MODAL_STYLES}
     >
-      {isOpen && <XurModalContent {...props} onRequestClose={onRequestClose} />}
+      {isOpen && <XurModalContent {...props} onRequestClose={closeModal} />}
     </Modal>
   );
 }
@@ -101,9 +103,12 @@ const mapStateToProps = () => {
       xurItems: xurItemsSelector(state),
       itemDefs: itemDefsSelector(state),
       inventory: inventorySelector(state),
-      location: state.app.xur.location
+      location: state.xur.location,
+      isOpen: state.xur.modalOpen
     };
   };
 };
 
-export default connect(mapStateToProps)(XurModalWrapper);
+const closeModal = setXurModal.bind(null, false);
+
+export default connect(mapStateToProps, { closeModal })(XurModalWrapper);
