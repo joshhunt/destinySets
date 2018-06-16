@@ -46,7 +46,9 @@ class App extends Component {
   componentDidMount() {
     destinyAuth(this.authDidUpdate);
 
-    destiny.xur().then(this.props.setXurData);
+    destiny.xur((cb, data) => {
+      data && this.props.setXurData(data);
+    });
   }
 
   componentDidUpdate(prevProps) {

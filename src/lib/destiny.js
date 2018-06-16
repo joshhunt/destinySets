@@ -297,13 +297,35 @@ export function getCurrentProfile() {
   });
 }
 
-export function xur() {
-  return get(XUR_URL).then(xurData => {
+function cachedGet(url, cb) {
+  const cached = ls.getCachedUrl(url);
+
+  if (cached) {
+    cb(null, cached);
+  }
+
+  return get(url)
+    .then(data => {
+      ls.saveCachedUrl(url, data);
+      cb(null, data);
+    })
+    .catch(err => cb(err));
+}
+
+export function xur(cb) {
+  return cachedGet(XUR_URL, (err, xurData) => {
+    if (err) {
+      return cb(err);
+    }
+
     const isLive =
       window.location.href.indexOf('forceXur') > -1 || xurData.isLive;
 
-    return isLive && xurData.itemHashes.length > 0
-      ? { items: xurData.itemHashes, location: xurData.location }
-      : { items: [] };
+    const payload =
+      isLive && xurData.itemHashes.length > 0
+        ? { items: xurData.itemHashes, location: xurData.location }
+        : { items: [] };
+
+    cb(null, payload);
   });
 }

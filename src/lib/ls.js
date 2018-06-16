@@ -14,6 +14,7 @@ const keys = {
   UID: 'uid',
   DEBUGID: 'debugid',
   PROFILE_ERROR_REPORTED: 'profileErrorReported',
+  REQUEST_CACHE: 'cache',
 
   DESTINY_PROFILE: 'd2Profile2',
   DEBUG: 'debug',
@@ -89,6 +90,14 @@ function save(key, value) {
     LOCAL_STORAGE = localStoragePolyfill;
     LOCAL_STORAGE.setItem(key, jason);
   }
+}
+
+export function getCachedUrl(url) {
+  return get(`${keys.REQUEST_CACHE}|${url}`);
+}
+
+export function saveCachedUrl(url, payload) {
+  return save(`${keys.REQUEST_CACHE}|${url}`, payload);
 }
 
 export function getProfileErrorReported() {
