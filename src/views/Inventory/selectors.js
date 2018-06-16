@@ -1,5 +1,6 @@
 import { createSelector } from 'reselect';
 import immer from 'immer';
+import { flatMap } from 'lodash';
 
 import {
   HUNTER,
@@ -11,6 +12,7 @@ import {
 import CONSOLE_EXCLUSIVES from 'app/extraData/consoleExclusives';
 
 import { inventorySelector } from 'app/store/selectors';
+import * as ls from 'app/lib/ls';
 
 import { getItemClass } from 'app/lib/destinyUtils';
 import fancySearch from 'app/lib/fancySearch';
@@ -131,9 +133,11 @@ export const filteredSetDataSelector = createSelector(
   inventorySelector,
   itemDefsSelector,
   (filters, setData, inventory, itemDefs) => {
-    if (!itemDefs) {
-      return setData;
-    }
+    // if (!itemDefs) {
+    //   return setData;
+    // }
+
+    const prevWhitelistedItems = ls.getTempFilterItemWhitelist();
 
     // TODO: Can we memoize this or something to prevent making changes to sets that don't change?
     const result = immer({ setData }, draft => {
@@ -143,6 +147,12 @@ export const filteredSetDataSelector = createSelector(
             section.itemGroups = section.itemGroups
               .map(itemList => {
                 return itemList.filter(itemHash => {
+                  if (!itemDefs && prevWhitelistedItems.length > 1) {
+                    return prevWhitelistedItems.includes(itemHash);
+                  } else if (!itemDefs) {
+                    return true;
+                  }
+
                   const item = itemDefs[itemHash];
                   return filterItem(item, inventory, filters);
                 });
@@ -160,6 +170,15 @@ export const filteredSetDataSelector = createSelector(
 
       draft.setData = draft.setData.filter(({ sets }) => sets.length);
     });
+
+    const itemsLeft = flatMap(result.setData, group =>
+      flatMap(group.sets, set =>
+        flatMap(set.sections, section => flatMap(section.itemGroups, x => x))
+      )
+    );
+
+    ls.saveTempFilterItemWhitelist(itemsLeft);
+    console.log('Just refiltered :)');
 
     return result.setData;
   }

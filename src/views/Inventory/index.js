@@ -48,6 +48,7 @@ class Inventory extends Component {
 
     if (filters !== oldProps.filters) {
       ls.saveFilters(filters);
+      console.log('SAW THAT FILTERS CHANGED');
     }
 
     if (language !== oldProps.language) {
@@ -90,6 +91,11 @@ class Inventory extends Component {
   setItemModal = itemHash => this.setState({ itemModal: itemHash });
   removeTrackedItem = item => this.props.removeTrackedItem(item.hash);
 
+  setFilterItem = (...args) => {
+    ls.clearTempFilterItemWhitelist();
+    this.props.setFilterItem(...args);
+  };
+
   render() {
     const { filters, filteredSetData, trackedItems } = this.props;
     const { itemTooltip, itemModal } = this.state;
@@ -99,7 +105,7 @@ class Inventory extends Component {
         <SectionList
           setData={filteredSetData}
           filters={filters}
-          setFilterItem={this.props.setFilterItem}
+          setFilterItem={this.setFilterItem}
         />
 
         {filteredSetData.map(({ sets, slug, name }, index) => (

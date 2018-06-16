@@ -15,6 +15,7 @@ const keys = {
   DEBUGID: 'debugid',
   PROFILE_ERROR_REPORTED: 'profileErrorReported',
   REQUEST_CACHE: 'cache',
+  TEMP_FILTER_ITEM_WHITELIST: 'filterItemWhitelist',
 
   DESTINY_PROFILE: 'd2Profile2',
   DEBUG: 'debug',
@@ -150,6 +151,22 @@ export function saveFilters(filters) {
 
 export function getFilters() {
   return get(keys.FILTERS);
+}
+
+export function getTempFilterItemWhitelist() {
+  return get(keys.TEMP_FILTER_ITEM_WHITELIST, []);
+}
+
+export function saveTempFilterItemWhitelist(items) {
+  const itemsToSave = items.reduce(
+    (acc, hash) => (acc.includes(hash) ? acc : [...acc, hash]),
+    getTempFilterItemWhitelist()
+  );
+  return save(keys.TEMP_FILTER_ITEM_WHITELIST, itemsToSave);
+}
+
+export function clearTempFilterItemWhitelist() {
+  return save(keys.TEMP_FILTER_ITEM_WHITELIST, []);
 }
 
 export function savePreviousAccount(id, type) {
