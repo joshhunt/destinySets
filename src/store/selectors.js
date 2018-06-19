@@ -184,7 +184,7 @@ export const xurHasNewItemsSelector = createSelector(
   }
 );
 
-export const profileObjectivesSelector = createSelector(
+export const objectiveInstancesSelector = createSelector(
   profileSelector,
   profile => {
     if (!profile) {
@@ -248,7 +248,7 @@ export const makeCatalystSelector = () => {
       }
 
       let status = NO_DATA;
-
+      let objectives = null;
       const instances = equipment[item.hash] || [];
 
       instances.forEach(instance => {
@@ -274,6 +274,10 @@ export const makeCatalystSelector = () => {
                 } else {
                   status = Math.max(status, ACTIVE_CATALYST_INPROGRESS);
                 }
+
+                if (reusablePlug.plugObjectives) {
+                  objectives = reusablePlug.plugObjectives;
+                }
               } else {
                 status = Math.max(status, INACTIVE_CATALYST);
               }
@@ -282,8 +286,11 @@ export const makeCatalystSelector = () => {
         });
       });
 
+      objectives && console.log('objectives:', objectives);
+
       return {
-        status
+        status,
+        objectives
       };
     }
   );

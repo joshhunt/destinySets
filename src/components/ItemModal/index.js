@@ -21,7 +21,7 @@ import {
   objectiveDefsSelector,
   statDefsSelector,
   makeItemStatsSelector,
-  profileObjectivesSelector,
+  objectiveInstancesSelector,
   makeItemInventoryEntrySelector
 } from 'app/store/selectors';
 
@@ -34,7 +34,7 @@ class ItemModalContent extends Component {
       onRequestClose,
       item,
       itemInventoryEntry,
-      profileObjectives,
+      objectiveInstances,
       objectiveDefs,
       toggleManuallyObtained,
       forgetDismantled,
@@ -117,8 +117,8 @@ class ItemModalContent extends Component {
             <Objectives
               className={styles.objectives}
               trackedStatStyle={isEmblem}
-              objectives={objectiveHashes}
-              profileObjectives={profileObjectives}
+              objectiveHashes={objectiveHashes}
+              objectiveInstances={objectiveInstances}
               objectiveDefs={objectiveDefs}
             />
           </div>
@@ -197,7 +197,7 @@ const mapStateToProps = () => {
   return (state, ownProps) => {
     return {
       googleAuth: state.app.googleAuth,
-      profileObjectives: profileObjectivesSelector(state),
+      objectiveInstances: objectiveInstancesSelector(state),
       objectiveDefs: objectiveDefsSelector(state),
       statDefs: statDefsSelector(state),
       stats: itemStatsSelector(state, ownProps),

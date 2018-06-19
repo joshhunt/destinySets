@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router';
 import cx from 'classnames';
 
-import Icon from 'app/components/Icon';
+import Objectives from 'app/components/Objectives';
 import BungieImage from 'app/components/BungieImage';
 import ItemBanner from 'app/components/ItemBanner';
 import {
@@ -54,6 +54,13 @@ class MasterworkCatalyst extends Component {
         <ItemBanner item={item} />
 
         <p>status: {MASTERWORK_STATUS[this.props.catalystData.status]}</p>
+
+        {this.props.catalystData.objectives && (
+          <Objectives
+            objectives={this.props.catalystData.objectives}
+            objectiveDefs={this.props.objectiveDefs}
+          />
+        )}
 
         {this.props.instances &&
           this.props.instances.map(instance => {
