@@ -3,7 +3,8 @@ import {
   TITAN,
   WARLOCK,
   FILTER_SHOW_COLLECTED,
-  FILTER_SHOW_PS4_EXCLUSIVES
+  FILTER_SHOW_PS4_EXCLUSIVES,
+  FILTER_SHOW_HIDDEN_SETS
 } from 'app/lib/destinyEnums';
 
 const SET_CLOUD_INVENTORY = 'Set cloud inventory';
@@ -21,7 +22,9 @@ export const DEFAULT_FILTER = {
   [HUNTER]: true,
   [WARLOCK]: true,
   [FILTER_SHOW_COLLECTED]: true,
-  [FILTER_SHOW_PS4_EXCLUSIVES]: true
+  [FILTER_SHOW_PS4_EXCLUSIVES]: true,
+  [FILTER_SHOW_PS4_EXCLUSIVES]: true,
+  [FILTER_SHOW_HIDDEN_SETS]: false
 };
 
 const INITIAL_STORE = {

@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import cx from 'classnames';
 
 import Item from 'app/components/NewItem';
+import Icon from 'app/components/Icon';
 import {
   makeSelectedItemDefsSelector,
   inventorySelector
@@ -23,7 +24,14 @@ function ItemSet({ className, inventory, itemDefs, setPopper, setModal, set }) {
             />
           )}
           <div className={styles.headerText}>
-            <h3 className={styles.title}>{name}</h3>
+            <div className={styles.split}>
+              <div className={styles.splitMain}>
+                <h3 className={styles.title}>{name}</h3>
+              </div>
+              <div className={styles.headerAccessory}>
+                <Icon name="minus-square" />
+              </div>
+            </div>
             {description && <p className={styles.desc}>{description}</p>}
           </div>
         </div>

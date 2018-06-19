@@ -134,6 +134,7 @@ export default ([
       },
       {
         name: 'Trials of the Nine',
+        id: 'WARMIND_TRIALS',
         description:
           'Weapons and armor obtained by competing in the Trials of the Nine.',
         sections: [
