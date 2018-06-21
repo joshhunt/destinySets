@@ -27,11 +27,15 @@ function getNameForItem(item) {
   return foundName ? `"${foundName}"` : '';
 }
 
+function isImage(value) {
+  return isString(value) && value.match(/\.(png|jpg|jpeg)$/);
+}
+
 export default class DataView extends Component {
   valueRenderer = (prettyValue, rawValue, ...itemPath) => {
     const [fieldName, parentFieldName] = itemPath;
 
-    if (isString(rawValue) && rawValue.match(/\.(png|jpg|jpeg)$/)) {
+    if (isImage(rawValue)) {
       const imageUrl = `https://bungie.net${rawValue}`;
 
       return (
@@ -85,6 +89,13 @@ export default class DataView extends Component {
     return (
       <div className={cx(className, s.root)} ref={r => (this.ref = r)}>
         <h2 className={s.itemTitle}>
+          {item.displayProperties.hasIcon && (
+            <img
+              className={s.titleIcon}
+              alt=""
+              src={`https://bungie.net${item.displayProperties.icon}`}
+            />
+          )}
           {item.displayProperties && item.displayProperties.name ? (
             item.displayProperties.name
           ) : (
