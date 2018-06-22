@@ -12,6 +12,7 @@ import {
 } from 'app/lib/destinyEnums';
 import Icon from 'app/components/Icon';
 
+import masterworkOutline from './masterwork-outline.png';
 import styles from './styles.styl';
 
 const TIER_COLOR = {
@@ -83,7 +84,13 @@ export default class Item extends Component {
   };
 
   render() {
-    const { className, item, inventoryEntry, extended } = this.props;
+    const {
+      className,
+      item,
+      inventoryEntry,
+      extended,
+      isMasterwork
+    } = this.props;
     const bgColor = getItemColor(item);
 
     if (!item) {
@@ -113,6 +120,14 @@ export default class Item extends Component {
         )}
       >
         <div className={styles.imageWrapper}>
+          {isMasterwork && (
+            <img
+              className={styles.overlay}
+              src={masterworkOutline}
+              alt="Masterwork"
+            />
+          )}
+
           <img
             src={`https://www.bungie.net${icon}`}
             className={styles.image}
