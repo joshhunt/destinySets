@@ -15,32 +15,36 @@ const ITEM_TYPE_COMPONENTS = {
 };
 
 function ItemSet({ className, inventory, itemDefs, setPopper, setModal, set }) {
-  const { name, description, sections, image } = set;
+  const { name, noUi, description, sections, image } = set;
   return (
-    <div className={cx(className, styles.root)}>
+    <div className={cx(className, styles.root, noUi && styles.noUi)}>
       <div className={styles.inner}>
-        <div className={styles.header}>
-          {image && (
-            <img
-              alt=""
-              className={styles.headerImage}
-              src={`https://www.bungie.net${image}`}
-            />
-          )}
-          <div className={styles.headerText}>
-            <h3 className={styles.title}>{name}</h3>
-            {description && <p className={styles.desc}>{description}</p>}
+        {!noUi && (
+          <div className={styles.header}>
+            {image && (
+              <img
+                alt=""
+                className={styles.headerImage}
+                src={`https://www.bungie.net${image}`}
+              />
+            )}
+            <div className={styles.headerText}>
+              <h3 className={styles.title}>{name}</h3>
+              {description && <p className={styles.desc}>{description}</p>}
+            </div>
           </div>
-        </div>
+        )}
 
         {sections.map((section, index) => (
           <div key={index} className={styles.section}>
-            <h4 className={styles.sectionName}>
-              {section.name}{' '}
-              {section.season && (
-                <span className={styles.seasonLabel}>S{section.season}</span>
-              )}
-            </h4>
+            {!noUi && (
+              <h4 className={styles.sectionName}>
+                {section.name}{' '}
+                {section.season && (
+                  <span className={styles.seasonLabel}>S{section.season}</span>
+                )}
+              </h4>
+            )}
 
             <div className={styles.itemListWrapper}>
               {section.itemGroups.map((itemList, index2) => (
@@ -51,7 +55,7 @@ function ItemSet({ className, inventory, itemDefs, setPopper, setModal, set }) {
                     return (
                       <ItemComponent
                         key={itemHash}
-                        className={styles.item}
+                        className={!section.type && styles.item}
                         itemHash={itemHash}
                         item={itemDefs[itemHash]}
                         setPopper={setPopper}

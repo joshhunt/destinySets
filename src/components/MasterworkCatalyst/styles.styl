@@ -2,10 +2,9 @@
   max-width: 25%
   min-width: 250px
   flex: 1 0 25%
-  padding: 10px
-  padding-bottom: 20px
-  background: rgba(white, .05)
-  border: 1px solid rgba(white, .05)
+  margin: 0 !important
+  padding: 7px
+
 
   @media screen and (max-width: 910px)
     width: 100%
@@ -21,10 +20,27 @@
   & + &
     border-left: none
 
+.inner
+  background: #15191E
+  padding: 15px
+  height: 100%
+
 .screenshot
   display: block
   width: 100%
   height: auto
+
+.objectives
+  margin-top: 15px;
+
+.masterworkComplete
+  display: inline-block
+  height: 2em
+  margin-right: .5ch
+  vertical-align: middle
+
+  & + span
+    vertical-align: baseline
 
 .plugIcon
   height: 1.5em

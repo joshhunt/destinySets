@@ -212,8 +212,6 @@ const extractInstances = fp.flatMapDeep(
 );
 
 const itemInstancesSelector = createSelector(profileSelector, profile => {
-  console.log('Running itemInstancesSelector');
-
   return fp.flow(
     fp.concat(extractInstances(profile.characterEquipment.data)),
     fp.concat(extractInstances(profile.characterInventories.data)),
@@ -237,6 +235,8 @@ export const ACTIVE_CATALYST_INPROGRESS = 2;
 export const ACTIVE_CATALYST_COMPLETE = 3;
 export const MASTERWORK_UPGRADED = 4;
 
+const MASTERWORK_FLAG = 4;
+
 export const makeCatalystSelector = () => {
   return createSelector(
     itemInstancesSelector,
@@ -249,15 +249,26 @@ export const makeCatalystSelector = () => {
 
       let status = NO_DATA;
       let objectives = null;
+      let hintText = null;
       const instances = equipment[item.hash] || [];
 
       instances.forEach(instance => {
+        if (instance.state & MASTERWORK_FLAG) {
+          status = Math.max(status, MASTERWORK_UPGRADED);
+        }
+
         if (!instance.$sockets) {
           return;
         }
 
         instance.$sockets.forEach(plug => {
           if (!plug.reusablePlugs) {
+            const plugItem = plug.plugHash && itemDefs[plug.plugHash];
+
+            if (plugItem) {
+              hintText = plugItem.displayProperties.description;
+            }
+
             return;
           }
 
@@ -265,6 +276,11 @@ export const makeCatalystSelector = () => {
 
           plug.reusablePlugs.forEach(reusablePlug => {
             const reusablePlugDef = itemDefs[reusablePlug.plugItemHash];
+
+            if (!reusablePlugDef) {
+              return;
+            }
+
             if (
               reusablePlugDef.plug.uiPlugLabel === 'masterwork_interactable'
             ) {
@@ -272,6 +288,7 @@ export const makeCatalystSelector = () => {
                 if (reusablePlug.canInsert) {
                   status = Math.max(status, ACTIVE_CATALYST_COMPLETE);
                 } else {
+                  hintText = reusablePlugDef.displayProperties.description;
                   status = Math.max(status, ACTIVE_CATALYST_INPROGRESS);
                 }
 
@@ -284,13 +301,31 @@ export const makeCatalystSelector = () => {
             }
           });
         });
-      });
 
-      objectives && console.log('objectives:', objectives);
+        if (status === NO_CATALYST) {
+          instance.$sockets.forEach(plug => {
+            const plugItem = itemDefs[plug.plugHash];
+
+            if (!plugItem) {
+              return;
+            }
+
+            if (
+              plugItem.plug &&
+              plugItem.plug.plugCategoryIdentifier &&
+              plugItem.plug.plugCategoryIdentifier.includes('masterwork')
+            )
+              hintText = plugItem.displayProperties.description;
+          });
+        } else if (status === INACTIVE_CATALYST) {
+          hintText = null;
+        }
+      });
 
       return {
         status,
-        objectives
+        objectives,
+        hintText
       };
     }
   );
