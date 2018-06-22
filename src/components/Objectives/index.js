@@ -17,7 +17,7 @@ function ObjectiveValue({ objective, def, trackedStatStyle }) {
   } else {
     value = (
       <span>
-        {objective.progress} / {completionValue}
+        {objective.progress || 0} / {completionValue}
       </span>
     );
   }
