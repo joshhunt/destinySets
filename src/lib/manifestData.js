@@ -25,7 +25,6 @@ function getManifest() {
     manifestPromise = destiny
       .get('https://destiny.plumbing/index.json')
       .catch(() => {
-        console.log('this caught here');
         return db.dataCache.toCollection().primaryKeys();
       })
       .then(data => {

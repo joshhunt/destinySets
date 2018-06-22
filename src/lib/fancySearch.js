@@ -188,16 +188,11 @@ export const fancySearchTerms = Object.keys(fancySearchFns);
 
 export default function fancySearch(search, defs, opts = { hashOnly: false }) {
   const queries = search.split(' ').filter(s => s.includes(':'));
-  console.log('queries:', queries);
-
   const filteredItems = queries.reduce((items, query) => {
     const searchFunc = fancySearchFns[query];
 
     if (!searchFunc) {
-      console.log('query:', query);
-      window.__LAST_QUERY = query;
       let match = query.match(/itemcategoryhash:(\d+)/);
-      console.log('match:', match);
 
       if (match) {
         const hash = Number(match[1]);
