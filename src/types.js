@@ -8,6 +8,7 @@ export type SetSection = {|
   query?: string,
   season?: number,
   bigItems?: boolean,
+  type?: 'exoticCatalysts',
   itemGroups?: Array<Array<ItemHash>>
 |};
 
@@ -17,12 +18,14 @@ export type DestinySet = {|
   image?: string,
   small?: boolean,
   big?: boolean,
+  noUi?: boolean,
   query?: string,
   sections: Array<SetSection>
 |};
 
 export type SetPageSection = {|
   name: string,
+  noUi?: boolean,
   sets: Array<DestinySet>
 |};
 

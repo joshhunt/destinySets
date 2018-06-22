@@ -25,46 +25,61 @@ function ObjectiveValue({ objective, def, trackedStatStyle }) {
   return <div>{value}</div>;
 }
 
+const FALLBACK_OBJECTIVE_DEF = {
+  completionValue: 0,
+  progressDescription: 'Unknown'
+};
+
 export default function Objectives(props) {
   const {
     className,
     objectives,
+    objectiveHashes,
     objectiveDefs,
-    profileObjectives,
+    objectiveInstances,
     trackedStatStyle
   } = props;
 
-  if (!(objectives && objectiveDefs)) {
+  if (!((objectives || objectiveHashes) && objectiveDefs)) {
     return null;
   }
 
+  // This is the array that we'll map over to display
+  const objectivesBuild = objectiveHashes
+    ? objectiveHashes.map(hash => {
+        return {
+          ...(objectiveInstances[hash] || { progress: 0 }),
+          def: objectiveDefs[hash] || FALLBACK_OBJECTIVE_DEF
+        };
+      })
+    : objectives.map(objective => {
+        return {
+          ...objective,
+          def: objectiveDefs[objective.objectiveHash] || FALLBACK_OBJECTIVE_DEF
+        };
+      });
+
   return (
     <div className={cx(className, trackedStatStyle && styles.trackedStat)}>
-      {objectives.map(objectiveHash => {
-        const objective = profileObjectives[objectiveHash] || { progress: 0 };
-        const def = objectiveDefs[objectiveHash] || {
-          completionValue: 0,
-          progressDescription: 'Unknown'
-        }; // TODO: Better solution here for missing objective defs
-
+      {objectivesBuild.map(objective => {
         return (
-          <div className={styles.objective} key={objectiveHash}>
+          <div className={styles.objective} key={objective.objectiveHash}>
             <div
               className={styles.objectiveTrack}
               style={{
                 width: `${Math.min(
-                  objective.progress / def.completionValue * 100,
+                  objective.progress / objective.def.completionValue * 100,
                   100
                 )}%`
               }}
             />
 
             <div className={styles.objectiveText}>
-              <div>{def.progressDescription}</div>
+              <div>{objective.def.progressDescription}</div>
 
               <ObjectiveValue
                 objective={objective}
-                def={def}
+                def={objective.def}
                 trackedStatStyle={trackedStatStyle}
               />
             </div>

@@ -171,6 +171,16 @@ export const fancySearchFns = {
 
   'is:clanbanner': items => {
     return itemFilter(items, itemCategory(enums.CLAN_BANNER));
+  },
+
+  'is:masterworkish': items => {
+    return itemFilter(items, item => {
+      return (
+        item.plug &&
+        item.plug.uiPlugLabel &&
+        item.plug.uiPlugLabel.includes('masterwork')
+      );
+    });
   }
 };
 
@@ -178,11 +188,17 @@ export const fancySearchTerms = Object.keys(fancySearchFns);
 
 export default function fancySearch(search, defs, opts = { hashOnly: false }) {
   const queries = search.split(' ').filter(s => s.includes(':'));
-
   const filteredItems = queries.reduce((items, query) => {
     const searchFunc = fancySearchFns[query];
 
     if (!searchFunc) {
+      let match = query.match(/itemcategoryhash:(\d+)/);
+
+      if (match) {
+        const hash = Number(match[1]);
+        return itemFilter(items, itemCategory(hash));
+      }
+
       return items;
     }
 

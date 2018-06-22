@@ -60,7 +60,11 @@ class Inventory extends Component {
   }
 
   potentiallyScheduleFetchProfile = (props = this.props) => {
-    if (!this.intervalId && props.trackedItems.length > 0) {
+    if (this.intervalId) {
+      return;
+    }
+
+    if (props.refreshOnInterval || props.trackedItems.length > 0) {
       this.intervalId = window.setInterval(() => {
         props.fetchProfile();
       }, FETCH_INTERVAL);
@@ -79,8 +83,13 @@ class Inventory extends Component {
     getDefinition('DestinyStatDefinition', lang).then(setStatDefs);
     getDefinition('DestinyObjectiveDefinition', lang).then(setObjectiveDefs);
 
-    const items = 'reducedCollectableInventoryItems';
-    this.itemDefsPromise = getDefinition(items, lang, false);
+    console.log('fullItemDefs:', this.props.location.query.fullItemDefs);
+    const args = this.props.location.query.fullItemDefs
+      ? ['DestinyInventoryItemDefinition', lang]
+      : ['reducedCollectableInventoryItems', lang, false];
+
+    console.log('args:', args);
+    this.itemDefsPromise = getDefinition(...args);
     this.itemDefsPromise.then(setItemDefs);
   }
 
@@ -98,19 +107,24 @@ class Inventory extends Component {
   render() {
     const { filters, filteredSetData, trackedItems } = this.props;
     const { itemTooltip, itemModal } = this.state;
+    const noUi = (filteredSetData[0] || {}).noUi;
+    console.log('noUi:', noUi);
 
     return (
       <div className={styles.root}>
-        <SectionList
-          setData={filteredSetData}
-          filters={filters}
-          setFilterItem={this.setFilterItem}
-        />
+        {!noUi && (
+          <SectionList
+            setData={filteredSetData}
+            filters={filters}
+            setFilterItem={this.setFilterItem}
+          />
+        )}
 
-        {filteredSetData.map(({ sets, slug, name }, index) => (
+        {filteredSetData.map(({ sets, noUi, slug, name }, index) => (
           <Section
             key={index}
             name={name}
+            noUi={noUi}
             sets={sets}
             slug={slug}
             setPopper={this.setPopper}

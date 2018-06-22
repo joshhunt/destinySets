@@ -79,7 +79,12 @@ function fromSockets(data) {
 }
 
 function objectivesFromSockets(data) {
-  return mapSockets(data, socket => socket.plugObjectives);
+  const firstLevel = mapSockets(data, socket => socket.plugObjectives);
+  const reusablePlugs = mapSockets(data, socket =>
+    fp.flatMap(plug => plug.plugObjectives, socket.reusablePlugs)
+  );
+
+  return [...firstLevel, ...reusablePlugs];
 }
 
 const fromProfilePlugSets = fp.flow(
@@ -226,6 +231,8 @@ export function objectivesFromProfile(profile) {
       'objectiveHash'
     );
   });
+
+  window.__objectives = toReturn;
 
   return toReturn;
 }

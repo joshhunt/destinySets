@@ -8,6 +8,7 @@ fontawesome.library.add(
   require('@fortawesome/fontawesome-pro-regular/faChevronDown'),
   require('@fortawesome/fontawesome-pro-regular/faSpinnerThird'),
   require('@fortawesome/fontawesome-pro-regular/faBars'),
+  require('@fortawesome/fontawesome-pro-regular/faExclamationTriangle'),
 
   require('@fortawesome/fontawesome-free-brands/faPaypal'),
   require('@fortawesome/fontawesome-free-brands/faGithub'),

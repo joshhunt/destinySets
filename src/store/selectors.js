@@ -1,5 +1,6 @@
 import { createSelector } from 'reselect';
 import { difference } from 'lodash';
+import fp from 'lodash/fp';
 
 import {
   inventoryFromProfile,
@@ -183,7 +184,7 @@ export const xurHasNewItemsSelector = createSelector(
   }
 );
 
-export const profileObjectivesSelector = createSelector(
+export const objectiveInstancesSelector = createSelector(
   profileSelector,
   profile => {
     if (!profile) {
@@ -200,6 +201,150 @@ export const makeItemInventoryEntrySelector = () => {
     itemHashPropSelector,
     (inventory, itemHash) => {
       return inventory ? inventory[itemHash] : null;
+    }
+  );
+};
+
+const itemSelector = (state, ownProps) => ownProps.item;
+
+const extractInstances = fp.flatMapDeep(
+  characterEquipment => characterEquipment.items
+);
+
+const itemInstancesSelector = createSelector(profileSelector, profile => {
+  if (!profile) {
+    return {};
+  }
+
+  return fp.flow(
+    fp.concat(extractInstances(profile.characterEquipment.data)),
+    fp.concat(extractInstances(profile.characterInventories.data)),
+    fp.concat(profile.profileInventory.data.items),
+    fp.map(itemInstance => {
+      return {
+        ...itemInstance,
+        $sockets: (
+          profile.itemComponents.sockets.data[itemInstance.itemInstanceId] || {}
+        ).sockets
+      };
+    }),
+    fp.groupBy(component => component.itemHash)
+  )([]);
+});
+
+export const NO_DATA = -1;
+export const NO_CATALYST = 0;
+export const INACTIVE_CATALYST = 1;
+export const ACTIVE_CATALYST_INPROGRESS = 2;
+export const ACTIVE_CATALYST_COMPLETE = 3;
+export const MASTERWORK_UPGRADED = 4;
+
+const MASTERWORK_FLAG = 4;
+
+export const makeCatalystSelector = () => {
+  return createSelector(
+    itemInstancesSelector,
+    itemDefsSelector,
+    itemSelector,
+    (equipment, itemDefs, item) => {
+      if (!item || !itemDefs) {
+        return null;
+      }
+
+      let status = NO_DATA;
+      let objectives = null;
+      let hintText = null;
+      const instances = equipment[item.hash] || [];
+
+      instances.forEach(instance => {
+        if (instance.state & MASTERWORK_FLAG) {
+          status = Math.max(status, MASTERWORK_UPGRADED);
+        }
+
+        if (!instance.$sockets) {
+          return;
+        }
+
+        instance.$sockets.forEach(plug => {
+          if (!plug.reusablePlugs) {
+            const plugItem = plug.plugHash && itemDefs[plug.plugHash];
+
+            if (plugItem) {
+              hintText = plugItem.displayProperties.description;
+            }
+
+            return;
+          }
+
+          status = Math.max(status, NO_CATALYST);
+
+          plug.reusablePlugs.forEach(reusablePlug => {
+            const reusablePlugDef = itemDefs[reusablePlug.plugItemHash];
+
+            if (!reusablePlugDef) {
+              return;
+            }
+
+            if (
+              reusablePlugDef.plug.uiPlugLabel === 'masterwork_interactable'
+            ) {
+              if (reusablePlugDef.plug.insertionRules.length) {
+                if (reusablePlug.canInsert) {
+                  status = Math.max(status, ACTIVE_CATALYST_COMPLETE);
+                } else {
+                  hintText = reusablePlugDef.displayProperties.description;
+                  status = Math.max(status, ACTIVE_CATALYST_INPROGRESS);
+                }
+
+                if (reusablePlug.plugObjectives) {
+                  objectives = reusablePlug.plugObjectives;
+                }
+              } else {
+                status = Math.max(status, INACTIVE_CATALYST);
+              }
+            }
+          });
+        });
+
+        if (status === NO_CATALYST) {
+          instance.$sockets.forEach(plug => {
+            const plugItem = itemDefs[plug.plugHash];
+
+            if (!plugItem) {
+              return;
+            }
+
+            if (
+              plugItem.plug &&
+              plugItem.plug.plugCategoryIdentifier &&
+              plugItem.plug.plugCategoryIdentifier.includes('masterwork')
+            )
+              hintText = plugItem.displayProperties.description;
+          });
+        } else if (status === INACTIVE_CATALYST) {
+          hintText = null;
+        }
+      });
+
+      return {
+        status,
+        objectives,
+        hintText
+      };
+    }
+  );
+};
+
+export const makeItemInstanceSelector = () => {
+  return createSelector(
+    itemInstancesSelector,
+    itemSelector,
+    (equipment, item) => {
+      if (!item) {
+        return null;
+      }
+
+      return equipment[item.hash];
     }
   );
 };

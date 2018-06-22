@@ -45,6 +45,7 @@ export default class AppRouter extends Component {
               path="/catalysts"
               component={Inventory}
               setData={sets.catalysts}
+              refreshOnInterval
             />
 
             <Route

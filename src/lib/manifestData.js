@@ -16,7 +16,7 @@ db.version(1).stores({
   dataCache: '&key, data'
 });
 
-const VERSION = 'v2';
+const VERSION = 'v6';
 
 let manifestPromise;
 
@@ -25,7 +25,6 @@ function getManifest() {
     manifestPromise = destiny
       .get('https://destiny.plumbing/index.json')
       .catch(() => {
-        console.log('this caught here');
         return db.dataCache.toCollection().primaryKeys();
       })
       .then(data => {
