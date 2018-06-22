@@ -107,7 +107,7 @@ class Inventory extends Component {
   render() {
     const { filters, filteredSetData, trackedItems } = this.props;
     const { itemTooltip, itemModal } = this.state;
-    const noUi = filteredSetData[0].noUi;
+    const noUi = (filteredSetData[0] || {}).noUi;
     console.log('noUi:', noUi);
 
     return (

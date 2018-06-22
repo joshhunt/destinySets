@@ -212,6 +212,10 @@ const extractInstances = fp.flatMapDeep(
 );
 
 const itemInstancesSelector = createSelector(profileSelector, profile => {
+  if (!profile) {
+    return {};
+  }
+
   return fp.flow(
     fp.concat(extractInstances(profile.characterEquipment.data)),
     fp.concat(extractInstances(profile.characterInventories.data)),
