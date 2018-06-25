@@ -26,8 +26,14 @@ import s from './styles.styl';
 const DEBUG = false;
 
 const MASTERWORK_STATUS = {
-  [NO_DATA]:
-    'Missing data - Destiny Sets can only see Catalyst and Masterwork data for Exotics in your inventory.',
+  [NO_DATA]: (
+    <span className={styles.faded}>
+      <em>
+        Missing data - Destiny Sets can only see Catalyst and Masterwork data
+        for Exotics in your inventory.
+      </em>
+    </span>
+  ),
   // [NO_CATALYST]: 'No catalyst',
   [INACTIVE_CATALYST]: (
     <span>
