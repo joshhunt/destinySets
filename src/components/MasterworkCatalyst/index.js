@@ -27,7 +27,7 @@ const DEBUG = false;
 
 const MASTERWORK_STATUS = {
   [NO_DATA]: (
-    <span className={styles.faded}>
+    <span className={s.faded}>
       <em>
         Missing data - Destiny Sets can only see Catalyst and Masterwork data
         for Exotics in your inventory.
