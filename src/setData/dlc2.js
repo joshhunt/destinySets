@@ -520,7 +520,15 @@ export default ([
         sections: [
           {
             name: 'Weapons',
-            items: []
+            items: [
+              1178397318, // Agrona PR4
+              1178397319, // Battle Scar
+              1489452902, // Courageous Surrender
+              1137768695, // Foregone Conclusion
+              2544285846, // Scipio-D
+              2433826056, // The Quickstep
+              1159252500 // Vacuna SR4
+            ]
           }
         ]
       }
