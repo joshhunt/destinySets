@@ -33,7 +33,7 @@ const LINKS = [
   link('Warmind', '/warmind'),
   link('Strikes', '/strike-gear'),
   link('All Items', '/all-items'),
-  link('Data Explorer', '/data')
+  link('Catalysts', '/catalysts')
 ];
 
 const SOCIALS = [

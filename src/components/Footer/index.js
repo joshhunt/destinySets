@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router';
 
 import styles from './styles.styl';
 
@@ -8,6 +9,10 @@ export default function Footer({ item }) {
   return (
     <div className={styles.footer}>
       <DonateButton />
+      <br />
+      Developer, or curious about the data behind Destiny? Check out the{' '}
+      <Link to="/data">Data Explorer</Link>
+      <br />
       <br />
       Made with love by{' '}
       <a href="http://joshhunt.is" target="_blank" rel="noopener noreferrer">
