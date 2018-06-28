@@ -694,6 +694,33 @@ export default ([
             ]
           },
           {
+            name: 'Armor',
+            season: 3,
+            itemGroups: [
+              [
+                2089084848, // Qiao's Grin
+                1886868481, // Qiao's Care
+                2798295255, // Qiao's Heart
+                3381714035, // Qiao's Strides
+                631647398 // Qiao's Passing
+              ],
+              [
+                2881907522, // Hardy's Calm
+                2221552043, // Hardy's Control
+                4234287845, // Hardy's Journey
+                3696190397, // Hardy's Steps
+                2890202680 // Hardy's Orders
+              ],
+              [
+                2170939813, // Mihaylova's Triumph
+                2910039924, // Mihaylova's Instruments
+                4141029260, // Mihaylova's Choice
+                3197778558, // Mihaylova's Path
+                2078786241 // Mihaylova's Tale
+              ]
+            ]
+          },
+          {
             name: 'Emotes',
             season: 1,
             items: common.EVERVERSE_S1_EMOTES
@@ -771,6 +798,22 @@ export default ([
             ]
           },
           {
+            name: 'Ghosts',
+            season: 3,
+            items: [
+              3075308678, // Skyline Flipside Shell
+              3075308672, // Bursting Wisdom Shell
+              1748063012, // Palm of Gold Shell
+              1748063015, // Waiting Cask Shell
+              631626576, // Orcasong Shell
+              631626578, // Copperhead Supremacy Shell
+              631626579, // Blaster Box
+              631626580, // Speckled Giallo Shell
+              631626582, // Riveted Majesty Shell
+              631626583 // Open Orchid Shell
+            ],
+          },
+          {
             name: 'Sparrows',
             season: 1,
             items: [
@@ -832,6 +875,23 @@ export default ([
               3588486148, // Machina Macro
               3588486151, // Frago Junium
               3588486150 // Vox Imperative
+            ]
+          },
+          {
+            name: 'Sparrows',
+            season: 3,
+            items: [
+              777818278, // Eon Drive
+              777818276, // Vespulaser
+              777818274, // Azure Azazyel
+              256118668, // Andes Peakhunter
+              2351197436, // Glam Toboggan
+              2351197437, // Sickle Skiff
+              2351197438, // Mindbarge
+              2351197439, // Fiery Phoenician
+              2351197433, // Mad Son of Seychelles
+              2351197434, // Alton's Ambush
+              2351197435 // Flychaplain
             ]
           },
           {
@@ -899,6 +959,72 @@ export default ([
               658724924, // Hardtop Regent
               658724925, // Amethystine
               709057677 // Fantail Regent
+            ]
+          },
+          {
+            name: 'Ships',
+            season: 3,
+            items: [
+              1748147690, // Lost Legend
+              1748147691, // Shadow Trespass
+              1748147688, // Holborn's Splint
+              3101966172, // Currus Gloriae XLII
+              3101966166, // Jadewyrm XLIV
+              1833943242, // Fleet Ska IX
+              1833943243, // Vor Pyl VIII
+              1833943240, // Ampulance LXXX
+              1833943246, // Kolla Mauler IX
+              1833943247, // Pitfall Souter E5D
+              1833943245 // Dusk Harrier
+            ]
+          },
+          {
+            name: 'Shaders',
+            season: 1,
+            items: [
+              1284563760, // Häkke History Polish
+              1284563761, // SUROS Modular Shine
+              1284563762, // Omolon Meteor Gloss
+              1284563763, // VEIST Poison Shimmer
+              1284563764, // Noble Constant Red
+              1284563765, // Vanguard Magnus Gloss
+              1284563766, // Frumious Blue
+              1284563767, // Midnight Talons
+              1284563774, // Tarnished Copper
+              1284563775, // Xenosilver
+              3205869472, // Golden Trace
+              3205869473, // Monochromatic
+              3205869474, // Cerulean Divide
+              3205869475, // Nebula Rose
+              3205869476, // Metro Shift
+              3205869477, // Dawn and Dusk
+              3205869478, // Arctic Pearl
+              3205869479, // Watermelon
+              3205869484, // Indigo Matrix
+              3205869485 // Bumblebee
+            ]
+          },
+          {
+            name: 'Shaders',
+            season: 2,
+            items: [
+              2395477994, // Mettalic Sunrise
+              2395477996, // Precursor Vex Chrome
+              2395477997, // Desert of Gold
+              2395477998, // Descendant Vex Chrome
+              2395477999 // Mercury Vex Chrome
+            ]
+          },
+          {
+            name: 'Shaders',
+            season: 3,
+            items: [
+              1017491633, // Molten Bronze
+              1017491632, // Mars Sunset
+              1017491635, // Cargulo Bristle
+              1017491634, // Ancient Republic
+              1017491637, // Petiolora Growth
+              1017491636 // Buffer Overflow
             ]
           }
         ]
