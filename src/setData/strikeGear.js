@@ -176,13 +176,13 @@ export default ([
         name: 'Will of the Thousands',
         image: '/img/destiny_content/pgcr/strike_xol.jpg',
         sections: [
-          // {
-          //   name: 'Nightfall exclusive',
-          //   bigItems: true,
-          //   items: [
-          //     4238497225 // D.F.A.
-          //   ]
-          // },
+          {
+            name: 'Nightfall exclusive',
+            bigItems: true,
+            items: [
+              1311389413 // Worm God Incarnation
+            ]
+          },
           {
             name: 'Nightfall emblems',
             items: [
