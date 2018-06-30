@@ -73,11 +73,11 @@ class DebugView extends Component {
           return files;
         });
 
-        let profileData;
+        let profile;
         this.profileDfd.promise
-          .then(_profileData => {
-            profileData = _profileData;
-            return cloudStorage.getFileId(profileData.profiles[0]);
+          .then(_profile => {
+            profile = _profile;
+            return cloudStorage.getFileId(profile);
           })
           .then(fileId => {
             this.setState({ cloudStorageFileId: fileId });
@@ -91,7 +91,7 @@ class DebugView extends Component {
               });
             });
 
-            return cloudStorage.listVersions(profileData.profiles[0]);
+            return cloudStorage.listVersions(profile);
           })
           .then(revisions => {
             const onePerDay = fp.flow(
@@ -181,7 +181,7 @@ class DebugView extends Component {
     destiny
       .getCurrentProfiles()
       .then(data => {
-        this.profileDfd.resolve(data);
+        this.profileDfd.resolve(destiny.getLastProfile(data));
         this.setState({
           profile: {
             data: data,
@@ -247,8 +247,8 @@ class DebugView extends Component {
 
     let _result;
     this.profileDfd.promise
-      .then(profileData => {
-        return cloudStorage.getRevision(rev.id, profileData.profiles[0]);
+      .then(profile => {
+        return cloudStorage.getRevision(rev.id, profile);
       })
       .then(result => {
         _result = result;
@@ -257,7 +257,7 @@ class DebugView extends Component {
 
         this.forceUpdate();
 
-        return this.itemDefsDfd.promise();
+        return this.itemDefsDfd.promise;
       })
       .then(itemDefs => {
         rev.__inventory = Object.values(_result.inventory).map(
