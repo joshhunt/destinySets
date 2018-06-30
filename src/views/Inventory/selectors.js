@@ -26,6 +26,10 @@ const slugify = str =>
     .replace(/^-+|-+$/g, ''); // remove leading, trailing -
 
 function filterItem(item, inventory, filters) {
+  if (!item) {
+    return false;
+  }
+
   if (
     !filters[FILTER_SHOW_PS4_EXCLUSIVES] &&
     CONSOLE_EXCLUSIVES.ps4.includes(item.hash)
