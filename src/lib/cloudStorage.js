@@ -22,7 +22,8 @@ function makeFileName(profile) {
   }.json`;
 }
 
-function getFileId({ profile }) {
+export function getFileId({ profile }) {
+  console.log('getFileId profile', profile);
   const fileName = makeFileName(profile);
   const lsFileId = ls.getGoogleDriveInventoryFileId(fileName);
   const fileId = __fileId || lsFileId;
@@ -71,28 +72,37 @@ function getFileId({ profile }) {
     .then(_fileId => {
       __fileId = _fileId;
       ls.saveGoogleDriveInventoryFileId(fileName, __fileId);
+
+      console.log('__fileId:', __fileId);
+
       return __fileId;
     });
 }
 
-export function listVersions() {
-  return gapi.client.drive.revisions
-    .list({ fileId: ls.getGoogleDriveInventoryFileId() })
-    .then(({ result }) => {
-      return result.revisions;
-    });
+export function listVersions(profile) {
+  return ready
+    .then(() => getFileId(profile))
+    .then(fileId => gapi.client.drive.revisions.list({ fileId }))
+    .then(data => data.result.revisions);
 }
 
-export function getRevision(revisionId) {
-  return gapi.client.drive.revisions
-    .get({
-      alt: 'media',
-      fileId: ls.getGoogleDriveInventoryFileId(),
-      revisionId
-    })
-    .then(({ result }) => {
-      return result;
-    });
+export function listAppDataFiles() {
+  return ready
+    .then(() => gapi.client.drive.files.list({ spaces: 'appDataFolder' }))
+    .then(data => data.result.files);
+}
+
+export function getRevision(revisionId, profile) {
+  return ready
+    .then(() => getFileId(profile))
+    .then(fileId =>
+      gapi.client.drive.revisions.get({
+        alt: 'media',
+        fileId,
+        revisionId
+      })
+    )
+    .then(({ result }) => result);
 }
 
 let queueLibPromise;

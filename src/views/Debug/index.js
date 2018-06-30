@@ -2,6 +2,7 @@ import React, { Fragment, Component } from 'react';
 import { Link } from 'react-router';
 import { get } from 'lodash';
 import fp from 'lodash/fp';
+import formatRelative from 'date-fns/formatRelative';
 
 import DestinyAuthProvider from 'app/lib/DestinyAuthProvider';
 import { getDefinition } from 'app/lib/manifestData';
@@ -17,10 +18,22 @@ import { saveDebugInfo } from 'app/lib/telemetry';
 
 import googleAuth from 'app/lib/googleDriveAuth';
 import * as cloudStorage from 'app/lib/cloudStorage';
+import BungieImage from 'app/components/BungieImage';
 
 import styles from './styles.styl';
 
 const bool = b => (b ? 'true' : 'false');
+
+const deferred = () => {
+  const dfd = {};
+
+  dfd.promise = new Promise((resolve, reject) => {
+    dfd.resolve = resolve;
+    dfd.reject = reject;
+  });
+
+  return dfd;
+};
 
 function debugQueueWorker(debugData, cb) {
   saveDebugInfo(debugData)
@@ -36,10 +49,14 @@ class DebugView extends Component {
   state = {
     auth: {},
     defs: {},
-    cloudStorageRevisions: []
+    cloudStorageRevisions: [],
+    cloudStorageAppDataFiles: []
   };
 
   componentDidMount() {
+    this.profileDfd = deferred();
+    this.itemDefsDfd = deferred();
+
     saveDebugId(getDebugId());
 
     this.fallbackDebugId = getDebugId();
@@ -47,15 +64,48 @@ class DebugView extends Component {
     this.queueLib = import('async/queue');
 
     googleAuth(({ signedIn }) => {
-      if (signedIn && getGoogleDriveInventoryFileId()) {
-        cloudStorage.listVersions().then(revisions => {
-          const onePerDay = fp.flow(
-            fp.groupBy(rev => rev.modifiedTime.split('T')[0]),
-            fp.map(rev => ({ ...rev[0], date: new Date(rev[0].modifiedTime) }))
-          )(revisions);
+      const fileId = getGoogleDriveInventoryFileId();
+      console.log('googleAuth', { signedIn, fileId });
 
-          this.setState({ cloudStorageRevisions: onePerDay });
+      if (signedIn) {
+        const listFilesPromise = cloudStorage.listAppDataFiles().then(files => {
+          this.setState({ cloudStorageAppDataFiles: files });
+          return files;
         });
+
+        let profileData;
+        this.profileDfd.promise
+          .then(_profileData => {
+            profileData = _profileData;
+            return cloudStorage.getFileId(profileData.profiles[0]);
+          })
+          .then(fileId => {
+            this.setState({ cloudStorageFileId: fileId });
+
+            listFilesPromise.then(files => {
+              this.setState({
+                cloudStorageAppDataFiles: files.map(f => ({
+                  ...f,
+                  __active: f.id === fileId
+                }))
+              });
+            });
+
+            return cloudStorage.listVersions(profileData.profiles[0]);
+          })
+          .then(revisions => {
+            const onePerDay = fp.flow(
+              fp.groupBy(rev => rev.modifiedTime.split('T')[0]),
+              fp.map(rev => ({
+                ...rev[0],
+                date: new Date(rev[0].modifiedTime)
+              }))
+            )(revisions);
+
+            onePerDay.reverse();
+
+            this.setState({ cloudStorageRevisions: onePerDay });
+          });
       }
     });
   }
@@ -99,21 +149,26 @@ class DebugView extends Component {
   }
 
   loadDef(defName) {
-    getDefinition(defName, 'en').then(defs => {
+    return getDefinition(defName, 'en').then(defs => {
       this.setState({
         defs: {
           ...this.state.defs,
           [defName]: `Loaded, ${Object.keys(defs).length} items`
         }
       });
+
+      return defs;
     });
   }
 
   fetchDefinitions(language) {
     this.loadDef('DestinyVendorDefinition');
     this.loadDef('DestinyStatDefinition');
-    this.loadDef('DestinyInventoryItemDefinition');
     this.loadDef('DestinyObjectiveDefinition');
+
+    this.loadDef('DestinyInventoryItemDefinition').then(defs => {
+      this.itemDefsDfd.resolve(defs);
+    });
   }
 
   fetchData() {
@@ -126,6 +181,7 @@ class DebugView extends Component {
     destiny
       .getCurrentProfiles()
       .then(data => {
+        this.profileDfd.resolve(data);
         this.setState({
           profile: {
             data: data,
@@ -189,17 +245,43 @@ class DebugView extends Component {
   expandCloudStorageRevision = rev => {
     console.log('clicked revision', rev);
 
-    cloudStorage.getRevision(rev.id).then(result => {
-      rev.__data = result;
-      rev.__dataString = JSON.stringify(result);
-      this.forceUpdate();
-    });
+    let _result;
+    this.profileDfd.promise
+      .then(profileData => {
+        return cloudStorage.getRevision(rev.id, profileData.profiles[0]);
+      })
+      .then(result => {
+        _result = result;
+        rev.__data = result;
+        rev.__dataString = JSON.stringify(result);
+
+        this.forceUpdate();
+
+        return this.itemDefsDfd.promise();
+      })
+      .then(itemDefs => {
+        rev.__inventory = Object.values(_result.inventory).map(
+          dismantledItem => {
+            return {
+              ...dismantledItem,
+              def: itemDefs[dismantledItem.itemHash]
+            };
+          }
+        );
+
+        this.forceUpdate();
+      });
+  };
+
+  displayCloudRevisionInventory = rev => {
+    rev.__displayInventory = !rev.__displayInventory;
+    this.forceUpdate();
   };
 
   cloudStorageRevertTo = data => {
     if (
       window.confirm(
-        "Warning: Only do this if you're absolutely sure you know what you're doing. You will probably loose data if you continue"
+        "Warning: Only do this if you're absolutely sure you know what you're doing. There's a chance you will loose data if you continue!"
       )
     ) {
       cloudStorage.saveInventory(data, {}, true);
@@ -291,27 +373,99 @@ class DebugView extends Component {
         </ul>
 
         <h2>Google Drive inventory revisions</h2>
+        <em>
+          Google Drive automatically keeps a revision history of your inventory.
+          Only one revision is shown per day
+        </em>
+        {this.state.cloudStorageFileId && (
+          <p>
+            <strong>File ID: </strong>
+            <code>{this.state.cloudStorageFileId}</code>
+          </p>
+        )}
         <ul>
           {this.state.cloudStorageRevisions.map(rev => (
             <li
+              className={styles.cursorPointer}
               key={rev.id}
               onClick={() =>
                 !rev.__data && this.expandCloudStorageRevision(rev)
               }
             >
-              {rev.modifiedTime} [{rev.id}]
-              {rev.__data &&
-                rev.__data.version && (
-                  <code>version: {rev.__data.version}</code>
-                )}
+              {formatRelative(rev.modifiedTime, new Date())}
+              {' - '}
+              <code className={styles.code}>{rev.id}</code>
+
               {rev.__data && (
-                <div>
-                  <textarea value={rev.__dataString} readOnly />
-                  <button onClick={() => this.cloudStorageRevertTo(rev.__data)}>
-                    Revert to this
-                  </button>
+                <div className={styles.reversionMoreInfo}>
+                  <p>
+                    <strong>
+                      {Object.values(rev.__data.inventory).length} items tracked
+                    </strong>,{' '}
+                    <strong>
+                      version: {rev.__data.version || 'no version'}
+                    </strong>
+                  </p>
+
+                  <div>
+                    <textarea value={rev.__dataString} readOnly />
+                  </div>
+
+                  <div>
+                    <button
+                      onClick={() => this.displayCloudRevisionInventory(rev)}
+                    >
+                      Display inventory
+                    </button>
+                    <button
+                      onClick={() => this.cloudStorageRevertTo(rev.__data)}
+                    >
+                      Revert to this
+                    </button>
+                  </div>
+
+                  {rev.__displayInventory && (
+                    <div className={styles.inventoryList}>
+                      {rev.__inventory &&
+                        rev.__inventory.map((item, index) => (
+                          <div key={index} className={styles.item}>
+                            {item.def ? (
+                              <div className={styles.itemInner}>
+                                {item.def.displayProperties.hasIcon && (
+                                  <BungieImage
+                                    className={styles.itemImage}
+                                    src={item.def.displayProperties.icon}
+                                  />
+                                )}
+
+                                <div>
+                                  <div>{item.def.displayProperties.name}</div>
+                                  <div className={styles.small}>
+                                    {item.dismantled && 'dismantled'}{' '}
+                                    {item.obtained && 'obtained'}
+                                  </div>
+                                </div>
+                              </div>
+                            ) : (
+                              item.itemHash
+                            )}
+                          </div>
+                        ))}
+                    </div>
+                  )}
                 </div>
               )}
+            </li>
+          ))}
+        </ul>
+
+        <h2>Google Drive inventory files</h2>
+        <em>Lists the files in your hidden Destiny Sets app data folder</em>
+        <ul>
+          {this.state.cloudStorageAppDataFiles.map(file => (
+            <li key={file.id}>
+              {file.name} - <code>{file.id}</code>{' '}
+              {file.__active && <span>- [active]</span>}
             </li>
           ))}
         </ul>
