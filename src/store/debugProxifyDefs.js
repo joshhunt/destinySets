@@ -4,7 +4,7 @@ const ITEM_DEF_KEYS = [];
 window.__ITEM_DEF_KEYS = ITEM_DEF_KEYS;
 const UNDEFINED_ITEM_DEF_KEYS = [];
 window.__UNDEFINED_ITEM_DEF_KEYS = UNDEFINED_ITEM_DEF_KEYS;
-const DEBUG_PROXIFY_ITEM_DEFS = true;
+const DEBUG_PROXIFY_ITEM_DEFS = false;
 
 function pushUniquely(arr, value) {
   if (!arr.includes(value)) {

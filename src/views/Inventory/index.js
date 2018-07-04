@@ -64,7 +64,7 @@ class Inventory extends Component {
       return;
     }
 
-    if (props.refreshOnInterval || props.trackedItems.length > 0) {
+    if (props.route.refreshOnInterval || props.trackedItems.length > 0) {
       this.intervalId = window.setInterval(() => {
         props.fetchProfile();
       }, FETCH_INTERVAL);
