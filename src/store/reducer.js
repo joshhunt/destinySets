@@ -15,6 +15,7 @@ const REMOVE_TRACKED_ITEM = 'Remove tracked item';
 const TOGGLE_MANUALLY_OBTAINED = 'Toggle manually obtained';
 const SET_GOOGLE_AUTH = 'Set Google auth data';
 const FORGET_DISMANTLED_ITEM = 'Forget dismantled item';
+const SET_APP_VALUE = 'Set app value';
 
 export const DEFAULT_FILTER = {
   [TITAN]: true,
@@ -28,6 +29,7 @@ const INITIAL_STORE = {
   filters: DEFAULT_FILTER,
   trackedItems: [],
   manualInventory: {},
+  dataExplorerVisited: false,
   googleAuth: {
     loaded: false,
     signedIn: false
@@ -64,6 +66,12 @@ function forgetDismantledDoWork(cloudInventory, itemHash) {
 
 export default function reducer(state = INITIAL_STORE, action) {
   switch (action.type) {
+    case SET_APP_VALUE:
+      return {
+        ...state,
+        ...action.payload
+      };
+
     case SET_GOOGLE_AUTH:
       return {
         ...state,
@@ -131,6 +139,10 @@ export default function reducer(state = INITIAL_STORE, action) {
     default:
       return state;
   }
+}
+
+export function setAppValue(payload) {
+  return { type: SET_APP_VALUE, payload };
 }
 
 export function setGoogleAuth(data) {

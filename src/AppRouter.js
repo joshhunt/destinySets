@@ -8,15 +8,10 @@ import App from './views/App';
 import Diff from './views/Diff';
 import Inventory from './views/Inventory';
 import Debug from './views/Debug';
+import DataExplorerRedirect from './views/DataExplorerRedirect';
 
 import store from './store';
 import sets from './setData';
-
-import makeSplitComponent from './makeSplitComponent';
-
-const DataExplorer = makeSplitComponent(() =>
-  import(/* webpackChunkName: "DataExplorer" */ './views/DataExplorer')
-);
 
 export default class AppRouter extends Component {
   render() {
@@ -26,13 +21,9 @@ export default class AppRouter extends Component {
           <Route component={App}>
             <Route path="/debug" component={Debug} />
 
-            <Route
-              path="/all-seasons"
-              component={Inventory}
-              setData={sets.allSeasons}
-            />
+            <Route path="/" component={Inventory} setData={sets.allSeasons} />
 
-            <Route path="/" component={Inventory} setData={sets.baseGame} />
+            <Route path="/base" component={Inventory} setData={sets.baseGame} />
 
             <Route
               path="/curse-of-osiris"
@@ -66,8 +57,7 @@ export default class AppRouter extends Component {
               setData={sets.allItemsDeluxe}
             />
 
-            <Route path="/data" component={DataExplorer} />
-            <Route path="/data/:itemHash" component={DataExplorer} />
+            <Route path="/data(/:itemHash)" component={DataExplorerRedirect} />
             <Route path="/diff" component={Diff} />
           </Route>
         </Router>

@@ -15,6 +15,7 @@ const keys = {
   DEBUGID: 'debugid',
   PROFILE_ERROR_REPORTED: 'profileErrorReported',
   REQUEST_CACHE: 'cache',
+  DATA_EXPLORER_VISITED: 'dataExplorerVisited',
   TEMP_FILTER_ITEM_WHITELIST: 'filterItemWhitelist',
 
   DESTINY_PROFILE: 'd2Profile2',
@@ -115,6 +116,14 @@ export function saveLanguage(langCode) {
 
 export function getLanguage() {
   return get(keys.LANGUAGE, getDefaultLanguage());
+}
+
+export function saveDataExplorerVisited(value) {
+  save(keys.DATA_EXPLORER_VISITED, value);
+}
+
+export function getDataExplorerVisited() {
+  return get(keys.DATA_EXPLORER_VISITED, false);
 }
 
 export function saveInventory(inventory) {

@@ -49,7 +49,12 @@ const SiteName = () => (
   </div>
 );
 
-const SiteLinks = ({ displayXur, openXurModal, xurHasNewItems }) => (
+const SiteLinks = ({
+  displayXur,
+  openXurModal,
+  xurHasNewItems,
+  showDataExplorerLink
+}) => (
   <Fragment>
     <div className={styles.dummyLink} />
 
@@ -63,6 +68,17 @@ const SiteLinks = ({ displayXur, openXurModal, xurHasNewItems }) => (
         {name}
       </Link>
     ))}
+
+    {showDataExplorerLink && (
+      <a
+        className={styles.link}
+        href="https://data.destinysets.com"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Data Explorer
+      </a>
+    )}
 
     {displayXur && (
       <a
@@ -107,7 +123,8 @@ function Sidebar({
   toggleSidebar,
   displayXur,
   openXurModal,
-  xurHasNewItems
+  xurHasNewItems,
+  showDataExplorerLink
 }) {
   return (
     <ClickOutside
@@ -126,6 +143,7 @@ function Sidebar({
           displayXur={displayXur}
           openXurModal={openXurModal}
           xurHasNewItems={xurHasNewItems}
+          showDataExplorerLink={showDataExplorerLink}
         />
 
         <div className={styles.hr} />
@@ -199,7 +217,8 @@ export default class Header extends Component {
       xurHasNewItems,
       openXurModal,
       profileCached,
-      profileLoading
+      profileLoading,
+      showDataExplorerLink
     } = this.props;
 
     const { isOverflowing, sidebarActive } = this.state;
@@ -240,6 +259,7 @@ export default class Header extends Component {
               displayXur={displayXur}
               openXurModal={openXurModal}
               xurHasNewItems={xurHasNewItems}
+              showDataExplorerLink={showDataExplorerLink}
             />
           </div>
 

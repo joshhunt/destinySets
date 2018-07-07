@@ -157,7 +157,8 @@ class App extends Component {
       profileLoading,
       openXurModal,
       xurItems,
-      xurHasNewItems
+      xurHasNewItems,
+      dataExplorerVisited
     } = this.props;
 
     return (
@@ -176,6 +177,7 @@ class App extends Component {
           xurHasNewItems={xurHasNewItems}
           displayXur={!!xurItems.length}
           openXurModal={openXurModal}
+          showDataExplorerLink={dataExplorerVisited}
         />
 
         <div>{children}</div>
@@ -205,6 +207,7 @@ const mapStateToProps = state => {
     allProfiles: state.profile.allProfiles,
     googleAuth: state.app.googleAuth,
     language: state.app.language,
+    dataExplorerVisited: state.app.dataExplorerVisited,
     cloudInventory: state.app.cloudInventory,
     itemDefs: state.definitions.itemDefs,
     inventory: inventorySelector(state),

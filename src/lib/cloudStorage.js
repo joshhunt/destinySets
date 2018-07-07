@@ -23,7 +23,6 @@ function makeFileName(profile) {
 }
 
 export function getFileId({ profile }) {
-  console.log('getFileId profile', profile);
   const fileName = makeFileName(profile);
   const lsFileId = ls.getGoogleDriveInventoryFileId(fileName);
   const fileId = __fileId || lsFileId;
@@ -72,8 +71,6 @@ export function getFileId({ profile }) {
     .then(_fileId => {
       __fileId = _fileId;
       ls.saveGoogleDriveInventoryFileId(fileName, __fileId);
-
-      console.log('__fileId:', __fileId);
 
       return __fileId;
     });

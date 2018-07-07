@@ -8,12 +8,7 @@ import DestinyAuthProvider from 'app/lib/DestinyAuthProvider';
 import { getDefinition } from 'app/lib/manifestData';
 import * as destiny from 'app/lib/destiny';
 import { PLATFORMS } from 'app/lib/destinyEnums';
-import {
-  getDebugId,
-  saveDebugId,
-  getGoogleDriveInventoryFileId,
-  clearAll
-} from 'app/lib/ls';
+import { getDebugId, saveDebugId, clearAll } from 'app/lib/ls';
 import { saveDebugInfo } from 'app/lib/telemetry';
 
 import googleAuth from 'app/lib/googleDriveAuth';
@@ -64,9 +59,6 @@ class DebugView extends Component {
     this.queueLib = import('async/queue');
 
     googleAuth(({ signedIn }) => {
-      const fileId = getGoogleDriveInventoryFileId();
-      console.log('googleAuth', { signedIn, fileId });
-
       if (signedIn) {
         const listFilesPromise = cloudStorage.listAppDataFiles().then(files => {
           this.setState({ cloudStorageAppDataFiles: files });
@@ -243,8 +235,6 @@ class DebugView extends Component {
   }
 
   expandCloudStorageRevision = rev => {
-    console.log('clicked revision', rev);
-
     let _result;
     this.profileDfd.promise
       .then(profile => {

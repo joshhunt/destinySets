@@ -1,9 +1,12 @@
 import React from 'react';
-import { Link } from 'react-router';
+
+import { saveDataExplorerVisited } from 'app/lib/ls';
 
 import styles from './styles.styl';
 
 import DonateButton from 'app/components/DonateButton';
+
+const rememberDev = () => saveDataExplorerVisited(true);
 
 export default function Footer({ item }) {
   return (
@@ -11,7 +14,14 @@ export default function Footer({ item }) {
       <DonateButton />
       <br />
       Developer, or curious about the data behind Destiny? Check out the{' '}
-      <Link to="/data">Data Explorer</Link>
+      <a
+        href="https://data.destinysets.com"
+        target="_blank"
+        rel="noopener noreferrer"
+        onClick={rememberDev}
+      >
+        Destiny Data Explorer
+      </a>
       <br />
       <br />
       Made with love by{' '}
