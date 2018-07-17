@@ -62,7 +62,9 @@ export default ([
               3681086673, // Iron Companionship Shell (Ghost shell)
               1220495181, // Iron Gallop (Sparrow)
               2924982629, // Iron Pendragon (Ship)
-              2919429251 // Iron Hero Sigil (Emblem)
+              2919429251, // Iron Hero Sigil (Emblem)
+              1420718398, // Esfera Triumph
+              1069214754 // Visage of Skorri
             ]
           }
         ]
@@ -189,10 +191,14 @@ export default ([
           },
 
           {
-            name: 'Emblems',
+            name: 'Extras',
             items: [
               19962737, // Chasing Perfection
-              2029506313 // You Are Worthy
+              2029506313, // You Are Worthy
+              2894506171, // Knight's Peace Shell
+              1827800764, // Millennial Spadework Shell
+              641129738, // Canine Rising
+              1879447862 // Burningbrite Tyger
             ]
           }
         ]
@@ -258,6 +264,7 @@ export default ([
               1220495180, // Pale Horse (Sparrow)
               2924982628, // Distant Pulsar (Ship)
               745759694, // Escape This Dead Orbit (CoO Emblem)
+              3826233802, // Rotaro 33
               738873646 // One Orbit Remains (Warmind emblem)
             ]
           }
@@ -318,6 +325,7 @@ export default ([
               1220495182, // Leonine Courser (Sparrow)
               2924982630, // Leonine Carrack (Ship)
               745759692, // Sigil of the New Monarch (CoO Emblem)
+              3826233803, // Trirang Tox
               1312626341 // Four Times a Ruler (Warmind Emblem)
             ]
           }
@@ -378,6 +386,7 @@ export default ([
               1220495183, // Truth Scraper (Sparrow)
               2924982631, // Bonegrip (Ship)
               745759695, // Future War Cultist (CoO Emblem)
+              308384258, // G-008 Ziphopper
               414672658 // Zero Future (Warmind Emblem)
             ]
           }

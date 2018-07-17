@@ -889,7 +889,8 @@ export default ([
               4132147351, // Recurrent Resplendence
               4182480235, // Hellspawn
               1940590825, // Sonic Simulation
-              1940590823 // Carrhae
+              1940590823, // Carrhae
+              4132147353 // Heart of the City
             ]
           },
           {
@@ -898,7 +899,8 @@ export default ([
               4132147344, // Stand Together
               4132147348, // Darkest Day
               4132147345, // Heretic
-              1940590824 // Tchaikovsky Admirer
+              1940590824, // Tchaikovsky Admirer
+              4132147347 // Day of Seven
             ]
           },
           {
