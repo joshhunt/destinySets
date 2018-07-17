@@ -8,44 +8,6 @@ export default ([
     name: 'Endgame',
     sets: [
       {
-        name: 'Leviathan Raid',
-        description:
-          'Ornaments and collectables obtained by completing challenges in The Leviathan',
-        sections: [
-          {
-            name: 'Hunter Ornaments',
-            items: [
-              215292674, // Praetorian Ornament
-              3849801323, // Praetorian Ornament
-              385347493, // Praetorian Ornament
-              646591613, // Praetorian Ornament
-              3802263800 // Praetorian Ornament
-            ]
-          },
-          {
-            name: 'Titan Ornaments',
-            items: [
-              3188290238, // Praetorian Ornament
-              2458159855, // Praetorian Ornament
-              17582153, // Praetorian Ornament
-              3032763153, // Praetorian Ornament
-              1331851268 // Praetorian Ornament
-            ]
-          },
-          {
-            name: 'Warlock Ornaments',
-            items: [
-              3909176373, // Praetorian Ornament
-              2543545988, // Praetorian Ornament
-              3439095932, // Praetorian Ornament
-              4091208110, // Praetorian Ornament
-              430065393 // Praetorian Ornament
-            ]
-          }
-        ]
-      },
-
-      {
         name: 'Spire of Stars, Raid Lair',
         description:
           'Gear obtained by playing the Spire of Stars raid lair and increasing your reputation with Emperor Calus.',
@@ -69,6 +31,16 @@ export default ([
             ]
           },
           {
+            name: 'Hunter Ornaments',
+            items: [
+              215292674, // Praetorian Ornament
+              3849801323, // Praetorian Ornament
+              385347493, // Praetorian Ornament
+              646591613, // Praetorian Ornament
+              3802263800 // Praetorian Ornament
+            ]
+          },
+          {
             name: 'Titan Armor',
             items: [
               855363300, // Turris Shade Helm
@@ -79,6 +51,16 @@ export default ([
             ]
           },
           {
+            name: 'Titan Ornaments',
+            items: [
+              3188290238, // Praetorian Ornament
+              2458159855, // Praetorian Ornament
+              17582153, // Praetorian Ornament
+              3032763153, // Praetorian Ornament
+              1331851268 // Praetorian Ornament
+            ]
+          },
+          {
             name: 'Warlock Armor',
             items: [
               1675393889, // Insigne Shade Cover
@@ -86,6 +68,16 @@ export default ([
               1296628624, // Insigne Shade Robes
               548581042, // Insigne Shade Boots
               223783885 // Insigne Shade Bond
+            ]
+          },
+          {
+            name: 'Warlock Ornaments',
+            items: [
+              3909176373, // Praetorian Ornament
+              2543545988, // Praetorian Ornament
+              3439095932, // Praetorian Ornament
+              4091208110, // Praetorian Ornament
+              430065393 // Praetorian Ornament
             ]
           },
           {
