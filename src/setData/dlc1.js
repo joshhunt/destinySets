@@ -8,50 +8,6 @@ export default ([
     name: 'Endgame',
     sets: [
       {
-        name: 'Leviathan Raid',
-        description:
-          'Ornaments and collectables obtained by completing challenges in The Leviathan',
-        sections: [
-          {
-            name: 'Hunter Ornaments',
-            items: [
-              3346055334, // Eater of Worlds Ornament
-              2519280691, // Eater of Worlds Ornament
-              3179514973, // Eater of Worlds Ornament
-              2899660517, // Eater of Worlds Ornament
-              1928662068 // Eater of Worlds Ornament
-            ]
-          },
-          {
-            name: 'Titan Ornaments',
-            items: [
-              3036703920, // Eater of Worlds Ornament
-              3093970453, // Eater of Worlds Ornament
-              2380365371, // Eater of Worlds Ornament
-              1815512839, // Eater of Worlds Ornament
-              3991114670 // Eater of Worlds Ornament
-            ]
-          },
-          {
-            name: 'Warlock Ornaments',
-            items: [
-              1397648181, // Eater of Worlds Ornament
-              1575703224, // Eater of Worlds Ornament
-              3163954768, // Eater of Worlds Ornament
-              4135965162, // Eater of Worlds Ornament
-              2837735361 // Eater of Worlds Ornament
-            ]
-          },
-          {
-            name: 'Extras',
-            items: [
-              113124080 // Contender's Shell (Ghost)
-            ]
-          }
-        ]
-      },
-
-      {
         name: 'Eater of Worlds, Raid Lair',
         description:
           'Gear obtained by playing the Eater of Worlds raid lair and increasing your reputation with Emperor Calus.',
@@ -95,11 +51,43 @@ export default ([
             ]
           },
           {
+            name: 'Hunter Ornaments',
+            items: [
+              3346055334, // Eater of Worlds Ornament
+              2519280691, // Eater of Worlds Ornament
+              3179514973, // Eater of Worlds Ornament
+              2899660517, // Eater of Worlds Ornament
+              1928662068 // Eater of Worlds Ornament
+            ]
+          },
+          {
+            name: 'Titan Ornaments',
+            items: [
+              3036703920, // Eater of Worlds Ornament
+              3093970453, // Eater of Worlds Ornament
+              2380365371, // Eater of Worlds Ornament
+              1815512839, // Eater of Worlds Ornament
+              3991114670 // Eater of Worlds Ornament
+            ]
+          },
+          {
+            name: 'Warlock Ornaments',
+            items: [
+              1397648181, // Eater of Worlds Ornament
+              1575703224, // Eater of Worlds Ornament
+              3163954768, // Eater of Worlds Ornament
+              4135965162, // Eater of Worlds Ornament
+              2837735361 // Eater of Worlds Ornament
+            ]
+          },
+          {
             name: 'Extras',
             items: [
               113124080, // Contender's Shell (Ghost)
               4261480751, // Emperor's Envy (Emblem)
-              4242407217 // Calus's Elite (Shader)
+              4242407217, // Calus's Elite (Shader)
+              4261480750, // Covetous Emperor (Emblem)
+              4242407216 // Calus's Preferred (Shader)
             ]
           }
         ]
