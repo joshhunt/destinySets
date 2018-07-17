@@ -31,26 +31,6 @@ export default ([
             ]
           },
           {
-            name: 'Titan Armor',
-            items: [
-              1991039861, // Mask of Nohr
-              666883012, // Gauntlets of Nohr
-              1242139836, // Plate of Nohr
-              2597529070, // Greaves of Nohr
-              2994007601 // Mark of Nohr
-            ]
-          },
-          {
-            name: 'Warlock Armor',
-            items: [
-              796914932, // Mask of Sekris
-              3964287245, // Wraps of Sekris
-              2329031091, // Robes of Sekris
-              340118991, // Boots of Sekris
-              239489770 // Bond of Sekris
-            ]
-          },
-          {
             name: 'Hunter Ornaments',
             items: [
               3346055334, // Eater of Worlds Ornament
@@ -61,6 +41,16 @@ export default ([
             ]
           },
           {
+            name: 'Titan Armor',
+            items: [
+              1991039861, // Mask of Nohr
+              666883012, // Gauntlets of Nohr
+              1242139836, // Plate of Nohr
+              2597529070, // Greaves of Nohr
+              2994007601 // Mark of Nohr
+            ]
+          },
+          {
             name: 'Titan Ornaments',
             items: [
               3036703920, // Eater of Worlds Ornament
@@ -68,6 +58,16 @@ export default ([
               2380365371, // Eater of Worlds Ornament
               1815512839, // Eater of Worlds Ornament
               3991114670 // Eater of Worlds Ornament
+            ]
+          },
+          {
+            name: 'Warlock Armor',
+            items: [
+              796914932, // Mask of Sekris
+              3964287245, // Wraps of Sekris
+              2329031091, // Robes of Sekris
+              340118991, // Boots of Sekris
+              239489770 // Bond of Sekris
             ]
           },
           {
