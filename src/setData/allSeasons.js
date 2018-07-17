@@ -8,6 +8,66 @@ export default ([
     name: 'Endgame',
     sets: [
       {
+        name: 'Leviathan Raid',
+        description:
+          'Gear obtained by playing the Leviathan raid and increasing your reputation with Emperor Calus.',
+        sections: [
+          {
+            name: 'Weapons',
+            season: 1,
+            items: [
+              2505533224,
+              3325744914,
+              3906942101,
+              1128225405,
+              3954531357,
+              3380742308,
+              3691881271,
+              1018072983
+            ]
+          },
+          {
+            name: 'Armor',
+            season: 1,
+            itemGroups: [
+              [2013109092, 1960303677, 407863747, 30962015, 3984534842], // Hunter
+              [1413589586, 1879942843, 1876645653, 288406317, 574137192], // Titan
+              [2700598111, 2676042150, 3592548938, 2193494688, 3763332443] // Warlock
+            ]
+          },
+          {
+            name: 'Armor - Prestige Mode',
+            season: 1,
+            itemGroups: [
+              [2013109093, 1960303676, 407863746, 30962014, 3984534843], // Hunter
+              [1413589587, 1879942842, 1876645652, 288406316, 574137193], // Titan
+              [2700598110, 2676042151, 3592548939, 2193494689, 3763332442] // Warlock
+            ]
+          },
+          {
+            name: 'Ornaments',
+            season: 2,
+            itemGroups: [
+              [3346055334, 2519280691, 3179514973, 2899660517, 1928662068], // Hunter Eater of Worlds Ornament
+              [3036703920, 3093970453, 2380365371, 1815512839, 3991114670], // Titan Eater of Worlds Ornament
+              [1397648181, 1575703224, 3163954768, 4135965162, 2837735361] // Warlock Eater of Worlds Ornament
+            ]
+          },
+          {
+            name: 'Emblems',
+            items: [
+              3257147585, // Embrace His Name
+              2107367383, // Glory to the Emperor
+              1667199810, // Good Dog
+              2984066626, // Splish Splash
+              1625974211, // Two Enter, One Leaves
+              812824526 // Take the Throne
+            ]
+          }
+        ]
+      },
+      
+      {
         name: 'Iron Banner',
         description:
           'Weapons and armor obtained by honoring the heroes of old in the Iron Banner Crucible tournament.',
@@ -65,66 +125,6 @@ export default ([
               2919429251, // Iron Hero Sigil (Emblem)
               1420718398, // Esfera Triumph
               1069214754 // Visage of Skorri
-            ]
-          }
-        ]
-      },
-
-      {
-        name: 'Leviathan Raid',
-        description:
-          'Gear obtained by playing the Leviathan raid and increasing your reputation with Emperor Calus.',
-        sections: [
-          {
-            name: 'Weapons',
-            season: 1,
-            items: [
-              2505533224,
-              3325744914,
-              3906942101,
-              1128225405,
-              3954531357,
-              3380742308,
-              3691881271,
-              1018072983
-            ]
-          },
-          {
-            name: 'Armor',
-            season: 1,
-            itemGroups: [
-              [2013109092, 1960303677, 407863747, 30962015, 3984534842], // Hunter
-              [1413589586, 1879942843, 1876645653, 288406317, 574137192], // Titan
-              [2700598111, 2676042150, 3592548938, 2193494688, 3763332443] // Warlock
-            ]
-          },
-          {
-            name: 'Armor - Prestige Mode',
-            season: 1,
-            itemGroups: [
-              [2013109093, 1960303676, 407863746, 30962014, 3984534843], // Hunter
-              [1413589587, 1879942842, 1876645652, 288406316, 574137193], // Titan
-              [2700598110, 2676042151, 3592548939, 2193494689, 3763332442] // Warlock
-            ]
-          },
-          {
-            name: 'Ornaments',
-            season: 2,
-            itemGroups: [
-              [3346055334, 2519280691, 3179514973, 2899660517, 1928662068], // Hunter Eater of Worlds Ornament
-              [3036703920, 3093970453, 2380365371, 1815512839, 3991114670], // Titan Eater of Worlds Ornament
-              [1397648181, 1575703224, 3163954768, 4135965162, 2837735361] // Warlock Eater of Worlds Ornament
-            ]
-          },
-          {
-            name: 'Emblems',
-            items: [
-              3257147585, // Embrace His Name
-              2107367383, // Glory to the Emperor
-              1667199810, // Good Dog
-              2984066626, // Splish Splash
-              1625974211, // Two Enter, One Leaves
-              812824526 // Take the Throne
             ]
           }
         ]
