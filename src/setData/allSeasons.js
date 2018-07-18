@@ -94,9 +94,7 @@ export default ([
             items: [
               113124080, // Contender's Shell (Ghost)
               4261480751, // Emperor's Envy (Emblem)
-              4242407217, // Calus's Elite (Shader)
-              4261480750, // Covetous Emperor (Emblem)
-              4242407216 // Calus's Preferred (Shader)
+              4261480750 // Covetous Emperor (Emblem)
             ]
           }
         ]
