@@ -45,6 +45,42 @@ export default ([
             ]
           },
           {
+            name: 'Emblems',
+            items: [
+              3257147585, // Embrace His Name
+              2107367383, // Glory to the Emperor
+              1667199810, // Good Dog
+              2984066626, // Splish Splash
+              1625974211, // Two Enter, One Leaves
+              812824526 // Take the Throne
+            ]
+          }
+        ]
+      },
+      
+      {
+        name: 'Eater of Worlds, Raid Lair',
+        description:
+          'Gear obtained by playing the Eater of Worlds raid lair and increasing your reputation with Emperor Calus.',
+        sections: [
+          {
+            name: 'Weapons',
+            season: 2,
+            items: [
+              3886263130, // I Am Alive
+              2707464805 // Zenith of Your Kind
+            ]
+          },
+          {
+            name: 'Armor',
+            season: 2,
+            itemGroups: [
+              [253344425, 2339720736, 2976612200, 1034660314, 383742277], // Hunter
+              [1991039861, 666883012,  1242139836, 2597529070, 2994007601], // Titan
+              [796914932, 3964287245, 2329031091, 340118991, 239489770] // Warlock
+            ]
+          },
+          {
             name: 'Ornaments',
             season: 2,
             itemGroups: [
@@ -54,14 +90,55 @@ export default ([
             ]
           },
           {
-            name: 'Emblems',
+            name: 'Extras',
             items: [
-              3257147585, // Embrace His Name
-              2107367383, // Glory to the Emperor
-              1667199810, // Good Dog
-              2984066626, // Splish Splash
-              1625974211, // Two Enter, One Leaves
-              812824526 // Take the Throne
+              113124080, // Contender's Shell (Ghost)
+              4261480751, // Emperor's Envy (Emblem)
+              4242407217, // Calus's Elite (Shader)
+              4261480750 // Covetous Emperor (Emblem)
+            ]
+          }
+        ]
+      },
+      
+      {
+        name: 'Spire of Stars, Raid Lair',
+        description:
+          'Gear obtained by playing the Spire of Stars raid lair and increasing your reputation with Emperor Calus.',
+        sections: [
+          {
+            name: 'Weapons',
+            season: 3,
+            items: [
+              2084611899, // Last of the Legion
+              4288031461 // The Emperor's Envy
+            ]
+          },
+          {
+            name: 'Armor',
+            season: 3,
+            itemGroups: [
+              [3440648382, 2710517999, 2933666377, 3285121297, 4247935492], // Hunter
+              [855363300, 802557885, 4135228483, 3168183519, 3416932282], // Titan
+              [1675393889, 2513313400, 1296628624, 548581042, 223783885] // Warlock
+            ]
+          },
+          {
+            name: 'Ornaments',
+            season: 3,
+            itemGroups: [
+              [215292674, 3849801323, 385347493, 646591613, 3802263800], // Hunter Spire of Stars Ornament
+              [3188290238, 2458159855, 17582153, 3032763153, 1331851268], // Titan Spire of Stars Ornament
+              [3909176373, 2543545988, 3439095932, 4091208110, 430065393] // Warlock Spire of Stars Ornament
+            ]
+          },
+          {
+            name: 'Extras',
+            items: [
+              530754878, // Luxurious Toast emote
+              1057119308, // Spire Star emblem
+              2331063860, // Grind Underfoot emblem
+              2331063861 // Together, For Glory! emblem
             ]
           }
         ]
