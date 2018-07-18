@@ -527,6 +527,104 @@ export default ([
     ]
   },
   {
+    name: 'Holiday',
+    sets: [
+      {
+        name: 'Solstice of Heroes',
+        big: false,
+        sections: [
+          {
+            name: 'Hunter Armor',
+            items: [
+
+            ]
+          },
+          {
+            name: 'Titan Armor',
+            items: [
+
+            ]
+          },
+          {
+            name: 'Warlock Armor',
+            items: [
+
+            ]
+          },
+          {
+            name: 'Emotes',
+            items: [
+              961496619, // (Fishing)
+              3244569127, // Festival Dance
+              396134792, // Sassy Taunt
+              2114877381, // Fly Dance
+              2427328578, // Alliterative Dance
+              2919938481, // Teamwork Dance
+              3672748946, // Herald Dance
+              1599949358, // Raise the Roof
+              4119095630 // Confident Strut 
+            ]
+          },
+          {
+            name: 'Moments of Triumph',
+            items: [
+              3867275449, // The Right Choice (Moments of Triumph Ghost)
+              4243004391, // Comrades in Arms (Moments of Triumph Sparrow)
+              3860733295, // Eternally Triumphant (Moments of Triumph Emblem, Missing the Upgraded Variant)
+            ]
+          },
+          {
+            name: 'Ghosts',
+            items: [
+              3717471208, // Predator Sun Shell
+              3717471209, // Archipelago Pitch
+              980898615, // Skyfire North Shell
+              980898611, // Authorized Misconduct Shell
+              980898614, // Bankjar Shell
+              980898608, // Headerstripe Shell
+              980898609, // Citrine Sway Shell
+              980898610, // Regality Sphere Shell
+            ]
+          },
+          {
+            name: 'Sparrows',
+            items: [
+              4213271810, // Blacklight Razor
+              4213271811, // Gray Hornet 
+              2298896088, // Memorium Sol
+              2298896090, // Orcinus Swath
+              2298896091, // Serriform 7
+              2298896092, // Junestinger
+              2298896093, // Timberwolf
+              2298896094, // Sunspear
+              2298896095, // Boltcrackle 
+            ]
+          },
+          {
+            name: 'Ships',
+            items: [
+              682682138, // Estival Excursion
+              3475074928 // Thunderwing
+            ]
+          },
+          {
+            name: 'Emblems',
+            items: [
+              
+            ]
+          },
+          {
+            name: 'Shaders',
+            items: [
+              3859483818 // Blazing Virtue
+              3859483819 // Malachite Gold
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
     name: 'Other',
     sets: [
       {
