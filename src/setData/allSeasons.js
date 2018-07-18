@@ -8,6 +8,142 @@ export default ([
     name: 'Endgame',
     sets: [
       {
+        name: 'Leviathan Raid',
+        description:
+          'Gear obtained by playing the Leviathan raid and increasing your reputation with Emperor Calus.',
+        sections: [
+          {
+            name: 'Weapons',
+            season: 1,
+            items: [
+              2505533224,
+              3325744914,
+              3906942101,
+              1128225405,
+              3954531357,
+              3380742308,
+              3691881271,
+              1018072983
+            ]
+          },
+          {
+            name: 'Armor',
+            season: 1,
+            itemGroups: [
+              [2013109092, 1960303677, 407863747, 30962015, 3984534842], // Hunter
+              [1413589586, 1879942843, 1876645653, 288406317, 574137192], // Titan
+              [2700598111, 2676042150, 3592548938, 2193494688, 3763332443] // Warlock
+            ]
+          },
+          {
+            name: 'Armor - Prestige Mode',
+            season: 1,
+            itemGroups: [
+              [2013109093, 1960303676, 407863746, 30962014, 3984534843], // Hunter
+              [1413589587, 1879942842, 1876645652, 288406316, 574137193], // Titan
+              [2700598110, 2676042151, 3592548939, 2193494689, 3763332442] // Warlock
+            ]
+          },
+          {
+            name: 'Emblems',
+            items: [
+              3257147585, // Embrace His Name
+              2107367383, // Glory to the Emperor
+              1667199810, // Good Dog
+              2984066626, // Splish Splash
+              1625974211, // Two Enter, One Leaves
+              812824526 // Take the Throne
+            ]
+          }
+        ]
+      },
+      
+      {
+        name: 'Eater of Worlds, Raid Lair',
+        description:
+          'Gear obtained by playing the Eater of Worlds raid lair and increasing your reputation with Emperor Calus.',
+        sections: [
+          {
+            name: 'Weapons',
+            season: 2,
+            items: [
+              3886263130, // I Am Alive
+              2707464805 // Zenith of Your Kind
+            ]
+          },
+          {
+            name: 'Armor',
+            season: 2,
+            itemGroups: [
+              [253344425, 2339720736, 2976612200, 1034660314, 383742277], // Hunter
+              [1991039861, 666883012,  1242139836, 2597529070, 2994007601], // Titan
+              [796914932, 3964287245, 2329031091, 340118991, 239489770] // Warlock
+            ]
+          },
+          {
+            name: 'Ornaments',
+            season: 2,
+            itemGroups: [
+              [3346055334, 2519280691, 3179514973, 2899660517, 1928662068], // Hunter Eater of Worlds Ornament
+              [3036703920, 3093970453, 2380365371, 1815512839, 3991114670], // Titan Eater of Worlds Ornament
+              [1397648181, 1575703224, 3163954768, 4135965162, 2837735361] // Warlock Eater of Worlds Ornament
+            ]
+          },
+          {
+            name: 'Extras',
+            items: [
+              113124080, // Contender's Shell (Ghost)
+              4261480751, // Emperor's Envy (Emblem)
+              4261480750 // Covetous Emperor (Emblem)
+            ]
+          }
+        ]
+      },
+      
+      {
+        name: 'Spire of Stars, Raid Lair',
+        description:
+          'Gear obtained by playing the Spire of Stars raid lair and increasing your reputation with Emperor Calus.',
+        sections: [
+          {
+            name: 'Weapons',
+            season: 3,
+            items: [
+              2084611899, // Last of the Legion
+              4288031461 // The Emperor's Envy
+            ]
+          },
+          {
+            name: 'Armor',
+            season: 3,
+            itemGroups: [
+              [3440648382, 2710517999, 2933666377, 3285121297, 4247935492], // Hunter
+              [855363300, 802557885, 4135228483, 3168183519, 3416932282], // Titan
+              [1675393889, 2513313400, 1296628624, 548581042, 223783885] // Warlock
+            ]
+          },
+          {
+            name: 'Ornaments',
+            season: 3,
+            itemGroups: [
+              [215292674, 3849801323, 385347493, 646591613, 3802263800], // Hunter Spire of Stars Ornament
+              [3188290238, 2458159855, 17582153, 3032763153, 1331851268], // Titan Spire of Stars Ornament
+              [3909176373, 2543545988, 3439095932, 4091208110, 430065393] // Warlock Spire of Stars Ornament
+            ]
+          },
+          {
+            name: 'Extras',
+            items: [
+              530754878, // Luxurious Toast emote
+              1057119308, // Spire Star emblem
+              2331063860, // Grind Underfoot emblem
+              2331063861 // Together, For Glory! emblem
+            ]
+          }
+        ]
+      },
+      
+      {
         name: 'Iron Banner',
         description:
           'Weapons and armor obtained by honoring the heroes of old in the Iron Banner Crucible tournament.',
@@ -65,66 +201,6 @@ export default ([
               2919429251, // Iron Hero Sigil (Emblem)
               1420718398, // Esfera Triumph
               1069214754 // Visage of Skorri
-            ]
-          }
-        ]
-      },
-
-      {
-        name: 'Leviathan Raid',
-        description:
-          'Gear obtained by playing the Leviathan raid and increasing your reputation with Emperor Calus.',
-        sections: [
-          {
-            name: 'Weapons',
-            season: 1,
-            items: [
-              2505533224,
-              3325744914,
-              3906942101,
-              1128225405,
-              3954531357,
-              3380742308,
-              3691881271,
-              1018072983
-            ]
-          },
-          {
-            name: 'Armor',
-            season: 1,
-            itemGroups: [
-              [2013109092, 1960303677, 407863747, 30962015, 3984534842], // Hunter
-              [1413589586, 1879942843, 1876645653, 288406317, 574137192], // Titan
-              [2700598111, 2676042150, 3592548938, 2193494688, 3763332443] // Warlock
-            ]
-          },
-          {
-            name: 'Armor - Prestige Mode',
-            season: 1,
-            itemGroups: [
-              [2013109093, 1960303676, 407863746, 30962014, 3984534843], // Hunter
-              [1413589587, 1879942842, 1876645652, 288406316, 574137193], // Titan
-              [2700598110, 2676042151, 3592548939, 2193494689, 3763332442] // Warlock
-            ]
-          },
-          {
-            name: 'Ornaments',
-            season: 2,
-            itemGroups: [
-              [3346055334, 2519280691, 3179514973, 2899660517, 1928662068], // Hunter Eater of Worlds Ornament
-              [3036703920, 3093970453, 2380365371, 1815512839, 3991114670], // Titan Eater of Worlds Ornament
-              [1397648181, 1575703224, 3163954768, 4135965162, 2837735361] // Warlock Eater of Worlds Ornament
-            ]
-          },
-          {
-            name: 'Emblems',
-            items: [
-              3257147585, // Embrace His Name
-              2107367383, // Glory to the Emperor
-              1667199810, // Good Dog
-              2984066626, // Splish Splash
-              1625974211, // Two Enter, One Leaves
-              812824526 // Take the Throne
             ]
           }
         ]

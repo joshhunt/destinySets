@@ -8,44 +8,6 @@ export default ([
     name: 'Endgame',
     sets: [
       {
-        name: 'Leviathan Raid',
-        description:
-          'Ornaments and collectables obtained by completing challenges in The Leviathan',
-        sections: [
-          {
-            name: 'Hunter Ornaments',
-            items: [
-              215292674, // Praetorian Ornament
-              3849801323, // Praetorian Ornament
-              385347493, // Praetorian Ornament
-              646591613, // Praetorian Ornament
-              3802263800 // Praetorian Ornament
-            ]
-          },
-          {
-            name: 'Titan Ornaments',
-            items: [
-              3188290238, // Praetorian Ornament
-              2458159855, // Praetorian Ornament
-              17582153, // Praetorian Ornament
-              3032763153, // Praetorian Ornament
-              1331851268 // Praetorian Ornament
-            ]
-          },
-          {
-            name: 'Warlock Ornaments',
-            items: [
-              3909176373, // Praetorian Ornament
-              2543545988, // Praetorian Ornament
-              3439095932, // Praetorian Ornament
-              4091208110, // Praetorian Ornament
-              430065393 // Praetorian Ornament
-            ]
-          }
-        ]
-      },
-
-      {
         name: 'Spire of Stars, Raid Lair',
         description:
           'Gear obtained by playing the Spire of Stars raid lair and increasing your reputation with Emperor Calus.',
@@ -69,6 +31,16 @@ export default ([
             ]
           },
           {
+            name: 'Hunter Ornaments',
+            items: [
+              215292674, // Praetorian Ornament
+              3849801323, // Praetorian Ornament
+              385347493, // Praetorian Ornament
+              646591613, // Praetorian Ornament
+              3802263800 // Praetorian Ornament
+            ]
+          },
+          {
             name: 'Titan Armor',
             items: [
               855363300, // Turris Shade Helm
@@ -76,6 +48,16 @@ export default ([
               4135228483, // Turris Shade Plate
               3168183519, // Turris Shade Greaves
               3416932282 // Turris Shade Mark
+            ]
+          },
+          {
+            name: 'Titan Ornaments',
+            items: [
+              3188290238, // Praetorian Ornament
+              2458159855, // Praetorian Ornament
+              17582153, // Praetorian Ornament
+              3032763153, // Praetorian Ornament
+              1331851268 // Praetorian Ornament
             ]
           },
           {
@@ -89,12 +71,23 @@ export default ([
             ]
           },
           {
+            name: 'Warlock Ornaments',
+            items: [
+              3909176373, // Praetorian Ornament
+              2543545988, // Praetorian Ornament
+              3439095932, // Praetorian Ornament
+              4091208110, // Praetorian Ornament
+              430065393 // Praetorian Ornament
+            ]
+          },
+          {
             name: 'Extras',
             items: [
               530754878, // Luxurious Toast emote
               1057119308, // Spire Star emblem
               2331063860, // Grind Underfoot emblem
               2331063861, // Together, For Glory! emblem
+              2543722796, // Praetorian Visage shader
               2543722797 // Calus's Shadow shader
             ]
           }
@@ -528,6 +521,115 @@ export default ([
               2544285846, // Scipio-D
               2433826056, // The Quickstep
               1159252500 // Vacuna SR4
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    name: 'Holiday',
+    sets: [
+      {
+        name: 'Solstice of Heroes',
+        big: false,
+        sections: [
+          {
+            name: 'Hunter Armor',
+            items: [
+
+            ]
+          },
+          {
+            name: 'Titan Armor',
+            items: [
+
+            ]
+          },
+          {
+            name: 'Warlock Armor',
+            items: [
+
+            ]
+          },
+          {
+            name: 'Moments of Triumph',
+            items: [
+              3867275449, // The Right Choice (Moments of Triumph Ghost)
+              4243004391, // Comrades in Arms (Moments of Triumph Sparrow)
+              3860733295, // Eternally Triumphant (Moments of Triumph Emblem)
+              3860733294 // Renewed Triumph (Moments of Triumph Emblem)
+            ]
+          },
+          {
+            name: 'Emotes',
+            items: [
+              961496619, // (Fishing)
+              3244569127, // Festival Dance
+              396134792, // Sassy Taunt
+              2114877381, // Fly Dance
+              2427328578, // Alliterative Dance
+              2919938481, // Teamwork Dance
+              3672748946, // Herald Dance
+              1599949358, // Raise the Roof
+              4119095630, // Confident Strut 
+              621701973 // Aggressively Affirmative
+            ]
+          },
+          {
+            name: 'Ghosts',
+            items: [
+              3717471208, // Predator Sun Shell
+              3717471209, // Archipelago Pitch
+              980898615, // Skyfire North Shell
+              980898611, // Authorized Misconduct Shell
+              980898614, // Bankjar Shell
+              980898608, // Headerstripe Shell
+              980898609, // Citrine Sway Shell
+              980898610, // Regality Sphere Shell
+            ]
+          },
+          {
+            name: 'Sparrows',
+            items: [
+              4213271810, // Blacklight Razor
+              4213271811, // Gray Hornet 
+              2298896088, // Memorium Sol
+              2298896090, // Orcinus Swath
+              2298896091, // Serriform 7
+              2298896092, // Junestinger
+              2298896093, // Timberwolf
+              2298896094, // Sunspear
+              2298896095, // Boltcrackle 
+            ]
+          },
+          {
+            name: 'Ships',
+            items: [
+              682682138, // Estival Excursion
+              3475074928 // Thunderwing
+            ]
+          },
+          {
+            name: 'Emblems',
+            items: [
+              
+            ]
+          },
+          {
+            name: 'Shaders',
+            items: [
+              3859483818, // Blazing Virtue
+              3859483819 // Malachite Gold
+            ]
+          },
+          {
+            name: 'Weapon Ornaments',
+            items: [
+              2396888157, // Sudden Squall
+              1259278657, // Raging Lepus
+              2949664689, // Gray Nitrite
+              1750365155, // Beachheader VI
             ]
           }
         ]
