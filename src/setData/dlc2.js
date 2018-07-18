@@ -552,6 +552,14 @@ export default ([
             ]
           },
           {
+            name: 'Moments of Triumph',
+            items: [
+              3867275449, // The Right Choice (Moments of Triumph Ghost)
+              4243004391, // Comrades in Arms (Moments of Triumph Sparrow)
+              3860733295, // Eternally Triumphant (Moments of Triumph Emblem, Missing the Upgraded Variant)
+            ]
+          },
+          {
             name: 'Emotes',
             items: [
               961496619, // (Fishing)
@@ -563,14 +571,6 @@ export default ([
               3672748946, // Herald Dance
               1599949358, // Raise the Roof
               4119095630 // Confident Strut 
-            ]
-          },
-          {
-            name: 'Moments of Triumph',
-            items: [
-              3867275449, // The Right Choice (Moments of Triumph Ghost)
-              4243004391, // Comrades in Arms (Moments of Triumph Sparrow)
-              3860733295, // Eternally Triumphant (Moments of Triumph Emblem, Missing the Upgraded Variant)
             ]
           },
           {
