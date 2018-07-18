@@ -616,7 +616,7 @@ export default ([
           {
             name: 'Shaders',
             items: [
-              3859483818 // Blazing Virtue
+              3859483818, // Blazing Virtue
               3859483819 // Malachite Gold
             ]
           }
