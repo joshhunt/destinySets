@@ -87,6 +87,7 @@ export default ([
               1057119308, // Spire Star emblem
               2331063860, // Grind Underfoot emblem
               2331063861, // Together, For Glory! emblem
+              2543722796, // Praetorian Visage shader
               2543722797 // Calus's Shadow shader
             ]
           }
