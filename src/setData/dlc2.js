@@ -619,6 +619,15 @@ export default ([
               3859483818, // Blazing Virtue
               3859483819 // Malachite Gold
             ]
+          },
+          {
+            name: 'Weapon Ornaments',
+            items: [
+              2396888157, // Sudden Squall
+              1259278657, // Raging Lepus
+              2949664689, // Gray Nitrite
+              1750365155, // Beachheader VI
+            ]
           }
         ]
       }
