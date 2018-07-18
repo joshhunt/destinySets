@@ -556,7 +556,8 @@ export default ([
             items: [
               3867275449, // The Right Choice (Moments of Triumph Ghost)
               4243004391, // Comrades in Arms (Moments of Triumph Sparrow)
-              3860733295, // Eternally Triumphant (Moments of Triumph Emblem, Missing the Upgraded Variant)
+              3860733295, // Eternally Triumphant (Moments of Triumph Emblem)
+              3860733294 // Renewed Triumph (Moments of Triumph Emblem)
             ]
           },
           {
@@ -570,7 +571,8 @@ export default ([
               2919938481, // Teamwork Dance
               3672748946, // Herald Dance
               1599949358, // Raise the Roof
-              4119095630 // Confident Strut 
+              4119095630, // Confident Strut 
+              621701973 // Aggressively Affirmative
             ]
           },
           {
