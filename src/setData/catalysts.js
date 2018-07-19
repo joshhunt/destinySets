@@ -16,6 +16,10 @@ export default ([
             name: 'Weapons',
             type: 'exoticCatalysts',
             items: [
+              2907129556, // Sturm
+              2208405142, // Telesto
+              4036115577, // Sleeper Simulant
+              3580904580, // Legend of Acruis
               3413074534, // Polarice Lance
               3141979346, // D.A.R.C.I.
               3628991658, // Graviton Lance
