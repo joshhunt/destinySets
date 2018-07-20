@@ -1,6 +1,7 @@
 // @flow
 
 import * as common from './common';
+import { section } from './common';
 import type { SetPage } from '../types';
 
 export default ([
@@ -12,74 +13,17 @@ export default ([
         description:
           'Gear obtained by playing the Eater of Worlds raid lair and increasing your reputation with Emperor Calus.',
         sections: [
-          {
-            name: 'Weapons',
-            items: [
-              3886263130, // I Am Alive
-              2707464805 // Zenith of Your Kind
-            ]
-          },
+          section('Weapons', common.RAID_EOW_WEAPONS),
 
-          {
-            name: 'Hunter Armor',
-            items: [
-              253344425, // Mask of Feltroc
-              2339720736, // Grips of Feltroc
-              2976612200, // Vest of Feltroc
-              1034660314, // Boots of Feltroc
-              383742277 // Cloak of Feltroc
-            ]
-          },
-          {
-            name: 'Hunter Ornaments',
-            items: [
-              3346055334, // Eater of Worlds Ornament
-              2519280691, // Eater of Worlds Ornament
-              3179514973, // Eater of Worlds Ornament
-              2899660517, // Eater of Worlds Ornament
-              1928662068 // Eater of Worlds Ornament
-            ]
-          },
-          {
-            name: 'Titan Armor',
-            items: [
-              1991039861, // Mask of Nohr
-              666883012, // Gauntlets of Nohr
-              1242139836, // Plate of Nohr
-              2597529070, // Greaves of Nohr
-              2994007601 // Mark of Nohr
-            ]
-          },
-          {
-            name: 'Titan Ornaments',
-            items: [
-              3036703920, // Eater of Worlds Ornament
-              3093970453, // Eater of Worlds Ornament
-              2380365371, // Eater of Worlds Ornament
-              1815512839, // Eater of Worlds Ornament
-              3991114670 // Eater of Worlds Ornament
-            ]
-          },
-          {
-            name: 'Warlock Armor',
-            items: [
-              796914932, // Mask of Sekris
-              3964287245, // Wraps of Sekris
-              2329031091, // Robes of Sekris
-              340118991, // Boots of Sekris
-              239489770 // Bond of Sekris
-            ]
-          },
-          {
-            name: 'Warlock Ornaments',
-            items: [
-              1397648181, // Eater of Worlds Ornament
-              1575703224, // Eater of Worlds Ornament
-              3163954768, // Eater of Worlds Ornament
-              4135965162, // Eater of Worlds Ornament
-              2837735361 // Eater of Worlds Ornament
-            ]
-          },
+          section('Hunter Armor', common.RAID_EOW_ARMOR_HUNTER),
+          section('Hunter Ornaments', common.RAID_EOW_ORNAMENTS_HUNTER),
+
+          section('Titan Armor', common.RAID_EOW_ARMOR_TITAN),
+          section('Titan Ornaments', common.RAID_EOW_ORNAMENTS_TITAN),
+
+          section('Warlock Armor', common.RAID_EOW_ARMOR_WARLOCK),
+          section('Warlock Ornaments', common.RAID_EOW_ORNAMENTS_WARLOCK),
+
           {
             name: 'Extras',
             items: [

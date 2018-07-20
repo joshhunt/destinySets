@@ -1,6 +1,7 @@
 // @flow
 
 import * as common from './common';
+import { section } from './common';
 import type { SetPage } from '../types';
 
 export default ([
@@ -12,74 +13,17 @@ export default ([
         description:
           'Gear obtained by playing the Spire of Stars raid lair and increasing your reputation with Emperor Calus.',
         sections: [
-          {
-            name: 'Weapons',
-            items: [
-              2084611899, // Last of the Legion
-              4288031461 // The Emperor's Envy
-            ]
-          },
+          section('Weapons', common.RAID_SOS_WEAPONS),
 
-          {
-            name: 'Hunter Armor',
-            items: [
-              3440648382, // Equitis Shade Cowl
-              2710517999, // Equitis Shade Grips
-              2933666377, // Equitis Shade Rig
-              3285121297, // Equitis Shade Boots
-              4247935492 // Equitis Shade Cloak
-            ]
-          },
-          {
-            name: 'Hunter Ornaments',
-            items: [
-              215292674, // Praetorian Ornament
-              3849801323, // Praetorian Ornament
-              385347493, // Praetorian Ornament
-              646591613, // Praetorian Ornament
-              3802263800 // Praetorian Ornament
-            ]
-          },
-          {
-            name: 'Titan Armor',
-            items: [
-              855363300, // Turris Shade Helm
-              802557885, // Turris Shade Gauntlets
-              4135228483, // Turris Shade Plate
-              3168183519, // Turris Shade Greaves
-              3416932282 // Turris Shade Mark
-            ]
-          },
-          {
-            name: 'Titan Ornaments',
-            items: [
-              3188290238, // Praetorian Ornament
-              2458159855, // Praetorian Ornament
-              17582153, // Praetorian Ornament
-              3032763153, // Praetorian Ornament
-              1331851268 // Praetorian Ornament
-            ]
-          },
-          {
-            name: 'Warlock Armor',
-            items: [
-              1675393889, // Insigne Shade Cover
-              2513313400, // Insigne Shade Gloves
-              1296628624, // Insigne Shade Robes
-              548581042, // Insigne Shade Boots
-              223783885 // Insigne Shade Bond
-            ]
-          },
-          {
-            name: 'Warlock Ornaments',
-            items: [
-              3909176373, // Praetorian Ornament
-              2543545988, // Praetorian Ornament
-              3439095932, // Praetorian Ornament
-              4091208110, // Praetorian Ornament
-              430065393 // Praetorian Ornament
-            ]
-          },
+          section('Hunter Armor', common.RAID_SOS_ARMOR_HUNTER),
+          section('Hunter Ornaments', common.RAID_SOS_ORNAMENTS_HUNTER),
+
+          section('Titan Armor', common.RAID_SOS_ARMOR_TITAN),
+          section('Titan Ornaments', common.RAID_SOS_ORNAMENTS_TITAN),
+
+          section('Warlock Armor', common.RAID_SOS_ARMOR_WARLOCK),
+          section('Warlock Ornaments', common.RAID_SOS_ORNAMENTS_WARLOCK),
+
           {
             name: 'Extras',
             items: [
@@ -536,21 +480,15 @@ export default ([
         sections: [
           {
             name: 'Hunter Armor',
-            items: [
-
-            ]
+            items: []
           },
           {
             name: 'Titan Armor',
-            items: [
-
-            ]
+            items: []
           },
           {
             name: 'Warlock Armor',
-            items: [
-
-            ]
+            items: []
           },
           {
             name: 'Moments of Triumph',
@@ -572,7 +510,7 @@ export default ([
               2919938481, // Teamwork Dance
               3672748946, // Herald Dance
               1599949358, // Raise the Roof
-              4119095630, // Confident Strut 
+              4119095630, // Confident Strut
               621701973 // Aggressively Affirmative
             ]
           },
@@ -586,21 +524,21 @@ export default ([
               980898614, // Bankjar Shell
               980898608, // Headerstripe Shell
               980898609, // Citrine Sway Shell
-              980898610, // Regality Sphere Shell
+              980898610 // Regality Sphere Shell
             ]
           },
           {
             name: 'Sparrows',
             items: [
               4213271810, // Blacklight Razor
-              4213271811, // Gray Hornet 
+              4213271811, // Gray Hornet
               2298896088, // Memorium Sol
               2298896090, // Orcinus Swath
               2298896091, // Serriform 7
               2298896092, // Junestinger
               2298896093, // Timberwolf
               2298896094, // Sunspear
-              2298896095, // Boltcrackle 
+              2298896095 // Boltcrackle
             ]
           },
           {
@@ -612,9 +550,7 @@ export default ([
           },
           {
             name: 'Emblems',
-            items: [
-              
-            ]
+            items: []
           },
           {
             name: 'Shaders',
@@ -629,7 +565,7 @@ export default ([
               2396888157, // Sudden Squall
               1259278657, // Raging Lepus
               2949664689, // Gray Nitrite
-              1750365155, // Beachheader VI
+              1750365155 // Beachheader VI
             ]
           }
         ]

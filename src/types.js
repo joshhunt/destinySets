@@ -2,14 +2,16 @@
 
 export type ItemHash = number;
 
+export type ItemsList = Array<ItemHash>;
+
 export type SetSection = {|
   name: string,
-  items?: Array<ItemHash>,
+  items?: ItemsList,
   query?: string,
   season?: number,
   bigItems?: boolean,
   type?: 'exoticCatalysts',
-  itemGroups?: Array<Array<ItemHash>>
+  itemGroups?: Array<ItemsList>
 |};
 
 export type DestinySet = {|

@@ -1,6 +1,7 @@
 // @flow
 
 import * as common from './common';
+import { section } from './common';
 import type { SetPage } from '../types';
 
 export default ([
@@ -12,43 +13,26 @@ export default ([
         description:
           'Gear obtained by playing the Leviathan raid and increasing your reputation with Emperor Calus.',
         sections: [
-          {
-            name: 'Weapons',
-            items: [
-              2505533224,
-              3325744914,
-              3906942101,
-              1128225405,
-              3954531357,
-              3380742308,
-              3691881271,
-              1018072983
-            ]
-          },
-          {
-            name: 'Hunter Armor',
-            items: [2013109092, 1960303677, 407863747, 30962015, 3984534842]
-          },
-          {
-            name: 'Hunter Armor - Prestige Mode',
-            items: [2013109093, 1960303676, 407863746, 30962014, 3984534843]
-          },
-          {
-            name: 'Titan Armor',
-            items: [1413589586, 1879942843, 1876645653, 288406317, 574137192]
-          },
-          {
-            name: 'Titan Armor - Prestige Mode',
-            items: [1413589587, 1879942842, 1876645652, 288406316, 574137193]
-          },
-          {
-            name: 'Warlock Armor',
-            items: [2700598111, 2676042150, 3592548938, 2193494688, 3763332443]
-          },
-          {
-            name: 'Warlock Armor - Prestige Mode',
-            items: [2700598110, 2676042151, 3592548939, 2193494689, 3763332442]
-          },
+          section('Weapons', common.RAID_LEVIATHAN_WEAPONS),
+
+          section('Hunter Armor', common.RAID_LEVIATHAN_ARMOR_HUNTER),
+          section(
+            'Hunter Armor - Prestige Mode',
+            common.RAID_LEVIATHAN_ARMOR_PRESTIGE_HUNTER
+          ),
+
+          section('Titan Armor', common.RAID_LEVIATHAN_ARMOR_TITAN),
+          section(
+            'Titan Armor - Prestige Mode',
+            common.RAID_LEVIATHAN_ARMOR_PRESTIGE_TITAN
+          ),
+
+          section('Warlock Armor', common.RAID_LEVIATHAN_ARMOR_WARLOCK),
+          section(
+            'Warlock Armor - Prestige Mode',
+            common.RAID_LEVIATHAN_ARMOR_PRESTIGE_WARLOCK
+          ),
+
           {
             name: 'Emblems',
             items: [
