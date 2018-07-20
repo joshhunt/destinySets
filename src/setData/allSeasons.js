@@ -15,33 +15,24 @@ export default ([
           {
             name: 'Weapons',
             season: 1,
-            items: [
-              2505533224,
-              3325744914,
-              3906942101,
-              1128225405,
-              3954531357,
-              3380742308,
-              3691881271,
-              1018072983
-            ]
+            items: common.RAID_LEVIATHAN_WEAPONS
           },
           {
             name: 'Armor',
             season: 1,
             itemGroups: [
-              [2013109092, 1960303677, 407863747, 30962015, 3984534842], // Hunter
-              [1413589586, 1879942843, 1876645653, 288406317, 574137192], // Titan
-              [2700598111, 2676042150, 3592548938, 2193494688, 3763332443] // Warlock
+              common.RAID_LEVIATHAN_ARMOR_HUNTER,
+              common.RAID_LEVIATHAN_ARMOR_TITAN,
+              common.RAID_LEVIATHAN_ARMOR_WARLOCK
             ]
           },
           {
             name: 'Armor - Prestige Mode',
             season: 1,
             itemGroups: [
-              [2013109093, 1960303676, 407863746, 30962014, 3984534843], // Hunter
-              [1413589587, 1879942842, 1876645652, 288406316, 574137193], // Titan
-              [2700598110, 2676042151, 3592548939, 2193494689, 3763332442] // Warlock
+              common.RAID_LEVIATHAN_ARMOR_PRESTIGE_HUNTER,
+              common.RAID_LEVIATHAN_ARMOR_PRESTIGE_TITAN,
+              common.RAID_LEVIATHAN_ARMOR_PRESTIGE_WARLOCK
             ]
           },
           {
@@ -57,7 +48,7 @@ export default ([
           }
         ]
       },
-      
+
       {
         name: 'Eater of Worlds, Raid Lair',
         description:
@@ -66,27 +57,24 @@ export default ([
           {
             name: 'Weapons',
             season: 2,
-            items: [
-              3886263130, // I Am Alive
-              2707464805 // Zenith of Your Kind
-            ]
+            items: common.RAID_EOW_WEAPONS
           },
           {
             name: 'Armor',
             season: 2,
             itemGroups: [
-              [253344425, 2339720736, 2976612200, 1034660314, 383742277], // Hunter
-              [1991039861, 666883012,  1242139836, 2597529070, 2994007601], // Titan
-              [796914932, 3964287245, 2329031091, 340118991, 239489770] // Warlock
+              common.RAID_EOW_ARMOR_HUNTER,
+              common.RAID_EOW_ARMOR_TITAN,
+              common.RAID_EOW_ARMOR_WARLOCK
             ]
           },
           {
             name: 'Ornaments',
             season: 2,
             itemGroups: [
-              [3346055334, 2519280691, 3179514973, 2899660517, 1928662068], // Hunter Eater of Worlds Ornament
-              [3036703920, 3093970453, 2380365371, 1815512839, 3991114670], // Titan Eater of Worlds Ornament
-              [1397648181, 1575703224, 3163954768, 4135965162, 2837735361] // Warlock Eater of Worlds Ornament
+              common.RAID_EOW_ORNAMENTS_HUNTER,
+              common.RAID_EOW_ORNAMENTS_TITAN,
+              common.RAID_EOW_ORNAMENTS_WARLOCK
             ]
           },
           {
@@ -99,7 +87,7 @@ export default ([
           }
         ]
       },
-      
+
       {
         name: 'Spire of Stars, Raid Lair',
         description:
@@ -108,27 +96,24 @@ export default ([
           {
             name: 'Weapons',
             season: 3,
-            items: [
-              2084611899, // Last of the Legion
-              4288031461 // The Emperor's Envy
-            ]
+            items: common.RAID_SOS_WEAPONS
           },
           {
             name: 'Armor',
             season: 3,
             itemGroups: [
-              [3440648382, 2710517999, 2933666377, 3285121297, 4247935492], // Hunter
-              [855363300, 802557885, 4135228483, 3168183519, 3416932282], // Titan
-              [1675393889, 2513313400, 1296628624, 548581042, 223783885] // Warlock
+              common.RAID_SOS_ARMOR_HUNTER,
+              common.RAID_SOS_ARMOR_TITAN,
+              common.RAID_SOS_ARMOR_WARLOCK
             ]
           },
           {
             name: 'Ornaments',
             season: 3,
             itemGroups: [
-              [215292674, 3849801323, 385347493, 646591613, 3802263800], // Hunter Spire of Stars Ornament
-              [3188290238, 2458159855, 17582153, 3032763153, 1331851268], // Titan Spire of Stars Ornament
-              [3909176373, 2543545988, 3439095932, 4091208110, 430065393] // Warlock Spire of Stars Ornament
+              common.RAID_SOS_ORNAMENTS_HUNTER,
+              common.RAID_SOS_ORNAMENTS_TITAN,
+              common.RAID_SOS_ORNAMENTS_WARLOCK
             ]
           },
           {
@@ -142,7 +127,7 @@ export default ([
           }
         ]
       },
-      
+
       {
         name: 'Iron Banner',
         description:
@@ -896,7 +881,7 @@ export default ([
               631626580, // Speckled Giallo Shell
               631626582, // Riveted Majesty Shell
               631626583 // Open Orchid Shell
-            ],
+            ]
           },
           {
             name: 'Sparrows',
