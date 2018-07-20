@@ -471,12 +471,7 @@ export default ([
           {
             name: 'Weapons',
             season: 2,
-            items: [
-              3393130645, // Positive Outlook
-              2957542878, // Living Memory
-              1927800278, // Eternal Blazon
-              3551104348 // Double-Edged Answer
-            ]
+            items: common.VENDOR_VANGUARD_S2_WEAPONS
           },
           {
             name: 'Armor',
@@ -491,29 +486,18 @@ export default ([
             name: 'Ornaments',
             season: 2,
             itemGroups: [
-              [
-                2795289891, // On the Offense Ornament
-                4188739374, // On the Offense Ornament
-                1409959426, // On the Offense Ornament
-                2951536384, // On the Offense Ornament
-                2541644975 // On the Offense Ornament
-              ],
-
-              [
-                1269036705, // Take Shelter Ornament
-                1776321292, // Take Shelter Ornament
-                1214682004, // Take Shelter Ornament
-                28479854, // Take Shelter Ornament
-                552112621 // Take Shelter Ornament
-              ],
-
-              [
-                2520561932, // Xenos Shore Ornament
-                137367657, // Xenos Shore Ornament
-                2033661183, // Xenos Shore Ornament
-                995614939, // Xenos Shore Ornament
-                2491110586 // Xenos Shore Ornament
-              ]
+              common.VENDOR_VANGUARD_S2_ORNAMENTS_HUNTER,
+              common.VENDOR_VANGUARD_S2_ORNAMENTS_TITAN,
+              common.VENDOR_VANGUARD_S2_ORNAMENTS_WARLOCK
+            ]
+          },
+          {
+            name: 'Ornaments',
+            season: 3,
+            itemGroups: [
+              common.VENDOR_VANGUARD_S3_ORNAMENTS_HUNTER,
+              common.VENDOR_VANGUARD_S3_ORNAMENTS_TITAN,
+              common.VENDOR_VANGUARD_S3_ORNAMENTS_WARLOCK
             ]
           },
           {
@@ -533,64 +517,48 @@ export default ([
           {
             name: 'Weapons',
             season: 1,
-            items: [
-              3336215727, // Martyr's Make
-              4193877020, // Does Not Compute
-              1048266744, // Better Devils
-              1325579289, // Retrofuturist
-              962412079, // Last Perdition
-              4174481098, // Steel Sybil Z-14
-              2660862359, // Gentleman Vagabond
-              1773600468, // Critical Sass
-              2621637518 // Play of the Game
-            ]
+            items: common.VENDOR_CRUCIBLE_S1_WEAPONS
           },
           {
             name: 'Weapons',
             season: 2,
-            items: [
-              1674742470, // Autumn Wind
-              468276817, // Nature of the Beast
-              1084788061, // Swift Solstice
-              2792181427 // Tiebreaker
-            ]
+            items: common.VENDOR_CRUCIBLE_S2_WEAPONS
+          },
+          {
+            name: 'Valor Rewards',
+            season: 3,
+            items: common.VENDOR_CRUCIBLE_S3_VALOR_REWARDS
+          },
+          {
+            name: 'Glory Rewards',
+            season: 3,
+            items: common.VENDOR_CRUCIBLE_S3_GLORY_REWARDS
           },
           {
             name: 'Armor',
             season: 1,
             itemGroups: [
-              [3223280471, 2296691422, 2718495762, 3140634552, 3313736739],
-              [2191401041, 849529384, 2815422368, 1484937602, 1742680797],
-              [1764274932, 636679949, 1333087155, 1307478991, 3538513130]
+              common.VENDOR_CRUCIBLE_S1_ARMOR_HUNTER,
+              common.VENDOR_CRUCIBLE_S1_ARMOR_TITAN,
+              common.VENDOR_CRUCIBLE_S1_ARMOR_WARLOCK
             ]
           },
           {
             name: 'Ornaments',
             season: 2,
             itemGroups: [
-              [
-                2806246104, // Soaring Sword Ornament
-                3460422045, // Soaring Sword Ornament
-                2646135315, // Soaring Sword Ornament
-                337811599, // Soaring Sword Ornament
-                1181382726 // Soaring Sword Ornament
-              ],
-
-              [
-                2908316342, // Phoenix Battle Ornament
-                3955222467, // Phoenix Battle Ornament
-                3440657549, // Phoenix Battle Ornament
-                2685752725, // Phoenix Battle Ornament
-                1617637028 // Phoenix Battle Ornament
-              ],
-
-              [
-                2516513295, // Ankaa Friend Ornament
-                121382562, // Ankaa Friend Ornament
-                2521913126, // Ankaa Friend Ornament
-                3980640404, // Ankaa Friend Ornament
-                36130859 // Ankaa Friend Ornament
-              ]
+              common.VENDOR_CRUCIBLE_S2_ORNAMENTS_HUNTER,
+              common.VENDOR_CRUCIBLE_S2_ORNAMENTS_TITAN,
+              common.VENDOR_CRUCIBLE_S2_ORNAMENTS_WARLOCK
+            ]
+          },
+          {
+            name: 'Ornaments',
+            season: 3,
+            itemGroups: [
+              common.VENDOR_CRUCIBLE_S3_ORNAMENTS_HUNTER,
+              common.VENDOR_CRUCIBLE_S3_ORNAMENTS_TITAN,
+              common.VENDOR_CRUCIBLE_S3_ORNAMENTS_WARLOCK
             ]
           },
           {

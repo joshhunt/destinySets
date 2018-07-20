@@ -354,55 +354,11 @@ export default ([
         name: 'Crucible Engram',
         description: 'Rewards for your efforts in the Crucible.',
         sections: [
-          {
-            name: 'Valor Rewards',
-            items: [
-              3529780349, // The Marine
-              1642781471, // Alchemical Dawn Shell
-              2525626415 // True Valor (Season 3)
-            ]
-          },
-          {
-            name: 'Glory Rewards',
-            items: [
-              2611861926, // Imminent Storm
-              4041111172, // The Button
-              191996029, // Redrix's Claymore
-              3190698551, // Wishbringer
-              2516883975, // Glory and Grandeur
-              2182330181 // True Glory (Season 3)
-            ]
-          },
-          {
-            name: 'Hunter Ornaments',
-            items: [
-              738275137, // Fire-Forged Hunter Head Ornament
-              1576194648, // Fire-Forged Hunter Arms Ornament
-              1058022768, // Fire-Forged Hunter Chest Ornament
-              3906326418, // Fire-Forged Hunter Leg Ornament
-              4238568621 // Fire-Forged Hunter Cloak Ornament
-            ]
-          },
-          {
-            name: 'Titan Ornaments',
-            items: [
-              1217364045, // Fire-Forged Titan Head Ornament
-              1870029884, // Fire-Forged Titan Arm Ornament
-              1131512228, // Fire-Forged Titan Chest Ornament
-              1255838534, // Fire-Forged Titan Leg Ornament
-              1875342329 // Fire-Forged Titan Mark Ornament
-            ]
-          },
-          {
-            name: 'Warlock Ornaments',
-            items: [
-              3999699118, // Fire-Forged Warlock Head Ornament
-              730038303, // Fire-Forged Warlock Arm Ornament
-              699889753, // Fire-Forged Warlock Chest Ornament
-              3946152673, // Fire-Forged Warlock Leg Ornament
-              2438616340 // Fire-Forged Warlock Bond Ornament
-            ]
-          },
+          $('Valor Rewards', common.VENDOR_CRUCIBLE_S3_VALOR_REWARDS),
+          $('Glory Rewards', common.VENDOR_CRUCIBLE_S3_GLORY_REWARDS),
+          $('Hunter Ornaments', common.VENDOR_CRUCIBLE_S3_ORNAMENTS_HUNTER),
+          $('Titan Ornaments', common.VENDOR_CRUCIBLE_S3_ORNAMENTS_TITAN),
+          $('Warlock Ornaments', common.VENDOR_CRUCIBLE_S3_ORNAMENTS_WARLOCK),
 
           {
             name: 'Extras',

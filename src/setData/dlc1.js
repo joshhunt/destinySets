@@ -345,47 +345,10 @@ export default ([
         name: 'Crucible Engram',
         description: 'Rewards for your efforts in the Crucible.',
         sections: [
-          {
-            name: 'Weapons',
-            items: [
-              // Curse of Osiris
-              1674742470, // Autumn Wind
-              468276817, // Nature of the Beast
-              1084788061, // Swift Solstice
-              2792181427 // Tiebreaker
-            ]
-          },
-
-          {
-            name: 'Hunter Ornaments',
-            items: [
-              2806246104, // Soaring Sword Ornament
-              3460422045, // Soaring Sword Ornament
-              2646135315, // Soaring Sword Ornament
-              337811599, // Soaring Sword Ornament
-              1181382726 // Soaring Sword Ornament
-            ]
-          },
-          {
-            name: 'Titan Ornaments',
-            items: [
-              2908316342, // Phoenix Battle Ornament
-              3955222467, // Phoenix Battle Ornament
-              3440657549, // Phoenix Battle Ornament
-              2685752725, // Phoenix Battle Ornament
-              1617637028 // Phoenix Battle Ornament
-            ]
-          },
-          {
-            name: 'Warlock Ornaments',
-            items: [
-              2516513295, // Ankaa Friend Ornament
-              121382562, // Ankaa Friend Ornament
-              2521913126, // Ankaa Friend Ornament
-              3980640404, // Ankaa Friend Ornament
-              36130859 // Ankaa Friend Ornament
-            ]
-          },
+          $('Weapons', common.VENDOR_CRUCIBLE_S2_WEAPONS),
+          $('Hunter Ornaments', common.VENDOR_CRUCIBLE_S2_ORNAMENTS_HUNTER),
+          $('Titan Ornaments', common.VENDOR_CRUCIBLE_S2_ORNAMENTS_TITAN),
+          $('Warlock Ornaments', common.VENDOR_CRUCIBLE_S2_ORNAMENTS_WARLOCK),
           {
             name: 'Shaders',
             items: [

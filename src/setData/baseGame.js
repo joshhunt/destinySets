@@ -571,32 +571,10 @@ export default ([
         name: 'Crucible Engram',
         description: 'Rewards for your efforts in the Crucible.',
         sections: [
-          {
-            name: 'Weapons',
-            items: [
-              3336215727, // Martyr's Make
-              4193877020, // Does Not Compute
-              1048266744, // Better Devils
-              1325579289, // Retrofuturist
-              962412079, // Last Perdition
-              4174481098, // Steel Sybil Z-14
-              2660862359, // Gentleman Vagabond
-              1773600468, // Critical Sass
-              2621637518 // Play of the Game
-            ]
-          },
-          {
-            name: 'Hunter Armor',
-            items: [3223280471, 2296691422, 2718495762, 3140634552, 3313736739]
-          },
-          {
-            name: 'Titan Armor',
-            items: [2191401041, 849529384, 2815422368, 1484937602, 1742680797]
-          },
-          {
-            name: 'Warlock Armor',
-            items: [1764274932, 636679949, 1333087155, 1307478991, 3538513130]
-          },
+          $('Weapons', common.VENDOR_CRUCIBLE_S1_WEAPONS),
+          $('Hunter Armor', common.VENDOR_CRUCIBLE_S1_ARMOR_HUNTER),
+          $('Titan Armor', common.VENDOR_CRUCIBLE_S1_ARMOR_TITAN),
+          $('Warlock Armor', common.VENDOR_CRUCIBLE_S1_ARMOR_WARLOCK),
           {
             name: 'Emblems',
             items: [
