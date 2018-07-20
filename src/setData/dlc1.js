@@ -1,7 +1,7 @@
 // @flow
 
 import * as common from './common';
-import { section } from './common';
+import { section as $ } from './common';
 import type { SetPage } from '../types';
 
 export default ([
@@ -13,16 +13,16 @@ export default ([
         description:
           'Gear obtained by playing the Eater of Worlds raid lair and increasing your reputation with Emperor Calus.',
         sections: [
-          section('Weapons', common.RAID_EOW_WEAPONS),
+          $('Weapons', common.RAID_EOW_WEAPONS),
 
-          section('Hunter Armor', common.RAID_EOW_ARMOR_HUNTER),
-          section('Hunter Ornaments', common.RAID_EOW_ORNAMENTS_HUNTER),
+          $('Hunter Armor', common.RAID_EOW_ARMOR_HUNTER),
+          $('Hunter Ornaments', common.RAID_EOW_ORNAMENTS_HUNTER),
 
-          section('Titan Armor', common.RAID_EOW_ARMOR_TITAN),
-          section('Titan Ornaments', common.RAID_EOW_ORNAMENTS_TITAN),
+          $('Titan Armor', common.RAID_EOW_ARMOR_TITAN),
+          $('Titan Ornaments', common.RAID_EOW_ORNAMENTS_TITAN),
 
-          section('Warlock Armor', common.RAID_EOW_ARMOR_WARLOCK),
-          section('Warlock Ornaments', common.RAID_EOW_ORNAMENTS_WARLOCK),
+          $('Warlock Armor', common.RAID_EOW_ARMOR_WARLOCK),
+          $('Warlock Ornaments', common.RAID_EOW_ORNAMENTS_WARLOCK),
 
           {
             name: 'Extras',
@@ -321,46 +321,10 @@ export default ([
         description:
           'Weapons and armor obtained by carrying out special operations for Zavala.',
         sections: [
-          {
-            name: 'Weapons',
-            items: [
-              // Curse of Osiris
-              3393130645, // Positive Outlook
-              2957542878, // Living Memory
-              1927800278, // Eternal Blazon
-              3551104348 // Double-Edged Answer
-            ]
-          },
-          {
-            name: 'Hunter Ornaments',
-            items: [
-              2795289891, // On the Offense Ornament
-              4188739374, // On the Offense Ornament
-              1409959426, // On the Offense Ornament
-              2951536384, // On the Offense Ornament
-              2541644975 // On the Offense Ornament
-            ]
-          },
-          {
-            name: 'Titan Ornaments',
-            items: [
-              1269036705, // Take Shelter Ornament
-              1776321292, // Take Shelter Ornament
-              1214682004, // Take Shelter Ornament
-              28479854, // Take Shelter Ornament
-              552112621 // Take Shelter Ornament
-            ]
-          },
-          {
-            name: 'Warlock Ornaments',
-            items: [
-              2520561932, // Xenos Shore Ornament
-              137367657, // Xenos Shore Ornament
-              2033661183, // Xenos Shore Ornament
-              995614939, // Xenos Shore Ornament
-              2491110586 // Xenos Shore Ornament
-            ]
-          },
+          $('Weapons', common.VENDOR_VANGUARD_S2_WEAPONS),
+          $('Hunter Ornaments', common.VENDOR_VANGUARD_S2_ORNAMENTS_HUNTER),
+          $('Titan Ornaments', common.VENDOR_VANGUARD_S2_ORNAMENTS_TITAN),
+          $('Warlock Ornaments', common.VENDOR_VANGUARD_S2_ORNAMENTS_WARLOCK),
           {
             name: 'Achievement Emblems',
             items: [

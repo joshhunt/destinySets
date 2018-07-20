@@ -466,19 +466,7 @@ export default ([
           {
             name: 'Weapons',
             season: 1,
-            items: [
-              1644162710, // Origin Story
-              1960218487, // Nameless Midnight
-              1200414607, // The Showrunner
-              3582424018, // Deadpan Delivery
-              3967155859, // The Last Dance
-              1351035691, // Daedalus Code
-              339163900, // Nightshade
-              137879537, // Curtain Call
-              2290863050, // Persuader
-              3445437901, // Main Ingredient
-              2168486467 // Wicked Sister
-            ]
+            items: common.VENDOR_VANGUARD_S1_WEAPONS
           },
           {
             name: 'Weapons',
@@ -494,9 +482,9 @@ export default ([
             name: 'Armor',
             season: 1,
             itemGroups: [
-              [3198744410, 1099472035, 406401261, 3486485973, 3281314016],
-              [3873435116, 3027732901, 1667528443, 3375062567, 24244626],
-              [1540376513, 2378296024, 34846448, 413460498, 3215392301]
+              common.VENDOR_VANGUARD_S1_ARMOR_HUNTER,
+              common.VENDOR_VANGUARD_S1_ARMOR_TITAN,
+              common.VENDOR_VANGUARD_S1_ARMOR_WARLOCK
             ]
           },
           {

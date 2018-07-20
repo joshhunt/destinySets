@@ -1,7 +1,7 @@
 // @flow
 
 import * as common from './common';
-import { section } from './common';
+import { section as $ } from './common';
 import type { SetPage } from '../types';
 
 export default ([
@@ -13,16 +13,16 @@ export default ([
         description:
           'Gear obtained by playing the Spire of Stars raid lair and increasing your reputation with Emperor Calus.',
         sections: [
-          section('Weapons', common.RAID_SOS_WEAPONS),
+          $('Weapons', common.RAID_SOS_WEAPONS),
 
-          section('Hunter Armor', common.RAID_SOS_ARMOR_HUNTER),
-          section('Hunter Ornaments', common.RAID_SOS_ORNAMENTS_HUNTER),
+          $('Hunter Armor', common.RAID_SOS_ARMOR_HUNTER),
+          $('Hunter Ornaments', common.RAID_SOS_ORNAMENTS_HUNTER),
 
-          section('Titan Armor', common.RAID_SOS_ARMOR_TITAN),
-          section('Titan Ornaments', common.RAID_SOS_ORNAMENTS_TITAN),
+          $('Titan Armor', common.RAID_SOS_ARMOR_TITAN),
+          $('Titan Ornaments', common.RAID_SOS_ORNAMENTS_TITAN),
 
-          section('Warlock Armor', common.RAID_SOS_ARMOR_WARLOCK),
-          section('Warlock Ornaments', common.RAID_SOS_ORNAMENTS_WARLOCK),
+          $('Warlock Armor', common.RAID_SOS_ARMOR_WARLOCK),
+          $('Warlock Ornaments', common.RAID_SOS_ORNAMENTS_WARLOCK),
 
           {
             name: 'Extras',
@@ -334,45 +334,10 @@ export default ([
         description:
           'Weapons and armor obtained by carrying out special operations for Zavala.',
         sections: [
-          {
-            name: 'Weapons',
-            items: [
-              819358961, // Spoiler Alert
-              1720373217, // The Permanent Truth
-              1940885628, // Archimedes Truth
-              2171006181 // Service Revolver
-            ]
-          },
-          {
-            name: 'Hunter Ornaments',
-            items: [
-              301260156, // Steadfast Hunter Ornament
-              1697714165, // Steadfast Hunter Ornament
-              2933221739, // Steadfast Hunter Ornament
-              3273836247, // Steadfast Hunter Ornament
-              1672921858 // Steadfast Hunter Ornament
-            ]
-          },
-          {
-            name: 'Titan Ornaments',
-            items: [
-              2170065560, // Steadfast Titan Ornament
-              2633869161, // Steadfast Titan Ornament
-              2942643951, // Steadfast Titan Ornament
-              2925811003, // Steadfast Titan Ornament
-              4189802622 // Steadfast Titan Ornament
-            ]
-          },
-          {
-            name: 'Warlock Ornaments',
-            items: [
-              4075989867, // Steadfast Warlock Ornament
-              2398247002, // Steadfast Warlock Ornament
-              547716782, // Steadfast Warlock Ornament
-              3654718868, // Steadfast Warlock Ornament
-              865811319 // Steadfast Warlock Ornament
-            ]
-          },
+          $('Weapons', common.VENDOR_VANGUARD_S3_WEAPONS),
+          $('Hunter Ornaments', common.VENDOR_VANGUARD_S3_ORNAMENTS_HUNTER),
+          $('Titan Ornaments', common.VENDOR_VANGUARD_S3_ORNAMENTS_TITAN),
+          $('Warlock Ornaments', common.VENDOR_VANGUARD_S3_ORNAMENTS_WARLOCK),
           {
             name: 'Extras',
             items: [

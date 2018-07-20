@@ -1,7 +1,7 @@
 // @flow
 
 import * as common from './common';
-import { section } from './common';
+import { section as $ } from './common';
 import type { SetPage } from '../types';
 
 export default ([
@@ -13,22 +13,22 @@ export default ([
         description:
           'Gear obtained by playing the Leviathan raid and increasing your reputation with Emperor Calus.',
         sections: [
-          section('Weapons', common.RAID_LEVIATHAN_WEAPONS),
+          $('Weapons', common.RAID_LEVIATHAN_WEAPONS),
 
-          section('Hunter Armor', common.RAID_LEVIATHAN_ARMOR_HUNTER),
-          section(
+          $('Hunter Armor', common.RAID_LEVIATHAN_ARMOR_HUNTER),
+          $(
             'Hunter Armor - Prestige Mode',
             common.RAID_LEVIATHAN_ARMOR_PRESTIGE_HUNTER
           ),
 
-          section('Titan Armor', common.RAID_LEVIATHAN_ARMOR_TITAN),
-          section(
+          $('Titan Armor', common.RAID_LEVIATHAN_ARMOR_TITAN),
+          $(
             'Titan Armor - Prestige Mode',
             common.RAID_LEVIATHAN_ARMOR_PRESTIGE_TITAN
           ),
 
-          section('Warlock Armor', common.RAID_LEVIATHAN_ARMOR_WARLOCK),
-          section(
+          $('Warlock Armor', common.RAID_LEVIATHAN_ARMOR_WARLOCK),
+          $(
             'Warlock Armor - Prestige Mode',
             common.RAID_LEVIATHAN_ARMOR_PRESTIGE_WARLOCK
           ),
@@ -502,37 +502,10 @@ export default ([
         description:
           'Weapons and armor obtained by carrying out special operations for Zavala.',
         sections: [
-          {
-            name: 'Weapons',
-            items: [
-              1644162710, // Origin Story
-              1960218487, // Nameless Midnight
-              1200414607, // The Showrunner
-              3582424018, // Deadpan Delivery
-              3967155859, // The Last Dance
-              1351035691, // Daedalus Code
-              339163900, // Nightshade
-              137879537, // Curtain Call
-              2290863050, // Persuader
-              3445437901, // Main Ingredient
-              2168486467 // Wicked Sister
-            ]
-          },
-
-          {
-            name: 'Hunter Armor',
-            items: [3198744410, 1099472035, 406401261, 3486485973, 3281314016]
-          },
-
-          {
-            name: 'Titan Armor',
-            items: [3873435116, 3027732901, 1667528443, 3375062567, 24244626]
-          },
-
-          {
-            name: 'Warlock Armor',
-            items: [1540376513, 2378296024, 34846448, 413460498, 3215392301]
-          },
+          $('Weapons', common.VENDOR_VANGUARD_S1_WEAPONS),
+          $('Hunter Armor', common.VENDOR_VANGUARD_S1_ARMOR_HUNTER),
+          $('Titan Armor', common.VENDOR_VANGUARD_S1_ARMOR_TITAN),
+          $('Warlock Armor', common.VENDOR_VANGUARD_S1_ARMOR_WARLOCK),
           {
             name: 'Emblems',
             items: [
