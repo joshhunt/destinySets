@@ -13,6 +13,7 @@ const componentProfiles = 100; // eslint-disable-line
 const componentVendorReceipts = 101; // eslint-disable-line
 const componentProfileInventories = 102; // eslint-disable-line
 const componentProfileCurrencies = 103; // eslint-disable-line
+const componentProfileProgressions = 104; // eslint-disable-line
 const componentCharacters = 200; // eslint-disable-line
 const componentCharacterInventories = 201; // eslint-disable-line
 const componentCharacterProgressions = 202; // eslint-disable-line
@@ -41,7 +42,9 @@ const PROFILE_COMPONENTS = [
   componentCharacterEquipment,
   componentItemObjectives,
   componentItemSockets,
-  componentKiosks
+  componentKiosks,
+  componentProfileProgressions,
+  componentCharacterProgressions
 ];
 
 const VENDOR_COMPONENTS = [

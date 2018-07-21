@@ -1,10 +1,14 @@
 export default function getItemExtraInfo(item, _itemInventoryEntry) {
   const itemInventoryEntry = _itemInventoryEntry || {
-    instances: [],
+    instances: [{}],
     obtained: false
   };
 
   const extraInfo = [];
+
+  if (itemInventoryEntry.instances[0].location === 'progressionChecklist') {
+    return ['Unlocked in checklist (beta)'];
+  }
 
   itemInventoryEntry.dismantled
     ? extraInfo.push('Dismantled')

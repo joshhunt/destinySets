@@ -1,5 +1,5 @@
 import { createSelector } from 'reselect';
-import { difference } from 'lodash';
+import { difference, toPairs, keyBy } from 'lodash';
 import fp from 'lodash/fp';
 
 import {
@@ -13,6 +13,7 @@ export const manualInventorySelector = state => state.app.manualInventory;
 export const itemDefsSelector = state => state.definitions.itemDefs;
 export const objectiveDefsSelector = state => state.definitions.objectiveDefs;
 export const statDefsSelector = state => state.definitions.statDefs;
+export const checklistDefsSelector = state => state.definitions.checklistDefs;
 
 const baseXurItemsSelector = state => state.xur.items;
 const profileSelector = state => state.profile.profile;
@@ -115,16 +116,90 @@ export const currentInventorySelector = createSelector(
   }
 );
 
+function inventoryFromChecklist(checklistDefs, checklist) {
+  const checklistDef = checklistDefs[PROFILE_CHECKLIST_TEST];
+  const checklistDefEntries = keyBy(checklistDef.entries, x => x.hash);
+  const inventory = {};
+
+  toPairs(checklist).forEach(([checklistItemHash, isUnlocked]) => {
+    if (isUnlocked) {
+      const checklistEntryDef = checklistDefEntries[checklistItemHash];
+      const itemHash = checklistEntryDef && checklistEntryDef.itemHash; // check this for the correct itemHash
+      if (itemHash) {
+        inventory[itemHash] = true;
+      }
+    }
+  });
+
+  return inventory;
+}
+
+// const PROFILE_CHECKLIST = 3393554306;
+const PROFILE_CHECKLIST_TEST = 365218222;
+const CHARACTER_CHECKLIST = 3246761912;
+
+export const checklistInventorySelector = createSelector(
+  checklistDefsSelector,
+  profileSelector,
+  (checklistDefs, profile) => {
+    if (!(checklistDefs && profile)) {
+      return {};
+    }
+
+    let inventory = {};
+
+    const profileChecklist =
+      profile.profileProgression.data.checklists[PROFILE_CHECKLIST_TEST];
+
+    const characterChecklists = Object.values(
+      profile.characterProgressions.data
+    )
+      .map(x => x.checklists[CHARACTER_CHECKLIST])
+      .filter(Boolean);
+
+    if (profileChecklist) {
+      inventory = {
+        ...inventory,
+        ...inventoryFromChecklist(checklistDefs, profileChecklist)
+      };
+    }
+
+    const characterInventory = characterChecklists.reduce((acc, checklist) => {
+      return {
+        ...acc,
+        ...inventoryFromChecklist(checklistDefs, checklist)
+      };
+    }, {});
+
+    return { ...characterInventory, ...inventory };
+  }
+);
+
 export const inventorySelector = createSelector(
   currentInventorySelector,
   cloudInventorySelector,
   manualInventorySelector,
-  (currentInventory, cloudInventory, manualInventory) => {
+  checklistInventorySelector,
+  (currentInventory, cloudInventory, manualInventory, checklistInventory) => {
     if (!currentInventory) {
       return currentInventory;
     }
 
     const inventory = { ...currentInventory };
+
+    console.log('checklistInventory:', checklistInventory);
+
+    if (checklistInventory) {
+      Object.keys(checklistInventory).forEach(itemHash => {
+        if (!inventory[itemHash]) {
+          inventory[itemHash] = {
+            itemHash,
+            dismantled: true,
+            instances: [{ location: 'progressionChecklist' }]
+          };
+        }
+      });
+    }
 
     if (cloudInventory) {
       const deletedItems = difference(

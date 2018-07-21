@@ -8,7 +8,8 @@ import {
   setVendorDefs,
   setItemDefs,
   setObjectiveDefs,
-  setStatDefs
+  setStatDefs,
+  setChecklistDefs
 } from 'app/store/definitions';
 
 import * as ls from 'app/lib/ls';
@@ -76,12 +77,14 @@ class Inventory extends Component {
       setVendorDefs,
       setStatDefs,
       setItemDefs,
-      setObjectiveDefs
+      setObjectiveDefs,
+      setChecklistDefs
     } = this.props;
 
     getDefinition('DestinyVendorDefinition', lang).then(setVendorDefs);
     getDefinition('DestinyStatDefinition', lang).then(setStatDefs);
     getDefinition('DestinyObjectiveDefinition', lang).then(setObjectiveDefs);
+    getDefinition('DestinyChecklistDefinition', lang).then(setChecklistDefs);
 
     const args = this.props.location.query.fullItemDefs
       ? ['DestinyInventoryItemDefinition', lang]
@@ -174,6 +177,7 @@ const mapDispatchToActions = {
   setVendorDefs,
   setItemDefs,
   setObjectiveDefs,
+  setChecklistDefs,
   setStatDefs,
   setFilterItem,
   removeTrackedItem
