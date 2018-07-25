@@ -121,9 +121,7 @@ export const currentInventorySelector = createSelector(
   }
 );
 
-function inventoryFromChecklist(checklistDefs, checklist) {
-  const checklistDef = checklistDefs[CHECKLIST_PROFILE_COLLECTIONS];
-
+function inventoryFromChecklist(checklistDef, checklist) {
   if (!checklistDef) {
     return {};
   }
@@ -168,19 +166,29 @@ export const checklistInventorySelector = createSelector(
       .map(x => x.checklists[CHECKLIST_CHARACTER_COLLECTIONS])
       .filter(Boolean);
 
+    console.log({ characterChecklists });
+
     if (profileChecklist) {
       inventory = {
         ...inventory,
-        ...inventoryFromChecklist(checklistDefs, profileChecklist)
+        ...inventoryFromChecklist(
+          checklistDefs[CHECKLIST_PROFILE_COLLECTIONS],
+          profileChecklist
+        )
       };
     }
 
     const characterInventory = characterChecklists.reduce((acc, checklist) => {
       return {
         ...acc,
-        ...inventoryFromChecklist(checklistDefs, checklist)
+        ...inventoryFromChecklist(
+          checklistDefs[CHECKLIST_CHARACTER_COLLECTIONS],
+          checklist
+        )
       };
     }, {});
+
+    console.log({ characterInventory });
 
     return { ...characterInventory, ...inventory };
   }
@@ -197,8 +205,6 @@ export const inventorySelector = createSelector(
     }
 
     const inventory = { ...currentInventory };
-
-    console.log('checklistInventory:', checklistInventory);
 
     if (checklistInventory) {
       Object.keys(checklistInventory).forEach(itemHash => {
