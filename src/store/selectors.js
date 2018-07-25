@@ -6,7 +6,12 @@ import {
   inventoryFromProfile,
   objectivesFromProfile
 } from 'app/lib/getFromProfile';
-import { NUMERICAL_STATS, STAT_BLACKLIST } from 'app/lib/destinyEnums';
+import {
+  NUMERICAL_STATS,
+  STAT_BLACKLIST,
+  CHECKLIST_PROFILE_COLLECTIONS,
+  CHECKLIST_CHARACTER_COLLECTIONS
+} from 'app/lib/destinyEnums';
 
 export const cloudInventorySelector = state => state.app.cloudInventory;
 export const manualInventorySelector = state => state.app.manualInventory;
@@ -117,7 +122,7 @@ export const currentInventorySelector = createSelector(
 );
 
 function inventoryFromChecklist(checklistDefs, checklist) {
-  const checklistDef = checklistDefs[PROFILE_CHECKLIST_TEST];
+  const checklistDef = checklistDefs[CHECKLIST_PROFILE_COLLECTIONS];
   const checklistDefEntries = keyBy(checklistDef.entries, x => x.hash);
   const inventory = {};
 
@@ -134,10 +139,6 @@ function inventoryFromChecklist(checklistDefs, checklist) {
   return inventory;
 }
 
-// const PROFILE_CHECKLIST = 3393554306;
-const PROFILE_CHECKLIST_TEST = 365218222;
-const CHARACTER_CHECKLIST = 3246761912;
-
 export const checklistInventorySelector = createSelector(
   checklistDefsSelector,
   profileSelector,
@@ -149,12 +150,12 @@ export const checklistInventorySelector = createSelector(
     let inventory = {};
 
     const profileChecklist =
-      profile.profileProgression.data.checklists[PROFILE_CHECKLIST_TEST];
+      profile.profileProgression.data.checklists[CHECKLIST_PROFILE_COLLECTIONS];
 
     const characterChecklists = Object.values(
       profile.characterProgressions.data
     )
-      .map(x => x.checklists[CHARACTER_CHECKLIST])
+      .map(x => x.checklists[CHECKLIST_CHARACTER_COLLECTIONS])
       .filter(Boolean);
 
     if (profileChecklist) {

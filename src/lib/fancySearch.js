@@ -187,6 +187,21 @@ export const fancySearchFns = {
 export const fancySearchTerms = Object.keys(fancySearchFns);
 
 export default function fancySearch(search, defs, opts = { hashOnly: false }) {
+  if (search === 'special:tempCollections') {
+    if (defs.checklist) {
+      const profileChecklist = defs.checklist.find(
+        d => d.hash === enums.CHECKLIST_PROFILE_COLLECTIONS
+      );
+
+      if (profileChecklist) {
+        const items = profileChecklist.entries.map(d => d.itemHash);
+        return opts.hashOnly
+          ? items
+          : items.map(h => defs.item.find(d => d.hash === h));
+      }
+    }
+  }
+
   const queries = search.split(' ').filter(s => s.includes(':'));
   const filteredItems = queries.reduce((items, query) => {
     const searchFunc = fancySearchFns[query];

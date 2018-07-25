@@ -70,23 +70,33 @@ function filterItem(item, inventory, filters) {
   return false;
 }
 
-function query(queryTerm, itemDefsArray) {
+function query(itemDefsArray, checklistDefsArray, queryTerm) {
   if (itemDefsArray.length === 0) {
     return [];
   }
 
-  return fancySearch(queryTerm, { item: itemDefsArray });
+  const results = fancySearch(queryTerm, {
+    item: itemDefsArray,
+    checklist: checklistDefsArray
+  });
+
+  return (results || []).filter(Boolean);
 }
 
 const filtersSelector = state => state.app.filters;
 const propsSetDataSelector = (state, props) => props.route.setData;
 const itemDefsSelector = state => state.definitions.itemDefs;
+const checklistDefsSelector = state => state.definitions.checklistDefs;
 
 const setDataSelector = createSelector(
   itemDefsSelector,
+  checklistDefsSelector,
   propsSetDataSelector,
-  (itemDefs, setData) => {
+  (itemDefs, checklistDefs, setData) => {
     const itemDefsArray = Object.values(itemDefs || {});
+    const checklistDefsArray = Object.values(checklistDefs || {});
+
+    const q = query.bind(null, itemDefsArray, checklistDefsArray);
 
     const newSetData = setData.map(group => {
       const sets = group.sets.map(_set => {
@@ -95,7 +105,7 @@ const setDataSelector = createSelector(
         if (set.query) {
           set = {
             ...set,
-            sections: sortItems(query(set.query, itemDefsArray))
+            sections: sortItems(q(set.query))
           };
         }
 
@@ -103,9 +113,7 @@ const setDataSelector = createSelector(
           let section = { ..._section };
 
           if (section.query) {
-            const queriedItems = query(section.query, itemDefsArray).map(
-              item => item.hash
-            );
+            const queriedItems = q(section.query).map(item => item.hash);
             section = { ...section, items: queriedItems };
           }
 

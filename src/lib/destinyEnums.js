@@ -6,6 +6,15 @@ export const NO_CLASS = 3;
 export const FILTER_SHOW_COLLECTED = 'showCollected';
 export const FILTER_SHOW_PS4_EXCLUSIVES = 'ps4Exclusives';
 
+const testChecklists = false;
+
+const _CHECKLIST_PROFILE_COLLECTIONS = 3393554306;
+const CHECKLIST_SLEEPER_NODES = 365218222;
+export const CHECKLIST_PROFILE_COLLECTIONS = testChecklists
+  ? CHECKLIST_SLEEPER_NODES
+  : _CHECKLIST_PROFILE_COLLECTIONS;
+export const CHECKLIST_CHARACTER_COLLECTIONS = 3246761912;
+
 // itemCategoryHashes
 export const CLASS_ITEMS = 49;
 export const WEAPON = 1;
