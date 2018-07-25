@@ -13,7 +13,6 @@ export type SetSection = {|
   season?: number,
   bigItems?: boolean,
   itemType?: ItemType,
-  sectionType?: 'tempCollection',
   itemGroups?: Array<ItemsList>
 |};
 

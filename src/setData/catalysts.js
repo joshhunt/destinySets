@@ -14,7 +14,7 @@ export default ([
         sections: [
           {
             name: 'Weapons',
-            type: 'exoticCatalysts',
+            itemType: 'exoticCatalysts',
             items: [
               2907129556, // Sturm
               2208405142, // Telesto
