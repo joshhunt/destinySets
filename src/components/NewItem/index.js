@@ -114,6 +114,7 @@ export default class Item extends Component {
           className,
           styles.root,
           inventoryEntry && inventoryEntry.obtained && styles.obtained,
+          inventoryEntry && inventoryEntry.checklisted && styles.checklisted,
           inventoryEntry &&
             (inventoryEntry.dismantled || inventoryEntry.manuallyObtained) &&
             styles.dismantled

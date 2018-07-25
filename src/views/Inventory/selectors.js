@@ -43,6 +43,7 @@ function filterItem(item, inventory, filters) {
       inventoryEntry &&
       (inventoryEntry.obtained ||
         inventoryEntry.dismantled ||
+        inventoryEntry.checklisted ||
         inventoryEntry.manuallyObtained)
     ) {
       return false;

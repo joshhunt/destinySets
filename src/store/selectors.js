@@ -205,7 +205,7 @@ export const inventorySelector = createSelector(
         if (!inventory[itemHash]) {
           inventory[itemHash] = {
             itemHash,
-            dismantled: true,
+            checklisted: true,
             instances: [{ location: 'progressionChecklist' }]
           };
         }
