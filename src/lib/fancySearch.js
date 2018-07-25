@@ -186,19 +186,46 @@ export const fancySearchFns = {
 
 export const fancySearchTerms = Object.keys(fancySearchFns);
 
+function itemsFromChecklistDefs(checklistDef, hashOnly) {
+  if (!checklistDef) {
+    return [];
+  }
+
+  return checklistDef.entries.map(d => d.itemHash);
+}
+
+function findOfHash(defsList, hash) {
+  return defsList.find(d => d.hash === hash);
+}
+
 export default function fancySearch(search, defs, opts = { hashOnly: false }) {
   if (search === 'special:tempCollections') {
     if (defs.checklist) {
-      const profileChecklist = defs.checklist.find(
-        d => d.hash === enums.CHECKLIST_PROFILE_COLLECTIONS
+      const profileChecklist = findOfHash(
+        defs.checklist,
+        enums.CHECKLIST_PROFILE_COLLECTIONS
       );
 
-      if (profileChecklist) {
-        const items = profileChecklist.entries.map(d => d.itemHash);
-        return opts.hashOnly
-          ? items
-          : items.map(h => defs.item.find(d => d.hash === h));
-      }
+      const characterChecklist = findOfHash(
+        defs.checklist,
+        enums.CHECKLIST_CHARACTER_COLLECTIONS
+      );
+
+      const profileItems = itemsFromChecklistDefs(
+        profileChecklist,
+        opts.hashOnly
+      );
+
+      const characterItems = itemsFromChecklistDefs(
+        characterChecklist,
+        opts.hashOnly
+      );
+
+      const allItems = [...profileItems, ...characterItems];
+
+      return opts.hashOnly
+        ? allItems
+        : allItems.map(h => defs.item.find(d => d.hash === h));
     }
   }
 
