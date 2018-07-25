@@ -21,7 +21,12 @@ export default class AppRouter extends Component {
           <Route component={App}>
             <Route path="/debug" component={Debug} />
 
-            <Route path="/" component={Inventory} setData={sets.allSeasons} />
+            <Route
+              path="/"
+              component={Inventory}
+              setData={sets.allSeasons}
+              showCollectionsPromo
+            />
 
             <Route
               path="/all-seasons"

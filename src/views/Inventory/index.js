@@ -141,9 +141,17 @@ class Inventory extends Component {
           <div className={styles.promo}>
             <p>
               This is an experimental preview of the items that will be marked
-              off in Collections when Forsaken drops. Solstice of Hero's items
-              may not appear in the list, but they will be counted when Forsaken
-              drops.
+              off in Collections when Forsaken drops. Some items, like S3
+              Faction Rally, Iron Banner, and Solstice of Heroes gear may not
+              appear in the list or as collected, but they will be counted when
+              Forsaken drops. For more info,{' '}
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://github.com/Bungie-net/api/issues/559#issuecomment-407541681"
+              >
+                see this thread
+              </a>.
             </p>
           </div>
         )}
