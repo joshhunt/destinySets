@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router';
 import { connect } from 'react-redux';
 
 import { setFilterItem, removeTrackedItem } from 'app/store/reducer';
@@ -106,7 +107,7 @@ class Inventory extends Component {
   };
 
   render() {
-    const { filters, filteredSetData, trackedItems } = this.props;
+    const { filters, filteredSetData, trackedItems, route } = this.props;
     const { itemTooltip, itemModal } = this.state;
     const noUi = (filteredSetData[0] || {}).noUi;
 
@@ -118,6 +119,33 @@ class Inventory extends Component {
             filters={filters}
             setFilterItem={this.setFilterItem}
           />
+        )}
+
+        {route.showCollectionsPromo && (
+          <div className={styles.promo}>
+            <p>
+              Check out the experimental Collections page for a preview of the
+              items have been marked off for the upcoming Collections in
+              Forsaken
+            </p>
+
+            <p>
+              <Link className={styles.button} to="/collections">
+                Visit Collections
+              </Link>
+            </p>
+          </div>
+        )}
+
+        {route.isCollections && (
+          <div className={styles.promo}>
+            <p>
+              This is an experimental preview of the items that will be marked
+              off in Collections when Forsaken drops. Solstice of Hero's items
+              may not appear in the list, but they will be counted when Forsaken
+              drops.
+            </p>
+          </div>
         )}
 
         {filteredSetData.map(({ sets, noUi, slug, name }, index) => (

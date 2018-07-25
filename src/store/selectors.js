@@ -123,6 +123,11 @@ export const currentInventorySelector = createSelector(
 
 function inventoryFromChecklist(checklistDefs, checklist) {
   const checklistDef = checklistDefs[CHECKLIST_PROFILE_COLLECTIONS];
+
+  if (!checklistDef) {
+    return {};
+  }
+
   const checklistDefEntries = keyBy(checklistDef.entries, x => x.hash);
   const inventory = {};
 

@@ -50,7 +50,7 @@ export default class AppRouter extends Component {
               path="/collections"
               component={Inventory}
               setData={sets.collections}
-              refreshOnInterval
+              isCollections
             />
 
             <Route
@@ -63,6 +63,7 @@ export default class AppRouter extends Component {
               path="/all-items"
               component={Inventory}
               setData={sets.allItems}
+              showCollectionsPromo
             />
 
             <Route
