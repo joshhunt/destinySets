@@ -1,5 +1,5 @@
 import { createSelector } from 'reselect';
-import { difference, toPairs, keyBy } from 'lodash';
+import { difference, toPairs, keyBy, get } from 'lodash';
 import fp from 'lodash/fp';
 
 import {
@@ -149,8 +149,13 @@ export const checklistInventorySelector = createSelector(
 
     let inventory = {};
 
-    const profileChecklist =
-      profile.profileProgression.data.checklists[CHECKLIST_PROFILE_COLLECTIONS];
+    const checklists = get(profile, 'profileProgression.data.checklists');
+
+    if (!checklists) {
+      return {};
+    }
+
+    const profileChecklist = checklists[CHECKLIST_PROFILE_COLLECTIONS];
 
     const characterChecklists = Object.values(
       profile.characterProgressions.data
