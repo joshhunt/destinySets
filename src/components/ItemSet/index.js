@@ -51,7 +51,7 @@ function ItemSet({ className, inventory, itemDefs, setPopper, setModal, set }) {
                 <div className={styles.itemList} key={index2}>
                   {itemList.map(itemHash => {
                     const ItemComponent =
-                      ITEM_TYPE_COMPONENTS[section.type] || Item;
+                      ITEM_TYPE_COMPONENTS[section.itemType] || Item;
                     return (
                       <ItemComponent
                         key={itemHash}
