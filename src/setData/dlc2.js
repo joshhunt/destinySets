@@ -488,7 +488,7 @@ export default ([
           },
           {
             name: 'Hunter Ornaments',
-            items: [
+            itemsGroups: [
               [
                 3820835868, // Solstice Mask (Scorched)
                 880745877, // Solstice Grasps (Scorched)
@@ -507,7 +507,7 @@ export default ([
           },
           {
             name: 'Titan Ornaments',
-            items: [
+            itemsGroups: [
               [
                 374780030, // Solstice Helm (Scorched)
                 3898143407, // Solstice Gauntlets (Scorched)
@@ -528,7 +528,7 @@ export default ([
           },
           {
             name: 'Warlock Ornaments',
-            items: [
+            itemsGroups: [
               [
                 1283615405, // Solstice Hood (Scorched)
                 1936281116, // Solstice Gloves (Scorched)
