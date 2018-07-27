@@ -410,107 +410,139 @@ export default ([
           },
           {
             name: 'Hunter Armor',
-            items: [
-              1506728251, // Solstice Mask (Scorched)
-              3007586538, // Solstice Grasps (Scorched)
-              780038942, // Solstice Vest (Scorched) 
-              2046798468, // Solstice Strides (Scorched)
-              109666087, // Solstice Cloak (Scorched)
-              2065460339, // Solstice Mask (Rekindled) 
-              3853434114, // Solstice Grasps (Rekindled)
-              2319743206, // Solstice Vest (Rekindled)
-              1644189372, // Solstice Strides (Rekindled)
-              2637837647, // Solstice Cloak (Rekindled)
-              622966241, // Solstice Mask (Resplendent)
-              1460885752, // Solstice Grasps (Resplendent)
-              222565136, // Solstice Vest (Resplendent)
-              3791120690, // Solstice Strides (Resplendent)
-              3444687693 // Solstice Cloak (Resplendent)
+            itemsGroups: [
+              [
+                1506728251, // Solstice Mask (Scorched)
+                3007586538, // Solstice Grasps (Scorched)
+                780038942, // Solstice Vest (Scorched) 
+                2046798468, // Solstice Strides (Scorched)
+                109666087 // Solstice Cloak (Scorched)
+              ],
+              [
+                2065460339, // Solstice Mask (Rekindled) 
+                3853434114, // Solstice Grasps (Rekindled)
+                2319743206, // Solstice Vest (Rekindled)
+                1644189372, // Solstice Strides (Rekindled)
+                2637837647 // Solstice Cloak (Rekindled)
+              ],
+              [
+                622966241, // Solstice Mask (Resplendent)
+                1460885752, // Solstice Grasps (Resplendent)
+                222565136, // Solstice Vest (Resplendent)
+                3791120690, // Solstice Strides (Resplendent)
+                3444687693 // Solstice Cloak (Resplendent)
+              ]
             ]
           },
           {
             name: 'Titan Armor',
-            items: [
-              1174021263, // Solstice Helm (Scorched)
-              3329153302, // Solstice Gauntlets (Scorched)
-              1225396570, // Solstice Plate (Scorched)
-              246568432, // Solstice Greaves (Scorched)
-              873850027, // Solstice Mark (Scorched)
-              2897466191, // Solstice Helm (Rekindled)
-              757630934, // Solstice Gauntlets (Rekindled)
-              1021217306, // Solstice Plate (Rekindled)
-              1969910192, // Solstice Greaves (Rekindled)
-              245110123, // Solstice Mark (Rekindled)
-              3915635973, // Solstice Helm (Resplendent)
-              401345492, // Solstice Gauntlets (Resplendent)
-              512463852, // Solstice Plate (Resplendent)
-              647507422, // Solstice Greaves (Resplendent)
-              3211222305 // Solstice Mark (Resplendent)
+            itemsGroups: [
+              [
+                1174021263, // Solstice Helm (Scorched)
+                3329153302, // Solstice Gauntlets (Scorched)
+                1225396570, // Solstice Plate (Scorched)
+                246568432, // Solstice Greaves (Scorched)
+                873850027 // Solstice Mark (Scorched)
+              ],
+              [
+                2897466191, // Solstice Helm (Rekindled)
+                757630934, // Solstice Gauntlets (Rekindled)
+                1021217306, // Solstice Plate (Rekindled)
+                1969910192, // Solstice Greaves (Rekindled)
+                245110123 // Solstice Mark (Rekindled)
+              ],
+              [
+                3915635973, // Solstice Helm (Resplendent)
+                401345492, // Solstice Gauntlets (Resplendent)
+                512463852, // Solstice Plate (Resplendent)
+                647507422, // Solstice Greaves (Resplendent)
+                3211222305 // Solstice Mark (Resplendent)
+              ]
             ]
           },
           {
             name: 'Warlock Armor',
-            items: [
-              2147433548, // Solstice Hood (Scorched)
-              1301731333, // Solstice Gloves (Scorched)
-              3101330395, // Solstice Robes (Scorched)
-              1224603527, // Solstice Boots (Scorched)
-              1841030642, // Solstice Bond (Scorched)
-              2274492816, // Solstice Hood (Rekindled)
-              2030596705, // Solstice Gloves (Rekindled)
-              796635575, // Solstice Robes (Rekindled)
-              3525545299, // Solstice Boots (Rekindled)
-              2924954886, // Solstice Bond (Rekindled)
-              545021994, // Solstice Hood (Resplendent)
-              550583155, // Solstice Gloves (Resplendent)
-              2158678429, // Solstice Robes (Resplendent)
-              285537093, // Solstice Boots (Resplendent)
-              3620666320, // Solstice Bond (Resplendent)
+            itemsGroups: [
+              [
+                2147433548, // Solstice Hood (Scorched)
+                1301731333, // Solstice Gloves (Scorched)
+                3101330395, // Solstice Robes (Scorched)
+                1224603527, // Solstice Boots (Scorched)
+                1841030642 // Solstice Bond (Scorched)
+              ],
+              [
+                2274492816, // Solstice Hood (Rekindled)
+                2030596705, // Solstice Gloves (Rekindled)
+                796635575, // Solstice Robes (Rekindled)
+                3525545299, // Solstice Boots (Rekindled)
+                2924954886 // Solstice Bond (Rekindled)
+              ],
+              [
+                545021994, // Solstice Hood (Resplendent)
+                550583155, // Solstice Gloves (Resplendent)
+                2158678429, // Solstice Robes (Resplendent)
+                285537093, // Solstice Boots (Resplendent)
+                3620666320 // Solstice Bond (Resplendent)
+              ],
             ]
           },
           {
             name: 'Hunter Ornaments',
             items: [
-              3820835868, // Solstice Mask (Scorched)
-              880745877, // Solstice Grasps (Scorched)
-              3736041099, // Solstice Vest (Scorched)
-              2922902263, // Solstice Strides (Scorched)
-              2517318050, // Solstice Cloak (Scorched)
-              4154821248, // Solstice Mask (Rekindled)
-              1720894545, // Solstice Grasps (Rekindled)
-              1632954375, // Solstice Vest (Rekindled)
-              1552044323, // Solstice Strides (Rekindled)
-              2814383126 // Solstice Cloak (Rekindled)
+              [
+                3820835868, // Solstice Mask (Scorched)
+                880745877, // Solstice Grasps (Scorched)
+                3736041099, // Solstice Vest (Scorched)
+                2922902263, // Solstice Strides (Scorched)
+                2517318050 // Solstice Cloak (Scorched)
+              ],
+              [
+                 4154821248, // Solstice Mask (Rekindled)
+                1720894545, // Solstice Grasps (Rekindled)
+                1632954375, // Solstice Vest (Rekindled)
+                1552044323, // Solstice Strides (Rekindled)
+                2814383126 // Solstice Cloak (Rekindled)
+              ]
             ]
           },
           {
             name: 'Titan Ornaments',
             items: [
-              374780030, // Solstice Helm (Scorched)
-              3898143407, // Solstice Gauntlets (Scorched)
-              1860355337, // Solstice Plate (Scorched)
-              4048186065, // Solstice Greaves (Scorched)
-              3640658628, // Solstice Mark (Scorched)
-              3916608434, // Solstice Helm (Rekindled)
-              87994267, // Solstice Gauntlets (Rekindled)
-              3908760309, // Solstice Plate (Rekindled)
-              3257562381, // Solstice Greaves (Rekindled)
-              2989132488 // Solstice Mark (Rekindled)
+              [
+                374780030, // Solstice Helm (Scorched)
+                3898143407, // Solstice Gauntlets (Scorched)
+                1860355337, // Solstice Plate (Scorched)
+                4048186065, // Solstice Greaves (Scorched)
+                3640658628 // Solstice Mark (Scorched)
+              ],
+              [
+                3916608434, // Solstice Helm (Rekindled)
+                87994267, // Solstice Gauntlets (Rekindled)
+                3908760309, // Solstice Plate (Rekindled)
+                3257562381, // Solstice Greaves (Rekindled)
+                2989132488 // Solstice Mark (Rekindled)
+              ]
+              
+              
             ]
           },
           {
             name: 'Warlock Ornaments',
             items: [
-              1283615405, // Solstice Hood (Scorched)
-              1936281116, // Solstice Gloves (Scorched)
-              2266517764, // Solstice Robes (Scorched)
-              939209126, // Solstice Boots (Scorched)
-              3010244697, // Solstice Bond (Scorched)
-              2163922573, // Solstice Hood (Rekindled)
-              2816485244, // Solstice Gloves (Rekindled)
-              3840083172, // Solstice Robes (Rekindled)
-              1819413126, // Solstice Boots (Rekindled)
-              713403449 // Solstice Bond (Rekindled)
+              [
+                1283615405, // Solstice Hood (Scorched)
+                1936281116, // Solstice Gloves (Scorched)
+                2266517764, // Solstice Robes (Scorched)
+                939209126, // Solstice Boots (Scorched)
+                3010244697 // Solstice Bond (Scorched)
+              ],
+              [
+                2163922573, // Solstice Hood (Rekindled)
+                2816485244, // Solstice Gloves (Rekindled)
+                3840083172, // Solstice Robes (Rekindled)
+                1819413126, // Solstice Boots (Rekindled)
+                713403449 // Solstice Bond (Rekindled)
+              ]
             ]
           },
           {
