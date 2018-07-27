@@ -839,6 +839,12 @@ export default ([
             ]
           },
           {
+            name: 'Bungie.net Email Subscription',
+            items: [
+              1940590818 // Kadi 55-30's Blessing
+            ]
+          },
+          {
             name: 'Comic',
             items: [
               1940590820 // The Visionary
