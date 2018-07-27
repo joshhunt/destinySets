@@ -410,7 +410,7 @@ export default ([
           },
           {
             name: 'Hunter Armor',
-            itemsGroups: [
+            itemGroups: [
               [
                 1506728251, // Solstice Mask (Scorched)
                 3007586538, // Solstice Grasps (Scorched)
@@ -436,7 +436,7 @@ export default ([
           },
           {
             name: 'Titan Armor',
-            itemsGroups: [
+            itemGroups: [
               [
                 1174021263, // Solstice Helm (Scorched)
                 3329153302, // Solstice Gauntlets (Scorched)
@@ -462,7 +462,7 @@ export default ([
           },
           {
             name: 'Warlock Armor',
-            itemsGroups: [
+            itemGroups: [
               [
                 2147433548, // Solstice Hood (Scorched)
                 1301731333, // Solstice Gloves (Scorched)
@@ -488,7 +488,7 @@ export default ([
           },
           {
             name: 'Hunter Ornaments',
-            itemsGroups: [
+            itemGroups: [
               [
                 3820835868, // Solstice Mask (Scorched)
                 880745877, // Solstice Grasps (Scorched)
@@ -507,7 +507,7 @@ export default ([
           },
           {
             name: 'Titan Ornaments',
-            itemsGroups: [
+            itemGroups: [
               [
                 374780030, // Solstice Helm (Scorched)
                 3898143407, // Solstice Gauntlets (Scorched)
@@ -528,7 +528,7 @@ export default ([
           },
           {
             name: 'Warlock Ornaments',
-            itemsGroups: [
+            itemGroups: [
               [
                 1283615405, // Solstice Hood (Scorched)
                 1936281116, // Solstice Gloves (Scorched)
