@@ -416,14 +416,14 @@ export default ([
                 3007586538, // Solstice Grasps (Scorched)
                 780038942, // Solstice Vest (Scorched) 
                 2046798468, // Solstice Strides (Scorched)
-                109666087 // Solstice Cloak (Scorched)
+                109666087, // Solstice Cloak (Scorched)
               ],
               [
                 2065460339, // Solstice Mask (Rekindled) 
                 3853434114, // Solstice Grasps (Rekindled)
                 2319743206, // Solstice Vest (Rekindled)
                 1644189372, // Solstice Strides (Rekindled)
-                2637837647 // Solstice Cloak (Rekindled)
+                2637837647, // Solstice Cloak (Rekindled)
               ],
               [
                 622966241, // Solstice Mask (Resplendent)
@@ -442,14 +442,14 @@ export default ([
                 3329153302, // Solstice Gauntlets (Scorched)
                 1225396570, // Solstice Plate (Scorched)
                 246568432, // Solstice Greaves (Scorched)
-                873850027 // Solstice Mark (Scorched)
+                873850027, // Solstice Mark (Scorched)
               ],
               [
                 2897466191, // Solstice Helm (Rekindled)
                 757630934, // Solstice Gauntlets (Rekindled)
                 1021217306, // Solstice Plate (Rekindled)
                 1969910192, // Solstice Greaves (Rekindled)
-                245110123 // Solstice Mark (Rekindled)
+                245110123, // Solstice Mark (Rekindled)
               ],
               [
                 3915635973, // Solstice Helm (Resplendent)
@@ -468,14 +468,14 @@ export default ([
                 1301731333, // Solstice Gloves (Scorched)
                 3101330395, // Solstice Robes (Scorched)
                 1224603527, // Solstice Boots (Scorched)
-                1841030642 // Solstice Bond (Scorched)
+                1841030642, // Solstice Bond (Scorched)
               ],
               [
                 2274492816, // Solstice Hood (Rekindled)
                 2030596705, // Solstice Gloves (Rekindled)
                 796635575, // Solstice Robes (Rekindled)
                 3525545299, // Solstice Boots (Rekindled)
-                2924954886 // Solstice Bond (Rekindled)
+                2924954886, // Solstice Bond (Rekindled)
               ],
               [
                 545021994, // Solstice Hood (Resplendent)
@@ -494,7 +494,7 @@ export default ([
                 880745877, // Solstice Grasps (Scorched)
                 3736041099, // Solstice Vest (Scorched)
                 2922902263, // Solstice Strides (Scorched)
-                2517318050 // Solstice Cloak (Scorched)
+                2517318050, // Solstice Cloak (Scorched)
               ],
               [
                  4154821248, // Solstice Mask (Rekindled)
@@ -513,7 +513,7 @@ export default ([
                 3898143407, // Solstice Gauntlets (Scorched)
                 1860355337, // Solstice Plate (Scorched)
                 4048186065, // Solstice Greaves (Scorched)
-                3640658628 // Solstice Mark (Scorched)
+                3640658628, // Solstice Mark (Scorched)
               ],
               [
                 3916608434, // Solstice Helm (Rekindled)
@@ -534,7 +534,7 @@ export default ([
                 1936281116, // Solstice Gloves (Scorched)
                 2266517764, // Solstice Robes (Scorched)
                 939209126, // Solstice Boots (Scorched)
-                3010244697 // Solstice Bond (Scorched)
+                3010244697, // Solstice Bond (Scorched)
               ],
               [
                 2163922573, // Solstice Hood (Rekindled)
