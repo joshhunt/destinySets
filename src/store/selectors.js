@@ -1,5 +1,6 @@
 import { createSelector } from 'reselect';
 import { difference, toPairs, keyBy, get } from 'lodash';
+import allSetData from 'app/setData';
 import fp from 'lodash/fp';
 
 import {
@@ -298,6 +299,39 @@ export const makeItemInventoryEntrySelector = () => {
 };
 
 const itemSelector = (state, ownProps) => ownProps.item;
+
+const allSetsSelector = () => allSetData;
+
+export const itemSourceSelector = createSelector(
+  allSetsSelector,
+  allSetData => {
+    const items = {};
+
+    Object.entries(allSetData).forEach(([pageKey, setData]) => {
+      setData.forEach(setGroup => {
+        setGroup.sets.forEach(set => {
+          set.sections.forEach(section => {
+            section.items &&
+              section.items.forEach(itemHash => {
+                if (!items[itemHash]) {
+                  items[itemHash] = [];
+                }
+
+                items[itemHash].push({
+                  pageKey,
+                  setName: set.name
+                });
+              });
+          });
+        });
+      });
+    });
+
+    console.log({ items });
+
+    return items;
+  }
+);
 
 const extractInstances = fp.flatMapDeep(
   characterEquipment => characterEquipment.items

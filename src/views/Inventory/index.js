@@ -24,6 +24,7 @@ import ItemModal from 'app/components/ItemModal';
 import SectionList from 'app/components/SectionList';
 
 import { filteredSetDataSelector } from './selectors';
+import { itemSourceSelector } from 'app/store/selectors';
 import styles from './styles.styl';
 
 const FETCH_INTERVAL = 30 * 1000;
@@ -204,6 +205,7 @@ const mapStateToProps = (state, ownProps) => {
     filters: state.app.filters,
     language: state.app.language,
     trackedItems: state.app.trackedItems,
+    itemSource: itemSourceSelector(),
     filteredSetData: filteredSetDataSelector(state, ownProps)
   };
 };
