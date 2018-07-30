@@ -16,6 +16,7 @@ export default ([
             name: 'Weapons',
             itemType: 'exoticCatalysts',
             items: [
+              1891561814, // Whisper of the Worm
               2907129556, // Sturm
               2208405142, // Telesto
               4036115577, // Sleeper Simulant
