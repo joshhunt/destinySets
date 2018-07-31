@@ -550,14 +550,14 @@ export default ([
             items: [
               961496619, // (Fishing)
               3244569127, // Festival Dance
-              396134792, // Sassy Taunt
-              2114877381, // Fly Dance
-              2427328578, // Alliterative Dance
               2919938481, // Teamwork Dance
+              2114877381, // Fly Dance
+              396134792, // Sassy Taunt
               3672748946, // Herald Dance
-              1599949358, // Raise the Roof
+              2427328578, // Alliterative Dance
+              621701973, // Aggressively Affirmative
               4119095630, // Confident Strut
-              621701973 // Aggressively Affirmative
+              1599949358 // Raise the Roof
             ]
           },
           {
@@ -565,26 +565,26 @@ export default ([
             items: [
               3717471208, // Predator Sun Shell
               3717471209, // Archipelago Pitch
-              980898615, // Skyfire North Shell
+              980898610, // Regality Sphere Shell
               980898611, // Authorized Misconduct Shell
-              980898614, // Bankjar Shell
               980898608, // Headerstripe Shell
               980898609, // Citrine Sway Shell
-              980898610 // Regality Sphere Shell
+              980898614, // Bankjar Shell
+              980898615 // Skyfire North Shell 
             ]
           },
           {
             name: 'Sparrows',
             items: [
-              4213271810, // Blacklight Razor
               4213271811, // Gray Hornet
-              2298896088, // Memorium Sol
-              2298896090, // Orcinus Swath
-              2298896091, // Serriform 7
+              4213271810, // Blacklight Razor
+              2298896094, // Sunspear
+              2298896095, // Boltcrackle
               2298896092, // Junestinger
               2298896093, // Timberwolf
-              2298896094, // Sunspear
-              2298896095 // Boltcrackle
+              2298896090, // Orcinus Swath
+              2298896091, // Serriform 7
+              2298896088 // Memorium Sol
             ]
           },
           {
@@ -608,10 +608,10 @@ export default ([
           {
             name: 'Weapon Ornaments',
             items: [
-              2396888157, // Sudden Squall
               1259278657, // Raging Lepus
               2949664689, // Gray Nitrite
-              1750365155 // Beachheader VI
+              1750365155, // Beachheader VI
+              2396888157 // Sudden Squall
             ]
           }
         ]
