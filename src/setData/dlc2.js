@@ -548,7 +548,7 @@ export default ([
           {
             name: 'Emotes',
             items: [
-              961496619, // (Fishing)
+              961496619, // Fishing
               3244569127, // Festival Dance
               2919938481, // Teamwork Dance
               2114877381, // Fly Dance
