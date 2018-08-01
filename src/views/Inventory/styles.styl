@@ -32,13 +32,21 @@ mobile()
 
 .trackedItems
   position: fixed
-  right: 16px
+  right: 0
   bottom: 0
+  padding-right: 16px
+  padding-left: 16px
+  max-height: calc(100vh - 52px)
+  overflow: auto
   color: white
   z-index: 999
 
+  & > div
+    box-shadow: 0 2px 5px red
+
   +mobile()
-    left: 16px
+    left: 0
+
     display: flex
     flex-direction: column
     align-items: center
