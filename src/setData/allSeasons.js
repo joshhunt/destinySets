@@ -5,6 +5,10 @@ import type { SetPage } from '../types';
 
 export default ([
   {
+    name: 'Holiday',
+    sets: [common.SOLSTICE_OF_HEROES]
+  },
+  {
     name: 'Endgame',
     sets: [
       {

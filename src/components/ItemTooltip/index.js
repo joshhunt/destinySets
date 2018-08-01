@@ -62,16 +62,17 @@ function ItemTooltip({
             </p>
           ))}
 
-        {screenshot && (
-          <div className={styles.screenshotWrapper}>
-            <FancyImage
-              className={styles.screenshot}
-              src={`https://bungie.net${screenshot}`}
-            />
-          </div>
-        )}
+        {!small &&
+          screenshot && (
+            <div className={styles.screenshotWrapper}>
+              <FancyImage
+                className={styles.screenshot}
+                src={`https://bungie.net${screenshot}`}
+              />
+            </div>
+          )}
 
-        {stats && <ItemStats stats={stats} statDefs={statDefs} />}
+        {!small && stats && <ItemStats stats={stats} statDefs={statDefs} />}
 
         {objectiveHashes.length ? (
           <Objectives
@@ -83,11 +84,12 @@ function ItemTooltip({
           />
         ) : null}
 
-        {extraInfo.map((info, index) => (
-          <div key={index} className={styles.extraInfo}>
-            {info}
-          </div>
-        ))}
+        {!small &&
+          extraInfo.map((info, index) => (
+            <div key={index} className={styles.extraInfo}>
+              {info}
+            </div>
+          ))}
       </div>
     </div>
   );
