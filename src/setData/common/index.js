@@ -105,63 +105,6 @@ export const SOLSTICE_OF_HEROES = {
       ]
     },
     {
-      name: 'Hunter Ornaments',
-      itemGroups: [
-        [
-          3820835868, // Solstice Mask (Scorched)
-          880745877, // Solstice Grasps (Scorched)
-          3736041099, // Solstice Vest (Scorched)
-          2922902263, // Solstice Strides (Scorched)
-          2517318050 // Solstice Cloak (Scorched)
-        ],
-        [
-          4154821248, // Solstice Mask (Rekindled)
-          1720894545, // Solstice Grasps (Rekindled)
-          1632954375, // Solstice Vest (Rekindled)
-          1552044323, // Solstice Strides (Rekindled)
-          2814383126 // Solstice Cloak (Rekindled)
-        ]
-      ]
-    },
-    {
-      name: 'Titan Ornaments',
-      itemGroups: [
-        [
-          374780030, // Solstice Helm (Scorched)
-          3898143407, // Solstice Gauntlets (Scorched)
-          1860355337, // Solstice Plate (Scorched)
-          4048186065, // Solstice Greaves (Scorched)
-          3640658628 // Solstice Mark (Scorched)
-        ],
-        [
-          3916608434, // Solstice Helm (Rekindled)
-          87994267, // Solstice Gauntlets (Rekindled)
-          3908760309, // Solstice Plate (Rekindled)
-          3257562381, // Solstice Greaves (Rekindled)
-          2989132488 // Solstice Mark (Rekindled)
-        ]
-      ]
-    },
-    {
-      name: 'Warlock Ornaments',
-      itemGroups: [
-        [
-          1283615405, // Solstice Hood (Scorched)
-          1936281116, // Solstice Gloves (Scorched)
-          2266517764, // Solstice Robes (Scorched)
-          939209126, // Solstice Boots (Scorched)
-          3010244697 // Solstice Bond (Scorched)
-        ],
-        [
-          2163922573, // Solstice Hood (Rekindled)
-          2816485244, // Solstice Gloves (Rekindled)
-          3840083172, // Solstice Robes (Rekindled)
-          1819413126, // Solstice Boots (Rekindled)
-          713403449 // Solstice Bond (Rekindled)
-        ]
-      ]
-    },
-    {
       name: 'Emotes',
       items: [
         961496619, // Fishing
