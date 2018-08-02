@@ -105,6 +105,19 @@ export const SOLSTICE_OF_HEROES = {
       ]
     },
     {
+      name: 'Ghosts',
+      items: [
+        3717471208, // Predator Sun Shell
+        3717471209, // Archipelago Pitch
+        980898610, // Regality Sphere Shell
+        980898611, // Authorized Misconduct Shell
+        980898608, // Headerstripe Shell
+        980898609, // Citrine Sway Shell
+        980898614, // Bankjar Shell
+        980898615 // Skyfire North Shell
+      ]
+    },
+    {
       name: 'Emotes',
       items: [
         961496619, // Fishing
@@ -120,57 +133,38 @@ export const SOLSTICE_OF_HEROES = {
       ]
     },
     {
-      name: 'Ghosts',
-      items: [
-        3717471208, // Predator Sun Shell
-        3717471209, // Archipelago Pitch
-        980898610, // Regality Sphere Shell
-        980898611, // Authorized Misconduct Shell
-        980898608, // Headerstripe Shell
-        980898609, // Citrine Sway Shell
-        980898614, // Bankjar Shell
-        980898615 // Skyfire North Shell
+      name: 'Vehicles',
+      itemGroups: [
+        [
+          682682138, // Estival Excursion
+          3475074928 // Thunderwing
+        ],
+        [
+          4213271811, // Gray Hornet
+          4213271810, // Blacklight Razor
+          2298896094, // Sunspear
+          2298896095, // Boltcrackle
+          2298896092, // Junestinger
+          2298896093, // Timberwolf
+          2298896090, // Orcinus Swath
+          2298896091, // Serriform 7
+          2298896088 // Memorium Sol
+        ]
       ]
     },
     {
-      name: 'Sparrows',
-      items: [
-        4213271811, // Gray Hornet
-        4213271810, // Blacklight Razor
-        2298896094, // Sunspear
-        2298896095, // Boltcrackle
-        2298896092, // Junestinger
-        2298896093, // Timberwolf
-        2298896090, // Orcinus Swath
-        2298896091, // Serriform 7
-        2298896088 // Memorium Sol
-      ]
-    },
-    {
-      name: 'Ships',
-      items: [
-        682682138, // Estival Excursion
-        3475074928 // Thunderwing
-      ]
-    },
-    {
-      name: 'Emblems',
-      items: []
-    },
-    {
-      name: 'Shaders',
-      items: [
-        3859483818, // Blazing Virtue
-        3859483819 // Malachite Gold
-      ]
-    },
-    {
-      name: 'Weapon Ornaments',
-      items: [
-        1259278657, // Raging Lepus
-        2949664689, // Gray Nitrite
-        1750365155, // Beachheader VI
-        2396888157 // Sudden Squall
+      name: 'Cosmetics',
+      itemGroups: [
+        [
+          3859483818, // Blazing Virtue
+          3859483819 // Malachite Gold
+        ],
+        [
+          1259278657, // Raging Lepus
+          2949664689, // Gray Nitrite
+          1750365155, // Beachheader VI
+          2396888157 // Sudden Squall
+        ]
       ]
     },
     {
