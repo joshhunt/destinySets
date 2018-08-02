@@ -8,7 +8,11 @@ function ObjectiveValue({ objective, def, trackedStatStyle }) {
   let value;
   if (trackedStatStyle) {
     value = ((objective || { progress: 0 }).progress || 0) / completionValue;
-    value = value.toLocaleString();
+    if (value < 1) {
+      value = `${value * 100}%`;
+    } else {
+      value = value.toLocaleString();
+    }
   } else if (valueStyle === 2) {
     value = (
       <input type="checkbox" checked={objective.progress >= 1} readOnly />
