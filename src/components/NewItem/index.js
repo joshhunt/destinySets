@@ -35,6 +35,23 @@ function isMobile() {
 
 const IS_MOBILE = isMobile();
 
+function calcObjectiveCompletion(objectiveInstances, item) {
+  const objectives = item.objectives.objectiveHashes.map(
+    hash => objectiveInstances[hash]
+  );
+
+  const completionValue = 1 / objectives.length;
+  const completion = objectives.reduce((acc, objective) => {
+    if (objective && objective.complete) {
+      return acc + completionValue;
+    }
+
+    return acc;
+  }, 0);
+
+  return completion;
+}
+
 function getItemColor(item) {
   if (!item) {
     return null;
@@ -89,7 +106,8 @@ export default class Item extends Component {
       item,
       inventoryEntry,
       extended,
-      isMasterwork
+      isMasterwork,
+      objectiveInstances
     } = this.props;
     const bgColor = getItemColor(item);
 
@@ -103,6 +121,10 @@ export default class Item extends Component {
     }
 
     const icon = item.displayProperties.icon || '/img/misc/missing_icon_d2.png';
+
+    const objectives = item.objectives && item.objectives.objectiveHashes;
+    const objectiveCompletionValue =
+      (objectives && calcObjectiveCompletion(objectiveInstances, item)) || 0;
 
     return (
       <div
@@ -129,17 +151,38 @@ export default class Item extends Component {
             />
           )}
 
-          <img
-            src={`https://www.bungie.net${icon}`}
-            className={styles.image}
-            style={{ backgroundColor: bgColor }}
-            alt=""
-          />
-          {inventoryEntry && (
-            <div className={styles.tick}>
-              <Icon icon="check" />
-            </div>
-          )}
+          <div className={styles.fadeOut}>
+            <img
+              src={`https://www.bungie.net${icon}`}
+              className={styles.image}
+              style={{ backgroundColor: bgColor }}
+              alt=""
+            />
+
+            {inventoryEntry && (
+              <div className={styles.tick}>
+                <Icon icon="check" />
+              </div>
+            )}
+          </div>
+
+          {objectives &&
+            objectiveCompletionValue !== 0 && (
+              <div
+                className={cx(
+                  styles.objectiveOverlay,
+                  objectiveCompletionValue === 1 && styles.objectivesComplete
+                )}
+                data-done={objectiveCompletionValue}
+              >
+                <div
+                  className={styles.objectiveTrack}
+                  style={{
+                    width: `${objectiveCompletionValue * 100}%`
+                  }}
+                />
+              </div>
+            )}
         </div>
 
         {extended && (

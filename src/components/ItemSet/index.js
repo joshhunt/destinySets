@@ -15,7 +15,7 @@ const ITEM_TYPE_COMPONENTS = {
   exoticCatalysts: MasterworkCatalyst
 };
 
-function ItemSet({ className, inventory, itemDefs, setPopper, setModal, set }) {
+function ItemSet({ className, inventory, itemDefs, setPopper, setModal, set, objectiveInstances }) {
   const { name, noUi, description, sections, image } = set;
   return (
     <div className={cx(className, styles.root, noUi && styles.noUi)}>
@@ -55,6 +55,7 @@ function ItemSet({ className, inventory, itemDefs, setPopper, setModal, set }) {
                       ITEM_TYPE_COMPONENTS[section.itemType] || Item;
                     return (
                       <ItemComponent
+                        objectiveInstances={objectiveInstances}
                         key={itemHash}
                         className={!section.type && styles.item}
                         itemHash={itemHash}

@@ -1,4 +1,5 @@
 $size = 44px;
+$green = #44bd32;
 
 ._root
   margin: 5px
@@ -13,7 +14,8 @@ $size = 44px;
 .obtained
 .dismantled
 .checklisted
-  opacity: .25
+  .fadeOut
+    opacity: .25
 
 .image
   display: block
@@ -40,7 +42,7 @@ $size = 44px;
   right: @top
   line-height: 1
   text-align: left
-  background: #44bd32
+  background: $green
   border-radius: 50%
   font-size: 12px
   padding: 3px
@@ -59,3 +61,18 @@ $size = 44px;
   font-size: .85em
   opacity: .8
   margin-top: 2px
+
+.objectiveOverlay
+  position: absolute
+  bottom: 2px
+  left: 2px
+  right: 2px
+  height: 4px
+  background: rgba(black, .5)
+
+.objectiveTrack
+  height: 100%
+  background: $green
+
+.objectivesComplete
+  opacity: .25
