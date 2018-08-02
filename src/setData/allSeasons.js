@@ -477,6 +477,12 @@ export default ([
             season: 2,
             items: common.VENDOR_VANGUARD_S2_WEAPONS
           },
+
+          {
+            name: 'Weapons',
+            season: 3,
+            items: common.VENDOR_VANGUARD_S3_WEAPONS
+          },
           {
             name: 'Armor',
             season: 1,
