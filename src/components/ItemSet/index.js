@@ -9,6 +9,9 @@ import {
   inventorySelector,
   objectiveInstancesSelector
 } from 'app/store/selectors';
+
+import LazyLoad from 'react-lazyload';
+
 import styles from './styles.styl';
 
 const ITEM_TYPE_COMPONENTS = {
@@ -46,41 +49,45 @@ function ItemSet({
         )}
 
         {sections.map((section, index) => (
-          <div key={index} className={styles.section}>
-            {!noUi && (
-              <h4 className={styles.sectionName}>
-                {section.name}{' '}
-                {section.season && (
-                  <span className={styles.seasonLabel}>S{section.season}</span>
-                )}
-              </h4>
-            )}
+          <LazyLoad>
+            <div key={index} className={styles.section}>
+              {!noUi && (
+                <h4 className={styles.sectionName}>
+                  {section.name}{' '}
+                  {section.season && (
+                    <span className={styles.seasonLabel}>
+                      S{section.season}
+                    </span>
+                  )}
+                </h4>
+              )}
 
-            <div className={styles.itemListWrapper}>
-              {section.itemGroups.map((itemList, index2) => (
-                <div className={styles.itemList} key={index2}>
-                  {itemList.map(itemHash => {
-                    const ItemComponent =
-                      ITEM_TYPE_COMPONENTS[section.itemType] || Item;
-                    return (
-                      <ItemComponent
-                        objectiveInstances={objectiveInstances}
-                        objectiveDefs={objectiveDefs}
-                        key={itemHash}
-                        className={!section.type && styles.item}
-                        itemHash={itemHash}
-                        item={itemDefs[itemHash]}
-                        setPopper={setPopper}
-                        inventoryEntry={inventory && inventory[itemHash]}
-                        onItemClick={setModal}
-                        extended={section.bigItems}
-                      />
-                    );
-                  })}
-                </div>
-              ))}
+              <div className={styles.itemListWrapper}>
+                {section.itemGroups.map((itemList, index2) => (
+                  <div className={styles.itemList} key={index2}>
+                    {itemList.map(itemHash => {
+                      const ItemComponent =
+                        ITEM_TYPE_COMPONENTS[section.itemType] || Item;
+                      return (
+                        <ItemComponent
+                          objectiveInstances={objectiveInstances}
+                          objectiveDefs={objectiveDefs}
+                          key={itemHash}
+                          className={!section.type && styles.item}
+                          itemHash={itemHash}
+                          item={itemDefs[itemHash]}
+                          setPopper={setPopper}
+                          inventoryEntry={inventory && inventory[itemHash]}
+                          onItemClick={setModal}
+                          extended={section.bigItems}
+                        />
+                      );
+                    })}
+                  </div>
+                ))}
+              </div>
             </div>
-          </div>
+          </LazyLoad>
         ))}
       </div>
     </div>

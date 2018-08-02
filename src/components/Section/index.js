@@ -5,8 +5,6 @@ import ItemSet from 'app/components/ItemSet';
 
 import styles from './styles.styl';
 
-// import LazyLoad from 'react-lazyload';
-
 export default function Section({
   name,
   noUi,
