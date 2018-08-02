@@ -35,18 +35,39 @@ function isMobile() {
 
 const IS_MOBILE = isMobile();
 
-function calcObjectiveCompletion(objectiveInstances, item) {
+function calcObjectiveCompletion(objectiveInstances, item, objectiveDefs) {
   const objectives = item.objectives.objectiveHashes.map(
     hash => objectiveInstances[hash]
   );
 
-  const completionValue = 1 / objectives.length;
+  if (!objectiveDefs) {
+    return 0;
+  }
+
+  const eachCompletionIsWorth = 1 / objectives.length;
+
   const completion = objectives.reduce((acc, objective) => {
-    if (objective && objective.complete) {
-      return acc + completionValue;
+    if (!objective) {
+      return acc;
     }
 
-    return acc;
+    const objectiveDef = objectiveDefs[objective.objectiveHash];
+
+    if (!objectiveDef) {
+      return acc;
+    }
+
+    const completionValue = objectiveDef.completionValue;
+    const percentCompleted = (objective.progress || 0) / completionValue;
+
+    if (objective && objective.complete) {
+      return acc + eachCompletionIsWorth;
+    }
+
+    return (
+      acc +
+      Math.min(percentCompleted * eachCompletionIsWorth, eachCompletionIsWorth)
+    );
   }, 0);
 
   return completion;
@@ -107,7 +128,8 @@ export default class Item extends Component {
       inventoryEntry,
       extended,
       isMasterwork,
-      objectiveInstances
+      objectiveInstances,
+      objectiveDefs
     } = this.props;
     const bgColor = getItemColor(item);
 
@@ -124,7 +146,9 @@ export default class Item extends Component {
 
     const objectives = item.objectives && item.objectives.objectiveHashes;
     const objectiveCompletionValue =
-      (objectives && calcObjectiveCompletion(objectiveInstances, item)) || 0;
+      (objectives &&
+        calcObjectiveCompletion(objectiveInstances, item, objectiveDefs)) ||
+      0;
 
     return (
       <div

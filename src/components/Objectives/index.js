@@ -7,8 +7,7 @@ function ObjectiveValue({ objective, def, trackedStatStyle }) {
   const { valueStyle, completionValue } = def;
   let value;
   if (trackedStatStyle) {
-    value =
-      ((objective || { progress: 0 }).progress || 0) / def.completionValue;
+    value = ((objective || { progress: 0 }).progress || 0) / completionValue;
     value = value.toLocaleString();
   } else if (valueStyle === 2) {
     value = (
