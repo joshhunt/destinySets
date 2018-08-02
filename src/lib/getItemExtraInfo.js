@@ -9,7 +9,7 @@ export default function getItemExtraInfo(item, _itemInventoryEntry) {
   const extraInfo = [];
 
   if (itemInventoryEntry.instances[0].location === 'progressionChecklist') {
-    return ['Unlocked in checklist (beta)'];
+    return ['Dismantled & unlocked in Forsaken Collections'];
   }
 
   itemInventoryEntry.dismantled

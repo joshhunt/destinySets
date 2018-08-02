@@ -12,7 +12,6 @@ import logo from 'app/logo.svg';
 import xur from 'app/assets/xur_icon.png';
 import { DONATION_LINK } from 'app/components/DonateButton';
 import Icon from 'app/components/Icon';
-import GoogleAuthButton from 'app/components/GoogleAuthButton';
 import DonateButton from 'app/components/DonateButton';
 import ProfileDropdown from './ProfileDropdown';
 import LanguageDropdown from './LanguageDropdown';
@@ -119,7 +118,6 @@ function Sidebar({
   isOpen,
   language,
   setLanguage,
-  displayGoogleAuthButton,
   toggleSidebar,
   displayXur,
   openXurModal,
@@ -156,8 +154,6 @@ function Sidebar({
           />
         )}
         <br />
-
-        {displayGoogleAuthButton && <GoogleAuthButton onClick={googleSignIn} />}
 
         <div className={styles.sidebarExtra}>
           <DonateButton />
@@ -222,8 +218,6 @@ export default class Header extends Component {
     } = this.props;
 
     const { isOverflowing, sidebarActive } = this.state;
-    const displayGoogleAuthButton =
-      currentProfile && googleAuth.loaded && !googleAuth.signedIn;
 
     return (
       <div
@@ -238,7 +232,6 @@ export default class Header extends Component {
             {...this.props}
             isOpen={sidebarActive}
             toggleSidebar={this.toggleSidebar}
-            displayGoogleAuthButton={displayGoogleAuthButton}
           />
         )}
 
@@ -264,9 +257,6 @@ export default class Header extends Component {
           </div>
 
           <div className={styles.etc}>
-            {displayGoogleAuthButton &&
-              !isOverflowing && <GoogleAuthButton onClick={googleSignIn} />}
-
             {language &&
               !isOverflowing && (
                 <LanguageDropdown
@@ -284,6 +274,7 @@ export default class Header extends Component {
                 switchProfile={switchProfile}
                 logout={logout}
                 googleSignOut={googleSignOut}
+                googleSignIn={googleSignIn}
                 googleAuthSignedIn={googleAuth.signedIn}
               />
             )}

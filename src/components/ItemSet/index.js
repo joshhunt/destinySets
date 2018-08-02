@@ -6,7 +6,8 @@ import Item from 'app/components/NewItem';
 import MasterworkCatalyst from 'app/components/MasterworkCatalyst';
 import {
   makeSelectedItemDefsSelector,
-  inventorySelector
+  inventorySelector,
+  objectiveInstancesSelector
 } from 'app/store/selectors';
 import styles from './styles.styl';
 
@@ -80,7 +81,8 @@ const mapStateToProps = () => {
   return (state, ownProps) => {
     return {
       inventory: inventorySelector(state),
-      itemDefs: selectedItemDefsSelector(state, ownProps)
+      itemDefs: selectedItemDefsSelector(state, ownProps),
+      objectiveInstances: objectiveInstancesSelector(state)
     };
   };
 };
