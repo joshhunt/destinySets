@@ -166,8 +166,6 @@ export const checklistInventorySelector = createSelector(
       .map(x => x.checklists[CHECKLIST_CHARACTER_COLLECTIONS])
       .filter(Boolean);
 
-    console.log({ characterChecklists });
-
     if (profileChecklist) {
       inventory = {
         ...inventory,
@@ -187,8 +185,6 @@ export const checklistInventorySelector = createSelector(
         )
       };
     }, {});
-
-    console.log({ characterInventory });
 
     return { ...characterInventory, ...inventory };
   }
