@@ -147,6 +147,7 @@ export default class Item extends Component {
     const objectives = item.objectives && item.objectives.objectiveHashes;
     const objectiveCompletionValue =
       (objectives &&
+        objectiveInstances &&
         calcObjectiveCompletion(objectiveInstances, item, objectiveDefs)) ||
       0;
 
