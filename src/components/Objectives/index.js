@@ -3,12 +3,16 @@ import cx from 'classnames';
 
 import styles from './styles.styl';
 
+const FRACTION = 1;
+
 function ObjectiveValue({ objective, def, trackedStatStyle }) {
   const { valueStyle, completionValue } = def;
   let value;
+
   if (trackedStatStyle) {
     value = ((objective || { progress: 0 }).progress || 0) / completionValue;
-    if (value < 1) {
+
+    if (value < FRACTION && valueStyle === 1) {
       value = `${value * 100}%`;
     } else {
       value = value.toLocaleString();
