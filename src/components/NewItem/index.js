@@ -10,7 +10,9 @@ import {
   EMBLEM,
   CLASSES
 } from 'app/lib/destinyEnums';
+
 import Icon from 'app/components/Icon';
+import Tick from 'app/components/Tick';
 
 import masterworkOutline from './masterwork-outline.png';
 import styles from './styles.styl';
@@ -184,11 +186,7 @@ export default class Item extends Component {
               alt=""
             />
 
-            {inventoryEntry && (
-              <div className={styles.tick}>
-                <Icon icon="check" />
-              </div>
-            )}
+            {inventoryEntry && <Tick className={styles.tick} />}
           </div>
 
           {objectives &&
