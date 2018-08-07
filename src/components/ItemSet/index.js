@@ -1,16 +1,10 @@
 import React from 'react';
-import { connect } from 'react-redux';
 import cx from 'classnames';
 
 import Item from 'app/components/NewItem';
 import MasterworkCatalyst from 'app/components/MasterworkCatalyst';
-import {
-  makeSelectedItemDefsSelector,
-  inventorySelector,
-  objectiveInstancesSelector
-} from 'app/store/selectors';
 
-import LazyLoad from 'react-lazyload';
+import TheRealLazyLoad from 'react-lazyload';
 
 import styles from './styles.styl';
 
@@ -18,15 +12,17 @@ const ITEM_TYPE_COMPONENTS = {
   exoticCatalysts: MasterworkCatalyst
 };
 
-function ItemSet({
+const LAZY_LOAD = false;
+
+const LazyLoad = LAZY_LOAD ? TheRealLazyLoad : ({ children }) => children;
+
+export default function ItemSet({
   className,
   inventory,
   itemDefs,
   setPopper,
   setModal,
-  set,
-  objectiveInstances,
-  objectiveDefs
+  set
 }) {
   const { name, noUi, description, sections, image } = set;
   return (
@@ -68,18 +64,15 @@ function ItemSet({
                     {itemList.map(itemHash => {
                       const ItemComponent =
                         ITEM_TYPE_COMPONENTS[section.itemType] || Item;
+
                       return (
                         <ItemComponent
-                          objectiveInstances={objectiveInstances}
-                          objectiveDefs={objectiveDefs}
-                          key={itemHash}
-                          className={!section.type && styles.item}
                           itemHash={itemHash}
-                          item={itemDefs[itemHash]}
-                          setPopper={setPopper}
-                          inventoryEntry={inventory && inventory[itemHash]}
-                          onItemClick={setModal}
+                          key={itemHash}
                           extended={section.bigItems}
+                          className={!section.type && styles.item}
+                          setPopper={setPopper}
+                          onItemClick={setModal}
                         />
                       );
                     })}
@@ -93,17 +86,3 @@ function ItemSet({
     </div>
   );
 }
-
-const mapStateToProps = () => {
-  const selectedItemDefsSelector = makeSelectedItemDefsSelector();
-  return (state, ownProps) => {
-    return {
-      inventory: inventorySelector(state),
-      itemDefs: selectedItemDefsSelector(state, ownProps),
-      objectiveInstances: objectiveInstancesSelector(state),
-      objectiveDefs: state.definitions.objectiveDefs
-    };
-  };
-};
-
-export default connect(mapStateToProps)(ItemSet);

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import cx from 'classnames';
 
 import {
@@ -11,6 +12,13 @@ import {
   CLASSES
 } from 'app/lib/destinyEnums';
 import Icon from 'app/components/Icon';
+
+import { makeItemInventoryEntrySelector } from 'app/store/selectors';
+
+import {
+  makeItemDefSelector,
+  makeItemObjectiveProgressSelector
+} from './selectors';
 
 import masterworkOutline from './masterwork-outline.png';
 import styles from './styles.styl';
@@ -35,44 +43,6 @@ function isMobile() {
 
 const IS_MOBILE = isMobile();
 
-function calcObjectiveCompletion(objectiveInstances, item, objectiveDefs) {
-  const objectives = item.objectives.objectiveHashes.map(
-    hash => objectiveInstances[hash]
-  );
-
-  if (!objectiveDefs) {
-    return 0;
-  }
-
-  const eachCompletionIsWorth = 1 / objectives.length;
-
-  const completion = objectives.reduce((acc, objective) => {
-    if (!objective) {
-      return acc;
-    }
-
-    const objectiveDef = objectiveDefs[objective.objectiveHash];
-
-    if (!objectiveDef) {
-      return acc;
-    }
-
-    const completionValue = objectiveDef.completionValue;
-    const percentCompleted = (objective.progress || 0) / completionValue;
-
-    if (objective && objective.complete) {
-      return acc + eachCompletionIsWorth;
-    }
-
-    return (
-      acc +
-      Math.min(percentCompleted * eachCompletionIsWorth, eachCompletionIsWorth)
-    );
-  }, 0);
-
-  return completion;
-}
-
 function getItemColor(item) {
   if (!item) {
     return null;
@@ -91,12 +61,11 @@ function getItemColor(item) {
   ) {
     return `rgb(${red}, ${green}, ${blue})`;
   } else {
-    // use rarity color
     return TIER_COLOR[item.inventory.tierTypeHash];
   }
 }
 
-export default class Item extends Component {
+class Item extends Component {
   onMouseEnter = () => {
     const { setPopper, itemHash } = this.props;
     !IS_MOBILE && setPopper && setPopper(itemHash, this.ref);
@@ -124,16 +93,16 @@ export default class Item extends Component {
   render() {
     const {
       className,
-      item,
+      itemDef,
       inventoryEntry,
       extended,
       isMasterwork,
-      objectiveInstances,
-      objectiveDefs
+      itemObjectiveProgress
     } = this.props;
-    const bgColor = getItemColor(item);
 
-    if (!item) {
+    const bgColor = getItemColor(itemDef);
+
+    if (!itemDef) {
       return (
         <div
           className={cx(className, styles.placeholder)}
@@ -142,14 +111,8 @@ export default class Item extends Component {
       );
     }
 
-    const icon = item.displayProperties.icon || '/img/misc/missing_icon_d2.png';
-
-    const objectives = item.objectives && item.objectives.objectiveHashes;
-    const objectiveCompletionValue =
-      (objectives &&
-        objectiveInstances &&
-        calcObjectiveCompletion(objectiveInstances, item, objectiveDefs)) ||
-      0;
+    const icon =
+      itemDef.displayProperties.icon || '/img/misc/missing_icon_d2.png';
 
     return (
       <div
@@ -168,15 +131,15 @@ export default class Item extends Component {
         )}
       >
         <div className={styles.imageWrapper}>
-          {isMasterwork && (
-            <img
-              className={styles.overlay}
-              src={masterworkOutline}
-              alt="Masterwork"
-            />
-          )}
-
           <div className={styles.fadeOut}>
+            {isMasterwork && (
+              <img
+                className={styles.overlay}
+                src={masterworkOutline}
+                alt="Masterwork"
+              />
+            )}
+
             <img
               src={`https://www.bungie.net${icon}`}
               className={styles.image}
@@ -191,31 +154,29 @@ export default class Item extends Component {
             )}
           </div>
 
-          {objectives &&
-            objectiveCompletionValue !== 0 && (
+          {itemObjectiveProgress !== 0 && (
+            <div
+              className={cx(
+                styles.objectiveOverlay,
+                itemObjectiveProgress === 1 && styles.objectivesComplete
+              )}
+            >
               <div
-                className={cx(
-                  styles.objectiveOverlay,
-                  objectiveCompletionValue === 1 && styles.objectivesComplete
-                )}
-                data-done={objectiveCompletionValue}
-              >
-                <div
-                  className={styles.objectiveTrack}
-                  style={{
-                    width: `${objectiveCompletionValue * 100}%`
-                  }}
-                />
-              </div>
-            )}
+                className={styles.objectiveTrack}
+                style={{
+                  width: `${itemObjectiveProgress * 100}%`
+                }}
+              />
+            </div>
+          )}
         </div>
 
         {extended && (
           <div className={styles.extended}>
-            <div>{item.displayProperties.name}</div>
+            <div>{itemDef.displayProperties.name}</div>
             <div className={styles.itemType}>
-              {CLASSES[item.classType]}{' '}
-              {item.itemTypeName || item.itemTypeDisplayName}
+              {CLASSES[itemDef.classType]}{' '}
+              {itemDef.itemTypeName || itemDef.itemTypeDisplayName}
             </div>
           </div>
         )}
@@ -223,3 +184,19 @@ export default class Item extends Component {
     );
   }
 }
+
+function mapStateToProps() {
+  const itemDefSelector = makeItemDefSelector();
+  const itemInventoryEntrySelector = makeItemInventoryEntrySelector();
+  const itemObjectiveProgressSelector = makeItemObjectiveProgressSelector();
+
+  return (state, ownProps) => {
+    return {
+      itemDef: itemDefSelector(state, ownProps),
+      inventoryEntry: itemInventoryEntrySelector(state, ownProps),
+      itemObjectiveProgress: itemObjectiveProgressSelector(state, ownProps)
+    };
+  };
+}
+
+export default connect(mapStateToProps)(Item);

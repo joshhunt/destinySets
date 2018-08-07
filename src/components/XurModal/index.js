@@ -55,8 +55,7 @@ class XurModalContent extends Component {
               <Item
                 className={styles.item}
                 key={itemHash}
-                item={itemDefs && itemDefs[itemHash]}
-                inventoryEntry={inventory && inventory[itemHash]}
+                itemHash={itemHash}
                 extended
               />
             ))}
