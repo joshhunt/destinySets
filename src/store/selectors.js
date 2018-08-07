@@ -293,8 +293,6 @@ export const makeItemInventoryEntrySelector = () => {
   );
 };
 
-const itemSelector = (state, ownProps) => ownProps.item;
-
 const extractInstances = fp.flatMapDeep(
   characterEquipment => characterEquipment.items
 );
@@ -333,8 +331,9 @@ export const makeCatalystSelector = () => {
   return createSelector(
     itemInstancesSelector,
     itemDefsSelector,
-    itemSelector,
+    makeItemSelector(),
     (equipment, itemDefs, item) => {
+      console.log({ equipment, itemDefs, item });
       if (!item || !itemDefs) {
         return null;
       }
@@ -426,13 +425,13 @@ export const makeCatalystSelector = () => {
 export const makeItemInstanceSelector = () => {
   return createSelector(
     itemInstancesSelector,
-    itemSelector,
-    (equipment, item) => {
-      if (!item) {
+    itemHashPropSelector,
+    (equipment, itemHash) => {
+      if (!itemHash) {
         return null;
       }
 
-      return equipment[item.hash];
+      return equipment[itemHash];
     }
   );
 };

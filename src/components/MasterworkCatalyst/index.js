@@ -9,21 +9,17 @@ import ItemBanner from 'app/components/ItemBanner';
 import {
   makeCatalystSelector,
   makeItemInstanceSelector,
-  itemDefsSelector,
   objectiveDefsSelector,
   NO_DATA,
-  NO_CATALYST,
   INACTIVE_CATALYST,
-  ACTIVE_CATALYST_INPROGRESS,
   ACTIVE_CATALYST_COMPLETE,
   MASTERWORK_UPGRADED
 } from 'app/store/selectors';
 
-import masterworkComplete from './masterwork-hammer.png';
-import SocketDebug from './Debug';
-import s from './styles.styl';
+import { makeItemDefSelector } from 'app/components/Item/selectors';
 
-const DEBUG = false;
+import masterworkComplete from './masterwork-hammer.png';
+import s from './styles.styl';
 
 const MASTERWORK_STATUS = {
   [NO_DATA]: (
@@ -46,20 +42,11 @@ const MASTERWORK_STATUS = {
   // [MASTERWORK_UPGRADED]: 'Masterwork'
 };
 
-const DEBUG_STATUS = {
-  [NO_DATA]: 'NO_DATA',
-  [NO_CATALYST]: 'NO_CATALYST',
-  [INACTIVE_CATALYST]: 'INACTIVE_CATALYST',
-  [ACTIVE_CATALYST_INPROGRESS]: 'ACTIVE_CATALYST_INPROGRESS',
-  [ACTIVE_CATALYST_COMPLETE]: 'ACTIVE_CATALYST_COMPLETE',
-  [MASTERWORK_UPGRADED]: 'MASTERWORK_UPGRADED'
-};
-
 class MasterworkCatalyst extends Component {
   render() {
-    const { className, item } = this.props;
+    const { className, itemDef } = this.props;
 
-    if (!item) {
+    if (!itemDef) {
       return <div className={cx(className, s.placeholder)} />;
     }
 
@@ -69,10 +56,8 @@ class MasterworkCatalyst extends Component {
     return (
       <div className={cx(className, s.root)}>
         <div className={s.inner}>
-          <BungieImage className={s.screenshot} src={item.screenshot} />
-          <ItemBanner item={item} />
-
-          {DEBUG && <p>{DEBUG_STATUS[status]}</p>}
+          <BungieImage className={s.screenshot} src={itemDef.screenshot} />
+          <ItemBanner item={itemDef} />
 
           {status === MASTERWORK_UPGRADED && (
             <p>
@@ -100,14 +85,6 @@ class MasterworkCatalyst extends Component {
               objectiveDefs={this.props.objectiveDefs}
             />
           )}
-
-          {DEBUG && (
-            <SocketDebug
-              instances={this.props.instances}
-              itemDefs={this.props.itemDefs}
-              objectiveDefs={this.props.objectiveDefs}
-            />
-          )}
         </div>
       </div>
     );
@@ -117,11 +94,14 @@ class MasterworkCatalyst extends Component {
 function mapStateToProps() {
   const catalystSelector = makeCatalystSelector();
   const itemInstanceSelector = makeItemInstanceSelector();
+
+  const itemDefSelector = makeItemDefSelector();
+
   return (state, ownProps) => {
     return {
+      itemDef: itemDefSelector(state, ownProps),
       instances: itemInstanceSelector(state, ownProps),
       catalystData: catalystSelector(state, ownProps),
-      itemDefs: itemDefsSelector(state),
       objectiveDefs: objectiveDefsSelector(state)
     };
   };

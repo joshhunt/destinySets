@@ -1,7 +1,7 @@
 import React from 'react';
 import cx from 'classnames';
 
-import Item from 'app/components/NewItem';
+import Item from 'app/components/Item';
 import MasterworkCatalyst from 'app/components/MasterworkCatalyst';
 
 import TheRealLazyLoad from 'react-lazyload';
@@ -12,19 +12,13 @@ const ITEM_TYPE_COMPONENTS = {
   exoticCatalysts: MasterworkCatalyst
 };
 
-const LAZY_LOAD = false;
+const LAZY_LOAD = true;
 
 const LazyLoad = LAZY_LOAD ? TheRealLazyLoad : ({ children }) => children;
 
-export default function ItemSet({
-  className,
-  inventory,
-  itemDefs,
-  setPopper,
-  setModal,
-  set
-}) {
+export default function ItemSet({ className, setPopper, setModal, set }) {
   const { name, noUi, description, sections, image } = set;
+
   return (
     <div className={cx(className, styles.root, noUi && styles.noUi)}>
       <div className={styles.inner}>
@@ -45,7 +39,7 @@ export default function ItemSet({
         )}
 
         {sections.map((section, index) => (
-          <LazyLoad>
+          <LazyLoad height={85}>
             <div key={index} className={styles.section}>
               {!noUi && (
                 <h4 className={styles.sectionName}>
