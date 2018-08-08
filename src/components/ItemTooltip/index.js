@@ -4,11 +4,11 @@ import { uniq } from 'lodash';
 import cx from 'classnames';
 
 import { EMBLEM } from 'app/lib/destinyEnums';
-import getItemExtraInfo from 'app/lib/getItemExtraInfo';
 import FancyImage from 'app/components/FancyImage';
 import ItemBanner from 'app/components/ItemBanner';
 import ItemStats from 'app/components/ItemStats';
 import Objectives from 'app/components/Objectives';
+import ExtraInfo from 'app/components/ExtraInfo';
 
 import {
   makeItemSelector,
@@ -16,8 +16,10 @@ import {
   statDefsSelector,
   makeItemStatsSelector,
   objectiveInstancesSelector,
-  makeItemInventoryEntrySelector
+  makeItemInventoryEntrySelector,
+  checklistInventorySelector
 } from 'app/store/selectors';
+
 import styles from './styles.styl';
 
 function ItemTooltip({
@@ -28,7 +30,8 @@ function ItemTooltip({
   objectiveDefs,
   stats,
   statDefs,
-  itemInventoryEntry
+  itemInventoryEntry,
+  collectionInventory
 }) {
   if (!item) {
     return null;
@@ -37,11 +40,6 @@ function ItemTooltip({
   const { displayProperties, screenshot, itemCategoryHashes, loreHash } = item;
 
   const isEmblem = (itemCategoryHashes || []).includes(EMBLEM);
-  const extraInfo = getItemExtraInfo(item, itemInventoryEntry);
-
-  if (loreHash) {
-    extraInfo.push('Lore available on Ishtar Collective, click for more info');
-  }
 
   const objectiveHashes = uniq(
     [
@@ -84,12 +82,21 @@ function ItemTooltip({
           />
         ) : null}
 
+        {!small && (
+          <ExtraInfo
+            className={styles.extraInfo}
+            item={item}
+            inventoryEntry={itemInventoryEntry}
+            inCollection={collectionInventory[item.hash]}
+          />
+        )}
+
         {!small &&
-          extraInfo.map((info, index) => (
-            <div key={index} className={styles.extraInfo}>
-              {info}
+          loreHash && (
+            <div className={styles.extraInfo}>
+              Lore available on Ishtar Collective, click for more info
             </div>
-          ))}
+          )}
       </div>
     </div>
   );
@@ -102,6 +109,7 @@ const mapStateToProps = () => {
 
   return (state, ownProps) => {
     return {
+      collectionInventory: checklistInventorySelector(state),
       objectiveInstances: objectiveInstancesSelector(state),
       objectiveDefs: objectiveDefsSelector(state),
       statDefs: statDefsSelector(state),

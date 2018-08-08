@@ -8,19 +8,11 @@ export default function getItemExtraInfo(item, _itemInventoryEntry) {
 
   const extraInfo = [];
 
-  if (itemInventoryEntry.instances[0].location === 'progressionChecklist') {
-    return ['Dismantled & unlocked in Forsaken Collections'];
-  }
-
-  itemInventoryEntry.dismantled
-    ? extraInfo.push('Dismantled')
-    : extraInfo.push(
-        ...uniq(
-          itemInventoryEntry.instances
-            .map(getFriendlyItemLocation)
-            .filter(Boolean)
-        )
-      );
+  extraInfo.push(
+    ...uniq(
+      itemInventoryEntry.instances.map(getFriendlyItemLocation).filter(Boolean)
+    )
+  );
 
   return extraInfo;
 }

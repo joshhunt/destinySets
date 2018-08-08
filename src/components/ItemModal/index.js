@@ -8,6 +8,7 @@ import Objectives from 'app/components/Objectives';
 import ItemBanner from 'app/components/ItemBanner';
 import Modal from 'app/components/Modal';
 import Icon from 'app/components/Icon';
+import ExtraInfo from 'app/components/ExtraInfo';
 import ishtarSvg from 'app/ishar.svg';
 
 import {
@@ -22,6 +23,7 @@ import {
   statDefsSelector,
   makeItemStatsSelector,
   objectiveInstancesSelector,
+  checklistInventorySelector,
   makeItemInventoryEntrySelector
 } from 'app/store/selectors';
 
@@ -38,7 +40,8 @@ class ItemModalContent extends Component {
       objectiveDefs,
       toggleManuallyObtained,
       forgetDismantled,
-      googleAuth
+      googleAuth,
+      collectionInventory
     } = this.props;
 
     const {
@@ -165,11 +168,12 @@ class ItemModalContent extends Component {
             )}
         </div>
 
-        {extraInfo.map((info, index) => (
-          <div key={index} className={styles.extraInfo}>
-            {info}
-          </div>
-        ))}
+        <ExtraInfo
+          className={styles.extraInfo}
+          item={item}
+          inventoryEntry={itemInventoryEntry}
+          inCollection={collectionInventory[item.hash]}
+        />
       </div>
     );
   }
@@ -202,7 +206,8 @@ const mapStateToProps = () => {
       statDefs: statDefsSelector(state),
       stats: itemStatsSelector(state, ownProps),
       item: itemSelector(state, ownProps),
-      itemInventoryEntry: itemInventoryEntrySelector(state, ownProps)
+      itemInventoryEntry: itemInventoryEntrySelector(state, ownProps),
+      collectionInventory: checklistInventorySelector(state)
     };
   };
 };
