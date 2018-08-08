@@ -26,7 +26,6 @@ export const DEFAULT_FILTER = {
   [WARLOCK]: true,
   [FILTER_SHOW_COLLECTED]: true,
   [FILTER_SHOW_PS4_EXCLUSIVES]: true,
-  [FILTER_SHOW_PS4_EXCLUSIVES]: true,
   [FILTER_SHOW_HIDDEN_SETS]: false
 };
 
