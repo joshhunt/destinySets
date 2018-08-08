@@ -1,16 +1,16 @@
 import * as ls from 'app/lib/ls';
 import React from 'react';
-import { connect } from 'react-redux';
 import cx from 'classnames';
-
 
 import Item from 'app/components/Item';
 import Icon from 'app/components/Icon';
+
 import MasterworkCatalyst from 'app/components/MasterworkCatalyst';
 
 import TheRealLazyLoad from 'react-lazyload';
 
 import styles from './styles.styl';
+
 import {
   inventorySelector,
   makeSelectedItemDefsSelector
@@ -27,6 +27,7 @@ const LazyLoad = LAZY_LOAD ? TheRealLazyLoad : ({ children }) => children;
 
 export function ItemSet({ className, setPopper, setModal, set, setHiddenItemSet }) {
   const { name, id, noUi, description, sections, image, hidden } = set;
+  
   return (
     <div className={cx(className, styles.root, noUi && styles.noUi)}>
       <div className={styles.inner}>
@@ -95,7 +96,6 @@ export function ItemSet({ className, setPopper, setModal, set, setHiddenItemSet 
     </div>
   );
 }
-
 const mapStateToProps = () => {
   const selectedItemDefsSelector = makeSelectedItemDefsSelector();
   return (state, ownProps) => {
