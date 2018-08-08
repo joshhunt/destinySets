@@ -8,5 +8,6 @@ export default {
   allItems: require('./allItems').default,
   allItemsDeluxe: require('./allItemsDeluxe').default,
   strikeGear: require('./strikeGear').default,
-  catalysts: require('./catalysts').default
+  catalysts: require('./catalysts').default,
+  collections: require('./collections').default
 };

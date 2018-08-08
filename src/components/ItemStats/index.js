@@ -1,9 +1,24 @@
 import React from 'react';
-
 import cx from 'classnames';
-import { NUMERICAL_STATS } from 'app/lib/destinyEnums';
+
+import {
+  NUMERICAL_STATS,
+  STAT_RECOVERY,
+  STAT_RESILIENCE,
+  STAT_MOBILITY
+} from 'app/lib/destinyEnums';
 
 import styles from './styles.styl';
+
+const MAX_VALUES = {
+  [STAT_RECOVERY]: 3,
+  [STAT_RESILIENCE]: 3,
+  [STAT_MOBILITY]: 3
+};
+
+function getMaxValue(statHash) {
+  return MAX_VALUES[statHash] || 100;
+}
 
 export default function ItemStats({ stats, statDefs }) {
   return (
@@ -24,7 +39,7 @@ export default function ItemStats({ stats, statDefs }) {
               <div className={styles.bar}>
                 <div
                   className={styles.barFill}
-                  style={{ width: `${value / 100 * 100}%` }}
+                  style={{ width: `${value / getMaxValue(statHash) * 100}%` }}
                 />
                 <div className={styles.value}>{value}</div>
               </div>

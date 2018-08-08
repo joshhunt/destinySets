@@ -8,15 +8,10 @@ import App from './views/App';
 import Diff from './views/Diff';
 import Inventory from './views/Inventory';
 import Debug from './views/Debug';
+import DataExplorerRedirect from './views/DataExplorerRedirect';
 
 import store from './store';
 import sets from './setData';
-
-import makeSplitComponent from './makeSplitComponent';
-
-const DataExplorer = makeSplitComponent(() =>
-  import(/* webpackChunkName: "DataExplorer" */ './views/DataExplorer')
-);
 
 export default class AppRouter extends Component {
   render() {
@@ -27,12 +22,19 @@ export default class AppRouter extends Component {
             <Route path="/debug" component={Debug} />
 
             <Route
+              path="/"
+              component={Inventory}
+              setData={sets.allSeasons}
+              showCollectionsPromo
+            />
+
+            <Route
               path="/all-seasons"
               component={Inventory}
               setData={sets.allSeasons}
             />
 
-            <Route path="/" component={Inventory} setData={sets.baseGame} />
+            <Route path="/base" component={Inventory} setData={sets.baseGame} />
 
             <Route
               path="/curse-of-osiris"
@@ -41,10 +43,19 @@ export default class AppRouter extends Component {
             />
 
             <Route path="/warmind" component={Inventory} setData={sets.dlc2} />
+
             <Route
               path="/catalysts"
               component={Inventory}
               setData={sets.catalysts}
+              refreshOnInterval
+            />
+
+            <Route
+              path="/collections"
+              component={Inventory}
+              setData={sets.collections}
+              isCollections
             />
 
             <Route
@@ -57,6 +68,7 @@ export default class AppRouter extends Component {
               path="/all-items"
               component={Inventory}
               setData={sets.allItems}
+              showCollectionsPromo
             />
 
             <Route
@@ -65,8 +77,7 @@ export default class AppRouter extends Component {
               setData={sets.allItemsDeluxe}
             />
 
-            <Route path="/data" component={DataExplorer} />
-            <Route path="/data/:itemHash" component={DataExplorer} />
+            <Route path="/data(/:itemHash)" component={DataExplorerRedirect} />
             <Route path="/diff" component={Diff} />
           </Route>
         </Router>

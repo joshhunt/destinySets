@@ -6,15 +6,47 @@ mobile()
   @media screen and (max-width: 679px)
     {block}
 
+.promo
+  margin: auto
+  font-size: 17px
+  text-align: center
+  max-width: 775px
+  background: #15191E
+  padding: 10px
+  margin-bottom: 60px
+
+  a
+    color: white
+
+.button
+  color: black !important
+  background: rgba(208, 170, 11, 1.0)
+  padding: 10px 20px
+  text-decoration: none
+  transition: 150ms ease-in-out
+  display: inline-block
+
+  &:hover
+    background: #ffce1f
+
+
 .trackedItems
   position: fixed
-  right: 16px
+  right: 0
   bottom: 0
+  padding-right: 16px
+  padding-left: 16px
+  max-height: calc(100vh - 52px)
+  overflow: auto
   color: white
   z-index: 999
 
+  & > div
+    box-shadow: 0 2px 5px red
+
   +mobile()
-    left: 16px
+    left: 0
+
     display: flex
     flex-direction: column
     align-items: center

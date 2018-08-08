@@ -5,10 +5,16 @@ $padding = 10px;
   height: 100%
   padding-bottom: 5px // TODO: set this in a better way? On .section?
 
+  .noUi &
+    background: none
+
 .header
   position: relative
   background: #283039
   padding: $padding
+
+  .noUi &
+    background: none
 
 .headerImage
   width: "calc(100% + (%s * 2))" % $padding
@@ -24,6 +30,12 @@ $padding = 10px;
   padding: $padding
   font-size: 18px
 
+.split
+  display: flex
+
+.splitMain
+  flex: 1
+
 .seasonLabel
   font-size: .75em
   background: #2B3037
@@ -35,10 +47,17 @@ $padding = 10px;
 .itemListWrapper
   margin: 0 -5px -10px -10px
 
+  .noUi &
+    margin-left: 0
+    margin-right: 0
+
 .itemList
   display: inline-flex
   flex-wrap: wrap
   margin: 0 5px 5px 5px
+
+  .noUi &
+    margin: 0 -7px
 
 .item
   margin-bottom: 10px !important
@@ -61,6 +80,9 @@ $padding = 10px;
 
 .section
   padding: 0 $padding
+
+  .noUi &
+    padding: 0
 
 .sectionName
   margin-top: 10px

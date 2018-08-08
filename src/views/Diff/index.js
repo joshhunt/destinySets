@@ -100,9 +100,8 @@ export default class Diff extends Component {
               {foo.items.map((item, index) => (
                 <Item
                   className={styles.item}
-                  key={index}
-                  item={item}
-                  linkToData
+                  key={item.hash}
+                  itemHash={item.hash}
                 />
               ))}
             </div>
@@ -115,9 +114,8 @@ export default class Diff extends Component {
               {newItems.map((item, index) => (
                 <Item
                   className={styles.item}
-                  key={index}
-                  item={item}
-                  linkToData
+                  key={item.hash}
+                  itemHash={item.hash}
                 />
               ))}
             </div>
@@ -129,7 +127,11 @@ export default class Diff extends Component {
             <h2>Unclassified</h2>
             <div className={styles.itemList}>
               {unclassifiedItems.map((item, index) => (
-                <Item className={styles.item} key={index} item={item} />
+                <Item
+                  className={styles.item}
+                  key={item.hash}
+                  itemHash={item.hash}
+                />
               ))}
             </div>
           </div>

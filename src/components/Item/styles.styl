@@ -1,113 +1,78 @@
+$size = 44px;
+$green = #44bd32;
+
+._root
+  margin: 5px
+
 .root
-  position: relative
+  composes: _root
   display: flex
-  transition: all 150ms ease-in-out
-  margin-bottom: 15px
 
-  &.small
-    display: inline-block
+.imageWrapper
+  position: relative
 
-  &.obtained
-  &.globallyObtained
-    opacity: .35
+.obtained
+.dismantled
+.checklisted
+  .fadeOut
+    opacity: .25
 
-.countOverlay
+.image
+  display: block
+  height: $size
+  width: auto
+  min-width: $size
+  background: rgba(#D2D2D2, 0.1)
+  object-fit: cover
+
+.overlay
   position: absolute
   top: 0
   left: 0
-  right: 0
-  bottom: 0
-  color: white
-  display: flex
-  align-items: center
-  justify-content: center
-  font-size: 16px
-  z-index: 1
-  pointer-events: none
+  width: 100%
 
-.accessory
-  flex: 0 1 auto
-  position: relative
-  color: white
+.placeholder
+  composes: _root image
+  height: $size
+  background: rgba(#D2D2D2, 0.1)
 
-  &:after
-    position: absolute
-    top: -4.5px
-    right: -4.5px
-    width: 18px
-    height: 18px
-    display: none
-    font-family: 'sans-serif'
-    font-size: 10px
-    border-radius: 18px
-    align-items: center
-    justify-content: center
-    color: white
-    letter-spacing: -2px
+.tick
+  position: absolute
+  top: -5px
+  right: @top
+  line-height: 1
+  text-align: left
+  background: $green
+  border-radius: 50%
+  font-size: 12px
+  padding: 3px
 
-  .globallyObtained &:after
-  .obtained &:after
-    content: '✓'
-    display: flex
-    background: #27ae60
-    color: white
+  .dismantled &
+    background: #7f8fa6
 
-  .globallyObtained &:after
-    background: #3498db
+  .checklisted &
+    background: #3c94ff
 
-  .forSale &:after
-    content: '$'
-    display: flex
-    background: #e67e22
-    color: white
+.extended
+  margin-left: 5px
+  line-height: 1.2
 
-  .dismantled &:after
-    content: '✓'
-    display: flex
-    background: #bdc3c7
-    color: white
-
-
-.image
-  width: 50px
-  height: 50px
-  display: block
-  margin-right: 5px
-  object-fit: cover
-  object-position: center
-
-.main
-  flex: 1 1 auto
-  // margin-left: 10px
-
-.name
-  font-size: 16px
-
-.type
-  font-size: 14px
+.itemType
+  font-size: .85em
   opacity: .8
+  margin-top: 2px
 
-.link
-  text-decoration: none
-  color: inherit !important
+.objectiveOverlay
+  position: absolute
+  bottom: 2px
+  left: 2px
+  right: 2px
+  height: 4px
+  background: rgba(black, .5)
 
-.small
-  .main
-    display: none
+.objectiveTrack
+  height: 100%
+  background: $green
 
-  .image
-    height: 56px
-    width: 56px
-    margin-right: 0
-
-.tiny
-  .image
-    width: 40px
-    height: 40px
-
-  .accessory:after
-    width: 15px
-    height: 15px
-    font-size: 9px
-    letter-spacing: -1px
-    margin-right: 0
+.objectivesComplete
+  opacity: .25

@@ -5,6 +5,16 @@ export const NO_CLASS = 3;
 
 export const FILTER_SHOW_COLLECTED = 'showCollected';
 export const FILTER_SHOW_PS4_EXCLUSIVES = 'ps4Exclusives';
+export const FILTER_SHOW_HIDDEN_SETS = 'showHiddenSets';
+
+const testChecklists = false;
+
+const _CHECKLIST_PROFILE_COLLECTIONS = 3393554306;
+const CHECKLIST_SLEEPER_NODES = 365218222;
+export const CHECKLIST_PROFILE_COLLECTIONS = testChecklists
+  ? CHECKLIST_SLEEPER_NODES
+  : _CHECKLIST_PROFILE_COLLECTIONS;
+export const CHECKLIST_CHARACTER_COLLECTIONS = 3246761912;
 
 // itemCategoryHashes
 export const CLASS_ITEMS = 49;
@@ -49,11 +59,16 @@ export const PC_BLIZZARD = 4;
 export const TIGERDEMON = 10;
 export const BUNGIENEXT = 254;
 
+export const STAT_RECOVERY = 1943323491;
+export const STAT_RESILIENCE = 392767087;
+export const STAT_MOBILITY = 2996146975;
+
 export const NUMERICAL_STATS = [4284893193, 3871231066, 2961396640];
 export const STAT_BLACKLIST = [
   1480404414, // Attack
   1935470627, // Power
-  3897883278 // Defense
+  3897883278, // Defense
+  1501155019 // Sparrow speed, always 0
 ];
 
 export const PLATFORMS = {

@@ -7,7 +7,8 @@ import {
   TITAN,
   WARLOCK,
   FILTER_SHOW_COLLECTED,
-  FILTER_SHOW_PS4_EXCLUSIVES
+  FILTER_SHOW_PS4_EXCLUSIVES,
+  FILTER_SHOW_HIDDEN_SETS
 } from 'app/lib/destinyEnums';
 import CONSOLE_EXCLUSIVES from 'app/extraData/consoleExclusives';
 
@@ -26,6 +27,10 @@ const slugify = str =>
     .replace(/^-+|-+$/g, ''); // remove leading, trailing -
 
 function filterItem(item, inventory, filters) {
+  if (!item) {
+    return false;
+  }
+
   if (
     !filters[FILTER_SHOW_PS4_EXCLUSIVES] &&
     CONSOLE_EXCLUSIVES.ps4.includes(item.hash)
@@ -39,6 +44,7 @@ function filterItem(item, inventory, filters) {
       inventoryEntry &&
       (inventoryEntry.obtained ||
         inventoryEntry.dismantled ||
+        inventoryEntry.checklisted ||
         inventoryEntry.manuallyObtained)
     ) {
       return false;
@@ -66,23 +72,34 @@ function filterItem(item, inventory, filters) {
   return false;
 }
 
-function query(queryTerm, itemDefsArray) {
+function query(itemDefsArray, checklistDefsArray, queryTerm) {
   if (itemDefsArray.length === 0) {
     return [];
   }
 
-  return fancySearch(queryTerm, { item: itemDefsArray });
+  const results = fancySearch(queryTerm, {
+    item: itemDefsArray,
+    checklist: checklistDefsArray
+  });
+
+  return (results || []).filter(Boolean);
 }
 
 const filtersSelector = state => state.app.filters;
+const hiddenSetsSelector = state => state.app.hiddenSets;
 const propsSetDataSelector = (state, props) => props.route.setData;
 const itemDefsSelector = state => state.definitions.itemDefs;
+const checklistDefsSelector = state => state.definitions.checklistDefs;
 
 const setDataSelector = createSelector(
   itemDefsSelector,
+  checklistDefsSelector,
   propsSetDataSelector,
-  (itemDefs, setData) => {
+  (itemDefs, checklistDefs, setData) => {
     const itemDefsArray = Object.values(itemDefs || {});
+    const checklistDefsArray = Object.values(checklistDefs || {});
+
+    const q = query.bind(null, itemDefsArray, checklistDefsArray);
 
     const newSetData = setData.map(group => {
       const sets = group.sets.map(_set => {
@@ -91,7 +108,7 @@ const setDataSelector = createSelector(
         if (set.query) {
           set = {
             ...set,
-            sections: sortItems(query(set.query, itemDefsArray))
+            sections: sortItems(q(set.query))
           };
         }
 
@@ -99,9 +116,7 @@ const setDataSelector = createSelector(
           let section = { ..._section };
 
           if (section.query) {
-            const queriedItems = query(section.query, itemDefsArray).map(
-              item => item.hash
-            );
+            const queriedItems = q(section.query).map(item => item.hash);
             section = { ...section, items: queriedItems };
           }
 
@@ -129,16 +144,27 @@ const setDataSelector = createSelector(
 
 export const filteredSetDataSelector = createSelector(
   filtersSelector,
+  hiddenSetsSelector,
   setDataSelector,
   inventorySelector,
   itemDefsSelector,
-  (filters, setData, inventory, itemDefs) => {
+  (filters, hiddenSets, setData, inventory, itemDefs) => {
     const prevWhitelistedItems = ls.getTempFilterItemWhitelist();
+    //const hiddenSets = ['WARMIND_TRIALS'];
 
     // TODO: Can we memoize this or something to prevent making changes to sets that don't change?
     const result = immer({ setData }, draft => {
       draft.setData.forEach(group => {
         group.sets.forEach(set => {
+          set.hidden = hiddenSets.hasOwnProperty(set.id) && hiddenSets[set.id];
+          if (
+            !filters[FILTER_SHOW_HIDDEN_SETS] &&
+            set.hidden
+          ) {
+            set.sections = [];
+            return;
+          }
+
           set.sections.forEach(section => {
             section.itemGroups = section.itemGroups
               .map(itemList => {

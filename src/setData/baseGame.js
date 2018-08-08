@@ -1,6 +1,7 @@
 // @flow
 
 import * as common from './common';
+import { section as $ } from './common';
 import type { SetPage } from '../types';
 
 export default ([
@@ -9,46 +10,30 @@ export default ([
     sets: [
       {
         name: 'Leviathan Raid',
+        id: 'BASE_LEVIATHAN',
         description:
           'Gear obtained by playing the Leviathan raid and increasing your reputation with Emperor Calus.',
         sections: [
-          {
-            name: 'Weapons',
-            items: [
-              2505533224,
-              3325744914,
-              3906942101,
-              1128225405,
-              3954531357,
-              3380742308,
-              3691881271,
-              1018072983
-            ]
-          },
-          {
-            name: 'Hunter Armor',
-            items: [2013109092, 1960303677, 407863747, 30962015, 3984534842]
-          },
-          {
-            name: 'Hunter Armor - Prestige Mode',
-            items: [2013109093, 1960303676, 407863746, 30962014, 3984534843]
-          },
-          {
-            name: 'Titan Armor',
-            items: [1413589586, 1879942843, 1876645653, 288406317, 574137192]
-          },
-          {
-            name: 'Titan Armor - Prestige Mode',
-            items: [1413589587, 1879942842, 1876645652, 288406316, 574137193]
-          },
-          {
-            name: 'Warlock Armor',
-            items: [2700598111, 2676042150, 3592548938, 2193494688, 3763332443]
-          },
-          {
-            name: 'Warlock Armor - Prestige Mode',
-            items: [2700598110, 2676042151, 3592548939, 2193494689, 3763332442]
-          },
+          $('Weapons', common.RAID_LEVIATHAN_WEAPONS),
+
+          $('Hunter Armor', common.RAID_LEVIATHAN_ARMOR_HUNTER),
+          $(
+            'Hunter Armor - Prestige Mode',
+            common.RAID_LEVIATHAN_ARMOR_PRESTIGE_HUNTER
+          ),
+
+          $('Titan Armor', common.RAID_LEVIATHAN_ARMOR_TITAN),
+          $(
+            'Titan Armor - Prestige Mode',
+            common.RAID_LEVIATHAN_ARMOR_PRESTIGE_TITAN
+          ),
+
+          $('Warlock Armor', common.RAID_LEVIATHAN_ARMOR_WARLOCK),
+          $(
+            'Warlock Armor - Prestige Mode',
+            common.RAID_LEVIATHAN_ARMOR_PRESTIGE_WARLOCK
+          ),
+
           {
             name: 'Emblems',
             items: [
@@ -72,6 +57,7 @@ export default ([
 
       {
         name: 'Iron Banner',
+        id: 'BASE_IRON_BANNER',
         description:
           'Weapons and armor obtained by honoring the heroes of old in the Iron Banner Crucible tournament.',
         sections: [
@@ -110,6 +96,7 @@ export default ([
 
       {
         name: 'Trials of the Nine',
+        id: 'BASE_TRIALS',
         description:
           'Weapons and armor obtained by competing in the Trials of the Nine.',
         sections: [
@@ -164,6 +151,7 @@ export default ([
     sets: [
       {
         name: 'Dead Orbit Arsenal',
+        id: 'BASE_DO',
         description:
           'Weapons and armor obtained by working with Dead Orbit in their mission to push beyond the solar system.',
         small: true,
@@ -201,6 +189,7 @@ export default ([
       },
       {
         name: 'New Monarchy Arsenal',
+        id: 'BASE_NM',
         description:
           'Weapons and armor obtained by working with New Monarchy to strengthen the Last City.',
         small: true,
@@ -238,6 +227,7 @@ export default ([
       },
       {
         name: 'Future War Cult Arsenal',
+        id: 'BASE_FWC',
         description:
           'Weapons and armor obtained by working with Future War Cult to prepare for the wars to come.',
         small: true,
@@ -280,6 +270,7 @@ export default ([
     sets: [
       {
         name: 'European Dead Zone Gear',
+        id: 'BASE_EDZ',
         description:
           'Weapons and armor obtained by performing tasks for Devrim Kay in the EDZ.',
         small: false,
@@ -337,6 +328,7 @@ export default ([
 
       {
         name: 'Echo Mesa, Io Gear',
+        id: 'BASE_ECHO_MESA',
         description:
           'Weapons and armor obtained by performing tasks for Asher Mir on Io.',
         small: false,
@@ -392,6 +384,7 @@ export default ([
 
       {
         name: 'New Pacific Arcology Gear',
+        id: 'BASE_NEW_PACIFIC_ARCOLOGY',
         description:
           'Weapons and armor obtained by performing tasks for Sloane on Titan.',
         small: false,
@@ -453,6 +446,7 @@ export default ([
 
       {
         name: 'Arcadian Valley, Nessus Gear',
+        id: 'BASE_ARCADIAN_VALLEY',
         description:
           'Weapons and armor obtained by performing tasks for Failsafe on Nessus.',
         small: false,
@@ -515,40 +509,14 @@ export default ([
     sets: [
       {
         name: 'Vanguard Tactician Gear',
+        id: 'BASE_VANGUARD_TACTICIAN_GEAR',
         description:
           'Weapons and armor obtained by carrying out special operations for Zavala.',
         sections: [
-          {
-            name: 'Weapons',
-            items: [
-              1644162710, // Origin Story
-              1960218487, // Nameless Midnight
-              1200414607, // The Showrunner
-              3582424018, // Deadpan Delivery
-              3967155859, // The Last Dance
-              1351035691, // Daedalus Code
-              339163900, // Nightshade
-              137879537, // Curtain Call
-              2290863050, // Persuader
-              3445437901, // Main Ingredient
-              2168486467 // Wicked Sister
-            ]
-          },
-
-          {
-            name: 'Hunter Armor',
-            items: [3198744410, 1099472035, 406401261, 3486485973, 3281314016]
-          },
-
-          {
-            name: 'Titan Armor',
-            items: [3873435116, 3027732901, 1667528443, 3375062567, 24244626]
-          },
-
-          {
-            name: 'Warlock Armor',
-            items: [1540376513, 2378296024, 34846448, 413460498, 3215392301]
-          },
+          $('Weapons', common.VENDOR_VANGUARD_S1_WEAPONS),
+          $('Hunter Armor', common.VENDOR_VANGUARD_S1_ARMOR_HUNTER),
+          $('Titan Armor', common.VENDOR_VANGUARD_S1_ARMOR_TITAN),
+          $('Warlock Armor', common.VENDOR_VANGUARD_S1_ARMOR_WARLOCK),
           {
             name: 'Emblems',
             items: [
@@ -576,6 +544,7 @@ export default ([
 
       {
         name: 'Vanguard Research Gear',
+        id: 'BASE_VANGUARD_RESEARCH_GEAR',
         description:
           'Weapons and armor obtained by assisting Ikora Rey with her research.',
         sections: [
@@ -612,34 +581,13 @@ export default ([
 
       {
         name: 'Crucible Engram',
+        id: 'BASE_CRUCIBLE_ENGRAM',
         description: 'Rewards for your efforts in the Crucible.',
         sections: [
-          {
-            name: 'Weapons',
-            items: [
-              3336215727, // Martyr's Make
-              4193877020, // Does Not Compute
-              1048266744, // Better Devils
-              1325579289, // Retrofuturist
-              962412079, // Last Perdition
-              4174481098, // Steel Sybil Z-14
-              2660862359, // Gentleman Vagabond
-              1773600468, // Critical Sass
-              2621637518 // Play of the Game
-            ]
-          },
-          {
-            name: 'Hunter Armor',
-            items: [3223280471, 2296691422, 2718495762, 3140634552, 3313736739]
-          },
-          {
-            name: 'Titan Armor',
-            items: [2191401041, 849529384, 2815422368, 1484937602, 1742680797]
-          },
-          {
-            name: 'Warlock Armor',
-            items: [1764274932, 636679949, 1333087155, 1307478991, 3538513130]
-          },
+          $('Weapons', common.VENDOR_CRUCIBLE_S1_WEAPONS),
+          $('Hunter Armor', common.VENDOR_CRUCIBLE_S1_ARMOR_HUNTER),
+          $('Titan Armor', common.VENDOR_CRUCIBLE_S1_ARMOR_TITAN),
+          $('Warlock Armor', common.VENDOR_CRUCIBLE_S1_ARMOR_WARLOCK),
           {
             name: 'Emblems',
             items: [
@@ -660,6 +608,7 @@ export default ([
 
       {
         name: 'Gunsmith Arsenal',
+        id: 'BASE_GUNSMITH_ARSENAL',
         description:
           'Weapons obtained by increasing your standing with Banshee-44, the Gunsmith.',
         sections: [
@@ -719,6 +668,7 @@ export default ([
       },
       {
         name: 'Flashpoint Gear',
+        id: 'BASE_FLASHPOINT',
         description: "Gear from Cayde-6's weekly Flashpoint.",
         sections: [
           {
@@ -759,6 +709,7 @@ export default ([
     sets: [
       {
         name: 'Hunter Specific Sets',
+        id: 'BASE_WORLD_HUNTER',
         description: 'Other legendary gear obtained from Engrams.',
         small: true,
         sections: [
@@ -796,6 +747,7 @@ export default ([
 
       {
         name: 'Titan Specific Sets',
+        id: 'BASE_WORLD_TITAN',
         description: 'Other legendary gear obtained from Engrams.',
         small: true,
         sections: [
@@ -833,6 +785,7 @@ export default ([
 
       {
         name: 'Warlock Specific Sets',
+        id: 'BASE_WORLD_WARLOCK',
         description: 'Other legendary gear obtained from Engrams.',
         small: true,
         sections: [
@@ -874,6 +827,7 @@ export default ([
     sets: [
       {
         name: 'Promotional Emblems',
+        id: 'BASE_PROMOTIONAL_EMBLEMS',
         description:
           'Emblems obtained from live events, promotional give aways, and D1 Veteran rewards.',
         sections: [
@@ -889,7 +843,8 @@ export default ([
               4132147351, // Recurrent Resplendence
               4182480235, // Hellspawn
               1940590825, // Sonic Simulation
-              1940590823 // Carrhae
+              1940590823, // Carrhae
+              4132147353 // Heart of the City
             ]
           },
           {
@@ -898,7 +853,14 @@ export default ([
               4132147344, // Stand Together
               4132147348, // Darkest Day
               4132147345, // Heretic
-              1940590824 // Tchaikovsky Admirer
+              1940590824, // Tchaikovsky Admirer
+              4132147347 // Day of Seven
+            ]
+          },
+          {
+            name: 'Bungie.net Email Subscription',
+            items: [
+              1940590818 // Kadi 55-30's Blessing
             ]
           },
           {
@@ -952,6 +914,7 @@ export default ([
       },
       {
         name: 'Eververse, Season 1',
+        id: 'BASE_EVERVERSE',
         big: true,
         sections: [
           {

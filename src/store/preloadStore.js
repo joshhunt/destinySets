@@ -1,5 +1,11 @@
 import * as ls from 'app/lib/ls';
-import { setBulkFilters, setLanguage, trackOrnaments } from 'app/store/reducer';
+import {
+  setBulkFilters,
+  setLanguage,
+  trackOrnaments,
+  setAppValue,
+  setBulkHiddenItemSet
+} from 'app/store/reducer';
 import { setProfiles } from 'app/store/profile';
 import { getLastProfile } from 'app/lib/destiny';
 
@@ -18,11 +24,16 @@ export default function preloadStore(store) {
   const authData = ls.getAuth();
   const profiles = ls.getProfiles();
   const trackedItems = ls.getTrackedItems();
+  const dataExplorerVisited = ls.getDataExplorerVisited();
 
   log('debug', { authData, profiles });
 
   if (trackedItems.length) {
     store.dispatch(trackOrnaments(trackedItems));
+  }
+
+  if (dataExplorerVisited) {
+    store.dispatch(setAppValue({ dataExplorerVisited }));
   }
 
   if (authData && profiles) {
@@ -38,6 +49,8 @@ export default function preloadStore(store) {
   }
 
   store.dispatch(setLanguage(ls.getLanguage()));
+
+  store.dispatch(setBulkHiddenItemSet(ls.getHiddenItemSets()));
 
   let currentTrackedItems = store.getState().app.trackedItems;
   store.subscribe(() => {

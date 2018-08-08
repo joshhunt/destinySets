@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router';
 import { connect } from 'react-redux';
 
 import { setFilterItem, removeTrackedItem } from 'app/store/reducer';
@@ -8,7 +9,8 @@ import {
   setVendorDefs,
   setItemDefs,
   setObjectiveDefs,
-  setStatDefs
+  setStatDefs,
+  setChecklistDefs
 } from 'app/store/definitions';
 
 import * as ls from 'app/lib/ls';
@@ -60,7 +62,11 @@ class Inventory extends Component {
   }
 
   potentiallyScheduleFetchProfile = (props = this.props) => {
-    if (!this.intervalId && props.trackedItems.length > 0) {
+    if (this.intervalId) {
+      return;
+    }
+
+    if (props.route.refreshOnInterval || props.trackedItems.length > 0) {
       this.intervalId = window.setInterval(() => {
         props.fetchProfile();
       }, FETCH_INTERVAL);
@@ -72,15 +78,20 @@ class Inventory extends Component {
       setVendorDefs,
       setStatDefs,
       setItemDefs,
-      setObjectiveDefs
+      setObjectiveDefs,
+      setChecklistDefs
     } = this.props;
 
     getDefinition('DestinyVendorDefinition', lang).then(setVendorDefs);
     getDefinition('DestinyStatDefinition', lang).then(setStatDefs);
     getDefinition('DestinyObjectiveDefinition', lang).then(setObjectiveDefs);
+    getDefinition('DestinyChecklistDefinition', lang).then(setChecklistDefs);
 
-    const items = 'reducedCollectableInventoryItems';
-    this.itemDefsPromise = getDefinition(items, lang, false);
+    const args = this.props.location.query.fullItemDefs
+      ? ['DestinyInventoryItemDefinition', lang]
+      : ['reducedCollectableInventoryItems', lang, false];
+
+    this.itemDefsPromise = getDefinition(...args);
     this.itemDefsPromise.then(setItemDefs);
   }
 
@@ -96,21 +107,60 @@ class Inventory extends Component {
   };
 
   render() {
-    const { filters, filteredSetData, trackedItems } = this.props;
+    const { filters, filteredSetData, trackedItems, route } = this.props;
     const { itemTooltip, itemModal } = this.state;
+    const noUi = (filteredSetData[0] || {}).noUi;
 
     return (
       <div className={styles.root}>
-        <SectionList
-          setData={filteredSetData}
-          filters={filters}
-          setFilterItem={this.setFilterItem}
-        />
+        {!noUi && (
+          <SectionList
+            setData={filteredSetData}
+            filters={filters}
+            setFilterItem={this.setFilterItem}
+          />
+        )}
 
-        {filteredSetData.map(({ sets, slug, name }, index) => (
+        {route.showCollectionsPromo && (
+          <div className={styles.promo}>
+            <p>
+              Check out the experimental Collections page for a preview of the
+              items have been marked off for the upcoming Collections in
+              Forsaken
+            </p>
+
+            <p>
+              <Link className={styles.button} to="/collections">
+                Visit Collections
+              </Link>
+            </p>
+          </div>
+        )}
+
+        {route.isCollections && (
+          <div className={styles.promo}>
+            <p>
+              This is an experimental preview of the items that will be marked
+              off in Collections when Forsaken drops. Some items, like S3
+              Faction Rally, Iron Banner, and Solstice of Heroes gear may not
+              appear in the list or as collected, but they will be counted when
+              Forsaken drops. For more info,{' '}
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://github.com/Bungie-net/api/issues/559#issuecomment-407541681"
+              >
+                see this thread
+              </a>.
+            </p>
+          </div>
+        )}
+
+        {filteredSetData.map(({ sets, noUi, slug, name }, index) => (
           <Section
             key={index}
             name={name}
+            noUi={noUi}
             sets={sets}
             slug={slug}
             setPopper={this.setPopper}
@@ -163,6 +213,7 @@ const mapDispatchToActions = {
   setVendorDefs,
   setItemDefs,
   setObjectiveDefs,
+  setChecklistDefs,
   setStatDefs,
   setFilterItem,
   removeTrackedItem

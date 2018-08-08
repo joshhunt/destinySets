@@ -3,11 +3,14 @@ import {
   TITAN,
   WARLOCK,
   FILTER_SHOW_COLLECTED,
-  FILTER_SHOW_PS4_EXCLUSIVES
+  FILTER_SHOW_PS4_EXCLUSIVES,
+  FILTER_SHOW_HIDDEN_SETS
 } from 'app/lib/destinyEnums';
 
 const SET_CLOUD_INVENTORY = 'Set cloud inventory';
 const SET_FILTER_ITEM = 'Set filter item';
+const SET_HIDDEN_ITEM_SET = 'Set hidden itemSet';
+const SET_BULK_HIDDEN_ITEM_SET = 'Set bulk hidden itemSet';
 const SET_BULK_FILTERS = 'Set bulk filters';
 const SET_LANGUAGE = 'Set language';
 const ADD_TRACK_ITEMS = 'Add tracked item';
@@ -15,19 +18,23 @@ const REMOVE_TRACKED_ITEM = 'Remove tracked item';
 const TOGGLE_MANUALLY_OBTAINED = 'Toggle manually obtained';
 const SET_GOOGLE_AUTH = 'Set Google auth data';
 const FORGET_DISMANTLED_ITEM = 'Forget dismantled item';
+const SET_APP_VALUE = 'Set app value';
 
 export const DEFAULT_FILTER = {
   [TITAN]: true,
   [HUNTER]: true,
   [WARLOCK]: true,
   [FILTER_SHOW_COLLECTED]: true,
-  [FILTER_SHOW_PS4_EXCLUSIVES]: true
+  [FILTER_SHOW_PS4_EXCLUSIVES]: true,
+  [FILTER_SHOW_PS4_EXCLUSIVES]: true,
+  [FILTER_SHOW_HIDDEN_SETS]: false
 };
 
 const INITIAL_STORE = {
   filters: DEFAULT_FILTER,
   trackedItems: [],
   manualInventory: {},
+  dataExplorerVisited: false,
   googleAuth: {
     loaded: false,
     signedIn: false
@@ -64,6 +71,12 @@ function forgetDismantledDoWork(cloudInventory, itemHash) {
 
 export default function reducer(state = INITIAL_STORE, action) {
   switch (action.type) {
+    case SET_APP_VALUE:
+      return {
+        ...state,
+        ...action.payload
+      };
+
     case SET_GOOGLE_AUTH:
       return {
         ...state,
@@ -84,6 +97,21 @@ export default function reducer(state = INITIAL_STORE, action) {
           ...state.filters,
           [action.filterKey]: action.filterValue
         }
+      };
+
+    case SET_HIDDEN_ITEM_SET:
+      return {
+        ...state,
+        hiddenSets: {
+          ...state.hiddenSets,
+          [action.setId]: action.hiddenValue
+        }
+      };
+
+    case SET_BULK_HIDDEN_ITEM_SET:
+      return {
+        ...state,
+        hiddenSets: { ...state.hiddenSets, ...action.hiddenSets }
       };
 
     case SET_BULK_FILTERS:
@@ -133,6 +161,10 @@ export default function reducer(state = INITIAL_STORE, action) {
   }
 }
 
+export function setAppValue(payload) {
+  return { type: SET_APP_VALUE, payload };
+}
+
 export function setGoogleAuth(data) {
   return { type: SET_GOOGLE_AUTH, data };
 }
@@ -143,6 +175,14 @@ export function setCloudInventory(cloudInventory) {
 
 export function setFilterItem(filterKey, filterValue) {
   return { type: SET_FILTER_ITEM, filterKey, filterValue };
+}
+
+export function setHiddenItemSet(setId, hiddenValue) {
+  return { type: SET_HIDDEN_ITEM_SET, setId, hiddenValue };
+}
+
+export function setBulkHiddenItemSet(hiddenSets) {
+  return { type: SET_BULK_HIDDEN_ITEM_SET, hiddenSets };
 }
 
 export function setBulkFilters(filters) {

@@ -1,17 +1,25 @@
+import { uniq } from 'lodash';
+
 export default function getItemExtraInfo(item, _itemInventoryEntry) {
   const itemInventoryEntry = _itemInventoryEntry || {
-    instances: [],
+    instances: [{}],
     obtained: false
   };
 
   const extraInfo = [];
 
+  if (itemInventoryEntry.instances[0].location === 'progressionChecklist') {
+    return ['Dismantled & unlocked in Forsaken Collections'];
+  }
+
   itemInventoryEntry.dismantled
     ? extraInfo.push('Dismantled')
     : extraInfo.push(
-        ...itemInventoryEntry.instances
-          .map(getFriendlyItemLocation)
-          .filter(Boolean)
+        ...uniq(
+          itemInventoryEntry.instances
+            .map(getFriendlyItemLocation)
+            .filter(Boolean)
+        )
       );
 
   return extraInfo;

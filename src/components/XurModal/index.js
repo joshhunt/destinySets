@@ -1,13 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import {
-  xurItemsSelector,
-  itemDefsSelector,
-  inventorySelector
-} from 'app/store/selectors';
+import { xurItemsSelector } from 'app/store/selectors';
 import { setXurModal } from 'app/store/xur';
-import Item from 'app/components/NewItem';
+import Item from 'app/components/Item';
 import Icon from 'app/components/Icon';
 import Modal from 'app/components/Modal';
 
@@ -19,8 +15,6 @@ class XurModalContent extends Component {
     const {
       onRequestClose,
       xurItems: { newItems, obtainedItems },
-      inventory,
-      itemDefs,
       location
     } = this.props;
 
@@ -55,8 +49,7 @@ class XurModalContent extends Component {
               <Item
                 className={styles.item}
                 key={itemHash}
-                item={itemDefs && itemDefs[itemHash]}
-                inventoryEntry={inventory && inventory[itemHash]}
+                itemHash={itemHash}
                 extended
               />
             ))}
@@ -79,8 +72,6 @@ const mapStateToProps = () => {
   return (state, ownProps) => {
     return {
       xurItems: xurItemsSelector(state),
-      itemDefs: itemDefsSelector(state),
-      inventory: inventorySelector(state),
       location: state.xur.location,
       isOpen: state.xur.modalOpen
     };

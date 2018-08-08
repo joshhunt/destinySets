@@ -171,18 +171,76 @@ export const fancySearchFns = {
 
   'is:clanbanner': items => {
     return itemFilter(items, itemCategory(enums.CLAN_BANNER));
+  },
+
+  'is:masterworkish': items => {
+    return itemFilter(items, item => {
+      return (
+        item.plug &&
+        item.plug.uiPlugLabel &&
+        item.plug.uiPlugLabel.includes('masterwork')
+      );
+    });
   }
 };
 
 export const fancySearchTerms = Object.keys(fancySearchFns);
 
-export default function fancySearch(search, defs, opts = { hashOnly: false }) {
-  const queries = search.split(' ').filter(s => s.includes(':'));
+function itemsFromChecklistDefs(checklistDef, hashOnly) {
+  if (!checklistDef) {
+    return [];
+  }
 
+  return checklistDef.entries.map(d => d.itemHash);
+}
+
+function findOfHash(defsList, hash) {
+  return defsList.find(d => d.hash === hash);
+}
+
+export default function fancySearch(search, defs, opts = { hashOnly: false }) {
+  if (search === 'special:tempCollections') {
+    if (defs.checklist) {
+      const profileChecklist = findOfHash(
+        defs.checklist,
+        enums.CHECKLIST_PROFILE_COLLECTIONS
+      );
+
+      const characterChecklist = findOfHash(
+        defs.checklist,
+        enums.CHECKLIST_CHARACTER_COLLECTIONS
+      );
+
+      const profileItems = itemsFromChecklistDefs(
+        profileChecklist,
+        opts.hashOnly
+      );
+
+      const characterItems = itemsFromChecklistDefs(
+        characterChecklist,
+        opts.hashOnly
+      );
+
+      const allItems = [...profileItems, ...characterItems];
+
+      return opts.hashOnly
+        ? allItems
+        : allItems.map(h => defs.item.find(d => d.hash === h));
+    }
+  }
+
+  const queries = search.split(' ').filter(s => s.includes(':'));
   const filteredItems = queries.reduce((items, query) => {
     const searchFunc = fancySearchFns[query];
 
     if (!searchFunc) {
+      let match = query.match(/itemcategoryhash:(\d+)/);
+
+      if (match) {
+        const hash = Number(match[1]);
+        return itemFilter(items, itemCategory(hash));
+      }
+
       return items;
     }
 

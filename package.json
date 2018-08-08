@@ -18,6 +18,7 @@
     "browser-locale": "^1.0.3",
     "classnames": "^2.2.5",
     "client-oauth2": "^4.2.0",
+    "date-fns": "^2.0.0-alpha.11",
     "dexie": "^2.0.1",
     "firebase": "^4.8.0",
     "flow-bin": "^0.72.0",

@@ -2,13 +2,18 @@
 
 export type ItemHash = number;
 
+export type ItemsList = Array<ItemHash>;
+
+export type ItemType = 'exoticCatalysts';
+
 export type SetSection = {|
   name: string,
-  items?: Array<ItemHash>,
+  items?: ItemsList,
   query?: string,
   season?: number,
   bigItems?: boolean,
-  itemGroups?: Array<Array<ItemHash>>
+  itemType?: ItemType,
+  itemGroups?: Array<ItemsList>
 |};
 
 export type DestinySet = {|
@@ -17,12 +22,14 @@ export type DestinySet = {|
   image?: string,
   small?: boolean,
   big?: boolean,
+  noUi?: boolean,
   query?: string,
   sections: Array<SetSection>
 |};
 
 export type SetPageSection = {|
   name: string,
+  noUi?: boolean,
   sets: Array<DestinySet>
 |};
 

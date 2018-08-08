@@ -15,7 +15,7 @@ import {
   objectiveDefsSelector,
   statDefsSelector,
   makeItemStatsSelector,
-  profileObjectivesSelector,
+  objectiveInstancesSelector,
   makeItemInventoryEntrySelector
 } from 'app/store/selectors';
 import styles from './styles.styl';
@@ -24,7 +24,7 @@ function ItemTooltip({
   item,
   small,
   dismiss,
-  profileObjectives,
+  objectiveInstances,
   objectiveDefs,
   stats,
   statDefs,
@@ -62,32 +62,34 @@ function ItemTooltip({
             </p>
           ))}
 
-        {screenshot && (
-          <div className={styles.screenshotWrapper}>
-            <FancyImage
-              className={styles.screenshot}
-              src={`https://bungie.net${screenshot}`}
-            />
-          </div>
-        )}
+        {!small &&
+          screenshot && (
+            <div className={styles.screenshotWrapper}>
+              <FancyImage
+                className={styles.screenshot}
+                src={`https://bungie.net${screenshot}`}
+              />
+            </div>
+          )}
 
-        {stats && <ItemStats stats={stats} statDefs={statDefs} />}
+        {!small && stats && <ItemStats stats={stats} statDefs={statDefs} />}
 
         {objectiveHashes.length ? (
           <Objectives
             className={styles.objectives}
             trackedStatStyle={isEmblem}
-            objectives={objectiveHashes}
-            profileObjectives={profileObjectives}
+            objectiveHashes={objectiveHashes}
+            objectiveInstances={objectiveInstances}
             objectiveDefs={objectiveDefs}
           />
         ) : null}
 
-        {extraInfo.map((info, index) => (
-          <div key={index} className={styles.extraInfo}>
-            {info}
-          </div>
-        ))}
+        {!small &&
+          extraInfo.map((info, index) => (
+            <div key={index} className={styles.extraInfo}>
+              {info}
+            </div>
+          ))}
       </div>
     </div>
   );
@@ -100,7 +102,7 @@ const mapStateToProps = () => {
 
   return (state, ownProps) => {
     return {
-      profileObjectives: profileObjectivesSelector(state),
+      objectiveInstances: objectiveInstancesSelector(state),
       objectiveDefs: objectiveDefsSelector(state),
       statDefs: statDefsSelector(state),
       stats: itemStatsSelector(state, ownProps),

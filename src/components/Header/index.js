@@ -12,7 +12,6 @@ import logo from 'app/logo.svg';
 import xur from 'app/assets/xur_icon.png';
 import { DONATION_LINK } from 'app/components/DonateButton';
 import Icon from 'app/components/Icon';
-import GoogleAuthButton from 'app/components/GoogleAuthButton';
 import DonateButton from 'app/components/DonateButton';
 import ProfileDropdown from './ProfileDropdown';
 import LanguageDropdown from './LanguageDropdown';
@@ -27,13 +26,13 @@ function isOverflowing(el) {
 
 const link = (name, to) => ({ name, to });
 const LINKS = [
-  link('Base', '/'),
-  link('All Seasons', '/all-seasons'),
+  link('All Seasons', '/'),
+  link('Base', '/base'),
   link('Curse of Osiris', '/curse-of-osiris'),
   link('Warmind', '/warmind'),
   link('Strikes', '/strike-gear'),
   link('All Items', '/all-items'),
-  link('Data Explorer', '/data')
+  link('Catalysts', '/catalysts')
 ];
 
 const SOCIALS = [
@@ -49,7 +48,12 @@ const SiteName = () => (
   </div>
 );
 
-const SiteLinks = ({ displayXur, openXurModal, xurHasNewItems }) => (
+const SiteLinks = ({
+  displayXur,
+  openXurModal,
+  xurHasNewItems,
+  showDataExplorerLink
+}) => (
   <Fragment>
     <div className={styles.dummyLink} />
 
@@ -63,6 +67,17 @@ const SiteLinks = ({ displayXur, openXurModal, xurHasNewItems }) => (
         {name}
       </Link>
     ))}
+
+    {showDataExplorerLink && (
+      <a
+        className={styles.link}
+        href="https://data.destinysets.com"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Data Explorer
+      </a>
+    )}
 
     {displayXur && (
       <a
@@ -103,11 +118,11 @@ function Sidebar({
   isOpen,
   language,
   setLanguage,
-  displayGoogleAuthButton,
   toggleSidebar,
   displayXur,
   openXurModal,
-  xurHasNewItems
+  xurHasNewItems,
+  showDataExplorerLink
 }) {
   return (
     <ClickOutside
@@ -126,6 +141,7 @@ function Sidebar({
           displayXur={displayXur}
           openXurModal={openXurModal}
           xurHasNewItems={xurHasNewItems}
+          showDataExplorerLink={showDataExplorerLink}
         />
 
         <div className={styles.hr} />
@@ -138,8 +154,6 @@ function Sidebar({
           />
         )}
         <br />
-
-        {displayGoogleAuthButton && <GoogleAuthButton onClick={googleSignIn} />}
 
         <div className={styles.sidebarExtra}>
           <DonateButton />
@@ -199,12 +213,11 @@ export default class Header extends Component {
       xurHasNewItems,
       openXurModal,
       profileCached,
-      profileLoading
+      profileLoading,
+      showDataExplorerLink
     } = this.props;
 
     const { isOverflowing, sidebarActive } = this.state;
-    const displayGoogleAuthButton =
-      currentProfile && googleAuth.loaded && !googleAuth.signedIn;
 
     return (
       <div
@@ -219,7 +232,6 @@ export default class Header extends Component {
             {...this.props}
             isOpen={sidebarActive}
             toggleSidebar={this.toggleSidebar}
-            displayGoogleAuthButton={displayGoogleAuthButton}
           />
         )}
 
@@ -240,13 +252,11 @@ export default class Header extends Component {
               displayXur={displayXur}
               openXurModal={openXurModal}
               xurHasNewItems={xurHasNewItems}
+              showDataExplorerLink={showDataExplorerLink}
             />
           </div>
 
           <div className={styles.etc}>
-            {displayGoogleAuthButton &&
-              !isOverflowing && <GoogleAuthButton onClick={googleSignIn} />}
-
             {language &&
               !isOverflowing && (
                 <LanguageDropdown
@@ -264,6 +274,7 @@ export default class Header extends Component {
                 switchProfile={switchProfile}
                 logout={logout}
                 googleSignOut={googleSignOut}
+                googleSignIn={googleSignIn}
                 googleAuthSignedIn={googleAuth.signedIn}
               />
             )}

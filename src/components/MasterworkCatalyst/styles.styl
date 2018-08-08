@@ -1,0 +1,67 @@
+.root
+  // max-width: 25%
+  min-width: 290px
+  max-width: 25%
+  flex: 1 0 25%
+  margin: 0 !important
+  padding: 7px
+
+  // @media screen and (max-width: 910px)
+  //   width: 100%
+  //   max-width: initial
+  //   min-width: 100%
+
+  code
+    font-family: monospace
+
+  ul
+    padding-left: 30px
+
+  & + &
+    border-left: none
+
+.inner
+  background: #15191E
+  padding: 15px
+  height: 100%
+
+.screenshot
+  display: block
+  width: 100%
+  height: auto
+
+.objectives
+  margin-top: 15px;
+
+.masterworkComplete
+  display: inline-block
+  height: 2em
+  margin-right: .5ch
+  vertical-align: middle
+
+  & + span
+    vertical-align: baseline
+
+.plugIcon
+  height: 1.5em
+  width: auto
+  vertical-align: middle
+  dispaly: inline-block
+  margin-right: .75ch
+
+.itemLink
+  color: inherit
+  text-decoration: none
+
+.instance + .instance
+  border-top: 1px solid rgba(white, .05)
+
+.red
+  color: red
+
+.green
+  color: green
+
+
+.faded
+  opacity: .75em

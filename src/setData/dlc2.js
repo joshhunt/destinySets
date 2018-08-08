@@ -1,6 +1,7 @@
 // @flow
 
 import * as common from './common';
+import { section as $ } from './common';
 import type { SetPage } from '../types';
 
 export default ([
@@ -8,86 +9,22 @@ export default ([
     name: 'Endgame',
     sets: [
       {
-        name: 'Leviathan Raid',
-        description:
-          'Ornaments and collectables obtained by completing challenges in The Leviathan',
-        sections: [
-          {
-            name: 'Hunter Ornaments',
-            items: [
-              215292674, // Praetorian Ornament
-              3849801323, // Praetorian Ornament
-              385347493, // Praetorian Ornament
-              646591613, // Praetorian Ornament
-              3802263800 // Praetorian Ornament
-            ]
-          },
-          {
-            name: 'Titan Ornaments',
-            items: [
-              3188290238, // Praetorian Ornament
-              2458159855, // Praetorian Ornament
-              17582153, // Praetorian Ornament
-              3032763153, // Praetorian Ornament
-              1331851268 // Praetorian Ornament
-            ]
-          },
-          {
-            name: 'Warlock Ornaments',
-            items: [
-              3909176373, // Praetorian Ornament
-              2543545988, // Praetorian Ornament
-              3439095932, // Praetorian Ornament
-              4091208110, // Praetorian Ornament
-              430065393 // Praetorian Ornament
-            ]
-          }
-        ]
-      },
-
-      {
         name: 'Spire of Stars, Raid Lair',
+        id: 'WARMIND_SPIRE',
         description:
           'Gear obtained by playing the Spire of Stars raid lair and increasing your reputation with Emperor Calus.',
         sections: [
-          {
-            name: 'Weapons',
-            items: [
-              2084611899, // Last of the Legion
-              4288031461 // The Emperor's Envy
-            ]
-          },
+          $('Weapons', common.RAID_SOS_WEAPONS),
 
-          {
-            name: 'Hunter Armor',
-            items: [
-              3440648382, // Equitis Shade Cowl
-              2710517999, // Equitis Shade Grips
-              2933666377, // Equitis Shade Rig
-              3285121297, // Equitis Shade Boots
-              4247935492 // Equitis Shade Cloak
-            ]
-          },
-          {
-            name: 'Titan Armor',
-            items: [
-              855363300, // Turris Shade Helm
-              802557885, // Turris Shade Gauntlets
-              4135228483, // Turris Shade Plate
-              3168183519, // Turris Shade Greaves
-              3416932282 // Turris Shade Mark
-            ]
-          },
-          {
-            name: 'Warlock Armor',
-            items: [
-              1675393889, // Insigne Shade Cover
-              2513313400, // Insigne Shade Gloves
-              1296628624, // Insigne Shade Robes
-              548581042, // Insigne Shade Boots
-              223783885 // Insigne Shade Bond
-            ]
-          },
+          $('Hunter Armor', common.RAID_SOS_ARMOR_HUNTER),
+          $('Hunter Ornaments', common.RAID_SOS_ORNAMENTS_HUNTER),
+
+          $('Titan Armor', common.RAID_SOS_ARMOR_TITAN),
+          $('Titan Ornaments', common.RAID_SOS_ORNAMENTS_TITAN),
+
+          $('Warlock Armor', common.RAID_SOS_ARMOR_WARLOCK),
+          $('Warlock Ornaments', common.RAID_SOS_ORNAMENTS_WARLOCK),
+
           {
             name: 'Extras',
             items: [
@@ -95,6 +32,7 @@ export default ([
               1057119308, // Spire Star emblem
               2331063860, // Grind Underfoot emblem
               2331063861, // Together, For Glory! emblem
+              2543722796, // Praetorian Visage shader
               2543722797 // Calus's Shadow shader
             ]
           }
@@ -103,6 +41,7 @@ export default ([
 
       {
         name: 'Iron Banner',
+        id: 'WARMIND_IRON_BANNER',
         description:
           'Weapons and armor obtained by honoring the heroes of old in the Iron Banner Crucible tournament.',
         sections: [
@@ -134,6 +73,7 @@ export default ([
       },
       {
         name: 'Trials of the Nine',
+        id: 'WARMIND_TRIALS',
         description:
           'Weapons and armor obtained by competing in the Trials of the Nine.',
         sections: [
@@ -155,6 +95,7 @@ export default ([
       },
       {
         name: 'Escalation Protocol',
+        id: 'WARMIND_ESCALATION_PROTOCOL',
         description: 'Gear obtained by completing Escalation Protocol.',
         sections: [
           {
@@ -219,6 +160,7 @@ export default ([
     sets: [
       {
         name: 'Dead Orbit Arsenal',
+        id: 'WARMIND_DO',
         description:
           'Weapons and armor obtained by working with Dead Orbit in their mission to push beyond the solar system.',
         small: true,
@@ -251,6 +193,7 @@ export default ([
       },
       {
         name: 'New Monarchy Arsenal',
+        id: 'WARMIND_NM',
         description:
           'Weapons and armor obtained by working with New Monarchy to strengthen the Last City.',
         small: true,
@@ -283,6 +226,7 @@ export default ([
       },
       {
         name: 'Future War Cult Arsenal',
+        id: 'WARMIND_FWC',
         description:
           'Weapons and armor obtained by working with Future War Cult to prepare for the wars to come.',
         small: true,
@@ -320,6 +264,7 @@ export default ([
     sets: [
       {
         name: 'Hellas Basin, Mars Gear',
+        id: 'WARMIND_HELLAS_BASIN',
         description: 'Gear obtained by performing tasks for Ana Bray on Mars.',
         small: false,
         sections: [
@@ -394,48 +339,14 @@ export default ([
 
       {
         name: 'Vanguard Tactician Gear',
+        id: 'WARMIND_VANGUARD_TACTICIAN',
         description:
           'Weapons and armor obtained by carrying out special operations for Zavala.',
         sections: [
-          {
-            name: 'Weapons',
-            items: [
-              819358961, // Spoiler Alert
-              1720373217, // The Permanent Truth
-              1940885628, // Archimedes Truth
-              2171006181 // Service Revolver
-            ]
-          },
-          {
-            name: 'Hunter Ornaments',
-            items: [
-              301260156, // Steadfast Hunter Ornament
-              1697714165, // Steadfast Hunter Ornament
-              2933221739, // Steadfast Hunter Ornament
-              3273836247, // Steadfast Hunter Ornament
-              1672921858 // Steadfast Hunter Ornament
-            ]
-          },
-          {
-            name: 'Titan Ornaments',
-            items: [
-              2170065560, // Steadfast Titan Ornament
-              2633869161, // Steadfast Titan Ornament
-              2942643951, // Steadfast Titan Ornament
-              2925811003, // Steadfast Titan Ornament
-              4189802622 // Steadfast Titan Ornament
-            ]
-          },
-          {
-            name: 'Warlock Ornaments',
-            items: [
-              4075989867, // Steadfast Warlock Ornament
-              2398247002, // Steadfast Warlock Ornament
-              547716782, // Steadfast Warlock Ornament
-              3654718868, // Steadfast Warlock Ornament
-              865811319 // Steadfast Warlock Ornament
-            ]
-          },
+          $('Weapons', common.VENDOR_VANGUARD_S3_WEAPONS),
+          $('Hunter Ornaments', common.VENDOR_VANGUARD_S3_ORNAMENTS_HUNTER),
+          $('Titan Ornaments', common.VENDOR_VANGUARD_S3_ORNAMENTS_TITAN),
+          $('Warlock Ornaments', common.VENDOR_VANGUARD_S3_ORNAMENTS_WARLOCK),
           {
             name: 'Extras',
             items: [
@@ -450,57 +361,14 @@ export default ([
 
       {
         name: 'Crucible Engram',
+        id: 'WARMIND_CRUCIBLE',
         description: 'Rewards for your efforts in the Crucible.',
         sections: [
-          {
-            name: 'Valor Rewards',
-            items: [
-              3529780349, // The Marine
-              1642781471, // Alchemical Dawn Shell
-              2525626415 // True Valor (Season 3)
-            ]
-          },
-          {
-            name: 'Glory Rewards',
-            items: [
-              2611861926, // Imminent Storm
-              4041111172, // The Button
-              191996029, // Redrix's Claymore
-              3190698551, // Wishbringer
-              2516883975, // Glory and Grandeur
-              2182330181 // True Glory (Season 3)
-            ]
-          },
-          {
-            name: 'Hunter Ornaments',
-            items: [
-              738275137, // Fire-Forged Hunter Head Ornament
-              1576194648, // Fire-Forged Hunter Arms Ornament
-              1058022768, // Fire-Forged Hunter Chest Ornament
-              3906326418, // Fire-Forged Hunter Leg Ornament
-              4238568621 // Fire-Forged Hunter Cloak Ornament
-            ]
-          },
-          {
-            name: 'Titan Ornaments',
-            items: [
-              1217364045, // Fire-Forged Titan Head Ornament
-              1870029884, // Fire-Forged Titan Arm Ornament
-              1131512228, // Fire-Forged Titan Chest Ornament
-              1255838534, // Fire-Forged Titan Leg Ornament
-              1875342329 // Fire-Forged Titan Mark Ornament
-            ]
-          },
-          {
-            name: 'Warlock Ornaments',
-            items: [
-              3999699118, // Fire-Forged Warlock Head Ornament
-              730038303, // Fire-Forged Warlock Arm Ornament
-              699889753, // Fire-Forged Warlock Chest Ornament
-              3946152673, // Fire-Forged Warlock Leg Ornament
-              2438616340 // Fire-Forged Warlock Bond Ornament
-            ]
-          },
+          $('Valor Rewards', common.VENDOR_CRUCIBLE_S3_VALOR_REWARDS),
+          $('Glory Rewards', common.VENDOR_CRUCIBLE_S3_GLORY_REWARDS),
+          $('Hunter Ornaments', common.VENDOR_CRUCIBLE_S3_ORNAMENTS_HUNTER),
+          $('Titan Ornaments', common.VENDOR_CRUCIBLE_S3_ORNAMENTS_TITAN),
+          $('Warlock Ornaments', common.VENDOR_CRUCIBLE_S3_ORNAMENTS_WARLOCK),
 
           {
             name: 'Extras',
@@ -515,22 +383,36 @@ export default ([
 
       {
         name: 'Gunsmith Arsenal',
+        id: 'WARMIND_GUNSMITH',
         description:
           'Weapons obtained by increasing your standing with Banshee-44, the Gunsmith.',
         sections: [
           {
             name: 'Weapons',
-            items: []
+            items: [
+              1178397318, // Agrona PR4
+              1178397319, // Battle Scar
+              1489452902, // Courageous Surrender
+              1137768695, // Foregone Conclusion
+              2544285846, // Scipio-D
+              2433826056, // The Quickstep
+              1159252500 // Vacuna SR4
+            ]
           }
         ]
       }
     ]
   },
   {
+    name: 'Holiday',
+    sets: [common.SOLSTICE_OF_HEROES]
+  },
+  {
     name: 'Other',
     sets: [
       {
         name: '"Insight" Armor - PS4 Exclusive',
+        id: 'WARMIND_INSIGHT',
         sections: [
           {
             name: 'Hunter armor',
@@ -566,6 +448,7 @@ export default ([
       },
       {
         name: 'Eververse, Season 3',
+        id: 'WARMIND_EVERVERSE',
         sections: [
           {
             name: 'Hunter Armor',

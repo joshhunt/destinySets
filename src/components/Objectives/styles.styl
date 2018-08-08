@@ -1,15 +1,24 @@
+$emptyTrack = lighten(#16191E, 2%)
+$filledTrack = rgb(80, 82, 93)
+
 //
 // Objectives
 //
 .objective
-  margin-bottom: 10px
   position: relative
-  background: lighten(#16191E, 2%)
+  background: $emptyTrack
+  border: 1px solid $filledTrack
   padding: 5px 8px
+  margin-bottom: 5px
 
   .trackedStat &
     margin-bottom: 0
     // background: lighten(#16191E, 2%)
+
+  // & + &
+  //   border-top: none
+
+
 
 .objectiveTrack
   position: absolute
@@ -19,7 +28,8 @@
   height: 100%
   width: 0
   z-index: 1
-  background: rgb(80, 82, 93)
+  background: $filledTrack
+  transition: width 250ms ease-in-out
 
   .trackedStat &
     display: none

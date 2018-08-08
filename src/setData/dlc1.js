@@ -1,6 +1,7 @@
 // @flow
 
 import * as common from './common';
+import { section as $ } from './common';
 import type { SetPage } from '../types';
 
 export default ([
@@ -8,98 +9,30 @@ export default ([
     name: 'Endgame',
     sets: [
       {
-        name: 'Leviathan Raid',
-        description:
-          'Ornaments and collectables obtained by completing challenges in The Leviathan',
-        sections: [
-          {
-            name: 'Hunter Ornaments',
-            items: [
-              3346055334, // Eater of Worlds Ornament
-              2519280691, // Eater of Worlds Ornament
-              3179514973, // Eater of Worlds Ornament
-              2899660517, // Eater of Worlds Ornament
-              1928662068 // Eater of Worlds Ornament
-            ]
-          },
-          {
-            name: 'Titan Ornaments',
-            items: [
-              3036703920, // Eater of Worlds Ornament
-              3093970453, // Eater of Worlds Ornament
-              2380365371, // Eater of Worlds Ornament
-              1815512839, // Eater of Worlds Ornament
-              3991114670 // Eater of Worlds Ornament
-            ]
-          },
-          {
-            name: 'Warlock Ornaments',
-            items: [
-              1397648181, // Eater of Worlds Ornament
-              1575703224, // Eater of Worlds Ornament
-              3163954768, // Eater of Worlds Ornament
-              4135965162, // Eater of Worlds Ornament
-              2837735361 // Eater of Worlds Ornament
-            ]
-          },
-          {
-            name: 'Extras',
-            items: [
-              113124080 // Contender's Shell (Ghost)
-            ]
-          }
-        ]
-      },
-
-      {
         name: 'Eater of Worlds, Raid Lair',
+        id: 'OSIRIS_EATER_OF_WORLDS',
         description:
           'Gear obtained by playing the Eater of Worlds raid lair and increasing your reputation with Emperor Calus.',
         sections: [
-          {
-            name: 'Weapons',
-            items: [
-              3886263130, // I Am Alive
-              2707464805 // Zenith of Your Kind
-            ]
-          },
+          $('Weapons', common.RAID_EOW_WEAPONS),
 
-          {
-            name: 'Hunter Armor',
-            items: [
-              253344425, // Mask of Feltroc
-              2339720736, // Grips of Feltroc
-              2976612200, // Vest of Feltroc
-              1034660314, // Boots of Feltroc
-              383742277 // Cloak of Feltroc
-            ]
-          },
-          {
-            name: 'Titan Armor',
-            items: [
-              1991039861, // Mask of Nohr
-              666883012, // Gauntlets of Nohr
-              1242139836, // Plate of Nohr
-              2597529070, // Greaves of Nohr
-              2994007601 // Mark of Nohr
-            ]
-          },
-          {
-            name: 'Warlock Armor',
-            items: [
-              796914932, // Mask of Sekris
-              3964287245, // Wraps of Sekris
-              2329031091, // Robes of Sekris
-              340118991, // Boots of Sekris
-              239489770 // Bond of Sekris
-            ]
-          },
+          $('Hunter Armor', common.RAID_EOW_ARMOR_HUNTER),
+          $('Hunter Ornaments', common.RAID_EOW_ORNAMENTS_HUNTER),
+
+          $('Titan Armor', common.RAID_EOW_ARMOR_TITAN),
+          $('Titan Ornaments', common.RAID_EOW_ORNAMENTS_TITAN),
+
+          $('Warlock Armor', common.RAID_EOW_ARMOR_WARLOCK),
+          $('Warlock Ornaments', common.RAID_EOW_ORNAMENTS_WARLOCK),
+
           {
             name: 'Extras',
             items: [
               113124080, // Contender's Shell (Ghost)
               4261480751, // Emperor's Envy (Emblem)
-              4242407217 // Calus's Elite (Shader)
+              4242407217, // Calus's Elite (Shader)
+              4261480750, // Covetous Emperor (Emblem)
+              4242407216 // Calus's Preferred (Shader)
             ]
           }
         ]
@@ -107,6 +40,7 @@ export default ([
 
       {
         name: 'Iron Banner',
+        id: 'OSIRIS_IRON_BANNER',
         description:
           'Weapons and armor obtained by honoring the heroes of old in the Iron Banner Crucible tournament.',
         sections: [
@@ -141,6 +75,7 @@ export default ([
 
       {
         name: 'Trials of the Nine',
+        id: 'OSIRIS_TRIALS',
         description:
           'Weapons and armor obtained by competing in the Trials of the Nine.',
         sections: [
@@ -187,6 +122,7 @@ export default ([
     sets: [
       {
         name: 'Dead Orbit Arsenal',
+        id: 'OSIRIS_DO',
         description:
           'Weapons and armor obtained by working with Dead Orbit in their mission to push beyond the solar system.',
         small: true,
@@ -221,6 +157,7 @@ export default ([
       },
       {
         name: 'New Monarchy Arsenal',
+        id: 'OSIRIS_NM',
         description:
           'Weapons and armor obtained by working with New Monarchy to strengthen the Last City.',
         small: true,
@@ -255,6 +192,7 @@ export default ([
       },
       {
         name: 'Future War Cult Arsenal',
+        id: 'OSIRIS_FWC',
         description:
           'Weapons and armor obtained by working with Future War Cult to prepare for the wars to come.',
         small: true,
@@ -294,6 +232,7 @@ export default ([
     sets: [
       {
         name: 'Mercury Gear',
+        id: 'OSIRIS_MERCURY',
         description:
           'Gear obtained by performing tasks for Brother Vance on Mercury.',
         small: false,
@@ -386,49 +325,14 @@ export default ([
 
       {
         name: 'Vanguard Tactician Gear',
+        id: 'OSIRIS_VANGUARD_TACTICIAN',
         description:
           'Weapons and armor obtained by carrying out special operations for Zavala.',
         sections: [
-          {
-            name: 'Weapons',
-            items: [
-              // Curse of Osiris
-              3393130645, // Positive Outlook
-              2957542878, // Living Memory
-              1927800278, // Eternal Blazon
-              3551104348 // Double-Edged Answer
-            ]
-          },
-          {
-            name: 'Hunter Ornaments',
-            items: [
-              2795289891, // On the Offense Ornament
-              4188739374, // On the Offense Ornament
-              1409959426, // On the Offense Ornament
-              2951536384, // On the Offense Ornament
-              2541644975 // On the Offense Ornament
-            ]
-          },
-          {
-            name: 'Titan Ornaments',
-            items: [
-              1269036705, // Take Shelter Ornament
-              1776321292, // Take Shelter Ornament
-              1214682004, // Take Shelter Ornament
-              28479854, // Take Shelter Ornament
-              552112621 // Take Shelter Ornament
-            ]
-          },
-          {
-            name: 'Warlock Ornaments',
-            items: [
-              2520561932, // Xenos Shore Ornament
-              137367657, // Xenos Shore Ornament
-              2033661183, // Xenos Shore Ornament
-              995614939, // Xenos Shore Ornament
-              2491110586 // Xenos Shore Ornament
-            ]
-          },
+          $('Weapons', common.VENDOR_VANGUARD_S2_WEAPONS),
+          $('Hunter Ornaments', common.VENDOR_VANGUARD_S2_ORNAMENTS_HUNTER),
+          $('Titan Ornaments', common.VENDOR_VANGUARD_S2_ORNAMENTS_TITAN),
+          $('Warlock Ornaments', common.VENDOR_VANGUARD_S2_ORNAMENTS_WARLOCK),
           {
             name: 'Achievement Emblems',
             items: [
@@ -447,49 +351,13 @@ export default ([
 
       {
         name: 'Crucible Engram',
+        id: 'OSIRIS_CRUCIBLE',
         description: 'Rewards for your efforts in the Crucible.',
         sections: [
-          {
-            name: 'Weapons',
-            items: [
-              // Curse of Osiris
-              1674742470, // Autumn Wind
-              468276817, // Nature of the Beast
-              1084788061, // Swift Solstice
-              2792181427 // Tiebreaker
-            ]
-          },
-
-          {
-            name: 'Hunter Ornaments',
-            items: [
-              2806246104, // Soaring Sword Ornament
-              3460422045, // Soaring Sword Ornament
-              2646135315, // Soaring Sword Ornament
-              337811599, // Soaring Sword Ornament
-              1181382726 // Soaring Sword Ornament
-            ]
-          },
-          {
-            name: 'Titan Ornaments',
-            items: [
-              2908316342, // Phoenix Battle Ornament
-              3955222467, // Phoenix Battle Ornament
-              3440657549, // Phoenix Battle Ornament
-              2685752725, // Phoenix Battle Ornament
-              1617637028 // Phoenix Battle Ornament
-            ]
-          },
-          {
-            name: 'Warlock Ornaments',
-            items: [
-              2516513295, // Ankaa Friend Ornament
-              121382562, // Ankaa Friend Ornament
-              2521913126, // Ankaa Friend Ornament
-              3980640404, // Ankaa Friend Ornament
-              36130859 // Ankaa Friend Ornament
-            ]
-          },
+          $('Weapons', common.VENDOR_CRUCIBLE_S2_WEAPONS),
+          $('Hunter Ornaments', common.VENDOR_CRUCIBLE_S2_ORNAMENTS_HUNTER),
+          $('Titan Ornaments', common.VENDOR_CRUCIBLE_S2_ORNAMENTS_TITAN),
+          $('Warlock Ornaments', common.VENDOR_CRUCIBLE_S2_ORNAMENTS_WARLOCK),
           {
             name: 'Shaders',
             items: [
@@ -501,6 +369,7 @@ export default ([
 
       {
         name: 'Gunsmith Arsenal',
+        id: 'OSIRIS_GUNSMITH',
         description:
           'Weapons obtained by increasing your standing with Banshee-44, the Gunsmith.',
         sections: [
@@ -537,6 +406,7 @@ export default ([
     sets: [
       {
         name: 'The Dawning',
+        id: 'OSIRIS_THE_DAWNING',
         big: false,
         sections: [
           {
@@ -656,6 +526,7 @@ export default ([
       },
       {
         name: 'Crimson Days',
+        id: 'OSIRIS_CRIMSON_DAYS',
         big: false,
         sections: [
           {
@@ -722,6 +593,7 @@ export default ([
     sets: [
       {
         name: 'Eververse, Season 2',
+        id: 'OSIRIS_EVERVERSE',
         big: true,
         sections: [
           {

@@ -8,6 +8,7 @@ export default ([
     sets: [
       {
         name: 'Weapons',
+        id: "DELUXE_WEAPONS",
         big: true,
         query: 'is:weapon',
         sections: []
@@ -15,6 +16,7 @@ export default ([
 
       {
         name: 'Armor',
+        id: "DELUXE_ARMOR",
         big: true,
         query: 'is:armor',
         sections: []

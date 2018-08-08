@@ -24,3 +24,4 @@ export const setVendorDefs = setDefs.bind(null, 'vendorDefs');
 export const setItemDefs = setDefs.bind(null, 'itemDefs');
 export const setObjectiveDefs = setDefs.bind(null, 'objectiveDefs');
 export const setStatDefs = setDefs.bind(null, 'statDefs');
+export const setChecklistDefs = setDefs.bind(null, 'checklistDefs');
