@@ -1,4 +1,5 @@
 import React from 'react';
+
 import {
   HUNTER,
   TITAN,
@@ -7,7 +8,9 @@ import {
   FILTER_SHOW_PS4_EXCLUSIVES,
   FILTER_SHOW_HIDDEN_SETS
 } from 'app/lib/destinyEnums';
+
 import styles from './styles.styl';
+
 const FILTER_NAMES = {
   [HUNTER]: 'Hunter',
   [TITAN]: 'Titan',
@@ -16,6 +19,7 @@ const FILTER_NAMES = {
   [FILTER_SHOW_PS4_EXCLUSIVES]: 'PS4 Exclusives',
   [FILTER_SHOW_HIDDEN_SETS]: 'Hidden sets'
 };
+
 export default function FilterBar({ filters, setFilterItem }) {
   return (
     <div className={styles.root}>
