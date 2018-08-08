@@ -28,7 +28,9 @@ export default function ExtraInfo({
         <span className={styles.blueTick}>
           <Icon icon="check" />
         </span>{' '}
-        Dismantled &amp; and unlocked in Forsaken checklist
+        {inventoryEntry.obtained
+          ? 'Unlocked in Forsaken checklist'
+          : 'Dismantled & and unlocked in Forsaken checklist'}
       </span>
     );
   }
