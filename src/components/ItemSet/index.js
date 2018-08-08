@@ -28,7 +28,7 @@ const LazyLoad = LAZY_LOAD ? TheRealLazyLoad : ({ children }) => children;
 
 export function ItemSet({ className, setPopper, setModal, set, setHiddenItemSet }) {
   const { name, id, noUi, description, sections, image, hidden } = set;
-  
+
   return (
     <div className={cx(className, styles.root, noUi && styles.noUi)}>
       <div className={styles.inner}>
