@@ -24,6 +24,8 @@ const LOCATIONS = {
   characterKiosks: 'Unlocked in Kiosk',
   profileKiosks: 'Unlocked in Kiosk',
   destinySetsManual: 'Manually marked as collected'
+  // profilePlugSets: 'Unlocked',
+  // vendorPlugStates: 'Unlocked'
 };
 
 export function getFriendlyItemLocation(instance) {
