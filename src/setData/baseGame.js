@@ -10,6 +10,7 @@ export default ([
     sets: [
       {
         name: 'Leviathan Raid',
+        id: 'BASE_LEVIATHAN',
         description:
           'Gear obtained by playing the Leviathan raid and increasing your reputation with Emperor Calus.',
         sections: [
@@ -56,6 +57,7 @@ export default ([
 
       {
         name: 'Iron Banner',
+        id: 'BASE_IRON_BANNER',
         description:
           'Weapons and armor obtained by honoring the heroes of old in the Iron Banner Crucible tournament.',
         sections: [
@@ -94,6 +96,7 @@ export default ([
 
       {
         name: 'Trials of the Nine',
+        id: 'BASE_TRIALS',
         description:
           'Weapons and armor obtained by competing in the Trials of the Nine.',
         sections: [
@@ -148,6 +151,7 @@ export default ([
     sets: [
       {
         name: 'Dead Orbit Arsenal',
+        id: 'BASE_DO',
         description:
           'Weapons and armor obtained by working with Dead Orbit in their mission to push beyond the solar system.',
         small: true,
@@ -185,6 +189,7 @@ export default ([
       },
       {
         name: 'New Monarchy Arsenal',
+        id: 'BASE_NM',
         description:
           'Weapons and armor obtained by working with New Monarchy to strengthen the Last City.',
         small: true,
@@ -222,6 +227,7 @@ export default ([
       },
       {
         name: 'Future War Cult Arsenal',
+        id: 'BASE_FWC',
         description:
           'Weapons and armor obtained by working with Future War Cult to prepare for the wars to come.',
         small: true,
@@ -264,6 +270,7 @@ export default ([
     sets: [
       {
         name: 'European Dead Zone Gear',
+        id: 'BASE_EDZ',
         description:
           'Weapons and armor obtained by performing tasks for Devrim Kay in the EDZ.',
         small: false,
@@ -321,6 +328,7 @@ export default ([
 
       {
         name: 'Echo Mesa, Io Gear',
+        id: 'BASE_ECHO_MESA',
         description:
           'Weapons and armor obtained by performing tasks for Asher Mir on Io.',
         small: false,
@@ -376,6 +384,7 @@ export default ([
 
       {
         name: 'New Pacific Arcology Gear',
+        id: 'BASE_NEW_PACIFIC_ARCOLOGY',
         description:
           'Weapons and armor obtained by performing tasks for Sloane on Titan.',
         small: false,
@@ -437,6 +446,7 @@ export default ([
 
       {
         name: 'Arcadian Valley, Nessus Gear',
+        id: 'BASE_ARCADIAN_VALLEY',
         description:
           'Weapons and armor obtained by performing tasks for Failsafe on Nessus.',
         small: false,
@@ -499,6 +509,7 @@ export default ([
     sets: [
       {
         name: 'Vanguard Tactician Gear',
+        id: 'BASE_VANGUARD_TACTICIAN_GEAR',
         description:
           'Weapons and armor obtained by carrying out special operations for Zavala.',
         sections: [
@@ -533,6 +544,7 @@ export default ([
 
       {
         name: 'Vanguard Research Gear',
+        id: 'BASE_VANGUARD_RESEARCH_GEAR',
         description:
           'Weapons and armor obtained by assisting Ikora Rey with her research.',
         sections: [
@@ -569,6 +581,7 @@ export default ([
 
       {
         name: 'Crucible Engram',
+        id: 'BASE_CRUCIBLE_ENGRAM',
         description: 'Rewards for your efforts in the Crucible.',
         sections: [
           $('Weapons', common.VENDOR_CRUCIBLE_S1_WEAPONS),
@@ -595,6 +608,7 @@ export default ([
 
       {
         name: 'Gunsmith Arsenal',
+        id: 'BASE_GUNSMITH_ARSENAL',
         description:
           'Weapons obtained by increasing your standing with Banshee-44, the Gunsmith.',
         sections: [
@@ -654,6 +668,7 @@ export default ([
       },
       {
         name: 'Flashpoint Gear',
+        id: 'BASE_FLASHPOINT',
         description: "Gear from Cayde-6's weekly Flashpoint.",
         sections: [
           {
@@ -694,6 +709,7 @@ export default ([
     sets: [
       {
         name: 'Hunter Specific Sets',
+        id: 'BASE_WORLD_HUNTER',
         description: 'Other legendary gear obtained from Engrams.',
         small: true,
         sections: [
@@ -731,6 +747,7 @@ export default ([
 
       {
         name: 'Titan Specific Sets',
+        id: 'BASE_WORLD_TITAN',
         description: 'Other legendary gear obtained from Engrams.',
         small: true,
         sections: [
@@ -768,6 +785,7 @@ export default ([
 
       {
         name: 'Warlock Specific Sets',
+        id: 'BASE_WORLD_WARLOCK',
         description: 'Other legendary gear obtained from Engrams.',
         small: true,
         sections: [
@@ -809,6 +827,7 @@ export default ([
     sets: [
       {
         name: 'Promotional Emblems',
+        id: 'BASE_PROMOTIONAL_EMBLEMS',
         description:
           'Emblems obtained from live events, promotional give aways, and D1 Veteran rewards.',
         sections: [
@@ -895,6 +914,7 @@ export default ([
       },
       {
         name: 'Eververse, Season 1',
+        id: 'BASE_EVERVERSE',
         big: true,
         sections: [
           {

@@ -3,11 +3,14 @@ import {
   TITAN,
   WARLOCK,
   FILTER_SHOW_COLLECTED,
-  FILTER_SHOW_PS4_EXCLUSIVES
+  FILTER_SHOW_PS4_EXCLUSIVES,
+  FILTER_SHOW_HIDDEN_SETS
 } from 'app/lib/destinyEnums';
 
 const SET_CLOUD_INVENTORY = 'Set cloud inventory';
 const SET_FILTER_ITEM = 'Set filter item';
+const SET_HIDDEN_ITEM_SET = 'Set hidden itemSet';
+const SET_BULK_HIDDEN_ITEM_SET = 'Set bulk hidden itemSet';
 const SET_BULK_FILTERS = 'Set bulk filters';
 const SET_LANGUAGE = 'Set language';
 const ADD_TRACK_ITEMS = 'Add tracked item';
@@ -22,7 +25,9 @@ export const DEFAULT_FILTER = {
   [HUNTER]: true,
   [WARLOCK]: true,
   [FILTER_SHOW_COLLECTED]: true,
-  [FILTER_SHOW_PS4_EXCLUSIVES]: true
+  [FILTER_SHOW_PS4_EXCLUSIVES]: true,
+  [FILTER_SHOW_PS4_EXCLUSIVES]: true,
+  [FILTER_SHOW_HIDDEN_SETS]: false
 };
 
 const INITIAL_STORE = {
@@ -94,6 +99,21 @@ export default function reducer(state = INITIAL_STORE, action) {
         }
       };
 
+    case SET_HIDDEN_ITEM_SET:
+      return {
+        ...state,
+        hiddenSets: {
+          ...state.hiddenSets,
+          [action.setId]: action.hiddenValue
+        }
+      };
+
+    case SET_BULK_HIDDEN_ITEM_SET:
+      return {
+        ...state,
+        hiddenSets: { ...state.hiddenSets, ...action.hiddenSets }
+      };
+
     case SET_BULK_FILTERS:
       return {
         ...state,
@@ -155,6 +175,14 @@ export function setCloudInventory(cloudInventory) {
 
 export function setFilterItem(filterKey, filterValue) {
   return { type: SET_FILTER_ITEM, filterKey, filterValue };
+}
+
+export function setHiddenItemSet(setId, hiddenValue) {
+  return { type: SET_HIDDEN_ITEM_SET, setId, hiddenValue };
+}
+
+export function setBulkHiddenItemSet(hiddenSets) {
+  return { type: SET_BULK_HIDDEN_ITEM_SET, hiddenSets };
 }
 
 export function setBulkFilters(filters) {

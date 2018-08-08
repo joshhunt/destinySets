@@ -7,7 +7,8 @@ import {
   TITAN,
   WARLOCK,
   FILTER_SHOW_COLLECTED,
-  FILTER_SHOW_PS4_EXCLUSIVES
+  FILTER_SHOW_PS4_EXCLUSIVES,
+  FILTER_SHOW_HIDDEN_SETS
 } from 'app/lib/destinyEnums';
 import CONSOLE_EXCLUSIVES from 'app/extraData/consoleExclusives';
 
@@ -85,6 +86,7 @@ function query(itemDefsArray, checklistDefsArray, queryTerm) {
 }
 
 const filtersSelector = state => state.app.filters;
+const hiddenSetsSelector = state => state.app.hiddenSets;
 const propsSetDataSelector = (state, props) => props.route.setData;
 const itemDefsSelector = state => state.definitions.itemDefs;
 const checklistDefsSelector = state => state.definitions.checklistDefs;
@@ -142,16 +144,27 @@ const setDataSelector = createSelector(
 
 export const filteredSetDataSelector = createSelector(
   filtersSelector,
+  hiddenSetsSelector,
   setDataSelector,
   inventorySelector,
   itemDefsSelector,
-  (filters, setData, inventory, itemDefs) => {
+  (filters, hiddenSets, setData, inventory, itemDefs) => {
     const prevWhitelistedItems = ls.getTempFilterItemWhitelist();
+    //const hiddenSets = ['WARMIND_TRIALS'];
 
     // TODO: Can we memoize this or something to prevent making changes to sets that don't change?
     const result = immer({ setData }, draft => {
       draft.setData.forEach(group => {
         group.sets.forEach(set => {
+          set.hidden = hiddenSets.hasOwnProperty(set.id) && hiddenSets[set.id];
+          if (
+            !filters[FILTER_SHOW_HIDDEN_SETS] &&
+            set.hidden
+          ) {
+            set.sections = [];
+            return;
+          }
+
           set.sections.forEach(section => {
             section.itemGroups = section.itemGroups
               .map(itemList => {
