@@ -1,5 +1,6 @@
 import * as ls from 'app/lib/ls';
 import React from 'react';
+import { connect } from 'react-redux';
 import cx from 'classnames';
 
 import Item from 'app/components/Item';
