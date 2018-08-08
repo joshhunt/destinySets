@@ -15,6 +15,7 @@ export const section = (name: string, items: ItemsList): SetSection => ({
 
 export const SOLSTICE_OF_HEROES = {
   name: 'Solstice of Heroes',
+  id: 'COMMON_SOLSTICE_OF_HEROES',
   big: true,
   sections: [
     {
