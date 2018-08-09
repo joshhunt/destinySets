@@ -30,7 +30,7 @@ export default function ExtraInfo({
         </span>{' '}
         {inventoryEntry.obtained
           ? 'Unlocked in Forsaken checklist'
-          : 'Dismantled & and unlocked in Forsaken checklist'}
+          : 'Dismantled & unlocked in Forsaken checklist'}
       </span>
     );
   }
