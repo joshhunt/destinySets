@@ -16,6 +16,9 @@ $padding = 10px;
   .noUi &
     background: none
 
+.hidden
+  opacity: .5
+
 .headerImage
   width: "calc(100% + (%s * 2))" % $padding
   display: block
@@ -35,6 +38,35 @@ $padding = 10px;
 
 .splitMain
   flex: 1
+
+
+.hiddenToggleText
+  font-size: 14px
+
+.hiddenToggle
+  background: none
+  padding: 5px
+  margin: -5px
+  border: none
+  outline: none !important
+  color: inherit
+  font-size: 15px
+  opacity: .25
+  transition: opacity 150ms ease-in-out
+  cursor: pointer
+
+  &:active
+    opacity: .3 !important
+
+@media (hover: hover)
+  .hiddenToggle
+    opacity: 0
+
+  .inner:hover .hiddenToggle
+    opacity: .5
+
+    &:hover
+      opacity: .75
 
 .seasonLabel
   font-size: .75em
