@@ -8,6 +8,7 @@ export default ([
     sets: [
       {
         name: 'Collections',
+        id: 'COLLECTIONS_COLLECTIONS',
         big: true,
         query: 'special:tempCollections',
         sections: []

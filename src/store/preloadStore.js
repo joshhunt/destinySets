@@ -3,7 +3,8 @@ import {
   setBulkFilters,
   setLanguage,
   trackOrnaments,
-  setAppValue
+  setAppValue,
+  setBulkHiddenItemSet
 } from 'app/store/reducer';
 import { setProfiles } from 'app/store/profile';
 import { getLastProfile } from 'app/lib/destiny';
@@ -48,6 +49,8 @@ export default function preloadStore(store) {
   }
 
   store.dispatch(setLanguage(ls.getLanguage()));
+
+  store.dispatch(setBulkHiddenItemSet(ls.getHiddenItemSets()));
 
   let currentTrackedItems = store.getState().app.trackedItems;
   store.subscribe(() => {

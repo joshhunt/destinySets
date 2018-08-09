@@ -10,6 +10,7 @@ export default ([
     sets: [
       {
         name: 'Spire of Stars, Raid Lair',
+        id: 'WARMIND_SPIRE',
         description:
           'Gear obtained by playing the Spire of Stars raid lair and increasing your reputation with Emperor Calus.',
         sections: [
@@ -40,6 +41,7 @@ export default ([
 
       {
         name: 'Iron Banner',
+        id: 'WARMIND_IRON_BANNER',
         description:
           'Weapons and armor obtained by honoring the heroes of old in the Iron Banner Crucible tournament.',
         sections: [
@@ -71,6 +73,7 @@ export default ([
       },
       {
         name: 'Trials of the Nine',
+        id: 'WARMIND_TRIALS',
         description:
           'Weapons and armor obtained by competing in the Trials of the Nine.',
         sections: [
@@ -92,6 +95,7 @@ export default ([
       },
       {
         name: 'Escalation Protocol',
+        id: 'WARMIND_ESCALATION_PROTOCOL',
         description: 'Gear obtained by completing Escalation Protocol.',
         sections: [
           {
@@ -156,6 +160,7 @@ export default ([
     sets: [
       {
         name: 'Dead Orbit Arsenal',
+        id: 'WARMIND_DO',
         description:
           'Weapons and armor obtained by working with Dead Orbit in their mission to push beyond the solar system.',
         small: true,
@@ -188,6 +193,7 @@ export default ([
       },
       {
         name: 'New Monarchy Arsenal',
+        id: 'WARMIND_NM',
         description:
           'Weapons and armor obtained by working with New Monarchy to strengthen the Last City.',
         small: true,
@@ -220,6 +226,7 @@ export default ([
       },
       {
         name: 'Future War Cult Arsenal',
+        id: 'WARMIND_FWC',
         description:
           'Weapons and armor obtained by working with Future War Cult to prepare for the wars to come.',
         small: true,
@@ -257,6 +264,7 @@ export default ([
     sets: [
       {
         name: 'Hellas Basin, Mars Gear',
+        id: 'WARMIND_HELLAS_BASIN',
         description: 'Gear obtained by performing tasks for Ana Bray on Mars.',
         small: false,
         sections: [
@@ -331,6 +339,7 @@ export default ([
 
       {
         name: 'Vanguard Tactician Gear',
+        id: 'WARMIND_VANGUARD_TACTICIAN',
         description:
           'Weapons and armor obtained by carrying out special operations for Zavala.',
         sections: [
@@ -352,6 +361,7 @@ export default ([
 
       {
         name: 'Crucible Engram',
+        id: 'WARMIND_CRUCIBLE',
         description: 'Rewards for your efforts in the Crucible.',
         sections: [
           $('Valor Rewards', common.VENDOR_CRUCIBLE_S3_VALOR_REWARDS),
@@ -373,6 +383,7 @@ export default ([
 
       {
         name: 'Gunsmith Arsenal',
+        id: 'WARMIND_GUNSMITH',
         description:
           'Weapons obtained by increasing your standing with Banshee-44, the Gunsmith.',
         sections: [
@@ -401,6 +412,7 @@ export default ([
     sets: [
       {
         name: '"Insight" Armor - PS4 Exclusive',
+        id: 'WARMIND_INSIGHT',
         sections: [
           {
             name: 'Hunter armor',
@@ -436,6 +448,7 @@ export default ([
       },
       {
         name: 'Eververse, Season 3',
+        id: 'WARMIND_EVERVERSE',
         sections: [
           {
             name: 'Hunter Armor',

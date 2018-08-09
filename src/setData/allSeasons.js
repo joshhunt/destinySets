@@ -13,6 +13,7 @@ export default ([
     sets: [
       {
         name: 'Leviathan Raid',
+        id: 'ALL_SEASONS_LEVIATHAN_RAID',
         description:
           'Gear obtained by playing the Leviathan raid and increasing your reputation with Emperor Calus.',
         sections: [
@@ -55,6 +56,7 @@ export default ([
 
       {
         name: 'Eater of Worlds, Raid Lair',
+        id: 'ALL_SEASONS_EATER_OF_WORLDS',
         description:
           'Gear obtained by playing the Eater of Worlds raid lair and increasing your reputation with Emperor Calus.',
         sections: [
@@ -94,6 +96,7 @@ export default ([
 
       {
         name: 'Spire of Stars, Raid Lair',
+        id: 'ALL_SEASONS_SPIRE_OF_STARS',
         description:
           'Gear obtained by playing the Spire of Stars raid lair and increasing your reputation with Emperor Calus.',
         sections: [
@@ -134,6 +137,7 @@ export default ([
 
       {
         name: 'Iron Banner',
+        id: 'ALL_SEASONS_IRON_BANNER',
         description:
           'Weapons and armor obtained by honoring the heroes of old in the Iron Banner Crucible tournament.',
         sections: [
@@ -197,6 +201,7 @@ export default ([
 
       {
         name: 'Trials of the Nine',
+        id: 'ALL_SEASONS_TRIALS_OF_THE_NINE',
         description:
           'Weapons and armor obtained by competing in the Trials of the Nine.',
         sections: [
@@ -276,6 +281,7 @@ export default ([
     sets: [
       {
         name: 'Dead Orbit Arsenal',
+        id: 'ALL_SEASONS_DEAD_ORBIT_ARSENAL',
         description:
           'Weapons and armor obtained by working with Dead Orbit in their mission to push beyond the solar system.',
         sections: [
@@ -337,6 +343,7 @@ export default ([
       },
       {
         name: 'New Monarchy Arsenal',
+        id: 'ALL_SEASONS_NEW_MONARCHY_ARSENAL',
         description:
           'Weapons and armor obtained by working with New Monarchy to strengthen the Last City.',
         sections: [
@@ -398,6 +405,7 @@ export default ([
       },
       {
         name: 'Future War Cult Arsenal',
+        id: 'ALL_SEASONS_FUTURE_WAR_CULT_ARSENAL',
         description:
           'Weapons and armor obtained by working with Future War Cult to prepare for the wars to come.',
         sections: [
@@ -464,6 +472,7 @@ export default ([
     sets: [
       {
         name: 'Vanguard Tactician Gear',
+        id: 'ALL_SEASONS_VANGUARD_TACTICIAN_GEAR',
         description:
           'Weapons and armor obtained by carrying out special operations for Zavala.',
         sections: [
@@ -522,6 +531,7 @@ export default ([
       },
       {
         name: 'Crucible Engram',
+        id: 'ALL_SEASONS_CRUCIBLE_ENGRAM',
         description: 'Rewards for your efforts in the Crucible.',
         sections: [
           {
@@ -584,6 +594,7 @@ export default ([
       },
       {
         name: 'Gunsmith Arsenal',
+        id: 'ALL_SEASONS_GUNSMITH_ARSENAL',
         description:
           'Weapons obtained by increasing your standing with Banshee-44, the Gunsmith.',
         sections: [
@@ -673,6 +684,7 @@ export default ([
     sets: [
       {
         name: 'Eververse',
+        id: 'ALL_SEASONS_EVERVERSE',
         big: true,
         sections: [
           {

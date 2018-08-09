@@ -9,6 +9,7 @@ export default ([
     sets: [
       {
         name: 'Exotics',
+        id: "CATALYSTS",
         big: true,
         noUi: true,
         sections: [

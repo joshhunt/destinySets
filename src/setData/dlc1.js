@@ -10,6 +10,7 @@ export default ([
     sets: [
       {
         name: 'Eater of Worlds, Raid Lair',
+        id: 'OSIRIS_EATER_OF_WORLDS',
         description:
           'Gear obtained by playing the Eater of Worlds raid lair and increasing your reputation with Emperor Calus.',
         sections: [
@@ -39,6 +40,7 @@ export default ([
 
       {
         name: 'Iron Banner',
+        id: 'OSIRIS_IRON_BANNER',
         description:
           'Weapons and armor obtained by honoring the heroes of old in the Iron Banner Crucible tournament.',
         sections: [
@@ -73,6 +75,7 @@ export default ([
 
       {
         name: 'Trials of the Nine',
+        id: 'OSIRIS_TRIALS',
         description:
           'Weapons and armor obtained by competing in the Trials of the Nine.',
         sections: [
@@ -119,6 +122,7 @@ export default ([
     sets: [
       {
         name: 'Dead Orbit Arsenal',
+        id: 'OSIRIS_DO',
         description:
           'Weapons and armor obtained by working with Dead Orbit in their mission to push beyond the solar system.',
         small: true,
@@ -153,6 +157,7 @@ export default ([
       },
       {
         name: 'New Monarchy Arsenal',
+        id: 'OSIRIS_NM',
         description:
           'Weapons and armor obtained by working with New Monarchy to strengthen the Last City.',
         small: true,
@@ -187,6 +192,7 @@ export default ([
       },
       {
         name: 'Future War Cult Arsenal',
+        id: 'OSIRIS_FWC',
         description:
           'Weapons and armor obtained by working with Future War Cult to prepare for the wars to come.',
         small: true,
@@ -226,6 +232,7 @@ export default ([
     sets: [
       {
         name: 'Mercury Gear',
+        id: 'OSIRIS_MERCURY',
         description:
           'Gear obtained by performing tasks for Brother Vance on Mercury.',
         small: false,
@@ -318,6 +325,7 @@ export default ([
 
       {
         name: 'Vanguard Tactician Gear',
+        id: 'OSIRIS_VANGUARD_TACTICIAN',
         description:
           'Weapons and armor obtained by carrying out special operations for Zavala.',
         sections: [
@@ -343,6 +351,7 @@ export default ([
 
       {
         name: 'Crucible Engram',
+        id: 'OSIRIS_CRUCIBLE',
         description: 'Rewards for your efforts in the Crucible.',
         sections: [
           $('Weapons', common.VENDOR_CRUCIBLE_S2_WEAPONS),
@@ -360,6 +369,7 @@ export default ([
 
       {
         name: 'Gunsmith Arsenal',
+        id: 'OSIRIS_GUNSMITH',
         description:
           'Weapons obtained by increasing your standing with Banshee-44, the Gunsmith.',
         sections: [
@@ -396,6 +406,7 @@ export default ([
     sets: [
       {
         name: 'The Dawning',
+        id: 'OSIRIS_THE_DAWNING',
         big: false,
         sections: [
           {
@@ -515,6 +526,7 @@ export default ([
       },
       {
         name: 'Crimson Days',
+        id: 'OSIRIS_CRIMSON_DAYS',
         big: false,
         sections: [
           {
@@ -581,6 +593,7 @@ export default ([
     sets: [
       {
         name: 'Eververse, Season 2',
+        id: 'OSIRIS_EVERVERSE',
         big: true,
         sections: [
           {

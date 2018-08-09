@@ -8,12 +8,14 @@ export default ([
     sets: [
       {
         name: 'Exotics',
+        id: 'ALL_EXOTICS',
         big: true,
         query: 'is:exotic is:gear',
         sections: []
       },
       {
         name: 'Weapons',
+        id: 'ALL_WEAPONS',
         big: true,
         sections: [
           {
@@ -36,6 +38,7 @@ export default ([
       },
       {
         name: 'Armor',
+        id: 'ALL_ARMOR',
         big: true,
         query: 'is:legendary is:armor',
         sections: []
@@ -48,6 +51,7 @@ export default ([
     sets: [
       {
         name: 'Emblems',
+        id: 'ALL_EMBLEMS',
         big: true,
         sections: [
           {
@@ -71,6 +75,7 @@ export default ([
 
       {
         name: 'Shaders',
+        id: 'ALL_SHADERS',
         big: true,
         sections: [
           {
@@ -90,6 +95,7 @@ export default ([
 
       {
         name: 'Emotes',
+        id: 'ALL_EMOTES',
         big: true,
         query: 'is:emote',
         sections: []
@@ -97,6 +103,7 @@ export default ([
 
       {
         name: 'Ornaments',
+        id: 'ALL_ORNAMENTS',
         big: true,
         query: 'is:ornament',
         sections: []
@@ -109,12 +116,14 @@ export default ([
     sets: [
       {
         name: 'Sparrows',
+        id: 'ALL_SPARROWS',
         query: 'is:sparrow',
         sections: []
       },
 
       {
         name: 'Ships',
+        id: 'ALL_SHIPS',
         query: 'is:ship',
         sections: []
       }

@@ -8,6 +8,7 @@ export default ([
     sets: [
       {
         name: 'The Inverted Spire',
+        id: 'STRIKE_THE_INVERTED_SPIRE',
         image: '/img/destiny_content/pgcr/strike_inverted_spire.jpg',
         sections: [
           {
@@ -28,6 +29,7 @@ export default ([
       },
       {
         name: 'Pyramidion',
+        id: 'STRIKE_PYRAMIDION',
         image: '/img/destiny_content/pgcr/strike_the_pyramdion.jpg',
         sections: [
           {
@@ -48,6 +50,7 @@ export default ([
       },
       {
         name: 'Exodus Crash',
+        id: 'STRIKE_EXODUS_CRASH',
         image: '/img/destiny_content/pgcr/strike_exodus_crash.jpg',
         sections: [
           {
@@ -68,6 +71,7 @@ export default ([
       },
       {
         name: 'The Arms Dealer',
+        id: 'STRIKE_THE_ARMS_DEALER',
         image: '/img/destiny_content/pgcr/strike_the_arms_dealer.jpg',
         sections: [
           {
@@ -88,6 +92,7 @@ export default ([
       },
       {
         name: "Savathûn's Song",
+        id: "STRIKE_SAVATHÛN'S_SONG",
         image: '/img/destiny_content/pgcr/strike_savanthuns_song.jpg',
         sections: [
           {
@@ -108,6 +113,7 @@ export default ([
       },
       {
         name: 'Lake of Shadows',
+        id: 'STRIKE_LAKE_OF_SHADOWS',
         image: '/img/destiny_content/pgcr/strike_lake_of_shadows.jpg',
         sections: [
           // {
@@ -124,6 +130,7 @@ export default ([
     sets: [
       {
         name: 'Tree Of Probabilities',
+        id: 'STRIKE_TREE_OF_PROBABILITIES',
         image: '/img/destiny_content/pgcr/campaign_tree_of_probabilities.jpg',
         sections: [
           {
@@ -146,6 +153,7 @@ export default ([
       },
       {
         name: 'A Garden World',
+        id: 'STRIKE_A_GARDEN_WORLD',
         image: '/img/destiny_content/pgcr/rituals_a_garden_world.jpg',
         sections: [
           {
@@ -174,6 +182,7 @@ export default ([
     sets: [
       {
         name: 'Will of the Thousands',
+        id: 'STRIKE_WILL_OF_THE_THOUSANDS',
         image: '/img/destiny_content/pgcr/strike_xol.jpg',
         sections: [
           {
@@ -196,6 +205,7 @@ export default ([
       },
       {
         name: 'Strange Terrain',
+        id: 'STRIKE_STRANGE_TERRAIN',
         image: '/img/destiny_content/pgcr/strike_nokris.jpg',
         sections: [
           {
