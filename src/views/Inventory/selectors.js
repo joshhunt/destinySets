@@ -150,7 +150,6 @@ export const filteredSetDataSelector = createSelector(
   itemDefsSelector,
   (filters, hiddenSets, setData, inventory, itemDefs) => {
     const prevWhitelistedItems = ls.getTempFilterItemWhitelist();
-    //const hiddenSets = ['WARMIND_TRIALS'];
 
     // TODO: Can we memoize this or something to prevent making changes to sets that don't change?
     const result = immer({ setData }, draft => {

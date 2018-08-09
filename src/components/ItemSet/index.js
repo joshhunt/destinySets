@@ -1,8 +1,8 @@
-import * as ls from 'app/lib/ls';
 import React from 'react';
 import { connect } from 'react-redux';
 import cx from 'classnames';
 
+import * as ls from 'app/lib/ls';
 import Item from 'app/components/Item';
 import Icon from 'app/components/Icon';
 
@@ -97,18 +97,9 @@ export function ItemSet({ className, setPopper, setModal, set, setHiddenItemSet 
     </div>
   );
 }
-const mapStateToProps = () => {
-  const selectedItemDefsSelector = makeSelectedItemDefsSelector();
-  return (state, ownProps) => {
-    return {
-      inventory: inventorySelector(state),
-      itemDefs: selectedItemDefsSelector(state, ownProps)
-    };
-  };
-};
 
 const mapDispatchToActions = {
   setHiddenItemSet: setHiddenItemSetAction
 };
 
-export default connect(mapStateToProps, mapDispatchToActions)(ItemSet);
+export default connect(null, mapDispatchToActions)(ItemSet);
