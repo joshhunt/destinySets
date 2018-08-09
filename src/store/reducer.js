@@ -110,7 +110,7 @@ export default function reducer(state = INITIAL_STORE, action) {
     case SET_BULK_HIDDEN_ITEM_SET:
       return {
         ...state,
-        hiddenSets: { ...state.hiddenSets, ...action.hiddenSets }
+        hiddenSets: action.hiddenSets
       };
 
     case SET_BULK_FILTERS:

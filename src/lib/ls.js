@@ -266,6 +266,10 @@ export function saveHiddenItemSets(setId, hidden) {
   return save(keys.HIDDEN_ITEM_SETS, hiddenSets);
 }
 
+export function saveBulkHiddenItemSets(value) {
+  return save(keys.HIDDEN_ITEM_SETS, value);
+}
+
 export function clearAll() {
   Object.values(keys).forEach(k => {
     localStorage.removeItem(k);

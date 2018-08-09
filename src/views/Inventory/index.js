@@ -2,7 +2,11 @@ import React, { Component } from 'react';
 import { Link } from 'react-router';
 import { connect } from 'react-redux';
 
-import { setFilterItem, removeTrackedItem } from 'app/store/reducer';
+import {
+  setFilterItem,
+  removeTrackedItem,
+  setBulkHiddenItemSet
+} from 'app/store/reducer';
 import { fetchProfile } from 'app/store/profile';
 
 import {
@@ -106,10 +110,22 @@ class Inventory extends Component {
     this.props.setFilterItem(...args);
   };
 
+  unhideAllSets = () => {
+    ls.saveBulkHiddenItemSets({});
+    this.props.setBulkHiddenItemSet({});
+  };
+
   render() {
     const { filters, filteredSetData, trackedItems, route } = this.props;
     const { itemTooltip, itemModal } = this.state;
     const noUi = (filteredSetData[0] || {}).noUi;
+
+    const numberOfHiddenSets = Object.values(this.props.hiddenSets).reduce(
+      (acc, value) => {
+        return value ? acc + 1 : acc;
+      },
+      0
+    );
 
     return (
       <div className={styles.root}>
@@ -168,6 +184,18 @@ class Inventory extends Component {
           />
         ))}
 
+        {numberOfHiddenSets > 1 && (
+          <p className={styles.hiddenSets}>
+            {numberOfHiddenSets} sets hidden.{' '}
+            <button
+              className={styles.unhideSetsButton}
+              onClick={this.unhideAllSets}
+            >
+              Unhide all
+            </button>
+          </p>
+        )}
+
         <Footer />
 
         {itemTooltip && (
@@ -201,6 +229,7 @@ class Inventory extends Component {
 
 const mapStateToProps = (state, ownProps) => {
   return {
+    hiddenSets: state.app.hiddenSets,
     filters: state.app.filters,
     language: state.app.language,
     trackedItems: state.app.trackedItems,
@@ -216,7 +245,8 @@ const mapDispatchToActions = {
   setChecklistDefs,
   setStatDefs,
   setFilterItem,
-  removeTrackedItem
+  removeTrackedItem,
+  setBulkHiddenItemSet
 };
 
 export default connect(mapStateToProps, mapDispatchToActions)(Inventory);
