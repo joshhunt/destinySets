@@ -12,10 +12,6 @@ import TheRealLazyLoad from 'react-lazyload';
 
 import styles from './styles.styl';
 
-import {
-  inventorySelector,
-  makeSelectedItemDefsSelector
-} from 'app/store/selectors';
 import { setHiddenItemSet as setHiddenItemSetAction } from 'app/store/reducer';
 
 const ITEM_TYPE_COMPONENTS = {
