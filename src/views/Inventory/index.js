@@ -184,7 +184,7 @@ class Inventory extends Component {
           />
         ))}
 
-        {numberOfHiddenSets > 1 && (
+        {numberOfHiddenSets > 0 && (
           <p className={styles.hiddenSets}>
             {numberOfHiddenSets} sets hidden.{' '}
             <button
