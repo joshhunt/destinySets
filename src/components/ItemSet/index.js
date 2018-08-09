@@ -72,7 +72,7 @@ class ItemSet extends Component {
                       {true && (
                         <span className={styles.hiddenToggleText}>
                           {' '}
-                          {hidden ? 'Show' : 'Hide'}
+                          {hidden ? 'Hidden' : 'Hide'}
                         </span>
                       )}
                     </button>
