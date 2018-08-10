@@ -99,18 +99,6 @@ class ItemModalContent extends Component {
           </p>
         )}
 
-        <ul className={styles.viewItemLinks}>
-          <li>
-            <a href={dtrLink} target="_blank" rel="noopener noreferrer">
-              View on DestinyTracker
-            </a>
-          </li>
-
-          <li>
-            <Link to={`/data/${hash}`}>View in Data Explorer</Link>
-          </li>
-        </ul>
-
         {!!objectiveHashes.length && (
           <div>
             <h3 className={styles.objectiveTitle}>
@@ -127,7 +115,7 @@ class ItemModalContent extends Component {
           </div>
         )}
 
-        <div>
+        <p>
           {!!objectiveHashes.length && (
             <button
               className={styles.mainButton}
@@ -166,7 +154,19 @@ class ItemModalContent extends Component {
                 Unmark as collected
               </button>
             )}
-        </div>
+        </p>
+
+        <ul className={styles.viewItemLinks}>
+          <li>
+            <a href={dtrLink} target="_blank" rel="noopener noreferrer">
+              View on DestinyTracker
+            </a>
+          </li>
+
+          <li>
+            <Link to={`/data/${hash}`}>View in Data Explorer</Link>
+          </li>
+        </ul>
 
         <ExtraInfo
           className={styles.extraInfo}

@@ -72,6 +72,10 @@ export default function Objectives(props) {
     ? incompleteObjectives
     : objectivesBuild;
 
+  const numObjectives = objectivesBuild.length;
+  const numIncomplete = incompleteObjectives.length;
+  const numCompleted = numObjectives - numIncomplete;
+
   return (
     <div className={cx(className, trackedStatStyle && styles.trackedStat)}>
       {objectivesToDisplay.map(objective => {
@@ -101,9 +105,10 @@ export default function Objectives(props) {
       })}
 
       {onlyIncomplete &&
-        incompleteObjectives.length !== objectivesBuild.length && (
+        numCompleted > 0 && (
           <div className={styles.completed}>
-            + {objectivesBuild.length - incompleteObjectives.length} completed
+            {numCompleted !== numObjectives && '+ '}
+            {objectivesBuild.length - incompleteObjectives.length} completed
             objectives
           </div>
         )}
