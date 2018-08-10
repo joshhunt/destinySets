@@ -79,6 +79,7 @@ function ItemTooltip({
             objectiveHashes={objectiveHashes}
             objectiveInstances={objectiveInstances}
             objectiveDefs={objectiveDefs}
+            onlyIncomplete={small}
           />
         ) : null}
 

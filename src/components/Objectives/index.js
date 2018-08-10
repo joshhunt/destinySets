@@ -44,7 +44,8 @@ export default function Objectives(props) {
     objectiveHashes,
     objectiveDefs,
     objectiveInstances,
-    trackedStatStyle
+    trackedStatStyle,
+    onlyIncomplete
   } = props;
 
   if (!((objectives || objectiveHashes) && objectiveDefs)) {
@@ -66,9 +67,14 @@ export default function Objectives(props) {
         };
       });
 
+  const incompleteObjectives = objectivesBuild.filter(obj => !obj.complete);
+  const objectivesToDisplay = onlyIncomplete
+    ? incompleteObjectives
+    : objectivesBuild;
+
   return (
     <div className={cx(className, trackedStatStyle && styles.trackedStat)}>
-      {objectivesBuild.map(objective => {
+      {objectivesToDisplay.map(objective => {
         return (
           <div className={styles.objective} key={objective.objectiveHash}>
             <div
@@ -93,6 +99,14 @@ export default function Objectives(props) {
           </div>
         );
       })}
+
+      {onlyIncomplete &&
+        incompleteObjectives.length !== objectivesBuild.length && (
+          <div className={styles.completed}>
+            + {objectivesBuild.length - incompleteObjectives.length} completed
+            objectives
+          </div>
+        )}
     </div>
   );
 }

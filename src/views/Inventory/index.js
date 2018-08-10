@@ -207,12 +207,17 @@ class Inventory extends Component {
         {trackedItems.length > 0 && (
           <div className={styles.trackedItems}>
             {trackedItems.map(hash => (
-              <ItemTooltip
+              <div
                 key={hash}
-                itemHash={hash}
-                small={true}
-                dismiss={this.removeTrackedItem}
-              />
+                className={styles.trackedItem}
+                data-global-hack-tracked-item
+              >
+                <ItemTooltip
+                  itemHash={hash}
+                  small={true}
+                  dismiss={this.removeTrackedItem}
+                />
+              </div>
             ))}
           </div>
         )}
