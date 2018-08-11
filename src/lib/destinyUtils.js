@@ -40,7 +40,7 @@ export const getItemClass = item => {
   const stackUniqueLabel = getLower(item, 'inventory.stackUniqueLabel');
   const plugCategoryIdentifier = getLower(item, 'plug.plugCategoryIdentifier');
 
-  if (item.itemCategoryHashes.includes(EMBLEM) && stackUniqueLabel.length) {
+  if (hasCategoryHash(item, EMBLEM) && stackUniqueLabel.length) {
     return classFromString(stackUniqueLabel);
   }
 
@@ -51,3 +51,9 @@ export const getItemClass = item => {
 
   return item.classType;
 };
+
+export function hasCategoryHash(item, categoryHash) {
+  return (
+    item.itemCategoryHashes && item.itemCategoryHashes.includes(categoryHash)
+  );
+}

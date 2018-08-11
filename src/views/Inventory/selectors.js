@@ -6,16 +6,21 @@ import {
   HUNTER,
   TITAN,
   WARLOCK,
+  WEAPON,
+  WEAPON_MODS_ORNAMENTS,
+  ARMOR_MODS_ORNAMENTS,
   FILTER_SHOW_COLLECTED,
   FILTER_SHOW_PS4_EXCLUSIVES,
-  FILTER_SHOW_HIDDEN_SETS
+  FILTER_SHOW_HIDDEN_SETS,
+  FILTER_SHOW_ORNAMENTS,
+  FILTER_SHOW_WEAPONS
 } from 'app/lib/destinyEnums';
 import CONSOLE_EXCLUSIVES from 'app/extraData/consoleExclusives';
 
 import { inventorySelector } from 'app/store/selectors';
 import * as ls from 'app/lib/ls';
 
-import { getItemClass } from 'app/lib/destinyUtils';
+import { getItemClass, hasCategoryHash } from 'app/lib/destinyUtils';
 import fancySearch from 'app/lib/fancySearch';
 import { default as sortItems } from 'app/lib/sortItemsIntoSections';
 
@@ -28,6 +33,17 @@ const slugify = str =>
 
 function filterItem(item, inventory, filters) {
   if (!item) {
+    return false;
+  }
+
+  if (!filters[FILTER_SHOW_WEAPONS] && hasCategoryHash(item, WEAPON)) {
+    return false;
+  }
+
+  const isOrnament =
+    hasCategoryHash(item, WEAPON_MODS_ORNAMENTS) ||
+    hasCategoryHash(item, ARMOR_MODS_ORNAMENTS);
+  if (!filters[FILTER_SHOW_ORNAMENTS] && isOrnament) {
     return false;
   }
 
@@ -156,10 +172,7 @@ export const filteredSetDataSelector = createSelector(
       draft.setData.forEach(group => {
         group.sets.forEach(set => {
           set.hidden = hiddenSets.hasOwnProperty(set.id) && hiddenSets[set.id];
-          if (
-            !filters[FILTER_SHOW_HIDDEN_SETS] &&
-            set.hidden
-          ) {
+          if (!filters[FILTER_SHOW_HIDDEN_SETS] && set.hidden) {
             set.sections = [];
             return;
           }
