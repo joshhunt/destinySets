@@ -26,11 +26,11 @@ export const DEFAULT_FILTER = {
   [TITAN]: true,
   [HUNTER]: true,
   [WARLOCK]: true,
+  [FILTER_SHOW_ORNAMENTS]: true,
+  [FILTER_SHOW_WEAPONS]: true,
   [FILTER_SHOW_COLLECTED]: true,
   [FILTER_SHOW_PS4_EXCLUSIVES]: true,
-  [FILTER_SHOW_HIDDEN_SETS]: false,
-  [FILTER_SHOW_ORNAMENTS]: true,
-  [FILTER_SHOW_WEAPONS]: true
+  [FILTER_SHOW_HIDDEN_SETS]: false
 };
 
 const INITIAL_STORE = {
