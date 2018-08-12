@@ -17,7 +17,8 @@ import {
   makeItemStatsSelector,
   objectiveInstancesSelector,
   makeItemInventoryEntrySelector,
-  checklistInventorySelector
+  checklistInventorySelector,
+  makeItemVendorEntrySelector
 } from 'app/store/selectors';
 
 import styles from './styles.styl';
@@ -31,6 +32,7 @@ function ItemTooltip({
   stats,
   statDefs,
   itemInventoryEntry,
+  vendorEntry,
   collectionInventory
 }) {
   if (!item) {
@@ -87,6 +89,7 @@ function ItemTooltip({
           <ExtraInfo
             className={styles.extraInfo}
             item={item}
+            vendorEntry={vendorEntry}
             inventoryEntry={itemInventoryEntry}
             inCollection={collectionInventory[item.hash]}
           />
@@ -107,6 +110,7 @@ const mapStateToProps = () => {
   const itemStatsSelector = makeItemStatsSelector();
   const itemSelector = makeItemSelector();
   const itemInventoryEntrySelector = makeItemInventoryEntrySelector();
+  const itemVendorEntrySelector = makeItemVendorEntrySelector();
 
   return (state, ownProps) => {
     return {
@@ -116,7 +120,8 @@ const mapStateToProps = () => {
       statDefs: statDefsSelector(state),
       stats: itemStatsSelector(state, ownProps),
       item: itemSelector(state, ownProps),
-      itemInventoryEntry: itemInventoryEntrySelector(state, ownProps)
+      itemInventoryEntry: itemInventoryEntrySelector(state, ownProps),
+      vendorEntry: itemVendorEntrySelector(state, ownProps)
     };
   };
 };

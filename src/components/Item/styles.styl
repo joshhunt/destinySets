@@ -41,17 +41,23 @@ $green = #44bd32;
   top: -5px
   right: @top
   line-height: 1
-  text-align: left
+  text-align: center
   background: $green
   border-radius: 50%
   font-size: 12px
   padding: 3px
+  width: 18px
+  height: 18px
 
   .dismantled &
     background: #7f8fa6
 
   .checklisted &
     background: #3c94ff
+
+.purchasableTick
+  composes: tick
+  background: #e67e22
 
 .extended
   margin-left: 5px

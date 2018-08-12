@@ -1,15 +1,19 @@
 import React from 'react';
+import { uniqBy } from 'lodash';
+import { connect } from 'react-redux';
 
 import getItemExtraInfo from 'app/lib/getItemExtraInfo';
 import Icon from 'app/components/Icon';
 
 import styles from './styles.styl';
 
-export default function ExtraInfo({
+function ExtraInfo({
+  className,
   item,
   inventoryEntry,
+  vendorEntry,
   inCollection,
-  className
+  vendorDefs
 }) {
   const extraInfo = getItemExtraInfo(item, inventoryEntry).map(location => {
     return (
@@ -37,7 +41,29 @@ export default function ExtraInfo({
 
   return (
     <div className={className}>
+      {!inventoryEntry &&
+        vendorEntry &&
+        uniqBy(vendorEntry, v => v.vendorHash).map(
+          (singleVendorEntry, index) => {
+            const vendor = vendorDefs[singleVendorEntry.vendorHash];
+
+            return (
+              <div key={index}>
+                <span className={styles.orangeTick}>
+                  <Icon icon="dollar-sign" />
+                </span>{' '}
+                Available from{' '}
+                {vendor ? vendor.displayProperties.name : 'unknown vendor'}
+              </div>
+            );
+          }
+        )}
+
       {extraInfo.map((info, index) => <div key={index}>{info}</div>)}
     </div>
   );
 }
+
+export default connect(state => ({
+  vendorDefs: state.definitions.vendorDefs
+}))(ExtraInfo);

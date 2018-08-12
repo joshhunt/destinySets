@@ -13,7 +13,10 @@ import {
 } from 'app/lib/destinyEnums';
 import Icon from 'app/components/Icon';
 
-import { makeItemInventoryEntrySelector } from 'app/store/selectors';
+import {
+  makeItemInventoryEntrySelector,
+  makeItemVendorEntrySelector
+} from 'app/store/selectors';
 
 import {
   makeItemDefSelector,
@@ -97,14 +100,20 @@ class Item extends PureComponent {
       inventoryEntry,
       extended,
       isMasterwork,
+      hideMissing,
+      vendorEntry,
       itemObjectiveProgress
     } = this.props;
 
     const bgColor = getItemColor(itemDef);
 
     if (!itemDef) {
+      if (hideMissing) {
+        return null;
+      }
       return (
         <div
+          data-item-hash={this.props.itemHash}
           className={cx(className, styles.placeholder)}
           style={{ backgroundColor: bgColor }}
         />
@@ -152,6 +161,12 @@ class Item extends PureComponent {
                 <Icon icon="check" />
               </div>
             )}
+
+            {!inventoryEntry && vendorEntry && (
+              <div className={styles.purchasableTick}>
+                <Icon icon="dollar-sign" />
+              </div>
+            )}
           </div>
 
           {itemObjectiveProgress !== 0 && (
@@ -188,12 +203,14 @@ class Item extends PureComponent {
 function mapStateToProps() {
   const itemDefSelector = makeItemDefSelector();
   const itemInventoryEntrySelector = makeItemInventoryEntrySelector();
+  const itemVendorEntrySelector = makeItemVendorEntrySelector();
   const itemObjectiveProgressSelector = makeItemObjectiveProgressSelector();
 
   return (state, ownProps) => {
     return {
       itemDef: itemDefSelector(state, ownProps),
       inventoryEntry: itemInventoryEntrySelector(state, ownProps),
+      vendorEntry: itemVendorEntrySelector(state, ownProps),
       itemObjectiveProgress: itemObjectiveProgressSelector(state, ownProps)
     };
   };

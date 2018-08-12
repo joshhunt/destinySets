@@ -24,7 +24,8 @@ import {
   makeItemStatsSelector,
   objectiveInstancesSelector,
   checklistInventorySelector,
-  makeItemInventoryEntrySelector
+  makeItemInventoryEntrySelector,
+  makeItemVendorEntrySelector
 } from 'app/store/selectors';
 
 import styles from './styles.styl';
@@ -41,7 +42,8 @@ class ItemModalContent extends Component {
       toggleManuallyObtained,
       forgetDismantled,
       googleAuth,
-      collectionInventory
+      collectionInventory,
+      vendorEntry
     } = this.props;
 
     const {
@@ -172,6 +174,7 @@ class ItemModalContent extends Component {
           className={styles.extraInfo}
           item={item}
           inventoryEntry={itemInventoryEntry}
+          vendorEntry={vendorEntry}
           inCollection={collectionInventory[item.hash]}
         />
       </div>
@@ -197,6 +200,7 @@ const mapStateToProps = () => {
   const itemStatsSelector = makeItemStatsSelector();
   const itemSelector = makeItemSelector();
   const itemInventoryEntrySelector = makeItemInventoryEntrySelector();
+  const itemVendorEntrySelector = makeItemVendorEntrySelector();
 
   return (state, ownProps) => {
     return {
@@ -207,6 +211,7 @@ const mapStateToProps = () => {
       stats: itemStatsSelector(state, ownProps),
       item: itemSelector(state, ownProps),
       itemInventoryEntry: itemInventoryEntrySelector(state, ownProps),
+      vendorEntry: itemVendorEntrySelector(state, ownProps),
       collectionInventory: checklistInventorySelector(state)
     };
   };

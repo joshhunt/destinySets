@@ -25,6 +25,7 @@ import Section from 'app/components/Section';
 import Popper from 'app/components/Popper';
 import ItemTooltip from 'app/components/ItemTooltip';
 import ItemModal from 'app/components/ItemModal';
+import Item from 'app/components/Item';
 import SectionList from 'app/components/SectionList';
 
 import { filteredSetDataSelector } from './selectors';
@@ -238,6 +239,8 @@ const mapStateToProps = (state, ownProps) => {
     filters: state.app.filters,
     language: state.app.language,
     trackedItems: state.app.trackedItems,
+    vendors: state.profile.profile && state.profile.profile.$vendors,
+    vendorDefs: state.definitions.vendorDefs,
     filteredSetData: filteredSetDataSelector(state, ownProps)
   };
 };

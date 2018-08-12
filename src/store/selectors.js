@@ -287,8 +287,23 @@ export const makeItemInventoryEntrySelector = () => {
   return createSelector(
     inventorySelector,
     itemHashPropSelector,
-    (inventory, itemHash) => {
+    (s, ownProps) => ownProps.hideInventoryData,
+    (inventory, itemHash, hideInventoryData) => {
+      if (hideInventoryData) {
+        return null;
+      }
+
       return inventory ? inventory[itemHash] : null;
+    }
+  );
+};
+
+export const makeItemVendorEntrySelector = () => {
+  return createSelector(
+    vendorItemDataSelector,
+    itemHashPropSelector,
+    (vendorData, itemHash) => {
+      return vendorData[itemHash];
     }
   );
 };
@@ -317,6 +332,39 @@ const itemInstancesSelector = createSelector(profileSelector, profile => {
     fp.groupBy(component => component.itemHash)
   )([]);
 });
+
+export const vendorItemDataSelector = createSelector(
+  profileSelector,
+  profile => {
+    if (!profile) {
+      return {};
+    }
+
+    const data = {};
+
+    Object.entries(profile.$vendors.data).forEach(
+      ([characterId, allVendorsData]) => {
+        Object.entries(allVendorsData.sales.data).forEach(
+          ([vendorHash, { saleItems }]) => {
+            Object.values(saleItems).forEach(saleItem => {
+              if (!data[saleItem.itemHash]) {
+                data[saleItem.itemHash] = [];
+              }
+
+              data[saleItem.itemHash].push({
+                characterId,
+                vendorHash,
+                saleItem
+              });
+            });
+          }
+        );
+      }
+    );
+
+    return data;
+  }
+);
 
 export const NO_DATA = -1;
 export const NO_CATALYST = 0;
