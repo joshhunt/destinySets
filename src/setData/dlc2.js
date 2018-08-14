@@ -29,6 +29,7 @@ export default ([
             name: 'Extras',
             items: [
               530754878, // Luxurious Toast emote
+              2925370359, // I'm Open Emote
               1057119308, // Spire Star emblem
               2331063860, // Grind Underfoot emblem
               2331063861, // Together, For Glory! emblem
