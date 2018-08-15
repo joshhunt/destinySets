@@ -94,11 +94,11 @@ export default function sortItems(_items, verbose = false) {
   const _sectionItems = groupBy(items, item => {
     if (item.itemCategoryHashes.includes(ARMOR_MODS_ORNAMENTS)) {
       if (isCategory(item, ARMOR_MODS_ORNAMENTS_TITAN)) {
-        return TITAN;
+        return ARMOR_MODS_ORNAMENTS_TITAN;
       } else if (isCategory(item, ARMOR_MODS_ORNAMENTS_WARLOCK)) {
-        return WARLOCK;
+        return ARMOR_MODS_ORNAMENTS_WARLOCK;
       } else if (isCategory(item, ARMOR_MODS_ORNAMENTS_HUNTER)) {
-        return HUNTER;
+        return ARMOR_MODS_ORNAMENTS_HUNTER;
       }
     } else if (item.itemCategoryHashes.includes(WEAPON)) {
       return 'weapon';
@@ -132,8 +132,20 @@ export default function sortItems(_items, verbose = false) {
   const sections = [
     { name: 'Weapons', items: sectionItems.weapon },
     { name: 'Hunter armor', items: sortArmor(sectionItems[HUNTER]) },
+    {
+      name: 'Hunter ornaments',
+      items: sortArmor(sectionItems[ARMOR_MODS_ORNAMENTS_TITAN])
+    },
     { name: 'Titan armor', items: sortArmor(sectionItems[TITAN]) },
+    {
+      name: 'Titan ornaments',
+      items: sortArmor(sectionItems[ARMOR_MODS_ORNAMENTS_WARLOCK])
+    },
     { name: 'Warlock armor', items: sortArmor(sectionItems[WARLOCK]) },
+    {
+      name: 'Warlock ornaments',
+      items: sortArmor(sectionItems[ARMOR_MODS_ORNAMENTS_HUNTER])
+    },
     { name: 'Emotes', items: sectionItems.emotes },
     { name: 'Ghosts', items: sectionItems.ghosts },
     { name: 'Ships', items: sectionItems.ships },
