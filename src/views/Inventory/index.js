@@ -25,7 +25,6 @@ import Section from 'app/components/Section';
 import Popper from 'app/components/Popper';
 import ItemTooltip from 'app/components/ItemTooltip';
 import ItemModal from 'app/components/ItemModal';
-import Item from 'app/components/Item';
 import SectionList from 'app/components/SectionList';
 
 import { filteredSetDataSelector } from './selectors';
