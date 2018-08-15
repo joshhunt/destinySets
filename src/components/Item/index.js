@@ -9,7 +9,8 @@ import {
   RARE,
   COMMON,
   EMBLEM,
-  CLASSES
+  CLASSES,
+  MASTERWORK_FLAG
 } from 'app/lib/destinyEnums';
 import Icon from 'app/components/Icon';
 
@@ -68,6 +69,16 @@ function getItemColor(item) {
   }
 }
 
+const isMasterwork = inventoryEntry => {
+  if (!inventoryEntry) {
+    return false;
+  }
+
+  return !!inventoryEntry.instances.find(instance => {
+    return instance.itemState & MASTERWORK_FLAG;
+  });
+};
+
 class Item extends PureComponent {
   onMouseEnter = () => {
     const { setPopper, itemHash } = this.props;
@@ -99,7 +110,6 @@ class Item extends PureComponent {
       itemDef,
       inventoryEntry,
       extended,
-      isMasterwork,
       hideMissing,
       vendorEntry,
       itemObjectiveProgress
@@ -141,7 +151,7 @@ class Item extends PureComponent {
       >
         <div className={styles.imageWrapper}>
           <div className={styles.fadeOut}>
-            {isMasterwork && (
+            {isMasterwork(inventoryEntry) && (
               <img
                 className={styles.overlay}
                 src={masterworkOutline}
@@ -170,21 +180,22 @@ class Item extends PureComponent {
               )}
           </div>
 
-          {(itemObjectiveProgress !== 0 && itemObjectiveProgress !== 1) && (
-            <div
-              className={cx(
-                styles.objectiveOverlay,
-                itemObjectiveProgress === 1 && styles.objectivesComplete
-              )}
-            >
+          {itemObjectiveProgress !== 0 &&
+            itemObjectiveProgress !== 1 && (
               <div
-                className={styles.objectiveTrack}
-                style={{
-                  width: `${itemObjectiveProgress * 100}%`
-                }}
-              />
-            </div>
-          )}
+                className={cx(
+                  styles.objectiveOverlay,
+                  itemObjectiveProgress === 1 && styles.objectivesComplete
+                )}
+              >
+                <div
+                  className={styles.objectiveTrack}
+                  style={{
+                    width: `${itemObjectiveProgress * 100}%`
+                  }}
+                />
+              </div>
+            )}
         </div>
 
         {extended && (

@@ -18,6 +18,8 @@ export const CHECKLIST_PROFILE_COLLECTIONS = testChecklists
   : _CHECKLIST_PROFILE_COLLECTIONS;
 export const CHECKLIST_CHARACTER_COLLECTIONS = 3246761912;
 
+export const MASTERWORK_FLAG = 4;
+
 // itemCategoryHashes
 export const CLASS_ITEMS = 49;
 export const WEAPON = 1;

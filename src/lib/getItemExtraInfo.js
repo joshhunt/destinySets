@@ -28,6 +28,18 @@ const LOCATIONS = {
   // vendorPlugStates: 'Unlocked'
 };
 
+const masterworkLocations = [
+  'characterEquipment',
+  'characterInventories',
+  'profileInventory'
+];
+
 export function getFriendlyItemLocation(instance) {
-  return LOCATIONS[instance.location];
+  let location = LOCATIONS[instance.location];
+
+  if (masterworkLocations.includes(instance.location)) {
+    location = `${location} & masterworked`;
+  }
+
+  return location;
 }

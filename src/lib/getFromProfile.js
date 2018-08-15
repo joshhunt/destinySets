@@ -1,4 +1,4 @@
-import { keyBy } from 'lodash';
+import { keyBy, isNumber } from 'lodash';
 import fp from 'lodash/fp';
 
 import {
@@ -14,7 +14,7 @@ const ITEM_BLACKLIST = [
 ];
 
 function itemMapper(item) {
-  return item.itemHash;
+  return item;
 }
 
 function fromCharacter(data) {
@@ -140,7 +140,9 @@ function fromVendorSockets(data) {
 }
 
 function mergeItems(acc, [items, itemLocation]) {
-  items.forEach(itemHash => {
+  items.forEach(thing => {
+    const itemHash = isNumber(thing) ? thing : thing.itemHash;
+
     if (ITEM_BLACKLIST.includes(itemHash)) {
       return acc;
     }
@@ -153,7 +155,10 @@ function mergeItems(acc, [items, itemLocation]) {
       };
     }
 
-    acc[itemHash].instances.push({ location: itemLocation });
+    acc[itemHash].instances.push({
+      location: itemLocation,
+      itemState: thing.state
+    });
   });
 
   return acc;

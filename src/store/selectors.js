@@ -10,7 +10,8 @@ import {
   NUMERICAL_STATS,
   STAT_BLACKLIST,
   CHECKLIST_PROFILE_COLLECTIONS,
-  CHECKLIST_CHARACTER_COLLECTIONS
+  CHECKLIST_CHARACTER_COLLECTIONS,
+  MASTERWORK_FLAG
 } from 'app/lib/destinyEnums';
 
 export const cloudInventorySelector = state => state.app.cloudInventory;
@@ -378,8 +379,6 @@ export const INACTIVE_CATALYST = 1;
 export const ACTIVE_CATALYST_INPROGRESS = 2;
 export const ACTIVE_CATALYST_COMPLETE = 3;
 export const MASTERWORK_UPGRADED = 4;
-
-const MASTERWORK_FLAG = 4;
 
 export const makeCatalystSelector = () => {
   return createSelector(
