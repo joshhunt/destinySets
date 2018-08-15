@@ -162,14 +162,15 @@ class Item extends PureComponent {
               </div>
             )}
 
-            {!inventoryEntry && vendorEntry && (
-              <div className={styles.purchasableTick}>
-                <Icon icon="dollar-sign" />
-              </div>
-            )}
+            {!inventoryEntry &&
+              vendorEntry && (
+                <div className={styles.purchasableTick}>
+                  <Icon icon="dollar-sign" />
+                </div>
+              )}
           </div>
 
-          {itemObjectiveProgress !== 0 && (
+          {(itemObjectiveProgress !== 0 && itemObjectiveProgress !== 1) && (
             <div
               className={cx(
                 styles.objectiveOverlay,
