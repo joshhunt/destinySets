@@ -85,7 +85,7 @@ class ItemSet extends Component {
           )}
 
           {sections.map((section, index) => (
-            <LazyLoad height={85} key={index}>
+            <LazyLoad height={85} key={index} offset={100}>
               <div className={styles.section}>
                 {!noUi && (
                   <h4 className={styles.sectionName}>
