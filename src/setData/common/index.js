@@ -23,8 +23,8 @@ export const SOLSTICE_OF_HEROES = {
       items: [
         3867275449, // The Right Choice (Moments of Triumph Ghost)
         4243004391, // Comrades in Arms (Moments of Triumph Sparrow)
-        3860733295, // Eternally Triumphant (Moments of Triumph Emblem)
-        3860733294 // Renewed Triumph (Moments of Triumph Emblem)
+        3860733294, // Renewed Triumph (Moments of Triumph Emblem)
+        3860733295 // Eternally Triumphant (Moments of Triumph Emblem)
       ]
     },
     {
