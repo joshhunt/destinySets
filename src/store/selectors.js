@@ -347,6 +347,10 @@ export const vendorItemDataSelector = createSelector(
         Object.entries(allVendorsData.sales.data).forEach(
           ([vendorHash, { saleItems }]) => {
             Object.values(saleItems).forEach(saleItem => {
+              if (saleItem.failureIndexes.length > 0) {
+                return;
+              }
+
               if (!data[saleItem.itemHash]) {
                 data[saleItem.itemHash] = [];
               }
@@ -361,6 +365,8 @@ export const vendorItemDataSelector = createSelector(
         );
       }
     );
+
+    window.__vendorData = data;
 
     return data;
   }

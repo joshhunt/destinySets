@@ -41,8 +41,7 @@ function ExtraInfo({
 
   return (
     <div className={className}>
-      {!inventoryEntry &&
-        vendorEntry &&
+      {vendorEntry &&
         uniqBy(vendorEntry, v => v.vendorHash).map(
           (singleVendorEntry, index) => {
             const vendor = vendorDefs[singleVendorEntry.vendorHash];
