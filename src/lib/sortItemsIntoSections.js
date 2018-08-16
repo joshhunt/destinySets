@@ -134,17 +134,17 @@ export default function sortItems(_items, verbose = false) {
     { name: 'Hunter armor', items: sortArmor(sectionItems[HUNTER]) },
     {
       name: 'Hunter ornaments',
-      items: sortArmor(sectionItems[ARMOR_MODS_ORNAMENTS_TITAN])
+      items: sortArmor(sectionItems[ARMOR_MODS_ORNAMENTS_HUNTER])
     },
     { name: 'Titan armor', items: sortArmor(sectionItems[TITAN]) },
     {
       name: 'Titan ornaments',
-      items: sortArmor(sectionItems[ARMOR_MODS_ORNAMENTS_WARLOCK])
+      items: sortArmor(sectionItems[ARMOR_MODS_ORNAMENTS_TITAN])
     },
     { name: 'Warlock armor', items: sortArmor(sectionItems[WARLOCK]) },
     {
       name: 'Warlock ornaments',
-      items: sortArmor(sectionItems[ARMOR_MODS_ORNAMENTS_HUNTER])
+      items: sortArmor(sectionItems[ARMOR_MODS_ORNAMENTS_WARLOCK])
     },
     { name: 'Emotes', items: sectionItems.emotes },
     { name: 'Ghosts', items: sectionItems.ghosts },
