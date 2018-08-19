@@ -1,5 +1,7 @@
 import { uniq } from 'lodash';
 
+import { MASTERWORK_FLAG } from 'app/lib/destinyEnums';
+
 export default function getItemExtraInfo(item, _itemInventoryEntry) {
   const itemInventoryEntry = _itemInventoryEntry || {
     instances: [{}],
@@ -37,7 +39,10 @@ const masterworkLocations = [
 export function getFriendlyItemLocation(instance) {
   let location = LOCATIONS[instance.location];
 
-  if (masterworkLocations.includes(instance.location)) {
+  if (
+    masterworkLocations.includes(instance.location) &&
+    instance.itemState & MASTERWORK_FLAG
+  ) {
     location = `${location} & masterworked`;
   }
 
