@@ -8,8 +8,6 @@ $padding = 10px
   color: white
 
   &.small
-    // padding-bottom: .1px
-    // margin-bottom: 15px
     box-shadow: 0 2px 15px rgba(0, 0, 0, 0.5)
 
 .body
@@ -25,6 +23,33 @@ $padding = 10px
   .small &
     margin-bottom: 10px
     padding: 0 10px 0 0
+
+.attributes
+  display: flex
+  padding: 15px 0
+
+.power
+  font-size: 30px
+  line-height: 1
+  display: flex
+  align-items: center
+  color: #C690DC
+  font-weight: 600
+
+.voidDamage
+  width: .95em
+  height: .95em
+  background: #C690DC
+  margin-right: .25ch
+  mask: url("https://bungie.net/img/destiny_content/damage_types/destiny2/void_large.png") center center / cover;
+
+.ammoType
+  display: flex
+  align-items: center
+  border-left: 1px solid #706A73
+  padding-left: 10px
+  margin-left: 10px
+  text-transform: uppercase
 
 .description
   margin: $padding 0

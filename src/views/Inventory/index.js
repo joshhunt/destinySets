@@ -144,6 +144,14 @@ class Inventory extends Component {
           </div>
         )}
 
+        <div>
+          <ItemTooltip itemHash={3691881271} />
+
+          <br />
+          <br />
+          <br />
+        </div>
+
         {filteredSetData.map(({ sets, noUi, slug, name }, index) => (
           <Section
             key={index}

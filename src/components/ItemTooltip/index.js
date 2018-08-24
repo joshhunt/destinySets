@@ -5,7 +5,8 @@ import cx from 'classnames';
 
 import { EMBLEM } from 'app/lib/destinyEnums';
 import FancyImage from 'app/components/FancyImage';
-import ItemBanner from 'app/components/ItemBanner';
+// import ItemBanner from 'app/components/ItemBanner';
+import ItemBanner from 'app/components/ItemBannerNew';
 import ItemStats from 'app/components/ItemStats';
 import Objectives from 'app/components/Objectives';
 import ExtraInfo from 'app/components/ExtraInfo';
@@ -55,6 +56,16 @@ function ItemTooltip({
       <ItemBanner className={styles.header} item={item} onClose={dismiss} />
 
       <div className={styles.body}>
+        <div className={styles.attributes}>
+          <div className={styles.power}>
+            <div className={styles.voidDamage} />
+            <div>400</div>
+          </div>
+          <div className={styles.ammoType}>
+            <div>Heavy</div>
+          </div>
+        </div>
+
         {displayProperties.description &&
           displayProperties.description.split('\n').map(para => (
             <p key={para} className={styles.description}>
