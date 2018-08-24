@@ -28,6 +28,20 @@ import { getItemClass, hasCategoryHash } from 'app/lib/destinyUtils';
 import fancySearch from 'app/lib/fancySearch';
 import { default as sortItems } from 'app/lib/sortItemsIntoSections';
 
+const ITEM_BLACKLIST = [
+  1744115122, // Legend of Acrius quest item
+  460724140, // Jade Rabbit dupe
+  546372301, // Jade Rabbit dupe
+  2896466320, // Jade Rabbit dupe
+  2978016230, // Jade Rabbit dupe
+  3229272315, // Jade Rabbit dupe
+  2769834047, // Old emblems
+  3334815691, // Old emblems
+  3754910498, // Old emblems
+  4059318875, // Old emblems
+  4114707355 // Old emblems
+];
+
 const slugify = str =>
   str
     .toLowerCase()
@@ -100,6 +114,8 @@ function query(itemDefsArray, checklistDefsArray, queryTerm) {
   const results = fancySearch(queryTerm, {
     item: itemDefsArray,
     checklist: checklistDefsArray
+  }).filter(item => {
+    return !ITEM_BLACKLIST.includes(item.hash);
   });
 
   return (results || []).filter(Boolean);
