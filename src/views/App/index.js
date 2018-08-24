@@ -158,7 +158,8 @@ class App extends Component {
       openXurModal,
       xurItems,
       xurHasNewItems,
-      dataExplorerVisited
+      dataExplorerVisited,
+      definitionsError
     } = this.props;
 
     return (
@@ -182,8 +183,15 @@ class App extends Component {
 
         <div>{children}</div>
 
+        {definitionsError && (
+          <div className={styles.error}>
+            There was an error loading definitions. Please refresh, or try again
+            later.
+          </div>
+        )}
+
         {!auth.isAuthed && (
-          <div className={styles.auth}>
+          <div className={styles.overlay}>
             <LoginUpsell>
               {profile
                 ? 'The connection with Bungie has expired. Please reconnect to update your inventory.'
@@ -200,6 +208,7 @@ class App extends Component {
 
 const mapStateToProps = state => {
   return {
+    definitionsError: state.definitions.error,
     auth: state.auth,
     profileCached: state.profile.isCached,
     profile: state.profile.profile,
@@ -209,7 +218,7 @@ const mapStateToProps = state => {
     language: state.app.language,
     dataExplorerVisited: state.app.dataExplorerVisited,
     cloudInventory: state.app.cloudInventory,
-    itemDefs: state.definitions.itemDefs,
+    itemDefs: state.definitions.DestinyInventoryItemDefinition,
     inventory: inventorySelector(state),
     manualInventory: state.app.manualInventory,
     xurItems: state.xur.items,

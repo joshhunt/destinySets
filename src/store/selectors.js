@@ -16,14 +16,19 @@ import {
 
 export const cloudInventorySelector = state => state.app.cloudInventory;
 export const manualInventorySelector = state => state.app.manualInventory;
-export const itemDefsSelector = state => state.definitions.itemDefs;
-export const objectiveDefsSelector = state => state.definitions.objectiveDefs;
-export const statDefsSelector = state => state.definitions.statDefs;
-export const checklistDefsSelector = state => state.definitions.checklistDefs;
-
 const baseXurItemsSelector = state => state.xur.items;
 const profileSelector = state => state.profile.profile;
-const vendorDefsSelector = state => state.definitions.vendorDefs;
+
+export const itemDefsSelector = state =>
+  state.definitions.DestinyInventoryItemDefinition;
+export const objectiveDefsSelector = state =>
+  state.definitions.DestinyObjectiveDefinition;
+export const statDefsSelector = state =>
+  state.definitions.DestinyStatDefinition;
+export const checklistDefsSelector = state =>
+  state.definitions.DestinyChecklistDefinition;
+export const vendorDefsSelector = state =>
+  state.definitions.DestinyVendorDefinition;
 
 export const itemHashPropSelector = (state, props) => props.itemHash;
 

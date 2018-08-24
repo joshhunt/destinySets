@@ -17,7 +17,11 @@ import {
 } from 'app/lib/destinyEnums';
 import CONSOLE_EXCLUSIVES from 'app/extraData/consoleExclusives';
 
-import { inventorySelector } from 'app/store/selectors';
+import {
+  inventorySelector,
+  itemDefsSelector,
+  checklistDefsSelector
+} from 'app/store/selectors';
 import * as ls from 'app/lib/ls';
 
 import { getItemClass, hasCategoryHash } from 'app/lib/destinyUtils';
@@ -104,8 +108,6 @@ function query(itemDefsArray, checklistDefsArray, queryTerm) {
 const filtersSelector = state => state.app.filters;
 const hiddenSetsSelector = state => state.app.hiddenSets;
 const propsSetDataSelector = (state, props) => props.route.setData;
-const itemDefsSelector = state => state.definitions.itemDefs;
-const checklistDefsSelector = state => state.definitions.checklistDefs;
 
 const setDataSelector = createSelector(
   itemDefsSelector,

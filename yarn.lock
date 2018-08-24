@@ -10,6 +10,10 @@
     prop-types "^15.6.0"
     recompose "^0.26.0"
 
+"@destiny-item-manager/zip.js@github:DestinyItemManager/zip.js":
+  version "1.0.0"
+  resolved "https://codeload.github.com/DestinyItemManager/zip.js/tar.gz/6931dae24f729399100ee7a6fe5dce43007581f0"
+
 "@firebase/app@0.1.4":
   version "0.1.4"
   resolved "https://registry.yarnpkg.com/@firebase/app/-/app-0.1.4.tgz#595b85390b1dc5846a88933d65d4fae7208f835d"
@@ -4035,6 +4039,13 @@ import-local@^0.1.1:
     pkg-dir "^2.0.0"
     resolve-cwd "^2.0.0"
 
+imports-loader@^0.8.0:
+  version "0.8.0"
+  resolved "https://registry.yarnpkg.com/imports-loader/-/imports-loader-0.8.0.tgz#030ea51b8ca05977c40a3abfd9b4088fe0be9a69"
+  dependencies:
+    loader-utils "^1.0.2"
+    source-map "^0.6.1"
+
 imurmurhash@^0.1.4:
   version "0.1.4"
   resolved "https://registry.yarnpkg.com/imurmurhash/-/imurmurhash-0.1.4.tgz#9218b9b2b928a238b13dc4fb6b6d576f231453ea"
@@ -7937,6 +7948,10 @@ spdy@^3.4.1:
 sprintf-js@~1.0.2:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/sprintf-js/-/sprintf-js-1.0.3.tgz#04e6926f662895354f3dd015203633b857297e2c"
+
+"sql.js@github:DestinyItemManager/sql.js":
+  version "0.4.0"
+  resolved "https://codeload.github.com/DestinyItemManager/sql.js/tar.gz/465c6828f2af3cc70cd2f732bb54720bfb2d90ac"
 
 sshpk@^1.7.0:
   version "1.13.1"

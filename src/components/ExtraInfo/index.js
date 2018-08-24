@@ -64,5 +64,5 @@ function ExtraInfo({
 }
 
 export default connect(state => ({
-  vendorDefs: state.definitions.vendorDefs
+  vendorDefs: state.definitions.DestinyVendorDefinition
 }))(ExtraInfo);

@@ -11,9 +11,18 @@ oldDb.version(1).stores({
 
 oldDb.delete();
 
-const db = new Dexie('destinyManifest');
+export const db = new Dexie('destinyManifest');
 db.version(1).stores({
   dataCache: '&key, data'
+});
+db.version(2).stores({
+  dataCache: '&key, data',
+  manifestBlob: '&key, data',
+  allData: '&key, data'
+});
+db.version(3).stores({
+  manifestBlob: '&key, data',
+  allData: '&key, data'
 });
 
 const VERSION = 'v7';
@@ -36,7 +45,7 @@ function getManifest() {
           throw new Error('Unable to getManifest, nothing cached');
         }
 
-        // TODO: fail appropraitely if no manifest is cached
+        // TODO: fail appropriately if no manifest is cached
         log('Manifest request failed, using previously cached');
         const id = data[0].split(':')[0];
         return { id, isStale: true };

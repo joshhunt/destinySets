@@ -9,16 +9,7 @@ import {
 } from 'app/store/reducer';
 import { fetchProfile } from 'app/store/profile';
 
-import {
-  setVendorDefs,
-  setItemDefs,
-  setObjectiveDefs,
-  setStatDefs,
-  setChecklistDefs
-} from 'app/store/definitions';
-
 import * as ls from 'app/lib/ls';
-import { getDefinition } from 'app/lib/manifestData';
 
 import Footer from 'app/components/Footer';
 import Section from 'app/components/Section';
@@ -40,7 +31,6 @@ class Inventory extends Component {
   };
 
   componentDidMount() {
-    this.fetchDefinitions(this.props.language);
     this.potentiallyScheduleFetchProfile();
   }
 
@@ -78,25 +68,7 @@ class Inventory extends Component {
   };
 
   fetchDefinitions({ code: lang }) {
-    const {
-      setVendorDefs,
-      setStatDefs,
-      setItemDefs,
-      setObjectiveDefs,
-      setChecklistDefs
-    } = this.props;
-
-    getDefinition('DestinyVendorDefinition', lang).then(setVendorDefs);
-    getDefinition('DestinyStatDefinition', lang).then(setStatDefs);
-    getDefinition('DestinyObjectiveDefinition', lang).then(setObjectiveDefs);
-    getDefinition('DestinyChecklistDefinition', lang).then(setChecklistDefs);
-
-    const args = this.props.location.query.fullItemDefs
-      ? ['DestinyInventoryItemDefinition', lang]
-      : ['reducedCollectableInventoryItems', lang, false];
-
-    this.itemDefsPromise = getDefinition(...args);
-    this.itemDefsPromise.then(setItemDefs);
+    console.log('TODO: ensure defs with language', lang);
   }
 
   setPopper = (itemHash, element) =>
@@ -239,18 +211,12 @@ const mapStateToProps = (state, ownProps) => {
     language: state.app.language,
     trackedItems: state.app.trackedItems,
     vendors: state.profile.profile && state.profile.profile.$vendors,
-    vendorDefs: state.definitions.vendorDefs,
     filteredSetData: filteredSetDataSelector(state, ownProps)
   };
 };
 
 const mapDispatchToActions = {
   fetchProfile,
-  setVendorDefs,
-  setItemDefs,
-  setObjectiveDefs,
-  setChecklistDefs,
-  setStatDefs,
   setFilterItem,
   removeTrackedItem,
   setBulkHiddenItemSet

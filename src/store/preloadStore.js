@@ -6,13 +6,13 @@ import {
   setAppValue,
   setBulkHiddenItemSet
 } from 'app/store/reducer';
+import { setBulkDefinitions, definitionsError } from 'app/store/definitions';
 import { setProfiles } from 'app/store/profile';
 import { getLastProfile } from 'app/lib/destiny';
 
-const log = require('app/lib/log')('authProvider');
+import { fasterGetDefinitions } from 'app/lib/definitions';
 
-// getTrackedItems
-// saveTrackedItems
+const log = require('app/lib/log')('authProvider');
 
 export default function preloadStore(store) {
   const prevFilters = ls.getFilters();
@@ -48,13 +48,16 @@ export default function preloadStore(store) {
     );
   }
 
-  store.dispatch(setLanguage(ls.getLanguage()));
+  const language = ls.getLanguage();
+
+  store.dispatch(setLanguage(language));
 
   store.dispatch(setBulkHiddenItemSet(ls.getHiddenItemSets()));
 
   let currentTrackedItems = store.getState().app.trackedItems;
   store.subscribe(() => {
     const newState = store.getState();
+    window.__state = newState;
 
     if (newState.app.trackedItems !== currentTrackedItems) {
       ls.saveTrackedItems(newState.app.trackedItems);
@@ -62,6 +65,33 @@ export default function preloadStore(store) {
 
     currentTrackedItems = newState.app.trackedItems;
   });
+
+  const REQUIRED_DEFINITIONS = [
+    'DestinyChecklistDefinition',
+    'DestinyObjectiveDefinition',
+    'DestinyStatDefinition',
+    'DestinyVendorDefinition',
+    'DestinyInventoryItemDefinition',
+    'DestinyFactionDefinition'
+  ];
+
+  fasterGetDefinitions(
+    language.code,
+    REQUIRED_DEFINITIONS,
+    arg => {
+      console.log('definitions progress', arg);
+    },
+    (err, data) => {
+      if (err) {
+        store.dispatch(definitionsError(err));
+        return;
+      }
+
+      if (data && data.definitions) {
+        store.dispatch(setBulkDefinitions(data.definitions));
+      }
+    }
+  );
 
   return store;
 }
