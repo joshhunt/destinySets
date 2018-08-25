@@ -9,6 +9,7 @@ import {
 import { setBulkDefinitions, definitionsError } from 'app/store/definitions';
 import { setProfiles } from 'app/store/profile';
 import { getLastProfile } from 'app/lib/destiny';
+import { trackError } from 'app/lib/telemetry';
 
 import { fasterGetDefinitions } from 'app/lib/definitions';
 
@@ -83,6 +84,7 @@ export default function preloadStore(store) {
     },
     (err, data) => {
       if (err) {
+        trackError(err);
         store.dispatch(definitionsError(err));
         return;
       }
