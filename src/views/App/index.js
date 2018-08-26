@@ -23,6 +23,7 @@ import { setXurData, setXurModal } from 'app/store/xur';
 import Header from 'app/components/Header';
 import LoginUpsell from 'app/components/LoginUpsell';
 import XurModal from 'app/components/XurModal';
+import Dismissable from 'app/components/Dismissable';
 
 import styles from './styles.styl';
 
@@ -184,10 +185,15 @@ class App extends Component {
         <div>{children}</div>
 
         {definitionsError && (
-          <div className={styles.error}>
-            There was an error loading definitions. Please refresh, or try again
-            later.
-          </div>
+          <Dismissable className={styles.error}>
+            <h1 className={styles.errorTitle}>
+              Error loading item definitions
+            </h1>
+            <p className={styles.errorText}>
+              There was an error loading the critical item definitions. Maybe
+              your browser isn't supported or is outdated?
+            </p>
+          </Dismissable>
         )}
 
         {!auth.isAuthed && (
