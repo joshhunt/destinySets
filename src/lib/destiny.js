@@ -206,10 +206,6 @@ export function getExtendedProfile(ship) {
       Object.keys(profile.characters.data).forEach((characterId, index) => {
         if (characterVendors[index]) {
           profile.$vendors.data[characterId] = characterVendors[index];
-        } else {
-          trackError(new Error('Missing vendor for character'), {
-            level: 'warning'
-          });
         }
       });
 
