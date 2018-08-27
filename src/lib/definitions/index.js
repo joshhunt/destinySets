@@ -14,6 +14,13 @@ const log = require('app/lib/log')('definitions');
 
 const VERSION = 'v1';
 
+const PERSIST = true;
+
+export const STATUS_DOWNLOADING = 'downloading';
+export const STATUS_EXTRACTING_TABLES = 'extracting tables';
+export const STATUS_UNZIPPING = 'unzipping';
+export const STATUS_DONE = 'done';
+
 function fetchManifestDBPath(language) {
   log('Requesting manifest for language', language);
 
@@ -27,7 +34,7 @@ function fetchManifestDBPath(language) {
 
 function onDownloadProgress(progress) {
   const perc = Math.round(progress.loaded / progress.total * 100);
-  log(`Definitions archive download progress ${perc}%`);
+  log(`Definitions archive download progress ${perc}% . `);
 }
 
 function requestDefinitionsArchive(dbPath) {
@@ -44,7 +51,9 @@ function requestDefinitionsArchive(dbPath) {
       onDownloadProgress
     }).then(resp => {
       log('Finished downloading definitions archive, storing it in db');
-      db.manifestBlob.put({ key: dbPath, data: resp.data });
+      PERSIST &&
+        PERSIST &&
+        db.manifestBlob.put({ key: dbPath, data: resp.data });
       return resp.data;
     });
   });
@@ -83,10 +92,11 @@ function unzipManifest(blob) {
   });
 }
 
-function loadDefinitions(dbPath) {
+function loadDefinitions(dbPath, progressCb) {
   return requestDefinitionsArchive(dbPath)
     .then(data => {
       log('Successfully downloaded definitions archive');
+      progressCb({ status: STATUS_UNZIPPING });
       return unzipManifest(data);
     })
     .then(manifestBlob => {
@@ -111,13 +121,17 @@ function openDBFromBlob(SQLLib, blob) {
 
 let requireDatabasePromise;
 
-function allDataFromRemote(dbPath, tablesNames) {
+function allDataFromRemote(dbPath, tablesNames, progressCb) {
   if (!requireDatabasePromise) {
     requireDatabasePromise = requireDatabase();
   }
 
-  return Promise.all([requireDatabasePromise, loadDefinitions(dbPath)])
+  return Promise.all([
+    requireDatabasePromise,
+    loadDefinitions(dbPath, progressCb)
+  ])
     .then(([SQLLib, databaseBlob]) => {
+      progressCb({ status: STATUS_EXTRACTING_TABLES });
       log('Loaded both SQL library and definitions database');
       return openDBFromBlob(SQLLib, databaseBlob);
     })
@@ -186,13 +200,13 @@ export function fasterGetDefinitions(language, tableNames, progressCb, dataCb) {
           return dataCb(null, { done: true });
         }
 
-        progressCb && progressCb({ updating: true });
+        progressCb && progressCb({ status: STATUS_DOWNLOADING });
 
-        allDataFromRemote(dbPath, tableNames).then(definitions => {
+        allDataFromRemote(dbPath, tableNames, progressCb).then(definitions => {
           log('Successfully got requested definitions');
 
           const key = [VERSION, dbPath].join(':');
-          db.allData.put({ key, data: definitions });
+          PERSIST && PERSIST && db.allData.put({ key, data: definitions });
 
           cleanUpPreviousVersions(key);
 
@@ -203,62 +217,5 @@ export function fasterGetDefinitions(language, tableNames, progressCb, dataCb) {
     .catch(err => {
       log('Error loading definitions', err);
       dataCb(err);
-    });
-}
-
-export function getDefinitions(language, tableNames, progressCb) {
-  fasterGetDefinitions(
-    language,
-    tableNames,
-    (...args) => {
-      console.log('progressCb', ...args);
-    },
-    (...args) => {
-      console.log('dataCb', ...args);
-    }
-  );
-
-  return fetchManifestDBPath(language)
-    .then(dbPath => {
-      const key = [VERSION, dbPath].join(':');
-      return Promise.all([db.allData.get(key), dbPath]);
-    })
-    .then(([cachedData, dbPath]) => {
-      if (cachedData) {
-        console.log('Previous manifests are cached');
-
-        const cachedTableNames = Object.keys(cachedData.data);
-        const requestedTablesCached = every(tableNames, z =>
-          cachedTableNames.includes(z)
-        );
-
-        if (requestedTablesCached) {
-          console.log('All tables have been cached, returning');
-          return cachedData.data;
-        }
-
-        console.log('Cached data does not contain all required tables');
-      }
-
-      progressCb && progressCb({ updating: true });
-
-      return allDataFromRemote(dbPath, tableNames).then(allData => {
-        const key = [VERSION, dbPath].join(':');
-        db.allData.put({ key, data: allData });
-
-        cleanUpPreviousVersions(key);
-
-        return allData;
-      });
-    })
-    .then(allTables => {
-      return Object.entries(allTables)
-        .filter(([tableName]) => tableNames.includes(tableName))
-        .reduce((acc, [tableName, definitions]) => {
-          return {
-            ...acc,
-            [tableName]: definitions
-          };
-        }, {});
     });
 }

@@ -6,7 +6,11 @@ import {
   setAppValue,
   setBulkHiddenItemSet
 } from 'app/store/reducer';
-import { setBulkDefinitions, definitionsError } from 'app/store/definitions';
+import {
+  setBulkDefinitions,
+  definitionsStatus,
+  definitionsError
+} from 'app/store/definitions';
 import { setProfiles } from 'app/store/profile';
 import { getLastProfile } from 'app/lib/destiny';
 import { trackError } from 'app/lib/telemetry';
@@ -79,8 +83,8 @@ export default function preloadStore(store) {
   fasterGetDefinitions(
     language.code,
     REQUIRED_DEFINITIONS,
-    arg => {
-      console.log('definitions progress', arg);
+    data => {
+      store.dispatch(definitionsStatus(data));
     },
     (err, data) => {
       if (err) {
@@ -90,6 +94,7 @@ export default function preloadStore(store) {
       }
 
       if (data && data.definitions) {
+        store.dispatch(definitionsStatus({ status: null }));
         store.dispatch(setBulkDefinitions(data.definitions));
       }
     }

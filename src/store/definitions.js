@@ -3,6 +3,7 @@ import { makePayloadAction } from './utils';
 
 export const SET_BULK_DEFINITIONS = 'Set bulk definitions';
 export const DEFINITIONS_ERROR = 'Definitions error';
+export const DEFINITIONS_STATUS = 'Definitions status';
 
 export default function definitionsReducer(state = {}, { type, payload }) {
   switch (type) {
@@ -10,6 +11,13 @@ export default function definitionsReducer(state = {}, { type, payload }) {
       return {
         ...state,
         error: true
+      };
+    }
+
+    case DEFINITIONS_STATUS: {
+      return {
+        ...state,
+        status: payload.status
       };
     }
 
@@ -29,4 +37,5 @@ export default function definitionsReducer(state = {}, { type, payload }) {
 }
 
 export const setBulkDefinitions = makePayloadAction(SET_BULK_DEFINITIONS);
+export const definitionsStatus = makePayloadAction(DEFINITIONS_STATUS);
 export const definitionsError = makePayloadAction(DEFINITIONS_ERROR);

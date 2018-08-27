@@ -8,6 +8,11 @@ import { sendProfileStats } from 'app/lib/telemetry';
 import googleAuth from 'app/lib/googleDriveAuth';
 import destinyAuth from 'app/lib/destinyAuth';
 import * as destiny from 'app/lib/destiny';
+import {
+  STATUS_DOWNLOADING,
+  STATUS_EXTRACTING_TABLES,
+  STATUS_UNZIPPING
+} from 'app/lib/definitions';
 
 import { inventorySelector, xurHasNewItemsSelector } from 'app/store/selectors';
 
@@ -20,6 +25,7 @@ import { setProfiles, switchProfile, fetchProfile } from 'app/store/profile';
 import { setAuthStatus } from 'app/store/auth';
 import { setXurData, setXurModal } from 'app/store/xur';
 
+import Icon from 'app/components/Icon';
 import Header from 'app/components/Header';
 import LoginUpsell from 'app/components/LoginUpsell';
 import XurModal from 'app/components/XurModal';
@@ -28,6 +34,12 @@ import Dismissable from 'app/components/Dismissable';
 import styles from './styles.styl';
 
 const log = require('app/lib/log')('<App />');
+
+const MANIFEST_MESSAGES = {
+  [STATUS_DOWNLOADING]: 'Downloading new item data from Bungie...',
+  [STATUS_EXTRACTING_TABLES]: 'Unpacking item data...',
+  [STATUS_UNZIPPING]: 'Unzipping item data...'
+};
 
 class App extends Component {
   state = {};
@@ -160,7 +172,8 @@ class App extends Component {
       xurItems,
       xurHasNewItems,
       dataExplorerVisited,
-      definitionsError
+      definitionsError,
+      definitionsStatus
     } = this.props;
 
     const messages = [];
@@ -186,6 +199,13 @@ class App extends Component {
             browser isn't supported or is outdated?
           </p>
         </Dismissable>
+      );
+    } else if (definitionsStatus) {
+      messages.push(
+        <div className={styles.manifestUpdate}>
+          <Icon name="spinner-third" className={styles.icon} spin />{' '}
+          {MANIFEST_MESSAGES[definitionsStatus]}
+        </div>
       );
     }
 
@@ -227,6 +247,7 @@ class App extends Component {
 const mapStateToProps = state => {
   return {
     definitionsError: state.definitions.error,
+    definitionsStatus: state.definitions.status,
     auth: state.auth,
     profileCached: state.profile.isCached,
     profile: state.profile.profile,
