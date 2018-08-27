@@ -1,16 +1,18 @@
 .root
   content: 'root'
 
-.overlay
+.bottomMessages
   position fixed
   bottom: 0
   left: 0
   right: 0
-  background: #090B0F
   z-index: 99999999999999
 
+.auth
+  background: #090B0F
+
 .error
-  composes: overlay
+  position: relative
   padding: 20px
   text-align: center
   background: #e74c3c

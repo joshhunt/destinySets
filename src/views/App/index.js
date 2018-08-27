@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
 import { pick } from 'lodash';
 
@@ -163,6 +163,32 @@ class App extends Component {
       definitionsError
     } = this.props;
 
+    const messages = [];
+
+    if (!auth.isAuthed) {
+      messages.push(
+        <div className={styles.auth}>
+          <LoginUpsell>
+            {profile
+              ? 'The connection with Bungie has expired. Please reconnect to update your inventory.'
+              : `Connect your Bungie.net acccount to automatically track items you've collected and dismantled.`}
+          </LoginUpsell>
+        </div>
+      );
+    }
+
+    if (definitionsError) {
+      messages.push(
+        <Dismissable className={styles.error}>
+          <h1 className={styles.errorTitle}>Error loading item definitions</h1>
+          <p className={styles.errorText}>
+            There was an error loading the critical item definitions. Maybe your
+            browser isn't supported or is outdated?
+          </p>
+        </Dismissable>
+      );
+    }
+
     return (
       <div className={styles.root}>
         <Header
@@ -184,25 +210,11 @@ class App extends Component {
 
         <div>{children}</div>
 
-        {definitionsError && (
-          <Dismissable className={styles.error}>
-            <h1 className={styles.errorTitle}>
-              Error loading item definitions
-            </h1>
-            <p className={styles.errorText}>
-              There was an error loading the critical item definitions. Maybe
-              your browser isn't supported or is outdated?
-            </p>
-          </Dismissable>
-        )}
-
-        {!auth.isAuthed && (
-          <div className={styles.overlay}>
-            <LoginUpsell>
-              {profile
-                ? 'The connection with Bungie has expired. Please reconnect to update your inventory.'
-                : `Connect your Bungie.net acccount to automatically track items you've collected and dismantled.`}
-            </LoginUpsell>
+        {messages.length > 0 && (
+          <div className={styles.bottomMessages}>
+            {messages.map((msgEl, index) => (
+              <Fragment key={index}>{msgEl}</Fragment>
+            ))}
           </div>
         )}
 
