@@ -45,16 +45,6 @@
     </script>
 
     <script>
-      window.onerror = function(errorMsg, errorSource) {
-        if (errorMsg.indexOf('SyntaxError') > -1 && errorSource) {
-          const newError = new Error('Custom error: ' + errorMsg + ' from ' + errorSource);
-          Raven.captureException(newError, { extra: { errorSource: errorSource } })
-        }
-      };
-
-    </script>
-
-    <script>
     if (window.location.hostname === 'destinysets.com') {
   (function(i, s, o, g, r, a, m) {
     i['GoogleAnalyticsObject'] = r;
