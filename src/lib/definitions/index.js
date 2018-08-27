@@ -17,10 +17,12 @@ const VERSION = 'v1';
 function fetchManifestDBPath(language) {
   log('Requesting manifest for language', language);
 
-  return getDestiny('/Platform/Destiny2/Manifest/').then(data => {
-    log('Manifest returned from Bungie', data);
-    return data.mobileWorldContentPaths[language];
-  });
+  return getDestiny('/Platform/Destiny2/Manifest/', { _noAuth: true }).then(
+    data => {
+      log('Manifest returned from Bungie', data);
+      return data.mobileWorldContentPaths[language];
+    }
+  );
 }
 
 function onDownloadProgress(progress) {
