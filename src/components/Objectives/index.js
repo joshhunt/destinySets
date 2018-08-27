@@ -78,9 +78,9 @@ export default function Objectives(props) {
 
   return (
     <div className={cx(className, trackedStatStyle && styles.trackedStat)}>
-      {objectivesToDisplay.map(objective => {
+      {objectivesToDisplay.map((objective, index) => {
         return (
-          <div className={styles.objective} key={objective.objectiveHash}>
+          <div className={styles.objective} key={index}>
             <div
               className={styles.objectiveTrack}
               style={{
