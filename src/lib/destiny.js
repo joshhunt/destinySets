@@ -124,20 +124,9 @@ export function getDestiny(_pathname, opts = {}, postBody) {
 
         err.data = resp;
 
-        if (resp.ErrorStatus === 'DestinyCharacterNotFound') {
-          // TODO: remove this sometime later
-          const debugId = ls.getDebugId();
-          saveDebugInfo(
-            {
-              debugData: JSON.stringify(DEBUG_STORE),
-              resp: JSON.stringify(resp),
-              debugId
-            },
-            'DestinyCharacterNotFound'
-          );
+        if (resp.ErrorStatus !== 'SystemDisabled') {
+          trackError(err);
         }
-
-        trackError(err);
 
         throw err;
       }
