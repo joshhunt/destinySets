@@ -98,6 +98,13 @@ export function getDestiny(_pathname, opts = {}, postBody) {
       return get(url, opts);
     })
     .then(resp => {
+      // const resp = {
+      //   ErrorCode: 5,
+      //   ErrorStatus: 'SystemDisabled',
+      //   Message: 'This system is temporarily disabled for maintenance.',
+      //   MessageData: '{}'
+      // };
+
       log(`RESPONSE: ${pathname}`, resp);
 
       if (resp.ErrorStatus === 'DestinyAccountNotFound') {
@@ -122,6 +129,7 @@ export function getDestiny(_pathname, opts = {}, postBody) {
             cleanedUrl
         );
 
+        err.response = resp;
         err.data = resp;
 
         if (resp.ErrorStatus !== 'SystemDisabled') {

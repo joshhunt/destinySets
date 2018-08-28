@@ -93,8 +93,6 @@ export function fetchProfile() {
         console.error(err);
 
         dispatch(setError(err));
-
-        throw err;
       });
   };
 }

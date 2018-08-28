@@ -173,6 +173,7 @@ class App extends Component {
       xurHasNewItems,
       dataExplorerVisited,
       definitionsError,
+      profileError,
       definitionsStatus
     } = this.props;
 
@@ -190,7 +191,18 @@ class App extends Component {
       );
     }
 
-    if (definitionsError) {
+    if (profileError) {
+      if (profileError.response && profileError.response.ErrorStatus) {
+        messages.push(
+          <Dismissable className={styles.error}>
+            <p className={styles.errorText}>
+              Bungie API Error {profileError.response.ErrorStatus} -{' '}
+              {profileError.response.Message}
+            </p>
+          </Dismissable>
+        );
+      }
+    } else if (definitionsError) {
       messages.push(
         <Dismissable className={styles.error}>
           <h1 className={styles.errorTitle}>Error loading item definitions</h1>
@@ -248,6 +260,7 @@ const mapStateToProps = state => {
   return {
     definitionsError: state.definitions.error,
     definitionsStatus: state.definitions.status,
+    profileError: state.profile.err,
     auth: state.auth,
     profileCached: state.profile.isCached,
     profile: state.profile.profile,
