@@ -14,8 +14,6 @@ const log = require('app/lib/log')('definitions');
 
 const VERSION = 'v1';
 
-const PERSIST = true;
-
 export const STATUS_DOWNLOADING = 'downloading';
 export const STATUS_EXTRACTING_TABLES = 'extracting tables';
 export const STATUS_UNZIPPING = 'unzipping';
@@ -51,9 +49,7 @@ function requestDefinitionsArchive(dbPath) {
       onDownloadProgress
     }).then(resp => {
       log('Finished downloading definitions archive, storing it in db');
-      PERSIST &&
-        PERSIST &&
-        db.manifestBlob.put({ key: dbPath, data: resp.data });
+      db.manifestBlob.put({ key: dbPath, data: resp.data });
       return resp.data;
     });
   });
@@ -206,7 +202,7 @@ export function fasterGetDefinitions(language, tableNames, progressCb, dataCb) {
           log('Successfully got requested definitions');
 
           const key = [VERSION, dbPath].join(':');
-          PERSIST && PERSIST && db.allData.put({ key, data: definitions });
+          db.allData.put({ key, data: definitions });
 
           cleanUpPreviousVersions(key);
 

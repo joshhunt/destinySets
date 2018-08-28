@@ -65,9 +65,8 @@ function getEnsuredAccessTokenNoop() {
   return Promise.resolve(null);
 }
 
-export function getDestiny(_pathname, opts = {}, postBody) {
-  const url = `https://www.bungie.net${_pathname}`;
-  const { pathname } = new URL(url);
+export function getDestiny(pathname, opts = {}, postBody) {
+  const url = `https://www.bungie.net${pathname}`;
 
   opts.headers = opts.headers || {};
   opts.headers['x-api-key'] = process.env.REACT_APP_API_KEY;
