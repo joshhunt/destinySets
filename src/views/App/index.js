@@ -201,6 +201,14 @@ class App extends Component {
             </p>
           </Dismissable>
         );
+      } else {
+        messages.push(
+          <Dismissable className={styles.error}>
+            <p className={styles.errorText}>
+              An unknown error has occurred while trying to get your profile.
+            </p>
+          </Dismissable>
+        );
       }
     } else if (definitionsError) {
       messages.push(
