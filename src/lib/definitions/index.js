@@ -155,7 +155,7 @@ function allDataFromRemote(dbPath, tablesNames, progressCb) {
     });
 }
 
-function cleanUpPreviousVersions(dbPath, dbPath, keyToKeep) {
+function cleanUpPreviousVersions(dbPath, keyToKeep) {
   db.allData
     .toCollection()
     .primaryKeys()
