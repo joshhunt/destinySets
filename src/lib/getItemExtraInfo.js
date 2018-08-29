@@ -23,8 +23,6 @@ const LOCATIONS = {
   characterEquipment: 'Equipped on character',
   characterInventories: 'On character',
   profileInventory: 'In vault',
-  characterKiosks: 'Unlocked in Kiosk',
-  profileKiosks: 'Unlocked in Kiosk',
   destinySetsManual: 'Manually marked as collected'
   // profilePlugSets: 'Unlocked',
   // vendorPlugStates: 'Unlocked'

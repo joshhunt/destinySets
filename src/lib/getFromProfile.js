@@ -14,44 +14,6 @@ function fromCharacter(data) {
   return fp.flatMap(character => character.items.map(itemMapper), data);
 }
 
-const flavorObjectivesFromKiosk = data =>
-  fp.flow(
-    fp.values,
-    fp.flatten,
-    fp.map(item => item.flavorObjective),
-    fp.compact
-  )(data.kioskItems);
-
-function fromKiosks(data, vendorDefs) {
-  return fp.flow(
-    fp.toPairs,
-    fp.flatMap(([vendorHash, vendorItems]) => {
-      const vendor = vendorDefs[vendorHash];
-
-      if (!vendor) {
-        return [];
-      }
-
-      return vendorItems
-        .map(vendorItem => {
-          if (!vendorItem.canAcquire) {
-            return null;
-          }
-
-          const item =
-            vendor && vendor.itemList && vendor.itemList[vendorItem.index];
-
-          return item && item.itemHash;
-        })
-        .filter(Boolean);
-    })
-  )(data.kioskItems);
-}
-
-function fromCharacterKiosks(data, vendorDefs) {
-  return fp.flatMap(character => fromKiosks(character, vendorDefs), data);
-}
-
 function mapSockets(data, fn) {
   return fp.flow(
     fp.flatMap(({ sockets }) => fp.flatMap(socket => fn(socket), sockets)),
@@ -158,11 +120,6 @@ export function inventoryFromProfile(profile, vendorDefs) {
     [fromCharacter(profile.characterEquipment.data), 'characterEquipment'],
     [fromCharacter(profile.characterInventories.data), 'characterInventories'],
     [profile.profileInventory.data.items.map(itemMapper), 'profileInventory'],
-    [
-      fromCharacterKiosks(profile.characterKiosks.data, vendorDefs),
-      'characterKiosks'
-    ],
-    [fromKiosks(profile.profileKiosks.data, vendorDefs), 'profileKiosks'],
     [fromSockets(profile.itemComponents.sockets.data), 'itemSockets'],
     [fromVendorSockets(profile.$vendors.data), 'vendorSockets'],
     [fromProfilePlugSets(profile.profilePlugSets.data), 'profilePlugSets'],
@@ -176,7 +133,6 @@ export function inventoryFromProfile(profile, vendorDefs) {
 export function objectivesFromProfile(profile) {
   return keyBy(
     [
-      ...flavorObjectivesFromKiosk(profile.profileKiosks.data),
       ...objectivesFromSockets(profile.itemComponents.sockets.data),
       ...fp.flatMap(
         obj => obj.objectives,

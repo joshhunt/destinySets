@@ -32,7 +32,6 @@ const componentItemPlugStates = 308; // eslint-disable-line
 const componentVendors = 400; // eslint-disable-line
 const componentVendorCategories = 401; // eslint-disable-line
 const componentVendorSales = 402; // eslint-disable-line
-const componentKiosks = 500; // eslint-disable-line
 
 const PROFILE_COMPONENTS = [
   componentProfiles,
@@ -42,7 +41,6 @@ const PROFILE_COMPONENTS = [
   componentCharacterEquipment,
   componentItemObjectives,
   componentItemSockets,
-  componentKiosks,
   componentProfileProgressions,
   componentCharacterProgressions
 ];
