@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
 import { pick } from 'lodash';
 
@@ -8,6 +8,11 @@ import { sendProfileStats } from 'app/lib/telemetry';
 import googleAuth from 'app/lib/googleDriveAuth';
 import destinyAuth from 'app/lib/destinyAuth';
 import * as destiny from 'app/lib/destiny';
+import {
+  STATUS_DOWNLOADING,
+  STATUS_EXTRACTING_TABLES,
+  STATUS_UNZIPPING
+} from 'app/lib/definitions';
 
 import { inventorySelector, xurHasNewItemsSelector } from 'app/store/selectors';
 
@@ -20,13 +25,21 @@ import { setProfiles, switchProfile, fetchProfile } from 'app/store/profile';
 import { setAuthStatus } from 'app/store/auth';
 import { setXurData, setXurModal } from 'app/store/xur';
 
+import Icon from 'app/components/Icon';
 import Header from 'app/components/Header';
 import LoginUpsell from 'app/components/LoginUpsell';
 import XurModal from 'app/components/XurModal';
+import Dismissable from 'app/components/Dismissable';
 
 import styles from './styles.styl';
 
 const log = require('app/lib/log')('<App />');
+
+const MANIFEST_MESSAGES = {
+  [STATUS_DOWNLOADING]: 'Downloading new item data from Bungie...',
+  [STATUS_EXTRACTING_TABLES]: 'Unpacking item data...',
+  [STATUS_UNZIPPING]: 'Unzipping item data...'
+};
 
 class App extends Component {
   state = {};
@@ -158,8 +171,63 @@ class App extends Component {
       openXurModal,
       xurItems,
       xurHasNewItems,
-      dataExplorerVisited
+      dataExplorerVisited,
+      definitionsError,
+      profileError,
+      definitionsStatus
     } = this.props;
+
+    const messages = [];
+
+    if (!auth.isAuthed) {
+      messages.push(
+        <div className={styles.auth}>
+          <LoginUpsell>
+            {profile
+              ? 'The connection with Bungie has expired. Please reconnect to update your inventory.'
+              : `Connect your Bungie.net acccount to automatically track items you've collected and dismantled.`}
+          </LoginUpsell>
+        </div>
+      );
+    }
+
+    if (profileError) {
+      if (profileError.response && profileError.response.ErrorStatus) {
+        messages.push(
+          <Dismissable className={styles.error}>
+            <p className={styles.errorText}>
+              Bungie API Error {profileError.response.ErrorStatus} -{' '}
+              {profileError.response.Message}
+            </p>
+          </Dismissable>
+        );
+      } else {
+        messages.push(
+          <Dismissable className={styles.error}>
+            <p className={styles.errorText}>
+              An unknown error has occurred while trying to get your profile.
+            </p>
+          </Dismissable>
+        );
+      }
+    } else if (definitionsError) {
+      messages.push(
+        <Dismissable className={styles.error}>
+          <h1 className={styles.errorTitle}>Error loading item definitions</h1>
+          <p className={styles.errorText}>
+            There was an error loading the critical item definitions. Maybe your
+            browser isn't supported or is outdated?
+          </p>
+        </Dismissable>
+      );
+    } else if (definitionsStatus) {
+      messages.push(
+        <div className={styles.manifestUpdate}>
+          <Icon name="spinner-third" className={styles.icon} spin />{' '}
+          {MANIFEST_MESSAGES[definitionsStatus]}
+        </div>
+      );
+    }
 
     return (
       <div className={styles.root}>
@@ -182,13 +250,11 @@ class App extends Component {
 
         <div>{children}</div>
 
-        {!auth.isAuthed && (
-          <div className={styles.auth}>
-            <LoginUpsell>
-              {profile
-                ? 'The connection with Bungie has expired. Please reconnect to update your inventory.'
-                : `Connect your Bungie.net acccount to automatically track items you've collected and dismantled.`}
-            </LoginUpsell>
+        {messages.length > 0 && (
+          <div className={styles.bottomMessages}>
+            {messages.map((msgEl, index) => (
+              <Fragment key={index}>{msgEl}</Fragment>
+            ))}
           </div>
         )}
 
@@ -200,6 +266,9 @@ class App extends Component {
 
 const mapStateToProps = state => {
   return {
+    definitionsError: state.definitions.error,
+    definitionsStatus: state.definitions.status,
+    profileError: state.profile.err,
     auth: state.auth,
     profileCached: state.profile.isCached,
     profile: state.profile.profile,
@@ -209,7 +278,7 @@ const mapStateToProps = state => {
     language: state.app.language,
     dataExplorerVisited: state.app.dataExplorerVisited,
     cloudInventory: state.app.cloudInventory,
-    itemDefs: state.definitions.itemDefs,
+    itemDefs: state.definitions.DestinyInventoryItemDefinition,
     inventory: inventorySelector(state),
     manualInventory: state.app.manualInventory,
     xurItems: state.xur.items,

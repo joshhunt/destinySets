@@ -9,10 +9,12 @@ fontawesome.library.add(
   require('@fortawesome/fontawesome-pro-regular/faSpinnerThird'),
   require('@fortawesome/fontawesome-pro-regular/faBars'),
   require('@fortawesome/fontawesome-pro-regular/faExclamationTriangle'),
-  require('@fortawesome/fontawesome-pro-regular/faMinus'),
-  require('@fortawesome/fontawesome-pro-regular/faMinusSquare'),
-  require('@fortawesome/fontawesome-pro-regular/faPlus'),
-  require('@fortawesome/fontawesome-pro-regular/faPlusSquare'),
+  require('@fortawesome/fontawesome-pro-regular/faDollarSign'),
+
+  require('@fortawesome/fontawesome-pro-regular/faEyeSlash'),
+  require('@fortawesome/fontawesome-pro-regular/faEye'),
+  require('@fortawesome/fontawesome-pro-light/faEyeSlash'),
+  require('@fortawesome/fontawesome-pro-light/faEye'),
 
   require('@fortawesome/fontawesome-free-brands/faPaypal'),
   require('@fortawesome/fontawesome-free-brands/faGithub'),

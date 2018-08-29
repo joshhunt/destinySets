@@ -8,8 +8,8 @@ $padding = 10px
   color: white
 
   &.small
-    padding-bottom: .1px
-    margin-bottom: 15px
+    // padding-bottom: .1px
+    // margin-bottom: 15px
     box-shadow: 0 2px 15px rgba(0, 0, 0, 0.5)
 
 .body
@@ -31,6 +31,10 @@ $padding = 10px
 
   .small &
     display: none
+    margin-top: 0
+
+  .body:hover &
+    display: block
 
 .screenshotWrapper
   position: relative
@@ -66,3 +70,4 @@ $padding = 10px
 
   .small &
     margin-top: 0
+    font-size: 13px

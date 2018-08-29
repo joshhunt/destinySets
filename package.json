@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@d8660091/react-popper": "^0.7.1",
+    "@destiny-item-manager/zip.js": "github:DestinyItemManager/zip.js",
     "@fortawesome/fontawesome": "^1.1.5",
     "@fortawesome/fontawesome-free-brands": "^5.0.9",
     "@fortawesome/fontawesome-pro-light": "^5.0.9",
@@ -24,6 +25,8 @@
     "flow-bin": "^0.72.0",
     "image-size": "^0.6.2",
     "immer": "^1.2.0",
+    "imports-loader": "^0.8.0",
+    "indexeddbshim": "^3.8.0",
     "install": "^0.11.0",
     "lodash": "^4.17.4",
     "npm": "^6.0.0",
@@ -43,7 +46,8 @@
     "react-scroll": "^1.7.9",
     "redux": "^3.7.2",
     "redux-thunk": "^2.3.0",
-    "reselect": "^3.0.1"
+    "reselect": "^3.0.1",
+    "sql.js": "github:DestinyItemManager/sql.js"
   },
   "scripts": {
     "start": "react-app-rewired start",

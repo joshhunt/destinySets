@@ -10,19 +10,25 @@ import {
   NUMERICAL_STATS,
   STAT_BLACKLIST,
   CHECKLIST_PROFILE_COLLECTIONS,
-  CHECKLIST_CHARACTER_COLLECTIONS
+  CHECKLIST_CHARACTER_COLLECTIONS,
+  MASTERWORK_FLAG
 } from 'app/lib/destinyEnums';
 
 export const cloudInventorySelector = state => state.app.cloudInventory;
 export const manualInventorySelector = state => state.app.manualInventory;
-export const itemDefsSelector = state => state.definitions.itemDefs;
-export const objectiveDefsSelector = state => state.definitions.objectiveDefs;
-export const statDefsSelector = state => state.definitions.statDefs;
-export const checklistDefsSelector = state => state.definitions.checklistDefs;
-
 const baseXurItemsSelector = state => state.xur.items;
 const profileSelector = state => state.profile.profile;
-const vendorDefsSelector = state => state.definitions.vendorDefs;
+
+export const itemDefsSelector = state =>
+  state.definitions.DestinyInventoryItemDefinition;
+export const objectiveDefsSelector = state =>
+  state.definitions.DestinyObjectiveDefinition;
+export const statDefsSelector = state =>
+  state.definitions.DestinyStatDefinition;
+export const checklistDefsSelector = state =>
+  state.definitions.DestinyChecklistDefinition;
+export const vendorDefsSelector = state =>
+  state.definitions.DestinyVendorDefinition;
 
 export const itemHashPropSelector = (state, props) => props.itemHash;
 
@@ -287,8 +293,23 @@ export const makeItemInventoryEntrySelector = () => {
   return createSelector(
     inventorySelector,
     itemHashPropSelector,
-    (inventory, itemHash) => {
+    (s, ownProps) => ownProps.hideInventoryData,
+    (inventory, itemHash, hideInventoryData) => {
+      if (hideInventoryData) {
+        return null;
+      }
+
       return inventory ? inventory[itemHash] : null;
+    }
+  );
+};
+
+export const makeItemVendorEntrySelector = () => {
+  return createSelector(
+    vendorItemDataSelector,
+    itemHashPropSelector,
+    (vendorData, itemHash) => {
+      return vendorData[itemHash];
     }
   );
 };
@@ -318,14 +339,51 @@ const itemInstancesSelector = createSelector(profileSelector, profile => {
   )([]);
 });
 
+export const vendorItemDataSelector = createSelector(
+  profileSelector,
+  profile => {
+    if (!profile) {
+      return {};
+    }
+
+    const data = {};
+
+    Object.entries(profile.$vendors.data).forEach(
+      ([characterId, allVendorsData]) => {
+        Object.entries(allVendorsData.sales.data).forEach(
+          ([vendorHash, { saleItems }]) => {
+            Object.values(saleItems).forEach(saleItem => {
+              if (saleItem.failureIndexes.length > 0) {
+                return;
+              }
+
+              if (!data[saleItem.itemHash]) {
+                data[saleItem.itemHash] = [];
+              }
+
+              data[saleItem.itemHash].push({
+                characterId,
+                vendorHash,
+                saleItem
+              });
+            });
+          }
+        );
+      }
+    );
+
+    window.__vendorData = data;
+
+    return data;
+  }
+);
+
 export const NO_DATA = -1;
 export const NO_CATALYST = 0;
 export const INACTIVE_CATALYST = 1;
 export const ACTIVE_CATALYST_INPROGRESS = 2;
 export const ACTIVE_CATALYST_COMPLETE = 3;
 export const MASTERWORK_UPGRADED = 4;
-
-const MASTERWORK_FLAG = 4;
 
 export const makeCatalystSelector = () => {
   return createSelector(

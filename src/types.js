@@ -18,6 +18,7 @@ export type SetSection = {|
 
 export type DestinySet = {|
   name: string,
+  id: string,
   description?: string,
   image?: string,
   small?: boolean,

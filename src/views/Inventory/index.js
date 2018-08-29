@@ -2,19 +2,14 @@ import React, { Component } from 'react';
 import { Link } from 'react-router';
 import { connect } from 'react-redux';
 
-import { setFilterItem, removeTrackedItem } from 'app/store/reducer';
+import {
+  setFilterItem,
+  removeTrackedItem,
+  setBulkHiddenItemSet
+} from 'app/store/reducer';
 import { fetchProfile } from 'app/store/profile';
 
-import {
-  setVendorDefs,
-  setItemDefs,
-  setObjectiveDefs,
-  setStatDefs,
-  setChecklistDefs
-} from 'app/store/definitions';
-
 import * as ls from 'app/lib/ls';
-import { getDefinition } from 'app/lib/manifestData';
 
 import Footer from 'app/components/Footer';
 import Section from 'app/components/Section';
@@ -36,7 +31,6 @@ class Inventory extends Component {
   };
 
   componentDidMount() {
-    this.fetchDefinitions(this.props.language);
     this.potentiallyScheduleFetchProfile();
   }
 
@@ -74,25 +68,7 @@ class Inventory extends Component {
   };
 
   fetchDefinitions({ code: lang }) {
-    const {
-      setVendorDefs,
-      setStatDefs,
-      setItemDefs,
-      setObjectiveDefs,
-      setChecklistDefs
-    } = this.props;
-
-    getDefinition('DestinyVendorDefinition', lang).then(setVendorDefs);
-    getDefinition('DestinyStatDefinition', lang).then(setStatDefs);
-    getDefinition('DestinyObjectiveDefinition', lang).then(setObjectiveDefs);
-    getDefinition('DestinyChecklistDefinition', lang).then(setChecklistDefs);
-
-    const args = this.props.location.query.fullItemDefs
-      ? ['DestinyInventoryItemDefinition', lang]
-      : ['reducedCollectableInventoryItems', lang, false];
-
-    this.itemDefsPromise = getDefinition(...args);
-    this.itemDefsPromise.then(setItemDefs);
+    console.log('TODO: ensure defs with language', lang);
   }
 
   setPopper = (itemHash, element) =>
@@ -106,10 +82,22 @@ class Inventory extends Component {
     this.props.setFilterItem(...args);
   };
 
+  unhideAllSets = () => {
+    ls.saveBulkHiddenItemSets({});
+    this.props.setBulkHiddenItemSet({});
+  };
+
   render() {
     const { filters, filteredSetData, trackedItems, route } = this.props;
     const { itemTooltip, itemModal } = this.state;
     const noUi = (filteredSetData[0] || {}).noUi;
+
+    const numberOfHiddenSets = Object.values(this.props.hiddenSets).reduce(
+      (acc, value) => {
+        return value ? acc + 1 : acc;
+      },
+      0
+    );
 
     return (
       <div className={styles.root}>
@@ -168,6 +156,18 @@ class Inventory extends Component {
           />
         ))}
 
+        {numberOfHiddenSets > 0 && (
+          <p className={styles.hiddenSets}>
+            {numberOfHiddenSets} sets hidden.{' '}
+            <button
+              className={styles.unhideSetsButton}
+              onClick={this.unhideAllSets}
+            >
+              Unhide all
+            </button>
+          </p>
+        )}
+
         <Footer />
 
         {itemTooltip && (
@@ -179,12 +179,17 @@ class Inventory extends Component {
         {trackedItems.length > 0 && (
           <div className={styles.trackedItems}>
             {trackedItems.map(hash => (
-              <ItemTooltip
+              <div
                 key={hash}
-                itemHash={hash}
-                small={true}
-                dismiss={this.removeTrackedItem}
-              />
+                className={styles.trackedItem}
+                data-global-hack-tracked-item
+              >
+                <ItemTooltip
+                  itemHash={hash}
+                  small={true}
+                  dismiss={this.removeTrackedItem}
+                />
+              </div>
             ))}
           </div>
         )}
@@ -201,22 +206,20 @@ class Inventory extends Component {
 
 const mapStateToProps = (state, ownProps) => {
   return {
+    hiddenSets: state.app.hiddenSets,
     filters: state.app.filters,
     language: state.app.language,
     trackedItems: state.app.trackedItems,
+    vendors: state.profile.profile && state.profile.profile.$vendors,
     filteredSetData: filteredSetDataSelector(state, ownProps)
   };
 };
 
 const mapDispatchToActions = {
   fetchProfile,
-  setVendorDefs,
-  setItemDefs,
-  setObjectiveDefs,
-  setChecklistDefs,
-  setStatDefs,
   setFilterItem,
-  removeTrackedItem
+  removeTrackedItem,
+  setBulkHiddenItemSet
 };
 
 export default connect(mapStateToProps, mapDispatchToActions)(Inventory);

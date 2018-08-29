@@ -1,27 +1,41 @@
-import proxyifyDefs from './debugProxifyDefs';
+import { pickBy } from 'lodash';
+import { makePayloadAction } from './utils';
 
-export const SET_DEFINITIONS = 'Set definitions';
+export const SET_BULK_DEFINITIONS = 'Set bulk definitions';
+export const DEFINITIONS_ERROR = 'Definitions error';
+export const DEFINITIONS_STATUS = 'Definitions status';
 
-export default function definitionsReducer(state = {}, action) {
-  switch (action.type) {
-    case SET_DEFINITIONS:
+export default function definitionsReducer(state = {}, { type, payload }) {
+  switch (type) {
+    case DEFINITIONS_ERROR: {
       return {
         ...state,
-        [action.name]:
-          action.name === 'itemDefs' ? proxyifyDefs(action.defs) : action.defs
+        error: true
       };
+    }
+
+    case DEFINITIONS_STATUS: {
+      return {
+        ...state,
+        status: payload.status
+      };
+    }
+
+    case SET_BULK_DEFINITIONS: {
+      const filtered = pickBy(payload, defs => defs);
+
+      return {
+        ...state,
+        ...filtered,
+        error: false
+      };
+    }
 
     default:
       return state;
   }
 }
 
-function setDefs(name, defs) {
-  return { type: SET_DEFINITIONS, name, defs };
-}
-
-export const setVendorDefs = setDefs.bind(null, 'vendorDefs');
-export const setItemDefs = setDefs.bind(null, 'itemDefs');
-export const setObjectiveDefs = setDefs.bind(null, 'objectiveDefs');
-export const setStatDefs = setDefs.bind(null, 'statDefs');
-export const setChecklistDefs = setDefs.bind(null, 'checklistDefs');
+export const setBulkDefinitions = makePayloadAction(SET_BULK_DEFINITIONS);
+export const definitionsStatus = makePayloadAction(DEFINITIONS_STATUS);
+export const definitionsError = makePayloadAction(DEFINITIONS_ERROR);

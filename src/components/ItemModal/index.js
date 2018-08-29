@@ -8,6 +8,7 @@ import Objectives from 'app/components/Objectives';
 import ItemBanner from 'app/components/ItemBanner';
 import Modal from 'app/components/Modal';
 import Icon from 'app/components/Icon';
+import ExtraInfo from 'app/components/ExtraInfo';
 import ishtarSvg from 'app/ishar.svg';
 
 import {
@@ -22,7 +23,9 @@ import {
   statDefsSelector,
   makeItemStatsSelector,
   objectiveInstancesSelector,
-  makeItemInventoryEntrySelector
+  checklistInventorySelector,
+  makeItemInventoryEntrySelector,
+  makeItemVendorEntrySelector
 } from 'app/store/selectors';
 
 import styles from './styles.styl';
@@ -38,7 +41,9 @@ class ItemModalContent extends Component {
       objectiveDefs,
       toggleManuallyObtained,
       forgetDismantled,
-      googleAuth
+      googleAuth,
+      collectionInventory,
+      vendorEntry
     } = this.props;
 
     const {
@@ -96,18 +101,6 @@ class ItemModalContent extends Component {
           </p>
         )}
 
-        <ul className={styles.viewItemLinks}>
-          <li>
-            <a href={dtrLink} target="_blank" rel="noopener noreferrer">
-              View on DestinyTracker
-            </a>
-          </li>
-
-          <li>
-            <Link to={`/data/${hash}`}>View in Data Explorer</Link>
-          </li>
-        </ul>
-
         {!!objectiveHashes.length && (
           <div>
             <h3 className={styles.objectiveTitle}>
@@ -124,7 +117,7 @@ class ItemModalContent extends Component {
           </div>
         )}
 
-        <div>
+        <p>
           {!!objectiveHashes.length && (
             <button
               className={styles.mainButton}
@@ -163,13 +156,27 @@ class ItemModalContent extends Component {
                 Unmark as collected
               </button>
             )}
-        </div>
+        </p>
 
-        {extraInfo.map((info, index) => (
-          <div key={index} className={styles.extraInfo}>
-            {info}
-          </div>
-        ))}
+        <ul className={styles.viewItemLinks}>
+          <li>
+            <a href={dtrLink} target="_blank" rel="noopener noreferrer">
+              View on DestinyTracker
+            </a>
+          </li>
+
+          <li>
+            <Link to={`/data/${hash}`}>View in Data Explorer</Link>
+          </li>
+        </ul>
+
+        <ExtraInfo
+          className={styles.extraInfo}
+          item={item}
+          inventoryEntry={itemInventoryEntry}
+          vendorEntry={vendorEntry}
+          inCollection={collectionInventory[item.hash]}
+        />
       </div>
     );
   }
@@ -193,6 +200,7 @@ const mapStateToProps = () => {
   const itemStatsSelector = makeItemStatsSelector();
   const itemSelector = makeItemSelector();
   const itemInventoryEntrySelector = makeItemInventoryEntrySelector();
+  const itemVendorEntrySelector = makeItemVendorEntrySelector();
 
   return (state, ownProps) => {
     return {
@@ -202,7 +210,9 @@ const mapStateToProps = () => {
       statDefs: statDefsSelector(state),
       stats: itemStatsSelector(state, ownProps),
       item: itemSelector(state, ownProps),
-      itemInventoryEntry: itemInventoryEntrySelector(state, ownProps)
+      itemInventoryEntry: itemInventoryEntrySelector(state, ownProps),
+      vendorEntry: itemVendorEntrySelector(state, ownProps),
+      collectionInventory: checklistInventorySelector(state)
     };
   };
 };

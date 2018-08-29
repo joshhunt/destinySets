@@ -1,5 +1,7 @@
 import { uniq } from 'lodash';
 
+import { MASTERWORK_FLAG } from 'app/lib/destinyEnums';
+
 export default function getItemExtraInfo(item, _itemInventoryEntry) {
   const itemInventoryEntry = _itemInventoryEntry || {
     instances: [{}],
@@ -8,19 +10,11 @@ export default function getItemExtraInfo(item, _itemInventoryEntry) {
 
   const extraInfo = [];
 
-  if (itemInventoryEntry.instances[0].location === 'progressionChecklist') {
-    return ['Dismantled & unlocked in Forsaken Collections'];
-  }
-
-  itemInventoryEntry.dismantled
-    ? extraInfo.push('Dismantled')
-    : extraInfo.push(
-        ...uniq(
-          itemInventoryEntry.instances
-            .map(getFriendlyItemLocation)
-            .filter(Boolean)
-        )
-      );
+  extraInfo.push(
+    ...uniq(
+      itemInventoryEntry.instances.map(getFriendlyItemLocation).filter(Boolean)
+    )
+  );
 
   return extraInfo;
 }
@@ -29,11 +23,26 @@ const LOCATIONS = {
   characterEquipment: 'Equipped on character',
   characterInventories: 'On character',
   profileInventory: 'In vault',
-  characterKiosks: 'Unlocked in Kiosk',
-  profileKiosks: 'Unlocked in Kiosk',
   destinySetsManual: 'Manually marked as collected'
+  // profilePlugSets: 'Unlocked',
+  // vendorPlugStates: 'Unlocked'
 };
 
+const masterworkLocations = [
+  'characterEquipment',
+  'characterInventories',
+  'profileInventory'
+];
+
 export function getFriendlyItemLocation(instance) {
-  return LOCATIONS[instance.location];
+  let location = LOCATIONS[instance.location];
+
+  if (
+    masterworkLocations.includes(instance.location) &&
+    instance.itemState & MASTERWORK_FLAG
+  ) {
+    location = `${location} & masterworked`;
+  }
+
+  return location;
 }

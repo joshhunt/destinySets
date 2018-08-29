@@ -6,6 +6,8 @@ export const NO_CLASS = 3;
 export const FILTER_SHOW_COLLECTED = 'showCollected';
 export const FILTER_SHOW_PS4_EXCLUSIVES = 'ps4Exclusives';
 export const FILTER_SHOW_HIDDEN_SETS = 'showHiddenSets';
+export const FILTER_SHOW_ORNAMENTS = 'showOrnaments';
+export const FILTER_SHOW_WEAPONS = 'showWeapons';
 
 const testChecklists = false;
 
@@ -16,14 +18,7 @@ export const CHECKLIST_PROFILE_COLLECTIONS = testChecklists
   : _CHECKLIST_PROFILE_COLLECTIONS;
 export const CHECKLIST_CHARACTER_COLLECTIONS = 3246761912;
 
-const testChecklists = false;
-
-const _CHECKLIST_PROFILE_COLLECTIONS = 3393554306;
-const CHECKLIST_SLEEPER_NODES = 365218222;
-export const CHECKLIST_PROFILE_COLLECTIONS = testChecklists
-  ? CHECKLIST_SLEEPER_NODES
-  : _CHECKLIST_PROFILE_COLLECTIONS;
-export const CHECKLIST_CHARACTER_COLLECTIONS = 3246761912;
+export const MASTERWORK_FLAG = 4;
 
 // itemCategoryHashes
 export const CLASS_ITEMS = 49;

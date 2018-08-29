@@ -1,12 +1,5 @@
-import { keyBy } from 'lodash';
+import { keyBy, isNumber } from 'lodash';
 import fp from 'lodash/fp';
-
-import {
-  getDebugId,
-  getProfileErrorReported,
-  saveProfileErrorReported
-} from 'app/lib/ls';
-import { saveDebugInfo, trackError, trackBreadcrumb } from 'app/lib/telemetry';
 
 const ITEM_BLACKLIST = [
   4248210736, // Default shader
@@ -14,53 +7,11 @@ const ITEM_BLACKLIST = [
 ];
 
 function itemMapper(item) {
-  return item.itemHash;
+  return item;
 }
 
 function fromCharacter(data) {
   return fp.flatMap(character => character.items.map(itemMapper), data);
-}
-
-const flavorObjectivesFromKiosk = data =>
-  fp.flow(
-    fp.values,
-    fp.flatten,
-    fp.map(item => item.flavorObjective),
-    fp.compact
-  )(data.kioskItems);
-
-function fromKiosks(data, vendorDefs) {
-  return fp.flow(
-    fp.toPairs,
-    fp.flatMap(([vendorHash, vendorItems]) => {
-      const vendor = vendorDefs[vendorHash];
-
-      return vendorItems
-        .map(vendorItem => {
-          if (!vendorItem.canAcquire) {
-            return null;
-          }
-
-          const item = vendor.itemList[vendorItem.index];
-
-          if (!item) {
-            trackBreadcrumb({
-              message: 'Missing item from vendorlist',
-              category: 'debug',
-              level: 'warning',
-              data: { vendorHash, vendorItemIndex: vendorItem.index }
-            });
-          }
-
-          return item.itemHash;
-        })
-        .filter(Boolean);
-    })
-  )(data.kioskItems);
-}
-
-function fromCharacterKiosks(data, vendorDefs) {
-  return fp.flatMap(character => fromKiosks(character, vendorDefs), data);
 }
 
 function mapSockets(data, fn) {
@@ -140,7 +91,9 @@ function fromVendorSockets(data) {
 }
 
 function mergeItems(acc, [items, itemLocation]) {
-  items.forEach(itemHash => {
+  items.forEach(thing => {
+    const itemHash = isNumber(thing) ? thing : thing.itemHash;
+
     if (ITEM_BLACKLIST.includes(itemHash)) {
       return acc;
     }
@@ -153,86 +106,40 @@ function mergeItems(acc, [items, itemLocation]) {
       };
     }
 
-    acc[itemHash].instances.push({ location: itemLocation });
+    acc[itemHash].instances.push({
+      location: itemLocation,
+      itemState: thing.state
+    });
   });
 
   return acc;
 }
 
-function reportError(err, name, profile) {
-  console.error(`Error in getFromProfile ${name}`);
-  console.error(err);
-
-  const error = err || new Error('Unknown error');
-  trackError(error);
-
-  if (getProfileErrorReported()) {
-    return;
-  }
-
-  saveDebugInfo(
-    {
-      debugId: getDebugId(),
-      profile: JSON.stringify(profile || { emptry: true }),
-      error: error.toString && error.toString(),
-      errorStack: error.stack
-    },
-    `caughtGetFromProfile/${name}`
-  );
-
-  saveProfileErrorReported(true);
-}
-
-function wrapForError(name, profile, fn) {
-  try {
-    return fn();
-  } catch (err) {
-    reportError(err, name, profile);
-  }
-}
-
 export function inventoryFromProfile(profile, vendorDefs) {
-  return wrapForError('inventoryFromProfile', profile, () => {
-    const inventory = [
-      [fromCharacter(profile.characterEquipment.data), 'characterEquipment'],
-      [
-        fromCharacter(profile.characterInventories.data),
-        'characterInventories'
-      ],
-      [profile.profileInventory.data.items.map(itemMapper), 'profileInventory'],
-      [
-        fromCharacterKiosks(profile.characterKiosks.data, vendorDefs),
-        'characterKiosks'
-      ],
-      [fromKiosks(profile.profileKiosks.data, vendorDefs), 'profileKiosks'],
-      [fromSockets(profile.itemComponents.sockets.data), 'itemSockets'],
-      [fromVendorSockets(profile.$vendors.data), 'vendorSockets'],
-      [fromProfilePlugSets(profile.profilePlugSets.data), 'profilePlugSets'],
-      [itemsFromVendorPlugStates(profile.$vendors.data), 'vendorPlugStates']
-    ].reduce(mergeItems, {});
+  const inventory = [
+    [fromCharacter(profile.characterEquipment.data), 'characterEquipment'],
+    [fromCharacter(profile.characterInventories.data), 'characterInventories'],
+    [profile.profileInventory.data.items.map(itemMapper), 'profileInventory'],
+    [fromSockets(profile.itemComponents.sockets.data), 'itemSockets'],
+    [fromVendorSockets(profile.$vendors.data), 'vendorSockets'],
+    [fromProfilePlugSets(profile.profilePlugSets.data), 'profilePlugSets'],
+    [itemsFromVendorPlugStates(profile.$vendors.data), 'vendorPlugStates']
+  ].reduce(mergeItems, {});
 
-    window.__inventory = inventory;
-    return inventory;
-  });
+  window.__inventory = inventory;
+  return inventory;
 }
 
 export function objectivesFromProfile(profile) {
-  const toReturn = wrapForError('objectivesFromProfile', profile, () => {
-    return keyBy(
-      [
-        ...flavorObjectivesFromKiosk(profile.profileKiosks.data),
-        ...objectivesFromSockets(profile.itemComponents.sockets.data),
-        ...fp.flatMap(
-          obj => obj.objectives,
-          profile.itemComponents.objectives.data
-        ),
-        ...objectivesFromVendors(profile.$vendors.data)
-      ],
-      'objectiveHash'
-    );
-  });
-
-  window.__objectives = toReturn;
-
-  return toReturn;
+  return keyBy(
+    [
+      ...objectivesFromSockets(profile.itemComponents.sockets.data),
+      ...fp.flatMap(
+        obj => obj.objectives,
+        profile.itemComponents.objectives.data
+      ),
+      ...objectivesFromVendors(profile.$vendors.data)
+    ],
+    'objectiveHash'
+  );
 }

@@ -6,18 +6,41 @@ import {
   HUNTER,
   TITAN,
   WARLOCK,
+  WEAPON,
+  WEAPON_MODS_ORNAMENTS,
+  ARMOR_MODS_ORNAMENTS,
   FILTER_SHOW_COLLECTED,
   FILTER_SHOW_PS4_EXCLUSIVES,
-  FILTER_SHOW_HIDDEN_SETS
+  FILTER_SHOW_HIDDEN_SETS,
+  FILTER_SHOW_ORNAMENTS,
+  FILTER_SHOW_WEAPONS
 } from 'app/lib/destinyEnums';
 import CONSOLE_EXCLUSIVES from 'app/extraData/consoleExclusives';
 
-import { inventorySelector } from 'app/store/selectors';
+import {
+  inventorySelector,
+  itemDefsSelector,
+  checklistDefsSelector
+} from 'app/store/selectors';
 import * as ls from 'app/lib/ls';
 
-import { getItemClass } from 'app/lib/destinyUtils';
+import { getItemClass, hasCategoryHash } from 'app/lib/destinyUtils';
 import fancySearch from 'app/lib/fancySearch';
 import { default as sortItems } from 'app/lib/sortItemsIntoSections';
+
+const ITEM_BLACKLIST = [
+  1744115122, // Legend of Acrius quest item
+  460724140, // Jade Rabbit dupe
+  546372301, // Jade Rabbit dupe
+  2896466320, // Jade Rabbit dupe
+  2978016230, // Jade Rabbit dupe
+  3229272315, // Jade Rabbit dupe
+  2769834047, // Old emblems
+  3334815691, // Old emblems
+  3754910498, // Old emblems
+  4059318875, // Old emblems
+  4114707355 // Old emblems
+];
 
 const slugify = str =>
   str
@@ -28,6 +51,17 @@ const slugify = str =>
 
 function filterItem(item, inventory, filters) {
   if (!item) {
+    return false;
+  }
+
+  if (!filters[FILTER_SHOW_WEAPONS] && hasCategoryHash(item, WEAPON)) {
+    return false;
+  }
+
+  const isOrnament =
+    hasCategoryHash(item, WEAPON_MODS_ORNAMENTS) ||
+    hasCategoryHash(item, ARMOR_MODS_ORNAMENTS);
+  if (!filters[FILTER_SHOW_ORNAMENTS] && isOrnament) {
     return false;
   }
 
@@ -80,6 +114,8 @@ function query(itemDefsArray, checklistDefsArray, queryTerm) {
   const results = fancySearch(queryTerm, {
     item: itemDefsArray,
     checklist: checklistDefsArray
+  }).filter(item => {
+    return !ITEM_BLACKLIST.includes(item.hash);
   });
 
   return (results || []).filter(Boolean);
@@ -88,8 +124,6 @@ function query(itemDefsArray, checklistDefsArray, queryTerm) {
 const filtersSelector = state => state.app.filters;
 const hiddenSetsSelector = state => state.app.hiddenSets;
 const propsSetDataSelector = (state, props) => props.route.setData;
-const itemDefsSelector = state => state.definitions.itemDefs;
-const checklistDefsSelector = state => state.definitions.checklistDefs;
 
 const setDataSelector = createSelector(
   itemDefsSelector,
@@ -150,17 +184,13 @@ export const filteredSetDataSelector = createSelector(
   itemDefsSelector,
   (filters, hiddenSets, setData, inventory, itemDefs) => {
     const prevWhitelistedItems = ls.getTempFilterItemWhitelist();
-    //const hiddenSets = ['WARMIND_TRIALS'];
 
     // TODO: Can we memoize this or something to prevent making changes to sets that don't change?
     const result = immer({ setData }, draft => {
       draft.setData.forEach(group => {
         group.sets.forEach(set => {
           set.hidden = hiddenSets.hasOwnProperty(set.id) && hiddenSets[set.id];
-          if (
-            !filters[FILTER_SHOW_HIDDEN_SETS] &&
-            set.hidden
-          ) {
+          if (!filters[FILTER_SHOW_HIDDEN_SETS] && set.hidden) {
             set.sections = [];
             return;
           }

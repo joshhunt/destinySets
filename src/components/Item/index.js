@@ -9,11 +9,15 @@ import {
   RARE,
   COMMON,
   EMBLEM,
-  CLASSES
+  CLASSES,
+  MASTERWORK_FLAG
 } from 'app/lib/destinyEnums';
 import Icon from 'app/components/Icon';
 
-import { makeItemInventoryEntrySelector } from 'app/store/selectors';
+import {
+  makeItemInventoryEntrySelector,
+  makeItemVendorEntrySelector
+} from 'app/store/selectors';
 
 import {
   makeItemDefSelector,
@@ -65,6 +69,16 @@ function getItemColor(item) {
   }
 }
 
+const isMasterwork = inventoryEntry => {
+  if (!inventoryEntry) {
+    return false;
+  }
+
+  return !!inventoryEntry.instances.find(instance => {
+    return instance.itemState & MASTERWORK_FLAG;
+  });
+};
+
 class Item extends PureComponent {
   onMouseEnter = () => {
     const { setPopper, itemHash } = this.props;
@@ -96,15 +110,20 @@ class Item extends PureComponent {
       itemDef,
       inventoryEntry,
       extended,
-      isMasterwork,
+      hideMissing,
+      vendorEntry,
       itemObjectiveProgress
     } = this.props;
 
     const bgColor = getItemColor(itemDef);
 
     if (!itemDef) {
+      if (hideMissing) {
+        return null;
+      }
       return (
         <div
+          data-item-hash={this.props.itemHash}
           className={cx(className, styles.placeholder)}
           style={{ backgroundColor: bgColor }}
         />
@@ -132,7 +151,7 @@ class Item extends PureComponent {
       >
         <div className={styles.imageWrapper}>
           <div className={styles.fadeOut}>
-            {isMasterwork && (
+            {isMasterwork(inventoryEntry) && (
               <img
                 className={styles.overlay}
                 src={masterworkOutline}
@@ -152,23 +171,31 @@ class Item extends PureComponent {
                 <Icon icon="check" />
               </div>
             )}
+
+            {!inventoryEntry &&
+              vendorEntry && (
+                <div className={styles.purchasableTick}>
+                  <Icon icon="dollar-sign" />
+                </div>
+              )}
           </div>
 
-          {itemObjectiveProgress !== 0 && (
-            <div
-              className={cx(
-                styles.objectiveOverlay,
-                itemObjectiveProgress === 1 && styles.objectivesComplete
-              )}
-            >
+          {itemObjectiveProgress !== 0 &&
+            itemObjectiveProgress !== 1 && (
               <div
-                className={styles.objectiveTrack}
-                style={{
-                  width: `${itemObjectiveProgress * 100}%`
-                }}
-              />
-            </div>
-          )}
+                className={cx(
+                  styles.objectiveOverlay,
+                  itemObjectiveProgress === 1 && styles.objectivesComplete
+                )}
+              >
+                <div
+                  className={styles.objectiveTrack}
+                  style={{
+                    width: `${itemObjectiveProgress * 100}%`
+                  }}
+                />
+              </div>
+            )}
         </div>
 
         {extended && (
@@ -188,12 +215,14 @@ class Item extends PureComponent {
 function mapStateToProps() {
   const itemDefSelector = makeItemDefSelector();
   const itemInventoryEntrySelector = makeItemInventoryEntrySelector();
+  const itemVendorEntrySelector = makeItemVendorEntrySelector();
   const itemObjectiveProgressSelector = makeItemObjectiveProgressSelector();
 
   return (state, ownProps) => {
     return {
       itemDef: itemDefSelector(state, ownProps),
       inventoryEntry: itemInventoryEntrySelector(state, ownProps),
+      vendorEntry: itemVendorEntrySelector(state, ownProps),
       itemObjectiveProgress: itemObjectiveProgressSelector(state, ownProps)
     };
   };

@@ -4,7 +4,9 @@ import {
   WARLOCK,
   FILTER_SHOW_COLLECTED,
   FILTER_SHOW_PS4_EXCLUSIVES,
-  FILTER_SHOW_HIDDEN_SETS
+  FILTER_SHOW_HIDDEN_SETS,
+  FILTER_SHOW_ORNAMENTS,
+  FILTER_SHOW_WEAPONS
 } from 'app/lib/destinyEnums';
 
 const SET_CLOUD_INVENTORY = 'Set cloud inventory';
@@ -24,8 +26,9 @@ export const DEFAULT_FILTER = {
   [TITAN]: true,
   [HUNTER]: true,
   [WARLOCK]: true,
+  [FILTER_SHOW_ORNAMENTS]: true,
+  [FILTER_SHOW_WEAPONS]: true,
   [FILTER_SHOW_COLLECTED]: true,
-  [FILTER_SHOW_PS4_EXCLUSIVES]: true,
   [FILTER_SHOW_PS4_EXCLUSIVES]: true,
   [FILTER_SHOW_HIDDEN_SETS]: false
 };
@@ -111,7 +114,7 @@ export default function reducer(state = INITIAL_STORE, action) {
     case SET_BULK_HIDDEN_ITEM_SET:
       return {
         ...state,
-        hiddenSets: { ...state.hiddenSets, ...action.hiddenSets }
+        hiddenSets: action.hiddenSets
       };
 
     case SET_BULK_FILTERS:

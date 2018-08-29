@@ -2,7 +2,7 @@ import { sortBy, has } from 'lodash';
 
 import { setUser } from 'app/lib/telemetry';
 import { getEnsuredAccessToken } from 'app/lib/destinyAuth';
-import { trackError, trackBreadcrumb, saveDebugInfo } from 'app/lib/telemetry';
+import { trackError, trackBreadcrumb } from 'app/lib/telemetry';
 import * as ls from 'app/lib/ls';
 
 const XUR_URL = 'https://api.destiny.plumbing/xur';
@@ -32,7 +32,6 @@ const componentItemPlugStates = 308; // eslint-disable-line
 const componentVendors = 400; // eslint-disable-line
 const componentVendorCategories = 401; // eslint-disable-line
 const componentVendorSales = 402; // eslint-disable-line
-const componentKiosks = 500; // eslint-disable-line
 
 const PROFILE_COMPONENTS = [
   componentProfiles,
@@ -42,7 +41,6 @@ const PROFILE_COMPONENTS = [
   componentCharacterEquipment,
   componentItemObjectives,
   componentItemSockets,
-  componentKiosks,
   componentProfileProgressions,
   componentCharacterProgressions
 ];
@@ -65,9 +63,8 @@ function getEnsuredAccessTokenNoop() {
   return Promise.resolve(null);
 }
 
-export function getDestiny(_pathname, opts = {}, postBody) {
-  const url = `https://www.bungie.net${_pathname}`;
-  const { pathname } = new URL(url);
+export function getDestiny(pathname, opts = {}, postBody) {
+  const url = `https://www.bungie.net${pathname}`;
 
   opts.headers = opts.headers || {};
   opts.headers['x-api-key'] = process.env.REACT_APP_API_KEY;
@@ -98,6 +95,13 @@ export function getDestiny(_pathname, opts = {}, postBody) {
       return get(url, opts);
     })
     .then(resp => {
+      // const resp = {
+      //   ErrorCode: 5,
+      //   ErrorStatus: 'SystemDisabled',
+      //   Message: 'This system is temporarily disabled for maintenance.',
+      //   MessageData: '{}'
+      // };
+
       log(`RESPONSE: ${pathname}`, resp);
 
       if (resp.ErrorStatus === 'DestinyAccountNotFound') {
@@ -105,13 +109,6 @@ export function getDestiny(_pathname, opts = {}, postBody) {
       }
 
       if (has(resp, 'ErrorCode') && resp.ErrorCode !== 1) {
-        trackBreadcrumb({
-          message: 'Bungie API Error',
-          category: 'api',
-          level: 'error',
-          data: { url, ...resp }
-        });
-
         const cleanedUrl = url.replace(/\/\d+\//g, '/_/');
         const err = new Error(
           'Bungie API Error ' +
@@ -122,22 +119,19 @@ export function getDestiny(_pathname, opts = {}, postBody) {
             cleanedUrl
         );
 
+        err.response = resp;
         err.data = resp;
 
-        if (resp.ErrorStatus === 'DestinyCharacterNotFound') {
-          // TODO: remove this sometime later
-          const debugId = ls.getDebugId();
-          saveDebugInfo(
-            {
-              debugData: JSON.stringify(DEBUG_STORE),
-              resp: JSON.stringify(resp),
-              debugId
-            },
-            'DestinyCharacterNotFound'
-          );
+        if (resp.ErrorStatus !== 'SystemDisabled') {
+          trackError(err);
+        } else {
+          trackBreadcrumb({
+            message: 'Bungie API Error',
+            category: 'api',
+            level: 'error',
+            data: { url, ...resp }
+          });
         }
-
-        trackError(err);
 
         throw err;
       }
@@ -156,8 +150,6 @@ export function getVendors(membership, characterId) {
       ','
     )}`
   ).catch(err => {
-    trackError(err);
-
     console.error('Error fetching vendors for', {
       membershipType,
       membershipId,
@@ -206,10 +198,6 @@ export function getExtendedProfile(ship) {
       Object.keys(profile.characters.data).forEach((characterId, index) => {
         if (characterVendors[index]) {
           profile.$vendors.data[characterId] = characterVendors[index];
-        } else {
-          trackError(new Error('Missing vendor for character'), {
-            level: 'warning'
-          });
         }
       });
 

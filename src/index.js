@@ -1,4 +1,5 @@
 import 'app/lib/autotrack.build';
+import 'indexeddbshim/dist/indexeddbshim.min';
 
 import React from 'react';
 import ReactDOM from 'react-dom';
