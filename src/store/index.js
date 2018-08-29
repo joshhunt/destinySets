@@ -24,7 +24,8 @@ function sanitiseDefintionsState(defintionsState) {
   }
   return mapValues(
     defintionsState,
-    definitions => `[${Object.keys(definitions).length} definitions hidden]`
+    definitions =>
+      `[${Object.keys(definitions || {}).length} definitions hidden]`
   );
 }
 
