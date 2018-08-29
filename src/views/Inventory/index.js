@@ -146,6 +146,7 @@ class Inventory extends Component {
 
         <div>
           <ItemTooltip itemHash={3691881271} />
+          <ItemTooltip itemHash={2065460339} />
 
           <br />
           <br />

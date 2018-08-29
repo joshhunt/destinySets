@@ -3,7 +3,14 @@ import { connect } from 'react-redux';
 import { uniq } from 'lodash';
 import cx from 'classnames';
 
-import { EMBLEM } from 'app/lib/destinyEnums';
+import {
+  EMBLEM,
+  STAT_POWER,
+  KINETIC,
+  VOID,
+  SOLAR,
+  ARC
+} from 'app/lib/destinyEnums';
 import FancyImage from 'app/components/FancyImage';
 // import ItemBanner from 'app/components/ItemBanner';
 import ItemBanner from 'app/components/ItemBannerNew';
@@ -24,6 +31,56 @@ import {
 
 import styles from './styles.styl';
 
+const maxPower = (stats, currentMaxPower) => {
+  const powerStat = stats[STAT_POWER];
+  return powerStat
+    ? Math.max(powerStat.value, currentMaxPower)
+    : currentMaxPower;
+};
+
+const calcMaxPower = item => {
+  let power = 0;
+
+  if (item.sourceData && item.sourceData.sources) {
+    power = item.sourceData.sources.reduce((currentMaxPower, source) => {
+      return maxPower(source.computedStats, currentMaxPower);
+    }, power);
+  } else if (item.stats && item.stats.stats) {
+    power = maxPower(item.stats.stats, power);
+  }
+
+  return power;
+};
+
+const ELEMENTAL_DAMAGE_CLASS = {
+  // 0: None,
+  1: styles.kineticDamage,
+  2: styles.arcDamage,
+  3: styles.solarDamage,
+  4: styles.voidDamage
+  // 5: Raid,
+};
+
+const AMMO_TYPE = {
+  0: <span>None</span>,
+  1: (
+    <span>
+      <img className={styles.ammoIcon} src={require('./primary.png')} /> Primary
+    </span>
+  ),
+  2: (
+    <span>
+      <img className={styles.ammoIcon} src={require('./special.png')} /> Special
+    </span>
+  ),
+  3: (
+    <span>
+      <img className={styles.ammoIcon} src={require('./heavy.png')} /> Heavy
+    </span>
+  ),
+  4: <span>Unknown</span>
+};
+
 function ItemTooltip({
   item,
   small,
@@ -40,7 +97,7 @@ function ItemTooltip({
     return null;
   }
 
-  const { displayProperties, screenshot, itemCategoryHashes, loreHash } = item;
+  const { displayProperties, itemCategoryHashes, loreHash } = item;
 
   const isEmblem = (itemCategoryHashes || []).includes(EMBLEM);
 
@@ -51,20 +108,35 @@ function ItemTooltip({
     ].filter(Boolean)
   );
 
+  const ammoType = item && item.equippingBlock && item.equippingBlock.ammoType;
+  const elementalDamageClass =
+    item && item.damageTypes && item.damageTypes.length > 0
+      ? ELEMENTAL_DAMAGE_CLASS[item.damageTypes[0]]
+      : null;
+
+  const showAttributes = elementalDamageClass || ammoType;
+
   return (
     <div className={cx(styles.tooltip, small && styles.small)}>
       <ItemBanner className={styles.header} item={item} onClose={dismiss} />
 
       <div className={styles.body}>
-        <div className={styles.attributes}>
-          <div className={styles.power}>
-            <div className={styles.voidDamage} />
-            <div>400</div>
+        {!small && showAttributes ? (
+          <div className={styles.attributes}>
+            {elementalDamageClass && (
+              <div className={elementalDamageClass}>
+                <div className={styles.elementalDamageIcon} />
+                <div>600</div>
+              </div>
+            )}
+
+            {ammoType && (
+              <div className={styles.ammoType}>
+                <div>{AMMO_TYPE[ammoType]}</div>
+              </div>
+            )}
           </div>
-          <div className={styles.ammoType}>
-            <div>Heavy</div>
-          </div>
-        </div>
+        ) : null}
 
         {displayProperties.description &&
           displayProperties.description.split('\n').map(para => (
@@ -72,16 +144,6 @@ function ItemTooltip({
               {para}
             </p>
           ))}
-
-        {!small &&
-          screenshot && (
-            <div className={styles.screenshotWrapper}>
-              <FancyImage
-                className={styles.screenshot}
-                src={`https://bungie.net${screenshot}`}
-              />
-            </div>
-          )}
 
         {!small && stats && <ItemStats stats={stats} statDefs={statDefs} />}
 

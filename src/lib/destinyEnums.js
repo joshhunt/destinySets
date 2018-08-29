@@ -63,9 +63,15 @@ export const PC_BLIZZARD = 4;
 export const TIGERDEMON = 10;
 export const BUNGIENEXT = 254;
 
+export const KINETIC = 3373582085;
+export const VOID = 3454344768;
+export const SOLAR = 1847026933;
+export const ARC = 2303181850;
+
 export const STAT_RECOVERY = 1943323491;
 export const STAT_RESILIENCE = 392767087;
 export const STAT_MOBILITY = 2996146975;
+export const STAT_POWER = 1935470627;
 
 export const NUMERICAL_STATS = [4284893193, 3871231066, 2961396640];
 export const STAT_BLACKLIST = [
