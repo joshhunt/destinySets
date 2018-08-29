@@ -17,6 +17,7 @@ import Popper from 'app/components/Popper';
 import ItemTooltip from 'app/components/ItemTooltip';
 import ItemModal from 'app/components/ItemModal';
 import SectionList from 'app/components/SectionList';
+import PresentationNode from 'app/components/PresentationNode';
 
 import { filteredSetDataSelector } from './selectors';
 import styles from './styles.styl';
@@ -143,6 +144,18 @@ class Inventory extends Component {
             </p>
           </div>
         )}
+
+        <div>
+          <br />
+          <br />
+          <PresentationNode
+            hash={3790247699}
+            setPopper={this.setPopper}
+            setModal={this.setItemModal}
+          />
+          <br />
+          <br />
+        </div>
 
         {filteredSetData.map(({ sets, noUi, slug, name }, index) => (
           <Section
