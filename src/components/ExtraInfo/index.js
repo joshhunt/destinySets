@@ -26,7 +26,7 @@ function ExtraInfo({
     );
   });
 
-  if (inCollection) {
+  if (inCollection && inventoryEntry) {
     extraInfo.push(
       <span>
         <span className={styles.blueTick}>
