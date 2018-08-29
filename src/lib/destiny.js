@@ -2,7 +2,7 @@ import { sortBy, has } from 'lodash';
 
 import { setUser } from 'app/lib/telemetry';
 import { getEnsuredAccessToken } from 'app/lib/destinyAuth';
-import { trackError, trackBreadcrumb, saveDebugInfo } from 'app/lib/telemetry';
+import { trackError, trackBreadcrumb } from 'app/lib/telemetry';
 import * as ls from 'app/lib/ls';
 
 const XUR_URL = 'https://api.destiny.plumbing/xur';
@@ -111,13 +111,6 @@ export function getDestiny(pathname, opts = {}, postBody) {
       }
 
       if (has(resp, 'ErrorCode') && resp.ErrorCode !== 1) {
-        trackBreadcrumb({
-          message: 'Bungie API Error',
-          category: 'api',
-          level: 'error',
-          data: { url, ...resp }
-        });
-
         const cleanedUrl = url.replace(/\/\d+\//g, '/_/');
         const err = new Error(
           'Bungie API Error ' +
@@ -133,6 +126,13 @@ export function getDestiny(pathname, opts = {}, postBody) {
 
         if (resp.ErrorStatus !== 'SystemDisabled') {
           trackError(err);
+        } else {
+          trackBreadcrumb({
+            message: 'Bungie API Error',
+            category: 'api',
+            level: 'error',
+            data: { url, ...resp }
+          });
         }
 
         throw err;
@@ -152,8 +152,6 @@ export function getVendors(membership, characterId) {
       ','
     )}`
   ).catch(err => {
-    trackError(err);
-
     console.error('Error fetching vendors for', {
       membershipType,
       membershipId,
