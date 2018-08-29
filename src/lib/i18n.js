@@ -56,6 +56,11 @@ export const CHINESE = {
   name: 'Chinese'
 };
 
+export const KOREAN = {
+  code: 'ko',
+  name: 'Korean'
+}
+
 export const DEFAULT_LANG = ENGLISH;
 
 export const languages = [
@@ -69,7 +74,8 @@ export const languages = [
   SPANISH_LATIN,
   RUSSIAN,
   POLISH,
-  CHINESE
+  CHINESE,
+  KOREAN
 ];
 
 export const languageByCode = keyBy(languages, lang => lang.code);
