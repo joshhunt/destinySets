@@ -28,13 +28,19 @@ function fromKiosks(data, vendorDefs) {
     fp.flatMap(([vendorHash, vendorItems]) => {
       const vendor = vendorDefs[vendorHash];
 
+      if (!vendor) {
+        return [];
+      }
+
       return vendorItems
         .map(vendorItem => {
           if (!vendorItem.canAcquire) {
             return null;
           }
 
-          const item = vendor.itemList && vendor.itemList[vendorItem.index];
+          const item =
+            vendor && vendor.itemList && vendor.itemList[vendorItem.index];
+
           return item && item.itemHash;
         })
         .filter(Boolean);
