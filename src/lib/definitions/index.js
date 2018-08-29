@@ -162,7 +162,16 @@ function cleanUpPreviousVersions(keyToKeep) {
     .then(keys => {
       const toDelete = keys.filter(key => !key.includes(keyToKeep));
       log('Deleting stale manifest data', toDelete);
-      return db.dataCache.bulkDelete(toDelete);
+      return db.allData.bulkDelete(toDelete);
+    });
+
+  db.manifestBlob
+    .toCollection()
+    .primaryKeys()
+    .then(keys => {
+      const toDelete = keys.filter(key => !key.includes(keyToKeep));
+      log('Deleting stale manifest data', toDelete);
+      return db.manifestBlob.bulkDelete(toDelete);
     });
 }
 
