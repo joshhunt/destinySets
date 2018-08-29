@@ -155,7 +155,7 @@ function allDataFromRemote(dbPath, tablesNames, progressCb) {
     });
 }
 
-function cleanUpPreviousVersions(keyToKeep) {
+function cleanUpPreviousVersions(dbPath, dbPath, keyToKeep) {
   db.allData
     .toCollection()
     .primaryKeys()
@@ -169,7 +169,7 @@ function cleanUpPreviousVersions(keyToKeep) {
     .toCollection()
     .primaryKeys()
     .then(keys => {
-      const toDelete = keys.filter(key => !key.includes(keyToKeep));
+      const toDelete = keys.filter(key => !key.includes(dbPath));
       log('Deleting stale manifest data', toDelete);
       return db.manifestBlob.bulkDelete(toDelete);
     });
@@ -213,7 +213,7 @@ export function fasterGetDefinitions(language, tableNames, progressCb, dataCb) {
           const key = [VERSION, dbPath].join(':');
           db.allData.put({ key, data: definitions });
 
-          cleanUpPreviousVersions(key);
+          cleanUpPreviousVersions(dbPath, key);
 
           dataCb(null, { done: true, definitions });
         });
