@@ -31,27 +31,6 @@ import {
 
 import styles from './styles.styl';
 
-const maxPower = (stats, currentMaxPower) => {
-  const powerStat = stats[STAT_POWER];
-  return powerStat
-    ? Math.max(powerStat.value, currentMaxPower)
-    : currentMaxPower;
-};
-
-const calcMaxPower = item => {
-  let power = 0;
-
-  if (item.sourceData && item.sourceData.sources) {
-    power = item.sourceData.sources.reduce((currentMaxPower, source) => {
-      return maxPower(source.computedStats, currentMaxPower);
-    }, power);
-  } else if (item.stats && item.stats.stats) {
-    power = maxPower(item.stats.stats, power);
-  }
-
-  return power;
-};
-
 const ELEMENTAL_DAMAGE_CLASS = {
   // 0: None,
   1: styles.kineticDamage,
@@ -65,17 +44,20 @@ const AMMO_TYPE = {
   0: <span>None</span>,
   1: (
     <span>
-      <img className={styles.ammoIcon} src={require('./primary.png')} /> Primary
+      <img className={styles.ammoIcon} src={require('./primary.png')} alt="" />{' '}
+      Primary
     </span>
   ),
   2: (
     <span>
-      <img className={styles.ammoIcon} src={require('./special.png')} /> Special
+      <img className={styles.ammoIcon} src={require('./special.png')} alt="" />{' '}
+      Special
     </span>
   ),
   3: (
     <span>
-      <img className={styles.ammoIcon} src={require('./heavy.png')} /> Heavy
+      <img className={styles.ammoIcon} src={require('./heavy.png')} alt="" />{' '}
+      Heavy
     </span>
   ),
   4: <span>Unknown</span>
