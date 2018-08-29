@@ -41,18 +41,8 @@ function fromKiosks(data, vendorDefs) {
             return null;
           }
 
-          const item = vendor.itemList[vendorItem.index];
-
-          if (!item) {
-            trackBreadcrumb({
-              message: 'Missing item from vendorlist',
-              category: 'debug',
-              level: 'warning',
-              data: { vendorHash, vendorItemIndex: vendorItem.index }
-            });
-          }
-
-          return item.itemHash;
+          const item = vendor.itemList && vendor.itemList[vendorItem.index];
+          return item && item.itemHash;
         })
         .filter(Boolean);
     })
