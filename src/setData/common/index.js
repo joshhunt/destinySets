@@ -20,6 +20,7 @@ export const SOLSTICE_OF_HEROES = {
   sections: [
     {
       name: 'Moments of Triumph',
+      season: 3,
       items: [
         3867275449, // The Right Choice (Moments of Triumph Ghost)
         4243004391, // Comrades in Arms (Moments of Triumph Sparrow)
@@ -29,6 +30,7 @@ export const SOLSTICE_OF_HEROES = {
     },
     {
       name: 'Hunter Armor',
+      season: 3,
       itemGroups: [
         [
           1506728251, // Solstice Mask (Scorched)
@@ -55,6 +57,7 @@ export const SOLSTICE_OF_HEROES = {
     },
     {
       name: 'Titan Armor',
+      season: 3,
       itemGroups: [
         [
           1174021263, // Solstice Helm (Scorched)
@@ -81,6 +84,7 @@ export const SOLSTICE_OF_HEROES = {
     },
     {
       name: 'Warlock Armor',
+      season: 3,
       itemGroups: [
         [
           2147433548, // Solstice Hood (Scorched)
@@ -107,6 +111,7 @@ export const SOLSTICE_OF_HEROES = {
     },
     {
       name: 'Ghosts',
+      season: 3,
       items: [
         3717471208, // Predator Sun Shell
         3717471209, // Archipelago Pitch
@@ -120,6 +125,7 @@ export const SOLSTICE_OF_HEROES = {
     },
     {
       name: 'Emotes',
+      season: 3,
       items: [
         961496619, // Fishing
         3244569127, // Festival Dance
@@ -135,6 +141,7 @@ export const SOLSTICE_OF_HEROES = {
     },
     {
       name: 'Vehicles',
+      season: 3,
       itemGroups: [
         [
           682682138, // Estival Excursion
@@ -155,6 +162,7 @@ export const SOLSTICE_OF_HEROES = {
     },
     {
       name: 'Cosmetics',
+      season: 3,
       itemGroups: [
         [
           3859483818, // Blazing Virtue
@@ -170,6 +178,7 @@ export const SOLSTICE_OF_HEROES = {
     },
     {
       name: 'Armor Glows',
+      season: 3,
       itemGroups: [
         [
           463166592, // Arcing Arms Glow
