@@ -28,7 +28,7 @@ export default class AppRouter extends Component {
               showCollectionsPromo
             />
 
-            <Route from="/all-seasons" to="year-1" />
+            <Redirect from="/all-seasons" to="year-1" />
 
             <Route
               path="/year-1"
