@@ -11,6 +11,9 @@ fontawesome.library.add(
   require('@fortawesome/fontawesome-pro-regular/faExclamationTriangle'),
   require('@fortawesome/fontawesome-pro-regular/faDollarSign'),
 
+  require('@fortawesome/fontawesome-pro-regular/faInfoCircle'),
+  require('@fortawesome/fontawesome-pro-solid/faInfoCircle'),
+
   require('@fortawesome/fontawesome-pro-regular/faEyeSlash'),
   require('@fortawesome/fontawesome-pro-regular/faEye'),
   require('@fortawesome/fontawesome-pro-light/faEyeSlash'),

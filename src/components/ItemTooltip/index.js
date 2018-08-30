@@ -8,6 +8,8 @@ import ItemBanner from 'app/components/ItemBannerNew';
 import ItemStats from 'app/components/ItemStats';
 import Objectives from 'app/components/Objectives';
 import ExtraInfo from 'app/components/ExtraInfo';
+import ItemAttributes from 'app/components/ItemAttributes';
+import Icon from 'app/components/Icon';
 
 import {
   makeItemSelector,
@@ -17,42 +19,11 @@ import {
   objectiveInstancesSelector,
   makeItemInventoryEntrySelector,
   checklistInventorySelector,
-  makeItemVendorEntrySelector
+  makeItemVendorEntrySelector,
+  makeItemHashToCollectableSelector
 } from 'app/store/selectors';
 
 import styles from './styles.styl';
-
-const ELEMENTAL_DAMAGE_CLASS = {
-  // 0: None,
-  1: styles.kineticDamage,
-  2: styles.arcDamage,
-  3: styles.solarDamage,
-  4: styles.voidDamage
-  // 5: Raid,
-};
-
-const AMMO_TYPE = {
-  0: <span>None</span>,
-  1: (
-    <span>
-      <img className={styles.ammoIcon} src={require('./primary.png')} alt="" />{' '}
-      Primary
-    </span>
-  ),
-  2: (
-    <span>
-      <img className={styles.ammoIcon} src={require('./special.png')} alt="" />{' '}
-      Special
-    </span>
-  ),
-  3: (
-    <span>
-      <img className={styles.ammoIcon} src={require('./heavy.png')} alt="" />{' '}
-      Heavy
-    </span>
-  ),
-  4: <span>Unknown</span>
-};
 
 function ItemTooltip({
   item,
@@ -64,7 +35,8 @@ function ItemTooltip({
   statDefs,
   itemInventoryEntry,
   vendorEntry,
-  collectionInventory
+  collectionInventory,
+  collectible
 }) {
   if (!item) {
     return null;
@@ -81,35 +53,14 @@ function ItemTooltip({
     ].filter(Boolean)
   );
 
-  const ammoType = item && item.equippingBlock && item.equippingBlock.ammoType;
-  const elementalDamageClass =
-    item && item.damageTypes && item.damageTypes.length > 0
-      ? ELEMENTAL_DAMAGE_CLASS[item.damageTypes[0]]
-      : null;
-
-  const showAttributes = elementalDamageClass || ammoType;
-
   return (
     <div className={cx(styles.tooltip, small && styles.small)}>
       <ItemBanner className={styles.header} item={item} onClose={dismiss} />
 
       <div className={styles.body}>
-        {!small && showAttributes ? (
-          <div className={styles.attributes}>
-            {elementalDamageClass && (
-              <div className={elementalDamageClass}>
-                <div className={styles.elementalDamageIcon} />
-                <div>600</div>
-              </div>
-            )}
-
-            {ammoType && (
-              <div className={styles.ammoType}>
-                <div>{AMMO_TYPE[ammoType]}</div>
-              </div>
-            )}
-          </div>
-        ) : null}
+        {!small && (
+          <ItemAttributes className={styles.itemAttributes} item={item} />
+        )}
 
         {displayProperties.description &&
           displayProperties.description.split('\n').map(para => (
@@ -117,6 +68,14 @@ function ItemTooltip({
               {para}
             </p>
           ))}
+
+        {collectible &&
+          collectible.sourceString &&
+          collectible.sourceString.length > 1 && (
+            <p className={styles.extraInfo}>
+              <Icon name="info-circle" /> {collectible.sourceString}
+            </p>
+          )}
 
         {!small && stats && <ItemStats stats={stats} statDefs={statDefs} />}
 
@@ -157,6 +116,7 @@ const mapStateToProps = () => {
   const itemSelector = makeItemSelector();
   const itemInventoryEntrySelector = makeItemInventoryEntrySelector();
   const itemVendorEntrySelector = makeItemVendorEntrySelector();
+  const itemHashToCollectableSelector = makeItemHashToCollectableSelector();
 
   return (state, ownProps) => {
     return {
@@ -167,7 +127,8 @@ const mapStateToProps = () => {
       stats: itemStatsSelector(state, ownProps),
       item: itemSelector(state, ownProps),
       itemInventoryEntry: itemInventoryEntrySelector(state, ownProps),
-      vendorEntry: itemVendorEntrySelector(state, ownProps)
+      vendorEntry: itemVendorEntrySelector(state, ownProps),
+      collectible: itemHashToCollectableSelector(state, ownProps)
     };
   };
 };

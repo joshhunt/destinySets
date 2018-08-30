@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router';
 
 import { EMBLEM } from 'app/lib/destinyEnums';
-import getItemExtraInfo from 'app/lib/getItemExtraInfo';
+import ItemAttributes from 'app/components/ItemAttributes';
 import Objectives from 'app/components/Objectives';
 import ItemBanner from 'app/components/ItemBanner';
 import Modal from 'app/components/Modal';
@@ -25,7 +25,8 @@ import {
   objectiveInstancesSelector,
   checklistInventorySelector,
   makeItemInventoryEntrySelector,
-  makeItemVendorEntrySelector
+  makeItemVendorEntrySelector,
+  makeItemHashToCollectableSelector
 } from 'app/store/selectors';
 
 import styles from './styles.styl';
@@ -43,7 +44,8 @@ class ItemModalContent extends Component {
       forgetDismantled,
       googleAuth,
       collectionInventory,
-      vendorEntry
+      vendorEntry,
+      collectible
     } = this.props;
 
     const {
@@ -54,16 +56,10 @@ class ItemModalContent extends Component {
       loreHash
     } = item;
 
-    const dtrLink = `http://db.destinytracker.com/d2/en/items/${hash}`;
     const ishtarLink =
       loreHash && `http://www.ishtar-collective.net/entries/${loreHash}`;
 
     const isEmblem = (itemCategoryHashes || []).includes(EMBLEM);
-    const extraInfo = getItemExtraInfo(item, itemInventoryEntry);
-
-    if (googleAuth.loaded && !googleAuth.signedIn) {
-      extraInfo.push('Connect Google Drive to manually mark as collected');
-    }
 
     const objectiveHashes = [
       item.emblemObjectiveHash,
@@ -88,18 +84,19 @@ class ItemModalContent extends Component {
 
         <ItemBanner className={styles.itemTop} item={this.props.item} />
 
+        <ItemAttributes item={item} />
+
         {displayProperties.description && (
           <p className={styles.description}>{displayProperties.description}</p>
         )}
 
-        {ishtarLink && (
-          <p>
-            <img alt="" src={ishtarSvg} className={styles.ishtarLogo} />
-            <a href={ishtarLink} target="_blank" rel="noopener noreferrer">
-              <em>View Lore on Ishtar Collective</em>
-            </a>
-          </p>
-        )}
+        {collectible &&
+          collectible.sourceString &&
+          collectible.sourceString.length > 1 && (
+            <p className={styles.extraInfo}>
+              <Icon name="info-circle" /> {collectible.sourceString}
+            </p>
+          )}
 
         {!!objectiveHashes.length && (
           <div>
@@ -159,11 +156,20 @@ class ItemModalContent extends Component {
         </p>
 
         <ul className={styles.viewItemLinks}>
-          <li>
+          {ishtarLink && (
+            <li>
+              <a href={ishtarLink} target="_blank" rel="noopener noreferrer">
+                <img alt="" src={ishtarSvg} className={styles.ishtarLogo} />
+                View Lore on Ishtar Collective
+              </a>
+            </li>
+          )}
+
+          {/*<li>
             <a href={dtrLink} target="_blank" rel="noopener noreferrer">
               View on DestinyTracker
             </a>
-          </li>
+          </li>*/}
 
           <li>
             <Link to={`/data/${hash}`}>View in Data Explorer</Link>
@@ -201,6 +207,7 @@ const mapStateToProps = () => {
   const itemSelector = makeItemSelector();
   const itemInventoryEntrySelector = makeItemInventoryEntrySelector();
   const itemVendorEntrySelector = makeItemVendorEntrySelector();
+  const itemHashToCollectableSelector = makeItemHashToCollectableSelector();
 
   return (state, ownProps) => {
     return {
@@ -212,7 +219,8 @@ const mapStateToProps = () => {
       item: itemSelector(state, ownProps),
       itemInventoryEntry: itemInventoryEntrySelector(state, ownProps),
       vendorEntry: itemVendorEntrySelector(state, ownProps),
-      collectionInventory: checklistInventorySelector(state)
+      collectionInventory: checklistInventorySelector(state),
+      collectible: itemHashToCollectableSelector(state, ownProps)
     };
   };
 };

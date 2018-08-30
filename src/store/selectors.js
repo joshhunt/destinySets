@@ -1,5 +1,5 @@
 import { createSelector } from 'reselect';
-import { difference, toPairs, keyBy, get } from 'lodash';
+import { difference, toPairs, keyBy, get, flatMapDeep } from 'lodash';
 import fp from 'lodash/fp';
 
 import {
@@ -29,6 +29,10 @@ export const checklistDefsSelector = state =>
   state.definitions.DestinyChecklistDefinition;
 export const vendorDefsSelector = state =>
   state.definitions.DestinyVendorDefinition;
+export const collectibleDefsSelector = state =>
+  state.definitions.DestinyCollectibleDefinition;
+export const presentationNodeDefsSelector = state =>
+  state.definitions.DestinyPresentationNodeDefinition;
 
 export const itemHashPropSelector = (state, props) => props.itemHash;
 
@@ -490,6 +494,64 @@ export const makeItemInstanceSelector = () => {
       }
 
       return equipment[itemHash];
+    }
+  );
+};
+
+function deepCollectiblesFromPresentationNodes(
+  node,
+  collectibleDefs,
+  presentationNodeDefs
+) {
+  return flatMapDeep(node.children.presentationNodes, childNode => {
+    const childPresentationNode =
+      presentationNodeDefs[childNode.presentationNodeHash];
+
+    if (
+      childPresentationNode.children.collectibles &&
+      childPresentationNode.children.collectibles.length
+    ) {
+      return childPresentationNode.children.collectibles.map(
+        c => collectibleDefs[c.collectibleHash]
+      );
+    }
+
+    return deepCollectiblesFromPresentationNodes(
+      childPresentationNode,
+      collectibleDefs,
+      presentationNodeDefs
+    );
+  });
+}
+
+const ROOT_ITEMS_PRESENTATION_NODE_HASH = 3790247699;
+export const collectiblesByItemHashSelector = createSelector(
+  collectibleDefsSelector,
+  presentationNodeDefsSelector,
+  (collectibleDefs, presentationNodeDefs) => {
+    if (!(presentationNodeDefs && collectibleDefs)) {
+      return {};
+    }
+
+    const rootNode = presentationNodeDefs[ROOT_ITEMS_PRESENTATION_NODE_HASH];
+    return keyBy(
+      deepCollectiblesFromPresentationNodes(
+        rootNode,
+        collectibleDefs,
+        presentationNodeDefs
+      ),
+      'itemHash'
+    );
+  }
+);
+
+export const makeItemHashToCollectableSelector = () => {
+  return createSelector(
+    collectiblesByItemHashSelector,
+    itemHashPropSelector,
+    (keyedCollectibles, itemHash) => {
+      console.log({ keyedCollectibles, itemHash });
+      return keyedCollectibles[itemHash];
     }
   );
 };

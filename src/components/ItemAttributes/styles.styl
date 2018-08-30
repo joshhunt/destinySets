@@ -1,0 +1,62 @@
+.root
+  display: flex
+  // padding: 15px 0 0 0
+
+._power
+  font-size: 30px
+  line-height: 1
+  display: flex
+  align-items: center
+  color: #C690DC
+  font-weight: 600
+
+.elementalDamageIcon
+  width: .95em
+  height: .95em
+  margin-right: .25ch
+
+.ammoIcon
+  height: 22px
+  vertical-align: top
+  display: inline-block
+  margin-right: 5px
+
+.kineticDamage
+  composes: _power
+  color: white
+
+  .elementalDamageIcon
+    background: white
+    mask: url("https://www.bungie.net/img/destiny_content/damage_types/destiny2/kinetic_large.png") center center / cover;
+
+.voidDamage
+  composes: _power
+  color: #C690DC
+
+  .elementalDamageIcon
+    background: #C690DC
+    mask: url("https://www.bungie.net/img/destiny_content/damage_types/destiny2/void_large.png") center center / cover;
+
+.arcDamage
+  composes: _power
+  color: #79BBE8
+
+  .elementalDamageIcon
+    background: #79BBE8
+    mask: url("https://www.bungie.net/img/destiny_content/damage_types/destiny2/arc_large.png") center center / cover;
+
+.solarDamage
+  composes: _power
+  color: #F1631E
+
+  .elementalDamageIcon
+    background: #F1631E
+    mask: url("https://www.bungie.net/img/destiny_content/damage_types/destiny2/thermal_large.png") center center / cover;
+
+.ammoType
+  display: flex
+  align-items: center
+  border-left: 1px solid #706A73
+  padding-left: 10px
+  margin-left: 10px
+  text-transform: uppercase

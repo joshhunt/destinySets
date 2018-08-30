@@ -180,7 +180,12 @@ function includesAllRequestedTables(data, requested) {
   return every(requested, n => cachedTables.includes(n));
 }
 
-export function fasterGetDefinitions(language, tableNames, progressCb, dataCb) {
+export function fasterGetDefinitions(
+  language,
+  requestedTableNames,
+  progressCb,
+  dataCb
+) {
   const versionId = `${VERSION}:`;
   let earlyCache;
 
@@ -192,7 +197,10 @@ export function fasterGetDefinitions(language, tableNames, progressCb, dataCb) {
         return d.key.indexOf(versionId) === 0;
       });
 
-      if (found && includesAllRequestedTables(found.data)) {
+      if (
+        found &&
+        includesAllRequestedTables(found.data, requestedTableNames)
+      ) {
         log('Returning early cached definitions early');
         earlyCache = found;
         dataCb(null, { definitions: found.data });
@@ -207,16 +215,18 @@ export function fasterGetDefinitions(language, tableNames, progressCb, dataCb) {
 
         progressCb && progressCb({ status: STATUS_DOWNLOADING });
 
-        allDataFromRemote(dbPath, tableNames, progressCb).then(definitions => {
-          log('Successfully got requested definitions');
+        allDataFromRemote(dbPath, requestedTableNames, progressCb).then(
+          definitions => {
+            log('Successfully got requested definitions');
 
-          const key = [VERSION, dbPath].join(':');
-          db.allData.put({ key, data: definitions });
+            const key = [VERSION, dbPath].join(':');
+            db.allData.put({ key, data: definitions });
 
-          cleanUpPreviousVersions(dbPath, key);
+            cleanUpPreviousVersions(dbPath, key);
 
-          dataCb(null, { done: true, definitions });
-        });
+            dataCb(null, { done: true, definitions });
+          }
+        );
       });
     })
     .catch(err => {

@@ -77,6 +77,8 @@ export default function preloadStore(store) {
     'DestinyStatDefinition',
     'DestinyVendorDefinition',
     'DestinyInventoryItemDefinition',
+    'DestinyCollectibleDefinition',
+    'DestinyPresentationNodeDefinition',
     'DestinyFactionDefinition'
   ];
 
