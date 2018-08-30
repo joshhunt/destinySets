@@ -1,5 +1,5 @@
 import React from 'react';
-import { uniq } from 'lodash';
+import { toPairs, groupBy } from 'lodash';
 import { connect } from 'react-redux';
 
 import Item from 'app/components/Item';
@@ -29,12 +29,19 @@ function PresentationNode({ node, setModal, setPopper, collectibleDefs }) {
     return null;
   }
 
-  const sources = uniq(
-    node.children.collectibles.map(e => {
-      const c = collectibleDefs[e.collectibleHash];
-      return c.sourceString;
-    })
-  ).filter(d => d.length > 2);
+  const groupedItems = toPairs(
+    groupBy(
+      node.children.collectibles.map(collectableEntry => {
+        return collectibleDefs[collectableEntry.collectibleHash];
+      }),
+      c => c.sourceString
+    )
+  ).map(([source, collectables]) => {
+    return {
+      source,
+      items: collectables.map(c => c.itemHash)
+    };
+  });
 
   return (
     <div className={s.root}>
@@ -49,26 +56,24 @@ function PresentationNode({ node, setModal, setPopper, collectibleDefs }) {
             />
           ))}
 
-        {node.children && (
-          <div>
-            {sources.map((s, i) => (
-              <p key={i}>
-                <em>{s}</em>
+        <div className={s.ggg}>
+          {groupedItems.map((gi, i) => (
+            <div class={s.border} key={i}>
+              <p>
+                <em>{gi.source}</em>
               </p>
-            ))}
-            <div className={s.itemList}>
-              {node.children.collectibles.map(collectableEntry => {
-                return (
-                  <ConnectedCollectable
-                    hash={collectableEntry.collectibleHash}
-                    setModal={setModal}
+              <div className={s.itemList}>
+                {gi.items.map(itemHash => (
+                  <Item
+                    itemHash={itemHash}
+                    onclick={setModal}
                     setPopper={setPopper}
                   />
-                );
-              })}
+                ))}
+              </div>
             </div>
-          </div>
-        )}
+          ))}
+        </div>
       </div>
     </div>
   );
