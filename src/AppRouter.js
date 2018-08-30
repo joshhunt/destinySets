@@ -1,7 +1,7 @@
 // eslint-disable no-console
 import React, { Component } from 'react';
 import { isString } from 'lodash';
-import { Router, Route, browserHistory } from 'react-router';
+import { Redirect, Router, Route, browserHistory } from 'react-router';
 import { Provider } from 'react-redux';
 
 import App from './views/App';
@@ -24,14 +24,16 @@ export default class AppRouter extends Component {
             <Route
               path="/"
               component={Inventory}
-              setData={sets.allSeasons}
+              setData={sets.yearOne}
               showCollectionsPromo
             />
 
+            <Route from="/all-seasons" to="year-1" />
+
             <Route
-              path="/all-seasons"
+              path="/year-1"
               component={Inventory}
-              setData={sets.allSeasons}
+              setData={sets.yearOne}
             />
 
             <Route path="/base" component={Inventory} setData={sets.baseGame} />

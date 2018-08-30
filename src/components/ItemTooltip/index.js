@@ -3,16 +3,7 @@ import { connect } from 'react-redux';
 import { uniq } from 'lodash';
 import cx from 'classnames';
 
-import {
-  EMBLEM,
-  STAT_POWER,
-  KINETIC,
-  VOID,
-  SOLAR,
-  ARC
-} from 'app/lib/destinyEnums';
-import FancyImage from 'app/components/FancyImage';
-// import ItemBanner from 'app/components/ItemBanner';
+import { EMBLEM } from 'app/lib/destinyEnums';
 import ItemBanner from 'app/components/ItemBannerNew';
 import ItemStats from 'app/components/ItemStats';
 import Objectives from 'app/components/Objectives';

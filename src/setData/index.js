@@ -1,7 +1,7 @@
 // @flow
 
 export default {
-  allSeasons: require('./allSeasons').default,
+  yearOne: require('./yearOne').default,
   dlc1: require('./dlc1').default,
   dlc2: require('./dlc2').default,
   baseGame: require('./baseGame').default,
