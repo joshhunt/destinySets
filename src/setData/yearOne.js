@@ -192,7 +192,7 @@ export default ([
             season: 1,
             items: [
               3373303016, // Felwinter Frost
-              3373303017 // Shades of Radegast
+              3373303017, // Shades of Radegast
               864505614, // Iron Wolf
               864505615 // Iron Battalion
             ]
