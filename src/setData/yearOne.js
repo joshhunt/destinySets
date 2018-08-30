@@ -37,20 +37,15 @@ export default ([
             ]
           },
           {
-            name: 'Emblems',
+            name: 'Extras',
             items: [
               3257147585, // Embrace His Name
-              2107367383, // Glory to the Emperor
               1667199810, // Good Dog
               2984066626, // Splish Splash
               1625974211, // Two Enter, One Leaves
-              812824526 // Take the Throne
-            ]
-          },
-          {
-            name: 'Shaders',
-            items: [
+              812824526, // Take the Throne
               1422712818, // Calus's Selected
+              2107367383, // Glory to the Emperor
               1422712819 // Calus's Treasured
             ]
           }
@@ -193,17 +188,11 @@ export default ([
             ]
           },
           {
-            name: 'Emblems',
+            name: 'Extras',
             season: 1,
             items: [
               3373303016, // Felwinter Frost
               3373303017 // Shades of Radegast
-            ]
-          },
-          {
-            name: 'Shaders',
-            season: 1,
-            items: [
               864505614, // Iron Wolf
               864505615 // Iron Battalion
             ]
@@ -292,17 +281,11 @@ export default ([
             ]
           },
           {
-            name: 'Emblems',
+            name: 'Extras',
             season: 1,
             items: [
               19962737, // Chasing Perfection
-              2029506313 // You Are Worthy
-            ]
-          },
-          {
-            name: 'Shaders',
-            season: 1,
-            items: [
+              2029506313, // You Are Worthy
               16277432, // Honors of the Nine
               16277433 // Gift of the Nine
             ]
@@ -448,16 +431,10 @@ export default ([
             ]
           },
           {
-            name: 'Emblems',
+            name: 'Extras',
             season: 1,
             items: [
-              802191383 // Total Eclipse
-            ]
-          },
-          {
-            name: 'Shaders',
-            season: 1,
-            items: [
+              802191383, // Total Eclipse
               1841451177, // Dead Orbit's Fate
               1841451179 // Dead Orbit Camo
             ]
@@ -536,13 +513,7 @@ export default ([
             name: 'Emblems',
             season: 1,
             items: [
-              802191381 // Regency
-            ]
-          },
-          {
-            name: 'Shaders',
-            season: 1,
-            items: [
+              802191381, // Regency
               1206746476, // New Monarchy Diamonds
               1206746478 // New Monarchy Regalia
             ]
@@ -618,16 +589,10 @@ export default ([
             ]
           },
           {
-            name: 'Emblems',
+            name: 'Extras',
             season: 1,
             items: [
-              802191382 // Battle Colors
-            ]
-          },
-          {
-            name: 'Shaders',
-            season: 1,
-            items: [
+              802191382, // Battle Colors
               1045633725, // War Cult Rain
               1045633727 // War Cult Camo
             ]
@@ -696,7 +661,7 @@ export default ([
             items: [3764013786, 1664741411, 2724176749, 4051755349, 1304122208]
           },
           {
-            name: 'Emblems',
+            name: 'Extras',
             items: [
               1321546045, // European Dead Zone
               2664485240, // Shadow of the Shard
@@ -705,12 +670,7 @@ export default ([
               2664485243, // Humanity's Cradle
               3541326821, // Dead Zone Camo
               3541326820, // Kay's Command
-              3541326823 // Trostland Terminus
-            ]
-          },
-          {
-            name: 'Shaders',
-            items: [
+              3541326823, // Trostland Terminus
               3921006352, // Dead Zone Foliage
               3921006355 // Dead Zone Bark
             ]
@@ -752,7 +712,7 @@ export default ([
             items: [1554079989, 229923140, 3388454204, 2160569198, 845354673]
           },
           {
-            name: 'Emblems',
+            name: 'Extras',
             items: [
               3451625162, // Echo Mesa
               313685908, // Taken Resurgence
@@ -761,12 +721,7 @@ export default ([
               313685911, // Asher's Asylum
               31953747, // Ballet Lover
               31953744, // Holy Ground
-              31953746 // Traveler's Flight
-            ]
-          },
-          {
-            name: 'Shaders',
-            items: [
+              31953746, // Traveler's Flight
               1489178153, // Echoes of Io
               1489178154 // Flowers of Io
             ]
@@ -814,7 +769,7 @@ export default ([
             items: [2575848725, 1251692004, 2400621276, 2757777294, 3686454865]
           },
           {
-            name: 'Emblems',
+            name: 'Extras',
             items: [
               426147374, // New Pacific Arcology
               594640136, // Hive Infestation
@@ -823,12 +778,7 @@ export default ([
               594640139, // Sloane's Watchtower
               3785035698, // Cargo Bay Cross
               3785035696, // New Pacific Access
-              3785035697 // Solarium Yellow
-            ]
-          },
-          {
-            name: 'Shaders',
-            items: [
+              3785035697, // Solarium Yellow
               1051938196, // New Pacific Sink
               1051938199 // New Pacific Rush
             ]
@@ -872,7 +822,7 @@ export default ([
             items: [2811068561, 1427620200, 2359639520, 2528959426, 1669675549]
           },
           {
-            name: 'Emblems',
+            name: 'Extras',
             items: [
               1599898966, // Arcadian Valley
               776878384, // Fallen Pillage
@@ -881,12 +831,7 @@ export default ([
               776878387, // Failsafe's Prison
               2484637938, // Exodus Access
               2484637936, // Jacobson's Staff
-              2484637939 // Tangled Anchor
-            ]
-          },
-          {
-            name: 'Shaders',
-            items: [
+              2484637939, // Tangled Anchor
               3403116793, // Nessus Pursuit
               3403116794 // Nessus Mirage
             ]
@@ -952,40 +897,22 @@ export default ([
             ]
           },
           {
-            name: 'Ghosts',
+            name: 'Extras',
             season: 2,
             items: [
-              573576346 // Sagira's Shell
-            ]
-          },
-          {
-            name: 'Emblems',
-            season: 2,
-            items: [
+              573576346, // Sagira's Shell
               1312472209, // Fields of Glass
               2276139500, // Infinite Possibilities
               2276139501, // Vex Convergence
               2276139502, // Vance's Temple
               2276139503, // Burning Silicon
               2939572589, // Crossroads Emblem
-              4261480748 // Transit of Mercury
-            ]
-          },
-          {
-            name: 'Achievement Emblems',
-            season: 2,
-            items: [
+              4261480748, // Transit of Mercury
               2939572586, // Hero of the Infinite
               4261480749, // Prophetic Arsenal
               2939572584, // Secrets of the Vex (Emblem)
               2939572585, // Vex Destroyer (Emblem)
-              2939572590 // Vex Scholar (Emblem)
-            ]
-          },
-          {
-            name: 'Shaders',
-            season: 2,
-            items: [
+              2939572590, // Vex Scholar (Emblem)
               3042066428, // Kairos Black (Shader)
               3042066430, // Kairos Gold (Shader)
               3042066431, // Kairos Bronze (Shader)
@@ -1131,21 +1058,17 @@ export default ([
             ]
           },
           {
-            name: 'Emblems',
+            name: 'Extras',
+            season: 1,
             items: [
               2010554576, // At the Vanguard
               2010554578, // Make Us Proud
-              2010554579 // Push Forward
-            ]
-          },
-          {
-            name: 'Shaders',
-            items: [
+              2010554579, // Push Forward
               223308216 // Vanguard Magnus
             ]
           },
           {
-            name: 'Shaders',
+            name: 'Extras',
             season: 2,
             items: [
               822835819 // Vanguard Discipline
@@ -1172,18 +1095,22 @@ export default ([
         sections: [
           {
             name: 'Hunter Armor',
+            season: 1,
             items: [4248632159, 4224076198, 385045066, 3741528736, 555828571]
           },
           {
             name: 'Titan Armor',
+            season: 1,
             items: [4081859017, 1490387264, 2682045448, 185326970, 89175653]
           },
           {
             name: 'Warlock Armor',
+            season: 1,
             items: [2615512594, 3081969019, 868792277, 1532009197, 4285708584]
           },
           {
-            name: 'Emblems',
+            name: 'Extras',
+            season: 1,
             items: [
               1724152706, // Red Legion Aegis
               1724152705, // Red Legion Logistics
@@ -1191,7 +1118,8 @@ export default ([
             ]
           },
           {
-            name: 'Achievement Emblems - The Red War Story',
+            name: 'The Red War Story Extras',
+            season: 1,
             items: [
               3635192014, // Hunter's Hoard
               3941202506, // Titan's Triumph
@@ -1254,22 +1182,18 @@ export default ([
             ]
           },
           {
-            name: 'Emblems',
+            name: 'Extras',
+            season: 1,
             items: [
               4242592195, // Fight Forever
               4242592192, // Give Them War
               4242592193, // One Path to Victory
-              969863968 // Victorious Veteran
-            ]
-          },
-          {
-            name: 'Shaders',
-            items: [
+              969863968, // Victorious Veteran
               3875413893 // Crucible Glory
             ]
           },
           {
-            name: 'Shaders',
+            name: 'Extras',
             season: 2,
             items: [
               87646118 // Endless Glory
@@ -1361,17 +1285,12 @@ export default ([
             ]
           },
           {
-            name: 'Emblems',
+            name: 'Extras',
             items: [
               3605230072, // Hakke Upgrade
               3605230074, // Omolon Upgrade
               3605230073, // SUROS Upgrade
-              3605230075 // VEIST Upgrade
-            ]
-          },
-          {
-            name: 'Shaders',
-            items: [
+              3605230075, // VEIST Upgrade
               346878928, // VEIST Fieldscale
               346878930, // VEIST Poison
               700322568, // Omolon Meteor
@@ -1398,22 +1317,27 @@ export default ([
         sections: [
           {
             name: 'Weapons',
+            season: 1,
             items: [1180270692] // Quickfang
           },
           {
             name: 'Dead End Cure 2.1',
+            season: 1,
             items: [3125909492, 1998314509, 316000947, 2669113551, 2521426922]
           },
           {
             name: 'Errant Knight 1.0',
+            season: 1,
             items: [2550994842, 493299171, 1024867629, 2414278933, 3433746208]
           },
           {
             name: 'Road Complex AA1',
+            season: 1,
             items: [269552461, 922218300, 1415533220, 308026950, 2159363321]
           },
           {
             name: 'Icarus Drifter - PS4 Exclusive',
+            season: 1,
             items: [155832748, 3646674533, 3066593211, 3569443559, 1847870034]
           },
           {
@@ -1428,7 +1352,8 @@ export default ([
             ]
           },
           {
-            name: 'Emblems',
+            name: 'Extras',
+            season: 1,
             items: [
               1907674138, // Hunter's Wit
               844563491, // Slinger's Sight
@@ -1447,22 +1372,27 @@ export default ([
         sections: [
           {
             name: 'Weapons',
+            season: 1,
             items: [1180270694] // Crown-Splitter
           },
           {
             name: 'Retro-Grade TG2',
+            season: 1,
             items: [2525344810, 2530905971, 1364856221, 2265859909, 2826844112]
           },
           {
             name: 'Kerak Type 2',
+            season: 1,
             items: [160388292, 107582877, 2696303651, 2048751167, 1978110490]
           },
           {
             name: 'Devastation Complex',
+            season: 1,
             items: [3725654227, 1260134370, 2932121030, 3304280092, 3250112431]
           },
           {
             name: 'Terra Concord - PS4 Exclusive',
+            season: 1,
             items: [690335398, 3999262583, 3291075521, 1512829977, 4073580572]
           },
           {
@@ -1477,7 +1407,8 @@ export default ([
             ]
           },
           {
-            name: 'Emblems',
+            name: 'Extras',
+            season: 1,
             items: [
               1907674139, // Titan's Pride
               3828080585, // Breaker's Blaze
@@ -1496,22 +1427,27 @@ export default ([
         sections: [
           {
             name: 'Weapons',
+            season: 1,
             items: [1180270693] // Eternity's Edge
           },
           {
             name: 'Heiro Camo',
+            season: 1,
             items: [2791527489, 3629447000, 3884999792, 1664611474, 2770578349]
           },
           {
             name: 'Philomath',
+            season: 1,
             items: [2542514983, 489114030, 683173058, 2996649640, 373203219]
           },
           {
             name: 'High-Minded Complex',
+            season: 1,
             items: [993844472, 1457647945, 410671183, 1749589787, 2082184158]
           },
           {
             name: 'Tesseract Trace - PS4 Exclusive',
+            season: 1,
             items: [2811180959, 3169402598, 4092393610, 2728535008, 434243995]
           },
           {
@@ -1526,7 +1462,8 @@ export default ([
             ]
           },
           {
-            name: 'Emblems',
+            name: 'Extras',
+            season: 1,
             items: [
               1907674137, // Warlock's Flight
               1530147650, // Blade's Blast
@@ -1549,6 +1486,7 @@ export default ([
         sections: [
           {
             name: 'Hunter Armor',
+            season: 2,
             items: [
               316740353, // Winterhart Mask
               1154659864, // Winterhart Grips
@@ -1560,6 +1498,7 @@ export default ([
           },
           {
             name: 'Titan Armor',
+            season: 2,
             items: [
               3956230125, // Winterhart Helm
               779962716, // Winterhart Gauntlets
@@ -1571,6 +1510,7 @@ export default ([
           },
           {
             name: 'Warlock Armor',
+            season: 2,
             items: [
               3734501342, // Winterhart Cover
               2538439951, // Winterhart Gloves
@@ -1582,6 +1522,7 @@ export default ([
           },
           {
             name: 'Emotes',
+            season: 2,
             items: [
               3494199208, // Giving
               367778392, // Honest Dance
@@ -1591,6 +1532,7 @@ export default ([
           },
           {
             name: 'Ghosts',
+            season: 2,
             items: [
               3287805175, // Dulcinea Shell
               3287805177, // Pomegranate Shell
@@ -1608,6 +1550,7 @@ export default ([
           },
           {
             name: 'Sparrows',
+            season: 2,
             items: [
               3105953707, // Chill of Winter
               3105953706, // Holiday Cheer
@@ -1629,6 +1572,7 @@ export default ([
           },
           {
             name: 'Ships',
+            season: 2,
             items: [
               317465075, // A History of Starlight
               317465074, // Cerulean Flash
@@ -1646,14 +1590,10 @@ export default ([
             ]
           },
           {
-            name: 'Emblems',
+            name: 'Extras',
+            season: 2,
             items: [
-              3639894194 // Light of the Dawning
-            ]
-          },
-          {
-            name: 'Shaders',
-            items: [
+              3639894194, // Light of the Dawning
               3800267415, // Dawning Hope
               3800267413, // Dawning Festiveness
               3866715933, // Dawning Warmth
@@ -1669,6 +1609,7 @@ export default ([
         sections: [
           {
             name: 'Emotes',
+            season: 2,
             items: [
               596833222, // Heart Sign
               4097227155, // Vengeful Dance
@@ -1678,6 +1619,7 @@ export default ([
           },
           {
             name: 'Ghosts',
+            season: 2,
             items: [
               263371512, // Entwining Heart Shell
               263371513, // Garland Shell
@@ -1691,6 +1633,7 @@ export default ([
           },
           {
             name: 'Sparrows',
+            season: 2,
             items: [
               3587167050, // Undefeated
               3587167051, // Undeterred
@@ -1701,20 +1644,17 @@ export default ([
             ]
           },
           {
-            name: 'Emblems',
+            name: 'Extras',
+            season: 2,
             items: [
-              1782320603 // Fire of the Crimson Days
-            ]
-          },
-          {
-            name: 'Shaders',
-            items: [
+              1782320603, // Fire of the Crimson Days
               1052553863, // Crimson Passion - Bright Dust dismantle
               1052553862 // Crimson Valor - Bright Dust dismantle
             ]
           },
           {
             name: 'Weapon Ornaments',
+            season: 2,
             items: [
               3373357626, // Prism for Prometheus Lens
               2433900295, // Carina Nebula for Graviton Lance
