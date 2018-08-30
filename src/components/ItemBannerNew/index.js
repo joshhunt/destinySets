@@ -25,10 +25,18 @@ const TIER_STYLE = {
   [COMMON]: styles.basic
 };
 
+// TODO: not localised properly
 const CLASS_TYPE = {
   [TITAN]: 'Titan',
   [HUNTER]: 'Hunter',
   [WARLOCK]: 'Warlock'
+};
+
+// TODO: not localised properly
+const WEAPON_SLOT = {
+  1498876634: 'Kinetic',
+  2465295065: 'Energy',
+  953998645: 'Power'
 };
 
 export default function ItemBanner({ className, item, onClose }) {
@@ -46,6 +54,9 @@ export default function ItemBanner({ className, item, onClose }) {
   const tier = inventory.tierTypeHash;
   const isEmblem = itemCategoryHashes.includes(EMBLEM);
   const showEmblem = secondaryIcon && isEmblem;
+  const weaponSlot =
+    item.equippingBlock &&
+    WEAPON_SLOT[item.equippingBlock.equipmentSlotTypeHash];
 
   const { red, green, blue } = backgroundColor || {};
 
@@ -72,7 +83,8 @@ export default function ItemBanner({ className, item, onClose }) {
         <div className={styles.sub}>
           <div>
             {' '}
-            {CLASS_TYPE[classType]} {itemTypeName || itemTypeDisplayName}
+            {CLASS_TYPE[classType]} {itemTypeName || itemTypeDisplayName}{' '}
+            {weaponSlot && ` - ${weaponSlot}`}
           </div>
           <div>{inventory.tierTypeName}</div>
         </div>
