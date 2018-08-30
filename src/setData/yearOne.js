@@ -510,7 +510,7 @@ export default ([
             ]
           },
           {
-            name: 'Emblems',
+            name: 'Extras',
             season: 1,
             items: [
               802191381, // Regency
