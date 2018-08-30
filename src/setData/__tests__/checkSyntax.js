@@ -1,5 +1,5 @@
 const SET_FILES = [
-  'allSeasons',
+  'yearOne',
   'dlc1',
   'dlc2',
   'baseGame',
