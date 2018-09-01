@@ -906,6 +906,7 @@ export default ([
               2276139501, // Vex Convergence
               2276139502, // Vance's Temple
               2276139503, // Burning Silicon
+              2029492794, // Legend of Saint-14
               2939572589, // Crossroads Emblem
               4261480748, // Transit of Mercury
               2939572586, // Hero of the Infinite
