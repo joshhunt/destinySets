@@ -152,6 +152,12 @@ function allDataFromRemote(dbPath, tablesNames, progressCb) {
       }, {});
 
       return allData;
+    })
+    .catch(err => {
+      //TODO: Fix memory issue with SQLLib or more gracefully handle failure
+      window.location.reload()
+      //without throwing an error the data becomes corrupted
+      throw err;
     });
 }
 

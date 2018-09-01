@@ -19,6 +19,17 @@ import { fasterGetDefinitions } from 'app/lib/definitions';
 
 const log = require('app/lib/log')('authProvider');
 
+export const REQUIRED_DEFINITIONS = [
+    'DestinyChecklistDefinition',
+    'DestinyObjectiveDefinition',
+    'DestinyStatDefinition',
+    'DestinyVendorDefinition',
+    'DestinyInventoryItemDefinition',
+    'DestinyCollectibleDefinition',
+    'DestinyPresentationNodeDefinition',
+    'DestinyFactionDefinition'
+  ];
+
 export default function preloadStore(store) {
   const prevFilters = ls.getFilters();
   if (prevFilters) {
@@ -70,17 +81,6 @@ export default function preloadStore(store) {
 
     currentTrackedItems = newState.app.trackedItems;
   });
-
-  const REQUIRED_DEFINITIONS = [
-    'DestinyChecklistDefinition',
-    'DestinyObjectiveDefinition',
-    'DestinyStatDefinition',
-    'DestinyVendorDefinition',
-    'DestinyInventoryItemDefinition',
-    'DestinyCollectibleDefinition',
-    'DestinyPresentationNodeDefinition',
-    'DestinyFactionDefinition'
-  ];
 
   fasterGetDefinitions(
     language.code,

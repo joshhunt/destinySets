@@ -3,6 +3,15 @@ import { Link } from 'react-router';
 import { connect } from 'react-redux';
 
 import {
+  setBulkDefinitions,
+  definitionsStatus,
+  definitionsError
+} from 'app/store/definitions';
+import { trackError } from 'app/lib/telemetry';
+import { REQUIRED_DEFINITIONS } from 'app/store/preloadStore';
+import { fasterGetDefinitions } from 'app/lib/definitions';
+
+import {
   setFilterItem,
   removeTrackedItem,
   setBulkHiddenItemSet
@@ -68,7 +77,25 @@ class Inventory extends Component {
   };
 
   fetchDefinitions({ code: lang }) {
-    console.log('TODO: ensure defs with language', lang);
+    fasterGetDefinitions(
+      lang,
+      REQUIRED_DEFINITIONS,
+      data => {
+        this.props.definitionsStatus(data);
+      },
+      (err, data) => {
+        if (err) {
+          trackError(err);
+          this.props.definitionsError(err);
+          return;
+        }
+
+        if (data && data.definitions) {
+          this.props.definitionsStatus({ status: null });
+          this.props.setBulkDefinitions(data.definitions);
+        }
+      }
+    );
   }
 
   setPopper = (itemHash, element) =>
@@ -219,7 +246,10 @@ const mapDispatchToActions = {
   fetchProfile,
   setFilterItem,
   removeTrackedItem,
-  setBulkHiddenItemSet
+  setBulkHiddenItemSet,
+  setBulkDefinitions,
+  definitionsStatus,
+  definitionsError
 };
 
 export default connect(mapStateToProps, mapDispatchToActions)(Inventory);
