@@ -1116,15 +1116,6 @@ export default ([
               1724152705, // Red Legion Logistics
               1724152704 // WAR Vault 5
             ]
-          },
-          {
-            name: 'The Red War Story Extras',
-            season: 1,
-            items: [
-              3635192014, // Hunter's Hoard
-              3941202506, // Titan's Triumph
-              3564452901 // Warlock's Wisdom
-            ]
           }
         ]
       },
@@ -1356,6 +1347,7 @@ export default ([
             season: 1,
             items: [
               1907674138, // Hunter's Wit
+              3635192014, // Hunter's Hoard
               844563491, // Slinger's Sight
               2054118356, // Strider's Slash
               621113310 // Stalker's Shot
@@ -1411,6 +1403,7 @@ export default ([
             season: 1,
             items: [
               1907674139, // Titan's Pride
+              3941202506, // Titan's Triumph
               3828080585, // Breaker's Blaze
               2967682030, // Striker's Slam
               3338748564 // Sentinel's Shove
@@ -1466,6 +1459,7 @@ export default ([
             season: 1,
             items: [
               1907674137, // Warlock's Flight
+              3564452901, // Warlock's Wisdom
               1530147650, // Blade's Blast
               3778092977, // Storm's Surge
               46275857 // Walker's Warp
