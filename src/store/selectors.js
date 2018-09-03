@@ -549,10 +549,7 @@ export const makeItemHashToCollectableSelector = () => {
   return createSelector(
     collectiblesByItemHashSelector,
     itemHashPropSelector,
-    (keyedCollectibles, itemHash) => {
-      console.log({ keyedCollectibles, itemHash });
-      return keyedCollectibles[itemHash];
-    }
+    (keyedCollectibles, itemHash) => keyedCollectibles[itemHash]
   );
 };
 

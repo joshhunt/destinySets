@@ -9,7 +9,7 @@ export default function ItemPerks({ perks, className }) {
     <div className={className}>
       {perks &&
         perks.map(perk => (
-          <div className={s.perk}>
+          <div key={perk.hash} className={s.perk}>
             <div className={s.accessory}>
               <BungieImage
                 className={s.perkImage}

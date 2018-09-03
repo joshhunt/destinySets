@@ -21,6 +21,7 @@ export default class PopperWrapper extends Component {
       placement: 'right',
       modifiers: {
         applyStyle: { enabled: false },
+        preventOverflow: { enabled: true, boundariesElement: 'viewport' },
         applyReactStyle: {
           enabled: true,
           fn: data =>
