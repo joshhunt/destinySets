@@ -106,7 +106,7 @@ class ItemModalContent extends Component {
             </p>
           )}
 
-        {perks && <ItemPerks perks={perks} />}
+        {perks && <ItemPerks className={styles.perks} perks={perks} />}
 
         {!hideObjectives &&
           objectiveHashes.length > 0 && (
