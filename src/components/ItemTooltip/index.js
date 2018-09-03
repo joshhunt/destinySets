@@ -3,13 +3,15 @@ import { connect } from 'react-redux';
 import { uniq } from 'lodash';
 import cx from 'classnames';
 
-import { EMBLEM } from 'app/lib/destinyEnums';
+import { EMBLEM, WEAPON, EXOTIC } from 'app/lib/destinyEnums';
+import { hasCategoryHash } from 'app/lib/destinyUtils';
 import ItemBanner from 'app/components/ItemBannerNew';
 import ItemStats from 'app/components/ItemStats';
 import Objectives from 'app/components/Objectives';
 import ExtraInfo from 'app/components/ExtraInfo';
 import ItemAttributes from 'app/components/ItemAttributes';
 import Icon from 'app/components/Icon';
+import ItemPerks from 'app/components/ItemPerks';
 
 import {
   makeItemSelector,
@@ -20,7 +22,8 @@ import {
   makeItemInventoryEntrySelector,
   checklistInventorySelector,
   makeItemVendorEntrySelector,
-  makeItemHashToCollectableSelector
+  makeItemHashToCollectableSelector,
+  makeItemPerksSelector
 } from 'app/store/selectors';
 
 import styles from './styles.styl';
@@ -36,7 +39,8 @@ function ItemTooltip({
   itemInventoryEntry,
   vendorEntry,
   collectionInventory,
-  collectible
+  collectible,
+  perks
 }) {
   if (!item) {
     return null;
@@ -45,6 +49,11 @@ function ItemTooltip({
   const { displayProperties, itemCategoryHashes, loreHash } = item;
 
   const isEmblem = (itemCategoryHashes || []).includes(EMBLEM);
+
+  const hideObjectives =
+    hasCategoryHash(item, WEAPON) &&
+    item.inventory &&
+    item.inventory.tierTypeHash === EXOTIC;
 
   const objectiveHashes = uniq(
     [
@@ -79,7 +88,9 @@ function ItemTooltip({
 
         {!small && stats && <ItemStats stats={stats} statDefs={statDefs} />}
 
-        {objectiveHashes.length ? (
+        {perks && <ItemPerks className={styles.perks} perks={perks} />}
+
+        {!hideObjectives && objectiveHashes.length ? (
           <Objectives
             className={styles.objectives}
             trackedStatStyle={isEmblem}
@@ -117,6 +128,7 @@ const mapStateToProps = () => {
   const itemInventoryEntrySelector = makeItemInventoryEntrySelector();
   const itemVendorEntrySelector = makeItemVendorEntrySelector();
   const itemHashToCollectableSelector = makeItemHashToCollectableSelector();
+  const perksSelector = makeItemPerksSelector();
 
   return (state, ownProps) => {
     return {
@@ -128,7 +140,8 @@ const mapStateToProps = () => {
       item: itemSelector(state, ownProps),
       itemInventoryEntry: itemInventoryEntrySelector(state, ownProps),
       vendorEntry: itemVendorEntrySelector(state, ownProps),
-      collectible: itemHashToCollectableSelector(state, ownProps)
+      collectible: itemHashToCollectableSelector(state, ownProps),
+      perks: perksSelector(state, ownProps)
     };
   };
 };

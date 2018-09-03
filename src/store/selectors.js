@@ -555,3 +555,32 @@ export const makeItemHashToCollectableSelector = () => {
     }
   );
 };
+
+export const makeItemPerksSelector = () => {
+  return createSelector(
+    itemDefsSelector,
+    makeItemSelector(),
+    (itemDefs, item) => {
+      if (!itemDefs || !item) {
+        return null;
+      }
+
+      return (
+        item.sockets &&
+        item.sockets.socketEntries &&
+        item.sockets.socketEntries
+          .map(socket => {
+            const plugItem = itemDefs[socket.singleInitialItemHash];
+            return plugItem;
+          })
+          .filter(plugItem => {
+            return (
+              plugItem &&
+              plugItem.plug &&
+              plugItem.plug.plugCategoryIdentifier === 'intrinsics'
+            );
+          })
+      );
+    }
+  );
+};

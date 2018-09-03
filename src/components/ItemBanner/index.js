@@ -31,6 +31,13 @@ const CLASS_TYPE = {
   [WARLOCK]: 'Warlock'
 };
 
+// TODO: not localised properly
+const WEAPON_SLOT = {
+  1498876634: 'Kinetic',
+  2465295065: 'Energy',
+  953998645: 'Power'
+};
+
 export default function ItemBanner({ className, item, onClose }) {
   const {
     displayProperties,
@@ -47,6 +54,9 @@ export default function ItemBanner({ className, item, onClose }) {
   const isEmblem = itemCategoryHashes.includes(EMBLEM);
   const showEmblem = secondaryIcon && isEmblem;
   const icon = displayProperties.icon || '/img/misc/missing_icon_d2.png';
+  const weaponSlot =
+    item.equippingBlock &&
+    WEAPON_SLOT[item.equippingBlock.equipmentSlotTypeHash];
 
   const { red, green, blue } = backgroundColor || {};
 
@@ -81,6 +91,7 @@ export default function ItemBanner({ className, item, onClose }) {
           <div>
             {' '}
             {CLASS_TYPE[classType]} {itemTypeName || itemTypeDisplayName}
+            {weaponSlot && ` - ${weaponSlot}`}
           </div>
           <div>{inventory.tierTypeName}</div>
         </div>

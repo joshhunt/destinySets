@@ -52,7 +52,7 @@ export default function ItemBanner({ className, item, onClose }) {
   } = item;
 
   const tier = inventory.tierTypeHash;
-  const isEmblem = itemCategoryHashes.includes(EMBLEM);
+  const isEmblem = itemCategoryHashes && itemCategoryHashes.includes(EMBLEM);
   const showEmblem = secondaryIcon && isEmblem;
   const weaponSlot =
     item.equippingBlock &&

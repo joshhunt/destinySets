@@ -2,11 +2,13 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router';
 
-import { EMBLEM } from 'app/lib/destinyEnums';
+import { EMBLEM, WEAPON, EXOTIC } from 'app/lib/destinyEnums';
+import { hasCategoryHash } from 'app/lib/destinyUtils';
 import ItemAttributes from 'app/components/ItemAttributes';
 import Objectives from 'app/components/Objectives';
 import ItemBanner from 'app/components/ItemBanner';
 import Modal from 'app/components/Modal';
+import ItemPerks from 'app/components/ItemPerks';
 import Icon from 'app/components/Icon';
 import ExtraInfo from 'app/components/ExtraInfo';
 import ishtarSvg from 'app/ishar.svg';
@@ -26,7 +28,8 @@ import {
   checklistInventorySelector,
   makeItemInventoryEntrySelector,
   makeItemVendorEntrySelector,
-  makeItemHashToCollectableSelector
+  makeItemHashToCollectableSelector,
+  makeItemPerksSelector
 } from 'app/store/selectors';
 
 import styles from './styles.styl';
@@ -45,7 +48,8 @@ class ItemModalContent extends Component {
       googleAuth,
       collectionInventory,
       vendorEntry,
-      collectible
+      collectible,
+      perks
     } = this.props;
 
     const {
@@ -60,6 +64,10 @@ class ItemModalContent extends Component {
       loreHash && `http://www.ishtar-collective.net/entries/${loreHash}`;
 
     const isEmblem = (itemCategoryHashes || []).includes(EMBLEM);
+    const hideObjectives =
+      hasCategoryHash(item, WEAPON) &&
+      item.inventory &&
+      item.inventory.tierTypeHash === EXOTIC;
 
     const objectiveHashes = [
       item.emblemObjectiveHash,
@@ -98,21 +106,24 @@ class ItemModalContent extends Component {
             </p>
           )}
 
-        {!!objectiveHashes.length && (
-          <div>
-            <h3 className={styles.objectiveTitle}>
-              Complete Objectives to Unlock
-            </h3>
+        {perks && <ItemPerks perks={perks} />}
 
-            <Objectives
-              className={styles.objectives}
-              trackedStatStyle={isEmblem}
-              objectiveHashes={objectiveHashes}
-              objectiveInstances={objectiveInstances}
-              objectiveDefs={objectiveDefs}
-            />
-          </div>
-        )}
+        {!hideObjectives &&
+          objectiveHashes.length > 0 && (
+            <div>
+              <h3 className={styles.objectiveTitle}>
+                Complete Objectives to Unlock
+              </h3>
+
+              <Objectives
+                className={styles.objectives}
+                trackedStatStyle={isEmblem}
+                objectiveHashes={objectiveHashes}
+                objectiveInstances={objectiveInstances}
+                objectiveDefs={objectiveDefs}
+              />
+            </div>
+          )}
 
         <p>
           {!!objectiveHashes.length && (
@@ -208,6 +219,7 @@ const mapStateToProps = () => {
   const itemInventoryEntrySelector = makeItemInventoryEntrySelector();
   const itemVendorEntrySelector = makeItemVendorEntrySelector();
   const itemHashToCollectableSelector = makeItemHashToCollectableSelector();
+  const itemPerksSelector = makeItemPerksSelector();
 
   return (state, ownProps) => {
     return {
@@ -220,7 +232,8 @@ const mapStateToProps = () => {
       itemInventoryEntry: itemInventoryEntrySelector(state, ownProps),
       vendorEntry: itemVendorEntrySelector(state, ownProps),
       collectionInventory: checklistInventorySelector(state),
-      collectible: itemHashToCollectableSelector(state, ownProps)
+      collectible: itemHashToCollectableSelector(state, ownProps),
+      perks: itemPerksSelector(state, ownProps)
     };
   };
 };
