@@ -28,13 +28,13 @@ export default class AppRouter extends Component {
               showCollectionsPromo
             />
 
-            <Redirect from="/all-seasons" to="year-1" />
-
             <Route
               path="/year-1"
               component={Inventory}
               setData={sets.yearOne}
             />
+
+            <Route path="/year-2" component={Inventory} setData={sets.yearTwo} />
 
             <Route path="/base" component={Inventory} setData={sets.baseGame} />
 
@@ -81,6 +81,8 @@ export default class AppRouter extends Component {
 
             <Route path="/data(/:itemHash)" component={DataExplorerRedirect} />
             <Route path="/diff" component={Diff} />
+
+            <Redirect from="/all-seasons" to="year-1" />
           </Route>
         </Router>
       </Provider>

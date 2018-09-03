@@ -2,6 +2,23 @@
 
 import type { SetPage } from '../types';
 
+const strike = (name, id, image, exclusiveItems, emblems) => ({
+  name,
+  id,
+  image,
+  sections: [
+    {
+      name: 'Nightfall exclusive',
+      bigItems: true,
+      items: exclusiveItems
+    },
+    {
+      name: 'Nightfall emblems',
+      items: emblems
+    }
+  ]
+});
+
 export default ([
   {
     name: 'Base Game',
@@ -110,18 +127,6 @@ export default ([
             ]
           }
         ]
-      },
-      {
-        name: 'Lake of Shadows',
-        id: 'STRIKE_LAKE_OF_SHADOWS',
-        image: '/img/destiny_content/pgcr/strike_lake_of_shadows.jpg',
-        sections: [
-          // {
-          //   name: 'Nightfall exclusive',
-          //   bigItems: true,
-          //   items: [2082184158]
-          // }
-        ]
       }
     ]
   },
@@ -226,6 +231,41 @@ export default ([
           }
         ]
       }
+    ]
+  },
+
+  {
+    name: 'Forsaken',
+    sets: [
+      // strike(
+      //   'Lake of Shadows',
+      //   'STRIKE_LAKE_OF_SHADOWS',
+      //   '/img/destiny_content/pgcr/strike_lake_of_shadows.jpg',
+      //   [3745974521],
+      //   []
+      // ),
+      // strike(
+      //   'The Insight Terminus',
+      //   'STRIKE_INSIGHT_TERMINUS',
+      //   '/img/destiny_content/pgcr/strike_glee.jpg',
+      //   [2154059444],
+      //   []
+      // ),
+      // strike(
+      //   'The Corrupted',
+      //   'STRIKE_THE_CORRUPTED',
+      //   '/img/destiny_content/pgcr/strike_gemini.jpg',
+      //   [1071542914],
+      //   []
+      // ),
+      // strike(
+      //   'The Hollowed Lair',
+      //   'STRIKE_THE_HOLLOWED_LAIR',
+      //   '/img/destiny_content/pgcr/strike_taurus.jpg',
+      //   [4117693024],
+      //   []
+      // )
+      // strike('Warden of Nothing', 'STRIKE_WARDEN_OF_NOTHING', null, [233423981])
     ]
   }
 ]: SetPage);
