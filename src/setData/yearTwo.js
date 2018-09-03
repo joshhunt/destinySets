@@ -5,64 +5,7 @@ export default ([
   {
     name: 'Activities',
     sets: [
-      {
-        name: 'Last Wish raid',
-        id: 'YEAR_TWO_LAST_WISH',
-        description: 'Last Wish raid.',
-        sections: [
-          {
-            name: 'Weapons',
-            items: [
-              601592879,
-              3799980700,
-              568515759,
-              654370424,
-              2721249463,
-              2545083870
-            ]
-          },
-          {
-            name: 'Hunter armor',
-            items: [
-              3251351304, // hood
-              196235132, // grips
-              146275556, // vest
-              3494130310, // strides
-              1314563129 // cloak
-            ]
-          },
-          {
-            name: 'Titan armor',
-            items: [
-              2274520361, // helm
-              65929376, // gauntlets
-              3614211816, // plate
-              3055836250, // greaves
-              1021341893 // mark
-            ]
-          },
-          {
-            name: 'Warlock armor',
-            items: [
-              2340335439, // mask
-              4058916407, // gloves
-              3445296383, // robes
-              1195800715, // boots
-              1230173206 // bond
-            ]
-          },
-          {
-            name: 'Extras',
-            items: [
-              3862768196, // Wish-Maker Shell
-              2269373482, // ship
-              2081719592, // sparrow
-              3668669365, // shader
-              3668669364 // shader
-            ]
-          }
-        ]
-      },
+
       {
         name: 'Strikes',
         id: 'YEAR_TWO_STRIKES',
@@ -230,6 +173,63 @@ export default ([
               4271205858, // Antediluvian
               1335424935, // Gambit Leather
               1335424934 // Gambit Chrome
+            ]
+          }
+        ]
+      }, {
+        name: 'Last Wish raid',
+        id: 'YEAR_TWO_LAST_WISH',
+        description: 'Last Wish raid.',
+        sections: [
+          {
+            name: 'Weapons',
+            items: [
+              601592879,
+              3799980700,
+              568515759,
+              654370424,
+              2721249463,
+              2545083870
+            ]
+          },
+          {
+            name: 'Hunter armor',
+            items: [
+              3251351304, // hood
+              196235132, // grips
+              146275556, // vest
+              3494130310, // strides
+              1314563129 // cloak
+            ]
+          },
+          {
+            name: 'Titan armor',
+            items: [
+              2274520361, // helm
+              65929376, // gauntlets
+              3614211816, // plate
+              3055836250, // greaves
+              1021341893 // mark
+            ]
+          },
+          {
+            name: 'Warlock armor',
+            items: [
+              2340335439, // mask
+              4058916407, // gloves
+              3445296383, // robes
+              1195800715, // boots
+              1230173206 // bond
+            ]
+          },
+          {
+            name: 'Extras',
+            items: [
+              3862768196, // Wish-Maker Shell
+              2269373482, // ship
+              2081719592, // sparrow
+              3668669365, // shader
+              3668669364 // shader
             ]
           }
         ]
