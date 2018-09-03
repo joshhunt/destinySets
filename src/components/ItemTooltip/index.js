@@ -88,7 +88,10 @@ function ItemTooltip({
 
         {!small && stats && <ItemStats stats={stats} statDefs={statDefs} />}
 
-        {perks && <ItemPerks className={styles.perks} perks={perks} />}
+        {perks &&
+          perks.length > 0 && (
+            <ItemPerks className={styles.perks} perks={perks} />
+          )}
 
         {!hideObjectives && objectiveHashes.length ? (
           <Objectives
