@@ -18,9 +18,9 @@ export default function ItemPerks({ perks, className }) {
             </div>
             <div className={s.main}>
               <div className={s.name}>{perk.displayProperties.name}</div>
-              <p className={s.description}>
+              <div className={s.description}>
                 {perk.displayProperties.description}
-              </p>
+              </div>
             </div>
           </div>
         ))}

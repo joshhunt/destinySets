@@ -67,30 +67,36 @@ function ItemTooltip({
       <ItemBanner className={styles.header} item={item} onClose={dismiss} />
 
       <div className={styles.body}>
-        {!small && (
-          <ItemAttributes className={styles.itemAttributes} item={item} />
+        {displayProperties.description && (
+          <div className={styles.section}>
+            {!small && (
+              <ItemAttributes className={styles.itemAttributes} item={item} />
+            )}
+
+            {displayProperties.description && (
+              <p className={styles.description}>
+                {displayProperties.description}
+              </p>
+            )}
+          </div>
         )}
 
-        {displayProperties.description &&
-          displayProperties.description.split('\n').map(para => (
-            <p key={para} className={styles.description}>
-              {para}
-            </p>
-          ))}
-
-        {collectible &&
-          collectible.sourceString &&
-          collectible.sourceString.length > 1 && (
-            <p className={styles.extraInfo}>
-              <Icon name="info-circle" /> {collectible.sourceString}
-            </p>
+        {!small &&
+          stats && (
+            <div className={styles.section}>
+              <ItemStats
+                className={styles.stats}
+                stats={stats}
+                statDefs={statDefs}
+              />
+            </div>
           )}
-
-        {!small && stats && <ItemStats stats={stats} statDefs={statDefs} />}
 
         {perks &&
           perks.length > 0 && (
-            <ItemPerks className={styles.perks} perks={perks} />
+            <div className={styles.section}>
+              <ItemPerks className={styles.perks} perks={perks} />
+            </div>
           )}
 
         {!hideObjectives && objectiveHashes.length ? (
@@ -104,22 +110,32 @@ function ItemTooltip({
           />
         ) : null}
 
-        {!small && (
-          <ExtraInfo
-            className={styles.extraInfo}
-            item={item}
-            vendorEntry={vendorEntry}
-            inventoryEntry={itemInventoryEntry}
-            inCollection={collectionInventory[item.hash]}
-          />
-        )}
+        <div className={styles.section}>
+          {collectible &&
+            collectible.sourceString &&
+            collectible.sourceString.length > 1 && (
+              <p className={styles.extraInfo}>
+                <Icon name="info-circle" /> {collectible.sourceString}
+              </p>
+            )}
 
-        {!small &&
-          loreHash && (
-            <div className={styles.extraInfo}>
-              Lore available on Ishtar Collective, click for more info
-            </div>
+          {!small && (
+            <ExtraInfo
+              className={styles.extraInfo}
+              item={item}
+              vendorEntry={vendorEntry}
+              inventoryEntry={itemInventoryEntry}
+              inCollection={collectionInventory[item.hash]}
+            />
           )}
+
+          {!small &&
+            loreHash && (
+              <div className={styles.extraInfo}>
+                Lore available on Ishtar Collective, click for more info
+              </div>
+            )}
+        </div>
       </div>
     </div>
   );

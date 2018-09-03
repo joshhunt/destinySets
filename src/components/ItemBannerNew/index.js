@@ -14,6 +14,7 @@ import {
   HUNTER,
   WARLOCK
 } from 'app/lib/destinyEnums';
+import { hasCategoryHash } from 'app/lib/destinyUtils';
 
 import styles from './styles.styl';
 
@@ -46,13 +47,12 @@ export default function ItemBanner({ className, item, onClose }) {
     classType,
     itemTypeName,
     itemTypeDisplayName,
-    itemCategoryHashes,
     secondaryIcon,
     backgroundColor
   } = item;
 
   const tier = inventory.tierTypeHash;
-  const isEmblem = itemCategoryHashes && itemCategoryHashes.includes(EMBLEM);
+  const isEmblem = hasCategoryHash(item, EMBLEM);
   const showEmblem = secondaryIcon && isEmblem;
   const weaponSlot =
     item.equippingBlock &&
@@ -69,7 +69,7 @@ export default function ItemBanner({ className, item, onClose }) {
         backgroundColor: showEmblem && `rgb(${red}, ${green}, ${blue})`
       }}
     >
-      <div className={styles.body}>
+      <div className={isEmblem ? styles.bodyEmblem : styles.body}>
         <div className={styles.main}>
           <div className={styles.itemName}>{displayProperties.name}</div>
           {onClose && (
