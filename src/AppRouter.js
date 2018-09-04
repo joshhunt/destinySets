@@ -21,12 +21,7 @@ export default class AppRouter extends Component {
           <Route component={App}>
             <Route path="/debug" component={Debug} />
 
-            <Route
-              path="/"
-              component={Inventory}
-              setData={sets.yearOne}
-              showCollectionsPromo
-            />
+            <Route path="/" component={Inventory} setData={sets.yearTwo} />
 
             <Route
               path="/year-1"
@@ -41,14 +36,6 @@ export default class AppRouter extends Component {
             />
 
             <Route path="/base" component={Inventory} setData={sets.baseGame} />
-
-            <Route
-              path="/curse-of-osiris"
-              component={Inventory}
-              setData={sets.dlc1}
-            />
-
-            <Route path="/warmind" component={Inventory} setData={sets.dlc2} />
 
             <Route
               path="/catalysts"
@@ -87,6 +74,8 @@ export default class AppRouter extends Component {
             <Route path="/data(/:itemHash)" component={DataExplorerRedirect} />
             <Route path="/diff" component={Diff} />
 
+            <Redirect from="/curse-of-osiris" to="year-1" />
+            <Redirect from="/warmind" to="year-1" />
             <Redirect from="/all-seasons" to="year-1" />
           </Route>
         </Router>

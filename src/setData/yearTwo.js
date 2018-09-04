@@ -246,54 +246,51 @@ export default ([
           "Complete activities and earn rank-up packages on the Tangled Shore",
         sections: [
           {
-            name: "Weapons",
-            items: [
-              640114618, // Tigerspite
-              3242168339, // Vouchsafe
-              334171687, // Waking Vigil
-              3297863558, // Twilight Oath
-              1644160541, // Abide the Return
-              3740842661 // Sleepless
+            "name": "Weapons",
+            "items": [
+              1839565992, // Ether Doctor
+              3957603605, // Wrong Side of Right
+              3376406418, // Right Side of Wrong
+              1178886909, // Thin Line
+              2681395357, // Trackless Waste
+              636912560 // Dust Rock Blues
             ]
           },
           {
-            name: "Hunter armor",
-            items: [
-              2824453288, // Reverie Dawn Casque
-              1705856569, // Reverie Dawn Grasps
-              1593474975, // Reverie Dawn Hauberk
-              344548395, // Reverie Dawn Strides
-              3306564654 // Reverie Dawn Cloak
+            "name": "Hunter armor",
+            "items": [
+              2276115770, // Scatterhorn Mask
+              218523139, // Scatterhorn Grasps
+              307138509, // Scatterhorn Vest
+              2563857333, // Scatterhorn Strides
+              2757593792 // Scatterhorn Cloak
             ]
           },
           {
-            name: "Titan armor",
-            items: [
-              4097166900, // Reverie Dawn Helm
-              2503434573, // Reverie Dawn Gauntlets
-              4070309619, // Reverie Dawn Plate
-              3174233615, // Reverie Dawn Greaves
-              1980768298 // Reverie Dawn Mark
+            "name": "Titan armor",
+            "items": [
+              1862088022, // Scatterhorn Helm
+              3066181671, // Scatterhorn Gauntlets
+              3871458129, // Scatterhorn Plate
+              2243444841, // Scatterhorn Greaves
+              1347463276 // Scatterhorn Mark
             ]
           },
           {
-            name: "Warlock armor",
-            items: [
-              185695659, // Reverie Dawn Hood
-              2761343386, // Reverie Dawn Gloves
-              2859583726, // Reverie Dawn Tabard
-              188778964, // Reverie Dawn Boots
-              3602032567 // Reverie Dawn Bond
+            "name": "Warlock armor",
+            "items": [
+              2411325265, // Scatterhorn Hood
+              1069453608, // Scatterhorn Wraps
+              1250571424, // Scatterhorn Robe
+              1704861826, // Scatterhorn Boots
+              177829853 // Scatterhorn Bond
             ]
           },
           {
-            name: "Extras",
-            items: [
-              813936739, // Starlight Shell
-              2844014413, // Pallas Galliot
-              1317468653, // Silver Tercel
-              3109957218, // Burnished Dreams
-              3109957219 // Blueshift Dreams
+            "name": "Extras",
+            "items": [
+              1226584228, // Tangled Rust
+              1226584229 // Tangled Bronze
             ]
           }
         ]
@@ -305,8 +302,8 @@ export default ([
           "Complete activities and earn rank-up packages in the Dreaming City",
         sections: [
           {
-            name: "Weapons",
-            items: [
+            "name": "Weapons",
+            "items": [
               640114618, // Tigerspite
               3242168339, // Vouchsafe
               334171687, // Waking Vigil
@@ -316,8 +313,8 @@ export default ([
             ]
           },
           {
-            name: "Hunter armor",
-            items: [
+            "name": "Hunter armor",
+            "items": [
               2824453288, // Reverie Dawn Casque
               1705856569, // Reverie Dawn Grasps
               1593474975, // Reverie Dawn Hauberk
@@ -326,8 +323,8 @@ export default ([
             ]
           },
           {
-            name: "Titan armor",
-            items: [
+            "name": "Titan armor",
+            "items": [
               4097166900, // Reverie Dawn Helm
               2503434573, // Reverie Dawn Gauntlets
               4070309619, // Reverie Dawn Plate
@@ -336,8 +333,8 @@ export default ([
             ]
           },
           {
-            name: "Warlock armor",
-            items: [
+            "name": "Warlock armor",
+            "items": [
               185695659, // Reverie Dawn Hood
               2761343386, // Reverie Dawn Gloves
               2859583726, // Reverie Dawn Tabard
@@ -346,15 +343,15 @@ export default ([
             ]
           },
           {
-            name: "Shaders",
-            items: [
+            "name": "Extras",
+            "items": [
               813936739, // Starlight Shell
               2844014413, // Pallas Galliot
               1317468653, // Silver Tercel
               3109957218, // Burnished Dreams
               3109957219 // Blueshift Dreams
             ]
-          }
+          },
         ]
       }
     ]
