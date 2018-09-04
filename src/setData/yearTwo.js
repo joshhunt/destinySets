@@ -287,6 +287,40 @@ export default ([
             ]
           },
           {
+            name: "Spider's Wanted Escapee Bounties",
+            itemGroups: [
+              [
+                3334276333, // Death by Scorn
+                720351794, // No Turning Back
+                301362380 // Terran Wind
+              ],
+              [
+                1673638926, // The Great Beyond
+                3031114503 // The Gambler's Palm
+              ]
+            ]
+          },
+          {
+            name: "Eliminated Barons' armor",
+            itemGroups: [
+              [
+                2932919026, // Nea-Thonis Breather
+                1928007477 // Scorned Baron Vest
+              ],
+              [
+                2007698582, // Torobatl Celebration Mask
+                1349281425 // Scorned Baron Plate
+              ],
+              [
+                3858472841, // Eimin-Tin Ritual Mask
+                3183089352 // Scorned Baron Robes
+              ],
+              [
+                785442930 // Eye for an Eye
+              ]
+            ]
+          },
+          {
             name: 'Extras',
             items: [
               1226584228, // Tangled Rust
