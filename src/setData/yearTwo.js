@@ -444,6 +444,109 @@ export default ([
     name: 'Other',
     sets: [
       {
+        name: 'Legendary Engrams',
+        description: 'Gunsmith and other drops',
+        id: 'YEAR_TWO_ENGRAMS',
+        big: true,
+        sections: [
+          {
+            name: 'Weapons',
+            items: [
+              819441402, // Misfit
+              3501969491, // The Cut and Run
+              4138174248, // Go Figure
+              2112909415, // Ten Paces
+              2112909414, // Duke Mk. 44
+              2105827099, // Bad Reputation
+              1843044399, // Smuggler's Word
+              1843044398, // Translation Theory
+              720351795, // Arsenic Bite-4b
+              3410721600, // Subtle Calamity
+              1327264046, // Badlander
+              218335759 // Edge Transit
+            ]
+          },
+          {
+            name: 'Hunter armor',
+            itemGroups: [
+              [
+                4261835528, // Tangled Web Mask
+                3609169817, // Tangled Web Grips
+                2648545535, // Tangled Web Vest
+                2206284939, // Tangled Web Strides
+                25091086 // Tangled Web Cloak
+              ],
+              [
+                4104298449, // Prodigal Mask
+                2762426792, // Prodigal Grasps
+                2766448160, // Prodigal Vest
+                3397835010, // Prodigal Strides
+                1693706589 // Prodigal Cloak
+              ],
+              [
+                3994031968, // Red Moon Phantom Mask
+                1601578801, // Red Moon Phantom Grips
+                3612275815, // Red Moon Phantom Vest
+                1432831619, // Red Moon Phantom Steps
+                32806262 // Cloak of Five Full Moons
+              ]
+            ]
+          },
+          {
+            name: 'Titan armor',
+            itemGroups: [
+              [
+                2982412348, // Tangled Web Helm
+                42219189, // Tangled Web Gauntlets
+                2562470699, // Tangled Web Plate
+                1618341271, // Tangled Web Greaves
+                919186882 // Tangled Web Mark
+              ],
+              [
+                2753581141, // Prodigal Helm
+                1429424420, // Prodigal Gauntlets
+                3850634012, // Prodigal Cuirass
+                3360070350, // Prodigal Greaves
+                1266060945 // Prodigal Mark
+              ],
+              [
+                3839471140, // Mimetic Savior Helm
+                3403784957, // Mimetic Savior Gauntlets
+                3066154883, // Mimetic Savior Plate
+                1432969759, // Mimetic Savior Greaves
+                1964977914 // Mimetic Savior Bond
+              ]
+            ]
+          },
+          {
+            name: 'Warlock armor',
+            itemGroups: [
+              [
+                1664085089, // Tangled Web Hood
+                2502004600, // Tangled Web Gloves
+                1034149520, // Tangled Web Robes
+                537272242, // Tangled Web Boots
+                4256272077 // Tangled Web Bond
+              ],
+              [
+                2012084760, // Prodigal Hood
+                2475888361, // Prodigal Gloves
+                1553407343, // Prodigal Robes
+                2767830203, // Prodigal Steps
+                2800566014 // Prodigal Bond
+              ],
+              [
+                2470746631, // Thorium Holt Hood
+                417345678, // Thorium Holt Gloves
+                1330107298, // Thorium Holt Robes
+                2924984456, // Thorium Holt Boots
+                554000115 // Thorium Holt Bond
+              ]
+            ]
+          }
+        ]
+      },
+      {
         name: 'Eververse',
         id: 'YEAR_TWO_EVERVERSE',
         big: true,
