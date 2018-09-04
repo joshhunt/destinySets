@@ -439,5 +439,121 @@ export default ([
         ]
       }
     ]
+  },
+  {
+    name: 'Other',
+    sets: [
+      {
+        name: 'Eververse',
+        id: 'YEAR_TWO_EVERVERSE',
+        big: true,
+        sections: [
+          {
+            name: 'Hunter armor',
+            items: [
+              2685109601, // Dragonfly Regalia Mask',
+              3523029112, // Dragonfly Regalia Grasps
+              190167440, // Dragonfly Regalia Vest
+              1558296754, // Dragonfly Regalia Strides
+              3412289997 // Dragonfly Regalia Wings
+            ]
+          },
+          {
+            name: 'Titan armor',
+            items: [
+              1961788365, // Dragonfly Regalia Helm
+              2614454204, // Dragonfly Regalia Gauntlets
+              2634286116, // Dragonfly Regalia Plate
+              2000262854, // Dragonfly Regalia Greaves
+              3378116217 // Dragonfly Regalia Mark
+            ]
+          },
+          {
+            name: 'Warlock armor',
+            items: [
+              3516622758, // Dragonfly Regalia Mandible
+              2530582647, // Dragonfly Regalia Reaches
+              4118548161, // Dragonfly Regalia Robes
+              44150041, // Dragonfly Regalia Boots
+              606085916 // Dragonfly Regalia Bond
+            ]
+          },
+          {
+            name: 'Ghosts',
+            items: [
+              1106697449, // Peerless Precision Shell
+              1106697448, // S.H.A.N.K. Shell
+              1106697451, // Tyrant Shell
+              1106697450, // Sanctified Vigilance Shell
+              374922802, // Color Theory Shell
+              374922803, // Blue Sky Shell
+              374922800, // Cordial Diamond Shell
+              374922801, // Trusty Shell
+              374922806, // Painted Eye Shell
+              374922807, // Triangle Shell
+              374922804, // Skewed Orbit Shell
+              374922805, // Freyja Shell
+              374922810, // Spectral Circuit Shell
+              374922811, // Eyeball Shell
+              1625672312, // Atlantis Shell
+              1625672315 // Chevron Shell
+            ]
+          },
+          {
+            name: 'Ships',
+            items: [
+              460688467, // Aeviternal XXII
+              460688466, // Death to Kells
+              460688465, // Unfinal Shapes
+              460688464, // The Tall Tale
+              3600237168, // Stellar Pavements
+              3600237169, // Impolite Company
+              3600237170, // Temperance Moon
+              3600237172, // Beautiful Gravities
+              3600237173, // Where Stars Collide
+              3600237174, // Bicameral Promise
+              3600237175, // Last Sunset
+              3600237176, // Quantum Cartographer
+              3600237177, // In Medias Res
+              1092458451, // Jewel of Saturn
+              1092458450, // Tickled Catastrophe
+              1092458449 // Astera Blade
+            ]
+          },
+          {
+            name: 'Sparrows',
+            items: [
+              523189763, // Hecuba-S
+              523189762, // Warrior's Steed
+              523189761, // Ravager's Ride
+              2285214174, // Jagged Darksun
+              2285214175, // Here I Stand
+              2285214172, // Jagged Sunstreak
+              2285214173, // Majuscule Tide
+              2285214170, // Roar Defiant
+              2285214171, // Thermal Runaway
+              2285214168, // Endymion Cavalcade
+              2285214169, // Swiftsong
+              2285214166, // Mappa Mundarum
+              2285214167, // Jubilee Pronto
+              1264663100, // Battle-Shrike
+              1264663103 // Gossamer Longshot
+            ]
+          },
+          {
+            name: 'Shaders',
+            items: [
+              2815102890, // Smashing Success
+              2815102891, // Melchizedek Bramble
+              2815102888, // Safety First
+              2815102889, // Flavedo Core
+              2815102894, // Metropolitan Acoustics
+              2815102895, // Celestial Dome
+              2815102892 // Forty-Four Steel
+            ]
+          }
+        ]
+      }
+    ]
   }
 ]: SetPage);
