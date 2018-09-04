@@ -175,6 +175,56 @@ export default ([
             ]
           }
         ]
+      },
+      {
+        name: 'Iron Banner',
+        id: 'YEAR_TWO_IRON_BANNER',
+        description:
+          'Complete Iron Banner matches and earn rank-up packages from Lord Saladin.',
+        sections: [
+          {
+            name: 'Weapons',
+            items: [
+              1982711279, // Talons of the Eagle
+              1280933460, // Claws of the Wolf
+              1357080535, // Breath of the Dragon
+              3169616514, // Bite of the Fox
+              1972985595, // Swarm of the Raven
+              432716552, // Shining Sphere
+              308332265 // Roar of the Bear
+            ]
+          },
+          {
+            name: 'Hunter armor',
+            items: [
+              1944853984, // Iron Remembrance Casque
+              3847368113, // Iron Remembrance Grips
+              279785447, // Iron Remembrance Vest
+              3678620931, // Iron Remembrance Strides
+              995283190 // Cloak of Remembrance
+            ]
+          },
+          {
+            name: 'Titan armor',
+            items: [
+              485774636, // Iron Remembrance Helm
+              3976616421, // Iron Remembrance Gauntlets
+              741704251, // Iron Remembrance Plate
+              3899385447, // Iron Remembrance Greaves
+              3817948370 // Mark of Remembrance
+            ]
+          },
+          {
+            name: 'Warlock armor',
+            items: [
+              2340483067, // Iron Remembrance Hood
+              3799661482, // Iron Remembrance Gloves
+              3974682334, // Iron Remembrance Vestments
+              2455992644, // Iron Remembrance Legs
+              3345886183 // Bond of Remembrance
+            ]
+          }
+        ]
       }
       // {
       //   name: "Last Wish raid",
