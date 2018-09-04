@@ -7,7 +7,15 @@ import styles from './styles.styl';
 
 export default class Section extends PureComponent {
   render() {
-    const { name, noUi, slug, sets, setPopper, setModal } = this.props;
+    const {
+      name,
+      noUi,
+      slug,
+      sets,
+      setPopper,
+      setModal,
+      extendedItems
+    } = this.props;
 
     return (
       <div className={styles.root} id={slug}>
@@ -20,6 +28,7 @@ export default class Section extends PureComponent {
                 set={set}
                 setPopper={setPopper}
                 setModal={setModal}
+                extendedItems={extendedItems}
               />
             </Fragment>
           ))}

@@ -34,7 +34,11 @@ export default class AppRouter extends Component {
               setData={sets.yearOne}
             />
 
-            <Route path="/year-2" component={Inventory} setData={sets.yearTwo} />
+            <Route
+              path="/year-2"
+              component={Inventory}
+              setData={sets.yearTwo}
+            />
 
             <Route path="/base" component={Inventory} setData={sets.baseGame} />
 
@@ -51,6 +55,7 @@ export default class AppRouter extends Component {
               component={Inventory}
               setData={sets.catalysts}
               refreshOnInterval
+              preventFiltering
             />
 
             <Route

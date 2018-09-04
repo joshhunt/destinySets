@@ -34,7 +34,7 @@ class ItemSet extends Component {
   };
 
   render() {
-    const { className, setPopper, setModal, set } = this.props;
+    const { className, setPopper, setModal, set, extendedItems } = this.props;
     const { name, noUi, description, sections, image, hidden } = set;
 
     return (
@@ -109,7 +109,7 @@ class ItemSet extends Component {
                           <ItemComponent
                             itemHash={itemHash}
                             key={itemHash}
-                            extended={section.bigItems}
+                            extended={section.bigItems || extendedItems}
                             className={!section.type && styles.item}
                             setPopper={setPopper}
                             onItemClick={setModal}

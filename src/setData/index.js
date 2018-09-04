@@ -12,3 +12,4 @@ export default {
   catalysts: require('./catalysts').default,
   collections: require('./collections').default
 };
+

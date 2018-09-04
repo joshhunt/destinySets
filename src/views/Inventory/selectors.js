@@ -49,9 +49,21 @@ const slugify = str =>
     .replace(/[\s_-]+/g, '-') // swap any length of whitespace, underscore, hyphen characters with a single -
     .replace(/^-+|-+$/g, ''); // remove leading, trailing -
 
-function filterItem(item, inventory, filters) {
+const compare = (string, search) => {
+  return string && string.toLowerCase().includes(search);
+};
+
+function filterItem(item, inventory, filters, searchTerm) {
   if (!item) {
     return false;
+  }
+
+  if (searchTerm) {
+    return (
+      item.displayProperties &&
+      (compare(item.displayProperties.name, searchTerm) ||
+        compare(item.displayProperties.description, searchTerm))
+    );
   }
 
   if (!filters[FILTER_SHOW_WEAPONS] && hasCategoryHash(item, WEAPON)) {
@@ -124,6 +136,9 @@ function query(itemDefsArray, checklistDefsArray, queryTerm) {
 const filtersSelector = state => state.app.filters;
 const hiddenSetsSelector = state => state.app.hiddenSets;
 const propsSetDataSelector = (state, props) => props.route.setData;
+const propsPreventFilteringSelector = (state, props) => {
+  return props.route.preventFiltering;
+};
 
 const setDataSelector = createSelector(
   itemDefsSelector,
@@ -182,13 +197,39 @@ export const filteredSetDataSelector = createSelector(
   setDataSelector,
   inventorySelector,
   itemDefsSelector,
-  (filters, hiddenSets, setData, inventory, itemDefs) => {
+  state => state.app.searchValue,
+  propsPreventFilteringSelector,
+  (
+    filters,
+    hiddenSets,
+    setData,
+    inventory,
+    itemDefs,
+    searchValue,
+    preventFiltering
+  ) => {
+    console.log('preventFiltering:', preventFiltering);
+    if (preventFiltering) {
+      return setData;
+    }
+
+    const searchTerm =
+      searchValue && searchValue.length > 2 ? searchValue.toLowerCase() : null;
     const prevWhitelistedItems = ls.getTempFilterItemWhitelist();
 
     // TODO: Can we memoize this or something to prevent making changes to sets that don't change?
     const result = immer({ setData }, draft => {
       draft.setData.forEach(group => {
         group.sets.forEach(set => {
+          if (
+            searchTerm &&
+            set.description &&
+            set.description.toLowerCase().includes(searchTerm)
+          ) {
+            // include them all
+            return;
+          }
+
           set.hidden = hiddenSets.hasOwnProperty(set.id) && hiddenSets[set.id];
           if (!filters[FILTER_SHOW_HIDDEN_SETS] && set.hidden) {
             set.sections = [];
@@ -206,7 +247,7 @@ export const filteredSetDataSelector = createSelector(
                   }
 
                   const item = itemDefs[itemHash];
-                  return filterItem(item, inventory, filters);
+                  return filterItem(item, inventory, filters, searchTerm);
                 });
               })
               .filter(itemList => itemList.length);

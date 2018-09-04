@@ -14,7 +14,8 @@ import { fasterGetDefinitions } from 'app/lib/definitions';
 import {
   setFilterItem,
   removeTrackedItem,
-  setBulkHiddenItemSet
+  setBulkHiddenItemSet,
+  setSearchValue
 } from 'app/store/reducer';
 import { fetchProfile } from 'app/store/profile';
 
@@ -114,8 +115,18 @@ class Inventory extends Component {
     this.props.setBulkHiddenItemSet({});
   };
 
+  onSearchChange = ev => {
+    this.props.setSearchValue(ev.target.value);
+  };
+
   render() {
-    const { filters, filteredSetData, trackedItems, route } = this.props;
+    const {
+      filters,
+      filteredSetData,
+      trackedItems,
+      route,
+      searchValue
+    } = this.props;
     const { itemTooltip, itemModal } = this.state;
     const noUi = (filteredSetData[0] || {}).noUi;
 
@@ -133,6 +144,8 @@ class Inventory extends Component {
             setData={filteredSetData}
             filters={filters}
             setFilterItem={this.setFilterItem}
+            searchValue={searchValue}
+            onSearchChange={this.onSearchChange}
           />
         )}
 
@@ -180,6 +193,7 @@ class Inventory extends Component {
             slug={slug}
             setPopper={this.setPopper}
             setModal={this.setItemModal}
+            extendedItems={searchValue && searchValue.length > 2}
           />
         ))}
 
@@ -238,7 +252,8 @@ const mapStateToProps = (state, ownProps) => {
     language: state.app.language,
     trackedItems: state.app.trackedItems,
     vendors: state.profile.profile && state.profile.profile.$vendors,
-    filteredSetData: filteredSetDataSelector(state, ownProps)
+    filteredSetData: filteredSetDataSelector(state, ownProps),
+    searchValue: state.app.searchValue
   };
 };
 
@@ -249,7 +264,8 @@ const mapDispatchToActions = {
   setBulkHiddenItemSet,
   setBulkDefinitions,
   definitionsStatus,
-  definitionsError
+  definitionsError,
+  setSearchValue
 };
 
 export default connect(mapStateToProps, mapDispatchToActions)(Inventory);

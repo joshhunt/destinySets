@@ -9,6 +9,8 @@ import {
   FILTER_SHOW_WEAPONS
 } from 'app/lib/destinyEnums';
 
+import { makePayloadAction } from './utils';
+
 const SET_CLOUD_INVENTORY = 'Set cloud inventory';
 const SET_FILTER_ITEM = 'Set filter item';
 const SET_HIDDEN_ITEM_SET = 'Set hidden itemSet';
@@ -21,6 +23,7 @@ const TOGGLE_MANUALLY_OBTAINED = 'Toggle manually obtained';
 const SET_GOOGLE_AUTH = 'Set Google auth data';
 const FORGET_DISMANTLED_ITEM = 'Forget dismantled item';
 const SET_APP_VALUE = 'Set app value';
+const SET_SEARCH_VALUE = 'Set search value';
 
 export const DEFAULT_FILTER = {
   [TITAN]: true,
@@ -79,6 +82,13 @@ export default function reducer(state = INITIAL_STORE, action) {
         ...state,
         ...action.payload
       };
+
+    case SET_SEARCH_VALUE: {
+      return {
+        ...state,
+        searchValue: action.payload
+      };
+    }
 
     case SET_GOOGLE_AUTH:
       return {
@@ -215,3 +225,5 @@ export function toggleManuallyObtained(itemHash) {
 export function forgetDismantled(itemHash) {
   return { type: FORGET_DISMANTLED_ITEM, itemHash };
 }
+
+export const setSearchValue = makePayloadAction(SET_SEARCH_VALUE);
