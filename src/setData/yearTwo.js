@@ -1,18 +1,18 @@
 // @flow
-import type { SetPage } from "../types";
+import type { SetPage } from '../types';
 
 export default ([
   {
-    name: "Activities",
+    name: 'Activities',
     sets: [
       {
-        name: "Strikes",
-        id: "YEAR_TWO_STRIKES",
+        name: 'Strikes',
+        id: 'YEAR_TWO_STRIKES',
         description:
-          "Complete strikes and earn rank-up packages from Commander Zavala",
+          'Complete strikes and earn rank-up packages from Commander Zavala',
         sections: [
           {
-            name: "Weapons",
+            name: 'Weapons',
             items: [
               3040742682, // Nameless Midnight
               2009277538, // The Last Dance
@@ -23,7 +23,7 @@ export default ([
             ]
           },
           {
-            name: "Hunter armor",
+            name: 'Hunter armor',
             items: [
               575676771, // Vigil of Heroes
               1247181362, // Vigil of Heroes
@@ -33,7 +33,7 @@ export default ([
             ]
           },
           {
-            name: "Titan armor",
+            name: 'Titan armor',
             items: [
               1514863327, // Vigil of Heroes
               1490307366, // Vigil of Heroes
@@ -43,7 +43,7 @@ export default ([
             ]
           },
           {
-            name: "Warlock armor",
+            name: 'Warlock armor',
             items: [
               3213912958, // Vigil of Heroes
               2442309039, // Vigil of Heroes
@@ -53,7 +53,7 @@ export default ([
             ]
           },
           {
-            name: "Shaders",
+            name: 'Shaders',
             items: [
               2788911999, // Vanguard Veteran
               2788911998 // Vanguard Metallic
@@ -62,13 +62,13 @@ export default ([
         ]
       },
       {
-        name: "Crucible",
-        id: "YEAR_TWO_CRUCIBLE",
+        name: 'Crucible',
+        id: 'YEAR_TWO_CRUCIBLE',
         description:
-          "Complete Crucible matches and earn rank-up packages from Lord Shaxx",
+          'Complete Crucible matches and earn rank-up packages from Lord Shaxx',
         sections: [
           {
-            name: "Weapons",
+            name: 'Weapons',
             items: [
               153979397, // Better Devils
               105567493, // Hard Truths
@@ -79,7 +79,7 @@ export default ([
             ]
           },
           {
-            name: "Hunter armor",
+            name: 'Hunter armor',
             items: [
               1127237110, // Wing Contender
               2331227463, // Wing Contender
@@ -89,7 +89,7 @@ export default ([
             ]
           },
           {
-            name: "Titan armor",
+            name: 'Titan armor',
             items: [
               2124666626, // Wing Discipline
               1464207979, // Wing Discipline
@@ -99,7 +99,7 @@ export default ([
             ]
           },
           {
-            name: "Warlock armor",
+            name: 'Warlock armor',
             items: [
               3724026171, // Wing Theorem
               929917162, // Wing Theorem
@@ -109,7 +109,7 @@ export default ([
             ]
           },
           {
-            name: "Extras",
+            name: 'Extras',
             items: [
               2588739578, // Crucible Legacy
               2588739579 // Crucible Metallic
@@ -118,13 +118,13 @@ export default ([
         ]
       },
       {
-        name: "Gambit",
-        id: "YEAR_TWO_GAMBIT",
+        name: 'Gambit',
+        id: 'YEAR_TWO_GAMBIT',
         description:
-          "Complete Gambit matches and earn rank-up packages from the Drifter",
+          'Complete Gambit matches and earn rank-up packages from the Drifter',
         sections: [
           {
-            name: "Weapons",
+            name: 'Weapons',
             items: [
               1789347249, // Hardline
               2034817450, // Distant Relation
@@ -135,7 +135,7 @@ export default ([
             ]
           },
           {
-            name: "Hunter armor",
+            name: 'Hunter armor',
             items: [
               629787707, // Ancient Apocalypse Mask
               2130645994, // Ancient Apocalypse Grips
@@ -145,7 +145,7 @@ export default ([
             ]
           },
           {
-            name: "Titan armor",
+            name: 'Titan armor',
             items: [
               3031848199, // Ancient Apocalypse Helm
               978447246, // Ancient Apocalypse Gauntlets
@@ -155,7 +155,7 @@ export default ([
             ]
           },
           {
-            name: "Warlock armor",
+            name: 'Warlock armor',
             items: [
               1236746902, // Ancient Apocalypse Hood
               2440840551, // Ancient Apocalypse Gloves
@@ -165,7 +165,7 @@ export default ([
             ]
           },
           {
-            name: "Extras",
+            name: 'Extras',
             items: [
               4257852942, // Furtive Shell
               3610893760, // Drift Apart
@@ -237,75 +237,72 @@ export default ([
     ]
   },
   {
-    name: "Destinations",
+    name: 'Destinations',
     sets: [
       {
-        name: "The Tangled Shore",
-        id: "year-two-tangled-shore",
+        name: 'The Tangled Shore',
+        id: 'year-two-tangled-shore',
         description:
-          "Complete activities and earn rank-up packages on the Tangled Shore",
+          'Complete activities and earn rank-up packages on the Tangled Shore',
         sections: [
           {
-            name: "Weapons",
+            name: 'Weapons',
             items: [
-              640114618, // Tigerspite
-              3242168339, // Vouchsafe
-              334171687, // Waking Vigil
-              3297863558, // Twilight Oath
-              1644160541, // Abide the Return
-              3740842661 // Sleepless
+              1839565992, // Ether Doctor
+              3957603605, // Wrong Side of Right
+              3376406418, // Right Side of Wrong
+              1178886909, // Thin Line
+              2681395357, // Trackless Waste
+              636912560 // Dust Rock Blues
             ]
           },
           {
-            name: "Hunter armor",
+            name: 'Hunter armor',
             items: [
-              2824453288, // Reverie Dawn Casque
-              1705856569, // Reverie Dawn Grasps
-              1593474975, // Reverie Dawn Hauberk
-              344548395, // Reverie Dawn Strides
-              3306564654 // Reverie Dawn Cloak
+              2276115770, // Scatterhorn Mask
+              218523139, // Scatterhorn Grasps
+              307138509, // Scatterhorn Vest
+              2563857333, // Scatterhorn Strides
+              2757593792 // Scatterhorn Cloak
             ]
           },
           {
-            name: "Titan armor",
+            name: 'Titan armor',
             items: [
-              4097166900, // Reverie Dawn Helm
-              2503434573, // Reverie Dawn Gauntlets
-              4070309619, // Reverie Dawn Plate
-              3174233615, // Reverie Dawn Greaves
-              1980768298 // Reverie Dawn Mark
+              1862088022, // Scatterhorn Helm
+              3066181671, // Scatterhorn Gauntlets
+              3871458129, // Scatterhorn Plate
+              2243444841, // Scatterhorn Greaves
+              1347463276 // Scatterhorn Mark
             ]
           },
           {
-            name: "Warlock armor",
+            name: 'Warlock armor',
             items: [
-              185695659, // Reverie Dawn Hood
-              2761343386, // Reverie Dawn Gloves
-              2859583726, // Reverie Dawn Tabard
-              188778964, // Reverie Dawn Boots
-              3602032567 // Reverie Dawn Bond
+              2411325265, // Scatterhorn Hood
+              1069453608, // Scatterhorn Wraps
+              1250571424, // Scatterhorn Robe
+              1704861826, // Scatterhorn Boots
+              177829853 // Scatterhorn Bond
             ]
           },
           {
-            name: "Extras",
+            name: 'Extras',
             items: [
-              813936739, // Starlight Shell
-              2844014413, // Pallas Galliot
-              1317468653, // Silver Tercel
-              3109957218, // Burnished Dreams
-              3109957219 // Blueshift Dreams
+              1226584228, // Tangled Rust
+              1226584229 // Tangled Bronze
             ]
           }
         ]
       },
       {
-        name: "The Dreaming City",
-        id: "year-two-dreaming-city",
+        name: 'The Dreaming City',
+        id: 'year-two-dreaming-city',
         description:
-          "Complete activities and earn rank-up packages in the Dreaming City",
+          'Complete activities and earn rank-up packages in the Dreaming City',
         sections: [
           {
-            name: "Weapons",
+            name: 'Weapons',
             items: [
               640114618, // Tigerspite
               3242168339, // Vouchsafe
@@ -316,7 +313,7 @@ export default ([
             ]
           },
           {
-            name: "Hunter armor",
+            name: 'Hunter armor',
             items: [
               2824453288, // Reverie Dawn Casque
               1705856569, // Reverie Dawn Grasps
@@ -326,7 +323,7 @@ export default ([
             ]
           },
           {
-            name: "Titan armor",
+            name: 'Titan armor',
             items: [
               4097166900, // Reverie Dawn Helm
               2503434573, // Reverie Dawn Gauntlets
@@ -336,7 +333,7 @@ export default ([
             ]
           },
           {
-            name: "Warlock armor",
+            name: 'Warlock armor',
             items: [
               185695659, // Reverie Dawn Hood
               2761343386, // Reverie Dawn Gloves
@@ -346,7 +343,7 @@ export default ([
             ]
           },
           {
-            name: "Shaders",
+            name: 'Extras',
             items: [
               813936739, // Starlight Shell
               2844014413, // Pallas Galliot
