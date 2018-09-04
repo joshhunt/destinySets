@@ -391,6 +391,7 @@ export default ([
               640114618, // Tigerspite
               3242168339, // Vouchsafe
               334171687, // Waking Vigil
+              346136302, // Retold Tale
               3297863558, // Twilight Oath
               1644160541, // Abide the Return
               3740842661 // Sleepless
@@ -431,9 +432,8 @@ export default ([
             items: [
               813936739, // Starlight Shell
               2844014413, // Pallas Galliot
-              1317468653, // Silver Tercel
-              3109957218, // Burnished Dreams
-              3109957219 // Blueshift Dreams
+              1317468652, // Harbinger's Echo
+              1317468653 // Silver Tercel
             ]
           }
         ]
