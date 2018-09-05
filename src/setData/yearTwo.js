@@ -581,6 +581,29 @@ export default ([
             ]
           },
           {
+            name: 'Emotes',
+            items: [
+              28673365, // Poultry Petting'
+              132405572, // All Alone'
+              704532774, // Sad Trombone'
+              1617583310, // Standoff'
+              1863079869, // Red Card'
+              2611996036, // All Mine'
+              3201469151, // Cerebral Explosion'
+              4080789277, // Beguiling Dance'
+              2604685098, // Linear Fusion Dance'
+              1036776535, // Denial Dance'
+              1314734302, // Smooth Dance'
+              1338552830, // Potential Dance'
+              2748215252, // Awkward Greeting'
+              448262266, // Rev It Up'
+              503951839, // What Is That?!'
+              896553940, // Lucky Shot'
+              2217132045, // Do Not Want'
+              1267161032 // Warm Up
+            ]
+          },
+          {
             name: 'Ghosts',
             items: [
               1106697449, // Peerless Precision Shell
