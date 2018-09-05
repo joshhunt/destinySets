@@ -190,7 +190,6 @@ export default ([
               1357080535, // Breath of the Dragon
               3169616514, // Bite of the Fox
               1972985595, // Swarm of the Raven
-              432716552, // Shining Sphere
               308332265 // Roar of the Bear
             ]
           },
