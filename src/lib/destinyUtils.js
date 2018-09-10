@@ -10,6 +10,8 @@ export const isOrnament = item =>
   item.plug.plugCategoryIdentifier &&
   item.plug.plugCategoryIdentifier.includes('skins');
 
+export const flagEnum = (state, value) => !!(state & value);
+
 function classFromString(str) {
   const results = str.match(/hunter|titan|warlock/);
   if (!results) {

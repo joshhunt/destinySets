@@ -62,7 +62,6 @@ export default class AppRouter extends Component {
               path="/all-items"
               component={Inventory}
               setData={sets.allItems}
-              showCollectionsPromo
             />
 
             <Route

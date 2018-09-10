@@ -211,15 +211,15 @@ export default function fancySearch(search, defs, opts = { hashOnly: false }) {
         enums.CHECKLIST_CHARACTER_COLLECTIONS
       );
 
-      const profileItems = itemsFromChecklistDefs(
-        profileChecklist,
-        opts.hashOnly
-      );
+      const profileItems =
+        (profileChecklist &&
+          itemsFromChecklistDefs(profileChecklist, opts.hashOnly)) ||
+        [];
 
-      const characterItems = itemsFromChecklistDefs(
-        characterChecklist,
-        opts.hashOnly
-      );
+      const characterItems =
+        (characterChecklist &&
+          itemsFromChecklistDefs(characterChecklist, opts.hashOnly)) ||
+        [];
 
       const allItems = [...profileItems, ...characterItems];
 

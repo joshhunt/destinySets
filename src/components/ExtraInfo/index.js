@@ -38,8 +38,8 @@ function ExtraInfo({
           <Icon icon="check" />
         </span>{' '}
         {inventoryEntry.obtained
-          ? 'Unlocked in Forsaken checklist'
-          : 'Dismantled & unlocked in Forsaken checklist'}
+          ? 'Unlocked in Collections'
+          : 'Dismantled & unlocked in Collections'}
       </span>
     );
   }

@@ -208,7 +208,6 @@ export const filteredSetDataSelector = createSelector(
     searchValue,
     preventFiltering
   ) => {
-    console.log('preventFiltering:', preventFiltering);
     if (preventFiltering) {
       return setData;
     }

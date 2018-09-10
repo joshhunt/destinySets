@@ -149,37 +149,15 @@ class Inventory extends Component {
           />
         )}
 
-        {route.showCollectionsPromo && (
-          <div className={styles.promo}>
-            <p>
-              Check out the experimental Collections page for a preview of the
-              items have been marked off for the upcoming Collections in
-              Forsaken
-            </p>
-
-            <p>
-              <Link className={styles.button} to="/collections">
-                Visit Collections
-              </Link>
-            </p>
-          </div>
-        )}
-
         {route.isCollections && (
           <div className={styles.promo}>
             <p>
-              This is an experimental preview of the items that will be marked
-              off in Collections when Forsaken drops. Some items, like S3
-              Faction Rally, Iron Banner, and Solstice of Heroes gear may not
-              appear in the list or as collected, but they will be counted when
-              Forsaken drops. For more info,{' '}
-              <a
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://github.com/Bungie-net/api/issues/559#issuecomment-407541681"
-              >
-                see this thread
-              </a>.
+              This was an experimental preview of the items that will be marked
+              off in Collections when Forsaken dropped, and may be retired soon
+              by Bungie in an upcomming update.
+            </p>
+            <p>
+              Official Collections support is now built into DestinySets.com.
             </p>
           </div>
         )}

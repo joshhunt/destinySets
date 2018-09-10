@@ -32,6 +32,7 @@ const componentItemPlugStates = 308; // eslint-disable-line
 const componentVendors = 400; // eslint-disable-line
 const componentVendorCategories = 401; // eslint-disable-line
 const componentVendorSales = 402; // eslint-disable-line
+const componentCollectibles = 800;
 
 const PROFILE_COMPONENTS = [
   componentProfiles,
@@ -42,7 +43,8 @@ const PROFILE_COMPONENTS = [
   componentItemObjectives,
   componentItemSockets,
   componentProfileProgressions,
-  componentCharacterProgressions
+  componentCharacterProgressions,
+  componentCollectibles
 ];
 
 const VENDOR_COMPONENTS = [

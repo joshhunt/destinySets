@@ -1,16 +1,15 @@
 import { createSelector } from 'reselect';
-import { difference, toPairs, keyBy, get, flatMapDeep } from 'lodash';
+import { difference, keyBy, get, flatMapDeep } from 'lodash';
 import fp from 'lodash/fp';
 
 import {
   inventoryFromProfile,
   objectivesFromProfile
 } from 'app/lib/getFromProfile';
+import { flagEnum } from 'app/lib/destinyUtils';
 import {
   NUMERICAL_STATS,
   STAT_BLACKLIST,
-  CHECKLIST_PROFILE_COLLECTIONS,
-  CHECKLIST_CHARACTER_COLLECTIONS,
   MASTERWORK_FLAG
 } from 'app/lib/destinyEnums';
 
@@ -131,72 +130,70 @@ export const currentInventorySelector = createSelector(
   }
 );
 
-function inventoryFromChecklist(checklistDef, checklist) {
-  if (!checklistDef) {
-    return {};
-  }
+const enumerateCollectibleState = state => ({
+  none: flagEnum(state, 0),
+  notAcquired: flagEnum(state, 1),
+  obscured: flagEnum(state, 2),
+  invisible: flagEnum(state, 4),
+  cannotAffordMaterialRequirements: flagEnum(state, 8),
+  inventorySpaceUnavailable: flagEnum(state, 16),
+  uniquenessViolation: flagEnum(state, 32),
+  purchaseDisabled: flagEnum(state, 64)
+});
 
-  const checklistDefEntries = keyBy(checklistDef.entries, x => x.hash);
-  const inventory = {};
-
-  toPairs(checklist).forEach(([checklistItemHash, isUnlocked]) => {
-    if (isUnlocked) {
-      const checklistEntryDef = checklistDefEntries[checklistItemHash];
-      const itemHash = checklistEntryDef && checklistEntryDef.itemHash; // check this for the correct itemHash
-      if (itemHash) {
-        inventory[itemHash] = true;
+function inventoryFromCollectibles(collectibles, collectibleDefs) {
+  return Object.entries(collectibles).reduce(
+    (acc, [collectibleHash, { state }]) => {
+      const collectible = collectibleDefs[collectibleHash];
+      if (!collectible || !collectible.itemHash) {
+        return acc;
       }
-    }
-  });
 
-  return inventory;
+      const actualState = enumerateCollectibleState(state);
+
+      if (actualState.notAcquired) {
+        return acc;
+      }
+
+      return {
+        ...acc,
+        [collectible.itemHash]: actualState
+      };
+    },
+    {}
+  );
 }
 
 export const checklistInventorySelector = createSelector(
-  checklistDefsSelector,
+  collectibleDefsSelector,
   profileSelector,
-  (checklistDefs, profile) => {
-    if (!(checklistDefs && profile)) {
+  (collectibleDefs, profile) => {
+    if (!(collectibleDefs && profile)) {
       return {};
     }
 
     let inventory = {};
 
-    const checklists = get(profile, 'profileProgression.data.checklists');
+    const collectibles = get(profile, 'profileCollectibles.data.collectibles');
 
-    if (!checklists) {
-      return {};
-    }
-
-    const profileChecklist = checklists[CHECKLIST_PROFILE_COLLECTIONS];
-
-    const characterChecklists = Object.values(
-      profile.characterProgressions.data
-    )
-      .map(x => x.checklists[CHECKLIST_CHARACTER_COLLECTIONS])
-      .filter(Boolean);
-
-    if (profileChecklist) {
+    if (collectibles) {
       inventory = {
         ...inventory,
-        ...inventoryFromChecklist(
-          checklistDefs[CHECKLIST_PROFILE_COLLECTIONS],
-          profileChecklist
-        )
+        ...inventoryFromCollectibles(collectibles, collectibleDefs)
       };
     }
 
-    const characterInventory = characterChecklists.reduce((acc, checklist) => {
-      return {
-        ...acc,
-        ...inventoryFromChecklist(
-          checklistDefs[CHECKLIST_CHARACTER_COLLECTIONS],
-          checklist
-        )
-      };
-    }, {});
+    const characterCollectibles = get(profile, 'characterCollectibles.data');
 
-    return { ...characterInventory, ...inventory };
+    characterCollectibles &&
+      Object.values(profile.characterCollectibles.data).forEach(data => {
+        inventory = {
+          ...inventory,
+          ...inventoryFromCollectibles(data.collectibles, collectibleDefs)
+        };
+      });
+
+    return inventory;
   }
 );
 
