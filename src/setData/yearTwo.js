@@ -224,65 +224,71 @@ export default ([
             ]
           }
         ]
+      },
+      {
+        name: 'Last Wish raid',
+        id: 'YEAR_TWO_LAST_WISH',
+        description: 'Last Wish raid.',
+        sections: [
+          {
+            name: 'Weapons',
+            items: [
+              686951703, // The Supremacy
+              4094657108, // Techeun Force
+              2069224589 // One Thousand Voices
+            ]
+          },
+
+          {
+            name: 'Hunter armor',
+            items: [
+              3838639757, // Mask of the Great Hunt
+              196235132, // Grips of the Great Hunt
+              146275556, // Vest of the Great Hunt
+              3494130310, // Strides of the Great Hunt
+              1314563129 // Cloak of the Great Hunt
+            ]
+          },
+
+          {
+            name: 'Titan armor',
+            items: [
+              2274520361, // Helm of the Great Hunt
+              65929376, // Gauntlets of the Great Hunt
+              3614211816, // Plate of the Great Hunt
+              3055836250, // Greaves of the Great Hunt
+              1021341893 // Mark of the Great Hunt
+            ]
+          },
+
+          {
+            name: 'Warlock armor',
+            items: [
+              3251351304, // Hood of the Great Hunt
+              2598685593, // Gloves of the Great Hunt
+              3445296383, // Robes of the Great Hunt
+              1195800715, // Boots of the Great Hunt
+              821841934 // Bond of the Great Hunt
+            ]
+          },
+
+          {
+            name: 'Other',
+            items: [
+              3862768196, // Wish-Maker Shell
+              2081719592, // Cleansing Knife
+              2269373482, // Ermine TAC-717
+              1059304051, // Wish No More
+              654370424, // Nation of Beasts
+              568515759, // Chattering Bone
+              3799980700, // Transfiguration
+              601592879, // Age-Old Bond
+              2721249463, // Tyranny of Heaven
+              2545083870 // Apex Predator
+            ]
+          }
+        ]
       }
-      // {
-      //   name: "Last Wish raid",
-      //   id: "YEAR_TWO_LAST_WISH",
-      //   description: "Last Wish raid.",
-      //   sections: [
-      //     {
-      //       name: "Weapons",
-      //       items: [
-      //         601592879,
-      //         3799980700,
-      //         568515759,
-      //         654370424,
-      //         2721249463,
-      //         2545083870
-      //       ]
-      //     },
-      //     {
-      //       name: "Hunter armor",
-      //       items: [
-      //         3251351304, // hood
-      //         196235132, // grips
-      //         146275556, // vest
-      //         3494130310, // strides
-      //         1314563129 // cloak
-      //       ]
-      //     },
-      //     {
-      //       name: "Titan armor",
-      //       items: [
-      //         2274520361, // helm
-      //         65929376, // gauntlets
-      //         3614211816, // plate
-      //         3055836250, // greaves
-      //         1021341893 // mark
-      //       ]
-      //     },
-      //     {
-      //       name: "Warlock armor",
-      //       items: [
-      //         2340335439, // mask
-      //         4058916407, // gloves
-      //         3445296383, // robes
-      //         1195800715, // boots
-      //         1230173206 // bond
-      //       ]
-      //     },
-      //     {
-      //       name: "Extras",
-      //       items: [
-      //         3862768196, // Wish-Maker Shell
-      //         2269373482, // ship
-      //         2081719592, // sparrow
-      //         3668669365, // shader
-      //         3668669364 // shader
-      //       ]
-      //     }
-      //   ]
-      // }
     ]
   },
   {
