@@ -53,10 +53,19 @@ export default ([
             ]
           },
           {
-            name: 'Shaders',
-            items: [
-              2788911999, // Vanguard Veteran
-              2788911998 // Vanguard Metallic
+            name: 'Extras',
+            itemGroups: [
+              [
+                2390666069 // High-Risk, High-Reward (Emblem)
+              ],
+              [
+                1075647353, // Vanguard Terminus (Emblem)
+                2788911997 // Vanguard Divide (Shader)
+              ],
+              [
+                2788911999, // Vanguard Veteran
+                2788911998 // Vanguard Metallic
+              ]
             ]
           }
         ]
@@ -110,9 +119,15 @@ export default ([
           },
           {
             name: 'Extras',
-            items: [
-              2588739578, // Crucible Legacy
-              2588739579 // Crucible Metallic
+            itemGroups: [
+              [
+                1131244817, // Damage, Incorporated
+                2588739576 // Crucible Solemnity
+              ],
+              [
+                2588739578, // Crucible Legacy
+                2588739579 // Crucible Metallic
+              ]
             ]
           }
         ]
@@ -166,12 +181,20 @@ export default ([
           },
           {
             name: 'Extras',
-            items: [
-              4257852942, // Furtive Shell
-              3610893760, // Drift Apart
-              4271205858, // Antediluvian
-              1335424935, // Gambit Leather
-              1335424934 // Gambit Chrome
+            itemGroups: [
+              [
+                1471300080, // A Cold Wind Blowin'
+                540603119, // Primeval Prime
+                540603118, // Ludomaniacal
+                1335424933 // Gambit Suede
+              ],
+              [
+                4257852942, // Furtive Shell
+                3610893760, // Drift Apart
+                4271205858, // Antediluvian
+                1335424935, // Gambit Leather
+                1335424934 // Gambit Chrome
+              ]
             ]
           }
         ]
