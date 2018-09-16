@@ -147,7 +147,8 @@ export default ([
               2712244741, // Bygones
               4077196130, // Trust
               2653316158, // Pillager
-              991314988 // Bad Omens
+              991314988, // Bad Omens
+              3100452337 // Dreaded Venture
             ]
           },
           {
