@@ -13,6 +13,7 @@ export default ([
         sections: [
           {
             name: 'Weapons',
+            season: 4,
             items: [
               3040742682, // Nameless Midnight
               2009277538, // The Last Dance
@@ -24,6 +25,7 @@ export default ([
           },
           {
             name: 'Hunter armor',
+            season: 4,
             items: [
               575676771, // Vigil of Heroes
               1247181362, // Vigil of Heroes
@@ -34,6 +36,7 @@ export default ([
           },
           {
             name: 'Titan armor',
+            season: 4,
             items: [
               1514863327, // Vigil of Heroes
               1490307366, // Vigil of Heroes
@@ -44,6 +47,7 @@ export default ([
           },
           {
             name: 'Warlock armor',
+            season: 4,
             items: [
               3213912958, // Vigil of Heroes
               2442309039, // Vigil of Heroes
@@ -54,18 +58,13 @@ export default ([
           },
           {
             name: 'Extras',
-            itemGroups: [
-              [
-                2390666069 // High-Risk, High-Reward (Emblem)
-              ],
-              [
-                1075647353, // Vanguard Terminus (Emblem)
-                2788911997 // Vanguard Divide (Shader)
-              ],
-              [
-                2788911999, // Vanguard Veteran
-                2788911998 // Vanguard Metallic
-              ]
+            season: 4,
+            items: [
+               2390666069, // High-Risk, High-Reward (Emblem)
+               1075647353, // Vanguard Terminus (Emblem)
+               2788911997 // Vanguard Divide (Shader)
+               2788911999, // Vanguard Veteran (Shader)
+               2788911998 // Vanguard Metallic (Shader)
             ]
           }
         ]
@@ -78,6 +77,7 @@ export default ([
         sections: [
           {
             name: 'Weapons',
+            season: 4,
             items: [
               153979397, // Better Devils
               105567493, // Hard Truths
@@ -89,6 +89,7 @@ export default ([
           },
           {
             name: 'Hunter armor',
+            season: 4,
             items: [
               1127237110, // Wing Contender
               2331227463, // Wing Contender
@@ -99,6 +100,7 @@ export default ([
           },
           {
             name: 'Titan armor',
+            season: 4,
             items: [
               2124666626, // Wing Discipline
               1464207979, // Wing Discipline
@@ -109,6 +111,7 @@ export default ([
           },
           {
             name: 'Warlock armor',
+            season: 4,
             items: [
               3724026171, // Wing Theorem
               929917162, // Wing Theorem
@@ -119,15 +122,12 @@ export default ([
           },
           {
             name: 'Extras',
-            itemGroups: [
-              [
+            season: 4,
+            items: [
                 1131244817, // Damage, Incorporated
-                2588739576 // Crucible Solemnity
-              ],
-              [
+                2588739576, // Crucible Solemnity
                 2588739578, // Crucible Legacy
                 2588739579 // Crucible Metallic
-              ]
             ]
           }
         ]
@@ -140,6 +140,7 @@ export default ([
         sections: [
           {
             name: 'Weapons',
+            season: 4,
             items: [
               1789347249, // Hardline
               2034817450, // Distant Relation
@@ -151,6 +152,7 @@ export default ([
           },
           {
             name: 'Hunter armor',
+            season: 4,
             items: [
               629787707, // Ancient Apocalypse Mask
               2130645994, // Ancient Apocalypse Grips
@@ -161,6 +163,7 @@ export default ([
           },
           {
             name: 'Titan armor',
+            season: 4,
             items: [
               3031848199, // Ancient Apocalypse Helm
               978447246, // Ancient Apocalypse Gauntlets
@@ -171,6 +174,7 @@ export default ([
           },
           {
             name: 'Warlock armor',
+            season: 4,
             items: [
               1236746902, // Ancient Apocalypse Hood
               2440840551, // Ancient Apocalypse Gloves
@@ -181,20 +185,17 @@ export default ([
           },
           {
             name: 'Extras',
-            itemGroups: [
-              [
+            season: 4,
+            items: [
+                4257852942, // Furtive Shell
+                4271205858, // Antediluvian
+                3610893760, // Drift Apart
                 1471300080, // A Cold Wind Blowin'
                 540603119, // Primeval Prime
                 540603118, // Ludomaniacal
                 1335424933 // Gambit Suede
-              ],
-              [
-                4257852942, // Furtive Shell
-                3610893760, // Drift Apart
-                4271205858, // Antediluvian
                 1335424935, // Gambit Leather
                 1335424934 // Gambit Chrome
-              ]
             ]
           }
         ]
@@ -207,6 +208,7 @@ export default ([
         sections: [
           {
             name: 'Weapons',
+            season: 4,
             items: [
               1982711279, // Talons of the Eagle
               1280933460, // Claws of the Wolf
@@ -218,6 +220,7 @@ export default ([
           },
           {
             name: 'Hunter armor',
+            season: 4,
             items: [
               1944853984, // Iron Remembrance Casque
               3847368113, // Iron Remembrance Grips
@@ -228,6 +231,7 @@ export default ([
           },
           {
             name: 'Titan armor',
+            season: 4,
             items: [
               485774636, // Iron Remembrance Helm
               3976616421, // Iron Remembrance Gauntlets
@@ -238,6 +242,7 @@ export default ([
           },
           {
             name: 'Warlock armor',
+            season: 4,
             items: [
               2340483067, // Iron Remembrance Hood
               3799661482, // Iron Remembrance Gloves
@@ -255,6 +260,7 @@ export default ([
         sections: [
           {
             name: 'Weapons',
+            season: 4,
             items: [
               686951703, // The Supremacy
               4094657108, // Techeun Force
@@ -264,6 +270,7 @@ export default ([
 
           {
             name: 'Hunter armor',
+            season: 4,
             items: [
               3838639757, // Mask of the Great Hunt
               196235132, // Grips of the Great Hunt
@@ -275,6 +282,7 @@ export default ([
 
           {
             name: 'Titan armor',
+            season: 4,
             items: [
               2274520361, // Helm of the Great Hunt
               65929376, // Gauntlets of the Great Hunt
@@ -286,6 +294,7 @@ export default ([
 
           {
             name: 'Warlock armor',
+            season: 4,
             items: [
               3251351304, // Hood of the Great Hunt
               2598685593, // Gloves of the Great Hunt
@@ -297,6 +306,7 @@ export default ([
 
           {
             name: 'Other',
+            season: 4,
             items: [
               3862768196, // Wish-Maker Shell
               2081719592, // Cleansing Knife
@@ -325,6 +335,7 @@ export default ([
         sections: [
           {
             name: 'Weapons',
+            season: 4,
             items: [
               1839565992, // Ether Doctor
               3957603605, // Wrong Side of Right
@@ -336,6 +347,7 @@ export default ([
           },
           {
             name: 'Hunter armor',
+            season: 4,
             items: [
               2276115770, // Scatterhorn Mask
               218523139, // Scatterhorn Grasps
@@ -346,6 +358,7 @@ export default ([
           },
           {
             name: 'Titan armor',
+            season: 4,
             items: [
               1862088022, // Scatterhorn Helm
               3066181671, // Scatterhorn Gauntlets
@@ -356,6 +369,7 @@ export default ([
           },
           {
             name: 'Warlock armor',
+            season: 4,
             items: [
               2411325265, // Scatterhorn Hood
               1069453608, // Scatterhorn Wraps
@@ -366,6 +380,7 @@ export default ([
           },
           {
             name: "Spider's Wanted Escapee Bounties",
+            season: 4,
             itemGroups: [
               [
                 3334276333, // Death by Scorn
@@ -380,6 +395,7 @@ export default ([
           },
           {
             name: "Eliminated Barons' armor",
+            season: 4,
             itemGroups: [
               [
                 2932919026, // Nea-Thonis Breather
@@ -400,6 +416,7 @@ export default ([
           },
           {
             name: 'Extras',
+            season: 4,
             items: [
               1226584228, // Tangled Rust
               1226584229 // Tangled Bronze
@@ -415,6 +432,7 @@ export default ([
         sections: [
           {
             name: 'Weapons',
+            season: 4,
             items: [
               640114618, // Tigerspite
               3242168339, // Vouchsafe
@@ -427,6 +445,7 @@ export default ([
           },
           {
             name: 'Hunter armor',
+            season: 4,
             items: [
               2824453288, // Reverie Dawn Casque
               1705856569, // Reverie Dawn Grasps
@@ -437,6 +456,7 @@ export default ([
           },
           {
             name: 'Titan armor',
+            season: 4,
             items: [
               4097166900, // Reverie Dawn Helm
               2503434573, // Reverie Dawn Gauntlets
@@ -447,6 +467,7 @@ export default ([
           },
           {
             name: 'Warlock armor',
+            season: 4,
             items: [
               185695659, // Reverie Dawn Hood
               2761343386, // Reverie Dawn Gloves
@@ -457,11 +478,12 @@ export default ([
           },
           {
             name: 'Extras',
+            season: 4,
             items: [
               813936739, // Starlight Shell
-              2844014413, // Pallas Galliot
               1317468652, // Harbinger's Echo
-              1317468653 // Silver Tercel
+              1317468653, // Silver Tercel
+              2844014413 // Pallas Galliot
             ]
           }
         ]
@@ -479,6 +501,7 @@ export default ([
         sections: [
           {
             name: 'Weapons',
+            season: 4,
             items: [
               819441402, // Misfit
               3501969491, // The Cut and Run
@@ -496,6 +519,7 @@ export default ([
           },
           {
             name: 'Hunter armor',
+            season: 4,
             itemGroups: [
               [
                 4261835528, // Tangled Web Mask
@@ -522,6 +546,7 @@ export default ([
           },
           {
             name: 'Titan armor',
+            season: 4,
             itemGroups: [
               [
                 2982412348, // Tangled Web Helm
@@ -548,6 +573,7 @@ export default ([
           },
           {
             name: 'Warlock armor',
+            season: 4,
             itemGroups: [
               [
                 1664085089, // Tangled Web Hood
@@ -581,6 +607,7 @@ export default ([
         sections: [
           {
             name: 'Hunter armor',
+            season: 4,
             items: [
               2685109601, // Dragonfly Regalia Mask',
               3523029112, // Dragonfly Regalia Grasps
@@ -591,6 +618,7 @@ export default ([
           },
           {
             name: 'Titan armor',
+            season: 4,
             items: [
               1961788365, // Dragonfly Regalia Helm
               2614454204, // Dragonfly Regalia Gauntlets
@@ -601,6 +629,7 @@ export default ([
           },
           {
             name: 'Warlock armor',
+            season: 4,
             items: [
               3516622758, // Dragonfly Regalia Mandible
               2530582647, // Dragonfly Regalia Reaches
@@ -611,6 +640,7 @@ export default ([
           },
           {
             name: 'Emotes',
+            season: 4,
             items: [
               28673365, // Poultry Petting'
               132405572, // All Alone'
@@ -634,6 +664,7 @@ export default ([
           },
           {
             name: 'Ghosts',
+            season: 4,
             items: [
               1106697449, // Peerless Precision Shell
               1106697448, // S.H.A.N.K. Shell
@@ -655,6 +686,7 @@ export default ([
           },
           {
             name: 'Ships',
+            season: 4,
             items: [
               460688467, // Aeviternal XXII
               460688466, // Death to Kells
@@ -676,6 +708,7 @@ export default ([
           },
           {
             name: 'Sparrows',
+            season: 4,
             items: [
               523189763, // Hecuba-S
               523189762, // Warrior's Steed
@@ -696,6 +729,7 @@ export default ([
           },
           {
             name: 'Shaders',
+            season: 4,
             items: [
               2815102890, // Smashing Success
               2815102891, // Melchizedek Bramble
