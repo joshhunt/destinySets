@@ -62,7 +62,7 @@ export default ([
             items: [
                2390666069, // High-Risk, High-Reward (Emblem)
                1075647353, // Vanguard Terminus (Emblem)
-               2788911997 // Vanguard Divide (Shader)
+               2788911997, // Vanguard Divide (Shader)
                2788911999, // Vanguard Veteran (Shader)
                2788911998 // Vanguard Metallic (Shader)
             ]
@@ -193,7 +193,7 @@ export default ([
                 1471300080, // A Cold Wind Blowin'
                 540603119, // Primeval Prime
                 540603118, // Ludomaniacal
-                1335424933 // Gambit Suede
+                1335424933, // Gambit Suede
                 1335424935, // Gambit Leather
                 1335424934 // Gambit Chrome
             ]
