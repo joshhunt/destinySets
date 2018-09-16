@@ -133,6 +133,7 @@ export default ([
               2331063860, // Grind Underfoot emblem
               2331063861, // Together, For Glory! emblem
               2543722796, // Praetorian Visage shader
+              3502530756, // Atop the Spire emblem
               2543722797 // Calus's Shadow shader
             ]
           }
