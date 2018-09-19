@@ -7,6 +7,7 @@ import { Provider } from 'react-redux';
 import App from './views/App';
 import Diff from './views/Diff';
 import Inventory from './views/Inventory';
+import Triumphs from './views/Triumphs';
 import Debug from './views/Debug';
 import DataExplorerRedirect from './views/DataExplorerRedirect';
 
@@ -69,6 +70,11 @@ export default class AppRouter extends Component {
               component={Inventory}
               setData={sets.allItemsDeluxe}
             />
+
+            <Route path="/triumphs" component={Triumphs} />
+            <Route path="/triumphs/:presentationNodeA" component={Triumphs} />
+            <Route path="/triumphs/:presentationNodeA/:presentationNodeB" component={Triumphs} />
+            <Route path="/triumphs/:presentationNodeA/:presentationNodeB/:presentationNodeC" component={Triumphs} />
 
             <Route path="/data(/:itemHash)" component={DataExplorerRedirect} />
             <Route path="/diff" component={Diff} />

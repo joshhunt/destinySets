@@ -1,0 +1,31 @@
+.nodes
+  content: 'lol'
+
+.children
+  display: grid
+  grid-template-columns: 1fr 1fr
+  grid-column-gap: 10px
+  grid-row-gap: 10px
+
+.node
+  grid-column: span 2
+
+.record
+  min-width: 400px
+
+.node
+.record
+  color: inherit
+  text-decoration: none
+
+.panes
+  display: flex
+  overflow: auto
+
+.pane
+  padding: 15px
+  margin: 15px
+  min-width: 350px
+
+  & + &
+    border-left: 2px solid rgba(white, .5)

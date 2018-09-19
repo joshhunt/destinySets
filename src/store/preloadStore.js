@@ -20,15 +20,16 @@ import { fasterGetDefinitions } from 'app/lib/definitions';
 const log = require('app/lib/log')('authProvider');
 
 export const REQUIRED_DEFINITIONS = [
-    'DestinyChecklistDefinition',
-    'DestinyObjectiveDefinition',
-    'DestinyStatDefinition',
-    'DestinyVendorDefinition',
-    'DestinyInventoryItemDefinition',
-    'DestinyCollectibleDefinition',
-    'DestinyPresentationNodeDefinition',
-    'DestinyFactionDefinition'
-  ];
+  'DestinyChecklistDefinition',
+  'DestinyObjectiveDefinition',
+  'DestinyStatDefinition',
+  'DestinyVendorDefinition',
+  'DestinyInventoryItemDefinition',
+  'DestinyCollectibleDefinition',
+  'DestinyPresentationNodeDefinition',
+  'DestinyRecordDefinition',
+  'DestinyFactionDefinition'
+];
 
 export default function preloadStore(store) {
   const prevFilters = ls.getFilters();
