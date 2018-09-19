@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
 import { connect } from 'react-redux';
+import { get } from 'lodash';
 
 import PresentationNode from 'app/components/PresentationNode';
 import Record from 'app/components/Record';
@@ -38,7 +39,8 @@ class Triumphs extends Component {
       rootSealsNode,
       subNodeA,
       subNodeB,
-      subNodeC
+      subNodeC,
+      score
     } = this.props;
 
     if (!rootTriumphNode) {
@@ -49,6 +51,11 @@ class Triumphs extends Component {
       <div>
         <div className={s.panes}>
           <div className={s.pane}>
+            <div className={s.scoreBox}>
+              <div className={s.scoreTitle}>Total score</div>
+              <div className={s.scoreScore}>{score}</div>
+            </div>
+
             <h2>Triumphs</h2>
             <div className={s.children}>
               {rootTriumphNode.children.presentationNodes.map(node => (
@@ -127,6 +134,8 @@ const mapStateToProps = (state, ownProps) => {
     return {};
   }
 
+  const score = get(state, 'profile.profile.profileRecords.data.score');
+
   return {
     rootTriumphNode: nodeDefs[ROOT_TRIUMPHS_NODE_HASH],
     rootSealsNode: nodeDefs[ROOT_SEALS_NODE_HASH],
@@ -134,6 +143,8 @@ const mapStateToProps = (state, ownProps) => {
     subNodeB: nodeDefs[ownProps.params.presentationNodeB],
     subNodeC: nodeDefs[ownProps.params.presentationNodeC],
     nodeDefs,
+    score,
+    scoresdf: 'hesdf',
     recordDefs
   };
 };
