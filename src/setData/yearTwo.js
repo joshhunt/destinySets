@@ -60,8 +60,12 @@ export default ([
             name: 'Extras',
             season: 4,
             items: [
+               2793382470, // Wisteria Orbit Shell (Ghost)
+               1013544390, // Mimesis Drive (Sparrow)
+               4030297244, // Buckthorn Approach (Ship)
                2390666069, // High-Risk, High-Reward (Emblem)
                1075647353, // Vanguard Terminus (Emblem)
+               1263710510, // Always North (Shader)
                2788911997, // Vanguard Divide (Shader)
                2788911999, // Vanguard Veteran (Shader)
                2788911998 // Vanguard Metallic (Shader)
