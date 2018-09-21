@@ -267,9 +267,15 @@ export default ([
             name: 'Weapons',
             season: 4,
             items: [
+              2069224589, // One Thousand Voices
               686951703, // The Supremacy
               4094657108, // Techeun Force
-              2069224589 // One Thousand Voices
+              654370424, // Nation of Beasts
+              568515759, // Chattering Bone
+              3799980700, // Transfiguration
+              601592879, // Age-Old Bond
+              2721249463, // Tyranny of Heaven
+              2545083870 // Apex Predator
             ]
           },
 
@@ -316,13 +322,7 @@ export default ([
               3862768196, // Wish-Maker Shell
               2081719592, // Cleansing Knife
               2269373482, // Ermine TAC-717
-              1059304051, // Wish No More
-              654370424, // Nation of Beasts
-              568515759, // Chattering Bone
-              3799980700, // Transfiguration
-              601592879, // Age-Old Bond
-              2721249463, // Tyranny of Heaven
-              2545083870 // Apex Predator
+              1059304051 // Wish No More
             ]
           }
         ]
