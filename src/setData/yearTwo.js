@@ -323,7 +323,7 @@ export default ([
           },
 
           {
-            name: 'Other',
+            name: 'Extras',
             season: 4,
             items: [
               3862768196, // Wish-Maker Shell
