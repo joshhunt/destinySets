@@ -255,6 +255,13 @@ export default ([
               2455992644, // Iron Remembrance Legs
               3345886183 // Bond of Remembrance
             ]
+          },
+          {
+            name: 'Extras',
+            season: 4,
+            items: [
+              2448092902 // Rusted Iron (Shader)
+            ]
           }
         ]
       },
