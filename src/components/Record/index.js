@@ -36,7 +36,10 @@ function Record({
         )}
 
       <div className={s.main}>
-        <div className={s.name}>{node.displayProperties.name}</div>
+        <div className={s.name}>
+          <div className={s.nameName}>{node.displayProperties.name}</div>
+          <div className={s.points}>{node.completionInfo.ScoreValue} pts</div>
+        </div>
         <div className={s.description}>
           <small>{node.displayProperties.description}</small>
         </div>
