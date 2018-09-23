@@ -152,7 +152,8 @@ export default ([
               4077196130, // Trust
               2653316158, // Pillager
               991314988, // Bad Omens
-              3100452337 // Dreaded Venture
+              3100452337, // Dreaded Venture
+              2217366863 // Parcel of Stardust
             ]
           },
           {
