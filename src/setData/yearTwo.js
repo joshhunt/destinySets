@@ -655,23 +655,24 @@ export default ([
             name: 'Emotes',
             season: 4,
             items: [
+              2611996036, // All Mine'
+              1863079869, // Red Card'
               28673365, // Poultry Petting'
               132405572, // All Alone'
               704532774, // Sad Trombone'
-              1617583310, // Standoff'
-              1863079869, // Red Card'
-              2611996036, // All Mine'
-              3201469151, // Cerebral Explosion'
+              1332836182, // Unbridled Enthusiasm
+              3201469151, // Cerebral Explosion' (CEREBRAL BUNDLE)
+              3256616328, // Accidental Dance
               4080789277, // Beguiling Dance'
               2604685098, // Linear Fusion Dance'
               1036776535, // Denial Dance'
-              1314734302, // Smooth Dance'
               1338552830, // Potential Dance'
+              1314734302, // Smooth Dance'
               2748215252, // Awkward Greeting'
-              448262266, // Rev It Up'
+              2217132045, // Do Not Want'
               503951839, // What Is That?!'
               896553940, // Lucky Shot'
-              2217132045, // Do Not Want'
+              448262266, // Rev It Up'
               1267161032 // Warm Up
             ]
           },
@@ -693,8 +694,10 @@ export default ([
               374922805, // Freyja Shell
               374922810, // Spectral Circuit Shell
               374922811, // Eyeball Shell
+              1625672313, // Mansansas Shell
               1625672312, // Atlantis Shell
-              1625672315 // Chevron Shell
+              1625672315, // Chevron Shell
+              374922805 // Freyja Shell (AWAKENED BUNDLE)
             ]
           },
           {
@@ -707,6 +710,9 @@ export default ([
               460688464, // The Tall Tale
               3600237168, // Stellar Pavements
               3600237169, // Impolite Company
+              1092458451, // Jewel of Saturn
+              1092458450, // Tickled Catastrophe
+              1092458449, // Astera Blade
               3600237170, // Temperance Moon
               3600237172, // Beautiful Gravities
               3600237173, // Where Stars Collide
@@ -714,9 +720,7 @@ export default ([
               3600237175, // Last Sunset
               3600237176, // Quantum Cartographer
               3600237177, // In Medias Res
-              1092458451, // Jewel of Saturn
-              1092458450, // Tickled Catastrophe
-              1092458449 // Astera Blade
+              3600237171 // Upward Spiral (AWAKENED BUNDLE)
             ]
           },
           {
@@ -728,16 +732,17 @@ export default ([
               523189761, // Ravager's Ride
               2285214174, // Jagged Darksun
               2285214175, // Here I Stand
+              1264663101, // Manta Esperanta
+              1264663100, // Battle-Shrike
+              1264663103, // Gossamer Longshot
               2285214172, // Jagged Sunstreak
               2285214173, // Majuscule Tide
-              2285214170, // Roar Defiant
               2285214171, // Thermal Runaway
               2285214168, // Endymion Cavalcade
               2285214169, // Swiftsong
               2285214166, // Mappa Mundarum
               2285214167, // Jubilee Pronto
-              1264663100, // Battle-Shrike
-              1264663103 // Gossamer Longshot
+              2285214170 // Roar Defiant (AWAKENED BUNDLE)
             ]
           },
           {
