@@ -21,7 +21,9 @@ const keys = {
 
   DESTINY_PROFILE: 'd2Profile2',
   DEBUG: 'debug',
-  _FIREBASE: 'firebase:host:destinysets' // not actually used, but needed for whitelisting
+
+  _FIREBASE: 'firebase:host:destinysets', // not actually used, but needed for whitelisting
+  _i18n: '_i18n' // used as a prefix
 };
 
 let LOCAL_STORAGE;
@@ -93,6 +95,14 @@ function save(key, value) {
     LOCAL_STORAGE = localStoragePolyfill;
     LOCAL_STORAGE.setItem(key, jason);
   }
+}
+
+export function getI18nString(path) {
+  return get(`${keys._i18n}|${path}`);
+}
+
+export function saveI18nString(path, string) {
+  return save(`${keys._i18n}|${path}`, string);
 }
 
 export function getCachedUrl(url) {

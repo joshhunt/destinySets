@@ -5,6 +5,7 @@ import cx from 'classnames';
 import * as ls from 'app/lib/ls';
 import Item from 'app/components/Item';
 import Icon from 'app/components/Icon';
+import I18NDefinitionsString from 'app/components/I18NDefinitionsString';
 
 import MasterworkCatalyst from 'app/components/MasterworkCatalyst';
 
@@ -59,7 +60,9 @@ class ItemSet extends Component {
               <div className={styles.headerText}>
                 <div className={styles.split}>
                   <div className={styles.splitMain}>
-                    <h3 className={styles.title}>{name}</h3>
+                    <h3 className={styles.title}>
+                      <I18NDefinitionsString t={name} />
+                    </h3>
                   </div>
 
                   <div className={styles.headerAccessory}>
@@ -79,7 +82,11 @@ class ItemSet extends Component {
                   </div>
                 </div>
 
-                {description && <p className={styles.desc}>{description}</p>}
+                {description && (
+                  <p className={styles.desc}>
+                    <I18NDefinitionsString t={description} />
+                  </p>
+                )}
               </div>
             </div>
           )}

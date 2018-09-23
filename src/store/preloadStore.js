@@ -28,6 +28,9 @@ export const REQUIRED_DEFINITIONS = [
   'DestinyCollectibleDefinition',
   'DestinyPresentationNodeDefinition',
   'DestinyRecordDefinition',
+  'DestinyFactionDefinition',
+  'DestinyActivityModeDefinition',
+  'DestinyPlaceDefinition',
   'DestinyFactionDefinition'
 ];
 

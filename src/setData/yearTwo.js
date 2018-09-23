@@ -1,15 +1,21 @@
 // @flow
 import type { SetPage } from '../types';
+import { i18nDefinitionString as _ } from './utils';
 
 export default ([
   {
     name: 'Activities',
     sets: [
       {
-        name: 'Strikes',
+        name: _(
+          'DestinyActivityModeDefinition[2394616003].displayProperties.name',
+          'Strikes'
+        ),
         id: 'YEAR_TWO_STRIKES',
-        description:
-          'Complete strikes and earn rank-up packages from Commander Zavala',
+        description: _(
+          'DestinyCollectibleDefinition[2589931339].sourceString',
+          'Complete strikes and earn rank-up packages from Commander Zavala.'
+        ),
         sections: [
           {
             name: 'Weapons',
@@ -60,24 +66,29 @@ export default ([
             name: 'Extras',
             season: 4,
             items: [
-               2793382470, // Wisteria Orbit Shell (Ghost)
-               1013544390, // Mimesis Drive (Sparrow)
-               4030297244, // Buckthorn Approach (Ship)
-               2390666069, // High-Risk, High-Reward (Emblem)
-               1075647353, // Vanguard Terminus (Emblem)
-               1263710510, // Always North (Shader)
-               2788911997, // Vanguard Divide (Shader)
-               2788911999, // Vanguard Veteran (Shader)
-               2788911998 // Vanguard Metallic (Shader)
+              2793382470, // Wisteria Orbit Shell (Ghost)
+              1013544390, // Mimesis Drive (Sparrow)
+              4030297244, // Buckthorn Approach (Ship)
+              2390666069, // High-Risk, High-Reward (Emblem)
+              1075647353, // Vanguard Terminus (Emblem)
+              1263710510, // Always North (Shader)
+              2788911997, // Vanguard Divide (Shader)
+              2788911999, // Vanguard Veteran (Shader)
+              2788911998 // Vanguard Metallic (Shader)
             ]
           }
         ]
       },
       {
-        name: 'Crucible',
+        name: _(
+          'DestinyActivityModeDefinition[1164760504].displayProperties.name',
+          'Crucible'
+        ),
         id: 'YEAR_TWO_CRUCIBLE',
-        description:
-          'Complete Crucible matches and earn rank-up packages from Lord Shaxx',
+        description: _(
+          'DestinyCollectibleDefinition[1279318105].sourceString',
+          'Complete Crucible matches and earn rank-up packages from Lord Shaxx.'
+        ),
         sections: [
           {
             name: 'Weapons',
@@ -128,19 +139,24 @@ export default ([
             name: 'Extras',
             season: 4,
             items: [
-                1131244817, // Damage, Incorporated
-                2588739576, // Crucible Solemnity
-                2588739578, // Crucible Legacy
-                2588739579 // Crucible Metallic
+              1131244817, // Damage, Incorporated
+              2588739576, // Crucible Solemnity
+              2588739578, // Crucible Legacy
+              2588739579 // Crucible Metallic
             ]
           }
         ]
       },
       {
-        name: 'Gambit',
+        name: _(
+          'DestinyActivityModeDefinition[1848252830].displayProperties.name',
+          'Gambit'
+        ),
         id: 'YEAR_TWO_GAMBIT',
-        description:
-          'Complete Gambit matches and earn rank-up packages from the Drifter',
+        description: _(
+          'DestinyCollectibleDefinition[1534387875].sourceString',
+          'Complete Gambit matches and earn rank-up packages from the Drifter.'
+        ),
         sections: [
           {
             name: 'Weapons',
@@ -192,24 +208,29 @@ export default ([
             name: 'Extras',
             season: 4,
             items: [
-                4257852942, // Furtive Shell
-                4271205858, // Antediluvian
-                3610893760, // Drift Apart
-                1471300080, // A Cold Wind Blowin'
-                540603119, // Primeval Prime
-                540603118, // Ludomaniacal
-                1335424933, // Gambit Suede
-                1335424935, // Gambit Leather
-                1335424934 // Gambit Chrome
+              4257852942, // Furtive Shell
+              4271205858, // Antediluvian
+              3610893760, // Drift Apart
+              1471300080, // A Cold Wind Blowin'
+              540603119, // Primeval Prime
+              540603118, // Ludomaniacal
+              1335424933, // Gambit Suede
+              1335424935, // Gambit Leather
+              1335424934 // Gambit Chrome
             ]
           }
         ]
       },
       {
-        name: 'Iron Banner',
+        name: _(
+          'DestinyActivityModeDefinition[1826469369].displayProperties.name',
+          'Iron Banner'
+        ),
         id: 'YEAR_TWO_IRON_BANNER',
-        description:
-          'Complete Iron Banner matches and earn rank-up packages from Lord Saladin.',
+        description: _(
+          'DestinyCollectibleDefinition[3008980338].sourceString',
+          'Complete Iron Banner matches and earn rank-up packages from Lord Saladin.'
+        ),
         sections: [
           {
             name: 'Weapons',
@@ -259,9 +280,15 @@ export default ([
         ]
       },
       {
-        name: 'Last Wish raid',
+        name: _(
+          'DestinyRecordDefinition[3688903951].displayProperties.name',
+          'Raid: Last Wish'
+        ),
         id: 'YEAR_TWO_LAST_WISH',
-        description: 'Last Wish raid.',
+        description: _(
+          'DestinyCollectibleDefinition[3471068543].sourceString',
+          'Last Wish raid.'
+        ),
         sections: [
           {
             name: 'Weapons',
@@ -333,10 +360,15 @@ export default ([
     name: 'Destinations',
     sets: [
       {
-        name: 'The Tangled Shore',
+        name: _(
+          'DestinyPlaceDefinition[975684424].displayProperties.name',
+          'The Tangled Shore'
+        ),
         id: 'year-two-tangled-shore',
-        description:
-          'Complete activities and earn rank-up packages on the Tangled Shore',
+        description: _(
+          'DestinyCollectibleDefinition[1350431641].sourceString',
+          'Complete activities and earn rank-up packages on the Tangled Shore.'
+        ),
         sections: [
           {
             name: 'Weapons',
@@ -430,10 +462,15 @@ export default ([
         ]
       },
       {
-        name: 'The Dreaming City',
+        name: _(
+          'DestinyPlaceDefinition[2877881518].displayProperties.name',
+          'The Dreaming City'
+        ),
         id: 'year-two-dreaming-city',
-        description:
-          'Complete activities and earn rank-up packages in the Dreaming City',
+        description: _(
+          'DestinyCollectibleDefinition[1350431640].sourceString',
+          'Complete activities and earn rank-up packages in the Dreaming City.'
+        ),
         sections: [
           {
             name: 'Weapons',
@@ -499,8 +536,14 @@ export default ([
     name: 'Other',
     sets: [
       {
-        name: 'Legendary Engrams',
-        description: 'Gunsmith and other drops',
+        name: _(
+          'DestinyVendorDefinition[3163810067].displayProperties.name',
+          'Legendary Engram'
+        ),
+        description: _(
+          'DestinyCollectibleDefinition[256984755].sourceString',
+          'Open Legendary engrams and earn faction rank-up packages.'
+        ),
         id: 'YEAR_TWO_ENGRAMS',
         big: true,
         sections: [
@@ -606,8 +649,15 @@ export default ([
         ]
       },
       {
-        name: 'Eververse',
+        name: _(
+          'DestinyFactionDefinition[1393733616].displayProperties.name',
+          'Eververse'
+        ),
         id: 'YEAR_TWO_EVERVERSE',
+        description: _(
+          'DestinyCollectibleDefinition[764786884].sourceString',
+          'Seasonal Bright Engrams.'
+        ),
         big: true,
         sections: [
           {
