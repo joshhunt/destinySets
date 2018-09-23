@@ -24,7 +24,7 @@ export default ([
             ]
           },
           {
-            name: 'Hunter armor',
+            name: 'Hunter Armor',
             season: 4,
             items: [
               575676771, // Vigil of Heroes
@@ -35,7 +35,7 @@ export default ([
             ]
           },
           {
-            name: 'Titan armor',
+            name: 'Titan Armor',
             season: 4,
             items: [
               1514863327, // Vigil of Heroes
@@ -46,7 +46,7 @@ export default ([
             ]
           },
           {
-            name: 'Warlock armor',
+            name: 'Warlock Armor',
             season: 4,
             items: [
               3213912958, // Vigil of Heroes
@@ -92,7 +92,7 @@ export default ([
             ]
           },
           {
-            name: 'Hunter armor',
+            name: 'Hunter Armor',
             season: 4,
             items: [
               1127237110, // Wing Contender
@@ -103,7 +103,7 @@ export default ([
             ]
           },
           {
-            name: 'Titan armor',
+            name: 'Titan Armor',
             season: 4,
             items: [
               2124666626, // Wing Discipline
@@ -114,7 +114,7 @@ export default ([
             ]
           },
           {
-            name: 'Warlock armor',
+            name: 'Warlock Armor',
             season: 4,
             items: [
               3724026171, // Wing Theorem
@@ -157,7 +157,7 @@ export default ([
             ]
           },
           {
-            name: 'Hunter armor',
+            name: 'Hunter Armor',
             season: 4,
             items: [
               629787707, // Ancient Apocalypse Mask
@@ -168,7 +168,7 @@ export default ([
             ]
           },
           {
-            name: 'Titan armor',
+            name: 'Titan Armor',
             season: 4,
             items: [
               3031848199, // Ancient Apocalypse Helm
@@ -179,7 +179,7 @@ export default ([
             ]
           },
           {
-            name: 'Warlock armor',
+            name: 'Warlock Armor',
             season: 4,
             items: [
               1236746902, // Ancient Apocalypse Hood
@@ -225,7 +225,7 @@ export default ([
             ]
           },
           {
-            name: 'Hunter armor',
+            name: 'Hunter Armor',
             season: 4,
             items: [
               1944853984, // Iron Remembrance Casque
@@ -236,7 +236,7 @@ export default ([
             ]
           },
           {
-            name: 'Titan armor',
+            name: 'Titan Armor',
             season: 4,
             items: [
               485774636, // Iron Remembrance Helm
@@ -247,7 +247,7 @@ export default ([
             ]
           },
           {
-            name: 'Warlock armor',
+            name: 'Warlock Armor',
             season: 4,
             items: [
               2340483067, // Iron Remembrance Hood
@@ -288,7 +288,7 @@ export default ([
           },
 
           {
-            name: 'Hunter armor',
+            name: 'Hunter Armor',
             season: 4,
             items: [
               3838639757, // Mask of the Great Hunt
@@ -300,7 +300,7 @@ export default ([
           },
 
           {
-            name: 'Titan armor',
+            name: 'Titan Armor',
             season: 4,
             items: [
               2274520361, // Helm of the Great Hunt
@@ -312,7 +312,7 @@ export default ([
           },
 
           {
-            name: 'Warlock armor',
+            name: 'Warlock Armor',
             season: 4,
             items: [
               3251351304, // Hood of the Great Hunt
@@ -359,7 +359,7 @@ export default ([
             ]
           },
           {
-            name: 'Hunter armor',
+            name: 'Hunter Armor',
             season: 4,
             items: [
               2276115770, // Scatterhorn Mask
@@ -370,7 +370,7 @@ export default ([
             ]
           },
           {
-            name: 'Titan armor',
+            name: 'Titan Armor',
             season: 4,
             items: [
               1862088022, // Scatterhorn Helm
@@ -381,7 +381,7 @@ export default ([
             ]
           },
           {
-            name: 'Warlock armor',
+            name: 'Warlock Armor',
             season: 4,
             items: [
               2411325265, // Scatterhorn Hood
@@ -407,7 +407,7 @@ export default ([
             ]
           },
           {
-            name: "Eliminated Barons' armor",
+            name: "Eliminated Barons' Armor",
             season: 4,
             itemGroups: [
               [
@@ -457,7 +457,7 @@ export default ([
             ]
           },
           {
-            name: 'Hunter armor',
+            name: 'Hunter Armor',
             season: 4,
             items: [
               2824453288, // Reverie Dawn Casque
@@ -468,7 +468,7 @@ export default ([
             ]
           },
           {
-            name: 'Titan armor',
+            name: 'Titan Armor',
             season: 4,
             items: [
               4097166900, // Reverie Dawn Helm
@@ -479,7 +479,7 @@ export default ([
             ]
           },
           {
-            name: 'Warlock armor',
+            name: 'Warlock Armor',
             season: 4,
             items: [
               185695659, // Reverie Dawn Hood
@@ -531,7 +531,7 @@ export default ([
             ]
           },
           {
-            name: 'Hunter armor',
+            name: 'Hunter Armor',
             season: 4,
             itemGroups: [
               [
@@ -558,7 +558,7 @@ export default ([
             ]
           },
           {
-            name: 'Titan armor',
+            name: 'Titan Armor',
             season: 4,
             itemGroups: [
               [
@@ -585,7 +585,7 @@ export default ([
             ]
           },
           {
-            name: 'Warlock armor',
+            name: 'Warlock Armor',
             season: 4,
             itemGroups: [
               [
@@ -619,7 +619,7 @@ export default ([
         big: true,
         sections: [
           {
-            name: 'Hunter armor',
+            name: 'Hunter Armor',
             season: 4,
             items: [
               2685109601, // Dragonfly Regalia Mask',
@@ -630,7 +630,7 @@ export default ([
             ]
           },
           {
-            name: 'Titan armor',
+            name: 'Titan Armor',
             season: 4,
             items: [
               1961788365, // Dragonfly Regalia Helm
@@ -641,7 +641,7 @@ export default ([
             ]
           },
           {
-            name: 'Warlock armor',
+            name: 'Warlock Armor',
             season: 4,
             items: [
               3516622758, // Dragonfly Regalia Mandible
