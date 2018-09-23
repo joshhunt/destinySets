@@ -690,6 +690,24 @@ export default ([
             ]
           },
           {
+            name: 'Ghost Projections',
+            season: 4,
+            items: [
+              3148574213, // Horned Horse Projection
+              3148574212, // Sovereign Projection
+              3148574215, // Fortunate Projection
+              3148574214, // Jeweled Projection
+              3148574209, // Beastly Projection
+              3148574208, // Vanguard Projection
+              3148574211, // Crucible Projection
+              3148574210, // Jade Rabbit Projection
+              3148574221, // SUROS Projection
+              3148574220, // Häkke Projection
+              1927164028, // Electrostatic Projection
+              1927164029  // Tex Mechanica Projection
+            ]
+          },
+          {
             name: 'Ships',
             season: 4,
             items: [

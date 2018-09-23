@@ -7,6 +7,7 @@ import {
   WEAPON,
   ARMOR,
   GHOST,
+  GHOST_PROJECTION,
   EMOTES,
   SHIP,
   SPARROW,
@@ -104,6 +105,8 @@ export default function sortItems(_items, verbose = false) {
       return 'weapon';
     } else if (item.itemCategoryHashes.includes(GHOST)) {
       return 'ghosts';
+    } else if (item.itemCategoryHashes.includes(GHOST_PROJECTION)) {
+      return 'ghostProjections';
     } else if (item.itemCategoryHashes.includes(EMOTES)) {
       return 'emotes';
     } else if (item.itemCategoryHashes.includes(SHIP)) {
@@ -148,6 +151,7 @@ export default function sortItems(_items, verbose = false) {
     },
     { name: 'Emotes', items: sectionItems.emotes },
     { name: 'Ghosts', items: sectionItems.ghosts },
+    { name: 'Ghost Projections', items: sectionItems.ghostProjections },
     { name: 'Ships', items: sectionItems.ships },
     { name: 'Sparrows', items: sectionItems.sparrows },
     { name: 'Emblems', items: sectionItems.emblems },

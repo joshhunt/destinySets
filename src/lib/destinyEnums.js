@@ -26,6 +26,7 @@ export const WEAPON = 1;
 export const EMBLEM = 19;
 export const ARMOR = 20;
 export const GHOST = 39;
+export const GHOST_PROJECTION = 1404791674;
 export const SHADER = 41;
 export const SHIP = 42;
 export const SPARROW = 43;

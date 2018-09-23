@@ -30,10 +30,6 @@ export default ([
             name: 'Power',
             query: 'is:legendary is:weapon is:power'
           },
-          {
-            name: 'Ghosts',
-            query: 'is:legendary is:ghost'
-          }
         ]
       },
       {
@@ -42,7 +38,14 @@ export default ([
         big: true,
         query: 'is:legendary is:armor',
         sections: []
-      }
+      },
+      {
+        name: 'Ghosts',
+        id: 'ALL_GHOSTS',
+        big: true,
+        query: 'is:ghostly',
+        sections: []
+      },
     ]
   },
 
