@@ -38,7 +38,9 @@ function Record({
       <div className={s.main}>
         <div className={s.name}>
           <div className={s.nameName}>{node.displayProperties.name}</div>
-          <div className={s.points}>{node.completionInfo.ScoreValue} pts</div>
+          <div className={s.points}>
+            {node.completionInfo && node.completionInfo.ScoreValue} pts
+          </div>
         </div>
         <div className={s.description}>
           <small>{node.displayProperties.description}</small>
@@ -58,7 +60,7 @@ function Record({
   );
 }
 
-const enumerateState = state => ({
+export const enumerateState = state => ({
   none: flagEnum(state, 0),
   recordRedeemed: flagEnum(state, 1),
   rewardUnavailable: flagEnum(state, 2),

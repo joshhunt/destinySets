@@ -33,6 +33,14 @@ function PresentationNodeChildren({ node, linkPrefix }) {
 }
 
 class Triumphs extends Component {
+  getRef = ref => {
+    this.scrollerRef = ref;
+  };
+
+  componentDidUpdate() {
+    this.scrollerRef.scrollTo(this.scrollerRef.scrollWidth, 0);
+  }
+
   render() {
     const {
       rootTriumphNode,
@@ -49,7 +57,7 @@ class Triumphs extends Component {
 
     return (
       <div>
-        <div className={s.panes}>
+        <div className={s.panes} ref={this.getRef}>
           <div className={s.pane}>
             <div className={s.scoreBox}>
               <div className={s.scoreTitle}>Total score</div>

@@ -1,9 +1,13 @@
+$trackHeight = 5px
+
 .root
   display: flex
   border: 1px solid rgba(white, .1)
   background: rgba(white, .03)
   padding: 10px
   align-items: center
+  position: relative
+  padding-bottom: $trackHeight + 10px
 
 .accessory
   content: 'accessory'
@@ -20,3 +24,29 @@
 
 .name
   font-size: 16px
+
+.progress
+  position: absolute
+  bottom: 0
+  left: 0
+  right: 0
+  background: rgba(white, .075)
+  height: $trackHeight
+  font-size: 10px
+
+.progressTrack
+  position: absolute
+  top: 0
+  left: 0
+  bottom: 0
+  background: rgba(white, .1)
+
+.progressCount
+  position: absolute
+  top: 0
+  right: 0
+  bottom: 0
+  display: flex
+  align-items: center
+  padding: 0 5px
+  display: none
