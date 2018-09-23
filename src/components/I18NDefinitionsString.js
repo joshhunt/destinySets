@@ -8,7 +8,18 @@ function I18NDefinitionsString({ msg }) {
   return msg || 'nothing';
 }
 
-const JUNK_PREFIXES = ['Source: ', '入手方法: '];
+const JUNK_PREFIXES = [
+  'Source: ',
+  '入手方法: ',
+  'Fonte: ',
+  'Source : ',
+  'Quelle: ',
+  'Fuente: ',
+  'Источник: ',
+  'Źródło: ',
+  '來源：',
+  '출처: '
+];
 const JUNK_REGEX = new RegExp(`^(${JUNK_PREFIXES.join('|')})`);
 
 const cleanup = msg => {
