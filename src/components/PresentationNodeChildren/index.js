@@ -10,6 +10,10 @@ import Record from 'app/components/Record';
 import s from './styles.styl';
 
 function PresentationNodeChildren({ node, linkPrefix }) {
+  if (!node) {
+    return null;
+  }
+
   return (
     <div>
       <h2>{node.displayProperties.name}</h2>
@@ -40,7 +44,7 @@ const mapStateToProps = (state, ownProps) => {
   } = state.definitions;
 
   return {
-    node: nodeDefs[ownProps.hash]
+    node: nodeDefs && nodeDefs[ownProps.hash]
   };
 };
 

@@ -1,11 +1,8 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router';
 import { connect } from 'react-redux';
 import { get } from 'lodash';
 
-import PresentationNode from 'app/components/PresentationNode';
 import PresentationNodeChildren from 'app/components/PresentationNodeChildren';
-import Record from 'app/components/Record';
 
 import s from './styles.styl';
 
@@ -30,19 +27,7 @@ class Triumphs extends Component {
   }
 
   render() {
-    const {
-      rootTriumphNode,
-      rootSealsNode,
-      subNodeA,
-      subNodeB,
-      subNodeC,
-      score,
-      params
-    } = this.props;
-
-    if (!rootTriumphNode) {
-      return null;
-    }
+    const { score, params } = this.props;
 
     return (
       <div>
@@ -101,28 +86,9 @@ class Triumphs extends Component {
 }
 
 const mapStateToProps = (state, ownProps) => {
-  const {
-    DestinyPresentationNodeDefinition: nodeDefs,
-    DestinyRecordDefinition: recordDefs
-  } = state.definitions;
-
-  if (!nodeDefs) {
-    return {};
-  }
-
   const score = get(state, 'profile.profile.profileRecords.data.score');
 
-  return {
-    rootTriumphNode: nodeDefs[ROOT_TRIUMPHS_NODE_HASH],
-    rootSealsNode: nodeDefs[ROOT_SEALS_NODE_HASH],
-    subNodeA: nodeDefs[ownProps.params.presentationNodeA],
-    subNodeB: nodeDefs[ownProps.params.presentationNodeB],
-    subNodeC: nodeDefs[ownProps.params.presentationNodeC],
-    nodeDefs,
-    score,
-    scoresdf: 'hesdf',
-    recordDefs
-  };
+  return { score };
 };
 
 export default connect(mapStateToProps)(Triumphs);
