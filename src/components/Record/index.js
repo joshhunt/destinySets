@@ -9,6 +9,7 @@ import { objectiveInstancesSelector } from 'app/store/selectors';
 
 import BungieImage from 'app/components/BungieImage';
 import Objectives from 'app/components/Objectives';
+import Icon from 'app/components/Icon';
 
 import s from './styles.styl';
 
@@ -28,6 +29,12 @@ function Record({
 
   return (
     <div className={cx(className, s.root, completed && s.completed)}>
+      {completed && (
+        <div className={s.tick}>
+          <Icon icon="check" />
+        </div>
+      )}
+
       {node.displayProperties &&
         node.displayProperties.icon && (
           <div className={s.accessory}>

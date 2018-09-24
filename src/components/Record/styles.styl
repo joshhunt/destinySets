@@ -1,14 +1,18 @@
+$green = #44bd32;
+
 .root
   display: flex
   border: 1px solid rgba(white, .1)
   background: rgba(white, .02)
   padding: 15px
+  position: relative
   // align-items: center
 
 .completed
-  border-color: rgba(#27ae60, .5)
-  background: rgba(#27ae60, .1)
-  color: lighten(#27ae60, 80%)
+  border-color: rgba($green, .5)
+  background: rgba($green, .1)
+  color: lighten($green, 80%)
+  opacity: .4
 
 .accessory
   margin-right: 15px
@@ -38,3 +42,19 @@
 
 .description
   line-height: 1.2
+
+
+.tick
+  position: absolute
+  top: -5px
+  right: -5px
+  background: $green
+  width: 20px
+  height: 20px
+  font-size: 14px
+  line-height: 1
+  border-radius: 50px
+  display: flex
+  align-items: center
+  justify-content: center
+

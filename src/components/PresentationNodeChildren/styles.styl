@@ -14,3 +14,59 @@
 .record
   color: inherit
   text-decoration: none
+
+.top
+  display: flex
+  margin: 15px 0
+  align-items: center
+  padding: 10px
+  position: relative
+
+  h2
+    margin: 0
+
+.iconWrapper
+  margin-right: 15px
+
+.icon
+  display: block
+  height: 50px
+
+.iconCorners
+  content: ''
+
+  &:before
+  &:after
+    content: ''
+    position: absolute
+    display: block
+    width: 8px
+    height: 8px
+    border: 1px solid rgba(white, .5)
+
+.iconCornersTop
+  composes: iconCorners
+
+  &:before
+    top: 0
+    left: 0
+    border-style: solid none none solid
+
+  &:after
+    top: 0
+    right: 0
+    border-style: solid solid none none
+
+.iconCornersBottom
+  composes: iconCorners
+
+  &:before
+    bottom: 0
+    left: 0
+    border-style: none none solid solid
+
+  &:after
+    bottom: 0
+    right: 0
+    border-style: none solid solid none
+
