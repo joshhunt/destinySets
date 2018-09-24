@@ -4,33 +4,17 @@ import { connect } from 'react-redux';
 import { get } from 'lodash';
 
 import PresentationNode from 'app/components/PresentationNode';
+import PresentationNodeChildren from 'app/components/PresentationNodeChildren';
 import Record from 'app/components/Record';
 
 import s from './styles.styl';
 
+const ROOT_TRIUMPHS_NODE_HASH = 1024788583;
+const ROOT_SEALS_NODE_HASH = 1652422747;
+
 const OVERRIDE = {
   1664035662: 3319885427
 };
-
-function PresentationNodeChildren({ node, linkPrefix }) {
-  return (
-    <div className={s.children}>
-      {node.children.presentationNodes.map(({ presentationNodeHash }) => (
-        <Link
-          className={s.node}
-          key={presentationNodeHash}
-          to={`${linkPrefix}/${presentationNodeHash}`}
-        >
-          <PresentationNode hash={presentationNodeHash} />
-        </Link>
-      ))}
-
-      {node.children.records.map(({ recordHash }) => (
-        <Record className={s.record} key={recordHash} hash={recordHash} />
-      ))}
-    </div>
-  );
-}
 
 class Triumphs extends Component {
   getRef = ref => {
@@ -38,7 +22,11 @@ class Triumphs extends Component {
   };
 
   componentDidUpdate() {
-    this.scrollerRef.scrollTo(this.scrollerRef.scrollWidth, 0);
+    this.scrollerRef.scroll({
+      top: 0,
+      left: this.scrollerRef.scrollWidth,
+      behavior: 'smooth'
+    });
   }
 
   render() {
@@ -48,7 +36,8 @@ class Triumphs extends Component {
       subNodeA,
       subNodeB,
       subNodeC,
-      score
+      score,
+      params
     } = this.props;
 
     if (!rootTriumphNode) {
@@ -64,62 +53,44 @@ class Triumphs extends Component {
               <div className={s.scoreScore}>{score}</div>
             </div>
 
-            <h2>Triumphs</h2>
-            <div className={s.children}>
-              {rootTriumphNode.children.presentationNodes.map(node => (
-                <Link
-                  className={s.node}
-                  key={node.presentationNodeHash}
-                  to={`/triumphs/${OVERRIDE[node.presentationNodeHash] ||
-                    node.presentationNodeHash}`}
-                >
-                  <PresentationNode hash={node.presentationNodeHash} />
-                </Link>
-              ))}
-            </div>
+            <PresentationNodeChildren
+              hash={ROOT_TRIUMPHS_NODE_HASH}
+              linkPrefix={`/triumphs`}
+            />
 
-            <h2>Seals</h2>
-            <div className={s.children}>
-              {rootSealsNode.children.presentationNodes.map(node => (
-                <Link
-                  className={s.node}
-                  key={node.presentationNodeHash}
-                  to={`/triumphs/${node.presentationNodeHash}`}
-                >
-                  <PresentationNode hash={node.presentationNodeHash} />
-                </Link>
-              ))}
-            </div>
+            <PresentationNodeChildren
+              hash={ROOT_SEALS_NODE_HASH}
+              linkPrefix={`/triumphs`}
+            />
           </div>
 
-          {subNodeA && (
+          {params.presentationNodeA && (
             <div className={s.pane}>
-              <h2>{subNodeA.displayProperties.name}</h2>
               <PresentationNodeChildren
-                node={subNodeA}
-                linkPrefix={`/triumphs/${subNodeA.hash}`}
+                hash={params.presentationNodeA}
+                linkPrefix={`/triumphs/${params.presentationNodeA}`}
               />
             </div>
           )}
 
-          {subNodeB && (
+          {params.presentationNodeB && (
             <div className={s.pane}>
-              <h2>{subNodeB.displayProperties.name}</h2>
               <PresentationNodeChildren
-                node={subNodeB}
-                linkPrefix={`/triumphs/${subNodeA.hash}/${subNodeB.hash}`}
-              />
-            </div>
-          )}
-
-          {subNodeC && (
-            <div className={s.pane}>
-              <h2>{subNodeC.displayProperties.name}</h2>
-              <PresentationNodeChildren
-                node={subNodeC}
-                linkPrefix={`/triumphs/${subNodeA.hash}/${subNodeB.hash}/${
-                  subNodeC.hash
+                hash={params.presentationNodeB}
+                linkPrefix={`/triumphs/${params.presentationNodeA}/${
+                  params.presentationNodeB
                 }`}
+              />
+            </div>
+          )}
+
+          {params.presentationNodeC && (
+            <div className={s.pane}>
+              <PresentationNodeChildren
+                hash={params.presentationNodeC}
+                linkPrefix={`/triumphs/${params.presentationNodeA}/${
+                  params.presentationNodeB
+                }/${params.presentationNodeC}`}
               />
             </div>
           )}
@@ -128,9 +99,6 @@ class Triumphs extends Component {
     );
   }
 }
-
-const ROOT_TRIUMPHS_NODE_HASH = 1024788583;
-const ROOT_SEALS_NODE_HASH = 1652422747;
 
 const mapStateToProps = (state, ownProps) => {
   const {
