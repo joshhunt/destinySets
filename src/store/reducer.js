@@ -19,6 +19,10 @@ const SET_BULK_FILTERS = 'Set bulk filters';
 const SET_LANGUAGE = 'Set language';
 const ADD_TRACK_ITEMS = 'Add tracked item';
 const REMOVE_TRACKED_ITEM = 'Remove tracked item';
+
+const ADD_TRACKED_RECORDS = 'Add tracked records';
+const REMOVE_TRACKED_RECORD = 'Remove tracked record';
+
 const TOGGLE_MANUALLY_OBTAINED = 'Toggle manually obtained';
 const SET_GOOGLE_AUTH = 'Set Google auth data';
 const FORGET_DISMANTLED_ITEM = 'Forget dismantled item';
@@ -39,6 +43,7 @@ export const DEFAULT_FILTER = {
 const INITIAL_STORE = {
   filters: DEFAULT_FILTER,
   trackedItems: [],
+  trackedRecords: [],
   manualInventory: {},
   dataExplorerVisited: false,
   googleAuth: {
@@ -151,6 +156,20 @@ export default function reducer(state = INITIAL_STORE, action) {
         trackedItems: state.trackedItems.filter(h => h !== action.itemHash)
       };
 
+    case ADD_TRACKED_RECORDS:
+      return {
+        ...state,
+        trackedRecords: [...state.trackedRecords, ...action.recordHashes]
+      };
+
+    case REMOVE_TRACKED_RECORD:
+      return {
+        ...state,
+        trackedRecords: state.trackedRecords.filter(
+          h => h !== action.recordHash
+        )
+      };
+
     case TOGGLE_MANUALLY_OBTAINED:
       return {
         ...state,
@@ -210,12 +229,20 @@ export function trackOrnaments(itemHashes) {
   return { type: ADD_TRACK_ITEMS, itemHashes };
 }
 
+export function trackRecords(recordHashes) {
+  return { type: ADD_TRACKED_RECORDS, recordHashes };
+}
+
 export function trackOrnament(itemHash) {
   return trackOrnaments([itemHash]);
 }
 
 export function removeTrackedItem(itemHash) {
   return { type: REMOVE_TRACKED_ITEM, itemHash };
+}
+
+export function removeTrackedRecord(recordHash) {
+  return { type: REMOVE_TRACKED_RECORD, recordHash };
 }
 
 export function toggleManuallyObtained(itemHash) {
