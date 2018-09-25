@@ -223,6 +223,7 @@ export const filteredSetDataSelector = createSelector(
           if (
             searchTerm &&
             set.description &&
+            set.description.toLowerCase &&
             set.description.toLowerCase().includes(searchTerm)
           ) {
             // include them all
