@@ -12,6 +12,7 @@ import logo from 'app/logo.svg';
 import xur from 'app/assets/xur_icon.png';
 import { DONATION_LINK } from 'app/components/DonateButton';
 import Icon from 'app/components/Icon';
+import LoginCTA from '../LoginCTA';
 import DonateButton from 'app/components/DonateButton';
 import ProfileDropdown from './ProfileDropdown';
 import LanguageDropdown from './LanguageDropdown';
@@ -113,6 +114,7 @@ function sidebarClickOutside(toggleSidebar, isOpen, ev) {
 }
 
 function Sidebar({
+  isAuth,
   isOpen,
   language,
   setLanguage,
@@ -151,7 +153,8 @@ function Sidebar({
             setLanguage={setLanguage}
           />
         )}
-        <br />
+
+        {!isAuth && <LoginCTA className={styles.sidebarLoginCta} />}
 
         <div className={styles.sidebarExtra}>
           <DonateButton />
@@ -203,6 +206,7 @@ export default class Header extends Component {
       currentProfile,
       allProfiles,
       switchProfile,
+      isAuth,
       language,
       setLanguage,
       logout,
@@ -245,6 +249,10 @@ export default class Header extends Component {
 
           <SiteName />
 
+          {/* isOverflowing && (
+            <LoginCTA className={styles.headerLoginCta}>Connect</LoginCTA>
+          ) */}
+
           <div className={styles.links} ref={this.setLinksRef}>
             <SiteLinks
               displayXur={displayXur}
@@ -253,6 +261,11 @@ export default class Header extends Component {
               showDataExplorerLink={showDataExplorerLink}
             />
           </div>
+
+          {!isAuth &&
+            !isOverflowing && <LoginCTA className={styles.headerLoginCta} />}
+
+          <div className={styles.spacer} />
 
           <div className={styles.etc}>
             {language &&

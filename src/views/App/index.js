@@ -41,6 +41,8 @@ const MANIFEST_MESSAGES = {
   [STATUS_UNZIPPING]: 'Unzipping item data...'
 };
 
+const hasDismissedCookie = /dismissed_login_upsell/.test(document.cookie);
+
 class App extends Component {
   state = {};
   alreadyFetched = false;
@@ -134,6 +136,11 @@ class App extends Component {
     });
   };
 
+  handleDismissLoginUpsell = () => {
+    // Set a cookie to set the dismissed state. Clear after 3 days.
+    document.cookie = 'dismissed_login_upsell=true; path=/; max-age=259200;';
+  };
+
   switchProfile = profile => {
     const { membershipId, membershipType } = profile.profile.data.userInfo;
     ls.savePreviousAccount(membershipId, membershipType);
@@ -179,10 +186,10 @@ class App extends Component {
 
     const messages = [];
 
-    if (!auth.isAuthed) {
+    if (!hasDismissedCookie && !auth.isAuthed) {
       messages.push(
         <div className={styles.auth}>
-          <LoginUpsell>
+          <LoginUpsell onDismissed={this.handleDismissLoginUpsell}>
             {profile
               ? 'The connection with Bungie has expired. Please reconnect to update your inventory.'
               : `Connect your Bungie.net acccount to automatically track items you've collected and dismantled.`}
@@ -234,6 +241,7 @@ class App extends Component {
         <Header
           profileLoading={profileLoading}
           profileCached={profileCached}
+          isAuth={auth.isAuthed}
           authExpired={!auth.isAuthed && profile}
           currentProfile={profile}
           allProfiles={allProfiles}
