@@ -249,10 +249,6 @@ export default class Header extends Component {
 
           <SiteName />
 
-          {/* isOverflowing && (
-            <LoginCTA className={styles.headerLoginCta}>Connect</LoginCTA>
-          ) */}
-
           <div className={styles.links} ref={this.setLinksRef}>
             <SiteLinks
               displayXur={displayXur}
