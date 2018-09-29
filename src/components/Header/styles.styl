@@ -34,12 +34,14 @@ $height = 52px
   margin-right: 12px
 
 .links
-  flex: 1
   margin-left: $padding
   height: $height
   overflow: hidden
   display: flex
   flex-wrap: wrap
+
+.spacer
+  flex: 1
 
 .link
 .dummyLink
@@ -94,6 +96,10 @@ $height = 52px
   margin: 0 -8px
   display: flex
   align-items: center
+
+.headerLoginCta
+  margin-left: 16px
+  padding: 10px 32px;
 
 .socialLink
   display: inline-block
@@ -165,6 +171,10 @@ $height = 52px
 
   .socialLink
     display: inline-block !important
+
+  .sidebarLoginCta
+    margin: 12px auto 8px;
+    display: block;
 
   .link
     display: block !important // override media query

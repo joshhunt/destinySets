@@ -9,7 +9,13 @@ export default class Dismissable extends Component {
     active: true
   };
 
-  toggle = () => this.setState({ active: !this.state.active });
+  toggle = e => {
+    if (this.props.onDismissed) {
+      this.props.onDismissed(e);
+    }
+
+    this.setState(prev => ({ active: !prev.active }));
+  };
 
   render() {
     if (!this.state.active) {
