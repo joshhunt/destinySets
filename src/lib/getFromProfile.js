@@ -61,34 +61,34 @@ function objectivesFromVendors(data) {
   )(data);
 }
 
-function itemsFromVendorPlugStates(data) {
-  return fp.flow(
-    fp.flatMap(character => {
-      return (
-        character &&
-        fp.flatMap(vendor => {
-          return fp.flatMap(plugState => {
-            return plugState.canInsert ? plugState.plugItemHash : null;
-          }, vendor.plugStates.data);
-        }, character.itemComponents)
-      );
-    }),
-    fp.compact
-  )(data);
-}
+// function itemsFromVendorPlugStates(data) {
+//   return fp.flow(
+//     fp.flatMap(character => {
+//       return (
+//         character &&
+//         fp.flatMap(vendor => {
+//           return fp.flatMap(plugState => {
+//             return plugState.canInsert ? plugState.plugItemHash : null;
+//           }, vendor.plugStates.data);
+//         }, character.itemComponents)
+//       );
+//     }),
+//     fp.compact
+//   )(data);
+// }
 
-const socketsFromVendors = fp.flatMap(vendor =>
-  fromSockets(vendor.sockets.data)
-);
+// const socketsFromVendors = fp.flatMap(vendor =>
+//   fromSockets(vendor.sockets.data)
+// );
 
-function fromVendorSockets(data) {
-  return fp.flow(
-    fp.flatMap(
-      character => character && socketsFromVendors(character.itemComponents)
-    ),
-    fp.compact
-  )(data);
-}
+// function fromVendorSockets(data) {
+//   return fp.flow(
+//     fp.flatMap(
+//       character => character && socketsFromVendors(character.itemComponents)
+//     ),
+//     fp.compact
+//   )(data);
+// }
 
 function mergeItems(acc, [items, itemLocation]) {
   items.forEach(thing => {
@@ -121,9 +121,9 @@ export function inventoryFromProfile(profile, vendorDefs) {
     [fromCharacter(profile.characterInventories.data), 'characterInventories'],
     [profile.profileInventory.data.items.map(itemMapper), 'profileInventory'],
     [fromSockets(profile.itemComponents.sockets.data), 'itemSockets'],
-    [fromVendorSockets(profile.$vendors.data), 'vendorSockets'],
-    [fromProfilePlugSets(profile.profilePlugSets.data), 'profilePlugSets'],
-    [itemsFromVendorPlugStates(profile.$vendors.data), 'vendorPlugStates']
+    // [fromVendorSockets(profile.$vendors.data), 'vendorSockets'],
+    [fromProfilePlugSets(profile.profilePlugSets.data), 'profilePlugSets']
+    // [itemsFromVendorPlugStates(profile.$vendors.data), 'vendorPlugStates']
   ].reduce(mergeItems, {});
 
   window.__inventory = inventory;
