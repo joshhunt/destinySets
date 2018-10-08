@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router';
 import { connect } from 'react-redux';
 import { get } from 'lodash';
 
 import PresentationNodeChildren from 'app/components/PresentationNodeChildren';
+import PresentationNode from 'app/components/PresentationNode';
 
 import s from './styles.styl';
 
@@ -19,15 +21,15 @@ class Triumphs extends Component {
   };
 
   componentDidUpdate() {
-    this.scrollerRef.scroll({
-      top: 0,
-      left: this.scrollerRef.scrollWidth,
-      behavior: 'smooth'
+    this.scrollerRef.lastChild.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start',
+      inline: 'nearest'
     });
   }
 
   render() {
-    const { score, params } = this.props;
+    const { score, params, trackedRecords } = this.props;
 
     return (
       <div>
@@ -37,6 +39,12 @@ class Triumphs extends Component {
               <div className={s.scoreTitle}>Total score</div>
               <div className={s.scoreScore}>{score}</div>
             </div>
+
+            {trackedRecords && (
+              <Link to="/triumphs/tracked">
+                <PresentationNode hash="tracked" />
+              </Link>
+            )}
 
             <PresentationNodeChildren
               hash={ROOT_TRIUMPHS_NODE_HASH}
@@ -52,6 +60,7 @@ class Triumphs extends Component {
           {params.presentationNodeA && (
             <div className={s.pane}>
               <PresentationNodeChildren
+                isCollapsed={!!params.presentationNodeB}
                 hash={params.presentationNodeA}
                 linkPrefix={`/triumphs/${params.presentationNodeA}`}
               />
@@ -61,6 +70,7 @@ class Triumphs extends Component {
           {params.presentationNodeB && (
             <div className={s.pane}>
               <PresentationNodeChildren
+                isCollapsed={!!params.presentationNodeC}
                 hash={params.presentationNodeB}
                 linkPrefix={`/triumphs/${params.presentationNodeA}/${
                   params.presentationNodeB
@@ -88,7 +98,10 @@ class Triumphs extends Component {
 const mapStateToProps = (state, ownProps) => {
   const score = get(state, 'profile.profile.profileRecords.data.score');
 
-  return { score };
+  return {
+    score,
+    trackedRecords: state.app.trackedRecords
+  };
 };
 
 export default connect(mapStateToProps)(Triumphs);

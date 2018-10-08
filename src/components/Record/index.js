@@ -5,7 +5,10 @@ import cx from 'classnames';
 
 import { flagEnum } from 'app/lib/destinyUtils';
 
-import { objectiveInstancesSelector } from 'app/store/selectors';
+import {
+  objectiveInstancesSelector,
+  recordsSelector
+} from 'app/store/selectors';
 import { trackRecords, removeTrackedRecord } from 'app/store/reducer';
 
 import BungieImage from 'app/components/BungieImage';
@@ -31,7 +34,9 @@ function Record({
     return null;
   }
 
-  const completed = recordState && !recordState.objectiveNotCompleted;
+  const completed =
+    recordState &&
+    (!recordState.objectiveNotCompleted || recordState.recordRedeemed);
 
   return (
     <div
@@ -50,7 +55,7 @@ function Record({
 
       <div className={s['bot-left']} />
 
-      {!completed && (
+      {
         <button
           className={s.trackButton}
           onClick={() =>
@@ -62,7 +67,7 @@ function Record({
           <img className={s.trackButtonBg} src={trackButtonBg} alt="" />
           <img className={s.trackButtonFg} src={trackButtonFg} alt="" />
         </button>
-      )}
+      }
 
       {record.displayProperties &&
         record.displayProperties.icon && (
@@ -95,6 +100,8 @@ function Record({
               objectiveDefs={objectiveDefs}
             />
           )}
+
+        {!recordState && <p className={s.small}>Missing data</p>}
       </div>
     </div>
   );
@@ -113,14 +120,14 @@ export const enumerateState = state => ({
 
 const mapStateToProps = (state, ownProps) => {
   const { DestinyRecordDefinition: recordDefs } = state.definitions;
-  const records = get(state, 'profile.profile.profileRecords.data.records');
-  const record = records && records[ownProps.hash];
+  const records = recordsSelector(state);
+  const record = records[ownProps.hash];
   const recordState = record && enumerateState(record.state);
   const isTracked = state.app.trackedRecords.includes(ownProps.hash);
 
   return {
     objectiveInstances: objectiveInstancesSelector(state),
-    record: recordDefs[ownProps.hash],
+    record: recordDefs && recordDefs[ownProps.hash],
     recordState,
     recordInstance: record,
     isTracked,

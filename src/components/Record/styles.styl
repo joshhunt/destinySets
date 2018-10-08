@@ -40,8 +40,6 @@ $borderWidth = 1px
 .completed
   border-color: rgba($green, .5)
   background: rgba($green, .1)
-  // color: lighten($green, 95%)
-  // opacity: .4
 
 .accessory
   margin-right: 15px
@@ -72,6 +70,10 @@ $borderWidth = 1px
 .description
   line-height: 1.2
 
+.small
+  font-size: .8em
+  opacity: .8
+
 .trackButton
   background: none
   border: none
@@ -89,6 +91,9 @@ $borderWidth = 1px
   .tracked &
   .root:hover &
     opacity: 1
+
+  .completed &
+    right: 25px
 
 
 .trackButtonBg

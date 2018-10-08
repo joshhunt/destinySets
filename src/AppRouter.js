@@ -71,10 +71,22 @@ export default class AppRouter extends Component {
               setData={sets.allItemsDeluxe}
             />
 
-            <Route path="/triumphs" component={Triumphs} />
-            <Route path="/triumphs/:presentationNodeA" component={Triumphs} />
-            <Route path="/triumphs/:presentationNodeA/:presentationNodeB" component={Triumphs} />
-            <Route path="/triumphs/:presentationNodeA/:presentationNodeB/:presentationNodeC" component={Triumphs} />
+            <Route refreshOnInterval path="/triumphs" component={Triumphs} />
+            <Route
+              refreshOnInterval
+              path="/triumphs/:presentationNodeA"
+              component={Triumphs}
+            />
+            <Route
+              refreshOnInterval
+              path="/triumphs/:presentationNodeA/:presentationNodeB"
+              component={Triumphs}
+            />
+            <Route
+              refreshOnInterval
+              path="/triumphs/:presentationNodeA/:presentationNodeB/:presentationNodeC"
+              component={Triumphs}
+            />
 
             <Route path="/data(/:itemHash)" component={DataExplorerRedirect} />
             <Route path="/diff" component={Diff} />

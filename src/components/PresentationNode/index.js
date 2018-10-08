@@ -5,10 +5,11 @@ import { flatMapDeep, get } from 'lodash';
 
 import BungieImage from 'app/components/BungieImage';
 import { enumerateState } from 'app/components/Record';
+import { fakePresentationNode } from 'app/components/PresentationNodeChildren';
 
 import s from './styles.styl';
 
-function PresentationNode({
+export function PresentationNode({
   className,
   node,
   totalChildRecords,
@@ -96,7 +97,10 @@ function recursiveRecords(node, definitions) {
 
 const mapStateToProps = (state, ownProps) => {
   const { DestinyPresentationNodeDefinition: nodeDefs } = state.definitions;
-  const node = nodeDefs[ownProps.hash];
+  const node =
+    ownProps.hash === 'tracked'
+      ? fakePresentationNode('tracked', state.app.trackedRecords)
+      : nodeDefs[ownProps.hash];
 
   const childRecordDefs = recursiveRecords(node, state.definitions);
   const records = get(state, 'profile.profile.profileRecords.data.records');

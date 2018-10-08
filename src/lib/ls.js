@@ -11,6 +11,7 @@ const keys = {
   GOOGLE_LOGIN_TOOLTIP: '$hideGoogleLoginTooltip',
   VISIT_COUNT: '$visitCount',
   TRACKED_ITEMS: '$trackedItems',
+  TRACKED_RECORDS: '$trackedRecords',
   UID: 'uid',
   DEBUGID: 'debugid',
   PROFILE_ERROR_REPORTED: 'profileErrorReported',
@@ -231,6 +232,14 @@ export function getTrackedItems() {
 
 export function saveTrackedItems(items) {
   save(keys.TRACKED_ITEMS, items);
+}
+
+export function getTrackedRecords() {
+  return get(keys.TRACKED_RECORDS, []);
+}
+
+export function saveTrackedRecords(items) {
+  save(keys.TRACKED_RECORDS, items);
 }
 
 export function getUID() {

@@ -130,6 +130,23 @@ export const currentInventorySelector = createSelector(
   }
 );
 
+export const recordsSelector = createSelector(profileSelector, profile => {
+  const profileRecords = get(profile, 'profileRecords.data.records', {});
+  const characterRecords = Object.values(
+    get(profile, 'characterRecords.data', {})
+  ).reduce((acc, { records }) => {
+    return {
+      ...acc,
+      ...records
+    };
+  }, {});
+
+  return {
+    ...profileRecords,
+    ...characterRecords
+  };
+});
+
 const enumerateCollectibleState = state => ({
   none: flagEnum(state, 0),
   notAcquired: flagEnum(state, 1),

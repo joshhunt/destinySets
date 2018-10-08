@@ -3,6 +3,7 @@ import {
   setBulkFilters,
   setLanguage,
   trackOrnaments,
+  trackRecords,
   setAppValue,
   setBulkHiddenItemSet
 } from 'app/store/reducer';
@@ -44,12 +45,17 @@ export default function preloadStore(store) {
   const authData = ls.getAuth();
   const profiles = ls.getProfiles();
   const trackedItems = ls.getTrackedItems();
+  const trackedRecords = ls.getTrackedRecords();
   const dataExplorerVisited = ls.getDataExplorerVisited();
 
   log('debug', { authData, profiles });
 
   if (trackedItems.length) {
     store.dispatch(trackOrnaments(trackedItems));
+  }
+
+  if (trackedRecords.length) {
+    store.dispatch(trackRecords(trackedRecords));
   }
 
   if (dataExplorerVisited) {
@@ -75,6 +81,7 @@ export default function preloadStore(store) {
   store.dispatch(setBulkHiddenItemSet(ls.getHiddenItemSets()));
 
   let currentTrackedItems = store.getState().app.trackedItems;
+  let currentTrackedRecords = store.getState().app.trackedRecords;
   store.subscribe(() => {
     const newState = store.getState();
     window.__state = newState;
@@ -83,7 +90,12 @@ export default function preloadStore(store) {
       ls.saveTrackedItems(newState.app.trackedItems);
     }
 
+    if (newState.app.trackedRecords !== currentTrackedRecords) {
+      ls.saveTrackedRecords(newState.app.trackedRecords);
+    }
+
     currentTrackedItems = newState.app.trackedItems;
+    currentTrackedRecords = newState.app.trackedRecords;
   });
 
   fasterGetDefinitions(
