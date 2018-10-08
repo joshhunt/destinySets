@@ -122,7 +122,7 @@ const mapStateToProps = (state, ownProps) => {
   const { DestinyRecordDefinition: recordDefs } = state.definitions;
   const records = recordsSelector(state);
   const record = records[ownProps.hash];
-  const recordState = record && enumerateState(record.state);
+  const recordState = record && record.enumeratedState;
   const isTracked = state.app.trackedRecords.includes(ownProps.hash);
 
   return {

@@ -1,5 +1,5 @@
 import { createSelector } from 'reselect';
-import { difference, keyBy, get, flatMapDeep } from 'lodash';
+import { difference, keyBy, get, flatMapDeep, mapValues } from 'lodash';
 import fp from 'lodash/fp';
 
 import {
@@ -7,6 +7,7 @@ import {
   objectivesFromProfile
 } from 'app/lib/getFromProfile';
 import { flagEnum } from 'app/lib/destinyUtils';
+import { enumerateState } from 'app/components/Record';
 import {
   NUMERICAL_STATS,
   STAT_BLACKLIST,
@@ -135,9 +136,16 @@ export const recordsSelector = createSelector(profileSelector, profile => {
   const characterRecords = Object.values(
     get(profile, 'characterRecords.data', {})
   ).reduce((acc, { records }) => {
+    const allMappedRecords = mapValues(records, record => {
+      return {
+        ...record,
+        enumeratedState: enumerateState(record.state)
+      };
+    });
+
     return {
       ...acc,
-      ...records
+      ...allMappedRecords
     };
   }, {});
 
