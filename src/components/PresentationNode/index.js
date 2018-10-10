@@ -30,13 +30,12 @@ export function PresentationNode({
 
       <div className={s.main}>
         <div className={s.name}>{node.displayProperties.name}</div>
+        <div className={s.count}>
+          {childRecordsCompleted} / {totalChildRecords}
+        </div>
       </div>
 
       <div className={s.progress}>
-        <div className={s.progressCount}>
-          {childRecordsCompleted} / {totalChildRecords}
-        </div>
-
         <div
           className={s.progressTrack}
           style={{

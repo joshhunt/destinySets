@@ -136,16 +136,9 @@ export const recordsSelector = createSelector(profileSelector, profile => {
   const characterRecords = Object.values(
     get(profile, 'characterRecords.data', {})
   ).reduce((acc, { records }) => {
-    const allMappedRecords = mapValues(records, record => {
-      return {
-        ...record,
-        enumeratedState: enumerateState(record.state)
-      };
-    });
-
     return {
       ...acc,
-      ...allMappedRecords
+      ...records
     };
   }, {});
 
@@ -154,9 +147,16 @@ export const recordsSelector = createSelector(profileSelector, profile => {
     ...characterRecords
   };
 
-  window.__records = all;
+  const allMappedRecords = mapValues(all, record => {
+    return {
+      ...record,
+      enumeratedState: enumerateState(record.state)
+    };
+  });
 
-  return all;
+  window.__records = allMappedRecords;
+
+  return allMappedRecords;
 });
 
 const enumerateCollectibleState = state => ({

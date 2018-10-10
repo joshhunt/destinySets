@@ -12,7 +12,7 @@ const ROOT_TRIUMPHS_NODE_HASH = 1024788583;
 const ROOT_SEALS_NODE_HASH = 1652422747;
 
 const OVERRIDE = {
-  // 1664035662: 3319885427
+  1664035662: 3319885427
 };
 
 function getBreadcrubLink(breadcrumbs, current) {
@@ -53,24 +53,19 @@ class Triumphs extends Component {
     if (viewHash === 'triumphs') {
       view = (
         <div className={s.view}>
-          {trackedRecords && (
-            <Link to="/triumphs/tracked">
-              <PresentationNode hash="tracked" />
-            </Link>
-          )}
-
-          {trackedRecords && <br />}
+        {trackedRecords.length ? (
+          <PresentationNodeChildren hash="tracked" isNested />
+        ) : null}
 
           <PresentationNodeChildren
             hash={ROOT_TRIUMPHS_NODE_HASH}
             linkPrefix={`/triumphs`}
-            isNested
+            showChildren
           />
 
           <PresentationNodeChildren
             hash={ROOT_SEALS_NODE_HASH}
             linkPrefix={`/triumphs`}
-            isNested
           />
         </div>
       );

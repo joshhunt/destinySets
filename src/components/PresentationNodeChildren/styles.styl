@@ -7,12 +7,12 @@
   grid-row-gap: 15px
 
 .childPresentationNodes
-  grid-template-columns: repeat(4, 1fr)
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr))
   composes: children
 
 .childRecords
   composes: children
-  grid-template-columns: repeat(3, 1fr)
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr))
 
 .node
 .record
