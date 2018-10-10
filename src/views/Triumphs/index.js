@@ -18,27 +18,18 @@ const OVERRIDE = {
 function getBreadcrubLink(breadcrumbs, current) {
   const i = breadcrumbs.indexOf(current);
   const prev = i > -1 ? breadcrumbs.slice(0, i + 1) : [];
-  return `/${prev.join('/')}`;
+  return `/${prev.map(c => c.id).join('/')}`;
 }
 
 class Triumphs extends Component {
   render() {
-    const { score, params, trackedRecords } = this.props;
+    const { score, params, trackedRecords, breadcrumbs } = this.props;
 
-    const breadcrumbs = [
-      'triumphs',
-      params.presentationNodeA,
-      params.presentationNodeB,
-      params.presentationNodeC
-    ]
-      .filter(Boolean)
-      .map(hash => OVERRIDE[hash] || hash);
-
-    const viewHash = breadcrumbs[breadcrumbs.length - 1];
+    const viewCrumb = breadcrumbs[breadcrumbs.length - 1];
 
     let view;
 
-    if (viewHash === 'triumphs') {
+    if (viewCrumb.id === 'triumphs') {
       view = (
         <div className={s.view}>
           {trackedRecords.length ? (
@@ -61,7 +52,7 @@ class Triumphs extends Component {
       view = (
         <div className={s.view}>
           <PresentationNodeChildren
-            hash={viewHash}
+            hash={viewCrumb.id}
             showChildren={true}
             linkPrefix={`/${breadcrumbs.join('/')}`}
           />
@@ -83,7 +74,7 @@ class Triumphs extends Component {
                 className={s.crumbLink}
                 to={getBreadcrubLink(breadcrumbs, crumb)}
               >
-                {crumb}
+                {crumb.node ? crumb.node.displayProperties.name : crumb.id}
               </Link>
             </span>
           ))}
@@ -105,11 +96,20 @@ const mapStateToProps = (state, ownProps) => {
     ownProps.params.presentationNodeC
   ]
     .filter(Boolean)
-    .map(hash => OVERRIDE[hash] || hash);
+    .map(hash => OVERRIDE[hash] || hash)
+    .map(hash => {
+      return {
+        id: hash,
+        node:
+          state.definitions.DestinyPresentationNodeDefinition &&
+          state.definitions.DestinyPresentationNodeDefinition[hash]
+      };
+    });
 
   return {
     score,
-    trackedRecords: state.app.trackedRecords
+    trackedRecords: state.app.trackedRecords,
+    breadcrumbs
   };
 };
 

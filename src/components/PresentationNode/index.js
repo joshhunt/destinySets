@@ -12,6 +12,7 @@ import s from './styles.styl';
 export function PresentationNode({
   className,
   node,
+  isHeader,
   totalChildRecords,
   childRecordsCompleted
 }) {
@@ -20,7 +21,10 @@ export function PresentationNode({
   }
 
   return (
-    <div className={cx(className, s.root)}>
+    <div className={cx(className, s.root, isHeader && s.headerRoot)}>
+      <div className={s.iconCornersTop} />
+      <div className={s.iconCornersBottom} />
+
       {node.displayProperties &&
         node.displayProperties.icon && (
           <div className={s.accessory}>
