@@ -149,10 +149,14 @@ export const recordsSelector = createSelector(profileSelector, profile => {
     };
   }, {});
 
-  return {
+  const all = {
     ...profileRecords,
     ...characterRecords
   };
+
+  window.__records = all;
+
+  return all;
 });
 
 const enumerateCollectibleState = state => ({

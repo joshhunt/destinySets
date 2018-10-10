@@ -2,29 +2,8 @@ $baseBg = darken(#1a1f28, 18%);
 // $baseBg = #15191E;
 $step = 25%;
 
-.nodes
-  content: 'lol'
-
-.panes
-  background: $baseBg
-
-.pane
-  padding: 20px 20px
-
-  & + &
-    border-top: 1px solid rgba(white, .15)
-
-  &:nth-last-child(2)
-    background: darken($baseBg, $step * 1)
-
-  &:nth-last-child(3)
-    background: darken($baseBg, $step * 2)
-
-  &:nth-last-child(4)
-    background: darken($baseBg, $step * 3)
-
-  &:last-child
-    min-height: 90vh
+.root
+  padding: 15px
 
 .scoreBox
   margin: 10px auto
@@ -40,3 +19,14 @@ $step = 25%;
   font-size: 45px
   font-weight: bold
   line-height: 1
+
+.crumb + .crumb
+  // margin-left: 10px
+  // padding-left: 10px
+  // border-left: 1px solid rgba(white, .4)
+
+  &:before
+    content: ' > '
+
+.crumbLink
+  color: white
