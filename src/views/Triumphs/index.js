@@ -22,18 +22,6 @@ function getBreadcrubLink(breadcrumbs, current) {
 }
 
 class Triumphs extends Component {
-  getRef = ref => {
-    this.scrollerRef = ref;
-  };
-
-  componentDidUpdate() {
-    // this.scrollerRef.lastChild.scrollIntoView({
-    //   behavior: 'smooth',
-    //   block: 'start',
-    //   inline: 'nearest'
-    // });
-  }
-
   render() {
     const { score, params, trackedRecords } = this.props;
 
@@ -53,9 +41,9 @@ class Triumphs extends Component {
     if (viewHash === 'triumphs') {
       view = (
         <div className={s.view}>
-        {trackedRecords.length ? (
-          <PresentationNodeChildren hash="tracked" isNested />
-        ) : null}
+          {trackedRecords.length ? (
+            <PresentationNodeChildren hash="tracked" isNested />
+          ) : null}
 
           <PresentationNodeChildren
             hash={ROOT_TRIUMPHS_NODE_HASH}
@@ -109,6 +97,15 @@ class Triumphs extends Component {
 
 const mapStateToProps = (state, ownProps) => {
   const score = get(state, 'profile.profile.profileRecords.data.score');
+
+  const breadcrumbs = [
+    'triumphs',
+    ownProps.params.presentationNodeA,
+    ownProps.params.presentationNodeB,
+    ownProps.params.presentationNodeC
+  ]
+    .filter(Boolean)
+    .map(hash => OVERRIDE[hash] || hash);
 
   return {
     score,

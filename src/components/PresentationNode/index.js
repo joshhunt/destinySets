@@ -39,10 +39,10 @@ export function PresentationNode({
         <div
           className={s.progressTrack}
           style={{
-            width: `${Math.min(
+            width: `calc(${Math.min(
               childRecordsCompleted / totalChildRecords * 100,
               100
-            )}%`
+            )}% + 2px)`
           }}
         />
       </div>
