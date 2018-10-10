@@ -27,23 +27,21 @@ function PresentationNodeChildren({ node, linkPrefix, isCollapsed }) {
         <h2>{node.displayProperties.name}</h2>
       </div>
 
-      {!isCollapsed && (
-        <div className={s.children}>
-          {node.children.presentationNodes.map(({ presentationNodeHash }) => (
-            <Link
-              className={s.node}
-              key={presentationNodeHash}
-              to={`${linkPrefix}/${presentationNodeHash}`}
-            >
-              <PresentationNode hash={presentationNodeHash} />
-            </Link>
-          ))}
+      <div className={s.children}>
+        {node.children.presentationNodes.map(({ presentationNodeHash }) => (
+          <Link
+            className={s.node}
+            key={presentationNodeHash}
+            to={`${linkPrefix}/${presentationNodeHash}`}
+          >
+            <PresentationNode hash={presentationNodeHash} />
+          </Link>
+        ))}
 
-          {node.children.records.map(({ recordHash }) => (
-            <Record className={s.record} key={recordHash} hash={recordHash} />
-          ))}
-        </div>
-      )}
+        {node.children.records.map(({ recordHash }) => (
+          <Record className={s.record} key={recordHash} hash={recordHash} />
+        ))}
+      </div>
     </div>
   );
 }
