@@ -533,7 +533,8 @@ export default ([
               813936739, // Starlight Shell
               1317468652, // Harbinger's Echo
               1317468653, // Silver Tercel
-              2844014413 // Pallas Galliot
+              2844014413, // Pallas Galliot
+              3352019292 // Secret Victories
             ]
           }
         ]
