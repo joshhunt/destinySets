@@ -566,59 +566,138 @@ export default ([
         big: true,
         sections: [
           {
+            name: 'Weapons',
+            season: 4,
+            items: [
+              3829285960 // Horror Story
+            ]
+          },
+          {
             name: 'Hunter Armor',
             season: 4,
             items: [
-
+              3448772677, // Skerren Corvus Mask
+              4187872788, // Skerren Corvus Grasps
+              654307116, // Skerren Corvus Vest
+              4051153950, // Skerren Corvus Strides
+              3352962401 // Skerren Corvus Cloak
             ]
           },
           {
             name: 'Titan Armor',
             season: 4,
             items: [
-
+              2253976433, // Lustrous Chromite Helm
+              870527944, // Lustrous Chromite Gauntlets
+              2800372416, // Lustrous Chromite Plate
+              1547512994, // Lustrous Chromite Greaves
+              1727527805 // Lustrous Chromite Mark
             ]
           },
           {
             name: 'Warlock Armor',
             season: 4,
             items: [
-
+              4044559530, // Liminal Voyager Hood
+              4050120691, // Liminal Voyager Gloves
+              1575548701, // Liminal Voyager Robes
+              3785074629, // Liminal Voyager Boots
+              3037536592 // Liminal Voyager Bond
+            ]
+          },
+          {
+            name: 'Masks',
+            season: 4,
+            items: [
+               1138577659, // Glitterball Mask
+               1138577658, // Colonel Mask
+               1441415180, // Master Rahool Mask
+               1441415182, // Traveler Mask
+               1441415178, // Lord Shaxx Mask
+               1441415181, // Petra Venj Mask
+               1441415179, // Dominus Ghaul Mask
+               1441415175, // Jade Rabbit Mask
+               1441415177, // Will of the Thousands Mask
+               1441415174, // Scorn Mask
+               1441415176, // Emperor Calus Mask
+               1441415183 // Dark Prince Mask
             ]
           },
           {
             name: 'Emotes',
             season: 4,
             items: [
-
+              2024188850, // Heroic Guitarist
+              171748061, // Summoning Dance
+              937162783, // Magnificent Dance
+              3665594271 // Spell of Abolition
             ]
           },
           {
             name: 'Ghosts',
             season: 4,
             items: [
-              
+              1833569877, // Okular Fortitude Shell
+              1833569876, // Nine Lives Shell
+              1833569879, // Stonecraft's Amalgam Shell
+              4283023982, // Quondam Shell
+              4283023983, // Angora Raider Shell
+              4283023980, // Canaan's Harvest Shell
+              4283023981, // Rigg's Vortex Shell
+              4283023978, // The Lycan's Mire Shell
+              4283023979 // Seal of Troika Shell
             ]
           },
           {
-            name: 'Sparrows',
+            name: 'Ghost Projections',
             season: 4,
             items: [
-
+              1771869769, // Chiroptera Projection
+              1771869768, // Spectral Projection
+              1771869771, // Spinneret Projection
+              1771869770, // Carved Projection
+              1771869773, // Arachnid Projection
+              1771869772, // Remembrance Projection
+              1771869775, // Unlucky Projection
+              1771869774 // Phrygian Projection
             ]
           },
           {
             name: 'Ships',
             season: 4,
             items: [
-
+              1721185807, // Infected Seeker
+              1721185806, // Aerial Shroud
+              1473368764, // Three to Eight
+              1473368765, // Uncrowned Progenitor
+              1473368766, // The First Domino
+              1473368767, // Stronger Than Now
+              1473368760, // Stained Shrapnel
+              1473368761 // Xenon Direct
+            ]
+          },
+          {
+            name: 'Sparrows',
+            season: 4,
+            items: [
+              1836636207, // Winchester's Ruin
+              2277536122, // Insurgent's Spur
+              2277536123, // Cetacean Wing
+              2277536120 // Bishop's Run
             ]
           },
           {
             name: 'Extras',
             season: 4,
             items: [
-
+              2176571298, // Nightmare's End (Emblem)
+              2176571299, // Deep in the Woods (Emblem)
+              566732136, // Amaranth Atrocity
+              2574262861, // Soulsknot (Transmat Effect)
+              2574262860, // Arachnophile (Transmat Effect)
+              4224972854, // Dark Fluorescence (Shader)
+              4224972855, // Shadowstrike (Shader)
+              566732136 // Amaranth Atrocity (Shader)
             ]
           }
         ]
