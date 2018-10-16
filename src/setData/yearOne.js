@@ -2059,6 +2059,68 @@ export default ([
               1017491637, // Petiolora Growth
               1017491636 // Buffer Overflow
             ]
+          },
+          {
+            name: 'Transmat Effects',
+            season: 1,
+            items: [
+              4258704672, // Cabal Arrival
+              4258704673, // Vex Arrival
+              4258704674, // Taken Arrival
+              4258704675, // Hive Arrival
+              4258704676, // Fallen Arrival
+              3351378135, // Guardian Gold 
+              3351378134, // Guardian White
+              3351378133, // Guardian Green
+              3351378132, // Guardian Pink
+              3351378131, // Guardian Blue
+              3351378130, // Arc Effects
+              3351378129, // Solar Effects
+              3351378128, // Void Effects
+              3351378143, // Ghost White
+              3351378142, // Ghost Gold
+              1281013970, // Ghost Green
+              1281013971, // Ghost Pink
+              1281013968, // Ghost Blue
+              1281013969, // Crucible White
+              1281013974, // Crucible Gold
+              1281013975, // Crucible Green
+              1281013972, // Crucible Pink
+              1281013973, // Crucible Blue
+              1281013978, // Amethyst Rabbit
+              1281013979 // Coral Rabbit
+            ]
+          },
+          {
+            name: 'Transmat Effects',
+            season: 2,
+            items: [
+              526091740, // Reflection Effects
+              526091741, // Dominus Ghaul Effects
+              526091742, // Traveler's Wake Effects
+              526091743, // Vex Invasion Effects
+              2153115587, // Silver Beam Effects
+              2153115586, // Gold Beam Effects
+              2153115585, // Green Beam Effects
+              2153115584, // Purple Beam Effects
+              2153115591, // Silver Spotlight Effects
+              2153115590, // Yellow Spotlight Effects
+              2153115589, // Green Spotlight Effects
+              2153115588, // Purple Spotlight Effects
+              2153115595, // Pink Class Sigil
+              2153115594, // Yellow Class Sigil
+              3376967254, // Green Class Sigil
+              3376967255 // Purple Class Sigil
+            ]
+          },
+          {
+            name: 'Transmat Effects',
+            season: 3,
+            items: [ 
+              1311389412, // Plesiohedral State
+              1311389415, // AI-COM/RSPN: REBOOT
+              1311389414 // Celebrate Newness
+            ]
           }
         ]
       }
