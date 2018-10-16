@@ -71,10 +71,13 @@ export default ([
               4030297244, // Buckthorn Approach (Ship)
               2390666069, // High-Risk, High-Reward (Emblem)
               1075647353, // Vanguard Terminus (Emblem)
+              2935851862, // Struck a Nerve (Emblem)
+              2294983474, // Honor of the Vanguard (Emblem)
+              2294983475, // Strikes of All Stripes (Emblem)
               1263710510, // Always North (Shader)
-              2788911997, // Vanguard Divide (Shader)
               2788911999, // Vanguard Veteran (Shader)
-              2788911998 // Vanguard Metallic (Shader)
+              2788911998, // Vanguard Metallic (Shader)
+              2788911997 // Vanguard Divide (Shader)
             ]
           }
         ]
@@ -140,9 +143,13 @@ export default ([
             season: 4,
             items: [
               1131244817, // Damage, Incorporated
-              2588739576, // Crucible Solemnity
+              4159935832, // Fireforged Valor
+              1788892384, // Smoldering Flame
+              1788892385, // Persistent Blaze
+              2420153991, // Made Shaxx Proud
               2588739578, // Crucible Legacy
-              2588739579 // Crucible Metallic
+              2588739579, // Crucible Metallic
+              2588739576 // Crucible Solemnity
             ]
           }
         ]
@@ -213,11 +220,14 @@ export default ([
               4271205858, // Antediluvian
               3610893760, // Drift Apart
               1471300080, // A Cold Wind Blowin'
+              3013363601, // Playin' The Odds
               540603119, // Primeval Prime
               540603118, // Ludomaniacal
-              1335424933, // Gambit Suede
+              180108390, // Kit and Kaboodle
+              180108391, // Dance the Demons Away
               1335424935, // Gambit Leather
-              1335424934 // Gambit Chrome
+              1335424934, // Gambit Chrome
+              1335424933 // Gambit Suede
             ]
           }
         ]
@@ -357,7 +367,9 @@ export default ([
               3862768196, // Wish-Maker Shell
               2081719592, // Cleansing Knife
               2269373482, // Ermine TAC-717
-              1059304051 // Wish No More
+              1059304051, // Wish No More
+              1511214613, // The Winding Tower (Emblem)
+              1511214612 // Castle in the Clouds (Emblem)
             ]
           }
         ]
@@ -463,6 +475,9 @@ export default ([
             name: 'Extras',
             season: 4,
             items: [
+              1671775166, // Wing of the Crow
+              1671775167, // Untangled
+              4085986809, // Secret Treasure
               1226584228, // Tangled Rust
               1226584229 // Tangled Bronze
             ]
@@ -534,7 +549,9 @@ export default ([
               1317468652, // Harbinger's Echo
               1317468653, // Silver Tercel
               2844014413, // Pallas Galliot
-              3352019292 // Secret Victories
+              3352019292, // Secret Victories
+              3118323620, // Drink at the Well
+              3118323621 // Transcendent
             ]
           }
         ]
