@@ -563,6 +563,7 @@ export default ([
     sets: [
       {
         name: 'Festival of the Lost',
+        id: 'YEAR_TWO_FESTIVAL_OF_THE_LOST',
         big: true,
         sections: [
           {
