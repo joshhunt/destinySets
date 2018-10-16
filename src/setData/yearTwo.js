@@ -892,6 +892,16 @@ export default ([
               2815102895, // Celestial Dome
               2815102892 // Forty-Four Steel
             ]
+          },
+          {
+            name: 'Transmat Effects',
+            season: 4,
+            items: [
+              1836879401, // Corrupt Ether
+              1836879400, // Reef Awoken
+              1836879403, // Reef Shimmer
+              1836879402 // Reef Oracle
+            ]
           }
         ]
       }
