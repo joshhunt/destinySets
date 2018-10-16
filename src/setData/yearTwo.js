@@ -542,6 +542,73 @@ export default ([
     ]
   },
   {
+    name: 'Holiday & Special Events',
+    sets: [
+      {
+        name: 'Festival of the Lost',
+        big: true,
+        sections: [
+          {
+            name: 'Hunter Armor',
+            season: 4,
+            items: [
+
+            ]
+          },
+          {
+            name: 'Titan Armor',
+            season: 4,
+            items: [
+
+            ]
+          },
+          {
+            name: 'Warlock Armor',
+            season: 4,
+            items: [
+
+            ]
+          },
+          {
+            name: 'Emotes',
+            season: 4,
+            items: [
+
+            ]
+          },
+          {
+            name: 'Ghosts',
+            season: 4,
+            items: [
+              
+            ]
+          },
+          {
+            name: 'Sparrows',
+            season: 4,
+            items: [
+
+            ]
+          },
+          {
+            name: 'Ships',
+            season: 4,
+            items: [
+
+            ]
+          },
+          {
+            name: 'Extras',
+            season: 4,
+            items: [
+
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
     name: 'Other',
     sets: [
       {
