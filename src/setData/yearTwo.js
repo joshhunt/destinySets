@@ -71,10 +71,13 @@ export default ([
               4030297244, // Buckthorn Approach (Ship)
               2390666069, // High-Risk, High-Reward (Emblem)
               1075647353, // Vanguard Terminus (Emblem)
+              2935851862, // Struck a Nerve (Emblem)
+              2294983474, // Honor of the Vanguard (Emblem)
+              2294983475, // Strikes of All Stripes (Emblem)
               1263710510, // Always North (Shader)
-              2788911997, // Vanguard Divide (Shader)
               2788911999, // Vanguard Veteran (Shader)
-              2788911998 // Vanguard Metallic (Shader)
+              2788911998, // Vanguard Metallic (Shader)
+              2788911997 // Vanguard Divide (Shader)
             ]
           }
         ]
@@ -140,9 +143,13 @@ export default ([
             season: 4,
             items: [
               1131244817, // Damage, Incorporated
-              2588739576, // Crucible Solemnity
+              4159935832, // Fireforged Valor
+              1788892384, // Smoldering Flame
+              1788892385, // Persistent Blaze
+              2420153991, // Made Shaxx Proud
               2588739578, // Crucible Legacy
-              2588739579 // Crucible Metallic
+              2588739579, // Crucible Metallic
+              2588739576 // Crucible Solemnity
             ]
           }
         ]
@@ -213,11 +220,14 @@ export default ([
               4271205858, // Antediluvian
               3610893760, // Drift Apart
               1471300080, // A Cold Wind Blowin'
+              3013363601, // Playin' The Odds
               540603119, // Primeval Prime
               540603118, // Ludomaniacal
-              1335424933, // Gambit Suede
+              180108390, // Kit and Kaboodle
+              180108391, // Dance the Demons Away
               1335424935, // Gambit Leather
-              1335424934 // Gambit Chrome
+              1335424934, // Gambit Chrome
+              1335424933 // Gambit Suede
             ]
           }
         ]
@@ -357,7 +367,9 @@ export default ([
               3862768196, // Wish-Maker Shell
               2081719592, // Cleansing Knife
               2269373482, // Ermine TAC-717
-              1059304051 // Wish No More
+              1059304051, // Wish No More
+              1511214613, // The Winding Tower (Emblem)
+              1511214612 // Castle in the Clouds (Emblem)
             ]
           }
         ]
@@ -463,6 +475,9 @@ export default ([
             name: 'Extras',
             season: 4,
             items: [
+              1671775166, // Wing of the Crow
+              1671775167, // Untangled
+              4085986809, // Secret Treasure
               1226584228, // Tangled Rust
               1226584229 // Tangled Bronze
             ]
@@ -534,7 +549,156 @@ export default ([
               1317468652, // Harbinger's Echo
               1317468653, // Silver Tercel
               2844014413, // Pallas Galliot
-              3352019292 // Secret Victories
+              3352019292, // Secret Victories
+              3118323620, // Drink at the Well
+              3118323621 // Transcendent
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    name: 'Holiday & Special Events',
+    sets: [
+      {
+        name: 'Festival of the Lost',
+        id: 'YEAR_TWO_FESTIVAL_OF_THE_LOST',
+        big: true,
+        sections: [
+          {
+            name: 'Weapons',
+            season: 4,
+            items: [
+              3829285960 // Horror Story
+            ]
+          },
+          {
+            name: 'Hunter Armor',
+            season: 4,
+            items: [
+              3448772677, // Skerren Corvus Mask
+              4187872788, // Skerren Corvus Grasps
+              654307116, // Skerren Corvus Vest
+              4051153950, // Skerren Corvus Strides
+              3352962401 // Skerren Corvus Cloak
+            ]
+          },
+          {
+            name: 'Titan Armor',
+            season: 4,
+            items: [
+              2253976433, // Lustrous Chromite Helm
+              870527944, // Lustrous Chromite Gauntlets
+              2800372416, // Lustrous Chromite Plate
+              1547512994, // Lustrous Chromite Greaves
+              1727527805 // Lustrous Chromite Mark
+            ]
+          },
+          {
+            name: 'Warlock Armor',
+            season: 4,
+            items: [
+              4044559530, // Liminal Voyager Hood
+              4050120691, // Liminal Voyager Gloves
+              1575548701, // Liminal Voyager Robes
+              3785074629, // Liminal Voyager Boots
+              3037536592 // Liminal Voyager Bond
+            ]
+          },
+          {
+            name: 'Masks',
+            season: 4,
+            items: [
+               1138577659, // Glitterball Mask
+               1138577658, // Colonel Mask
+               1441415180, // Master Rahool Mask
+               1441415182, // Traveler Mask
+               1441415178, // Lord Shaxx Mask
+               1441415181, // Petra Venj Mask
+               1441415179, // Dominus Ghaul Mask
+               1441415175, // Jade Rabbit Mask
+               1441415177, // Will of the Thousands Mask
+               1441415174, // Scorn Mask
+               1441415176, // Emperor Calus Mask
+               1441415183 // Dark Prince Mask
+            ]
+          },
+          {
+            name: 'Emotes',
+            season: 4,
+            items: [
+              2024188850, // Heroic Guitarist
+              171748061, // Summoning Dance
+              937162783, // Magnificent Dance
+              3665594271 // Spell of Abolition
+            ]
+          },
+          {
+            name: 'Ghosts',
+            season: 4,
+            items: [
+              1833569877, // Okular Fortitude Shell
+              1833569876, // Nine Lives Shell
+              1833569879, // Stonecraft's Amalgam Shell
+              4283023982, // Quondam Shell
+              4283023983, // Angora Raider Shell
+              4283023980, // Canaan's Harvest Shell
+              4283023981, // Rigg's Vortex Shell
+              4283023978, // The Lycan's Mire Shell
+              4283023979 // Seal of Troika Shell
+            ]
+          },
+          {
+            name: 'Ghost Projections',
+            season: 4,
+            items: [
+              1771869769, // Chiroptera Projection
+              1771869768, // Spectral Projection
+              1771869771, // Spinneret Projection
+              1771869770, // Carved Projection
+              1771869773, // Arachnid Projection
+              1771869772, // Remembrance Projection
+              1771869775, // Unlucky Projection
+              1771869774 // Phrygian Projection
+            ]
+          },
+          {
+            name: 'Ships',
+            season: 4,
+            items: [
+              1721185807, // Infected Seeker
+              1721185806, // Aerial Shroud
+              1473368764, // Three to Eight
+              1473368765, // Uncrowned Progenitor
+              1473368766, // The First Domino
+              1473368767, // Stronger Than Now
+              1473368760, // Stained Shrapnel
+              1473368761 // Xenon Direct
+            ]
+          },
+          {
+            name: 'Sparrows',
+            season: 4,
+            items: [
+              1836636207, // Winchester's Ruin
+              2277536122, // Insurgent's Spur
+              2277536123, // Cetacean Wing
+              2277536120 // Bishop's Run
+            ]
+          },
+          {
+            name: 'Extras',
+            season: 4,
+            items: [
+              2176571298, // Nightmare's End (Emblem)
+              2176571299, // Deep in the Woods (Emblem)
+              566732136, // Amaranth Atrocity
+              2574262861, // Soulsknot (Transmat Effect)
+              2574262860, // Arachnophile (Transmat Effect)
+              4224972854, // Dark Fluorescence (Shader)
+              4224972855, // Shadowstrike (Shader)
+              566732136 // Amaranth Atrocity (Shader)
             ]
           }
         ]
@@ -824,6 +988,16 @@ export default ([
               2815102894, // Metropolitan Acoustics
               2815102895, // Celestial Dome
               2815102892 // Forty-Four Steel
+            ]
+          },
+          {
+            name: 'Transmat Effects',
+            season: 4,
+            items: [
+              1836879401, // Corrupt Ether
+              1836879400, // Reef Awoken
+              1836879403, // Reef Shimmer
+              1836879402 // Reef Oracle
             ]
           }
         ]
