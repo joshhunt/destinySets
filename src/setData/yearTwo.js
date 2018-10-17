@@ -693,7 +693,6 @@ export default ([
             items: [
               2176571298, // Nightmare's End (Emblem)
               2176571299, // Deep in the Woods (Emblem)
-              566732136, // Amaranth Atrocity
               2574262861, // Soulsknot (Transmat Effect)
               2574262860, // Arachnophile (Transmat Effect)
               4224972854, // Dark Fluorescence (Shader)
