@@ -1537,10 +1537,7 @@ export default ([
               3287805183, // Infinite Hand Shell
               3287805180, // Joyous Hunt Shell
               3287805176, // Dawning Bauble Shell
-              1051903593, // Dawning Bauble Shell
-              1816495538, // Sweet Memories Shell
               3287805181, // Sweet Memories Shell
-              1397284432, // Jasper Dawn Shell
               3287805179 // Jasper Dawn Shell
             ]
           },
@@ -1558,11 +1555,8 @@ export default ([
               1423305591, // Verità Scelta
               1423305587, // Subito Mk. 9
               1423305585, // Rocket-Propelled Bobsled
-              3161524490, // Rupture
               1423305589, // Rupture
               1423305590, // Shimmering Iris
-              3569791559, // Shimmering Iris
-              1984190529, // Magikon
               1423305584 // Magikon
             ]
           },
@@ -1577,12 +1571,9 @@ export default ([
               3140833553, // Brilliant Narcissus
               3140833558, // Breath of Stars
               3140833556, // Winter Blade
-              3177119978, // Carmina Commencing
               3140833557, // Carmina Commencing
               3140833559, // Regent Redeemer
-              1602334068, // Regent Redeemer
               3140833554, // Joyfire
-              3729709035 // Joyfire
             ]
           },
           {
@@ -1592,8 +1583,13 @@ export default ([
               3639894194, // Light of the Dawning
               3800267415, // Dawning Hope
               3800267413, // Dawning Festiveness
-              3866715933, // Dawning Warmth
-              3800267414 // Dawning Brilliance
+              3800267412, // Dawning Warmth
+              3800267414, // Dawning Brilliance
+              3023230941, // Ice Ball Effects
+              2607476204, // Silver Dawning Lanterns
+              2607476205, // Yellow Dawning Lanterns
+              2607476206, // Green Dawning Lanterns
+              2607476207 // Purple Dawning Lanterns
             ]
           }
         ]
