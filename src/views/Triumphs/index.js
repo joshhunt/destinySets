@@ -54,7 +54,7 @@ class Triumphs extends Component {
           <PresentationNodeChildren
             hash={viewCrumb.id}
             showChildren={true}
-            linkPrefix={`/${breadcrumbs.join('/')}`}
+            linkPrefix={`/${breadcrumbs.map(bc => bc.id).join('/')}`}
           />
         </div>
       );
