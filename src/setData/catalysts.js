@@ -9,7 +9,7 @@ export default ([
     sets: [
       {
         name: 'Exotics',
-        id: "CATALYSTS",
+        id: 'CATALYSTS',
         big: true,
         noUi: true,
         sections: [
@@ -17,6 +17,7 @@ export default ([
             name: 'Weapons',
             itemType: 'exoticCatalysts',
             items: [
+              3549153978, // Fighting Lion
               1891561814, // Whisper of the Worm
               2907129556, // Sturm
               2208405142, // Telesto
