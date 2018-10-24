@@ -8,6 +8,7 @@ import App from './views/App';
 import Diff from './views/Diff';
 import Inventory from './views/Inventory';
 import Triumphs from './views/Triumphs';
+import ItemPage from './views/ItemPage';
 import Debug from './views/Debug';
 import DataExplorerRedirect from './views/DataExplorerRedirect';
 
@@ -87,6 +88,8 @@ export default class AppRouter extends Component {
               path="/triumphs/:presentationNodeA/:presentationNodeB/:presentationNodeC"
               component={Triumphs}
             />
+
+            <Route path="/item/:itemHash" components={ItemPage} />
 
             <Route path="/data(/:itemHash)" component={DataExplorerRedirect} />
             <Route path="/diff" component={Diff} />

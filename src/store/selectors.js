@@ -34,7 +34,8 @@ export const collectibleDefsSelector = state =>
 export const presentationNodeDefsSelector = state =>
   state.definitions.DestinyPresentationNodeDefinition;
 
-export const itemHashPropSelector = (state, props) => props.itemHash;
+export const itemHashPropSelector = (state, props) =>
+  props.itemHash || (props.routeParams && props.routeParams.itemHash);
 
 export const makeItemSelector = () => {
   return createSelector(
