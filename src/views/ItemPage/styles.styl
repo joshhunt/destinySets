@@ -1,8 +1,8 @@
 $border-color =  lighten(#12161B, 10%);
 
 .root
-  padding: 15px
-  max-width: 1200px
+  padding: 15px 60px
+  max-width: 1440px
   margin: auto
 
 .pageFlex
@@ -13,10 +13,14 @@ $border-color =  lighten(#12161B, 10%);
 
 .itemMain
 .itemExtra
+.perksSection
   flex: 1
   width: 50%
   min-width: 300px
   margin: 0 15px 30px 15px
+
+.perksSection
+  flex-basis: 100%
 
 .nameIconLockup
   display: flex
@@ -67,3 +71,63 @@ $border-color =  lighten(#12161B, 10%);
 
 .itemAttributes
   margin-bottom: 20px
+
+.perks
+  display: flex
+  margin: 0 -20px
+  max-width: 100%
+  overflow: auto
+
+.socket
+  flex: 1 0 0
+  margin: 0 10px
+  padding: 0 10px
+
+  & + &
+    border-left: 1px solid $border-color
+
+.perk
+  display: flex
+  align-items: center
+  padding: 5px
+  font-size: 14px
+
+.perkName
+  white-space: nowrap
+  overflow: hidden
+  text-overflow: ellipsis
+
+.perkIcon
+  height: 30px
+  display: inline-block
+  margin-right: 5px
+
+.altPerk
+  composes: perk
+  opacity: 0.85
+
+.randomPerk
+  composes: perk
+  opacity: 0.85
+  font-size: 13px
+
+  .perkIcon
+    height: 25px
+
+.randomRollTitle
+  margin-top: 10px
+  font-weight: bold
+
+.tooltipPerkDescription
+.tooltipPerkName
+  white-space: pre-line
+  text-align: left
+  display: inline-block
+
+.tooltipPerkName
+  display: block
+  font-weight: bold
+
+  img
+    height: 1em
+    vertical-align: middle

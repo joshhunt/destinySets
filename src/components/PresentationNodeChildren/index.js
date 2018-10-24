@@ -44,6 +44,7 @@ function PresentationNodeChildren({
             ({ presentationNodeHash }) =>
               showChildren ? (
                 <ConnectedPresentationNodeChildren
+                  key={presentationNodeHash}
                   hash={presentationNodeHash}
                   showChildren={false}
                   isNested={true}

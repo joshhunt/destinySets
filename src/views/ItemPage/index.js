@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { connect } from 'react-redux';
 import cx from 'classnames';
+import { Tooltip } from 'react-tippy';
 
 import {
   makeItemSelector,
@@ -11,6 +12,8 @@ import BungieImage from 'app/components/BungieImage';
 import ItemStats from 'app/components/ItemStats';
 import ItemAttributes from 'app/components/ItemAttributes';
 import Icon from 'app/components/Icon';
+
+import 'react-tippy/dist/tippy.css';
 
 import s from './styles.styl';
 
@@ -39,7 +42,40 @@ const WEAPON_SLOT = {
   953998645: 'Power'
 };
 
-function ItemPage({ item, stats, statDefs, collectible, itemHash }) {
+function Perk({ className, perk }) {
+  if (!perk) {
+    return null;
+  }
+
+  return (
+    <Tooltip
+      html={
+        <Fragment>
+          <div className={s.tooltipPerkName}>
+            <BungieImage
+              src={perk.displayProperties.icon}
+              className={s.tooltipPerkIcon}
+            />{' '}
+            {perk.displayProperties.name}
+          </div>
+          <span className={s.tooltipPerkDescription}>
+            {perk.displayProperties.description}
+          </span>
+        </Fragment>
+      }
+      position="bottom"
+      arrow
+      followCursor
+    >
+      <div className={className}>
+        <BungieImage className={s.perkIcon} src={perk.displayProperties.icon} />
+        <div className={s.perkName}>{perk.displayProperties.name}</div>
+      </div>
+    </Tooltip>
+  );
+}
+
+function ItemPage({ item, stats, statDefs, collectible, perks, itemHash }) {
   const weaponSlot =
     item &&
     item.equippingBlock &&
@@ -97,6 +133,31 @@ function ItemPage({ item, stats, statDefs, collectible, itemHash }) {
         <div className={s.itemExtra}>
           <BungieImage className={s.screenshot} src={item && item.screenshot} />
         </div>
+
+        <div className={s.perksSection}>
+          <h2>Perks</h2>
+          <div className={s.perks}>
+            {perks &&
+              perks.map((socket, index) => (
+                <div className={s.socket}>
+                  <Perk perk={socket.mainPerk} className={s.perk} />
+
+                  {socket.altPerks.map(perk => (
+                    <Perk perk={perk} className={s.altPerk} />
+                  ))}
+
+                  {socket.randomPerks && (
+                    <div className={s.randomRolls}>
+                      <div className={s.randomRollTitle}>Random perks:</div>
+                      {socket.randomPerks.map(perk => (
+                        <Perk perk={perk} className={s.randomPerk} />
+                      ))}
+                    </div>
+                  )}
+                </div>
+              ))}
+          </div>
+        </div>
       </div>
     </div>
   );
@@ -107,15 +168,48 @@ function mapStateToProps() {
   const itemStatsSelector = makeItemStatsSelector();
 
   return (state, ownProps) => {
-    const itemDef = itemSelector(state, ownProps);
+    const item = itemSelector(state, ownProps);
+    const itemDefs = state.definitions.DestinyInventoryItemDefinition;
+
+    // TODO: memoize this with a selector
+    const socketCategory =
+      item &&
+      item.sockets &&
+      item.sockets.socketCategories.find(
+        ({ socketCategoryHash }) => (socketCategoryHash = 4241085061)
+      );
+
+    const perks =
+      socketCategory &&
+      socketCategory.socketIndexes
+        .map(socketIndex => item.sockets.socketEntries[socketIndex])
+        .map(socket => {
+          return {
+            mainPerk: itemDefs[socket.singleInitialItemHash],
+            altPerks: socket.reusablePlugItems
+              .filter(
+                ({ plugItemHash }) =>
+                  socket.singleInitialItemHash !== plugItemHash
+              )
+              .map(({ plugItemHash }) => itemDefs[plugItemHash]),
+
+            randomPerks:
+              socket.randomizedPlugItems.length > 0 &&
+              socket.randomizedPlugItems
+                .map(randomRoll => itemDefs[randomRoll.plugItemHash])
+                .filter(Boolean)
+          };
+        });
+
     return {
-      item: itemDef,
+      item: item,
       stats: itemStatsSelector(state, ownProps),
       statDefs: statDefsSelector(state),
+      perks,
       collectible:
         state.definitions.DestinyCollectibleDefinition &&
         state.definitions.DestinyCollectibleDefinition[
-          itemDef && itemDef.collectibleHash
+          item && item.collectibleHash
         ]
     };
   };

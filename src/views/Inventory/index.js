@@ -39,15 +39,6 @@ class Inventory extends Component {
     unexpectedError: false
   };
 
-  componentDidMount() {
-    this.potentiallyScheduleFetchProfile();
-  }
-
-  componentWillUnmount() {
-    window.clearInterval(this.intervalId);
-    this.intervalId = null;
-  }
-
   componentDidUpdate(oldProps) {
     const { filters, language, trackedItems } = this.props;
 
@@ -71,6 +62,7 @@ class Inventory extends Component {
 
     if (props.route.refreshOnInterval || props.trackedItems.length > 0) {
       this.intervalId = window.setInterval(() => {
+        console.log('calling props.fetchProfile()');
         props.fetchProfile();
       }, FETCH_INTERVAL);
     }

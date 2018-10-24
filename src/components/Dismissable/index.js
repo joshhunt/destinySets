@@ -21,7 +21,7 @@ export default class Dismissable extends Component {
     if (!this.state.active) {
       return null;
     }
-    const { children, ...props } = this.props;
+    const { children, onDismissed, ...props } = this.props;
 
     return (
       <div {...props}>

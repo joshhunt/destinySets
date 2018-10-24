@@ -35,6 +35,8 @@ import styles from './styles.styl';
 
 const log = require('app/lib/log')('<App />');
 
+const FETCH_INTERVAL = 30 * 1000;
+
 const MANIFEST_MESSAGES = {
   [STATUS_DOWNLOADING]: 'Downloading new item data from Bungie...',
   [STATUS_EXTRACTING_TABLES]: 'Unpacking item data...',
@@ -61,9 +63,16 @@ class App extends Component {
   componentDidMount() {
     destinyAuth(this.authDidUpdate);
 
+    this.potentiallyScheduleFetchProfile();
+
     destiny.xur((cb, data) => {
       data && this.props.setXurData(data);
     });
+  }
+
+  componentWillUnmount() {
+    window.clearInterval(this.intervalId);
+    this.intervalId = null;
   }
 
   componentDidUpdate(prevProps) {
@@ -87,7 +96,25 @@ class App extends Component {
         props.profile
       );
     }
+
+    if (propChanged('trackedItems')) {
+      this.potentiallyScheduleFetchProfile(this.props);
+    }
   }
+
+  potentiallyScheduleFetchProfile = (props = this.props) => {
+    if (this.intervalId) {
+      return;
+    }
+
+    const refreshOnInterval = this.props.routes.find(r => r.refreshOnInterval);
+
+    if (refreshOnInterval || props.trackedItems.length > 0) {
+      this.intervalId = window.setInterval(() => {
+        props.fetchProfile();
+      }, FETCH_INTERVAL);
+    }
+  };
 
   authDidUpdate = (err, { isAuthenticated, isFinal }) => {
     log('Auth state update', { err, isAuthenticated, isFinal });
@@ -278,6 +305,7 @@ const mapStateToProps = state => {
     definitionsStatus: state.definitions.status,
     profileError: state.profile.err,
     auth: state.auth,
+    trackedItems: state.app.trackedItems,
     profileCached: state.profile.isCached,
     profile: state.profile.profile,
     profileLoading: state.profile.profileLoading,

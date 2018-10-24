@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 import { get } from 'lodash';
 
 import PresentationNodeChildren from 'app/components/PresentationNodeChildren';
-import PresentationNode from 'app/components/PresentationNode';
 
 import s from './styles.styl';
 
@@ -23,7 +22,7 @@ function getBreadcrubLink(breadcrumbs, current) {
 
 class Triumphs extends Component {
   render() {
-    const { score, params, trackedRecords, breadcrumbs } = this.props;
+    const { score, trackedRecords, breadcrumbs } = this.props;
 
     const viewCrumb = breadcrumbs[breadcrumbs.length - 1];
 
@@ -69,7 +68,7 @@ class Triumphs extends Component {
 
         <p>
           {breadcrumbs.map(crumb => (
-            <span className={s.crumb}>
+            <span className={s.crumb} key={crumb.id}>
               <Link
                 className={s.crumbLink}
                 to={getBreadcrubLink(breadcrumbs, crumb)}
