@@ -6,7 +6,8 @@ import { Tooltip } from 'react-tippy';
 import {
   makeItemSelector,
   makeItemStatsSelector,
-  statDefsSelector
+  statDefsSelector,
+  makeItemInstanceSelector
 } from 'app/store/selectors';
 import BungieImage from 'app/components/BungieImage';
 import ItemStats from 'app/components/ItemStats';
@@ -14,6 +15,8 @@ import ItemAttributes from 'app/components/ItemAttributes';
 import Icon from 'app/components/Icon';
 
 import 'react-tippy/dist/tippy.css';
+
+import { makePerksSelector } from './selectors';
 
 import s from './styles.styl';
 
@@ -63,7 +66,7 @@ function Perk({ className, perk }) {
           </span>
         </Fragment>
       }
-      position="bottom"
+      position="top"
       arrow
       followCursor
     >
@@ -75,7 +78,46 @@ function Perk({ className, perk }) {
   );
 }
 
-function ItemPage({ item, stats, statDefs, collectible, perks, itemHash }) {
+function Perks({ perks }) {
+  return (
+    <div className={s.perks}>
+      {perks &&
+        perks.map((socket, index) => (
+          <div className={s.socket}>
+            {socket.mainPerk && (
+              <Perk perk={socket.mainPerk} className={s.perk} />
+            )}
+
+            {socket.altPerks.map(perk => (
+              <Perk
+                perk={perk.plugItem}
+                className={perk.enabled ? s.altPerkEnabled : s.altPerk}
+              />
+            ))}
+
+            {socket.randomPerks && (
+              <div className={s.randomRolls}>
+                <div className={s.randomRollTitle}>Random perks:</div>
+                {socket.randomPerks.map(perk => (
+                  <Perk perk={perk} className={s.randomPerk} />
+                ))}
+              </div>
+            )}
+          </div>
+        ))}
+    </div>
+  );
+}
+
+function ItemPage({
+  item,
+  stats,
+  statDefs,
+  collectible,
+  perks,
+  itemHash,
+  instances
+}) {
   const weaponSlot =
     item &&
     item.equippingBlock &&
@@ -136,27 +178,16 @@ function ItemPage({ item, stats, statDefs, collectible, perks, itemHash }) {
 
         <div className={s.perksSection}>
           <h2>Perks</h2>
-          <div className={s.perks}>
-            {perks &&
-              perks.map((socket, index) => (
-                <div className={s.socket}>
-                  <Perk perk={socket.mainPerk} className={s.perk} />
 
-                  {socket.altPerks.map(perk => (
-                    <Perk perk={perk} className={s.altPerk} />
-                  ))}
+          {perks && <Perks perks={perks} />}
 
-                  {socket.randomPerks && (
-                    <div className={s.randomRolls}>
-                      <div className={s.randomRollTitle}>Random perks:</div>
-                      {socket.randomPerks.map(perk => (
-                        <Perk perk={perk} className={s.randomPerk} />
-                      ))}
-                    </div>
-                  )}
-                </div>
-              ))}
-          </div>
+          <h2>Instances</h2>
+          {instances.map((instance, index) => (
+            <div key={index}>
+              {perks && <Perks perks={instance.$perks} />}
+              <br />
+            </div>
+          ))}
         </div>
       </div>
     </div>
@@ -166,46 +197,49 @@ function ItemPage({ item, stats, statDefs, collectible, perks, itemHash }) {
 function mapStateToProps() {
   const itemSelector = makeItemSelector();
   const itemStatsSelector = makeItemStatsSelector();
+  const perksSelector = makePerksSelector();
+  const itemInstanceSelector = makeItemInstanceSelector();
 
   return (state, ownProps) => {
     const item = itemSelector(state, ownProps);
     const itemDefs = state.definitions.DestinyInventoryItemDefinition;
 
-    // TODO: memoize this with a selector
-    const socketCategory =
-      item &&
-      item.sockets &&
-      item.sockets.socketCategories.find(
-        ({ socketCategoryHash }) => (socketCategoryHash = 4241085061)
-      );
+    const { perks, socketCategory } = perksSelector(state, ownProps);
 
-    const perks =
-      socketCategory &&
-      socketCategory.socketIndexes
-        .map(socketIndex => item.sockets.socketEntries[socketIndex])
-        .map(socket => {
-          return {
-            mainPerk: itemDefs[socket.singleInitialItemHash],
-            altPerks: socket.reusablePlugItems
-              .filter(
-                ({ plugItemHash }) =>
-                  socket.singleInitialItemHash !== plugItemHash
-              )
-              .map(({ plugItemHash }) => itemDefs[plugItemHash]),
-
-            randomPerks:
-              socket.randomizedPlugItems.length > 0 &&
-              socket.randomizedPlugItems
-                .map(randomRoll => itemDefs[randomRoll.plugItemHash])
-                .filter(Boolean)
-          };
-        });
+    const instances = itemInstanceSelector(state, ownProps);
+    const instancesWithPerks =
+      instances &&
+      instances.map(instance => {
+        // debugger;
+        return {
+          ...instance,
+          $perks:
+            socketCategory &&
+            socketCategory.socketIndexes.map(socketIndex => {
+              const socket = instance.$sockets[socketIndex];
+              return {
+                // mainPerk: itemDefs[socket.plugHash],
+                altPerks: socket.reusablePlugs.map(plug => ({
+                  enabled: socket.plugHash === plug.plugItemHash,
+                  plugItem: itemDefs[plug.plugItemHash]
+                }))
+                // altPerks: socket.reusablePlugItems
+                //   .filter(
+                //     ({ plugItemHash }) =>
+                //       socket.singleInitialItemHash !== plugItemHash
+                //   )
+                //   .map(({ plugItemHash }) => itemDefs[plugItemHash])
+              };
+            })
+        };
+      });
 
     return {
       item: item,
       stats: itemStatsSelector(state, ownProps),
       statDefs: statDefsSelector(state),
       perks,
+      instances: instancesWithPerks,
       collectible:
         state.definitions.DestinyCollectibleDefinition &&
         state.definitions.DestinyCollectibleDefinition[

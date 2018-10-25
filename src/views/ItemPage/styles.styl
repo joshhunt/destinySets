@@ -74,7 +74,7 @@ $border-color =  lighten(#12161B, 10%);
 
 .perks
   display: flex
-  margin: 0 -20px
+  margin: 0 -10px
   max-width: 100%
   overflow: auto
   -webkit-overflow-scrolling: touch
@@ -82,10 +82,10 @@ $border-color =  lighten(#12161B, 10%);
 .socket
   flex: 1 0 0
   margin: 0 10px
-  padding: 0 10px
 
   & + &
     border-left: 1px solid $border-color
+    padding-left: 10px
 
 .perk
   display: flex
@@ -105,11 +105,17 @@ $border-color =  lighten(#12161B, 10%);
 
 .altPerk
   composes: perk
-  opacity: 0.85
+  opacity: 0.8
+
+.altPerkEnabled
+  composes: perk
+  font-weight: bold
+  border: 1px solid rgba(68,189,50,0.15);
+  background: rgba(68,189,50,0.15);
 
 .randomPerk
   composes: perk
-  opacity: 0.85
+  opacity: 0.8
   font-size: 13px
 
   .perkIcon

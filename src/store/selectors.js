@@ -345,30 +345,41 @@ export const makeItemVendorEntrySelector = () => {
   );
 };
 
-const extractInstances = fp.flatMapDeep(
-  characterEquipment => characterEquipment.items
-);
+const extractInstances = characterInventory => {
+  return Object.entries(characterInventory).reduce(
+    (acc, [characterId, { items }]) => {
+      return acc.concat(
+        items.map(item => ({ ...item, $characterId: characterId }))
+      );
+    },
+    []
+  );
+};
 
-const itemInstancesSelector = createSelector(profileSelector, profile => {
-  if (!profile) {
-    return {};
+export const itemInstancesSelector = createSelector(
+  profileSelector,
+  profile => {
+    if (!profile) {
+      return {};
+    }
+
+    return fp.flow(
+      fp.concat(extractInstances(profile.characterEquipment.data)),
+      fp.concat(extractInstances(profile.characterInventories.data)),
+      fp.concat(profile.profileInventory.data.items),
+      fp.map(itemInstance => {
+        return {
+          ...itemInstance,
+          $sockets: (
+            profile.itemComponents.sockets.data[itemInstance.itemInstanceId] ||
+            {}
+          ).sockets
+        };
+      }),
+      fp.groupBy(component => component.itemHash)
+    )([]);
   }
-
-  return fp.flow(
-    fp.concat(extractInstances(profile.characterEquipment.data)),
-    fp.concat(extractInstances(profile.characterInventories.data)),
-    fp.concat(profile.profileInventory.data.items),
-    fp.map(itemInstance => {
-      return {
-        ...itemInstance,
-        $sockets: (
-          profile.itemComponents.sockets.data[itemInstance.itemInstanceId] || {}
-        ).sockets
-      };
-    }),
-    fp.groupBy(component => component.itemHash)
-  )([]);
-});
+);
 
 export const vendorItemDataSelector = createSelector(
   profileSelector,
