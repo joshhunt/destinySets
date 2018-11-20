@@ -999,7 +999,8 @@ export default ([
               1273131835, // Arctic Arsenalist
               1291068171, // Data Mine
               1273131832, // Warminded
-              235397502 // Arctic Dreamscape
+              235397502, // Arctic Dreamscape
+              235397503 // Bray Innovation
             ]
           }
         ]
