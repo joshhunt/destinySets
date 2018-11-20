@@ -181,13 +181,17 @@ function ItemPage({
 
           {perks && <Perks perks={perks} />}
 
-          <h2>Instances</h2>
-          {instances.map((instance, index) => (
-            <div key={index}>
-              {perks && <Perks perks={instance.$perks} />}
-              <br />
-            </div>
-          ))}
+          {instances && (
+            <Fragment>
+              <h2>Instances</h2>
+              {instances.map((instance, index) => (
+                <div key={index}>
+                  {perks && <Perks perks={instance.$perks} />}
+                  <br />
+                </div>
+              ))}
+            </Fragment>
+          )}
         </div>
       </div>
     </div>
