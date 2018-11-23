@@ -235,35 +235,35 @@ export default ([
         'STRIKE_LAKE_OF_SHADOWS',
         '/img/destiny_content/pgcr/strike_lake_of_shadows.jpg',
         [3745974521],
-        [1184965378]
+        [1184965378, 4179974574]
       ),
       strike(
         'The Insight Terminus',
         'STRIKE_INSIGHT_TERMINUS',
         '/img/destiny_content/pgcr/strike_glee.jpg',
         [2154059444],
-        [3844225097]
+        [3844225097, 3597022727]
       ),
       strike(
         'The Corrupted',
         'STRIKE_THE_CORRUPTED',
         '/img/destiny_content/pgcr/strike_gemini.jpg',
         [1071542914],
-        [4162792207]
+        [4162792207, 1777460225]
       ),
       strike(
         'The Hollowed Lair',
         'STRIKE_THE_HOLLOWED_LAIR',
         '/img/destiny_content/pgcr/strike_taurus.jpg',
         [4117693024],
-        [1639160638]
+        [1639160638, 3819100474]
       ),
       strike(
         'Warden of Nothing',
         'STRIKE_WARDEN_OF_NOTHING',
         '/img/destiny_content/pgcr/strike_aries.jpg',
         [233423981],
-        [1814407142]
+        [1814407142, 1582507554]
       )
     ]
   }
