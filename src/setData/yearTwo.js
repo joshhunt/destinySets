@@ -875,7 +875,6 @@ export default ([
               132405572, // All Alone'
               704532774, // Sad Trombone'
               1332836182, // Unbridled Enthusiasm
-              3201469151, // Cerebral Explosion' (CEREBRAL BUNDLE)
               3256616328, // Accidental Dance
               4080789277, // Beguiling Dance'
               2604685098, // Linear Fusion Dance'
@@ -910,7 +909,6 @@ export default ([
               1625672313, // Mansansas Shell
               1625672312, // Atlantis Shell
               1625672315, // Chevron Shell
-              374922805 // Freyja Shell (AWAKENED BUNDLE)
             ]
           },
           {
@@ -951,7 +949,6 @@ export default ([
               3600237175, // Last Sunset
               3600237176, // Quantum Cartographer
               3600237177, // In Medias Res
-              3600237171 // Upward Spiral (AWAKENED BUNDLE)
             ]
           },
           {
@@ -973,7 +970,6 @@ export default ([
               2285214169, // Swiftsong
               2285214166, // Mappa Mundarum
               2285214167, // Jubilee Pronto
-              2285214170 // Roar Defiant (AWAKENED BUNDLE)
             ]
           },
           {
