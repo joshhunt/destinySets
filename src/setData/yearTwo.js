@@ -259,6 +259,14 @@ export default ([
               1335424934, // Gambit Chrome
               1335424933 // Gambit Suede
             ]
+          },
+          {
+            name: 'Extras',
+            season: 5,
+            items: [
+              2394866220, // Keep on Drifting
+              3217477988 // Gambit Duds
+            ]
           }
         ]
       },
