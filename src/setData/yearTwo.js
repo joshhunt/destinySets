@@ -844,6 +844,17 @@ export default ([
             ]
           },
           {
+            name: 'Hunter Armor',
+            season: 5,
+            items: [
+              2754217990, // Vanguard Dare Casque
+              1768177879, // Vanguard Dare Grips
+              3422717473, // Vanguard Dare Vest
+              3576712697, // Vanguard Dare Boots
+              4205222524 // Vanguard Dare Cloak
+            ]
+          },
+          {
             name: 'Titan Armor',
             season: 4,
             items: [
@@ -852,6 +863,17 @@ export default ([
               2634286116, // Dragonfly Regalia Plate
               2000262854, // Dragonfly Regalia Greaves
               3378116217 // Dragonfly Regalia Mark
+            ]
+          },
+          {
+            name: 'Titan Armor',
+            season: 5,
+            items: [
+              2613761000, // Star-Crossed Helm
+              1961095289, // Star-Crossed Fists
+              1510035423, // Star-Crossed Heart
+              558210411, // Star-Crossed Footsteps
+              2757194094 // Star-Crossed Mark
             ]
           },
           {
@@ -866,6 +888,17 @@ export default ([
             ]
           },
           {
+            name: 'Warlock Armor',
+            season: 5,
+            items: [
+              773780651, // Symmetrists' Mask
+              3349428378, // Symmetrists' Palms
+              3634634222, // Symmetrists' Habit
+              776863956, // Symmetrists' Balance
+              82115767 // Bond of Reciprocity
+            ]
+          },
+          {
             name: 'Emotes',
             season: 4,
             items: [
@@ -875,7 +908,6 @@ export default ([
               132405572, // All Alone'
               704532774, // Sad Trombone'
               1332836182, // Unbridled Enthusiasm
-              3201469151, // Cerebral Explosion' (CEREBRAL BUNDLE)
               3256616328, // Accidental Dance
               4080789277, // Beguiling Dance'
               2604685098, // Linear Fusion Dance'
@@ -888,6 +920,27 @@ export default ([
               896553940, // Lucky Shot'
               448262266, // Rev It Up'
               1267161032 // Warm Up
+            ]
+          },
+          {
+            name: 'Emotes',
+            season: 5,
+            items: [
+              2480779718, // Pyrrhic Victory
+              1280540149, // Let's Chat
+              815877596, // Nothing Is Wrong
+              4025684881, // S'mores
+              1552953172, // Explosive Dance
+              985639543, // Duel
+              3893300466, // Floating Dance
+              1725443969, // Competitive Dance
+              2760383682, // Ska Dance
+              2346609008, // Cringe
+              1740156933, // Get Out
+              2005133719, // Cheeky Celebration
+              2528830834, // Oh Snap
+              1372151242, // Silly Salute
+              2321189501 // You
             ]
           },
           {
@@ -910,7 +963,31 @@ export default ([
               1625672313, // Mansansas Shell
               1625672312, // Atlantis Shell
               1625672315, // Chevron Shell
-              374922805 // Freyja Shell (AWAKENED BUNDLE)
+            ]
+          },
+          {
+            name: 'Ghosts',
+            season: 5,
+            items: [
+              227918506, // Rust Punk Shell
+              227918507, // Neon Helix Shell
+              227918504, // Future Perfect Shell
+              227918505, // Sanctum Plate Shell
+              4214004319, // Age of Tomorrow Shell
+              4214004318, // Lustrous Onyx Shell
+              4214004317, // Buzzing Drone Shell
+              4214004316, // Dark Days Shell
+              4214004315, // Aqua Tusk Shell
+              4214004314, // Brilliant Starfish Shell
+              4214004313, // Eye of the Storm Shell
+              4214004311, // Aero Dart Shell
+              4214004310, // Path Followed Shell
+              3308716490, // Techno Robin Shell
+              3308716491, // Valor Chevron Shell
+              3308716488, // Classic Waveform Shell
+              3308716489, // Audiophile Shell
+              3308716494, // Autumn Gloss Shell
+              3308716495 // Eight Ball Shell
             ]
           },
           {
@@ -929,6 +1006,24 @@ export default ([
               3148574220, // Häkke Projection
               1927164028, // Electrostatic Projection
               1927164029  // Tex Mechanica Projection
+            ]
+          },
+          {
+            name: 'Ghost Projections',
+            season: 5,
+            items: [
+              3673160716, // Three as One Projection
+              3673160717, // Rasmussen Projection
+              3673160718, // Meyrin Projection
+              3673160719, // Satou Projection
+              2233846239, // Wise Owl Projection
+              2233846238, // Artist's Palette Projection
+              2233846237, // Lost Sector Projection
+              2233846236, // Taken King Projection
+              2233846235, // Parthenon Projection
+              2233846234, // Quill and Ink Projection
+              2233846233, // Lost Treasure Projection
+              2233846232 // Clashing Projection
             ]
           },
           {
@@ -951,7 +1046,29 @@ export default ([
               3600237175, // Last Sunset
               3600237176, // Quantum Cartographer
               3600237177, // In Medias Res
-              3600237171 // Upward Spiral (AWAKENED BUNDLE)
+            ]
+          },
+          {
+            name: 'Ships',
+            season: 5,
+            items: [
+              2417017736, // unsecured/OUTCRY
+              2417017737, // Ada-1's Lone Wolf
+              2417017738, // Ódrerir
+              749977229, // Forgotten Vortex
+              749977228, // Inky Daydream
+              3941922388, // The People's Pride
+              3941922389, // Technical Meltdown
+              3941922390, // Momentum Occasion
+              3941922391, // Galaxy Kayak
+              749977231, // Grim Foxx
+              749977230, // Turbo Hammer
+              749977225, // Dream Streak
+              749977224, // Granite Burrow
+              749977227, // Cosmo Jumper
+              749977226, // Azul Blade
+              749977221, // Ruby Slice
+              749977220 // Cautious Optimism
             ]
           },
           {
@@ -973,7 +1090,29 @@ export default ([
               2285214169, // Swiftsong
               2285214166, // Mappa Mundarum
               2285214167, // Jubilee Pronto
-              2285214170 // Roar Defiant (AWAKENED BUNDLE)
+            ]
+          },
+          {
+            name: 'Sparrows',
+            season: 5,
+            items: [
+              3268592500, // Approaching Infinity
+              3268592502, // Burnout
+              3268592503, // The Bronco
+              4085575827, // Unraveling Star
+              4085575826, // Swiftrook
+              3964057062, // Inexorable
+              3964057063, // Juliet Windy
+              3964057060, // Summer's Altar
+              3964057061, // Jupiter Midnight
+              4085575825, // Widen the Sky
+              4085575824, // Vega Wave
+              4085575831, // Where I Belong
+              4085575830, // Gravity Maestro
+              4085575829, // Cosmonaut Galahad
+              4085575828, // Eidolon Bird
+              4085575835, // Spinning Spinning
+              4085575834 // Pegasus Bravo
             ]
           },
           {
@@ -990,6 +1129,18 @@ export default ([
             ]
           },
           {
+            name: 'Shaders',
+            season: 5,
+            items: [
+              2644588986, // Deep-Sea Jaunt
+              2644588987, // Temperature Wash
+              2644588988, // Lilac Bombast
+              2644588989, // Vibrant Beach
+              2644588990, // Chalco's Finery
+              2644588991 // Sunrise Warrior
+            ]
+          },
+          {
             name: 'Transmat Effects',
             season: 4,
             items: [
@@ -997,6 +1148,16 @@ export default ([
               1836879400, // Reef Awoken
               1836879403, // Reef Shimmer
               1836879402 // Reef Oracle
+            ]
+          },
+          {
+            name: 'Transmat Effects',
+            season: 5,
+            items: [
+              1866581851, // Signal Processed
+              1866581850, // Only the Finest
+              1866581849, // Guiding Light
+              1866581848 // The Past Unearthed
             ]
           }
         ]
