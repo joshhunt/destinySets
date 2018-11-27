@@ -844,6 +844,13 @@ export default ([
             ]
           },
           {
+            name: 'Hunter Armor',
+            season: 5,
+            items: [
+              
+            ]
+          },
+          {
             name: 'Titan Armor',
             season: 4,
             items: [
@@ -855,6 +862,13 @@ export default ([
             ]
           },
           {
+            name: 'Titan Armor',
+            season: 5,
+            items: [
+              
+            ]
+          },
+          {
             name: 'Warlock Armor',
             season: 4,
             items: [
@@ -863,6 +877,13 @@ export default ([
               4118548161, // Dragonfly Regalia Robes
               44150041, // Dragonfly Regalia Boots
               606085916 // Dragonfly Regalia Bond
+            ]
+          },
+          {
+            name: 'Warlock Armor',
+            season: 5,
+            items: [
+              
             ]
           },
           {
@@ -890,6 +911,13 @@ export default ([
             ]
           },
           {
+            name: 'Emotes',
+            season: 5,
+            items: [
+              
+            ]
+          },
+          {
             name: 'Ghosts',
             season: 4,
             items: [
@@ -912,6 +940,13 @@ export default ([
             ]
           },
           {
+            name: 'Ghosts',
+            season: 5,
+            items: [
+              
+            ]
+          },
+          {
             name: 'Ghost Projections',
             season: 4,
             items: [
@@ -927,6 +962,13 @@ export default ([
               3148574220, // Häkke Projection
               1927164028, // Electrostatic Projection
               1927164029  // Tex Mechanica Projection
+            ]
+          },
+          {
+            name: 'Ghost Projections',
+            season: 5,
+            items: [
+              
             ]
           },
           {
@@ -952,6 +994,13 @@ export default ([
             ]
           },
           {
+            name: 'Ships',
+            season: 5,
+            items: [
+              
+            ]
+          },
+          {
             name: 'Sparrows',
             season: 4,
             items: [
@@ -973,6 +1022,13 @@ export default ([
             ]
           },
           {
+            name: 'Sparrows',
+            season: 5,
+            items: [
+              
+            ]
+          },
+          {
             name: 'Shaders',
             season: 4,
             items: [
@@ -986,6 +1042,13 @@ export default ([
             ]
           },
           {
+            name: 'Shaders',
+            season: 5,
+            items: [
+              
+            ]
+          },
+          {
             name: 'Transmat Effects',
             season: 4,
             items: [
@@ -993,6 +1056,13 @@ export default ([
               1836879400, // Reef Awoken
               1836879403, // Reef Shimmer
               1836879402 // Reef Oracle
+            ]
+          },
+          {
+            name: 'Transmat Effects',
+            season: 5,
+            items: [
+              
             ]
           }
         ]
