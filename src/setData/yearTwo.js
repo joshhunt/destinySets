@@ -92,7 +92,7 @@ export default ([
             season: 5,
             items: [
               912222548, // Soldier On (Emblem)
-              274843196 // Vanguard Unyielding (Shader) 
+              274843196 // Vanguard Unyielding (Shader)
             ]
           }
         ]
@@ -331,6 +331,49 @@ export default ([
             season: 4,
             items: [
               2448092902 // Rusted Iron (Shader)
+            ]
+          }
+        ]
+      },
+      {
+        name: 'Raid: Scourge of the Past',
+        id: 'YEAR_TWO_RAID_BLACK_ARMORY',
+        description: 'Found in the "Scourge of the Past" raid lair.',
+        sections: [
+          {
+            name: 'Hunter armor',
+            items: [
+              350056552, // Bladesmith's Memory Mask
+              3992358137, // Bladesmith's Memory Grips
+              1917693279, // Bladesmith's Memory Vest
+              2589473259, // Bladesmith's Memory Strides
+              3164851950 // Bladesmith's Memory Cloak
+            ]
+          },
+          {
+            name: 'Titan armor',
+            items: [
+              2921334134, // Bulletsmith's Ire Helm
+              4125324487, // Bulletsmith's Ire Gauntlets
+              2530113265, // Bulletsmith's Ire Plate
+              2878130185, // Bulletsmith's Ire Greaves
+              388999052 // Bulletsmith's Ire Mark
+            ]
+          },
+          {
+            name: 'Warlock armor',
+            items: [
+              1624906371, // Gunsmith's Devotion Crown
+              2762445138, // Gunsmith's Devotion Gloves
+              4238134294, // Gunsmith's Devotion Robes
+              3163683564, // Gunsmith's Devotion Boots
+              3567761471 // Gunsmith's Devotion Bond
+            ]
+          },
+          {
+            name: 'Other',
+            items: [
+              3317837688 // Always on Time
             ]
           }
         ]
@@ -648,18 +691,18 @@ export default ([
             name: 'Masks',
             season: 4,
             items: [
-               1138577659, // Glitterball Mask
-               1138577658, // Colonel Mask
-               1441415180, // Master Rahool Mask
-               1441415182, // Traveler Mask
-               1441415178, // Lord Shaxx Mask
-               1441415181, // Petra Venj Mask
-               1441415179, // Dominus Ghaul Mask
-               1441415175, // Jade Rabbit Mask
-               1441415177, // Will of the Thousands Mask
-               1441415174, // Scorn Mask
-               1441415176, // Emperor Calus Mask
-               1441415183 // Dark Prince Mask
+              1138577659, // Glitterball Mask
+              1138577658, // Colonel Mask
+              1441415180, // Master Rahool Mask
+              1441415182, // Traveler Mask
+              1441415178, // Lord Shaxx Mask
+              1441415181, // Petra Venj Mask
+              1441415179, // Dominus Ghaul Mask
+              1441415175, // Jade Rabbit Mask
+              1441415177, // Will of the Thousands Mask
+              1441415174, // Scorn Mask
+              1441415176, // Emperor Calus Mask
+              1441415183 // Dark Prince Mask
             ]
           },
           {
@@ -1000,7 +1043,7 @@ export default ([
               374922811, // Eyeball Shell
               1625672313, // Mansansas Shell
               1625672312, // Atlantis Shell
-              1625672315, // Chevron Shell
+              1625672315 // Chevron Shell
             ]
           },
           {
@@ -1043,7 +1086,7 @@ export default ([
               3148574221, // SUROS Projection
               3148574220, // Häkke Projection
               1927164028, // Electrostatic Projection
-              1927164029  // Tex Mechanica Projection
+              1927164029 // Tex Mechanica Projection
             ]
           },
           {
@@ -1083,7 +1126,7 @@ export default ([
               3600237174, // Bicameral Promise
               3600237175, // Last Sunset
               3600237176, // Quantum Cartographer
-              3600237177, // In Medias Res
+              3600237177 // In Medias Res
             ]
           },
           {
@@ -1127,7 +1170,7 @@ export default ([
               2285214168, // Endymion Cavalcade
               2285214169, // Swiftsong
               2285214166, // Mappa Mundarum
-              2285214167, // Jubilee Pronto
+              2285214167 // Jubilee Pronto
             ]
           },
           {
