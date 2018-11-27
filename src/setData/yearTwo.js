@@ -30,6 +30,13 @@ export default ([
             ]
           },
           {
+            name: 'Weapons',
+            season: 5,
+            items: [
+              792755504 // Nightshade
+            ]
+          },
+          {
             name: 'Hunter Armor',
             season: 4,
             items: [
@@ -79,6 +86,14 @@ export default ([
               2788911998, // Vanguard Metallic (Shader)
               2788911997 // Vanguard Divide (Shader)
             ]
+          },
+          {
+            name: 'Extras',
+            season: 5,
+            items: [
+              912222548, // Soldier On (Emblem)
+              274843196 // Vanguard Unyielding (Shader) 
+            ]
           }
         ]
       },
@@ -103,6 +118,13 @@ export default ([
               1684914716, // Fate Cries Foul
               4230993599, // Steel Sybil Z-14
               195440257 // Play of the Game
+            ]
+          },
+          {
+            name: 'Weapons',
+            season: 5,
+            items: [
+              3356526253 // Wishbringer
             ]
           },
           {
@@ -150,6 +172,14 @@ export default ([
               2588739578, // Crucible Legacy
               2588739579, // Crucible Metallic
               2588739576 // Crucible Solemnity
+            ]
+          },
+          {
+            name: 'Extras',
+            season: 5,
+            items: [
+              2414564781, // Punctuation Marks (Emblem)
+              769099721 // Devil in the Details (Shader)
             ]
           }
         ]
@@ -228,6 +258,14 @@ export default ([
               1335424935, // Gambit Leather
               1335424934, // Gambit Chrome
               1335424933 // Gambit Suede
+            ]
+          },
+          {
+            name: 'Extras',
+            season: 5,
+            items: [
+              2394866220, // Keep on Drifting
+              3217477988 // Gambit Duds
             ]
           }
         ]
