@@ -1484,6 +1484,13 @@ export default ([
         big: false,
         sections: [
           {
+            name: 'Weapons',
+            season: 2,
+            items: [
+              4203034886 // Zephyr
+            ] 
+          },
+          {
             name: 'Hunter Armor',
             season: 2,
             items: [
