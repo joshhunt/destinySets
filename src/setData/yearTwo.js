@@ -645,7 +645,7 @@ export default ([
       {
         name: 'Festival of the Lost',
         id: 'YEAR_TWO_FESTIVAL_OF_THE_LOST',
-        big: true,
+        big: false,
         sections: [
           {
             name: 'Weapons',
