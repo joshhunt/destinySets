@@ -636,6 +636,77 @@ export default ([
             ]
           }
         ]
+      },
+
+      {
+        name: 'Black Armory Forge Gear',
+        description:
+          'Gear from Forge Ignitions and crafted in a Black Armory forge.',
+        id: 'YEAR_TWO_FORGE_GEAR',
+        sections: [
+          {
+            name: 'Hunter armor',
+            items: [
+              3086191374, // Woven Firesmith Mask
+              240988159, // Woven Firesmith Grips
+              2791841721, // Woven Firesmith Vest
+              3457205569, // Woven Firesmith Boots
+              4106007668 // Woven Firesmith Cape
+            ]
+          },
+          {
+            name: 'Titan armor',
+            items: [
+              524862116, // Forged Machinist Helm
+              89175933, // Forged Machinist Gauntlets
+              866063619, // Forged Machinist Plate
+              2413328031, // Forged Machinist Greaves
+              4059853946 // Forged Machinist Mark
+            ]
+          },
+          {
+            name: 'Warlock armor',
+            items: [
+              2389815461, // Annealed Shaper Crown
+              3128915572, // Annealed Shaper Gloves
+              2153602188, // Annealed Shaper Robes
+              3416654206, // Annealed Shaper Boots
+              91359169 // Annealed Shaper Bond
+            ]
+          },
+          {
+            name: 'Ships',
+            items: [
+              2719140312 // The Platinum Starling
+            ]
+          },
+          {
+            name: 'Weapons',
+            items: [
+              1775804198, // Galliard-42 XN7568
+              20025671, // Tango-45 XK5094
+              1386601612, // Swift Ride XE8375
+              2824241403, // Bad News XF4354
+              2422664927, // Atalanta-D XG1992
+              3751622019, // Dead Man Walking XX7463
+              3461377698, // Baligant XU7743
+              4148143418, // Show of Force XF4865
+              1757129747, // Acantha-D XK8434
+              2817798849 // Hoosegow XE5837
+            ]
+          },
+          {
+            name: 'Emblems',
+            items: [
+              4185095556, // Steel of Bergusia
+              4185095558, // Gofannon's Hammer
+              4185095559, // Might of Volundr
+              4185095557, // Tear of Izanami
+              4181232540, // Hubris of Niobe
+              2083630698 // Obsidian Dreams
+            ]
+          }
+        ]
       }
     ]
   },
