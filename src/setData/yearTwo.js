@@ -342,6 +342,7 @@ export default ([
         sections: [
           {
             name: 'Hunter armor',
+            season: 5,
             items: [
               350056552, // Bladesmith's Memory Mask
               3992358137, // Bladesmith's Memory Grips
@@ -352,6 +353,7 @@ export default ([
           },
           {
             name: 'Titan armor',
+            season: 5,
             items: [
               2921334134, // Bulletsmith's Ire Helm
               4125324487, // Bulletsmith's Ire Gauntlets
@@ -362,6 +364,7 @@ export default ([
           },
           {
             name: 'Warlock armor',
+            season: 5,
             items: [
               1624906371, // Gunsmith's Devotion Crown
               2762445138, // Gunsmith's Devotion Gloves
@@ -372,6 +375,7 @@ export default ([
           },
           {
             name: 'Other',
+            season: 5,
             items: [
               3317837688 // Always on Time
             ]
@@ -646,6 +650,7 @@ export default ([
         sections: [
           {
             name: 'Hunter armor',
+            season: 5,
             items: [
               3086191374, // Woven Firesmith Mask
               240988159, // Woven Firesmith Grips
@@ -656,6 +661,7 @@ export default ([
           },
           {
             name: 'Titan armor',
+            season: 5,
             items: [
               524862116, // Forged Machinist Helm
               89175933, // Forged Machinist Gauntlets
@@ -666,6 +672,7 @@ export default ([
           },
           {
             name: 'Warlock armor',
+            season: 5,
             items: [
               2389815461, // Annealed Shaper Crown
               3128915572, // Annealed Shaper Gloves
@@ -675,13 +682,8 @@ export default ([
             ]
           },
           {
-            name: 'Ships',
-            items: [
-              2719140312 // The Platinum Starling
-            ]
-          },
-          {
             name: 'Weapons',
+            season: 5,
             items: [
               1775804198, // Galliard-42 XN7568
               20025671, // Tango-45 XK5094
@@ -696,8 +698,10 @@ export default ([
             ]
           },
           {
-            name: 'Emblems',
+            name: 'Extras',
+            season: 5,
             items: [
+              2719140312, // The Platinum Starling
               4185095556, // Steel of Bergusia
               4185095558, // Gofannon's Hammer
               4185095559, // Might of Volundr
