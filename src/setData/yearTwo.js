@@ -446,6 +446,7 @@ export default ([
             items: [
               2960983142, // Armory Forged Shell
               2960983143, // Fusion Matrix Shell
+              4235730721, // Anti-Paladin
               2719140312, // The Platinum Starling
               4185095556, // Steel of Bergusia
               4185095558, // Gofannon's Hammer
