@@ -33,7 +33,8 @@ export default ([
             name: 'Weapons',
             season: 5,
             items: [
-              792755504 // Nightshade
+              792755504, // Nightshade
+              4083045006 // Persuader
             ]
           },
           {
@@ -124,7 +125,8 @@ export default ([
             name: 'Weapons',
             season: 5,
             items: [
-              3356526253 // Wishbringer
+              3356526253, // Wishbringer
+              2278995296 // Does Not Compute  
             ]
           },
           {
@@ -294,6 +296,14 @@ export default ([
             ]
           },
           {
+            name: 'Weapons',
+            season: 5,
+            items: [
+              4292849692, // Crimil's Dagger 
+              1865351684 // The Hero's Burden
+            ]
+          },
+          {
             name: 'Hunter Armor',
             season: 4,
             items: [
@@ -302,6 +312,17 @@ export default ([
               279785447, // Iron Remembrance Vest
               3678620931, // Iron Remembrance Strides
               995283190 // Cloak of Remembrance
+            ]
+          },
+          {
+            name: 'Hunter Armor',
+            season: 5,
+            items: [
+              142417051, // Iron Fellowship Casque 
+              1601698634, // Iron Fellowship Grips 
+              2753509502, // Iron Fellowship Vest 
+              258029924, // Iron Fellowship Strides
+              2083136519 // Iron Fellowship Cloak 
             ]
           },
           {
@@ -316,6 +337,17 @@ export default ([
             ]
           },
           {
+            name: 'Titan Armor',
+            season: 5,
+            items: [
+              3018777825, // Iron Fellowship Helm
+              3856697336, // Iron Fellowship Gauntlets
+              3661959184, // Iron Fellowship Plate
+              1891964978, // Iron Fellowship Greaves
+              2589114445 // Iron Fellowship Mark 
+            ]
+          },
+          {
             name: 'Warlock Armor',
             season: 4,
             items: [
@@ -327,57 +359,100 @@ export default ([
             ]
           },
           {
+            name: 'Warlock Armor',
+            season: 5,
+            items: [
+              2055774222, // Iron Fellowship Hood
+              3505538303, // Iron Fellowship Gloves
+              4145557177, // Iron Fellowship Robes
+              2426788417, // Iron Fellowship Boots
+              1164755828 // Iron Fellowship Bond
+            ]
+          },
+          {
             name: 'Extras',
             season: 4,
             items: [
               2448092902 // Rusted Iron (Shader)
             ]
+          },
+          {
+            name: 'Extras',
+            season: 5,
+            items: [
+              1162929425 // The Golden Standard (Emblem)
+            ]
           }
         ]
       },
-      {
-        name: 'Raid: Scourge of the Past',
-        id: 'YEAR_TWO_RAID_BLACK_ARMORY',
-        description: 'Found in the "Scourge of the Past" raid lair.',
+            {
+        name: 'Black Armory Forge Gear',
+        description:
+          'Gear from Forge Ignitions and crafted in a Black Armory forge.',
+        id: 'YEAR_TWO_FORGE_GEAR',
         sections: [
           {
-            name: 'Hunter armor',
+            name: 'Weapons',
             season: 5,
             items: [
-              350056552, // Bladesmith's Memory Mask
-              3992358137, // Bladesmith's Memory Grips
-              1917693279, // Bladesmith's Memory Vest
-              2589473259, // Bladesmith's Memory Strides
-              3164851950 // Bladesmith's Memory Cloak
+              1775804198, // Galliard-42 XN7568
+              20025671, // Tango-45 XK5094
+              1386601612, // Swift Ride XE8375
+              2824241403, // Bad News XF4354
+              2422664927, // Atalanta-D XG1992
+              3751622019, // Dead Man Walking XX7463
+              3461377698, // Baligant XU7743
+              4148143418, // Show of Force XF4865
+              1757129747, // Acantha-D XK8434
+              2817798849 // Hoosegow XE5837
             ]
           },
           {
-            name: 'Titan armor',
+            name: 'Hunter Armor',
             season: 5,
             items: [
-              2921334134, // Bulletsmith's Ire Helm
-              4125324487, // Bulletsmith's Ire Gauntlets
-              2530113265, // Bulletsmith's Ire Plate
-              2878130185, // Bulletsmith's Ire Greaves
-              388999052 // Bulletsmith's Ire Mark
+              3086191374, // Woven Firesmith Mask
+              240988159, // Woven Firesmith Grips
+              2791841721, // Woven Firesmith Vest
+              3457205569, // Woven Firesmith Boots
+              4106007668 // Woven Firesmith Cape
             ]
           },
           {
-            name: 'Warlock armor',
+            name: 'Titan Armor',
             season: 5,
             items: [
-              1624906371, // Gunsmith's Devotion Crown
-              2762445138, // Gunsmith's Devotion Gloves
-              4238134294, // Gunsmith's Devotion Robes
-              3163683564, // Gunsmith's Devotion Boots
-              3567761471 // Gunsmith's Devotion Bond
+              524862116, // Forged Machinist Helm
+              89175933, // Forged Machinist Gauntlets
+              866063619, // Forged Machinist Plate
+              2413328031, // Forged Machinist Greaves
+              4059853946 // Forged Machinist Mark
             ]
           },
           {
-            name: 'Other',
+            name: 'Warlock Armor',
             season: 5,
             items: [
-              3317837688 // Always on Time
+              2389815461, // Annealed Shaper Crown
+              3128915572, // Annealed Shaper Gloves
+              2153602188, // Annealed Shaper Robes
+              3416654206, // Annealed Shaper Boots
+              91359169 // Annealed Shaper Bond
+            ]
+          },
+          {
+            name: 'Extras',
+            season: 5,
+            items: [
+              2960983142, // Armory Forged Shell
+              2960983143, // Fusion Matrix Shell
+              2719140312, // The Platinum Starling
+              4185095556, // Steel of Bergusia
+              4185095558, // Gofannon's Hammer
+              4185095559, // Might of Volundr
+              4185095557, // Tear of Izanami
+              4181232540, // Hubris of Niobe
+              2083630698 // Obsidian Dreams
             ]
           }
         ]
@@ -408,7 +483,6 @@ export default ([
               2545083870 // Apex Predator
             ]
           },
-
           {
             name: 'Hunter Armor',
             season: 4,
@@ -420,7 +494,6 @@ export default ([
               1314563129 // Cloak of the Great Hunt
             ]
           },
-
           {
             name: 'Titan Armor',
             season: 4,
@@ -432,7 +505,6 @@ export default ([
               1021341893 // Mark of the Great Hunt
             ]
           },
-
           {
             name: 'Warlock Armor',
             season: 4,
@@ -455,6 +527,55 @@ export default ([
               1059304051, // Wish No More
               1511214613, // The Winding Tower (Emblem)
               1511214612 // Castle in the Clouds (Emblem)
+            ]
+          },
+          
+        ]
+      },
+      {
+        name: 'Raid: Scourge of the Past',
+        id: 'YEAR_TWO_RAID_BLACK_ARMORY',
+        description: 'Found in the "Scourge of the Past" raid lair.',
+        sections: [
+          {
+            name: 'Hunter Armor',
+            season: 5,
+            items: [
+              350056552, // Bladesmith's Memory Mask
+              3992358137, // Bladesmith's Memory Grips
+              1917693279, // Bladesmith's Memory Vest
+              2589473259, // Bladesmith's Memory Strides
+              3164851950 // Bladesmith's Memory Cloak
+            ]
+          },
+          {
+            name: 'Titan Armor',
+            season: 5,
+            items: [
+              2921334134, // Bulletsmith's Ire Helm
+              4125324487, // Bulletsmith's Ire Gauntlets
+              2530113265, // Bulletsmith's Ire Plate
+              2878130185, // Bulletsmith's Ire Greaves
+              388999052 // Bulletsmith's Ire Mark
+            ]
+          },
+          {
+            name: 'Warlock Armor',
+            season: 5,
+            items: [
+              1624906371, // Gunsmith's Devotion Crown
+              2762445138, // Gunsmith's Devotion Gloves
+              4238134294, // Gunsmith's Devotion Robes
+              3163683564, // Gunsmith's Devotion Boots
+              3567761471 // Gunsmith's Devotion Bond
+            ]
+          },
+          {
+            name: 'Extras',
+            season: 5,
+            items: [
+              3931192718, // Recovered Memories
+              3317837688 // Always on Time
             ]
           }
         ]
@@ -641,77 +762,6 @@ export default ([
           }
         ]
       },
-
-      {
-        name: 'Black Armory Forge Gear',
-        description:
-          'Gear from Forge Ignitions and crafted in a Black Armory forge.',
-        id: 'YEAR_TWO_FORGE_GEAR',
-        sections: [
-          {
-            name: 'Hunter armor',
-            season: 5,
-            items: [
-              3086191374, // Woven Firesmith Mask
-              240988159, // Woven Firesmith Grips
-              2791841721, // Woven Firesmith Vest
-              3457205569, // Woven Firesmith Boots
-              4106007668 // Woven Firesmith Cape
-            ]
-          },
-          {
-            name: 'Titan armor',
-            season: 5,
-            items: [
-              524862116, // Forged Machinist Helm
-              89175933, // Forged Machinist Gauntlets
-              866063619, // Forged Machinist Plate
-              2413328031, // Forged Machinist Greaves
-              4059853946 // Forged Machinist Mark
-            ]
-          },
-          {
-            name: 'Warlock armor',
-            season: 5,
-            items: [
-              2389815461, // Annealed Shaper Crown
-              3128915572, // Annealed Shaper Gloves
-              2153602188, // Annealed Shaper Robes
-              3416654206, // Annealed Shaper Boots
-              91359169 // Annealed Shaper Bond
-            ]
-          },
-          {
-            name: 'Weapons',
-            season: 5,
-            items: [
-              1775804198, // Galliard-42 XN7568
-              20025671, // Tango-45 XK5094
-              1386601612, // Swift Ride XE8375
-              2824241403, // Bad News XF4354
-              2422664927, // Atalanta-D XG1992
-              3751622019, // Dead Man Walking XX7463
-              3461377698, // Baligant XU7743
-              4148143418, // Show of Force XF4865
-              1757129747, // Acantha-D XK8434
-              2817798849 // Hoosegow XE5837
-            ]
-          },
-          {
-            name: 'Extras',
-            season: 5,
-            items: [
-              2719140312, // The Platinum Starling
-              4185095556, // Steel of Bergusia
-              4185095558, // Gofannon's Hammer
-              4185095559, // Might of Volundr
-              4185095557, // Tear of Izanami
-              4181232540, // Hubris of Niobe
-              2083630698 // Obsidian Dreams
-            ]
-          }
-        ]
-      }
     ]
   },
   {
