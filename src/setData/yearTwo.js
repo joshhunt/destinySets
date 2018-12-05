@@ -296,6 +296,14 @@ export default ([
             ]
           },
           {
+            name: 'Weapons',
+            season: 5,
+            items: [
+              4292849692, // Crimil's Dagger 
+              1865351684 // The Hero's Burden
+            ]
+          },
+          {
             name: 'Hunter Armor',
             season: 4,
             items: [
@@ -304,6 +312,17 @@ export default ([
               279785447, // Iron Remembrance Vest
               3678620931, // Iron Remembrance Strides
               995283190 // Cloak of Remembrance
+            ]
+          },
+          {
+            name: 'Hunter Armor',
+            season: 5,
+            items: [
+              142417051, // Iron Fellowship Casque 
+              1601698634, // Iron Fellowship Grips 
+              2753509502, // Iron Fellowship Vest 
+              258029924, // Iron Fellowship Strides
+              2083136519 // Iron Fellowship Cloak 
             ]
           },
           {
@@ -318,6 +337,17 @@ export default ([
             ]
           },
           {
+            name: 'Titan Armor',
+            season: 5,
+            items: [
+              3018777825, // Iron Fellowship Helm
+              3856697336, // Iron Fellowship Gauntlets
+              3661959184, // Iron Fellowship Plate
+              1891964978, // Iron Fellowship Greaves
+              2589114445 // Iron Fellowship Mark 
+            ]
+          },
+          {
             name: 'Warlock Armor',
             season: 4,
             items: [
@@ -329,10 +359,28 @@ export default ([
             ]
           },
           {
+            name: 'Warlock Armor',
+            season: 5,
+            items: [
+              2055774222, // Iron Fellowship Hood
+              3505538303, // Iron Fellowship Gloves
+              4145557177, // Iron Fellowship Robes
+              2426788417, // Iron Fellowship Boots
+              1164755828 // Iron Fellowship Bond
+            ]
+          },
+          {
             name: 'Extras',
             season: 4,
             items: [
               2448092902 // Rusted Iron (Shader)
+            ]
+          },
+          {
+            name: 'Extras',
+            season: 5,
+            items: [
+              1162929425 // The Golden Standard (Emblem)
             ]
           }
         ]
