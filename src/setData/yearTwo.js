@@ -897,6 +897,8 @@ export default ([
             name: 'Extras',
             season: 5,
             items: [
+              3136552544, // Holiday Treats (Emblem)
+              3136552545, // Delicious Benefactor (Emblem)
               3328839466, // Resilient Laurel (Shader)
               3328839467, // Aniline Shock (Shader)
               2774782768, // Shower of Gifts (Transmat Effect)
