@@ -33,7 +33,8 @@ export default ([
             name: 'Weapons',
             season: 5,
             items: [
-              792755504 // Nightshade
+              792755504, // Nightshade
+              4083045006 // Persuader
             ]
           },
           {
