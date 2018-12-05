@@ -125,7 +125,8 @@ export default ([
             name: 'Weapons',
             season: 5,
             items: [
-              3356526253 // Wishbringer
+              3356526253, // Wishbringer
+              2278995296 // Does Not Compute  
             ]
           },
           {
