@@ -575,8 +575,8 @@ export default ([
             name: 'Extras',
             season: 5,
             items: [
-              3931192718, // Recovered Memories
-              3317837688 // Always on Time
+              3317837688, // Always on Time
+              3931192718 // Recovered Memories
             ]
           }
         ]
