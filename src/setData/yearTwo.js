@@ -394,8 +394,8 @@ export default ([
             name: 'Extras',
             season: 5,
             items: [
-              2960983142, // ARMORY FORGED SHELL
-              2960983143, // FUSION MATRIX SHELL
+              2960983142, // Armory Forged Shell
+              2960983143, // Fusion Matrix Shell
               2719140312, // The Platinum Starling
               4185095556, // Steel of Bergusia
               4185095558, // Gofannon's Hammer
