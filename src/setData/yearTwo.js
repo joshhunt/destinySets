@@ -446,6 +446,7 @@ export default ([
             items: [
               2960983142, // Armory Forged Shell
               2960983143, // Fusion Matrix Shell
+              3317837689, // Anti-Paladin
               2719140312, // The Platinum Starling
               4185095556, // Steel of Bergusia
               4185095558, // Gofannon's Hammer
@@ -574,8 +575,8 @@ export default ([
             name: 'Extras',
             season: 5,
             items: [
-              3931192718, // Recovered Memories
-              3317837688 // Always on Time
+              3317837688, // Always on Time
+              3931192718 // Recovered Memories
             ]
           }
         ]
