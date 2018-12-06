@@ -771,7 +771,7 @@ export default ([
       {
         name: 'Festival of the Lost',
         id: 'YEAR_TWO_FESTIVAL_OF_THE_LOST',
-        big: true,
+        big: false,
         sections: [
           {
             name: 'Weapons',
@@ -905,6 +905,132 @@ export default ([
               566732136, // Amaranth Atrocity (Shader)
               2574262861, // Soulsknot (Transmat Effect)
               2574262860 // Arachnophile (Transmat Effect)
+            ]
+          }
+        ]
+      },
+      {
+        name: 'The Dawning',
+        id: 'YEAR_TWO_THE_DAWNING',
+        big: false,
+        sections: [
+           {
+            name: 'Weapons',
+            season: 5,
+            items: [
+              66875353 // Avalanche
+            ] 
+          },
+          {
+            name: 'Hunter Armor',
+            season: 5,
+            items: [
+              2891490654, // Frostveil Mask
+              1695429263, // Frostveil Grasps
+              1987263977, // Frostveil Vest
+              2311506225, // Frostveil Boots
+              3301429924 // Frostveil Cloak
+            ]
+          },
+          {
+            name: 'Titan Armor',
+            season: 5,
+            items: [
+              437421244, // Froststrike Helm
+              1792195381, // Froststrike Gauntlets
+              1280755883, // Froststrike Plate
+              3368317463, // Froststrike Greaves
+              3932439362 // Froststrike Mark
+            ]
+          },
+          {
+            name: 'Warlock Armor',
+            season: 5,
+            items: [
+              671247011, // Frostreach Hood
+              1767312242, // Frostreach Gloves
+              2702372534, // Frostreach Robes
+              2168550540, // Frostreach Boots
+              2073576287 // Frostreach Bond
+            ]
+          },
+          {
+            name: 'Emotes',
+            season: 5,
+            items: [
+              1708415886, // Baking Cookies
+              3510138048, // Protecting Teammates
+              2799886702, // Comfort Dance
+              2556098840, // Fist Bump
+              3166802179, // Chest Bump
+              3539322898 // High Five
+            ]
+          },
+          {
+            name: 'Ghosts',
+            season: 5,
+            items: [
+              4031340274, // True North Shell
+              4031340275, // Hard-Packed Shell
+              1028757552, // Ternion Honor Shell
+              1028757553, // Transhedron Shell
+              1028757554, // Frozen Amaryllis Shell
+              1028757555, // Sibyl Shell
+              1028757556, // Maelstrom's Auge Shell
+              1028757557, // Kabuto Shell
+              1028757558, // Amethyst Spine Shell
+              1028757559, // Ufsilon's Rune Shell
+              1028757567 // Sunseeker Shell
+            ]
+          },
+                    {
+            name: 'Ghost Projections',
+            season: 5,
+            items: [
+              611329864, // Package Projection
+              611329865, // Cocoa Projection
+              611329868, // Cupcake Projection
+              611329869, // Dawning Projection
+              611329870, // Flickering Projection
+              611329871 // Garland Projection
+            ]
+          },
+          {
+            name: 'Sparrows',
+            season: 5,
+            items: [
+              1847708611 // Dawning Cheer
+            ]
+          },
+          {
+            name: 'Ships',
+            season: 5,
+            items: [
+              855351524, // Glad Tidings
+              855351525, // Home Away
+              1287851098, // Affinity's Gift
+              1502135233, // Celestial Tour
+              1502135240, // Flight of Fancy
+              1502135241, // Cold Snap
+              1502135242, // In With the New
+              1502135243, // Classical Nova
+              1502135244, // Whetted Resolution
+              1502135246, // Crux Unraveled
+              1502135247 // Bird of Peace
+            ]
+          },
+          {
+            name: 'Extras',
+            season: 5,
+            items: [
+              3136552544, // Holiday Treats (Emblem)
+              3136552545, // Delicious Benefactor (Emblem)
+              3328839466, // Resilient Laurel (Shader)
+              3328839467, // Aniline Shock (Shader)
+              2774782768, // Shower of Gifts (Transmat Effect)
+              2774782769, // Howling Blizzard (Transmat Effect)
+              3012249670, // Shining Winter (Transmat Effect)
+              3012249671 // Cold and Bright (Transmat Effect)
             ]
           }
         ]
