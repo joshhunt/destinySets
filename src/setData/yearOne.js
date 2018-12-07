@@ -1869,11 +1869,13 @@ export default ([
               2546958596, // Lunadove
               2546958599, // Hightail
               2546958598, // Wave-Maker
+              2546958595, // Noble Steed
               904825093, // Wayfarer Delta
               904825092, // Wayfarer Tri
               904825094, // Warbird
               904825089, // Hyperion
-              904825088 // Dead-End Pro
+              904825088, // Dead-End Pro
+              904825095 // On Guard
             ]
           },
           {
@@ -1957,7 +1959,10 @@ export default ([
               3213307844, // Space-Age Lancelot
               3213307846, // Spectral Gain
               3213307849, // Verona Mesh
-              3213307848 // High Line
+              3213307848, // High Line
+              1104161648, // Tidal Dawn
+              2503134043, // Starling Bolt
+              2503134033 // City Apex
             ]
           },
           {
