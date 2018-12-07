@@ -1166,69 +1166,57 @@ export default ([
         big: true,
         sections: [
           {
-            name: 'Hunter Armor',
+            name: 'Armor',
             season: 4,
-            items: [
-              2685109601, // Dragonfly Regalia Mask',
-              3523029112, // Dragonfly Regalia Grasps
-              190167440, // Dragonfly Regalia Vest
-              1558296754, // Dragonfly Regalia Strides
-              3412289997 // Dragonfly Regalia Wings
+            itemGroups: [
+              [
+                2685109601, // Dragonfly Regalia Mask',
+                3523029112, // Dragonfly Regalia Grasps
+                190167440, // Dragonfly Regalia Vest
+                1558296754, // Dragonfly Regalia Strides
+                3412289997 // Dragonfly Regalia Wings
+              ],
+              [
+                1961788365, // Dragonfly Regalia Helm
+                2614454204, // Dragonfly Regalia Gauntlets
+                2634286116, // Dragonfly Regalia Plate
+                2000262854, // Dragonfly Regalia Greaves
+                3378116217 // Dragonfly Regalia Mark
+              ],
+              [
+                3516622758, // Dragonfly Regalia Mandible
+                2530582647, // Dragonfly Regalia Reaches
+                4118548161, // Dragonfly Regalia Robes
+                44150041, // Dragonfly Regalia Boots
+                606085916 // Dragonfly Regalia Bond
+              ]
             ]
           },
           {
-            name: 'Hunter Armor',
+            name: 'Armor',
             season: 5,
-            items: [
-              2754217990, // Vanguard Dare Casque
-              1768177879, // Vanguard Dare Grips
-              3422717473, // Vanguard Dare Vest
-              3576712697, // Vanguard Dare Boots
-              4205222524 // Vanguard Dare Cloak
-            ]
-          },
-          {
-            name: 'Titan Armor',
-            season: 4,
-            items: [
-              1961788365, // Dragonfly Regalia Helm
-              2614454204, // Dragonfly Regalia Gauntlets
-              2634286116, // Dragonfly Regalia Plate
-              2000262854, // Dragonfly Regalia Greaves
-              3378116217 // Dragonfly Regalia Mark
-            ]
-          },
-          {
-            name: 'Titan Armor',
-            season: 5,
-            items: [
-              2613761000, // Star-Crossed Helm
-              1961095289, // Star-Crossed Fists
-              1510035423, // Star-Crossed Heart
-              558210411, // Star-Crossed Footsteps
-              2757194094 // Star-Crossed Mark
-            ]
-          },
-          {
-            name: 'Warlock Armor',
-            season: 4,
-            items: [
-              3516622758, // Dragonfly Regalia Mandible
-              2530582647, // Dragonfly Regalia Reaches
-              4118548161, // Dragonfly Regalia Robes
-              44150041, // Dragonfly Regalia Boots
-              606085916 // Dragonfly Regalia Bond
-            ]
-          },
-          {
-            name: 'Warlock Armor',
-            season: 5,
-            items: [
-              773780651, // Symmetrists' Mask
-              3349428378, // Symmetrists' Palms
-              3634634222, // Symmetrists' Habit
-              776863956, // Symmetrists' Balance
-              82115767 // Bond of Reciprocity
+            itemGroups: [
+              [
+                2754217990, // Vanguard Dare Casque
+                1768177879, // Vanguard Dare Grips
+                3422717473, // Vanguard Dare Vest
+                3576712697, // Vanguard Dare Boots
+                4205222524 // Vanguard Dare Cloak
+              ],
+              [
+                2613761000, // Star-Crossed Helm
+                1961095289, // Star-Crossed Fists
+                1510035423, // Star-Crossed Heart
+                558210411, // Star-Crossed Footsteps
+                2757194094 // Star-Crossed Mark
+              ],
+              [
+                773780651, // Symmetrists' Mask
+                3349428378, // Symmetrists' Palms
+                3634634222, // Symmetrists' Habit
+                776863956, // Symmetrists' Balance
+                82115767 // Bond of Reciprocity
+              ]
             ]
           },
           {
