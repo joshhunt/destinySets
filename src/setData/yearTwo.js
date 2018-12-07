@@ -448,10 +448,10 @@ export default ([
               2960983143, // Fusion Matrix Shell
               3317837689, // Anti-Paladin
               2719140312, // The Platinum Starling
-              4185095556, // Steel of Bergusia
-              4185095558, // Gofannon's Hammer
               4185095559, // Might of Volundr
+              4185095558, // Gofannon's Hammer
               4185095557, // Tear of Izanami
+              4185095556, // Steel of Bergusia
               4181232540, // Hubris of Niobe
               2083630698, // Obsidian Dreams
               3650581584 // New Age Black Armory
