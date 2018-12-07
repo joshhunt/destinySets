@@ -453,7 +453,8 @@ export default ([
               4185095559, // Might of Volundr
               4185095557, // Tear of Izanami
               4181232540, // Hubris of Niobe
-              2083630698 // Obsidian Dreams
+              2083630698, // Obsidian Dreams
+              3650581584 // New Age Black Armory
             ]
           }
         ]
@@ -527,7 +528,8 @@ export default ([
               2269373482, // Ermine TAC-717
               1059304051, // Wish No More
               1511214613, // The Winding Tower (Emblem)
-              1511214612 // Castle in the Clouds (Emblem)
+              1511214612, // Castle in the Clouds (Emblem)
+              3668669364 // Dreaming Spectrum (Shader)
             ]
           },
           
