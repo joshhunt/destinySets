@@ -451,7 +451,7 @@ export default ([
               4185095559, // Might of Volundr
               956685247, // Vengeance of Volundr
               4185095558, // Gofannon's Hammer
-              267292838, // Gofannon's Fire
+              2944769992, // Gofannon's Fire
               4185095557, // Tear of Izanami
               3491436641, // Blood of Izanami
               4185095556, // Steel of Bergusia
