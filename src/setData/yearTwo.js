@@ -578,7 +578,8 @@ export default ([
             season: 5,
             items: [
               3317837688, // Always on Time
-              3931192718 // Recovered Memories
+              3931192718, // Recovered Memories
+              2557722678 // Midnight Smith
             ]
           }
         ]
