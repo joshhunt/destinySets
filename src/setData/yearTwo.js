@@ -449,9 +449,13 @@ export default ([
               3317837689, // Anti-Paladin
               2719140312, // The Platinum Starling
               4185095559, // Might of Volundr
+              956685247, // Vengeance of Volundr
               4185095558, // Gofannon's Hammer
+              267292838, // Gofannon's Fire
               4185095557, // Tear of Izanami
+              3491436641, // Blood of Izanami
               4185095556, // Steel of Bergusia
+              3715790138, // Blade of Bergusia
               4181232540, // Hubris of Niobe
               2083630698, // Obsidian Dreams
               3650581584 // New Age Black Armory
