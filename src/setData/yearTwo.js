@@ -169,7 +169,6 @@ export default ([
               1131244817, // Damage, Incorporated
               4159935832, // Fireforged Valor
               1788892384, // Smoldering Flame
-              3317837689, // anti paladin sparrow
               1788892385, // Persistent Blaze
               2420153991, // Made Shaxx Proud
               2588739578, // Crucible Legacy
@@ -458,6 +457,9 @@ export default ([
               3491436641, // Blood of Izanami
               4185095556, // Steel of Bergusia
               3715790138, // Blade of Bergusia
+              1347384482, // Meyrin's Vision
+              1347384481, // Satou's Secret
+              1347384483, // Rasmussen's Gift
               4181232540, // Hubris of Niobe
               2083630698, // Obsidian Dreams
               3650581584 // New Age Black Armory
