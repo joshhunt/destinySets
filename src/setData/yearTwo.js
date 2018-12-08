@@ -446,6 +446,7 @@ export default ([
             items: [
               2960983142, // Armory Forged Shell
               2960983143, // Fusion Matrix Shell
+              2960983140, // Futurecraft Shell
               3317837689, // Anti-Paladin
               2719140312, // The Platinum Starling
               4185095559, // Might of Volundr
