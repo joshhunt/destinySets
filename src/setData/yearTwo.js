@@ -126,7 +126,7 @@ export default ([
             season: 5,
             items: [
               3356526253, // Wishbringer
-              2278995296 // Does Not Compute  
+              2278995296 // Does Not Compute
             ]
           },
           {
@@ -169,6 +169,7 @@ export default ([
               1131244817, // Damage, Incorporated
               4159935832, // Fireforged Valor
               1788892384, // Smoldering Flame
+              3317837689, // anti paladin sparrow
               1788892385, // Persistent Blaze
               2420153991, // Made Shaxx Proud
               2588739578, // Crucible Legacy
@@ -299,7 +300,7 @@ export default ([
             name: 'Weapons',
             season: 5,
             items: [
-              4292849692, // Crimil's Dagger 
+              4292849692, // Crimil's Dagger
               1865351684 // The Hero's Burden
             ]
           },
@@ -318,11 +319,11 @@ export default ([
             name: 'Hunter Armor',
             season: 5,
             items: [
-              142417051, // Iron Fellowship Casque 
-              1601698634, // Iron Fellowship Grips 
-              2753509502, // Iron Fellowship Vest 
+              142417051, // Iron Fellowship Casque
+              1601698634, // Iron Fellowship Grips
+              2753509502, // Iron Fellowship Vest
               258029924, // Iron Fellowship Strides
-              2083136519 // Iron Fellowship Cloak 
+              2083136519 // Iron Fellowship Cloak
             ]
           },
           {
@@ -344,7 +345,7 @@ export default ([
               3856697336, // Iron Fellowship Gauntlets
               3661959184, // Iron Fellowship Plate
               1891964978, // Iron Fellowship Greaves
-              2589114445 // Iron Fellowship Mark 
+              2589114445 // Iron Fellowship Mark
             ]
           },
           {
@@ -385,7 +386,7 @@ export default ([
           }
         ]
       },
-            {
+      {
         name: 'Black Armory Forge Gear',
         description:
           'Gear from Forge Ignitions and crafted in a Black Armory forge.',
@@ -536,8 +537,7 @@ export default ([
               1511214612, // Castle in the Clouds (Emblem)
               3668669364 // Dreaming Spectrum (Shader)
             ]
-          },
-          
+          }
         ]
       },
       {
@@ -770,7 +770,7 @@ export default ([
             ]
           }
         ]
-      },
+      }
     ]
   },
   {
@@ -922,12 +922,12 @@ export default ([
         id: 'YEAR_TWO_THE_DAWNING',
         big: false,
         sections: [
-           {
+          {
             name: 'Weapons',
             season: 5,
             items: [
               66875353 // Avalanche
-            ] 
+            ]
           },
           {
             name: 'Hunter Armor',
@@ -991,7 +991,7 @@ export default ([
               1028757567 // Sunseeker Shell
             ]
           },
-                    {
+          {
             name: 'Ghost Projections',
             season: 5,
             items: [
