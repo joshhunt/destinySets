@@ -61,21 +61,21 @@ function objectivesFromVendors(data) {
   )(data);
 }
 
-function itemsFromVendorPlugStates(data) {
-  return fp.flow(
-    fp.flatMap(character => {
-      return (
-        character &&
-        fp.flatMap(vendor => {
-          return fp.flatMap(plugState => {
-            return plugState.canInsert ? plugState.plugItemHash : null;
-          }, vendor.plugStates.data);
-        }, character.itemComponents)
-      );
-    }),
-    fp.compact
-  )(data);
-}
+// function itemsFromVendorPlugStates(data) {
+//   return fp.flow(
+//     fp.flatMap(character => {
+//       return (
+//         character &&
+//         fp.flatMap(vendor => {
+//           return fp.flatMap(plugState => {
+//             return plugState.canInsert ? plugState.plugItemHash : null;
+//           }, vendor.plugStates.data);
+//         }, character.itemComponents)
+//       );
+//     }),
+//     fp.compact
+//   )(data);
+// }
 
 const socketsFromVendors = fp.flatMap(vendor =>
   fromSockets(vendor.sockets.data)
@@ -123,7 +123,7 @@ export function inventoryFromProfile(profile, vendorDefs) {
     [fromSockets(profile.itemComponents.sockets.data), 'itemSockets'],
     [fromVendorSockets(profile.$vendors.data), 'vendorSockets'],
     [fromProfilePlugSets(profile.profilePlugSets.data), 'profilePlugSets'],
-    [itemsFromVendorPlugStates(profile.$vendors.data), 'vendorPlugStates']
+    // [itemsFromVendorPlugStates(profile.$vendors.data), 'vendorPlugStates']
   ].reduce(mergeItems, {});
 
   window.__inventory = inventory;
