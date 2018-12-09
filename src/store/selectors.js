@@ -47,6 +47,27 @@ export const makeItemSelector = () => {
   );
 };
 
+export const makeItemPresentationSelector = () => {
+  return createSelector(
+    itemDefsSelector,
+    collectiblesByItemHashSelector,
+    itemHashPropSelector,
+    (itemDefs, collectibles, itemHash) => {
+      const itemDef = itemDefs && itemDefs[itemHash];
+
+      if (itemDef && !itemDef.redacted) {
+        return itemDefs[itemHash];
+      }
+
+      if (collectibles && collectibles[itemHash]) {
+        return collectibles[itemHash];
+      }
+
+      return itemDef;
+    }
+  );
+};
+
 export const makeItemStatsSelector = () => {
   return createSelector(
     itemDefsSelector,

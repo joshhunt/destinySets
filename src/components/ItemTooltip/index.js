@@ -23,7 +23,8 @@ import {
   checklistInventorySelector,
   makeItemVendorEntrySelector,
   makeItemHashToCollectableSelector,
-  makeItemPerksSelector
+  makeItemPerksSelector,
+  makeItemPresentationSelector
 } from 'app/store/selectors';
 
 import styles from './styles.styl';
@@ -36,6 +37,7 @@ function ItemTooltip({
   objectiveDefs,
   stats,
   statDefs,
+  displayItem,
   itemInventoryEntry,
   vendorEntry,
   collectionInventory,
@@ -46,7 +48,8 @@ function ItemTooltip({
     return null;
   }
 
-  const { displayProperties, itemCategoryHashes, loreHash } = item;
+  const { itemCategoryHashes, loreHash } = item;
+  const { displayProperties } = displayItem;
 
   const isEmblem = (itemCategoryHashes || []).includes(EMBLEM);
 
@@ -64,7 +67,12 @@ function ItemTooltip({
 
   return (
     <div className={cx(styles.tooltip, small && styles.small)}>
-      <ItemBanner className={styles.header} item={item} onClose={dismiss} />
+      <ItemBanner
+        className={styles.header}
+        item={item}
+        displayItem={displayItem}
+        onClose={dismiss}
+      />
 
       <div className={styles.body}>
         {displayProperties.description && (
@@ -148,6 +156,7 @@ const mapStateToProps = () => {
   const itemVendorEntrySelector = makeItemVendorEntrySelector();
   const itemHashToCollectableSelector = makeItemHashToCollectableSelector();
   const perksSelector = makeItemPerksSelector();
+  const itemPresentationSelector = makeItemPresentationSelector();
 
   return (state, ownProps) => {
     return {
@@ -160,7 +169,8 @@ const mapStateToProps = () => {
       itemInventoryEntry: itemInventoryEntrySelector(state, ownProps),
       vendorEntry: itemVendorEntrySelector(state, ownProps),
       collectible: itemHashToCollectableSelector(state, ownProps),
-      perks: perksSelector(state, ownProps)
+      perks: perksSelector(state, ownProps),
+      displayItem: itemPresentationSelector(state, ownProps)
     };
   };
 };

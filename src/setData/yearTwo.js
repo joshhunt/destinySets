@@ -443,26 +443,43 @@ export default ([
           {
             name: 'Extras',
             season: 5,
-            items: [
-              2960983142, // Armory Forged Shell
-              2960983143, // Fusion Matrix Shell
-              2960983140, // Futurecraft Shell
-              3317837689, // Anti-Paladin
-              2719140312, // The Platinum Starling
-              4185095559, // Might of Volundr
-              956685247, // Vengeance of Volundr
-              4185095558, // Gofannon's Hammer
-              2944769992, // Gofannon's Fire
-              4185095557, // Tear of Izanami
-              3491436641, // Blood of Izanami
-              4185095556, // Steel of Bergusia
-              3715790138, // Blade of Bergusia
-              1347384482, // Meyrin's Vision
-              1347384481, // Satou's Secret
-              1347384483, // Rasmussen's Gift
-              4181232540, // Hubris of Niobe
-              2083630698, // Obsidian Dreams
-              3650581584 // New Age Black Armory
+            itemGroups: [
+              [
+                // Ghosts
+                2960983142, // Armory Forged Shell
+                2960983143, // Fusion Matrix Shell
+                2960983140 // Futurecraft Shell
+              ],
+              [
+                // Sparrows / Ships
+                3317837689, // Anti-Paladin
+                2719140312 // The Platinum Starling
+              ],
+              [
+                // Forge emblems
+                4185095559, // Might of Volundr
+                4185095558, // Gofannon's Hammer
+                4185095557, // Tear of Izanami
+                4185095556 // Steel of Bergusia
+              ],
+              [
+                // Triumph bounty emblems
+                956685247, // Vengeance of Volundr
+                2944769992, // Gofannon's Fire
+                3491436641, // Blood of Izanami
+                3715790138 // Blade of Bergusia
+              ],
+              [
+                1347384482, // Meyrin's Vision
+                1347384481, // Satou's Secret
+                1347384483 // Rasmussen's Gift
+              ],
+              [
+                // Misc
+                4181232540, // Hubris of Niobe
+                2083630698, // Obsidian Dreams
+                3650581584 // New Age Black Armory
+              ]
             ]
           }
         ]

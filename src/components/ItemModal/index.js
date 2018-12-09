@@ -29,7 +29,8 @@ import {
   makeItemInventoryEntrySelector,
   makeItemVendorEntrySelector,
   makeItemHashToCollectableSelector,
-  makeItemPerksSelector
+  makeItemPerksSelector,
+  makeItemPresentationSelector
 } from 'app/store/selectors';
 
 import styles from './styles.styl';
@@ -40,6 +41,7 @@ class ItemModalContent extends Component {
       trackOrnament,
       onRequestClose,
       item,
+      displayItem,
       itemInventoryEntry,
       objectiveInstances,
       objectiveDefs,
@@ -52,13 +54,8 @@ class ItemModalContent extends Component {
       perks
     } = this.props;
 
-    const {
-      hash,
-      displayProperties,
-      screenshot,
-      itemCategoryHashes,
-      loreHash
-    } = item;
+    const { hash, screenshot, itemCategoryHashes, loreHash } = item;
+    const { displayProperties } = displayItem || item;
 
     const ishtarLink =
       loreHash && `http://www.ishtar-collective.net/entries/${loreHash}`;
@@ -90,7 +87,11 @@ class ItemModalContent extends Component {
           </div>
         )}
 
-        <ItemBanner className={styles.itemTop} item={this.props.item} />
+        <ItemBanner
+          className={styles.itemTop}
+          item={this.props.item}
+          displayItem={displayItem}
+        />
 
         <ItemAttributes item={item} />
 
@@ -227,6 +228,7 @@ const mapStateToProps = () => {
   const itemVendorEntrySelector = makeItemVendorEntrySelector();
   const itemHashToCollectableSelector = makeItemHashToCollectableSelector();
   const itemPerksSelector = makeItemPerksSelector();
+  const itemPresentationSelector = makeItemPresentationSelector();
 
   return (state, ownProps) => {
     return {
@@ -240,7 +242,8 @@ const mapStateToProps = () => {
       vendorEntry: itemVendorEntrySelector(state, ownProps),
       collectionInventory: checklistInventorySelector(state),
       collectible: itemHashToCollectableSelector(state, ownProps),
-      perks: itemPerksSelector(state, ownProps)
+      perks: itemPerksSelector(state, ownProps),
+      displayItem: itemPresentationSelector(state, ownProps)
     };
   };
 };

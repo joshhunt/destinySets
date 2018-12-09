@@ -38,9 +38,8 @@ const WEAPON_SLOT = {
   953998645: 'Power'
 };
 
-export default function ItemBanner({ className, item, onClose }) {
+export default function ItemBanner({ className, item, displayItem, onClose }) {
   const {
-    displayProperties,
     inventory,
     classType,
     itemTypeName,
@@ -49,6 +48,8 @@ export default function ItemBanner({ className, item, onClose }) {
     secondaryIcon,
     backgroundColor
   } = item;
+
+  const { displayProperties } = displayItem || item;
 
   const tier = inventory.tierTypeHash;
   const isEmblem = (itemCategoryHashes || []).includes(EMBLEM);
@@ -78,7 +79,14 @@ export default function ItemBanner({ className, item, onClose }) {
 
       <div className={styles.body}>
         <div className={styles.main}>
-          <div>{displayProperties.name}</div>
+          <div>
+            {(() => {
+              if (item.hash === '1386601612' || item.hash === 1386601612) {
+                debugger;
+              }
+              return displayProperties.name;
+            })()}
+          </div>
           {onClose && (
             <div>
               <button className={styles.close} onClick={() => onClose(item)}>
@@ -88,11 +96,17 @@ export default function ItemBanner({ className, item, onClose }) {
           )}
         </div>
         <div className={styles.sub}>
-          <div>
-            {' '}
-            {CLASS_TYPE[classType]} {itemTypeName || itemTypeDisplayName}
-            {weaponSlot && ` - ${weaponSlot}`}
-          </div>
+          {item.redacted ? (
+            <div>
+              <em>Classified item</em>
+            </div>
+          ) : (
+            <div>
+              {' '}
+              {CLASS_TYPE[classType]} {itemTypeName || itemTypeDisplayName}{' '}
+              {weaponSlot && ` - ${weaponSlot}`}
+            </div>
+          )}
           <div>{inventory.tierTypeName}</div>
         </div>
       </div>
