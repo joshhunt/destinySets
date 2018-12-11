@@ -985,11 +985,10 @@ export default ([
             name: 'Emotes',
             season: 5,
             items: [
-              1708415886, // Baking Cookies
               3510138048, // Protecting Teammates
+              3166802179, // Chest Bump
               2799886702, // Comfort Dance
               2556098840, // Fist Bump
-              3166802179, // Chest Bump
               3539322898 // High Five
             ]
           },
@@ -999,14 +998,14 @@ export default ([
             items: [
               4031340274, // True North Shell
               4031340275, // Hard-Packed Shell
-              1028757552, // Ternion Honor Shell
-              1028757553, // Transhedron Shell
-              1028757554, // Frozen Amaryllis Shell
-              1028757555, // Sibyl Shell
-              1028757556, // Maelstrom's Auge Shell
-              1028757557, // Kabuto Shell
-              1028757558, // Amethyst Spine Shell
               1028757559, // Ufsilon's Rune Shell
+              1028757558, // Amethyst Spine Shell
+              1028757557, // Kabuto Shell
+              1028757556, // Maelstrom's Auge Shell
+              1028757555, // Sibyl Shell
+              1028757554, // Frozen Amaryllis Shell
+              1028757553, // Transhedron Shell
+              1028757552, // Ternion Honor Shell
               1028757567 // Sunseeker Shell
             ]
           },
@@ -1014,12 +1013,12 @@ export default ([
             name: 'Ghost Projections',
             season: 5,
             items: [
-              611329864, // Package Projection
-              611329865, // Cocoa Projection
               611329868, // Cupcake Projection
               611329869, // Dawning Projection
               611329870, // Flickering Projection
-              611329871 // Garland Projection
+              611329871, // Garland Projection
+              611329864, // Package Projection
+              611329865 // Cocoa Projection
             ]
           },
           {
@@ -1035,15 +1034,15 @@ export default ([
             items: [
               855351524, // Glad Tidings
               855351525, // Home Away
-              1287851098, // Affinity's Gift
-              1502135233, // Celestial Tour
-              1502135240, // Flight of Fancy
               1502135241, // Cold Snap
-              1502135242, // In With the New
+              1502135240, // Flight of Fancy
               1502135243, // Classical Nova
+              1502135242, // In With the New
               1502135244, // Whetted Resolution
+              1502135247, // Bird of Peace
               1502135246, // Crux Unraveled
-              1502135247 // Bird of Peace
+              1502135233, // Celestial Tour
+              1287851098 // Affinity's Gift
             ]
           },
           {
@@ -1052,12 +1051,13 @@ export default ([
             items: [
               3136552544, // Holiday Treats (Emblem)
               3136552545, // Delicious Benefactor (Emblem)
-              3328839466, // Resilient Laurel (Shader)
               3328839467, // Aniline Shock (Shader)
+              3328839466, // Resilient Laurel (Shader)
               2774782768, // Shower of Gifts (Transmat Effect)
               2774782769, // Howling Blizzard (Transmat Effect)
-              3012249670, // Shining Winter (Transmat Effect)
-              3012249671 // Cold and Bright (Transmat Effect)
+              3012249671, // Cold and Bright (Transmat Effect)
+              3012249670 // Shining Winter (Transmat Effect)
+
             ]
           }
         ]
