@@ -459,7 +459,6 @@ export default ([
                 2960983142, // Armory Forged Shell
                 2960983140, // Futurecraft Shell
                 2960983143 // Fusion Matrix Shell
-                
               ],
               [
                 // Sparrows / Ships
