@@ -392,19 +392,29 @@ export default ([
         id: 'YEAR_TWO_FORGE_GEAR',
         sections: [
           {
+            name: 'Weapon Frames',
+            season: 5,
+            items: [
+                603242241, // Hammerhead
+                93253474, // The Ringing Nail
+                1449922174, // Tatara Gaze
+                2575506895 // Kindled Orchid
+            ]
+          },
+          {
             name: 'Weapons',
             season: 5,
             items: [
-              1775804198, // Galliard-42 XN7568
-              20025671, // Tango-45 XK5094
-              1386601612, // Swift Ride XE8375
-              2824241403, // Bad News XF4354
-              2422664927, // Atalanta-D XG1992
-              3751622019, // Dead Man Walking XX7463
-              3461377698, // Baligant XU7743
-              4148143418, // Show of Force XF4865
-              1757129747, // Acantha-D XK8434
-              2817798849 // Hoosegow XE5837
+                1775804198, // Galliard-42 XN7568
+                20025671, // Tango-45 XK5094
+                1386601612, // Swift Ride XE8375
+                2824241403, // Bad News XF4354
+                2422664927, // Atalanta-D XG1992
+                3751622019, // Dead Man Walking XX7463
+                3461377698, // Baligant XU7743
+                4148143418, // Show of Force XF4865
+                1757129747, // Acantha-D XK8434
+                2817798849 // Hoosegow XE5837
             ]
           },
           {
@@ -447,8 +457,9 @@ export default ([
               [
                 // Ghosts
                 2960983142, // Armory Forged Shell
-                2960983143, // Fusion Matrix Shell
-                2960983140 // Futurecraft Shell
+                2960983140, // Futurecraft Shell
+                2960983143 // Fusion Matrix Shell
+                
               ],
               [
                 // Sparrows / Ships
