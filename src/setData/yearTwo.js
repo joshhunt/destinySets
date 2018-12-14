@@ -380,7 +380,8 @@ export default ([
             name: 'Extras',
             season: 5,
             items: [
-              1162929425 // The Golden Standard (Emblem)
+              1162929425, // The Golden Standard (Emblem)
+              231533811 // Iron Strength (Shader)
             ]
           }
         ]
@@ -391,6 +392,16 @@ export default ([
           'Gear from Forge Ignitions and crafted in a Black Armory forge.',
         id: 'YEAR_TWO_FORGE_GEAR',
         sections: [
+          {
+            name: 'Weapon Frames',
+            season: 5,
+            items: [
+              603242241, // Hammerhead
+              93253474, // The Ringing Nail
+              1449922174, // Tatara Gaze
+              2575506895 // Kindled Orchid
+            ]
+          },
           {
             name: 'Weapons',
             season: 5,
@@ -447,8 +458,8 @@ export default ([
               [
                 // Ghosts
                 2960983142, // Armory Forged Shell
-                2960983143, // Fusion Matrix Shell
-                2960983140 // Futurecraft Shell
+                2960983140, // Futurecraft Shell
+                2960983143 // Fusion Matrix Shell
               ],
               [
                 // Sparrows / Ships
