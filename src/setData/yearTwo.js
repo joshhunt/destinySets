@@ -380,8 +380,8 @@ export default ([
             name: 'Extras',
             season: 5,
             items: [
-              1162929425 // The Golden Standard (Emblem)
-              231533811, // Iron Strength (Shader)
+              1162929425, // The Golden Standard (Emblem)
+              231533811 // Iron Strength (Shader)
             ]
           }
         ]
