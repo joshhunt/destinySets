@@ -9,7 +9,6 @@ import Diff from './views/Diff';
 import Inventory from './views/Inventory';
 import Triumphs from './views/Triumphs';
 import ItemPage from './views/ItemPage';
-import Debug from './views/Debug';
 import DataExplorerRedirect from './views/DataExplorerRedirect';
 
 import store from './store';
@@ -21,8 +20,6 @@ export default class AppRouter extends Component {
       <Provider store={store}>
         <Router history={browserHistory}>
           <Route component={App}>
-            <Route path="/debug" component={Debug} />
-
             <Route path="/" component={Inventory} setData={sets.yearTwo} />
 
             <Route

@@ -8,11 +8,6 @@ import { sendProfileStats } from 'app/lib/telemetry';
 import googleAuth from 'app/lib/googleDriveAuth';
 import destinyAuth from 'app/lib/destinyAuth';
 import * as destiny from 'app/lib/destiny';
-import {
-  STATUS_DOWNLOADING,
-  STATUS_EXTRACTING_TABLES,
-  STATUS_UNZIPPING
-} from 'app/lib/definitions';
 
 import { inventorySelector, xurHasNewItemsSelector } from 'app/store/selectors';
 
@@ -36,11 +31,10 @@ import styles from './styles.styl';
 const log = require('app/lib/log')('<App />');
 
 const FETCH_INTERVAL = 30 * 1000;
+const STATUS_DOWNLOADING = 'downloading';
 
 const MANIFEST_MESSAGES = {
-  [STATUS_DOWNLOADING]: 'Downloading new item data from Bungie...',
-  [STATUS_EXTRACTING_TABLES]: 'Unpacking item data...',
-  [STATUS_UNZIPPING]: 'Unzipping item data...'
+  [STATUS_DOWNLOADING]: 'Downloading new item data from Bungie...'
 };
 
 const hasDismissedCookie = /dismissed_login_upsell/.test(document.cookie);
@@ -336,4 +330,7 @@ const mapDispatchToActions = {
   openXurModal
 };
 
-export default connect(mapStateToProps, mapDispatchToActions)(App);
+export default connect(
+  mapStateToProps,
+  mapDispatchToActions
+)(App);

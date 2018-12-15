@@ -6,9 +6,6 @@ import {
   definitionsStatus,
   definitionsError
 } from 'app/store/definitions';
-import { trackError } from 'app/lib/telemetry';
-import { REQUIRED_DEFINITIONS } from 'app/store/preloadStore';
-import { fasterGetDefinitions } from 'app/lib/definitions';
 
 import {
   setFilterItem,
@@ -40,14 +37,10 @@ class Inventory extends Component {
   };
 
   componentDidUpdate(oldProps) {
-    const { filters, language, trackedItems } = this.props;
+    const { filters, trackedItems } = this.props;
 
     if (filters !== oldProps.filters) {
       ls.saveFilters(filters);
-    }
-
-    if (language !== oldProps.language) {
-      this.fetchDefinitions(language);
     }
 
     if (trackedItems !== oldProps.trackedItems) {
@@ -67,28 +60,6 @@ class Inventory extends Component {
       }, FETCH_INTERVAL);
     }
   };
-
-  fetchDefinitions({ code: lang }) {
-    fasterGetDefinitions(
-      lang,
-      REQUIRED_DEFINITIONS,
-      data => {
-        this.props.definitionsStatus(data);
-      },
-      (err, data) => {
-        if (err) {
-          trackError(err);
-          this.props.definitionsError(err);
-          return;
-        }
-
-        if (data && data.definitions) {
-          this.props.definitionsStatus({ status: null });
-          this.props.setBulkDefinitions(data.definitions);
-        }
-      }
-    );
-  }
 
   setPopper = (itemHash, element) =>
     this.setState({ itemTooltip: itemHash ? { itemHash, element } : null });
@@ -218,7 +189,6 @@ const mapStateToProps = (state, ownProps) => {
   return {
     hiddenSets: state.app.hiddenSets,
     filters: state.app.filters,
-    language: state.app.language,
     trackedItems: state.app.trackedItems,
     vendors: state.profile.profile && state.profile.profile.$vendors,
     filteredSetData: filteredSetDataSelector(state, ownProps),
@@ -237,4 +207,7 @@ const mapDispatchToActions = {
   setSearchValue
 };
 
-export default connect(mapStateToProps, mapDispatchToActions)(Inventory);
+export default connect(
+  mapStateToProps,
+  mapDispatchToActions
+)(Inventory);

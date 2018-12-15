@@ -23,7 +23,6 @@ const keys = {
   DESTINY_PROFILE: 'd2Profile2',
   DEBUG: 'debug',
 
-  _FIREBASE: 'firebase:host:destinysets', // not actually used, but needed for whitelisting
   _i18n: '_i18n' // used as a prefix
 };
 

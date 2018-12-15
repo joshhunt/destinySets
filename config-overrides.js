@@ -11,6 +11,15 @@ module.exports = function override(config, env) {
 
   config.entry.unshift('babel-polyfill');
 
+  const babelLoader = getLoader(config.module.rules, rule => {
+    return rule.loader && rule.loader.includes('/babel-loader/');
+  });
+
+  babelLoader.include = [
+    babelLoader.include,
+    require.resolve('@destiny-plumbing/definitions')
+  ];
+
   const cssLoader = getLoader(
     config.module.rules,
     rule => String(rule.test) === String(/\.css$/)

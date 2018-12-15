@@ -576,6 +576,15 @@ export default ([
         description: 'Found in the "Scourge of the Past" raid lair.',
         sections: [
           {
+            name: 'Weapons',
+            items: [
+              1931556011, // No Feelings
+              1664372054, // Threat Level
+              2753269585, // Tempered Dynamo
+              2186258845 // Bellowing Giant
+            ]
+          },
+          {
             name: 'Hunter Armor',
             season: 5,
             items: [
@@ -1068,7 +1077,6 @@ export default ([
               2774782769, // Howling Blizzard (Transmat Effect)
               3012249671, // Cold and Bright (Transmat Effect)
               3012249670 // Shining Winter (Transmat Effect)
-
             ]
           }
         ]
