@@ -15,10 +15,12 @@ import {
 import { setProfiles } from 'app/store/profile';
 import { getLastProfile } from 'app/lib/destiny';
 import { trackError } from 'app/lib/telemetry';
-
-import { fasterGetDefinitions } from 'app/lib/definitions';
+import { staleThenRevalidate, _Dexie } from '@destiny-plumbing/definitions';
 
 const log = require('app/lib/log')('authProvider');
+
+// Clean up previous definitions
+_Dexie.delete('destinyManifest');
 
 export const REQUIRED_DEFINITIONS = [
   'DestinyChecklistDefinition',
@@ -34,6 +36,35 @@ export const REQUIRED_DEFINITIONS = [
   'DestinyPlaceDefinition',
   'DestinyFactionDefinition'
 ];
+
+function loadDefinitions(store, language) {
+  try {
+    staleThenRevalidate(
+      process.env.REACT_APP_API_KEY,
+      language.code,
+      REQUIRED_DEFINITIONS,
+      (err, result) => {
+        if (err) {
+          trackError(err);
+          store.dispatch(definitionsError(err));
+          return;
+        }
+
+        if (result && result.loading) {
+          store.dispatch(definitionsStatus({ status: 'downloading' }));
+        }
+
+        if (result && result.definitions) {
+          store.dispatch(definitionsStatus({ status: null }));
+          store.dispatch(setBulkDefinitions(result.definitions));
+        }
+      }
+    );
+  } catch (err) {
+    trackError(err);
+    store.dispatch(definitionsError(err));
+  }
+}
 
 export default function preloadStore(store) {
   const prevFilters = ls.getFilters();
@@ -77,46 +108,30 @@ export default function preloadStore(store) {
   const language = ls.getLanguage();
 
   store.dispatch(setLanguage(language));
-
   store.dispatch(setBulkHiddenItemSet(ls.getHiddenItemSets()));
 
-  let currentTrackedItems = store.getState().app.trackedItems;
-  let currentTrackedRecords = store.getState().app.trackedRecords;
+  let prevState = store.getState();
+
   store.subscribe(() => {
     const newState = store.getState();
     window.__state = newState;
 
-    if (newState.app.trackedItems !== currentTrackedItems) {
+    if (newState.app.trackedItems !== prevState.app.trackedItems) {
       ls.saveTrackedItems(newState.app.trackedItems);
     }
 
-    if (newState.app.trackedRecords !== currentTrackedRecords) {
+    if (newState.app.trackedRecords !== prevState.app.trackedRecords) {
       ls.saveTrackedRecords(newState.app.trackedRecords);
     }
 
-    currentTrackedItems = newState.app.trackedItems;
-    currentTrackedRecords = newState.app.trackedRecords;
+    if (newState.app.language !== prevState.app.language) {
+      loadDefinitions(store, newState.app.language);
+    }
+
+    prevState = newState;
   });
 
-  fasterGetDefinitions(
-    language.code,
-    REQUIRED_DEFINITIONS,
-    data => {
-      store.dispatch(definitionsStatus(data));
-    },
-    (err, data) => {
-      if (err) {
-        trackError(err);
-        store.dispatch(definitionsError(err));
-        return;
-      }
-
-      if (data && data.definitions) {
-        store.dispatch(definitionsStatus({ status: null }));
-        store.dispatch(setBulkDefinitions(data.definitions));
-      }
-    }
-  );
+  loadDefinitions(store, language);
 
   return store;
 }
