@@ -585,7 +585,6 @@ export default ([
               1664372054, // Threat Level
               2753269585, // Tempered Dynamo
               2186258845 // Bellowing Giant
-              
             ]
           },
           {
