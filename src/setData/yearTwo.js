@@ -399,7 +399,9 @@ export default ([
               603242241, // Hammerhead
               93253474, // The Ringing Nail
               1449922174, // Tatara Gaze
-              2575506895 // Kindled Orchid
+              2575506895, // Kindled Orchid
+              421573768, // The Spiteful Fang
+              3843477312 // Blast Furnance
             ]
           },
           {
@@ -578,11 +580,11 @@ export default ([
           {
             name: 'Weapons',
             items: [
+              2376481550, // Anarchy
               1931556011, // No Feelings
               1664372054, // Threat Level
               2753269585, // Tempered Dynamo
-              2186258845, // Bellowing Giant
-              2376481550 // Anarchy
+              2186258845 // Bellowing Giant
             ]
           },
           {
