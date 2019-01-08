@@ -401,13 +401,16 @@ export default ([
               1449922174, // Tatara Gaze
               2575506895, // Kindled Orchid
               421573768, // The Spiteful Fang
-              3843477312 // Blast Furnance
+              3843477312, // Blast Furnance
+              3704653637 // Stryker's Sure-Hand
             ]
           },
           {
             name: 'Weapons',
             season: 5,
             items: [
+              3588934839, // Le Monarque
+              3211806999, // Izanagi's Burden
               1775804198, // Galliard-42 XN7568
               20025671, // Tango-45 XK5094
               1386601612, // Swift Ride XE8375
@@ -491,7 +494,12 @@ export default ([
                 // Misc
                 4181232540, // Hubris of Niobe
                 2083630698, // Obsidian Dreams
-                3650581584 // New Age Black Armory
+                3650581584, // New Age Black Armory
+                3650581585, // Refurbished Black Armory
+                3650581586, // Rasmussen Clan
+                3650581587, // House of Meyrin
+                3650581588, // Satou Tribe
+                3650581589 // Bergusian Night 
               ]
             ]
           }
@@ -1350,6 +1358,7 @@ export default ([
               4214004315, // Aqua Tusk Shell
               4214004314, // Brilliant Starfish Shell
               4214004313, // Eye of the Storm Shell
+              4214004312, // Chrome Crab Shell
               4214004311, // Aero Dart Shell
               4214004310, // Path Followed Shell
               3308716490, // Techno Robin Shell
