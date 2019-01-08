@@ -410,6 +410,7 @@ export default ([
             season: 5,
             items: [
               3588934839, // Le Monarque
+              3211806999, // Izanagi's Burden
               1775804198, // Galliard-42 XN7568
               20025671, // Tango-45 XK5094
               1386601612, // Swift Ride XE8375
