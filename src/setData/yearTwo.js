@@ -401,7 +401,8 @@ export default ([
               1449922174, // Tatara Gaze
               2575506895, // Kindled Orchid
               421573768, // The Spiteful Fang
-              3843477312 // Blast Furnance
+              3843477312, // Blast Furnance
+              3704653637 // Stryker's Sure-Hand
             ]
           },
           {
