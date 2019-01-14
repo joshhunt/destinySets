@@ -221,9 +221,12 @@ function mapStateToProps() {
             socketCategory &&
             socketCategory.socketIndexes.map(socketIndex => {
               const socket = instance.$sockets[socketIndex];
+              const reusablePlugs = socket.reusablePlugs || [{
+                plugItemHash: socket.plugHash,
+              }];
               return {
                 // mainPerk: itemDefs[socket.plugHash],
-                altPerks: socket.reusablePlugs.map(plug => ({
+                altPerks: reusablePlugs.map(plug => ({
                   enabled: socket.plugHash === plug.plugItemHash,
                   plugItem: itemDefs[plug.plugItemHash]
                 }))
