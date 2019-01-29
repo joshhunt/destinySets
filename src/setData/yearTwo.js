@@ -1109,7 +1109,7 @@ export default ([
             name: 'Emotes',
             season: 5,
             items: [
-              3990400405 // Tiny Bow
+              
             ]
           },
           {
@@ -1133,13 +1133,13 @@ export default ([
 
             ]
           },
-          {
-            name: 'Weapon Ornaments',
-            season: 5,
-            items: [
-
-            ]
-          }
+          //{
+          //  name: 'Weapon Ornaments',
+          //  season: 5,
+          //  items: [
+          //    
+          //  ]
+          //}
         ]
       }
     ]
