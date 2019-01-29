@@ -1654,16 +1654,16 @@ export default ([
               1052553862 // Crimson Valor - Bright Dust dismantle
             ]
           },
-          {
-            name: 'Weapon Ornaments',
-            season: 2,
-            items: [
-              3373357626, // Prism for Prometheus Lens
-              2433900295, // Carina Nebula for Graviton Lance
-              3171649853, // Go About Your Business for Sweet Business
-              669267835 // Dieselpunk for The Wardcliffe Coil
-            ]
-          }
+          //{
+          //  name: 'Weapon Ornaments',
+          //  season: 2,
+          //  items: [
+          //    3373357626, // Prism for Prometheus Lens
+          //    2433900295, // Carina Nebula for Graviton Lance
+          //    3171649853, // Go About Your Business for Sweet Business
+          //    669267835 // Dieselpunk for The Wardcliffe Coil
+          //  ]
+          //}
         ]
       },
       common.SOLSTICE_OF_HEROES
