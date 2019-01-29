@@ -1,5 +1,10 @@
 // @flow
 
+export type I18nDefinitionString = {|
+  path: string,
+  fallback: string
+|};
+
 export type ItemHash = number;
 
 export type ItemsList = Array<ItemHash>;
@@ -17,9 +22,9 @@ export type SetSection = {|
 |};
 
 export type DestinySet = {|
-  name: string,
+  name: string | I18nDefinitionString,
   id: string,
-  description?: string,
+  description?: string | I18nDefinitionString,
   image?: string,
   small?: boolean,
   big?: boolean,

@@ -11,6 +11,7 @@ const keys = {
   GOOGLE_LOGIN_TOOLTIP: '$hideGoogleLoginTooltip',
   VISIT_COUNT: '$visitCount',
   TRACKED_ITEMS: '$trackedItems',
+  TRACKED_RECORDS: '$trackedRecords',
   UID: 'uid',
   DEBUGID: 'debugid',
   PROFILE_ERROR_REPORTED: 'profileErrorReported',
@@ -21,7 +22,8 @@ const keys = {
 
   DESTINY_PROFILE: 'd2Profile2',
   DEBUG: 'debug',
-  _FIREBASE: 'firebase:host:destinysets' // not actually used, but needed for whitelisting
+
+  _i18n: '_i18n' // used as a prefix
 };
 
 let LOCAL_STORAGE;
@@ -93,6 +95,14 @@ function save(key, value) {
     LOCAL_STORAGE = localStoragePolyfill;
     LOCAL_STORAGE.setItem(key, jason);
   }
+}
+
+export function getI18nString(path) {
+  return get(`${keys._i18n}|${path}`);
+}
+
+export function saveI18nString(path, string) {
+  return save(`${keys._i18n}|${path}`, string);
 }
 
 export function getCachedUrl(url) {
@@ -221,6 +231,14 @@ export function getTrackedItems() {
 
 export function saveTrackedItems(items) {
   save(keys.TRACKED_ITEMS, items);
+}
+
+export function getTrackedRecords() {
+  return get(keys.TRACKED_RECORDS, []);
+}
+
+export function saveTrackedRecords(items) {
+  save(keys.TRACKED_RECORDS, items);
 }
 
 export function getUID() {

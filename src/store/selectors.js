@@ -1,16 +1,16 @@
 import { createSelector } from 'reselect';
-import { difference, toPairs, keyBy, get, flatMapDeep } from 'lodash';
+import { difference, keyBy, get, flatMapDeep, mapValues } from 'lodash';
 import fp from 'lodash/fp';
 
 import {
   inventoryFromProfile,
   objectivesFromProfile
 } from 'app/lib/getFromProfile';
+import { flagEnum } from 'app/lib/destinyUtils';
+import { enumerateState } from 'app/components/Record';
 import {
   NUMERICAL_STATS,
   STAT_BLACKLIST,
-  CHECKLIST_PROFILE_COLLECTIONS,
-  CHECKLIST_CHARACTER_COLLECTIONS,
   MASTERWORK_FLAG
 } from 'app/lib/destinyEnums';
 
@@ -34,7 +34,8 @@ export const collectibleDefsSelector = state =>
 export const presentationNodeDefsSelector = state =>
   state.definitions.DestinyPresentationNodeDefinition;
 
-export const itemHashPropSelector = (state, props) => props.itemHash;
+export const itemHashPropSelector = (state, props) =>
+  props.itemHash || (props.routeParams && props.routeParams.itemHash);
 
 export const makeItemSelector = () => {
   return createSelector(
@@ -42,6 +43,27 @@ export const makeItemSelector = () => {
     itemHashPropSelector,
     (itemDefs, itemHash) => {
       return itemDefs ? itemDefs[itemHash] : null;
+    }
+  );
+};
+
+export const makeItemPresentationSelector = () => {
+  return createSelector(
+    itemDefsSelector,
+    collectiblesByItemHashSelector,
+    itemHashPropSelector,
+    (itemDefs, collectibles, itemHash) => {
+      const itemDef = itemDefs && itemDefs[itemHash];
+
+      if (itemDef && !itemDef.redacted) {
+        return itemDefs[itemHash];
+      }
+
+      if (collectibles && collectibles[itemHash]) {
+        return collectibles[itemHash];
+      }
+
+      return itemDef;
     }
   );
 };
@@ -131,72 +153,98 @@ export const currentInventorySelector = createSelector(
   }
 );
 
-function inventoryFromChecklist(checklistDef, checklist) {
-  if (!checklistDef) {
-    return {};
-  }
+export const recordsSelector = createSelector(profileSelector, profile => {
+  const profileRecords = get(profile, 'profileRecords.data.records', {});
+  const characterRecords = Object.values(
+    get(profile, 'characterRecords.data', {})
+  ).reduce((acc, { records }) => {
+    return {
+      ...acc,
+      ...records
+    };
+  }, {});
 
-  const checklistDefEntries = keyBy(checklistDef.entries, x => x.hash);
-  const inventory = {};
+  const all = {
+    ...profileRecords,
+    ...characterRecords
+  };
 
-  toPairs(checklist).forEach(([checklistItemHash, isUnlocked]) => {
-    if (isUnlocked) {
-      const checklistEntryDef = checklistDefEntries[checklistItemHash];
-      const itemHash = checklistEntryDef && checklistEntryDef.itemHash; // check this for the correct itemHash
-      if (itemHash) {
-        inventory[itemHash] = true;
-      }
-    }
+  const allMappedRecords = mapValues(all, record => {
+    return {
+      ...record,
+      enumeratedState: enumerateState(record.state)
+    };
   });
 
-  return inventory;
+  window.__records = allMappedRecords;
+
+  return allMappedRecords;
+});
+
+const enumerateCollectibleState = state => ({
+  none: flagEnum(state, 0),
+  notAcquired: flagEnum(state, 1),
+  obscured: flagEnum(state, 2),
+  invisible: flagEnum(state, 4),
+  cannotAffordMaterialRequirements: flagEnum(state, 8),
+  inventorySpaceUnavailable: flagEnum(state, 16),
+  uniquenessViolation: flagEnum(state, 32),
+  purchaseDisabled: flagEnum(state, 64)
+});
+
+function inventoryFromCollectibles(collectibles, collectibleDefs) {
+  return Object.entries(collectibles).reduce(
+    (acc, [collectibleHash, { state }]) => {
+      const collectible = collectibleDefs[collectibleHash];
+      if (!collectible || !collectible.itemHash) {
+        return acc;
+      }
+
+      const actualState = enumerateCollectibleState(state);
+
+      if (actualState.notAcquired) {
+        return acc;
+      }
+
+      return {
+        ...acc,
+        [collectible.itemHash]: actualState
+      };
+    },
+    {}
+  );
 }
 
 export const checklistInventorySelector = createSelector(
-  checklistDefsSelector,
+  collectibleDefsSelector,
   profileSelector,
-  (checklistDefs, profile) => {
-    if (!(checklistDefs && profile)) {
+  (collectibleDefs, profile) => {
+    if (!(collectibleDefs && profile)) {
       return {};
     }
 
     let inventory = {};
 
-    const checklists = get(profile, 'profileProgression.data.checklists');
+    const collectibles = get(profile, 'profileCollectibles.data.collectibles');
 
-    if (!checklists) {
-      return {};
-    }
-
-    const profileChecklist = checklists[CHECKLIST_PROFILE_COLLECTIONS];
-
-    const characterChecklists = Object.values(
-      profile.characterProgressions.data
-    )
-      .map(x => x.checklists[CHECKLIST_CHARACTER_COLLECTIONS])
-      .filter(Boolean);
-
-    if (profileChecklist) {
+    if (collectibles) {
       inventory = {
         ...inventory,
-        ...inventoryFromChecklist(
-          checklistDefs[CHECKLIST_PROFILE_COLLECTIONS],
-          profileChecklist
-        )
+        ...inventoryFromCollectibles(collectibles, collectibleDefs)
       };
     }
 
-    const characterInventory = characterChecklists.reduce((acc, checklist) => {
-      return {
-        ...acc,
-        ...inventoryFromChecklist(
-          checklistDefs[CHECKLIST_CHARACTER_COLLECTIONS],
-          checklist
-        )
-      };
-    }, {});
+    const characterCollectibles = get(profile, 'characterCollectibles.data');
 
-    return { ...characterInventory, ...inventory };
+    characterCollectibles &&
+      Object.values(profile.characterCollectibles.data).forEach(data => {
+        inventory = {
+          ...inventory,
+          ...inventoryFromCollectibles(data.collectibles, collectibleDefs)
+        };
+      });
+
+    return inventory;
   }
 );
 
@@ -318,30 +366,41 @@ export const makeItemVendorEntrySelector = () => {
   );
 };
 
-const extractInstances = fp.flatMapDeep(
-  characterEquipment => characterEquipment.items
-);
+const extractInstances = characterInventory => {
+  return Object.entries(characterInventory).reduce(
+    (acc, [characterId, { items }]) => {
+      return acc.concat(
+        items.map(item => ({ ...item, $characterId: characterId }))
+      );
+    },
+    []
+  );
+};
 
-const itemInstancesSelector = createSelector(profileSelector, profile => {
-  if (!profile) {
-    return {};
+export const itemInstancesSelector = createSelector(
+  profileSelector,
+  profile => {
+    if (!profile) {
+      return {};
+    }
+
+    return fp.flow(
+      fp.concat(extractInstances(profile.characterEquipment.data)),
+      fp.concat(extractInstances(profile.characterInventories.data)),
+      fp.concat(profile.profileInventory.data.items),
+      fp.map(itemInstance => {
+        return {
+          ...itemInstance,
+          $sockets: (
+            profile.itemComponents.sockets.data[itemInstance.itemInstanceId] ||
+            {}
+          ).sockets
+        };
+      }),
+      fp.groupBy(component => component.itemHash)
+    )([]);
   }
-
-  return fp.flow(
-    fp.concat(extractInstances(profile.characterEquipment.data)),
-    fp.concat(extractInstances(profile.characterInventories.data)),
-    fp.concat(profile.profileInventory.data.items),
-    fp.map(itemInstance => {
-      return {
-        ...itemInstance,
-        $sockets: (
-          profile.itemComponents.sockets.data[itemInstance.itemInstanceId] || {}
-        ).sockets
-      };
-    }),
-    fp.groupBy(component => component.itemHash)
-  )([]);
-});
+);
 
 export const vendorItemDataSelector = createSelector(
   profileSelector,
@@ -549,9 +608,35 @@ export const makeItemHashToCollectableSelector = () => {
   return createSelector(
     collectiblesByItemHashSelector,
     itemHashPropSelector,
-    (keyedCollectibles, itemHash) => {
-      console.log({ keyedCollectibles, itemHash });
-      return keyedCollectibles[itemHash];
+    (keyedCollectibles, itemHash) => keyedCollectibles[itemHash]
+  );
+};
+
+export const makeItemPerksSelector = () => {
+  return createSelector(
+    itemDefsSelector,
+    makeItemSelector(),
+    (itemDefs, item) => {
+      if (!itemDefs || !item) {
+        return null;
+      }
+
+      return (
+        item.sockets &&
+        item.sockets.socketEntries &&
+        item.sockets.socketEntries
+          .map(socket => {
+            const plugItem = itemDefs[socket.singleInitialItemHash];
+            return plugItem;
+          })
+          .filter(plugItem => {
+            return (
+              plugItem &&
+              plugItem.plug &&
+              plugItem.plug.plugCategoryIdentifier === 'intrinsics'
+            );
+          })
+      );
     }
   );
 };

@@ -1,0 +1,140 @@
+$border-color =  lighten(#12161B, 10%);
+
+.root
+  padding: 15px 15px
+  max-width: 1400px
+  margin: auto
+
+.pageFlex
+  display: flex
+  justify-content: center
+  flex-wrap: wrap
+  margin: 0 -15px
+
+.itemMain
+.itemExtra
+.perksSection
+  flex: 1
+  width: 50%
+  min-width: 300px
+  margin: 0 15px 30px 15px
+
+.perksSection
+  flex-basis: 100%
+
+.nameIconLockup
+  display: flex
+  align-items: flex-end
+  margin: 0 15px 15px 15px
+  width: 100%
+  border-bottom: 1px solid $border-color
+  padding-bottom: 10px
+
+.itemIcon
+  height: 60px
+  width: 60px
+  display: block
+  margin-right: 15px
+
+.itemName
+  margin: 0
+  font-size: 28px
+
+.screenshot
+  width: 100%
+  display: block
+
+.stats
+  font-size: 17.8px
+
+.itemSource
+.description
+  margin: 0 0 20px 0
+  font-style: italic
+
+.itemSource
+  opacity: .7
+  font-style: normal
+
+.skeleton
+  background: $border-color
+  color: $border-color
+  height: 1.2em
+  width: 100%
+  min-width: 150px
+  margin-bottom: .2em
+
+.skeletonImage
+  background: $border-color
+  height: 60px
+  width: 60px
+
+.itemAttributes
+  margin-bottom: 20px
+
+.perks
+  display: flex
+  margin: 0 -10px
+  max-width: 100%
+  overflow: auto
+  -webkit-overflow-scrolling: touch
+
+.socket
+  flex: 1 0 0
+  margin: 0 10px
+
+  & + &
+    border-left: 1px solid $border-color
+    padding-left: 10px
+
+.perk
+  display: flex
+  align-items: center
+  padding: 5px
+  font-size: 14px
+
+.perkName
+  white-space: nowrap
+  overflow: hidden
+  text-overflow: ellipsis
+
+.perkIcon
+  height: 30px
+  display: inline-block
+  margin-right: 5px
+
+.altPerk
+  composes: perk
+  opacity: 0.8
+
+.altPerkEnabled
+  composes: perk
+  font-weight: bold
+  border: 1px solid rgba(68,189,50,0.15);
+  background: rgba(68,189,50,0.15);
+
+.randomPerk
+  composes: perk
+  opacity: 0.8
+  font-size: 13px
+
+  .perkIcon
+    height: 25px
+
+.randomRollTitle
+  margin-top: 10px
+  font-weight: bold
+
+.tooltipPerkDescription
+.tooltipPerkName
+  white-space: pre-line
+  text-align: left
+  display: inline-block
+
+.tooltipPerkName
+  display: block
+  font-weight: bold
+
+  img
+    height: 1em
+    vertical-align: middle

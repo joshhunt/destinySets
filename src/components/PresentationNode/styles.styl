@@ -1,0 +1,50 @@
+$trackHeight = 6px
+
+.root
+  display: flex
+  border: 1px solid rgba(white, .1)
+  background: rgba(white, .03)
+  padding: 10px
+  align-items: center
+  position: relative
+  padding-bottom: $trackHeight + 10px
+  color: white
+
+  &, *
+    text-decoration: none !important
+
+.count
+  font-size: .9em
+  opacity: .6
+
+.accessory
+  content: 'accessory'
+  margin-right: 10px
+
+.icon
+  height: 35px
+  width: auto
+  object-fit: contain
+  display: block
+
+.main
+  flex: 1
+
+.name
+  font-size: 16px
+
+.progress
+  position: absolute
+  bottom: 0
+  left: 0
+  right: 0
+  background: rgba(white, .06)
+  height: $trackHeight
+  font-size: 10px
+
+.progressTrack
+  position: absolute
+  top: 0
+  left: -1px
+  bottom: -1px
+  background: #404245

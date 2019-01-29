@@ -1,11 +1,17 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router';
 import { connect } from 'react-redux';
+
+import {
+  setBulkDefinitions,
+  definitionsStatus,
+  definitionsError
+} from 'app/store/definitions';
 
 import {
   setFilterItem,
   removeTrackedItem,
-  setBulkHiddenItemSet
+  setBulkHiddenItemSet,
+  setSearchValue
 } from 'app/store/reducer';
 import { fetchProfile } from 'app/store/profile';
 
@@ -30,24 +36,11 @@ class Inventory extends Component {
     unexpectedError: false
   };
 
-  componentDidMount() {
-    this.potentiallyScheduleFetchProfile();
-  }
-
-  componentWillUnmount() {
-    window.clearInterval(this.intervalId);
-    this.intervalId = null;
-  }
-
   componentDidUpdate(oldProps) {
-    const { filters, language, trackedItems } = this.props;
+    const { filters, trackedItems } = this.props;
 
     if (filters !== oldProps.filters) {
       ls.saveFilters(filters);
-    }
-
-    if (language !== oldProps.language) {
-      this.fetchDefinitions(language);
     }
 
     if (trackedItems !== oldProps.trackedItems) {
@@ -62,14 +55,11 @@ class Inventory extends Component {
 
     if (props.route.refreshOnInterval || props.trackedItems.length > 0) {
       this.intervalId = window.setInterval(() => {
+        console.log('calling props.fetchProfile()');
         props.fetchProfile();
       }, FETCH_INTERVAL);
     }
   };
-
-  fetchDefinitions({ code: lang }) {
-    console.log('TODO: ensure defs with language', lang);
-  }
 
   setPopper = (itemHash, element) =>
     this.setState({ itemTooltip: itemHash ? { itemHash, element } : null });
@@ -87,8 +77,18 @@ class Inventory extends Component {
     this.props.setBulkHiddenItemSet({});
   };
 
+  onSearchChange = ev => {
+    this.props.setSearchValue(ev.target.value);
+  };
+
   render() {
-    const { filters, filteredSetData, trackedItems, route } = this.props;
+    const {
+      filters,
+      filteredSetData,
+      trackedItems,
+      route,
+      searchValue
+    } = this.props;
     const { itemTooltip, itemModal } = this.state;
     const noUi = (filteredSetData[0] || {}).noUi;
 
@@ -106,40 +106,20 @@ class Inventory extends Component {
             setData={filteredSetData}
             filters={filters}
             setFilterItem={this.setFilterItem}
+            searchValue={searchValue}
+            onSearchChange={this.onSearchChange}
           />
-        )}
-
-        {route.showCollectionsPromo && (
-          <div className={styles.promo}>
-            <p>
-              Check out the experimental Collections page for a preview of the
-              items have been marked off for the upcoming Collections in
-              Forsaken
-            </p>
-
-            <p>
-              <Link className={styles.button} to="/collections">
-                Visit Collections
-              </Link>
-            </p>
-          </div>
         )}
 
         {route.isCollections && (
           <div className={styles.promo}>
             <p>
-              This is an experimental preview of the items that will be marked
-              off in Collections when Forsaken drops. Some items, like S3
-              Faction Rally, Iron Banner, and Solstice of Heroes gear may not
-              appear in the list or as collected, but they will be counted when
-              Forsaken drops. For more info,{' '}
-              <a
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://github.com/Bungie-net/api/issues/559#issuecomment-407541681"
-              >
-                see this thread
-              </a>.
+              This was an experimental preview of the items that will be marked
+              off in Collections when Forsaken dropped, and may be retired soon
+              by Bungie in an upcomming update.
+            </p>
+            <p>
+              Official Collections support is now built into DestinySets.com.
             </p>
           </div>
         )}
@@ -153,6 +133,7 @@ class Inventory extends Component {
             slug={slug}
             setPopper={this.setPopper}
             setModal={this.setItemModal}
+            extendedItems={searchValue && searchValue.length > 2}
           />
         ))}
 
@@ -208,10 +189,10 @@ const mapStateToProps = (state, ownProps) => {
   return {
     hiddenSets: state.app.hiddenSets,
     filters: state.app.filters,
-    language: state.app.language,
     trackedItems: state.app.trackedItems,
     vendors: state.profile.profile && state.profile.profile.$vendors,
-    filteredSetData: filteredSetDataSelector(state, ownProps)
+    filteredSetData: filteredSetDataSelector(state, ownProps),
+    searchValue: state.app.searchValue
   };
 };
 
@@ -219,7 +200,14 @@ const mapDispatchToActions = {
   fetchProfile,
   setFilterItem,
   removeTrackedItem,
-  setBulkHiddenItemSet
+  setBulkHiddenItemSet,
+  setBulkDefinitions,
+  definitionsStatus,
+  definitionsError,
+  setSearchValue
 };
 
-export default connect(mapStateToProps, mapDispatchToActions)(Inventory);
+export default connect(
+  mapStateToProps,
+  mapDispatchToActions
+)(Inventory);

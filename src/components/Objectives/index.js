@@ -1,12 +1,13 @@
 import React from 'react';
 import cx from 'classnames';
+import { has } from 'lodash';
 
 import styles from './styles.styl';
 
 const FRACTION = 1;
 
-function ObjectiveValue({ objective, def, trackedStatStyle }) {
-  const { valueStyle, completionValue } = def;
+function ObjectiveValue({ objective, def, trackedStatStyle, completionValue }) {
+  const { valueStyle } = def;
   let value;
 
   if (trackedStatStyle) {
@@ -79,13 +80,17 @@ export default function Objectives(props) {
   return (
     <div className={cx(className, trackedStatStyle && styles.trackedStat)}>
       {objectivesToDisplay.map((objective, index) => {
+        const completionValue = has(objective, 'completionValue')
+          ? objective.completionValue
+          : objective.def.completionValue;
+
         return (
           <div className={styles.objective} key={index}>
             <div
               className={styles.objectiveTrack}
               style={{
                 width: `${Math.min(
-                  objective.progress / objective.def.completionValue * 100,
+                  objective.progress / completionValue * 100,
                   100
                 )}%`
               }}
@@ -98,6 +103,7 @@ export default function Objectives(props) {
                 objective={objective}
                 def={objective.def}
                 trackedStatStyle={trackedStatStyle}
+                completionValue={completionValue}
               />
             </div>
           </div>

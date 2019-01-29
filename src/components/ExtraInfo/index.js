@@ -2,10 +2,15 @@ import React from 'react';
 import { uniqBy } from 'lodash';
 import { connect } from 'react-redux';
 
-import getItemExtraInfo from 'app/lib/getItemExtraInfo';
+import getItemExtraInfo, { DISMANTLED_MESSAGE } from 'app/lib/getItemExtraInfo';
+
 import Icon from 'app/components/Icon';
 
 import styles from './styles.styl';
+
+const TICK_STYLE = {
+  [DISMANTLED_MESSAGE]: styles.greyTick
+};
 
 function ExtraInfo({
   className,
@@ -18,7 +23,7 @@ function ExtraInfo({
   const extraInfo = getItemExtraInfo(item, inventoryEntry).map(location => {
     return (
       <span>
-        <span className={styles.greenTick}>
+        <span className={TICK_STYLE[location] || styles.greenTick}>
           <Icon icon="check" />
         </span>{' '}
         {location}
@@ -33,10 +38,14 @@ function ExtraInfo({
           <Icon icon="check" />
         </span>{' '}
         {inventoryEntry.obtained
-          ? 'Unlocked in Forsaken checklist'
-          : 'Dismantled & unlocked in Forsaken checklist'}
+          ? 'Unlocked in Collections'
+          : 'Dismantled & unlocked in Collections'}
       </span>
     );
+  }
+
+  if (!vendorEntry && extraInfo.length === 0) {
+    return null;
   }
 
   return (

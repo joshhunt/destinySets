@@ -20,9 +20,9 @@ function getMaxValue(statHash) {
   return MAX_VALUES[statHash] || 100;
 }
 
-export default function ItemStats({ stats, statDefs }) {
+export default function ItemStats({ stats, statDefs, className }) {
   return (
-    <div className={styles.root}>
+    <div className={cx(className, styles.root)}>
       {stats.map(({ statHash, value }) => {
         const def = statDefs[statHash];
 

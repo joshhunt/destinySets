@@ -1,0 +1,37 @@
+mobile()
+  @media screen and (max-width: 679px)
+    {block}
+
+.root
+  content: 'root'
+  display: flex
+  align-items: center
+  position: relative
+  margin-left: 10px
+  margin-right: 5px
+
+.input
+  background: none
+  border: none
+  font-family: inherit
+  font-size: inherit
+  width: 70px
+  padding-left: 20px
+  outline: none
+  color: white
+  transition: all 250ms ease-in-out
+  border-bottom: 1px rgba(white, 0) solid
+
+  &:focus
+    width: 200px
+    border-bottom: 1px rgba(white, .2) solid
+
+  +mobile()
+    width: 20px
+
+.icon
+  pointer-events: none
+  position: absolute
+  top: 14px
+  left: 0
+  font-size: 14px

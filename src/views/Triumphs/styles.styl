@@ -1,0 +1,34 @@
+$baseBg = darken(#1a1f28, 18%);
+// $baseBg = #15191E;
+$step = 25%;
+
+.root
+  padding: 15px
+  padding-bottom: 100px
+
+.scoreBox
+  margin: 10px auto
+  text-align: center
+  text-transform: uppercase
+  margin-bottom: 30px
+
+.scoreTitle
+  font-size: 15px
+  opacity: .5
+
+.scoreScore
+  font-size: 45px
+  font-weight: bold
+  line-height: 1
+
+.crumb + .crumb
+  // margin-left: 10px
+  // padding-left: 10px
+  // border-left: 1px solid rgba(white, .4)
+
+  &:before
+    content: ' > '
+
+.crumbLink
+  color: white
+  text-transform: capitalize

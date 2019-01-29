@@ -16,7 +16,8 @@ import Icon from 'app/components/Icon';
 
 import {
   makeItemInventoryEntrySelector,
-  makeItemVendorEntrySelector
+  makeItemVendorEntrySelector,
+  makeItemPresentationSelector
 } from 'app/store/selectors';
 
 import {
@@ -108,6 +109,7 @@ class Item extends PureComponent {
     const {
       className,
       itemDef,
+      displayItem,
       inventoryEntry,
       extended,
       hideMissing,
@@ -131,7 +133,7 @@ class Item extends PureComponent {
     }
 
     const icon =
-      itemDef.displayProperties.icon || '/img/misc/missing_icon_d2.png';
+      displayItem.displayProperties.icon || '/img/misc/missing_icon_d2.png';
 
     return (
       <div
@@ -200,7 +202,7 @@ class Item extends PureComponent {
 
         {extended && (
           <div className={styles.extended}>
-            <div>{itemDef.displayProperties.name}</div>
+            <div>{displayItem.displayProperties.name}</div>
             <div className={styles.itemType}>
               {CLASSES[itemDef.classType]}{' '}
               {itemDef.itemTypeName || itemDef.itemTypeDisplayName}
@@ -217,13 +219,18 @@ function mapStateToProps() {
   const itemInventoryEntrySelector = makeItemInventoryEntrySelector();
   const itemVendorEntrySelector = makeItemVendorEntrySelector();
   const itemObjectiveProgressSelector = makeItemObjectiveProgressSelector();
+  const itemPresentationSelector = makeItemPresentationSelector();
 
   return (state, ownProps) => {
+    const displayItem = itemPresentationSelector(state, ownProps);
+
     return {
       itemDef: itemDefSelector(state, ownProps),
       inventoryEntry: itemInventoryEntrySelector(state, ownProps),
       vendorEntry: itemVendorEntrySelector(state, ownProps),
-      itemObjectiveProgress: itemObjectiveProgressSelector(state, ownProps)
+      itemObjectiveProgress: itemObjectiveProgressSelector(state, ownProps),
+      displayItem,
+      cool: 'yes'
     };
   };
 }

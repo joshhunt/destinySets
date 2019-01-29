@@ -8,11 +8,6 @@ import { sendProfileStats } from 'app/lib/telemetry';
 import googleAuth from 'app/lib/googleDriveAuth';
 import destinyAuth from 'app/lib/destinyAuth';
 import * as destiny from 'app/lib/destiny';
-import {
-  STATUS_DOWNLOADING,
-  STATUS_EXTRACTING_TABLES,
-  STATUS_UNZIPPING
-} from 'app/lib/definitions';
 
 import { inventorySelector, xurHasNewItemsSelector } from 'app/store/selectors';
 
@@ -35,11 +30,14 @@ import styles from './styles.styl';
 
 const log = require('app/lib/log')('<App />');
 
+const FETCH_INTERVAL = 30 * 1000;
+const STATUS_DOWNLOADING = 'downloading';
+
 const MANIFEST_MESSAGES = {
-  [STATUS_DOWNLOADING]: 'Downloading new item data from Bungie...',
-  [STATUS_EXTRACTING_TABLES]: 'Unpacking item data...',
-  [STATUS_UNZIPPING]: 'Unzipping item data...'
+  [STATUS_DOWNLOADING]: 'Downloading new item data from Bungie...'
 };
+
+const hasDismissedCookie = /dismissed_login_upsell/.test(document.cookie);
 
 class App extends Component {
   state = {};
@@ -59,9 +57,16 @@ class App extends Component {
   componentDidMount() {
     destinyAuth(this.authDidUpdate);
 
+    this.potentiallyScheduleFetchProfile();
+
     destiny.xur((cb, data) => {
       data && this.props.setXurData(data);
     });
+  }
+
+  componentWillUnmount() {
+    window.clearInterval(this.intervalId);
+    this.intervalId = null;
   }
 
   componentDidUpdate(prevProps) {
@@ -85,7 +90,25 @@ class App extends Component {
         props.profile
       );
     }
+
+    if (propChanged('trackedItems')) {
+      this.potentiallyScheduleFetchProfile(this.props);
+    }
   }
+
+  potentiallyScheduleFetchProfile = (props = this.props) => {
+    if (this.intervalId) {
+      return;
+    }
+
+    const refreshOnInterval = this.props.routes.find(r => r.refreshOnInterval);
+
+    if (refreshOnInterval || props.trackedItems.length > 0) {
+      this.intervalId = window.setInterval(() => {
+        props.fetchProfile();
+      }, FETCH_INTERVAL);
+    }
+  };
 
   authDidUpdate = (err, { isAuthenticated, isFinal }) => {
     log('Auth state update', { err, isAuthenticated, isFinal });
@@ -134,6 +157,11 @@ class App extends Component {
     });
   };
 
+  handleDismissLoginUpsell = () => {
+    // Set a cookie to set the dismissed state. Clear after 3 days.
+    document.cookie = 'dismissed_login_upsell=true; path=/; max-age=259200;';
+  };
+
   switchProfile = profile => {
     const { membershipId, membershipType } = profile.profile.data.userInfo;
     ls.savePreviousAccount(membershipId, membershipType);
@@ -179,10 +207,10 @@ class App extends Component {
 
     const messages = [];
 
-    if (!auth.isAuthed) {
+    if (!hasDismissedCookie && !auth.isAuthed) {
       messages.push(
         <div className={styles.auth}>
-          <LoginUpsell>
+          <LoginUpsell onDismissed={this.handleDismissLoginUpsell}>
             {profile
               ? 'The connection with Bungie has expired. Please reconnect to update your inventory.'
               : `Connect your Bungie.net acccount to automatically track items you've collected and dismantled.`}
@@ -234,6 +262,7 @@ class App extends Component {
         <Header
           profileLoading={profileLoading}
           profileCached={profileCached}
+          isAuth={auth.isAuthed}
           authExpired={!auth.isAuthed && profile}
           currentProfile={profile}
           allProfiles={allProfiles}
@@ -270,6 +299,7 @@ const mapStateToProps = state => {
     definitionsStatus: state.definitions.status,
     profileError: state.profile.err,
     auth: state.auth,
+    trackedItems: state.app.trackedItems,
     profileCached: state.profile.isCached,
     profile: state.profile.profile,
     profileLoading: state.profile.profileLoading,
@@ -300,4 +330,7 @@ const mapDispatchToActions = {
   openXurModal
 };
 
-export default connect(mapStateToProps, mapDispatchToActions)(App);
+export default connect(
+  mapStateToProps,
+  mapDispatchToActions
+)(App);

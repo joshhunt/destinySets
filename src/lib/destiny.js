@@ -32,6 +32,8 @@ const componentItemPlugStates = 308; // eslint-disable-line
 const componentVendors = 400; // eslint-disable-line
 const componentVendorCategories = 401; // eslint-disable-line
 const componentVendorSales = 402; // eslint-disable-line
+const componentCollectibles = 800;
+const componentRecords = 900;
 
 const PROFILE_COMPONENTS = [
   componentProfiles,
@@ -42,7 +44,9 @@ const PROFILE_COMPONENTS = [
   componentItemObjectives,
   componentItemSockets,
   componentProfileProgressions,
-  componentCharacterProgressions
+  componentCharacterProgressions,
+  componentCollectibles,
+  componentRecords
 ];
 
 const VENDOR_COMPONENTS = [
@@ -309,15 +313,14 @@ export function xur(cb) {
       return cb(err);
     }
 
-    // const isLive =
-    //   window.location.href.indexOf('forceXur') > -1 || xurData.isLive;
+    const isLive =
+      window.location.href.indexOf('forceXur') > -1 || xurData.isLive;
 
-    cb(null, { items: [] });
-    // const payload =
-    //   isLive && xurData.itemHashes.length > 0
-    //     ? { items: xurData.itemHashes, location: xurData.location }
-    //     : { items: [] };
+    const payload =
+      isLive && xurData.itemHashes.length > 0
+        ? { items: xurData.itemHashes, location: xurData.location }
+        : { items: [] };
 
-    // cb(null, payload);
+    cb(null, payload);
   });
 }

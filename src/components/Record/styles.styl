@@ -1,0 +1,136 @@
+$green = #44bd32;
+$trackedGreen = #A9FF6A
+$borderWidth = 1px
+
+.root
+  display: flex
+  border: $borderWidth solid rgba(white, .1)
+  background: rgba(white, .02)
+  padding: 15px
+  position: relative
+  // align-items: center
+  position: relative;
+
+  &:before
+  &:after
+    content: ""
+    position: absolute
+    top: $borderWidth * -1
+    right: $borderWidth * -1
+    opacity: 0
+    pointer-events: none
+    transition: 250ms ease-in-out
+
+  &:before
+    bottom: $borderWidth * -1
+    width: $borderWidth
+    background-image: linear-gradient($trackedGreen, transparent)
+
+  &:after
+    left: $borderWidth * -1
+    height: $borderWidth
+    background-image: linear-gradient(to right, transparent, $trackedGreen)
+
+  &.tracked
+    &:before
+    &:after
+      opacity: 1
+
+
+.completed
+  border-color: rgba($green, .5)
+  background: rgba($green, .1)
+
+.accessory
+  margin-right: 15px
+
+.icon
+  width: 50px
+  height: 50px
+  object-fit: contain
+  display: block
+
+.main
+  flex: 1
+
+.name
+  font-size: 16px
+  display: flex
+
+.nameName
+  flex: 1
+
+.points
+  font-size: 14px
+
+.objectives
+  font-size: 13px
+  margin-top: 15px
+
+.description
+  line-height: 1.2
+
+.small
+  font-size: .8em
+  opacity: .8
+
+.trackButton
+  background: none
+  border: none
+  padding: 0
+  position absolute
+  top: 0
+  right: 10px
+  width: 15px
+  height: 18px
+  opacity: 0
+  transition: 250ms ease-in-out
+  cursor: pointer
+  outline: none !important
+
+  .tracked &
+  .root:hover &
+    opacity: 1
+
+  .completed &
+    right: 25px
+
+
+.trackButtonBg
+.trackButtonFg
+  display: block
+  position absolute
+  top: 0
+  left: 0
+
+.trackButtonBg
+  width: 16px
+
+.trackButtonFg
+  width: 12px
+  left: 2px
+  top: 1px
+
+  .tracked &
+    animation: spin 1.5s infinite linear
+
+.tick
+  position: absolute
+  top: -5px
+  right: -5px
+  background: $green
+  width: 20px
+  height: 20px
+  font-size: 14px
+  line-height: 1
+  border-radius: 50px
+  display: flex
+  align-items: center
+  justify-content: center
+
+@keyframes spin
+  from
+    transform: rotate(0deg)
+
+  to
+    transform: rotate(180deg)

@@ -19,6 +19,7 @@ const COLLECTABLE = [
   enums.WEAPON,
   enums.ARMOR,
   enums.GHOST,
+  enums.GHOST_PROJECTION,
   enums.SPARROW,
   enums.SHIP,
   enums.SHADER,
@@ -80,14 +81,23 @@ export const fancySearchFns = {
       const categories = item.itemCategoryHashes || [];
       return (
         categories.includes(enums.ARMOR) ||
-        categories.includes(enums.WEAPON) ||
-        categories.includes(enums.GHOST)
+        categories.includes(enums.WEAPON)
       );
     });
   },
 
   'is:ghost': items => {
     return itemFilter(items, itemCategory(enums.GHOST));
+  },
+
+  'is:ghostprojection': items => {
+    return itemFilter(items, itemCategory(enums.GHOST_PROJECTION));
+  },
+
+  'is:ghostly': items => {
+    return itemFilter(items, item => {
+      return itemCategory(enums.GHOST)(item) || itemCategory(enums.GHOST_PROJECTION)(item);
+    });
   },
 
   'is:sparrow': items => {
@@ -211,15 +221,15 @@ export default function fancySearch(search, defs, opts = { hashOnly: false }) {
         enums.CHECKLIST_CHARACTER_COLLECTIONS
       );
 
-      const profileItems = itemsFromChecklistDefs(
-        profileChecklist,
-        opts.hashOnly
-      );
+      const profileItems =
+        (profileChecklist &&
+          itemsFromChecklistDefs(profileChecklist, opts.hashOnly)) ||
+        [];
 
-      const characterItems = itemsFromChecklistDefs(
-        characterChecklist,
-        opts.hashOnly
-      );
+      const characterItems =
+        (characterChecklist &&
+          itemsFromChecklistDefs(characterChecklist, opts.hashOnly)) ||
+        [];
 
       const allItems = [...profileItems, ...characterItems];
 

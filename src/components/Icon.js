@@ -10,6 +10,7 @@ fontawesome.library.add(
   require('@fortawesome/fontawesome-pro-regular/faBars'),
   require('@fortawesome/fontawesome-pro-regular/faExclamationTriangle'),
   require('@fortawesome/fontawesome-pro-regular/faDollarSign'),
+  require('@fortawesome/fontawesome-pro-regular/faSearch'),
 
   require('@fortawesome/fontawesome-pro-regular/faInfoCircle'),
   require('@fortawesome/fontawesome-pro-solid/faInfoCircle'),

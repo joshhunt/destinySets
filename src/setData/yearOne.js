@@ -133,6 +133,7 @@ export default ([
               2331063860, // Grind Underfoot emblem
               2331063861, // Together, For Glory! emblem
               2543722796, // Praetorian Visage shader
+              1595521942, // Atop the Spire emblem
               2543722797 // Calus's Shadow shader
             ]
           }
@@ -998,7 +999,10 @@ export default ([
               1273131835, // Arctic Arsenalist
               1291068171, // Data Mine
               1273131832, // Warminded
-              235397502 // Arctic Dreamscape
+              235397500, // The Mad Monk 
+              235397502, // Arctic Dreamscape
+              235397503 // Bray Innovation
+              
             ]
           }
         ]
@@ -1480,6 +1484,13 @@ export default ([
         big: false,
         sections: [
           {
+            name: 'Weapons',
+            season: 2,
+            items: [
+              4203034886 // Zephyr
+            ] 
+          },
+          {
             name: 'Hunter Armor',
             season: 2,
             items: [
@@ -1536,10 +1547,7 @@ export default ([
               3287805183, // Infinite Hand Shell
               3287805180, // Joyous Hunt Shell
               3287805176, // Dawning Bauble Shell
-              1051903593, // Dawning Bauble Shell
-              1816495538, // Sweet Memories Shell
               3287805181, // Sweet Memories Shell
-              1397284432, // Jasper Dawn Shell
               3287805179 // Jasper Dawn Shell
             ]
           },
@@ -1557,11 +1565,8 @@ export default ([
               1423305591, // Verità Scelta
               1423305587, // Subito Mk. 9
               1423305585, // Rocket-Propelled Bobsled
-              3161524490, // Rupture
               1423305589, // Rupture
               1423305590, // Shimmering Iris
-              3569791559, // Shimmering Iris
-              1984190529, // Magikon
               1423305584 // Magikon
             ]
           },
@@ -1576,12 +1581,9 @@ export default ([
               3140833553, // Brilliant Narcissus
               3140833558, // Breath of Stars
               3140833556, // Winter Blade
-              3177119978, // Carmina Commencing
               3140833557, // Carmina Commencing
               3140833559, // Regent Redeemer
-              1602334068, // Regent Redeemer
               3140833554, // Joyfire
-              3729709035 // Joyfire
             ]
           },
           {
@@ -1591,8 +1593,13 @@ export default ([
               3639894194, // Light of the Dawning
               3800267415, // Dawning Hope
               3800267413, // Dawning Festiveness
-              3866715933, // Dawning Warmth
-              3800267414 // Dawning Brilliance
+              3800267412, // Dawning Warmth
+              3800267414, // Dawning Brilliance
+              3023230941, // Ice Ball Effects
+              2607476204, // Silver Dawning Lanterns
+              2607476205, // Yellow Dawning Lanterns
+              2607476206, // Green Dawning Lanterns
+              2607476207 // Purple Dawning Lanterns
             ]
           }
         ]
@@ -1869,11 +1876,13 @@ export default ([
               2546958596, // Lunadove
               2546958599, // Hightail
               2546958598, // Wave-Maker
+              2546958595, // Noble Steed
               904825093, // Wayfarer Delta
               904825092, // Wayfarer Tri
               904825094, // Warbird
               904825089, // Hyperion
-              904825088 // Dead-End Pro
+              904825088, // Dead-End Pro
+              904825095 // On Guard
             ]
           },
           {
@@ -1957,7 +1966,10 @@ export default ([
               3213307844, // Space-Age Lancelot
               3213307846, // Spectral Gain
               3213307849, // Verona Mesh
-              3213307848 // High Line
+              3213307848, // High Line
+              1104161648, // Tidal Dawn
+              2503134043, // Starling Bolt
+              2503134033 // City Apex
             ]
           },
           {
@@ -2057,6 +2069,68 @@ export default ([
               1017491634, // Ancient Republic
               1017491637, // Petiolora Growth
               1017491636 // Buffer Overflow
+            ]
+          },
+          {
+            name: 'Transmat Effects',
+            season: 1,
+            items: [
+              4258704672, // Cabal Arrival
+              4258704673, // Vex Arrival
+              4258704674, // Taken Arrival
+              4258704675, // Hive Arrival
+              4258704676, // Fallen Arrival
+              3351378135, // Guardian Gold 
+              3351378134, // Guardian White
+              3351378133, // Guardian Green
+              3351378132, // Guardian Pink
+              3351378131, // Guardian Blue
+              3351378130, // Arc Effects
+              3351378129, // Solar Effects
+              3351378128, // Void Effects
+              3351378143, // Ghost White
+              3351378142, // Ghost Gold
+              1281013970, // Ghost Green
+              1281013971, // Ghost Pink
+              1281013968, // Ghost Blue
+              1281013969, // Crucible White
+              1281013974, // Crucible Gold
+              1281013975, // Crucible Green
+              1281013972, // Crucible Pink
+              1281013973, // Crucible Blue
+              1281013978, // Amethyst Rabbit
+              1281013979 // Coral Rabbit
+            ]
+          },
+          {
+            name: 'Transmat Effects',
+            season: 2,
+            items: [
+              526091740, // Reflection Effects
+              526091741, // Dominus Ghaul Effects
+              526091742, // Traveler's Wake Effects
+              526091743, // Vex Invasion Effects
+              2153115587, // Silver Beam Effects
+              2153115586, // Gold Beam Effects
+              2153115585, // Green Beam Effects
+              2153115584, // Purple Beam Effects
+              2153115591, // Silver Spotlight Effects
+              2153115590, // Yellow Spotlight Effects
+              2153115589, // Green Spotlight Effects
+              2153115588, // Purple Spotlight Effects
+              2153115595, // Pink Class Sigil
+              2153115594, // Yellow Class Sigil
+              3376967254, // Green Class Sigil
+              3376967255 // Purple Class Sigil
+            ]
+          },
+          {
+            name: 'Transmat Effects',
+            season: 3,
+            items: [ 
+              1311389412, // Plesiohedral State
+              1311389415, // AI-COM/RSPN: REBOOT
+              1311389414 // Celebrate Newness
             ]
           }
         ]

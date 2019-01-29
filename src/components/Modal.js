@@ -8,7 +8,7 @@ const MODAL_STYLES = {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    zIndex: 10
+    zIndex: 9999999999
   },
   content: {
     position: 'static',
@@ -18,13 +18,9 @@ const MODAL_STYLES = {
   }
 };
 
-export default function DSModal({ children, ...props, }) {
+export default function DSModal({ children, ...props }) {
   return (
-    <Modal
-      contentLabel="Modal"
-      style={MODAL_STYLES}
-      {...props}
-    >
+    <Modal contentLabel="Modal" style={MODAL_STYLES} {...props}>
       {children}
     </Modal>
   );

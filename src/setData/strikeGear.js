@@ -2,31 +2,41 @@
 
 import type { SetPage } from '../types';
 
+const strike = (name, id, image, exclusiveItems, emblems) => ({
+  name,
+  id,
+  image,
+  sections: [
+    {
+      name: 'Nightfall exclusive',
+      bigItems: true,
+      items: exclusiveItems
+    },
+    {
+      name: 'Nightfall emblems',
+      items: emblems
+    }
+  ]
+});
+
 export default ([
   {
     name: 'Base Game',
     sets: [
-      {
-        name: 'The Inverted Spire',
-        id: 'STRIKE_THE_INVERTED_SPIRE',
-        image: '/img/destiny_content/pgcr/strike_inverted_spire.jpg',
-        sections: [
-          {
-            name: 'Nightfall exclusive',
-            bigItems: true,
-            items: [953357968] // Trichromatica
-          },
-          {
-            name: 'Nightfall emblems',
-            items: [
-              2764373298, // The Inverted Spire
-              4238775804, // Operation Radiolarian Cascade
-              4238775806, // Unconventional Research
-              4238775807 // A Mind Forever Changing
-            ]
-          }
+      strike(
+        'The Inverted Spire',
+        'STRIKE_THE_INVERTED_SPIRE',
+        '/img/destiny_content/pgcr/strike_inverted_spire.jpg',
+        [
+          953357968 // Trichromatica
+        ],
+        [
+          2764373298, // The Inverted Spire
+          4238775804, // Operation Radiolarian Cascade
+          4238775806, // Unconventional Research
+          4238775807 // A Mind Forever Changing
         ]
-      },
+      ),
       {
         name: 'Pyramidion',
         id: 'STRIKE_PYRAMIDION',
@@ -109,18 +119,6 @@ export default ([
               4040838276 // Watcher from Beyond
             ]
           }
-        ]
-      },
-      {
-        name: 'Lake of Shadows',
-        id: 'STRIKE_LAKE_OF_SHADOWS',
-        image: '/img/destiny_content/pgcr/strike_lake_of_shadows.jpg',
-        sections: [
-          // {
-          //   name: 'Nightfall exclusive',
-          //   bigItems: true,
-          //   items: [2082184158]
-          // }
         ]
       }
     ]
@@ -226,6 +224,47 @@ export default ([
           }
         ]
       }
+    ]
+  },
+
+  {
+    name: 'Forsaken',
+    sets: [
+      strike(
+        'Lake of Shadows',
+        'STRIKE_LAKE_OF_SHADOWS',
+        '/img/destiny_content/pgcr/strike_lake_of_shadows.jpg',
+        [3745974521],
+        [1184965378, 4179974574]
+      ),
+      strike(
+        'The Insight Terminus',
+        'STRIKE_INSIGHT_TERMINUS',
+        '/img/destiny_content/pgcr/strike_glee.jpg',
+        [2154059444],
+        [3844225097, 3597022727]
+      ),
+      strike(
+        'The Corrupted',
+        'STRIKE_THE_CORRUPTED',
+        '/img/destiny_content/pgcr/strike_gemini.jpg',
+        [1071542914],
+        [4162792207, 1777460225]
+      ),
+      strike(
+        'The Hollowed Lair',
+        'STRIKE_THE_HOLLOWED_LAIR',
+        '/img/destiny_content/pgcr/strike_taurus.jpg',
+        [4117693024],
+        [1639160638, 3819100474]
+      ),
+      strike(
+        'Warden of Nothing',
+        'STRIKE_WARDEN_OF_NOTHING',
+        '/img/destiny_content/pgcr/strike_aries.jpg',
+        [233423981],
+        [1814407142, 1582507554]
+      )
     ]
   }
 ]: SetPage);
