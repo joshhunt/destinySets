@@ -1092,6 +1092,55 @@ export default ([
             ]
           }
         ]
+      },
+      {
+        name: 'Crimson Days',
+        id: 'YEAR_TWO_CRIMSON_DAYS',
+        big: false,
+        sections: [
+          {
+            name: 'Weapons',
+            season: 5,
+            items: [
+              2009106091 // The Vow
+            ]
+          },
+          {
+            name: 'Emotes',
+            season: 5,
+            items: [
+              3990400405 // Tiny Bow
+            ]
+          },
+          {
+            name: 'Ghosts',
+            season: 5,
+            items: [
+              679887739 // Sugary Shell
+            ]
+          },
+          {
+            name: 'Sparrows',
+            season: 5,
+            items: [
+
+            ]
+          },
+          {
+            name: 'Extras',
+            season: 5,
+            items: [
+
+            ]
+          },
+          {
+            name: 'Weapon Ornaments',
+            season: 5,
+            items: [
+
+            ]
+          }
+        ]
       }
     ]
   },
