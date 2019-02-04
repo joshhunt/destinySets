@@ -1623,13 +1623,13 @@ export default ([
             name: 'Ghosts',
             season: 2,
             items: [
-              263371512, // Entwining Heart Shell
+              263371517, // Electric Heart Shell
+              263371516, // Amo Ludere Shell
+              263371519, // Radiant Sunflake Shell
               263371513, // Garland Shell
+              263371512, // Entwining Heart Shell
               263371515, // True Conifer Shell
               263371514, // Propulsive Heart Shell
-              263371516, // Amo Ludere Shell
-              263371517, // Electric Heart Shell
-              263371519, // Radiant Sunflake Shell
               263371518 // Tirastrella Shell
             ]
           },
@@ -1639,10 +1639,10 @@ export default ([
             items: [
               3587167050, // Undefeated
               3587167051, // Undeterred
-              1623653768, // Last Love
-              1623653770, // Heartbreaker
               1623653769, // First Love
-              1623653771 // Battleheart
+              1623653768, // Last Love
+              1623653771, // Battleheart
+              1623653770 // Heartbreaker
             ]
           },
           {
@@ -1650,18 +1650,18 @@ export default ([
             season: 2,
             items: [
               1782320603, // Fire of the Crimson Days
-              1052553863, // Crimson Passion - Bright Dust dismantle
-              1052553862 // Crimson Valor - Bright Dust dismantle
+              1052553863, // Crimson Passion
+              1052553862 // Crimson Valor
             ]
           },
           //{
           //  name: 'Weapon Ornaments',
           //  season: 2,
           //  items: [
-          //    3373357626, // Prism for Prometheus Lens
-          //    2433900295, // Carina Nebula for Graviton Lance
-          //    3171649853, // Go About Your Business for Sweet Business
-          //    669267835 // Dieselpunk for The Wardcliffe Coil
+          //    3373357626, // Prism
+          //    3171649853, // Go About Your Business
+          //    2433900295, // Carina Nebula
+          //    669267835 // Dieselpunk
           //  ]
           //}
         ]
