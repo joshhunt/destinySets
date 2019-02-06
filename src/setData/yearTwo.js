@@ -1277,6 +1277,86 @@ export default ([
               ]
             ]
           },
+		  {
+            name: 'Ornaments',
+            season: 4,
+            itemGroups: [
+              [
+                1702676167 // Victorian Silverhawk
+				1590290995 // Turbo-Kickers
+				74694216 // Nephrite Paragon
+				447258238 // Electronic Mindcage
+				2729756765 // Afraid of the Dark
+				4135276161 // Transcendent Geometry
+			  ],
+			  [
+				1206295112 // Aim to Misbehave
+				1445854248 // Electric Violet
+				2515377971 // Guardian Angel
+				2752106987 // Author of Devastation
+				2943778709 // Cleans Up Good
+				3071174732 // Machinist's Trove
+				3319386964 // Belvedere
+				3458554860 // Pride of Omolon
+				3474614844 // Iridescent Death
+				3779623011 // Lethal System
+				3977461550 // Tangled Outrider
+				4252160794 // Sneak Attack
+			  ],
+			  [
+				135999390 // Past Is Past
+				439277955 // Eyes Forward
+				451772823 // Foretelling
+				565852609 // Yes, Queen
+				1045979943 // Subatomic Ivory
+				1954229677 // Next of Kin
+				2241160198 // Wrath Majestic
+				2473664949 // Plunderer
+				714705096 // Dirty Work
+				2854488868 // Loaded Dice
+				3892880725 // Credence
+				3919047492 // Meteor Shower
+				4292140878 // End of Days"
+              ]
+            ]
+          },
+		  {
+            name: 'Ornaments',
+            season: 5,
+            itemGroups: [
+              [
+                4192295468 // Rigel Crossroads
+				2580207276 // Augmented Wish
+				3054468233 // Lordly Homage
+				1974045428 // Thanatonaut's Peril
+				2662368496 // Eyes of Mercury
+				683894655 // Matterflare
+			  ],
+			  [
+				346961818 // IKELOS Field Tuning
+				476682455 // One Terrible Scream
+				1119316141 // Laconic
+				1570516124 // Salute to the Colonel
+				1644978187 // Cuddly Throwback
+				1672094182 // SUROS Chrome
+				2005782761 // Desert Camo
+				2117927723 // Tangled Paladin
+				2515305906 // Kingmaker
+				2990167832 // Calus's Promise
+				2004366751 // Haetae's Judgment
+			  ],
+			  [
+				989739137 // A Bad Run
+				1854219966 // Blind Faith
+				2690170829 // Never Through
+				4150423078 // Unwelcome Visit
+				2936629770 // Salt the Fields
+				2057077927 // Fell to Earth
+				3394132457 // Over and Done With
+				586630330 // Aim Is True
+              ]
+            ]
+          },
           {
             name: 'Emotes',
             season: 4,
