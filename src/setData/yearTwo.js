@@ -717,7 +717,7 @@ export default ([
             ]
           },
           {
-            name: "Eliminated Barons' Armor",
+            name: "Baron Exclusive Gear",
             season: 4,
             itemGroups: [
               [
