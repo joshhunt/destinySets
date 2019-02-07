@@ -965,7 +965,16 @@ export default ([
               2574262861, // Soulsknot (Transmat Effect)
               2574262860 // Arachnophile (Transmat Effect)
             ]
-          }
+          },
+          {
+            name: 'Ornaments',
+            season: 4,
+            items: [
+              [
+                796633253 // Prideglass
+              ]
+            ]
+          },
         ]
       },
       {
