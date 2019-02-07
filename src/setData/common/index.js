@@ -168,12 +168,12 @@ export const SOLSTICE_OF_HEROES = {
           3859483818, // Blazing Virtue
           3859483819 // Malachite Gold
         ],
-        //[
-        //  1259278657, // Raging Lepus
-        //  2949664689, // Gray Nitrite
-        //  1750365155, // Beachheader VI
-        //  2396888157 // Sudden Squall
-        //]
+        [
+         1259278657, // Raging Lepus
+         2949664689, // Gray Nitrite
+         1750365155, // Beachheader VI
+         2396888157 // Sudden Squall
+        ]
       ]
     },
     {

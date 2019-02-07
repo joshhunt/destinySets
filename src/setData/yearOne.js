@@ -1654,16 +1654,16 @@ export default ([
               1052553862 // Crimson Valor
             ]
           },
-          //{
-          //  name: 'Weapon Ornaments',
-          //  season: 2,
-          //  items: [
-          //    3373357626, // Prism
-          //    3171649853, // Go About Your Business
-          //    2433900295, // Carina Nebula
-          //    669267835 // Dieselpunk
-          //  ]
-          //}
+          {
+           name: 'Weapon Ornaments',
+           season: 2,
+           items: [
+             3373357626, // Prism
+             3171649853, // Go About Your Business
+             2433900295, // Carina Nebula
+             669267835 // Dieselpunk
+           ]
+          }
         ]
       },
       common.SOLSTICE_OF_HEROES
