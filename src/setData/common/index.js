@@ -18,15 +18,15 @@ export const SOLSTICE_OF_HEROES = {
   id: 'COMMON_SOLSTICE_OF_HEROES',
   big: true,
   sections: [
-    {
-      name: 'Moments of Triumph',
+     {
+      name: 'Ornaments',
       season: 3,
       items: [
-        3867275449, // The Right Choice (Moments of Triumph Ghost)
-        4243004391, // Comrades in Arms (Moments of Triumph Sparrow)
-        3860733294, // Renewed Triumph (Moments of Triumph Emblem)
-        3860733295 // Eternally Triumphant (Moments of Triumph Emblem)
-      ]
+        1259278657, // Raging Lepus
+        2949664689, // Gray Nitrite
+        1750365155, // Beachheader VI
+        2396888157 // Sudden Squall
+       ]
     },
     {
       name: 'Hunter Armor',
@@ -161,19 +161,21 @@ export const SOLSTICE_OF_HEROES = {
       ]
     },
     {
+      name: 'Moments of Triumph',
+      season: 3,
+      items: [
+        3867275449, // The Right Choice (Moments of Triumph Ghost)
+        4243004391, // Comrades in Arms (Moments of Triumph Sparrow)
+        3860733294, // Renewed Triumph (Moments of Triumph Emblem)
+        3860733295 // Eternally Triumphant (Moments of Triumph Emblem)
+      ]
+    },
+    {
       name: 'Cosmetics',
       season: 3,
-      itemGroups: [
-        [
+      items: [
           3859483818, // Blazing Virtue
           3859483819 // Malachite Gold
-        ],
-        [
-         1259278657, // Raging Lepus
-         2949664689, // Gray Nitrite
-         1750365155, // Beachheader VI
-         2396888157 // Sudden Squall
-        ]
       ]
     },
     {
