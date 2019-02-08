@@ -833,10 +833,15 @@ export default ([
         big: false,
         sections: [
           {
-            name: 'Weapons',
+            name: 'Weapon & Ornament',
             season: 4,
-            items: [
-              3829285960 // Horror Story
+            itemGroups: [
+              [
+                3829285960 // Horror Story
+              ],
+              [
+                796633253 // Prideglass
+              ]
             ]
           },
           {
@@ -965,16 +970,7 @@ export default ([
               2574262861, // Soulsknot (Transmat Effect)
               2574262860 // Arachnophile (Transmat Effect)
             ]
-          },
-          {
-            name: 'Ornaments',
-            season: 4,
-            items: [
-              [
-                796633253 // Prideglass
-              ]
-            ]
-          },
+          }
         ]
       },
       {
