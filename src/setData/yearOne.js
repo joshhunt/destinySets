@@ -1763,7 +1763,6 @@ export default ([
             name: 'Ornaments',
             season: 1,
             items: [
-              [
                 3434280692, // Sub-Zero
                 2110420504, // Down to Business
                 2760478958, // Book of the Dead
@@ -1781,7 +1780,6 @@ export default ([
                 2673403667, // The Future is Chrome
                 1135501644, // Titanium Alloy
                 1748595581 // Beware the Red Legion
-              ]
             ]
           },
           {
