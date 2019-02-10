@@ -1002,7 +1002,7 @@ export default ([
               235397500, // The Mad Monk 
               235397502, // Arctic Dreamscape
               235397503 // Bray Innovation
-              
+
             ]
           }
         ]
@@ -1488,7 +1488,7 @@ export default ([
             season: 2,
             items: [
               4203034886 // Zephyr
-            ] 
+            ]
           },
           {
             name: 'Hunter Armor',
@@ -1610,6 +1610,16 @@ export default ([
         big: false,
         sections: [
           {
+            name: 'Ornaments',
+            season: 2,
+            items: [
+              3373357626, // Prism
+              3171649853, // Go About Your Business
+              2433900295, // Carina Nebula
+              669267835 // Dieselpunk
+            ]
+          },
+          {
             name: 'Emotes',
             season: 2,
             items: [
@@ -1623,13 +1633,13 @@ export default ([
             name: 'Ghosts',
             season: 2,
             items: [
-              263371512, // Entwining Heart Shell
+              263371517, // Electric Heart Shell
+              263371516, // Amo Ludere Shell
+              263371519, // Radiant Sunflake Shell
               263371513, // Garland Shell
+              263371512, // Entwining Heart Shell
               263371515, // True Conifer Shell
               263371514, // Propulsive Heart Shell
-              263371516, // Amo Ludere Shell
-              263371517, // Electric Heart Shell
-              263371519, // Radiant Sunflake Shell
               263371518 // Tirastrella Shell
             ]
           },
@@ -1639,10 +1649,10 @@ export default ([
             items: [
               3587167050, // Undefeated
               3587167051, // Undeterred
-              1623653768, // Last Love
-              1623653770, // Heartbreaker
               1623653769, // First Love
-              1623653771 // Battleheart
+              1623653768, // Last Love
+              1623653771, // Battleheart
+              1623653770 // Heartbreaker
             ]
           },
           {
@@ -1650,18 +1660,8 @@ export default ([
             season: 2,
             items: [
               1782320603, // Fire of the Crimson Days
-              1052553863, // Crimson Passion - Bright Dust dismantle
-              1052553862 // Crimson Valor - Bright Dust dismantle
-            ]
-          },
-          {
-            name: 'Weapon Ornaments',
-            season: 2,
-            items: [
-              3373357626, // Prism for Prometheus Lens
-              2433900295, // Carina Nebula for Graviton Lance
-              3171649853, // Go About Your Business for Sweet Business
-              669267835 // Dieselpunk for The Wardcliffe Coil
+              1052553863, // Crimson Passion
+              1052553862 // Crimson Valor
             ]
           }
         ]
@@ -1756,6 +1756,83 @@ export default ([
                 4141029260, // Mihaylova's Choice
                 3197778558, // Mihaylova's Path
                 2078786241 // Mihaylova's Tale
+              ]
+            ]
+          },
+          {
+            name: 'Ornaments',
+            season: 1,
+            items: [
+                3434280692, // Sub-Zero
+                2110420504, // Down to Business
+                2760478958, // Book of the Dead
+                1856805547, // Particle Accelerator
+                1630611952, // Red Dwarf
+                20859173, // Symbiosis
+                3925009772, // Black Plague
+                3520552272, // Summer Storm
+                1014060907, // Break the Dawn
+                3034617041, // Jade Countenance
+                4236694804, // Under Construction
+                2412488653, // Mind of Its Own
+                2583504679, // Tesla's Revenge
+                3628862572, // Comstock Lode
+                2673403667, // The Future is Chrome
+                1135501644, // Titanium Alloy
+                1748595581 // Beware the Red Legion
+            ]
+          },
+          {
+            name: 'Ornaments',
+            season: 2,
+            itemGroups: [
+              [
+                3373357627, // Eye of Osiris
+                889398080, // Silver Bullet
+                907775118, // VEIST Silver
+                1970437989, // Jade Jester
+                2356548547, // Reef in Ruins
+                2195305504, // MIDA Tactical
+                2599526136, // Catacombs
+                914313861 // War Beast Skin
+              ],
+              [
+                848193348, // Tiamat
+                3972613793, // Forest Ranger
+                409092784, // Trickster
+                3002642194, // Vulcan's Heart
+                2456870946, // Rocket Scientist
+                1991731877, // Technoscarab
+                1064781608, // Gothic Horror
+                2042795071, // Dead of Winter
+                49421814 // Midnight Sun
+              ]
+            ]
+          },
+          {
+            name: 'Ornaments',
+            season: 3,
+            itemGroups: [
+              [
+                3556728490, // Dread from Below
+                4288562036, // Heaven's Vigil
+                3686084858, // Quark Star
+                2036459008, // The Bray Legacy
+                2775242452, // The Devil's Work
+                2425317590, // Positive Infinity
+                2409312095, // Hypnopompic
+                4280582304 // Coup de Main
+              ],
+              [
+                3628276006, // Thundergod
+                1391284237, // War Painted
+                1244411540, // Deep Pockets
+                1180014202, // Endless Loop
+                933468683, // Grant's Vicksburg
+                1967983910, // Hip Wader
+                2140296014, // Crown Joules
+                2173197096, // A Stride to the Edge
+                915385568 // Capreolinax                
               ]
             ]
           },
@@ -2127,7 +2204,7 @@ export default ([
           {
             name: 'Transmat Effects',
             season: 3,
-            items: [ 
+            items: [
               1311389412, // Plesiohedral State
               1311389415, // AI-COM/RSPN: REBOOT
               1311389414 // Celebrate Newness

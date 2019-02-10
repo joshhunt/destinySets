@@ -717,7 +717,7 @@ export default ([
             ]
           },
           {
-            name: "Eliminated Barons' Armor",
+            name: "Baron Exclusive Gear",
             season: 4,
             itemGroups: [
               [
@@ -833,10 +833,15 @@ export default ([
         big: false,
         sections: [
           {
-            name: 'Weapons',
+            name: 'Weapon & Ornament',
             season: 4,
-            items: [
-              3829285960 // Horror Story
+            itemGroups: [
+              [
+                3829285960 // Horror Story
+              ],
+              [
+                796633253 // Prideglass
+              ]
             ]
           },
           {
@@ -1092,6 +1097,27 @@ export default ([
             ]
           }
         ]
+      },
+      {
+        name: 'Crimson Days',
+        id: 'YEAR_TWO_CRIMSON_DAYS',
+        big: false,
+        sections: [
+          {
+            name: 'Weapons',
+            season: 5,
+            items: [
+              2009106091 // The Vow
+            ]
+          },
+          {
+            name: 'Ghosts',
+            season: 5,
+            items: [
+              679887739 // Sugary Shell
+            ]
+          }
+        ]
       }
     ]
   },
@@ -1277,83 +1303,82 @@ export default ([
               ]
             ]
           },
-		  {
+          {
             name: 'Ornaments',
             season: 4,
             itemGroups: [
               [
+                3458554860, // Pride of Omolon
+                3319386964, // Belvedere
+                3071174732, // Machinist's Trove
+                2943778709, // Cleans Up Good
+                1445854248, // Electric Violet
+                3779623011, // Lethal System
+                4252160794, // Sneak Attack
+                3474614844, // Iridescent Death
+                2752106987, // Author of Devastation
+                3977461550, // Tangled Outrider
+                1206295112, // Aim to Misbehave
+                2515377971 // Guardian Angel
+              ],
+              [
+                2854488868, // Loaded Dice
+                3892880725, // Credence
+                135999390, // Past Is Past
+                451772823, // Foretelling
+                1954229677, // Next of Kin
+                2473664949, // Plunderer
+                4292140878, // End of Days"
+                3919047492, // Meteor Shower
+                714705096, // Dirty Work
+                1045979943, // Subatomic Ivory
+                439277955, // Eyes Forward
+                565852609 // Yes, Queen
+              ],
+              [
                 1702676167, // Victorian Silverhawk
-				1590290995, // Turbo-Kickers
-				74694216, // Nephrite Paragon
-				447258238, // Electronic Mindcage
-				2729756765, // Afraid of the Dark
-				4135276161 // Transcendent Geometry
-			  ],
-			  [
-				1206295112, // Aim to Misbehave
-				1445854248, // Electric Violet
-				2515377971, // Guardian Angel
-				2752106987, // Author of Devastation
-				2943778709, // Cleans Up Good
-				3071174732, // Machinist's Trove
-				3319386964, // Belvedere
-				3458554860, // Pride of Omolon
-				3474614844, // Iridescent Death
-				3779623011, // Lethal System
-				3977461550, // Tangled Outrider
-				4252160794 // Sneak Attack
-			  ],
-			  [
-				135999390, // Past Is Past
-				439277955, // Eyes Forward
-				451772823, // Foretelling
-				565852609, // Yes, Queen
-				1045979943, // Subatomic Ivory
-				1954229677, // Next of Kin
-				2241160198, // Wrath Majestic
-				2473664949, // Plunderer
-				714705096, // Dirty Work
-				2854488868, // Loaded Dice
-				3892880725, // Credence
-				3919047492, // Meteor Shower
-				4292140878 // End of Days"
+                1590290995, // Turbo-Kickers
+                447258238, // Electronic Mindcage
+                74694216, // Nephrite Paragon
+                2729756765, // Afraid of the Dark
+                4135276161 // Transcendent Geometry
               ]
             ]
           },
-		  {
+          {
             name: 'Ornaments',
             season: 5,
             itemGroups: [
               [
+                2990167832, // Calus's Promise
+                2005782761, // Desert Camo
+                346961818, // IKELOS Field Tuning
+                1672094182, // SUROS Chrome
+                476682455, // One Terrible Scream
+                1644978187, // Cuddly Throwback
+                2117927723, // Tangled Paladin
+                1570516124, // Salute to the Colonel
+                2515305906, // Kingmaker
+                2004366751, // Haetae's Judgment
+                1119316141 // Laconic
+              ],
+              [
+                989739137, // A Bad Run
+                1854219966, // Blind Faith
+                2690170829, // Never Through
+                4150423078, // Unwelcome Visit
+                2936629770, // Salt the Fields
+                2057077927, // Fell to Earth
+                3394132457, // Over and Done With
+                586630330 // Aim Is True
+              ],
+              [
+                2580207276, // Augmented Wish
                 4192295468, // Rigel Crossroads
-				2580207276, // Augmented Wish
-				3054468233, // Lordly Homage
-				1974045428, // Thanatonaut's Peril
-				2662368496, // Eyes of Mercury
-				683894655, // Matterflare
-			  ],
-			  [
-				346961818, // IKELOS Field Tuning
-				476682455, // One Terrible Scream
-				1119316141, // Laconic
-				1570516124, // Salute to the Colonel
-				1644978187, // Cuddly Throwback
-				1672094182, // SUROS Chrome
-				2005782761, // Desert Camo
-				2117927723, // Tangled Paladin
-				2515305906, // Kingmaker
-				2990167832, // Calus's Promise
-				2004366751 // Haetae's Judgment
-			  ],
-			  [
-				989739137, // A Bad Run
-				1854219966, // Blind Faith
-				2690170829, // Never Through
-				4150423078, // Unwelcome Visit
-				2936629770, // Salt the Fields
-				2057077927, // Fell to Earth
-				3394132457, // Over and Done With
-				586630330 // Aim Is True
+                3054468233, // Lordly Homage
+                1974045428, // Thanatonaut's Peril
+                2662368496, // Eyes of Mercury
+                683894655 // Matterflare
               ]
             ]
           },
@@ -1487,6 +1512,50 @@ export default ([
             ]
           },
           {
+            name: 'Sparrows',
+            season: 4,
+            items: [
+              523189763, // Hecuba-S
+              523189762, // Warrior's Steed
+              523189761, // Ravager's Ride
+              2285214174, // Jagged Darksun
+              2285214175, // Here I Stand
+              1264663101, // Manta Esperanta
+              1264663100, // Battle-Shrike
+              1264663103, // Gossamer Longshot
+              2285214172, // Jagged Sunstreak
+              2285214173, // Majuscule Tide
+              2285214171, // Thermal Runaway
+              2285214168, // Endymion Cavalcade
+              2285214169, // Swiftsong
+              2285214166, // Mappa Mundarum
+              2285214167 // Jubilee Pronto
+            ]
+          },
+          {
+            name: 'Sparrows',
+            season: 5,
+            items: [
+              3268592500, // Approaching Infinity
+              3268592502, // Burnout
+              3268592503, // The Bronco
+              4085575827, // Unraveling Star
+              4085575826, // Swiftrook
+              3964057062, // Inexorable
+              3964057063, // Juliet Windy
+              3964057060, // Summer's Altar
+              3964057061, // Jupiter Midnight
+              4085575825, // Widen the Sky
+              4085575824, // Vega Wave
+              4085575831, // Where I Belong
+              4085575830, // Gravity Maestro
+              4085575829, // Cosmonaut Galahad
+              4085575828, // Eidolon Bird
+              4085575835, // Spinning Spinning
+              4085575834 // Pegasus Bravo
+            ]
+          },
+          {
             name: 'Ships',
             season: 4,
             items: [
@@ -1529,50 +1598,6 @@ export default ([
               749977226, // Azul Blade
               749977221, // Ruby Slice
               749977220 // Cautious Optimism
-            ]
-          },
-          {
-            name: 'Sparrows',
-            season: 4,
-            items: [
-              523189763, // Hecuba-S
-              523189762, // Warrior's Steed
-              523189761, // Ravager's Ride
-              2285214174, // Jagged Darksun
-              2285214175, // Here I Stand
-              1264663101, // Manta Esperanta
-              1264663100, // Battle-Shrike
-              1264663103, // Gossamer Longshot
-              2285214172, // Jagged Sunstreak
-              2285214173, // Majuscule Tide
-              2285214171, // Thermal Runaway
-              2285214168, // Endymion Cavalcade
-              2285214169, // Swiftsong
-              2285214166, // Mappa Mundarum
-              2285214167 // Jubilee Pronto
-            ]
-          },
-          {
-            name: 'Sparrows',
-            season: 5,
-            items: [
-              3268592500, // Approaching Infinity
-              3268592502, // Burnout
-              3268592503, // The Bronco
-              4085575827, // Unraveling Star
-              4085575826, // Swiftrook
-              3964057062, // Inexorable
-              3964057063, // Juliet Windy
-              3964057060, // Summer's Altar
-              3964057061, // Jupiter Midnight
-              4085575825, // Widen the Sky
-              4085575824, // Vega Wave
-              4085575831, // Where I Belong
-              4085575830, // Gravity Maestro
-              4085575829, // Cosmonaut Galahad
-              4085575828, // Eidolon Bird
-              4085575835, // Spinning Spinning
-              4085575834 // Pegasus Bravo
             ]
           },
           {
