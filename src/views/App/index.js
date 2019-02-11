@@ -213,7 +213,7 @@ class App extends Component {
           <LoginUpsell onDismissed={this.handleDismissLoginUpsell}>
             {profile
               ? 'The connection with Bungie has expired. Please reconnect to update your inventory.'
-              : `Connect your Bungie.net acccount to automatically track items you've collected and dismantled.`}
+              : `Connect your Bungie.net account to automatically track items you've collected and dismantled.`}
           </LoginUpsell>
         </div>
       );
