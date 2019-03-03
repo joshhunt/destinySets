@@ -223,6 +223,13 @@ export default ([
             ]
           },
           {
+            name: 'Hunter Prime Armor',
+            season: 6,
+            items: [
+              
+            ]
+          },
+          {
             name: 'Titan Armor',
             season: 4,
             items: [
@@ -234,6 +241,13 @@ export default ([
             ]
           },
           {
+            name: 'Titan Prime Armor',
+            season: 6,
+            items: [
+              
+            ]
+          },
+          {
             name: 'Warlock Armor',
             season: 4,
             items: [
@@ -242,6 +256,13 @@ export default ([
               4188366993, // Ancient Apocalypse Robes
               1193646249, // Ancient Apocalypse Boots
               2088829612 // Ancient Apocalypse Bond
+            ]
+          },
+          {
+            name: 'Warlock Prime Armor',
+            season: 6,
+            items: [
+              
             ]
           },
           {
@@ -304,6 +325,13 @@ export default ([
             ]
           },
           {
+            name: 'Weapons',
+            season: 6,
+            items: [
+              
+            ]
+          },
+          {
             name: 'Hunter Armor',
             season: 4,
             items: [
@@ -323,6 +351,13 @@ export default ([
               2753509502, // Iron Fellowship Vest
               258029924, // Iron Fellowship Strides
               2083136519 // Iron Fellowship Cloak
+            ]
+          },
+          {
+            name: 'Hunter Armor',
+            season: 6,
+            items: [
+              
             ]
           },
           {
@@ -348,6 +383,13 @@ export default ([
             ]
           },
           {
+            name: 'Titan Armor',
+            season: 6,
+            items: [
+              
+            ]
+          },
+          {
             name: 'Warlock Armor',
             season: 4,
             items: [
@@ -370,6 +412,13 @@ export default ([
             ]
           },
           {
+            name: 'Warlock Armor',
+            season: 6,
+            items: [
+              
+            ]
+          },
+          {
             name: 'Extras',
             season: 4,
             items: [
@@ -382,6 +431,13 @@ export default ([
             items: [
               1162929425, // The Golden Standard (Emblem)
               231533811 // Iron Strength (Shader)
+            ]
+          },
+          {
+            name: 'Extras',
+            season: 6,
+            items: [
+              
             ]
           }
         ]
@@ -1304,6 +1360,21 @@ export default ([
             ]
           },
           {
+            name: 'Armor',
+            season: 6,
+            itemGroups: [
+              [
+                
+              ],
+              [
+                
+              ],
+              [
+                
+              ]
+            ]
+          },
+          {
             name: 'Ornaments',
             season: 4,
             itemGroups: [
@@ -1383,6 +1454,21 @@ export default ([
             ]
           },
           {
+            name: 'Ornaments',
+            season: 6,
+            itemGroups: [
+              [
+                
+              ],
+              [
+                
+              ],
+              [
+                
+              ]
+            ]
+          },
+          {
             name: 'Emotes',
             season: 4,
             items: [
@@ -1425,6 +1511,13 @@ export default ([
               2528830834, // Oh Snap
               1372151242, // Silly Salute
               2321189501 // You
+            ]
+          },
+          {
+            name: 'Emotes',
+            season: 6,
+            items: [
+              
             ]
           },
           {
@@ -1476,6 +1569,13 @@ export default ([
             ]
           },
           {
+            name: 'Ghosts',
+            season: 6,
+            items: [
+              
+            ]
+          },
+          {
             name: 'Ghost Projections',
             season: 4,
             items: [
@@ -1509,6 +1609,13 @@ export default ([
               2233846234, // Quill and Ink Projection
               2233846233, // Lost Treasure Projection
               2233846232 // Clashing Projection
+            ]
+          },
+          {
+            name: 'Ghost Projections',
+            season: 6,
+            items: [
+              
             ]
           },
           {
@@ -1553,6 +1660,13 @@ export default ([
               4085575828, // Eidolon Bird
               4085575835, // Spinning Spinning
               4085575834 // Pegasus Bravo
+            ]
+          },
+          {
+            name: 'Sparrows',
+            season: 6,
+            items: [
+              
             ]
           },
           {
@@ -1601,6 +1715,13 @@ export default ([
             ]
           },
           {
+            name: 'Ships',
+            season: 6,
+            items: [
+              
+            ]
+          },
+          {
             name: 'Shaders',
             season: 4,
             items: [
@@ -1626,6 +1747,13 @@ export default ([
             ]
           },
           {
+            name: 'Shaders',
+            season: 6,
+            items: [
+              
+            ]
+          },
+          {
             name: 'Transmat Effects',
             season: 4,
             items: [
@@ -1643,6 +1771,13 @@ export default ([
               1866581850, // Only the Finest
               1866581849, // Guiding Light
               1866581848 // The Past Unearthed
+            ]
+          },
+          {
+            name: 'Transmat Effects',
+            season: 6,
+            items: [
+              
             ]
           }
         ]
