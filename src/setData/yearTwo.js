@@ -212,6 +212,15 @@ export default ([
             ]
           },
           {
+            name: 'Prime Weapons',
+            season: 6,
+            items: [
+              // Spare Ashes (HC)
+              // Sole Survivor (SR)
+              // Doomsday (GL)
+            ]
+          },
+          {
             name: 'Hunter Armor',
             season: 4,
             items: [
@@ -220,13 +229,6 @@ export default ([
               3855285278, // Ancient Apocalypse Vest
               1169857924, // Ancient Apocalypse Strides
               3184912423 // Ancient Apocalypse Cloak
-            ]
-          },
-          {
-            name: 'Hunter Prime Armor',
-            season: 6,
-            items: [
-              
             ]
           },
           {
@@ -241,13 +243,6 @@ export default ([
             ]
           },
           {
-            name: 'Titan Prime Armor',
-            season: 6,
-            items: [
-              
-            ]
-          },
-          {
             name: 'Warlock Armor',
             season: 4,
             items: [
@@ -256,13 +251,6 @@ export default ([
               4188366993, // Ancient Apocalypse Robes
               1193646249, // Ancient Apocalypse Boots
               2088829612 // Ancient Apocalypse Bond
-            ]
-          },
-          {
-            name: 'Warlock Prime Armor',
-            season: 6,
-            items: [
-              
             ]
           },
           {
@@ -558,6 +546,35 @@ export default ([
                 3650581588, // Satou Tribe
                 3650581589 // Bergusian Night 
               ]
+            ]
+          }
+        ]
+      },
+      {
+        name: 'The Reckoning',
+        description:
+          'Gear from The Reckoning.',
+        id: 'YEAR_TWO_THE_RECKONING',
+        sections: [
+          {
+            name: 'Hunter Armor',
+            season: 6,
+            items: [
+              
+            ]
+          },
+          {
+            name: 'Titan Armor',
+            season: 6,
+            items: [
+              
+            ]
+          },
+          {
+            name: 'Warlock Armor',
+            season: 6,
+            items: [
+              
             ]
           }
         ]
