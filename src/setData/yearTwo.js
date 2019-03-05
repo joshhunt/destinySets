@@ -657,7 +657,10 @@ export default ([
       {
         name: 'Raid: Scourge of the Past',
         id: 'YEAR_TWO_RAID_BLACK_ARMORY',
-        description: 'Found in the "Scourge of the Past" raid lair.',
+        description: _(
+          'DestinyCollectibleDefinition[982798874].sourceString',
+          'Found in the "Scourge of the Past" raid.'
+        ),
         sections: [
           {
             name: 'Weapons',
@@ -903,6 +906,8 @@ export default ([
       {
         name: 'Festival of the Lost',
         id: 'YEAR_TWO_FESTIVAL_OF_THE_LOST',
+        description:
+          'Earned during the seasonal Festival of the Lost event.',
         big: false,
         sections: [
           {
@@ -1049,6 +1054,8 @@ export default ([
       {
         name: 'The Dawning',
         id: 'YEAR_TWO_THE_DAWNING',
+        description:
+          'Earned during the seasonal The Dawning event.',
         big: false,
         sections: [
           {
@@ -1174,6 +1181,10 @@ export default ([
       {
         name: 'Crimson Days',
         id: 'YEAR_TWO_CRIMSON_DAYS',
+        description: _(
+          'DestinyCollectibleDefinition[2772970661].sourceString',
+          'Earned during the seasonal Crimson Days event.'
+        ),
         big: false,
         sections: [
           {
