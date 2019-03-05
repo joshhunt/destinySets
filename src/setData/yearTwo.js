@@ -620,7 +620,7 @@ export default ([
         sections: [
           {
             name: 'Hunter Armor',
-            season: 4,
+            season: 6,
             itemGroups: [
               [
                 493448176, // Illicit Invader Mask
@@ -633,7 +633,7 @@ export default ([
           },
           {
             name: 'Titan Armor',
-            season: 4,
+            season: 6,
             itemGroups: [
               [
                 200738236, // Illicit Invader Helm
@@ -646,7 +646,7 @@ export default ([
           },
           {
             name: 'Warlock Armor',
-            season: 4,
+            season: 6,
             itemGroups: [
               [
                 2342017355, // Illicit Invader Hood
