@@ -1848,18 +1848,18 @@ export default ([
             name: 'Sparrows',
             season: 6,
             items: [
-              928095169 // Barebones SL-19
-              928095168 // Another Inspired Idea
-              928095170 // Praxic Finery
-              3330250540 // Sunny Disposition
-              3330250541 // Aerolite HW-42
-              2816146407 // Bitter Poison
-              2816146406 // Beat Patrol
-              3330250542 // The Whipcrack
-              3330250543 // Spaded Knife
-              3330250538 // Sgian Dubh
-              3330250539 // Praxic Justice
-              3330250532 // Arion
+              928095169, // Barebones SL-19
+              928095168, // Another Inspired Idea
+              928095170, // Praxic Finery
+              3330250540, // Sunny Disposition
+              3330250541, // Aerolite HW-42
+              2816146407, // Bitter Poison
+              2816146406, // Beat Patrol
+              3330250542, // The Whipcrack
+              3330250543, // Spaded Knife
+              3330250538, // Sgian Dubh
+              3330250539, // Praxic Justice
+              3330250532, // Arion
               3330250533 // RJSV 99-40
             ]
           },
