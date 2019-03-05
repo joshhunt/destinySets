@@ -38,6 +38,13 @@ export default ([
             ]
           },
           {
+            name: 'Weapons',
+            season: 6,
+            items: [
+              834081972, // 	Service Revolver
+            ]
+          },
+          {
             name: 'Hunter Armor',
             season: 4,
             items: [
@@ -130,6 +137,14 @@ export default ([
             ]
           },
           {
+            name: 'Weapons',
+            season: 6,
+            items: [
+              188882152, // Last Perdition
+              
+            ]
+          },
+          {
             name: 'Hunter Armor',
             season: 4,
             items: [
@@ -215,9 +230,16 @@ export default ([
             name: 'Prime Weapons',
             season: 6,
             items: [
-              // Spare Ashes (HC)
-              // Sole Survivor (SR)
-              // Doomsday (GL)
+              821154603, // Gnawing Hunger
+              736901634, // Doomsday
+              3116356268, // Spare Rations
+              299665907, // Outlast
+              3504336176, // Night Watch
+              755130877, // Last Man Standing
+              2199171672, // Lonesome
+              1115104187, // 	Sole Survivor
+              2744715540, // Bug-Out Bag
+              715338174	// Just in Case
             ]
           },
           {
@@ -278,6 +300,17 @@ export default ([
               2394866220, // Keep on Drifting
               3217477988 // Gambit Duds
             ]
+          },
+          {
+            name: 'Prime Extras',
+            season: 5,
+            items: [
+              2868525742, // The Reaper 
+              2868525741, // The Invader
+              2868525740, // The Collector
+              2868525743, // The Sentry
+              3735277403 // Prime Palette
+            ]
           }
         ]
       },
@@ -316,7 +349,8 @@ export default ([
             name: 'Weapons',
             season: 6,
             items: [
-              
+              930590127, // The Wizened Rebuke
+              2108920981, // Orewing's Maul
             ]
           },
           {
@@ -345,7 +379,11 @@ export default ([
             name: 'Hunter Armor',
             season: 6,
             items: [
-              
+              1618191618, // Iron Symmachy Mask
+              957732971, // Iron Symmachy Grips
+              3112906149, // Iron Symmachy Vest
+              2049490557, // Iron Symmachy Strides
+              2234855160 // Iron Symmachy Cloak
             ]
           },
           {
@@ -374,7 +412,11 @@ export default ([
             name: 'Titan Armor',
             season: 6,
             items: [
-              
+                1127757814, // Iron Symmachy Helm
+                2331748167, // Iron Symmachy Gauntlets
+                3420845681, // Iron Symmachy Plate
+                1084553865, // Iron Symmachy Greaves
+                1279731468 // Iron Symmachy Mark
             ]
           },
           {
@@ -403,7 +445,11 @@ export default ([
             name: 'Warlock Armor',
             season: 6,
             items: [
-              
+              3147146325, // Iron Symmachy Hood
+              1822989604, // Iron Symmachy Gloves
+              3543613212, // Iron Symmachy Robes
+              3753635534, // Iron Symmachy Boots
+              959040145 // Iron Symmachy Bond"
             ]
           },
           {
@@ -425,7 +471,8 @@ export default ([
             name: 'Extras',
             season: 6,
             items: [
-              
+              2868525739, // Heavy as Death (Emblem)
+              1987234560 // Iron Ruby (Shader)
             ]
           }
         ]
@@ -575,6 +622,13 @@ export default ([
             season: 6,
             items: [
               
+            ]
+          },
+          {
+            name: 'Extras',
+            season: 6,
+            items: [
+              2868525732 // 	Wheel of Fortune
             ]
           }
         ]
