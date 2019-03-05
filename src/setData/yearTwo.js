@@ -619,7 +619,34 @@ export default ([
         id: 'YEAR_TWO_THE_RECKONING',
         sections: [
           {
-            name: 'Hunter Armor',
+            name: 'Illicit Reaper Armor',
+            season: 6,
+            itemGroups: [
+              [
+                3639906116, // Illicit Reaper Mask
+                3587100701, // Illicit Reaper Grips
+                2635164579, // Illicit Reaper Vest
+                1233301695, // Illicit Reaper Strides
+                1916971418 // Illicit Reaper Cloak
+              ],
+              [
+                360521696, // Illicit Reaper Helm
+                2263035825, // Illicit Reaper Gauntlets
+                1744000487, // Illicit Reaper Plate
+                2094288643, // Illicit Reaper Greaves
+                2459498230 // Illicit Reaper Mark
+              ],
+              [
+                2030998601, // Illicit Reaper Hood
+                3734494144, // Illicit Reaper Gloves
+                2966502280, // Illicit Reaper Robes
+                2429433850, // Illicit Reaper Boots
+                373632485 // Illicit Reaper Bond
+              ]
+            ]
+          },
+          {
+            name: 'Illicit Invader Armor',
             season: 6,
             itemGroups: [
               [
@@ -628,32 +655,74 @@ export default ([
                 4053228823, // Illicit Invader Vest
                 1320043187, // Illicit Invader Strides
                 1886580966 // Illicit Invader Cloak
-              ]
-            ]
-          },
-          {
-            name: 'Titan Armor',
-            season: 6,
-            itemGroups: [
+              ],
               [
                 200738236, // Illicit Invader Helm
                 1555512373, // Illicit Invader Gauntlets
                 386784171, // Illicit Invader Plate
                 3131634455, // Illicit Invader Greaves
                 3038467650 // Illicit Invader Mark
-              ]
-            ]
-          },
-          {
-            name: 'Warlock Armor',
-            season: 6,
-            itemGroups: [
+              ],
               [
                 2342017355, // Illicit Invader Hood
                 239713978, // Illicit Invader Gloves
                 1258016014, // Illicit Invader Robes
                 1920643316, // Illicit Invader Boots
                 1576110551 // Illicit Invader Bond
+              ]
+            ]
+          },
+          {
+            name: 'Illicit Collector Armor',
+            season: 6,
+            itemGroups: [
+              [
+                1722308938, // Illicit Collector Mask
+                1769446803, // Illicit Collector Grips
+                2082319037, // Illicit Collector Vest
+                1504400869, // Illicit Collector Strides
+                3585883632 // Illicit Collector Cloak
+              ],
+              [
+                2525623542, // Illicit Collector Helm
+                3729613895, // Illicit Collector Gauntlets
+                4120018289, // Illicit Collector Plate
+                2482419593, // Illicit Collector Greaves
+                1978904076 // Illicit Collector Mark
+              ],
+              [
+                359531057, // Illicit Collector Hood
+                3271153032, // Illicit Collector Gloves
+                4174424192, // Illicit Collector Robes
+                77525090, // Illicit Collector Boots
+                3526140221 // Illicit Collector Bond
+              ]
+            ]
+          },
+          {
+            name: 'Illicit Sentry Armor',
+            season: 6,
+            itemGroups: [
+              [
+                3280699112, // Illicit Sentry Mask
+                2628033401, // Illicit Sentry Grips
+                3998122207, // Illicit Sentry Vest
+                1225148523, // Illicit Sentry Strides
+                950313582 // Illicit Sentry Cloak
+              ],
+              [
+                1698832196, // Illicit Sentry Helm
+                1646026781, // Illicit Sentry Gauntlets
+                2066422691, // Illicit Sentry Plate
+                3587195071, // Illicit Sentry Greaves
+                1348229530 // Illicit Sentry Mark
+              ],
+              [
+                1823966645, // Illicit Sentry Hood
+                458336260, // Illicit Sentry Gloves
+                2765681916, // Illicit Sentry Robes
+                2005998382, // Illicit Sentry Boots
+                4051618673 // Illicit Sentry Bond
               ]
             ]
           },
