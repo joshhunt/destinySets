@@ -316,7 +316,7 @@ export default ([
           },
           {
             name: 'Prime Extras',
-            season: 5,
+            season: 6,
             items: [
               2868525742, // The Reaper 
               2868525741, // The Invader
