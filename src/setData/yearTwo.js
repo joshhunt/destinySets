@@ -619,6 +619,45 @@ export default ([
         id: 'YEAR_TWO_THE_RECKONING',
         sections: [
           {
+            name: 'Hunter Armor',
+            season: 4,
+            itemGroups: [
+              [
+                493448176, // Illicit Invader Mask
+                249655105, // Illicit Invader Grips
+                4053228823, // Illicit Invader Vest
+                1320043187, // Illicit Invader Strides
+                1886580966 // Illicit Invader Cloak
+              ]
+            ]
+          },
+          {
+            name: 'Titan Armor',
+            season: 4,
+            itemGroups: [
+              [
+                200738236, // Illicit Invader Helm
+                1555512373, // Illicit Invader Gauntlets
+                386784171, // Illicit Invader Plate
+                3131634455, // Illicit Invader Greaves
+                3038467650 // Illicit Invader Mark
+              ]
+            ]
+          },
+          {
+            name: 'Warlock Armor',
+            season: 4,
+            itemGroups: [
+              [
+                2342017355, // Illicit Invader Hood
+                239713978, // Illicit Invader Gloves
+                1258016014, // Illicit Invader Robes
+                1920643316, // Illicit Invader Boots
+                1576110551 // Illicit Invader Bond
+              ]
+            ]
+          },
+          {
             name: 'Extras',
             season: 6,
             items: [
