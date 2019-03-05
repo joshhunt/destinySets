@@ -41,7 +41,7 @@ export default ([
             name: 'Weapons',
             season: 6,
             items: [
-              834081972, // 	Service Revolver
+              834081972 // 	Service Revolver
             ]
           },
           {
@@ -102,6 +102,13 @@ export default ([
               912222548, // Soldier On (Emblem)
               274843196 // Vanguard Unyielding (Shader)
             ]
+          },
+          {
+            name: 'Extras',
+            season: 6,
+            items: [
+              3215252549 // Determination
+            ]
           }
         ]
       },
@@ -141,7 +148,6 @@ export default ([
             season: 6,
             items: [
               188882152, // Last Perdition
-              
             ]
           },
           {
@@ -197,6 +203,13 @@ export default ([
             items: [
               2414564781, // Punctuation Marks (Emblem)
               769099721 // Devil in the Details (Shader)
+            ]
+          },
+          {
+            name: 'Extras',
+            season: 6,
+            items: [
+              2632846356 // Rain of Ashes
             ]
           }
         ]
@@ -309,6 +322,7 @@ export default ([
               2868525741, // The Invader
               2868525740, // The Collector
               2868525743, // The Sentry
+              3808901541, // Viper Strike
               3735277403 // Prime Palette
             ]
           }
@@ -471,6 +485,7 @@ export default ([
             name: 'Extras',
             season: 6,
             items: [
+              2868525736, // The Weight of Guilt (Emblem)
               2868525739, // Heavy as Death (Emblem)
               1987234560 // Iron Ruby (Shader)
             ]
@@ -603,27 +618,6 @@ export default ([
           'Gear from The Reckoning.',
         id: 'YEAR_TWO_THE_RECKONING',
         sections: [
-          {
-            name: 'Hunter Armor',
-            season: 6,
-            items: [
-              
-            ]
-          },
-          {
-            name: 'Titan Armor',
-            season: 6,
-            items: [
-              
-            ]
-          },
-          {
-            name: 'Warlock Armor',
-            season: 6,
-            items: [
-              
-            ]
-          },
           {
             name: 'Extras',
             season: 6,
@@ -1442,21 +1436,6 @@ export default ([
             ]
           },
           {
-            name: 'Armor',
-            season: 6,
-            itemGroups: [
-              [
-                
-              ],
-              [
-                
-              ],
-              [
-                
-              ]
-            ]
-          },
-          {
             name: 'Ornaments',
             season: 4,
             itemGroups: [
@@ -1536,21 +1515,6 @@ export default ([
             ]
           },
           {
-            name: 'Ornaments',
-            season: 6,
-            itemGroups: [
-              [
-                
-              ],
-              [
-                
-              ],
-              [
-                
-              ]
-            ]
-          },
-          {
             name: 'Emotes',
             season: 4,
             items: [
@@ -1593,13 +1557,6 @@ export default ([
               2528830834, // Oh Snap
               1372151242, // Silly Salute
               2321189501 // You
-            ]
-          },
-          {
-            name: 'Emotes',
-            season: 6,
-            items: [
-              
             ]
           },
           {
@@ -1651,13 +1608,6 @@ export default ([
             ]
           },
           {
-            name: 'Ghosts',
-            season: 6,
-            items: [
-              
-            ]
-          },
-          {
             name: 'Ghost Projections',
             season: 4,
             items: [
@@ -1691,13 +1641,6 @@ export default ([
               2233846234, // Quill and Ink Projection
               2233846233, // Lost Treasure Projection
               2233846232 // Clashing Projection
-            ]
-          },
-          {
-            name: 'Ghost Projections',
-            season: 6,
-            items: [
-              
             ]
           },
           {
@@ -1742,13 +1685,6 @@ export default ([
               4085575828, // Eidolon Bird
               4085575835, // Spinning Spinning
               4085575834 // Pegasus Bravo
-            ]
-          },
-          {
-            name: 'Sparrows',
-            season: 6,
-            items: [
-              
             ]
           },
           {
@@ -1797,13 +1733,6 @@ export default ([
             ]
           },
           {
-            name: 'Ships',
-            season: 6,
-            items: [
-              
-            ]
-          },
-          {
             name: 'Shaders',
             season: 4,
             items: [
@@ -1829,13 +1758,6 @@ export default ([
             ]
           },
           {
-            name: 'Shaders',
-            season: 6,
-            items: [
-              
-            ]
-          },
-          {
             name: 'Transmat Effects',
             season: 4,
             items: [
@@ -1853,13 +1775,6 @@ export default ([
               1866581850, // Only the Finest
               1866581849, // Guiding Light
               1866581848 // The Past Unearthed
-            ]
-          },
-          {
-            name: 'Transmat Effects',
-            season: 6,
-            items: [
-              
             ]
           }
         ]
