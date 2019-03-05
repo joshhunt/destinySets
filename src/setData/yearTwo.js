@@ -619,6 +619,45 @@ export default ([
         id: 'YEAR_TWO_THE_RECKONING',
         sections: [
           {
+            name: 'Hunter Armor',
+            season: 6,
+            itemGroups: [
+              [
+                493448176, // Illicit Invader Mask
+                249655105, // Illicit Invader Grips
+                4053228823, // Illicit Invader Vest
+                1320043187, // Illicit Invader Strides
+                1886580966 // Illicit Invader Cloak
+              ]
+            ]
+          },
+          {
+            name: 'Titan Armor',
+            season: 6,
+            itemGroups: [
+              [
+                200738236, // Illicit Invader Helm
+                1555512373, // Illicit Invader Gauntlets
+                386784171, // Illicit Invader Plate
+                3131634455, // Illicit Invader Greaves
+                3038467650 // Illicit Invader Mark
+              ]
+            ]
+          },
+          {
+            name: 'Warlock Armor',
+            season: 6,
+            itemGroups: [
+              [
+                2342017355, // Illicit Invader Hood
+                239713978, // Illicit Invader Gloves
+                1258016014, // Illicit Invader Robes
+                1920643316, // Illicit Invader Boots
+                1576110551 // Illicit Invader Bond
+              ]
+            ]
+          },
+          {
             name: 'Extras',
             season: 6,
             items: [
@@ -1436,6 +1475,33 @@ export default ([
             ]
           },
           {
+            name: 'Armor',
+            season: 6,
+            itemGroups: [
+              [
+                2647162463, // Neoteric Kiyot Mask
+                2622606502, // Neoteric Kiyot Grasps
+                3532819274, // Neoteric Kiyot Vest
+                2140059040, // Neoteric Kiyot Strides
+                3703602779 // Neoteric Kiyot Cloak
+              ],
+              [
+                2001565587, // Sunbreak Helm
+                3789539490, // Sunbreak Gauntlets
+                729400710, // Sunbreak Plate
+                2004752092, // Sunbreak Greaves
+                1471849583 // Sunbreak Mark
+              ],
+              [
+                1178752364, // Mantle of the Cormorant Blade
+                333050149, // Gloves of the Cormorant Blade
+                189621627, // Duster of the Cormorant Blade
+                680379815, // Boots of the Cormorant Blade
+                2841305106 // Bond of the Cormorant Blade
+              ]
+            ]
+          },
+          {
             name: 'Ornaments',
             season: 4,
             itemGroups: [
@@ -1515,6 +1581,42 @@ export default ([
             ]
           },
           {
+            name: 'Ornaments',
+            season: 6,
+            itemGroups: [
+              [
+                3151260458, // Caution: Heavy Machinery
+                3844549116, // Vigil for Saint-14
+                2634511221, // Vostok
+                1535205434, // Climate Change
+                898795824, // The Colony XZ812
+                1865779065, // Four-Headed Mongrel
+                1473300982, // Red String of Fate
+                3009090211 // The Panama Ravine
+              ],
+              [
+                1084411177, // Draws Nigh
+                2805728757, // Insomnia
+                1226148028, // Ozymandias
+                613746953, // Out of Place
+                2812946864, // At Any Cost
+                2302790381, // The Bunker
+                3020192510, // Powerful Statement
+                1125119861, // 87% Ennui
+                1546799103, // Perfluorocarbon
+                1414396215 // Itsy-Bitsy Spider
+              ],
+              [
+                1397707366, // Unyielding
+                3542571269, // Thalia's Reach
+                2365935989, // Ursus Maritimus
+                1505928251, // Otto's Resolve
+                164776724, // The Hateful Wish
+                159907007 // Ayrin's Swagger
+              ]
+            ]
+          },
+          {
             name: 'Emotes',
             season: 4,
             items: [
@@ -1557,6 +1659,26 @@ export default ([
               2528830834, // Oh Snap
               1372151242, // Silly Salute
               2321189501 // You
+            ]
+          },
+          {
+            name: 'Emotes',
+            season: 6,
+            items: [
+              2218275250, // Chair Pop
+              2272950849, // Chicken Dinner
+              3559259728, // Rock Out
+              1652440677, // Cup of Tea
+              3217972777, // Respectful Handshake
+              2879093413, // Boxer's Dance
+              240371989, // Grooving
+              442845394, // Cloister Dance
+              1552235509, // Newish Dance
+              2134292552, // Shake Dance
+              3558549449, // Reload
+              1005293753, // Directed Plea
+              3517258101, // Wasn't Me
+              925771554 // Watching You
             ]
           },
           {
@@ -1608,6 +1730,25 @@ export default ([
             ]
           },
           {
+            name: 'Ghosts',
+            season: 6,
+            items: [
+              527607310, // Hissing Silence Shell
+              527607309, // Plasma Shell
+              527607308, // Sunshot Shell
+              2371653985, // Lilac Bell Shell
+              2371653986, // Stalwart Shell
+              2371653987, // Arch Shell
+              2371653988, // Bulwark Shell
+              2371653989, // Poison Courier Shell
+              2371653990, // Tastemaker Shell
+              2371653991, // Worrier Shell
+              2371653992, // Vanguard Courier Shell
+              2371653993, // City Courier Shell
+              3921206146 // Subterfuge Shell
+            ]
+          },
+          {
             name: 'Ghost Projections',
             season: 4,
             items: [
@@ -1641,6 +1782,22 @@ export default ([
               2233846234, // Quill and Ink Projection
               2233846233, // Lost Treasure Projection
               2233846232 // Clashing Projection
+            ]
+          },
+          {
+            name: 'Ghost Projections',
+            season: 6,
+            items: [
+              403349193, // Treacherous Projection
+              403349192, // SIVA Projection
+              403349195, // Crane Projection
+              403349194, // Viper Projection
+              668465162, // Mote Projection
+              668465163, // Invade! Projection
+              668465164, // Bank! Projection
+              668465165, // Collect! Projection
+              668465166, // Fight! Projection
+              668465167 // Twin Snake Projection
             ]
           },
           {
@@ -1685,6 +1842,25 @@ export default ([
               4085575828, // Eidolon Bird
               4085575835, // Spinning Spinning
               4085575834 // Pegasus Bravo
+            ]
+          },
+          {
+            name: 'Sparrows',
+            season: 6,
+            items: [
+              928095169, // Barebones SL-19
+              928095168, // Another Inspired Idea
+              928095170, // Praxic Finery
+              3330250540, // Sunny Disposition
+              3330250541, // Aerolite HW-42
+              2816146407, // Bitter Poison
+              2816146406, // Beat Patrol
+              3330250542, // The Whipcrack
+              3330250543, // Spaded Knife
+              3330250538, // Sgian Dubh
+              3330250539, // Praxic Justice
+              3330250532, // Arion
+              3330250533 // RJSV 99-40
             ]
           },
           {
@@ -1733,6 +1909,24 @@ export default ([
             ]
           },
           {
+            name: 'Ships',
+            season: 6,
+            items: [
+              554648944, // Skulking Fox
+              554648947, // Threat Display
+              4063523622, // Vimana-S
+              4063523623, // Reclaimer-IS
+              1871791701, // Monument-CER
+              1871791700, // Ignition-CER
+              4063523621, // Broadcast-IS
+              4063523618, // Egbe-01X
+              4063523619, // Safe Passage
+              4063523616, // Holacanthus
+              4063523630, // DSV-Huygens IX
+              4063523631 // SCRAP MS-123-88
+            ]
+          },
+          {
             name: 'Shaders',
             season: 4,
             items: [
@@ -1758,6 +1952,18 @@ export default ([
             ]
           },
           {
+            name: 'Shaders',
+            season: 6,
+            items: [
+              915277997, // Bloody Tooth
+              915277996, // Atlantic Rush
+              915277995, // Chrome Stock
+              915277994, // Verdigris
+              915277993, // Reefmade
+              915277992 // Warbrick
+            ]
+          },
+          {
             name: 'Transmat Effects',
             season: 4,
             items: [
@@ -1775,6 +1981,16 @@ export default ([
               1866581850, // Only the Finest
               1866581849, // Guiding Light
               1866581848 // The Past Unearthed
+            ]
+          },
+          {
+            name: 'Transmat Effects',
+            season: 6,
+            items: [
+              1556665148, // Twin Snake Effects
+              1556665149, // Jade Coin Effects
+              1556665150, // Sterile Neutrino Effects
+              1556665151 // Illicit Transmat Effects
             ]
           }
         ]
