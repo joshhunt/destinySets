@@ -1212,7 +1212,7 @@ export default ([
         name: 'The Dawning',
         id: 'YEAR_TWO_THE_DAWNING',
         description:
-          'Earned during the seasonal The Dawning event.',
+          'Earned during the seasonal Dawning event.',
         big: false,
         sections: [
           {
@@ -1359,7 +1359,136 @@ export default ([
             ]
           }
         ]
-      }
+      },
+      {
+        name: 'The Revelry',
+        id: 'YEAR_TWO_THE_REVELRY',
+        description:
+          'Earned during the seasonal Revelry event.',
+        big: false,
+        sections: [
+          {
+            name: 'Hunter Armor',
+            season: 6,
+            itemGroups: [
+              [
+                53761356, // Vernal Growth Mask
+                3503026437, // Vernal Growth Grips
+                1165027035, // Vernal Growth Vest
+                3425898631, // Vernal Growth Strides
+                4199694578 // Vernal Growth Cloak
+              ],
+              [
+                1232802389, // Inaugural Revelry Mask
+                4203612964, // Inaugural Revelry Grips
+                862152988, // Inaugural Revelry Vrowth Grips
+                1165027035, // Vernal Growth Vest
+                3425898631, // Vernal Growth Strides
+                4199694578 // Vernal Growth Cloak
+              ],
+              [
+                1232802389, // Inaugural Revelry Mask
+                4203612964, // Inaugural Revelry Grips
+                862152988, // Inaugural Revelry Vest
+                1839291598, // Inaugural Revelrest
+                1839291598, // Inaugural Revelry Strides
+                2572547217 // Inaugural Revelry Cloak
+              ]
+            ]
+          },
+          {
+            name: 'Titan Armor',
+            season: 6,
+            itemGroups: [
+              [
+                1821343040, // Vernal Growth Helm
+                3682383633, // Vernal Growth Gauntlets
+                4079552711, // Vernal Growth Plate
+                3089075939, // Vernal Growth Greaves
+                500083158 // Vernal Growth Mark
+              ],
+              [
+                438524081, // Inaugural Revelry Helm
+                3350146056, // Inaugural Revelry Gauntlets
+                3796358144, // Inaugural Revelry Plate
+                156518114, // Inaugural Revelry Greaves
+                3148074173 // Inaugural Revelry Mark
+              ]
+            ]
+          },
+          {
+            name: 'Warlock Armor',
+            season: 6,
+            itemGroups: [
+              [
+                1356657785, // Vernal Growth Hood
+                870019568, // Vernal Growth Gloves
+                2967148056, // Vernal Growth Robes
+                1187078090, // Vernal Growth Boots
+                1362642485 // Vernal Growth Bond
+              ],
+              [
+                3738044006, // Inaugural Revelry Hood
+                2710427191, // Inaugural Revelry Gloves
+                678051457, // Inaugural Revelry Chest
+                4094504409, // Inaugural Revelry Boots
+                1926693852 // Inaugural Revelry Bond
+              ]
+            ]
+          },
+          {
+            name: 'Emotes',
+            season: 6,
+            items: [
+              2422643144, // Perfect Swing
+              3946927545, // Stylish Fist Bump
+              4128095381 // Hyped Dance
+            ]
+          },
+          {
+            name: 'Ghosts',
+            season: 6,
+            items: [
+              286098607, // Ladylike Shell
+              286098604, // Lapine Shell
+              2179603798, // Revelry Masquerade Shell
+              2179603799 // Revelry Courier Shell
+            ]
+          },
+          {
+            name: 'Ghost Projections',
+            season: 6,
+            items: [
+              3105972942, // Dragonfly Projection
+              3105972943, // Cheese Projection
+              3105972940 // Carrot Projection
+            ]
+          },
+          {
+            name: 'Sparrows',
+            season: 6,
+            items: [
+              281718534, // Circumpolar Light
+              281718535, // Equinoctial Edge
+            ]
+          },
+          {
+            name: 'Ships',
+            season: 6,
+            items: [
+              2459768632, // The Mayfly
+            ]
+          },
+          {
+            name: 'Extras',
+            season: 6,
+            items: [
+              1914989541, // Verdant Chrome
+              1914989540, // Verdant Crown
+            ]
+          }
+        ]
+      },
     ]
   },
   {
