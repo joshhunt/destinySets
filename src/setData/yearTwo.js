@@ -1474,6 +1474,8 @@ export default ([
             name: 'Extras',
             season: 6,
             items: [
+              2868525733, // Simulant Spring
+              2868525738, // Virescent
               1914989541, // Verdant Chrome
               1914989540, // Verdant Crown
             ]
