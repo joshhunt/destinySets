@@ -1381,16 +1381,7 @@ export default ([
               [
                 1232802389, // Inaugural Revelry Mask
                 4203612964, // Inaugural Revelry Grips
-                862152988, // Inaugural Revelry Vrowth Grips
-                1165027035, // Vernal Growth Vest
-                3425898631, // Vernal Growth Strides
-                4199694578 // Vernal Growth Cloak
-              ],
-              [
-                1232802389, // Inaugural Revelry Mask
-                4203612964, // Inaugural Revelry Grips
                 862152988, // Inaugural Revelry Vest
-                1839291598, // Inaugural Revelrest
                 1839291598, // Inaugural Revelry Strides
                 2572547217 // Inaugural Revelry Cloak
               ]
