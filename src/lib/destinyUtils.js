@@ -1,6 +1,7 @@
 import { EMBLEM, HUNTER, TITAN, WARLOCK, NO_CLASS } from 'app/lib/destinyEnums';
 import { getLower } from 'app/lib/utils';
 import CLASS_OVERRIDES from 'app/extraData/classOverrides';
+import ITEM_SEASONS from 'app/extraData/d2-seasons';
 
 // TODO: we can just use itemCategoryHashes for this now?
 export const isOrnament = item =>
@@ -58,4 +59,9 @@ export function hasCategoryHash(item, categoryHash) {
   return (
     item.itemCategoryHashes && item.itemCategoryHashes.includes(categoryHash)
   );
+}
+
+export function getItemSeason(item) {
+  const CURRENT_SEASON = 6;
+  return ITEM_SEASONS[item] || CURRENT_SEASON;
 }

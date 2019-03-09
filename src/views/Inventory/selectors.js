@@ -24,7 +24,11 @@ import {
 } from 'app/store/selectors';
 import * as ls from 'app/lib/ls';
 
-import { getItemClass, hasCategoryHash } from 'app/lib/destinyUtils';
+import {
+  getItemClass,
+  hasCategoryHash,
+  getItemSeason
+} from 'app/lib/destinyUtils';
 import fancySearch from 'app/lib/fancySearch';
 import { default as sortItems } from 'app/lib/sortItemsIntoSections';
 
@@ -57,6 +61,8 @@ function filterItem(item, inventory, filters, searchTerm) {
   if (!item) {
     return false;
   }
+
+  const season = getItemSeason(item);
 
   if (searchTerm) {
     return (
