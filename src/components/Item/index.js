@@ -13,6 +13,7 @@ import {
   MASTERWORK_FLAG
 } from 'app/lib/destinyEnums';
 import Icon from 'app/components/Icon';
+import BungieImage from 'app/components/BungieImage';
 
 import {
   makeItemInventoryEntrySelector,
@@ -80,6 +81,21 @@ const isMasterwork = inventoryEntry => {
   });
 };
 
+const ROLE_PERKS = [
+  326979294,
+  911695907,
+  3047801520,
+  1233336930,
+  2575042148,
+  3588389153,
+  548249507,
+  2684355120,
+  4258500190,
+  149961592,
+  446122123,
+  1263189958
+];
+
 class Item extends PureComponent {
   onMouseEnter = () => {
     const { setPopper, itemHash } = this.props;
@@ -109,6 +125,7 @@ class Item extends PureComponent {
     const {
       className,
       itemDef,
+      roleDef,
       displayItem,
       inventoryEntry,
       extended,
@@ -168,36 +185,41 @@ class Item extends PureComponent {
               alt=""
             />
 
+            {roleDef && (
+              <BungieImage
+                src={roleDef.displayProperties.icon}
+                className={styles.role}
+              />
+            )}
+
             {inventoryEntry && (
               <div className={styles.tick}>
                 <Icon icon="check" />
               </div>
             )}
 
-            {!inventoryEntry &&
-              vendorEntry && (
-                <div className={styles.purchasableTick}>
-                  <Icon icon="dollar-sign" />
-                </div>
-              )}
-          </div>
-
-          {itemObjectiveProgress !== 0 &&
-            itemObjectiveProgress !== 1 && (
-              <div
-                className={cx(
-                  styles.objectiveOverlay,
-                  itemObjectiveProgress === 1 && styles.objectivesComplete
-                )}
-              >
-                <div
-                  className={styles.objectiveTrack}
-                  style={{
-                    width: `${itemObjectiveProgress * 100}%`
-                  }}
-                />
+            {!inventoryEntry && vendorEntry && (
+              <div className={styles.purchasableTick}>
+                <Icon icon="dollar-sign" />
               </div>
             )}
+          </div>
+
+          {itemObjectiveProgress !== 0 && itemObjectiveProgress !== 1 && (
+            <div
+              className={cx(
+                styles.objectiveOverlay,
+                itemObjectiveProgress === 1 && styles.objectivesComplete
+              )}
+            >
+              <div
+                className={styles.objectiveTrack}
+                style={{
+                  width: `${itemObjectiveProgress * 100}%`
+                }}
+              />
+            </div>
+          )}
         </div>
 
         {extended && (
@@ -224,8 +246,28 @@ function mapStateToProps() {
   return (state, ownProps) => {
     const displayItem = itemPresentationSelector(state, ownProps);
 
+    const itemDef = itemDefSelector(state, ownProps);
+
+    const firstPerk =
+      itemDef && itemDef.sockets && itemDef.sockets.socketEntries[0];
+    const roleHash =
+      firstPerk &&
+      ROLE_PERKS.includes(firstPerk.singleInitialItemHash) &&
+      firstPerk.singleInitialItemHash;
+    const roleDef =
+      state.definitions.DestinyInventoryItemDefinition &&
+      state.definitions.DestinyInventoryItemDefinition[roleHash];
+
+    // if (
+    //   ownProps.itemHash === 1886580966 ||
+    //   ownProps.itemHash === '1886580966'
+    // ) {
+    //   debugger;
+    // }
+
     return {
-      itemDef: itemDefSelector(state, ownProps),
+      itemDef,
+      roleDef,
       inventoryEntry: itemInventoryEntrySelector(state, ownProps),
       vendorEntry: itemVendorEntrySelector(state, ownProps),
       itemObjectiveProgress: itemObjectiveProgressSelector(state, ownProps),

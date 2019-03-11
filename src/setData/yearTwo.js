@@ -1,5 +1,6 @@
 // @flow
 import type { SetPage } from '../types';
+import * as common from './common';
 import { i18nDefinitionString as _ } from './utils';
 
 export default ([
@@ -41,7 +42,7 @@ export default ([
             name: 'Weapons',
             season: 6,
             items: [
-              834081972 // 	Service Revolver
+              834081972 //  Service Revolver
             ]
           },
           {
@@ -147,7 +148,7 @@ export default ([
             name: 'Weapons',
             season: 6,
             items: [
-              188882152, // Last Perdition
+              188882152 // Last Perdition
             ]
           },
           {
@@ -250,9 +251,9 @@ export default ([
               3504336176, // Night Watch
               755130877, // Last Man Standing
               2199171672, // Lonesome
-              1115104187, // 	Sole Survivor
+              1115104187, //  Sole Survivor
               2744715540, // Bug-Out Bag
-              715338174	// Just in Case
+              715338174 // Just in Case
             ]
           },
           {
@@ -318,7 +319,7 @@ export default ([
             name: 'Prime Extras',
             season: 6,
             items: [
-              2868525742, // The Reaper 
+              2868525742, // The Reaper
               2868525741, // The Invader
               2868525740, // The Collector
               2868525743, // The Sentry
@@ -364,7 +365,7 @@ export default ([
             season: 6,
             items: [
               930590127, // The Wizened Rebuke
-              2108920981, // Orewing's Maul
+              2108920981 // Orewing's Maul
             ]
           },
           {
@@ -426,11 +427,11 @@ export default ([
             name: 'Titan Armor',
             season: 6,
             items: [
-                1127757814, // Iron Symmachy Helm
-                2331748167, // Iron Symmachy Gauntlets
-                3420845681, // Iron Symmachy Plate
-                1084553865, // Iron Symmachy Greaves
-                1279731468 // Iron Symmachy Mark
+              1127757814, // Iron Symmachy Helm
+              2331748167, // Iron Symmachy Gauntlets
+              3420845681, // Iron Symmachy Plate
+              1084553865, // Iron Symmachy Greaves
+              1279731468 // Iron Symmachy Mark
             ]
           },
           {
@@ -607,131 +608,8 @@ export default ([
                 3650581586, // Rasmussen Clan
                 3650581587, // House of Meyrin
                 3650581588, // Satou Tribe
-                3650581589 // Bergusian Night 
+                3650581589 // Bergusian Night
               ]
-            ]
-          }
-        ]
-      },
-      {
-        name: 'The Reckoning',
-        description:
-          'Gear from The Reckoning.',
-        id: 'YEAR_TWO_THE_RECKONING',
-        sections: [
-          {
-            name: 'Illicit Reaper Armor',
-            season: 6,
-            itemGroups: [
-              [
-                3639906116, // Illicit Reaper Mask
-                3587100701, // Illicit Reaper Grips
-                2635164579, // Illicit Reaper Vest
-                1233301695, // Illicit Reaper Strides
-                1916971418 // Illicit Reaper Cloak
-              ],
-              [
-                360521696, // Illicit Reaper Helm
-                2263035825, // Illicit Reaper Gauntlets
-                1744000487, // Illicit Reaper Plate
-                2094288643, // Illicit Reaper Greaves
-                2459498230 // Illicit Reaper Mark
-              ],
-              [
-                2030998601, // Illicit Reaper Hood
-                3734494144, // Illicit Reaper Gloves
-                2966502280, // Illicit Reaper Robes
-                2429433850, // Illicit Reaper Boots
-                373632485 // Illicit Reaper Bond
-              ]
-            ]
-          },
-          {
-            name: 'Illicit Invader Armor',
-            season: 6,
-            itemGroups: [
-              [
-                493448176, // Illicit Invader Mask
-                249655105, // Illicit Invader Grips
-                4053228823, // Illicit Invader Vest
-                1320043187, // Illicit Invader Strides
-                1886580966 // Illicit Invader Cloak
-              ],
-              [
-                200738236, // Illicit Invader Helm
-                1555512373, // Illicit Invader Gauntlets
-                386784171, // Illicit Invader Plate
-                3131634455, // Illicit Invader Greaves
-                3038467650 // Illicit Invader Mark
-              ],
-              [
-                2342017355, // Illicit Invader Hood
-                239713978, // Illicit Invader Gloves
-                1258016014, // Illicit Invader Robes
-                1920643316, // Illicit Invader Boots
-                1576110551 // Illicit Invader Bond
-              ]
-            ]
-          },
-          {
-            name: 'Illicit Collector Armor',
-            season: 6,
-            itemGroups: [
-              [
-                1722308938, // Illicit Collector Mask
-                1769446803, // Illicit Collector Grips
-                2082319037, // Illicit Collector Vest
-                1504400869, // Illicit Collector Strides
-                3585883632 // Illicit Collector Cloak
-              ],
-              [
-                2525623542, // Illicit Collector Helm
-                3729613895, // Illicit Collector Gauntlets
-                4120018289, // Illicit Collector Plate
-                2482419593, // Illicit Collector Greaves
-                1978904076 // Illicit Collector Mark
-              ],
-              [
-                359531057, // Illicit Collector Hood
-                3271153032, // Illicit Collector Gloves
-                4174424192, // Illicit Collector Robes
-                77525090, // Illicit Collector Boots
-                3526140221 // Illicit Collector Bond
-              ]
-            ]
-          },
-          {
-            name: 'Illicit Sentry Armor',
-            season: 6,
-            itemGroups: [
-              [
-                3280699112, // Illicit Sentry Mask
-                2628033401, // Illicit Sentry Grips
-                3998122207, // Illicit Sentry Vest
-                1225148523, // Illicit Sentry Strides
-                950313582 // Illicit Sentry Cloak
-              ],
-              [
-                1698832196, // Illicit Sentry Helm
-                1646026781, // Illicit Sentry Gauntlets
-                2066422691, // Illicit Sentry Plate
-                3587195071, // Illicit Sentry Greaves
-                1348229530 // Illicit Sentry Mark
-              ],
-              [
-                1823966645, // Illicit Sentry Hood
-                458336260, // Illicit Sentry Gloves
-                2765681916, // Illicit Sentry Robes
-                2005998382, // Illicit Sentry Boots
-                4051618673 // Illicit Sentry Bond
-              ]
-            ]
-          },
-          {
-            name: 'Extras',
-            season: 6,
-            items: [
-              2868525732 // 	Wheel of Fortune
             ]
           }
         ]
@@ -875,6 +753,118 @@ export default ([
       }
     ]
   },
+
+  {
+    name: 'The Reckoning',
+    sets: [
+      {
+        name: 'Illicit Set',
+        description:
+          'The Gambit Prime Illicit armor, obtained from The Reckoning tier 1',
+        id: 'RECKONING_ILLICIT',
+        sections: [
+          {
+            name: 'Hunter armor',
+            itemGroups: [
+              common.RECKONING_ILLICIT_COLLECTOR_HUNTER,
+              common.RECKONING_ILLICIT_SENTRY_HUNTER,
+              common.RECKONING_ILLICIT_INVADER_HUNTER,
+              common.RECKONING_ILLICIT_REAPER_HUNTER
+            ]
+          },
+          {
+            name: 'Titan armor',
+            itemGroups: [
+              common.RECKONING_ILLICIT_COLLECTOR_TITAN,
+              common.RECKONING_ILLICIT_SENTRY_TITAN,
+              common.RECKONING_ILLICIT_INVADER_TITAN,
+              common.RECKONING_ILLICIT_REAPER_TITAN
+            ]
+          },
+          {
+            name: 'Warlock armor',
+            itemGroups: [
+              common.RECKONING_ILLICIT_COLLECTOR_WARLOCK,
+              common.RECKONING_ILLICIT_SENTRY_WARLOCK,
+              common.RECKONING_ILLICIT_INVADER_WARLOCK,
+              common.RECKONING_ILLICIT_REAPER_WARLOCK
+            ]
+          }
+        ]
+      },
+      {
+        name: 'Outlawed Set',
+        description:
+          'The Gambit Prime Outlawed armor, obtained from The Reckoning tier 2',
+        id: 'RECKONING_ILLICIT',
+        sections: [
+          {
+            name: 'Hunter armor',
+            itemGroups: [
+              common.RECKONING_OUTLAWED_COLLECTOR_HUNTER,
+              common.RECKONING_OUTLAWED_SENTRY_HUNTER,
+              common.RECKONING_OUTLAWED_INVADER_HUNTER,
+              common.RECKONING_OUTLAWED_REAPER_HUNTER
+            ]
+          },
+          {
+            name: 'Titan armor',
+            itemGroups: [
+              common.RECKONING_OUTLAWED_COLLECTOR_TITAN,
+              common.RECKONING_OUTLAWED_SENTRY_TITAN,
+              common.RECKONING_OUTLAWED_INVADER_TITAN,
+              common.RECKONING_OUTLAWED_REAPER_TITAN
+            ]
+          },
+          {
+            name: 'Warlock armor',
+            itemGroups: [
+              common.RECKONING_OUTLAWED_COLLECTOR_WARLOCK,
+              common.RECKONING_OUTLAWED_SENTRY_WARLOCK,
+              common.RECKONING_OUTLAWED_INVADER_WARLOCK,
+              common.RECKONING_OUTLAWED_REAPER_WARLOCK
+            ]
+          }
+        ]
+      },
+      {
+        name: 'Notorious Set',
+        description:
+          'The Gambit Prime Notorious armor, obtained from The Reckoning tier 3',
+        id: 'RECKONING_ILLICIT',
+        sections: [
+          {
+            name: 'Hunter armor',
+            itemGroups: [
+              common.RECKONING_NOTORIOUS_COLLECTOR_HUNTER,
+              common.RECKONING_NOTORIOUS_SENTRY_HUNTER,
+              common.RECKONING_NOTORIOUS_INVADER_HUNTER,
+              common.RECKONING_NOTORIOUS_REAPER_HUNTER
+            ]
+          },
+          {
+            name: 'Titan armor',
+            itemGroups: [
+              common.RECKONING_NOTORIOUS_COLLECTOR_TITAN,
+              common.RECKONING_NOTORIOUS_SENTRY_TITAN,
+              common.RECKONING_NOTORIOUS_INVADER_TITAN,
+              common.RECKONING_NOTORIOUS_REAPER_TITAN
+            ]
+          },
+          {
+            name: 'Warlock armor',
+            itemGroups: [
+              common.RECKONING_NOTORIOUS_COLLECTOR_WARLOCK,
+              common.RECKONING_NOTORIOUS_SENTRY_WARLOCK,
+              common.RECKONING_NOTORIOUS_INVADER_WARLOCK,
+              common.RECKONING_NOTORIOUS_REAPER_WARLOCK
+            ]
+          }
+        ]
+      }
+    ]
+  },
+
   {
     name: 'Destinations',
     sets: [
@@ -950,7 +940,7 @@ export default ([
             ]
           },
           {
-            name: "Baron Exclusive Gear",
+            name: 'Baron Exclusive Gear',
             season: 4,
             itemGroups: [
               [
@@ -1063,8 +1053,7 @@ export default ([
       {
         name: 'Festival of the Lost',
         id: 'YEAR_TWO_FESTIVAL_OF_THE_LOST',
-        description:
-          'Earned during the seasonal Festival of the Lost event.',
+        description: 'Earned during the seasonal Festival of the Lost event.',
         big: false,
         sections: [
           {
@@ -1211,8 +1200,7 @@ export default ([
       {
         name: 'The Dawning',
         id: 'YEAR_TWO_THE_DAWNING',
-        description:
-          'Earned during the seasonal Dawning event.',
+        description: 'Earned during the seasonal Dawning event.',
         big: false,
         sections: [
           {
@@ -1363,8 +1351,7 @@ export default ([
       {
         name: 'The Revelry',
         id: 'YEAR_TWO_THE_REVELRY',
-        description:
-          'Earned during the seasonal Revelry event.',
+        description: 'Earned during the seasonal Revelry event.',
         big: false,
         sections: [
           {
@@ -1460,14 +1447,14 @@ export default ([
             season: 6,
             items: [
               281718534, // Circumpolar Light
-              281718535, // Equinoctial Edge
+              281718535 // Equinoctial Edge
             ]
           },
           {
             name: 'Ships',
             season: 6,
             items: [
-              2459768632, // The Mayfly
+              2459768632 // The Mayfly
             ]
           },
           {
@@ -1477,11 +1464,11 @@ export default ([
               2868525733, // Simulant Spring
               2868525738, // Virescent
               1914989541, // Verdant Chrome
-              1914989540, // Verdant Crown
+              1914989540 // Verdant Crown
             ]
           }
         ]
-      },
+      }
     ]
   },
   {
