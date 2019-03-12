@@ -764,7 +764,8 @@ export default ([
         id: 'RECKONING_ILLICIT',
         sections: [
           {
-            name: 'Hunter armor',
+            name: 'Hunter Armor',
+            season: 6,
             itemGroups: [
               common.RECKONING_ILLICIT_COLLECTOR_HUNTER,
               common.RECKONING_ILLICIT_SENTRY_HUNTER,
@@ -773,7 +774,8 @@ export default ([
             ]
           },
           {
-            name: 'Titan armor',
+            name: 'Titan Armor',
+            season: 6,
             itemGroups: [
               common.RECKONING_ILLICIT_COLLECTOR_TITAN,
               common.RECKONING_ILLICIT_SENTRY_TITAN,
@@ -782,7 +784,8 @@ export default ([
             ]
           },
           {
-            name: 'Warlock armor',
+            name: 'Warlock Armor',
+            season: 6,
             itemGroups: [
               common.RECKONING_ILLICIT_COLLECTOR_WARLOCK,
               common.RECKONING_ILLICIT_SENTRY_WARLOCK,
@@ -799,7 +802,8 @@ export default ([
         id: 'RECKONING_ILLICIT',
         sections: [
           {
-            name: 'Hunter armor',
+            name: 'Hunter Armor',
+            season: 6,
             itemGroups: [
               common.RECKONING_OUTLAWED_COLLECTOR_HUNTER,
               common.RECKONING_OUTLAWED_SENTRY_HUNTER,
@@ -808,7 +812,8 @@ export default ([
             ]
           },
           {
-            name: 'Titan armor',
+            name: 'Titan Armor',
+            season: 6,
             itemGroups: [
               common.RECKONING_OUTLAWED_COLLECTOR_TITAN,
               common.RECKONING_OUTLAWED_SENTRY_TITAN,
@@ -817,7 +822,8 @@ export default ([
             ]
           },
           {
-            name: 'Warlock armor',
+            name: 'Warlock Armor',
+            season: 6,
             itemGroups: [
               common.RECKONING_OUTLAWED_COLLECTOR_WARLOCK,
               common.RECKONING_OUTLAWED_SENTRY_WARLOCK,
@@ -834,7 +840,8 @@ export default ([
         id: 'RECKONING_ILLICIT',
         sections: [
           {
-            name: 'Hunter armor',
+            name: 'Hunter Armor',
+            season: 6,
             itemGroups: [
               common.RECKONING_NOTORIOUS_COLLECTOR_HUNTER,
               common.RECKONING_NOTORIOUS_SENTRY_HUNTER,
@@ -843,7 +850,8 @@ export default ([
             ]
           },
           {
-            name: 'Titan armor',
+            name: 'Titan Armor',
+            season: 6,
             itemGroups: [
               common.RECKONING_NOTORIOUS_COLLECTOR_TITAN,
               common.RECKONING_NOTORIOUS_SENTRY_TITAN,
@@ -852,12 +860,20 @@ export default ([
             ]
           },
           {
-            name: 'Warlock armor',
+            name: 'Warlock Armor',
+            season: 6,
             itemGroups: [
               common.RECKONING_NOTORIOUS_COLLECTOR_WARLOCK,
               common.RECKONING_NOTORIOUS_SENTRY_WARLOCK,
               common.RECKONING_NOTORIOUS_INVADER_WARLOCK,
               common.RECKONING_NOTORIOUS_REAPER_WARLOCK
+            ]
+          },
+          {
+            name: 'Extras',
+            season: 6,
+            items: [
+              2868525732 // 	Wheel of Fortune
             ]
           }
         ]
