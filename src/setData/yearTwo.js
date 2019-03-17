@@ -760,7 +760,7 @@ export default ([
       {
         name: 'Illicit Set',
         description:
-          'The Gambit Prime Illicit armor, obtained from The Reckoning tier 1',
+          'The Gambit Prime Illicit armor, obtained from The Reckoning Tier 1',
         id: 'RECKONING_ILLICIT',
         sections: [
           {
@@ -798,7 +798,7 @@ export default ([
       {
         name: 'Outlawed Set',
         description:
-          'The Gambit Prime Outlawed armor, obtained from The Reckoning tier 2',
+          'The Gambit Prime Outlawed armor, obtained from The Reckoning Tier 2',
         id: 'RECKONING_ILLICIT',
         sections: [
           {
@@ -836,7 +836,7 @@ export default ([
       {
         name: 'Notorious Set',
         description:
-          'The Gambit Prime Notorious armor, obtained from The Reckoning tier 3',
+          'The Gambit Prime Notorious armor & gear, obtained from The Reckoning Tier 3',
         id: 'RECKONING_ILLICIT',
         sections: [
           {
