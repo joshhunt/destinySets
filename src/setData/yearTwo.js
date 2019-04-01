@@ -244,16 +244,13 @@ export default ([
             name: 'Prime Weapons',
             season: 6,
             items: [
-              821154603, // Gnawing Hunger
-              736901634, // Doomsday
               3116356268, // Spare Rations
               299665907, // Outlast
               3504336176, // Night Watch
               755130877, // Last Man Standing
               2199171672, // Lonesome
               1115104187, //  Sole Survivor
-              2744715540, // Bug-Out Bag
-              715338174 // Just in Case
+              2744715540 // Bug-Out Bag
             ]
           },
           {
@@ -839,6 +836,15 @@ export default ([
           'The Gambit Prime Notorious armor & gear, obtained from The Reckoning Tier 3',
         id: 'RECKONING_ILLICIT',
         sections: [
+          {
+            name: 'Weapons',
+            season: 6,
+            items: [
+              821154603, // Gnawing Hunger
+              715338174, // Just in Case
+              736901634 // Doomsday
+            ]
+          },
           {
             name: 'Hunter Armor',
             season: 6,
