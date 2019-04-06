@@ -795,9 +795,18 @@ export default ([
       {
         name: 'Outlawed Set',
         description:
-          'The Gambit Prime Outlawed armor, obtained from The Reckoning Tier 2',
+          'The Gambit Prime Outlawed armor & weapons, obtained from The Reckoning Tier 2',
         id: 'RECKONING_ILLICIT',
         sections: [
+          {
+            name: 'Weapons (Tier 2+)',
+            season: 6,
+            items: [
+              821154603, // Gnawing Hunger
+              715338174, // Just in Case
+              736901634 // Doomsday
+            ]
+          },
           {
             name: 'Hunter Armor',
             season: 6,
@@ -833,18 +842,9 @@ export default ([
       {
         name: 'Notorious Set',
         description:
-          'The Gambit Prime Notorious armor & gear, obtained from The Reckoning Tier 3',
+          'The Gambit Prime Notorious armor & flair, obtained from The Reckoning Tier 3',
         id: 'RECKONING_ILLICIT',
         sections: [
-          {
-            name: 'Weapons',
-            season: 6,
-            items: [
-              821154603, // Gnawing Hunger
-              715338174, // Just in Case
-              736901634 // Doomsday
-            ]
-          },
           {
             name: 'Hunter Armor',
             season: 6,
