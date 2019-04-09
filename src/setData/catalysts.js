@@ -17,6 +17,11 @@ export default ([
             name: 'Weapons',
             itemType: 'exoticCatalysts',
             items: [
+              3549153979, // The Prospector
+              2362471601, // Rat King
+              4124984448, // Hard Light
+              2856683562, // SUROS Regime  
+
               3549153978, // Fighting Lion
               1891561814, // Whisper of the Worm
               2907129556, // Sturm
