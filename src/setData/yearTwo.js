@@ -1377,7 +1377,7 @@ export default ([
         big: false,
         sections: [
           {
-            name: 'Hunter Armor',
+            name: 'Hunter Armor & Ornaments',
             season: 6,
             itemGroups: [
               [
@@ -1393,11 +1393,15 @@ export default ([
                 862152988, // Inaugural Revelry Vest
                 1839291598, // Inaugural Revelry Strides
                 2572547217 // Inaugural Revelry Cloak
+              ],
+              [
+                1027203767, //  Reveler's Wings
+                1027203766 // Reveler's Antlers
               ]
             ]
           },
           {
-            name: 'Titan Armor',
+            name: 'Titan Armor & Ornaments',
             season: 6,
             itemGroups: [
               [
@@ -1413,11 +1417,15 @@ export default ([
                 3796358144, // Inaugural Revelry Plate
                 156518114, // Inaugural Revelry Greaves
                 3148074173 // Inaugural Revelry Mark
+              ],
+              [
+                2665176423, // Reveler's Wings 
+                1685769250 // Reveler's Antlers
               ]
             ]
           },
           {
-            name: 'Warlock Armor',
+            name: 'Warlock Armor & Ornaments',
             season: 6,
             itemGroups: [
               [
@@ -1433,6 +1441,10 @@ export default ([
                 678051457, // Inaugural Revelry Chest
                 4094504409, // Inaugural Revelry Boots
                 1926693852 // Inaugural Revelry Bond
+              ],
+              [
+                2665176423, // Reveler's Wings
+                2665176422 // Reveler's Antlers
               ]
             ]
           },
@@ -1461,7 +1473,8 @@ export default ([
             items: [
               3105972942, // Dragonfly Projection
               3105972943, // Cheese Projection
-              3105972940 // Carrot Projection
+              3105972940, // Carrot Projection
+              3105972941 // Petalled Projection
             ]
           },
           {
@@ -1469,14 +1482,16 @@ export default ([
             season: 6,
             items: [
               281718534, // Circumpolar Light
-              281718535 // Equinoctial Edge
+              281718535, // Equinoctial Edge
+              2717540197 // The Saturnalian
             ]
           },
           {
             name: 'Ships',
             season: 6,
             items: [
-              2459768632 // The Mayfly
+              2459768632, // The Mayfly
+              3252358296 // Wander-CER
             ]
           },
           {
@@ -1486,7 +1501,9 @@ export default ([
               2868525733, // Simulant Spring
               2868525738, // Virescent
               1914989541, // Verdant Chrome
-              1914989540 // Verdant Crown
+              1914989540, // Verdant Crown
+              971728596, // Spring Breeze Effects
+              971728597 // Spring Fountain Effects
             ]
           }
         ]
