@@ -956,7 +956,6 @@ export default ([
                 301362380 // Terran Wind
               ],
               [
-                1673638926, // The Great Beyond
                 3031114503, // The Gambler's Palm
                 1673638926 // The Great Beyond 
               ]
