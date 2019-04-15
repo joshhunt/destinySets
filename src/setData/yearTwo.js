@@ -796,17 +796,8 @@ export default ([
         name: 'Outlawed Set',
         description:
           'The Gambit Prime Outlawed armor & weapons, obtained from The Reckoning Tier 2',
-        id: 'RECKONING_ILLICIT',
+        id: 'RECKONING_OUTLAWED',
         sections: [
-          {
-            name: 'Weapons (Tier 2+)',
-            season: 6,
-            items: [
-              821154603, // Gnawing Hunger
-              715338174, // Just in Case
-              736901634 // Doomsday
-            ]
-          },
           {
             name: 'Hunter Armor',
             season: 6,
@@ -836,6 +827,15 @@ export default ([
               common.RECKONING_OUTLAWED_INVADER_WARLOCK,
               common.RECKONING_OUTLAWED_REAPER_WARLOCK
             ]
+          },
+          {
+            name: 'Weapons (Tier 2+)',
+            season: 6,
+            items: [
+              821154603, // Gnawing Hunger
+              715338174, // Just in Case
+              736901634 // Doomsday
+            ]
           }
         ]
       },
@@ -843,7 +843,7 @@ export default ([
         name: 'Notorious Set',
         description:
           'The Gambit Prime Notorious armor & flair, obtained from The Reckoning Tier 3',
-        id: 'RECKONING_ILLICIT',
+        id: 'RECKONING_NOTORIOUS',
         sections: [
           {
             name: 'Hunter Armor',
@@ -956,8 +956,8 @@ export default ([
                 301362380 // Terran Wind
               ],
               [
-                1673638926, // The Great Beyond
-                3031114503 // The Gambler's Palm
+                3031114503, // The Gambler's Palm
+                1673638926 // The Great Beyond 
               ]
             ]
           },
