@@ -796,7 +796,7 @@ export default ([
         name: 'Outlawed Set',
         description:
           'The Gambit Prime Outlawed armor & weapons, obtained from The Reckoning Tier 2',
-        id: 'RECKONING_ILLICIT',
+        id: 'RECKONING_OUTLAWED',
         sections: [
           {
             name: 'Hunter Armor',
@@ -843,7 +843,7 @@ export default ([
         name: 'Notorious Set',
         description:
           'The Gambit Prime Notorious armor & flair, obtained from The Reckoning Tier 3',
-        id: 'RECKONING_ILLICIT',
+        id: 'RECKONING_NOTORIOUS',
         sections: [
           {
             name: 'Hunter Armor',
