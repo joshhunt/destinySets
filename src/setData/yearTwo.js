@@ -1454,7 +1454,9 @@ export default ([
             items: [
               2422643144, // Perfect Swing
               3946927545, // Stylish Fist Bump
-              4128095381 // Hyped Dance
+              2873996295, // Ricochet Dance
+              4128095381, // Hyped Dance
+              3035129091 // Glide Dance
             ]
           },
           {
@@ -1463,8 +1465,12 @@ export default ([
             items: [
               286098607, // Ladylike Shell
               286098604, // Lapine Shell
-              2179603798, // Revelry Masquerade Shell
-              2179603799 // Revelry Courier Shell
+              2179603795, // Hatchling Shell
+              2179603794, // Prophet Shell
+              2179603793, // Trostland Courier Shell
+              2179603792, // Verdant Infinity Shell
+              2179603799, // Revelry Courier Shell
+              2179603798 // Revelry Masquerade Shell
             ]
           },
           {
@@ -1483,7 +1489,12 @@ export default ([
             items: [
               281718534, // Circumpolar Light
               281718535, // Equinoctial Edge
-              2717540197 // The Saturnalian
+              2717540197, // The Saturnalian
+              2717540196, // Saturnalia-DAI-SP1
+              2717540199, // Raucous Edge
+              2717540198, // The Merry Gunner
+              2717540193, // The Festive Hauler
+              2717540192 // The Convivial Racer
             ]
           },
           {
@@ -1491,6 +1502,11 @@ export default ([
             season: 6,
             items: [
               2459768632, // The Mayfly
+              3252358301, // Carouse-CER
+              3252358300, // Congregate-IS
+              3252358303, // Wassail-CER
+              3252358302, // Equatorial Equilibrium
+              3252358297, // Bombos-CER
               3252358296 // Wander-CER
             ]
           },
@@ -1500,6 +1516,7 @@ export default ([
             items: [
               2868525733, // Simulant Spring
               2868525738, // Virescent
+              2133500860, // Answered Call
               1914989541, // Verdant Chrome
               1914989540, // Verdant Crown
               971728596, // Spring Breeze Effects
