@@ -1516,6 +1516,7 @@ export default ([
             items: [
               2868525733, // Simulant Spring
               2868525738, // Virescent
+              2133500860, // Answered Call
               1914989541, // Verdant Chrome
               1914989540, // Verdant Crown
               971728596, // Spring Breeze Effects
