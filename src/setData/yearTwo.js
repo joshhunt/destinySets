@@ -1419,7 +1419,7 @@ export default ([
                 3148074173 // Inaugural Revelry Mark
               ],
               [
-                2665176423, // Reveler's Wings 
+                1685769251, // Reveler's Wings 
                 1685769250 // Reveler's Antlers
               ]
             ]
