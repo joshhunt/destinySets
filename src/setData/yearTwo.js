@@ -90,6 +90,7 @@ export default ([
               2935851862, // Struck a Nerve (Emblem)
               2294983474, // Honor of the Vanguard (Emblem)
               2294983475, // Strikes of All Stripes (Emblem)
+              1987790789, // After the Nightfall (Emblem)
               1263710510, // Always North (Shader)
               2788911999, // Vanguard Veteran (Shader)
               2788911998, // Vanguard Metallic (Shader)
