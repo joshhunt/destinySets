@@ -90,6 +90,7 @@ export default ([
               2935851862, // Struck a Nerve (Emblem)
               2294983474, // Honor of the Vanguard (Emblem)
               2294983475, // Strikes of All Stripes (Emblem)
+              1987790789, // After the Nightfall (Emblem)
               1263710510, // Always North (Shader)
               2788911999, // Vanguard Veteran (Shader)
               2788911998, // Vanguard Metallic (Shader)
@@ -244,16 +245,13 @@ export default ([
             name: 'Prime Weapons',
             season: 6,
             items: [
-              821154603, // Gnawing Hunger
-              736901634, // Doomsday
               3116356268, // Spare Rations
               299665907, // Outlast
               3504336176, // Night Watch
               755130877, // Last Man Standing
               2199171672, // Lonesome
               1115104187, //  Sole Survivor
-              2744715540, // Bug-Out Bag
-              715338174 // Just in Case
+              2744715540 // Bug-Out Bag
             ]
           },
           {
@@ -760,11 +758,12 @@ export default ([
       {
         name: 'Illicit Set',
         description:
-          'The Gambit Prime Illicit armor, obtained from The Reckoning tier 1',
+          'The Gambit Prime Illicit armor, obtained from The Reckoning Tier 1',
         id: 'RECKONING_ILLICIT',
         sections: [
           {
-            name: 'Hunter armor',
+            name: 'Hunter Armor',
+            season: 6,
             itemGroups: [
               common.RECKONING_ILLICIT_COLLECTOR_HUNTER,
               common.RECKONING_ILLICIT_SENTRY_HUNTER,
@@ -773,7 +772,8 @@ export default ([
             ]
           },
           {
-            name: 'Titan armor',
+            name: 'Titan Armor',
+            season: 6,
             itemGroups: [
               common.RECKONING_ILLICIT_COLLECTOR_TITAN,
               common.RECKONING_ILLICIT_SENTRY_TITAN,
@@ -782,7 +782,8 @@ export default ([
             ]
           },
           {
-            name: 'Warlock armor',
+            name: 'Warlock Armor',
+            season: 6,
             itemGroups: [
               common.RECKONING_ILLICIT_COLLECTOR_WARLOCK,
               common.RECKONING_ILLICIT_SENTRY_WARLOCK,
@@ -795,11 +796,12 @@ export default ([
       {
         name: 'Outlawed Set',
         description:
-          'The Gambit Prime Outlawed armor, obtained from The Reckoning tier 2',
-        id: 'RECKONING_ILLICIT',
+          'The Gambit Prime Outlawed armor & weapons, obtained from The Reckoning Tier 2',
+        id: 'RECKONING_OUTLAWED',
         sections: [
           {
-            name: 'Hunter armor',
+            name: 'Hunter Armor',
+            season: 6,
             itemGroups: [
               common.RECKONING_OUTLAWED_COLLECTOR_HUNTER,
               common.RECKONING_OUTLAWED_SENTRY_HUNTER,
@@ -808,7 +810,8 @@ export default ([
             ]
           },
           {
-            name: 'Titan armor',
+            name: 'Titan Armor',
+            season: 6,
             itemGroups: [
               common.RECKONING_OUTLAWED_COLLECTOR_TITAN,
               common.RECKONING_OUTLAWED_SENTRY_TITAN,
@@ -817,12 +820,22 @@ export default ([
             ]
           },
           {
-            name: 'Warlock armor',
+            name: 'Warlock Armor',
+            season: 6,
             itemGroups: [
               common.RECKONING_OUTLAWED_COLLECTOR_WARLOCK,
               common.RECKONING_OUTLAWED_SENTRY_WARLOCK,
               common.RECKONING_OUTLAWED_INVADER_WARLOCK,
               common.RECKONING_OUTLAWED_REAPER_WARLOCK
+            ]
+          },
+          {
+            name: 'Weapons (Tier 2+)',
+            season: 6,
+            items: [
+              821154603, // Gnawing Hunger
+              715338174, // Just in Case
+              736901634 // Doomsday
             ]
           }
         ]
@@ -830,11 +843,12 @@ export default ([
       {
         name: 'Notorious Set',
         description:
-          'The Gambit Prime Notorious armor, obtained from The Reckoning tier 3',
-        id: 'RECKONING_ILLICIT',
+          'The Gambit Prime Notorious armor & flair, obtained from The Reckoning Tier 3',
+        id: 'RECKONING_NOTORIOUS',
         sections: [
           {
-            name: 'Hunter armor',
+            name: 'Hunter Armor',
+            season: 6,
             itemGroups: [
               common.RECKONING_NOTORIOUS_COLLECTOR_HUNTER,
               common.RECKONING_NOTORIOUS_SENTRY_HUNTER,
@@ -843,7 +857,8 @@ export default ([
             ]
           },
           {
-            name: 'Titan armor',
+            name: 'Titan Armor',
+            season: 6,
             itemGroups: [
               common.RECKONING_NOTORIOUS_COLLECTOR_TITAN,
               common.RECKONING_NOTORIOUS_SENTRY_TITAN,
@@ -852,12 +867,20 @@ export default ([
             ]
           },
           {
-            name: 'Warlock armor',
+            name: 'Warlock Armor',
+            season: 6,
             itemGroups: [
               common.RECKONING_NOTORIOUS_COLLECTOR_WARLOCK,
               common.RECKONING_NOTORIOUS_SENTRY_WARLOCK,
               common.RECKONING_NOTORIOUS_INVADER_WARLOCK,
               common.RECKONING_NOTORIOUS_REAPER_WARLOCK
+            ]
+          },
+          {
+            name: 'Extras',
+            season: 6,
+            items: [
+              2868525732 // 	Wheel of Fortune
             ]
           }
         ]
@@ -934,8 +957,8 @@ export default ([
                 301362380 // Terran Wind
               ],
               [
-                1673638926, // The Great Beyond
-                3031114503 // The Gambler's Palm
+                3031114503, // The Gambler's Palm
+                1673638926 // The Great Beyond 
               ]
             ]
           },
@@ -1355,7 +1378,7 @@ export default ([
         big: false,
         sections: [
           {
-            name: 'Hunter Armor',
+            name: 'Hunter Armor & Ornaments',
             season: 6,
             itemGroups: [
               [
@@ -1371,11 +1394,15 @@ export default ([
                 862152988, // Inaugural Revelry Vest
                 1839291598, // Inaugural Revelry Strides
                 2572547217 // Inaugural Revelry Cloak
+              ],
+              [
+                1027203767, //  Reveler's Wings
+                1027203766 // Reveler's Antlers
               ]
             ]
           },
           {
-            name: 'Titan Armor',
+            name: 'Titan Armor & Ornaments',
             season: 6,
             itemGroups: [
               [
@@ -1391,11 +1418,15 @@ export default ([
                 3796358144, // Inaugural Revelry Plate
                 156518114, // Inaugural Revelry Greaves
                 3148074173 // Inaugural Revelry Mark
+              ],
+              [
+                1685769251, // Reveler's Wings 
+                1685769250 // Reveler's Antlers
               ]
             ]
           },
           {
-            name: 'Warlock Armor',
+            name: 'Warlock Armor & Ornaments',
             season: 6,
             itemGroups: [
               [
@@ -1411,6 +1442,10 @@ export default ([
                 678051457, // Inaugural Revelry Chest
                 4094504409, // Inaugural Revelry Boots
                 1926693852 // Inaugural Revelry Bond
+              ],
+              [
+                2665176423, // Reveler's Wings
+                2665176422 // Reveler's Antlers
               ]
             ]
           },
@@ -1420,7 +1455,9 @@ export default ([
             items: [
               2422643144, // Perfect Swing
               3946927545, // Stylish Fist Bump
-              4128095381 // Hyped Dance
+              2873996295, // Ricochet Dance
+              4128095381, // Hyped Dance
+              3035129091 // Glide Dance
             ]
           },
           {
@@ -1429,8 +1466,12 @@ export default ([
             items: [
               286098607, // Ladylike Shell
               286098604, // Lapine Shell
-              2179603798, // Revelry Masquerade Shell
-              2179603799 // Revelry Courier Shell
+              2179603795, // Hatchling Shell
+              2179603794, // Prophet Shell
+              2179603793, // Trostland Courier Shell
+              2179603792, // Verdant Infinity Shell
+              2179603799, // Revelry Courier Shell
+              2179603798 // Revelry Masquerade Shell
             ]
           },
           {
@@ -1439,7 +1480,8 @@ export default ([
             items: [
               3105972942, // Dragonfly Projection
               3105972943, // Cheese Projection
-              3105972940 // Carrot Projection
+              3105972940, // Carrot Projection
+              3105972941 // Petalled Projection
             ]
           },
           {
@@ -1447,14 +1489,26 @@ export default ([
             season: 6,
             items: [
               281718534, // Circumpolar Light
-              281718535 // Equinoctial Edge
+              281718535, // Equinoctial Edge
+              2717540197, // The Saturnalian
+              2717540196, // Saturnalia-DAI-SP1
+              2717540199, // Raucous Edge
+              2717540198, // The Merry Gunner
+              2717540193, // The Festive Hauler
+              2717540192 // The Convivial Racer
             ]
           },
           {
             name: 'Ships',
             season: 6,
             items: [
-              2459768632 // The Mayfly
+              2459768632, // The Mayfly
+              3252358301, // Carouse-CER
+              3252358300, // Congregate-IS
+              3252358303, // Wassail-CER
+              3252358302, // Equatorial Equilibrium
+              3252358297, // Bombos-CER
+              3252358296 // Wander-CER
             ]
           },
           {
@@ -1463,8 +1517,11 @@ export default ([
             items: [
               2868525733, // Simulant Spring
               2868525738, // Virescent
+              2133500860, // Answered Call
               1914989541, // Verdant Chrome
-              1914989540 // Verdant Crown
+              1914989540, // Verdant Crown
+              971728596, // Spring Breeze Effects
+              971728597 // Spring Fountain Effects
             ]
           }
         ]
