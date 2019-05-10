@@ -806,6 +806,15 @@ export default ([
         id: 'RECKONING_OUTLAWED',
         sections: [
           {
+            name: 'Weapons (Tier 2 & 3)',
+            season: 6,
+            items: [
+              821154603, // Gnawing Hunger
+              715338174, // Just in Case
+              736901634 // Doomsday
+            ]
+          },
+          {
             name: 'Hunter Armor',
             season: 6,
             itemGroups: [
@@ -833,15 +842,6 @@ export default ([
               common.RECKONING_OUTLAWED_SENTRY_WARLOCK,
               common.RECKONING_OUTLAWED_INVADER_WARLOCK,
               common.RECKONING_OUTLAWED_REAPER_WARLOCK
-            ]
-          },
-          {
-            name: 'Weapons (Tier 2+)',
-            season: 6,
-            items: [
-              821154603, // Gnawing Hunger
-              715338174, // Just in Case
-              736901634 // Doomsday
             ]
           }
         ]
