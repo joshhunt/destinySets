@@ -1,5 +1,6 @@
 // @flow
 import type { SetPage } from '../types';
+import * as common from './common';
 import { i18nDefinitionString as _ } from './utils';
 
 export default ([
@@ -35,6 +36,13 @@ export default ([
             items: [
               792755504, // Nightshade
               4083045006 // Persuader
+            ]
+          },
+          {
+            name: 'Weapons',
+            season: 6,
+            items: [
+              834081972 //  Service Revolver
             ]
           },
           {
@@ -82,6 +90,7 @@ export default ([
               2935851862, // Struck a Nerve (Emblem)
               2294983474, // Honor of the Vanguard (Emblem)
               2294983475, // Strikes of All Stripes (Emblem)
+              1987790789, // After the Nightfall (Emblem)
               1263710510, // Always North (Shader)
               2788911999, // Vanguard Veteran (Shader)
               2788911998, // Vanguard Metallic (Shader)
@@ -94,6 +103,13 @@ export default ([
             items: [
               912222548, // Soldier On (Emblem)
               274843196 // Vanguard Unyielding (Shader)
+            ]
+          },
+          {
+            name: 'Extras',
+            season: 6,
+            items: [
+              3215252549 // Determination
             ]
           }
         ]
@@ -127,6 +143,13 @@ export default ([
             items: [
               3356526253, // Wishbringer
               2278995296 // Does Not Compute
+            ]
+          },
+          {
+            name: 'Weapons',
+            season: 6,
+            items: [
+              188882152 // Last Perdition
             ]
           },
           {
@@ -183,6 +206,13 @@ export default ([
               2414564781, // Punctuation Marks (Emblem)
               769099721 // Devil in the Details (Shader)
             ]
+          },
+          {
+            name: 'Extras',
+            season: 6,
+            items: [
+              2632846356 // Rain of Ashes
+            ]
           }
         ]
       },
@@ -209,6 +239,19 @@ export default ([
               991314988, // Bad Omens
               3100452337, // Dreaded Venture
               2217366863 // Parcel of Stardust
+            ]
+          },
+          {
+            name: 'Prime Weapons',
+            season: 6,
+            items: [
+              3116356268, // Spare Rations
+              299665907, // Outlast
+              3504336176, // Night Watch
+              755130877, // Last Man Standing
+              2199171672, // Lonesome
+              1115104187, //  Sole Survivor
+              2744715540 // Bug-Out Bag
             ]
           },
           {
@@ -269,6 +312,18 @@ export default ([
               2394866220, // Keep on Drifting
               3217477988 // Gambit Duds
             ]
+          },
+          {
+            name: 'Prime Extras',
+            season: 6,
+            items: [
+              2868525742, // The Reaper
+              2868525741, // The Invader
+              2868525740, // The Collector
+              2868525743, // The Sentry
+              3808901541, // Viper Strike
+              3735277403 // Prime Palette
+            ]
           }
         ]
       },
@@ -304,6 +359,14 @@ export default ([
             ]
           },
           {
+            name: 'Weapons',
+            season: 6,
+            items: [
+              930590127, // The Wizened Rebuke
+              2108920981 // Orewing's Maul
+            ]
+          },
+          {
             name: 'Hunter Armor',
             season: 4,
             items: [
@@ -323,6 +386,17 @@ export default ([
               2753509502, // Iron Fellowship Vest
               258029924, // Iron Fellowship Strides
               2083136519 // Iron Fellowship Cloak
+            ]
+          },
+          {
+            name: 'Hunter Armor',
+            season: 6,
+            items: [
+              1618191618, // Iron Symmachy Mask
+              957732971, // Iron Symmachy Grips
+              3112906149, // Iron Symmachy Vest
+              2049490557, // Iron Symmachy Strides
+              2234855160 // Iron Symmachy Cloak
             ]
           },
           {
@@ -348,6 +422,17 @@ export default ([
             ]
           },
           {
+            name: 'Titan Armor',
+            season: 6,
+            items: [
+              1127757814, // Iron Symmachy Helm
+              2331748167, // Iron Symmachy Gauntlets
+              3420845681, // Iron Symmachy Plate
+              1084553865, // Iron Symmachy Greaves
+              1279731468 // Iron Symmachy Mark
+            ]
+          },
+          {
             name: 'Warlock Armor',
             season: 4,
             items: [
@@ -370,6 +455,17 @@ export default ([
             ]
           },
           {
+            name: 'Warlock Armor',
+            season: 6,
+            items: [
+              3147146325, // Iron Symmachy Hood
+              1822989604, // Iron Symmachy Gloves
+              3543613212, // Iron Symmachy Robes
+              3753635534, // Iron Symmachy Boots
+              959040145 // Iron Symmachy Bond"
+            ]
+          },
+          {
             name: 'Extras',
             season: 4,
             items: [
@@ -382,6 +478,16 @@ export default ([
             items: [
               1162929425, // The Golden Standard (Emblem)
               231533811 // Iron Strength (Shader)
+            ]
+          },
+          {
+            name: 'Extras',
+            season: 6,
+            items: [
+              1368521327, // Volk-CER (Ship)
+              2868525736, // The Weight of Guilt (Emblem)
+              2868525739, // Heavy as Death (Emblem)
+              1987234560 // Iron Ruby (Shader)
             ]
           }
         ]
@@ -500,7 +606,7 @@ export default ([
                 3650581586, // Rasmussen Clan
                 3650581587, // House of Meyrin
                 3650581588, // Satou Tribe
-                3650581589 // Bergusian Night 
+                3650581589 // Bergusian Night
               ]
             ]
           }
@@ -584,7 +690,10 @@ export default ([
       {
         name: 'Raid: Scourge of the Past',
         id: 'YEAR_TWO_RAID_BLACK_ARMORY',
-        description: 'Found in the "Scourge of the Past" raid lair.',
+        description: _(
+          'DestinyCollectibleDefinition[982798874].sourceString',
+          'Found in the "Scourge of the Past" raid.'
+        ),
         sections: [
           {
             name: 'Weapons',
@@ -642,6 +751,143 @@ export default ([
       }
     ]
   },
+
+  {
+    name: 'The Reckoning',
+    sets: [
+      {
+        name: 'Illicit Set',
+        description:
+          'The Gambit Prime Illicit armor, obtained from The Reckoning Tier 1',
+        id: 'RECKONING_ILLICIT',
+        sections: [
+          {
+            name: 'Hunter Armor',
+            season: 6,
+            itemGroups: [
+              common.RECKONING_ILLICIT_COLLECTOR_HUNTER,
+              common.RECKONING_ILLICIT_SENTRY_HUNTER,
+              common.RECKONING_ILLICIT_INVADER_HUNTER,
+              common.RECKONING_ILLICIT_REAPER_HUNTER
+            ]
+          },
+          {
+            name: 'Titan Armor',
+            season: 6,
+            itemGroups: [
+              common.RECKONING_ILLICIT_COLLECTOR_TITAN,
+              common.RECKONING_ILLICIT_SENTRY_TITAN,
+              common.RECKONING_ILLICIT_INVADER_TITAN,
+              common.RECKONING_ILLICIT_REAPER_TITAN
+            ]
+          },
+          {
+            name: 'Warlock Armor',
+            season: 6,
+            itemGroups: [
+              common.RECKONING_ILLICIT_COLLECTOR_WARLOCK,
+              common.RECKONING_ILLICIT_SENTRY_WARLOCK,
+              common.RECKONING_ILLICIT_INVADER_WARLOCK,
+              common.RECKONING_ILLICIT_REAPER_WARLOCK
+            ]
+          }
+        ]
+      },
+      {
+        name: 'Outlawed Set',
+        description:
+          'The Gambit Prime Outlawed armor & weapons, obtained from The Reckoning Tier 2',
+        id: 'RECKONING_OUTLAWED',
+        sections: [
+          {
+            name: 'Hunter Armor',
+            season: 6,
+            itemGroups: [
+              common.RECKONING_OUTLAWED_COLLECTOR_HUNTER,
+              common.RECKONING_OUTLAWED_SENTRY_HUNTER,
+              common.RECKONING_OUTLAWED_INVADER_HUNTER,
+              common.RECKONING_OUTLAWED_REAPER_HUNTER
+            ]
+          },
+          {
+            name: 'Titan Armor',
+            season: 6,
+            itemGroups: [
+              common.RECKONING_OUTLAWED_COLLECTOR_TITAN,
+              common.RECKONING_OUTLAWED_SENTRY_TITAN,
+              common.RECKONING_OUTLAWED_INVADER_TITAN,
+              common.RECKONING_OUTLAWED_REAPER_TITAN
+            ]
+          },
+          {
+            name: 'Warlock Armor',
+            season: 6,
+            itemGroups: [
+              common.RECKONING_OUTLAWED_COLLECTOR_WARLOCK,
+              common.RECKONING_OUTLAWED_SENTRY_WARLOCK,
+              common.RECKONING_OUTLAWED_INVADER_WARLOCK,
+              common.RECKONING_OUTLAWED_REAPER_WARLOCK
+            ]
+          },
+          {
+            name: 'Weapons (Tier 2+)',
+            season: 6,
+            items: [
+              821154603, // Gnawing Hunger
+              715338174, // Just in Case
+              736901634 // Doomsday
+            ]
+          }
+        ]
+      },
+      {
+        name: 'Notorious Set',
+        description:
+          'The Gambit Prime Notorious armor & flair, obtained from The Reckoning Tier 3',
+        id: 'RECKONING_NOTORIOUS',
+        sections: [
+          {
+            name: 'Hunter Armor',
+            season: 6,
+            itemGroups: [
+              common.RECKONING_NOTORIOUS_COLLECTOR_HUNTER,
+              common.RECKONING_NOTORIOUS_SENTRY_HUNTER,
+              common.RECKONING_NOTORIOUS_INVADER_HUNTER,
+              common.RECKONING_NOTORIOUS_REAPER_HUNTER
+            ]
+          },
+          {
+            name: 'Titan Armor',
+            season: 6,
+            itemGroups: [
+              common.RECKONING_NOTORIOUS_COLLECTOR_TITAN,
+              common.RECKONING_NOTORIOUS_SENTRY_TITAN,
+              common.RECKONING_NOTORIOUS_INVADER_TITAN,
+              common.RECKONING_NOTORIOUS_REAPER_TITAN
+            ]
+          },
+          {
+            name: 'Warlock Armor',
+            season: 6,
+            itemGroups: [
+              common.RECKONING_NOTORIOUS_COLLECTOR_WARLOCK,
+              common.RECKONING_NOTORIOUS_SENTRY_WARLOCK,
+              common.RECKONING_NOTORIOUS_INVADER_WARLOCK,
+              common.RECKONING_NOTORIOUS_REAPER_WARLOCK
+            ]
+          },
+          {
+            name: 'Extras',
+            season: 6,
+            items: [
+              2868525732 // 	Wheel of Fortune
+            ]
+          }
+        ]
+      }
+    ]
+  },
+
   {
     name: 'Destinations',
     sets: [
@@ -711,13 +957,13 @@ export default ([
                 301362380 // Terran Wind
               ],
               [
-                1673638926, // The Great Beyond
-                3031114503 // The Gambler's Palm
+                3031114503, // The Gambler's Palm
+                1673638926 // The Great Beyond 
               ]
             ]
           },
           {
-            name: "Baron Exclusive Gear",
+            name: 'Baron Exclusive Gear',
             season: 4,
             itemGroups: [
               [
@@ -830,6 +1076,7 @@ export default ([
       {
         name: 'Festival of the Lost',
         id: 'YEAR_TWO_FESTIVAL_OF_THE_LOST',
+        description: 'Earned during the seasonal Festival of the Lost event.',
         big: false,
         sections: [
           {
@@ -976,6 +1223,7 @@ export default ([
       {
         name: 'The Dawning',
         id: 'YEAR_TWO_THE_DAWNING',
+        description: 'Earned during the seasonal Dawning event.',
         big: false,
         sections: [
           {
@@ -1101,6 +1349,10 @@ export default ([
       {
         name: 'Crimson Days',
         id: 'YEAR_TWO_CRIMSON_DAYS',
+        description: _(
+          'DestinyCollectibleDefinition[2772970661].sourceString',
+          'Earned during the seasonal Crimson Days event.'
+        ),
         big: false,
         sections: [
           {
@@ -1115,6 +1367,161 @@ export default ([
             season: 5,
             items: [
               679887739 // Sugary Shell
+            ]
+          }
+        ]
+      },
+      {
+        name: 'The Revelry',
+        id: 'YEAR_TWO_THE_REVELRY',
+        description: 'Earned during the seasonal Revelry event.',
+        big: false,
+        sections: [
+          {
+            name: 'Hunter Armor & Ornaments',
+            season: 6,
+            itemGroups: [
+              [
+                53761356, // Vernal Growth Mask
+                3503026437, // Vernal Growth Grips
+                1165027035, // Vernal Growth Vest
+                3425898631, // Vernal Growth Strides
+                4199694578 // Vernal Growth Cloak
+              ],
+              [
+                1232802389, // Inaugural Revelry Mask
+                4203612964, // Inaugural Revelry Grips
+                862152988, // Inaugural Revelry Vest
+                1839291598, // Inaugural Revelry Strides
+                2572547217 // Inaugural Revelry Cloak
+              ],
+              [
+                1027203767, //  Reveler's Wings
+                1027203766 // Reveler's Antlers
+              ]
+            ]
+          },
+          {
+            name: 'Titan Armor & Ornaments',
+            season: 6,
+            itemGroups: [
+              [
+                1821343040, // Vernal Growth Helm
+                3682383633, // Vernal Growth Gauntlets
+                4079552711, // Vernal Growth Plate
+                3089075939, // Vernal Growth Greaves
+                500083158 // Vernal Growth Mark
+              ],
+              [
+                438524081, // Inaugural Revelry Helm
+                3350146056, // Inaugural Revelry Gauntlets
+                3796358144, // Inaugural Revelry Plate
+                156518114, // Inaugural Revelry Greaves
+                3148074173 // Inaugural Revelry Mark
+              ],
+              [
+                1685769251, // Reveler's Wings 
+                1685769250 // Reveler's Antlers
+              ]
+            ]
+          },
+          {
+            name: 'Warlock Armor & Ornaments',
+            season: 6,
+            itemGroups: [
+              [
+                1356657785, // Vernal Growth Hood
+                870019568, // Vernal Growth Gloves
+                2967148056, // Vernal Growth Robes
+                1187078090, // Vernal Growth Boots
+                1362642485 // Vernal Growth Bond
+              ],
+              [
+                3738044006, // Inaugural Revelry Hood
+                2710427191, // Inaugural Revelry Gloves
+                678051457, // Inaugural Revelry Chest
+                4094504409, // Inaugural Revelry Boots
+                1926693852 // Inaugural Revelry Bond
+              ],
+              [
+                2665176423, // Reveler's Wings
+                2665176422 // Reveler's Antlers
+              ]
+            ]
+          },
+          {
+            name: 'Emotes',
+            season: 6,
+            items: [
+              2422643144, // Perfect Swing
+              3946927545, // Stylish Fist Bump
+              2873996295, // Ricochet Dance
+              4128095381, // Hyped Dance
+              3035129091 // Glide Dance
+            ]
+          },
+          {
+            name: 'Ghosts',
+            season: 6,
+            items: [
+              286098607, // Ladylike Shell
+              286098604, // Lapine Shell
+              2179603795, // Hatchling Shell
+              2179603794, // Prophet Shell
+              2179603793, // Trostland Courier Shell
+              2179603792, // Verdant Infinity Shell
+              2179603799, // Revelry Courier Shell
+              2179603798 // Revelry Masquerade Shell
+            ]
+          },
+          {
+            name: 'Ghost Projections',
+            season: 6,
+            items: [
+              3105972942, // Dragonfly Projection
+              3105972943, // Cheese Projection
+              3105972940, // Carrot Projection
+              3105972941 // Petalled Projection
+            ]
+          },
+          {
+            name: 'Sparrows',
+            season: 6,
+            items: [
+              281718534, // Circumpolar Light
+              281718535, // Equinoctial Edge
+              2717540197, // The Saturnalian
+              2717540196, // Saturnalia-DAI-SP1
+              2717540199, // Raucous Edge
+              2717540198, // The Merry Gunner
+              2717540193, // The Festive Hauler
+              2717540192 // The Convivial Racer
+            ]
+          },
+          {
+            name: 'Ships',
+            season: 6,
+            items: [
+              2459768632, // The Mayfly
+              3252358301, // Carouse-CER
+              3252358300, // Congregate-IS
+              3252358303, // Wassail-CER
+              3252358302, // Equatorial Equilibrium
+              3252358297, // Bombos-CER
+              3252358296 // Wander-CER
+            ]
+          },
+          {
+            name: 'Extras',
+            season: 6,
+            items: [
+              2868525733, // Simulant Spring
+              2868525738, // Virescent
+              2133500860, // Answered Call
+              1914989541, // Verdant Chrome
+              1914989540, // Verdant Crown
+              971728596, // Spring Breeze Effects
+              971728597 // Spring Fountain Effects
             ]
           }
         ]
@@ -1304,6 +1711,33 @@ export default ([
             ]
           },
           {
+            name: 'Armor',
+            season: 6,
+            itemGroups: [
+              [
+                2647162463, // Neoteric Kiyot Mask
+                2622606502, // Neoteric Kiyot Grasps
+                3532819274, // Neoteric Kiyot Vest
+                2140059040, // Neoteric Kiyot Strides
+                3703602779 // Neoteric Kiyot Cloak
+              ],
+              [
+                2001565587, // Sunbreak Helm
+                3789539490, // Sunbreak Gauntlets
+                729400710, // Sunbreak Plate
+                2004752092, // Sunbreak Greaves
+                1471849583 // Sunbreak Mark
+              ],
+              [
+                1178752364, // Mantle of the Cormorant Blade
+                333050149, // Gloves of the Cormorant Blade
+                189621627, // Duster of the Cormorant Blade
+                680379815, // Boots of the Cormorant Blade
+                2841305106 // Bond of the Cormorant Blade
+              ]
+            ]
+          },
+          {
             name: 'Ornaments',
             season: 4,
             itemGroups: [
@@ -1383,6 +1817,42 @@ export default ([
             ]
           },
           {
+            name: 'Ornaments',
+            season: 6,
+            itemGroups: [
+              [
+                3151260458, // Caution: Heavy Machinery
+                3844549116, // Vigil for Saint-14
+                2634511221, // Vostok
+                1535205434, // Climate Change
+                898795824, // The Colony XZ812
+                1865779065, // Four-Headed Mongrel
+                1473300982, // Red String of Fate
+                3009090211 // The Panama Ravine
+              ],
+              [
+                1084411177, // Draws Nigh
+                2805728757, // Insomnia
+                1226148028, // Ozymandias
+                613746953, // Out of Place
+                2812946864, // At Any Cost
+                2302790381, // The Bunker
+                3020192510, // Powerful Statement
+                1125119861, // 87% Ennui
+                1546799103, // Perfluorocarbon
+                1414396215 // Itsy-Bitsy Spider
+              ],
+              [
+                1397707366, // Unyielding
+                3542571269, // Thalia's Reach
+                2365935989, // Ursus Maritimus
+                1505928251, // Otto's Resolve
+                164776724, // The Hateful Wish
+                159907007 // Ayrin's Swagger
+              ]
+            ]
+          },
+          {
             name: 'Emotes',
             season: 4,
             items: [
@@ -1425,6 +1895,26 @@ export default ([
               2528830834, // Oh Snap
               1372151242, // Silly Salute
               2321189501 // You
+            ]
+          },
+          {
+            name: 'Emotes',
+            season: 6,
+            items: [
+              2218275250, // Chair Pop
+              2272950849, // Chicken Dinner
+              3559259728, // Rock Out
+              1652440677, // Cup of Tea
+              3217972777, // Respectful Handshake
+              2879093413, // Boxer's Dance
+              240371989, // Grooving
+              442845394, // Cloister Dance
+              1552235509, // Newish Dance
+              2134292552, // Shake Dance
+              3558549449, // Reload
+              1005293753, // Directed Plea
+              3517258101, // Wasn't Me
+              925771554 // Watching You
             ]
           },
           {
@@ -1476,6 +1966,25 @@ export default ([
             ]
           },
           {
+            name: 'Ghosts',
+            season: 6,
+            items: [
+              527607310, // Hissing Silence Shell
+              527607309, // Plasma Shell
+              527607308, // Sunshot Shell
+              2371653985, // Lilac Bell Shell
+              2371653986, // Stalwart Shell
+              2371653987, // Arch Shell
+              2371653988, // Bulwark Shell
+              2371653989, // Poison Courier Shell
+              2371653990, // Tastemaker Shell
+              2371653991, // Worrier Shell
+              2371653992, // Vanguard Courier Shell
+              2371653993, // City Courier Shell
+              3921206146 // Subterfuge Shell
+            ]
+          },
+          {
             name: 'Ghost Projections',
             season: 4,
             items: [
@@ -1509,6 +2018,22 @@ export default ([
               2233846234, // Quill and Ink Projection
               2233846233, // Lost Treasure Projection
               2233846232 // Clashing Projection
+            ]
+          },
+          {
+            name: 'Ghost Projections',
+            season: 6,
+            items: [
+              403349193, // Treacherous Projection
+              403349192, // SIVA Projection
+              403349195, // Crane Projection
+              403349194, // Viper Projection
+              668465162, // Mote Projection
+              668465163, // Invade! Projection
+              668465164, // Bank! Projection
+              668465165, // Collect! Projection
+              668465166, // Fight! Projection
+              668465167 // Twin Snake Projection
             ]
           },
           {
@@ -1553,6 +2078,25 @@ export default ([
               4085575828, // Eidolon Bird
               4085575835, // Spinning Spinning
               4085575834 // Pegasus Bravo
+            ]
+          },
+          {
+            name: 'Sparrows',
+            season: 6,
+            items: [
+              928095169, // Barebones SL-19
+              928095168, // Another Inspired Idea
+              928095170, // Praxic Finery
+              3330250540, // Sunny Disposition
+              3330250541, // Aerolite HW-42
+              2816146407, // Bitter Poison
+              2816146406, // Beat Patrol
+              3330250542, // The Whipcrack
+              3330250543, // Spaded Knife
+              3330250538, // Sgian Dubh
+              3330250539, // Praxic Justice
+              3330250532, // Arion
+              3330250533 // RJSV 99-40
             ]
           },
           {
@@ -1601,6 +2145,24 @@ export default ([
             ]
           },
           {
+            name: 'Ships',
+            season: 6,
+            items: [
+              554648944, // Skulking Fox
+              554648947, // Threat Display
+              4063523622, // Vimana-S
+              4063523623, // Reclaimer-IS
+              1871791701, // Monument-CER
+              1871791700, // Ignition-CER
+              4063523621, // Broadcast-IS
+              4063523618, // Egbe-01X
+              4063523619, // Safe Passage
+              4063523616, // Holacanthus
+              4063523630, // DSV-Huygens IX
+              4063523631 // SCRAP MS-123-88
+            ]
+          },
+          {
             name: 'Shaders',
             season: 4,
             items: [
@@ -1626,6 +2188,18 @@ export default ([
             ]
           },
           {
+            name: 'Shaders',
+            season: 6,
+            items: [
+              915277997, // Bloody Tooth
+              915277996, // Atlantic Rush
+              915277995, // Chrome Stock
+              915277994, // Verdigris
+              915277993, // Reefmade
+              915277992 // Warbrick
+            ]
+          },
+          {
             name: 'Transmat Effects',
             season: 4,
             items: [
@@ -1643,6 +2217,16 @@ export default ([
               1866581850, // Only the Finest
               1866581849, // Guiding Light
               1866581848 // The Past Unearthed
+            ]
+          },
+          {
+            name: 'Transmat Effects',
+            season: 6,
+            items: [
+              1556665148, // Twin Snake Effects
+              1556665149, // Jade Coin Effects
+              1556665150, // Sterile Neutrino Effects
+              1556665151 // Illicit Transmat Effects
             ]
           }
         ]

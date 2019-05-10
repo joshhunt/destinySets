@@ -7,6 +7,7 @@ export * from './trials';
 export * from './factions';
 export * from './yearOneRaids';
 export * from './vendors';
+export * from './gambitPrimeStuff';
 
 export const section = (name: string, items: ItemsList): SetSection => ({
   name,
@@ -18,7 +19,7 @@ export const SOLSTICE_OF_HEROES = {
   id: 'COMMON_SOLSTICE_OF_HEROES',
   big: true,
   sections: [
-     {
+    {
       name: 'Ornaments',
       season: 3,
       items: [
@@ -26,7 +27,7 @@ export const SOLSTICE_OF_HEROES = {
         2949664689, // Gray Nitrite
         1750365155, // Beachheader VI
         2396888157 // Sudden Squall
-       ]
+      ]
     },
     {
       name: 'Hunter Armor',
@@ -174,8 +175,8 @@ export const SOLSTICE_OF_HEROES = {
       name: 'Cosmetics',
       season: 3,
       items: [
-          3859483818, // Blazing Virtue
-          3859483819 // Malachite Gold
+        3859483818, // Blazing Virtue
+        3859483819 // Malachite Gold
       ]
     },
     {
