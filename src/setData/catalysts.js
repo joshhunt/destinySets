@@ -17,7 +17,7 @@ export default ([
             name: 'Weapons',
             itemType: 'exoticCatalysts',
             items: [
-              3352275956, // Outbreak Perfected
+              400096939, // Outbreak Perfected
               3549153979, // The Prospector
               2362471601, // Rat King
               4124984448, // Hard Light
