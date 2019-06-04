@@ -225,8 +225,8 @@ export default ([
             season: 7,
             items: [
               1661191197, // DISDAIN FOR GLITTER
-              3928440585, // CRUCIBLE REDJACK
-              3928440584 // CRUCIBLE CARMINE
+              3928440584, // CRUCIBLE CARMINE
+              3928440585 // CRUCIBLE REDJACK
             ]
           }
         ]
