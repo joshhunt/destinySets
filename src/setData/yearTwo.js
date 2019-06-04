@@ -617,6 +617,103 @@ export default ([
         ]
       },
       {
+        name: 'Menagerie',
+        description:
+          'Acquired from the Menagerie.',
+        id: 'YEAR_TWO_MENAGERIE',
+        sections: [
+          {
+            name: 'Weapons',
+            season: 7,
+            items: [
+              2429822977, // AUSTRINGER
+              2919334548, // IMPERIAL DECREE
+              4124357815, // THE EPICUREAN
+              79075821, // DRANG (BAROQUE)
+              4190932264, // BELOVED
+              174192097, // CALUS MINI-TOOL
+              1642384931 // FIXED ODDS
+            ]
+          },
+          {
+            name: 'Hunter Weapon & Armor',
+            season: 7,
+            itemGroups: [
+              [
+                 569799275, // GOLDTUSK
+              ],
+              [
+                2172333833, // EXODUS DOWN MASK
+                3875829376, // EXODUS DOWN GRIPS
+                126418248, // EXODUS DOWN VEST
+                2953649850, // EXODUS DOWN STRIDES
+                2252973221 // EXODUS DOWN CLOAK
+              ],
+              [
+                906236408, // OPULENT STALKER MASK
+                1370039881, // OPULENT STALKER GRIPS
+                3759327055, // OPULENT STALKER VEST
+                1661981723, // OPULENT STALKER STRIDES
+                1135872734 // OPULENT STALKER CLOAK
+              ]
+            ]
+          },
+          {
+            name: 'Titan Weapon & Armor',
+            season: 7,
+            itemGroups: [
+              [
+                569799273, // THRONE-CLEAVER
+              ],
+              [
+                582151075, // EXODUS DOWN HELM
+                1678216306, // EXODUS DOWN GAUNTLETS
+                1156448694, // EXODUS DOWN
+                2079454604, // EXODUS DOWN GREAVES
+                527652447 // EXODUS DOWN MARK
+              ],
+              [
+                1420117606, // OPULENT DUELIST HELM
+                392500791, // OPULENT DUELIST GAUNTLETS
+                2856582785, // OPULENT DUELIST PLATE
+                1776578009, // OPULENT DUELIST GREAVES
+                4105225180 // OPULENT DUELIST MARK 
+              ]
+            ]
+          },
+          {
+            name: 'Warlock Weapon & Armor',
+            season: 7,
+            itemGroups: [
+              [
+                 569799274, // DEATH'S RAZOR
+              ],
+              [
+                2731698402, // EXODUS DOWN HOOD
+                2029766091, // EXODUS DOWN GLOVES
+                2218838661, // EXODUS DOWN ROBES
+                3545981149, // EXODUS DOWN BOOTS
+                874856664 // EXODUS DOWN BOND
+              ],
+              [
+                831222279, // OPULENT SCHOLAR HOOD
+                3072788622, // OPULENT SCHOLAR GLOVES
+                2026757026, // OPULENT SCHOLAR ROBES
+                1285460104, // OPULENT SCHOLAR BOOTS
+                1250649843 // OPULENT SCHOLAR BOND
+              ]
+            ]
+          },
+          {
+            name: 'Extras',
+            season: 7,
+            items: [
+              1661191194 // A Hall of Delights
+            ]
+          }
+        ]
+      },
+      {
         name: _(
           'DestinyRecordDefinition[3688903951].displayProperties.name',
           'Raid: Last Wish'
@@ -757,68 +854,66 @@ export default ([
     ]
   },
   {
-        name: 'Raid: Crown of Sorrow',
+    name: 'Raid: Crown of Sorrow',
         id: 'YEAR_TWO_RAID_PENUMBRA',
-        description: _(
-          'DestinyCollectibleDefinition[3110698812].sourceString',
-          'Acquired from the raid "Crown of Sorrow.'
+            description: (
+    'DestinyCollectibleDefinition[3110698812].sourceString',
+        'Acquired from the raid "Crown of Sorrow.'
         ),
-        sections: [
-          {
+    sections: [
+        {
             name: 'Weapons',
             season: 7,
             items: [
-              3110698812, // TARRABAH
-              1286686760, // GAHLRAN'S RIGHT HAND
-              2338088853, // CALUSEA NOBLESSE
-              3861448240, // EMPEROR'S COURTESY
-              1496419775 // BANE OF SORROW
+                3110698812, // TARRABAH
+                1286686760, // GAHLRAN'S RIGHT HAND
+                2338088853, // CALUSEA NOBLESSE
+                3861448240, // EMPEROR'S COURTESY
+                1496419775 // BANE OF SORROW
             ]
-          },
-          {
+        },
+        {
             name: 'Hunter Armor',
             season: 7,
             items: [
-              1999427172, // SHADOW'S MASK
-              1946621757, // SHADOW'S GRIPS
-              3483984579, // SHADOW'S VEST
-              17280095, // SHADOW'S STRIDES
-              2765688378 // SHADOW'S CLOAK
+                1999427172, // SHADOW'S MASK
+                1946621757, // SHADOW'S GRIPS
+                3483984579, // SHADOW'S VEST
+                17280095, // SHADOW'S STRIDES
+                2765688378 // SHADOW'S CLOAK
             ]
-          },
-          {
+        },
+        {
             name: 'Titan Armor',
             season: 7,
             items: [
-              1434870610, // SHADOW'S HELM
-              1901223867, // SHADOW'S GAUNTLETS
-              1862963733, // SHADOW'S PLATE
-              309687341, // SHADOW'S GREAVES
-              560455272 // SHADOW'S MARK
+                1434870610, // SHADOW'S HELM
+                1901223867, // SHADOW'S GAUNTLETS
+                1862963733, // SHADOW'S PLATE
+                309687341, // SHADOW'S GREAVES
+                560455272 // SHADOW'S MARK
             ]
-          },
-          {
+        },
+        {
             name: 'Warlock Armor',
             season: 7,
             items: [
-              1481751647, // SHADOW'S MIND
-              1457195686, // SHADOW'S GLOVES
-              2023695690, // SHADOW'S ROBES
-              974648224, // SHADOW'S BOOTS
-              2194479195 // SHADOW'S BOND
+                1481751647, // SHADOW'S MIND
+                1457195686, // SHADOW'S GLOVES
+                2023695690, // SHADOW'S ROBES
+                974648224, // SHADOW'S BOOTS
+                2194479195 // SHADOW'S BOND
             ]
-          },
-          {
+        },
+        {
             name: 'Extras',
             season: 7,
             items: [
 
             ]
-          }
-        ]
-      }
+        }
     ]
-  },
+},
   {
     name: 'The Reckoning',
     sets: [
