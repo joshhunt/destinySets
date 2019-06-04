@@ -779,7 +779,8 @@ export default ([
             name: 'Extras',
             season: 7,
             items: [
-              1661191194 // A Hall of Delights
+              1661191194, // A Hall of Delights
+              1661191195 // THE IMPERIAL MENAGERIE
             ]
           }
         ]
@@ -978,7 +979,7 @@ export default ([
                         name: 'Extras',
                         season: 7,
                         items: [
-
+                          1661191193 // CROWN OF SORROW
                         ]
                     }
                 ]
@@ -2117,13 +2118,35 @@ export default ([
             season: 7,
             itemGroups: [
               [
-                
+                2257492093, // BAIKONUR
+                3763220133, // BARREN WASTES
+                2404516638, // CYBERINTELLECT
+                3807808621, // DIGITAL OPS
+                1321987864, // DREAM OF A NEW WORLD
+                1904833599, // RONIN
+                2182432903, // STOLEN GOODS
+                3838841051, // ULTRAVIOLET
+                343223696 // VORACIOUS
               ],
               [
-                
+                77772312, // ALONE, TO BE JOINED
+                2533050120, // BEGGAR, TO BE FED
+                4017323452, // BROKEN BIRD, TO BE HEALED
+                403561732, // DEFENSELESS, TO BE ARMED
+                3473397300, // KING IN ALL DIRECTIONS
+                3199440990, // ROCK-A-BYE
+                2512537661, // SHAPESHIFTER 
+                1546315793, // UNHEARING, TO BE TOLD
+                3967294031, // UNLOVED, TO BE CHERISHED
+                1069601252 // UNSEEING, TO BE SHOWN 
               ],
               [
-                
+                3211076406, // BLUED STEEL
+                2783100859, // QUEEN COBRA
+                1011994721, // JIĀN
+                3105540650, // ~FLEX ENHANCE REPLICATE~
+                1984736607, // CADUCEUS
+                2986573526 // ELECTROMAG STABILIZERS
               ]
             ]
           },
@@ -2196,7 +2219,26 @@ export default ([
             name: 'Emotes',
             season: 7,
             items: [
-              
+              4114677048, // BREATHE IN
+              4009267290, // CONSULT THE ARCHIVES
+              1849697741, // FLAG ON THE PLAY
+              2231816495, // MIRROR MIRROR
+              1858216083, // PAPERWORK
+              2931525672, // SABRAGE SALUTE
+              377681571, // X MARKS THE SPOT
+              403465735, // FLICK OF THE WRIST
+              319183094, // MEDITATIVE MOMENT
+              908677920, // STYLISH SIT
+              1324309776, // DISCOURAGED
+              1482931023, // HIP BUMP
+              1081767429, // LINK UP
+              854833035, // QUICK HUG
+              4096637925, // SILLY HANDSHAKE
+              28833378, // STATIC SHOCK
+              2070010145, // BUT YOU
+              1668956766, // GIDDY LAUGH
+              4179243516, // TIME OUT
+              4189539716 // YOU GO AHEAD
             ]
           },
           {
