@@ -1741,6 +1741,21 @@ export default ([
             ]
           },
           {
+            name: 'Armor',
+            season: 7,
+            itemGroups: [
+              [
+                
+              ],
+              [
+                
+              ],
+              [
+                
+              ]
+            ]
+          },
+          {
             name: 'Ornaments',
             season: 4,
             itemGroups: [
@@ -1856,6 +1871,21 @@ export default ([
             ]
           },
           {
+            name: 'Ornaments',
+            season: 7,
+            itemGroups: [
+              [
+                
+              ],
+              [
+                
+              ],
+              [
+                
+              ]
+            ]
+          },
+          {
             name: 'Emotes',
             season: 4,
             items: [
@@ -1918,6 +1948,13 @@ export default ([
               1005293753, // Directed Plea
               3517258101, // Wasn't Me
               925771554 // Watching You
+            ]
+          },
+          {
+            name: 'Emotes',
+            season: 7,
+            items: [
+              
             ]
           },
           {
@@ -1988,6 +2025,13 @@ export default ([
             ]
           },
           {
+            name: 'Ghosts',
+            season: 7,
+            items: [
+              
+            ]
+          },
+          {
             name: 'Ghost Projections',
             season: 4,
             items: [
@@ -2037,6 +2081,13 @@ export default ([
               668465165, // Collect! Projection
               668465166, // Fight! Projection
               668465167 // Twin Snake Projection
+            ]
+          },
+          {
+            name: 'Ghost Projections',
+            season: 7,
+            items: [
+              
             ]
           },
           {
@@ -2103,6 +2154,13 @@ export default ([
             ]
           },
           {
+            name: 'Sparrows',
+            season: 7,
+            items: [
+              
+            ]
+          },
+          {
             name: 'Ships',
             season: 4,
             items: [
@@ -2166,6 +2224,13 @@ export default ([
             ]
           },
           {
+            name: 'Ships',
+            season: 7,
+            items: [
+              
+            ]
+          },
+          {
             name: 'Shaders',
             season: 4,
             items: [
@@ -2203,6 +2268,13 @@ export default ([
             ]
           },
           {
+            name: 'Shaders',
+            season: 7,
+            items: [
+              
+            ]
+          },
+          {
             name: 'Transmat Effects',
             season: 4,
             items: [
@@ -2230,6 +2302,13 @@ export default ([
               1556665149, // Jade Coin Effects
               1556665150, // Sterile Neutrino Effects
               1556665151 // Illicit Transmat Effects
+            ]
+          },
+          {
+            name: 'Transmat Effects',
+            season: 7,
+            items: [
+              
             ]
           }
         ]
