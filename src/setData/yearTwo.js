@@ -701,6 +701,7 @@ export default ([
         sections: [
           {
             name: 'Weapons',
+            season: 5,
             items: [
               2376481550, // Anarchy
               1931556011, // No Feelings
@@ -755,7 +756,69 @@ export default ([
       }
     ]
   },
+  {
+        name: 'Raid: Crown of Sorrow',
+        id: 'YEAR_TWO_RAID_PENUMBRA',
+        description: _(
+          'DestinyCollectibleDefinition[3110698812].sourceString',
+          'Acquired from the raid "Crown of Sorrow.'
+        ),
+        sections: [
+          {
+            name: 'Weapons',
+            season: 7,
+            items: [
+              3110698812, // TARRABAH
+              1286686760, // GAHLRAN'S RIGHT HAND
+              2338088853, // CALUSEA NOBLESSE
+              3861448240, // EMPEROR'S COURTESY
+              1496419775 // BANE OF SORROW
+            ]
+          },
+          {
+            name: 'Hunter Armor',
+            season: 7,
+            items: [
+              1999427172, // SHADOW'S MASK
+              1946621757, // SHADOW'S GRIPS
+              3483984579, // SHADOW'S VEST
+              17280095, // SHADOW'S STRIDES
+              2765688378 // SHADOW'S CLOAK
+            ]
+          },
+          {
+            name: 'Titan Armor',
+            season: 7,
+            items: [
+              1434870610, // SHADOW'S HELM
+              1901223867, // SHADOW'S GAUNTLETS
+              1862963733, // SHADOW'S PLATE
+              309687341, // SHADOW'S GREAVES
+              560455272 // SHADOW'S MARK
+            ]
+          },
+          {
+            name: 'Warlock Armor',
+            season: 7,
+            items: [
+              1481751647, // SHADOW'S MIND
+              1457195686, // SHADOW'S GLOVES
+              2023695690, // SHADOW'S ROBES
+              974648224, // SHADOW'S BOOTS
+              2194479195 // SHADOW'S BOND
+            ]
+          },
+          {
+            name: 'Extras',
+            season: 7,
+            items: [
 
+            ]
+          }
+        ]
+      }
+    ]
+  },
   {
     name: 'The Reckoning',
     sets: [
