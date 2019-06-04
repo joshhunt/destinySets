@@ -559,7 +559,7 @@ export default ([
             name: 'Extras',
             season: 7,
             items: [
-              3675530153, // The Pacesetter
+              3767156788, // The Pacesetter
               1661191199, // GRIZZLED WOLF
               1448664466, // IRON BONE
               1448664467 // IRON GOLD
