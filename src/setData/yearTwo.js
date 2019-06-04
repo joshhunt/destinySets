@@ -82,9 +82,6 @@ export default ([
             name: 'Extras',
             season: 4,
             items: [
-              2793382470, // Wisteria Orbit Shell (Ghost)
-              1013544390, // Mimesis Drive (Sparrow)
-              4030297244, // Buckthorn Approach (Ship)
               2390666069, // High-Risk, High-Reward (Emblem)
               1075647353, // Vanguard Terminus (Emblem)
               2935851862, // Struck a Nerve (Emblem)
@@ -110,6 +107,15 @@ export default ([
             season: 6,
             items: [
               3215252549 // Determination
+            ]
+          },
+          {
+            name: 'Extras',
+            season: 7,
+            items: [
+              1661191186, // DISDAIN FOR GOLD
+              2523776413, // VANGUARD STEEL
+              2523776412 // VANGUARD BURNISHED STEEL
             ]
           }
         ]
@@ -212,6 +218,15 @@ export default ([
             season: 6,
             items: [
               2632846356 // Rain of Ashes
+            ]
+          },
+          {
+            name: 'Extras',
+            season: 7,
+            items: [
+              1661191197, // DISDAIN FOR GLITTER
+              3928440584, // CRUCIBLE CARMINE
+              3928440585 // CRUCIBLE REDJACK
             ]
           }
         ]
@@ -324,7 +339,16 @@ export default ([
               3808901541, // Viper Strike
               3735277403 // Prime Palette
             ]
-          }
+          },
+          {
+            name: 'Extras',
+            season: 7,
+            items: [
+              1661191187, // MISTRUST OF GIFTS
+              2224920149, // GAMBIT STEEL 
+              2224920148 // GAMBIT BLACKGUARD
+            ]
+          },
         ]
       },
       {
@@ -367,6 +391,14 @@ export default ([
             ]
           },
           {
+            name: 'Weapons',
+            season: 7,
+            items: [
+              2326716489, // GUNNORA'S AXE
+              136525518 // SHINING SPHERE
+            ]
+          },
+          {
             name: 'Hunter Armor',
             season: 4,
             items: [
@@ -397,6 +429,17 @@ export default ([
               3112906149, // Iron Symmachy Vest
               2049490557, // Iron Symmachy Strides
               2234855160 // Iron Symmachy Cloak
+            ]
+          },
+          {
+            name: 'Hunter Armor',
+            season: 7,
+            items: [
+              481390023, // IRON TRUAGE CASQUE
+              2723059534, // IRON TRUAGE GRIPS
+              4169842018, // IRON TRUAGE VEST
+              511170376, // IRON TRUAGE BOOTS
+              3818295475 // MANTLE OF EFRIDEET
             ]
           },
           {
@@ -433,6 +476,17 @@ export default ([
             ]
           },
           {
+            name: 'Titan Armor',
+            season: 7,
+            items: [
+              3379235805, // IRON TRUAGE HELM
+              2266122060, // IRON TRUAGE GAUNTLETS
+              2850783764, // IRON TRUAGE PLATE
+              2911957494, // IRON TRUAGE GREAVES
+              4019071337 // RADEGAST'S IRON SASH 
+            ]
+          },
+          {
             name: 'Warlock Armor',
             season: 4,
             items: [
@@ -466,6 +520,17 @@ export default ([
             ]
           },
           {
+            name: 'Warlock Armor',
+            season: 7,
+            items: [
+              1854612346, // IRON TRUAGE HOOD
+              3625849667, // IRON TRUAGE GLOVES
+              1166260237, // IRON TRUAGE VESTMENTS
+              1717896437, // IRON TRUAGE LEGS
+              4041069824 // TIMUR'S IRON BOND
+            ]
+          },
+          {
             name: 'Extras',
             season: 4,
             items: [
@@ -484,10 +549,20 @@ export default ([
             name: 'Extras',
             season: 6,
             items: [
-              1368521327, // Volk-CER (Ship)
+              1368521327, // Volk-CER
               2868525736, // The Weight of Guilt (Emblem)
               2868525739, // Heavy as Death (Emblem)
               1987234560 // Iron Ruby (Shader)
+            ]
+          },
+          {
+            name: 'Extras',
+            season: 7,
+            items: [
+              3767156788, // The Pacesetter
+              1661191199, // GRIZZLED WOLF
+              1448664466, // IRON BONE
+              1448664467 // IRON GOLD
             ]
           }
         ]
@@ -613,6 +688,104 @@ export default ([
         ]
       },
       {
+        name: 'Menagerie',
+        description:
+          'Acquired from the Menagerie.',
+        id: 'YEAR_TWO_MENAGERIE',
+        sections: [
+          {
+            name: 'Weapons',
+            season: 7,
+            items: [
+              2429822977, // AUSTRINGER
+              2919334548, // IMPERIAL DECREE
+              4124357815, // THE EPICUREAN
+              79075821, // DRANG (BAROQUE)
+              4190932264, // BELOVED
+              174192097, // CALUS MINI-TOOL
+              1642384931 // FIXED ODDS
+            ]
+          },
+          {
+            name: 'Hunter Weapon & Armor',
+            season: 7,
+            itemGroups: [
+              [
+                 569799275, // GOLDTUSK
+              ],
+              [
+                2172333833, // EXODUS DOWN MASK
+                3875829376, // EXODUS DOWN GRIPS
+                126418248, // EXODUS DOWN VEST
+                2953649850, // EXODUS DOWN STRIDES
+                2252973221 // EXODUS DOWN CLOAK
+              ],
+              [
+                906236408, // OPULENT STALKER MASK
+                1370039881, // OPULENT STALKER GRIPS
+                3759327055, // OPULENT STALKER VEST
+                1661981723, // OPULENT STALKER STRIDES
+                1135872734 // OPULENT STALKER CLOAK
+              ]
+            ]
+          },
+          {
+            name: 'Titan Weapon & Armor',
+            season: 7,
+            itemGroups: [
+              [
+                569799273, // THRONE-CLEAVER
+              ],
+              [
+                582151075, // EXODUS DOWN HELM
+                1678216306, // EXODUS DOWN GAUNTLETS
+                1156448694, // EXODUS DOWN
+                2079454604, // EXODUS DOWN GREAVES
+                527652447 // EXODUS DOWN MARK
+              ],
+              [
+                1420117606, // OPULENT DUELIST HELM
+                392500791, // OPULENT DUELIST GAUNTLETS
+                2856582785, // OPULENT DUELIST PLATE
+                1776578009, // OPULENT DUELIST GREAVES
+                4105225180 // OPULENT DUELIST MARK 
+              ]
+            ]
+          },
+          {
+            name: 'Warlock Weapon & Armor',
+            season: 7,
+            itemGroups: [
+              [
+                 569799274, // DEATH'S RAZOR
+              ],
+              [
+                2731698402, // EXODUS DOWN HOOD
+                2029766091, // EXODUS DOWN GLOVES
+                2218838661, // EXODUS DOWN ROBES
+                3545981149, // EXODUS DOWN BOOTS
+                874856664 // EXODUS DOWN BOND
+              ],
+              [
+                831222279, // OPULENT SCHOLAR HOOD
+                3072788622, // OPULENT SCHOLAR GLOVES
+                2026757026, // OPULENT SCHOLAR ROBES
+                1285460104, // OPULENT SCHOLAR BOOTS
+                1250649843 // OPULENT SCHOLAR BOND
+              ]
+            ]
+          },
+          {
+            name: 'Extras',
+            season: 7,
+            items: [
+              1661191194, // A Hall of Delights
+              1661191195 // THE IMPERIAL MENAGERIE
+            ]
+          }
+        ]
+      },
+      {
         name: _(
           'DestinyRecordDefinition[3688903951].displayProperties.name',
           'Raid: Last Wish'
@@ -697,6 +870,7 @@ export default ([
         sections: [
           {
             name: 'Weapons',
+            season: 5,
             items: [
               2376481550, // Anarchy
               1931556011, // No Feelings
@@ -748,10 +922,70 @@ export default ([
             ]
           }
         ]
-      }
+      },
+      {
+    name: 'Raid: Crown of Sorrow',
+        id: 'YEAR_TWO_RAID_PENUMBRA',
+            description: (
+                'DestinyCollectibleDefinition[3110698812].sourceString',
+                'Acquired from the raid "Crown of Sorrow.'
+            ),
+                sections: [
+                    {
+                        name: 'Weapons',
+                        season: 7,
+                        items: [
+                            3110698812, // TARRABAH
+                            1286686760, // GAHLRAN'S RIGHT HAND
+                            2338088853, // CALUSEA NOBLESSE
+                            3861448240, // EMPEROR'S COURTESY
+                            1496419775 // BANE OF SORROW
+                        ]
+                    },
+                    {
+                        name: 'Hunter Armor',
+                        season: 7,
+                        items: [
+                            1999427172, // SHADOW'S MASK
+                            1946621757, // SHADOW'S GRIPS
+                            3483984579, // SHADOW'S VEST
+                            17280095, // SHADOW'S STRIDES
+                            2765688378 // SHADOW'S CLOAK
+                        ]
+                    },
+                    {
+                        name: 'Titan Armor',
+                        season: 7,
+                        items: [
+                            1434870610, // SHADOW'S HELM
+                            1901223867, // SHADOW'S GAUNTLETS
+                            1862963733, // SHADOW'S PLATE
+                            309687341, // SHADOW'S GREAVES
+                            560455272 // SHADOW'S MARK
+                        ]
+                    },
+                    {
+                        name: 'Warlock Armor',
+                        season: 7,
+                        items: [
+                            1481751647, // SHADOW'S MIND
+                            1457195686, // SHADOW'S GLOVES
+                            2023695690, // SHADOW'S ROBES
+                            974648224, // SHADOW'S BOOTS
+                            2194479195 // SHADOW'S BOND
+                        ]
+                    },
+                    {
+                        name: 'Extras',
+                        season: 7,
+                        items: [
+                          1661191193 // CROWN OF SORROW
+                        ]
+                    }
+                ]
+            }
     ]
   },
-
   {
     name: 'The Reckoning',
     sets: [
@@ -800,6 +1034,15 @@ export default ([
         id: 'RECKONING_OUTLAWED',
         sections: [
           {
+            name: 'Weapons (Tier 2 & 3)',
+            season: 6,
+            items: [
+              821154603, // Gnawing Hunger
+              715338174, // Just in Case
+              736901634 // Doomsday
+            ]
+          },
+          {
             name: 'Hunter Armor',
             season: 6,
             itemGroups: [
@@ -827,15 +1070,6 @@ export default ([
               common.RECKONING_OUTLAWED_SENTRY_WARLOCK,
               common.RECKONING_OUTLAWED_INVADER_WARLOCK,
               common.RECKONING_OUTLAWED_REAPER_WARLOCK
-            ]
-          },
-          {
-            name: 'Weapons (Tier 2+)',
-            season: 6,
-            items: [
-              821154603, // Gnawing Hunger
-              715338174, // Just in Case
-              736901634 // Doomsday
             ]
           }
         ]
@@ -1738,6 +1972,33 @@ export default ([
             ]
           },
           {
+            name: 'Armor',
+            season: 7,
+            itemGroups: [
+              [
+                3856371784, // Mask of Optimacy
+                3203706073, // Arms of Optimacy
+                1381620543, // Vest of Optimacy
+                1800924363, // Legs of Optimacy
+                2628779086 // Cloak of Optimacy
+              ],
+              [
+                3938714858, // Helm of Optimacy
+                3519818547, // Arms of Optimacy
+                1072425053, // Plate of Optimacy
+                3254669317, // Legs of Optimacy
+                2958870416 // Mark of Optimacy
+              ],
+              [
+                979292443, // Hood of Optimacy
+                2438574026, // Arms of Optimacy
+                2859359742, // Robes of Optimacy
+                1094905316, // Legs of Optimacy
+                2188986759 // Bond of Optimacy
+              ]
+            ]
+          },
+          {
             name: 'Ornaments',
             season: 4,
             itemGroups: [
@@ -1853,6 +2114,43 @@ export default ([
             ]
           },
           {
+            name: 'Ornaments',
+            season: 7,
+            itemGroups: [
+              [
+                2257492093, // BAIKONUR
+                3763220133, // BARREN WASTES
+                2404516638, // CYBERINTELLECT
+                3807808621, // DIGITAL OPS
+                1321987864, // DREAM OF A NEW WORLD
+                1904833599, // RONIN
+                2182432903, // STOLEN GOODS
+                3838841051, // ULTRAVIOLET
+                343223696 // VORACIOUS
+              ],
+              [
+                77772312, // ALONE, TO BE JOINED
+                2533050120, // BEGGAR, TO BE FED
+                4017323452, // BROKEN BIRD, TO BE HEALED
+                403561732, // DEFENSELESS, TO BE ARMED
+                3473397300, // KING IN ALL DIRECTIONS
+                3199440990, // ROCK-A-BYE
+                2512537661, // SHAPESHIFTER 
+                1546315793, // UNHEARING, TO BE TOLD
+                3967294031, // UNLOVED, TO BE CHERISHED
+                1069601252 // UNSEEING, TO BE SHOWN 
+              ],
+              [
+                3211076406, // BLUED STEEL
+                2783100859, // QUEEN COBRA
+                1011994721, // JIĀN
+                3105540650, // ~FLEX ENHANCE REPLICATE~
+                1984736607, // CADUCEUS
+                2986573526 // ELECTROMAG STABILIZERS
+              ]
+            ]
+          },
+          {
             name: 'Emotes',
             season: 4,
             items: [
@@ -1915,6 +2213,32 @@ export default ([
               1005293753, // Directed Plea
               3517258101, // Wasn't Me
               925771554 // Watching You
+            ]
+          },
+          {
+            name: 'Emotes',
+            season: 7,
+            items: [
+              4114677048, // BREATHE IN
+              4009267290, // CONSULT THE ARCHIVES
+              1849697741, // FLAG ON THE PLAY
+              2231816495, // MIRROR MIRROR
+              1858216083, // PAPERWORK
+              2931525672, // SABRAGE SALUTE
+              377681571, // X MARKS THE SPOT
+              403465735, // FLICK OF THE WRIST
+              319183094, // MEDITATIVE MOMENT
+              908677920, // STYLISH SIT
+              1324309776, // DISCOURAGED
+              1482931023, // HIP BUMP
+              1081767429, // LINK UP
+              854833035, // QUICK HUG
+              4096637925, // SILLY HANDSHAKE
+              28833378, // STATIC SHOCK
+              2070010145, // BUT YOU
+              1668956766, // GIDDY LAUGH
+              4179243516, // TIME OUT
+              4189539716 // YOU GO AHEAD
             ]
           },
           {
@@ -1985,6 +2309,21 @@ export default ([
             ]
           },
           {
+            name: 'Ghosts',
+            season: 7,
+            items: [
+              443190216, // Void Shell
+              443190217, // Kitbash Shell
+              443190218, // Arc Shell
+              443190219, // Solar Shell
+              443190220, // Gyro Shell
+              443190221, // PS-1 Shell
+              443190222, // Drop Pod Shell 
+              443190223, // Intrepid Shell 
+              
+            ]
+          },
+          {
             name: 'Ghost Projections',
             season: 4,
             items: [
@@ -2034,6 +2373,13 @@ export default ([
               668465165, // Collect! Projection
               668465166, // Fight! Projection
               668465167 // Twin Snake Projection
+            ]
+          },
+          {
+            name: 'Ghost Projections',
+            season: 7,
+            items: [
+              
             ]
           },
           {
@@ -2100,6 +2446,21 @@ export default ([
             ]
           },
           {
+            name: 'Sparrows',
+            season: 7,
+            items: [
+              258623688, // BrayTech DREAM9 
+              25862368, // Clean Sweep
+              258623690, // Expedition-JT
+              258623691, // The Motherlode
+              258623692, // The Grateful Crane
+              258623693, // The Calypso
+              258623694, // Blood in the Water
+              258623695, // One Fell Swoop
+              
+            ]
+          },
+          {
             name: 'Ships',
             season: 4,
             items: [
@@ -2163,6 +2524,20 @@ export default ([
             ]
           },
           {
+            name: 'Ships',
+            season: 7,
+            items: [
+              2964059912, // Transpose JT-24-X
+              2964059913, // Chela-N
+              2964059914, // Aeshnidae Fixed-Wing
+              2964059916, // Bayle's Aerodyne 
+              2964059917, // Proteus
+              2964059918, // Woomera B-5
+              2964059919, // The Oviraptor
+              
+            ]
+          },
+          {
             name: 'Shaders',
             season: 4,
             items: [
@@ -2200,6 +2575,18 @@ export default ([
             ]
           },
           {
+            name: 'Shaders',
+            season: 7,
+            items: [
+              1363705632, // First Light
+              1363705633, // Atmospheric Glow
+              1363705634, // Amethyst Veil
+              1363705635, // Coastal Suede
+              1363705639, // Royal Welcome
+              
+            ]
+          },
+          {
             name: 'Transmat Effects',
             season: 4,
             items: [
@@ -2227,6 +2614,17 @@ export default ([
               1556665149, // Jade Coin Effects
               1556665150, // Sterile Neutrino Effects
               1556665151 // Illicit Transmat Effects
+            ]
+          },
+          {
+            name: 'Transmat Effects',
+            season: 7,
+            items: [
+              515071961, // Tiger Effects
+              515071964, // Eldritch Effects 
+              515071965, // Darkblade Effects
+              515071966, // Loot Chest Effects
+              515071967, // Minotaur Effects
             ]
           }
         ]
