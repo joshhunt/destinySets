@@ -490,7 +490,8 @@ export default ([
             name: 'Extras',
             season: 7,
             items: [
-              1368521327 // Volk-CER (Ship)
+              3675530153, // The Pacesetter
+              1368521327 // Volk-CER
             ]
           }
         ]
@@ -1745,13 +1746,25 @@ export default ([
             season: 7,
             itemGroups: [
               [
-                
+                3856371784, // Mask of Optimacy
+                3203706073, // Arms of Optimacy
+                1381620543, // Vest of Optimacy
+                1800924363, // Legs of Optimacy
+                2628779086 // Cloak of Optimacy
               ],
               [
-                
+                3938714858, // Helm of Optimacy
+                3519818547, // Arms of Optimacy
+                1072425053, // Plate of Optimacy
+                3254669317, // Legs of Optimacy
+                2958870416 // Mark of Optimacy
               ],
               [
-                
+                979292443, // Hood of Optimacy
+                2438574026, // Arms of Optimacy
+                2859359742, // Robes of Optimacy
+                1094905316, // Legs of Optimacy
+                2188986759 // Bond of Optimacy
               ]
             ]
           },
@@ -2028,6 +2041,14 @@ export default ([
             name: 'Ghosts',
             season: 7,
             items: [
+              443190216, // Void Shell
+              443190217, // Kitbash Shell
+              443190218, // Arc Shell
+              443190219, // Solar Shell
+              443190220, // Gyro Shell
+              443190221, // PS-1 Shell
+              443190222, // Drop Pod Shell 
+              443190223, // Intrepid Shell 
               
             ]
           },
@@ -2157,6 +2178,14 @@ export default ([
             name: 'Sparrows',
             season: 7,
             items: [
+              258623688, // BrayTech DREAM9 
+              25862368, // Clean Sweep
+              258623690, // Expedition-JT
+              258623691, // The Motherlode
+              258623692, // The Grateful Crane
+              258623693, // The Calypso
+              258623694, // Blood in the Water
+              258623695, // One Fell Swoop
               
             ]
           },
@@ -2227,6 +2256,13 @@ export default ([
             name: 'Ships',
             season: 7,
             items: [
+              2964059912, // Transpose JT-24-X
+              2964059913, // Chela-N
+              2964059914, // Aeshnidae Fixed-Wing
+              2964059916, // Bayle's Aerodyne 
+              2964059917, // Proteus
+              2964059918, // Woomera B-5
+              2964059919, // The Oviraptor
               
             ]
           },
@@ -2271,6 +2307,11 @@ export default ([
             name: 'Shaders',
             season: 7,
             items: [
+              1363705632, // First Light
+              1363705633, // Atmospheric Glow
+              1363705634, // Amethyst Veil
+              1363705635, // Coastal Suede
+              1363705639, // Royal Welcome
               
             ]
           },
@@ -2308,7 +2349,11 @@ export default ([
             name: 'Transmat Effects',
             season: 7,
             items: [
-              
+              515071961, // Tiger Effects
+              515071964, // Eldritch Effects 
+              515071965, // Darkblade Effects
+              515071966, // Loot Chest Effects
+              515071967, // Minotaur Effects
             ]
           }
         ]
