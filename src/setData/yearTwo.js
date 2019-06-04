@@ -108,6 +108,15 @@ export default ([
             items: [
               3215252549 // Determination
             ]
+          },
+          {
+            name: 'Extras',
+            season: 7,
+            items: [
+              1661191186, // DISDAIN FOR GOLD
+              2523776413, // VANGUARD STEEL
+              2523776412 // VANGUARD BURNISHED STEEL
+            ]
           }
         ]
       },
@@ -209,6 +218,15 @@ export default ([
             season: 6,
             items: [
               2632846356 // Rain of Ashes
+            ]
+          },
+          {
+            name: 'Extras',
+            season: 7,
+            items: [
+              1661191197, // DISDAIN FOR GLITTER
+              3928440585, // CRUCIBLE REDJACK
+              3928440584 // CRUCIBLE CARMINE
             ]
           }
         ]
@@ -321,7 +339,16 @@ export default ([
               3808901541, // Viper Strike
               3735277403 // Prime Palette
             ]
-          }
+          },
+          {
+            name: 'Extras',
+            season: 7,
+            items: [
+              1661191187, // MISTRUST OF GIFTS
+              2224920149, // GAMBIT STEEL 
+              2224920148 // GAMBIT BLACKGUARD
+            ]
+          },
         ]
       },
       {
@@ -364,6 +391,14 @@ export default ([
             ]
           },
           {
+            name: 'Weapons',
+            season: 7,
+            items: [
+              2326716489, // GUNNORA'S AXE
+              136525518 // SHINING SPHERE
+            ]
+          },
+          {
             name: 'Hunter Armor',
             season: 4,
             items: [
@@ -394,6 +429,17 @@ export default ([
               3112906149, // Iron Symmachy Vest
               2049490557, // Iron Symmachy Strides
               2234855160 // Iron Symmachy Cloak
+            ]
+          },
+          {
+            name: 'Hunter Armor',
+            season: 7,
+            items: [
+              481390023, // IRON TRUAGE CASQUE
+              2723059534, // IRON TRUAGE GRIPS
+              4169842018, // IRON TRUAGE VEST
+              511170376, // IRON TRUAGE BOOTS
+              3818295475 // MANTLE OF EFRIDEET
             ]
           },
           {
@@ -430,6 +476,17 @@ export default ([
             ]
           },
           {
+            name: 'Titan Armor',
+            season: 7,
+            items: [
+              3379235805, // IRON TRUAGE HELM
+              2266122060, // IRON TRUAGE GAUNTLETS
+              2850783764, // IRON TRUAGE PLATE
+              2911957494, // IRON TRUAGE GREAVES
+              4019071337 // RADEGAST'S IRON SASH 
+            ]
+          },
+          {
             name: 'Warlock Armor',
             season: 4,
             items: [
@@ -463,6 +520,17 @@ export default ([
             ]
           },
           {
+            name: 'Warlock Armor',
+            season: 7,
+            items: [
+              1854612346, // IRON TRUAGE HOOD
+              3625849667, // IRON TRUAGE GLOVES
+              1166260237, // IRON TRUAGE VESTMENTS
+              1717896437, // IRON TRUAGE LEGS
+              4041069824 // TIMUR'S IRON BOND
+            ]
+          },
+          {
             name: 'Extras',
             season: 4,
             items: [
@@ -481,6 +549,7 @@ export default ([
             name: 'Extras',
             season: 6,
             items: [
+              1368521327, // Volk-CER
               2868525736, // The Weight of Guilt (Emblem)
               2868525739, // Heavy as Death (Emblem)
               1987234560 // Iron Ruby (Shader)
@@ -491,7 +560,9 @@ export default ([
             season: 7,
             items: [
               3675530153, // The Pacesetter
-              1368521327 // Volk-CER
+              1661191199, // GRIZZLED WOLF
+              1448664466, // IRON BONE
+              1448664467 // IRON GOLD
             ]
           }
         ]
