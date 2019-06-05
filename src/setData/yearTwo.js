@@ -779,6 +779,7 @@ export default ([
             name: 'Extras',
             season: 7,
             items: [
+              3176509806, // Árma Mákhēs
               1661191194, // A Hall of Delights
               1661191195, // THE IMPERIAL MENAGERIE
               3841416154 // SHADOW GILT
