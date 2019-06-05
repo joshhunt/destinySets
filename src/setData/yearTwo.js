@@ -779,8 +779,10 @@ export default ([
             name: 'Extras',
             season: 7,
             items: [
+              3176509806, // Árma Mákhēs
               1661191194, // A Hall of Delights
-              1661191195 // THE IMPERIAL MENAGERIE
+              1661191195, // THE IMPERIAL MENAGERIE
+              3841416154 // SHADOW GILT
             ]
           }
         ]
@@ -979,7 +981,8 @@ export default ([
                         name: 'Extras',
                         season: 7,
                         items: [
-                          1661191193 // CROWN OF SORROW
+                          1661191193, // CROWN OF SORROW
+                          2027598066 // IMPERIAL OPULENCE
                         ]
                     }
                 ]
@@ -1983,6 +1986,13 @@ export default ([
                 2628779086 // Cloak of Optimacy
               ],
               [
+                1394425388, // INTREPID DISCOVERY MASK
+                590299877, // INTREPID DISCOVERY GRIPS
+                1855737147, // INTREPID DISCOVERY VEST
+                513068903, // INTREPID DISCOVERY STRIDES
+                637013970 // INTREPID DISCOVERY CLOAK
+              ],
+              [
                 3938714858, // Helm of Optimacy
                 3519818547, // Arms of Optimacy
                 1072425053, // Plate of Optimacy
@@ -1990,11 +2000,25 @@ export default ([
                 2958870416 // Mark of Optimacy
               ],
               [
+                2882705174, // INTREPID EXPLOIT HELM
+                4086798823, // INTREPID EXPLOIT GAUNTLETS
+                3937103377, // INTREPID EXPLOIT PLATE
+                2839604521, // INTREPID EXPLOIT GREAVES
+                1837565996 // INTREPID EXPLOIT MARK
+              ],
+              [
                 979292443, // Hood of Optimacy
                 2438574026, // Arms of Optimacy
                 2859359742, // Robes of Optimacy
                 1094905316, // Legs of Optimacy
                 2188986759 // Bond of Optimacy
+              ],
+              [
+                2856645651, // INTREPID INQUIRY HOOD
+                349652258, // INTREPID INQUIRY GLOVES
+                3876766470, // INTREPID INQUIRY ROBES
+                2859832156, // INTREPID INQUIRY BOOTS
+                324248047 // INTREPID INQUIRY BOND
               ]
             ]
           },
@@ -2379,7 +2403,17 @@ export default ([
             name: 'Ghost Projections',
             season: 7,
             items: [
-              
+              1295682250, // CHALICE PROJECTION
+              1295682249, // CROWN OF SORROW PROJECTION
+              1295682255, // DARING HAT PROJECTION
+              1295682248, // EMPEROR CALUS PROJECTION
+              1295682251, // IMPERIAL BEAST PROJECTION
+              3527564902, // BEAST'S PAW PROJECTION
+              3527564901, // DROPSHIP PROJECTION
+              3527564900, // IMPERIAL AXES PROJECTION
+              3527564896, // SALACOT PROJECTION
+              3527564903, // TREASURE CHEST PROJECTION
+              3527564897 // TREASURE MAP PROJECTION
             ]
           },
           {
