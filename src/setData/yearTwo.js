@@ -2379,7 +2379,17 @@ export default ([
             name: 'Ghost Projections',
             season: 7,
             items: [
-              
+              1295682250, // CHALICE PROJECTION
+              1295682249, // CROWN OF SORROW PROJECTION
+              1295682255, // DARING HAT PROJECTION
+              1295682248, // EMPEROR CALUS PROJECTION
+              1295682251, // IMPERIAL BEAST PROJECTION
+              3527564902, // BEAST'S PAW PROJECTION
+              3527564901, // DROPSHIP PROJECTION
+              3527564900, // IMPERIAL AXES PROJECTION
+              3527564896, // SALACOT PROJECTION
+              3527564903, // TREASURE CHEST PROJECTION
+              3527564897 // TREASURE MAP PROJECTION
             ]
           },
           {
