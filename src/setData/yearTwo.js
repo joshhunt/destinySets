@@ -1985,6 +1985,13 @@ export default ([
                 2628779086 // Cloak of Optimacy
               ],
               [
+                1394425388, // INTREPID DISCOVERY MASK
+                590299877, // INTREPID DISCOVERY GRIPS
+                1855737147, // INTREPID DISCOVERY VEST
+                513068903, // INTREPID DISCOVERY STRIDES
+                637013970 // INTREPID DISCOVERY CLOAK
+              ],
+              [
                 3938714858, // Helm of Optimacy
                 3519818547, // Arms of Optimacy
                 1072425053, // Plate of Optimacy
@@ -1992,11 +1999,25 @@ export default ([
                 2958870416 // Mark of Optimacy
               ],
               [
+                2882705174, // INTREPID EXPLOIT HELM
+                4086798823, // INTREPID EXPLOIT GAUNTLETS
+                3937103377, // INTREPID EXPLOIT PLATE
+                2839604521, // INTREPID EXPLOIT GREAVES
+                1837565996 // INTREPID EXPLOIT MARK
+              ],
+              [
                 979292443, // Hood of Optimacy
                 2438574026, // Arms of Optimacy
                 2859359742, // Robes of Optimacy
                 1094905316, // Legs of Optimacy
                 2188986759 // Bond of Optimacy
+              ],
+              [
+                2856645651, // INTREPID INQUIRY HOOD
+                349652258, // INTREPID INQUIRY GLOVES
+                3876766470, // INTREPID INQUIRY ROBES
+                2859832156, // INTREPID INQUIRY BOOTS
+                324248047 // INTREPID INQUIRY BOND
               ]
             ]
           },
