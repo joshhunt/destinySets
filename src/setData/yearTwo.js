@@ -782,6 +782,7 @@ export default ([
               3176509806, // Árma Mákhēs
               1661191194, // A Hall of Delights
               1661191195, // THE IMPERIAL MENAGERIE
+              3841416153, // Goldleaf
               3841416154 // SHADOW GILT
             ]
           }
@@ -981,6 +982,7 @@ export default ([
                         name: 'Extras',
                         season: 7,
                         items: [
+                          947448544, // Shadow of Earth Shell
                           1661191193, // CROWN OF SORROW
                           2027598066 // IMPERIAL OPULENCE
                         ]
