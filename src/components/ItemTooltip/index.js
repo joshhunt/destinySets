@@ -12,6 +12,9 @@ import ExtraInfo from 'app/components/ExtraInfo';
 import ItemAttributes from 'app/components/ItemAttributes';
 import Icon from 'app/components/Icon';
 import ItemPerks from 'app/components/ItemPerks';
+import ChaliceRecipie from 'app/components/ChaliceRecipie';
+
+import CHALICE_DATA from 'app/extraData/chalice';
 
 import {
   makeItemSelector,
@@ -65,6 +68,8 @@ function ItemTooltip({
     ].filter(Boolean)
   );
 
+  const chaliceRecipie = CHALICE_DATA[item.hash];
+
   return (
     <div className={cx(styles.tooltip, small && styles.small)}>
       <ItemBanner
@@ -89,23 +94,21 @@ function ItemTooltip({
           </div>
         )}
 
-        {!small &&
-          stats && (
-            <div className={styles.section}>
-              <ItemStats
-                className={styles.stats}
-                stats={stats}
-                statDefs={statDefs}
-              />
-            </div>
-          )}
+        {!small && stats && (
+          <div className={styles.section}>
+            <ItemStats
+              className={styles.stats}
+              stats={stats}
+              statDefs={statDefs}
+            />
+          </div>
+        )}
 
-        {perks &&
-          perks.length > 0 && (
-            <div className={styles.section}>
-              <ItemPerks className={styles.perks} perks={perks} />
-            </div>
-          )}
+        {perks && perks.length > 0 && (
+          <div className={styles.section}>
+            <ItemPerks className={styles.perks} perks={perks} />
+          </div>
+        )}
 
         {!hideObjectives && objectiveHashes.length ? (
           <Objectives
@@ -137,12 +140,15 @@ function ItemTooltip({
             />
           )}
 
-          {!small &&
-            loreHash && (
-              <div className={styles.extraInfo}>
-                Lore available on Ishtar Collective, click for more info
-              </div>
-            )}
+          {!small && loreHash && (
+            <div className={styles.extraInfo}>
+              Lore available on Ishtar Collective, click for more info
+            </div>
+          )}
+        </div>
+
+        <div className={styles.section}>
+          {chaliceRecipie && <ChaliceRecipie recipie={chaliceRecipie} />}
         </div>
       </div>
     </div>

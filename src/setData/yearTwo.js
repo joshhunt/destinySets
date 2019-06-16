@@ -345,10 +345,10 @@ export default ([
             season: 7,
             items: [
               1661191187, // MISTRUST OF GIFTS
-              2224920149, // GAMBIT STEEL 
+              2224920149, // GAMBIT STEEL
               2224920148 // GAMBIT BLACKGUARD
             ]
-          },
+          }
         ]
       },
       {
@@ -483,7 +483,7 @@ export default ([
               2266122060, // IRON TRUAGE GAUNTLETS
               2850783764, // IRON TRUAGE PLATE
               2911957494, // IRON TRUAGE GREAVES
-              4019071337 // RADEGAST'S IRON SASH 
+              4019071337 // RADEGAST'S IRON SASH
             ]
           },
           {
@@ -689,8 +689,7 @@ export default ([
       },
       {
         name: 'Menagerie',
-        description:
-          'Acquired from the Menagerie.',
+        description: 'Acquired from the Menagerie.',
         id: 'YEAR_TWO_MENAGERIE',
         sections: [
           {
@@ -711,9 +710,6 @@ export default ([
             season: 7,
             itemGroups: [
               [
-                 569799275, // GOLDTUSK
-              ],
-              [
                 2172333833, // EXODUS DOWN MASK
                 3875829376, // EXODUS DOWN GRIPS
                 126418248, // EXODUS DOWN VEST
@@ -726,6 +722,9 @@ export default ([
                 3759327055, // OPULENT STALKER VEST
                 1661981723, // OPULENT STALKER STRIDES
                 1135872734 // OPULENT STALKER CLOAK
+              ],
+              [
+                569799275 // GOLDTUSK
               ]
             ]
           },
@@ -733,9 +732,6 @@ export default ([
             name: 'Titan Weapon & Armor',
             season: 7,
             itemGroups: [
-              [
-                569799273, // THRONE-CLEAVER
-              ],
               [
                 582151075, // EXODUS DOWN HELM
                 1678216306, // EXODUS DOWN GAUNTLETS
@@ -748,7 +744,10 @@ export default ([
                 392500791, // OPULENT DUELIST GAUNTLETS
                 2856582785, // OPULENT DUELIST PLATE
                 1776578009, // OPULENT DUELIST GREAVES
-                4105225180 // OPULENT DUELIST MARK 
+                4105225180 // OPULENT DUELIST MARK
+              ],
+              [
+                569799273 // THRONE-CLEAVER
               ]
             ]
           },
@@ -756,9 +755,6 @@ export default ([
             name: 'Warlock Weapon & Armor',
             season: 7,
             itemGroups: [
-              [
-                 569799274, // DEATH'S RAZOR
-              ],
               [
                 2731698402, // EXODUS DOWN HOOD
                 2029766091, // EXODUS DOWN GLOVES
@@ -772,6 +768,9 @@ export default ([
                 2026757026, // OPULENT SCHOLAR ROBES
                 1285460104, // OPULENT SCHOLAR BOOTS
                 1250649843 // OPULENT SCHOLAR BOND
+              ],
+              [
+                569799274 // DEATH'S RAZOR
               ]
             ]
           },
@@ -927,68 +926,66 @@ export default ([
         ]
       },
       {
-    name: 'Raid: Crown of Sorrow',
+        name: 'Raid: Crown of Sorrow',
         id: 'YEAR_TWO_RAID_PENUMBRA',
-            description: (
-                'DestinyCollectibleDefinition[3110698812].sourceString',
-                'Acquired from the raid "Crown of Sorrow.'
-            ),
-                sections: [
-                    {
-                        name: 'Weapons',
-                        season: 7,
-                        items: [
-                            3110698812, // TARRABAH
-                            1286686760, // GAHLRAN'S RIGHT HAND
-                            2338088853, // CALUSEA NOBLESSE
-                            3861448240, // EMPEROR'S COURTESY
-                            1496419775 // BANE OF SORROW
-                        ]
-                    },
-                    {
-                        name: 'Hunter Armor',
-                        season: 7,
-                        items: [
-                            1999427172, // SHADOW'S MASK
-                            1946621757, // SHADOW'S GRIPS
-                            3483984579, // SHADOW'S VEST
-                            17280095, // SHADOW'S STRIDES
-                            2765688378 // SHADOW'S CLOAK
-                        ]
-                    },
-                    {
-                        name: 'Titan Armor',
-                        season: 7,
-                        items: [
-                            1434870610, // SHADOW'S HELM
-                            1901223867, // SHADOW'S GAUNTLETS
-                            1862963733, // SHADOW'S PLATE
-                            309687341, // SHADOW'S GREAVES
-                            560455272 // SHADOW'S MARK
-                        ]
-                    },
-                    {
-                        name: 'Warlock Armor',
-                        season: 7,
-                        items: [
-                            1481751647, // SHADOW'S MIND
-                            1457195686, // SHADOW'S GLOVES
-                            2023695690, // SHADOW'S ROBES
-                            974648224, // SHADOW'S BOOTS
-                            2194479195 // SHADOW'S BOND
-                        ]
-                    },
-                    {
-                        name: 'Extras',
-                        season: 7,
-                        items: [
-                          947448544, // Shadow of Earth Shell
-                          1661191193, // CROWN OF SORROW
-                          2027598066 // IMPERIAL OPULENCE
-                        ]
-                    }
-                ]
-            }
+        description: ('DestinyCollectibleDefinition[3110698812].sourceString',
+        'Acquired from the raid "Crown of Sorrow.'),
+        sections: [
+          {
+            name: 'Weapons',
+            season: 7,
+            items: [
+              3110698812, // TARRABAH
+              1286686760, // GAHLRAN'S RIGHT HAND
+              2338088853, // CALUSEA NOBLESSE
+              3861448240, // EMPEROR'S COURTESY
+              1496419775 // BANE OF SORROW
+            ]
+          },
+          {
+            name: 'Hunter Armor',
+            season: 7,
+            items: [
+              1999427172, // SHADOW'S MASK
+              1946621757, // SHADOW'S GRIPS
+              3483984579, // SHADOW'S VEST
+              17280095, // SHADOW'S STRIDES
+              2765688378 // SHADOW'S CLOAK
+            ]
+          },
+          {
+            name: 'Titan Armor',
+            season: 7,
+            items: [
+              1434870610, // SHADOW'S HELM
+              1901223867, // SHADOW'S GAUNTLETS
+              1862963733, // SHADOW'S PLATE
+              309687341, // SHADOW'S GREAVES
+              560455272 // SHADOW'S MARK
+            ]
+          },
+          {
+            name: 'Warlock Armor',
+            season: 7,
+            items: [
+              1481751647, // SHADOW'S MIND
+              1457195686, // SHADOW'S GLOVES
+              2023695690, // SHADOW'S ROBES
+              974648224, // SHADOW'S BOOTS
+              2194479195 // SHADOW'S BOND
+            ]
+          },
+          {
+            name: 'Extras',
+            season: 7,
+            items: [
+              947448544, // Shadow of Earth Shell
+              1661191193, // CROWN OF SORROW
+              2027598066 // IMPERIAL OPULENCE
+            ]
+          }
+        ]
+      }
     ]
   },
   {
@@ -1197,7 +1194,7 @@ export default ([
               ],
               [
                 3031114503, // The Gambler's Palm
-                1673638926 // The Great Beyond 
+                1673638926 // The Great Beyond
               ]
             ]
           },
@@ -1659,7 +1656,7 @@ export default ([
                 3148074173 // Inaugural Revelry Mark
               ],
               [
-                1685769251, // Reveler's Wings 
+                1685769251, // Reveler's Wings
                 1685769250 // Reveler's Antlers
               ]
             ]
@@ -2161,10 +2158,10 @@ export default ([
                 403561732, // DEFENSELESS, TO BE ARMED
                 3473397300, // KING IN ALL DIRECTIONS
                 3199440990, // ROCK-A-BYE
-                2512537661, // SHAPESHIFTER 
+                2512537661, // SHAPESHIFTER
                 1546315793, // UNHEARING, TO BE TOLD
                 3967294031, // UNLOVED, TO BE CHERISHED
-                1069601252 // UNSEEING, TO BE SHOWN 
+                1069601252 // UNSEEING, TO BE SHOWN
               ],
               [
                 3211076406, // BLUED STEEL
@@ -2344,9 +2341,8 @@ export default ([
               443190219, // Solar Shell
               443190220, // Gyro Shell
               443190221, // PS-1 Shell
-              443190222, // Drop Pod Shell 
-              443190223, // Intrepid Shell 
-              
+              443190222, // Drop Pod Shell
+              443190223 // Intrepid Shell
             ]
           },
           {
@@ -2485,15 +2481,14 @@ export default ([
             name: 'Sparrows',
             season: 7,
             items: [
-              258623688, // BrayTech DREAM9 
+              258623688, // BrayTech DREAM9
               25862368, // Clean Sweep
               258623690, // Expedition-JT
               258623691, // The Motherlode
               258623692, // The Grateful Crane
               258623693, // The Calypso
               258623694, // Blood in the Water
-              258623695, // One Fell Swoop
-              
+              258623695 // One Fell Swoop
             ]
           },
           {
@@ -2566,11 +2561,10 @@ export default ([
               2964059912, // Transpose JT-24-X
               2964059913, // Chela-N
               2964059914, // Aeshnidae Fixed-Wing
-              2964059916, // Bayle's Aerodyne 
+              2964059916, // Bayle's Aerodyne
               2964059917, // Proteus
               2964059918, // Woomera B-5
-              2964059919, // The Oviraptor
-              
+              2964059919 // The Oviraptor
             ]
           },
           {
@@ -2618,8 +2612,7 @@ export default ([
               1363705633, // Atmospheric Glow
               1363705634, // Amethyst Veil
               1363705635, // Coastal Suede
-              1363705639, // Royal Welcome
-              
+              1363705639 // Royal Welcome
             ]
           },
           {
@@ -2657,10 +2650,10 @@ export default ([
             season: 7,
             items: [
               515071961, // Tiger Effects
-              515071964, // Eldritch Effects 
+              515071964, // Eldritch Effects
               515071965, // Darkblade Effects
               515071966, // Loot Chest Effects
-              515071967, // Minotaur Effects
+              515071967 // Minotaur Effects
             ]
           }
         ]
