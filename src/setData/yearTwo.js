@@ -549,7 +549,7 @@ export default ([
             name: 'Extras',
             season: 6,
             items: [
-              1368521327, // Volk-CER
+              // 1368521327, // Volk-CER (Currently MIA from Loot-Pool)
               2868525736, // The Weight of Guilt (Emblem)
               2868525739, // Heavy as Death (Emblem)
               1987234560 // Iron Ruby (Shader)
@@ -782,7 +782,8 @@ export default ([
               1661191194, // A Hall of Delights
               1661191195, // THE IMPERIAL MENAGERIE
               3841416153, // Goldleaf
-              3841416154 // SHADOW GILT
+              3841416154, // SHADOW GILT
+              3841416155 // Cinderchar
             ]
           }
         ]
