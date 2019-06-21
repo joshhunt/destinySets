@@ -781,6 +781,7 @@ export default ([
               3176509806, // Árma Mákhēs
               1661191194, // A Hall of Delights
               1661191195, // THE IMPERIAL MENAGERIE
+              3841416152, // Golden Empire
               3841416153, // Goldleaf
               3841416154, // SHADOW GILT
               3841416155 // Cinderchar
