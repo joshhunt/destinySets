@@ -119,14 +119,20 @@ function filterItem(item, inventory, filters, searchTerm) {
   return false;
 }
 
-function query(itemDefsArray, checklistDefsArray, queryTerm) {
+function query(
+  itemDefsArray,
+  checklistDefsArray,
+  presentationNodeDefs,
+  queryTerm
+) {
   if (itemDefsArray.length === 0) {
     return [];
   }
 
   const results = fancySearch(queryTerm, {
     item: itemDefsArray,
-    checklist: checklistDefsArray
+    checklist: checklistDefsArray,
+    presentationNodeDefs
   }).filter(item => {
     return !ITEM_BLACKLIST.includes(item.hash);
   });
@@ -144,12 +150,18 @@ const propsPreventFilteringSelector = (state, props) => {
 const setDataSelector = createSelector(
   itemDefsSelector,
   checklistDefsSelector,
+  state => state.definitions.DestinyPresentationNodeDefinition,
   propsSetDataSelector,
-  (itemDefs, checklistDefs, setData) => {
+  (itemDefs, checklistDefs, presentationNodeDefs, setData) => {
     const itemDefsArray = Object.values(itemDefs || {});
     const checklistDefsArray = Object.values(checklistDefs || {});
 
-    const q = query.bind(null, itemDefsArray, checklistDefsArray);
+    const q = query.bind(
+      null,
+      itemDefsArray,
+      checklistDefsArray,
+      presentationNodeDefs
+    );
 
     const newSetData = setData.map(group => {
       const sets = group.sets.map(_set => {

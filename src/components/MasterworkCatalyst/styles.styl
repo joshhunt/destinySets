@@ -1,3 +1,7 @@
+$green = #44bd32;
+$trackedGreen = #A9FF6A
+$borderWidth = 1px
+
 .root
   // max-width: 25%
   min-width: 290px
@@ -20,10 +24,31 @@
   & + &
     border-left: none
 
+  // &.completed
+  //   opacity: .5
+
 .inner
+  display: flex
+  flex-direction: column
+  position: relative
+  z-index: 1
   background: #15191E
   padding: 15px
   height: 100%
+
+.tick
+  position: absolute
+  top: 8px
+  right: 8px
+  background: $green
+  width: 20px
+  height: 20px
+  font-size: 14px
+  line-height: 1
+  border-radius: 50px
+  display: flex
+  align-items: center
+  justify-content: center
 
 .screenshot
   display: block
@@ -65,3 +90,11 @@
 
 .faded
   opacity: .75em
+
+
+.completeMessage
+  display: flex
+  align-items: center
+  flex-grow: 1
+  justify-content: center
+  margin-bottom: 0

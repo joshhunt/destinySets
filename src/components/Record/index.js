@@ -8,15 +8,11 @@ import {
   objectiveInstancesSelector,
   recordsSelector
 } from 'app/store/selectors';
-import { trackRecords, removeTrackedRecord } from 'app/store/reducer';
 
-import BungieImage from 'app/components/BungieImage';
 import Objectives from 'app/components/Objectives';
 import Icon from 'app/components/Icon';
 
 import s from './styles.styl';
-import trackButtonBg from './037e-00001686.png';
-import trackButtonFg from './037e-00001685.png';
 
 function Record({
   className,
@@ -24,10 +20,7 @@ function Record({
   recordState,
   recordInstance,
   objectiveInstances,
-  objectiveDefs,
-  isTracked,
-  trackRecords,
-  removeTrackedRecord
+  objectiveDefs
 }) {
   if (!record) {
     return null;
@@ -38,67 +31,22 @@ function Record({
     (!recordState.objectiveNotCompleted || recordState.recordRedeemed);
 
   return (
-    <div
-      className={cx(
-        className,
-        s.root,
-        completed && s.completed,
-        isTracked && s.tracked
-      )}
-    >
-      {completed && (
-        <div className={s.tick}>
-          <Icon icon="check" />
-        </div>
-      )}
-
+    <div className={cx(className, s.root, completed && s.completed)}>
       <div className={s['bot-left']} />
 
-      {
-        <button
-          className={s.trackButton}
-          onClick={() =>
-            isTracked
-              ? removeTrackedRecord(record.hash)
-              : trackRecords([record.hash])
-          }
-        >
-          <img className={s.trackButtonBg} src={trackButtonBg} alt="" />
-          <img className={s.trackButtonFg} src={trackButtonFg} alt="" />
-        </button>
-      }
-
-      {record.displayProperties &&
-        record.displayProperties.icon && (
-          <div className={s.accessory}>
-            <BungieImage
-              className={s.icon}
-              src={record.displayProperties.icon}
-            />
-          </div>
-        )}
-
       <div className={s.main}>
-        <div className={s.name}>
-          <div className={s.nameName}>{record.displayProperties.name}</div>
-          <div className={s.points}>
-            {record.completionInfo && record.completionInfo.ScoreValue} pts
-          </div>
-        </div>
-
         <div className={s.description}>
           <small>{record.displayProperties.description}</small>
         </div>
 
-        {recordInstance &&
-          recordInstance.objectives && (
-            <Objectives
-              className={s.objectives}
-              objectives={recordInstance.objectives}
-              objectiveInstances={objectiveInstances}
-              objectiveDefs={objectiveDefs}
-            />
-          )}
+        {recordInstance && recordInstance.objectives && (
+          <Objectives
+            className={s.objectives}
+            objectives={recordInstance.objectives}
+            objectiveInstances={objectiveInstances}
+            objectiveDefs={objectiveDefs}
+          />
+        )}
 
         {!recordState && <p className={s.small}>Missing data</p>}
       </div>
@@ -122,18 +70,14 @@ const mapStateToProps = (state, ownProps) => {
   const records = recordsSelector(state);
   const record = records[ownProps.hash];
   const recordState = record && record.enumeratedState;
-  const isTracked = state.app.trackedRecords.includes(ownProps.hash);
 
   return {
     objectiveInstances: objectiveInstancesSelector(state),
     record: recordDefs && recordDefs[ownProps.hash],
     recordState,
     recordInstance: record,
-    isTracked,
     objectiveDefs: state.definitions.DestinyObjectiveDefinition
   };
 };
 
-export default connect(mapStateToProps, { trackRecords, removeTrackedRecord })(
-  Record
-);
+export default connect(mapStateToProps)(Record);
