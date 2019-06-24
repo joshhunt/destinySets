@@ -983,7 +983,8 @@ export default ([
             items: [
               947448544, // Shadow of Earth Shell
               1661191193, // CROWN OF SORROW
-              2027598066 // IMPERIAL OPULENCE
+              2027598066, // IMPERIAL OPULENCE
+              2027598067 // IMPERIAL DRESS
             ]
           }
         ]
