@@ -779,6 +779,7 @@ export default ([
             season: 7,
             items: [
               3176509806, // Árma Mákhēs
+              3875444086, // The Emperor's Chosen
               1661191194, // A Hall of Delights
               1661191195, // THE IMPERIAL MENAGERIE
               3841416152, // Golden Empire
