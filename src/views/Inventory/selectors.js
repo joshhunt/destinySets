@@ -35,6 +35,7 @@ const ITEM_BLACKLIST = [
   2896466320, // Jade Rabbit dupe
   2978016230, // Jade Rabbit dupe
   3229272315, // Jade Rabbit dupe
+  2146650065, // Prometheus Lens dupe
   2251716886, // Jade Rabbit ornament
   2769834047, // Old emblems
   3334815691, // Old emblems
