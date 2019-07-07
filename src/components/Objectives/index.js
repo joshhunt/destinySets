@@ -90,7 +90,7 @@ export default function Objectives(props) {
               className={styles.objectiveTrack}
               style={{
                 width: `${Math.min(
-                  objective.progress / completionValue * 100,
+                  (objective.progress / completionValue) * 100,
                   100
                 )}%`
               }}
@@ -110,14 +110,13 @@ export default function Objectives(props) {
         );
       })}
 
-      {onlyIncomplete &&
-        numCompleted > 0 && (
-          <div className={styles.completed}>
-            {numCompleted !== numObjectives && '+ '}
-            {objectivesBuild.length - incompleteObjectives.length} completed
-            objectives
-          </div>
-        )}
+      {onlyIncomplete && numCompleted > 0 && (
+        <div className={styles.completed}>
+          {numCompleted !== numObjectives && '+ '}
+          {objectivesBuild.length - incompleteObjectives.length} completed
+          objectives
+        </div>
+      )}
     </div>
   );
 }

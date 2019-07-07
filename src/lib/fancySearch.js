@@ -1,7 +1,9 @@
-import { intersection, overEvery } from 'lodash';
+import { intersection, overEvery, invert, get as lodashGet } from 'lodash';
 
 import * as enums from 'app/lib/destinyEnums';
 import { getLower as get } from 'app/lib/utils';
+
+import catalystTriumphs from 'app/extraData/catalystTriumphs';
 
 const tierType = hash => item => item.inventory.tierTypeHash === hash;
 const classType = value => item => item.classType === value && !item.redacted;
@@ -80,8 +82,7 @@ export const fancySearchFns = {
     return itemFilter(items, item => {
       const categories = item.itemCategoryHashes || [];
       return (
-        categories.includes(enums.ARMOR) ||
-        categories.includes(enums.WEAPON)
+        categories.includes(enums.ARMOR) || categories.includes(enums.WEAPON)
       );
     });
   },
@@ -96,7 +97,10 @@ export const fancySearchFns = {
 
   'is:ghostly': items => {
     return itemFilter(items, item => {
-      return itemCategory(enums.GHOST)(item) || itemCategory(enums.GHOST_PROJECTION)(item);
+      return (
+        itemCategory(enums.GHOST)(item) ||
+        itemCategory(enums.GHOST_PROJECTION)(item)
+      );
     });
   },
 
@@ -196,47 +200,43 @@ export const fancySearchFns = {
 
 export const fancySearchTerms = Object.keys(fancySearchFns);
 
-function itemsFromChecklistDefs(checklistDef, hashOnly) {
-  if (!checklistDef) {
-    return [];
-  }
+const CATALYST_PRESENTATION_NODES = {
+  kinetic: 4145555894,
+  energy: 259629437,
+  power: 3274555605
+};
 
-  return checklistDef.entries.map(d => d.itemHash);
-}
-
-function findOfHash(defsList, hash) {
-  return defsList.find(d => d.hash === hash);
-}
+const catalystItemsByRecordHash = invert(catalystTriumphs);
 
 export default function fancySearch(search, defs, opts = { hashOnly: false }) {
-  if (search === 'special:tempCollections') {
-    if (defs.checklist) {
-      const profileChecklist = findOfHash(
-        defs.checklist,
-        enums.CHECKLIST_PROFILE_COLLECTIONS
+  const [, catalystWeaponType] = search.match(/special:(\w+)Catalysts/) || [];
+
+  if (catalystWeaponType && defs.presentationNodeDefs) {
+    const nodeHash = CATALYST_PRESENTATION_NODES[catalystWeaponType];
+    const node = defs.presentationNodeDefs[nodeHash];
+
+    if (!node) {
+      debugger;
+      console.warn(
+        'Unable to find presentation node for',
+        catalystWeaponType,
+        'catalysts'
       );
 
-      const characterChecklist = findOfHash(
-        defs.checklist,
-        enums.CHECKLIST_CHARACTER_COLLECTIONS
-      );
-
-      const profileItems =
-        (profileChecklist &&
-          itemsFromChecklistDefs(profileChecklist, opts.hashOnly)) ||
-        [];
-
-      const characterItems =
-        (characterChecklist &&
-          itemsFromChecklistDefs(characterChecklist, opts.hashOnly)) ||
-        [];
-
-      const allItems = [...profileItems, ...characterItems];
-
-      return opts.hashOnly
-        ? allItems
-        : allItems.map(h => defs.item.find(d => d.hash === h));
+      return [];
     }
+
+    const itemHashes = lodashGet(node, 'children.records', [])
+      .map(({ recordHash }) => {
+        return parseInt(catalystItemsByRecordHash[recordHash], 10);
+      })
+      .filter(Boolean);
+
+    console.log({ catalystWeaponType, itemHashes });
+
+    return opts.hashOnly
+      ? itemHashes
+      : itemHashes.map(h => defs.item.find(d => d.hash === h));
   }
 
   const queries = search.split(' ').filter(s => s.includes(':'));

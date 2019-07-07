@@ -1,0 +1,43 @@
+.root
+  content: 'hello'
+  margin-bottom: 10px
+  font-size: 14px
+
+.recipie
+  display: flex
+  align-items: center
+  margin-top: 5px
+
+.slot
+  // display: flex
+  // align-items: center
+  font-size: 0
+  padding: 2px
+  background: rgba(white, .1)
+
+  & + &
+    margin-right: 5px
+
+.and
+  display: inline-block
+  font-size: 12px
+  margin: 5px
+
+.icon
+  width: 45px
+  height: 45px
+  display: inline-block
+  vertical-align: middle
+
+.rune
+  display: inline-block
+  vertical-align: middle
+
+  & + &
+    &:before
+      display: inline-block
+      vertical-align: middle
+      content: ' or '
+      line-height: 35px
+      font-size: 12px
+      margin: 5px

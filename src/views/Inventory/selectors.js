@@ -30,12 +30,6 @@ import { default as sortItems } from 'app/lib/sortItemsIntoSections';
 
 const ITEM_BLACKLIST = [
   1744115122, // Legend of Acrius quest item
-  460724140, // Jade Rabbit dupe
-  546372301, // Jade Rabbit dupe
-  2896466320, // Jade Rabbit dupe
-  2978016230, // Jade Rabbit dupe
-  3229272315, // Jade Rabbit dupe
-  2251716886, // Jade Rabbit ornament
   2769834047, // Old emblems
   3334815691, // Old emblems
   3754910498, // Old emblems
@@ -119,16 +113,25 @@ function filterItem(item, inventory, filters, searchTerm) {
   return false;
 }
 
-function query(itemDefsArray, checklistDefsArray, queryTerm) {
+function query(
+  itemDefsArray,
+  checklistDefsArray,
+  presentationNodeDefs,
+  queryTerm
+) {
   if (itemDefsArray.length === 0) {
     return [];
   }
 
   const results = fancySearch(queryTerm, {
     item: itemDefsArray,
-    checklist: checklistDefsArray
+    checklist: checklistDefsArray,
+    presentationNodeDefs
   }).filter(item => {
-    return !ITEM_BLACKLIST.includes(item.hash);
+    return (
+      !ITEM_BLACKLIST.includes(item.hash) &&
+      !item.itemCategoryHashes.includes(3109687656)
+    );
   });
 
   return (results || []).filter(Boolean);
@@ -144,12 +147,18 @@ const propsPreventFilteringSelector = (state, props) => {
 const setDataSelector = createSelector(
   itemDefsSelector,
   checklistDefsSelector,
+  state => state.definitions.DestinyPresentationNodeDefinition,
   propsSetDataSelector,
-  (itemDefs, checklistDefs, setData) => {
+  (itemDefs, checklistDefs, presentationNodeDefs, setData) => {
     const itemDefsArray = Object.values(itemDefs || {});
     const checklistDefsArray = Object.values(checklistDefs || {});
 
-    const q = query.bind(null, itemDefsArray, checklistDefsArray);
+    const q = query.bind(
+      null,
+      itemDefsArray,
+      checklistDefsArray,
+      presentationNodeDefs
+    );
 
     const newSetData = setData.map(group => {
       const sets = group.sets.map(_set => {

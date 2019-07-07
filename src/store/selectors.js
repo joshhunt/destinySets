@@ -153,33 +153,36 @@ export const currentInventorySelector = createSelector(
   }
 );
 
-export const recordsSelector = createSelector(profileSelector, profile => {
-  const profileRecords = get(profile, 'profileRecords.data.records', {});
-  const characterRecords = Object.values(
-    get(profile, 'characterRecords.data', {})
-  ).reduce((acc, { records }) => {
-    return {
-      ...acc,
-      ...records
+export const recordsSelector = createSelector(
+  profileSelector,
+  profile => {
+    const profileRecords = get(profile, 'profileRecords.data.records', {});
+    const characterRecords = Object.values(
+      get(profile, 'characterRecords.data', {})
+    ).reduce((acc, { records }) => {
+      return {
+        ...acc,
+        ...records
+      };
+    }, {});
+
+    const all = {
+      ...profileRecords,
+      ...characterRecords
     };
-  }, {});
 
-  const all = {
-    ...profileRecords,
-    ...characterRecords
-  };
+    const allMappedRecords = mapValues(all, record => {
+      return {
+        ...record,
+        enumeratedState: enumerateState(record.state)
+      };
+    });
 
-  const allMappedRecords = mapValues(all, record => {
-    return {
-      ...record,
-      enumeratedState: enumerateState(record.state)
-    };
-  });
+    window.__records = allMappedRecords;
 
-  window.__records = allMappedRecords;
-
-  return allMappedRecords;
-});
+    return allMappedRecords;
+  }
+);
 
 const enumerateCollectibleState = state => ({
   none: flagEnum(state, 0),
@@ -454,7 +457,6 @@ export const makeCatalystSelector = () => {
     itemDefsSelector,
     makeItemSelector(),
     (equipment, itemDefs, item) => {
-      console.log({ equipment, itemDefs, item });
       if (!item || !itemDefs) {
         return null;
       }

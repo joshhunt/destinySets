@@ -11,7 +11,10 @@ import Modal from 'app/components/Modal';
 import ItemPerks from 'app/components/ItemPerks';
 import Icon from 'app/components/Icon';
 import ExtraInfo from 'app/components/ExtraInfo';
+import ChaliceRecipie from 'app/components/ChaliceRecipie';
 import ishtarSvg from 'app/ishar.svg';
+
+import CHALICE_DATA from 'app/extraData/chalice';
 
 import {
   trackOrnament as trackOrnamentAction,
@@ -71,6 +74,8 @@ class ItemModalContent extends Component {
       ...((item.objectives || {}).objectiveHashes || [])
     ].filter(Boolean);
 
+    const chaliceRecipie = CHALICE_DATA[item.hash];
+
     return (
       <div className={styles.root}>
         <button className={styles.close} onClick={onRequestClose}>
@@ -107,27 +112,25 @@ class ItemModalContent extends Component {
             </p>
           )}
 
-        {perks &&
-          perks.length > 0 && (
-            <ItemPerks className={styles.perks} perks={perks} />
-          )}
+        {perks && perks.length > 0 && (
+          <ItemPerks className={styles.perks} perks={perks} />
+        )}
 
-        {!hideObjectives &&
-          objectiveHashes.length > 0 && (
-            <div>
-              <h3 className={styles.objectiveTitle}>
-                Complete Objectives to Unlock
-              </h3>
+        {!hideObjectives && objectiveHashes.length > 0 && (
+          <div>
+            <h3 className={styles.objectiveTitle}>
+              Complete Objectives to Unlock
+            </h3>
 
-              <Objectives
-                className={styles.objectives}
-                trackedStatStyle={isEmblem}
-                objectiveHashes={objectiveHashes}
-                objectiveInstances={objectiveInstances}
-                objectiveDefs={objectiveDefs}
-              />
-            </div>
-          )}
+            <Objectives
+              className={styles.objectives}
+              trackedStatStyle={isEmblem}
+              objectiveHashes={objectiveHashes}
+              objectiveInstances={objectiveInstances}
+              objectiveDefs={objectiveDefs}
+            />
+          </div>
+        )}
 
         <p>
           {!!objectiveHashes.length && (
@@ -139,36 +142,37 @@ class ItemModalContent extends Component {
             </button>
           )}
 
-          {itemInventoryEntry &&
-            itemInventoryEntry.dismantled && (
-              <button
-                className={styles.button}
-                onClick={() => forgetDismantled(hash)}
-              >
-                Forget dismantled
-              </button>
-            )}
+          {itemInventoryEntry && itemInventoryEntry.dismantled && (
+            <button
+              className={styles.button}
+              onClick={() => forgetDismantled(hash)}
+            >
+              Forget dismantled
+            </button>
+          )}
 
-          {googleAuth.signedIn &&
-            !itemInventoryEntry && (
-              <button
-                className={styles.button}
-                onClick={() => toggleManuallyObtained(hash)}
-              >
-                Mark as collected
-              </button>
-            )}
+          {googleAuth.signedIn && !itemInventoryEntry && (
+            <button
+              className={styles.button}
+              onClick={() => toggleManuallyObtained(hash)}
+            >
+              Mark as collected
+            </button>
+          )}
 
-          {itemInventoryEntry &&
-            itemInventoryEntry.manuallyObtained && (
-              <button
-                className={styles.button}
-                onClick={() => toggleManuallyObtained(hash)}
-              >
-                Unmark as collected
-              </button>
-            )}
+          {itemInventoryEntry && itemInventoryEntry.manuallyObtained && (
+            <button
+              className={styles.button}
+              onClick={() => toggleManuallyObtained(hash)}
+            >
+              Unmark as collected
+            </button>
+          )}
         </p>
+
+        <div className={styles.section}>
+          {chaliceRecipie && <ChaliceRecipie recipie={chaliceRecipie} />}
+        </div>
 
         <ul className={styles.viewItemLinks}>
           {ishtarLink && (
@@ -254,4 +258,7 @@ const mapDispatchToActions = {
   forgetDismantled: forgetDismantledAction
 };
 
-export default connect(mapStateToProps, mapDispatchToActions)(ItemModalWrapper);
+export default connect(
+  mapStateToProps,
+  mapDispatchToActions
+)(ItemModalWrapper);
