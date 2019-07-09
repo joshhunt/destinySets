@@ -1765,6 +1765,96 @@ export default ([
             ]
           }
         ]
+      },
+      {
+        name: 'Moments of Triumph',
+        id: 'YEAR_TWO_MOMENTS_OF_TRIUMPH',
+        description: '',
+        big: false,
+        sections: [
+          {
+            name: 'Weapon & Ornament',
+            season: 7,
+            itemGroups: [
+              [
+
+              ],
+              [
+
+              ]
+            ]
+          },
+          {
+            name: 'Hunter Armor',
+            season: 7,
+            items: [
+
+            ]
+          },
+          {
+            name: 'Titan Armor',
+            season: 7,
+            items: [
+
+            ]
+          },
+          {
+            name: 'Warlock Armor',
+            season: 7,
+            items: [
+
+            ]
+          },
+          {
+            name: 'Masks',
+            season: 7,
+            items: [
+
+            ]
+          },
+          {
+            name: 'Emotes',
+            season: 7,
+            items: [
+
+            ]
+          },
+          {
+            name: 'Ghosts',
+            season: 7,
+            items: [
+
+            ]
+          },
+          {
+            name: 'Ghost Projections',
+            season: 7,
+            items: [
+
+            ]
+          },
+          {
+            name: 'Ships',
+            season: 7,
+            items: [
+
+            ]
+          },
+          {
+            name: 'Sparrows',
+            season: 7,
+            items: [
+
+            ]
+          },
+          {
+            name: 'Extras',
+            season: 7,
+            items: [
+
+            ]
+          }
+        ]
       }
     ]
   },
