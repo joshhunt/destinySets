@@ -1422,6 +1422,16 @@ export default ([
             ]
           },
           {
+            name: 'Sparrows',
+            season: 4,
+            items: [
+              1836636207, // Winchester's Ruin
+              2277536122, // Insurgent's Spur
+              2277536123, // Cetacean Wing
+              2277536120 // Bishop's Run
+            ]
+          },
+          {
             name: 'Ships',
             season: 4,
             items: [
@@ -1433,16 +1443,6 @@ export default ([
               1473368767, // Stronger Than Now
               1473368760, // Stained Shrapnel
               1473368761 // Xenon Direct
-            ]
-          },
-          {
-            name: 'Sparrows',
-            season: 4,
-            items: [
-              1836636207, // Winchester's Ruin
-              2277536122, // Insurgent's Spur
-              2277536123, // Cetacean Wing
-              2277536120 // Bishop's Run
             ]
           },
           {
@@ -1767,86 +1767,11 @@ export default ([
         ]
       },
       {
-        name: 'Moments of Triumph',
+        name: 'Moments of Triumph', // Will probably merge with Solstice set when that event starts
         id: 'YEAR_TWO_MOMENTS_OF_TRIUMPH',
         description: '',
         big: false,
         sections: [
-          {
-            name: 'Weapon & Ornament',
-            season: 7,
-            itemGroups: [
-              [
-
-              ],
-              [
-
-              ]
-            ]
-          },
-          {
-            name: 'Hunter Armor',
-            season: 7,
-            items: [
-
-            ]
-          },
-          {
-            name: 'Titan Armor',
-            season: 7,
-            items: [
-
-            ]
-          },
-          {
-            name: 'Warlock Armor',
-            season: 7,
-            items: [
-
-            ]
-          },
-          {
-            name: 'Masks',
-            season: 7,
-            items: [
-
-            ]
-          },
-          {
-            name: 'Emotes',
-            season: 7,
-            items: [
-
-            ]
-          },
-          {
-            name: 'Ghosts',
-            season: 7,
-            items: [
-
-            ]
-          },
-          {
-            name: 'Ghost Projections',
-            season: 7,
-            items: [
-
-            ]
-          },
-          {
-            name: 'Ships',
-            season: 7,
-            items: [
-
-            ]
-          },
-          {
-            name: 'Sparrows',
-            season: 7,
-            items: [
-
-            ]
-          },
           {
             name: 'Extras',
             season: 7,
