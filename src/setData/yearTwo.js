@@ -791,6 +791,21 @@ export default ([
         ]
       },
       {
+        name: 'Tribute Hall',
+        description: 'Acquired by Placing Tributes in the Tribute Hall',
+        id: 'YEAR_TWO_TRIBUTE_HALL',
+        sections: [
+          {
+            name: 'Extras',
+            season: 7,
+            items: [
+              377681571, // X Marks the Spot
+              1661191192 // The Tribute Hall
+            ]
+          }
+        ]
+      },
+      {
         name: _(
           'DestinyRecordDefinition[3688903951].displayProperties.name',
           'Raid: Last Wish'
@@ -1776,6 +1791,8 @@ export default ([
             name: 'Extras',
             season: 7,
             items: [
+              3823337168, // Lightning Rider
+              3514681868, // Solstice Hymnal
               1661191196 // Moments of Triumph 2019
             ]
           }
