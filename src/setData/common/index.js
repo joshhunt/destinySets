@@ -208,3 +208,155 @@ export const SOLSTICE_OF_HEROES = {
     }
   ]
 };
+
+export const SOLSTICE_OF_HEROES_YEAR_2 = {
+  name: 'Solstice of Heroes',
+  id: 'COMMON_SOLSTICE_OF_HEROES',
+  description: 'Earned during the 2019 Solstice of Heroes event.',
+  big: true,
+  sections: [
+    {
+      name: 'Ornaments',
+      season: 7,
+      items: [
+
+      ]
+    },
+    {
+      name: 'Hunter Armor',
+      season: 7,
+      itemGroups: [
+        [
+          1126194683, // SOLSTICE MASK (DRAINED)
+          2585373098, // SOLSTICE GRASPS (DRAINED)
+          4242735326, // SOLSTICE VEST (DRAINED)
+          1241704260, // SOLSTICE STRIDES (DRAINED)
+          3613939175 // SOLSTICE CLOAK (DRAINED)
+        ],
+        [
+          2826719795, // SOLSTICE MASK (RENEWED)
+          785657282, // SOLSTICE GRASPS (RENEWED)
+          477417894, // SOLSTICE VEST (RENEWED)
+          2829803132, // SOLSTICE STRIDES (RENEWED)
+          1219866639 // SOLSTICE CLOAK (RENEWED)
+        ],
+        [
+          1597235361, // SOLSTICE MASK (MAJESTIC)
+          2393578168, // SOLSTICE GRASPS (MAJESTIC)
+          3084686800, // SOLSTICE VEST (MAJESTIC)
+          428845810, // SOLSTICE STRIDES (MAJESTIC)
+          2436402701 // SOLSTICE CLOAK (MAJESTIC)
+        ]
+      ]
+    },
+    {
+      name: 'Titan Armor',
+      season: 7,
+      itemGroups: [
+        [
+          132648577, // SOLSTICE HELM (DRAINED)
+          970568088, // SOLSTICE GAUNTLETS (DRAINED)
+          4282498224, // SOLSTICE PLATE (DRAINED)
+          3725260498, // SOLSTICE GREAVES (DRAINED)
+          3634214125 // SOLSTICE MARK (DRAINED)
+        ],
+        [
+          808331801, // SOLSTICE HELM (RENEWED)
+          280116880, // SOLSTICE GAUNTLETS (RENEWED)
+          829700536, // SOLSTICE PLATE (RENEWED)
+          638752234, // SOLSTICE GREAVES (RENEWED)
+          3520162133 // SOLSTICE MARK (RENEWED)
+        ],
+        [
+          536106547, // SOLSTICE HELM (MAJESTIC)
+          2790011330, // SOLSTICE GAUNTLETS (MAJESTIC)
+          778247590, // SOLSTICE PLATE (MAJESTIC)
+          539189884, // SOLSTICE GREAVES (MAJESTIC)
+          1520696335 // SOLSTICE MARK (MAJESTIC)
+        ]
+      ]
+    },
+    {
+      name: 'Warlock Armor',
+      season: 7,
+      itemGroups: [
+        [
+          1834731376, // SOLSTICE HOOD (DRAINED)
+          1590938305, // SOLSTICE GLOVES (DRAINED)
+          1276995479, // SOLSTICE ROBES (DRAINED)
+          2661326387, // SOLSTICE BOOTS (DRAINED)
+          3405314918 // SOLSTICE BOND (DRAINED)
+        ],
+        [
+          381563628, // SOLSTICE HOOD (RENEWED)
+          3830828709, // SOLSTICE GLOVES (RENEWED)
+          3192591867, // SOLSTICE ROBES (RENEWED)
+          4178158375, // SOLSTICE BOOTS (RENEWED)
+          1549308050 // SOLSTICE BOND (RENEWED)
+        ],
+        [
+          3359671646, // SOLSTICE HOOD (MAJESTIC)
+          2163610255, // SOLSTICE GLOVES (MAJESTIC)
+          1685642729, // SOLSTICE ROBES (MAJESTIC)
+          2779687217, // SOLSTICE BOOTS (MAJESTIC)
+          2999808676 // SOLSTICE BOND (MAJESTIC)
+        ]
+      ]
+    },
+    {
+      name: 'Ghosts',
+      season: 7,
+      items: [
+
+      ]
+    },
+    {
+      name: 'Emotes',
+      season: 7,
+      items: [
+
+      ]
+    },
+    {
+      name: 'Vehicles',
+      season: 7,
+      itemGroups: [
+        [
+
+        ],
+        [
+
+        ]
+      ]
+    },
+    {
+      name: 'Moments of Triumph',
+      season: 7,
+      items: [
+
+      ]
+    },
+    {
+      name: 'Cosmetics',
+      season: 7,
+      items: [
+
+      ]
+    },
+    {
+      name: 'Armor Glows',
+      season: 7,
+      itemGroups: [
+        [
+
+        ],
+        [
+
+        ],
+        [
+
+        ]
+      ]
+    }
+  ]
+};

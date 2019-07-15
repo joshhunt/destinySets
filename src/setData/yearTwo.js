@@ -947,7 +947,7 @@ export default ([
         name: 'Raid: Crown of Sorrow',
         id: 'YEAR_TWO_RAID_PENUMBRA',
         description: ('DestinyCollectibleDefinition[3110698812].sourceString',
-        'Acquired from the raid "Crown of Sorrow.'),
+          'Acquired from the raid "Crown of Sorrow.'),
         sections: [
           {
             name: 'Weapons',
@@ -1797,7 +1797,8 @@ export default ([
             ]
           }
         ]
-      }
+      },
+      common.SOLSTICE_OF_HEROES_YEAR_2
     ]
   },
   {
