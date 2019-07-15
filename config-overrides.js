@@ -12,7 +12,7 @@ module.exports = function override(config, env) {
   config.entry.unshift('babel-polyfill');
 
   const babelLoader = getLoader(config.module.rules, rule => {
-    return rule.loader && rule.loader.includes('/babel-loader/');
+    return rule.loader && /[\/\\]babel-loader[\/\\]/.test(rule.loader);
   });
 
   babelLoader.include = [
