@@ -17,7 +17,7 @@ export const section = (name: string, items: ItemsList): SetSection => ({
 export const SOLSTICE_OF_HEROES = {
   name: 'Solstice of Heroes',
   id: 'COMMON_SOLSTICE_OF_HEROES',
-  big: true,
+  big: false,
   sections: [
     {
       name: 'Ornaments',
@@ -213,7 +213,7 @@ export const SOLSTICE_OF_HEROES_YEAR_2 = {
   name: 'Solstice of Heroes',
   id: 'COMMON_SOLSTICE_OF_HEROES',
   description: 'Earned during the 2019 Solstice of Heroes event.',
-  big: true,
+  big: false,
   sections: [
     {
       name: 'Ornaments',
@@ -314,7 +314,12 @@ export const SOLSTICE_OF_HEROES_YEAR_2 = {
       name: 'Emotes',
       season: 7,
       items: [
-
+        4114677048, // BREATHE IN
+        1849697741, // FLAG ON THE PLAY
+        1858216083, // PAPERWORK
+        403465735, // FLICK OF THE WRIST              
+        1482931023, // HIP BUMP
+        4096637925, // SILLY HANDSHAKE
       ]
     },
     {
