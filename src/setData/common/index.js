@@ -111,6 +111,33 @@ export const SOLSTICE_OF_HEROES = {
       ]
     },
     {
+      name: 'Armor Glows',
+      season: 3,
+      itemGroups: [
+        [
+          463166592, // Arcing Arms Glow
+          3507818312, // Arcing Chest Glow
+          1339405989, // Arcing Class Item Glow
+          3054638345, // Arcing Helmet Glow
+          3835954362 // Arcing Leg Glow
+        ],
+        [
+          873770815, // Sunlit Arms Glow
+          3367964921, // Sunlit Chest Glow
+          811724212, // Sunlit Class Item Glow
+          4143534670, // Sunlit Helmet Glow
+          4089988225 // Sunlit Leg Glow
+        ],
+        [
+          2699000684, // Void-Tinged Arms Glow
+          1702504372, // Void-Tinged Chest Glow
+          2912265353, // Void-Tinged Class Item Glow
+          4236468733, // Void-Tinged Helmet Glow
+          3344732822 // Void-Tinged Leg Glow
+        ]
+      ]
+    },
+    {
       name: 'Ghosts',
       season: 3,
       items: [
@@ -177,33 +204,6 @@ export const SOLSTICE_OF_HEROES = {
       items: [
         3859483818, // Blazing Virtue
         3859483819 // Malachite Gold
-      ]
-    },
-    {
-      name: 'Armor Glows',
-      season: 3,
-      itemGroups: [
-        [
-          463166592, // Arcing Arms Glow
-          3507818312, // Arcing Chest Glow
-          1339405989, // Arcing Class Item Glow
-          3054638345, // Arcing Helmet Glow
-          3835954362 // Arcing Leg Glow
-        ],
-        [
-          873770815, // Sunlit Arms Glow
-          3367964921, // Sunlit Chest Glow
-          811724212, // Sunlit Class Item Glow
-          4143534670, // Sunlit Helmet Glow
-          4089988225 // Sunlit Leg Glow
-        ],
-        [
-          2699000684, // Void-Tinged Arms Glow
-          1702504372, // Void-Tinged Chest Glow
-          2912265353, // Void-Tinged Class Item Glow
-          4236468733, // Void-Tinged Helmet Glow
-          3344732822 // Void-Tinged Leg Glow
-        ]
       ]
     }
   ]
@@ -304,10 +304,33 @@ export const SOLSTICE_OF_HEROES_YEAR_2 = {
       ]
     },
     {
+      name: 'Armor Glows',
+      season: 7,
+      itemGroups: [
+        [
+
+        ],
+        [
+
+        ],
+        [
+
+        ]
+      ]
+    },
+    {
       name: 'Ghosts',
       season: 7,
-      items: [
-
+      itemGroups: [
+        [
+          // Shaded Shell
+          // Jubilant Shell
+          // Buoy Shell
+        ],
+        [
+          // 2 Legendary Ghost Projections
+          // 4 Rare Ghost Projections
+        ]
       ]
     },
     {
@@ -327,10 +350,15 @@ export const SOLSTICE_OF_HEROES_YEAR_2 = {
       season: 7,
       itemGroups: [
         [
-
+          2863148329, // Been Replaced
+          2863148328, // Been Replaced
+          2863148331, // Been Replaced
+          3570942494,
+          // Micro Mini
+          // Legacy-2
         ],
         [
-
+          // Summertide Kite
         ]
       ]
     },
@@ -345,22 +373,9 @@ export const SOLSTICE_OF_HEROES_YEAR_2 = {
       name: 'Cosmetics',
       season: 7,
       items: [
-
-      ]
-    },
-    {
-      name: 'Armor Glows',
-      season: 7,
-      itemGroups: [
-        [
-
-        ],
-        [
-
-        ],
-        [
-
-        ]
+        // Pomegranate Gloss
+        // Tangerine Gloss
+        // 2 Transmat Effects
       ]
     }
   ]
