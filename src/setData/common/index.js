@@ -346,20 +346,20 @@ export const SOLSTICE_OF_HEROES_YEAR_2 = {
       ]
     },
     {
-      name: 'Vehicles',
+      name: 'Sparrows',
       season: 7,
       itemGroups: [
-        [
-          2863148329, // Been Replaced
-          2863148328, // Been Replaced
-          2863148331, // Been Replaced
-          3570942494,
-          // Micro Mini
-          // Legacy-2
-        ],
-        [
-          // Summertide Kite
-        ]
+        3570942494,
+        // EV-37 Voidstreak - Collect the Solstice Legendary Armor sets on all three classes
+        // Micro Mini
+        // Legacy-2
+      ]
+    },
+    {
+      name: 'Ships',
+      season: 7,
+      items: [
+        // Summertide Kite
       ]
     },
     {
