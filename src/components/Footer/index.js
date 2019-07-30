@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 
 import { saveDataExplorerVisited } from 'app/lib/ls';
 
@@ -8,10 +8,17 @@ import DonateButton from 'app/components/DonateButton';
 
 const rememberDev = () => saveDataExplorerVisited(true);
 
-export default function Footer({ item }) {
+export default function Footer({ item, children }) {
   return (
     <div className={styles.footer}>
       <DonateButton />
+      {children && (
+        <Fragment>
+          <br />
+          {children}
+          <br />
+        </Fragment>
+      )}
       <br />
       Developer, or curious about the data behind Destiny? Check out the{' '}
       <a

@@ -1,10 +1,11 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { get } from 'lodash';
 import cx from 'classnames';
 import { connect } from 'react-redux';
 
 import { fetchProfile as fetchProfileAction } from 'app/store/profile';
 import { WARLOCK, HUNTER, TITAN, CLASSES } from 'app/lib/destinyEnums';
+import Footer from 'app/components/Footer';
 import BungieImage from 'app/components/BungieImage';
 import Icon from 'app/components/Icon';
 import {
@@ -67,7 +68,7 @@ const _g = (gear, field) =>
   (gear.item && !gear.item.redacted && get(gear.item, field)) ||
   get(gear.collectible, field);
 
-function Gear({ gear, objectiveDefs, objectiveInstances }) {
+function Gear({ gear, objectiveDefs, objectiveInstances, viewAllObjectives }) {
   const icon = _g(gear, 'displayProperties.icon');
   const name = _g(gear, 'displayProperties.name');
 
@@ -83,6 +84,9 @@ function Gear({ gear, objectiveDefs, objectiveInstances }) {
     });
 
   const isPartiallyCompleted = gear.inventory && !isObjectivesComplete;
+
+  const showObjectives =
+    viewAllObjectives || (gear.inventory && !isObjectivesComplete);
 
   return (
     <div
@@ -101,7 +105,7 @@ function Gear({ gear, objectiveDefs, objectiveInstances }) {
         <BungieImage src={icon} className={s.gearIcon} />
       </div>
 
-      <div>
+      <div className={s.gearMain}>
         <strong>{name}</strong>
         {
           <p className={s.gearDescription}>
@@ -109,7 +113,7 @@ function Gear({ gear, objectiveDefs, objectiveInstances }) {
           </p>
         }
 
-        {gear.inventory && !isObjectivesComplete && (
+        {showObjectives && (
           <Objectives
             className={s.objectives}
             objectiveHashes={objectiveHashes}
@@ -148,6 +152,8 @@ function SolsticeOfHeroes({
 
     return () => window.clearInterval(intervalId);
   }, []);
+
+  const [viewAllObjectives, setViewAllObjectives] = useState();
 
   return (
     <div className={s.page}>
@@ -188,6 +194,7 @@ function SolsticeOfHeroes({
 
                         return (
                           <Gear
+                            viewAllObjectives={viewAllObjectives}
                             gear={gear}
                             objectiveDefs={objectiveDefs}
                             objectiveInstances={objectiveInstances}
@@ -204,8 +211,21 @@ function SolsticeOfHeroes({
       })}
 
       <br />
-      <p>Thanks to Niris for the design inspiration!</p>
-      <br />
+
+      <button onClick={() => setViewAllObjectives(!viewAllObjectives)}>
+        {viewAllObjectives ? 'Hide' : 'View'} all objectives
+      </button>
+
+      <Footer>
+        Special thanks to{' '}
+        <a href="https://twitter.com/mr_niris" target="_blank">
+          Niris
+        </a>{' '}
+        for the incredible design inspiration.{' '}
+        <a href="https://www.niris.tv/" target="_blank">
+          Check out his stuff.
+        </a>
+      </Footer>
     </div>
   );
 }
