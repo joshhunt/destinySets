@@ -161,6 +161,17 @@ function SolsticeOfHeroes({
 
       {!viewData.length ? <p className={s.loading}>Loading...</p> : null}
 
+      {viewData.length > 0 && (
+        <button
+          className={s.toggleButton}
+          onClick={() => setViewAllObjectives(!viewAllObjectives)}
+        >
+          {viewAllObjectives
+            ? 'Relevent objectives only'
+            : 'View all objectives'}
+        </button>
+      )}
+
       {viewData.map(sets => {
         const baseSet = sets.node;
 
@@ -211,10 +222,6 @@ function SolsticeOfHeroes({
       })}
 
       <br />
-
-      <button onClick={() => setViewAllObjectives(!viewAllObjectives)}>
-        {viewAllObjectives ? 'Hide' : 'View'} all objectives
-      </button>
 
       <Footer>
         Special thanks to{' '}
