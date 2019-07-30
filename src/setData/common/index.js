@@ -328,8 +328,12 @@ export const SOLSTICE_OF_HEROES_YEAR_2 = {
           // Buoy Shell
         ],
         [
-          // 2 Legendary Ghost Projections
-          // 4 Rare Ghost Projections
+          // Sunglasses Projection
+          // Palm Tree Projection
+          // Crab Projection
+          // Beach Ball Projection
+          // Triumphant Projection
+          // Buried Treasure Projection
         ]
       ]
     },
@@ -348,11 +352,11 @@ export const SOLSTICE_OF_HEROES_YEAR_2 = {
     {
       name: 'Sparrows',
       season: 7,
-      itemGroups: [
+      items: [
         3570942494,
-        // EV-37 Voidstreak - Collect the Solstice Legendary Armor sets on all three classes
         // Micro Mini
         // Legacy-2
+        // EV-37 Voidstreak
       ]
     },
     {
@@ -363,19 +367,13 @@ export const SOLSTICE_OF_HEROES_YEAR_2 = {
       ]
     },
     {
-      name: 'Moments of Triumph',
-      season: 7,
-      items: [
-
-      ]
-    },
-    {
       name: 'Cosmetics',
       season: 7,
       items: [
-        // Pomegranate Gloss
         // Tangerine Gloss
-        // 2 Transmat Effects
+        // Pomegranate Gloss
+        // Beach Ball Effects
+        // Sandcastle Effects
       ]
     }
   ]
