@@ -1,5 +1,6 @@
 import React from 'react';
 import { get } from 'lodash';
+import cx from 'classnames';
 import { connect } from 'react-redux';
 import { WARLOCK, HUNTER, TITAN } from 'app/lib/destinyEnums';
 import BungieImage from 'app/components/BungieImage';
@@ -50,7 +51,14 @@ function Gear({ gear }) {
       <div className={s.iconWell}>
         <BungieImage src={icon} className={s.gearIcon} />
       </div>
-      <div>{name}</div>
+
+      <div>
+        <strong>{name}</strong>
+        <br />
+        <p className={s.gearDescription}>
+          {gear.collectible.displayProperties.description}
+        </p>
+      </div>
     </div>
   );
 }
@@ -58,20 +66,20 @@ function Gear({ gear }) {
 function SolsticeOfHeroes({ viewData, classDefs }) {
   console.log('viewData:', viewData);
   return (
-    <div>
+    <div className={s.page}>
       <h1>solstice of heroes</h1>
 
       {viewData.map(sets => {
         const baseSet = sets.node;
 
         return (
-          <div>
+          <div className={cx(s.set, s.legendary)}>
             <h2>{baseSet && baseSet.displayProperties.name}</h2>
 
-            <div>
+            <div className={s.setsList}>
               {sets.sets.map(set => {
                 return (
-                  <div>
+                  <div className={s.setForClass}>
                     <h3>{set.classDef.displayProperties.name}</h3>
                     <div>
                       {set.childItems.map(gear => {
