@@ -947,7 +947,7 @@ export default ([
         name: 'Raid: Crown of Sorrow',
         id: 'YEAR_TWO_RAID_PENUMBRA',
         description: ('DestinyCollectibleDefinition[3110698812].sourceString',
-        'Acquired from the raid "Crown of Sorrow.'),
+          'Acquired from the raid "Crown of Sorrow.'),
         sections: [
           {
             name: 'Weapons',
@@ -1782,9 +1782,9 @@ export default ([
         ]
       },
       {
-        name: 'Moments of Triumph', // Will probably merge with Solstice set when that event starts
+        name: 'Moments of Triumph',
         id: 'YEAR_TWO_MOMENTS_OF_TRIUMPH',
-        description: '',
+        description: 'Earned during the 2019 Moments of Triumph event.',
         big: false,
         sections: [
           {
@@ -1797,7 +1797,8 @@ export default ([
             ]
           }
         ]
-      }
+      },
+      common.SOLSTICE_OF_HEROES_YEAR_2
     ]
   },
   {
@@ -2278,21 +2279,14 @@ export default ([
             name: 'Emotes',
             season: 7,
             items: [
-              4114677048, // BREATHE IN
               4009267290, // CONSULT THE ARCHIVES
-              1849697741, // FLAG ON THE PLAY
               2231816495, // MIRROR MIRROR
-              1858216083, // PAPERWORK
               2931525672, // SABRAGE SALUTE
-              377681571, // X MARKS THE SPOT
-              403465735, // FLICK OF THE WRIST
               319183094, // MEDITATIVE MOMENT
               908677920, // STYLISH SIT
               1324309776, // DISCOURAGED
-              1482931023, // HIP BUMP
               1081767429, // LINK UP
               854833035, // QUICK HUG
-              4096637925, // SILLY HANDSHAKE
               28833378, // STATIC SHOCK
               2070010145, // BUT YOU
               1668956766, // GIDDY LAUGH

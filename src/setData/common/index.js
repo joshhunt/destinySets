@@ -17,7 +17,7 @@ export const section = (name: string, items: ItemsList): SetSection => ({
 export const SOLSTICE_OF_HEROES = {
   name: 'Solstice of Heroes',
   id: 'COMMON_SOLSTICE_OF_HEROES',
-  big: true,
+  big: false,
   sections: [
     {
       name: 'Ornaments',
@@ -111,6 +111,33 @@ export const SOLSTICE_OF_HEROES = {
       ]
     },
     {
+      name: 'Armor Glows',
+      season: 3,
+      itemGroups: [
+        [
+          3054638345, // Arcing Helmet Glow
+          463166592, // Arcing Arms Glow
+          3507818312, // Arcing Chest Glow
+          3835954362, // Arcing Leg Glow
+          1339405989 // Arcing Class Item Glow
+        ],
+        [
+          4143534670, // Sunlit Helmet Glow
+          873770815, // Sunlit Arms Glow
+          3367964921, // Sunlit Chest Glow
+          4089988225, // Sunlit Leg Glow
+          811724212 // Sunlit Class Item Glow
+        ],
+        [
+          4236468733, // Void-Tinged Helmet Glow
+          2699000684, // Void-Tinged Arms Glow
+          1702504372, // Void-Tinged Chest Glow
+          3344732822, // Void-Tinged Leg Glow
+          2912265353 // Void-Tinged Class Item Glow
+        ]
+      ]
+    },
+    {
       name: 'Ghosts',
       season: 3,
       items: [
@@ -178,32 +205,186 @@ export const SOLSTICE_OF_HEROES = {
         3859483818, // Blazing Virtue
         3859483819 // Malachite Gold
       ]
+    }
+  ]
+};
+
+export const SOLSTICE_OF_HEROES_YEAR_2 = {
+  name: 'Solstice of Heroes',
+  id: 'COMMON_SOLSTICE_OF_HEROES',
+  description: 'Earned during the 2019 Solstice of Heroes event.',
+  big: false,
+  sections: [
+    {
+      name: 'Ornaments',
+      season: 7,
+      items: [
+
+      ]
+    },
+    {
+      name: 'Hunter Armor',
+      season: 7,
+      itemGroups: [
+        [
+          1126194683, // SOLSTICE MASK (DRAINED)
+          2585373098, // SOLSTICE GRASPS (DRAINED)
+          4242735326, // SOLSTICE VEST (DRAINED)
+          1241704260, // SOLSTICE STRIDES (DRAINED)
+          3613939175 // SOLSTICE CLOAK (DRAINED)
+        ],
+        [
+          2826719795, // SOLSTICE MASK (RENEWED)
+          785657282, // SOLSTICE GRASPS (RENEWED)
+          477417894, // SOLSTICE VEST (RENEWED)
+          2829803132, // SOLSTICE STRIDES (RENEWED)
+          1219866639 // SOLSTICE CLOAK (RENEWED)
+        ],
+        [
+          1597235361, // SOLSTICE MASK (MAJESTIC)
+          2393578168, // SOLSTICE GRASPS (MAJESTIC)
+          3084686800, // SOLSTICE VEST (MAJESTIC)
+          428845810, // SOLSTICE STRIDES (MAJESTIC)
+          2436402701 // SOLSTICE CLOAK (MAJESTIC)
+        ]
+      ]
+    },
+    {
+      name: 'Titan Armor',
+      season: 7,
+      itemGroups: [
+        [
+          132648577, // SOLSTICE HELM (DRAINED)
+          970568088, // SOLSTICE GAUNTLETS (DRAINED)
+          4282498224, // SOLSTICE PLATE (DRAINED)
+          3725260498, // SOLSTICE GREAVES (DRAINED)
+          3634214125 // SOLSTICE MARK (DRAINED)
+        ],
+        [
+          808331801, // SOLSTICE HELM (RENEWED)
+          280116880, // SOLSTICE GAUNTLETS (RENEWED)
+          829700536, // SOLSTICE PLATE (RENEWED)
+          638752234, // SOLSTICE GREAVES (RENEWED)
+          3520162133 // SOLSTICE MARK (RENEWED)
+        ],
+        [
+          536106547, // SOLSTICE HELM (MAJESTIC)
+          2790011330, // SOLSTICE GAUNTLETS (MAJESTIC)
+          778247590, // SOLSTICE PLATE (MAJESTIC)
+          539189884, // SOLSTICE GREAVES (MAJESTIC)
+          1520696335 // SOLSTICE MARK (MAJESTIC)
+        ]
+      ]
+    },
+    {
+      name: 'Warlock Armor',
+      season: 7,
+      itemGroups: [
+        [
+          1834731376, // SOLSTICE HOOD (DRAINED)
+          1590938305, // SOLSTICE GLOVES (DRAINED)
+          1276995479, // SOLSTICE ROBES (DRAINED)
+          2661326387, // SOLSTICE BOOTS (DRAINED)
+          3405314918 // SOLSTICE BOND (DRAINED)
+        ],
+        [
+          381563628, // SOLSTICE HOOD (RENEWED)
+          3830828709, // SOLSTICE GLOVES (RENEWED)
+          3192591867, // SOLSTICE ROBES (RENEWED)
+          4178158375, // SOLSTICE BOOTS (RENEWED)
+          1549308050 // SOLSTICE BOND (RENEWED)
+        ],
+        [
+          3359671646, // SOLSTICE HOOD (MAJESTIC)
+          2163610255, // SOLSTICE GLOVES (MAJESTIC)
+          1685642729, // SOLSTICE ROBES (MAJESTIC)
+          2779687217, // SOLSTICE BOOTS (MAJESTIC)
+          2999808676 // SOLSTICE BOND (MAJESTIC)
+        ]
+      ]
     },
     {
       name: 'Armor Glows',
-      season: 3,
+      season: 7,
       itemGroups: [
         [
-          463166592, // Arcing Arms Glow
-          3507818312, // Arcing Chest Glow
-          1339405989, // Arcing Class Item Glow
-          3054638345, // Arcing Helmet Glow
-          3835954362 // Arcing Leg Glow
+          834178986, // Arc Head Armor Glow
+          839740147, // Arc Arms Armor Glow
+          577345565, // Arc Chest Armor Glow
+          574694085, // Arc Leg Armor Glow
+          2039333456 // Arc Class Item Glow
         ],
         [
-          873770815, // Sunlit Arms Glow
-          3367964921, // Sunlit Chest Glow
-          811724212, // Sunlit Class Item Glow
-          4143534670, // Sunlit Helmet Glow
-          4089988225 // Sunlit Leg Glow
+          60802325, // Solar Head Armor Glow
+          3031612900, // Solar Arms Armor Glow
+          2449203932, // Solar Chest Armor Glow
+          242730894, // Solar Leg Armor Glow
+          3735037521 // Solar Class Item Glow
         ],
         [
-          2699000684, // Void-Tinged Arms Glow
-          1702504372, // Void-Tinged Chest Glow
-          2912265353, // Void-Tinged Class Item Glow
-          4236468733, // Void-Tinged Helmet Glow
-          3344732822 // Void-Tinged Leg Glow
+          558870048, // Void Head Armor Glow
+          2419910641, // Void Arms Armor Glow
+          2552954151, // Void Chest Armor Glow
+          2251060291, // Void Leg Armor Glow
+          3692806198 // Void Class Item Glow
         ]
+      ]
+    },
+    {
+      name: 'Ghosts',
+      season: 7,
+      itemGroups: [
+        [
+          537036424, // Jubilant Shell
+          537036425, // Shaded Shell
+          537036427 // Buoy Shell
+        ],
+        [
+          2325283036, // Beach Ball Projection
+          2325283037, // Crab Projection
+          2325283038, // Palm Tree Projection
+          2325283039, // Sunglasses Projection
+          3631905978, // Triumphant Projection
+          3631905979 // Buried Treasure Projection
+        ]
+      ]
+    },
+    {
+      name: 'Emotes',
+      season: 7,
+      items: [
+        4114677048, // BREATHE IN
+        1849697741, // FLAG ON THE PLAY
+        1858216083, // PAPERWORK
+        403465735, // FLICK OF THE WRIST              
+        1482931023, // HIP BUMP
+        4096637925, // SILLY HANDSHAKE
+      ]
+    },
+    {
+      name: 'Sparrows',
+      season: 7,
+      items: [
+        1363029408, // Micro Mini
+        1363029409, // Legacy-2
+        3570942494 // EV-37 Voidstreak
+      ]
+    },
+    {
+      name: 'Ships',
+      season: 7,
+      items: [
+        1454610995 // Summertide Kite
+      ]
+    },
+    {
+      name: 'Cosmetics',
+      season: 7,
+      items: [
+        4173467416, // Tangerine Gloss
+        4173467417, // Pomegranate Gloss
+        2957044930, // Beach Ball Effects
+        2957044931 // Sandcastle Effects
       ]
     }
   ]
