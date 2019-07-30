@@ -2,7 +2,7 @@ import React from 'react';
 import { get } from 'lodash';
 import cx from 'classnames';
 import { connect } from 'react-redux';
-import { WARLOCK, HUNTER, TITAN } from 'app/lib/destinyEnums';
+import { WARLOCK, HUNTER, TITAN, CLASSES } from 'app/lib/destinyEnums';
 import BungieImage from 'app/components/BungieImage';
 
 import s from './styles.styl';
@@ -28,15 +28,15 @@ const MAJESTIC = [MAJESTIC_WARLOCK, MAJESTIC_HUNTER, MAJESTIC_TITAN];
 const ALL_SETS = [DRAINED, RENEWED, MAJESTIC];
 
 const CLASS_MAP = {
-  [DRAINED_WARLOCK]: WARLOCK,
-  [DRAINED_HUNTER]: HUNTER,
-  [DRAINED_TITAN]: TITAN,
-  [RENEWED_WARLOCK]: WARLOCK,
-  [RENEWED_HUNTER]: HUNTER,
-  [RENEWED_TITAN]: TITAN,
-  [MAJESTIC_WARLOCK]: WARLOCK,
-  [MAJESTIC_HUNTER]: HUNTER,
-  [MAJESTIC_TITAN]: TITAN
+  [DRAINED_WARLOCK]: CLASSES[WARLOCK],
+  [DRAINED_HUNTER]: CLASSES[HUNTER],
+  [DRAINED_TITAN]: CLASSES[TITAN],
+  [RENEWED_WARLOCK]: CLASSES[WARLOCK],
+  [RENEWED_HUNTER]: CLASSES[HUNTER],
+  [RENEWED_TITAN]: CLASSES[TITAN],
+  [MAJESTIC_WARLOCK]: CLASSES[WARLOCK],
+  [MAJESTIC_HUNTER]: CLASSES[HUNTER],
+  [MAJESTIC_TITAN]: CLASSES[TITAN]
 };
 
 const _g = (gear, field) =>
@@ -83,7 +83,8 @@ function SolsticeOfHeroes({ viewData, classDefs }) {
                 return (
                   <div className={s.setForClass}>
                     <h3 className={s.heading}>
-                      {set.classDef.displayProperties.name}
+                      {/* {set.classDef.displayProperties.name} */}
+                      {set.theClassName}
                     </h3>
                     <div>
                       {set.childItems.map(gear => {
@@ -114,11 +115,11 @@ function mapStateToProps(state) {
     state.definitions.DestinyPresentationNodeDefinition;
   const classDefs = state.definitions.DestinyClassDefinition;
 
-  if (!itemDefs || !presentationNodeDefs || !classDefs) {
+  if (!itemDefs || !presentationNodeDefs) {
     return { viewData: [] };
   }
 
-  const classDefItems = Object.values(classDefs);
+  // const classDefItems = Object.values(classDefs);
 
   const viewData = ALL_SETS.map(sets => {
     return {
@@ -149,12 +150,13 @@ function mapStateToProps(state) {
             }
           );
 
-          const classDef = classDefItems.find(
-            c => c.classType === CLASS_MAP[presentationNodeHash]
-          );
+          // const classDef = classDefItems.find(
+          //   c => c.classType === CLASS_MAP[presentationNodeHash]
+          // );
 
           return {
-            classDef,
+            // classDef,
+            theClassName: CLASS_MAP[presentationNodeHash],
             childItems
           };
         })
