@@ -12,7 +12,8 @@ const DRAINED_HUNTER = 2557471208;
 const DRAINED_TITAN = 2946324356;
 
 const RENEWED_WARLOCK = 1432280512;
-const RENEWED_HUNTER = 2557471207;
+// const RENEWED_HUNTER = 2557471207; -- real one
+const RENEWED_HUNTER = 3032864258; // -- 2018
 const RENEWED_TITAN = 2946324363;
 
 const MAJESTIC_WARLOCK = 1432280513;
@@ -46,6 +47,7 @@ const _g = (gear, field) =>
 function Gear({ gear }) {
   const icon = _g(gear, 'displayProperties.icon');
   const name = _g(gear, 'displayProperties.name');
+
   return (
     <div className={s.gear}>
       <div className={s.iconWell}>
@@ -113,7 +115,7 @@ function mapStateToProps(state) {
   const collectibleDefs = state.definitions.DestinyCollectibleDefinition;
   const presentationNodeDefs =
     state.definitions.DestinyPresentationNodeDefinition;
-  const classDefs = state.definitions.DestinyClassDefinition;
+  // const classDefs = state.definitions.DestinyClassDefinition;
 
   if (!itemDefs || !presentationNodeDefs) {
     return { viewData: [] };
