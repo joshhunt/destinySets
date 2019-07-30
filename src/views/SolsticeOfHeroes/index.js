@@ -67,20 +67,24 @@ function SolsticeOfHeroes({ viewData, classDefs }) {
   console.log('viewData:', viewData);
   return (
     <div className={s.page}>
-      <h1>solstice of heroes</h1>
+      <h1 className={s.heading}>Solstice of Heroes - 2019</h1>
 
       {viewData.map(sets => {
         const baseSet = sets.node;
 
         return (
           <div className={cx(s.set, s.legendary)}>
-            <h2>{baseSet && baseSet.displayProperties.name}</h2>
+            <h2 className={s.heading}>
+              {baseSet && baseSet.displayProperties.name}
+            </h2>
 
             <div className={s.setsList}>
               {sets.sets.map(set => {
                 return (
                   <div className={s.setForClass}>
-                    <h3>{set.classDef.displayProperties.name}</h3>
+                    <h3 className={s.heading}>
+                      {set.classDef.displayProperties.name}
+                    </h3>
                     <div>
                       {set.childItems.map(gear => {
                         // const name =

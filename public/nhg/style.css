@@ -1,0 +1,152 @@
+@font-face {
+  font-family: 'nhg display';
+  src: url('NHaasGroteskDSPro-15UltTh.woff2') format('woff2');
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'nhg display';
+  src: url('NHaasGroteskDSPro-16UltThIt.woff2') format('woff2');
+  font-weight: 200;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'nhg display';
+  src: url('NHaasGroteskDSPro-25Th.woff2') format('woff2');
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'nhg display';
+  src: url('NHaasGroteskDSPro-26ThIt.woff2') format('woff2');
+  font-weight: 200;
+  font-style: italic;
+}
+
+/* @font-face {
+    font-family: 'nhg display';
+    src: url('NHaasGroteskDSPro-36XLtIt.woff2') format('woff2');
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'nhg display';
+    src: url('NHaasGroteskDSPro-35XLt.woff2') format('woff2');
+    font-weight: 300;
+    font-style: normal;
+} */
+
+@font-face {
+  font-family: 'nhg display';
+  src: url('NHaasGroteskDSPro-45Lt.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'nhg display';
+  src: url('NHaasGroteskDSPro-46LtIt.woff2') format('woff2');
+  font-weight: 300;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'nhg display';
+  src: url('NHaasGroteskDSPro-55Rg.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'nhg display';
+  src: url('NHaasGroteskDSPro-56It.woff2') format('woff2');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'nhg display';
+  src: url('NHaasGroteskDSPro-65Md.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'nhg display';
+  src: url('NHaasGroteskDSPro-66MdIt.woff2') format('woff2');
+  font-weight: 500;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'nhg display';
+  src: url('NHaasGroteskDSPro-75Bd.woff2') format('woff2');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'nhg display';
+  src: url('NHaasGroteskDSPro-76BdIt.woff2') format('woff2');
+  font-weight: bold;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'nhg display';
+  src: url('NHaasGroteskDSPro-95Blk.woff2') format('woff2');
+  font-weight: 900;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'nhg display';
+  src: url('NHaasGroteskDSPro-96BlkIt.woff2') format('woff2');
+  font-weight: 900;
+  font-style: italic;
+}
+
+@font-face {
+    font-family: 'nhg text';
+    src: url('NHaasGroteskTXPro-55Rg.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'nhg text';
+    src: url('NHaasGroteskTXPro-56It.woff2') format('woff2');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'nhg text';
+    src: url('NHaasGroteskTXPro-65Md.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'nhg text';
+    src: url('NHaasGroteskTXPro-66MdIt.woff2') format('woff2');
+    font-weight: 500;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'nhg text';
+    src: url('NHaasGroteskTXPro-75Bd.woff2') format('woff2');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'nhg text';
+    src: url('NHaasGroteskTXPro-76BdIt.woff2') format('woff2');
+    font-weight: bold;
+    font-style: italic;
+}

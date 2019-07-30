@@ -1,5 +1,5 @@
 .page
-  margin:0 50px
+  margin:0 15px
 
 .set
   border-left: 5px solid transparent
@@ -11,16 +11,33 @@
   &:nth-of-type(2)
     border-left-color: #4f76a4
 
-  &:nth-of-type(2)
+  &:nth-of-type(3)
     border-left-color: #522f65
 
+.heading
+  font-family: 'nhg text'
+  letter-spacing: 1px
+
+  h1&
+    font-size: 50px
+
+  h2&
+    font-size: 35px
+
+  h3&
+    font-size: 14px
+    text-transform: uppercase
+    border-bottom: 1px solid #64686b
+    padding-bottom: 5px
 
 .setsList
   display: flex
   flex-direction: row
+  margin: 0 -20px
 
 .setForClass
   flex: 1 1 auto
+  margin: 0 20px
 
 .gear
   display: flex
@@ -38,6 +55,6 @@
 
 .gearDescription
   font-size: .9em
-  opacity: .8em
+  opacity: .75
   margin: 5px 0
   line-height: 1.3
