@@ -115,25 +115,25 @@ export const SOLSTICE_OF_HEROES = {
       season: 3,
       itemGroups: [
         [
+          3054638345, // Arcing Helmet Glow
           463166592, // Arcing Arms Glow
           3507818312, // Arcing Chest Glow
-          1339405989, // Arcing Class Item Glow
-          3054638345, // Arcing Helmet Glow
-          3835954362 // Arcing Leg Glow
+          3835954362, // Arcing Leg Glow
+          1339405989 // Arcing Class Item Glow
         ],
         [
+          4143534670, // Sunlit Helmet Glow
           873770815, // Sunlit Arms Glow
           3367964921, // Sunlit Chest Glow
-          811724212, // Sunlit Class Item Glow
-          4143534670, // Sunlit Helmet Glow
-          4089988225 // Sunlit Leg Glow
+          4089988225, // Sunlit Leg Glow
+          811724212 // Sunlit Class Item Glow
         ],
         [
+          4236468733, // Void-Tinged Helmet Glow
           2699000684, // Void-Tinged Arms Glow
           1702504372, // Void-Tinged Chest Glow
-          2912265353, // Void-Tinged Class Item Glow
-          4236468733, // Void-Tinged Helmet Glow
-          3344732822 // Void-Tinged Leg Glow
+          3344732822, // Void-Tinged Leg Glow
+          2912265353 // Void-Tinged Class Item Glow
         ]
       ]
     },
@@ -308,13 +308,25 @@ export const SOLSTICE_OF_HEROES_YEAR_2 = {
       season: 7,
       itemGroups: [
         [
-
+          834178986, // Arc Head Armor Glow
+          839740147, // Arc Arms Armor Glow
+          577345565, // Arc Chest Armor Glow
+          574694085, // Arc Leg Armor Glow
+          2039333456 // Arc Class Item Glow
         ],
         [
-
+          60802325, // Solar Head Armor Glow
+          3031612900, // Solar Arms Armor Glow
+          2449203932, // Solar Chest Armor Glow
+          242730894, // Solar Leg Armor Glow
+          3735037521 // Solar Class Item Glow
         ],
         [
-
+          558870048, // Void Head Armor Glow
+          2419910641, // Void Arms Armor Glow
+          2552954151, // Void Chest Armor Glow
+          2251060291, // Void Leg Armor Glow
+          3692806198 // Void Class Item Glow
         ]
       ]
     },
@@ -323,17 +335,17 @@ export const SOLSTICE_OF_HEROES_YEAR_2 = {
       season: 7,
       itemGroups: [
         [
-          // Shaded Shell
-          // Jubilant Shell
-          // Buoy Shell
+          537036424, // Jubilant Shell
+          537036425, // Shaded Shell
+          537036427 // Buoy Shell
         ],
         [
-          // Sunglasses Projection
-          // Palm Tree Projection
-          // Crab Projection
-          // Beach Ball Projection
-          // Triumphant Projection
-          // Buried Treasure Projection
+          2325283036, // Beach Ball Projection
+          2325283037, // Crab Projection
+          2325283038, // Palm Tree Projection
+          2325283039, // Sunglasses Projection
+          3631905978, // Triumphant Projection
+          3631905979 // Buried Treasure Projection
         ]
       ]
     },
@@ -353,27 +365,26 @@ export const SOLSTICE_OF_HEROES_YEAR_2 = {
       name: 'Sparrows',
       season: 7,
       items: [
-        3570942494,
-        // Micro Mini
-        // Legacy-2
-        // EV-37 Voidstreak
+        1363029408, // Micro Mini
+        1363029409, // Legacy-2
+        3570942494 // EV-37 Voidstreak
       ]
     },
     {
       name: 'Ships',
       season: 7,
       items: [
-        // Summertide Kite
+        1454610995 // Summertide Kite
       ]
     },
     {
       name: 'Cosmetics',
       season: 7,
       items: [
-        // Tangerine Gloss
-        // Pomegranate Gloss
-        // Beach Ball Effects
-        // Sandcastle Effects
+        4173467416, // Tangerine Gloss
+        4173467417, // Pomegranate Gloss
+        2957044930, // Beach Ball Effects
+        2957044931 // Sandcastle Effects
       ]
     }
   ]
