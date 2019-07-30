@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router';
 
 import {
   setBulkDefinitions,
@@ -123,6 +124,27 @@ class Inventory extends Component {
             </p>
           </div>
         )}
+
+        <div className={styles.solsticePromo}>
+          <div className={styles.solsticePromoContent}>
+            <h1>Solstice of Heroes 2019</h1>
+
+            <p>
+              Solstice of Heroes is live now for all players of Destiny 2 until
+              August 27.
+            </p>
+
+            <p>
+              Use Destiny Sets to persue limited-time Solstice-themed armor sets
+              and track your progress through unlocking and masterworking all
+              your Solstice of Heroes 2019 gear.
+            </p>
+
+            <Link className={styles.solsticeCta} to="/solstice-2019">
+              Track your Solstice gear now
+            </Link>
+          </div>
+        </div>
 
         {filteredSetData.map(({ sets, noUi, slug, name }, index) => (
           <Section

@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { get } from 'lodash';
 import cx from 'classnames';
 import { connect } from 'react-redux';
+
+import { fetchProfile as fetchProfileAction } from 'app/store/profile';
 import { WARLOCK, HUNTER, TITAN, CLASSES } from 'app/lib/destinyEnums';
 import BungieImage from 'app/components/BungieImage';
 import Icon from 'app/components/Icon';
@@ -71,7 +73,7 @@ function Gear({ gear, objectiveDefs, objectiveInstances }) {
 
   const objectiveHashes = get(gear.item, 'objectives.objectiveHashes', []);
 
-  const obtained = gear.inventory; // todo: need this to be better?
+  const obtained = gear.inventory;
 
   const isObjectivesComplete =
     objectiveHashes.length > 0 &&
@@ -129,11 +131,29 @@ function Gear({ gear, objectiveDefs, objectiveInstances }) {
   );
 }
 
-function SolsticeOfHeroes({ viewData, objectiveDefs, objectiveInstances }) {
-  console.log('viewData:', viewData);
+const REFRESH_INTERVAL = 30 * 1000;
+
+function SolsticeOfHeroes({
+  viewData,
+  objectiveDefs,
+  objectiveInstances,
+  fetchProfile
+}) {
+  useEffect(() => {
+    console.log('effect running');
+    const intervalId = window.setInterval(() => {
+      console.log('fetch...');
+      fetchProfile && fetchProfile();
+    }, REFRESH_INTERVAL);
+
+    return () => window.clearInterval(intervalId);
+  }, []);
+
   return (
     <div className={s.page}>
       <h1 className={s.heading}>Solstice of Heroes - 2019</h1>
+
+      {!viewData.length ? <p className={s.loading}>Loading...</p> : null}
 
       {viewData.map(sets => {
         const baseSet = sets.node;
@@ -182,6 +202,10 @@ function SolsticeOfHeroes({ viewData, objectiveDefs, objectiveInstances }) {
           </div>
         );
       })}
+
+      <br />
+      <p>Thanks to Niris for the design inspiration!</p>
+      <br />
     </div>
   );
 }
@@ -256,4 +280,7 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(mapStateToProps)(SolsticeOfHeroes);
+export default connect(
+  mapStateToProps,
+  { fetchProfile: fetchProfileAction }
+)(SolsticeOfHeroes);
