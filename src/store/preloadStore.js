@@ -28,6 +28,7 @@ export const REQUIRED_DEFINITIONS = [
   'DestinyStatDefinition',
   'DestinyVendorDefinition',
   'DestinyInventoryItemDefinition',
+  'DestinyClassDefinition',
   'DestinyCollectibleDefinition',
   'DestinyPresentationNodeDefinition',
   'DestinyRecordDefinition',
