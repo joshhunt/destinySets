@@ -4,6 +4,12 @@ import cx from 'classnames';
 import { connect } from 'react-redux';
 import { WARLOCK, HUNTER, TITAN, CLASSES } from 'app/lib/destinyEnums';
 import BungieImage from 'app/components/BungieImage';
+import Icon from 'app/components/Icon';
+import {
+  inventorySelector,
+  objectiveInstancesSelector
+} from 'app/store/selectors';
+import Objectives from 'app/components/Objectives';
 
 import s from './styles.styl';
 
@@ -59,28 +65,71 @@ const _g = (gear, field) =>
   (gear.item && !gear.item.redacted && get(gear.item, field)) ||
   get(gear.collectible, field);
 
-function Gear({ gear }) {
+function Gear({ gear, objectiveDefs, objectiveInstances }) {
   const icon = _g(gear, 'displayProperties.icon');
   const name = _g(gear, 'displayProperties.name');
 
+  const objectiveHashes = get(gear.item, 'objectives.objectiveHashes', []);
+
+  const obtained = gear.inventory; // todo: need this to be better?
+
+  const isObjectivesComplete =
+    objectiveHashes.length > 0 &&
+    objectiveHashes.every(objectiveHash => {
+      const objInstance = objectiveInstances[objectiveHash];
+      return objInstance && objInstance.complete;
+    });
+
+  const isPartiallyCompleted = gear.inventory && !isObjectivesComplete;
+
   return (
-    <div className={s.gear}>
+    <div
+      className={cx(
+        s.gear,
+        obtained && s.obtained,
+        isPartiallyCompleted && s.partiallyCompleted
+      )}
+    >
       <div className={s.iconWell}>
+        {isObjectivesComplete && (
+          <div className={s.tick}>
+            <Icon icon="check" />
+          </div>
+        )}
         <BungieImage src={icon} className={s.gearIcon} />
       </div>
 
       <div>
         <strong>{name}</strong>
-        <br />
-        <p className={s.gearDescription}>
-          {gear.collectible.displayProperties.description}
-        </p>
+        {
+          <p className={s.gearDescription}>
+            <span>{gear.collectible.displayProperties.description}</span>
+          </p>
+        }
+
+        {gear.inventory && !isObjectivesComplete && (
+          <Objectives
+            className={s.objectives}
+            objectiveHashes={objectiveHashes}
+            objectiveInstances={objectiveInstances}
+            objectiveDefs={objectiveDefs}
+          />
+        )}
+
+        {isObjectivesComplete && (
+          <p className={s.gearDescription}>
+            {' '}
+            <span>
+              <em>All objectives complete</em>
+            </span>
+          </p>
+        )}
       </div>
     </div>
   );
 }
 
-function SolsticeOfHeroes({ viewData, classDefs }) {
+function SolsticeOfHeroes({ viewData, objectiveDefs, objectiveInstances }) {
   console.log('viewData:', viewData);
   return (
     <div className={s.page}>
@@ -117,7 +166,13 @@ function SolsticeOfHeroes({ viewData, classDefs }) {
                         //     get(gear.item, 'displayProperties.name')) ||
                         //   get(gear.collectible, 'displayProperties.name');
 
-                        return <Gear gear={gear} />;
+                        return (
+                          <Gear
+                            gear={gear}
+                            objectiveDefs={objectiveDefs}
+                            objectiveInstances={objectiveInstances}
+                          />
+                        );
                       })}
                     </div>
                   </div>
@@ -132,13 +187,15 @@ function SolsticeOfHeroes({ viewData, classDefs }) {
 }
 
 function mapStateToProps(state) {
+  const inventory = inventorySelector(state);
   const itemDefs = state.definitions.DestinyInventoryItemDefinition;
   const collectibleDefs = state.definitions.DestinyCollectibleDefinition;
+  const objectiveDefs = state.definitions.DestinyObjectiveDefinition;
   const presentationNodeDefs =
     state.definitions.DestinyPresentationNodeDefinition;
   // const classDefs = state.definitions.DestinyClassDefinition;
 
-  if (!itemDefs || !presentationNodeDefs) {
+  if (!itemDefs || !presentationNodeDefs || !objectiveDefs) {
     return { viewData: [] };
   }
 
@@ -168,6 +225,7 @@ function mapStateToProps(state) {
 
               return {
                 collectible,
+                inventory: inventory && inventory[collectible.itemHash],
                 item
               };
             }
@@ -191,7 +249,11 @@ function mapStateToProps(state) {
     };
   });
 
-  return { viewData };
+  return {
+    viewData,
+    objectiveDefs,
+    objectiveInstances: objectiveInstancesSelector(state)
+  };
 }
 
 export default connect(mapStateToProps)(SolsticeOfHeroes);

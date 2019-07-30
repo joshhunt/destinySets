@@ -1,3 +1,5 @@
+$green = #44bd32;
+
 .page
   margin:0 30px
 
@@ -45,9 +47,15 @@
   margin: 0 20px
 
 .gear
+  position: relative
   display: flex
-  margin-bottom: 20px
+  margin-bottom: 30px
   line-height: 1
+
+  opacity: .5
+
+  &.obtained
+    opacity: 1
 
 .iconWell
   flex: 0
@@ -57,12 +65,13 @@
   width: 45px
   height: 45px
 
-
 .gearDescription
-  font-size: .9em
-  opacity: .75
   margin: 5px 0
   line-height: 1.3
+
+  > span
+    font-size: .9em
+    opacity: .75
 
 .classIcon
   width: 1.75em
@@ -79,3 +88,46 @@
 
   &:global(.Titan)
     height: 13px
+
+.objectives
+  margin-top: 10px
+  font-size: 14px
+
+._baseTick
+  display: inline-block
+  line-height: 1
+  text-align: center
+  background: $green
+  border-radius: 50%
+  font-size: 12px
+  padding: 3px
+  width: 18px
+  height: 18px
+
+.inlineTick
+  composes: _baseTick
+  transform: scale(.8)
+  margin-right: .5em
+
+.tick
+  composes: _baseTick
+  position: absolute
+  top: -5px
+  left: @top
+
+  // .partiallyCompleted &
+  //   width: 16px
+  //   height: 16px
+  //   border: 2px solid $green
+  //   background: desaturate($green, 20%)
+
+  //   svg
+  //     position: relative
+  //     top: -3px
+  //     left: -3px
+
+  .dismantled &
+    background: #7f8fa6
+
+  .checklisted &
+    background: #3c94ff
