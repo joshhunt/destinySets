@@ -40,6 +40,22 @@ const CLASS_MAP = {
   [MAJESTIC_TITAN]: CLASSES[TITAN]
 };
 
+const WARLOCK_ICON_NODE = 7761993;
+const TITAN_ICON_NODE = 272447096;
+const HUNTER_ICON_NODE = 308119616;
+
+const CLASS_ICON_NODE_MAP = {
+  [DRAINED_WARLOCK]: WARLOCK_ICON_NODE,
+  [DRAINED_HUNTER]: HUNTER_ICON_NODE,
+  [DRAINED_TITAN]: TITAN_ICON_NODE,
+  [RENEWED_WARLOCK]: WARLOCK_ICON_NODE,
+  [RENEWED_HUNTER]: HUNTER_ICON_NODE,
+  [RENEWED_TITAN]: TITAN_ICON_NODE,
+  [MAJESTIC_WARLOCK]: WARLOCK_ICON_NODE,
+  [MAJESTIC_HUNTER]: HUNTER_ICON_NODE,
+  [MAJESTIC_TITAN]: TITAN_ICON_NODE
+};
+
 const _g = (gear, field) =>
   (gear.item && !gear.item.redacted && get(gear.item, field)) ||
   get(gear.collectible, field);
@@ -86,6 +102,12 @@ function SolsticeOfHeroes({ viewData, classDefs }) {
                   <div className={s.setForClass}>
                     <h3 className={s.heading}>
                       {/* {set.classDef.displayProperties.name} */}
+
+                      <BungieImage
+                        src={set.classIcon}
+                        className={cx(s.classIcon, set.theClassName)}
+                      />
+
                       {set.theClassName}
                     </h3>
                     <div>
@@ -156,9 +178,13 @@ function mapStateToProps(state) {
           //   c => c.classType === CLASS_MAP[presentationNodeHash]
           // );
 
+          const iconNode =
+            presentationNodeDefs[CLASS_ICON_NODE_MAP[presentationNodeHash]];
+
           return {
             // classDef,
             theClassName: CLASS_MAP[presentationNodeHash],
+            classIcon: iconNode && iconNode.displayProperties.icon,
             childItems
           };
         })

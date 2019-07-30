@@ -15,7 +15,8 @@
     border-left-color: #522f65
 
 .heading
-  font-family: 'nhg text'
+  &, *
+    font-family: 'nhg text'
   letter-spacing: 1px
 
   h1&
@@ -62,3 +63,19 @@
   opacity: .75
   margin: 5px 0
   line-height: 1.3
+
+.classIcon
+  width: 1.75em
+  height: 1.75em
+  // vertical-align: middle
+  margin-right: 8px
+  object-fit: cover
+
+  &:global(.Warlock)
+    height: 10px
+
+  &:global(.Hunter)
+    height: 13px
+
+  &:global(.Titan)
+    height: 13px
