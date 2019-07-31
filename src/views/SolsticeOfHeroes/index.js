@@ -91,6 +91,7 @@ function Gear({
 
   const isPartiallyCompleted = gear.inventory && !isObjectivesComplete;
 
+  const showDescription = viewAllObjectives || !isObjectivesComplete;
   const showObjectives =
     viewAllObjectives || (gear.inventory && !isObjectivesComplete);
 
@@ -114,12 +115,11 @@ function Gear({
 
       <div className={s.gearMain}>
         <strong>{name}</strong>
-        {viewAllObjectives ||
-          (!isObjectivesComplete && (
-            <p className={s.gearDescription}>
-              <span>{gear.collectible.displayProperties.description}</span>
-            </p>
-          ))}
+        {showDescription && (
+          <p className={s.gearDescription}>
+            <span>{gear.collectible.displayProperties.description}</span>
+          </p>
+        )}
 
         {showObjectives && (
           <Objectives
