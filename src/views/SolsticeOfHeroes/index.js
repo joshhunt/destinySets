@@ -29,9 +29,7 @@ const MAJESTIC_HUNTER = 2557471206;
 const MAJESTIC_TITAN = 2946324362;
 
 const DRAINED = [DRAINED_WARLOCK, DRAINED_HUNTER, DRAINED_TITAN];
-
 const RENEWED = [RENEWED_WARLOCK, RENEWED_HUNTER, RENEWED_TITAN];
-
 const MAJESTIC = [MAJESTIC_WARLOCK, MAJESTIC_HUNTER, MAJESTIC_TITAN];
 
 const ALL_SETS = [DRAINED, RENEWED, MAJESTIC];
@@ -78,18 +76,21 @@ const _g = (gear, field) =>
   (gear.item && !gear.item.redacted && get(gear.item, field)) ||
   get(gear.collectible, field);
 
+const isCompleted = (gear, objectiveHashes, objectiveInstances) => {
+  return (
+    gear.hasBeenUpgraded ||
+    (objectiveHashes.length > 0 &&
+      objectiveHashes.every(objectiveHash => {
+        const objInstance = objectiveInstances[objectiveHash];
+        return objInstance && objInstance.complete;
+      }))
+  );
+};
+
 const countCompletedGear = (gearSet, objectiveInstances) => {
   return gearSet.filter(gear => {
     const objectiveHashes = get(gear.item, 'objectives.objectiveHashes', []);
-
-    return (
-      gear.hasBeenUpgraded ||
-      (objectiveHashes.length > 0 &&
-        objectiveHashes.every(objectiveHash => {
-          const objInstance = objectiveInstances[objectiveHash];
-          return objInstance && objInstance.complete;
-        }))
-    );
+    return isCompleted(gear, objectiveHashes, objectiveInstances);
   }).length;
 };
 
@@ -107,13 +108,11 @@ function Gear({
 
   const obtained = gear.inventory;
 
-  const isObjectivesComplete =
-    gear.hasBeenUpgraded ||
-    (objectiveHashes.length > 0 &&
-      objectiveHashes.every(objectiveHash => {
-        const objInstance = objectiveInstances[objectiveHash];
-        return objInstance && objInstance.complete;
-      }));
+  const isObjectivesComplete = isCompleted(
+    gear,
+    objectiveHashes,
+    objectiveInstances
+  );
 
   const isPartiallyCompleted = gear.inventory && !isObjectivesComplete;
 
