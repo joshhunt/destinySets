@@ -10,7 +10,6 @@ import {
 } from 'app/store/selectors';
 
 import Objectives from 'app/components/Objectives';
-import Icon from 'app/components/Icon';
 
 import s from './styles.styl';
 

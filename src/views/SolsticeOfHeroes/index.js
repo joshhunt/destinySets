@@ -239,11 +239,19 @@ function SolsticeOfHeroes({
 
       <Footer>
         Special thanks to{' '}
-        <a href="https://twitter.com/mr_niris" target="_blank">
+        <a
+          href="https://twitter.com/mr_niris"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           Niris
         </a>{' '}
         for the incredible design inspiration.{' '}
-        <a href="https://www.niris.tv/" target="_blank">
+        <a
+          href="https://www.niris.tv/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           Check out his stuff.
         </a>
       </Footer>
