@@ -64,6 +64,16 @@ const CLASS_ICON_NODE_MAP = {
   [MAJESTIC_TITAN]: TITAN_ICON_NODE
 };
 
+const FINISHED_IF_MAP = {
+  [DRAINED_WARLOCK]: 381563628,
+  [DRAINED_HUNTER]: 2826719795,
+  [DRAINED_TITAN]: 808331801,
+
+  [RENEWED_WARLOCK]: 692234472,
+  [RENEWED_HUNTER]: 268592485,
+  [RENEWED_TITAN]: 536106547
+};
+
 const _g = (gear, field) =>
   (gear.item && !gear.item.redacted && get(gear.item, field)) ||
   get(gear.collectible, field);
@@ -83,11 +93,12 @@ function Gear({
   const obtained = gear.inventory;
 
   const isObjectivesComplete =
-    objectiveHashes.length > 0 &&
-    objectiveHashes.every(objectiveHash => {
-      const objInstance = objectiveInstances[objectiveHash];
-      return objInstance && objInstance.complete;
-    });
+    gear.hasBeenUpgraded ||
+    (objectiveHashes.length > 0 &&
+      objectiveHashes.every(objectiveHash => {
+        const objInstance = objectiveInstances[objectiveHash];
+        return objInstance && objInstance.complete;
+      }));
 
   const isPartiallyCompleted = gear.inventory && !isObjectivesComplete;
 
@@ -294,12 +305,16 @@ function mapStateToProps(state) {
             return null;
           }
 
+          const upgradedInventoryEntry =
+            inventory[FINISHED_IF_MAP[presentationNodeHash]];
+
           const childItems = node.children.collectibles.map(
             ({ collectibleHash }) => {
               const collectible = collectibleDefs[collectibleHash];
               const item = collectible && itemDefs[collectible.itemHash];
 
               return {
+                hasBeenUpgraded: upgradedInventoryEntry,
                 collectible,
                 inventory: inventory && inventory[collectible.itemHash],
                 item
