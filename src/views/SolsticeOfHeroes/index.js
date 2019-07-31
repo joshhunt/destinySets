@@ -78,6 +78,21 @@ const _g = (gear, field) =>
   (gear.item && !gear.item.redacted && get(gear.item, field)) ||
   get(gear.collectible, field);
 
+const countCompletedGear = (gearSet, objectiveInstances) => {
+  return gearSet.filter(gear => {
+    const objectiveHashes = get(gear.item, 'objectives.objectiveHashes', []);
+
+    return (
+      gear.hasBeenUpgraded ||
+      (objectiveHashes.length > 0 &&
+        objectiveHashes.every(objectiveHash => {
+          const objInstance = objectiveInstances[objectiveHash];
+          return objInstance && objInstance.complete;
+        }))
+    );
+  }).length;
+};
+
 function Gear({
   gear,
   objectiveDefs,
@@ -211,23 +226,27 @@ function SolsticeOfHeroes({
                 return (
                   <div className={s.setForClass}>
                     <h3 className={s.heading}>
-                      {/* {set.classDef.displayProperties.name} */}
+                      <div className={s.splitHeading}>
+                        <div>
+                          <BungieImage
+                            src={set.classIcon}
+                            className={cx(s.classIcon, set.theClassName)}
+                          />
 
-                      <BungieImage
-                        src={set.classIcon}
-                        className={cx(s.classIcon, set.theClassName)}
-                      />
+                          {set.theClassName}
+                        </div>
 
-                      {set.theClassName}
+                        <div className={s.gearCount}>
+                          {countCompletedGear(
+                            set.childItems,
+                            objectiveInstances
+                          )}{' '}
+                          / 5
+                        </div>
+                      </div>
                     </h3>
                     <div>
                       {set.childItems.map(gear => {
-                        // const name =
-                        //   (gear.item &&
-                        //     !gear.item.redacted &&
-                        //     get(gear.item, 'displayProperties.name')) ||
-                        //   get(gear.collectible, 'displayProperties.name');
-
                         return (
                           <Gear
                             viewAllObjectives={viewAllObjectives}
