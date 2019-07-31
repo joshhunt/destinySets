@@ -165,9 +165,14 @@ function SolsticeOfHeroes({
 
   return (
     <div className={s.page}>
-      <h1 className={s.heading}>Solstice of Heroes - 2019</h1>
+      <h1 className={s.heading}>Solstice of Heroes 2019</h1>
 
       {!viewData.length ? <p className={s.loading}>Loading...</p> : null}
+
+      <p className={s.explainer}>
+        Complete all objectives on all items in a set to unlock the next set.
+        Complete objectives on Majestic gear to masterwork it.
+      </p>
 
       {viewData.length > 0 && (
         <button
