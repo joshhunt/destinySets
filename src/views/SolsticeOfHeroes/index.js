@@ -290,7 +290,7 @@ function SolsticeOfHeroes({
 }
 
 function mapStateToProps(state) {
-  const inventory = inventorySelector(state);
+  const inventory = inventorySelector(state) || {};
   const itemDefs = state.definitions.DestinyInventoryItemDefinition;
   const collectibleDefs = state.definitions.DestinyCollectibleDefinition;
   const objectiveDefs = state.definitions.DestinyObjectiveDefinition;
@@ -334,7 +334,7 @@ function mapStateToProps(state) {
               return {
                 hasBeenUpgraded: upgradedInventoryEntry,
                 collectible,
-                inventory: inventory && inventory[collectible.itemHash],
+                inventory: inventory[collectible.itemHash],
                 item
               };
             }
