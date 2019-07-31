@@ -68,7 +68,13 @@ const _g = (gear, field) =>
   (gear.item && !gear.item.redacted && get(gear.item, field)) ||
   get(gear.collectible, field);
 
-function Gear({ gear, objectiveDefs, objectiveInstances, viewAllObjectives }) {
+function Gear({
+  gear,
+  objectiveDefs,
+  objectiveInstances,
+  viewAllObjectives,
+  isLoggedIn
+}) {
   const icon = _g(gear, 'displayProperties.icon');
   const name = _g(gear, 'displayProperties.name');
 
@@ -93,6 +99,7 @@ function Gear({ gear, objectiveDefs, objectiveInstances, viewAllObjectives }) {
       className={cx(
         s.gear,
         obtained && s.obtained,
+        !isLoggedIn && s.notLoggedIn,
         isPartiallyCompleted && s.partiallyCompleted
       )}
     >
@@ -141,7 +148,8 @@ function SolsticeOfHeroes({
   viewData,
   objectiveDefs,
   objectiveInstances,
-  fetchProfile
+  fetchProfile,
+  isLoggedIn
 }) {
   useEffect(() => {
     console.log('effect running');
@@ -207,6 +215,7 @@ function SolsticeOfHeroes({
                           <Gear
                             viewAllObjectives={viewAllObjectives}
                             gear={gear}
+                            isLoggedIn={isLoggedIn}
                             objectiveDefs={objectiveDefs}
                             objectiveInstances={objectiveInstances}
                           />
@@ -249,6 +258,8 @@ function mapStateToProps(state) {
   if (!itemDefs || !presentationNodeDefs || !objectiveDefs) {
     return { viewData: [] };
   }
+
+  const isLoggedIn = !!state.profile.profile;
 
   // const classDefItems = Object.values(classDefs);
 
@@ -303,6 +314,7 @@ function mapStateToProps(state) {
   return {
     viewData,
     objectiveDefs,
+    isLoggedIn,
     objectiveInstances: objectiveInstancesSelector(state)
   };
 }

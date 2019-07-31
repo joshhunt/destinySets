@@ -55,10 +55,13 @@ $green = #44bd32;
   display: flex
   margin-bottom: 30px
   line-height: 1
-
   opacity: .5
+  transition: 200ms ease-in-out opacity
 
   &.obtained
+    opacity: 1
+
+  &.notLoggedIn
     opacity: 1
 
 .iconWell
