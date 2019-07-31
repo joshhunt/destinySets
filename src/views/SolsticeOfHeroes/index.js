@@ -114,11 +114,12 @@ function Gear({
 
       <div className={s.gearMain}>
         <strong>{name}</strong>
-        {!isObjectivesComplete && (
-          <p className={s.gearDescription}>
-            <span>{gear.collectible.displayProperties.description}</span>
-          </p>
-        )}
+        {viewAllObjectives ||
+          (!isObjectivesComplete && (
+            <p className={s.gearDescription}>
+              <span>{gear.collectible.displayProperties.description}</span>
+            </p>
+          ))}
 
         {showObjectives && (
           <Objectives
