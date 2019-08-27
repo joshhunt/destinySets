@@ -367,7 +367,7 @@ export const SOLSTICE_OF_HEROES_YEAR_2 = {
       items: [
         1363029408, // Micro Mini
         1363029409, // Legacy-2
-        3570942494 // EV-37 Voidstreak
+        2863148331 // EV-37 Voidstreak
       ]
     },
     {
