@@ -11,6 +11,7 @@ import Triumphs from './views/Triumphs';
 import ItemPage from './views/ItemPage';
 import SolsticeOfHeroes from './views/SolsticeOfHeroes';
 import DataExplorerRedirect from './views/DataExplorerRedirect';
+import EditorPage from './views/EditorPage/lazy';
 
 import store from './store';
 import sets from './setData';
@@ -97,6 +98,8 @@ export default class AppRouter extends Component {
             <Redirect from="/curse-of-osiris" to="year-1" />
             <Redirect from="/warmind" to="year-1" />
             <Redirect from="/all-seasons" to="year-1" />
+
+            <Route path="/editor" components={EditorPage} />
           </Route>
         </Router>
       </Provider>

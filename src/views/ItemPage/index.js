@@ -115,7 +115,6 @@ function ItemPage({
   statDefs,
   collectible,
   perks,
-  itemHash,
   instances
 }) {
   const weaponSlot =

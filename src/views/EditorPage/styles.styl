@@ -1,0 +1,43 @@
+.section
+  padding: 15px 0
+  margin: 15px
+  border-bottom: 1px solid grey
+
+._fieldBase
+  background: none
+  border: none
+  border-bottom: 1px solid lightgray
+  color: inherit
+  font-size: inherit
+
+.sectionNameField
+  composes: _fieldBase
+  font-size: 22px
+
+.sets
+  display: grid
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  margin: 0 -15px
+
+.set
+  background: #15191E
+  margin: 15px
+
+.setHeader
+  background: #283039
+  padding: 10px
+
+.setNameField
+  composes: _fieldBase
+  width: 100%
+
+.setBody
+  padding: 10px
+
+
+.setSection
+  padding: 10px 0
+  border-bottom: 1px solid rgba(white, .1)
+
+.mono
+  font-family: monospace
