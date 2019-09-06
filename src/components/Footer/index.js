@@ -31,9 +31,11 @@ export default function Footer({ item, children }) {
       </a>
       <br />
       <br />
-      Made with love by{' '}
+      Made by{' '}
       <a href="http://joshhunt.is" target="_blank" rel="noopener noreferrer">
         Josh Hunt
+      </a>{' '} and <a href="https://twitter.com/Jakosaur_" target="_blank" rel="noopener noreferrer">
+      Jakosaur_
       </a>{' '}
       for Destiny fans.
       <br />
