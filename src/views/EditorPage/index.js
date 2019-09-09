@@ -4,6 +4,9 @@ import produce from 'immer';
 
 import allSetData from 'app/setData';
 
+import Item from './ItemWithTooltip';
+import AddItemModal from './AddItemModal';
+
 import s from './styles.styl';
 
 function DefinitionString({ phrase }) {
@@ -11,6 +14,7 @@ function DefinitionString({ phrase }) {
 }
 
 export default function EditorPage() {
+  const [addItemModalOpen, setAddItemModalOpen] = useState(false);
   const setData = allSetData.yearTwo;
 
   const normalizedSetData = useMemo(
@@ -43,10 +47,28 @@ export default function EditorPage() {
     };
   }
 
-  console.log('pageData:', pageData);
+  function makeOnChangeInt(...args) {
+    const onChange = makeOnChange(...args);
+
+    return ev => {
+      ev.target.value = parseInt(ev.target.value, 10);
+      onChange(ev);
+    };
+  }
+
+  function openAddItemModal() {
+    setAddItemModalOpen(true);
+  }
+
+  function recieveNewItems(items) {
+    setAddItemModalOpen(false);
+    console.log('recieved new items', items);
+  }
 
   return (
-    <div>
+    <div className={s.root}>
+      <AddItemModal isOpen={addItemModalOpen} addItems={recieveNewItems} />
+
       {pageData.map((pageSection, index) => {
         return (
           <div className={s.section} key={index}>
@@ -79,22 +101,71 @@ export default function EditorPage() {
                       {set.sections.map((section, iii) => {
                         return (
                           <div className={s.setSection}>
-                            <input
-                              placeholder="name"
-                              value={section.name}
-                              className={s.setNameField}
-                              onChange={makeOnChange(
-                                index,
-                                'sets',
-                                ii,
-                                'sections',
-                                iii,
-                                'name'
-                              )}
-                            />
+                            <div className={s.split}>
+                              <div>
+                                <input
+                                  placeholder="name"
+                                  value={section.name}
+                                  className={s.setNameField}
+                                  onChange={makeOnChange(
+                                    index,
+                                    'sets',
+                                    ii,
+                                    'sections',
+                                    iii,
+                                    'name'
+                                  )}
+                                />
+                              </div>
+
+                              <div>
+                                <label>season:</label>
+                                <input
+                                  placeholder="e.g. 6"
+                                  value={section.season}
+                                  className={s.setSeasonField}
+                                  onChange={makeOnChangeInt(
+                                    index,
+                                    'sets',
+                                    ii,
+                                    'sections',
+                                    iii,
+                                    'season'
+                                  )}
+                                />
+                              </div>
+                            </div>
+
+                            <div className={s.itemGroups}>
+                              {section.itemGroups.map(group => (
+                                <div className={s.itemGroup}>
+                                  {group.map(itemHash => (
+                                    <Item
+                                      className={s.item}
+                                      itemHash={itemHash}
+                                    />
+                                  ))}
+
+                                  <button
+                                    className={s.button}
+                                    onClick={openAddItemModal}
+                                  >
+                                    Add item
+                                  </button>
+                                </div>
+                              ))}
+
+                              <div className={s.fullRow}>
+                                <button className={s.button}>
+                                  Add item group
+                                </button>
+                              </div>
+                            </div>
                           </div>
                         );
                       })}
+
+                      <button className={s.button}>Add set section</button>
                     </div>
                   </div>
                 );

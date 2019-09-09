@@ -4,11 +4,13 @@
   border-bottom: 1px solid grey
 
 ._fieldBase
-  background: none
-  border: none
-  border-bottom: 1px solid lightgray
   color: inherit
   font-size: inherit
+  background: #484848
+  border: 1px solid #7b7b7b
+  border-radius: 2px
+  padding-left: 5px
+  padding-right: 5px
 
 .sectionNameField
   composes: _fieldBase
@@ -27,17 +29,52 @@
   background: #283039
   padding: 10px
 
+.split
+  display: flex
+  justify-content: space-between
+
 .setNameField
   composes: _fieldBase
   width: 100%
 
+.setSeasonField
+  composes: _fieldBase
+  width: 50px
+  margin-left: 10px
+
 .setBody
   padding: 10px
 
-
 .setSection
-  padding: 10px 0
-  border-bottom: 1px solid rgba(white, .1)
+  padding: 10px
+  background: rgba(white, .06)
+  margin-bottom: 10px
 
 .mono
   font-family: monospace
+
+.itemGroups
+  margin: -5px
+  margin-top: 0
+
+.itemGroup
+  display: inline-flex
+  flex-wrap: wrap
+  margin: 5px
+  border: 1px solid rgba(white, .2)
+  font-size: 0
+
+.item
+  display: inline-block
+
+.button
+  composes: cta from 'app/components/CTA/styles.styl'
+  padding: 5px
+  margin: 5px
+  font-size: 12px
+  border: none
+  border-radius: 2px
+
+.fullRow
+  width: 100%
+  flex: 0 0 100%
