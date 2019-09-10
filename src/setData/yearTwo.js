@@ -2085,7 +2085,7 @@ export default ([
                 2473664949, // Plunderer
                 4292140878, // End of Days"
                 3919047492, // Meteor Shower
-                714705096, // Dirty Work
+                2714705096, // Dirty Work
                 1045979943, // Subatomic Ivory
                 439277955, // Eyes Forward
                 565852609 // Yes, Queen
