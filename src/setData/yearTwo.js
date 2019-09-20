@@ -2178,33 +2178,38 @@ export default ([
             season: 7,
             itemGroups: [
               [
+                343223696, // VORACIOUS
+                // 2182432903, // STOLEN GOODS (Wasn't sold for Bright Dust)
+                1541998888, // Lucid Melody
+                12695374, // Aurelian Decree
+                12695375, // Beast Magic
+                
                 // 2257492093, // BAIKONUR (Wasn't sold for Bright Dust)
                 3763220133, // BARREN WASTES
                 // 2404516638, // CYBERINTELLECT (Wasn't sold for Bright Dust)
                 3807808621, // DIGITAL OPS
                 1321987864, // DREAM OF A NEW WORLD
                 1904833599, // RONIN
-                // 2182432903, // STOLEN GOODS (Wasn't sold for Bright Dust)
-                3838841051, // ULTRAVIOLET
-                343223696 // VORACIOUS
+                3838841051 // ULTRAVIOLET
+                
               ],
               [
-                77772312, // ALONE, TO BE JOINED
                 // 2533050120, // BEGGAR, TO BE FED (Wasn't sold for Bright Dust)
                 4017323452, // BROKEN BIRD, TO BE HEALED
+                // 1069601252, // UNSEEING, TO BE SHOWN (Wasn't sold for Bright Dust)
+                1546315793, // UNHEARING, TO BE TOLD
+                77772312, // ALONE, TO BE JOINED
+                // 3967294031, // UNLOVED, TO BE CHERISHED (Wasn't sold for Bright Dust)
                 403561732, // DEFENSELESS, TO BE ARMED
-                3473397300, // KING IN ALL DIRECTIONS
                 // 3199440990, // ROCK-A-BYE (Wasn't sold for Bright Dust)
                 // 2512537661, // SHAPESHIFTER (Wasn't sold for Bright Dust)
-                1546315793, // UNHEARING, TO BE TOLD
-                // 3967294031, // UNLOVED, TO BE CHERISHED (Wasn't sold for Bright Dust)
-                // 1069601252 // UNSEEING, TO BE SHOWN (Wasn't sold for Bright Dust)
+                3473397300 // KING IN ALL DIRECTIONS
               ],
               [
-                3211076406, // BLUED STEEL
                 2783100859, // QUEEN COBRA
-                // 1011994721, // JIĀN (Wasn't sold for Bright Dust)
+                3211076406, // BLUED STEEL
                 3105540650, // ~FLEX ENHANCE REPLICATE~
+                // 1011994721, // JIĀN (Wasn't sold for Bright Dust)
                 1984736607, // CADUCEUS
                 2986573526 // ELECTROMAG STABILIZERS
               ]
@@ -2282,16 +2287,17 @@ export default ([
               4009267290, // CONSULT THE ARCHIVES
               2231816495, // MIRROR MIRROR
               // 2931525672, // SABRAGE SALUTE (Wasn't sold for Bright Dust)
+              1668956766, // GIDDY LAUGH
+              2070010145, // BUT YOU
+              4189539716, // YOU GO AHEAD
+              4179243516, // TIME OUT
               319183094, // MEDITATIVE MOMENT
               908677920, // STYLISH SIT
               // 1324309776, // DISCOURAGED (Wasn't sold for Bright Dust)
               1081767429, // LINK UP
               854833035, // QUICK HUG
               28833378, // STATIC SHOCK
-              2070010145, // BUT YOU
-              1668956766, // GIDDY LAUGH
-              4179243516, // TIME OUT
-              4189539716 // YOU GO AHEAD
+              2070010145 // BUT YOU
             ]
           },
           {
@@ -2365,14 +2371,14 @@ export default ([
             name: 'Ghosts',
             season: 7,
             items: [
-              // 443190216, // Void Shell (Wasn't sold for Bright Dust)
-              443190217, // Kitbash Shell
-              443190218, // Arc Shell
-              443190219, // Solar Shell
+              443190222, // Drop Pod Shell
+              // 443190223, // Intrepid Shell (Wasn't sold for Bright Dust)
               // 443190220, // Gyro Shell (Wasn't sold for Bright Dust)
               // 443190221, // PS-1 Shell (Wasn't sold for Bright Dust)
-              443190222, // Drop Pod Shell
-              // 443190223 // Intrepid Shell (Wasn't sold for Bright Dust)
+              443190218, // Arc Shell
+              443190219, // Solar Shell
+              // 443190216, // Void Shell (Wasn't sold for Bright Dust)
+              443190217 // Kitbash Shell
             ]
           },
           {
@@ -2431,16 +2437,16 @@ export default ([
             name: 'Ghost Projections',
             season: 7,
             items: [
+              1295682251, // IMPERIAL BEAST PROJECTION
               1295682250, // CHALICE PROJECTION
               1295682249, // CROWN OF SORROW PROJECTION
+              // 1295682248, // EMPEROR CALUS PROJECTION (Wasn't sold for Bright Dust)              
               // 1295682255, // DARING HAT PROJECTION (Wasn't sold for Bright Dust)
-              // 1295682248, // EMPEROR CALUS PROJECTION (Wasn't sold for Bright Dust)
-              1295682251, // IMPERIAL BEAST PROJECTION
-              3527564902, // BEAST'S PAW PROJECTION
-              // 3527564901, // DROPSHIP PROJECTION (Wasn't sold for Bright Dust)
               // 3527564900, // IMPERIAL AXES PROJECTION (Wasn't sold for Bright Dust)
-              // 3527564896, // SALACOT PROJECTION (Wasn't sold for Bright Dust)
+              // 3527564901, // DROPSHIP PROJECTION (Wasn't sold for Bright Dust)
+              3527564902, // BEAST'S PAW PROJECTION
               // 3527564903, // TREASURE CHEST PROJECTION (Wasn't sold for Bright Dust)
+              // 3527564896, // SALACOT PROJECTION (Wasn't sold for Bright Dust)
               // 3527564897 // TREASURE MAP PROJECTION (Wasn't sold for Bright Dust)
             ]
           },
@@ -2588,13 +2594,13 @@ export default ([
             name: 'Ships',
             season: 7,
             items: [
-              2964059912, // Transpose JT-24-X
-              // 2964059913, // Chela-N (Wasn't sold for Bright Dust)
-              // 2964059914, // Aeshnidae Fixed-Wing (Wasn't sold for Bright Dust)
               2964059916, // Bayle's Aerodyne
               2964059917, // Proteus
               2964059918, // Woomera B-5
-              2964059919 // The Oviraptor
+              2964059919, // The Oviraptor
+              2964059912, // Transpose JT-24-X
+              // 2964059913, // Chela-N (Wasn't sold for Bright Dust)
+              // 2964059914 // Aeshnidae Fixed-Wing (Wasn't sold for Bright Dust)
             ]
           },
           {
@@ -2638,10 +2644,10 @@ export default ([
             name: 'Shaders',
             season: 7,
             items: [
-              1363705632, // First Light
-              1363705633, // Atmospheric Glow
-              1363705634, // Amethyst Veil
               1363705635, // Coastal Suede
+              1363705634, // Amethyst Veil
+              1363705633, // Atmospheric Glow
+              1363705632, // First Light
               1363705639 // Royal Welcome
             ]
           },
@@ -2679,11 +2685,11 @@ export default ([
             name: 'Transmat Effects',
             season: 7,
             items: [
-              515071961, // Tiger Effects
-              515071964, // Eldritch Effects
               515071965, // Darkblade Effects
+              515071964, // Eldritch Effects
+              515071967, // Minotaur Effects
               // 515071966, // Loot Chest Effects (Wasn't sold for Bright Dust)
-              515071967 // Minotaur Effects
+              515071961 // Tiger Effects
             ]
           }
         ]
