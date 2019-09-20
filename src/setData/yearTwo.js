@@ -2518,7 +2518,7 @@ export default ([
             season: 7,
             items: [
               // 258623688, // BrayTech DREAM9 (Wasn't sold for Bright Dust)
-              25862368, // Clean Sweep
+              258623689, // Clean Sweep
               // 258623690, // Expedition-JT (Wasn't sold for Bright Dust)
               258623691, // The Motherlode
               258623692, // The Grateful Crane
