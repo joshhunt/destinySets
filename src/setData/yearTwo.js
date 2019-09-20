@@ -2181,9 +2181,9 @@ export default ([
                 // Order based on Eververse Store
                 343223696, // VORACIOUS
                 // 2182432903, // STOLEN GOODS (Wasn't sold for Bright Dust)
-                1541998888, // Lucid Melody
-                12695374, // Aurelian Decree
-                12695375, // Beast Magic
+                // 1541998888, // Lucid Melody (Wasn't sold for Bright Dust)
+                // 12695374, // Aurelian Decree (Wasn't sold for Bright Dust)
+                // 12695375, // Beast Magic (Wasn't sold for Bright Dust)
                 // Below weren't available for direct purchase so random order
                 // 2257492093, // BAIKONUR (Wasn't sold for Bright Dust)
                 3763220133, // BARREN WASTES
@@ -2518,7 +2518,7 @@ export default ([
             season: 7,
             items: [
               // 258623688, // BrayTech DREAM9 (Wasn't sold for Bright Dust)
-              258623689, // Clean Sweep
+              // 258623689, // Clean Sweep (Wasn't sold for Bright Dust)
               // 258623690, // Expedition-JT (Wasn't sold for Bright Dust)
               258623691, // The Motherlode
               258623692, // The Grateful Crane
