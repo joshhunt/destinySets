@@ -2178,12 +2178,13 @@ export default ([
             season: 7,
             itemGroups: [
               [
+                // Order based on Eververse Store
                 343223696, // VORACIOUS
                 // 2182432903, // STOLEN GOODS (Wasn't sold for Bright Dust)
                 1541998888, // Lucid Melody
                 12695374, // Aurelian Decree
                 12695375, // Beast Magic
-                
+                // Below weren't available for direct purchase so random order
                 // 2257492093, // BAIKONUR (Wasn't sold for Bright Dust)
                 3763220133, // BARREN WASTES
                 // 2404516638, // CYBERINTELLECT (Wasn't sold for Bright Dust)
@@ -2191,7 +2192,6 @@ export default ([
                 1321987864, // DREAM OF A NEW WORLD
                 1904833599, // RONIN
                 3838841051 // ULTRAVIOLET
-                
               ],
               [
                 // 2533050120, // BEGGAR, TO BE FED (Wasn't sold for Bright Dust)
