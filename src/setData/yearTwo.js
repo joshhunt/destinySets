@@ -2296,8 +2296,7 @@ export default ([
               // 1324309776, // DISCOURAGED (Wasn't sold for Bright Dust)
               1081767429, // LINK UP
               854833035, // QUICK HUG
-              28833378, // STATIC SHOCK
-              2070010145 // BUT YOU
+              28833378 // STATIC SHOCK
             ]
           },
           {
