@@ -23,7 +23,9 @@ export default class AppRouter extends Component {
           <Route component={App}>
             <Route path="/solstice-2019" component={SolsticeOfHeroes} />
 
-            <Route path="/" component={Inventory} setData={sets.yearTwo} />
+            <Route path="/" component={Inventory} setData={sets.yearThree} />
+
+            <Route path="/base" component={Inventory} setData={sets.baseGame} />
 
             <Route
               path="/year-1"
@@ -37,7 +39,11 @@ export default class AppRouter extends Component {
               setData={sets.yearTwo}
             />
 
-            <Route path="/base" component={Inventory} setData={sets.baseGame} />
+            <Route
+              path="/year-3"
+              component={Inventory}
+              setData={sets.yearThree}
+            />
 
             <Route
               path="/catalysts"
