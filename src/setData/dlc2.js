@@ -412,7 +412,7 @@ export default ([
     name: 'Other',
     sets: [
       {
-        name: '"Insight" Armor - PS4 Exclusive',
+        name: '"Insight" Armor',
         id: 'WARMIND_INSIGHT',
         sections: [
           {

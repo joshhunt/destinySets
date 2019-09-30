@@ -10,12 +10,12 @@ import {
   WEAPON_MODS_ORNAMENTS,
   ARMOR_MODS_ORNAMENTS,
   FILTER_SHOW_COLLECTED,
-  FILTER_SHOW_PS4_EXCLUSIVES,
+  // FILTER_SHOW_PS4_EXCLUSIVES,
   FILTER_SHOW_HIDDEN_SETS,
   FILTER_SHOW_ORNAMENTS,
   FILTER_SHOW_WEAPONS
 } from 'app/lib/destinyEnums';
-import CONSOLE_EXCLUSIVES from 'app/extraData/consoleExclusives';
+// import CONSOLE_EXCLUSIVES from 'app/extraData/consoleExclusives';
 
 import {
   inventorySelector,
@@ -72,12 +72,12 @@ function filterItem(item, inventory, filters, searchTerm) {
     return false;
   }
 
-  if (
-    !filters[FILTER_SHOW_PS4_EXCLUSIVES] &&
-    CONSOLE_EXCLUSIVES.ps4.includes(item.hash)
-  ) {
-    return false;
-  }
+  // if (
+  //   !filters[FILTER_SHOW_PS4_EXCLUSIVES] &&
+  //   CONSOLE_EXCLUSIVES.ps4.includes(item.hash)
+  // ) {
+  //   return false;
+  // }
 
   if (!filters[FILTER_SHOW_COLLECTED] && inventory) {
     const inventoryEntry = inventory[item.hash];
