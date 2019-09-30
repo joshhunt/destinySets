@@ -27,7 +27,7 @@ export default ([
               2957367743, // Toil and Trouble
               253196586, // Oath for Tomorrow
               3745990145, // Long Shadow
-              4146702548 // Outrageous Fortune
+              4146702548 // Outrageous Fortunes
             ]
           },
           {
