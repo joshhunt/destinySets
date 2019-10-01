@@ -7,54 +7,54 @@ export default ([
   {
     name: 'Activities',
     sets: [
-      {
-        name: _(
-          'DestinyActivityModeDefinition[2394616003].displayProperties.name', // Double Check
-          'Strikes' // Double Check
-        ),
-        id: 'year-three-strikes',
-        description: _(
-          'DestinyCollectibleDefinition[2589931339].sourceString', // Double Check
-          'Complete strikes and earn rank-up packages from Commander Zavala.' // Double Check
-        ),
-        sections: [
-          {
-            name: 'Weapons',
-            season: "K", // Double Check
-            items: [
+      // {
+      //   name: _(
+      //     'DestinyActivityModeDefinition[2394616003].displayProperties.name', // Double Check
+      //     'Strikes' // Double Check
+      //   ),
+      //   id: 'year-three-strikes',
+      //   description: _(
+      //     'DestinyCollectibleDefinition[2589931339].sourceString', // Double Check
+      //     'Complete strikes and earn rank-up packages from Commander Zavala.' // Double Check
+      //   ),
+      //   sections: [
+      //     {
+      //       name: 'Weapons',
+      //       season: "K", // Double Check
+      //       items: [
 
-            ]
-          },
-          {
-            name: 'Hunter Armor',
-            season: "K", // Double Check
-            items: [
+      //       ]
+      //     },
+      //     {
+      //       name: 'Hunter Armor',
+      //       season: "K", // Double Check
+      //       items: [
 
-            ]
-          },
-          {
-            name: 'Titan Armor',
-            season: "K", // Double Check
-            items: [
+      //       ]
+      //     },
+      //     {
+      //       name: 'Titan Armor',
+      //       season: "K", // Double Check
+      //       items: [
 
-            ]
-          },
-          {
-            name: 'Warlock Armor',
-            season: "K", // Double Check
-            items: [
+      //       ]
+      //     },
+      //     {
+      //       name: 'Warlock Armor',
+      //       season: "K", // Double Check
+      //       items: [
 
-            ]
-          },
-          {
-            name: 'Extras',
-            season: "K", // Double Check
-            items: [
+      //       ]
+      //     },
+      //     {
+      //       name: 'Extras',
+      //       season: "K", // Double Check
+      //       items: [
 
-            ]
-          }
-        ]
-      },
+      //       ]
+      //     }
+      //   ]
+      // },
       {
         name: _(
           'DestinyActivityModeDefinition[1164760504].displayProperties.name', // Double Check
