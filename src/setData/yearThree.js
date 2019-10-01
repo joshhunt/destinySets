@@ -57,109 +57,169 @@ export default ([
       },
       {
         name: _(
-          'DestinyActivityModeDefinition[1826469369].displayProperties.name', // Double Check
-          'Iron Banner' // Double Check
+          'DestinyActivityModeDefinition[1164760504].displayProperties.name', // Double Check
+          'Crucible' // Double Check
+        ),
+        id: 'YEAR_TWO_CRUCIBLE',
+        description: _(
+          'DestinyCollectibleDefinition[1279318105].sourceString', // Double Check
+          'Complete Crucible matches and earn rank-up packages from Lord Shaxx.' // Double Check
+        ),
+        sections: [
+          {
+            name: 'Weapons',
+            season: 8,
+            items: [
+
+            ]
+          },
+          {
+            name: 'Hunter Armor',
+            season: 8,
+            items: [
+
+            ]
+          },
+          {
+            name: 'Titan Armor',
+            season: 8,
+            items: [
+
+            ]
+          },
+          {
+            name: 'Warlock Armor',
+            season: 8,
+            items: [
+
+            ]
+          },
+          {
+            name: 'Extras',
+            season: 8,
+            items: [
+              3219975799 // Honorable Duelist Shell
+            ]
+          }
+        ]
+      },
+      {
+        name: _(
+          'DestinyActivityModeDefinition[1826469369].displayProperties.name',
+          'Iron Banner'
         ),
         id: 'year-iron-banner',
         description: _(
-          'DestinyCollectibleDefinition[3008980338].sourceString', // Double Check
-          'Complete Iron Banner matches and earn rank-up packages from Lord Saladin.' // Double Check
+          'DestinyCollectibleDefinition[3864000240].sourceString',
+          'Complete Iron Banner matches and earn rank-up packages from Lord Saladin.'
         ),
         sections: [
           {
             name: 'Weapons',
             season: 8, // Double Check
             items: [
-              2154059444
+
             ]
           },
           {
             name: 'Hunter Armor',
             season: 8, // Double Check
             items: [
-
+              1098138990, // Iron Will Mask
+              2547799775, // Iron Will Sleeves
+              1058936857, // Iron Will Vest
+              1469050017, // Iron Will Boots
+              2414679508 // Iron Will Cloak
             ]
           },
           {
             name: 'Titan Armor',
             season: 8, // Double Check
             items: [
-
+              1895324274, // Iron Will Helm
+              2320100699, // Iron Will Gauntlets
+              2536633781, // Iron Will Plate
+              770140877, // Iron Will Greaves
+              1234228360 // Iron Will Mark
             ]
           },
           {
             name: 'Warlock Armor',
             season: 8, // Double Check
             items: [
-
+              2205315921, // Iron Will Hood
+              863444264, // Iron Will Gloves
+              4128151712, // Iron Will Vestments
+              1498852482, // Iron Will Steps
+              3055410141 // Iron Will Bond
             ]
           },
           {
             name: 'Extras',
             season: 8, // Double Check
             items: [
-
+              677674547 // Flying Foundry
             ]
           }
         ]
       },
-      {
-        name: _(
-          'DestinyActivityModeDefinition[2394616003].displayProperties.name', // Double Check
-          'Vex Offensive' // Double Check
-        ),
-        id: 'year-vex-offensive',
-        description: _(
-          'DestinyCollectibleDefinition[2589931339].sourceString', // Double Check
-          'Complete strikes and earn rank-up packages from Commander Zavala.' // Double Check
-        ),
-        sections: [
-          {
-            name: 'Weapons',
-            season: 8, // Double Check
-            items: [
-              2154059444
-            ]
-          },
-          {
-            name: 'Hunter Armor',
-            season: 8, // Double Check
-            items: [
+      // {
+      //   name: _(
+      //     'DestinyActivityModeDefinition[2394616003].displayProperties.name', // Double Check
+      //     'Vex Offensive' // Double Check
+      //   ),
+      //   id: 'year-vex-offensive',
+      //   description: _(
+      //     'DestinyCollectibleDefinition[2589931339].sourceString', // Double Check
+      //     'Complete strikes and earn rank-up packages from Commander Zavala.' // Double Check
+      //   ),
+      //   sections: [
+      //     {
+      //       name: 'Weapons',
+      //       season: 8, // Double Check
+      //       items: [
+      //         2154059444
+      //       ]
+      //     },
+      //     {
+      //       name: 'Hunter Armor',
+      //       season: 8, // Double Check
+      //       items: [
 
-            ]
-          },
-          {
-            name: 'Titan Armor',
-            season: 8, // Double Check
-            items: [
+      //       ]
+      //     },
+      //     {
+      //       name: 'Titan Armor',
+      //       season: 8, // Double Check
+      //       items: [
 
-            ]
-          },
-          {
-            name: 'Warlock Armor',
-            season: 8, // Double Check
-            items: [
+      //       ]
+      //     },
+      //     {
+      //       name: 'Warlock Armor',
+      //       season: 8, // Double Check
+      //       items: [
 
-            ]
-          },
-          {
-            name: 'Extras',
-            season: 8, // Double Check
-            items: [
+      //       ]
+      //     },
+      //     {
+      //       name: 'Extras',
+      //       season: 8, // Double Check
+      //       items: [
 
-            ]
-          }
-        ]
-      },
+      //       ]
+      //     }
+      //   ]
+      // },
       {
         name: _(
           // 'DestinyActivityModeDefinition[2394616003].displayProperties.name', // Double Check
-          'Garden of Salvation' // Double Check
+          'Garden of Salvation'
         ),
         id: 'year-three-garden-of-salvation',
         description: _(
-          'DestinyCollectibleDefinition[2948134329].sourceString', // Double Check
-          '"Garden of Salvation" raid' // Double Check
+          'DestinyCollectibleDefinition[2948134329].sourceString',
+          '"Garden of Salvation" raid'
         ),
         sections: [
           {
@@ -226,212 +286,239 @@ export default ([
     sets: [
       {
         name: _(
-          'DestinyPlaceDefinition[975684424].displayProperties.name', // Double Check
-          'The Moon' // Double Check
+          'DestinyPlaceDefinition[3325508439].displayProperties.name',
+          'The Moon'
         ),
         id: 'year-three-moon',
         description: _(
-          'DestinyCollectibleDefinition[1350431641].sourceString', // Double Check
-          'Complete activities and earn rank-up packages on the Moon.' // Double Check
+          'DestinyCollectibleDefinition[1310958655].sourceString',
+          'Found by exploring the Moon.'
         ),
         sections: [
           {
             name: 'Weapons',
-            season: "K", // Double Check
+            season: "K",
             items: [
-              2154059444
+              2723909519, // Arc Logic
+              208088207, // Premonition
+              3924212056, // Loud Lullaby
+              4277547616, // Every Waking Moment
+              1016668089, // One Small Step
+              2931957300, // Dream Breaker
+              1645386487, // Tranquility
+              3870811754, // Night Terror
+              3690523502, // Love and Death
+              3325778512 // A Fine Memorial
             ]
           },
           {
             name: 'Hunter Armor',
-            season: "K", // Double Check
+            season: "K",
             items: [
-
+              659922705, // Dreambane Cowl
+              3571441640, // Dreambane Grips
+              883769696, // Dreambane Vest
+              377813570, // Dreambane Strides
+              193805725 // Dreambane Cloak
             ]
           },
           {
             name: 'Titan Armor',
-            season: "K", // Double Check
+            season: "K",
             items: [
-
+              272413517, // Dreambane Helm
+              925079356, // Dreambane Gauntlets
+              2568538788, // Dreambane Plate
+              310888006, // Dreambane Greaves
+              3312368889 // Dreambane Mark
             ]
           },
           {
             name: 'Warlock Armor',
-            season: "K", // Double Check
+            season: "K",
             items: [
-
+              1528483180, // Dreambane Hood
+              682780965, // Dreambane Gloves
+              3692187003, // Dreambane Robes
+              1030110631, // Dreambane Boots
+              2048903186 // Dreambane Bond
             ]
           },
           {
             name: 'Extras',
-            season: "K", // Double Check
+            season: "K",
             items: [
-
+              1272828316, // Moonshot Shell
+              3382260610, // Moonrider One
+              672488948, // The Third Tide
+              1714370698, // Orbital Cartographer
+              298334056, // Lunar Memoriam
+              2056256564, // Lunar Halcyon Gilt
+              2056256565 // Lunar Gloom
             ]
           }
         ]
       }
     ]
   },
-  {
-    name: 'Holiday & Special Events',
-    sets: [
-      {
-        name: 'Festival of the Lost',
-        id: 'year-three-festival-of-the-lost',
-        description: 'Earned during the seasonal Festival of the Lost event.', // Double Check
-        sections: [
-          {
-            name: 'Weapons',
-            season: 8, // Double Check
-            items: [
-              2154059444
-            ]
-          },
-          {
-            name: 'Hunter Armor',
-            season: 8, // Double Check
-            items: [
+  // {
+  //   name: 'Holiday & Special Events',
+  //   sets: [
+  //     {
+  //       name: 'Festival of the Lost',
+  //       id: 'year-three-festival-of-the-lost',
+  //       description: 'Earned during the seasonal Festival of the Lost event.', // Double Check
+  //       sections: [
+  //         {
+  //           name: 'Weapons',
+  //           season: 8, // Double Check
+  //           items: [
+  //             2154059444
+  //           ]
+  //         },
+  //         {
+  //           name: 'Hunter Armor',
+  //           season: 8, // Double Check
+  //           items: [
 
-            ]
-          },
-          {
-            name: 'Titan Armor',
-            season: 8, // Double Check
-            items: [
+  //           ]
+  //         },
+  //         {
+  //           name: 'Titan Armor',
+  //           season: 8, // Double Check
+  //           items: [
 
-            ]
-          },
-          {
-            name: 'Warlock Armor',
-            season: 8, // Double Check
-            items: [
+  //           ]
+  //         },
+  //         {
+  //           name: 'Warlock Armor',
+  //           season: 8, // Double Check
+  //           items: [
 
-            ]
-          },
-          {
-            name: 'Masks',
-            season: 8, // Double Check
-            items: [
+  //           ]
+  //         },
+  //         {
+  //           name: 'Masks',
+  //           season: 8, // Double Check
+  //           items: [
 
-            ]
-          },
-          {
-            name: 'Emotes',
-            season: 8, // Double Check
-            items: [
+  //           ]
+  //         },
+  //         {
+  //           name: 'Emotes',
+  //           season: 8, // Double Check
+  //           items: [
 
-            ]
-          },
-          {
-            name: 'Ghosts',
-            season: 8, // Double Check
-            items: [
+  //           ]
+  //         },
+  //         {
+  //           name: 'Ghosts',
+  //           season: 8, // Double Check
+  //           items: [
 
-            ]
-          },
-          {
-            name: 'Ghost Projections',
-            season: 8, // Double Check
-            items: [
+  //           ]
+  //         },
+  //         {
+  //           name: 'Ghost Projections',
+  //           season: 8, // Double Check
+  //           items: [
 
-            ]
-          },
-          {
-            name: 'Sparrows',
-            season: 8, // Double Check
-            items: [
+  //           ]
+  //         },
+  //         {
+  //           name: 'Sparrows',
+  //           season: 8, // Double Check
+  //           items: [
 
-            ]
-          },
-          {
-            name: 'Ships',
-            season: 8, // Double Check
-            items: [
+  //           ]
+  //         },
+  //         {
+  //           name: 'Ships',
+  //           season: 8, // Double Check
+  //           items: [
 
-            ]
-          },
-          {
-            name: 'Extras',
-            season: 8, // Double Check
-            items: [
+  //           ]
+  //         },
+  //         {
+  //           name: 'Extras',
+  //           season: 8, // Double Check
+  //           items: [
 
-            ]
-          }
-        ]
-      },
-    ]
-  },
+  //           ]
+  //         }
+  //       ]
+  //     },
+  //   ]
+  // },
   {
     name: 'Other',
     sets: [
-      {
-        name: _(
-          'DestinyVendorDefinition[3163810067].displayProperties.name',
-          'Legendary Engram'
-        ),
-        description: _(
-          'DestinyCollectibleDefinition[256984755].sourceString',
-          'Open Legendary engrams and earn faction rank-up packages.'
-        ),
-        id: 'year-three-legendary-engram',
-        big: false, // Double Check
-        sections: [
-          {
-            name: 'Weapons',
-            season: 4,
-            items: [
-              2154059444
-            ]
-          },
-          {
-            name: 'Hunter Armor',
-            season: 4,
-            itemGroups: [
-              [
+      // {
+      //   name: _(
+      //     'DestinyVendorDefinition[3163810067].displayProperties.name',
+      //     'Legendary Engram'
+      //   ),
+      //   description: _(
+      //     'DestinyCollectibleDefinition[256984755].sourceString',
+      //     'Open Legendary engrams and earn faction rank-up packages.'
+      //   ),
+      //   id: 'year-three-legendary-engram',
+      //   big: false, // Double Check
+      //   sections: [
+      //     {
+      //       name: 'Weapons',
+      //       season: 4,
+      //       items: [
 
-              ],
-              [
+      //       ]
+      //     },
+      //     {
+      //       name: 'Hunter Armor',
+      //       season: 4,
+      //       itemGroups: [
+      //         [
 
-              ],
-              [
+      //         ],
+      //         [
 
-              ]
-            ]
-          },
-          {
-            name: 'Titan Armor',
-            season: 4,
-            itemGroups: [
-              [
+      //         ],
+      //         [
 
-              ],
-              [
+      //         ]
+      //       ]
+      //     },
+      //     {
+      //       name: 'Titan Armor',
+      //       season: 4,
+      //       itemGroups: [
+      //         [
 
-              ],
-              [
+      //         ],
+      //         [
 
-              ]
-            ]
-          },
-          {
-            name: 'Warlock Armor',
-            season: 4,
-            itemGroups: [
-              [
+      //         ],
+      //         [
 
-              ],
-              [
+      //         ]
+      //       ]
+      //     },
+      //     {
+      //       name: 'Warlock Armor',
+      //       season: 4,
+      //       itemGroups: [
+      //         [
 
-              ],
-              [
+      //         ],
+      //         [
 
-              ]
-            ]
-          }
-        ]
-      },
+      //         ],
+      //         [
+
+      //         ]
+      //       ]
+      //     }
+      //   ]
+      // },
       {
         name: _(
           'DestinyFactionDefinition[1393733616].displayProperties.name', // Double Check
