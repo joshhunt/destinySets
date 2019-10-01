@@ -22,7 +22,7 @@ export default ([
             name: 'Weapons',
             season: "K", // Double Check
             items: [
-              2154059444
+
             ]
           },
           {
@@ -178,7 +178,7 @@ export default ([
       //       name: 'Weapons',
       //       season: 8, // Double Check
       //       items: [
-      //         2154059444
+      //         
       //       ]
       //     },
       //     {
@@ -373,7 +373,7 @@ export default ([
   //           name: 'Weapons',
   //           season: 8, // Double Check
   //           items: [
-  //             2154059444
+  //             
   //           ]
   //         },
   //         {
@@ -519,100 +519,100 @@ export default ([
       //     }
       //   ]
       // },
-      {
-        name: _(
-          'DestinyFactionDefinition[1393733616].displayProperties.name', // Double Check
-          'Eververse' // Double Check
-        ),
-        id: 'year-three-eververse',
-        description: _(
-          'DestinyCollectibleDefinition[764786884].sourceString', // Double Check
-          'Seasonal Bright Engrams.' // Double Check
-        ),
-        big: false, // Double Check
-        sections: [
-          {
-            name: 'Armor',
-            season: 8, // Double Check
-            itemGroups: [
-              [
-                // Hunter
-                2154059444
-              ],
-              [
-                // Titan
-              ],
-              [
-                // Warlock
-              ]
-            ]
-          },
-          {
-            name: 'Ornaments',
-            season: 8, // Double Check
-            itemGroups: [
-              [
-                // Exotic Weapon
-              ],
-              [
-                // Legendary Weapon
-              ],
-              [
-                // Exotic Armour
-              ]
-            ]
-          },
-          {
-            name: 'Emotes',
-            season: 8, // Double Check
-            items: [
+      // {
+      //   name: _(
+      //     'DestinyFactionDefinition[1393733616].displayProperties.name', // Double Check
+      //     'Eververse' // Double Check
+      //   ),
+      //   id: 'year-three-eververse',
+      //   description: _(
+      //     'DestinyCollectibleDefinition[764786884].sourceString', // Double Check
+      //     'Seasonal Bright Engrams.' // Double Check
+      //   ),
+      //   big: false, // Double Check
+      //   sections: [
+      //     {
+      //       name: 'Armor',
+      //       season: 8, // Double Check
+      //       itemGroups: [
+      //         [
+      //           // Hunter
 
-            ]
-          },
-          {
-            name: 'Ghosts',
-            season: 8, // Double Check
-            items: [
+      //         ],
+      //         [
+      //           // Titan
+      //         ],
+      //         [
+      //           // Warlock
+      //         ]
+      //       ]
+      //     },
+      //     {
+      //       name: 'Ornaments',
+      //       season: 8, // Double Check
+      //       itemGroups: [
+      //         [
+      //           // Exotic Weapon
+      //         ],
+      //         [
+      //           // Legendary Weapon
+      //         ],
+      //         [
+      //           // Exotic Armour
+      //         ]
+      //       ]
+      //     },
+      //     {
+      //       name: 'Emotes',
+      //       season: 8, // Double Check
+      //       items: [
 
-            ]
-          },
-          {
-            name: 'Ghost Projections',
-            season: 8, // Double Check
-            items: [
+      //       ]
+      //     },
+      //     {
+      //       name: 'Ghosts',
+      //       season: 8, // Double Check
+      //       items: [
 
-            ]
-          },
-          {
-            name: 'Sparrows',
-            season: 8, // Double Check
-            items: [
+      //       ]
+      //     },
+      //     {
+      //       name: 'Ghost Projections',
+      //       season: 8, // Double Check
+      //       items: [
 
-            ]
-          },
-          {
-            name: 'Ships',
-            season: 8, // Double Check
-            items: [
+      //       ]
+      //     },
+      //     {
+      //       name: 'Sparrows',
+      //       season: 8, // Double Check
+      //       items: [
 
-            ]
-          },
-          {
-            name: 'Shaders',
-            season: 8, // Double Check
-            items: [
+      //       ]
+      //     },
+      //     {
+      //       name: 'Ships',
+      //       season: 8, // Double Check
+      //       items: [
 
-            ]
-          },
-          {
-            name: 'Transmat Effects',
-            season: 8, // Double Check
-            items: [
+      //       ]
+      //     },
+      //     {
+      //       name: 'Shaders',
+      //       season: 8, // Double Check
+      //       items: [
 
-            ]
-          }
-        ]
-      }
+      //       ]
+      //     },
+      //     {
+      //       name: 'Transmat Effects',
+      //       season: 8, // Double Check
+      //       items: [
+
+      //       ]
+      //     }
+      //   ]
+      // }
     ]
   }
 ]: SetPage);
