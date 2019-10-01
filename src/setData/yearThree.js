@@ -153,48 +153,68 @@ export default ([
       },
       {
         name: _(
-          'DestinyActivityModeDefinition[2394616003].displayProperties.name', // Double Check
+          // 'DestinyActivityModeDefinition[2394616003].displayProperties.name', // Double Check
           'Garden of Salvation' // Double Check
         ),
-        id: 'year-garden-of-salvation',
+        id: 'year-three-garden-of-salvation',
         description: _(
-          'DestinyCollectibleDefinition[2589931339].sourceString', // Double Check
-          'Complete strikes and earn rank-up packages from Commander Zavala.' // Double Check
+          'DestinyCollectibleDefinition[2948134329].sourceString', // Double Check
+          '"Garden of Salvation" raid' // Double Check
         ),
         sections: [
           {
             name: 'Weapons',
             season: "K", // Double Check
             items: [
-              2154059444
+              3385326721, // Reckless Oracle
+              2408405461, // Sacred Provenance
+              48643186, // Ancient Gospel
+              4095896073, // Accrued Redemption
+              4020742303, // Prophet of Doom
+              2209003210, // Zealot's Reward
+              3454326177 // Omniscient Eye
             ]
           },
           {
             name: 'Hunter Armor',
             season: "K", // Double Check
             items: [
-
+              1399922251, // Cowl of Righteousness
+              1653741426, // Grips of Exaltation
+              4177973942, // Vest of Transcendence
+              2054979724, // Strides of Ascendancy 
+              3549177695 // Cloak of Temptation
             ]
           },
           {
             name: 'Titan Armor',
             season: "K", // Double Check
             items: [
-
+              519078295, // Helm of Righteousness
+              3887559710, // Gauntlets of Exaltation
+              3939809874, // Plate of Transcendence
+              11974904, // Greaves of Ascendancy
+              281660259 // Temptation's Mark
             ]
           },
           {
             name: 'Warlock Armor',
             season: "K", // Double Check
             items: [
-
+              3001934726, // Mask of Righteousness
+              2015894615, // Gloves of Exaltation
+              2320830625, // Robes of Transcendence
+              3824429433, // Boots of Ascendancy
+              3103335676 // Temptation's Bond
             ]
           },
           {
             name: 'Extras',
             season: "K", // Double Check
             items: [
-
+              298334059, // Inherent Truth
+              3996862462, // Ancient Believer 
+              3996862463 // Ancient Defender
             ]
           }
         ]
