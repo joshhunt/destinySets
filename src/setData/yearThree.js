@@ -7,100 +7,144 @@ export default ([
   {
     name: 'Activities',
     sets: [
-      // {
-      //   name: _(
-      //     'DestinyActivityModeDefinition[2394616003].displayProperties.name', // Double Check
-      //     'Strikes' // Double Check
-      //   ),
-      //   id: 'year-three-strikes',
-      //   description: _(
-      //     'DestinyCollectibleDefinition[2589931339].sourceString', // Double Check
-      //     'Complete strikes and earn rank-up packages from Commander Zavala.' // Double Check
-      //   ),
-      //   sections: [
-      //     {
-      //       name: 'Weapons',
-      //       season: "K", // Double Check
-      //       items: [
-
-      //       ]
-      //     },
-      //     {
-      //       name: 'Hunter Armor',
-      //       season: "K", // Double Check
-      //       items: [
-
-      //       ]
-      //     },
-      //     {
-      //       name: 'Titan Armor',
-      //       season: "K", // Double Check
-      //       items: [
-
-      //       ]
-      //     },
-      //     {
-      //       name: 'Warlock Armor',
-      //       season: "K", // Double Check
-      //       items: [
-
-      //       ]
-      //     },
-      //     {
-      //       name: 'Extras',
-      //       season: "K", // Double Check
-      //       items: [
-
-      //       ]
-      //     }
-      //   ]
-      // },
       {
         name: _(
-          'DestinyActivityModeDefinition[1164760504].displayProperties.name', // Double Check
-          'Crucible' // Double Check
+          'DestinyActivityModeDefinition[2394616003].displayProperties.name',
+          'Strikes'
         ),
-        id: 'YEAR_TWO_CRUCIBLE',
-        description: _(
-          'DestinyCollectibleDefinition[1279318105].sourceString', // Double Check
-          'Complete Crucible matches and earn rank-up packages from Lord Shaxx.' // Double Check
-        ),
+        id: 'year-three-strikes',
+        description: 'Complete necessary pursuits from Commander Zavala.',
         sections: [
-          {
-            name: 'Weapons',
-            season: 8,
-            items: [
+          // {
+          //   name: 'Weapons',
+          //   season: 8, // Double Check
+          //   items: [
 
-            ]
-          },
-          {
-            name: 'Hunter Armor',
-            season: 8,
-            items: [
+          //   ]
+          // },
+          // {
+          //   name: 'Hunter Armor',
+          //   season: 8, // Double Check
+          //   items: [
 
-            ]
-          },
-          {
-            name: 'Titan Armor',
-            season: 8,
-            items: [
+          //   ]
+          // },
+          // {
+          //   name: 'Titan Armor',
+          //   season: 8, // Double Check
+          //   items: [
 
-            ]
-          },
-          {
-            name: 'Warlock Armor',
-            season: 8,
-            items: [
+          //   ]
+          // },
+          // {
+          //   name: 'Warlock Armor',
+          //   season: 8, // Double Check
+          //   items: [
 
+          //   ]
+          // },
+          {
+            name: 'Extras',
+            season: 8, // Double Check
+            items: [
+              298334049, // Timeless Vigil
+              2058800852, // Vanguard Stratosphere
+              2058800853 // Vanguard Angelos
             ]
-          },
+          }
+        ]
+      },
+      {
+        name: _(
+          'DestinyActivityModeDefinition[1164760504].displayProperties.name',
+          'Crucible'
+        ),
+        id: 'year-three-crucible',
+        description: 'Complete necessary pursuits from Lord Shaxx.',
+        sections: [
+          // {
+          //   name: 'Weapons',
+          //   season: 8, // Double Check
+          //   items: [
+
+          //   ]
+          // },
+          // {
+          //   name: 'Hunter Armor',
+          //   season: 8, // Double Check
+          //   items: [
+
+          //   ]
+          // },
+          // {
+          //   name: 'Titan Armor',
+          //   season: 8, // Double Check
+          //   items: [
+
+          //   ]
+          // },
+          // {
+          //   name: 'Warlock Armor',
+          //   season: 8, // Double Check
+          //   items: [
+
+          //   ]
+          // },
           {
             name: 'Extras',
             season: 8,
             items: [
               3219975799, // Honorable Duelist Shell
+              298334062, // Burnished Blade
               1392223752, // Crucible Vermillion
               1392223753 // Crucible Lazurite
+            ]
+          }
+        ]
+      },
+      {
+        name: _(
+          'DestinyActivityModeDefinition[1848252830].displayProperties.name',
+          'Gambit'
+        ),
+        id: 'year-three-gambit',
+        description: 'Complete necessary pursuits from the Drifter.',
+        sections: [
+          // {
+          //   name: 'Weapons',
+          //   season: 8, // Double Check
+          //   items: [
+
+          //   ]
+          // },
+          // {
+          //   name: 'Hunter Armor',
+          //   season: 8, // Double Check
+          //   items: [
+
+          //   ]
+          // },
+          // {
+          //   name: 'Titan Armor',
+          //   season: 8, // Double Check
+          //   items: [
+
+          //   ]
+          // },
+          // {
+          //   name: 'Warlock Armor',
+          //   season: 8, // Double Check
+          //   items: [
+
+          //   ]
+          // },
+          {
+            name: 'Extras',
+            season: 8,
+            items: [
+              1714370697, // Living Vestige
+              1359616732, // Gambit Emerald
+              1359616733 // Gambit Celadon
             ]
           }
         ]
@@ -110,22 +154,22 @@ export default ([
           'DestinyActivityModeDefinition[1826469369].displayProperties.name',
           'Iron Banner'
         ),
-        id: 'year-iron-banner',
+        id: 'year-three-iron-banner',
         description: _(
-          'DestinyCollectibleDefinition[3864000240].sourceString',
+          'DestinyCollectibleDefinition[1098138990].sourceString',
           'Complete Iron Banner matches and earn rank-up packages from Lord Saladin.'
         ),
         sections: [
-          {
-            name: 'Weapons',
-            season: 8, // Double Check
-            items: [
+          // {
+          //   name: 'Weapons',
+          //   season: 8, // Double Check
+          //   items: [
 
-            ]
-          },
+          //   ]
+          // },
           {
             name: 'Hunter Armor',
-            season: 8, // Double Check
+            season: 8,
             items: [
               1098138990, // Iron Will Mask
               2547799775, // Iron Will Sleeves
@@ -136,7 +180,7 @@ export default ([
           },
           {
             name: 'Titan Armor',
-            season: 8, // Double Check
+            season: 8,
             items: [
               1895324274, // Iron Will Helm
               2320100699, // Iron Will Gauntlets
@@ -147,7 +191,7 @@ export default ([
           },
           {
             name: 'Warlock Armor',
-            season: 8, // Double Check
+            season: 8,
             items: [
               2205315921, // Iron Will Hood
               863444264, // Iron Will Gloves
@@ -158,7 +202,7 @@ export default ([
           },
           {
             name: 'Extras',
-            season: 8, // Double Check
+            season: 8,
             items: [
               677674547 // Flying Foundry
             ]
@@ -228,55 +272,55 @@ export default ([
             name: 'Weapons',
             season: "K", // Double Check
             items: [
-              3385326721, // Reckless Oracle
-              2408405461, // Sacred Provenance
-              48643186, // Ancient Gospel
-              4095896073, // Accrued Redemption
-              4020742303, // Prophet of Doom
-              2209003210, // Zealot's Reward
-              3454326177 // Omniscient Eye
+              // 3385326721, // Reckless Oracle
+              // 2408405461, // Sacred Provenance
+              // 48643186, // Ancient Gospel
+              // 4095896073, // Accrued Redemption
+              // 4020742303, // Prophet of Doom
+              // 2209003210, // Zealot's Reward
+              // 3454326177 // Omniscient Eye
             ]
           },
           {
             name: 'Hunter Armor',
             season: "K", // Double Check
             items: [
-              1399922251, // Cowl of Righteousness
-              1653741426, // Grips of Exaltation
-              4177973942, // Vest of Transcendence
-              2054979724, // Strides of Ascendancy 
-              3549177695 // Cloak of Temptation
+              // 1399922251, // Cowl of Righteousness
+              // 1653741426, // Grips of Exaltation
+              // 4177973942, // Vest of Transcendence
+              // 2054979724, // Strides of Ascendancy 
+              // 3549177695 // Cloak of Temptation
             ]
           },
           {
             name: 'Titan Armor',
             season: "K", // Double Check
             items: [
-              519078295, // Helm of Righteousness
-              3887559710, // Gauntlets of Exaltation
-              3939809874, // Plate of Transcendence
-              11974904, // Greaves of Ascendancy
-              281660259 // Temptation's Mark
+              // 519078295, // Helm of Righteousness
+              // 3887559710, // Gauntlets of Exaltation
+              // 3939809874, // Plate of Transcendence
+              // 11974904, // Greaves of Ascendancy
+              // 281660259 // Temptation's Mark
             ]
           },
           {
             name: 'Warlock Armor',
             season: "K", // Double Check
             items: [
-              3001934726, // Mask of Righteousness
-              2015894615, // Gloves of Exaltation
-              2320830625, // Robes of Transcendence
-              3824429433, // Boots of Ascendancy
-              3103335676 // Temptation's Bond
+              // 3001934726, // Mask of Righteousness
+              // 2015894615, // Gloves of Exaltation
+              // 2320830625, // Robes of Transcendence
+              // 3824429433, // Boots of Ascendancy
+              // 3103335676 // Temptation's Bond
             ]
           },
           {
             name: 'Extras',
             season: "K", // Double Check
             items: [
-              298334059, // Inherent Truth
-              3996862462, // Ancient Believer 
-              3996862463 // Ancient Defender
+              // 298334059, // Inherent Truth
+              // 3996862462, // Ancient Believer 
+              // 3996862463 // Ancient Defender
             ]
           }
         ]
