@@ -98,7 +98,9 @@ export default ([
             name: 'Extras',
             season: 8,
             items: [
-              3219975799 // Honorable Duelist Shell
+              3219975799, // Honorable Duelist Shell
+              1392223752, // Crucible Vermillion
+              1392223753 // Crucible Lazurite
             ]
           }
         ]
