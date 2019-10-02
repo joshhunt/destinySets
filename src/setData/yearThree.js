@@ -154,7 +154,7 @@ export default ([
         sections: [
           {
             name: 'Extras',
-            season: "K",
+            // season: "K",
             items: [
               298334057 // A Sibyl's Dreams
             ]
@@ -222,7 +222,7 @@ export default ([
         sections: [
           {
             name: 'Weapons',
-            season: "K", // Double Check
+            // season: "K", // Double Check
             items: [
               // 3385326721, // Reckless Oracle
               // 2408405461, // Sacred Provenance
@@ -235,7 +235,7 @@ export default ([
           },
           {
             name: 'Hunter Armor',
-            season: "K", // Double Check
+            // season: "K", // Double Check
             items: [
               // 1399922251, // Cowl of Righteousness
               // 1653741426, // Grips of Exaltation
@@ -246,7 +246,7 @@ export default ([
           },
           {
             name: 'Titan Armor',
-            season: "K", // Double Check
+            // season: "K", // Double Check
             items: [
               // 519078295, // Helm of Righteousness
               // 3887559710, // Gauntlets of Exaltation
@@ -257,7 +257,7 @@ export default ([
           },
           {
             name: 'Warlock Armor',
-            season: "K", // Double Check
+            // season: "K", // Double Check
             items: [
               // 3001934726, // Mask of Righteousness
               // 2015894615, // Gloves of Exaltation
@@ -268,7 +268,7 @@ export default ([
           },
           {
             name: 'Extras',
-            season: "K", // Double Check
+            // season: "K", // Double Check
             items: [
               // 298334059, // Inherent Truth
               // 3996862462, // Ancient Believer 
@@ -295,7 +295,7 @@ export default ([
         sections: [
           {
             name: 'Weapons',
-            season: "K",
+            // season: "K",
             items: [
               2723909519, // Arc Logic
               208088207, // Premonition
@@ -311,7 +311,7 @@ export default ([
           },
           {
             name: 'Hunter Armor',
-            season: "K",
+            // season: "K",
             items: [
               659922705, // Dreambane Cowl
               3571441640, // Dreambane Grips
@@ -322,7 +322,7 @@ export default ([
           },
           {
             name: 'Titan Armor',
-            season: "K",
+            // season: "K",
             items: [
               272413517, // Dreambane Helm
               925079356, // Dreambane Gauntlets
@@ -333,7 +333,7 @@ export default ([
           },
           {
             name: 'Warlock Armor',
-            season: "K",
+            // season: "K",
             items: [
               1528483180, // Dreambane Hood
               682780965, // Dreambane Gloves
@@ -344,7 +344,7 @@ export default ([
           },
           {
             name: 'Extras',
-            season: "K",
+            // season: "K",
             items: [
               1272828316, // Moonshot Shell
               3382260610, // Moonrider One
