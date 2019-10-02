@@ -144,7 +144,7 @@ export default ([
       {
         name: _(
           'DestinyActivityModeDefinition[332181804].displayProperties.name',
-          'Nightmare Hunts'
+          'Nightmare Hunt'
         ),
         id: 'year-three-nightmare-hunts',
         // description: _(
