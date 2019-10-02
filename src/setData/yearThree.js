@@ -96,8 +96,8 @@ export default ([
             items: [
               3219975799, // Honorable Duelist Shell
               298334062, // Burnished Blade
-              1392223752, // Crucible Vermillion
-              1392223753 // Crucible Lazurite
+              1392223753, // Crucible Lazurite
+              1392223752 // Crucible Vermillion
             ]
           }
         ]
@@ -204,7 +204,9 @@ export default ([
             name: 'Extras',
             season: 8,
             items: [
-              677674547 // Flying Foundry
+              677674547, // Flying Foundry
+              3340102521, // Iron Mossbone
+              3340102520 // Iron Oxide
             ]
           }
         ]
@@ -565,100 +567,100 @@ export default ([
       //     }
       //   ]
       // },
-      // {
-      //   name: _(
-      //     'DestinyFactionDefinition[1393733616].displayProperties.name', // Double Check
-      //     'Eververse' // Double Check
-      //   ),
-      //   id: 'year-three-eververse',
-      //   description: _(
-      //     'DestinyCollectibleDefinition[764786884].sourceString', // Double Check
-      //     'Seasonal Bright Engrams.' // Double Check
-      //   ),
-      //   big: false, // Double Check
-      //   sections: [
-      //     {
-      //       name: 'Armor',
-      //       season: 8, // Double Check
-      //       itemGroups: [
-      //         [
-      //           // Hunter
+      {
+        name: _(
+          'DestinyFactionDefinition[1393733616].displayProperties.name', // Double Check
+          'Eververse' // Double Check
+        ),
+        id: 'year-three-eververse',
+        description: _(
+          'DestinyCollectibleDefinition[764786884].sourceString', // Double Check
+          'Seasonal Bright Engrams.' // Double Check
+        ),
+        big: false, // Double Check
+        sections: [
+          {
+            name: 'Armor',
+            season: 8, // Double Check
+            itemGroups: [
+              [
+                // Hunter
 
-      //         ],
-      //         [
-      //           // Titan
-      //         ],
-      //         [
-      //           // Warlock
-      //         ]
-      //       ]
-      //     },
-      //     {
-      //       name: 'Ornaments',
-      //       season: 8, // Double Check
-      //       itemGroups: [
-      //         [
-      //           // Exotic Weapon
-      //         ],
-      //         [
-      //           // Legendary Weapon
-      //         ],
-      //         [
-      //           // Exotic Armour
-      //         ]
-      //       ]
-      //     },
-      //     {
-      //       name: 'Emotes',
-      //       season: 8, // Double Check
-      //       items: [
+              ],
+              [
+                // Titan
+              ],
+              [
+                // Warlock
+              ]
+            ]
+          },
+          {
+            name: 'Ornaments',
+            season: 8, // Double Check
+            itemGroups: [
+              [
+                // Exotic Weapon
+              ],
+              [
+                // Legendary Weapon
+              ],
+              [
+                // Exotic Armour
+              ]
+            ]
+          },
+          {
+            name: 'Emotes',
+            season: 8, // Double Check
+            items: [
+              991204036 // Make it Stop
+            ]
+          },
+          {
+            name: 'Ghosts',
+            season: 8, // Double Check
+            items: [
 
-      //       ]
-      //     },
-      //     {
-      //       name: 'Ghosts',
-      //       season: 8, // Double Check
-      //       items: [
+            ]
+          },
+          {
+            name: 'Ghost Projections',
+            season: 8, // Double Check
+            items: [
 
-      //       ]
-      //     },
-      //     {
-      //       name: 'Ghost Projections',
-      //       season: 8, // Double Check
-      //       items: [
+            ]
+          },
+          {
+            name: 'Sparrows',
+            season: 8, // Double Check
+            items: [
 
-      //       ]
-      //     },
-      //     {
-      //       name: 'Sparrows',
-      //       season: 8, // Double Check
-      //       items: [
+            ]
+          },
+          {
+            name: 'Ships',
+            season: 8, // Double Check
+            items: [
 
-      //       ]
-      //     },
-      //     {
-      //       name: 'Ships',
-      //       season: 8, // Double Check
-      //       items: [
-
-      //       ]
-      //     },
-      //     {
-      //       name: 'Shaders',
-      //       season: 8, // Double Check
-      //       items: [
-
-      //       ]
-      //     },
-      //     {
-      //       name: 'Transmat Effects',
-      //       season: 8, // Double Check
-      //       items: [
-
-      //       ]
-      //     }
-      //   ]
-      // }
+            ]
+          },
+          {
+            name: 'Shaders',
+            season: 8, // Double Check
+            items: [
+              3818755494 // Bruised Blush
+            ]
+          },
+          {
+            name: 'Transmat Effects',
+            season: 8, // Double Check
+            items: [
+              3951356827 // Blind Clutch
+            ]
+          }
+        ]
+      }
     ]
   }
 ]: SetPage);
