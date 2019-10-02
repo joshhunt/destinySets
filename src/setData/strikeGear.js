@@ -267,24 +267,7 @@ export default ([
       )
     ]
   },
-  // Placeholders Below
-  // {
-  //   name: 'Shadowkeep',
-  //   sets: [
-  //     strike(
-  //       'The Festering Core',
-  //       'STRIKE_THE_FESTERING_CORE',
-  //       '/img/destiny_content/pgcr/strike_lake_of_shadows.jpg', // Double Check
-  //       [3745974521], // Double Check
-  //       [1184965378, 4179974574] // Double Check
-  //     ),
-  //     strike(
-  //       'The Scarlet Keep',
-  //       'STRIKE_THE_SCARLET_KEEP',
-  //       '/img/destiny_content/pgcr/strike_glee.jpg', // Double Check
-  //       [2154059444], // Double Check
-  //       [3844225097, 3597022727] // Double Check
-  //     )
-  //   ]
-  // }
+
+  // 1655929400 - The Ordeal
+
 ]: SetPage);

@@ -15,34 +15,13 @@ export default ([
         id: 'year-three-strikes',
         description: 'Complete necessary pursuits from Commander Zavala.',
         sections: [
-          // {
-          //   name: 'Weapons',
-          //   season: 8, // Double Check
-          //   items: [
-
-          //   ]
-          // },
-          // {
-          //   name: 'Hunter Armor',
-          //   season: 8, // Double Check
-          //   items: [
-
-          //   ]
-          // },
-          // {
-          //   name: 'Titan Armor',
-          //   season: 8, // Double Check
-          //   items: [
-
-          //   ]
-          // },
-          // {
-          //   name: 'Warlock Armor',
-          //   season: 8, // Double Check
-          //   items: [
-
-          //   ]
-          // },
+          {
+            name: 'Weapons',
+            season: 8, // Double Check
+            items: [
+              847329160 // Edgewise
+            ]
+          },
           {
             name: 'Extras',
             season: 8, // Double Check
@@ -62,34 +41,13 @@ export default ([
         id: 'year-three-crucible',
         description: 'Complete necessary pursuits from Lord Shaxx.',
         sections: [
-          // {
-          //   name: 'Weapons',
-          //   season: 8, // Double Check
-          //   items: [
-
-          //   ]
-          // },
-          // {
-          //   name: 'Hunter Armor',
-          //   season: 8, // Double Check
-          //   items: [
-
-          //   ]
-          // },
-          // {
-          //   name: 'Titan Armor',
-          //   season: 8, // Double Check
-          //   items: [
-
-          //   ]
-          // },
-          // {
-          //   name: 'Warlock Armor',
-          //   season: 8, // Double Check
-          //   items: [
-
-          //   ]
-          // },
+          {
+            name: 'Weapons',
+            season: 8, // Double Check
+            items: [
+              3535742959 // Randy's Throwing Knife
+            ]
+          },
           {
             name: 'Extras',
             season: 8,
@@ -110,34 +68,13 @@ export default ([
         id: 'year-three-gambit',
         description: 'Complete necessary pursuits from the Drifter.',
         sections: [
-          // {
-          //   name: 'Weapons',
-          //   season: 8, // Double Check
-          //   items: [
-
-          //   ]
-          // },
-          // {
-          //   name: 'Hunter Armor',
-          //   season: 8, // Double Check
-          //   items: [
-
-          //   ]
-          // },
-          // {
-          //   name: 'Titan Armor',
-          //   season: 8, // Double Check
-          //   items: [
-
-          //   ]
-          // },
-          // {
-          //   name: 'Warlock Armor',
-          //   season: 8, // Double Check
-          //   items: [
-
-          //   ]
-          // },
+          {
+            name: 'Weapons',
+            season: 8, // Double Check
+            items: [
+              4227181568 // Exit Strategy
+            ]
+          },
           {
             name: 'Extras',
             season: 8,
@@ -160,13 +97,6 @@ export default ([
           'Complete Iron Banner matches and earn rank-up packages from Lord Saladin.'
         ),
         sections: [
-          // {
-          //   name: 'Weapons',
-          //   season: 8, // Double Check
-          //   items: [
-
-          //   ]
-          // },
           {
             name: 'Hunter Armor',
             season: 8,
@@ -207,6 +137,26 @@ export default ([
               677674547, // Flying Foundry
               3340102521, // Iron Mossbone
               3340102520 // Iron Oxide
+            ]
+          }
+        ]
+      },
+      {
+        name: _(
+          'DestinyActivityModeDefinition[332181804].displayProperties.name',
+          'Nightmare Hunts'
+        ),
+        id: 'year-three-nightmare-hunts',
+        // description: _(
+        //   'DestinyCollectibleDefinition[1098138990].sourceString', // Double Check
+        //   'Complete Iron Banner matches and earn rank-up packages from Lord Saladin.' // Double Check
+        // ),
+        sections: [
+          {
+            name: 'Extras',
+            season: "K",
+            items: [
+              298334057 // A Sibyl's Dreams
             ]
           }
         ]
@@ -573,10 +523,7 @@ export default ([
           'Eververse' // Double Check
         ),
         id: 'year-three-eververse',
-        description: _(
-          'DestinyCollectibleDefinition[764786884].sourceString', // Double Check
-          'Seasonal Bright Engrams.' // Double Check
-        ),
+        description: 'Items sold at Eververse for Bright Dust.',
         big: false, // Double Check
         sections: [
           {
