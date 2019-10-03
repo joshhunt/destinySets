@@ -35,14 +35,23 @@ export default ([
             season: 5,
             items: [
               792755504, // Nightshade
-              4083045006 // Persuader
+              4083045006, // Persuader
+              580961571 // Loaded Question
             ]
           },
           {
             name: 'Weapons',
             season: 6,
             items: [
-              834081972 //  Service Revolver
+              834081972, //  Service Revolver
+              3907337522 // Oxygen SR3
+            ]
+          },
+          {
+            name: 'Weapons',
+            season: 7,
+            items: [
+              578459533 // Wendigo GL3
             ]
           },
           {
@@ -140,7 +149,9 @@ export default ([
               3222518097, // Anonymous Autumn
               1684914716, // Fate Cries Foul
               4230993599, // Steel Sybil Z-14
-              195440257 // Play of the Game
+              195440257, // Play of the Game
+              153979396, // Luna's Howl
+              1161276682 // Redrix's Broadsword 
             ]
           },
           {
@@ -148,14 +159,23 @@ export default ([
             season: 5,
             items: [
               3356526253, // Wishbringer
-              2278995296 // Does Not Compute
+              2278995296, // Does Not Compute
+              3993415705 // The Mountaintop
             ]
           },
           {
             name: 'Weapons',
             season: 6,
             items: [
-              188882152 // Last Perdition
+              188882152, // Last Perdition
+              3354242550 // The Recluse
+            ]
+          },
+          {
+            name: 'Weapons',
+            season: 7,
+            items: [
+              654608616 // Revoker
             ]
           },
           {
@@ -257,6 +277,20 @@ export default ([
             ]
           },
           {
+            name: 'Weapons',
+            season: 5,
+            items: [
+              324382200 // Breakneck
+            ]
+          },
+          {
+            name: 'Weapons',
+            season: 6,
+            items: [
+              1600633250 // 21% Delirium
+            ]
+          },
+          {
             name: 'Prime Weapons',
             season: 6,
             items: [
@@ -267,6 +301,13 @@ export default ([
               2199171672, // Lonesome
               1115104187, //  Sole Survivor
               2744715540 // Bug-Out Bag
+            ]
+          },
+          {
+            name: 'Weapons',
+            season: 7,
+            items: [
+              1584643826 // Hush
             ]
           },
           {

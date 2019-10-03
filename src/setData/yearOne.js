@@ -1332,12 +1332,12 @@ export default ([
             items: [269552461, 922218300, 1415533220, 308026950, 2159363321]
           },
           {
-            name: 'Icarus Drifter - PS4 Exclusive',
+            name: 'Icarus Drifter',
             season: 1,
             items: [155832748, 3646674533, 3066593211, 3569443559, 1847870034]
           },
           {
-            name: 'Insight - PS4 Exclusive',
+            name: 'Insight',
             season: 3,
             items: [
               1680657538, // Insight Rover Mask
@@ -1388,12 +1388,12 @@ export default ([
             items: [3725654227, 1260134370, 2932121030, 3304280092, 3250112431]
           },
           {
-            name: 'Terra Concord - PS4 Exclusive',
+            name: 'Terra Concord',
             season: 1,
             items: [690335398, 3999262583, 3291075521, 1512829977, 4073580572]
           },
           {
-            name: 'Insight - PS4 Exclusive',
+            name: 'Insight',
             season: 3,
             items: [
               1192751404, // Insight Unyielding Helm
@@ -1444,12 +1444,12 @@ export default ([
             items: [993844472, 1457647945, 410671183, 1749589787, 2082184158]
           },
           {
-            name: 'Tesseract Trace - PS4 Exclusive',
+            name: 'Tesseract Trace',
             season: 1,
             items: [2811180959, 3169402598, 4092393610, 2728535008, 434243995]
           },
           {
-            name: 'Insight - PS4 Exclusive',
+            name: 'Insight',
             season: 3,
             items: [
               2905154661, // Insight Vikti Hood
@@ -1763,23 +1763,23 @@ export default ([
             name: 'Ornaments',
             season: 1,
             items: [
-                3434280692, // Sub-Zero
-                2110420504, // Down to Business
-                2760478958, // Book of the Dead
-                1856805547, // Particle Accelerator
-                1630611952, // Red Dwarf
-                20859173, // Symbiosis
-                3925009772, // Black Plague
-                3520552272, // Summer Storm
-                1014060907, // Break the Dawn
-                3034617041, // Jade Countenance
-                4236694804, // Under Construction
-                2412488653, // Mind of Its Own
-                2583504679, // Tesla's Revenge
-                3628862572, // Comstock Lode
-                2673403667, // The Future is Chrome
-                1135501644, // Titanium Alloy
-                1748595581 // Beware the Red Legion
+              3434280692, // Sub-Zero
+              2110420504, // Down to Business
+              2760478958, // Book of the Dead
+              1856805547, // Particle Accelerator
+              1630611952, // Red Dwarf
+              20859173, // Symbiosis
+              3925009772, // Black Plague
+              3520552272, // Summer Storm
+              1014060907, // Break the Dawn
+              3034617041, // Jade Countenance
+              4236694804, // Under Construction
+              2412488653, // Mind of Its Own
+              2583504679, // Tesla's Revenge
+              3628862572, // Comstock Lode
+              2673403667, // The Future is Chrome
+              1135501644, // Titanium Alloy
+              1748595581 // Beware the Red Legion
             ]
           },
           {

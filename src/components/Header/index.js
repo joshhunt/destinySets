@@ -27,7 +27,8 @@ function isOverflowing(el) {
 
 const link = (name, to) => ({ name, to });
 const LINKS = [
-  link('Forsaken', '/'),
+  link('Year 3', '/'),
+  link('Year 2', '/year-2'),
   link('Year 1', '/year-1'),
   link('Strikes', '/strike-gear'),
   link('All Items', '/all-items'),
@@ -53,42 +54,42 @@ const SiteLinks = ({
   xurHasNewItems,
   showDataExplorerLink
 }) => (
-  <Fragment>
-    <div className={styles.dummyLink} />
+    <Fragment>
+      <div className={styles.dummyLink} />
 
-    {LINKS.map(({ name, to }) => (
-      <Link
-        key={to}
-        className={styles.link}
-        activeClassName={styles.active}
-        to={to}
-      >
-        {name}
-      </Link>
-    ))}
+      {LINKS.map(({ name, to }) => (
+        <Link
+          key={to}
+          className={styles.link}
+          activeClassName={styles.active}
+          to={to}
+        >
+          {name}
+        </Link>
+      ))}
 
-    {showDataExplorerLink && (
-      <a
-        className={styles.link}
-        href="https://data.destinysets.com"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Data Explorer
+      {showDataExplorerLink && (
+        <a
+          className={styles.link}
+          href="https://data.destinysets.com"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Data Explorer
       </a>
-    )}
+      )}
 
-    {displayXur && (
-      <a
-        onClick={() => openXurModal(true)}
-        className={cx(styles.xurLink, xurHasNewItems && styles.xurLinkNewItems)}
-      >
-        <img className={styles.xurIcon} src={xur} alt="" />
-        Xûr
+      {displayXur && (
+        <a
+          onClick={() => openXurModal(true)}
+          className={cx(styles.xurLink, xurHasNewItems && styles.xurLinkNewItems)}
+        >
+          <img className={styles.xurIcon} src={xur} alt="" />
+          Xûr
       </a>
-    )}
-  </Fragment>
-);
+      )}
+    </Fragment>
+  );
 
 const SocialLinks = () => (
   <Fragment>

@@ -730,7 +730,7 @@ export default ([
             items: [269552461, 922218300, 1415533220, 308026950, 2159363321]
           },
           {
-            name: 'Icarus Drifter - PS4 Exclusive',
+            name: 'Icarus Drifter',
             items: [155832748, 3646674533, 3066593211, 3569443559, 1847870034]
           },
           {
@@ -768,7 +768,7 @@ export default ([
             items: [3725654227, 1260134370, 2932121030, 3304280092, 3250112431]
           },
           {
-            name: 'Terra Concord - PS4 Exclusive',
+            name: 'Terra Concord',
             items: [690335398, 3999262583, 3291075521, 1512829977, 4073580572]
           },
           {
@@ -806,7 +806,7 @@ export default ([
             items: [993844472, 1457647945, 410671183, 1749589787, 2082184158]
           },
           {
-            name: 'Tesseract Trace - PS4 Exclusive',
+            name: 'Tesseract Trace',
             items: [2811180959, 3169402598, 4092393610, 2728535008, 434243995]
           },
           {

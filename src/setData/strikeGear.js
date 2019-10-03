@@ -8,12 +8,12 @@ const strike = (name, id, image, exclusiveItems, emblems) => ({
   image,
   sections: [
     {
-      name: 'Nightfall exclusive',
+      name: 'Nightfall Exclusive',
       bigItems: true,
       items: exclusiveItems
     },
     {
-      name: 'Nightfall emblems',
+      name: 'Nightfall Emblems',
       items: emblems
     }
   ]
@@ -43,12 +43,12 @@ export default ([
         image: '/img/destiny_content/pgcr/strike_the_pyramdion.jpg',
         sections: [
           {
-            name: 'Nightfall exclusive',
+            name: 'Nightfall Exclusive',
             bigItems: true,
             items: [990416096] // Silicon Neuroma
           },
           {
-            name: 'Nightfall emblems',
+            name: 'Nightfall Emblems',
             items: [
               10493725, // The Pyramidion
               1078226395, // Operation Intrepid
@@ -64,12 +64,12 @@ export default ([
         image: '/img/destiny_content/pgcr/strike_exodus_crash.jpg',
         sections: [
           {
-            name: 'Nightfall exclusive',
+            name: 'Nightfall Exclusive',
             bigItems: true,
             items: [2757144093] // Impact Velocity
           },
           {
-            name: 'Nightfall emblems',
+            name: 'Nightfall Emblems',
             items: [
               2726018197, // Exodus Crash
               769740914, // Better Failsafe Than Sorry
@@ -85,12 +85,12 @@ export default ([
         image: '/img/destiny_content/pgcr/strike_the_arms_dealer.jpg',
         sections: [
           {
-            name: 'Nightfall exclusive',
+            name: 'Nightfall Exclusive',
             bigItems: true,
             items: [2757144092] // Tilt Fuse
           },
           {
-            name: 'Nightfall emblems',
+            name: 'Nightfall Emblems',
             items: [
               997563763, // The Arms Dealer
               2399682325, // Outlawed and Unsanctioned
@@ -106,12 +106,12 @@ export default ([
         image: '/img/destiny_content/pgcr/strike_savanthuns_song.jpg',
         sections: [
           {
-            name: 'Nightfall exclusive',
+            name: 'Nightfall Exclusive',
             bigItems: true,
             items: [1457979868] // Duty Bound
           },
           {
-            name: 'Nightfall emblems',
+            name: 'Nightfall Emblems',
             items: [
               148664963, // Savathûn's Song
               4040838277, // Search and Rescue
@@ -132,14 +132,14 @@ export default ([
         image: '/img/destiny_content/pgcr/campaign_tree_of_probabilities.jpg',
         sections: [
           {
-            name: 'Nightfall exclusive',
+            name: 'Nightfall Exclusive',
             bigItems: true,
             items: [
               4238497225 // D.F.A.
             ]
           },
           {
-            name: 'Nightfall emblems',
+            name: 'Nightfall Emblems',
             items: [
               2933984410, // Tree of Probabilities
               2178159623, // No More Lasers
@@ -155,14 +155,14 @@ export default ([
         image: '/img/destiny_content/pgcr/rituals_a_garden_world.jpg',
         sections: [
           {
-            name: 'Nightfall exclusive',
+            name: 'Nightfall Exclusive',
             bigItems: true,
             items: [
               1174053886 // Universal Wavefunction
             ]
           },
           {
-            name: 'Nightfall emblems',
+            name: 'Nightfall Emblems',
             items: [
               893502917, // A Garden World
               1505307650, // Blast from the Past
@@ -184,14 +184,14 @@ export default ([
         image: '/img/destiny_content/pgcr/strike_xol.jpg',
         sections: [
           {
-            name: 'Nightfall exclusive',
+            name: 'Nightfall Exclusive',
             bigItems: true,
             items: [
               1311389413 // Worm God Incarnation
             ]
           },
           {
-            name: 'Nightfall emblems',
+            name: 'Nightfall Emblems',
             items: [
               3427785728, // Will of the Thousands
               1456844009, // Feast of Worms
@@ -207,14 +207,14 @@ export default ([
         image: '/img/destiny_content/pgcr/strike_nokris.jpg',
         sections: [
           {
-            name: 'Nightfall exclusive',
+            name: 'Nightfall Exclusive',
             bigItems: true,
             items: [
               1929278169 // BrayTech Osprey
             ]
           },
           {
-            name: 'Nightfall emblems',
+            name: 'Nightfall Emblems',
             items: [
               2136479687, // Strange Terrain
               1901100185, // Maleficarum Interrupted
@@ -266,5 +266,8 @@ export default ([
         [1814407142, 1582507554]
       )
     ]
-  }
+  },
+
+  // 1655929400 - The Ordeal
+
 ]: SetPage);
