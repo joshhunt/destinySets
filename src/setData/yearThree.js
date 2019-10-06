@@ -26,6 +26,7 @@ export default ([
             name: 'Extras',
             season: 8, // Double Check
             items: [
+              1655929400, // The Ordeal
               298334049, // Timeless Vigil
               2058800852, // Vanguard Stratosphere
               2058800853 // Vanguard Angelos
