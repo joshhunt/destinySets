@@ -162,11 +162,8 @@ export default ([
         ]
       },
       {
-        name: _(
-          'DestinyActivityModeDefinition[1963485238].displayProperties.name',
-          'Vex Offensive'
-        ),
-        id: 'year-three-vex-offensive',
+        name: 'Vex Offensive & Invasions',
+        id: 'year-three-vex-offensive-and-invasions',
         description: _(
           'DestinyCollectibleDefinition[4151753667].sourceString',
           'Complete seasonal activities during Season of the Undying.'
