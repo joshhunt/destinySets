@@ -26,6 +26,7 @@ export default ([
             name: 'Extras',
             season: 8, // Double Check
             items: [
+              1655929400, // The Ordeal
               298334049, // Timeless Vigil
               2058800852, // Vanguard Stratosphere
               2058800853 // Vanguard Angelos
@@ -93,7 +94,7 @@ export default ([
         ),
         id: 'year-three-iron-banner',
         description: _(
-          'DestinyCollectibleDefinition[1098138990].sourceString',
+          'DestinyCollectibleDefinition[1158218425].sourceString',
           'Complete Iron Banner matches and earn rank-up packages from Lord Saladin.'
         ),
         sections: [
@@ -147,10 +148,10 @@ export default ([
           'Nightmare Hunt'
         ),
         id: 'year-three-nightmare-hunts',
-        // description: _(
-        //   'DestinyCollectibleDefinition[1098138990].sourceString', // Double Check
-        //   'Complete Iron Banner matches and earn rank-up packages from Lord Saladin.' // Double Check
-        // ),
+        description: _(
+          'DestinyCollectibleDefinition[2185716210].sourceString', // Double Check
+          'Complete all Nightmare Hunt time trials on Master difficulty.' // Double Check
+        ),
         sections: [
           {
             name: 'Extras',
@@ -161,54 +162,33 @@ export default ([
           }
         ]
       },
-      // {
-      //   name: _(
-      //     'DestinyActivityModeDefinition[2394616003].displayProperties.name', // Double Check
-      //     'Vex Offensive' // Double Check
-      //   ),
-      //   id: 'year-vex-offensive',
-      //   description: _(
-      //     'DestinyCollectibleDefinition[2589931339].sourceString', // Double Check
-      //     'Complete strikes and earn rank-up packages from Commander Zavala.' // Double Check
-      //   ),
-      //   sections: [
-      //     {
-      //       name: 'Weapons',
-      //       season: 8, // Double Check
-      //       items: [
-      //         
-      //       ]
-      //     },
-      //     {
-      //       name: 'Hunter Armor',
-      //       season: 8, // Double Check
-      //       items: [
-
-      //       ]
-      //     },
-      //     {
-      //       name: 'Titan Armor',
-      //       season: 8, // Double Check
-      //       items: [
-
-      //       ]
-      //     },
-      //     {
-      //       name: 'Warlock Armor',
-      //       season: 8, // Double Check
-      //       items: [
-
-      //       ]
-      //     },
-      //     {
-      //       name: 'Extras',
-      //       season: 8, // Double Check
-      //       items: [
-
-      //       ]
-      //     }
-      //   ]
-      // },
+      {
+        name: 'Vex Offensive & Invasions',
+        id: 'year-three-vex-offensive-and-invasions',
+        description: _(
+          'DestinyCollectibleDefinition[4151753667].sourceString',
+          'Complete seasonal activities during Season of the Undying.'
+        ),
+        sections: [
+          {
+            name: 'Weapons',
+            season: 8,
+            items: [
+              2314999489, // Imperative
+              1167153950, // Adhortative
+              2138599001, // Optative
+              2663204025 // Subjunctive
+            ]
+          },
+          {
+            name: 'Extras',
+            season: 8,
+            items: [
+              1714370696 // Pushing Down Daisies
+            ]
+          }
+        ]
+      },
       {
         name: // 'DestinyActivityModeDefinition[2394616003].displayProperties.name', // Double Check
           'Garden of Salvation', // Add above back in later
@@ -517,16 +497,16 @@ export default ([
       // },
       {
         name: _(
-          'DestinyFactionDefinition[1393733616].displayProperties.name', // Double Check
-          'Eververse' // Double Check
+          'DestinyFactionDefinition[1393733616].displayProperties.name',
+          'Eververse'
         ),
         id: 'year-three-eververse',
         description: 'Items sold at Eververse for Bright Dust.',
-        big: false, // Double Check
+        big: false,
         sections: [
           {
             name: 'Armor',
-            season: 8, // Double Check
+            season: 8,
             itemGroups: [
               [
                 // Hunter
@@ -542,7 +522,7 @@ export default ([
           },
           {
             name: 'Ornaments',
-            season: 8, // Double Check
+            season: 8,
             itemGroups: [
               [
                 // Exotic Weapon
@@ -557,49 +537,49 @@ export default ([
           },
           {
             name: 'Emotes',
-            season: 8, // Double Check
+            season: 8,
             items: [
               991204036 // Make it Stop
             ]
           },
           {
             name: 'Ghosts',
-            season: 8, // Double Check
+            season: 8,
             items: [
 
             ]
           },
           {
             name: 'Ghost Projections',
-            season: 8, // Double Check
+            season: 8,
             items: [
 
             ]
           },
           {
             name: 'Sparrows',
-            season: 8, // Double Check
+            season: 8,
             items: [
 
             ]
           },
           {
             name: 'Ships',
-            season: 8, // Double Check
+            season: 8,
             items: [
 
             ]
           },
           {
             name: 'Shaders',
-            season: 8, // Double Check
+            season: 8,
             items: [
               3818755494 // Bruised Blush
             ]
           },
           {
             name: 'Transmat Effects',
-            season: 8, // Double Check
+            season: 8,
             items: [
               3951356827 // Blind Clutch
             ]

@@ -1359,7 +1359,8 @@ export default ([
               2844014413, // Pallas Galliot
               3352019292, // Secret Victories
               3118323620, // Drink at the Well
-              3118323621 // Transcendent
+              3118323621, // Transcendent
+              185321779 // Ennead
             ]
           }
         ]
