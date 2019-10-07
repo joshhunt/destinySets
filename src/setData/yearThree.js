@@ -501,7 +501,7 @@ export default ([
           'Eververse'
         ),
         id: 'year-three-eververse',
-        description: 'Items sold at Eververse for Bright Dust.',
+        description: 'Items sold at Eververse for Bright Dust.lol',
         big: false,
         sections: [
           {
