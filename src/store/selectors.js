@@ -410,7 +410,8 @@ export const makeBetterItemVendorEntrySelector = () => {
           const sortableCost =
             ve.costs.find(c => CURRENCY_SORT_ORDER.includes(c.itemHash)) ||
             ve.costs[0];
-          const sortIndex = CURRENCY_SORT_ORDER.indexOf(sortableCost.itemHash);
+          const sortIndex =
+            sortableCost && CURRENCY_SORT_ORDER.indexOf(sortableCost.itemHash);
           const final = sortIndex === -1 ? 999 : sortIndex;
 
           return final;
