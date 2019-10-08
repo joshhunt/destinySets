@@ -369,6 +369,57 @@ export const makeItemVendorEntrySelector = () => {
   );
 };
 
+const CURRENCY_SORT_ORDER = [
+  3159615086, // glimmer
+  1022552290, // legendary shards
+  2817410917, // bright dust
+  3147280338 // silver
+];
+
+export const makeBetterItemVendorEntrySelector = () => {
+  return createSelector(
+    vendorItemDataSelector,
+    itemHashPropSelector,
+    (vendorData, itemHash) => {
+      const vendorEntries = vendorData[itemHash];
+
+      return fp.flow(
+        fp.map(ve => {
+          const costs = ve.saleItem.costs;
+
+          if (!costs || costs.length === 0) {
+            return {
+              vendorHash: ve.vendorHash,
+              costs: []
+            };
+          }
+
+          return {
+            vendorHash: ve.vendorHash,
+            costs
+          };
+        }),
+        fp.flattenDeep,
+        fp.uniqBy(
+          ve =>
+            `${ve.vendorHash}|${ve.costs.map(
+              c => `${c.itemHash}|${c.quantity}`
+            )}`
+        ),
+        fp.sortBy(ve => {
+          const sortableCost =
+            ve.costs.find(c => CURRENCY_SORT_ORDER.includes(c.itemHash)) ||
+            ve.costs[0];
+          const sortIndex = CURRENCY_SORT_ORDER.indexOf(sortableCost.itemHash);
+          const final = sortIndex === -1 ? 999 : sortIndex;
+
+          return final;
+        })
+      )(vendorEntries);
+    }
+  );
+};
+
 const extractInstances = characterInventory => {
   return Object.entries(characterInventory).reduce(
     (acc, [characterId, { items }]) => {

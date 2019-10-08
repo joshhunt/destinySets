@@ -48,6 +48,7 @@ $green = #44bd32;
   padding: 3px
   width: 18px
   height: 18px
+  filter: drop-shadow(2px 4px 6px #15191D)
 
   .dismantled &
     background: #7f8fa6
@@ -55,9 +56,19 @@ $green = #44bd32;
   .checklisted &
     background: #3c94ff
 
-.purchasableTick
+.purchasable
   composes: tick
-  background: #e67e22
+  padding: 0
+  // background: #e67e22
+  background: none
+  width: 20px
+  height: 20px
+
+  img
+    width: 100%
+
+  &.legendaryShards
+    filter: drop-shadow(0px 0px 1px #15191d) drop-shadow(0px 0px 2px #15191d) drop-shadow(0px 0px 0px #15191d) drop-shadow(2px 4px 6px #15191d)
 
 .extended
   margin-left: 5px

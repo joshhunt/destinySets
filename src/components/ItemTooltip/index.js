@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { uniq } from 'lodash';
+import { uniq, get } from 'lodash';
 import cx from 'classnames';
 
 import { EMBLEM, WEAPON, EXOTIC } from 'app/lib/destinyEnums';
@@ -14,6 +14,8 @@ import Icon from 'app/components/Icon';
 import ItemPerks from 'app/components/ItemPerks';
 import ChaliceRecipie from 'app/components/ChaliceRecipie';
 
+import { makeItemDefSelector } from 'app/components/Item/selectors';
+
 import CHALICE_DATA from 'app/extraData/chalice';
 
 import {
@@ -24,7 +26,7 @@ import {
   objectiveInstancesSelector,
   makeItemInventoryEntrySelector,
   checklistInventorySelector,
-  makeItemVendorEntrySelector,
+  makeBetterItemVendorEntrySelector,
   makeItemHashToCollectableSelector,
   makeItemPerksSelector,
   makeItemPresentationSelector
@@ -42,7 +44,7 @@ function ItemTooltip({
   statDefs,
   displayItem,
   itemInventoryEntry,
-  vendorEntry,
+  richVendorEntry,
   collectionInventory,
   collectible,
   perks
@@ -134,7 +136,7 @@ function ItemTooltip({
             <ExtraInfo
               className={styles.extraInfo}
               item={item}
-              vendorEntry={vendorEntry}
+              richVendorEntry={richVendorEntry}
               inventoryEntry={itemInventoryEntry}
               inCollection={collectionInventory[item.hash]}
             />
@@ -156,15 +158,28 @@ function ItemTooltip({
 }
 
 const mapStateToProps = () => {
+  const itemDefSelector = makeItemDefSelector();
   const itemStatsSelector = makeItemStatsSelector();
   const itemSelector = makeItemSelector();
   const itemInventoryEntrySelector = makeItemInventoryEntrySelector();
-  const itemVendorEntrySelector = makeItemVendorEntrySelector();
+  const betterItemVendorEntrySelector = makeBetterItemVendorEntrySelector();
   const itemHashToCollectableSelector = makeItemHashToCollectableSelector();
   const perksSelector = makeItemPerksSelector();
   const itemPresentationSelector = makeItemPresentationSelector();
 
   return (state, ownProps) => {
+    const vendorEntry = betterItemVendorEntrySelector(state, ownProps);
+
+    const richVendorEntries = vendorEntry.map(ve => ({
+      ...ve,
+      costs: ve.costs.map(cost => ({
+        ...cost,
+        item: itemDefSelector(state, {
+          itemHash: cost.itemHash
+        })
+      }))
+    }));
+
     return {
       collectionInventory: checklistInventorySelector(state),
       objectiveInstances: objectiveInstancesSelector(state),
@@ -173,7 +188,7 @@ const mapStateToProps = () => {
       stats: itemStatsSelector(state, ownProps),
       item: itemSelector(state, ownProps),
       itemInventoryEntry: itemInventoryEntrySelector(state, ownProps),
-      vendorEntry: itemVendorEntrySelector(state, ownProps),
+      richVendorEntry: richVendorEntries,
       collectible: itemHashToCollectableSelector(state, ownProps),
       perks: perksSelector(state, ownProps),
       displayItem: itemPresentationSelector(state, ownProps)

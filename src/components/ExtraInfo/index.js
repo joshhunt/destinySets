@@ -16,7 +16,7 @@ function ExtraInfo({
   className,
   item,
   inventoryEntry,
-  vendorEntry,
+  richVendorEntry,
   inCollection,
   vendorDefs
 }) {
@@ -44,30 +44,48 @@ function ExtraInfo({
     );
   }
 
-  if (!vendorEntry && extraInfo.length === 0) {
+  if (!richVendorEntry && extraInfo.length === 0) {
     return null;
   }
 
   return (
     <div className={className}>
-      {vendorEntry &&
-        uniqBy(vendorEntry, v => v.vendorHash).map(
-          (singleVendorEntry, index) => {
-            const vendor = vendorDefs[singleVendorEntry.vendorHash];
+      {richVendorEntry &&
+        richVendorEntry.map((ve, index) => {
+          const vendor = vendorDefs[ve.vendorHash];
 
-            return (
-              <div key={index}>
-                <span className={styles.orangeTick}>
-                  <Icon icon="dollar-sign" />
-                </span>{' '}
-                Available from{' '}
-                {vendor ? vendor.displayProperties.name : 'unknown vendor'}
-              </div>
-            );
-          }
-        )}
+          console.log('extraInfo ve', ve);
 
-      {extraInfo.map((info, index) => <div key={index}>{info}</div>)}
+          return (
+            <div key={index}>
+              <span className={styles.orangeTick}>
+                <Icon icon="dollar-sign" />
+              </span>{' '}
+              Available from{' '}
+              {vendor ? vendor.displayProperties.name : 'unknown vendor'}
+              {ve.costs && (
+                <span>
+                  {' for '}
+
+                  {ve.costs
+                    .map(cost => {
+                      return (
+                        <span>
+                          {cost.quantity}{' '}
+                          {cost.item && cost.item.displayProperties.name}
+                        </span>
+                      );
+                    })
+                    .reduce((prev, curr) => [prev, ' and ', curr])}
+                </span>
+              )}
+            </div>
+          );
+        })}
+
+      {extraInfo.map((info, index) => (
+        <div key={index}>{info}</div>
+      ))}
     </div>
   );
 }

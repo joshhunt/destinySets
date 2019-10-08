@@ -190,8 +190,8 @@ export default ([
         ]
       },
       {
-        name: // 'DestinyActivityModeDefinition[2394616003].displayProperties.name', // Double Check
-          'Garden of Salvation', // Add above back in later
+        // 'DestinyActivityModeDefinition[2394616003].displayProperties.name', // Double Check
+        name: 'Garden of Salvation', // Add above back in later
         id: 'year-three-garden-of-salvation',
         description: _(
           'DestinyCollectibleDefinition[2948134329].sourceString',
@@ -218,7 +218,7 @@ export default ([
               557676195, // Cowl of Righteousness
               1653741426, // Grips of Exaltation
               4177973942, // Vest of Transcendence
-              2054979724, // Strides of Ascendancy 
+              2054979724, // Strides of Ascendancy
               3549177695 // Cloak of Temptation
             ]
           },
@@ -249,12 +249,12 @@ export default ([
             // season: "K", // Double Check
             items: [
               298334059, // Inherent Truth
-              3996862462, // Ancient Believer 
+              3996862462, // Ancient Believer
               3996862463 // Ancient Defender
             ]
           }
         ]
-      },
+      }
     ]
   },
   {
@@ -349,7 +349,7 @@ export default ([
   //           name: 'Weapons',
   //           season: 8, // Double Check
   //           items: [
-  //             
+  //
   //           ]
   //         },
   //         {
@@ -605,6 +605,7 @@ export default ([
 
               // 779216205 // Friendly Fire Shell (Not planned to be sold for Bright Dust)
             ]
+
           },
           {
             name: 'Ghost Projections',

@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
+import { get } from 'lodash';
 import cx from 'classnames';
 
 import {
@@ -18,6 +19,7 @@ import BungieImage from 'app/components/BungieImage';
 import {
   makeItemInventoryEntrySelector,
   makeItemVendorEntrySelector,
+  makeBetterItemVendorEntrySelector,
   makeItemPresentationSelector
 } from 'app/store/selectors';
 
@@ -130,7 +132,7 @@ class Item extends PureComponent {
       inventoryEntry,
       extended,
       hideMissing,
-      vendorEntry,
+      richVendorEntries,
       itemObjectiveProgress
     } = this.props;
 
@@ -151,6 +153,9 @@ class Item extends PureComponent {
 
     const icon =
       displayItem.displayProperties.icon || '/img/misc/missing_icon_d2.png';
+
+    const firstVendorEntry = richVendorEntries && richVendorEntries[0];
+    const firstSaleCurrency = firstVendorEntry && firstVendorEntry.costs[0];
 
     return (
       <div
@@ -198,9 +203,18 @@ class Item extends PureComponent {
               </div>
             )}
 
-            {!inventoryEntry && vendorEntry && (
-              <div className={styles.purchasableTick}>
-                <Icon icon="dollar-sign" />
+            {!inventoryEntry && firstVendorEntry && (
+              <div
+                className={cx(
+                  styles.purchasable,
+                  firstSaleCurrency.itemHash === 1022552290 &&
+                    styles.legendaryShards
+                )}
+              >
+                <BungieImage
+                  className={styles.currency}
+                  src={firstSaleCurrency.item.displayProperties.icon}
+                />
               </div>
             )}
           </div>
@@ -239,7 +253,7 @@ class Item extends PureComponent {
 function mapStateToProps() {
   const itemDefSelector = makeItemDefSelector();
   const itemInventoryEntrySelector = makeItemInventoryEntrySelector();
-  const itemVendorEntrySelector = makeItemVendorEntrySelector();
+  const betterItemVendorEntrySelector = makeBetterItemVendorEntrySelector();
   const itemObjectiveProgressSelector = makeItemObjectiveProgressSelector();
   const itemPresentationSelector = makeItemPresentationSelector();
 
@@ -258,18 +272,23 @@ function mapStateToProps() {
       state.definitions.DestinyInventoryItemDefinition &&
       state.definitions.DestinyInventoryItemDefinition[roleHash];
 
-    // if (
-    //   ownProps.itemHash === 1886580966 ||
-    //   ownProps.itemHash === '1886580966'
-    // ) {
-    //   debugger;
-    // }
+    const vendorEntry = betterItemVendorEntrySelector(state, ownProps);
+
+    const richVendorEntries = vendorEntry.map(ve => ({
+      ...ve,
+      costs: ve.costs.map(cost => ({
+        ...cost,
+        item: itemDefSelector(state, {
+          itemHash: cost.itemHash
+        })
+      }))
+    }));
 
     return {
       itemDef,
       roleDef,
       inventoryEntry: itemInventoryEntrySelector(state, ownProps),
-      vendorEntry: itemVendorEntrySelector(state, ownProps),
+      richVendorEntries,
       itemObjectiveProgress: itemObjectiveProgressSelector(state, ownProps),
       displayItem,
       cool: 'yes'
