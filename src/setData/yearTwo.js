@@ -2415,7 +2415,7 @@ export default ([
               443190222, // Drop Pod Shell
               // 443190223, // Intrepid Shell (Wasn't sold for Bright Dust)
               // 443190220, // Gyro Shell (Wasn't sold for Bright Dust)
-              // 443190221, // PS-1 Shell (Wasn't sold for Bright Dust)
+              443190221, // PS-1 Shell
               443190218, // Arc Shell
               443190219, // Solar Shell
               // 443190216, // Void Shell (Wasn't sold for Bright Dust)
