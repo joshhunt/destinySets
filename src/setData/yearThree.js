@@ -149,8 +149,8 @@ export default ([
         ),
         id: 'year-three-nightmare-hunts',
         description: _(
-          'DestinyCollectibleDefinition[2185716210].sourceString', // Double Check
-          'Complete all Nightmare Hunt time trials on Master difficulty.' // Double Check
+          'DestinyCollectibleDefinition[2185716210].sourceString',
+          'Complete all Nightmare Hunt time trials on Master difficulty.'
         ),
         sections: [
           {
@@ -190,8 +190,10 @@ export default ([
         ]
       },
       {
-        // 'DestinyActivityModeDefinition[2394616003].displayProperties.name', // Double Check
-        name: 'Garden of Salvation', // Add above back in later
+        name: _(
+          'DestinyActivityModeDefinition[2659723068].displayProperties.name',
+          'Garden of Salvation',
+        ),
         id: 'year-three-garden-of-salvation',
         description: _(
           'DestinyCollectibleDefinition[2948134329].sourceString',
@@ -429,72 +431,33 @@ export default ([
   {
     name: 'Other',
     sets: [
-      // {
-      //   name: _(
-      //     'DestinyVendorDefinition[3163810067].displayProperties.name',
-      //     'Legendary Engram'
-      //   ),
-      //   description: _(
-      //     'DestinyCollectibleDefinition[256984755].sourceString',
-      //     'Open Legendary engrams and earn faction rank-up packages.'
-      //   ),
-      //   id: 'year-three-legendary-engram',
-      //   big: false, // Double Check
-      //   sections: [
-      //     {
-      //       name: 'Weapons',
-      //       season: 4,
-      //       items: [
+      {
+        name: _(
+          'DestinyPresentationNodeDefinition[3110685926].displayProperties.name',
+          'Season Pass'
+        ),
+        description: _(
+          'Free Track available to all Destiny 2 Players. Paid Track to owners of the current Season Pass.'
+        ),
+        id: 'year-three-season-passes',
+        big: false,
+        sections: [
+          {
+            name: 'Free Track',
+            season: 8,
+            items: [
 
-      //       ]
-      //     },
-      //     {
-      //       name: 'Hunter Armor',
-      //       season: 4,
-      //       itemGroups: [
-      //         [
+            ]
+          },
+          {
+            name: 'Paid Track',
+            season: 8,
+            items: [
 
-      //         ],
-      //         [
-
-      //         ],
-      //         [
-
-      //         ]
-      //       ]
-      //     },
-      //     {
-      //       name: 'Titan Armor',
-      //       season: 4,
-      //       itemGroups: [
-      //         [
-
-      //         ],
-      //         [
-
-      //         ],
-      //         [
-
-      //         ]
-      //       ]
-      //     },
-      //     {
-      //       name: 'Warlock Armor',
-      //       season: 4,
-      //       itemGroups: [
-      //         [
-
-      //         ],
-      //         [
-
-      //         ],
-      //         [
-
-      //         ]
-      //       ]
-      //     }
-      //   ]
-      // },
+            ]
+          },
+        ]
+      },
       {
         name: _(
           'DestinyFactionDefinition[1393733616].displayProperties.name',
