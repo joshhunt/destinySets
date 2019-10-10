@@ -2129,7 +2129,7 @@ export default ([
             name: 'Shaders',
             season: 2,
             items: [
-              2395477994, // Mettalic Sunrise
+              2395477994, // Mercurian Sunrise
               2395477996, // Precursor Vex Chrome
               2395477997, // Desert of Gold
               2395477998, // Descendant Vex Chrome
