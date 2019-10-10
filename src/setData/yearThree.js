@@ -436,9 +436,7 @@ export default ([
           'DestinyPresentationNodeDefinition[3110685926].displayProperties.name',
           'Season Pass'
         ),
-        description: _(
-          'Free Track available to all Destiny 2 Players. Paid Track to owners of the current Season Pass.'
-        ),
+        description: 'Free Track available to all Destiny 2 Players. Paid Track to owners of the current Season Pass.',
         id: 'year-three-season-passes',
         big: false,
         sections: [
