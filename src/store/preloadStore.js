@@ -29,7 +29,7 @@ export const REQUIRED_DEFINITIONS = [
   'DestinyVendorDefinition',
   'DestinyInventoryItemDefinition',
   'DestinyClassDefinition',
-  'DestinySandboxPerkDefinition',
+  // 'DestinySandboxPerkDefinition',
   'DestinyCollectibleDefinition',
   'DestinyPresentationNodeDefinition',
   'DestinyRecordDefinition',
