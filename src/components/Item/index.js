@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
-import { get } from 'lodash';
+import { get, memoize } from 'lodash';
 import cx from 'classnames';
 
 import {
@@ -128,6 +128,7 @@ class Item extends PureComponent {
       className,
       itemDef,
       roleDef,
+      overlayImage,
       displayItem,
       inventoryEntry,
       extended,
@@ -180,6 +181,14 @@ class Item extends PureComponent {
                 className={styles.overlay}
                 src={masterworkOutline}
                 alt="Masterwork"
+              />
+            )}
+
+            {overlayImage && (
+              <BungieImage
+                className={styles.overlay}
+                alt=""
+                src={overlayImage}
               />
             )}
 
@@ -250,6 +259,8 @@ class Item extends PureComponent {
   }
 }
 
+const makeItemHashObj = memoize(itemHash => ({ itemHash }));
+
 function mapStateToProps() {
   const itemDefSelector = makeItemDefSelector();
   const itemInventoryEntrySelector = makeItemInventoryEntrySelector();
@@ -261,6 +272,19 @@ function mapStateToProps() {
     const displayItem = itemPresentationSelector(state, ownProps);
 
     const itemDef = itemDefSelector(state, ownProps);
+    const statDefs = state.definitions.DestinyStatDefinition || {};
+
+    const investmentStatItem = ((itemDef && itemDef.investmentStats) || [])
+      .map(is => {
+        return statDefs[is.statTypeHash];
+      })
+      .filter(Boolean)[0];
+
+    const overlayImage = get(investmentStatItem, 'displayProperties.icon');
+
+    if (ownProps.itemHash === 3188535145) {
+      console.log({ investmentStatItem, overlayImage });
+    }
 
     const firstPerk =
       itemDef && itemDef.sockets && itemDef.sockets.socketEntries[0];
@@ -278,15 +302,14 @@ function mapStateToProps() {
       ...ve,
       costs: ve.costs.map(cost => ({
         ...cost,
-        item: itemDefSelector(state, {
-          itemHash: cost.itemHash
-        })
+        item: itemDefSelector(state, makeItemHashObj(cost.itemHash))
       }))
     }));
 
     return {
       itemDef,
       roleDef,
+      overlayImage,
       inventoryEntry: itemInventoryEntrySelector(state, ownProps),
       richVendorEntries,
       itemObjectiveProgress: itemObjectiveProgressSelector(state, ownProps),

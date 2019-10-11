@@ -43,6 +43,7 @@ function ItemTooltip({
   stats,
   statDefs,
   displayItem,
+  investmentStatItem,
   itemInventoryEntry,
   richVendorEntry,
   collectionInventory,
@@ -94,6 +95,13 @@ function ItemTooltip({
               </p>
             )}
           </div>
+        )}
+
+        {investmentStatItem && (
+          <p className={styles.description}>
+            {investmentStatItem.displayProperties.name}:{' '}
+            {item.investmentStats[0].value}
+          </p>
         )}
 
         {!small && stats && (
@@ -169,6 +177,7 @@ const mapStateToProps = () => {
 
   return (state, ownProps) => {
     const vendorEntry = betterItemVendorEntrySelector(state, ownProps);
+    const itemDef = itemSelector(state, ownProps);
 
     const richVendorEntries = vendorEntry.map(ve => ({
       ...ve,
@@ -180,13 +189,21 @@ const mapStateToProps = () => {
       }))
     }));
 
+    const statDefs = state.definitions.DestinyStatDefinition || {};
+    const investmentStatItem = ((itemDef && itemDef.investmentStats) || [])
+      .map(is => {
+        return statDefs[is.statTypeHash];
+      })
+      .filter(Boolean)[0];
+
     return {
       collectionInventory: checklistInventorySelector(state),
       objectiveInstances: objectiveInstancesSelector(state),
       objectiveDefs: objectiveDefsSelector(state),
       statDefs: statDefsSelector(state),
       stats: itemStatsSelector(state, ownProps),
-      item: itemSelector(state, ownProps),
+      item: itemDef,
+      investmentStatItem,
       itemInventoryEntry: itemInventoryEntrySelector(state, ownProps),
       richVendorEntry: richVendorEntries,
       collectible: itemHashToCollectableSelector(state, ownProps),
