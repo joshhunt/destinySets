@@ -1,5 +1,5 @@
 import { createSelector } from 'reselect';
-import { difference, keyBy, get, flatMapDeep, mapValues } from 'lodash';
+import { difference, keyBy, get, flatMapDeep, mapValues, merge } from 'lodash';
 import fp from 'lodash/fp';
 
 import {
@@ -21,6 +21,8 @@ const profileSelector = state => state.profile.profile;
 
 export const itemDefsSelector = state =>
   state.definitions.DestinyInventoryItemDefinition;
+export const perkDefsSelector = state =>
+  state.definitions.DestinySandboxPerkDefinition;
 export const objectiveDefsSelector = state =>
   state.definitions.DestinyObjectiveDefinition;
 export const statDefsSelector = state =>
@@ -50,20 +52,42 @@ export const makeItemSelector = () => {
 export const makeItemPresentationSelector = () => {
   return createSelector(
     itemDefsSelector,
+    perkDefsSelector,
     collectiblesByItemHashSelector,
     itemHashPropSelector,
-    (itemDefs, collectibles, itemHash) => {
+    (itemDefs, perkDefs, collectibles, itemHash) => {
       const itemDef = itemDefs && itemDefs[itemHash];
+      const perk = itemDef && itemDef.perks && itemDef.perks[0];
+      const sandboxPerkDef = perkDefs && perk && perkDefs[perk.perkHash];
 
-      if (itemDef && !itemDef.redacted) {
-        return itemDefs[itemHash];
+      const newItemDef = !sandboxPerkDef
+        ? itemDef
+        : merge({}, itemDef, {
+            displayProperties: {
+              description: sandboxPerkDef.displayProperties.description
+            }
+          });
+
+      if (itemHash === 4193902249) {
+        console.log({
+          itemHash,
+          itemDef,
+          perk,
+          sandboxPerkDef,
+          newItemDef,
+          perkDefs
+        });
+      }
+
+      if (newItemDef && !newItemDef.redacted) {
+        return newItemDef;
       }
 
       if (collectibles && collectibles[itemHash]) {
         return collectibles[itemHash];
       }
 
-      return itemDef;
+      return newItemDef;
     }
   );
 };
