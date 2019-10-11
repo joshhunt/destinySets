@@ -32,7 +32,8 @@ const LINKS = [
   link('Year 1', '/year-1'),
   link('Strikes', '/strike-gear'),
   link('All Items', '/all-items'),
-  link('Catalysts', '/catalysts')
+  link('Catalysts', '/catalysts'),
+  link('Mods (beta)', '/mods')
 ];
 
 const SOCIALS = [
@@ -54,42 +55,42 @@ const SiteLinks = ({
   xurHasNewItems,
   showDataExplorerLink
 }) => (
-    <Fragment>
-      <div className={styles.dummyLink} />
+  <Fragment>
+    <div className={styles.dummyLink} />
 
-      {LINKS.map(({ name, to }) => (
-        <Link
-          key={to}
-          className={styles.link}
-          activeClassName={styles.active}
-          to={to}
-        >
-          {name}
-        </Link>
-      ))}
+    {LINKS.map(({ name, to }) => (
+      <Link
+        key={to}
+        className={styles.link}
+        activeClassName={styles.active}
+        to={to}
+      >
+        {name}
+      </Link>
+    ))}
 
-      {showDataExplorerLink && (
-        <a
-          className={styles.link}
-          href="https://data.destinysets.com"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Data Explorer
+    {showDataExplorerLink && (
+      <a
+        className={styles.link}
+        href="https://data.destinysets.com"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Data Explorer
       </a>
-      )}
+    )}
 
-      {displayXur && (
-        <a
-          onClick={() => openXurModal(true)}
-          className={cx(styles.xurLink, xurHasNewItems && styles.xurLinkNewItems)}
-        >
-          <img className={styles.xurIcon} src={xur} alt="" />
-          Xûr
+    {displayXur && (
+      <a
+        onClick={() => openXurModal(true)}
+        className={cx(styles.xurLink, xurHasNewItems && styles.xurLinkNewItems)}
+      >
+        <img className={styles.xurIcon} src={xur} alt="" />
+        Xûr
       </a>
-      )}
-    </Fragment>
-  );
+    )}
+  </Fragment>
+);
 
 const SocialLinks = () => (
   <Fragment>
@@ -259,19 +260,16 @@ export default class Header extends Component {
             />
           </div>
 
-          {!isAuth &&
-            !isOverflowing && <LoginCTA className={styles.headerLoginCta} />}
+          {!isAuth && !isOverflowing && (
+            <LoginCTA className={styles.headerLoginCta} />
+          )}
 
           <div className={styles.spacer} />
 
           <div className={styles.etc}>
-            {language &&
-              !isOverflowing && (
-                <LanguageDropdown
-                  language={language}
-                  setLanguage={setLanguage}
-                />
-              )}
+            {language && !isOverflowing && (
+              <LanguageDropdown language={language} setLanguage={setLanguage} />
+            )}
 
             {currentProfile && (
               <ProfileDropdown

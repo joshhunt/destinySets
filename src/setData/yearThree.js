@@ -1,6 +1,5 @@
 // @flow
 import type { SetPage } from '../types';
-import * as common from './common';
 import { i18nDefinitionString as _ } from './utils';
 
 export default ([
@@ -192,7 +191,7 @@ export default ([
       {
         name: _(
           'DestinyActivityModeDefinition[2659723068].displayProperties.name',
-          'Garden of Salvation',
+          'Garden of Salvation'
         ),
         id: 'year-three-garden-of-salvation',
         description: _(
@@ -436,24 +435,21 @@ export default ([
           'DestinyPresentationNodeDefinition[3110685926].displayProperties.name',
           'Season Pass'
         ),
-        description: 'Free Track available to all Destiny 2 Players. Paid Track to owners of the current Season Pass.',
+        description:
+          'Free Track available to all Destiny 2 Players. Paid Track to owners of the current Season Pass.',
         id: 'year-three-season-passes',
         big: false,
         sections: [
           {
             name: 'Free Track',
             season: 8,
-            items: [
-
-            ]
+            items: []
           },
           {
             name: 'Paid Track',
             season: 8,
-            items: [
-
-            ]
-          },
+            items: []
+          }
         ]
       },
       {
@@ -474,21 +470,21 @@ export default ([
                 986495788, // Empyrean Cartographer Grips
                 3384125556, // Empyrean Cartographer Vest
                 2056685398, // Empyrean Cartographer Strides
-                4127955529, // Empyrean Cartographer Cloak
+                4127955529 // Empyrean Cartographer Cloak
               ],
               [
                 2727287231, // Empyrean Cartographer Helm
                 2661154438, // Empyrean Cartographer Gauntlets
                 926439978, // Empyrean Cartographer Plate
                 2220183680, // Empyrean Cartographer Greaves
-                1563257659, // Empyrean Cartographer Mark
+                1563257659 // Empyrean Cartographer Mark
               ],
               [
                 2868013594, // Empyrean Cartographer Hood
                 810317923, // Empyrean Cartographer Gloves
                 2081889453, // Empyrean Cartographer Robes
                 2731297685, // Empyrean Cartographer Boots
-                195800736, // Empyrean Cartographer Bond
+                195800736 // Empyrean Cartographer Bond
               ]
             ]
           },
@@ -497,10 +493,10 @@ export default ([
             season: 8,
             itemGroups: [
               [
-                // 52189603, // Bad Dog (Not planned to be sold for Bright Dust) 
-                // 651701175, // Big Blind (Not planned to be sold for Bright Dust) 
-                // 3844102542, // Father of Islands (Not planned to be sold for Bright Dust) 
-                // 3432171457, // Heretic Robe (Not planned to be sold for Bright Dust) 
+                // 52189603, // Bad Dog (Not planned to be sold for Bright Dust)
+                // 651701175, // Big Blind (Not planned to be sold for Bright Dust)
+                // 3844102542, // Father of Islands (Not planned to be sold for Bright Dust)
+                // 3432171457, // Heretic Robe (Not planned to be sold for Bright Dust)
                 // 1360105767, // Járngreipr (Not planned to be sold for Bright Dust)
                 // 1563263613, // Law of Induction (Not planned to be sold for Bright Dust)
                 // 3438514430, // Peacebringer (Not planned to be sold for Bright Dust)
@@ -508,9 +504,7 @@ export default ([
                 // 3093486579, // Sky/Perdition (Not planned to be sold for Bright Dust)
                 // 2744195002, // Third Rail (Not planned to be sold for Bright Dust)
                 // 519687404, // What If (Not planned to be sold for Bright Dust)
-
                 // Currently Classified
-
                 // 4159445096 // Ornament for Xenophage (Not planned to be sold for Bright Dust)
               ],
               [
@@ -519,7 +513,7 @@ export default ([
                 1145663134 // Great White
               ],
               [
-                // 3624790844, // Eerie Breeze (Not planned to be sold for Bright Dust) 
+                // 3624790844, // Eerie Breeze (Not planned to be sold for Bright Dust)
                 // 331838657, // The Gate Lord (Not planned to be sold for Bright Dust)
                 // 3200402431, // Bronze Carapace (Not planned to be sold for Bright Dust)
                 // 1206183717, // Shock Grenadier (Not planned to be sold for Bright Dust)
@@ -541,13 +535,13 @@ export default ([
               // 2370712399, // Spring Showers (Not planned to be sold for Bright Dust)
               // 3105326202, // Cross-Step Shuffle (Not planned to be sold for Bright Dust)
               // 1188569234, // Ding (Not planned to be sold for Bright Dust)
-              1141309169, // Flare Gun 
+              1141309169, // Flare Gun
               1422833575, // Give Dap
               1300438173, // Happy Feet
               // 3702002191, // Be Sneaky (Not planned to be sold for Bright Dust)
               248592690, // Eat It Up
               991204036, // Make It Stop
-              88498859 // Too Hot 
+              88498859 // Too Hot
             ]
           },
           {
@@ -559,14 +553,13 @@ export default ([
               // 779216203, // Lion Guardant Shell (Not planned to be sold for Bright Dust)
               779216206, // Lunar Shell
               779216207, // Ophiuchus Shell
-              779216200, // Propheteer Shell
+              779216200 // Propheteer Shell
               // 779216201, // Scarlet Swarm Shell (Not planned to be sold for Bright Dust)
 
               // Has highResIcon but not attached to Tess
 
               // 779216205 // Friendly Fire Shell (Not planned to be sold for Bright Dust)
             ]
-
           },
           {
             name: 'Ghost Projections',
@@ -586,7 +579,7 @@ export default ([
               // 2067296773, // Four Degrees of Separation (Not planned to be sold for Bright Dust)
               // 2067296775, // Golden Pride (Not planned to be sold for Bright Dust)
               2067296772, // Invasive Species
-              2067296770, // Jotuneer
+              2067296770 // Jotuneer
               // 2067296771, // The Regal Howl (Not planned to be sold for Bright Dust)
 
               // Has highResIcon but not attached to Tess
@@ -600,7 +593,7 @@ export default ([
             season: 8,
             items: [
               // 4079130217, // Quality Cut (Not planned to be sold for Bright Dust)
-              4079130220, // Refashioned Shapes
+              4079130220 // Refashioned Shapes
               // 4079130223, // The Machinoform (Not planned to be sold for Bright Dust)
 
               // Has highResIcon but not attached to Tess

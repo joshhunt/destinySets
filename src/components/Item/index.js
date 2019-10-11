@@ -203,7 +203,7 @@ class Item extends PureComponent {
               </div>
             )}
 
-            {!inventoryEntry && firstVendorEntry && (
+            {!inventoryEntry && firstVendorEntry && firstSaleCurrency && (
               <div
                 className={cx(
                   styles.purchasable,

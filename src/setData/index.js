@@ -1,6 +1,7 @@
 // @flow
 
 export default {
+  mods: require('./mods').default,
   yearOne: require('./yearOne').default,
   yearTwo: require('./yearTwo').default,
   yearThree: require('./yearThree').default,
@@ -13,4 +14,3 @@ export default {
   catalysts: require('./catalysts').default,
   collections: require('./collections').default
 };
-
