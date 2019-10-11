@@ -225,7 +225,6 @@ export default [
             name: 'Mods',
             items: [
               // --- Semi sorted
-
               531752975, // Minor Resist,
               1313760467, // Major Resist,
               1719752237, // Boss Resist,
@@ -242,79 +241,65 @@ export default [
               3355995799, // Intellect Mod,
 
               // --- Unsorted
-              4088080604, // Circuit Scavenger,
-              369171376, // Transcendent Blessing,
-              322752304, // Ashes to Assets,
-
-              403494087, // Fastball,
-              301151651, // Emperor's Balance,
-
-              499567183, // Shielding Hand,
-              928186993, // Voltaic Ammo Collector,
-
               1016705548, // Dynamo,
-              973776237, // Insulation,
-
+              1320020854, // Better Already,
               1409526707, // Emperor's Shock,
               1432806784, // Invigoration,
               1489470244, // Power Overwhelming,
-              1320020854, // Better Already,
-
-              2280136185, // Giving Hand,
-              1708067044, // Traction,
               1513970148, // Distribution,
+              1708067044, // Traction,
+              2280136185, // Giving Hand,
               2375300279, // Remote Connection,
-              2402696709, // Overload Grenades,
-              2476831315, // Recuperation,
-              2612707366, // Oppressive Darkness,
-
-              2887845822, // Resistant Tether,
-
-              3788210493, // Momentum Transfer,
-              4088080602, // Labyrinth Miner,
-              4088080603, // Biomonetizer,
-              4092923892, // Pump Action,
-              4134680615, // Voltaic Mote Collector,
-              4240256197, // Empowering Largesse,
-              4130296084, // Energized,
-              4137020505, // Perpetuation,
-
-              4185864113, // Embraced Largesse,
-              4088080605, // Dissection Matrix,
-              4084428384, // Light Reactor,
-              4018667352, // Emperor's Blaze,
-              4088080601, // Dark Glimmer,
-
-              3974455041, // Outreach,
-
-              3895804619, // Dreambane Mod,
-
-              3598368346, // Innervation,
-              3470562293, // Impact Induction,
-              3415291596, // Relay Defender,
-
-              3320641683, // Absolution,
-
-              3065699930, // Hands-On,
-              2816649701, // Striking Hand,
-
-              2689994974, // Radiant Largesse,
-              2612707361, // From the Depths,
-              2527938402, // Riven's Curse,
-              2612707360, // Thunder Coil,
               2402696706, // Ballistic Combo,
               2402696707, // Unstoppable Melee,
               2402696708, // Disruptor Spike,
-
+              2402696709, // Overload Grenades,
+              2476831315, // Recuperation,
+              2527938402, // Riven's Curse,
+              2612707360, // Thunder Coil,
+              2612707361, // From the Depths,
+              2612707366, // Oppressive Darkness,
+              2689994974, // Radiant Largesse,
+              2816649701, // Striking Hand,
+              2887845822, // Resistant Tether,
+              301151651, // Emperor's Balance,
+              3065699930, // Hands-On,
+              322752304, // Ashes to Assets,
+              3320641683, // Absolution,
+              3415291596, // Relay Defender,
+              3470562293, // Impact Induction,
               3561960031, // Bomber,
-              3884084138, // Enhanced Bomber,
-              531981182, // Enhanced Momentum Transfer,
-              774147760, // Enhanced Impact Induction,
-              865380761, // Enhanced Voltaic Mote Collector,
+              3598368346, // Innervation,
+              369171376, // Transcendent Blessing,
+              3788210493, // Momentum Transfer,
+              3895804619, // Dreambane Mod,
+              3974455041, // Outreach,
+              4018667352, // Emperor's Blaze,
+              403494087, // Fastball,
+              4084428384, // Light Reactor,
+              4088080601, // Dark Glimmer,
+              4088080602, // Labyrinth Miner,
+              4088080603, // Biomonetizer,
+              4088080604, // Circuit Scavenger,
+              4088080605, // Dissection Matrix,
+              4092923892, // Pump Action,
+              4130296084, // Energized,
+              4134680615, // Voltaic Mote Collector,
+              4137020505, // Perpetuation,
+              4185864113, // Embraced Largesse,
+              4240256197, // Empowering Largesse,
+              499567183, // Shielding Hand,
+              928186993, // Voltaic Ammo Collector,
+              973776237, // Insulation,
+
               2037533514, // Enhanced Resistant Tether,
               3320253353, // Enhanced Ashes to Assets,
+              3630287380, // Enhanced Relay Defender,
+              3884084138, // Enhanced Bomber,
               4020036031, // Enhanced Voltaic Ammo Collector,
-              3630287380 // Enhanced Relay Defender,
+              531981182, // Enhanced Momentum Transfer,
+              774147760, // Enhanced Impact Induction,
+              865380761 // Enhanced Voltaic Mote Collector,
             ]
           }
         ]
