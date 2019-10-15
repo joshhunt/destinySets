@@ -8,7 +8,7 @@ export default [
       {
         name: 'Armor mods',
         description:
-          'Very beta, completely untested. No guarantees made about accuracy. You will need to have the armour piece the mod goes into for it to be marked as collected. ',
+          'Very beta, completely untested. No guarantees made about accuracy. You will need to have an armour piece the mod goes into for it to be marked as collected. ',
         big: true,
         sections: [
           {
