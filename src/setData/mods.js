@@ -8,7 +8,7 @@ export default [
       {
         name: 'Armor mods',
         description:
-          'Very beta, completely untested. Elemental affinity not displayed yet. No guarentees made about accuracy.',
+          'Very beta, completely untested. No guarantees made about accuracy. You will need to have the armour piece the mod goes into for it to be marked as collected. ',
         big: true,
         sections: [
           {
@@ -255,7 +255,6 @@ export default [
               2402696708, // Disruptor Spike,
               2402696709, // Overload Grenades,
               2476831315, // Recuperation,
-              2527938402, // Riven's Curse,
               2612707360, // Thunder Coil,
               2612707361, // From the Depths,
               2612707366, // Oppressive Darkness,
