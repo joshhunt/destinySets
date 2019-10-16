@@ -144,21 +144,23 @@ const SORTED_PRIMARY_CATEGORIES = [
         .map(([energyTypeHash, rawItems]) => {
           const energyType = DestinyEnergyTypeDefinition[energyTypeHash];
 
-          const items = lodash(rawItems)
-            // .sortBy(item => [item.plug.energyCost.energyCost, item.index])
+          const itemGroups = lodash(rawItems)
             .sortBy(item => item.index)
-            .map(item => item.hash)
+            .groupBy(item => item.plug.plugCategoryIdentifier)
+            .values()
+            .map(items => items.map(i => i.hash))
             .value();
 
           return {
             name: energyType.displayProperties.name,
-            items
+            itemGroups
           };
         })
         .value();
 
       return {
         name: category,
+        big: category === DSET_PRIMARY_CATEGORY_UNIVERSAL,
         sections
       };
     });
