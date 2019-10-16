@@ -28,6 +28,11 @@ export default class AppRouter extends Component {
             <Route path="/base" component={Inventory} setData={sets.baseGame} />
 
             <Route path="/mods" component={Inventory} setData={sets.mods} />
+            <Route
+              path="/mods-sorted"
+              component={Inventory}
+              setData={sets.modsGenerated}
+            />
 
             <Route
               path="/year-1"

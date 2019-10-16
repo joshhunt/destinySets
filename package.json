@@ -18,6 +18,7 @@
     "classnames": "^2.2.5",
     "date-fns": "^2.0.0-alpha.11",
     "dexie": "^2.0.1",
+    "dotenv": "^8.2.0",
     "flow-bin": "^0.72.0",
     "image-size": "^0.6.2",
     "immer": "^1.2.0",
@@ -37,7 +38,8 @@
     "react-tippy": "^1.2.3",
     "redux": "^3.7.2",
     "redux-thunk": "^2.3.0",
-    "reselect": "^3.0.1"
+    "reselect": "^3.0.1",
+    "temp-dir": "^2.0.0"
   },
   "scripts": {
     "start": "react-app-rewired start",
