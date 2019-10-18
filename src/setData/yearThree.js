@@ -338,95 +338,98 @@ export default ([
       }
     ]
   },
-  // {
-  //   name: 'Holiday & Special Events',
-  //   sets: [
-  //     {
-  //       name: 'Festival of the Lost',
-  //       id: 'year-three-festival-of-the-lost',
-  //       description: 'Earned during the seasonal Festival of the Lost event.', // Double Check
-  //       sections: [
-  //         {
-  //           name: 'Weapons',
-  //           season: 8, // Double Check
-  //           items: [
-  //
-  //           ]
-  //         },
-  //         {
-  //           name: 'Hunter Armor',
-  //           season: 8, // Double Check
-  //           items: [
+  {
+    name: 'Holiday & Special Events',
+    sets: [
+      {
+        name: 'Festival of the Lost',
+        id: 'year-three-festival-of-the-lost',
+        description: 'Earned during the seasonal Festival of the Lost event.', // Double Check
+        sections: [
+          {
+            name: 'Weapons',
+            season: 8, // Double Check
+            items: [
 
-  //           ]
-  //         },
-  //         {
-  //           name: 'Titan Armor',
-  //           season: 8, // Double Check
-  //           items: [
+            ]
+          },
+          {
+            name: 'Hunter Armor',
+            season: 8, // Double Check
+            items: [
 
-  //           ]
-  //         },
-  //         {
-  //           name: 'Warlock Armor',
-  //           season: 8, // Double Check
-  //           items: [
+            ]
+          },
+          {
+            name: 'Titan Armor',
+            season: 8, // Double Check
+            items: [
 
-  //           ]
-  //         },
-  //         {
-  //           name: 'Masks',
-  //           season: 8, // Double Check
-  //           items: [
+            ]
+          },
+          {
+            name: 'Warlock Armor',
+            season: 8, // Double Check
+            items: [
 
-  //           ]
-  //         },
-  //         {
-  //           name: 'Emotes',
-  //           season: 8, // Double Check
-  //           items: [
+            ]
+          },
+          {
+            name: 'Masks',
+            season: 8, // Double Check
+            items: [
 
-  //           ]
-  //         },
-  //         {
-  //           name: 'Ghosts',
-  //           season: 8, // Double Check
-  //           items: [
+            ]
+          },
+          {
+            name: 'Emotes',
+            season: 8,
+            items: [
+              2810182789, // Tombstone
+              3531985793, // Boo
+              1016114126, // Bone Boogie
+              3730248014 // Parting
+            ]
+          },
+          {
+            name: 'Ghosts',
+            season: 8, // Double Check
+            items: [
 
-  //           ]
-  //         },
-  //         {
-  //           name: 'Ghost Projections',
-  //           season: 8, // Double Check
-  //           items: [
+            ]
+          },
+          {
+            name: 'Ghost Projections',
+            season: 8, // Double Check
+            items: [
 
-  //           ]
-  //         },
-  //         {
-  //           name: 'Sparrows',
-  //           season: 8, // Double Check
-  //           items: [
+            ]
+          },
+          {
+            name: 'Sparrows',
+            season: 8, // Double Check
+            items: [
 
-  //           ]
-  //         },
-  //         {
-  //           name: 'Ships',
-  //           season: 8, // Double Check
-  //           items: [
+            ]
+          },
+          {
+            name: 'Ships',
+            season: 8, // Double Check
+            items: [
 
-  //           ]
-  //         },
-  //         {
-  //           name: 'Extras',
-  //           season: 8, // Double Check
-  //           items: [
+            ]
+          },
+          {
+            name: 'Extras',
+            season: 8, // Double Check
+            items: [
 
-  //           ]
-  //         }
-  //       ]
-  //     },
-  //   ]
-  // },
+            ]
+          }
+        ]
+      },
+    ]
+  },
   {
     name: 'Other',
     sets: [
@@ -611,7 +614,9 @@ export default ([
             name: 'Finishers',
             season: 8,
             items: [
-
+              // 2504641452, // Savage Haymaker (Not planned to be sold for Bright Dust)
+              // 2504641454, // Golden Age Dropkick (Not planned to be sold for Bright Dust)
+              // 2504641455 // Whirlwind (Not planned to be sold for Bright Dust)
             ]
           },
           {
