@@ -338,95 +338,98 @@ export default ([
       }
     ]
   },
-  // {
-  //   name: 'Holiday & Special Events',
-  //   sets: [
-  //     {
-  //       name: 'Festival of the Lost',
-  //       id: 'year-three-festival-of-the-lost',
-  //       description: 'Earned during the seasonal Festival of the Lost event.', // Double Check
-  //       sections: [
-  //         {
-  //           name: 'Weapons',
-  //           season: 8, // Double Check
-  //           items: [
-  //
-  //           ]
-  //         },
-  //         {
-  //           name: 'Hunter Armor',
-  //           season: 8, // Double Check
-  //           items: [
+  {
+    name: 'Holiday & Special Events',
+    sets: [
+      {
+        name: 'Festival of the Lost',
+        id: 'year-three-festival-of-the-lost',
+        description: 'Earned during the seasonal Festival of the Lost event.', // Double Check
+        sections: [
+          {
+            name: 'Weapons',
+            season: 8, // Double Check
+            items: [
 
-  //           ]
-  //         },
-  //         {
-  //           name: 'Titan Armor',
-  //           season: 8, // Double Check
-  //           items: [
+            ]
+          },
+          {
+            name: 'Hunter Armor',
+            season: 8, // Double Check
+            items: [
 
-  //           ]
-  //         },
-  //         {
-  //           name: 'Warlock Armor',
-  //           season: 8, // Double Check
-  //           items: [
+            ]
+          },
+          {
+            name: 'Titan Armor',
+            season: 8, // Double Check
+            items: [
 
-  //           ]
-  //         },
-  //         {
-  //           name: 'Masks',
-  //           season: 8, // Double Check
-  //           items: [
+            ]
+          },
+          {
+            name: 'Warlock Armor',
+            season: 8, // Double Check
+            items: [
 
-  //           ]
-  //         },
-  //         {
-  //           name: 'Emotes',
-  //           season: 8, // Double Check
-  //           items: [
+            ]
+          },
+          {
+            name: 'Masks',
+            season: 8, // Double Check
+            items: [
 
-  //           ]
-  //         },
-  //         {
-  //           name: 'Ghosts',
-  //           season: 8, // Double Check
-  //           items: [
+            ]
+          },
+          {
+            name: 'Emotes',
+            season: 8,
+            items: [
+              2810182789, // Tombstone
+              3531985793, // Boo
+              1016114126, // Bone Boogie
+              3730248014 // Parting
+            ]
+          },
+          {
+            name: 'Ghosts',
+            season: 8, // Double Check
+            items: [
 
-  //           ]
-  //         },
-  //         {
-  //           name: 'Ghost Projections',
-  //           season: 8, // Double Check
-  //           items: [
+            ]
+          },
+          {
+            name: 'Ghost Projections',
+            season: 8, // Double Check
+            items: [
 
-  //           ]
-  //         },
-  //         {
-  //           name: 'Sparrows',
-  //           season: 8, // Double Check
-  //           items: [
+            ]
+          },
+          {
+            name: 'Sparrows',
+            season: 8, // Double Check
+            items: [
 
-  //           ]
-  //         },
-  //         {
-  //           name: 'Ships',
-  //           season: 8, // Double Check
-  //           items: [
+            ]
+          },
+          {
+            name: 'Ships',
+            season: 8, // Double Check
+            items: [
 
-  //           ]
-  //         },
-  //         {
-  //           name: 'Extras',
-  //           season: 8, // Double Check
-  //           items: [
+            ]
+          },
+          {
+            name: 'Extras',
+            season: 8, // Double Check
+            items: [
 
-  //           ]
-  //         }
-  //       ]
-  //     },
-  //   ]
-  // },
+            ]
+          }
+        ]
+      },
+    ]
+  },
   {
     name: 'Other',
     sets: [
@@ -443,12 +446,75 @@ export default ([
           {
             name: 'Free Track',
             season: 8,
-            items: []
+            itemGroups: [
+              [
+                3524313097, // Eriana's Vow
+                1952163498, // Pluperfect
+                3369545945 // Temporal Clause
+              ],
+              [
+                4078925540, // Substitutional Alloy Mask
+                4026120125, // Substitutional Alloy Grips
+                1855720515, // Substitutional Alloy Vest
+                2096778463, // Substitutional Alloy Strides
+                1137424314 // Substitutional Alloy Cloak
+              ],
+              [
+                2903026872, // Substitutional Alloy Helm
+                2942269705, // Substitutional Alloy Gauntlets
+                2468603407, // Substitutional Alloy Plate
+                3192738011, // Substitutional Alloy Greaves
+                3757338782 // Substitutional Alloy Mark
+              ],
+              [
+                2690973103, // Substitutional Alloy Hood
+                509561142, // Substitutional Alloy Gloves
+                3166926330, // Substitutional Alloy Robes
+                1721943440, // Substitutional Alloy Boots
+                2815379659 // Substitutional Alloy Bond
+              ]
+            ]
           },
           {
             name: 'Paid Track',
             season: 8,
-            items: []
+            itemGroups: [
+              [
+                2939609184, // For Wei
+                3562520053, // They Had Built
+                1576402082 // Let the Future Narrow
+              ],
+              [
+                1650573830, // Phenotype Plasticity Mask
+                3569117172, // Phenotype Plasticity Gloves
+                1035752481, // Phenotype Plasticity Vest
+                3856855806, // Phenotype Plasticity Boots
+                1818257532 // Phenotype Plasticity Cloak
+              ],
+              [
+                2040228420, // Phenotype Plasticity Helm
+                1987423005, // Phenotype Plasticity Gauntlets
+                2210147491, // Phenotype Plasticity Plate
+                3928591295, // Phenotype Plasticity Greaves
+                1491954330 // Phenotype Plasticity Mark
+              ],
+              [
+                2830017061, // Phenotype Plasticity Hood
+                3569117172, // Phenotype Plasticity Gloves
+                1313704204, // Phenotype Plasticity Robes
+                3856855806, // Phenotype Plasticity Boots
+                3546428481 // Phenotype Plasticity Bond
+              ],
+              [
+                448266921, // Clash of Swords
+                825357415, // Belgian Flying Kick
+                1457434304, // Never Live It Down
+                298334063, // Trailblazer
+                3448612595, // Night's Chill
+                3448612594, // First Frost
+                2078915253, // Blackheart Growth
+              ]
+            ]
           }
         ]
       },
@@ -542,6 +608,15 @@ export default ([
               248592690, // Eat It Up
               991204036, // Make It Stop
               88498859 // Too Hot
+            ]
+          },
+          {
+            name: 'Finishers',
+            season: 8,
+            items: [
+              // 2504641452, // Savage Haymaker (Not planned to be sold for Bright Dust)
+              // 2504641454, // Golden Age Dropkick (Not planned to be sold for Bright Dust)
+              // 2504641455 // Whirlwind (Not planned to be sold for Bright Dust)
             ]
           },
           {

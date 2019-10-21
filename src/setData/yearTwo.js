@@ -2640,7 +2640,7 @@ export default ([
               2964059918, // Woomera B-5
               2964059919, // The Oviraptor
               2964059912, // Transpose JT-24-X
-              // 2964059913, // Chela-N (Wasn't sold for Bright Dust)
+              2964059913, // Chela-N
               // 2964059914 // Aeshnidae Fixed-Wing (Wasn't sold for Bright Dust)
             ]
           },
