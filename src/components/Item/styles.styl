@@ -14,8 +14,19 @@ $green = #44bd32;
 .obtained
 .dismantled
 .checklisted
+  .root:not(.invertObtainedStyle) &
+    .fadeOut
+      opacity: .25
+
+.invertObtainedStyle
   .fadeOut
     opacity: .25
+
+  &.obtained
+  &.dismantled
+  &.checklisted
+    .fadeOut
+      opacity: 1
 
 .image
   display: block

@@ -10,6 +10,7 @@ import Inventory from './views/Inventory';
 import Triumphs from './views/Triumphs';
 import ItemPage from './views/ItemPage';
 import SolsticeOfHeroes from './views/SolsticeOfHeroes';
+import Mods from './views/Mods';
 import DataExplorerRedirect from './views/DataExplorerRedirect';
 
 import store from './store';
@@ -28,6 +29,13 @@ export default class AppRouter extends Component {
             <Route path="/base" component={Inventory} setData={sets.baseGame} />
 
             <Route path="/mods" component={Inventory} setData={sets.mods} />
+
+            <Route
+              path="/mods-new"
+              component={Mods}
+              setData={sets.modsGenerated}
+            />
+
             <Route
               path="/mods-sorted"
               component={Inventory}

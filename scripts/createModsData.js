@@ -87,10 +87,10 @@ const CATEGORY_HASH_TO_PRIMARY_CATEGORY = {
 };
 
 const SORTED_ENERGY_TYPES = [
+  '1198124803', // Any
   '728351493', // Arc
   '591714140', // Solar
-  '4069572561', // Void
-  '1198124803' // Any
+  '4069572561' // Void
 ];
 
 const SORTED_PRIMARY_CATEGORIES = [

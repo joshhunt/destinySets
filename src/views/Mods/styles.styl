@@ -1,0 +1,158 @@
+$green = #44bd32;
+
+
+.splitHeading
+  display: flex
+  justify-content: space-between
+
+.gearCount
+  opacity: .8
+
+.explainer
+  font-size: 16px;
+  font-family: 'nhg text'
+  letter-spacing: .25px
+  margin-bottom: 30px
+
+.page
+  margin:0 30px
+
+.set
+  border-left: 3px solid #64686b
+  padding: 0 15px
+
+.gearMain
+  flex: 1
+
+.heading
+  &, *
+    font-family: 'nhg text'
+  letter-spacing: 1px
+
+  h1&
+    font-size: 50px
+
+  h2&
+    font-size: 35px
+    margin-bottom: 15px
+
+  h3&
+    font-size: 14px
+    text-transform: uppercase
+    border-bottom: 1px solid #64686b
+    padding-bottom: 5px
+
+.setsList
+  display: flex
+  flex-direction: row
+  margin: 0 -20px
+  flex-wrap: wrap
+
+.setForClass
+  flex: 1
+  margin: 0 20px
+  min-width: 300px
+
+.gear
+  position: relative
+  display: flex
+  margin-bottom: 30px
+  line-height: 1
+  opacity: .5
+  transition: 200ms ease-in-out opacity
+
+  &.obtained
+    opacity: 1
+
+  &.notLoggedIn
+    opacity: 1
+
+.iconWell
+  flex: 0
+  margin-right: 10px
+
+.gearIcon
+  width: 45px
+  height: 45px
+
+.gearDescription
+  margin: 5px 0
+  line-height: 1.3
+
+  > span
+    font-size: .9em
+    opacity: .75
+
+.classIcon
+  width: 1.75em
+  height: 1.75em
+  // vertical-align: middle
+  margin-right: 8px
+  object-fit: cover
+
+  &:global(.Warlock)
+    height: 10px
+
+  &:global(.Hunter)
+    height: 13px
+
+  &:global(.Titan)
+    height: 13px
+
+.objectives
+  margin-top: 10px
+  font-size: 14px
+
+._baseTick
+  display: inline-block
+  line-height: 1
+  text-align: center
+  background: $green
+  border-radius: 50%
+  font-size: 12px
+  padding: 3px
+  width: 18px
+  height: 18px
+
+.inlineTick
+  composes: _baseTick
+  transform: scale(.8)
+  margin-right: .5em
+
+.tick
+  composes: _baseTick
+  position: absolute
+  top: -5px
+  left: @top
+
+  // .partiallyCompleted &
+  //   width: 16px
+  //   height: 16px
+  //   border: 2px solid $green
+  //   background: desaturate($green, 20%)
+
+  //   svg
+  //     position: relative
+  //     top: -3px
+  //     left: -3px
+
+  .dismantled &
+    background: #7f8fa6
+
+  .checklisted &
+    background: #3c94ff
+
+.toggleButton
+  background: none
+  border-radius: 2px
+  border: 2px solid rgba(white, .7)
+  appearance: none
+  color: rgba(white, .9)
+  font-size: 14px
+  padding: 3px 10px
+
+.itemGroup
+  margin: -5px
+
+.item
+  display: inline-block
