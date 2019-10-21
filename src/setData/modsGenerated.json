@@ -3,7 +3,7 @@
     "name": "Armor Mods",
     "sets": [
       {
-        "name": "HELMET",
+        "name": "Helmet",
         "big": false,
         "sections": [
           {
@@ -70,7 +70,7 @@
         ]
       },
       {
-        "name": "ARMS",
+        "name": "Arms",
         "big": false,
         "sections": [
           {
@@ -135,7 +135,7 @@
         ]
       },
       {
-        "name": "CHEST",
+        "name": "Chest",
         "big": false,
         "sections": [
           {
@@ -209,7 +209,7 @@
         ]
       },
       {
-        "name": "LEGS",
+        "name": "Legs",
         "big": false,
         "sections": [
           {
@@ -280,7 +280,7 @@
         ]
       },
       {
-        "name": "CLASS",
+        "name": "Class item",
         "big": false,
         "sections": [
           {
@@ -343,7 +343,7 @@
         ]
       },
       {
-        "name": "UNIVERSAL",
+        "name": "Universal",
         "big": true,
         "sections": [
           {
