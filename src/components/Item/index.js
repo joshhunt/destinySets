@@ -198,7 +198,7 @@ class Item extends PureComponent {
             <img
               src={`https://www.bungie.net${icon}`}
               className={styles.image}
-              style={{ backgroundColor: bgColor }}
+              style={modStyle ? null : { backgroundColor: bgColor }}
               alt=""
             />
 
