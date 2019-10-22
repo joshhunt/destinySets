@@ -147,16 +147,14 @@ export default ([
           'Nightmare Hunt'
         ),
         id: 'year-three-nightmare-hunts',
-        description: _(
-          'DestinyCollectibleDefinition[2185716210].sourceString',
-          'Complete all Nightmare Hunt time trials on Master difficulty.'
-        ),
+        description: 'Complete all Nightmare Hunt time trials on Master difficulty & one flawless Master difficulty run.',
         sections: [
           {
             name: 'Extras',
             // season: "K",
             items: [
-              298334057 // A Sibyl's Dreams
+              298334057, // A Sibyl's Dreams
+              2056256564 // Lunar Halcyon Gilt
             ]
           }
         ]
@@ -277,7 +275,7 @@ export default ([
             // season: "K",
             items: [
               2723909519, // Arc Logic
-              208088207, // Premonition
+              // 208088207, // Premonition (Dungeon Pulse)
               3924212056, // Loud Lullaby
               4277547616, // Every Waking Moment
               1016668089, // One Small Step
@@ -330,7 +328,6 @@ export default ([
               672488948, // The Third Tide
               1714370698, // Orbital Cartographer
               298334056, // Lunar Memoriam
-              2056256564, // Lunar Halcyon Gilt
               2056256565 // Lunar Gloom
             ]
           }
