@@ -2,7 +2,7 @@
 
 export default {
   mods: require('./mods').default,
-  modsGenerated: require('./modsGenerated.json'),
+  modsGenerated: require('./modsGenerated').default,
   yearOne: require('./yearOne').default,
   yearTwo: require('./yearTwo').default,
   yearThree: require('./yearThree').default,

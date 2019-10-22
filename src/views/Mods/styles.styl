@@ -14,11 +14,12 @@ $green = #44bd32;
   margin-bottom: 30px
 
 .page
-  margin:0 30px
+  margin: 0 30px
 
 .set
   border-left: 3px solid #64686b
   padding: 0 15px
+  margin-bottom: 50px
 
 .gearMain
   flex: 1
@@ -26,6 +27,7 @@ $green = #44bd32;
 .heading
   &, *
     font-family: 'nhg text'
+
   letter-spacing: 1px
 
   h1&
@@ -33,13 +35,38 @@ $green = #44bd32;
 
   h2&
     font-size: 25px
-    margin-bottom: 15px
+    margin: 0 0 10px 0
 
   h3&
     font-size: 14px
     text-transform: uppercase
-    border-bottom: 1px solid #64686b
+    border-bottom: 2px solid #64686b
     padding-bottom: 5px
+    margin: 0 0 14px 0
+
+  h4&
+    font-size: 13px
+    font-weight: normal
+    margin: 0 0 8px 0
+    color: #d8d9da
+
+.Arc
+  border-bottom-color: #79BBE8 !important
+
+.Solar
+  border-bottom-color: #FA6400 !important
+
+.Void
+  border-bottom-color: #B185DF !important
+
+.energyIcon
+  height: 1.1em
+  margin-right: 2px
+  // vertical-align: middle
+
+.group
+  & + &
+    margin-top: 15px
 
 .setsList
   display: flex
@@ -47,24 +74,10 @@ $green = #44bd32;
   margin: 0 -20px
   flex-wrap: wrap
 
-.setForClass
+.setForElement
   flex: 1
-  margin: 0 20px
+  margin: 0 20px 30px 20px
   min-width: 300px
-
-.gear
-  position: relative
-  display: flex
-  margin-bottom: 30px
-  line-height: 1
-  opacity: .5
-  transition: 200ms ease-in-out opacity
-
-  &.obtained
-    opacity: 1
-
-  &.notLoggedIn
-    opacity: 1
 
 .iconWell
   flex: 0

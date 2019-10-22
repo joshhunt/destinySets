@@ -30,10 +30,10 @@ export const REQUIRED_DEFINITIONS = [
   'DestinyInventoryItemDefinition',
   'DestinyClassDefinition',
   // 'DestinySandboxPerkDefinition',
+  // 'DestinyEnergyTypeDefinition',
   'DestinyCollectibleDefinition',
   'DestinyPresentationNodeDefinition',
   'DestinyRecordDefinition',
-  'DestinyFactionDefinition',
   'DestinyActivityModeDefinition',
   'DestinyPlaceDefinition',
   'DestinyFactionDefinition'

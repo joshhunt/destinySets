@@ -26,6 +26,7 @@
     "lodash": "^4.17.4",
     "npm": "^6.0.0",
     "popper.js": "^1.14.1",
+    "prettier": "^1.18.2",
     "react": "^16.8.6",
     "react-click-outside": "tj/react-click-outside",
     "react-dom": "^16.8.6",

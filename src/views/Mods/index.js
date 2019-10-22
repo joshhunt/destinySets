@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import { fetchProfile as fetchProfileAction } from 'app/store/profile';
 import Footer from 'app/components/Footer';
 import Item from 'app/components/Item';
+import BungieImage from 'app/components/BungieImage';
 
 import Popper from 'app/components/Popper';
 import ItemTooltip from 'app/components/ItemTooltip';
@@ -12,7 +13,18 @@ import ItemModal from 'app/components/ItemModal';
 
 import s from './styles.styl';
 
-function Mods({ route: { setData }, fetchProfile, isLoggedIn }) {
+const ELEMENT_CLASS_NAME = {
+  1198124803: s.Any,
+  728351493: s.Arc,
+  591714140: s.Solar,
+  4069572561: s.Void
+};
+
+function Mods({
+  route: { setData },
+  fetchProfile,
+  DestinyEnergyTypeDefinition
+}) {
   useEffect(() => {
     fetchProfile && fetchProfile();
   }, []);
@@ -41,26 +53,50 @@ function Mods({ route: { setData }, fetchProfile, isLoggedIn }) {
 
             <div className={s.setsList}>
               {modSet.sections.map(modSection => {
-                return (
-                  <div className={s.setForClass}>
-                    <h3 className={s.heading}>{modSection.name}</h3>
+                const energyType =
+                  DestinyEnergyTypeDefinition[modSection.nameHash];
 
-                    {modSection.itemGroups.map(modList => {
+                return (
+                  <div className={s.setForElement}>
+                    <h3
+                      className={cx(
+                        s.heading,
+                        ELEMENT_CLASS_NAME[modSection.nameHash]
+                      )}
+                    >
+                      {energyType ? (
+                        <span>
+                          <BungieImage
+                            src={energyType.displayProperties.icon}
+                            className={s.energyIcon}
+                          />{' '}
+                          {energyType.displayProperties.name}
+                        </span>
+                      ) : (
+                        modSection.name
+                      )}
+                    </h3>
+
+                    {modSection.groups.map(group => {
                       return (
-                        <div className={s.itemGroup}>
-                          {modList.map(modItemHash => {
-                            return (
-                              <Item
-                                itemHash={modItemHash}
-                                key={modItemHash}
-                                extended={false}
-                                className={s.item}
-                                invertObtainedStyle
-                                setPopper={setPopper}
-                                onItemClick={setItemModal}
-                              />
-                            );
-                          })}
+                        <div className={s.group}>
+                          <h4 className={s.heading}>{group.name}</h4>
+
+                          <div className={s.itemGroup}>
+                            {group.items.map(modItemHash => {
+                              return (
+                                <Item
+                                  itemHash={modItemHash}
+                                  key={modItemHash}
+                                  extended={false}
+                                  className={s.item}
+                                  invertObtainedStyle
+                                  setPopper={setPopper}
+                                  onItemClick={setItemModal}
+                                />
+                              );
+                            })}
+                          </div>
                         </div>
                       );
                     })}
@@ -111,16 +147,11 @@ function Mods({ route: { setData }, fetchProfile, isLoggedIn }) {
 }
 
 function mapStateToProps(state) {
-  const itemDefs = state.definitions.DestinyInventoryItemDefinition;
-
-  if (!itemDefs) {
-    return { viewData: [] };
-  }
-
-  const isLoggedIn = !!state.profile.profile;
+  const DestinyEnergyTypeDefinition =
+    (state.definitions && state.definitions.DestinyEnergyTypeDefinition) || {};
 
   return {
-    isLoggedIn
+    DestinyEnergyTypeDefinition
   };
 }
 
