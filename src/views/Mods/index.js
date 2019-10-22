@@ -51,7 +51,11 @@ function Mods({
     <div className={s.page}>
       <h1 className={s.heading}>Mods</h1>
 
-      <p className={s.explainer}>Work-in-progress for a dedicated mods UI</p>
+      <p className={s.explainer}>
+        Very beta, completely untested. No guarantees made about accuracy. You
+        will need to have an armour piece the mod goes into for it to be marked
+        as collected.
+      </p>
 
       {modSets.map(modSet => {
         return (
