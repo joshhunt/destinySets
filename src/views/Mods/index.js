@@ -20,6 +20,13 @@ const ELEMENT_CLASS_NAME = {
   4069572561: s.Void
 };
 
+const ITEM_ELEMENT_CLASS_NAME = {
+  1198124803: s.itemAny,
+  728351493: s.itemArc,
+  591714140: s.itemSolar,
+  4069572561: s.itemVoid
+};
+
 function Mods({
   route: { setData },
   fetchProfile,
@@ -86,11 +93,14 @@ function Mods({
                             {group.items.map(modItemHash => {
                               return (
                                 <Item
+                                  className={cx(
+                                    s.item,
+                                    ITEM_ELEMENT_CLASS_NAME[modSection.nameHash]
+                                  )}
                                   itemHash={modItemHash}
                                   key={modItemHash}
                                   extended={false}
-                                  className={s.item}
-                                  invertObtainedStyle
+                                  modStyle
                                   setPopper={setPopper}
                                   onItemClick={setItemModal}
                                 />

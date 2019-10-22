@@ -25,10 +25,10 @@
     lodash "^4.17.10"
     to-fast-properties "^2.0.0"
 
-"@destiny-plumbing/definitions@0.2.1":
-  version "0.2.1"
-  resolved "https://registry.yarnpkg.com/@destiny-plumbing/definitions/-/definitions-0.2.1.tgz#61675896dad788c509e324ebc64f941408e5332b"
-  integrity sha512-CDJkFl9A/PAQaT7Hisv4dXR+SnHFMrHqFlAnB+b7SY9KN6BiusGOb8G/gsMAFFCmJO2LJqpDQ5izRJDqJmx89w==
+"@destiny-plumbing/definitions@0.2.2":
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/@destiny-plumbing/definitions/-/definitions-0.2.2.tgz#5d3b456957a8d80a0449d5e7d3ac815e802344c8"
+  integrity sha512-K2XPoRybemdSMemVJ5b+L6x29QfHET+5D+mthIWrs3nF3xssifqWP4NYOnBILT79Cb5/eMGan6anTl2Kr+jFsw==
   dependencies:
     dexie "^2.0.1"
 

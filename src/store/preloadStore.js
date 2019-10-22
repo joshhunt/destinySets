@@ -29,8 +29,8 @@ export const REQUIRED_DEFINITIONS = [
   'DestinyVendorDefinition',
   'DestinyInventoryItemDefinition',
   'DestinyClassDefinition',
-  // 'DestinySandboxPerkDefinition',
-  // 'DestinyEnergyTypeDefinition',
+  'DestinySandboxPerkDefinition',
+  'DestinyEnergyTypeDefinition',
   'DestinyCollectibleDefinition',
   'DestinyPresentationNodeDefinition',
   'DestinyRecordDefinition',
@@ -46,6 +46,7 @@ function loadDefinitions(store, language) {
       language.code,
       REQUIRED_DEFINITIONS,
       (err, result) => {
+        console.log('definitions cb:', { err, result });
         if (err) {
           trackError(err);
           store.dispatch(definitionsError(err));

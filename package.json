@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@destiny-plumbing/definitions": "0.2.1",
+    "@destiny-plumbing/definitions": "0.2.2",
     "@fortawesome/fontawesome": "^1.1.5",
     "@fortawesome/fontawesome-free-brands": "^5.0.9",
     "@fortawesome/fontawesome-pro-light": "^5.0.9",

@@ -135,7 +135,7 @@ class Item extends PureComponent {
       hideMissing,
       richVendorEntries,
       itemObjectiveProgress,
-      invertObtainedStyle
+      modStyle
     } = this.props;
 
     const bgColor = getItemColor(itemDef);
@@ -168,7 +168,8 @@ class Item extends PureComponent {
         className={cx(
           className,
           styles.root,
-          invertObtainedStyle && styles.invertObtainedStyle,
+          styles[itemDef.uiItemDisplayStyle],
+          modStyle && styles.modStyle,
           inventoryEntry && inventoryEntry.obtained && styles.obtained,
           inventoryEntry && inventoryEntry.checklisted && styles.checklisted,
           inventoryEntry &&
