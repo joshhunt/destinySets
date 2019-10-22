@@ -11,11 +11,15 @@ $green = #44bd32;
 .imageWrapper
   position: relative
 
-.obtained
-.dismantled
-.checklisted
-  .root:not(.invertObtainedStyle) &
+.root:not(.invertObtainedStyle)
+  content: ".root:not(.invertObtainedStyle)"
+  &.obtained
+  &.dismantled
+  &.checklisted
+    content: "&.checklisted etc"
+
     .fadeOut
+      content: "fadeOut"
       opacity: .25
 
 .invertObtainedStyle
