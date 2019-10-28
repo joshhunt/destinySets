@@ -10,7 +10,7 @@ export default ([
         name: 'Exotics',
         id: 'ALL_EXOTICS',
         big: true,
-        query: 'is:exotic is:gear',
+        query: 'is:exotic is:gear is:incollections',
         sections: []
       },
       {
@@ -29,14 +29,14 @@ export default ([
           {
             name: 'Power',
             query: 'is:legendary is:weapon is:power'
-          },
+          }
         ]
       },
       {
         name: 'Armor',
         id: 'ALL_ARMOR',
         big: true,
-        query: 'is:legendary is:armor',
+        query: 'is:legendary is:armor is:incollections',
         sections: []
       },
       {
@@ -45,7 +45,7 @@ export default ([
         big: true,
         query: 'is:ghostly',
         sections: []
-      },
+      }
     ]
   },
 

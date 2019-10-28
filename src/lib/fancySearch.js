@@ -53,6 +53,12 @@ export const fancySearchFns = {
     });
   },
 
+  'is:incollections': items => {
+    return itemFilter(items, item => {
+      return !!item.collectibleHash;
+    });
+  },
+
   'is:hunter': items => {
     return itemFilter(items, classType(enums.HUNTER));
   },
