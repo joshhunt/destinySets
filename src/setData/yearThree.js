@@ -345,37 +345,45 @@ export default ([
         sections: [
           {
             name: 'Weapons',
-            season: 8, // Double Check
+            season: 8,
             items: [
-
+                3645283765, // Braytech Werewolf
+                // 4159445096 // Ornament: Xenophage (TBC)
             ]
           },
           {
             name: 'Hunter Armor',
-            season: 8, // Double Check
+            season: 8,
             items: [
-
+                 4045465181 // Masquerader Helmet: Hunter
             ]
           },
           {
             name: 'Titan Armor',
-            season: 8, // Double Check
+            season: 8,
             items: [
-
+                2305908225 // Masquerader Helmet: Titan
             ]
           },
           {
             name: 'Warlock Armor',
-            season: 8, // Double Check
+            season: 8,
             items: [
-
+                300849752 // Masquerader Helmet: Warlock
             ]
           },
           {
             name: 'Masks',
-            season: 8, // Double Check
+            season: 8,
             items: [
-
+                1201782503, // Classified
+                1201782502, // Classified
+                1494882402, // Classified
+                1494882403, // Classified
+                1494882400, // Classified
+                1494882401, // Classified
+                1494882406, // Classified
+                1494882407 // Classified
             ]
           },
           {
@@ -390,37 +398,44 @@ export default ([
           },
           {
             name: 'Ghosts',
-            season: 8, // Double Check
+            season: 8,
             items: [
-
+                3677746973, // Jack-O-Shell
+                3677746975, // Gelatine Shell
+                3677746972 // Chiropteran Shell
             ]
           },
           {
             name: 'Ghost Projections',
-            season: 8, // Double Check
+            season: 8,
             items: [
-
+                3661044024, // Hive-o'-lantern Projection
+                3661044025 // Classified
             ]
           },
           {
             name: 'Sparrows',
-            season: 8, // Double Check
+            season: 8,
             items: [
-
+                4087530286, // Brumeswept Night
+                4087530287 // The Necrobeast
             ]
           },
           {
             name: 'Ships',
-            season: 8, // Double Check
+            season: 8,
             items: [
-
+                3755201983 // The Desmodus
             ]
           },
           {
             name: 'Extras',
-            season: 8, // Double Check
+            season: 8,
             items: [
-
+                1005594230, // Skele-Ghaul
+                1005594231, // Basalt Toxic
+                3980259370, // Transmat: Murder of Crows
+                3980259371 // Transmat: Looming Moon
             ]
           }
         ]
