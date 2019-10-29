@@ -352,22 +352,49 @@ export default ([
           {
             name: 'Hunter Armor',
             season: 8,
-            items: [
-                 2352138838 // Masquerader Helmet: Hunter
+            itemGroups: [
+                [
+                  2352138838 // Masquerader Helmet: Hunter
+                ],
+                [
+                  1256660988, // Chthonic Mask
+                  2653114997, // Chthonic Grips
+                  3560184043, // Chthonic Vest
+                  4229237079, // Chthonic Strides
+                  2299884162 // Chthonic Cloak
+                ]
             ]
           },
           {
             name: 'Titan Armor',
             season: 8,
-            items: [
-                239189018 // Masquerader Helmet: Titan
+            itemGroups: [
+                [  
+                  239189018 // Masquerader Helmet: Titan
+                ],
+                [
+                  3055452222, // Pandemonic Helm 
+                  2325321839, // Pandemonic Gauntlets
+                  170952905, // Pandemonic Plate
+                  2899925137, // Pandemonic Greaves
+                  1485222020 // Pandemonic Mark
+                ]
             ]
           },
           {
             name: 'Warlock Armor',
             season: 8,
-            items: [
+            itemGroups: [
+              [
                 2213504923 // Masquerader Helmet: Warlock
+              ],
+              [
+                3081047495, // Phantasmagoric Hood
+                1027749710, // Phantasmagoric Gloves
+                3859783010, // Phantasmagoric Robes
+                3110827848, // Phantasmagoric Boots
+                3508236467 // Phantasmagoric Bond
+              ]
             ]
           },
           {
@@ -398,9 +425,10 @@ export default ([
             name: 'Ghosts',
             season: 8,
             items: [
+                3677746975, // Gensym Relic Shell
+                3677746972, // Chiropteran Shell
                 3677746973, // Jack-O-Shell
                 3677746975, // Gelatine Shell
-                3677746972 // Chiropteran Shell
             ]
           },
           {
