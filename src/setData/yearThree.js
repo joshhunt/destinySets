@@ -417,8 +417,8 @@ export default ([
             items: [
               2810182789, // Tombstone
               3531985793, // Boo
-              1016114126, // Bone Boogie
-              3730248014 // Parting
+              3730248014, // Parting
+              1016114126 // Bone Boogie
             ]
           },
           {
@@ -427,16 +427,15 @@ export default ([
             items: [
                 3677746975, // Gensym Relic Shell
                 3677746972, // Chiropteran Shell
-                3677746973, // Jack-O-Shell
-                3677746975, // Gelatine Shell
+                3677746973 // Jack-O-Shell
             ]
           },
           {
             name: 'Ghost Projections',
             season: 8,
             items: [
-                3661044024, // Hive-o'-lantern Projection
-                3661044025 // Winged Nightmare Projection
+                3661044025, // Winged Nightmare Projection
+                3661044024 // Hive-o'-lantern Projection
             ]
           },
           {
@@ -461,8 +460,9 @@ export default ([
                 298334048, // Sweet Dreams
                 1005594230, // Skele-Ghaul
                 1005594231, // Basalt Toxic
-                3980259370, // Transmat: Murder of Crows
-                3980259371 // Transmat: Looming Moon
+                3980259371, // Transmat: Looming Moon
+                3980259370 // Transmat: Murder of Crows
+
             ]
           }
         ]
