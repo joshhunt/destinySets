@@ -353,35 +353,35 @@ export default ([
             name: 'Hunter Armor',
             season: 8,
             items: [
-                 4045465181 // Masquerader Helmet: Hunter
+                 2352138838 // Masquerader Helmet: Hunter
             ]
           },
           {
             name: 'Titan Armor',
             season: 8,
             items: [
-                2305908225 // Masquerader Helmet: Titan
+                239189018 // Masquerader Helmet: Titan
             ]
           },
           {
             name: 'Warlock Armor',
             season: 8,
             items: [
-                300849752 // Masquerader Helmet: Warlock
+                2213504923 // Masquerader Helmet: Warlock
             ]
           },
           {
             name: 'Masks',
             season: 8,
             items: [
-                1201782503, // Classified
-                1201782502, // Classified
-                1494882402, // Classified
-                1494882403, // Classified
-                1494882400, // Classified
-                1494882401, // Classified
-                1494882406, // Classified
-                1494882407 // Classified
+                1201782503, // Omnigul Mask 
+                1201782502, // Jack-o'-Lantern Mask
+                1494882400, // Hidden Swarm Mask
+                1494882401, // Goblin Mask    
+                1494882403, // Mithrax Mask
+                1494882402, // Opulent Calus Mask
+                1494882406, // Drifter Mask
+                1494882407 // Eris Morn Mask
             ]
           },
           {
@@ -408,7 +408,7 @@ export default ([
             season: 8,
             items: [
                 3661044024, // Hive-o'-lantern Projection
-                3661044025 // Classified
+                3661044025 // Winged Nightmare Projection
             ]
           },
           {
@@ -430,6 +430,7 @@ export default ([
             name: 'Extras',
             season: 8,
             items: [
+                298334048, // Sweet Dreams
                 1005594230, // Skele-Ghaul
                 1005594231, // Basalt Toxic
                 3980259370, // Transmat: Murder of Crows
