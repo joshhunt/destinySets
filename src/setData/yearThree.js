@@ -287,6 +287,23 @@ export default ([
             ]
           },
           {
+            name: "Dungeon",
+            itemGroups: [
+              [
+                208088207, // Premonition (Dungeon Pulse)
+                2782847179, // Blasphemer (Shotgun)
+                2164448701, // Apostate (Sniper Rifle)
+                3067821200 // Heretic (Rocket Launcher)
+              ],
+              [
+                298334061, // Sanguine Static (Emblem)
+                298334060, // Crimson Echoes (Emblem)
+                3708784304, // Bane of Crota Shell (Ghost Shell)
+                4023500750 // Bane of Tyrants (Ship)
+              ]
+            ]
+          },
+          {
             name: 'Hunter Armor',
             // season: "K",
             items: [
