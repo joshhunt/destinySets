@@ -347,8 +347,7 @@ export default ([
             name: 'Weapons',
             season: 8,
             items: [
-                3645283765, // Braytech Werewolf
-                // 4159445096 // Ornament: Xenophage (TBC)
+                3645283765 // Braytech Werewolf
             ]
           },
           {
