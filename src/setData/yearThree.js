@@ -275,7 +275,6 @@ export default ([
             // season: "K",
             items: [
               2723909519, // Arc Logic
-              // 208088207, // Premonition (Dungeon Pulse)
               3924212056, // Loud Lullaby
               4277547616, // Every Waking Moment
               1016668089, // One Small Step
@@ -362,37 +361,71 @@ export default ([
         sections: [
           {
             name: 'Weapons',
-            season: 8, // Double Check
+            season: 8,
             items: [
-
+                3645283765 // Braytech Werewolf
             ]
           },
           {
             name: 'Hunter Armor',
-            season: 8, // Double Check
-            items: [
-
+            season: 8,
+            itemGroups: [
+                [
+                  2352138838 // Masquerader Helmet: Hunter
+                ],
+                [
+                  1256660988, // Chthonic Mask
+                  2653114997, // Chthonic Grips
+                  3560184043, // Chthonic Vest
+                  4229237079, // Chthonic Strides
+                  2299884162 // Chthonic Cloak
+                ]
             ]
           },
           {
             name: 'Titan Armor',
-            season: 8, // Double Check
-            items: [
-
+            season: 8,
+            itemGroups: [
+                [  
+                  239189018 // Masquerader Helmet: Titan
+                ],
+                [
+                  3055452222, // Pandemonic Helm 
+                  2325321839, // Pandemonic Gauntlets
+                  170952905, // Pandemonic Plate
+                  2899925137, // Pandemonic Greaves
+                  1485222020 // Pandemonic Mark
+                ]
             ]
           },
           {
             name: 'Warlock Armor',
-            season: 8, // Double Check
-            items: [
-
+            season: 8,
+            itemGroups: [
+              [
+                2213504923 // Masquerader Helmet: Warlock
+              ],
+              [
+                3081047495, // Phantasmagoric Hood
+                1027749710, // Phantasmagoric Gloves
+                3859783010, // Phantasmagoric Robes
+                3110827848, // Phantasmagoric Boots
+                3508236467 // Phantasmagoric Bond
+              ]
             ]
           },
           {
             name: 'Masks',
-            season: 8, // Double Check
+            season: 8,
             items: [
-
+                1201782503, // Omnigul Mask 
+                1201782502, // Jack-o'-Lantern Mask
+                1494882400, // Hidden Swarm Mask
+                1494882401, // Goblin Mask    
+                1494882403, // Mithrax Mask
+                1494882402, // Opulent Calus Mask
+                1494882406, // Drifter Mask
+                1494882407 // Eris Morn Mask
             ]
           },
           {
@@ -401,42 +434,51 @@ export default ([
             items: [
               2810182789, // Tombstone
               3531985793, // Boo
-              1016114126, // Bone Boogie
-              3730248014 // Parting
+              3730248014, // Parting
+              1016114126 // Bone Boogie
             ]
           },
           {
             name: 'Ghosts',
-            season: 8, // Double Check
+            season: 8,
             items: [
-
+                3677746975, // Gensym Relic Shell
+                3677746972, // Chiropteran Shell
+                3677746973 // Jack-O-Shell
             ]
           },
           {
             name: 'Ghost Projections',
-            season: 8, // Double Check
+            season: 8,
             items: [
-
+                3661044025, // Winged Nightmare Projection
+                3661044024 // Hive-o'-lantern Projection
             ]
           },
           {
             name: 'Sparrows',
-            season: 8, // Double Check
+            season: 8,
             items: [
-
+                4087530286, // Brumeswept Night
+                4087530287 // The Necrobeast
             ]
           },
           {
             name: 'Ships',
-            season: 8, // Double Check
+            season: 8,
             items: [
-
+                3755201983 // The Desmodus
             ]
           },
           {
             name: 'Extras',
-            season: 8, // Double Check
+            season: 8,
             items: [
+                298334048, // Sweet Dreams
+                1005594230, // Skele-Ghaul
+                1005594231, // Basalt Toxic
+                3980259371, // Transmat: Looming Moon
+                3980259370 // Transmat: Murder of Crows
 
             ]
           }
