@@ -286,16 +286,25 @@ export default ([
             ]
           },
           {
-            name: "Dungeon",
+            name: "Altars of Sorrow",
             itemGroups: [
               [
-                208088207, // Premonition (Dungeon Pulse)
                 2782847179, // Blasphemer (Shotgun)
                 2164448701, // Apostate (Sniper Rifle)
                 3067821200 // Heretic (Rocket Launcher)
               ],
               [
                 3708784304, // Bane of Crota Shell (Ghost Shell)
+              ]
+            ]
+          },
+          {
+            name: "'Pit of Heresy' Dungeon",
+            itemGroups: [
+              [
+                208088207 // Premonition (Dungeon Pulse)
+              ],
+              [
                 4023500750, // Bane of Tyrants (Ship)
                 298334061, // Sanguine Static (Emblem)
                 298334060, // Crimson Echoes (Emblem)
