@@ -1,28 +1,28 @@
 // @flow
-import type { SetPage } from '../types';
-import { i18nDefinitionString as _ } from './utils';
+import type { SetPage } from "../types";
+import { i18nDefinitionString as _ } from "./utils";
 
 export default ([
   {
-    name: 'Activities',
+    name: "Activities",
     sets: [
       {
         name: _(
-          'DestinyActivityModeDefinition[2394616003].displayProperties.name',
-          'Strikes'
+          "DestinyActivityModeDefinition[2394616003].displayProperties.name",
+          "Strikes"
         ),
-        id: 'year-three-strikes',
-        description: 'Complete necessary pursuits from Commander Zavala.',
+        id: "year-three-strikes",
+        description: "Complete necessary pursuits from Commander Zavala.",
         sections: [
           {
-            name: 'Weapons',
+            name: "Weapons",
             season: 8, // Double Check
             items: [
               847329160 // Edgewise
             ]
           },
           {
-            name: 'Extras',
+            name: "Extras",
             season: 8, // Double Check
             items: [
               1655929400, // The Ordeal
@@ -35,21 +35,21 @@ export default ([
       },
       {
         name: _(
-          'DestinyActivityModeDefinition[1164760504].displayProperties.name',
-          'Crucible'
+          "DestinyActivityModeDefinition[1164760504].displayProperties.name",
+          "Crucible"
         ),
-        id: 'year-three-crucible',
-        description: 'Complete necessary pursuits from Lord Shaxx.',
+        id: "year-three-crucible",
+        description: "Complete necessary pursuits from Lord Shaxx.",
         sections: [
           {
-            name: 'Weapons',
+            name: "Weapons",
             season: 8, // Double Check
             items: [
               3535742959 // Randy's Throwing Knife
             ]
           },
           {
-            name: 'Extras',
+            name: "Extras",
             season: 8,
             items: [
               3219975799, // Honorable Duelist Shell
@@ -62,21 +62,21 @@ export default ([
       },
       {
         name: _(
-          'DestinyActivityModeDefinition[1848252830].displayProperties.name',
-          'Gambit'
+          "DestinyActivityModeDefinition[1848252830].displayProperties.name",
+          "Gambit"
         ),
-        id: 'year-three-gambit',
-        description: 'Complete necessary pursuits from the Drifter.',
+        id: "year-three-gambit",
+        description: "Complete necessary pursuits from the Drifter.",
         sections: [
           {
-            name: 'Weapons',
+            name: "Weapons",
             season: 8, // Double Check
             items: [
               4227181568 // Exit Strategy
             ]
           },
           {
-            name: 'Extras',
+            name: "Extras",
             season: 8,
             items: [
               1714370697, // Living Vestige
@@ -88,17 +88,17 @@ export default ([
       },
       {
         name: _(
-          'DestinyActivityModeDefinition[1826469369].displayProperties.name',
-          'Iron Banner'
+          "DestinyActivityModeDefinition[1826469369].displayProperties.name",
+          "Iron Banner"
         ),
-        id: 'year-three-iron-banner',
+        id: "year-three-iron-banner",
         description: _(
-          'DestinyCollectibleDefinition[1158218425].sourceString',
-          'Complete Iron Banner matches and earn rank-up packages from Lord Saladin.'
+          "DestinyCollectibleDefinition[1158218425].sourceString",
+          "Complete Iron Banner matches and earn rank-up packages from Lord Saladin."
         ),
         sections: [
           {
-            name: 'Hunter Armor',
+            name: "Hunter Armor",
             season: 8,
             items: [
               1098138990, // Iron Will Mask
@@ -109,7 +109,7 @@ export default ([
             ]
           },
           {
-            name: 'Titan Armor',
+            name: "Titan Armor",
             season: 8,
             items: [
               1895324274, // Iron Will Helm
@@ -120,7 +120,7 @@ export default ([
             ]
           },
           {
-            name: 'Warlock Armor',
+            name: "Warlock Armor",
             season: 8,
             items: [
               2205315921, // Iron Will Hood
@@ -131,7 +131,7 @@ export default ([
             ]
           },
           {
-            name: 'Extras',
+            name: "Extras",
             season: 8,
             items: [
               677674547, // Flying Foundry
@@ -143,14 +143,15 @@ export default ([
       },
       {
         name: _(
-          'DestinyActivityModeDefinition[332181804].displayProperties.name',
-          'Nightmare Hunt'
+          "DestinyActivityModeDefinition[332181804].displayProperties.name",
+          "Nightmare Hunt"
         ),
-        id: 'year-three-nightmare-hunts',
-        description: 'Complete all Nightmare Hunt time trials on Master difficulty & one flawless Master difficulty run.',
+        id: "year-three-nightmare-hunts",
+        description:
+          "Complete all Nightmare Hunt time trials on Master difficulty & one flawless Master difficulty run.",
         sections: [
           {
-            name: 'Extras',
+            name: "Extras",
             // season: "K",
             items: [
               298334057, // A Sibyl's Dreams
@@ -160,15 +161,15 @@ export default ([
         ]
       },
       {
-        name: 'Vex Offensive & Invasions',
-        id: 'year-three-vex-offensive-and-invasions',
+        name: "Vex Offensive & Invasions",
+        id: "year-three-vex-offensive-and-invasions",
         description: _(
-          'DestinyCollectibleDefinition[4151753667].sourceString',
-          'Complete seasonal activities during Season of the Undying.'
+          "DestinyCollectibleDefinition[4151753667].sourceString",
+          "Complete seasonal activities during Season of the Undying."
         ),
         sections: [
           {
-            name: 'Weapons',
+            name: "Weapons",
             season: 8,
             items: [
               2314999489, // Imperative
@@ -178,7 +179,7 @@ export default ([
             ]
           },
           {
-            name: 'Extras',
+            name: "Extras",
             season: 8,
             items: [
               1714370696 // Pushing Down Daisies
@@ -188,17 +189,17 @@ export default ([
       },
       {
         name: _(
-          'DestinyActivityModeDefinition[2659723068].displayProperties.name',
-          'Garden of Salvation'
+          "DestinyActivityModeDefinition[2659723068].displayProperties.name",
+          "Garden of Salvation"
         ),
-        id: 'year-three-garden-of-salvation',
+        id: "year-three-garden-of-salvation",
         description: _(
-          'DestinyCollectibleDefinition[2948134329].sourceString',
+          "DestinyCollectibleDefinition[2948134329].sourceString",
           '"Garden of Salvation" raid'
         ),
         sections: [
           {
-            name: 'Weapons',
+            name: "Weapons",
             // season: "K", // Double Check
             items: [
               3385326721, // Reckless Oracle
@@ -211,7 +212,7 @@ export default ([
             ]
           },
           {
-            name: 'Hunter Armor',
+            name: "Hunter Armor",
             // season: "K", // Double Check
             items: [
               557676195, // Cowl of Righteousness
@@ -222,7 +223,7 @@ export default ([
             ]
           },
           {
-            name: 'Titan Armor',
+            name: "Titan Armor",
             // season: "K", // Double Check
             items: [
               519078295, // Helm of Righteousness
@@ -233,7 +234,7 @@ export default ([
             ]
           },
           {
-            name: 'Warlock Armor',
+            name: "Warlock Armor",
             // season: "K", // Double Check
             items: [
               3001934726, // Mask of Righteousness
@@ -244,7 +245,7 @@ export default ([
             ]
           },
           {
-            name: 'Extras',
+            name: "Extras",
             // season: "K", // Double Check
             items: [
               298334059, // Inherent Truth
@@ -257,25 +258,24 @@ export default ([
     ]
   },
   {
-    name: 'Destinations',
+    name: "Destinations",
     sets: [
       {
         name: _(
-          'DestinyPlaceDefinition[3325508439].displayProperties.name',
-          'The Moon'
+          "DestinyPlaceDefinition[3325508439].displayProperties.name",
+          "The Moon"
         ),
-        id: 'year-three-moon',
+        id: "year-three-moon",
         description: _(
-          'DestinyCollectibleDefinition[1310958655].sourceString',
-          'Found by exploring the Moon.'
+          "DestinyCollectibleDefinition[1310958655].sourceString",
+          "Found by exploring the Moon."
         ),
         sections: [
           {
-            name: 'Weapons',
+            name: "Weapons",
             // season: "K",
             items: [
               2723909519, // Arc Logic
-              // 208088207, // Premonition (Dungeon Pulse)
               3924212056, // Loud Lullaby
               4277547616, // Every Waking Moment
               1016668089, // One Small Step
@@ -287,7 +287,24 @@ export default ([
             ]
           },
           {
-            name: 'Hunter Armor',
+            name: "Dungeon",
+            itemGroups: [
+              [
+                208088207, // Premonition (Dungeon Pulse)
+                2782847179, // Blasphemer (Shotgun)
+                2164448701, // Apostate (Sniper Rifle)
+                3067821200 // Heretic (Rocket Launcher)
+              ],
+              [
+                298334061, // Sanguine Static (Emblem)
+                298334060, // Crimson Echoes (Emblem)
+                3708784304, // Bane of Crota Shell (Ghost Shell)
+                4023500750 // Bane of Tyrants (Ship)
+              ]
+            ]
+          },
+          {
+            name: "Hunter Armor",
             // season: "K",
             items: [
               659922705, // Dreambane Cowl
@@ -298,7 +315,7 @@ export default ([
             ]
           },
           {
-            name: 'Titan Armor',
+            name: "Titan Armor",
             // season: "K",
             items: [
               272413517, // Dreambane Helm
@@ -309,7 +326,7 @@ export default ([
             ]
           },
           {
-            name: 'Warlock Armor',
+            name: "Warlock Armor",
             // season: "K",
             items: [
               1528483180, // Dreambane Hood
@@ -320,7 +337,7 @@ export default ([
             ]
           },
           {
-            name: 'Extras',
+            name: "Extras",
             // season: "K",
             items: [
               1272828316, // Moonshot Shell
@@ -336,50 +353,40 @@ export default ([
     ]
   },
   {
-    name: 'Holiday & Special Events',
+    name: "Holiday & Special Events",
     sets: [
       {
-        name: 'Festival of the Lost',
-        id: 'year-three-festival-of-the-lost',
-        description: 'Earned during the seasonal Festival of the Lost event.', // Double Check
+        name: "Festival of the Lost",
+        id: "year-three-festival-of-the-lost",
+        description: "Earned during the seasonal Festival of the Lost event.", // Double Check
         sections: [
           {
-            name: 'Weapons',
+            name: "Weapons",
             season: 8, // Double Check
-            items: [
-
-            ]
+            items: []
           },
           {
-            name: 'Hunter Armor',
+            name: "Hunter Armor",
             season: 8, // Double Check
-            items: [
-
-            ]
+            items: []
           },
           {
-            name: 'Titan Armor',
+            name: "Titan Armor",
             season: 8, // Double Check
-            items: [
-
-            ]
+            items: []
           },
           {
-            name: 'Warlock Armor',
+            name: "Warlock Armor",
             season: 8, // Double Check
-            items: [
-
-            ]
+            items: []
           },
           {
-            name: 'Masks',
+            name: "Masks",
             season: 8, // Double Check
-            items: [
-
-            ]
+            items: []
           },
           {
-            name: 'Emotes',
+            name: "Emotes",
             season: 8,
             items: [
               2810182789, // Tombstone
@@ -389,59 +396,49 @@ export default ([
             ]
           },
           {
-            name: 'Ghosts',
+            name: "Ghosts",
             season: 8, // Double Check
-            items: [
-
-            ]
+            items: []
           },
           {
-            name: 'Ghost Projections',
+            name: "Ghost Projections",
             season: 8, // Double Check
-            items: [
-
-            ]
+            items: []
           },
           {
-            name: 'Sparrows',
+            name: "Sparrows",
             season: 8, // Double Check
-            items: [
-
-            ]
+            items: []
           },
           {
-            name: 'Ships',
+            name: "Ships",
             season: 8, // Double Check
-            items: [
-
-            ]
+            items: []
           },
           {
-            name: 'Extras',
+            name: "Extras",
             season: 8, // Double Check
-            items: [
-
-            ]
+            items: []
           }
         ]
-      },
+      }
     ]
   },
   {
-    name: 'Other',
+    name: "Other",
     sets: [
       {
         name: _(
-          'DestinyPresentationNodeDefinition[3110685926].displayProperties.name',
-          'Season Pass'
+          "DestinyPresentationNodeDefinition[3110685926].displayProperties.name",
+          "Season Pass"
         ),
         description:
-          'Free Track available to all Destiny 2 Players. Paid Track to owners of the current Season Pass.',
-        id: 'year-three-season-passes',
+          "Free Track available to all Destiny 2 Players. Paid Track to owners of the current Season Pass.",
+        id: "year-three-season-passes",
         big: false,
         sections: [
           {
-            name: 'Free Track',
+            name: "Free Track",
             season: 8,
             itemGroups: [
               [
@@ -473,7 +470,7 @@ export default ([
             ]
           },
           {
-            name: 'Paid Track',
+            name: "Paid Track",
             season: 8,
             itemGroups: [
               [
@@ -509,7 +506,7 @@ export default ([
                 298334063, // Trailblazer
                 3448612595, // Night's Chill
                 3448612594, // First Frost
-                2078915253, // Blackheart Growth
+                2078915253 // Blackheart Growth
               ]
             ]
           }
@@ -517,15 +514,15 @@ export default ([
       },
       {
         name: _(
-          'DestinyFactionDefinition[1393733616].displayProperties.name',
-          'Eververse'
+          "DestinyFactionDefinition[1393733616].displayProperties.name",
+          "Eververse"
         ),
-        id: 'year-three-eververse',
-        description: 'Items sold at Eververse for Bright Dust.',
+        id: "year-three-eververse",
+        description: "Items sold at Eververse for Bright Dust.",
         big: false,
         sections: [
           {
-            name: 'Armor',
+            name: "Armor",
             season: 8,
             itemGroups: [
               [
@@ -552,7 +549,7 @@ export default ([
             ]
           },
           {
-            name: 'Ornaments',
+            name: "Ornaments",
             season: 8,
             itemGroups: [
               [
@@ -586,7 +583,7 @@ export default ([
             ]
           },
           {
-            name: 'Emotes',
+            name: "Emotes",
             season: 8,
             items: [
               // 3769820799, // Camping (Not planned to be sold for Bright Dust)
@@ -608,7 +605,7 @@ export default ([
             ]
           },
           {
-            name: 'Finishers',
+            name: "Finishers",
             season: 8,
             items: [
               // 2504641452, // Savage Haymaker (Not planned to be sold for Bright Dust)
@@ -617,7 +614,7 @@ export default ([
             ]
           },
           {
-            name: 'Ghosts',
+            name: "Ghosts",
             season: 8,
             items: [
               // 779216204, // Harper's Shell (Not planned to be sold for Bright Dust)
@@ -634,7 +631,7 @@ export default ([
             ]
           },
           {
-            name: 'Ghost Projections',
+            name: "Ghost Projections",
             season: 8,
             items: [
               2155593794, // Moonbound Projection
@@ -644,7 +641,7 @@ export default ([
             ]
           },
           {
-            name: 'Sparrows',
+            name: "Sparrows",
             season: 8,
             items: [
               2067296769, // Blood Runner
@@ -661,7 +658,7 @@ export default ([
             ]
           },
           {
-            name: 'Ships',
+            name: "Ships",
             season: 8,
             items: [
               // 4079130217, // Quality Cut (Not planned to be sold for Bright Dust)
@@ -677,7 +674,7 @@ export default ([
             ]
           },
           {
-            name: 'Shaders',
+            name: "Shaders",
             season: 8,
             items: [
               3818755494, // Bruised Blush
@@ -689,7 +686,7 @@ export default ([
             ]
           },
           {
-            name: 'Transmat Effects',
+            name: "Transmat Effects",
             season: 8,
             items: [
               3951356827, // Blind Clutch
