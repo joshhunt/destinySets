@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useMemo } from 'react';
 import cx from 'classnames';
 import { connect } from 'react-redux';
+import { flatMapDeep } from 'lodash';
 
 import { fetchProfile as fetchProfileAction } from 'app/store/profile';
 import Footer from 'app/components/Footer';
@@ -30,6 +31,7 @@ const ITEM_ELEMENT_CLASS_NAME = {
 function Mods({
   route: { setData },
   fetchProfile,
+  modDefinitions,
   DestinyEnergyTypeDefinition
 }) {
   useEffect(() => {
@@ -38,6 +40,7 @@ function Mods({
 
   const [itemTooltip, setItemTooltip] = useState();
   const [itemModal, setItemModalState] = useState();
+  const [modSearch, setModSearch] = useState();
 
   const setPopper = (itemHash, element) => {
     setItemTooltip(itemHash ? { itemHash, element } : null);
@@ -46,6 +49,19 @@ function Mods({
   const setItemModal = itemHash => setItemModalState(itemHash);
 
   const modSets = setData[0].sets;
+
+  const searchResults = useMemo(() => {
+    const compareSearch = modSearch && modSearch.toLowerCase();
+
+    if (!modSearch || modSearch.length == 0) {
+      return [];
+    }
+
+    return modDefinitions.filter(mod => {
+      const compareName = mod.displayProperties.name.toLowerCase();
+      return compareName.includes(compareSearch);
+    });
+  }, [modSearch, modDefinitions]);
 
   return (
     <div className={s.page}>
@@ -56,6 +72,32 @@ function Mods({
         will need to have an armour piece the mod goes into for it to be marked
         as collected.
       </p>
+
+      <input
+        onChange={ev => setModSearch(ev.target.value)}
+        placeholder="search"
+      />
+
+      {searchResults && searchResults.length > 0 && (
+        <React.Fragment>
+          <h2 className={s.heading}>Search results</h2>
+          <div className={s.searchResultsList}>
+            {searchResults &&
+              searchResults.length > 0 &&
+              searchResults.map(mod => (
+                <Item
+                  className={s.searchResultMod}
+                  itemHash={mod.hash}
+                  extended
+                  key={mod.hash}
+                  modStyle
+                  setPopper={setPopper}
+                  onItemClick={setItemModal}
+                />
+              ))}
+          </div>
+        </React.Fragment>
+      )}
 
       {modSets.map(modSet => {
         return (
@@ -103,7 +145,6 @@ function Mods({
                                   )}
                                   itemHash={modItemHash}
                                   key={modItemHash}
-                                  extended={false}
                                   modStyle
                                   setPopper={setPopper}
                                   onItemClick={setItemModal}
@@ -160,12 +201,29 @@ function Mods({
   );
 }
 
-function mapStateToProps(state) {
+function mapStateToProps(state, { route: { setData } }) {
   const DestinyEnergyTypeDefinition =
     (state.definitions && state.definitions.DestinyEnergyTypeDefinition) || {};
 
+  const DestinyInventoryItemDefinition =
+    (state.definitions && state.definitions.DestinyInventoryItemDefinition) ||
+    {};
+
+  const modDefinitions = flatMapDeep(
+    setData.map(category =>
+      category.sets.map(set =>
+        set.sections.map(section => section.groups.map(group => group.items))
+      )
+    )
+  )
+    .map(itemHash => DestinyInventoryItemDefinition[itemHash])
+    .filter(Boolean);
+
+  console.log('modDefinitions:', modDefinitions);
+
   return {
-    DestinyEnergyTypeDefinition
+    DestinyEnergyTypeDefinition,
+    modDefinitions
   };
 }
 
