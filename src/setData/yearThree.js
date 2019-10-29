@@ -147,7 +147,7 @@ export default ([
           'Nightmare Hunt'
         ),
         id: 'year-three-nightmare-hunts',
-        description: 'Complete all Nightmare Hunt time trials on Master difficulty & one flawless Master difficulty run.',
+        description: 'Complete all Nightmare Hunt time trials & one flawless run on Master difficulty.',
         sections: [
           {
             name: 'Extras',
@@ -295,10 +295,10 @@ export default ([
                 3067821200 // Heretic (Rocket Launcher)
               ],
               [
+                3708784304, // Bane of Crota Shell (Ghost Shell)
+                4023500750, // Bane of Tyrants (Ship)
                 298334061, // Sanguine Static (Emblem)
                 298334060, // Crimson Echoes (Emblem)
-                3708784304, // Bane of Crota Shell (Ghost Shell)
-                4023500750 // Bane of Tyrants (Ship)
               ]
             ]
           },
@@ -475,6 +475,7 @@ export default ([
             season: 8,
             items: [
                 298334048, // Sweet Dreams
+                2233576420, // Fright Night
                 1005594230, // Skele-Ghaul
                 1005594231, // Basalt Toxic
                 3980259371, // Transmat: Looming Moon
