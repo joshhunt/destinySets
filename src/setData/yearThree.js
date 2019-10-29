@@ -275,7 +275,6 @@ export default ([
             // season: "K",
             items: [
               2723909519, // Arc Logic
-              // 208088207, // Premonition (Dungeon Pulse)
               3924212056, // Loud Lullaby
               4277547616, // Every Waking Moment
               1016668089, // One Small Step
