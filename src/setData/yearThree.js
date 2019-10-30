@@ -372,7 +372,7 @@ export default ([
             name: 'Weapons',
             season: 8,
             items: [
-                3645283765 // Braytech Werewolf
+                528834068 // Braytech Werewolf
             ]
           },
           {
