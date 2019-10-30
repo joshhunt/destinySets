@@ -484,6 +484,7 @@ export default ([
             season: 8,
             items: [
                 298334048, // Sweet Dreams
+                2526736328, // Dark Orbit
                 2233576420, // Fright Night
                 1005594230, // Skele-Ghaul
                 1005594231, // Basalt Toxic
