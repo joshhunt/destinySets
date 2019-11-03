@@ -51,12 +51,12 @@ export const POLISH = {
   name: 'Polish'
 };
 
-export const CHINESES = {
+export const CHINESE_SIMP = {
   code: 'zh-chs',
   name: 'Chinese (Simplified)'
 }
 
-export const CHINESET = {
+export const CHINESE_TRAD = {
   code: 'zh-cht',
   name: 'Chinese (Traditional)'
 };
@@ -79,8 +79,8 @@ export const languages = [
   SPANISH_LATIN,
   RUSSIAN,
   POLISH,
-  CHINESES,
-  CHINESET,
+  CHINESE_SIMP,
+  CHINESE_TRAD,
   KOREAN
 ];
 
