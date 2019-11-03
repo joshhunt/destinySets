@@ -485,9 +485,9 @@ export default ([
             items: [
                 298334048, // Sweet Dreams
                 2526736328, // Dark Orbit
-                2233576420, // Fright Night
                 1005594230, // Skele-Ghaul
                 1005594231, // Basalt Toxic
+                2233576420, // Fright Night
                 3980259371, // Transmat: Looming Moon
                 3980259370 // Transmat: Murder of Crows
 
