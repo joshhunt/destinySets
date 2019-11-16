@@ -63,18 +63,6 @@ $green = #44bd32;
   img
     background: black !important
 
-.itemArc
-  img
-    background: darken(#79BBE8, 20%) !important
-
-.itemSolar
-  img
-    background: darken(#FA6400, 20%) !important
-
-.itemVoid
-  img
-    background: darken(#B185DF, 20%) !important
-
 .energyIcon
   height: 1em
   margin-right: 2px
@@ -107,5 +95,39 @@ $green = #44bd32;
 
 .searchResultsList
   display: grid
-  grid-template-columns: repeat( auto-fit, minmax(300px, 1fr) );
+  grid-template-columns: repeat( auto-fill, minmax(300px, 1fr) );
   margin-bottom: 30px
+
+
+mobile()
+  @media screen and (max-width: 679px)
+    {block}
+
+.search
+  display: flex
+  align-items: center
+  position: relative
+  margin-bottom: 30px
+  width: 300px
+
+.searchInput
+  background: none
+  border: none
+  font-family: inherit
+  font-size: inherit
+  width: 100%
+  padding-left: 20px
+  outline: none
+  color: white
+  transition: all 250ms ease-in-out
+  border-bottom: 1px rgba(white, .2) solid
+
+  &:focus
+    border-bottom: 1px rgba(white, .4) solid
+
+.searchIcon
+  pointer-events: none
+  position: absolute
+  // top: 0
+  left: 0
+  font-size: 14px

@@ -18,7 +18,6 @@ import BungieImage from 'app/components/BungieImage';
 
 import {
   makeItemInventoryEntrySelector,
-  makeItemVendorEntrySelector,
   makeBetterItemVendorEntrySelector,
   makeItemPresentationSelector
 } from 'app/store/selectors';
@@ -61,6 +60,7 @@ function getItemColor(item) {
     green: 0,
     blue: 0
   };
+
   const luminosity = red + green + blue;
   if (
     (item.itemCategoryHashes || []).includes(EMBLEM) &&
@@ -83,20 +83,13 @@ const isMasterwork = inventoryEntry => {
   });
 };
 
-const ROLE_PERKS = [
-  326979294,
-  911695907,
-  3047801520,
-  1233336930,
-  2575042148,
-  3588389153,
-  548249507,
-  2684355120,
-  4258500190,
-  149961592,
-  446122123,
-  1263189958
-];
+export const ITEM_ELEMENT_CLASS_NAME = {
+  // Stat type hashes
+  3578062600: styles.itemAny,
+  3779394102: styles.itemArc,
+  3344745325: styles.itemSolar,
+  2399985800: styles.itemVoid
+};
 
 class Item extends PureComponent {
   onMouseEnter = () => {
@@ -127,8 +120,7 @@ class Item extends PureComponent {
     const {
       className,
       itemDef,
-      roleDef,
-      overlayImage,
+      investmentStatItem,
       displayItem,
       inventoryEntry,
       extended,
@@ -139,6 +131,7 @@ class Item extends PureComponent {
     } = this.props;
 
     const bgColor = getItemColor(itemDef);
+    const overlayImage = get(investmentStatItem, 'displayProperties.icon');
 
     if (!itemDef) {
       if (hideMissing) {
@@ -197,17 +190,15 @@ class Item extends PureComponent {
 
             <img
               src={`https://www.bungie.net${icon}`}
-              className={styles.image}
+              className={cx(
+                styles.image,
+                ITEM_ELEMENT_CLASS_NAME[
+                  investmentStatItem && investmentStatItem.hash
+                ]
+              )}
               style={modStyle ? null : { backgroundColor: bgColor }}
               alt=""
             />
-
-            {roleDef && (
-              <BungieImage
-                src={roleDef.displayProperties.icon}
-                className={styles.role}
-              />
-            )}
 
             {inventoryEntry && (
               <div className={styles.tick}>
@@ -283,22 +274,6 @@ function mapStateToProps() {
       })
       .filter(Boolean)[0];
 
-    const overlayImage = get(investmentStatItem, 'displayProperties.icon');
-
-    if (ownProps.itemHash === 3188535145) {
-      console.log({ investmentStatItem, overlayImage });
-    }
-
-    const firstPerk =
-      itemDef && itemDef.sockets && itemDef.sockets.socketEntries[0];
-    const roleHash =
-      firstPerk &&
-      ROLE_PERKS.includes(firstPerk.singleInitialItemHash) &&
-      firstPerk.singleInitialItemHash;
-    const roleDef =
-      state.definitions.DestinyInventoryItemDefinition &&
-      state.definitions.DestinyInventoryItemDefinition[roleHash];
-
     const vendorEntry = betterItemVendorEntrySelector(state, ownProps);
 
     const richVendorEntries = vendorEntry.map(ve => ({
@@ -311,9 +286,8 @@ function mapStateToProps() {
 
     return {
       itemDef,
-      roleDef,
-      overlayImage,
       inventoryEntry: itemInventoryEntrySelector(state, ownProps),
+      investmentStatItem,
       richVendorEntries,
       itemObjectiveProgress: itemObjectiveProgressSelector(state, ownProps),
       displayItem,

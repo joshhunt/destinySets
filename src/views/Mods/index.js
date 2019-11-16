@@ -11,8 +11,10 @@ import BungieImage from 'app/components/BungieImage';
 import Popper from 'app/components/Popper';
 import ItemTooltip from 'app/components/ItemTooltip';
 import ItemModal from 'app/components/ItemModal';
+import Icon from 'app/components/Icon';
 
 import s from './styles.styl';
+import DetailedMod from './DetailedMod';
 
 const ELEMENT_CLASS_NAME = {
   1198124803: s.Any,
@@ -21,12 +23,19 @@ const ELEMENT_CLASS_NAME = {
   4069572561: s.Void
 };
 
-const ITEM_ELEMENT_CLASS_NAME = {
-  1198124803: s.itemAny,
-  728351493: s.itemArc,
-  591714140: s.itemSolar,
-  4069572561: s.itemVoid
-};
+function Search({ className, ...props }) {
+  return (
+    <div className={cx(className, s.search)}>
+      <Icon className={s.searchIcon} icon="search" />
+      <input
+        className={s.searchInput}
+        type="text"
+        placeholder="Search"
+        {...props}
+      />
+    </div>
+  );
+}
 
 function Mods({
   route: { setData },
@@ -41,6 +50,24 @@ function Mods({
   const [itemTooltip, setItemTooltip] = useState();
   const [itemModal, setItemModalState] = useState();
   const [modSearch, setModSearch] = useState();
+
+  const modSlotLookup = useMemo(() => {
+    const lookup = {};
+
+    setData.forEach(gs =>
+      gs.sets.forEach(set => {
+        const armourSlot = set.name;
+
+        set.sections.forEach(section => {
+          section.groups.forEach(group =>
+            group.items.forEach(itemHash => (lookup[itemHash] = armourSlot))
+          );
+        });
+      })
+    );
+
+    return lookup;
+  }, setData);
 
   const setPopper = (itemHash, element) => {
     setItemTooltip(itemHash ? { itemHash, element } : null);
@@ -67,25 +94,16 @@ function Mods({
     <div className={s.page}>
       <h1 className={s.heading}>Mods</h1>
 
-      <p className={s.explainer}>
-        Very beta, completely untested. No guarantees made about accuracy. You
-        will need to have an armour piece the mod goes into for it to be marked
-        as collected.
-      </p>
-
-      <input
-        onChange={ev => setModSearch(ev.target.value)}
-        placeholder="search"
-      />
+      <Search onChange={ev => setModSearch(ev.target.value)} />
 
       {searchResults && searchResults.length > 0 && (
-        <React.Fragment>
+        <div className={cx(s.set, s.legendary)}>
           <h2 className={s.heading}>Search results</h2>
           <div className={s.searchResultsList}>
             {searchResults &&
               searchResults.length > 0 &&
               searchResults.map(mod => (
-                <Item
+                <DetailedMod
                   className={s.searchResultMod}
                   itemHash={mod.hash}
                   extended
@@ -93,10 +111,11 @@ function Mods({
                   modStyle
                   setPopper={setPopper}
                   onItemClick={setItemModal}
+                  armourSlot={modSlotLookup[mod.hash]}
                 />
               ))}
           </div>
-        </React.Fragment>
+        </div>
       )}
 
       {modSets.map(modSet => {
@@ -139,10 +158,7 @@ function Mods({
                             {group.items.map(modItemHash => {
                               return (
                                 <Item
-                                  className={cx(
-                                    s.item,
-                                    ITEM_ELEMENT_CLASS_NAME[modSection.nameHash]
-                                  )}
+                                  className={s.item}
                                   itemHash={modItemHash}
                                   key={modItemHash}
                                   modStyle
