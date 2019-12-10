@@ -16,19 +16,67 @@ export default ([
         sections: [
           {
             name: 'Weapons',
-            season: 8, // Double Check
+            season: 8,
             items: [
               847329160 // Edgewise
             ]
           },
           {
+            name: 'Weapons',
+            season: 9,
+            items: [
+              805677041 // Buzzard
+            ]
+          },
+          {
+            name: 'Hunter Armor',
+            season: 9,
+            items: [
+              432360904, // Vigil of Heroes
+              4074662489, // Vigil of Heroes
+              2337221567, // Vigil of Heroes
+              2671880779, // Vigil of Heroes
+              3584380110 // Vigil of Heroes
+            ]
+          },
+          {
+            name: 'Titan Armor',
+            season: 9,
+            items: [
+              1130203390, // Vigil of Heroes
+              358599471, // Vigil of Heroes
+              3500775049, // Vigil of Heroes
+              508642129, // Vigil of Heroes
+              986111044 // Vigil of Heroes
+            ]
+          },
+          {
+            name: 'Warlock Armor',
+            season: 9,
+            items: [
+              2422319309, // Vigil of Heroes
+              3074985148, // Vigil of Heroes
+              3544662820, // Vigil of Heroes
+              2460793798, // Vigil of Heroes
+              4288492921 // Vigil of Heroes
+            ]
+          },
+          {
             name: 'Extras',
-            season: 8, // Double Check
+            season: 8,
             items: [
               1655929400, // The Ordeal
               298334049, // Timeless Vigil
               2058800852, // Vanguard Stratosphere
               2058800853 // Vanguard Angelos
+            ]
+          },
+          {
+            name: 'Extras',
+            season: 9,
+            items: [
+              1736897078, // Tactician
+              3373970267 // Vanguard Nightbeam
             ]
           }
         ]
