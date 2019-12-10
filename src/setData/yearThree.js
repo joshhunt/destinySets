@@ -43,9 +43,49 @@ export default ([
         sections: [
           {
             name: 'Weapons',
-            season: 8, // Double Check
+            season: 8,
             items: [
               3535742959 // Randy's Throwing Knife
+            ]
+          },
+          {
+            name: 'Weapons',
+            season: 9,
+            items: [
+              2697058914 // Komodo-4FR
+            ]
+          },
+          {
+            name: 'Hunter Armor',
+            season: 9,
+            items: [
+              4123918087, // Wing Contender
+              2070517134, // Wing Contender
+              1838273186, // Wing Contender
+              283188616, // Wing Contender
+              1062166003 // Wing Contender
+            ]
+          },
+          {
+            name: 'Titan Armor',
+            season: 9,
+            items: [
+              3483546829, // Wing Discipline
+              4136212668, // Wing Discipline
+              1722623780, // Wing Discipline
+              3522021318, // Wing Discipline
+              2466453881 // Wing Discipline
+            ]
+          },
+          {
+            name: 'Warlock Armor',
+            season: 9,
+            items: [
+              874101646, // Wing Theorem
+              2323865727, // Wing Theorem
+              2525395257, // Wing Theorem
+              1245115841, // Wing Theorem
+              3839561204 // Wing Theorem
             ]
           },
           {
@@ -56,6 +96,15 @@ export default ([
               298334062, // Burnished Blade
               1392223753, // Crucible Lazurite
               1392223752 // Crucible Vermillion
+            ]
+          },
+          {
+            name: 'Extras',
+            season: 9,
+            items: [
+              1736897075, // No Quarter
+              1736897079, // Savior of the Past
+              3603801350 // Crucible Prestige
             ]
           }
         ]
