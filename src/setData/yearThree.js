@@ -576,6 +576,38 @@ export default ([
             ]
           },
           {
+            name: 'Free Track',
+            season: 9,
+            itemGroups: [
+              [
+                4017959782, // Symmetry
+                1289324202, // Pyroclastic Flow
+                4166221755 // Trophy Hunter
+              ],
+              [
+                382498903, // Righteous Mask
+                3750877150, // Righteous Grips
+                344824594, // Righteous Vest
+                299852984, // Righteous Strides
+                940065571 // Righteous Cloak
+              ],
+              [
+                238618945, // Righteous Helm
+                1076538456, // Righteous Gauntlets
+                1560040304, // Righteous Plate
+                3406670226, // Righteous Greaves
+                445618861 // Righteous Mark
+              ],
+              [
+                1557571326, // Righteous Hood
+                785967407, // Righteous Gloves
+                3931361417, // Righteous Robes
+                936010065, // Righteous Boots
+                1416697412 // Righteous Bond
+              ]
+            ]
+          },
+          {
             name: 'Paid Track',
             season: 8,
             itemGroups: [
@@ -613,6 +645,48 @@ export default ([
                 3448612595, // Night's Chill
                 3448612594, // First Frost
                 2078915253, // Blackheart Growth
+              ]
+            ]
+          },
+          {
+            name: 'Paid Track',
+            season: 9,
+            itemGroups: [
+              [
+                2066724468, // Skyline Constellation
+                2416805974, // Meteoric Descent
+                1249781195 // Zaroff's Prized Longbore
+              ],
+              [
+                90191153, // Virtuous Mask
+                3001813128, // Virtuous Grips
+                3004625280, // Virtuous Vest
+                4103152482, // Virtuous Strides
+                2356341309 // Virtuous Cloak
+              ],
+              [
+                3324052357, // Virtuous Helm
+                4104729172, // Virtuous Gauntlets
+                474951532, // Virtuous Plate
+                55923806, // Virtuous Greaves
+                3173709985 // Virtuous Mark
+              ],
+              [
+                752572736, // Virtuous Hood
+                2613613329, // Virtuous Gloves
+                2861849799, // Virtuous Robes
+                2020305635, // Virtuous Boots
+                3577347542 // Virtuous Bond
+              ],
+              [
+                4191932814, // Pigeon Feed
+                1362221859, // Coin Trick
+                4140860253, // The Kellbreaker
+                2512921531, // Saintly Shell
+                1736897074, // Dawn Chaser
+                1402284586, // Gunmetal Marigold
+                1402284587, // Regal Medallion
+                1693097638 // Defiant Vexsplosion
               ]
             ]
           }
