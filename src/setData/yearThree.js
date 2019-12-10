@@ -16,19 +16,67 @@ export default ([
         sections: [
           {
             name: 'Weapons',
-            season: 8, // Double Check
+            season: 8,
             items: [
               847329160 // Edgewise
             ]
           },
           {
+            name: 'Weapons',
+            season: 9,
+            items: [
+              805677041 // Buzzard
+            ]
+          },
+          {
+            name: 'Hunter Armor',
+            season: 9,
+            items: [
+              432360904, // Vigil of Heroes
+              4074662489, // Vigil of Heroes
+              2337221567, // Vigil of Heroes
+              2671880779, // Vigil of Heroes
+              3584380110 // Vigil of Heroes
+            ]
+          },
+          {
+            name: 'Titan Armor',
+            season: 9,
+            items: [
+              1130203390, // Vigil of Heroes
+              358599471, // Vigil of Heroes
+              3500775049, // Vigil of Heroes
+              508642129, // Vigil of Heroes
+              986111044 // Vigil of Heroes
+            ]
+          },
+          {
+            name: 'Warlock Armor',
+            season: 9,
+            items: [
+              2422319309, // Vigil of Heroes
+              3074985148, // Vigil of Heroes
+              3544662820, // Vigil of Heroes
+              2460793798, // Vigil of Heroes
+              4288492921 // Vigil of Heroes
+            ]
+          },
+          {
             name: 'Extras',
-            season: 8, // Double Check
+            season: 8,
             items: [
               1655929400, // The Ordeal
               298334049, // Timeless Vigil
               2058800852, // Vanguard Stratosphere
               2058800853 // Vanguard Angelos
+            ]
+          },
+          {
+            name: 'Extras',
+            season: 9,
+            items: [
+              1736897078, // Tactician
+              3373970267 // Vanguard Nightbeam
             ]
           }
         ]
@@ -43,9 +91,49 @@ export default ([
         sections: [
           {
             name: 'Weapons',
-            season: 8, // Double Check
+            season: 8,
             items: [
               3535742959 // Randy's Throwing Knife
+            ]
+          },
+          {
+            name: 'Weapons',
+            season: 9,
+            items: [
+              2697058914 // Komodo-4FR
+            ]
+          },
+          {
+            name: 'Hunter Armor',
+            season: 9,
+            items: [
+              4123918087, // Wing Contender
+              2070517134, // Wing Contender
+              1838273186, // Wing Contender
+              283188616, // Wing Contender
+              1062166003 // Wing Contender
+            ]
+          },
+          {
+            name: 'Titan Armor',
+            season: 9,
+            items: [
+              3483546829, // Wing Discipline
+              4136212668, // Wing Discipline
+              1722623780, // Wing Discipline
+              3522021318, // Wing Discipline
+              2466453881 // Wing Discipline
+            ]
+          },
+          {
+            name: 'Warlock Armor',
+            season: 9,
+            items: [
+              874101646, // Wing Theorem
+              2323865727, // Wing Theorem
+              2525395257, // Wing Theorem
+              1245115841, // Wing Theorem
+              3839561204 // Wing Theorem
             ]
           },
           {
@@ -56,6 +144,15 @@ export default ([
               298334062, // Burnished Blade
               1392223753, // Crucible Lazurite
               1392223752 // Crucible Vermillion
+            ]
+          },
+          {
+            name: 'Extras',
+            season: 9,
+            items: [
+              1736897075, // No Quarter
+              1736897079, // Savior of the Past
+              3603801350 // Crucible Prestige
             ]
           }
         ]
@@ -70,9 +167,49 @@ export default ([
         sections: [
           {
             name: 'Weapons',
-            season: 8, // Double Check
+            season: 8,
             items: [
               4227181568 // Exit Strategy
+            ]
+          },
+          {
+            name: 'Weapons',
+            season: 9,
+            items: [
+              838556752 // Python
+            ]
+          },
+          {
+            name: 'Hunter Armor',
+            season: 9,
+            items: [
+              759348512, // Ancient Apocalypse Mask
+              2620389105, // Ancient Apocalypse Grips
+              1741396519, // Ancient Apocalypse Vest
+              2451538755, // Ancient Apocalypse Strides
+              2881248566 // Ancient Apocalypse Cloak
+            ]
+          },
+          {
+            name: 'Titan Armor',
+            season: 9,
+            items: [
+              3664007718, // Ancient Apocalypse Helm
+              2677967607, // Ancient Apocalypse Gauntlets
+              1237661249, // Ancient Apocalypse Plate
+              191535001, // Ancient Apocalypse Greaves
+              2020166300 // Ancient Apocalypse Mark
+            ]
+          },
+          {
+            name: 'Warlock Armor',
+            season: 9,
+            items: [
+              1013137701, // Ancient Apocalypse Hood
+              1752237812, // Ancient Apocalypse Gloves
+              3550729740, // Ancient Apocalypse Robes
+              2039976446, // Ancient Apocalypse Boots
+              1488486721 // Ancient Apocalypse Bond
             ]
           },
           {
@@ -82,6 +219,14 @@ export default ([
               1714370697, // Living Vestige
               1359616732, // Gambit Emerald
               1359616733 // Gambit Celadon
+            ]
+          },
+          {
+            name: 'Extras',
+            season: 9,
+            items: [
+              1736897076, // Team Player
+              2173837803 // Gambit Jadestone
             ]
           }
         ]
@@ -109,6 +254,17 @@ export default ([
             ]
           },
           {
+            name: 'Hunter Armor',
+            season: 9,
+            items: [
+              3292445816, // Iron Truage Casque
+              3756249289, // Iron Truage Grips
+              1181560527, // Iron Truage Vest
+              4048191131, // Iron Truage Boots
+              2853073502 // Mantle of Efrideet
+            ]
+          },
+          {
             name: 'Titan Armor',
             season: 8,
             items: [
@@ -117,6 +273,17 @@ export default ([
               2536633781, // Iron Will Plate
               770140877, // Iron Will Greaves
               1234228360 // Iron Will Mark
+            ]
+          },
+          {
+            name: 'Titan Armor',
+            season: 9,
+            items: [
+              1105558158, // Iron Truage Helm
+              2555322239, // Iron Truage Gauntlets
+              1313089081, // Iron Truage Plate
+              1476572353, // Iron Truage Greaves
+              2627255028 // Radegast's Iron Sash
             ]
           },
           {
@@ -131,6 +298,17 @@ export default ([
             ]
           },
           {
+            name: 'Warlock Armor',
+            season: 9,
+            items: [
+              423204919, // Iron Truage Hood
+              3791686334, // Iron Truage Gloves
+              1604601714, // Iron Truage Vestments
+              4211068696, // Iron Truage Legs
+              2241419267 // Timur's Iron Bond
+            ]
+          },
+          {
             name: 'Extras',
             season: 8,
             items: [
@@ -138,23 +316,12 @@ export default ([
               3340102521, // Iron Mossbone
               3340102520 // Iron Oxide
             ]
-          }
-        ]
-      },
-      {
-        name: _(
-          'DestinyActivityModeDefinition[332181804].displayProperties.name',
-          'Nightmare Hunt'
-        ),
-        id: 'year-three-nightmare-hunts',
-        description: 'Complete all Nightmare Hunt time trials & one flawless run on Master difficulty.',
-        sections: [
+          },
           {
             name: 'Extras',
-            // season: "K",
+            season: 9,
             items: [
-              298334057, // A Sibyl's Dreams
-              2056256564 // Lunar Halcyon Gilt
+              2982947772 // Iron Fuchsite
             ]
           }
         ]
@@ -182,6 +349,49 @@ export default ([
             season: 8,
             items: [
               1714370696 // Pushing Down Daisies
+            ]
+          }
+        ]
+      },
+      {
+        name: 'The Sundial',
+        id: 'year-three-the-sundial',
+        description: _(
+          'DestinyCollectibleDefinition[3648433278].sourceString',
+          'Acquired from the Sundial activity on Mercury.'
+        ),
+        sections: [
+          {
+            name: 'Weapons',
+            season: 9,
+            items: [
+              1251729046, // Steelfeather Repeater
+              2723241847, // Patron of Lost Causes
+              1289997971, // Breachlight
+              1706206669, // Gallant Charge
+              3850168899, // Martyr's Retribution
+              946443267 // Line in the Sand
+            ]
+          },
+          {
+            name: 'Obelisk Bounties & Resonance Rank Increases',
+            season: 9,
+            items: [
+              3393519051, // Perfect Paradox
+              410996590, // Jack Queen King 3
+              4149758318, // Traveler's Judgment 5
+              3233390913 // Infinite Paths 8
+            ]
+          },
+          {
+            name: 'Extras',
+            season: 9,
+            items: [
+              2422240131, // Timeswept Shell
+              1736897072, // Sandswept Crusader
+              1736897073, // Timeline Warrior
+              980059630, // Vitrified Chronology
+              980059631 // Vitrified Duality
             ]
           }
         ]
@@ -286,7 +496,16 @@ export default ([
             ]
           },
           {
+            name: 'Nightmare Hunts',
+            // season: "K",
+            items: [
+              298334057, // A Sibyl's Dreams
+              2056256564 // Lunar Halcyon Gilt
+            ]
+          },
+          {
             name: "Altars of Sorrow",
+            // season: "K",
             itemGroups: [
               [
                 2782847179, // Blasphemer (Shotgun)
@@ -300,6 +519,7 @@ export default ([
           },
           {
             name: "'Pit of Heresy' Dungeon",
+            // season: "K",
             itemGroups: [
               [
                 208088207 // Premonition (Dungeon Pulse)
@@ -366,7 +586,7 @@ export default ([
       {
         name: 'Festival of the Lost',
         id: 'year-three-festival-of-the-lost',
-        description: 'Earned during the seasonal Festival of the Lost event.', // Double Check
+        description: 'Earned during the seasonal Festival of the Lost event.',
         sections: [
           {
             name: 'Weapons',
@@ -495,6 +715,86 @@ export default ([
           }
         ]
       },
+      {
+        name: 'The Dawning',
+        id: 'year_three_the_dawning',
+        description: 'Earned during the seasonal Dawning event.',
+        big: false,
+        sections: [
+          {
+            name: 'Weapons',
+            season: 9,
+            items: [
+              1506719573 // Cold Front
+            ]
+          },
+          {
+            name: 'Hunter Armor',
+            season: 9,
+            items: [
+              
+            ]
+          },
+          {
+            name: 'Titan Armor',
+            season: 9,
+            items: [
+              
+            ]
+          },
+          {
+            name: 'Warlock Armor',
+            season: 9,
+            items: [
+              
+            ]
+          },
+          {
+            name: 'Emotes',
+            season: 9,
+            items: [
+              
+            ]
+          },
+          {
+            name: 'Ghosts',
+            season: 9,
+            items: [
+              
+            ]
+          },
+          {
+            name: 'Ghost Projections',
+            season: 9,
+            items: [
+              
+            ]
+          },
+          {
+            name: 'Sparrows',
+            season: 9,
+            items: [
+              3981634627 // Alpine Dash
+            ]
+          },
+          {
+            name: 'Ships',
+            season: 9,
+            items: [
+              2307306630 // Bright Spirits
+            ]
+          },
+          {
+            name: 'Extras',
+            season: 9,
+            items: [
+              1736897080, // Gift Giver
+              466236950, // Dawning Elegance
+              466236951 // Dawning Welcome
+            ]
+          }
+        ]
+      }
     ]
   },
   {
@@ -506,7 +806,7 @@ export default ([
           'Season Pass'
         ),
         description:
-          'Free Track available to all Destiny 2 Players. Paid Track to owners of the current Season Pass.',
+          'Free Track is available to all Destiny 2 Players. Paid Track is available to owners of the current Season Pass.',
         id: 'year-three-season-passes',
         big: false,
         sections: [
@@ -539,6 +839,38 @@ export default ([
                 3166926330, // Substitutional Alloy Robes
                 1721943440, // Substitutional Alloy Boots
                 2815379659 // Substitutional Alloy Bond
+              ]
+            ]
+          },
+          {
+            name: 'Free Track',
+            season: 9,
+            itemGroups: [
+              [
+                4017959782, // Symmetry
+                1289324202, // Pyroclastic Flow
+                4166221755 // Trophy Hunter
+              ],
+              [
+                382498903, // Righteous Mask
+                3750877150, // Righteous Grips
+                344824594, // Righteous Vest
+                299852984, // Righteous Strides
+                940065571 // Righteous Cloak
+              ],
+              [
+                238618945, // Righteous Helm
+                1076538456, // Righteous Gauntlets
+                1560040304, // Righteous Plate
+                3406670226, // Righteous Greaves
+                445618861 // Righteous Mark
+              ],
+              [
+                1557571326, // Righteous Hood
+                785967407, // Righteous Gloves
+                3931361417, // Righteous Robes
+                936010065, // Righteous Boots
+                1416697412 // Righteous Bond
               ]
             ]
           },
@@ -580,6 +912,48 @@ export default ([
                 3448612595, // Night's Chill
                 3448612594, // First Frost
                 2078915253, // Blackheart Growth
+              ]
+            ]
+          },
+          {
+            name: 'Paid Track',
+            season: 9,
+            itemGroups: [
+              [
+                2066724468, // Skyline Constellation
+                2416805974, // Meteoric Descent
+                1249781195 // Zaroff's Prized Longbore
+              ],
+              [
+                90191153, // Virtuous Mask
+                3001813128, // Virtuous Grips
+                3004625280, // Virtuous Vest
+                4103152482, // Virtuous Strides
+                2356341309 // Virtuous Cloak
+              ],
+              [
+                3324052357, // Virtuous Helm
+                4104729172, // Virtuous Gauntlets
+                474951532, // Virtuous Plate
+                55923806, // Virtuous Greaves
+                3173709985 // Virtuous Mark
+              ],
+              [
+                752572736, // Virtuous Hood
+                2613613329, // Virtuous Gloves
+                2861849799, // Virtuous Robes
+                2020305635, // Virtuous Boots
+                3577347542 // Virtuous Bond
+              ],
+              [
+                4191932814, // Pigeon Feed
+                1362221859, // Coin Trick
+                4140860253, // The Kellbreaker
+                2512921531, // Saintly Shell
+                1736897074, // Dawn Chaser
+                1402284586, // Gunmetal Marigold
+                1402284587, // Regal Medallion
+                1693097638 // Defiant Vexsplosion
               ]
             ]
           }
@@ -766,6 +1140,33 @@ export default ([
               3951356826, // Harpy's Cry
               3951356824, // Nightmare Emergence
               3951356825 // Shattered Shrieker
+            ]
+          }
+        ]
+      },
+      {
+        name: _(
+          'DestinyVendorDefinition[3163810067].displayProperties.name',
+          'Legendary Engrams'
+        ),
+        id: 'year-three-legendary-engram',
+        description: _(
+          'DestinyCollectibleDefinition[4273799635].sourceString',
+          'Open Legendary engrams and earn faction rank-up packages.'
+        ),
+        big: false,
+        sections: [
+          {
+            name: 'Weapons',
+            season: 9,
+            items: [
+              3569802112, // The Old Fashioned
+              1807343361, // Hawthorne's Field-Forged Shotgun
+              3863882743, // Uriel's Gift
+              3434944005, // Point of the Stag
+              4106983932, // Elatha FR4
+              3622137132, // Last Hope
+              1529450902, // Mos Epoch III
             ]
           }
         ]
