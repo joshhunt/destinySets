@@ -15,16 +15,38 @@ export default [
             nameHash: 1198124803,
             itemGroups: [
               [
+                3102998657 // Enhanced Linear Fusion Targeting
+              ],
+              [
                 3786078704, // Precision Weapon Targeting
                 3476502793 // Scatter Projectile Targeting
+              ],
+              [
+                3068122505, // Primary Ammo Finder
+                1041574086, // Special Ammo Finder
+                3091871970 // Heavy Ammo Finder
               ]
             ],
             groups: [
+              {
+                name: "Seasonal Artifact mod",
+                items: [
+                  3102998657 // Enhanced Linear Fusion Targeting
+                ]
+              },
               {
                 name: "Targeting",
                 items: [
                   3786078704, // Precision Weapon Targeting
                   3476502793 // Scatter Projectile Targeting
+                ]
+              },
+              {
+                name: "Ammo Finder",
+                items: [
+                  3068122505, // Primary Ammo Finder
+                  1041574086, // Special Ammo Finder
+                  3091871970 // Heavy Ammo Finder
                 ]
               }
             ]
@@ -168,11 +190,9 @@ export default [
             nameHash: 1198124803,
             itemGroups: [
               [
-                3333771943, // Enhanced Hand Cannon Loader
-                3333771940, // Enhanced Submachine Gun Loader
-                3333771941, // Enhanced Bow Loader
-                3333771938, // Enhanced Fusion Rifle Loader
-                3333771939 // Enhanced Auto Rifle Loader
+                3102998661, // Enhanced Rifle Loader
+                3102998663, // Enhanced Bow Loader
+                3102998656 // Enhanced Sniper Rifle Loader
               ],
               [
                 403494087 // Fastball
@@ -187,11 +207,9 @@ export default [
               {
                 name: "Seasonal Artifact mod",
                 items: [
-                  3333771943, // Enhanced Hand Cannon Loader
-                  3333771940, // Enhanced Submachine Gun Loader
-                  3333771941, // Enhanced Bow Loader
-                  3333771938, // Enhanced Fusion Rifle Loader
-                  3333771939 // Enhanced Auto Rifle Loader
+                  3102998661, // Enhanced Rifle Loader
+                  3102998663, // Enhanced Bow Loader
+                  3102998656 // Enhanced Sniper Rifle Loader
                 ]
               },
               {
@@ -324,11 +342,12 @@ export default [
             nameHash: 1198124803,
             itemGroups: [
               [
-                2402696710, // Breach Refractor
-                2402696709, // Overload Grenades
-                2402696708, // Disruptor Spike
-                2402696707, // Unstoppable Melee
-                2402696706 // Ballistic Combo
+                3102998662, // Enhanced Unflinching Rifle Aim
+                4195125383, // Breach Resonator
+                4195125380, // Molten Overload
+                4195125381, // Disruptor Spike
+                4195125378, // Unstoppable Schwarzschild Condensor
+                4195125379 // Tenderizer
               ],
               [
                 1541497724, // Unflinching Light Arms Aim
@@ -340,11 +359,12 @@ export default [
               {
                 name: "Seasonal Artifact mod",
                 items: [
-                  2402696710, // Breach Refractor
-                  2402696709, // Overload Grenades
-                  2402696708, // Disruptor Spike
-                  2402696707, // Unstoppable Melee
-                  2402696706 // Ballistic Combo
+                  3102998662, // Enhanced Unflinching Rifle Aim
+                  4195125383, // Breach Resonator
+                  4195125380, // Molten Overload
+                  4195125381, // Disruptor Spike
+                  4195125378, // Unstoppable Schwarzschild Condensor
+                  4195125379 // Tenderizer
                 ]
               },
               {
@@ -504,6 +524,11 @@ export default [
                 805625272, // Light Arms Dexterity
                 3507619526, // Rifle Dexterity
                 3175015261 // Oversize Weapon Dexterity
+              ],
+              [
+                2401086340, // Primary Ammo Scavenger
+                345205583, // Special Ammo Scavenger
+                3866072732 // Power Ammo Scavenger
               ]
             ],
             groups: [
@@ -519,6 +544,14 @@ export default [
                   805625272, // Light Arms Dexterity
                   3507619526, // Rifle Dexterity
                   3175015261 // Oversize Weapon Dexterity
+                ]
+              },
+              {
+                name: "Ammo Scavenger",
+                items: [
+                  2401086340, // Primary Ammo Scavenger
+                  345205583, // Special Ammo Scavenger
+                  3866072732 // Power Ammo Scavenger
                 ]
               }
             ]
@@ -666,11 +699,11 @@ export default [
             nameHash: 1198124803,
             itemGroups: [
               [
-                2612707365, // Heavy Finisher
-                2612707366, // Oppressive Darkness
-                2612707367, // Arc Battery
-                2612707360, // Thunder Coil
-                2612707361 // From the Depths
+                3979891912, // Guardian Angel
+                3979891915, // Void Battery
+                3979891914, // Heavy Finisher
+                3979891917, // Solar Plexus
+                3979891916 // From the Depths
               ],
               [
                 3320641683, // Absolution
@@ -683,11 +716,11 @@ export default [
               {
                 name: "Seasonal Artifact mod",
                 items: [
-                  2612707365, // Heavy Finisher
-                  2612707366, // Oppressive Darkness
-                  2612707367, // Arc Battery
-                  2612707360, // Thunder Coil
-                  2612707361 // From the Depths
+                  3979891912, // Guardian Angel
+                  3979891915, // Void Battery
+                  3979891914, // Heavy Finisher
+                  3979891917, // Solar Plexus
+                  3979891916 // From the Depths
                 ]
               },
               {
@@ -711,7 +744,9 @@ export default [
                 4237638091, // One-Two Finisher
                 4237638095, // Explosive Finisher
                 3065699930, // Hands-On
-                4092923892 // Pump Action
+                4092923892, // Pump Action
+                1957851633, // Bleeding Edge
+                4121395272 // Storm of Lead
               ]
             ],
             groups: [
@@ -723,7 +758,9 @@ export default [
                   4237638091, // One-Two Finisher
                   4237638095, // Explosive Finisher
                   3065699930, // Hands-On
-                  4092923892 // Pump Action
+                  4092923892, // Pump Action
+                  1957851633, // Bleeding Edge
+                  4121395272 // Storm of Lead
                 ]
               }
             ]
@@ -739,7 +776,9 @@ export default [
                 3884084138, // Enhanced Bomber
                 322752304, // Ashes to Assets
                 3320253353, // Enhanced Ashes to Assets
-                4084428384 // Light Reactor
+                4084428384, // Light Reactor
+                2548337781, // Blast Off
+                1834598430 // Light Conductor
               ]
             ],
             groups: [
@@ -752,7 +791,9 @@ export default [
                   3884084138, // Enhanced Bomber
                   322752304, // Ashes to Assets
                   3320253353, // Enhanced Ashes to Assets
-                  4084428384 // Light Reactor
+                  4084428384, // Light Reactor
+                  2548337781, // Blast Off
+                  1834598430 // Light Conductor
                 ]
               }
             ]
@@ -766,9 +807,10 @@ export default [
                 973776237, // Insulation
                 4137020505, // Perpetuation
                 1016705548, // Dynamo
-                4237638088, // Safe Finisher
+                4237638088, // Bulwark Finisher
                 4237638089, // Healthy Finisher
-                2375300279 // Remote Connection
+                2375300279, // Remote Connection
+                3962384413 // Dire Artillery
               ]
             ],
             groups: [
@@ -779,9 +821,10 @@ export default [
                   973776237, // Insulation
                   4137020505, // Perpetuation
                   1016705548, // Dynamo
-                  4237638088, // Safe Finisher
+                  4237638088, // Bulwark Finisher
                   4237638089, // Healthy Finisher
-                  2375300279 // Remote Connection
+                  2375300279, // Remote Connection
+                  3962384413 // Dire Artillery
                 ]
               }
             ]
@@ -797,11 +840,11 @@ export default [
             nameHash: 1198124803,
             itemGroups: [
               [
-                4088080601, // Dark Glimmer
-                4088080602, // Labyrinth Miner
-                4088080603, // Biomonetizer
-                4088080604, // Circuit Scavenger
-                4088080605 // Dissection Matrix
+                3264050278, // Solidus Strike
+                3264050277, // Splintered Gladius
+                3264050276, // Biomonetizer
+                3264050275, // Tithe Collector's Sigil
+                3264050274 // Knight Errant
               ],
               [
                 926084009, // Paragon Mod
@@ -813,7 +856,12 @@ export default [
                 2850583378, // Resilience Mod
                 531752975, // Minor Resist
                 1313760467, // Major Resist
-                1719752237 // Boss Resist
+                1719752237, // Boss Resist
+                3632726238, // Taking Charge
+                3632726239, // Shield Break Charge
+                3632726236, // Empowered Finish
+                3632726237, // High-Energy Fire
+                2588939505 // Concussive Dampener
               ],
               [
                 3895804619, // Dreambane Mod
@@ -848,11 +896,11 @@ export default [
               {
                 name: "Seasonal Artifact mod",
                 items: [
-                  4088080601, // Dark Glimmer
-                  4088080602, // Labyrinth Miner
-                  4088080603, // Biomonetizer
-                  4088080604, // Circuit Scavenger
-                  4088080605 // Dissection Matrix
+                  3264050278, // Solidus Strike
+                  3264050277, // Splintered Gladius
+                  3264050276, // Biomonetizer
+                  3264050275, // Tithe Collector's Sigil
+                  3264050274 // Knight Errant
                 ]
               },
               {
@@ -867,7 +915,12 @@ export default [
                   2850583378, // Resilience Mod
                   531752975, // Minor Resist
                   1313760467, // Major Resist
-                  1719752237 // Boss Resist
+                  1719752237, // Boss Resist
+                  3632726238, // Taking Charge
+                  3632726239, // Shield Break Charge
+                  3632726236, // Empowered Finish
+                  3632726237, // High-Energy Fire
+                  2588939505 // Concussive Dampener
                 ]
               },
               {
@@ -917,7 +970,11 @@ export default [
             nameHash: 728351493,
             itemGroups: [
               [
-                3074491624 // Arc Resistance
+                3074491624, // Arc Resistance
+                1484685884, // Quick Charge
+                1484685885, // Striking Light
+                1484685886, // Heavy Handed
+                1484685887 // Powerful Friends
               ],
               [
                 3829100654, // Supreme Nightmare Banisher
@@ -935,7 +992,11 @@ export default [
               {
                 name: "General",
                 items: [
-                  3074491624 // Arc Resistance
+                  3074491624, // Arc Resistance
+                  1484685884, // Quick Charge
+                  1484685885, // Striking Light
+                  1484685886, // Heavy Handed
+                  1484685887 // Powerful Friends
                 ]
               },
               {
@@ -962,7 +1023,11 @@ export default [
             nameHash: 591714140,
             itemGroups: [
               [
-                1429600943 // Solar Resistance
+                1429600943, // Solar Resistance
+                3185435909, // Heal Thyself
+                3185435908, // Firepower
+                3185435911, // Blast Radius
+                3185435910 // Charged Up
               ],
               [
                 2023980600, // Supreme Nightmare Breaker
@@ -980,7 +1045,11 @@ export default [
               {
                 name: "General",
                 items: [
-                  1429600943 // Solar Resistance
+                  1429600943, // Solar Resistance
+                  3185435909, // Heal Thyself
+                  3185435908, // Firepower
+                  3185435911, // Blast Radius
+                  3185435910 // Charged Up
                 ]
               },
               {
@@ -1007,7 +1076,10 @@ export default [
             nameHash: 4069572561,
             itemGroups: [
               [
-                107977982 // Void Resistance
+                107977982, // Void Resistance
+                3523075120, // Protective Light
+                3523075122, // Precisely Charged
+                3523075123 // Stacks on Stacks
               ],
               [
                 2045123179, // Supreme Nightmare Crusher
@@ -1019,13 +1091,19 @@ export default [
               [
                 4185864113, // Embraced Largesse
                 301151651 // Emperor's Balance
+              ],
+              [
+                3523075121 // Extra Reserves
               ]
             ],
             groups: [
               {
                 name: "General",
                 items: [
-                  107977982 // Void Resistance
+                  107977982, // Void Resistance
+                  3523075120, // Protective Light
+                  3523075122, // Precisely Charged
+                  3523075123 // Stacks on Stacks
                 ]
               },
               {
@@ -1043,6 +1121,12 @@ export default [
                 items: [
                   4185864113, // Embraced Largesse
                   301151651 // Emperor's Balance
+                ]
+              },
+              {
+                name: "Ammo Reserves",
+                items: [
+                  3523075121 // Extra Reserves
                 ]
               }
             ]
