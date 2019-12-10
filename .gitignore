@@ -6,7 +6,6 @@
 logs
 *.log
 npm-debug.log*
-.npmrc
 
 # Runtime data
 pids
