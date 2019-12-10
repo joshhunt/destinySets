@@ -1030,5 +1030,90 @@ export default ([
         ]
       }
     ]
+  },
+  {
+    name: 'Holiday & Special Events',
+    sets: [
+      {
+        name: 'The Dawning',
+        id: 'year_three_the_dawning',
+        description: 'Earned during the seasonal Dawning event.',
+        big: false,
+        sections: [
+          {
+            name: 'Weapons',
+            season: 9,
+            items: [
+              1506719573 // Cold Front
+            ]
+          },
+          {
+            name: 'Hunter Armor',
+            season: 9,
+            items: [
+              
+            ]
+          },
+          {
+            name: 'Titan Armor',
+            season: 9,
+            items: [
+              
+            ]
+          },
+          {
+            name: 'Warlock Armor',
+            season: 9,
+            items: [
+              
+            ]
+          },
+          {
+            name: 'Emotes',
+            season: 9,
+            items: [
+              
+            ]
+          },
+          {
+            name: 'Ghosts',
+            season: 9,
+            items: [
+              
+            ]
+          },
+          {
+            name: 'Ghost Projections',
+            season: 9,
+            items: [
+              
+            ]
+          },
+          {
+            name: 'Sparrows',
+            season: 9,
+            items: [
+              3981634627 // Alpine Dash
+            ]
+          },
+          {
+            name: 'Ships',
+            season: 9,
+            items: [
+              2307306630 // Bright Spirits
+            ]
+          },
+          {
+            name: 'Extras',
+            season: 9,
+            items: [
+              1736897080, // Gift Giver
+              466236950, // Dawning Elegance
+              466236951 // Dawning Welcome
+            ]
+          }
+        ]
+      }
+    ]
   }
 ]: SetPage);
