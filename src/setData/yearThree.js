@@ -119,9 +119,16 @@ export default ([
         sections: [
           {
             name: 'Weapons',
-            season: 8, // Double Check
+            season: 8,
             items: [
               4227181568 // Exit Strategy
+            ]
+          },
+          {
+            name: 'Weapons',
+            season: 9,
+            items: [
+              838556752 // Python
             ]
           },
           {
@@ -131,6 +138,14 @@ export default ([
               1714370697, // Living Vestige
               1359616732, // Gambit Emerald
               1359616733 // Gambit Celadon
+            ]
+          },
+          {
+            name: 'Extras',
+            season: 9,
+            items: [
+              1736897076, // Team Player
+              2173837803 // Gambit Jadestone
             ]
           }
         ]
