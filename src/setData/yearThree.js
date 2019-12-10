@@ -327,24 +327,6 @@ export default ([
         ]
       },
       {
-        name: _(
-          'DestinyActivityModeDefinition[332181804].displayProperties.name',
-          'Nightmare Hunt'
-        ),
-        id: 'year-three-nightmare-hunts',
-        description: 'Complete all Nightmare Hunt time trials & one flawless run on Master difficulty.',
-        sections: [
-          {
-            name: 'Extras',
-            // season: "K",
-            items: [
-              298334057, // A Sibyl's Dreams
-              2056256564 // Lunar Halcyon Gilt
-            ]
-          }
-        ]
-      },
-      {
         name: 'Vex Offensive & Invasions',
         id: 'year-three-vex-offensive-and-invasions',
         description: _(
@@ -389,6 +371,16 @@ export default ([
               1706206669, // Gallant Charge
               3850168899, // Martyr's Retribution
               946443267 // Line in the Sand
+            ]
+          },
+          {
+            name: 'Obelisk Bounties & Resonance Rank Increases',
+            season: 9,
+            items: [
+              3393519051, // Perfect Paradox
+              410996590, // Jack Queen King 3
+              4149758318, // Traveler's Judgment 5
+              3233390913 // Infinite Paths 8
             ]
           },
           {
@@ -504,7 +496,16 @@ export default ([
             ]
           },
           {
+            name: 'Nightmare Hunts',
+            // season: "K",
+            items: [
+              298334057, // A Sibyl's Dreams
+              2056256564 // Lunar Halcyon Gilt
+            ]
+          },
+          {
             name: "Altars of Sorrow",
+            // season: "K",
             itemGroups: [
               [
                 2782847179, // Blasphemer (Shotgun)
@@ -518,6 +519,7 @@ export default ([
           },
           {
             name: "'Pit of Heresy' Dungeon",
+            // season: "K",
             itemGroups: [
               [
                 208088207 // Premonition (Dungeon Pulse)
@@ -584,7 +586,7 @@ export default ([
       {
         name: 'Festival of the Lost',
         id: 'year-three-festival-of-the-lost',
-        description: 'Earned during the seasonal Festival of the Lost event.', // Double Check
+        description: 'Earned during the seasonal Festival of the Lost event.',
         sections: [
           {
             name: 'Weapons',
@@ -804,7 +806,7 @@ export default ([
           'Season Pass'
         ),
         description:
-          'Free Track available to all Destiny 2 Players. Paid Track to owners of the current Season Pass.',
+          'Free Track is available to all Destiny 2 Players. Paid Track is available to owners of the current Season Pass.',
         id: 'year-three-season-passes',
         big: false,
         sections: [
@@ -1138,6 +1140,33 @@ export default ([
               3951356826, // Harpy's Cry
               3951356824, // Nightmare Emergence
               3951356825 // Shattered Shrieker
+            ]
+          }
+        ]
+      },
+      {
+        name: _(
+          'DestinyVendorDefinition[3163810067].displayProperties.name',
+          'Legendary Engrams'
+        ),
+        id: 'year-three-legendary-engram',
+        description: _(
+          'DestinyCollectibleDefinition[4273799635].sourceString',
+          'Open Legendary engrams and earn faction rank-up packages.'
+        ),
+        big: false,
+        sections: [
+          {
+            name: 'Weapons',
+            season: 9,
+            items: [
+              3569802112, // The Old Fashioned
+              1807343361, // Hawthorne's Field-Forged Shotgun
+              3863882743, // Uriel's Gift
+              3434944005, // Point of the Stag
+              4106983932, // Elatha FR4
+              3622137132, // Last Hope
+              1529450902, // Mos Epoch III
             ]
           }
         ]
