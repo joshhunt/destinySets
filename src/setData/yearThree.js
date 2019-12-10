@@ -109,6 +109,17 @@ export default ([
             ]
           },
           {
+            name: 'Hunter Armor',
+            season: 9,
+            items: [
+              3292445816, // Iron Truage Casque
+              3756249289, // Iron Truage Grips
+              1181560527, // Iron Truage Vest
+              4048191131, // Iron Truage Boots
+              2853073502 // Mantle of Efrideet
+            ]
+          },
+          {
             name: 'Titan Armor',
             season: 8,
             items: [
@@ -117,6 +128,17 @@ export default ([
               2536633781, // Iron Will Plate
               770140877, // Iron Will Greaves
               1234228360 // Iron Will Mark
+            ]
+          },
+          {
+            name: 'Titan Armor',
+            season: 9,
+            items: [
+              1105558158, // Iron Truage Helm
+              2555322239, // Iron Truage Gauntlets
+              1313089081, // Iron Truage Plate
+              1476572353, // Iron Truage Greaves
+              2627255028 // Radegast's Iron Sash
             ]
           },
           {
@@ -131,12 +153,30 @@ export default ([
             ]
           },
           {
+            name: 'Warlock Armor',
+            season: 9,
+            items: [
+              423204919, // Iron Truage Hood
+              3791686334, // Iron Truage Gloves
+              1604601714, // Iron Truage Vestments
+              4211068696, // Iron Truage Legs
+              2241419267 // Timur's Iron Bond
+            ]
+          },
+          {
             name: 'Extras',
             season: 8,
             items: [
               677674547, // Flying Foundry
               3340102521, // Iron Mossbone
               3340102520 // Iron Oxide
+            ]
+          },
+          {
+            name: 'Extras',
+            season: 9,
+            items: [
+              2982947772 // Iron Fuchsite
             ]
           }
         ]
