@@ -187,6 +187,39 @@ export default ([
         ]
       },
       {
+        name: 'The Sundial',
+        id: 'year-three-the-sundial',
+        description: _(
+          'DestinyCollectibleDefinition[3648433278].sourceString',
+          'Acquired from the Sundial activity on Mercury.'
+        ),
+        sections: [
+          {
+            name: 'Weapons',
+            season: 9,
+            items: [
+              1251729046, // Steelfeather Repeater
+              2723241847, // Patron of Lost Causes
+              1289997971, // Breachlight
+              1706206669, // Gallant Charge
+              3850168899, // Martyr's Retribution
+              946443267 // Line in the Sand
+            ]
+          },
+          {
+            name: 'Extras',
+            season: 9,
+            items: [
+              2422240131, // Timeswept Shell
+              1736897072, // Sandswept Crusader
+              1736897073, // Timeline Warrior
+              980059630, // Vitrified Chronology
+              980059631 // Vitrified Duality
+            ]
+          }
+        ]
+      },
+      {
         name: _(
           'DestinyActivityModeDefinition[2659723068].displayProperties.name',
           'Garden of Salvation'
