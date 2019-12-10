@@ -180,6 +180,39 @@ export default ([
             ]
           },
           {
+            name: 'Hunter Armor',
+            season: 9,
+            items: [
+              759348512, // Ancient Apocalypse Mask
+              2620389105, // Ancient Apocalypse Grips
+              1741396519, // Ancient Apocalypse Vest
+              2451538755, // Ancient Apocalypse Strides
+              2881248566 // Ancient Apocalypse Cloak
+            ]
+          },
+          {
+            name: 'Titan Armor',
+            season: 9,
+            items: [
+              3664007718, // Ancient Apocalypse Helm
+              2677967607, // Ancient Apocalypse Gauntlets
+              1237661249, // Ancient Apocalypse Plate
+              191535001, // Ancient Apocalypse Greaves
+              2020166300 // Ancient Apocalypse Mark
+            ]
+          },
+          {
+            name: 'Warlock Armor',
+            season: 9,
+            items: [
+              1013137701, // Ancient Apocalypse Hood
+              1752237812, // Ancient Apocalypse Gloves
+              3550729740, // Ancient Apocalypse Robes
+              2039976446, // Ancient Apocalypse Boots
+              1488486721 // Ancient Apocalypse Bond
+            ]
+          },
+          {
             name: 'Extras',
             season: 8,
             items: [
