@@ -1,35 +1,35 @@
 // @flow
-import type { SetPage } from '../types';
-import { i18nDefinitionString as _ } from './utils';
+import type { SetPage } from "../types";
+import { i18nDefinitionString as _ } from "./utils";
 
 export default ([
   {
-    name: 'Activities',
+    name: "Activities",
     sets: [
       {
         name: _(
-          'DestinyActivityModeDefinition[2394616003].displayProperties.name',
-          'Strikes'
+          "DestinyActivityModeDefinition[2394616003].displayProperties.name",
+          "Strikes"
         ),
-        id: 'year-three-strikes',
-        description: 'Complete necessary pursuits from Commander Zavala.',
+        id: "year-three-strikes",
+        description: "Complete necessary pursuits from Commander Zavala.",
         sections: [
           {
-            name: 'Weapons',
+            name: "Weapons",
             season: 8,
             items: [
               847329160 // Edgewise
             ]
           },
           {
-            name: 'Weapons',
+            name: "Weapons",
             season: 9,
             items: [
               805677041 // Buzzard
             ]
           },
           {
-            name: 'Hunter Armor',
+            name: "Hunter Armor",
             season: 9,
             items: [
               432360904, // Vigil of Heroes
@@ -40,7 +40,7 @@ export default ([
             ]
           },
           {
-            name: 'Titan Armor',
+            name: "Titan Armor",
             season: 9,
             items: [
               1130203390, // Vigil of Heroes
@@ -51,7 +51,7 @@ export default ([
             ]
           },
           {
-            name: 'Warlock Armor',
+            name: "Warlock Armor",
             season: 9,
             items: [
               2422319309, // Vigil of Heroes
@@ -62,7 +62,7 @@ export default ([
             ]
           },
           {
-            name: 'Extras',
+            name: "Extras",
             season: 8,
             items: [
               1655929400, // The Ordeal
@@ -72,7 +72,7 @@ export default ([
             ]
           },
           {
-            name: 'Extras',
+            name: "Extras",
             season: 9,
             items: [
               1736897078, // Tactician
@@ -83,28 +83,28 @@ export default ([
       },
       {
         name: _(
-          'DestinyActivityModeDefinition[1164760504].displayProperties.name',
-          'Crucible'
+          "DestinyActivityModeDefinition[1164760504].displayProperties.name",
+          "Crucible"
         ),
-        id: 'year-three-crucible',
-        description: 'Complete necessary pursuits from Lord Shaxx.',
+        id: "year-three-crucible",
+        description: "Complete necessary pursuits from Lord Shaxx.",
         sections: [
           {
-            name: 'Weapons',
+            name: "Weapons",
             season: 8,
             items: [
               3535742959 // Randy's Throwing Knife
             ]
           },
           {
-            name: 'Weapons',
+            name: "Weapons",
             season: 9,
             items: [
               2697058914 // Komodo-4FR
             ]
           },
           {
-            name: 'Hunter Armor',
+            name: "Hunter Armor",
             season: 9,
             items: [
               4123918087, // Wing Contender
@@ -115,7 +115,7 @@ export default ([
             ]
           },
           {
-            name: 'Titan Armor',
+            name: "Titan Armor",
             season: 9,
             items: [
               3483546829, // Wing Discipline
@@ -126,7 +126,7 @@ export default ([
             ]
           },
           {
-            name: 'Warlock Armor',
+            name: "Warlock Armor",
             season: 9,
             items: [
               874101646, // Wing Theorem
@@ -137,7 +137,7 @@ export default ([
             ]
           },
           {
-            name: 'Extras',
+            name: "Extras",
             season: 8,
             items: [
               3219975799, // Honorable Duelist Shell
@@ -147,11 +147,11 @@ export default ([
             ]
           },
           {
-            name: 'Extras',
+            name: "Extras",
             season: 9,
             items: [
               1736897075, // No Quarter
-              1736897079, // Savior of the Past
+              // 1736897079, // Savior of the Past (Hidden until Source Confirmed)
               3603801350 // Crucible Prestige
             ]
           }
@@ -159,28 +159,28 @@ export default ([
       },
       {
         name: _(
-          'DestinyActivityModeDefinition[1848252830].displayProperties.name',
-          'Gambit'
+          "DestinyActivityModeDefinition[1848252830].displayProperties.name",
+          "Gambit"
         ),
-        id: 'year-three-gambit',
-        description: 'Complete necessary pursuits from the Drifter.',
+        id: "year-three-gambit",
+        description: "Complete necessary pursuits from the Drifter.",
         sections: [
           {
-            name: 'Weapons',
+            name: "Weapons",
             season: 8,
             items: [
               4227181568 // Exit Strategy
             ]
           },
           {
-            name: 'Weapons',
+            name: "Weapons",
             season: 9,
             items: [
               838556752 // Python
             ]
           },
           {
-            name: 'Hunter Armor',
+            name: "Hunter Armor",
             season: 9,
             items: [
               759348512, // Ancient Apocalypse Mask
@@ -191,7 +191,7 @@ export default ([
             ]
           },
           {
-            name: 'Titan Armor',
+            name: "Titan Armor",
             season: 9,
             items: [
               3664007718, // Ancient Apocalypse Helm
@@ -202,7 +202,7 @@ export default ([
             ]
           },
           {
-            name: 'Warlock Armor',
+            name: "Warlock Armor",
             season: 9,
             items: [
               1013137701, // Ancient Apocalypse Hood
@@ -213,7 +213,7 @@ export default ([
             ]
           },
           {
-            name: 'Extras',
+            name: "Extras",
             season: 8,
             items: [
               1714370697, // Living Vestige
@@ -222,7 +222,7 @@ export default ([
             ]
           },
           {
-            name: 'Extras',
+            name: "Extras",
             season: 9,
             items: [
               1736897076, // Team Player
@@ -233,17 +233,24 @@ export default ([
       },
       {
         name: _(
-          'DestinyActivityModeDefinition[1826469369].displayProperties.name',
-          'Iron Banner'
+          "DestinyActivityModeDefinition[1826469369].displayProperties.name",
+          "Iron Banner"
         ),
-        id: 'year-three-iron-banner',
+        id: "year-three-iron-banner",
         description: _(
-          'DestinyCollectibleDefinition[1158218425].sourceString',
-          'Complete Iron Banner matches and earn rank-up packages from Lord Saladin.'
+          "DestinyCollectibleDefinition[1158218425].sourceString",
+          "Complete Iron Banner matches and earn rank-up packages from Lord Saladin."
         ),
         sections: [
           {
-            name: 'Hunter Armor',
+            name: "Weapons",
+            season: 9,
+            items: [
+              3434944005 // Point of the Stag
+            ]
+          },
+          {
+            name: "Hunter Armor",
             season: 8,
             items: [
               1098138990, // Iron Will Mask
@@ -254,7 +261,7 @@ export default ([
             ]
           },
           {
-            name: 'Hunter Armor',
+            name: "Hunter Armor",
             season: 9,
             items: [
               3292445816, // Iron Truage Casque
@@ -265,7 +272,7 @@ export default ([
             ]
           },
           {
-            name: 'Titan Armor',
+            name: "Titan Armor",
             season: 8,
             items: [
               1895324274, // Iron Will Helm
@@ -276,7 +283,7 @@ export default ([
             ]
           },
           {
-            name: 'Titan Armor',
+            name: "Titan Armor",
             season: 9,
             items: [
               1105558158, // Iron Truage Helm
@@ -287,7 +294,7 @@ export default ([
             ]
           },
           {
-            name: 'Warlock Armor',
+            name: "Warlock Armor",
             season: 8,
             items: [
               2205315921, // Iron Will Hood
@@ -298,7 +305,7 @@ export default ([
             ]
           },
           {
-            name: 'Warlock Armor',
+            name: "Warlock Armor",
             season: 9,
             items: [
               423204919, // Iron Truage Hood
@@ -309,7 +316,7 @@ export default ([
             ]
           },
           {
-            name: 'Extras',
+            name: "Extras",
             season: 8,
             items: [
               677674547, // Flying Foundry
@@ -318,24 +325,25 @@ export default ([
             ]
           },
           {
-            name: 'Extras',
+            name: "Extras",
             season: 9,
             items: [
+              1736897077, // Iron in the Fire
               2982947772 // Iron Fuchsite
             ]
           }
         ]
       },
       {
-        name: 'Vex Offensive & Invasions',
-        id: 'year-three-vex-offensive-and-invasions',
+        name: "Vex Offensive & Invasions",
+        id: "year-three-vex-offensive-and-invasions",
         description: _(
-          'DestinyCollectibleDefinition[4151753667].sourceString',
-          'Complete seasonal activities during Season of the Undying.'
+          "DestinyCollectibleDefinition[4151753667].sourceString",
+          "Complete seasonal activities during Season of the Undying."
         ),
         sections: [
           {
-            name: 'Weapons',
+            name: "Weapons",
             season: 8,
             items: [
               2314999489, // Imperative
@@ -345,7 +353,7 @@ export default ([
             ]
           },
           {
-            name: 'Extras',
+            name: "Extras",
             season: 8,
             items: [
               1714370696 // Pushing Down Daisies
@@ -354,15 +362,15 @@ export default ([
         ]
       },
       {
-        name: 'The Sundial',
-        id: 'year-three-the-sundial',
+        name: "The Sundial",
+        id: "year-three-the-sundial",
         description: _(
-          'DestinyCollectibleDefinition[3648433278].sourceString',
-          'Acquired from the Sundial activity on Mercury.'
+          "DestinyCollectibleDefinition[3648433278].sourceString",
+          "Acquired from the Sundial activity on Mercury."
         ),
         sections: [
           {
-            name: 'Weapons',
+            name: "Weapons",
             season: 9,
             items: [
               1251729046, // Steelfeather Repeater
@@ -374,7 +382,7 @@ export default ([
             ]
           },
           {
-            name: 'Obelisk Bounties & Resonance Rank Increases',
+            name: "Obelisk Bounties & Resonance Rank Increases",
             season: 9,
             items: [
               3393519051, // Perfect Paradox
@@ -384,7 +392,7 @@ export default ([
             ]
           },
           {
-            name: 'Extras',
+            name: "Extras",
             season: 9,
             items: [
               2422240131, // Timeswept Shell
@@ -398,17 +406,17 @@ export default ([
       },
       {
         name: _(
-          'DestinyActivityModeDefinition[2659723068].displayProperties.name',
-          'Garden of Salvation'
+          "DestinyActivityModeDefinition[2659723068].displayProperties.name",
+          "Garden of Salvation"
         ),
-        id: 'year-three-garden-of-salvation',
+        id: "year-three-garden-of-salvation",
         description: _(
-          'DestinyCollectibleDefinition[2948134329].sourceString',
+          "DestinyCollectibleDefinition[2948134329].sourceString",
           '"Garden of Salvation" raid'
         ),
         sections: [
           {
-            name: 'Weapons',
+            name: "Weapons",
             // season: "K", // Double Check
             items: [
               3385326721, // Reckless Oracle
@@ -421,7 +429,7 @@ export default ([
             ]
           },
           {
-            name: 'Hunter Armor',
+            name: "Hunter Armor",
             // season: "K", // Double Check
             items: [
               557676195, // Cowl of Righteousness
@@ -432,7 +440,7 @@ export default ([
             ]
           },
           {
-            name: 'Titan Armor',
+            name: "Titan Armor",
             // season: "K", // Double Check
             items: [
               519078295, // Helm of Righteousness
@@ -443,7 +451,7 @@ export default ([
             ]
           },
           {
-            name: 'Warlock Armor',
+            name: "Warlock Armor",
             // season: "K", // Double Check
             items: [
               3001934726, // Mask of Righteousness
@@ -454,7 +462,7 @@ export default ([
             ]
           },
           {
-            name: 'Extras',
+            name: "Extras",
             // season: "K", // Double Check
             items: [
               298334059, // Inherent Truth
@@ -467,21 +475,21 @@ export default ([
     ]
   },
   {
-    name: 'Destinations',
+    name: "Destinations",
     sets: [
       {
         name: _(
-          'DestinyPlaceDefinition[3325508439].displayProperties.name',
-          'The Moon'
+          "DestinyPlaceDefinition[3325508439].displayProperties.name",
+          "The Moon"
         ),
-        id: 'year-three-moon',
+        id: "year-three-moon",
         description: _(
-          'DestinyCollectibleDefinition[1310958655].sourceString',
-          'Found by exploring the Moon.'
+          "DestinyCollectibleDefinition[1310958655].sourceString",
+          "Found by exploring the Moon."
         ),
         sections: [
           {
-            name: 'Weapons',
+            name: "Weapons",
             // season: "K",
             items: [
               2723909519, // Arc Logic
@@ -496,7 +504,7 @@ export default ([
             ]
           },
           {
-            name: 'Nightmare Hunts',
+            name: "Nightmare Hunts",
             // season: "K",
             items: [
               298334057, // A Sibyl's Dreams
@@ -513,7 +521,7 @@ export default ([
                 3067821200 // Heretic (Rocket Launcher)
               ],
               [
-                3708784304, // Bane of Crota Shell (Ghost Shell)
+                3708784304 // Bane of Crota Shell (Ghost Shell)
               ]
             ]
           },
@@ -527,12 +535,12 @@ export default ([
               [
                 4023500750, // Bane of Tyrants (Ship)
                 298334061, // Sanguine Static (Emblem)
-                298334060, // Crimson Echoes (Emblem)
+                298334060 // Crimson Echoes (Emblem)
               ]
             ]
           },
           {
-            name: 'Hunter Armor',
+            name: "Hunter Armor",
             // season: "K",
             items: [
               659922705, // Dreambane Cowl
@@ -543,7 +551,7 @@ export default ([
             ]
           },
           {
-            name: 'Titan Armor',
+            name: "Titan Armor",
             // season: "K",
             items: [
               272413517, // Dreambane Helm
@@ -554,7 +562,7 @@ export default ([
             ]
           },
           {
-            name: 'Warlock Armor',
+            name: "Warlock Armor",
             // season: "K",
             items: [
               1528483180, // Dreambane Hood
@@ -565,7 +573,7 @@ export default ([
             ]
           },
           {
-            name: 'Extras',
+            name: "Extras",
             // season: "K",
             items: [
               1272828316, // Moonshot Shell
@@ -581,54 +589,54 @@ export default ([
     ]
   },
   {
-    name: 'Holiday & Special Events',
+    name: "Holiday & Special Events",
     sets: [
       {
-        name: 'Festival of the Lost',
-        id: 'year-three-festival-of-the-lost',
-        description: 'Earned during the seasonal Festival of the Lost event.',
+        name: "Festival of the Lost",
+        id: "year-three-festival-of-the-lost",
+        description: "Earned during the seasonal Festival of the Lost event.",
         sections: [
           {
-            name: 'Weapons',
+            name: "Weapons",
             season: 8,
             items: [
-                528834068 // Braytech Werewolf
+              528834068 // Braytech Werewolf
             ]
           },
           {
-            name: 'Hunter Armor',
+            name: "Hunter Armor",
             season: 8,
             itemGroups: [
-                [
-                  2352138838 // Masquerader Helmet: Hunter
-                ],
-                [
-                  1256660988, // Chthonic Mask
-                  2653114997, // Chthonic Grips
-                  3560184043, // Chthonic Vest
-                  4229237079, // Chthonic Strides
-                  2299884162 // Chthonic Cloak
-                ]
+              [
+                2352138838 // Masquerader Helmet: Hunter
+              ],
+              [
+                1256660988, // Chthonic Mask
+                2653114997, // Chthonic Grips
+                3560184043, // Chthonic Vest
+                4229237079, // Chthonic Strides
+                2299884162 // Chthonic Cloak
+              ]
             ]
           },
           {
-            name: 'Titan Armor',
+            name: "Titan Armor",
             season: 8,
             itemGroups: [
-                [  
-                  239189018 // Masquerader Helmet: Titan
-                ],
-                [
-                  3055452222, // Pandemonic Helm 
-                  2325321839, // Pandemonic Gauntlets
-                  170952905, // Pandemonic Plate
-                  2899925137, // Pandemonic Greaves
-                  1485222020 // Pandemonic Mark
-                ]
+              [
+                239189018 // Masquerader Helmet: Titan
+              ],
+              [
+                3055452222, // Pandemonic Helm
+                2325321839, // Pandemonic Gauntlets
+                170952905, // Pandemonic Plate
+                2899925137, // Pandemonic Greaves
+                1485222020 // Pandemonic Mark
+              ]
             ]
           },
           {
-            name: 'Warlock Armor',
+            name: "Warlock Armor",
             season: 8,
             itemGroups: [
               [
@@ -644,21 +652,21 @@ export default ([
             ]
           },
           {
-            name: 'Masks',
+            name: "Masks",
             season: 8,
             items: [
-                1201782503, // Omnigul Mask 
-                1201782502, // Jack-o'-Lantern Mask
-                1494882400, // Hidden Swarm Mask
-                1494882401, // Goblin Mask    
-                1494882403, // Mithrax Mask
-                1494882402, // Opulent Calus Mask
-                1494882406, // Drifter Mask
-                1494882407 // Eris Morn Mask
+              1201782503, // Omnigul Mask
+              1201782502, // Jack-o'-Lantern Mask
+              1494882400, // Hidden Swarm Mask
+              1494882401, // Goblin Mask
+              1494882403, // Mithrax Mask
+              1494882402, // Opulent Calus Mask
+              1494882406, // Drifter Mask
+              1494882407 // Eris Morn Mask
             ]
           },
           {
-            name: 'Emotes',
+            name: "Emotes",
             season: 8,
             items: [
               2810182789, // Tombstone
@@ -668,129 +676,165 @@ export default ([
             ]
           },
           {
-            name: 'Ghosts',
+            name: "Ghosts",
             season: 8,
             items: [
-                3677746975, // Gensym Relic Shell
-                3677746972, // Chiropteran Shell
-                3677746973 // Jack-O-Shell
+              3677746975, // Gensym Relic Shell
+              3677746972, // Chiropteran Shell
+              3677746973 // Jack-O-Shell
             ]
           },
           {
-            name: 'Ghost Projections',
+            name: "Ghost Projections",
             season: 8,
             items: [
-                3661044025, // Winged Nightmare Projection
-                3661044024 // Hive-o'-lantern Projection
+              3661044025, // Winged Nightmare Projection
+              3661044024 // Hive-o'-lantern Projection
             ]
           },
           {
-            name: 'Sparrows',
+            name: "Sparrows",
             season: 8,
             items: [
-                4087530286, // Brumeswept Night
-                4087530287 // The Necrobeast
+              4087530286, // Brumeswept Night
+              4087530287 // The Necrobeast
             ]
           },
           {
-            name: 'Ships',
+            name: "Ships",
             season: 8,
             items: [
-                3755201983 // The Desmodus
+              3755201983 // The Desmodus
             ]
           },
           {
-            name: 'Extras',
+            name: "Extras",
             season: 8,
             items: [
-                298334048, // Sweet Dreams
-                2526736328, // Dark Orbit
-                1005594230, // Skele-Ghaul
-                1005594231, // Basalt Toxic
-                2233576420, // Fright Night
-                3980259371, // Transmat: Looming Moon
-                3980259370 // Transmat: Murder of Crows
-
+              298334048, // Sweet Dreams
+              2526736328, // Dark Orbit
+              1005594230, // Skele-Ghaul
+              1005594231, // Basalt Toxic
+              2233576420, // Fright Night
+              3980259371, // Transmat: Looming Moon
+              3980259370 // Transmat: Murder of Crows
             ]
           }
         ]
       },
       {
-        name: 'The Dawning',
-        id: 'year_three_the_dawning',
-        description: 'Earned during the seasonal Dawning event.',
+        name: "The Dawning",
+        id: "year_three_the_dawning",
+        description: "Earned during the seasonal Dawning event.",
         big: false,
         sections: [
           {
-            name: 'Weapons',
+            name: "Weapons",
             season: 9,
-            items: [
-              1506719573 // Cold Front
+            itemGroups: [
+              [
+                1506719573 // Cold Front
+              ],
+              [
+                3344861342, // Brumal Dawn
+                3615976865, // Frostborne
+                2579162237 // Wind Chill
+              ]
             ]
           },
           {
-            name: 'Hunter Armor',
+            name: "Hunter Armor",
             season: 9,
             items: [
-              
+              1018190408, // Northlight Mask
+              365524697, // Northlight Grips
+              55826751, // Northlight Vest
+              3257710283, // Northlight Strides
+              1302985294 // Northlight Cloak
             ]
           },
           {
-            name: 'Titan Armor',
+            name: "Titan Armor",
             season: 9,
             items: [
-              
+              3188413900, // Northlight Helm
+              2342711685, // Northlight Gauntlets
+              3857100891, // Northlight Plate
+              2265583879, // Northlight Greaves
+              2596801138 // Northlight Mark
             ]
           },
           {
-            name: 'Warlock Armor',
+            name: "Warlock Armor",
             season: 9,
             items: [
-              
+              2551510151, // Northlight Crown
+              498109198, // Northlight Gloves
+              1665551138, // Northlight Robes
+              3005747976, // Northlight Boots
+              889443955 // Northlight Bond
             ]
           },
           {
-            name: 'Emotes',
+            name: "Emotes & Finishers",
             season: 9,
-            items: [
-              
+            itemGroups: [
+              [
+                1181969391, // Card Shuffle
+                3941766715, // Get That Bread
+                9762701, // Graceful Spin
+                595406727, // Something to Say
+                2352869761 // Bust a Move
+              ],
+              [
+                1913500528 // Perfect Ten
+              ]
             ]
           },
           {
-            name: 'Ghosts',
+            name: "Ghosts",
             season: 9,
-            items: [
-              
+            itemGroups: [
+              [
+                76764722, // Confectionery Shell
+                76764721, // Crystalline Shell
+                76764720 // Winterview Shell
+              ],
+              [
+                3390110524, // Snowflake Projection
+                3390110525 // The Great Pigeon Projection
+              ]
             ]
           },
           {
-            name: 'Ghost Projections',
+            name: "Sparrows",
             season: 9,
             items: [
-              
-            ]
-          },
-          {
-            name: 'Sparrows',
-            season: 9,
-            items: [
+              1837000827, // Cardinal Directive
+              1837000826, // Polar Vortex
               3981634627 // Alpine Dash
             ]
           },
           {
-            name: 'Ships',
+            name: "Ships",
             season: 9,
             items: [
+              1430140002, // Amnestia-S2
+              1430140003, // Sleepless Flight
               2307306630 // Bright Spirits
             ]
           },
           {
-            name: 'Extras',
+            name: "Extras",
             season: 9,
             items: [
               1736897080, // Gift Giver
+              2118730408, // Dawning Celebration
+              2118730409, // Dawning Tranquility
               466236950, // Dawning Elegance
-              466236951 // Dawning Welcome
+              466236951, // Dawning Welcome
+              3403347111, // Snowy Entrance
+              3403347110 // Sweet Entrance
             ]
           }
         ]
@@ -798,20 +842,20 @@ export default ([
     ]
   },
   {
-    name: 'Other',
+    name: "Other",
     sets: [
       {
         name: _(
-          'DestinyPresentationNodeDefinition[3110685926].displayProperties.name',
-          'Season Pass'
+          "DestinyPresentationNodeDefinition[3110685926].displayProperties.name",
+          "Season Pass"
         ),
         description:
-          'Free Track is available to all Destiny 2 Players. Paid Track is available to owners of the current Season Pass.',
-        id: 'year-three-season-passes',
+          "Free Track is available to all Destiny 2 Players. Paid Track is available to owners of the current Season Pass.",
+        id: "year-three-season-passes",
         big: false,
         sections: [
           {
-            name: 'Free Track',
+            name: "Free Track",
             season: 8,
             itemGroups: [
               [
@@ -843,7 +887,7 @@ export default ([
             ]
           },
           {
-            name: 'Free Track',
+            name: "Free Track",
             season: 9,
             itemGroups: [
               [
@@ -875,7 +919,7 @@ export default ([
             ]
           },
           {
-            name: 'Paid Track',
+            name: "Paid Track",
             season: 8,
             itemGroups: [
               [
@@ -911,12 +955,12 @@ export default ([
                 298334063, // Trailblazer
                 3448612595, // Night's Chill
                 3448612594, // First Frost
-                2078915253, // Blackheart Growth
+                2078915253 // Blackheart Growth
               ]
             ]
           },
           {
-            name: 'Paid Track',
+            name: "Paid Track",
             season: 9,
             itemGroups: [
               [
@@ -961,15 +1005,15 @@ export default ([
       },
       {
         name: _(
-          'DestinyFactionDefinition[1393733616].displayProperties.name',
-          'Eververse'
+          "DestinyFactionDefinition[1393733616].displayProperties.name",
+          "Eververse"
         ),
-        id: 'year-three-eververse',
-        description: 'Items sold at Eververse for Bright Dust.',
+        id: "year-three-eververse",
+        description: "Items sold at Eververse for Bright Dust.",
         big: false,
         sections: [
           {
-            name: 'Armor',
+            name: "Armor",
             season: 8,
             itemGroups: [
               [
@@ -996,7 +1040,34 @@ export default ([
             ]
           },
           {
-            name: 'Ornaments',
+            name: "Armor",
+            season: 9,
+            itemGroups: [
+              [
+                1701735222, // Virulent Mask
+                2864252039, // Virulent Grips
+                989383089, // Virulent Vest
+                2041515209, // Virulent Strides
+                3184812876 // Virulent Cloak
+              ],
+              [
+                78334970, // Future-Facing Helm
+                1849572291, // Future-Facing Gauntlets
+                438532493, // Future-Facing Plate
+                4236586357, // Future-Facing Greaves
+                3313342080 // Future-Facing Mark
+              ],
+              [
+                3389218555, // Wrath Trail Hood
+                553429674, // Wrath Trail Gloves
+                1413321694, // Wrath Trail Robes
+                3504728132, // Wrath Trail Boots
+                784525543 // Wrath Trail Bond
+              ]
+            ]
+          },
+          {
+            name: "Ornaments",
             season: 8,
             itemGroups: [
               [
@@ -1008,11 +1079,10 @@ export default ([
                 // 1563263613, // Law of Induction (Not planned to be sold for Bright Dust)
                 // 3438514430, // Peacebringer (Not planned to be sold for Bright Dust)
                 // 2020179519, // Polemology (Not planned to be sold for Bright Dust)
-                // 3093486579, // Sky/Perdition (Not planned to be sold for Bright Dust)
+                3093486579 // Sky/Perdition
                 // 2744195002, // Third Rail (Not planned to be sold for Bright Dust)
                 // 519687404, // What If (Not planned to be sold for Bright Dust)
-                // Currently Classified
-                // 4159445096 // Ornament for Xenophage (Not planned to be sold for Bright Dust)
+                // 4159445096 // A Better Specimen (Not planned to be sold for Bright Dust)
               ],
               [
                 // 1617168101, // Augury of Snakes (Not planned to be sold for Bright Dust)
@@ -1030,69 +1100,149 @@ export default ([
             ]
           },
           {
-            name: 'Emotes',
-            season: 8,
-            items: [
-              // 3769820799, // Camping (Not planned to be sold for Bright Dust)
-              3806167517, // Fireteam Fire Up
-              // 3470992439, // Guitar Solo (Not planned to be sold for Bright Dust)
-              2291520183, // Ninja Vanish
-              // 3366702053, // Plant the Flag (Not planned to be sold for Bright Dust)
-              // 2035374481, // Precise Strike (Not planned to be sold for Bright Dust)
-              // 2370712399, // Spring Showers (Not planned to be sold for Bright Dust)
-              // 3105326202, // Cross-Step Shuffle (Not planned to be sold for Bright Dust)
-              // 1188569234, // Ding (Not planned to be sold for Bright Dust)
-              1141309169, // Flare Gun
-              1422833575, // Give Dap
-              1300438173, // Happy Feet
-              // 3702002191, // Be Sneaky (Not planned to be sold for Bright Dust)
-              248592690, // Eat It Up
-              991204036, // Make It Stop
-              88498859 // Too Hot
+            name: "Ornaments",
+            season: 9,
+            itemGroups: [
+              [
+                384923539, // Abyssal Scream
+                3449188806, // Long Live the Queen
+                1869157938, // Ain't My First Rodeo
+                432606867, // Black Death
+                4115107119 // Packmaster's Command
+                // 204713420, // Devil's Advocate (Not planned to be sold for Bright Dust)
+                // 171163996, // Bloodline Memorial (Not planned to be sold for Bright Dust)
+                // 299539105 // Violent Exorcism (Not planned to be sold for Bright Dust)
+              ],
+              [
+                440770966 // Shifting Loyalties
+                // 2319265678 // Doubt (Not planned to be sold for Bright Dust)
+              ],
+              [
+                929374195, // Mantle of Remembrance
+                2579031865, // Calliope's Lullaby
+                3654808012, // The Fourteenth Anamnesis
+                3786758103, // Embodiment of the Warbeast
+                3778646768, // Flight of the Interceptor
+                475012491 // The Want of Lies and Wishes
+              ]
             ]
           },
           {
-            name: 'Finishers',
+            name: "Emotes & Finishers",
             season: 8,
-            items: [
-              // 2504641452, // Savage Haymaker (Not planned to be sold for Bright Dust)
-              // 2504641454, // Golden Age Dropkick (Not planned to be sold for Bright Dust)
-              // 2504641455 // Whirlwind (Not planned to be sold for Bright Dust)
+            itemGroups: [
+              [
+                // 3769820799, // Camping (Not planned to be sold for Bright Dust)
+                3806167517, // Fireteam Fire Up
+                // 3470992439, // Guitar Solo (Not planned to be sold for Bright Dust)
+                2291520183, // Ninja Vanish
+                // 3366702053, // Plant the Flag (Not planned to be sold for Bright Dust)
+                // 2035374481, // Precise Strike (Not planned to be sold for Bright Dust)
+                // 2370712399, // Spring Showers (Not planned to be sold for Bright Dust)
+                // 3105326202, // Cross-Step Shuffle (Not planned to be sold for Bright Dust)
+                1188569234, // Ding
+                1141309169, // Flare Gun
+                1422833575, // Give Dap
+                1300438173, // Happy Feet
+                // 3702002191, // Be Sneaky (Not planned to be sold for Bright Dust)
+                248592690, // Eat It Up
+                991204036, // Make It Stop
+                88498859 // Too Hot
+              ],
+              [
+                // 2504641452, // Savage Haymaker (Not planned to be sold for Bright Dust)
+                // 2504641454, // Golden Age Dropkick (Not planned to be sold for Bright Dust)
+                // 2504641455 // Whirlwind (Not planned to be sold for Bright Dust)
+              ]
             ]
           },
           {
-            name: 'Ghosts',
+            name: "Emotes & Finishers",
+            season: 9,
+            itemGroups: [
+              [
+                1749473785, // Galloping Knight
+                2711683305, // Playground Ride
+                710527784, // Spike
+                1194404806, // Cowbell
+                1037681135, // Shake It Out
+                300144357, // Distracted
+                2077271390, // Flashy Moves
+                2737227933, // Blade Wipe
+                2970231290, // Face Palm
+                4138096633 // Guardian, Bye!
+                //                  208153163, // Keep It Clean (Not planned to be sold for Bright Dust)
+                //                  2036655792, // Origami Crane (Not planned to be sold for Bright Dust)
+                //                  1700183918, // Gunslinger's Anticipation (Not planned to be sold for Bright Dust)
+                //                  1944063916, // Sunbreaker's Anticipation (Not planned to be sold for Bright Dust)
+                //                  340413553, // Dawnblade's Anticipation (Not planned to be sold for Bright Dust)
+                //                  1931729143, // Nightstalker's Respite (Not planned to be sold for Bright Dust)
+                //                  430068245, // Sentinel's Respite (Not planned to be sold for Bright Dust)
+                //                  3302119490 // Voidwalker's Respite (Not planned to be sold for Bright Dust)
+              ],
+              [
+                //                  1395929128, // Clock Cleaner (Not planned to be sold for Bright Dust)
+                //                  885220736, // Fist of Fury (Not planned to be sold for Bright Dust)
+                //                  3643356340, // Flash Kick (Not planned to be sold for Bright Dust)
+                //                  1294248797, // Sure Shot (Not planned to be sold for Bright Dust)
+                //                  3474738931, // Nail on the Head (Not planned to be sold for Bright Dust)
+                //                  1492613344 // En Garde (Not planned to be sold for Bright Dust)
+              ]
+            ]
+          },
+          {
+            name: "Ghosts",
             season: 8,
-            items: [
-              // 779216204, // Harper's Shell (Not planned to be sold for Bright Dust)
-              779216202, // Lander Shell
-              // 779216203, // Lion Guardant Shell (Not planned to be sold for Bright Dust)
-              779216206, // Lunar Shell
-              779216207, // Ophiuchus Shell
-              779216200 // Propheteer Shell
-              // 779216201, // Scarlet Swarm Shell (Not planned to be sold for Bright Dust)
+            itemGroups: [
+              [
+                // 779216204, // Harper's Shell (Not planned to be sold for Bright Dust)
+                779216202, // Lander Shell
+                // 779216203, // Lion Guardant Shell (Not planned to be sold for Bright Dust)
+                779216206, // Lunar Shell
+                779216207, // Ophiuchus Shell
+                779216200, // Propheteer Shell
+                779216201 // Scarlet Swarm Shell
 
-              // Has highResIcon but not attached to Tess
+                // Has highResIcon but not attached to Tess
 
-              // 779216205 // Friendly Fire Shell (Not planned to be sold for Bright Dust)
+                // 779216205 // Friendly Fire Shell (Not planned to be sold for Bright Dust)
+              ],
+              [
+                2155593794, // Moonbound Projection
+                2155593795, // Mindjack Projection
+                2155593792, // Crota's Bane Projection
+                2155593793 // Aeronautics of China Projection
+              ]
             ]
           },
           {
-            name: 'Ghost Projections',
-            season: 8,
-            items: [
-              2155593794, // Moonbound Projection
-              2155593795, // Mindjack Projection
-              2155593792, // Crota's Bane Projection
-              2155593793 // Aeronautics of China Projection
+            name: "Ghosts",
+            season: 9,
+            itemGroups: [
+              [
+                4005536857, // Omolon Shell
+                4005536859, // Veist Shell
+                4005536858, // Tex Mechanica Shell
+                4005536856, // Lampion Shell
+                4005536862, // Traitor Primus Shell
+                4005536861 // Phalanx Shell
+                //               4005536860 // Simulation Shell (Not planned to be sold for Bright Dust)
+              ],
+              [
+                859004031, // Lantern Projection
+                859004030, // Red Legion Projection
+                859004029, // Saint-14 Projection
+                859004028, // Colossus Helmet Projection
+                859004027 // XIV Projection
+              ]
             ]
           },
           {
-            name: 'Sparrows',
+            name: "Sparrows",
             season: 8,
             items: [
               2067296769, // Blood Runner
-              // 2067296773, // Four Degrees of Separation (Not planned to be sold for Bright Dust)
+              2067296773, // Four Degrees of Separation
               // 2067296775, // Golden Pride (Not planned to be sold for Bright Dust)
               2067296772, // Invasive Species
               2067296770 // Jotuneer
@@ -1101,11 +1251,24 @@ export default ([
               // Has highResIcon but not attached to Tess
 
               // 2067296774, // Blast Chariot (Not planned to be sold for Bright Dust)
-              // 2067296768 // Magneton Trust (Not planned to be sold for Bright Dust)
+              // 2067296768 // Magneton Trust (Planned for a future season)
             ]
           },
           {
-            name: 'Ships',
+            name: "Sparrows",
+            season: 9,
+            items: [
+              4248884709, // Ash Angel
+              4248884708, // Tip of the Spear
+              4248884710, // The Ram
+              4248884705, // Spur of the Moment
+              4248884711 // Perennial Velocity
+              //               4248884706, // Motive Force (Not planned to be sold for Bright Dust)
+              //               4248884704 // Viper-4s (Not planned to be sold for Bright Dust)
+            ]
+          },
+          {
+            name: "Ships",
             season: 8,
             items: [
               // 4079130217, // Quality Cut (Not planned to be sold for Bright Dust)
@@ -1121,7 +1284,17 @@ export default ([
             ]
           },
           {
-            name: 'Shaders',
+            name: "Ships",
+            season: 9,
+            items: [
+              430387804, // Saint's Invocation
+              430387802, // The Prod
+              430387801 // Chrysopelea-S
+              //               430387803 // Tachyon-4 (Not planned to be sold for Bright Dust)
+            ]
+          },
+          {
+            name: "Shaders",
             season: 8,
             items: [
               3818755494, // Bruised Blush
@@ -1133,7 +1306,17 @@ export default ([
             ]
           },
           {
-            name: 'Transmat Effects',
+            name: "Shaders",
+            season: 9,
+            items: [
+              3906243540, // Grayscale Undergrowth
+              3906243543, // Circadian Chill
+              3906243542, // Byzantium Lotus
+              3906243541 // Welded Brass
+            ]
+          },
+          {
+            name: "Transmat Effects",
             season: 8,
             items: [
               3951356827, // Blind Clutch
@@ -1141,23 +1324,33 @@ export default ([
               3951356824, // Nightmare Emergence
               3951356825 // Shattered Shrieker
             ]
+          },
+          {
+            name: "Transmat Effects",
+            season: 9,
+            items: [
+              1378231105, // Cabal Shield Breaker
+              1378231104, // Box of Tricks
+              1378231107, // Vex Gate Arrival
+              1378231106 // Up in Smoke
+            ]
           }
         ]
       },
       {
         name: _(
-          'DestinyVendorDefinition[3163810067].displayProperties.name',
-          'Legendary Engrams'
+          "DestinyVendorDefinition[3163810067].displayProperties.name",
+          "Legendary Engrams"
         ),
-        id: 'year-three-legendary-engram',
+        id: "year-three-legendary-engram",
         description: _(
-          'DestinyCollectibleDefinition[4273799635].sourceString',
-          'Open Legendary engrams and earn faction rank-up packages.'
+          "DestinyCollectibleDefinition[4273799635].sourceString",
+          "Open Legendary engrams and earn faction rank-up packages."
         ),
         big: false,
         sections: [
           {
-            name: 'Weapons',
+            name: "Weapons",
             season: 9,
             items: [
               3569802112, // The Old Fashioned
@@ -1166,7 +1359,7 @@ export default ([
               3434944005, // Point of the Stag
               4106983932, // Elatha FR4
               3622137132, // Last Hope
-              1529450902, // Mos Epoch III
+              1529450902 // Mos Epoch III
             ]
           }
         ]
