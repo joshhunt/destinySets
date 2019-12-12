@@ -732,56 +732,87 @@ export default ([
           {
             name: 'Weapons',
             season: 9,
-            items: [
-              1506719573 // Cold Front
+            itemGroups: [
+              [
+                1506719573 // Cold Front
+              ],
+              [
+                3344861342, // Brumal Dawn
+                3615976865, // Frostborne
+                2579162237 // Wind Chill
+              ]
             ]
           },
           {
             name: 'Hunter Armor',
             season: 9,
             items: [
-              
+              1018190408, // Northlight Mask
+              365524697, // Northlight Grips 
+              55826751, // Northlight Vest 
+              3257710283, // Northlight Strides
+              1302985294 // Northlight Cloak
             ]
           },
           {
             name: 'Titan Armor',
             season: 9,
             items: [
-              
+              3188413900, // Northlight Helm
+              2342711685, // Northlight Gauntlets
+              3857100891, // Northlight Plate 
+              2265583879, // Northlight Greaves 
+              2596801138 // Northlight Mark 
             ]
           },
           {
             name: 'Warlock Armor',
             season: 9,
             items: [
-              
+              2551510151, // Northlight Crown 
+              498109198, // Northlight Gloves 
+              1665551138, // Northlight Robes 
+              3005747976, // Northlight Boots
+              889443955 // Northlight Bond
             ]
           },
           {
-            name: 'Emotes',
-            season: 9,
-            items: [
-              
+            name: 'Emotes & Finishers',
+            season: 9,            
+            itemGroups: [
+              [
+                1181969391, // Card Shuffle
+                3941766715, // Get That Bread
+                9762701, // Graceful Spin
+                595406727, // Something to Say
+                2352869761 // Bust a Move
+              ],
+              [
+                1913500528 // Perfect Ten
+              ]
             ]
           },
           {
             name: 'Ghosts',
             season: 9,
-            items: [
-              
-            ]
-          },
-          {
-            name: 'Ghost Projections',
-            season: 9,
-            items: [
-              
+            itemGroups: [
+              [
+                76764722, // Confectionery Shell 
+                76764721, // Crystalline Shell 
+                76764720 // Winterview Shell
+              ],
+              [
+                 3390110524, // Snowflake Projection
+                 3390110525 // The Great Pigeon Projection
+              ]
             ]
           },
           {
             name: 'Sparrows',
             season: 9,
             items: [
+              1837000827, // Cardinal Directive
+              1837000826, // Polar Vortex
               3981634627 // Alpine Dash
             ]
           },
@@ -790,6 +821,7 @@ export default ([
             season: 9,
             items: [
               1430140002, // Amnestia-S2
+              1430140003, // Sleepless Flight
               2307306630 // Bright Spirits
             ]
           },
@@ -798,8 +830,12 @@ export default ([
             season: 9,
             items: [
               1736897080, // Gift Giver
+              2118730408, // Dawning Celebration
+              2118730409, // Dawning Tranquility
               466236950, // Dawning Elegance
-              466236951 // Dawning Welcome
+              466236951, // Dawning Welcome
+              3403347111, // Snowy Entrance 
+              3403347110 // Sweet Entrance
             ]
           }
         ]
