@@ -243,6 +243,13 @@ export default ([
         ),
         sections: [
           {
+            name: 'Weapons',
+            season: 9,
+            items:[
+              3434944005 // Point of the Stag
+            ]
+          },
+          {
             name: 'Hunter Armor',
             season: 8,
             items: [
