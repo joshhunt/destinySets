@@ -1100,7 +1100,7 @@ export default ([
               // Has highResIcon but not attached to Tess
 
               // 2067296774, // Blast Chariot (Not planned to be sold for Bright Dust)
-              // 2067296768 // Magneton Trust (Not planned to be sold for Bright Dust)
+              // 2067296768 // Magneton Trust (Planned for a future season)
             ]
           },
           {
