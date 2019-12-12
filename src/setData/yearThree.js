@@ -1008,11 +1008,10 @@ export default ([
                 // 1563263613, // Law of Induction (Not planned to be sold for Bright Dust)
                 // 3438514430, // Peacebringer (Not planned to be sold for Bright Dust)
                 // 2020179519, // Polemology (Not planned to be sold for Bright Dust)
-                // 3093486579, // Sky/Perdition (Not planned to be sold for Bright Dust)
+                3093486579, // Sky/Perdition
                 // 2744195002, // Third Rail (Not planned to be sold for Bright Dust)
                 // 519687404, // What If (Not planned to be sold for Bright Dust)
-                // Currently Classified
-                // 4159445096 // Ornament for Xenophage (Not planned to be sold for Bright Dust)
+                // 4159445096 // A Better Specimen (Not planned to be sold for Bright Dust)
               ],
               [
                 // 1617168101, // Augury of Snakes (Not planned to be sold for Bright Dust)
@@ -1041,7 +1040,7 @@ export default ([
               // 2035374481, // Precise Strike (Not planned to be sold for Bright Dust)
               // 2370712399, // Spring Showers (Not planned to be sold for Bright Dust)
               // 3105326202, // Cross-Step Shuffle (Not planned to be sold for Bright Dust)
-              // 1188569234, // Ding (Not planned to be sold for Bright Dust)
+              1188569234, // Ding
               1141309169, // Flare Gun
               1422833575, // Give Dap
               1300438173, // Happy Feet
@@ -1069,8 +1068,8 @@ export default ([
               // 779216203, // Lion Guardant Shell (Not planned to be sold for Bright Dust)
               779216206, // Lunar Shell
               779216207, // Ophiuchus Shell
-              779216200 // Propheteer Shell
-              // 779216201, // Scarlet Swarm Shell (Not planned to be sold for Bright Dust)
+              779216200, // Propheteer Shell
+              779216201 // Scarlet Swarm Shell
 
               // Has highResIcon but not attached to Tess
 
@@ -1092,7 +1091,7 @@ export default ([
             season: 8,
             items: [
               2067296769, // Blood Runner
-              // 2067296773, // Four Degrees of Separation (Not planned to be sold for Bright Dust)
+              2067296773, // Four Degrees of Separation
               // 2067296775, // Golden Pride (Not planned to be sold for Bright Dust)
               2067296772, // Invasive Species
               2067296770 // Jotuneer
