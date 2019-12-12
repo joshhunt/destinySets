@@ -776,7 +776,7 @@ export default ([
             ]
           },
           {
-            name: "Emotes & Finishers",
+            name: "Emotes",
             season: 9,
             itemGroups: [
               [
