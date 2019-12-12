@@ -151,7 +151,7 @@ export default ([
             season: 9,
             items: [
               1736897075, // No Quarter
-              1736897079, // Savior of the Past
+              // 1736897079, // Savior of the Past (Hidden until Source Confirmed)
               3603801350 // Crucible Prestige
             ]
           }
