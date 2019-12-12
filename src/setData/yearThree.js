@@ -1074,9 +1074,27 @@ export default ([
             ]
           },
           {
-            name: 'Emotes',
+            name: 'Ornaments',
+            season: 9,
+            itemGroups: [
+              [
+//                 204713420, // Devil's Advocate (Not planned to be sold for Bright Dust)
+//                 171163996, // Bloodline Memorial (Not planned to be sold for Bright Dust) 
+//                 299539105 // Violent Exorcism (Not planned to be sold for Bright Dust) 
+              ],
+              [
+//                 2319265678 // Doubt (Not planned to be sold for Bright Dust) 
+              ],
+              [
+
+              ]
+            ]
+          },
+          {
+            name: 'Emotes & Finishers',
             season: 8,
-            items: [
+            itemGroups: [
+              [
               // 3769820799, // Camping (Not planned to be sold for Bright Dust)
               3806167517, // Fireteam Fire Up
               // 3470992439, // Guitar Solo (Not planned to be sold for Bright Dust)
@@ -1093,15 +1111,36 @@ export default ([
               248592690, // Eat It Up
               991204036, // Make It Stop
               88498859 // Too Hot
+              ],
+              [
+               // 2504641452, // Savage Haymaker (Not planned to be sold for Bright Dust)
+              // 2504641454, // Golden Age Dropkick (Not planned to be sold for Bright Dust)
+              // 2504641455 // Whirlwind (Not planned to be sold for Bright Dust)
+              ]
             ]
           },
           {
-            name: 'Finishers',
-            season: 8,
-            items: [
-              // 2504641452, // Savage Haymaker (Not planned to be sold for Bright Dust)
-              // 2504641454, // Golden Age Dropkick (Not planned to be sold for Bright Dust)
-              // 2504641455 // Whirlwind (Not planned to be sold for Bright Dust)
+            name: 'Emotes & Finishers',
+            season: 9,
+            itemGroups: [
+              [
+//                  208153163, // Keep It Clean (Not planned to be sold for Bright Dust)
+//                  2036655792, // Origami Crane (Not planned to be sold for Bright Dust)
+//                  1700183918, // Gunslinger's Anticipation (Not planned to be sold for Bright Dust)
+//                  1944063916, // Sunbreaker's Anticipation (Not planned to be sold for Bright Dust)
+//                  340413553, // Dawnblade's Anticipation (Not planned to be sold for Bright Dust)
+//                  1931729143, // Nightstalker's Respite (Not planned to be sold for Bright Dust)
+//                  430068245, // Sentinel's Respite (Not planned to be sold for Bright Dust)
+//                  3302119490 // Voidwalker's Respite (Not planned to be sold for Bright Dust)
+              ],
+              [
+//                  1395929128, // Clock Cleaner (Not planned to be sold for Bright Dust)
+//                  885220736, // Fist of Fury (Not planned to be sold for Bright Dust)
+//                  3643356340, // Flash Kick (Not planned to be sold for Bright Dust)
+//                  1294248797, // Sure Shot (Not planned to be sold for Bright Dust)
+//                  3474738931, // Nail on the Head (Not planned to be sold for Bright Dust)
+//                  1492613344 // En Garde (Not planned to be sold for Bright Dust)
+              ]
             ]
           },
           {
@@ -1119,6 +1158,13 @@ export default ([
               // Has highResIcon but not attached to Tess
 
               // 779216205 // Friendly Fire Shell (Not planned to be sold for Bright Dust)
+            ]
+          },
+          {
+            name: 'Ghosts',
+            season: 9,
+            items: [
+//               4005536860 // Simulation Shell (Not planned to be sold for Bright Dust)
             ]
           },
           {
@@ -1149,6 +1195,14 @@ export default ([
             ]
           },
           {
+            name: 'Sparrows',
+            season: 9,
+            items: [
+//               4248884706, // Motive Force (Not planned to be sold for Bright Dust)
+//               4248884704 // Viper-4s (Not planned to be sold for Bright Dust)
+            ]
+          },
+          {
             name: 'Ships',
             season: 8,
             items: [
@@ -1162,6 +1216,13 @@ export default ([
               // 4079130219, // Cuttlebone (Not planned to be sold for Bright Dust)
               // 4079130216, // Nephilim Toaster (Not planned to be sold for Bright Dust)
               // 4079130221 // Unwilling Revolt 00-Z (Not planned to be sold for Bright Dust)
+            ]
+          },
+          {
+            name: 'Ships',
+            season: 9,
+            items: [
+//               430387803 // Tachyon-4 (Not planned to be sold for Bright Dust)
             ]
           },
           {
