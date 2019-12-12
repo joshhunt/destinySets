@@ -328,6 +328,7 @@ export default ([
             name: 'Extras',
             season: 9,
             items: [
+              1736897077, // Iron in the Fire
               2982947772 // Iron Fuchsite
             ]
           }
