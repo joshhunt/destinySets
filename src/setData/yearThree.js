@@ -781,6 +781,7 @@ export default ([
             name: 'Ships',
             season: 9,
             items: [
+              1430140002, // Amnestia-S2
               2307306630 // Bright Spirits
             ]
           },
