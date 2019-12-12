@@ -776,7 +776,7 @@ export default ([
             ]
           },
           {
-            name: "Emotes & Finishers",
+            name: "Emotes",
             season: 9,
             itemGroups: [
               [
@@ -787,7 +787,7 @@ export default ([
                 2352869761 // Bust a Move
               ],
               [
-                1913500528 // Perfect Ten
+//                 1913500528 // Perfect Ten (Not planned to be sold for Bright Dust)
               ]
             ]
           },
