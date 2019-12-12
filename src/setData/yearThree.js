@@ -1041,6 +1041,33 @@ export default ([
             ]
           },
           {
+            name: 'Armor',
+            season: 9,
+            itemGroups: [
+              [
+                1701735222, // Virulent Mask
+                2864252039, // Virulent Grips 
+                989383089, // Virulent Vest 
+                2041515209, // Virulent Strides
+                3184812876 // Virulent Cloak
+              ],
+              [
+                78334970, // Future-Facing Helm 
+                1849572291, // Future-Facing Gauntlets
+                438532493, // Future-Facing Plate
+                4236586357, // Future-Facing Greaves
+                3313342080 // Future-Facing Mark
+              ],
+              [
+                3389218555, // Wrath Trail Hood 
+                553429674, // Wrath Trail Gloves 
+                1413321694, // Wrath Trail Robes
+                3504728132, // Wrath Trail Boots
+                784525543 // Wrath Trail Bond
+              ]
+            ]
+          },
+          {
             name: 'Ornaments',
             season: 8,
             itemGroups: [
@@ -1078,15 +1105,26 @@ export default ([
             season: 9,
             itemGroups: [
               [
+                384923539, // Abyssal Scream
+                        3449188806, // Long Live the Queen 
+                        1869157938, // Ain't My First Rodeo
+                        432606867, // Black Death
+                        4115107119, // Packmaster's Command
 //                 204713420, // Devil's Advocate (Not planned to be sold for Bright Dust)
 //                 171163996, // Bloodline Memorial (Not planned to be sold for Bright Dust) 
 //                 299539105 // Violent Exorcism (Not planned to be sold for Bright Dust) 
               ],
               [
+                440770966, // Shifting Loyalties
 //                 2319265678 // Doubt (Not planned to be sold for Bright Dust) 
               ],
               [
-
+                929374195, // Mantle of Remembrance
+                        2579031865, // Calliope's Lullaby 
+                        3654808012, // The Fourteenth Anamnesis 
+                        3786758103, // Embodiment of the Warbeast
+                        3778646768, // Flight of the Interceptor 
+                        475012491 // The Want of Lies and Wishes
               ]
             ]
           },
@@ -1124,6 +1162,16 @@ export default ([
             season: 9,
             itemGroups: [
               [
+                1749473785, // Galloping Knight
+                        2711683305, // Playground Ride
+                        710527784, // Spike 
+                        1194404806, // Cowbell 
+                        1037681135, // Shake It Out
+                        300144357, // Distracted
+                        2077271390, // Flashy Moves 
+                        2737227933, // Blade Wipe
+                        2970231290, // Face Palm 
+                        4138096633, // Guardian, Bye! 
 //                  208153163, // Keep It Clean (Not planned to be sold for Bright Dust)
 //                  2036655792, // Origami Crane (Not planned to be sold for Bright Dust)
 //                  1700183918, // Gunslinger's Anticipation (Not planned to be sold for Bright Dust)
@@ -1146,35 +1194,48 @@ export default ([
           {
             name: 'Ghosts',
             season: 8,
-            items: [
-              // 779216204, // Harper's Shell (Not planned to be sold for Bright Dust)
-              779216202, // Lander Shell
-              // 779216203, // Lion Guardant Shell (Not planned to be sold for Bright Dust)
-              779216206, // Lunar Shell
-              779216207, // Ophiuchus Shell
-              779216200, // Propheteer Shell
-              779216201 // Scarlet Swarm Shell
+            itemGroups: [
+              [
+                // 779216204, // Harper's Shell (Not planned to be sold for Bright Dust)
+                779216202, // Lander Shell
+                // 779216203, // Lion Guardant Shell (Not planned to be sold for Bright Dust)
+                779216206, // Lunar Shell
+                779216207, // Ophiuchus Shell
+                779216200, // Propheteer Shell
+                779216201 // Scarlet Swarm Shell
 
-              // Has highResIcon but not attached to Tess
+                // Has highResIcon but not attached to Tess
 
-              // 779216205 // Friendly Fire Shell (Not planned to be sold for Bright Dust)
+                // 779216205 // Friendly Fire Shell (Not planned to be sold for Bright Dust)
+              ],
+              [
+               2155593794, // Moonbound Projection
+              2155593795, // Mindjack Projection
+              2155593792, // Crota's Bane Projection
+              2155593793 // Aeronautics of China Projection
+              ]
             ]
           },
           {
             name: 'Ghosts',
             season: 9,
-            items: [
+            itemGroups: [
+              [
+                4005536857, // Omolon Shell
+                        4005536859, // Veist Shell
+                        4005536858, // Tex Mechanica Shell
+                        4005536856, // Lampion Shell
+                        4005536862, // Traitor Primus Shell 
+                        4005536861, // Phalanx Shell
 //               4005536860 // Simulation Shell (Not planned to be sold for Bright Dust)
-            ]
-          },
-          {
-            name: 'Ghost Projections',
-            season: 8,
-            items: [
-              2155593794, // Moonbound Projection
-              2155593795, // Mindjack Projection
-              2155593792, // Crota's Bane Projection
-              2155593793 // Aeronautics of China Projection
+              ],
+              [
+                859004031, // Lantern Projection
+                        859004030, // Red Legion Projection
+                        859004029, // Saint-14 Projection
+                        859004028, // Colossus Helmet Projection 
+                        859004027 // XIV Projection
+              ]
             ]
           },
           {
@@ -1198,6 +1259,11 @@ export default ([
             name: 'Sparrows',
             season: 9,
             items: [
+              4248884709, // Ash Angel 
+                        4248884708, // Tip of the Spear
+                        4248884710, // The Ram 
+                        4248884705, // Spur of the Moment
+                        4248884711, // Perennial Velocity 
 //               4248884706, // Motive Force (Not planned to be sold for Bright Dust)
 //               4248884704 // Viper-4s (Not planned to be sold for Bright Dust)
             ]
@@ -1222,6 +1288,9 @@ export default ([
             name: 'Ships',
             season: 9,
             items: [
+              430387804, // Saint's Invocation
+                        430387802, // The Prod
+                        430387801, // Chrysopelea-S
 //               430387803 // Tachyon-4 (Not planned to be sold for Bright Dust)
             ]
           },
@@ -1238,6 +1307,16 @@ export default ([
             ]
           },
           {
+            name: 'Shaders',
+            season: 9,
+            items: [
+              3906243540, // Grayscale Undergrowth
+                        3906243543, // Circadian Chill 
+                        3906243542, // Byzantium Lotus 
+                        3906243541 // Welded Brass
+            ]
+          },
+          {
             name: 'Transmat Effects',
             season: 8,
             items: [
@@ -1245,6 +1324,16 @@ export default ([
               3951356826, // Harpy's Cry
               3951356824, // Nightmare Emergence
               3951356825 // Shattered Shrieker
+            ]
+          },
+          {
+            name: 'Transmat Effects',
+            season: 9,
+            items: [
+              1378231105, // Cabal Shield Breaker
+                        1378231104, // Box of Tricks 
+                        1378231107, // Vex Gate Arrival 
+                        1378231106 // Up in Smoke
             ]
           }
         ]
