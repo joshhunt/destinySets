@@ -1356,7 +1356,6 @@ export default ([
               3569802112, // The Old Fashioned
               1807343361, // Hawthorne's Field-Forged Shotgun
               3863882743, // Uriel's Gift
-              3434944005, // Point of the Stag
               4106983932, // Elatha FR4
               3622137132, // Last Hope
               1529450902 // Mos Epoch III
