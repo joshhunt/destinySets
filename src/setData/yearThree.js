@@ -398,8 +398,8 @@ export default ([
               2422240131, // Timeswept Shell
               1736897072, // Sandswept Crusader
               1736897073, // Timeline Warrior
-              980059630, // Vitrified Chronology
-              980059631 // Vitrified Duality
+              980059631,// Vitrified Duality
+              980059630 // Vitrified Chronology
             ]
           }
         ]
@@ -1105,17 +1105,17 @@ export default ([
             itemGroups: [
               [
                 384923539, // Abyssal Scream
-                3449188806, // Long Live the Queen
-                1869157938, // Ain't My First Rodeo
                 432606867, // Black Death
-                4115107119 // Packmaster's Command
+                3449188806, // Long Live the Queen
+                4115107119, // Packmaster's Command
+                1869157938, // Ain't My First Rodeo
+                // 299539105, // Violent Exorcism (Not planned to be sold for Bright Dust)
                 // 204713420, // Devil's Advocate (Not planned to be sold for Bright Dust)
-                // 171163996, // Bloodline Memorial (Not planned to be sold for Bright Dust)
-                // 299539105 // Violent Exorcism (Not planned to be sold for Bright Dust)
+                // 171163996 // Bloodline Memorial (Not planned to be sold for Bright Dust)
               ],
               [
+                // 2319265678, // Doubt (Not planned to be sold for Bright Dust)
                 440770966 // Shifting Loyalties
-                // 2319265678 // Doubt (Not planned to be sold for Bright Dust)
               ],
               [
                 929374195, // Mantle of Remembrance
@@ -1128,7 +1128,7 @@ export default ([
             ]
           },
           {
-            name: "Emotes & Finishers",
+            name: "Emotes",
             season: 8,
             itemGroups: [
               [
@@ -1157,7 +1157,7 @@ export default ([
             ]
           },
           {
-            name: "Emotes & Finishers",
+            name: "Emotes",
             season: 9,
             itemGroups: [
               [
@@ -1184,8 +1184,8 @@ export default ([
                 //                  1395929128, // Clock Cleaner (Not planned to be sold for Bright Dust)
                 //                  885220736, // Fist of Fury (Not planned to be sold for Bright Dust)
                 //                  3643356340, // Flash Kick (Not planned to be sold for Bright Dust)
-                //                  1294248797, // Sure Shot (Not planned to be sold for Bright Dust)
                 //                  3474738931, // Nail on the Head (Not planned to be sold for Bright Dust)
+                //                  1294248797, // Sure Shot (Not planned to be sold for Bright Dust)
                 //                  1492613344 // En Garde (Not planned to be sold for Bright Dust)
               ]
             ]
@@ -1220,13 +1220,13 @@ export default ([
             season: 9,
             itemGroups: [
               [
-                4005536857, // Omolon Shell
-                4005536859, // Veist Shell
-                4005536858, // Tex Mechanica Shell
                 4005536856, // Lampion Shell
-                4005536862, // Traitor Primus Shell
-                4005536861 // Phalanx Shell
-                //               4005536860 // Simulation Shell (Not planned to be sold for Bright Dust)
+                4005536857, // Omolon Shell
+                4005536858, // Tex Mechanica Shell
+                4005536859, // Veist Shell
+                //               4005536860,// Simulation Shell (Not planned to be sold for Bright Dust)
+                4005536861,// Phalanx Shell
+                4005536862 // Traitor Primus Shell
               ],
               [
                 859004031, // Lantern Projection
@@ -1258,13 +1258,13 @@ export default ([
             name: "Sparrows",
             season: 9,
             items: [
-              4248884709, // Ash Angel
               4248884708, // Tip of the Spear
+              4248884709, // Ash Angel
               4248884710, // The Ram
-              4248884705, // Spur of the Moment
-              4248884711 // Perennial Velocity
-              //               4248884706, // Motive Force (Not planned to be sold for Bright Dust)
+              4248884711, // Perennial Velocity
               //               4248884704 // Viper-4s (Not planned to be sold for Bright Dust)
+              4248884705, // Spur of the Moment
+              //               4248884706 // Motive Force (Not planned to be sold for Bright Dust)
             ]
           },
           {
@@ -1287,10 +1287,10 @@ export default ([
             name: "Ships",
             season: 9,
             items: [
-              430387804, // Saint's Invocation
+              430387801, // Chrysopelea-S
               430387802, // The Prod
-              430387801 // Chrysopelea-S
-              //               430387803 // Tachyon-4 (Not planned to be sold for Bright Dust)
+              //               430387803, // Tachyon-4 (Not planned to be sold for Bright Dust)
+              430387804 // Saint's Invocation
             ]
           },
           {
@@ -1309,10 +1309,10 @@ export default ([
             name: "Shaders",
             season: 9,
             items: [
+              3906243541, // Welded Brass
               3906243540, // Grayscale Undergrowth
               3906243543, // Circadian Chill
-              3906243542, // Byzantium Lotus
-              3906243541 // Welded Brass
+              3906243542 // Byzantium Lotus
             ]
           },
           {
@@ -1356,7 +1356,6 @@ export default ([
               3569802112, // The Old Fashioned
               1807343361, // Hawthorne's Field-Forged Shotgun
               3863882743, // Uriel's Gift
-              3434944005, // Point of the Stag
               4106983932, // Elatha FR4
               3622137132, // Last Hope
               1529450902 // Mos Epoch III
