@@ -419,6 +419,7 @@ export default ([
             name: "Weapons",
             // season: "K", // Double Check
             items: [
+              4103414242, // Divinity
               3385326721, // Reckless Oracle
               2408405461, // Sacred Provenance
               48643186, // Ancient Gospel
@@ -835,6 +836,92 @@ export default ([
               466236951, // Dawning Welcome
               3403347111, // Snowy Entrance
               3403347110 // Sweet Entrance
+            ]
+          }
+        ]
+      },
+      {
+        name: "Crimson Days",
+        id: "year_three_crimson_days",
+        description: "Earned during the seasonal Crimson Days event.",
+        big: false,
+        sections: [
+          {
+            name: "Weapons",
+            season: 9,
+            itemGroups: [
+              [
+
+              ],
+              [
+
+              ]
+            ]
+          },
+          {
+            name: "Hunter Armor",
+            season: 9,
+            items: [
+
+            ]
+          },
+          {
+            name: "Titan Armor",
+            season: 9,
+            items: [
+
+            ]
+          },
+          {
+            name: "Warlock Armor",
+            season: 9,
+            items: [
+
+            ]
+          },
+          {
+            name: "Emotes",
+            season: 9,
+            itemGroups: [
+              [
+
+              ],
+              [
+                
+              ]
+            ]
+          },
+          {
+            name: "Ghosts",
+            season: 9,
+            itemGroups: [
+              [
+                2716406907, // Crimson Shell
+              ],
+              [
+                
+              ]
+            ]
+          },
+          {
+            name: "Sparrows",
+            season: 9,
+            items: [
+
+            ]
+          },
+          {
+            name: "Ships",
+            season: 9,
+            items: [
+
+            ]
+          },
+          {
+            name: "Extras",
+            season: 9,
+            items: [
+
             ]
           }
         ]
