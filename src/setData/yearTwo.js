@@ -1567,6 +1567,7 @@ export default ([
             name: 'Emotes',
             season: 5,
             items: [
+              1708415886, // Baking Cookies
               3510138048, // Protecting Teammates
               3166802179, // Chest Bump
               2799886702, // Comfort Dance

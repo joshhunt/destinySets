@@ -370,25 +370,33 @@ export default ([
         ),
         sections: [
           {
-            name: "Weapons",
+            name: "Active Obilisk Link & Frame Weapons",
             season: 9,
-            items: [
-              1251729046, // Steelfeather Repeater
-              2723241847, // Patron of Lost Causes
-              1289997971, // Breachlight
-              1706206669, // Gallant Charge
-              3850168899, // Martyr's Retribution
-              946443267 // Line in the Sand
+            itemGroups: [
+              [
+                1706206669, // Gallant Charge
+                3233390913 // Infinite Paths 8
+              ],
+               [
+                3850168899, // Martyr's Retribution
+                946443267 // Line in the Sand
+              ],
+              [
+                2723241847, // Patron of Lost Causes
+                4149758318 // Traveler's Judgment 5
+              ],
+              [
+                1289997971, // Breachlight
+                1251729046 // Steelfeather Repeater              
+              ]   
             ]
           },
           {
-            name: "Obelisk Bounties & Resonance Rank Increases",
+            name: "Obelisk Frames & Resonance Rank Increases",
             season: 9,
             items: [
               3393519051, // Perfect Paradox
-              410996590, // Jack Queen King 3
-              4149758318, // Traveler's Judgment 5
-              3233390913 // Infinite Paths 8
+              410996590 // Jack Queen King 3
             ]
           },
           {
