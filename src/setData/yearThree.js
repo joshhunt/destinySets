@@ -370,25 +370,25 @@ export default ([
         ),
         sections: [
           {
-            name: "Active Obilisk Link & Obilisk Frame Weapons",
+            name: "Active Obilisk Link & Frame Weapons",
             season: 9,
             itemGroups: [
-              [
-                1289997971, // Breachlight
-                1251729046 // Steelfeather Repeater              
-              ],
-              [
-                3850168899, // Martyr's Retribution
-                946443267 // Line in the Sand
-              ],
               [
                 1706206669, // Gallant Charge
                 3233390913 // Infinite Paths 8
               ],
+               [
+                3850168899, // Martyr's Retribution
+                946443267 // Line in the Sand
+              ],
               [
                 2723241847, // Patron of Lost Causes
                 4149758318 // Traveler's Judgment 5
-              ]
+              ],
+              [
+                1289997971, // Breachlight
+                1251729046 // Steelfeather Repeater              
+              ]   
             ]
           },
           {
