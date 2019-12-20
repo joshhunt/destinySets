@@ -244,7 +244,7 @@ export default ([
         sections: [
           {
             name: "Weapons",
-            season: 9,
+            season: 10,
             items: [
               3434944005 // Point of the Stag
             ]
