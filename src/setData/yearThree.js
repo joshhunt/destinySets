@@ -904,7 +904,7 @@ export default ([
             season: 9,
             itemGroups: [
               [
-                2716406907, // Crimson Shell
+                2716406907 // Crimson Shell
               ],
               [
                 
@@ -915,7 +915,7 @@ export default ([
             name: "Sparrows",
             season: 9,
             items: [
-
+              1266122672 // IVC-10
             ]
           },
           {
