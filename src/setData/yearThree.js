@@ -32,33 +32,33 @@ export default ([
             name: "Hunter Armor",
             season: 9,
             items: [
-              432360904, // Vigil of Heroes
-              4074662489, // Vigil of Heroes
-              2337221567, // Vigil of Heroes
-              2671880779, // Vigil of Heroes
-              3584380110 // Vigil of Heroes
+//               432360904, // Vigil of Heroes (Doesn't have related collectible. When acquired, Destiny 2 marks Forsaken version as collected. When this is dismantled, item becomes unacquired on website.)
+//               4074662489, // Vigil of Heroes (Doesn't have related collectible. When acquired, Destiny 2 marks Forsaken version as collected. When this is dismantled, item becomes unacquired on website.)
+//               2337221567, // Vigil of Heroes (Doesn't have related collectible. When acquired, Destiny 2 marks Forsaken version as collected. When this is dismantled, item becomes unacquired on website.)
+//               2671880779, // Vigil of Heroes (Doesn't have related collectible. When acquired, Destiny 2 marks Forsaken version as collected. When this is dismantled, item becomes unacquired on website.)
+//               3584380110 // Vigil of Heroes (Doesn't have related collectible. When acquired, Destiny 2 marks Forsaken version as collected. When this is dismantled, item becomes unacquired on website.)
             ]
           },
           {
             name: "Titan Armor",
             season: 9,
             items: [
-              1130203390, // Vigil of Heroes
-              358599471, // Vigil of Heroes
-              3500775049, // Vigil of Heroes
-              508642129, // Vigil of Heroes
-              986111044 // Vigil of Heroes
+//               1130203390, // Vigil of Heroes (Doesn't have related collectible. When acquired, Destiny 2 marks Forsaken version as collected. When this is dismantled, item becomes unacquired on website.)
+//               358599471, // Vigil of Heroes (Doesn't have related collectible. When acquired, Destiny 2 marks Forsaken version as collected. When this is dismantled, item becomes unacquired on website.)
+//               3500775049, // Vigil of Heroes (Doesn't have related collectible. When acquired, Destiny 2 marks Forsaken version as collected. When this is dismantled, item becomes unacquired on website.)
+//               508642129, // Vigil of Heroes (Doesn't have related collectible. When acquired, Destiny 2 marks Forsaken version as collected. When this is dismantled, item becomes unacquired on website.)
+//               986111044 // Vigil of Heroes (Doesn't have related collectible. When acquired, Destiny 2 marks Forsaken version as collected. When this is dismantled, item becomes unacquired on website.)
             ]
           },
           {
             name: "Warlock Armor",
             season: 9,
             items: [
-              2422319309, // Vigil of Heroes
-              3074985148, // Vigil of Heroes
-              3544662820, // Vigil of Heroes
-              2460793798, // Vigil of Heroes
-              4288492921 // Vigil of Heroes
+//               2422319309, // Vigil of Heroes (Doesn't have related collectible. When acquired, Destiny 2 marks Forsaken version as collected. When this is dismantled, item becomes unacquired on website.)
+//               3074985148, // Vigil of Heroes (Doesn't have related collectible. When acquired, Destiny 2 marks Forsaken version as collected. When this is dismantled, item becomes unacquired on website.)
+//               3544662820, // Vigil of Heroes (Doesn't have related collectible. When acquired, Destiny 2 marks Forsaken version as collected. When this is dismantled, item becomes unacquired on website.)
+//               2460793798, // Vigil of Heroes (Doesn't have related collectible. When acquired, Destiny 2 marks Forsaken version as collected. When this is dismantled, item becomes unacquired on website.)
+//               4288492921 // Vigil of Heroes (Doesn't have related collectible. When acquired, Destiny 2 marks Forsaken version as collected. When this is dismantled, item becomes unacquired on website.)
             ]
           },
           {
@@ -107,33 +107,33 @@ export default ([
             name: "Hunter Armor",
             season: 9,
             items: [
-              4123918087, // Wing Contender
-              2070517134, // Wing Contender
-              1838273186, // Wing Contender
-              283188616, // Wing Contender
-              1062166003 // Wing Contender
+//               4123918087, // Wing Contender (Doesn't have related collectible. When acquired, Destiny 2 marks Forsaken version as collected. When this is dismantled, item becomes unacquired on website.)
+//               2070517134, // Wing Contender (Doesn't have related collectible. When acquired, Destiny 2 marks Forsaken version as collected. When this is dismantled, item becomes unacquired on website.)
+//               1838273186, // Wing Contender (Doesn't have related collectible. When acquired, Destiny 2 marks Forsaken version as collected. When this is dismantled, item becomes unacquired on website.)
+//               283188616, // Wing Contender (Doesn't have related collectible. When acquired, Destiny 2 marks Forsaken version as collected. When this is dismantled, item becomes unacquired on website.)
+//               1062166003 // Wing Contender (Doesn't have related collectible. When acquired, Destiny 2 marks Forsaken version as collected. When this is dismantled, item becomes unacquired on website.)
             ]
           },
           {
             name: "Titan Armor",
             season: 9,
             items: [
-              3483546829, // Wing Discipline
-              4136212668, // Wing Discipline
-              1722623780, // Wing Discipline
-              3522021318, // Wing Discipline
-              2466453881 // Wing Discipline
+//               3483546829, // Wing Discipline (Doesn't have related collectible. When acquired, Destiny 2 marks Forsaken version as collected. When this is dismantled, item becomes unacquired on website.)
+//               4136212668, // Wing Discipline (Doesn't have related collectible. When acquired, Destiny 2 marks Forsaken version as collected. When this is dismantled, item becomes unacquired on website.)
+//               1722623780, // Wing Discipline (Doesn't have related collectible. When acquired, Destiny 2 marks Forsaken version as collected. When this is dismantled, item becomes unacquired on website.)
+//               3522021318, // Wing Discipline (Doesn't have related collectible. When acquired, Destiny 2 marks Forsaken version as collected. When this is dismantled, item becomes unacquired on website.)
+//               2466453881 // Wing Discipline (Doesn't have related collectible. When acquired, Destiny 2 marks Forsaken version as collected. When this is dismantled, item becomes unacquired on website.)
             ]
           },
           {
             name: "Warlock Armor",
             season: 9,
             items: [
-              874101646, // Wing Theorem
-              2323865727, // Wing Theorem
-              2525395257, // Wing Theorem
-              1245115841, // Wing Theorem
-              3839561204 // Wing Theorem
+//               874101646, // Wing Theorem (Doesn't have related collectible. When acquired, Destiny 2 marks Forsaken version as collected. When this is dismantled, item becomes unacquired on website.)
+//               2323865727, // Wing Theorem (Doesn't have related collectible. When acquired, Destiny 2 marks Forsaken version as collected. When this is dismantled, item becomes unacquired on website.)
+//               2525395257, // Wing Theorem (Doesn't have related collectible. When acquired, Destiny 2 marks Forsaken version as collected. When this is dismantled, item becomes unacquired on website.)
+//               1245115841, // Wing Theorem (Doesn't have related collectible. When acquired, Destiny 2 marks Forsaken version as collected. When this is dismantled, item becomes unacquired on website.)
+//               3839561204 // Wing Theorem (Doesn't have related collectible. When acquired, Destiny 2 marks Forsaken version as collected. When this is dismantled, item becomes unacquired on website.)
             ]
           },
           {
@@ -183,33 +183,33 @@ export default ([
             name: "Hunter Armor",
             season: 9,
             items: [
-              759348512, // Ancient Apocalypse Mask
-              2620389105, // Ancient Apocalypse Grips
-              1741396519, // Ancient Apocalypse Vest
-              2451538755, // Ancient Apocalypse Strides
-              2881248566 // Ancient Apocalypse Cloak
+//               759348512, // Ancient Apocalypse Mask (Doesn't have related collectible. When acquired, Destiny 2 marks Forsaken version as collected. When this is dismantled, item becomes unacquired on website.)
+//               2620389105, // Ancient Apocalypse Grips (Doesn't have related collectible. When acquired, Destiny 2 marks Forsaken version as collected. When this is dismantled, item becomes unacquired on website.)
+//               1741396519, // Ancient Apocalypse Vest (Doesn't have related collectible. When acquired, Destiny 2 marks Forsaken version as collected. When this is dismantled, item becomes unacquired on website.)
+//               2451538755, // Ancient Apocalypse Strides (Doesn't have related collectible. When acquired, Destiny 2 marks Forsaken version as collected. When this is dismantled, item becomes unacquired on website.)
+//               2881248566 // Ancient Apocalypse Cloak (Doesn't have related collectible. When acquired, Destiny 2 marks Forsaken version as collected. When this is dismantled, item becomes unacquired on website.)
             ]
           },
           {
             name: "Titan Armor",
             season: 9,
             items: [
-              3664007718, // Ancient Apocalypse Helm
-              2677967607, // Ancient Apocalypse Gauntlets
-              1237661249, // Ancient Apocalypse Plate
-              191535001, // Ancient Apocalypse Greaves
-              2020166300 // Ancient Apocalypse Mark
+//               3664007718, // Ancient Apocalypse Helm (Doesn't have related collectible. When acquired, Destiny 2 marks Forsaken version as collected. When this is dismantled, item becomes unacquired on website.)
+//               2677967607, // Ancient Apocalypse Gauntlets (Doesn't have related collectible. When acquired, Destiny 2 marks Forsaken version as collected. When this is dismantled, item becomes unacquired on website.)
+//               1237661249, // Ancient Apocalypse Plate (Doesn't have related collectible. When acquired, Destiny 2 marks Forsaken version as collected. When this is dismantled, item becomes unacquired on website.)
+//               191535001, // Ancient Apocalypse Greaves (Doesn't have related collectible. When acquired, Destiny 2 marks Forsaken version as collected. When this is dismantled, item becomes unacquired on website.)
+//               2020166300 // Ancient Apocalypse Mark (Doesn't have related collectible. When acquired, Destiny 2 marks Forsaken version as collected. When this is dismantled, item becomes unacquired on website.)
             ]
           },
           {
             name: "Warlock Armor",
             season: 9,
             items: [
-              1013137701, // Ancient Apocalypse Hood
-              1752237812, // Ancient Apocalypse Gloves
-              3550729740, // Ancient Apocalypse Robes
-              2039976446, // Ancient Apocalypse Boots
-              1488486721 // Ancient Apocalypse Bond
+//               1013137701, // Ancient Apocalypse Hood (Doesn't have related collectible. When acquired, Destiny 2 marks Forsaken version as collected. When this is dismantled, item becomes unacquired on website.)
+//               1752237812, // Ancient Apocalypse Gloves (Doesn't have related collectible. When acquired, Destiny 2 marks Forsaken version as collected. When this is dismantled, item becomes unacquired on website.)
+//               3550729740, // Ancient Apocalypse Robes (Doesn't have related collectible. When acquired, Destiny 2 marks Forsaken version as collected. When this is dismantled, item becomes unacquired on website.)
+//               2039976446, // Ancient Apocalypse Boots (Doesn't have related collectible. When acquired, Destiny 2 marks Forsaken version as collected. When this is dismantled, item becomes unacquired on website.)
+//               1488486721 // Ancient Apocalypse Bond (Doesn't have related collectible. When acquired, Destiny 2 marks Forsaken version as collected. When this is dismantled, item becomes unacquired on website.)
             ]
           },
           {
