@@ -151,7 +151,6 @@ export default ([
             season: 9,
             items: [
               1736897075, // No Quarter
-              // 1736897079, // Savior of the Past (Hidden until Source Confirmed)
               3603801350 // Crucible Prestige
             ]
           }
@@ -406,6 +405,7 @@ export default ([
               2422240131, // Timeswept Shell
               1736897072, // Sandswept Crusader
               1736897073, // Timeline Warrior
+              1736897079, // Savior of the Past
               980059631,// Vitrified Duality
               980059630 // Vitrified Chronology
             ]
