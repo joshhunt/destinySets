@@ -334,85 +334,6 @@ export default ([
         ]
       },
       {
-        name: "Vex Offensive & Invasions",
-        id: "year-three-vex-offensive-and-invasions",
-        description: _(
-          "DestinyCollectibleDefinition[4151753667].sourceString",
-          "Complete seasonal activities during Season of the Undying."
-        ),
-        sections: [
-          {
-            name: "Weapons",
-            season: 8,
-            items: [
-              2314999489, // Imperative
-              1167153950, // Adhortative
-              2138599001, // Optative
-              2663204025 // Subjunctive
-            ]
-          },
-          {
-            name: "Extras",
-            season: 8,
-            items: [
-              1714370696 // Pushing Down Daisies
-            ]
-          }
-        ]
-      },
-      {
-        name: "The Sundial",
-        id: "year-three-the-sundial",
-        description: _(
-          "DestinyCollectibleDefinition[3648433278].sourceString",
-          "Acquired from the Sundial activity on Mercury."
-        ),
-        sections: [
-          {
-            name: "Active Obilisk Link & Frame Weapons",
-            season: 9,
-            itemGroups: [
-              [
-                1706206669, // Gallant Charge
-                3233390913 // Infinite Paths 8
-              ],
-               [
-                3850168899, // Martyr's Retribution
-                946443267 // Line in the Sand
-              ],
-              [
-                2723241847, // Patron of Lost Causes
-                4149758318 // Traveler's Judgment 5
-              ],
-              [
-                1289997971, // Breachlight
-                1251729046 // Steelfeather Repeater              
-              ]   
-            ]
-          },
-          {
-            name: "Obelisk Frames & Resonance Rank Increases",
-            season: 9,
-            items: [
-              3393519051, // Perfect Paradox
-              410996590 // Jack Queen King 3
-            ]
-          },
-          {
-            name: "Extras",
-            season: 9,
-            items: [
-              2422240131, // Timeswept Shell
-              1736897072, // Sandswept Crusader
-              1736897073, // Timeline Warrior
-              1736897079, // Savior of the Past
-              980059631,// Vitrified Duality
-              980059630 // Vitrified Chronology
-            ]
-          }
-        ]
-      },
-      {
         name: _(
           "DestinyActivityModeDefinition[2659723068].displayProperties.name",
           "Garden of Salvation"
@@ -477,6 +398,79 @@ export default ([
               298334059, // Inherent Truth
               3996862462, // Ancient Believer
               3996862463 // Ancient Defender
+            ]
+          }
+        ]
+      },
+      {
+        name: "Season 8",
+        id: "year-three-season-8",
+        description: "Complete seasonal activities during Season of the Undying.",
+        sections: [
+          {
+            name: "Vex Offensive/Invasions & Ikora Bounty Weapons",
+            season: 8,
+            items: [
+              2314999489, // Imperative
+              1167153950, // Adhortative
+              2138599001, // Optative
+              2663204025 // Subjunctive
+            ]
+          },
+          {
+            name: "Extras",
+            season: 8,
+            items: [
+              1714370696 // Pushing Down Daisies
+            ]
+          }
+        ]
+      },
+      {
+        name: "Season 9",
+        id: "year-three-season-9",
+        description: "Complete seasonal activities during Season of Dawn.",
+        sections: [
+          {
+            name: "Active Obilisk Link & Frame Weapons",
+            season: 9,
+            itemGroups: [
+              [
+                1706206669, // Gallant Charge
+                3233390913 // Infinite Paths 8
+              ],
+               [
+                3850168899, // Martyr's Retribution
+                946443267 // Line in the Sand
+              ],
+              [
+                2723241847, // Patron of Lost Causes
+                4149758318 // Traveler's Judgment 5
+              ],
+              [
+                1289997971, // Breachlight
+                1251729046 // Steelfeather Repeater              
+              ]   
+            ]
+          },
+          {
+            name: "Obelisk Frames & Resonance Rank Increases",
+            season: 9,
+            items: [
+              3393519051, // Perfect Paradox
+              410996590 // Jack Queen King 3
+            ]
+          },
+          {
+            name: "Extras",
+            season: 9,
+            items: [
+              2422240131, // Timeswept Shell
+              1736897072, // Sandswept Crusader
+              1736897073, // Timeline Warrior
+              1736897079, // Savior of the Past
+              980059631,// Vitrified Duality
+              980059630 // Vitrified Chronology
             ]
           }
         ]
