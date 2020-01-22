@@ -462,6 +462,14 @@ export default ([
             ]
           },
           {
+            name: "Empyrean Foundation",
+            season: 9,
+            items: [
+              1736897081, // Restorative Light
+              2266613161 // Lighthouse Sun
+            ]
+          },
+          {
             name: "Extras",
             season: 9,
             items: [
