@@ -1220,7 +1220,7 @@ export default ([
                 3654808012, // The Fourteenth Anamnesis
                 3786758103, // Embodiment of the Warbeast
                 3778646768, // Flight of the Interceptor
-                475012491 // The Want of Lies and Wishes
+                // 475012491 // The Want of Lies and Wishes (Didn't show up for Bright Dust due to an in-game issue)
               ]
             ]
           },
