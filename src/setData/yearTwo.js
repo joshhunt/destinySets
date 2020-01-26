@@ -1350,7 +1350,7 @@ export default ([
             ]
           },
           {
-            name: 'The Shattered Throne Dungeon',
+            name: "'The Shattered Throne' Dungeon",
             season: 4,
             items: [
               814876684, // Wish-Ender
