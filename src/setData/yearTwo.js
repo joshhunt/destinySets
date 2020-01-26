@@ -1350,13 +1350,21 @@ export default ([
             ]
           },
           {
+            name: 'The Shattered Throne Dungeon',
+            season: 4,
+            items: [
+              814876684, // Wish-Ender
+              2844014413, // Pallas Galliot
+              185321778 // The Eternal Return
+            ]
+          },
+          {
             name: 'Extras',
             season: 4,
             items: [
               813936739, // Starlight Shell
               1317468652, // Harbinger's Echo
               1317468653, // Silver Tercel
-              2844014413, // Pallas Galliot
               3352019292, // Secret Victories
               3118323620, // Drink at the Well
               3118323621, // Transcendent
