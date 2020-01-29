@@ -515,42 +515,6 @@ export default ([
             ]
           },
           {
-            name: "Nightmare Hunts",
-            // season: "K",
-            items: [
-              298334057, // A Sibyl's Dreams
-              2056256564 // Lunar Halcyon Gilt
-            ]
-          },
-          {
-            name: "Altars of Sorrow",
-            // season: "K",
-            itemGroups: [
-              [
-                2782847179, // Blasphemer (Shotgun)
-                2164448701, // Apostate (Sniper Rifle)
-                3067821200 // Heretic (Rocket Launcher)
-              ],
-              [
-                3708784304 // Bane of Crota Shell (Ghost Shell)
-              ]
-            ]
-          },
-          {
-            name: "'Pit of Heresy' Dungeon",
-            // season: "K",
-            itemGroups: [
-              [
-                208088207 // Premonition (Dungeon Pulse)
-              ],
-              [
-                4023500750, // Bane of Tyrants (Ship)
-                298334061, // Sanguine Static (Emblem)
-                298334060 // Crimson Echoes (Emblem)
-              ]
-            ]
-          },
-          {
             name: "Hunter Armor",
             // season: "K",
             items: [
@@ -581,6 +545,42 @@ export default ([
               3692187003, // Dreambane Robes
               1030110631, // Dreambane Boots
               2048903186 // Dreambane Bond
+            ]
+          },
+          {
+            name: "Altars of Sorrow",
+            // season: "K",
+            itemGroups: [
+              [
+                2782847179, // Blasphemer (Shotgun)
+                2164448701, // Apostate (Sniper Rifle)
+                3067821200 // Heretic (Rocket Launcher)
+              ],
+              [
+                3708784304 // Bane of Crota Shell (Ghost Shell)
+              ]
+            ]
+          },
+          {
+            name: "Nightmare Hunts",
+            // season: "K",
+            items: [
+              298334057, // A Sibyl's Dreams
+              2056256564 // Lunar Halcyon Gilt
+            ]
+          },
+          {
+            name: "'Pit of Heresy' Dungeon",
+            // season: "K",
+            itemGroups: [
+              [
+                208088207 // Premonition (Dungeon Pulse)
+              ],
+              [
+                4023500750, // Bane of Tyrants (Ship)
+                298334061, // Sanguine Static (Emblem)
+                298334060 // Crimson Echoes (Emblem)
+              ]
             ]
           },
           {
@@ -917,7 +917,8 @@ export default ([
             name: "Sparrows",
             season: 9,
             items: [
-              1266122672 // IVC-10
+              1266122672, // IVC-10
+              2048941953 // SVC-12
             ]
           },
           {
@@ -1220,7 +1221,7 @@ export default ([
                 3654808012, // The Fourteenth Anamnesis
                 3786758103, // Embodiment of the Warbeast
                 3778646768, // Flight of the Interceptor
-                475012491 // The Want of Lies and Wishes
+                // 475012491 // The Want of Lies and Wishes (Didn't show up for Bright Dust due to an in-game issue)
               ]
             ]
           },
