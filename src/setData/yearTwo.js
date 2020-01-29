@@ -1359,12 +1359,24 @@ export default ([
             ]
           },
           {
+            name: 'Ascendant Challenges',
+            season: 4,
+            items: [
+              813936739 // Starlight Shell
+            ]
+          },
+          {
+            name: 'Petra Weekly Mission',
+            season: 4,
+            items: [
+              1317468653 // Silver Tercel
+            ]
+          },
+          {
             name: 'Extras',
             season: 4,
             items: [
-              813936739, // Starlight Shell
               1317468652, // Harbinger's Echo
-              1317468653, // Silver Tercel
               3352019292, // Secret Victories
               3118323620, // Drink at the Well
               3118323621, // Transcendent
