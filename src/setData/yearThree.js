@@ -918,7 +918,7 @@ export default ([
             season: 9,
             items: [
               1266122672, // IVC-10
-              2048941953 // SVC-12
+              1266122673 // SVC-12
             ]
           },
           {
