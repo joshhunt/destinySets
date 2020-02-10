@@ -897,7 +897,7 @@ export default ([
 
               ],
               [
-                
+                // 1345789366 // Heartfelt Union (Not planned to be sold for Bright Dust)
               ]
             ]
           },
@@ -909,7 +909,7 @@ export default ([
                 2716406907 // Crimson Shell
               ],
               [
-                
+                4111024700 // Two of Hearts Projection
               ]
             ]
           },
