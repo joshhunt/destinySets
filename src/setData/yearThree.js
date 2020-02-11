@@ -857,48 +857,10 @@ export default ([
         big: false,
         sections: [
           {
-            name: "Weapons",
-            season: 9,
-            itemGroups: [
-              [
-
-              ],
-              [
-
-              ]
-            ]
-          },
-          {
-            name: "Hunter Armor",
-            season: 9,
-            items: [
-
-            ]
-          },
-          {
-            name: "Titan Armor",
-            season: 9,
-            items: [
-
-            ]
-          },
-          {
-            name: "Warlock Armor",
-            season: 9,
-            items: [
-
-            ]
-          },
-          {
             name: "Emotes",
             season: 9,
-            itemGroups: [
-              [
-
-              ],
-              [
-                
-              ]
+            items: [ 
+                // 1345789366 // Heartfelt Union (Not planned to be sold for Bright Dust)
             ]
           },
           {
@@ -909,7 +871,7 @@ export default ([
                 2716406907 // Crimson Shell
               ],
               [
-                
+                4111024700 // Two of Hearts Projection
               ]
             ]
           },
@@ -922,17 +884,10 @@ export default ([
             ]
           },
           {
-            name: "Ships",
-            season: 9,
-            items: [
-
-            ]
-          },
-          {
             name: "Extras",
             season: 9,
             items: [
-
+              3622268500 // In the Valley
             ]
           }
         ]
