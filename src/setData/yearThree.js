@@ -857,48 +857,10 @@ export default ([
         big: false,
         sections: [
           {
-            name: "Weapons",
-            season: 9,
-            itemGroups: [
-              [
-
-              ],
-              [
-
-              ]
-            ]
-          },
-          {
-            name: "Hunter Armor",
-            season: 9,
-            items: [
-
-            ]
-          },
-          {
-            name: "Titan Armor",
-            season: 9,
-            items: [
-
-            ]
-          },
-          {
-            name: "Warlock Armor",
-            season: 9,
-            items: [
-
-            ]
-          },
-          {
             name: "Emotes",
             season: 9,
-            itemGroups: [
-              [
-
-              ],
-              [
+            items: [ 
                 // 1345789366 // Heartfelt Union (Not planned to be sold for Bright Dust)
-              ]
             ]
           },
           {
@@ -919,13 +881,6 @@ export default ([
             items: [
               1266122672, // IVC-10
               1266122673 // SVC-12
-            ]
-          },
-          {
-            name: "Ships",
-            season: 9,
-            items: [
-
             ]
           },
           {
