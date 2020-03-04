@@ -1342,7 +1342,7 @@ export default ([
             items: [
               430387801, // Chrysopelea-S
               430387802, // The Prod
-              //               430387803, // Tachyon-4 (Not planned to be sold for Bright Dust)
+              430387803, // Tachyon-4
               430387804 // Saint's Invocation
             ]
           },
