@@ -1315,7 +1315,7 @@ export default ([
               4248884709, // Ash Angel
               4248884710, // The Ram
               4248884711, // Perennial Velocity
-              //               4248884704 // Viper-4s (Not planned to be sold for Bright Dust)
+              4248884704, // Viper-4s
               4248884705, // Spur of the Moment
               //               4248884706 // Motive Force (Not planned to be sold for Bright Dust)
             ]
