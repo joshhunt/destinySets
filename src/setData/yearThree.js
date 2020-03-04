@@ -1223,8 +1223,8 @@ export default ([
                 2077271390, // Flashy Moves
                 2737227933, // Blade Wipe
                 2970231290, // Face Palm
-                4138096633 // Guardian, Bye!
-                //                  208153163, // Keep It Clean (Not planned to be sold for Bright Dust)
+                4138096633, // Guardian, Bye!
+                208153163 // Keep It Clean
                 //                  2036655792, // Origami Crane (Not planned to be sold for Bright Dust)
                 //                  1700183918, // Gunslinger's Anticipation (Not planned to be sold for Bright Dust)
                 //                  1944063916, // Sunbreaker's Anticipation (Not planned to be sold for Bright Dust)
