@@ -1167,7 +1167,7 @@ export default ([
                 // 171163996 // Bloodline Memorial (Not planned to be sold for Bright Dust)
               ],
               [
-                // 2319265678, // Doubt (Not planned to be sold for Bright Dust)
+                2319265678, // Doubt
                 440770966 // Shifting Loyalties
               ],
               [
