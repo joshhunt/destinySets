@@ -1164,7 +1164,7 @@ export default ([
                 1869157938, // Ain't My First Rodeo
                 // 299539105, // Violent Exorcism (Not planned to be sold for Bright Dust)
                 // 204713420, // Devil's Advocate (Not planned to be sold for Bright Dust)
-                // 171163996 // Bloodline Memorial (Not planned to be sold for Bright Dust)
+                171163996 // Bloodline Memorial
               ],
               [
                 2319265678, // Doubt
