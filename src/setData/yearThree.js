@@ -29,11 +29,6 @@ export default ([
             ]
           },
           {
-            name: 'Weapons',
-            season: 10,
-            items: []
-          },
-          {
             name: 'Hunter Armor',
             season: 9,
             items: [
@@ -87,7 +82,10 @@ export default ([
           {
             name: 'Extras',
             season: 10,
-            items: []
+            items: [
+              1983519833, // Strike Operator
+              4286955050 // Vanguard Flashfire
+            ]
           }
         ]
       },
@@ -112,11 +110,6 @@ export default ([
             items: [
               2697058914 // Komodo-4FR
             ]
-          },
-          {
-            name: 'Weapons',
-            season: 10,
-            items: []
           },
           {
             name: 'Hunter Armor',
@@ -172,7 +165,10 @@ export default ([
           {
             name: 'Extras',
             season: 10,
-            items: []
+            items: [
+              1983519836, // Settled Differences
+              2811768631 // Crucible Peppermint
+            ]
           }
         ]
       },
@@ -197,11 +193,6 @@ export default ([
             items: [
               838556752 // Python
             ]
-          },
-          {
-            name: 'Weapons',
-            season: 10,
-            items: []
           },
           {
             name: 'Hunter Armor',
@@ -256,7 +247,10 @@ export default ([
           {
             name: 'Extras',
             season: 10,
-            items: []
+            items: [
+              1983519835, // Fifteen Holding, Fifteen Down
+              2207282210 // Raw Idocrase
+            ]
           }
         ]
       },
@@ -379,42 +373,75 @@ export default ([
           {
             name: 'Extras',
             season: 10,
-            items: []
+            items: [
+              1983519834 // Cast Iron
+            ]
           }
         ]
       },
       {
         name: _(
-          'DestinyActivityModeDefinition[1848252830].displayProperties.name', // CHECK
+          'DestinyActivityModeDefinition[1673724806].displayProperties.name',
           'Trials of Osiris'
         ),
         id: 'year-three-trials-of-osiris',
-        description: 'Complete necessary pursuits from the Drifter.', // CHECK
+        description: 'Complete challenges in the Trials of Osiris.',
         sections: [
           {
             name: 'Weapons',
             season: 10,
-            items: []
+            items: [
+              2478792241, // The Scholar
+              1697682876, // Astral Horizon
+              3164743584, // Eye of Sol
+              1907698332, // The Summoner
+              679281855, // Exile's Curse
+              958384347 // Tomorrow's Answer
+            ]
           },
           {
             name: 'Hunter Armor',
             season: 10,
-            items: []
+            items: [
+              3275117874, // Cover of the Exile
+              3741471003, // Grips of the Exile
+              938618741, // Vest of the Exile
+              2616071821, // Boots of the Exile
+              18990920 // Cloak of the Exile
+            ]
           },
           {
             name: 'Titan Armor',
             season: 10,
-            items: []
+            items: [
+              435339366, // Helm of the Exile
+              3702689847, // Gauntlets of the Exile
+              1127943297, // Plate of the Exile
+              791799769, // Greaves of the Exile
+              2376585692 // Mark of the Exile
+            ]
           },
           {
             name: 'Warlock Armor',
             season: 10,
-            items: []
+            items: [
+              1637326795, // Hood of the Exile
+              3829990714, // Gloves of the Exile
+              2883045518, // Robe of the Exile
+              1215952756, // Legs of the Exile
+              3201140055 // Bond of the Exile
+            ]
           },
           {
             name: 'Extras',
             season: 10,
-            items: []
+            items: [
+              2071635915, // Flawless Empyrean
+              1983519830, // Hardened by Trial
+              2071635914, // Light for the Lost
+              3892999872, // Lantern Shell
+              3224184260 // Resurrection's Guide
+            ]
           }
         ]
       },
@@ -1034,7 +1061,7 @@ export default ([
           {
             name: 'Extras',
             season: 10,
-            items: []
+            items: [1983519832, 1983519831]
           }
         ]
       }
