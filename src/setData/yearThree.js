@@ -335,6 +335,51 @@ export default ([
       },
       {
         name: _(
+          "DestinyActivityModeDefinition[1848252830].displayProperties.name", // CHECK
+          "Trials of Osiris"
+        ),
+        id: "year-three-trials-of-osiris",
+        description: "Complete necessary pursuits from the Drifter.", // CHECK
+        sections: [
+          {
+            name: "Weapons",
+            season: 10,
+            items: [
+
+            ]
+          },
+          {
+            name: "Hunter Armor",
+            season: 10,
+            items: [
+
+            ]
+          },
+          {
+            name: "Titan Armor",
+            season: 10,
+            items: [
+
+            ]
+          },
+          {
+            name: "Warlock Armor",
+            season: 10,
+            items: [
+
+            ]
+          },
+          {
+            name: "Extras",
+            season: 10,
+            items: [
+
+            ]
+          }
+        ]
+      },
+      {
+        name: _(
           "DestinyActivityModeDefinition[2659723068].displayProperties.name",
           "Garden of Salvation"
         ),
