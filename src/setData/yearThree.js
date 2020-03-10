@@ -491,7 +491,8 @@ export default ([
             name: 'Extras',
             season: 10,
             items: [
-              1983519834 // Cast Iron
+              1983519834, // Cast Iron
+              1385647483 // Iron Precious
             ]
           }
         ]
