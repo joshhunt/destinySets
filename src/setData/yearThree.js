@@ -40,6 +40,17 @@ export default ([
             ]
           },
           {
+            name: 'Hunter Armor',
+            season: 10,
+            items: [
+              // 1953621386, // The Took Offense (Doesn't have related collectible)
+              // 1959285715, // The Took Offense (Doesn't have related collectible)
+              // 946526461, // The Took Offense (Doesn't have related collectible)
+              // 1269679141, // The Took Offense (Doesn't have related collectible)
+              // 2408514352 // The Took Offense (Doesn't have related collectible)
+            ]
+          },
+          {
             name: 'Titan Armor',
             season: 9,
             items: [
@@ -51,6 +62,17 @@ export default ([
             ]
           },
           {
+            name: 'Titan Armor',
+            season: 10,
+            items: [
+              // 4038429998, // The Shelter in Place (Doesn't have related collectible)
+              // 768769183, // The Shelter in Place (Doesn't have related collectible)
+              // 1276048857, // The Shelter in Place (Doesn't have related collectible)
+              // 3984883553, // The Shelter in Place (Doesn't have related collectible)
+              // 3014775444 // Mark of Shelter (Doesn't have related collectible)
+            ]
+          },
+          {
             name: 'Warlock Armor',
             season: 9,
             items: [
@@ -59,6 +81,17 @@ export default ([
               // 3544662820, // Vigil of Heroes (Doesn't have related collectible)
               // 2460793798, // Vigil of Heroes (Doesn't have related collectible)
               // 4288492921 // Vigil of Heroes (Doesn't have related collectible)
+            ]
+          },
+          {
+            name: 'Warlock Armor',
+            season: 10,
+            items: [
+              // 1702245537, // Xenos Vale IV (Doesn't have related collectible)
+              // 2498588344, // Xenos Vale IV (Doesn't have related collectible)
+              // 2454114768, // Xenos Vale IV (Doesn't have related collectible)
+              // 533855986, // Xenos Vale IV (Doesn't have related collectible)
+              // 1805830669 // Xenos Vale Bond (Doesn't have related collectible)
             ]
           },
           {
@@ -123,6 +156,17 @@ export default ([
             ]
           },
           {
+            name: 'Hunter Armor',
+            season: 10,
+            items: [
+              // 2094233929, // Swordflight 4.1 (Doesn't have related collectible)
+              // 3797729472, // Swordflight 4.1 (Doesn't have related collectible)
+              // 2680535688, // Swordflight 4.1 (Doesn't have related collectible)
+              // 2492669178, // Swordflight 4.1 (Doesn't have related collectible)
+              // 87665893 // Binary Phoenix Cloak (Doesn't have related collectible)
+            ]
+          },
+          {
             name: 'Titan Armor',
             season: 9,
             items: [
@@ -134,6 +178,17 @@ export default ([
             ]
           },
           {
+            name: 'Titan Armor',
+            season: 10,
+            items: [
+              // 1727248109, // Phoenix Strife Type 0  (Doesn't have related collectible)
+              // 2845947996, // Phoenix Strife Type 0  (Doesn't have related collectible)
+              // 2674680132, // Phoenix Strife Type 0  (Doesn't have related collectible)
+              // 1807196134, // Phoenix Strife Type 0  (Doesn't have related collectible)
+              // 3884544409 // Binary Phoenix Mark (Doesn't have related collectible)
+            ]
+          },
+          {
             name: 'Warlock Armor',
             season: 9,
             items: [
@@ -142,6 +197,17 @@ export default ([
               // 2525395257, // Wing Theorem (Doesn't have related collectible)
               // 1245115841, // Wing Theorem (Doesn't have related collectible)
               // 3839561204 // Wing Theorem (Doesn't have related collectible)
+            ]
+          },
+          {
+            name: 'Warlock Armor',
+            season: 10,
+            items: [
+              // 1299272338, // Ankaa Seeker IV (Doesn't have related collectible)
+              // 1765728763, // Ankaa Seeker IV (Doesn't have related collectible)
+              // 852430165, // Ankaa Seeker IV (Doesn't have related collectible)
+              // 215768941, // Ankaa Seeker IV (Doesn't have related collectible)
+              // 4269346472 // Binary Phoenix Bond (Doesn't have related collectible)
             ]
           },
           {
@@ -206,6 +272,17 @@ export default ([
             ]
           },
           {
+            name: 'Hunter Armor',
+            season: 10,
+            items: [
+              // 230878649, // Ancient Apocalypse Mask (Doesn't have related collectible)
+              // 127018032, // Ancient Apocalypse Grips (Doesn't have related collectible)
+              // 2728668760, // Ancient Apocalypse Vest (Doesn't have related collectible)
+              // 485653258, // Ancient Apocalypse Strides (Doesn't have related collectible)
+              // 1548620661 // Ancient Apocalypse Cloak (Doesn't have related collectible)
+            ]
+          },
+          {
             name: 'Titan Armor',
             season: 9,
             items: [
@@ -217,6 +294,17 @@ export default ([
             ]
           },
           {
+            name: 'Titan Armor',
+            season: 10,
+            items: [
+              // 2512196373, // Ancient Apocalypse Helm (Doesn't have related collectible)
+              // 1188039652, // Ancient Apocalypse Gauntlets (Doesn't have related collectible)
+              // 2518527196, // Ancient Apocalypse Plate (Doesn't have related collectible)
+              // 2694124942, // Ancient Apocalypse Greaves (Doesn't have related collectible)
+              // 3804360785  // Ancient Apocalypse Mark (Doesn't have related collectible)
+            ]
+          },
+          {
             name: 'Warlock Armor',
             season: 9,
             items: [
@@ -225,6 +313,17 @@ export default ([
               // 3550729740, // Ancient Apocalypse Robes (Doesn't have related collectible)
               // 2039976446, // Ancient Apocalypse Boots (Doesn't have related collectible)
               // 1488486721 // Ancient Apocalypse Bond (Doesn't have related collectible)
+            ]
+          },
+          {
+            name: 'Warlock Armor',
+            season: 10,
+            items: [
+              // 4255727106, // Ancient Apocalypse Hood (Doesn't have related collectible)
+              // 3595268459, // Ancient Apocalypse Gloves (Doesn't have related collectible)
+              // 887818405, // Ancient Apocalypse Robes (Doesn't have related collectible)
+              // 392058749, // Ancient Apocalypse Boots (Doesn't have related collectible)
+              // 9767416 // Ancient Apocalypse Bond (Doesn't have related collectible)
             ]
           },
           {
@@ -297,7 +396,13 @@ export default ([
           {
             name: 'Hunter Armor',
             season: 10,
-            items: []
+            items: [
+              // 2845071512, // Iron Remembrance Casque (Doesn't have related collectible)
+              // 3308875113, // Iron Remembrance Grips (Doesn't have related collectible)
+              // 92135663, // Iron Remembrance Vest (Doesn't have related collectible)
+              // 3600816955, // Iron Remembrance Strides (Doesn't have related collectible)
+              // 1339294334 // Cloak of Remembrance (Doesn't have related collectible)
+            ]
           },
           {
             name: 'Titan Armor',
@@ -324,7 +429,13 @@ export default ([
           {
             name: 'Titan Armor',
             season: 10,
-            items: []
+            items: [
+              // 1882457108, // Iron Remembrance Helm (Doesn't have related collectible)
+              // 713182381, // Iron Remembrance Gauntlets (Doesn't have related collectible)
+              // 63725907, // Iron Remembrance Plate (Doesn't have related collectible)
+              // 1425558127, // Iron Remembrance Greaves (Doesn't have related collectible)
+              // 2310625418 // Mark of Remembrance (Doesn't have related collectible)
+            ]
           },
           {
             name: 'Warlock Armor',
@@ -351,7 +462,13 @@ export default ([
           {
             name: 'Warlock Armor',
             season: 10,
-            items: []
+            items: [
+              // 2758933481, // Iron Remembrance Hood (Doesn't have related collectible)
+              // 167461728, // Iron Remembrance Gloves (Doesn't have related collectible)
+              // 2614190248, // Iron Remembrance Vestments (Doesn't have related collectible)
+              // 3115791898, // Iron Remembrance Legs (Doesn't have related collectible)
+              // 21320325 // Bond of Remembrance (Doesn't have related collectible)
+            ]
           },
           {
             name: 'Extras',
@@ -436,11 +553,11 @@ export default ([
             name: 'Extras',
             season: 10,
             items: [
+              3892999872, // Lantern Shell
+              3224184260, // Resurrection's Guide
               2071635915, // Flawless Empyrean
               1983519830, // Hardened by Trial
-              2071635914, // Light for the Lost
-              3892999872, // Lantern Shell
-              3224184260 // Resurrection's Guide
+              2071635914 // Light for the Lost
             ]
           }
         ]
@@ -601,7 +718,28 @@ export default ([
         id: 'year-three-season-10',
         description:
           'Complete seasonal activities during Season of the Worthy.',
-        sections: []
+        sections: [
+          {
+            name: 'Seraph Weapon Frames',
+            season: 10,
+            items: [
+              1561006927, // Seventh Seraph Carbine
+              3937866388, // Seventh Seraph SI-2
+              3037520408, // Seventh Seraph Officer Revolver
+              2582755344 // Seventh Seraph SAW
+            ]
+          },
+          {
+            name: 'Extras',
+            season: 10,
+            items: [
+              3508741484, // Absalom Knife
+              1983519839, // Knight of the Old Guard
+              737170668, // Midnight Exigent
+              737170669 // Valkyrie Zero
+            ]
+          }
+        ]
       }
     ]
   },
@@ -1147,7 +1285,34 @@ export default ([
           {
             name: 'Free Track',
             season: 10,
-            itemGroups: [[], [], [], []]
+            itemGroups: [
+              [
+                776191470, // Tommy's Matchbook
+                766323545, // Seventh Seraph VY-7
+                1821724780 // Seventh Seraph CQC-12
+              ],
+              [
+                2234841490, // Seventh Seraph Cowl
+                2701297915, // Seventh Seraph Grips
+                4224643669, // Seventh Seraph Vest
+                1151338093, // Seventh Seraph Strides
+                3346592680 // Seventh Seraph Cloak
+              ],
+              [
+                2021231310, // Seventh Seraph Helmet
+                3046434751, // Seventh Seraph Gauntlets
+                630719097, // Seventh Seraph Plate
+                1967684865, // Seventh Seraph Greaves
+                2369445684 // Seventh Seraph Mark
+              ],
+              [
+                1790943181, // Seventh Seraph Hood
+                2443609020, // Seventh Seraph Gloves
+                2503153700, // Seventh Seraph Robes
+                1829417670, // Seventh Seraph Boots
+                3246983801 // Seventh Seraph Bond
+              ]
+            ]
           },
           {
             name: 'Paid Track',
@@ -1235,7 +1400,44 @@ export default ([
           {
             name: 'Paid Track',
             season: 10,
-            itemGroups: [[], [], [], [], []]
+            itemGroups: [
+              [
+                859354675, // The Chopper
+                4166195598, // Tyrant's Lash
+                341869371 // Tyrant's Cudgel
+              ],
+              [
+                3578708308, // Valkyrian Mask
+                2409536749, // Valkyrian Grips
+                4015910035, // Valkyrian Vest
+                2655878319, // Valkyrian Strides
+                2350826186 // Valkyrian Cloak
+              ],
+              [
+                1969707994, // Valkyrian Helm
+                4165402915, // Valkyrian Gauntlets
+                1173448301, // Valkyrian Plate
+                2257449557, // Valkyrian Greaves
+                4048361056 // Valkyrian Mark
+              ],
+              [
+                178211227, // Valkyrian Hood
+                1637492810, // Valkyrian Gloves
+                4293660542, // Valkyrian Robes
+                293824100, // Valkyrian Boots
+                3623287559 // Valkyrian Bond
+              ],
+              [
+                3263140403, // None Shall Pass
+                1269179840, // Valkyrian Impaler
+                1661778308, // Seventh Seraph Vector
+                3030850318, // Tatarstan
+                1983519837, // Emblem of the Worthy
+                2471702601, // Silver Tactical
+                2471702600, // Darkwater Froth
+                3922035879 // Big Red Entrance
+              ]
+            ]
           }
         ]
       },
@@ -1635,6 +1837,21 @@ export default ([
               4106983932, // Elatha FR4
               3622137132, // Last Hope
               1529450902 // Mos Epoch III
+            ]
+          },
+          {
+            name: 'Weapons',
+            season: 10,
+            items: [
+              2742838701, // Dire Promise
+              1786797708, // Escape Velocity
+              2807687156, // Distant Tumulus
+              2742838700, // True Prophecy
+              1723380073, // Enigma's Draw
+              3055192515, // Timelines' Vertex
+              1162247618, // Jian 7 Rifle
+              2257180473, // Interference VI
+              2857348871 // Honor's Edge
             ]
           }
         ]
