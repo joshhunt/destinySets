@@ -29,6 +29,11 @@ export default ([
             ]
           },
           {
+            name: 'Weapons',
+            season: 10,
+            items: []
+          },
+          {
             name: 'Hunter Armor',
             season: 9,
             items: [
@@ -78,6 +83,11 @@ export default ([
               1736897078, // Tactician
               3373970267 // Vanguard Nightbeam
             ]
+          },
+          {
+            name: 'Extras',
+            season: 10,
+            items: []
           }
         ]
       },
@@ -102,6 +112,11 @@ export default ([
             items: [
               2697058914 // Komodo-4FR
             ]
+          },
+          {
+            name: 'Weapons',
+            season: 10,
+            items: []
           },
           {
             name: 'Hunter Armor',
@@ -153,6 +168,11 @@ export default ([
               1736897075, // No Quarter
               3603801350 // Crucible Prestige
             ]
+          },
+          {
+            name: 'Extras',
+            season: 10,
+            items: []
           }
         ]
       },
@@ -177,6 +197,11 @@ export default ([
             items: [
               838556752 // Python
             ]
+          },
+          {
+            name: 'Weapons',
+            season: 10,
+            items: []
           },
           {
             name: 'Hunter Armor',
@@ -227,6 +252,11 @@ export default ([
               1736897076, // Team Player
               2173837803 // Gambit Jadestone
             ]
+          },
+          {
+            name: 'Extras',
+            season: 10,
+            items: []
           }
         ]
       },
@@ -271,6 +301,11 @@ export default ([
             ]
           },
           {
+            name: 'Hunter Armor',
+            season: 10,
+            items: []
+          },
+          {
             name: 'Titan Armor',
             season: 8,
             items: [
@@ -291,6 +326,11 @@ export default ([
               // 1476572353, // Iron Truage Greaves (Doesn't have related collectible)
               // 2627255028 // Radegast's Iron Sash (Doesn't have related collectible)
             ]
+          },
+          {
+            name: 'Titan Armor',
+            season: 10,
+            items: []
           },
           {
             name: 'Warlock Armor',
@@ -315,6 +355,11 @@ export default ([
             ]
           },
           {
+            name: 'Warlock Armor',
+            season: 10,
+            items: []
+          },
+          {
             name: 'Extras',
             season: 8,
             items: [
@@ -330,6 +375,11 @@ export default ([
               1736897077, // Iron in the Fire
               2982947772 // Iron Fuchsite
             ]
+          },
+          {
+            name: 'Extras',
+            season: 10,
+            items: []
           }
         ]
       },
@@ -518,6 +568,13 @@ export default ([
             ]
           }
         ]
+      },
+      {
+        name: 'Season 10',
+        id: 'year-three-season-10',
+        description:
+          'Complete seasonal activities during Season of the Worthy.',
+        sections: []
       }
     ]
   },
@@ -927,6 +984,59 @@ export default ([
             ]
           }
         ]
+      },
+      {
+        name: 'Guardian Games',
+        id: 'year_three_guardian_games',
+        description: 'Earned during the seasonal Guardian Games event.',
+        big: false,
+        sections: [
+          {
+            name: 'Weapons',
+            season: 10,
+            itemGroups: [[], []]
+          },
+          {
+            name: 'Hunter Armor',
+            season: 10,
+            items: []
+          },
+          {
+            name: 'Titan Armor',
+            season: 10,
+            items: []
+          },
+          {
+            name: 'Warlock Armor',
+            season: 10,
+            items: []
+          },
+          {
+            name: 'Emotes',
+            season: 10,
+            itemGroups: [[], []]
+          },
+          {
+            name: 'Ghosts',
+            season: 10,
+            itemGroups: [[], []]
+          },
+          {
+            name: 'Sparrows',
+            season: 10,
+            items: []
+          },
+          {
+            name: 'Ships',
+            season: 10,
+            items: []
+          },
+          {
+            name: 'Extras',
+            season: 10,
+            items: []
+          }
+        ]
       }
     ]
   },
@@ -1006,6 +1116,11 @@ export default ([
                 1416697412 // Righteous Bond
               ]
             ]
+          },
+          {
+            name: 'Free Track',
+            season: 10,
+            itemGroups: [[], [], [], []]
           },
           {
             name: 'Paid Track',
@@ -1089,6 +1204,11 @@ export default ([
                 1693097638 // Defiant Vexsplosion
               ]
             ]
+          },
+          {
+            name: 'Paid Track',
+            season: 10,
+            itemGroups: [[], [], [], [], []]
           }
         ]
       },
@@ -1156,6 +1276,11 @@ export default ([
             ]
           },
           {
+            name: 'Armor',
+            season: 10,
+            itemGroups: [[], [], []]
+          },
+          {
             name: 'Ornaments',
             season: 8,
             itemGroups: [
@@ -1215,6 +1340,11 @@ export default ([
                 // 475012491 // The Want of Lies and Wishes (Didn't show up for Bright Dust due to an in-game issue)
               ]
             ]
+          },
+          {
+            name: 'Ornaments',
+            season: 10,
+            itemGroups: [[], [], []]
           },
           {
             name: 'Emotes',
@@ -1280,6 +1410,11 @@ export default ([
             ]
           },
           {
+            name: 'Emotes',
+            season: 10,
+            itemGroups: [[], []]
+          },
+          {
             name: 'Ghosts',
             season: 8,
             itemGroups: [
@@ -1327,6 +1462,11 @@ export default ([
             ]
           },
           {
+            name: 'Ghosts',
+            season: 10,
+            itemGroups: [[], []]
+          },
+          {
             name: 'Sparrows',
             season: 8,
             items: [
@@ -1357,6 +1497,11 @@ export default ([
             ]
           },
           {
+            name: 'Sparrows',
+            season: 10,
+            items: []
+          },
+          {
             name: 'Ships',
             season: 8,
             items: [
@@ -1383,6 +1528,11 @@ export default ([
             ]
           },
           {
+            name: 'Ships',
+            season: 10,
+            items: []
+          },
+          {
             name: 'Shaders',
             season: 8,
             items: [
@@ -1405,6 +1555,11 @@ export default ([
             ]
           },
           {
+            name: 'Shaders',
+            season: 10,
+            items: []
+          },
+          {
             name: 'Transmat Effects',
             season: 8,
             items: [
@@ -1423,6 +1578,11 @@ export default ([
               1378231107, // Vex Gate Arrival
               1378231106 // Up in Smoke
             ]
+          },
+          {
+            name: 'Transmat Effects',
+            season: 10,
+            items: []
           }
         ]
       },
