@@ -1180,7 +1180,16 @@ export default ([
           {
             name: 'Emotes',
             season: 10,
-            itemGroups: [[], []]
+            itemGroups: [
+              [      
+                2788609407, // Participation Trophy
+                10656656, // Torch Light
+                2201628119 // Represent
+              ], 
+              [
+                
+              ]
+            ]
           },
           {
             name: 'Ghosts',
