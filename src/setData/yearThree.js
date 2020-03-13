@@ -556,9 +556,9 @@ export default ([
             items: [
               3892999872, // Lantern Shell
               3224184260, // Resurrection's Guide
-              2071635915, // Flawless Empyrean
               1983519830, // Hardened by Trial
-              2071635914 // Light for the Lost
+              2071635914, // Light for the Lost
+              2071635915 // Flawless Empyrean
             ]
           }
         ]
@@ -1181,14 +1181,12 @@ export default ([
             name: 'Emotes',
             season: 10,
             itemGroups: [
-              [      
+              [
                 2788609407, // Participation Trophy
                 10656656, // Torch Light
                 2201628119 // Represent
-              ], 
-              [
-                
-              ]
+              ],
+              []
             ]
           },
           {
