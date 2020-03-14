@@ -1182,9 +1182,14 @@ export default ([
             season: 10,
             itemGroups: [
               [
-                2788609407, // Participation Trophy
+                // 2788609407, // Participation Trophy (Not planned to be sold for Bright Dust)
                 10656656, // Torch Light
-                2201628119 // Represent
+                2201628119, // Represent
+                // 1327630195 // Low Score (Not planned to be sold for Bright Dust)
+                1870273657, // High Score,
+                2367025562, // Hip to the Hop,
+                213458862, // One… Two… Uh…,
+                2300270673 // Recognize
               ],
               []
             ]
@@ -1515,7 +1520,29 @@ export default ([
           {
             name: 'Armor',
             season: 10,
-            itemGroups: [[], [], []]
+            itemGroups: [
+              [
+                1880090831, // Luxe Visage
+                4035222870, // Luxe Sleeves
+                1188323994, // Luxe Vest
+                952534832, // Luxe Riders
+                412216811 // Luxe Cloak
+              ],
+              [
+                2138625825, // Luxe Visor
+                2934968632, // Luxe Cuffs
+                74228048, // Luxe Parka
+                970236274, // Luxe Treads
+                3720911245 // Luxe Mark
+              ],
+              [
+                1476085268, // Luxe Crown
+                306810541, // Luxe Gloves
+                3799598931, // Luxe Overcoat
+                1019186287, // Luxe Soles
+                1751531146 // Luxe Bond
+              ]
+            ]
           },
           {
             name: 'Ornaments',
@@ -1581,7 +1608,28 @@ export default ([
           {
             name: 'Ornaments',
             season: 10,
-            itemGroups: [[], [], []]
+            itemGroups: [
+              [
+                2598666301, // All In
+                269320354, // Blind Fury
+                1409366784, // Burning Red
+                1513177792, // Mercurial Affliction
+                1673894252, // Splice of Life
+                2482603977, // Standard Bearer
+                1998569185 // Timeline Zero
+              ],
+              [
+                // 4124216484, // Prized Ivory (Not planned to be sold for Bright Dust)
+                1418556229, // Lord of the Hunt
+                1828076537, // Necrosis
+                1733242439 // Only the Penitent Pass
+              ],
+              [
+                3927691568, // Nano Redux
+                879895999, // Huskcrushers
+                3505404632 // Diadem of Deceit
+              ]
+            ]
           },
           {
             name: 'Emotes',
@@ -1640,8 +1688,8 @@ export default ([
                 //  1395929128, // Clock Cleaner (Not planned to be sold for Bright Dust)
                 //  885220736, // Fist of Fury (Not planned to be sold for Bright Dust)
                 //  3643356340, // Flash Kick (Not planned to be sold for Bright Dust)
-                //  3474738931, // Nail on the Head (Not planned to be sold for Bright Dust)
                 //  1294248797, // Sure Shot (Not planned to be sold for Bright Dust)
+                //  3474738931, // Nail on the Head (Not planned to be sold for Bright Dust)
                 //  1492613344 // En Garde (Not planned to be sold for Bright Dust)
               ]
             ]
@@ -1649,7 +1697,37 @@ export default ([
           {
             name: 'Emotes',
             season: 10,
-            itemGroups: [[], []]
+            itemGroups: [
+              [
+                1706261957, // ANOTHER!
+                2007350539, // Carry The Load
+                4273833730, // Feline Fancy
+                2082339998, // Hit the Bag
+                2737290434, // Master Chef
+                // 2836141137, // Blinding Imagery (Not planned to be sold for Bright Dust)
+                // 3394806033, // Masterful Flow (Not planned to be sold for Bright Dust)
+                // 2032032009, // Up High, Down Low (Not planned to be sold for Bright Dust)
+                666690120, // Big Red Button
+                2203539122, // Don Shades
+                2270918090, // I Surrender!
+                3245326556, // Infinity Cubes
+                3736949607, // Taunt and Flaunt
+                2144724879, // Patty Cake
+                1942988696, // Shoulder Hug
+                1032515587, // Whisper Sweet Nothings
+                3973089432, // All Right, Let's GO!
+                1897766356 // Hand Cannon Vogue
+              ],
+              [
+                // 1429730445, // I Am the Boss Now (Not planned to be sold for Bright Dust)
+                // 1475990252, // Gladiator's Bladerush (Not planned to be sold for Bright Dust)
+                // 777541286 // Energy Overload (Not planned to be sold for Bright Dust)
+                // 529541453, // This… Is… TRIALS! (Not planned to be sold for Bright Dust)
+                // 1516635053, // Crackling Flourish (Not planned to be sold for Bright Dust)
+                // 3141315153, // Thunderclap (Not planned to be sold for Bright Dust)
+                // 1491605562, // Stormbreaker (Not planned to be sold for Bright Dust)
+              ]
+            ]
           },
           {
             name: 'Ghosts',
@@ -1685,7 +1763,7 @@ export default ([
                 4005536857, // Omolon Shell
                 4005536858, // Tex Mechanica Shell
                 4005536859, // Veist Shell
-                // 4005536860,// Simulation Shell (Not planned to be sold for Bright Dust)
+                4005536860, // Simulation Shell
                 4005536861, // Phalanx Shell
                 4005536862 // Traitor Primus Shell
               ],
@@ -1701,7 +1779,24 @@ export default ([
           {
             name: 'Ghosts',
             season: 10,
-            itemGroups: [[], []]
+            itemGroups: [
+              [
+                1090082587, // Orbweaver Shell
+                1090082586, // Seraph Shell
+                1090082585, // CLVS-241 Shell
+                // 1090082584, // Almost Mighty Shell (Not planned to be sold for Bright Dust)
+                // 1090082591, // Constricting Shell (Not planned to be sold for Bright Dust)
+                1090082590, // CamNav-TTN Shell
+                1090082589 // Nucleus Shell
+              ],
+              [
+                4149534912, // Cover of the Exile Projection
+                4149534916, // Rasputin Projection
+                4149534917, // Trials of Osiris Projection
+                // 4149534918, // Hood of the Exile Projection (Not planned to be sold for Bright Dust)
+                4149534919 // Helm of the Exile Projection
+              ]
+            ]
           },
           {
             name: 'Sparrows',
@@ -1736,7 +1831,16 @@ export default ([
           {
             name: 'Sparrows',
             season: 10,
-            items: []
+            items: [
+              // 144819303, // The Blockbuster (Not planned to be sold for Bright Dust)
+              144819302, // Magneton Thrust
+              144819301, // Nightmare Stalker
+              144819300, // Lunatic's Legacy
+              // 144819299, // Residual Trace (Not planned to be sold for Bright Dust)
+              144819298, // Immoderate Splendor
+              144819297, // Urban Commander
+              144819296 // Haute Bliss
+            ]
           },
           {
             name: 'Ships',
@@ -1767,7 +1871,15 @@ export default ([
           {
             name: 'Ships',
             season: 10,
-            items: []
+            items: [
+              3528646495, // Obsidian Wings
+              3528646494, // Waking Nightmare
+              // 3528646493, // NS81 Reprisal Sprint (Not planned to be sold for Bright Dust)
+              3528646492, // Solar Sails
+              3528646491 // Arrow of Time
+              // 3528646490, // Knucklebug (Not planned to be sold for Bright Dust)
+              // 3528646489 // Saint's Vocation (Not planned to be sold for Bright Dust)
+            ]
           },
           {
             name: 'Shaders',
@@ -1794,7 +1906,12 @@ export default ([
           {
             name: 'Shaders',
             season: 10,
-            items: []
+            items: [
+              2885393052, // Golden Age Wine
+              2885393053, // Vibrant Medusa
+              2885393054, // Coppertone Patina
+              2885393055 // Neopop Wave
+            ]
           },
           {
             name: 'Transmat Effects',
@@ -1819,7 +1936,11 @@ export default ([
           {
             name: 'Transmat Effects',
             season: 10,
-            items: []
+            items: [
+              3545885626, // Warsat Arrival
+              3545885627, // Cabal Entrance
+              3545885625 // SIVA Emergence
+            ]
           }
         ]
       },
