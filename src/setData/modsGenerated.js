@@ -15,7 +15,7 @@ export default [
             nameHash: 1198124803,
             itemGroups: [
               [
-                3102998657 // Enhanced Linear Fusion Targeting
+                739803544 // Enhanced Scatter Projectile Targeting
               ],
               [
                 3786078704, // Precision Weapon Targeting
@@ -31,7 +31,7 @@ export default [
               {
                 name: "Seasonal Artifact mod",
                 items: [
-                  3102998657 // Enhanced Linear Fusion Targeting
+                  739803544 // Enhanced Scatter Projectile Targeting
                 ]
               },
               {
@@ -67,7 +67,10 @@ export default [
                 3993244252, // Enhanced Bow Targeting
                 1015337793, // Machine Gun Targeting
                 3319681729, // Pulse Rifle Targeting
-                2919349723 // Shotgun Targeting
+                2919349723, // Shotgun Targeting
+                3309247652, // Enhanced Machine Gun Targeting
+                1248126076, // Enhanced Pulse Rifle Targeting
+                4190395210 // Enhanced Shotgun Targeting
               ]
             ],
             groups: [
@@ -88,7 +91,10 @@ export default [
                   3993244252, // Enhanced Bow Targeting
                   1015337793, // Machine Gun Targeting
                   3319681729, // Pulse Rifle Targeting
-                  2919349723 // Shotgun Targeting
+                  2919349723, // Shotgun Targeting
+                  3309247652, // Enhanced Machine Gun Targeting
+                  1248126076, // Enhanced Pulse Rifle Targeting
+                  4190395210 // Enhanced Shotgun Targeting
                 ]
               }
             ]
@@ -109,7 +115,10 @@ export default [
                 3901392720, // Fusion Rifle Targeting
                 3338875786, // Linear Fusion Rifle Targeting
                 1627441143, // Enhanced Linear Fusion Targeting
-                3857411140 // Submachine Gun Targeting
+                3857411140, // Submachine Gun Targeting
+                1758950396, // Enhanced Auto Rifle Targeting
+                87259167, // Enhanced Fusion Rifle Targeting
+                2847540257 // Enhanced Submachine Gun Targeting
               ]
             ],
             groups: [
@@ -130,7 +139,10 @@ export default [
                   3901392720, // Fusion Rifle Targeting
                   3338875786, // Linear Fusion Rifle Targeting
                   1627441143, // Enhanced Linear Fusion Targeting
-                  3857411140 // Submachine Gun Targeting
+                  3857411140, // Submachine Gun Targeting
+                  1758950396, // Enhanced Auto Rifle Targeting
+                  87259167, // Enhanced Fusion Rifle Targeting
+                  2847540257 // Enhanced Submachine Gun Targeting
                 ]
               }
             ]
@@ -152,7 +164,9 @@ export default [
                 631976966, // Scout Rifle Targeting
                 1507854082, // Sidearm Targeting
                 2307244871, // Sniper Rifle Targeting
-                198889228 // Enhanced Sniper Rifle Targeting
+                198889228, // Enhanced Sniper Rifle Targeting
+                130615063, // Enhanced Scout Rifle Targeting
+                3178987263 // Enhanced Sidearm Targeting
               ]
             ],
             groups: [
@@ -174,7 +188,9 @@ export default [
                   631976966, // Scout Rifle Targeting
                   1507854082, // Sidearm Targeting
                   2307244871, // Sniper Rifle Targeting
-                  198889228 // Enhanced Sniper Rifle Targeting
+                  198889228, // Enhanced Sniper Rifle Targeting
+                  130615063, // Enhanced Scout Rifle Targeting
+                  3178987263 // Enhanced Sidearm Targeting
                 ]
               }
             ]
@@ -190,9 +206,8 @@ export default [
             nameHash: 1198124803,
             itemGroups: [
               [
-                3102998661, // Enhanced Rifle Loader
-                3102998663, // Enhanced Bow Loader
-                3102998656 // Enhanced Sniper Rifle Loader
+                739803545, // Enhanced Auto Rifle Loader
+                739803550 // Enhanced Small Arms Loader
               ],
               [
                 403494087 // Fastball
@@ -207,9 +222,8 @@ export default [
               {
                 name: "Seasonal Artifact mod",
                 items: [
-                  3102998661, // Enhanced Rifle Loader
-                  3102998663, // Enhanced Bow Loader
-                  3102998656 // Enhanced Sniper Rifle Loader
+                  739803545, // Enhanced Auto Rifle Loader
+                  739803550 // Enhanced Small Arms Loader
                 ]
               },
               {
@@ -241,7 +255,10 @@ export default [
                 157329321, // Machine Gun Loader
                 1129724921, // Pulse Rifle Loader
                 1534061443, // Shotgun Loader
-                1657427196 // Enhanced Shotgun Loader
+                1657427196, // Enhanced Shotgun Loader
+                2599026044, // Enhanced Bow Loader
+                3661789072, // Enhanced Machine Gun Loader
+                38612140 // Enhanced Pulse Rifle Loader
               ]
             ],
             groups: [
@@ -259,7 +276,10 @@ export default [
                   157329321, // Machine Gun Loader
                   1129724921, // Pulse Rifle Loader
                   1534061443, // Shotgun Loader
-                  1657427196 // Enhanced Shotgun Loader
+                  1657427196, // Enhanced Shotgun Loader
+                  2599026044, // Enhanced Bow Loader
+                  3661789072, // Enhanced Machine Gun Loader
+                  38612140 // Enhanced Pulse Rifle Loader
                 ]
               }
             ]
@@ -278,7 +298,11 @@ export default [
                 178399816, // Linear Fusion Rifle Loader
                 2324400338, // Rocket Launcher Loader
                 503582313, // Enhanced Rocket Launcher Loader
-                2790645726 // Submachine Gun Loader
+                2790645726, // Submachine Gun Loader
+                4258747542, // Enhanced Auto Rifle Loader
+                1318561067, // Enhanced Fusion Rifle Loader
+                2818043025, // Enhanced Linear Fusion Rifle Loader
+                1823641159 // Enhanced Submachine Gun Loader
               ]
             ],
             groups: [
@@ -297,7 +321,11 @@ export default [
                   178399816, // Linear Fusion Rifle Loader
                   2324400338, // Rocket Launcher Loader
                   503582313, // Enhanced Rocket Launcher Loader
-                  2790645726 // Submachine Gun Loader
+                  2790645726, // Submachine Gun Loader
+                  4258747542, // Enhanced Auto Rifle Loader
+                  1318561067, // Enhanced Fusion Rifle Loader
+                  2818043025, // Enhanced Linear Fusion Rifle Loader
+                  1823641159 // Enhanced Submachine Gun Loader
                 ]
               }
             ]
@@ -313,7 +341,10 @@ export default [
                 989778135, // Enhanced Hand Cannon Loader
                 667313240, // Scout Rifle Loader
                 762238512, // Sidearm Loader
-                2039949393 // Sniper Rifle Loader
+                2039949393, // Sniper Rifle Loader
+                3282442165, // Enhanced Scout Rifle Loader
+                361808353, // Enhanced Sidearm Loader
+                2163041754 // Enhanced Sniper Rifle Loader
               ]
             ],
             groups: [
@@ -326,7 +357,10 @@ export default [
                   989778135, // Enhanced Hand Cannon Loader
                   667313240, // Scout Rifle Loader
                   762238512, // Sidearm Loader
-                  2039949393 // Sniper Rifle Loader
+                  2039949393, // Sniper Rifle Loader
+                  3282442165, // Enhanced Scout Rifle Loader
+                  361808353, // Enhanced Sidearm Loader
+                  2163041754 // Enhanced Sniper Rifle Loader
                 ]
               }
             ]
@@ -342,29 +376,30 @@ export default [
             nameHash: 1198124803,
             itemGroups: [
               [
-                3102998662, // Enhanced Unflinching Rifle Aim
-                4195125383, // Breach Resonator
-                4195125380, // Molten Overload
-                4195125381, // Disruptor Spike
-                4195125378, // Unstoppable Schwarzschild Condensor
-                4195125379 // Tenderizer
+                739803547, // Enhanced Unflinching Auto Rifle Aim
+                820036194, // Surge Detonators
+                820036196, // Inferno Whip
+                820036197 // Flare-Up
               ],
               [
                 1541497724, // Unflinching Light Arms Aim
                 3084181312, // Unflinching Rifle Aim
                 364819640 // Unflinching Large Arms
+              ],
+              [
+                2020900991, // Light Arms Reserves
+                3397262883, // Large Arms Reserves
+                1384818155 // Rifle Reserves
               ]
             ],
             groups: [
               {
                 name: "Seasonal Artifact mod",
                 items: [
-                  3102998662, // Enhanced Unflinching Rifle Aim
-                  4195125383, // Breach Resonator
-                  4195125380, // Molten Overload
-                  4195125381, // Disruptor Spike
-                  4195125378, // Unstoppable Schwarzschild Condensor
-                  4195125379 // Tenderizer
+                  739803547, // Enhanced Unflinching Auto Rifle Aim
+                  820036194, // Surge Detonators
+                  820036196, // Inferno Whip
+                  820036197 // Flare-Up
                 ]
               },
               {
@@ -373,6 +408,14 @@ export default [
                   1541497724, // Unflinching Light Arms Aim
                   3084181312, // Unflinching Rifle Aim
                   364819640 // Unflinching Large Arms
+                ]
+              },
+              {
+                name: "Ammo Reserves",
+                items: [
+                  2020900991, // Light Arms Reserves
+                  3397262883, // Large Arms Reserves
+                  1384818155 // Rifle Reserves
                 ]
               }
             ]
@@ -393,7 +436,10 @@ export default [
                 643703876, // Enhanced Unflinching Bow Aim
                 3091213995, // Unflinching Machine Gun
                 2379452959, // Unflinching Pulse Rifle Aim
-                357349821 // Unflinching Shotgun Aim
+                357349821, // Unflinching Shotgun Aim
+                476007934, // Enhanced Unflinching Machine Gun Aim
+                2066320542, // Enhanced Unflinching Pulse Rifle Aim
+                2998471416 // Enhanced Unflinching Shotgun Aim
               ]
             ],
             groups: [
@@ -414,7 +460,10 @@ export default [
                   643703876, // Enhanced Unflinching Bow Aim
                   3091213995, // Unflinching Machine Gun
                   2379452959, // Unflinching Pulse Rifle Aim
-                  357349821 // Unflinching Shotgun Aim
+                  357349821, // Unflinching Shotgun Aim
+                  476007934, // Enhanced Unflinching Machine Gun Aim
+                  2066320542, // Enhanced Unflinching Pulse Rifle Aim
+                  2998471416 // Enhanced Unflinching Shotgun Aim
                 ]
               }
             ]
@@ -435,7 +484,10 @@ export default [
                 3121039270, // Unflinching Fusion Rifle Aim
                 650627622, // Unflinching Linear Fusion Aim
                 3673056113, // Enhanced Unflinching Linear Fusion Aim
-                3626376648 // Unflinching Submachine Gun Aim
+                3626376648, // Unflinching Submachine Gun Aim
+                2568247584, // Enhanced Unflinching Auto Rifle Aim
+                4057143977, // Enhanced Unflinching Fusion Rifle Aim
+                1008801629 // Enhanced Unflinching Submachine Gun Aim
               ]
             ],
             groups: [
@@ -456,7 +508,10 @@ export default [
                   3121039270, // Unflinching Fusion Rifle Aim
                   650627622, // Unflinching Linear Fusion Aim
                   3673056113, // Enhanced Unflinching Linear Fusion Aim
-                  3626376648 // Unflinching Submachine Gun Aim
+                  3626376648, // Unflinching Submachine Gun Aim
+                  2568247584, // Enhanced Unflinching Auto Rifle Aim
+                  4057143977, // Enhanced Unflinching Fusion Rifle Aim
+                  1008801629 // Enhanced Unflinching Submachine Gun Aim
                 ]
               }
             ]
@@ -479,7 +534,10 @@ export default [
                 263996333, // Enhanced Unflinching Scout Rifle Aim
                 2881057950, // Unflinching Sidearm Aim
                 1203395203, // Unflinching Sniper Aim
-                435979054 // Enhanced Unflinching Sniper Aim
+                435979054, // Enhanced Unflinching Sniper Aim
+                1582133419, // Enhanced Unflinching Grenade Launcher Aim
+                262997143, // Enhanced Unflinching Hand Cannon Aim
+                3234602043 // Enhanced Unflinching Sidearm Aim
               ]
             ],
             groups: [
@@ -502,7 +560,10 @@ export default [
                   263996333, // Enhanced Unflinching Scout Rifle Aim
                   2881057950, // Unflinching Sidearm Aim
                   1203395203, // Unflinching Sniper Aim
-                  435979054 // Enhanced Unflinching Sniper Aim
+                  435979054, // Enhanced Unflinching Sniper Aim
+                  1582133419, // Enhanced Unflinching Grenade Launcher Aim
+                  262997143, // Enhanced Unflinching Hand Cannon Aim
+                  3234602043 // Enhanced Unflinching Sidearm Aim
                 ]
               }
             ]
@@ -518,6 +579,9 @@ export default [
             nameHash: 1198124803,
             itemGroups: [
               [
+                739803551 // Enhanced Sword Scavenger
+              ],
+              [
                 1708067044 // Traction
               ],
               [
@@ -528,10 +592,16 @@ export default [
               [
                 2401086340, // Primary Ammo Scavenger
                 345205583, // Special Ammo Scavenger
-                3866072732 // Power Ammo Scavenger
+                3866072732 // Heavy Ammo Scavenger
               ]
             ],
             groups: [
+              {
+                name: "Seasonal Artifact mod",
+                items: [
+                  739803551 // Enhanced Sword Scavenger
+                ]
+              },
               {
                 name: "General",
                 items: [
@@ -551,7 +621,7 @@ export default [
                 items: [
                   2401086340, // Primary Ammo Scavenger
                   345205583, // Special Ammo Scavenger
-                  3866072732 // Power Ammo Scavenger
+                  3866072732 // Heavy Ammo Scavenger
                 ]
               }
             ]
@@ -572,7 +642,10 @@ export default [
                 3362003312, // Machine Gun Dexterity
                 691818084, // Pulse Rifle Dexterity
                 2561450986, // Shotgun Dexterity
-                294409479 // Enhanced Shotgun Dexterity
+                294409479, // Enhanced Shotgun Dexterity
+                768133715, // Enhanced Bow Dexterity
+                1993219983, // Enhanced Machine Gun Dexterity
+                727582839 // Enhanced Pulse Rifle Dexterity
               ]
             ],
             groups: [
@@ -593,7 +666,10 @@ export default [
                   3362003312, // Machine Gun Dexterity
                   691818084, // Pulse Rifle Dexterity
                   2561450986, // Shotgun Dexterity
-                  294409479 // Enhanced Shotgun Dexterity
+                  294409479, // Enhanced Shotgun Dexterity
+                  768133715, // Enhanced Bow Dexterity
+                  1993219983, // Enhanced Machine Gun Dexterity
+                  727582839 // Enhanced Pulse Rifle Dexterity
                 ]
               }
             ]
@@ -615,7 +691,11 @@ export default [
                 2520883911, // Linear Fusion Dexterity
                 3026352437, // Rocket Launcher Dexterity
                 3076533032, // Enhanced Rocket Launcher Dexterity
-                201274281 // Submachine Gun Dexterity
+                201274281, // Submachine Gun Dexterity
+                2912791105, // Enhanced Auto Rifle Dexterity
+                206913198, // Enhanced Fusion Rifle Dexterity
+                1472121496, // Enhanced Linear Fusion Rifle Dexterity
+                4085860898 // Enhanced Submachine Gun Dexterity
               ]
             ],
             groups: [
@@ -637,7 +717,11 @@ export default [
                   2520883911, // Linear Fusion Dexterity
                   3026352437, // Rocket Launcher Dexterity
                   3076533032, // Enhanced Rocket Launcher Dexterity
-                  201274281 // Submachine Gun Dexterity
+                  201274281, // Submachine Gun Dexterity
+                  2912791105, // Enhanced Auto Rifle Dexterity
+                  206913198, // Enhanced Fusion Rifle Dexterity
+                  1472121496, // Enhanced Linear Fusion Rifle Dexterity
+                  4085860898 // Enhanced Submachine Gun Dexterity
                 ]
               }
             ]
@@ -660,7 +744,10 @@ export default [
                 327265103, // Scout Rifle Dexterity
                 101023751, // Sidearm Dexterity
                 1819979056, // Sniper Rifle Dexterity
-                439107567 // Enhanced Sniper Rifle Dexterity
+                439107567, // Enhanced Sniper Rifle Dexterity
+                358728248, // Enhanced Grenade Launcher Dexterity
+                4235763716, // Enhanced Scout Rifle Dexterity
+                2620269144 // Enhanced Sidearm Dexterity
               ]
             ],
             groups: [
@@ -683,7 +770,10 @@ export default [
                   327265103, // Scout Rifle Dexterity
                   101023751, // Sidearm Dexterity
                   1819979056, // Sniper Rifle Dexterity
-                  439107567 // Enhanced Sniper Rifle Dexterity
+                  439107567, // Enhanced Sniper Rifle Dexterity
+                  358728248, // Enhanced Grenade Launcher Dexterity
+                  4235763716, // Enhanced Scout Rifle Dexterity
+                  2620269144 // Enhanced Sidearm Dexterity
                 ]
               }
             ]
@@ -699,11 +789,10 @@ export default [
             nameHash: 1198124803,
             itemGroups: [
               [
-                3979891912, // Guardian Angel
-                3979891915, // Void Battery
-                3979891914, // Heavy Finisher
-                3979891917, // Solar Plexus
-                3979891916 // From the Depths
+                3235387874, // Passive Guard
+                3235387873, // Soul of the Praxic Fire
+                3235387879, // Thunder Coil
+                3235387878 // Lightning Strikes Twice
               ],
               [
                 3320641683, // Absolution
@@ -716,11 +805,10 @@ export default [
               {
                 name: "Seasonal Artifact mod",
                 items: [
-                  3979891912, // Guardian Angel
-                  3979891915, // Void Battery
-                  3979891914, // Heavy Finisher
-                  3979891917, // Solar Plexus
-                  3979891916 // From the Depths
+                  3235387874, // Passive Guard
+                  3235387873, // Soul of the Praxic Fire
+                  3235387879, // Thunder Coil
+                  3235387878 // Lightning Strikes Twice
                 ]
               },
               {
@@ -840,14 +928,15 @@ export default [
             nameHash: 1198124803,
             itemGroups: [
               [
-                3264050278, // Solidus Strike
-                3264050277, // Splintered Gladius
-                3264050276, // Biomonetizer
-                3264050275, // Tithe Collector's Sigil
-                3264050274 // Knight Errant
+                1974622780, // Flourishing Blade
+                1974622783, // Splintered Gladius
+                1974622782, // While Ye May
+                1974622777, // Prized Shooting
+                1974622776, // Automatic Prize
+                820036195, // Hammer of the Warmind
+                3235387872 // Tyrant's Surge
               ],
               [
-                926084009, // Paragon Mod
                 4048838440, // Discipline Mod
                 3253038666, // Strength Mod
                 3355995799, // Intellect Mod
@@ -861,7 +950,8 @@ export default [
                 3632726239, // Shield Break Charge
                 3632726236, // Empowered Finish
                 3632726237, // High-Energy Fire
-                2588939505 // Concussive Dampener
+                2588939505, // Concussive Dampener
+                179977572 // Global Reach
               ],
               [
                 3895804619, // Dreambane Mod
@@ -896,17 +986,18 @@ export default [
               {
                 name: "Seasonal Artifact mod",
                 items: [
-                  3264050278, // Solidus Strike
-                  3264050277, // Splintered Gladius
-                  3264050276, // Biomonetizer
-                  3264050275, // Tithe Collector's Sigil
-                  3264050274 // Knight Errant
+                  1974622780, // Flourishing Blade
+                  1974622783, // Splintered Gladius
+                  1974622782, // While Ye May
+                  1974622777, // Prized Shooting
+                  1974622776, // Automatic Prize
+                  820036195, // Hammer of the Warmind
+                  3235387872 // Tyrant's Surge
                 ]
               },
               {
                 name: "General",
                 items: [
-                  926084009, // Paragon Mod
                   4048838440, // Discipline Mod
                   3253038666, // Strength Mod
                   3355995799, // Intellect Mod
@@ -920,7 +1011,8 @@ export default [
                   3632726239, // Shield Break Charge
                   3632726236, // Empowered Finish
                   3632726237, // High-Energy Fire
-                  2588939505 // Concussive Dampener
+                  2588939505, // Concussive Dampener
+                  179977572 // Global Reach
                 ]
               },
               {
@@ -974,7 +1066,13 @@ export default [
                 1484685884, // Quick Charge
                 1484685885, // Striking Light
                 1484685886, // Heavy Handed
-                1484685887 // Powerful Friends
+                1484685887, // Powerful Friends
+                179977573, // Blessing of Rasputin
+                179977575, // Warmind's Light
+                1789319806, // Modular Lightning
+                1789319807, // Strength of Rasputin
+                1789319804, // Sheltering Energy
+                1789319805 // Chosen of the Warmind
               ],
               [
                 3829100654, // Supreme Nightmare Banisher
@@ -996,7 +1094,13 @@ export default [
                   1484685884, // Quick Charge
                   1484685885, // Striking Light
                   1484685886, // Heavy Handed
-                  1484685887 // Powerful Friends
+                  1484685887, // Powerful Friends
+                  179977573, // Blessing of Rasputin
+                  179977575, // Warmind's Light
+                  1789319806, // Modular Lightning
+                  1789319807, // Strength of Rasputin
+                  1789319804, // Sheltering Energy
+                  1789319805 // Chosen of the Warmind
                 ]
               },
               {
@@ -1027,7 +1131,13 @@ export default [
                 3185435909, // Heal Thyself
                 3185435908, // Firepower
                 3185435911, // Blast Radius
-                3185435910 // Charged Up
+                3185435910, // Charged Up
+                179977574, // Light of the Fire
+                2216063963, // Burning Cells
+                2216063962, // Wrath of Rasputin
+                2216063961, // Fireteam Medic
+                2216063960, // Rage of the Warmind
+                2216063967 // Incinerating Light
               ],
               [
                 2023980600, // Supreme Nightmare Breaker
@@ -1049,7 +1159,13 @@ export default [
                   3185435909, // Heal Thyself
                   3185435908, // Firepower
                   3185435911, // Blast Radius
-                  3185435910 // Charged Up
+                  3185435910, // Charged Up
+                  179977574, // Light of the Fire
+                  2216063963, // Burning Cells
+                  2216063962, // Wrath of Rasputin
+                  2216063961, // Fireteam Medic
+                  2216063960, // Rage of the Warmind
+                  2216063967 // Incinerating Light
                 ]
               },
               {
@@ -1079,7 +1195,13 @@ export default [
                 107977982, // Void Resistance
                 3523075120, // Protective Light
                 3523075122, // Precisely Charged
-                3523075123 // Stacks on Stacks
+                3523075123, // Stacks on Stacks
+                179977568, // Grasp of the Warmind
+                2597888510, // Cellular Suppression
+                2597888511, // Power of Rasputin
+                2597888508, // Warmind's Protection
+                2597888509, // Warmind's Longevity
+                2597888506 // Light from Darkness
               ],
               [
                 2045123179, // Supreme Nightmare Crusher
@@ -1103,7 +1225,13 @@ export default [
                   107977982, // Void Resistance
                   3523075120, // Protective Light
                   3523075122, // Precisely Charged
-                  3523075123 // Stacks on Stacks
+                  3523075123, // Stacks on Stacks
+                  179977568, // Grasp of the Warmind
+                  2597888510, // Cellular Suppression
+                  2597888511, // Power of Rasputin
+                  2597888508, // Warmind's Protection
+                  2597888509, // Warmind's Longevity
+                  2597888506 // Light from Darkness
                 ]
               },
               {
