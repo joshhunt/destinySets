@@ -125,10 +125,10 @@ const MOD_CATEGORISER = [
   matchName('Dexterity', /\sDexterity$/g),
   matchName('Loaders', /\sLoader$/g, /\sReloader$/g),
   matchName('Unflinching aim', /^(Enhanced )?Unflinching/g),
-  matchPlugCategory('Seasonal Mod: Undying', 'enhancements.season_maverick'),
   matchPlugCategory('Seasonal Mod: Outlaw', 'enhancements.season_outlaw'),
   matchPlugCategory('Seasonal Mod: Forge', 'enhancements.season_forge'),
   matchPlugCategory('Seasonal Mod: Opulence', 'enhancements.season_opulence'),
+  matchPlugCategory('Seasonal Mod: Undying', 'enhancements.season_maverick'),
   matchPlugCategory('Seasonal Mod: Dawn', 'enhancements.season_v470'),
   matchPlugCategory('Seasonal Mod: Worthy', 'enhancements.season_v480'),
   matchName('General', /.*/)
