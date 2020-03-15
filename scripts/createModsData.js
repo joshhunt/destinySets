@@ -129,6 +129,7 @@ const MOD_CATEGORISER = [
   matchPlugCategory('Seasonal Mod: Outlaw', 'enhancements.season_outlaw'),
   matchPlugCategory('Seasonal Mod: Forge', 'enhancements.season_forge'),
   matchPlugCategory('Seasonal Mod: Opulence', 'enhancements.season_opulence'),
+  matchPlugCategory('Seasonal Mod: Dawn', 'enhancements.season_v470'),
   matchName('General', /.*/)
 ];
 

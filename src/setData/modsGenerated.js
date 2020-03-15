@@ -946,10 +946,6 @@ export default [
                 531752975, // Minor Resist
                 1313760467, // Major Resist
                 1719752237, // Boss Resist
-                3632726238, // Taking Charge
-                3632726239, // Shield Break Charge
-                3632726236, // Empowered Finish
-                3632726237, // High-Energy Fire
                 2588939505, // Concussive Dampener
                 179977572 // Global Reach
               ],
@@ -980,6 +976,12 @@ export default [
                 2146600970, // Hive Invigoration
                 3967424085, // Hive Barrier
                 3302924434 // Hive Repurposing
+              ],
+              [
+                3632726238, // Taking Charge
+                3632726239, // Shield Break Charge
+                3632726236, // Empowered Finish
+                3632726237 // High-Energy Fire
               ]
             ],
             groups: [
@@ -1007,10 +1009,6 @@ export default [
                   531752975, // Minor Resist
                   1313760467, // Major Resist
                   1719752237, // Boss Resist
-                  3632726238, // Taking Charge
-                  3632726239, // Shield Break Charge
-                  3632726236, // Empowered Finish
-                  3632726237, // High-Energy Fire
                   2588939505, // Concussive Dampener
                   179977572 // Global Reach
                 ]
@@ -1054,6 +1052,15 @@ export default [
                   3967424085, // Hive Barrier
                   3302924434 // Hive Repurposing
                 ]
+              },
+              {
+                name: "Seasonal Mod: Dawn",
+                items: [
+                  3632726238, // Taking Charge
+                  3632726239, // Shield Break Charge
+                  3632726236, // Empowered Finish
+                  3632726237 // High-Energy Fire
+                ]
               }
             ]
           },
@@ -1063,10 +1070,6 @@ export default [
             itemGroups: [
               [
                 3074491624, // Arc Resistance
-                1484685884, // Quick Charge
-                1484685885, // Striking Light
-                1484685886, // Heavy Handed
-                1484685887, // Powerful Friends
                 179977573, // Blessing of Rasputin
                 179977575, // Warmind's Light
                 1789319806, // Modular Lightning
@@ -1084,6 +1087,12 @@ export default [
               [
                 4240256197, // Empowering Largesse
                 1409526707 // Emperor's Shock
+              ],
+              [
+                1484685884, // Quick Charge
+                1484685885, // Striking Light
+                1484685886, // Heavy Handed
+                1484685887 // Powerful Friends
               ]
             ],
             groups: [
@@ -1091,10 +1100,6 @@ export default [
                 name: "General",
                 items: [
                   3074491624, // Arc Resistance
-                  1484685884, // Quick Charge
-                  1484685885, // Striking Light
-                  1484685886, // Heavy Handed
-                  1484685887, // Powerful Friends
                   179977573, // Blessing of Rasputin
                   179977575, // Warmind's Light
                   1789319806, // Modular Lightning
@@ -1119,6 +1124,15 @@ export default [
                   4240256197, // Empowering Largesse
                   1409526707 // Emperor's Shock
                 ]
+              },
+              {
+                name: "Seasonal Mod: Dawn",
+                items: [
+                  1484685884, // Quick Charge
+                  1484685885, // Striking Light
+                  1484685886, // Heavy Handed
+                  1484685887 // Powerful Friends
+                ]
               }
             ]
           },
@@ -1128,10 +1142,6 @@ export default [
             itemGroups: [
               [
                 1429600943, // Solar Resistance
-                3185435909, // Heal Thyself
-                3185435908, // Firepower
-                3185435911, // Blast Radius
-                3185435910, // Charged Up
                 179977574, // Light of the Fire
                 2216063963, // Burning Cells
                 2216063962, // Wrath of Rasputin
@@ -1149,6 +1159,12 @@ export default [
               [
                 2689994974, // Radiant Largesse
                 4018667352 // Emperor's Blaze
+              ],
+              [
+                3185435909, // Heal Thyself
+                3185435908, // Firepower
+                3185435911, // Blast Radius
+                3185435910 // Charged Up
               ]
             ],
             groups: [
@@ -1156,10 +1172,6 @@ export default [
                 name: "General",
                 items: [
                   1429600943, // Solar Resistance
-                  3185435909, // Heal Thyself
-                  3185435908, // Firepower
-                  3185435911, // Blast Radius
-                  3185435910, // Charged Up
                   179977574, // Light of the Fire
                   2216063963, // Burning Cells
                   2216063962, // Wrath of Rasputin
@@ -1184,6 +1196,15 @@ export default [
                   2689994974, // Radiant Largesse
                   4018667352 // Emperor's Blaze
                 ]
+              },
+              {
+                name: "Seasonal Mod: Dawn",
+                items: [
+                  3185435909, // Heal Thyself
+                  3185435908, // Firepower
+                  3185435911, // Blast Radius
+                  3185435910 // Charged Up
+                ]
               }
             ]
           },
@@ -1193,9 +1214,6 @@ export default [
             itemGroups: [
               [
                 107977982, // Void Resistance
-                3523075120, // Protective Light
-                3523075122, // Precisely Charged
-                3523075123, // Stacks on Stacks
                 179977568, // Grasp of the Warmind
                 2597888510, // Cellular Suppression
                 2597888511, // Power of Rasputin
@@ -1215,6 +1233,11 @@ export default [
                 301151651 // Emperor's Balance
               ],
               [
+                3523075120, // Protective Light
+                3523075122, // Precisely Charged
+                3523075123 // Stacks on Stacks
+              ],
+              [
                 3523075121 // Extra Reserves
               ]
             ],
@@ -1223,9 +1246,6 @@ export default [
                 name: "General",
                 items: [
                   107977982, // Void Resistance
-                  3523075120, // Protective Light
-                  3523075122, // Precisely Charged
-                  3523075123, // Stacks on Stacks
                   179977568, // Grasp of the Warmind
                   2597888510, // Cellular Suppression
                   2597888511, // Power of Rasputin
@@ -1249,6 +1269,14 @@ export default [
                 items: [
                   4185864113, // Embraced Largesse
                   301151651 // Emperor's Balance
+                ]
+              },
+              {
+                name: "Seasonal Mod: Dawn",
+                items: [
+                  3523075120, // Protective Light
+                  3523075122, // Precisely Charged
+                  3523075123 // Stacks on Stacks
                 ]
               },
               {
