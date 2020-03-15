@@ -946,8 +946,7 @@ export default [
                 531752975, // Minor Resist
                 1313760467, // Major Resist
                 1719752237, // Boss Resist
-                2588939505, // Concussive Dampener
-                179977572 // Global Reach
+                2588939505 // Concussive Dampener
               ],
               [
                 3895804619, // Dreambane Mod
@@ -982,6 +981,9 @@ export default [
                 3632726239, // Shield Break Charge
                 3632726236, // Empowered Finish
                 3632726237 // High-Energy Fire
+              ],
+              [
+                179977572 // Global Reach
               ]
             ],
             groups: [
@@ -1009,8 +1011,7 @@ export default [
                   531752975, // Minor Resist
                   1313760467, // Major Resist
                   1719752237, // Boss Resist
-                  2588939505, // Concussive Dampener
-                  179977572 // Global Reach
+                  2588939505 // Concussive Dampener
                 ]
               },
               {
@@ -1061,6 +1062,12 @@ export default [
                   3632726236, // Empowered Finish
                   3632726237 // High-Energy Fire
                 ]
+              },
+              {
+                name: "Seasonal Mod: Worthy",
+                items: [
+                  179977572 // Global Reach
+                ]
               }
             ]
           },
@@ -1069,13 +1076,7 @@ export default [
             nameHash: 728351493,
             itemGroups: [
               [
-                3074491624, // Arc Resistance
-                179977573, // Blessing of Rasputin
-                179977575, // Warmind's Light
-                1789319806, // Modular Lightning
-                1789319807, // Strength of Rasputin
-                1789319804, // Sheltering Energy
-                1789319805 // Chosen of the Warmind
+                3074491624 // Arc Resistance
               ],
               [
                 3829100654, // Supreme Nightmare Banisher
@@ -1093,19 +1094,21 @@ export default [
                 1484685885, // Striking Light
                 1484685886, // Heavy Handed
                 1484685887 // Powerful Friends
+              ],
+              [
+                179977573, // Blessing of Rasputin
+                179977575, // Warmind's Light
+                1789319806, // Modular Lightning
+                1789319807, // Strength of Rasputin
+                1789319804, // Sheltering Energy
+                1789319805 // Chosen of the Warmind
               ]
             ],
             groups: [
               {
                 name: "General",
                 items: [
-                  3074491624, // Arc Resistance
-                  179977573, // Blessing of Rasputin
-                  179977575, // Warmind's Light
-                  1789319806, // Modular Lightning
-                  1789319807, // Strength of Rasputin
-                  1789319804, // Sheltering Energy
-                  1789319805 // Chosen of the Warmind
+                  3074491624 // Arc Resistance
                 ]
               },
               {
@@ -1133,6 +1136,17 @@ export default [
                   1484685886, // Heavy Handed
                   1484685887 // Powerful Friends
                 ]
+              },
+              {
+                name: "Seasonal Mod: Worthy",
+                items: [
+                  179977573, // Blessing of Rasputin
+                  179977575, // Warmind's Light
+                  1789319806, // Modular Lightning
+                  1789319807, // Strength of Rasputin
+                  1789319804, // Sheltering Energy
+                  1789319805 // Chosen of the Warmind
+                ]
               }
             ]
           },
@@ -1141,13 +1155,7 @@ export default [
             nameHash: 591714140,
             itemGroups: [
               [
-                1429600943, // Solar Resistance
-                179977574, // Light of the Fire
-                2216063963, // Burning Cells
-                2216063962, // Wrath of Rasputin
-                2216063961, // Fireteam Medic
-                2216063960, // Rage of the Warmind
-                2216063967 // Incinerating Light
+                1429600943 // Solar Resistance
               ],
               [
                 2023980600, // Supreme Nightmare Breaker
@@ -1165,19 +1173,21 @@ export default [
                 3185435908, // Firepower
                 3185435911, // Blast Radius
                 3185435910 // Charged Up
+              ],
+              [
+                179977574, // Light of the Fire
+                2216063963, // Burning Cells
+                2216063962, // Wrath of Rasputin
+                2216063961, // Fireteam Medic
+                2216063960, // Rage of the Warmind
+                2216063967 // Incinerating Light
               ]
             ],
             groups: [
               {
                 name: "General",
                 items: [
-                  1429600943, // Solar Resistance
-                  179977574, // Light of the Fire
-                  2216063963, // Burning Cells
-                  2216063962, // Wrath of Rasputin
-                  2216063961, // Fireteam Medic
-                  2216063960, // Rage of the Warmind
-                  2216063967 // Incinerating Light
+                  1429600943 // Solar Resistance
                 ]
               },
               {
@@ -1205,6 +1215,17 @@ export default [
                   3185435911, // Blast Radius
                   3185435910 // Charged Up
                 ]
+              },
+              {
+                name: "Seasonal Mod: Worthy",
+                items: [
+                  179977574, // Light of the Fire
+                  2216063963, // Burning Cells
+                  2216063962, // Wrath of Rasputin
+                  2216063961, // Fireteam Medic
+                  2216063960, // Rage of the Warmind
+                  2216063967 // Incinerating Light
+                ]
               }
             ]
           },
@@ -1213,13 +1234,7 @@ export default [
             nameHash: 4069572561,
             itemGroups: [
               [
-                107977982, // Void Resistance
-                179977568, // Grasp of the Warmind
-                2597888510, // Cellular Suppression
-                2597888511, // Power of Rasputin
-                2597888508, // Warmind's Protection
-                2597888509, // Warmind's Longevity
-                2597888506 // Light from Darkness
+                107977982 // Void Resistance
               ],
               [
                 2045123179, // Supreme Nightmare Crusher
@@ -1239,19 +1254,21 @@ export default [
               ],
               [
                 3523075121 // Extra Reserves
+              ],
+              [
+                179977568, // Grasp of the Warmind
+                2597888510, // Cellular Suppression
+                2597888511, // Power of Rasputin
+                2597888508, // Warmind's Protection
+                2597888509, // Warmind's Longevity
+                2597888506 // Light from Darkness
               ]
             ],
             groups: [
               {
                 name: "General",
                 items: [
-                  107977982, // Void Resistance
-                  179977568, // Grasp of the Warmind
-                  2597888510, // Cellular Suppression
-                  2597888511, // Power of Rasputin
-                  2597888508, // Warmind's Protection
-                  2597888509, // Warmind's Longevity
-                  2597888506 // Light from Darkness
+                  107977982 // Void Resistance
                 ]
               },
               {
@@ -1283,6 +1300,17 @@ export default [
                 name: "Ammo Reserves",
                 items: [
                   3523075121 // Extra Reserves
+                ]
+              },
+              {
+                name: "Seasonal Mod: Worthy",
+                items: [
+                  179977568, // Grasp of the Warmind
+                  2597888510, // Cellular Suppression
+                  2597888511, // Power of Rasputin
+                  2597888508, // Warmind's Protection
+                  2597888509, // Warmind's Longevity
+                  2597888506 // Light from Darkness
                 ]
               }
             ]
