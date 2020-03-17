@@ -1616,7 +1616,8 @@ export default ([
                 1513177792, // Mercurial Affliction
                 1673894252, // Splice of Life
                 2482603977, // Standard Bearer
-                1998569185 // Timeline Zero
+                1998569185, // Timeline Zero
+                // 3547626308 // Death Comes Calling (Not planned to be sold for Bright Dust)
               ],
               [
                 // 4124216484, // Prized Ivory (Not planned to be sold for Bright Dust)
