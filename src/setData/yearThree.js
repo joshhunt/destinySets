@@ -1677,20 +1677,20 @@ export default ([
                 2711683305, // Playground Ride
                 710527784, // Spike
                 1194404806, // Cowbell
+                208153163, // Keep It Clean
+                2036655792, // Origami Crane
                 1037681135, // Shake It Out
                 300144357, // Distracted
                 2077271390, // Flashy Moves
                 2737227933, // Blade Wipe
-                2970231290, // Face Palm
-                4138096633, // Guardian, Bye!
-                208153163, // Keep It Clean
-                2036655792 // Origami Crane
                 //  1700183918, // Gunslinger's Anticipation (Not planned to be sold for Bright Dust)
                 //  1944063916, // Sunbreaker's Anticipation (Not planned to be sold for Bright Dust)
                 //  340413553, // Dawnblade's Anticipation (Not planned to be sold for Bright Dust)
                 //  1931729143, // Nightstalker's Respite (Not planned to be sold for Bright Dust)
                 //  430068245, // Sentinel's Respite (Not planned to be sold for Bright Dust)
                 //  3302119490 // Voidwalker's Respite (Not planned to be sold for Bright Dust)
+                2970231290, // Face Palm
+                4138096633 // Guardian, Bye!
               ],
               [
                 //  1395929128, // Clock Cleaner (Not planned to be sold for Bright Dust)
