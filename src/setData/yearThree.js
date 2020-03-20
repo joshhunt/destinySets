@@ -1202,17 +1202,23 @@ export default ([
           {
             name: 'Sparrows',
             season: 10,
-            items: []
+            items: [
+              // 1614326414, // (Not planned to be sold for Bright Dust)
+              // 1614326415 // (Not planned to be sold for Bright Dust)
+            ]
           },
           {
             name: 'Ships',
             season: 10,
-            items: []
+            items: [
+              1205148160
+              // 1205148161 (Not planned to be sold for Bright Dust)
+            ]
           },
           {
             name: 'Extras',
             season: 10,
-            items: [1983519832, 1983519831]
+            items: [1983519832, 1983519831, 2171727442, 2171727443]
           }
         ]
       }
@@ -1617,7 +1623,8 @@ export default ([
                 1673894252, // Splice of Life
                 2482603977, // Standard Bearer
                 1998569185, // Timeline Zero
-                // 3547626308 // Death Comes Calling (Not planned to be sold for Bright Dust)
+                // 3547626308, // Death Comes Calling (Not planned to be sold for Bright Dust)
+                // 3673548752 // (Not planned to be sold for Bright Dust)
               ],
               [
                 // 4124216484, // Prized Ivory (Not planned to be sold for Bright Dust)
