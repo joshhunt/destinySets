@@ -1594,7 +1594,7 @@ export default ([
                 4115107119, // Packmaster's Command
                 1869157938, // Ain't My First Rodeo
                 // 299539105, // Violent Exorcism (Not planned to be sold for Bright Dust)
-                // 204713420, // Devil's Advocate (Not planned to be sold for Bright Dust)
+                204713420, // Devil's Advocate
                 171163996 // Bloodline Memorial
               ],
               [
