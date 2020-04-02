@@ -1560,7 +1560,7 @@ export default ([
                 // 3844102542, // Father of Islands (Not planned to be sold for Bright Dust)
                 // 3432171457, // Heretic Robe (Not planned to be sold for Bright Dust)
                 // 1360105767, // Járngreipr (Not planned to be sold for Bright Dust)
-                // 1563263613, // Law of Induction (Not planned to be sold for Bright Dust)
+                1563263613, // Law of Induction
                 // 3438514430, // Peacebringer (Not planned to be sold for Bright Dust)
                 // 2020179519, // Polemology (Not planned to be sold for Bright Dust)
                 3093486579 // Sky/Perdition
@@ -1593,7 +1593,7 @@ export default ([
                 3449188806, // Long Live the Queen
                 4115107119, // Packmaster's Command
                 1869157938, // Ain't My First Rodeo
-                // 299539105, // Violent Exorcism (Not planned to be sold for Bright Dust)
+                299539105, // Violent Exorcism
                 204713420, // Devil's Advocate
                 171163996 // Bloodline Memorial
               ],
@@ -1640,7 +1640,7 @@ export default ([
             ]
           },
           {
-            name: 'Emotes',
+            name: 'Emotes & Finishers',
             season: 8,
             itemGroups: [
               [
@@ -1663,7 +1663,7 @@ export default ([
               ],
               [
                 // 2504641452, // Savage Haymaker (Not planned to be sold for Bright Dust)
-                // 2504641454, // Golden Age Dropkick (Not planned to be sold for Bright Dust)
+                2504641454 // Golden Age Dropkick
                 // 2504641455 // Whirlwind (Not planned to be sold for Bright Dust)
               ]
             ]
