@@ -34,7 +34,7 @@ export default {
   3413860063: 4267969601, // Lord of Wolves
   3524313097: 2369153435, // Eriana's Vow
   4017959782: 725782604, // Symmetry
-  // 776191470: 0, // Tommy's Matchbook
+  776191470: 2711296708, // Tommy's Matchbook
   1665952087: 4149879737, // The Fourth Horseman
 
   // Heavy weapons
