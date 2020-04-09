@@ -1622,7 +1622,7 @@ export default ([
                 1513177792, // Mercurial Affliction
                 1673894252, // Splice of Life
                 2482603977, // Standard Bearer
-                1998569185, // Timeline Zero
+                1998569185 // Timeline Zero
                 // 3547626308, // Death Comes Calling (Not planned to be sold for Bright Dust)
                 // 3673548752 // (Not planned to be sold for Bright Dust)
               ],
@@ -1832,8 +1832,8 @@ export default ([
               4248884710, // The Ram
               4248884711, // Perennial Velocity
               4248884704, // Viper-4s
-              4248884705 // Spur of the Moment
-              // 4248884706 // Motive Force (Not planned to be sold for Bright Dust)
+              4248884705, // Spur of the Moment
+              4248884706 // Motive Force
             ]
           },
           {
