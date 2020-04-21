@@ -1165,60 +1165,115 @@ export default ([
           {
             name: 'Hunter Armor',
             season: 10,
-            items: []
+            itemGroups: [
+              [
+                685004314, // Competitive Spirit Mask
+                2922275939, // Competitive Spirit Grips
+                2797445293, // Competitive Spirit Vest
+                548288405, // Competitive Spirit Strides
+                911356576 // Competitive Spirit Cloak
+              ],
+              [
+                195422190 // Cunning Rivalry Cloak
+              ]
+            ]
           },
           {
             name: 'Titan Armor',
             season: 10,
-            items: []
+            itemGroups: [
+              [
+                2449623004, // Competitive Spirit Helm
+                3845973845, // Competitive Spirit Gauntlets
+                2709194827, // Competitive Spirit Plate
+                1127128759, // Competitive Spirit Greaves
+                1065911138 // Competitive Spirit Mark
+              ],
+              [
+                967781090 // Mighty Rivalry Mark
+              ]
+            ]
           },
           {
             name: 'Warlock Armor',
             season: 10,
-            items: []
+            itemGroups: [
+              [
+                544720811, // Competitive Spirit Hood
+                3120368538, // Competitive Spirit Gloves
+                1517831918, // Competitive Spirit Robes
+                547804116, // Competitive Spirit Boots
+                2260280759 // Competitive Spirit Bond
+              ],
+              [
+                3365248655 // Sage Rivalry Bond
+              ]
+            ]
           },
           {
             name: 'Emotes',
             season: 10,
             itemGroups: [
               [
-                // 2788609407, // Participation Trophy (Not planned to be sold for Bright Dust)
-                10656656, // Torch Light
                 2201628119, // Represent
-                // 1327630195 // Low Score (Not planned to be sold for Bright Dust)
-                1870273657, // High Score,
-                2367025562, // Hip to the Hop,
-                213458862, // One… Two… Uh…,
+                10656656, // Torch Light
+                2788609407, // Participation Trophy
+                2367025562, // Hip to the Hop
+                1870273657, // High Score
+                1327630195, // Low Score
+                213458862, // One… Two… Uh…
                 2300270673 // Recognize
               ],
-              []
+              [
+                // 2376234856 // Shuffle and Scat (Not planned to be sold for Bright Dust)
+              ]
             ]
           },
           {
             name: 'Ghosts',
             season: 10,
-            itemGroups: [[], []]
+            itemGroups: [
+              [
+                2272646882, // Rival Hunter Shell
+                2272646881, // Rival Titan Shell
+                2272646880 // Rival Warlock Shell
+              ],
+              [
+                1673238725, // Hunter Projection
+                1673238724, // Titan Projection
+                1673238727 // Warlock Projection
+              ]
+            ]
           },
           {
             name: 'Sparrows',
             season: 10,
             items: [
-              // 1614326414, // (Not planned to be sold for Bright Dust)
-              // 1614326415 // (Not planned to be sold for Bright Dust)
+              1614326414, // Runner Up
+              1614326415 // Victory Lap
             ]
           },
           {
             name: 'Ships',
             season: 10,
             items: [
-              1205148160
-              // 1205148161 (Not planned to be sold for Bright Dust)
+              1205148160, // The Underdog
+              1205148161 // Team Spirit
             ]
           },
           {
             name: 'Extras',
             season: 10,
-            items: [1983519832, 1983519831, 2171727442, 2171727443]
+            items: [
+              1983519832, // Rivals Three
+              1983519831, // Settle the Score
+              2171727443, // Rivalry Whitesand
+              2171727442, // Rivalry Blacksand
+              2213649831, // Rivalry Resolute
+              2213649830, // Rivalry Stoic
+              3393212813, // Cherry Blossom Entrance
+              3393212812 // Cyber Class Entrance
+            ]
           }
         ]
       }

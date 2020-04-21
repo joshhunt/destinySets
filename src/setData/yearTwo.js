@@ -151,7 +151,8 @@ export default ([
               4230993599, // Steel Sybil Z-14
               195440257, // Play of the Game
               153979396, // Luna's Howl
-              1161276682 // Redrix's Broadsword 
+              153979399, // Not Forgotten
+              1161276682 // Redrix's Broadsword
             ]
           },
           {
@@ -987,7 +988,8 @@ export default ([
       {
         name: 'Raid: Crown of Sorrow',
         id: 'YEAR_TWO_RAID_PENUMBRA',
-        description: ('DestinyCollectibleDefinition[3110698812].sourceString',
+        description:
+          ('DestinyCollectibleDefinition[3110698812].sourceString',
           'Acquired from the raid "Crown of Sorrow.'),
         sections: [
           {
@@ -2502,11 +2504,11 @@ export default ([
               1295682251, // IMPERIAL BEAST PROJECTION
               1295682250, // CHALICE PROJECTION
               1295682249, // CROWN OF SORROW PROJECTION
-              // 1295682248, // EMPEROR CALUS PROJECTION (Wasn't sold for Bright Dust)              
+              // 1295682248, // EMPEROR CALUS PROJECTION (Wasn't sold for Bright Dust)
               1295682255, // DARING HAT PROJECTION
               // 3527564900, // IMPERIAL AXES PROJECTION (Wasn't sold for Bright Dust)
               // 3527564901, // DROPSHIP PROJECTION (Wasn't sold for Bright Dust)
-              3527564902, // BEAST'S PAW PROJECTION
+              3527564902 // BEAST'S PAW PROJECTION
               // 3527564903, // TREASURE CHEST PROJECTION (Wasn't sold for Bright Dust)
               // 3527564896, // SALACOT PROJECTION (Wasn't sold for Bright Dust)
               // 3527564897 // TREASURE MAP PROJECTION (Wasn't sold for Bright Dust)
@@ -2661,7 +2663,7 @@ export default ([
               2964059918, // Woomera B-5
               2964059919, // The Oviraptor
               2964059912, // Transpose JT-24-X
-              2964059913, // Chela-N
+              2964059913 // Chela-N
               // 2964059914 // Aeshnidae Fixed-Wing (Wasn't sold for Bright Dust)
             ]
           },
