@@ -1215,12 +1215,12 @@ export default ([
             season: 10,
             itemGroups: [
               [
-                2788609407, // Participation Trophy
-                10656656, // Torch Light
                 2201628119, // Represent
-                1327630195, // Low Score
-                1870273657, // High Score
+                10656656, // Torch Light
+                2788609407, // Participation Trophy
                 2367025562, // Hip to the Hop
+                1870273657, // High Score
+                1327630195, // Low Score
                 213458862, // One… Two… Uh…
                 2300270673 // Recognize
               ],
@@ -1232,10 +1232,17 @@ export default ([
           {
             name: 'Ghosts',
             season: 10,
-            items: [
-              2272646882, // Rival Hunter Shell
-              2272646881, // Rival Titan Shell
-              2272646880 // Rival Warlock Shell
+            itemGroups: [
+              [
+                2272646882, // Rival Hunter Shell
+                2272646881, // Rival Titan Shell
+                2272646880 // Rival Warlock Shell
+              ],
+              [
+                1673238725, // Hunter Projection
+                1673238724, // Titan Projection
+                1673238727 // Warlock Projection
+              ]
             ]
           },
           {
@@ -1250,8 +1257,8 @@ export default ([
             name: 'Ships',
             season: 10,
             items: [
-              1205148161, // Team Spirit
-              1205148160 // The Underdog
+              1205148160, // The Underdog
+              1205148161 // Team Spirit
             ]
           },
           {
@@ -1260,10 +1267,10 @@ export default ([
             items: [
               1983519832, // Rivals Three
               1983519831, // Settle the Score
-              2171727442, // Rivalry Blacksand
               2171727443, // Rivalry Whitesand
-              2213649830, // Rivalry Stoic
+              2171727442, // Rivalry Blacksand
               2213649831, // Rivalry Resolute
+              2213649830, // Rivalry Stoic
               3393212813, // Cherry Blossom Entrance
               3393212812 // Cyber Class Entrance
             ]
