@@ -1717,9 +1717,9 @@ export default ([
                 88498859 // Too Hot
               ],
               [
-                // 2504641452, // Savage Haymaker (Not planned to be sold for Bright Dust)
-                2504641454 // Golden Age Dropkick
-                // 2504641455 // Whirlwind (Not planned to be sold for Bright Dust)
+                2504641452, // Savage Haymaker
+                2504641454, // Golden Age Dropkick
+                2504641455 // Whirlwind
               ]
             ]
           },
