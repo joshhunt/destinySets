@@ -1158,11 +1158,6 @@ export default ([
         big: false,
         sections: [
           {
-            name: 'Weapons',
-            season: 10,
-            itemGroups: [[], []]
-          },
-          {
             name: 'Hunter Armor',
             season: 10,
             itemGroups: [
@@ -1679,13 +1674,14 @@ export default ([
                 2482603977, // Standard Bearer
                 1998569185 // Timeline Zero
                 // 3547626308, // Death Comes Calling (Not planned to be sold for Bright Dust)
-                // 3673548752 // (Not planned to be sold for Bright Dust)
+                // 3673548752 // Regal Deterrent (Not planned to be sold for Bright Dust)
               ],
               [
                 // 4124216484, // Prized Ivory (Not planned to be sold for Bright Dust)
                 1418556229, // Lord of the Hunt
                 1828076537, // Necrosis
-                1733242439 // Only the Penitent Pass
+                1733242439, // Only the Penitent Pass
+                // 572589482 // Blissful Ignorance (Not planned to be sold for Bright Dust)
               ],
               [
                 3927691568, // Nano Redux
@@ -1717,9 +1713,9 @@ export default ([
                 88498859 // Too Hot
               ],
               [
-                // 2504641452, // Savage Haymaker (Not planned to be sold for Bright Dust)
-                2504641454 // Golden Age Dropkick
-                // 2504641455 // Whirlwind (Not planned to be sold for Bright Dust)
+                2504641452, // Savage Haymaker
+                2504641454, // Golden Age Dropkick
+                2504641455 // Whirlwind
               ]
             ]
           },
