@@ -1845,7 +1845,7 @@ export default ([
                 1090082586, // Seraph Shell
                 1090082585, // CLVS-241 Shell
                 // 1090082584, // Almost Mighty Shell (Not planned to be sold for Bright Dust)
-                // 1090082591, // Constricting Shell (Never sold)
+                // 1090082591, // Constricting Shell (Never Sold)
                 1090082590, // CamNav-TTN Shell
                 1090082589 // Nucleus Shell
               ],
