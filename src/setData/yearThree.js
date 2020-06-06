@@ -736,6 +736,7 @@ export default ([
             items: [
               3508741484, // Absalom Knife
               1983519839, // Knight of the Old Guard
+              1983519838, // Seraph's Wings
               737170668, // Midnight Exigent
               737170669 // Valkyrie Zero
             ]
