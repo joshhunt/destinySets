@@ -199,7 +199,7 @@ export const SOLSTICE_OF_HEROES = {
       ]
     },
     {
-      name: 'Cosmetics',
+      name: 'Extras',
       season: 3,
       items: [
         3859483818, // Blazing Virtue
@@ -218,9 +218,7 @@ export const SOLSTICE_OF_HEROES_YEAR_2 = {
     {
       name: 'Ornaments',
       season: 7,
-      items: [
-
-      ]
+      items: []
     },
     {
       name: 'Hunter Armor',
@@ -356,9 +354,9 @@ export const SOLSTICE_OF_HEROES_YEAR_2 = {
         4114677048, // BREATHE IN
         1849697741, // FLAG ON THE PLAY
         1858216083, // PAPERWORK
-        403465735, // FLICK OF THE WRIST              
+        403465735, // FLICK OF THE WRIST
         1482931023, // HIP BUMP
-        4096637925, // SILLY HANDSHAKE
+        4096637925 // SILLY HANDSHAKE
       ]
     },
     {
@@ -378,13 +376,29 @@ export const SOLSTICE_OF_HEROES_YEAR_2 = {
       ]
     },
     {
-      name: 'Cosmetics',
+      name: 'Extras',
       season: 7,
       items: [
         4173467416, // Tangerine Gloss
         4173467417, // Pomegranate Gloss
         2957044930, // Beach Ball Effects
         2957044931 // Sandcastle Effects
+      ]
+    }
+  ]
+};
+
+export const SOLSTICE_OF_HEROES_YEAR_3 = {
+  name: 'Solstice of Heroes',
+  id: 'COMMON_SOLSTICE_OF_HEROES',
+  description: 'Earned during the 2020 Solstice of Heroes event.',
+  big: false,
+  sections: [
+    {
+      name: 'Extras',
+      season: 11,
+      items: [
+        1138508286 // Magnificence in Action
       ]
     }
   ]
