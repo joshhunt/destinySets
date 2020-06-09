@@ -119,6 +119,14 @@ export default ([
               1983519833, // Strike Operator
               4286955050 // Vanguard Flashfire
             ]
+          },
+          {
+            name: 'Extras',
+            season: 11,
+            items: [
+              1138508273, // Strike at the Heart
+              1514974385 // Vanguard Marshal
+            ]
           }
         ]
       },
@@ -235,6 +243,14 @@ export default ([
               1983519836, // Settled Differences
               2811768631 // Crucible Peppermint
             ]
+          },
+          {
+            name: 'Extras',
+            season: 11,
+            items: [
+              1138508274, // Settled Differences
+              2378905788 // Carminica
+            ]
           }
         ]
       },
@@ -350,6 +366,14 @@ export default ([
               1983519835, // Fifteen Holding, Fifteen Down
               2207282210 // Raw Idocrase
             ]
+          },
+          {
+            name: 'Extras',
+            season: 11,
+            items: [
+              1138508275, // Long-Boy Special
+              2590008185 // Ruin Wreath
+            ]
           }
         ]
       },
@@ -369,6 +393,14 @@ export default ([
             season: 10,
             items: [
               3434944005 // Point of the Stag
+            ]
+          },
+          {
+            name: 'Weapons',
+            season: 11,
+            items: [
+              1690783811, // The Forward Path
+              65611680 // The Fool's Remedy
             ]
           },
           {
@@ -493,6 +525,14 @@ export default ([
             items: [
               1983519834, // Cast Iron
               1385647483 // Iron Precious
+            ]
+          },
+          {
+            name: 'Extras',
+            season: 11,
+            items: [
+              1138508272, // Light Unbridled
+              3176983014 // Iron Vendetta
             ]
           }
         ]
@@ -739,6 +779,115 @@ export default ([
               1983519838, // Seraph's Wings
               737170668, // Midnight Exigent
               737170669 // Valkyrie Zero
+            ]
+          }
+        ]
+      },
+      {
+        name: 'Season 11',
+        id: 'year-three-season-11',
+        description: 'Complete seasonal activities during Season of Arrivals.',
+        sections: [
+          {
+            name: 'Contact Weapons',
+            season: 11,
+            items: [
+              3143732432, // False Promises
+              211938782, // Whispering Slab
+              607191995, // Hollow Words
+              3616586446, // First In, Last Out
+              1253087083, // IKELOS_SR_v1.0.2
+              2222560548, // IKELOS_SMG_v1.0.2
+              407621213, // Berenger's Memory
+              35794111 // Temptation's Hook
+            ]
+          },
+          {
+            name: 'Prophecy Dungeon Weapons',
+            season: 11,
+            items: [
+              1200824700, // IKELOS_HC_v1.0.2
+              1096206669, // IKELOS_SG_v1.0.2
+              1271343896, // Widow's Bite
+              2742490609, // Death Adder
+              3669616453, // Hoosegow
+              3629968765 // Negative Space
+            ]
+          },
+          {
+            name: 'Prophecy Dungeon Hunter Armor',
+            season: 11,
+            itemGroups: [
+              [
+                3075372781, // Flowing Cowl (CODA)
+                4194072668, // Flowing Grips (CODA)
+                508076356, // Flowing Vest (CODA)
+                3155320806, // Flowing Boots (CODA)
+                1717940633 // Cloak Judgment (CODA)
+              ],
+              [
+                2623956730, // Moonfang-X7 Mask
+                100226755, // Moonfang-X7 Grips
+                4121885325, // Moonfang-X7 Rig
+                2487240821, // Moonfang-X7 Strides
+                2701727616 // Moonfang-X7 Cloak
+              ]
+            ]
+          },
+          {
+            name: 'Prophecy Dungeon Titan Armor',
+            season: 11,
+            itemGroups: [
+              [
+                3976073347, // Crushing Helm (CODA)
+                818644818, // Crushing Guard (CODA)
+                2570653206, // Crushing Plate (CODA)
+                1219883244, // Crushing Greaves (CODA)
+                1900280383 // Mark Judgment (CODA)
+              ],
+              [
+                2234240008, // Moonfang-X7 Helm
+                1581574297, // Moonfang-X7 Gauntlets
+                1571337215, // Moonfang-X7 Chassis
+                178689419, // Moonfang-X7 Greaves
+                3242850062 // Moonfang-X7 Mark
+              ]
+            ]
+          },
+          {
+            name: 'Prophecy Dungeon Warlock Armor',
+            season: 11,
+            itemGroups: [
+              [
+                2602907742, // Channeling Cowl (CODA)
+                1406846351, // Channeling Wraps (CODA)
+                1652467433, // Channeling Robes (CODA)
+                2022923313, // Channeling Treads (CODA)
+                2966633380 // Bond Judgment (CODA)
+              ],
+              [
+                2288398391, // Moonfang-X7 Crown
+                1361912510, // Moonfang-X7 Gloves
+                1658294130, // Moonfang-X7 Robe
+                1781294872, // Moonfang-X7 Boots
+                2295111683 // Moonfang-X7 Bond
+              ]
+            ]
+          },
+          {
+            name: 'Contact Extras',
+            season: 11,
+            items: [
+              1138508278, // Point of Contact
+              4115783783, // Envious Touch
+              4115783782 // Dark Omolon
+            ]
+          },
+          {
+            name: 'Prophecy Dungeon Extras',
+            season: 11,
+            items: [
+              1138508276 // Prophetic Visionary
             ]
           }
         ]
@@ -1385,6 +1534,38 @@ export default ([
             ]
           },
           {
+            name: 'Free Track',
+            season: 11,
+            itemGroups: [
+              [
+                2357297366, // Witherhoard
+                614426548, // Falling Guillotine
+                1216130969 // Cold Denial
+              ],
+              [
+                3097544525, // Holdfast Mask
+                3750210364, // Holdfast Grips
+                2930001572, // Holdfast Vest
+                3136019014, // Holdfast Strides
+                3673831673 // Holdfast Cloak
+              ],
+              [
+                1214477175, // Holdfast Helm
+                287888126, // Holdfast Gauntlets
+                1585947570, // Holdfast Plate
+                1131831128, // Holdfast Greaves
+                1756730947 // Holdfast Mark
+              ],
+              [
+                1173249516, // Holdfast Cover
+                327547301, // Holdfast Gloves
+                119457531, // Holdfast Robes
+                674876967, // Holdfast Boots
+                2771141010 // Holdfast Bond
+              ]
+            ]
+          },
+          {
             name: 'Paid Track',
             season: 8,
             itemGroups: [
@@ -1508,6 +1689,48 @@ export default ([
                 3922035879 // Big Red Entrance
               ]
             ]
+          },
+          {
+            name: 'Paid Track',
+            season: 11,
+            itemGroups: [
+              [
+                609666430, // White Collar Crime
+                2801311442, // Riptide
+                3103387299 // Dark Waters
+              ],
+              [
+                3971891703, // Siegebreak Mask
+                3045302654, // Siegebreak Grips
+                2574956338, // Siegebreak Vest
+                3889245656, // Siegebreak Strides
+                2745739715 // Siegebreak Cloak
+              ],
+              [
+                2884709491, // Siegebreak Helm
+                377715970, // Siegebreak Gauntlets
+                1764669670, // Siegebreak Plate
+                2463438524, // Siegebreak Greaves
+                2082764111 // Siegebreak Mark
+              ],
+              [
+                1034893694, // Siegebreak Cover
+                263289775, // Siegebreak Gloves
+                1598189577, // Siegebreak Jacket
+                413332433, // Siegebreak Boots
+                3378492868 // Siegebreak Bond
+              ],
+              [
+                772166226, // Nurturing Nature
+                3594816059, // Revolution Blade
+                372702809, // Last Bastion Shell
+                1901005163, // Warden's Wailer
+                1138508277, // Edge of Arrival
+                51755992, // Throne of Soot
+                51755993, // Horizons Beyond
+                4104235240 // Traveler Entrance
+              ]
+            ]
           }
         ]
       },
@@ -1614,9 +1837,9 @@ export default ([
                 1563263613, // Law of Induction
                 // 3438514430, // Peacebringer (Not planned to be sold for Bright Dust)
                 // 2020179519, // Polemology (Not planned to be sold for Bright Dust)
-                3093486579 // Sky/Perdition
+                3093486579, // Sky/Perdition
                 // 2744195002, // Third Rail (Not planned to be sold for Bright Dust)
-                // 519687404, // What If (Not planned to be sold for Bright Dust)
+                519687404 // What If
                 // 4159445096 // A Better Specimen (Not planned to be sold for Bright Dust)
               ],
               [
@@ -1681,7 +1904,7 @@ export default ([
                 // 4124216484, // Prized Ivory (Not planned to be sold for Bright Dust)
                 1418556229, // Lord of the Hunt
                 1828076537, // Necrosis
-                1733242439, // Only the Penitent Pass
+                1733242439 // Only the Penitent Pass
                 // 572589482 // Blissful Ignorance (Not planned to be sold for Bright Dust)
               ],
               [
@@ -1698,7 +1921,7 @@ export default ([
               [
                 // 3769820799, // Camping (Not planned to be sold for Bright Dust)
                 3806167517, // Fireteam Fire Up
-                // 3470992439, // Guitar Solo (Not planned to be sold for Bright Dust)
+                3470992439, // Guitar Solo
                 2291520183, // Ninja Vanish
                 // 3366702053, // Plant the Flag (Not planned to be sold for Bright Dust)
                 // 2035374481, // Precise Strike (Not planned to be sold for Bright Dust)
@@ -1845,7 +2068,7 @@ export default ([
                 1090082586, // Seraph Shell
                 1090082585, // CLVS-241 Shell
                 // 1090082584, // Almost Mighty Shell (Not planned to be sold for Bright Dust)
-                // 1090082591, // Constricting Shell (Never Sold)
+                1090082591, // Constricting Shell
                 1090082590, // CamNav-TTN Shell
                 1090082589 // Nucleus Shell
               ],
@@ -1853,7 +2076,7 @@ export default ([
                 4149534912, // Cover of the Exile Projection
                 4149534916, // Rasputin Projection
                 4149534917, // Trials of Osiris Projection
-                // 4149534918, // Hood of the Exile Projection (Not planned to be sold for Bright Dust)
+                4149534918, // Hood of the Exile Projection
                 4149534919 // Helm of the Exile Projection
               ]
             ]
@@ -1907,8 +2130,8 @@ export default ([
             season: 8,
             items: [
               // 4079130217, // Quality Cut (Not planned to be sold for Bright Dust)
-              4079130220 // Refashioned Shapes
-              // 4079130223, // The Machinoform (Not planned to be sold for Bright Dust)
+              4079130220, // Refashioned Shapes
+              4079130223 // The Machinoform
 
               // Has highResIcon but not attached to Tess
 
