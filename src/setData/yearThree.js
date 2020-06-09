@@ -1892,7 +1892,7 @@ export default ([
             name: 'Sparrows',
             season: 10,
             items: [
-              // 144819303, // The Blockbuster (Never Sold)
+              // 144819303, // The Blockbuster (Not planned to be sold for Bright Dust)
               144819302, // Magneton Thrust
               144819301, // Nightmare Stalker
               144819300, // Lunatic's Legacy
@@ -1934,7 +1934,7 @@ export default ([
             items: [
               3528646495, // Obsidian Wings
               3528646494, // Waking Nightmare
-              // 3528646493, // NS81 Reprisal Sprint (Never Sold)
+              // 3528646493, // NS81 Reprisal Sprint (Not planned to be sold for Bright Dust)
               3528646492, // Solar Sails
               3528646491 // Arrow of Time
               // 3528646490, // Knucklebug (Not planned to be sold for Bright Dust)
