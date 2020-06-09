@@ -31,6 +31,7 @@ export default {
   19024058: 3885534828, // Prometheus Lens
   2208405142: 2087362844, // Telesto
   3413074534: 1640774328, // Polaris Lance
+  814876685: 2027397534, // Trinity Ghoul
   3413860063: 4267969601, // Lord of Wolves
   3524313097: 2369153435, // Eriana's Vow
   4017959782: 725782604, // Symmetry
@@ -63,7 +64,6 @@ export default {
   // 3325463374: 0, // Thunderlord
   // 1201830623: 0, // Truth
   // 417164956: 0, // Jötunn
-  // 814876685: 0, // Trinity Ghoul
   // 814876684: 0, // Wish-Ender
   // 204878059: 0, // Malfeasance
 };
