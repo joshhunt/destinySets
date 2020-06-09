@@ -1,5 +1,6 @@
 // @flow
 import type { SetPage } from '../types';
+import * as common from './common';
 import { i18nDefinitionString as _ } from './utils';
 
 export default ([
@@ -1421,7 +1422,8 @@ export default ([
             ]
           }
         ]
-      }
+      },
+      common.SOLSTICE_OF_HEROES_YEAR_3
     ]
   },
   {
