@@ -820,18 +820,18 @@ export default ([
             season: 11,
             itemGroups: [
               [
-                3075372781, // Flowing Cowl (CODA)
-                4194072668, // Flowing Grips (CODA)
-                508076356, // Flowing Vest (CODA)
-                3155320806, // Flowing Boots (CODA)
-                1717940633 // Cloak Judgment (CODA)
-              ],
-              [
                 2623956730, // Moonfang-X7 Mask
                 100226755, // Moonfang-X7 Grips
                 4121885325, // Moonfang-X7 Rig
                 2487240821, // Moonfang-X7 Strides
                 2701727616 // Moonfang-X7 Cloak
+              ],
+              [
+                3075372781, // Flowing Cowl (CODA)
+                4194072668, // Flowing Grips (CODA)
+                508076356, // Flowing Vest (CODA)
+                3155320806, // Flowing Boots (CODA)
+                1717940633 // Cloak Judgment (CODA)
               ]
             ]
           },
@@ -840,18 +840,18 @@ export default ([
             season: 11,
             itemGroups: [
               [
-                3976073347, // Crushing Helm (CODA)
-                818644818, // Crushing Guard (CODA)
-                2570653206, // Crushing Plate (CODA)
-                1219883244, // Crushing Greaves (CODA)
-                1900280383 // Mark Judgment (CODA)
-              ],
-              [
                 2234240008, // Moonfang-X7 Helm
                 1581574297, // Moonfang-X7 Gauntlets
                 1571337215, // Moonfang-X7 Chassis
                 178689419, // Moonfang-X7 Greaves
                 3242850062 // Moonfang-X7 Mark
+              ],
+              [
+                3976073347, // Crushing Helm (CODA)
+                818644818, // Crushing Guard (CODA)
+                2570653206, // Crushing Plate (CODA)
+                1219883244, // Crushing Greaves (CODA)
+                1900280383 // Mark Judgment (CODA)
               ]
             ]
           },
@@ -860,18 +860,18 @@ export default ([
             season: 11,
             itemGroups: [
               [
-                2602907742, // Channeling Cowl (CODA)
-                1406846351, // Channeling Wraps (CODA)
-                1652467433, // Channeling Robes (CODA)
-                2022923313, // Channeling Treads (CODA)
-                2966633380 // Bond Judgment (CODA)
-              ],
-              [
                 2288398391, // Moonfang-X7 Crown
                 1361912510, // Moonfang-X7 Gloves
                 1658294130, // Moonfang-X7 Robe
                 1781294872, // Moonfang-X7 Boots
                 2295111683 // Moonfang-X7 Bond
+              ],
+              [
+                2602907742, // Channeling Cowl (CODA)
+                1406846351, // Channeling Wraps (CODA)
+                1652467433, // Channeling Robes (CODA)
+                2022923313, // Channeling Treads (CODA)
+                2966633380 // Bond Judgment (CODA)
               ]
             ]
           },
@@ -889,6 +889,13 @@ export default ([
             season: 11,
             items: [
               1138508276 // Prophetic Visionary
+            ]
+          },
+          {
+            name: 'Prismatic Recaster Extras',
+            season: 11,
+            items: [
+              577493531 // Enneagon
             ]
           }
         ]
