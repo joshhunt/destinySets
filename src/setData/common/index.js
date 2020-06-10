@@ -395,6 +395,24 @@ export const SOLSTICE_OF_HEROES_YEAR_3 = {
   big: false,
   sections: [
     {
+      name: 'Ghosts',
+      season: 11,
+      itemGroups: [
+        [
+          3478783829 // Awakened Shell
+        ],
+        []
+      ]
+    },
+    {
+      name: 'Emotes',
+      season: 11,
+      items: [
+        3574066955, // Catching Rays
+        801509177 // Power Rising
+      ]
+    },
+    {
       name: 'Extras',
       season: 11,
       items: [
