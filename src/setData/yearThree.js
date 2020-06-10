@@ -860,18 +860,18 @@ export default ([
             season: 11,
             itemGroups: [
               [
-                2602907742, // Channeling Cowl (CODA)
-                1406846351, // Channeling Wraps (CODA)
-                1652467433, // Channeling Robes (CODA)
-                2022923313, // Channeling Treads (CODA)
-                2966633380 // Bond Judgment (CODA)
-              ],
-              [
                 2288398391, // Moonfang-X7 Crown
                 1361912510, // Moonfang-X7 Gloves
                 1658294130, // Moonfang-X7 Robe
                 1781294872, // Moonfang-X7 Boots
                 2295111683 // Moonfang-X7 Bond
+              ],
+              [
+                2602907742, // Channeling Cowl (CODA)
+                1406846351, // Channeling Wraps (CODA)
+                1652467433, // Channeling Robes (CODA)
+                2022923313, // Channeling Treads (CODA)
+                2966633380 // Bond Judgment (CODA)
               ]
             ]
           },
