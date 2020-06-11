@@ -2372,15 +2372,6 @@ export default ([
           },
           {
             name: 'Transmat Effects',
-            season: 10,
-            items: [
-              3545885626, // Warsat Arrival
-              3545885627, // Cabal Entrance
-              3545885625 // SIVA Emergence
-            ]
-          },
-          {
-            name: 'Transmat Effects',
             season: 11,
             items: [
               1729618707, // Daito Capsule Entrance
