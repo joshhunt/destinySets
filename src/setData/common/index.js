@@ -409,7 +409,10 @@ export const SOLSTICE_OF_HEROES_YEAR_3 = {
       season: 11,
       items: [
         3574066955, // Catching Rays
-        801509177 // Power Rising
+        801509177, // Power Rising
+        4264494593, // Sweltering Heat
+        2840773569, //Twisty Dance
+        1623693459 // Intimidating Snap
       ]
     },
     {

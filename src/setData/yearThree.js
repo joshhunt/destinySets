@@ -1924,6 +1924,24 @@ export default ([
             ]
           },
           {
+            name: 'Ornaments',
+            season: 11,
+            itemGroups: [
+              [
+                // 3697492370, // Ahead of Its Time (Not planned to be sold for Bright Dust)
+                // 3365127084 // Sand and Sun (Not planned to be sold for Bright Dust)
+                1606218149, // Heated Exchange
+                3038888553, // Matterscourge
+                2347594371 // Objective Reality
+              ],
+              [
+                // 2779460227, // Arcturus Engine (Not planned to be sold for Bright Dust)
+                // 2549526496, // Hrafnagud (Not planned to be sold for Bright Dust)
+                // 1705887390 // Path to Convergence (Not planned to be sold for Bright Dust)
+              ]
+            ]
+          },
+          {
             name: 'Emotes & Finishers',
             season: 8,
             itemGroups: [
@@ -2022,6 +2040,39 @@ export default ([
             ]
           },
           {
+            name: 'Emotes',
+            season: 10,
+            itemGroups: [
+              [
+                // 1426984386, // Leggy Dance (Not planned to be sold for Bright Dust)
+                // 1163621614 // Victory Shout (Not planned to be sold for Bright Dust)
+                2837446538, // A Sour Taste
+                484425890, // Dawn of Invention
+                1872362630, // Dubious Correlation
+                3358915164, // Commanding Presence
+                2449520393, // Grasping Thoughts
+                391087589, // Elegant Twirl
+                346333546, // Fencing Salute
+                4015309571, // Fluid Dance
+                2850533948, // Air Riff
+                3793695881, // Pumping Up
+                964709622, // Study Time
+                3615496977, // Wacky Inflation
+                2161809809, // Eager Beaver
+                3086378545, // Miniscule Melody
+                3462529885 // Sign of Approval
+              ],
+              [
+                // 2902950991, // Aerial Snap Kick (Not planned to be sold for Bright Dust)
+                // 659427429, // Overhead Heel Crush (Not planned to be sold for Bright Dust)
+                // 2167929971, // Set and Spike (Not planned to be sold for Bright Dust)
+                // 1447853644, // Slice and Dice (Not planned to be sold for Bright Dust)
+                // 697327226, // Bulwark Hurl (Not planned to be sold for Bright Dust)
+                // 3401563735 // Nova Pulse (Not planned to be sold for Bright Dust)
+              ]
+            ]
+          },
+          {
             name: 'Ghosts',
             season: 8,
             itemGroups: [
@@ -2091,6 +2142,26 @@ export default ([
             ]
           },
           {
+            name: 'Ghosts',
+            season: 11,
+            itemGroups: [
+              [
+                // 2764545753 // Empathic Shell (Not planned to be sold for Bright Dust)
+                3398078482, // Adonis Shell
+                3398078487, // August Shell
+                3398078485, // Canopus Shell
+                3398078483 // Multiband Shell
+              ],
+              [
+                // 2062815069 // Depository Projection (Not planned to be sold for Bright Dust)
+                2062815066, // Daito Projection
+                2062815067, // Ennead Projection
+                2062815065, // Sterling Arbor Projection
+                2062815064 // Tetrahedron Projection
+              ]
+            ]
+          },
+          {
             name: 'Sparrows',
             season: 8,
             items: [
@@ -2135,6 +2206,17 @@ export default ([
             ]
           },
           {
+            name: 'Sparrows',
+            season: 11,
+            items: [
+              406589945, // Adonis Blue
+              406589948, // August Courser
+              406589944, // Canopus Trireme
+              406589947, // Galvanic Fork
+              406589950 // SK-1 Multiband Rover
+            ]
+          },
+          {
             name: 'Ships',
             season: 8,
             items: [
@@ -2174,6 +2256,18 @@ export default ([
             ]
           },
           {
+            name: 'Ships',
+            season: 11,
+            items: [
+              2266588628, // Callisto Lancer
+              2266588627, // Canopus Wing
+              2266588630, // Rimskipper Sling
+              2266588631, // The Pallbearer
+              2266588626, // Velocimancer
+              2266588629 // VG-17 Flying Fortress
+            ]
+          },
+          {
             name: 'Shaders',
             season: 8,
             items: [
@@ -2206,6 +2300,16 @@ export default ([
             ]
           },
           {
+            name: 'Shaders',
+            season: 11,
+            items: [
+              1046971210, // Biolume
+              1046971211, // Butterbark
+              1046971208, // Gloamstrife
+              1046971209 // Jacarina
+            ]
+          },
+          {
             name: 'Transmat Effects',
             season: 8,
             items: [
@@ -2232,6 +2336,23 @@ export default ([
               3545885626, // Warsat Arrival
               3545885627, // Cabal Entrance
               3545885625 // SIVA Emergence
+            ]
+          },
+          {
+            name: 'Transmat Effects',
+            season: 10,
+            items: [
+              3545885626, // Warsat Arrival
+              3545885627, // Cabal Entrance
+              3545885625 // SIVA Emergence
+            ]
+          },
+          {
+            name: 'Transmat Effects',
+            season: 11,
+            items: [
+              1729618706, //Champion Entrance
+              1729618707 // Daito Capsule Entrance
             ]
           }
         ]
