@@ -897,6 +897,13 @@ export default ([
             items: [
               577493531 // Enneagon
             ]
+          },
+          {
+            name: 'End-of-Season Event Extras',
+            season: 11,
+            items: [
+              3401308133 // Calamity Protocol
+            ]
           }
         ]
       }
