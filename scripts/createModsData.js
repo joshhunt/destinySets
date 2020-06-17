@@ -117,6 +117,13 @@ const matchArtifactMods = categoryName => ({ categoryName, matchArtifactMods });
 
 const MOD_CATEGORISER = [
   matchArtifactMods('Seasonal Artifact mod'),
+  matchPlugCategory('Seasonal Mod: Outlaw', 'enhancements.season_outlaw'),
+  matchPlugCategory('Seasonal Mod: Forge', 'enhancements.season_forge'),
+  matchPlugCategory('Seasonal Mod: Opulence', 'enhancements.season_opulence'),
+  matchPlugCategory('Seasonal Mod: Undying', 'enhancements.season_maverick'),
+  matchPlugCategory('Seasonal Mod: Dawn', 'enhancements.season_v470'),
+  matchPlugCategory('Seasonal Mod: Worthy', 'enhancements.season_v480'),
+  matchPlugCategory('Seasonal Mod: Arrivals', 'enhancements.season_v490'),
   // matchPlugCategory('General', 'enhancements.v2_general'), // must be before scavenger to prevent Circuit Scavenger mod from being classed as ammo scavenger
   matchName('Ammo Finder', /\sAmmo Finder$/g),
   matchName('Ammo Scavenger', /\sScavenger$/g),
@@ -125,12 +132,6 @@ const MOD_CATEGORISER = [
   matchName('Dexterity', /\sDexterity$/g),
   matchName('Loaders', /\sLoader$/g, /\sReloader$/g),
   matchName('Unflinching aim', /^(Enhanced )?Unflinching/g),
-  matchPlugCategory('Seasonal Mod: Outlaw', 'enhancements.season_outlaw'),
-  matchPlugCategory('Seasonal Mod: Forge', 'enhancements.season_forge'),
-  matchPlugCategory('Seasonal Mod: Opulence', 'enhancements.season_opulence'),
-  matchPlugCategory('Seasonal Mod: Undying', 'enhancements.season_maverick'),
-  matchPlugCategory('Seasonal Mod: Dawn', 'enhancements.season_v470'),
-  matchPlugCategory('Seasonal Mod: Worthy', 'enhancements.season_v480'),
   matchName('General', /.*/)
 ];
 

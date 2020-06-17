@@ -15,7 +15,7 @@ export default [
             nameHash: 1198124803,
             itemGroups: [
               [
-                739803544 // Enhanced Scatter Projectile Targeting
+                3213968580 // Enhanced Scatter Projectile Targeting
               ],
               [
                 3786078704, // Precision Weapon Targeting
@@ -31,7 +31,7 @@ export default [
               {
                 name: "Seasonal Artifact mod",
                 items: [
-                  739803544 // Enhanced Scatter Projectile Targeting
+                  3213968580 // Enhanced Scatter Projectile Targeting
                 ]
               },
               {
@@ -206,8 +206,9 @@ export default [
             nameHash: 1198124803,
             itemGroups: [
               [
-                739803545, // Enhanced Auto Rifle Loader
-                739803550 // Enhanced Small Arms Loader
+                3213968582, // Enhanced Pulse Rifle Loader
+                3213968578, // Enhanced Bow Loader
+                3175764267 // Unstoppable Pulse Rifle
               ],
               [
                 403494087 // Fastball
@@ -222,8 +223,9 @@ export default [
               {
                 name: "Seasonal Artifact mod",
                 items: [
-                  739803545, // Enhanced Auto Rifle Loader
-                  739803550 // Enhanced Small Arms Loader
+                  3213968582, // Enhanced Pulse Rifle Loader
+                  3213968578, // Enhanced Bow Loader
+                  3175764267 // Unstoppable Pulse Rifle
                 ]
               },
               {
@@ -376,10 +378,11 @@ export default [
             nameHash: 1198124803,
             itemGroups: [
               [
-                739803547, // Enhanced Unflinching Auto Rifle Aim
-                820036194, // Surge Detonators
-                820036196, // Inferno Whip
-                820036197 // Flare-Up
+                3213968581, // Enhanced Unflinching Rifle Aim
+                3175764264, // Counter Charge
+                3175764266, // Overload Grenades
+                3175764269, // Breach Resonator
+                3175764268 // Inferno Whip
               ],
               [
                 1541497724, // Unflinching Light Arms Aim
@@ -396,10 +399,11 @@ export default [
               {
                 name: "Seasonal Artifact mod",
                 items: [
-                  739803547, // Enhanced Unflinching Auto Rifle Aim
-                  820036194, // Surge Detonators
-                  820036196, // Inferno Whip
-                  820036197 // Flare-Up
+                  3213968581, // Enhanced Unflinching Rifle Aim
+                  3175764264, // Counter Charge
+                  3175764266, // Overload Grenades
+                  3175764269, // Breach Resonator
+                  3175764268 // Inferno Whip
                 ]
               },
               {
@@ -579,7 +583,11 @@ export default [
             nameHash: 1198124803,
             itemGroups: [
               [
-                739803551 // Enhanced Sword Scavenger
+                3465659109, // Flourishing Blade
+                3465659111, // Automatic Prize
+                3465659104, // Dimensional Tithes
+                3465659105, // Ascendant Bounty
+                3213968579 // Enhanced Sword Scavenger
               ],
               [
                 1708067044 // Traction
@@ -599,7 +607,11 @@ export default [
               {
                 name: "Seasonal Artifact mod",
                 items: [
-                  739803551 // Enhanced Sword Scavenger
+                  3465659109, // Flourishing Blade
+                  3465659111, // Automatic Prize
+                  3465659104, // Dimensional Tithes
+                  3465659105, // Ascendant Bounty
+                  3213968579 // Enhanced Sword Scavenger
                 ]
               },
               {
@@ -789,10 +801,11 @@ export default [
             nameHash: 1198124803,
             itemGroups: [
               [
-                3235387874, // Passive Guard
-                3235387873, // Soul of the Praxic Fire
-                3235387879, // Thunder Coil
-                3235387878 // Lightning Strikes Twice
+                4186620519, // Oppressive Darkness
+                4186620516, // Solar Plexus
+                4186620517, // Heavy Finisher
+                4186620514, // Volatile Conduction
+                4186620515 // Guardian Angel
               ],
               [
                 3320641683, // Absolution
@@ -805,10 +818,11 @@ export default [
               {
                 name: "Seasonal Artifact mod",
                 items: [
-                  3235387874, // Passive Guard
-                  3235387873, // Soul of the Praxic Fire
-                  3235387879, // Thunder Coil
-                  3235387878 // Lightning Strikes Twice
+                  4186620519, // Oppressive Darkness
+                  4186620516, // Solar Plexus
+                  4186620517, // Heavy Finisher
+                  4186620514, // Volatile Conduction
+                  4186620515 // Guardian Angel
                 ]
               },
               {
@@ -928,13 +942,7 @@ export default [
             nameHash: 1198124803,
             itemGroups: [
               [
-                1974622780, // Flourishing Blade
-                1974622783, // Splintered Gladius
-                1974622782, // While Ye May
-                1974622777, // Prized Shooting
-                1974622776, // Automatic Prize
-                820036195, // Hammer of the Warmind
-                3235387872 // Tyrant's Surge
+                3465659110 // Prized Shooting
               ],
               [
                 4048838440, // Discipline Mod
@@ -990,13 +998,7 @@ export default [
               {
                 name: "Seasonal Artifact mod",
                 items: [
-                  1974622780, // Flourishing Blade
-                  1974622783, // Splintered Gladius
-                  1974622782, // While Ye May
-                  1974622777, // Prized Shooting
-                  1974622776, // Automatic Prize
-                  820036195, // Hammer of the Warmind
-                  3235387872 // Tyrant's Surge
+                  3465659110 // Prized Shooting
                 ]
               },
               {
@@ -1102,6 +1104,12 @@ export default [
                 1789319807, // Strength of Rasputin
                 1789319804, // Sheltering Energy
                 1789319805 // Chosen of the Warmind
+              ],
+              [
+                2979815164, // Swift Charge
+                2979815165, // Lucent Blade
+                2979815166, // Font of Light
+                2979815167 // Radiant Light
               ]
             ],
             groups: [
@@ -1147,6 +1155,15 @@ export default [
                   1789319804, // Sheltering Energy
                   1789319805 // Chosen of the Warmind
                 ]
+              },
+              {
+                name: "Seasonal Mod: Arrivals",
+                items: [
+                  2979815164, // Swift Charge
+                  2979815165, // Lucent Blade
+                  2979815166, // Font of Light
+                  2979815167 // Radiant Light
+                ]
               }
             ]
           },
@@ -1181,6 +1198,12 @@ export default [
                 2216063961, // Fireteam Medic
                 2216063960, // Rage of the Warmind
                 2216063967 // Incinerating Light
+              ],
+              [
+                4272180933, // Sustained Charge
+                4272180932, // Argent Ordnance
+                4272180935, // Kindling the Flame
+                4272180934 // Supercharged
               ]
             ],
             groups: [
@@ -1226,6 +1249,15 @@ export default [
                   2216063960, // Rage of the Warmind
                   2216063967 // Incinerating Light
                 ]
+              },
+              {
+                name: "Seasonal Mod: Arrivals",
+                items: [
+                  4272180933, // Sustained Charge
+                  4272180932, // Argent Ordnance
+                  4272180935, // Kindling the Flame
+                  4272180934 // Supercharged
+                ]
               }
             ]
           },
@@ -1249,11 +1281,9 @@ export default [
               ],
               [
                 3523075120, // Protective Light
+                3523075121, // Extra Reserves
                 3523075122, // Precisely Charged
                 3523075123 // Stacks on Stacks
-              ],
-              [
-                3523075121 // Extra Reserves
               ],
               [
                 179977568, // Grasp of the Warmind
@@ -1262,6 +1292,12 @@ export default [
                 2597888508, // Warmind's Protection
                 2597888509, // Warmind's Longevity
                 2597888506 // Light from Darkness
+              ],
+              [
+                2263321584, // Precision Charge
+                2263321585, // Surprise Attack
+                2263321586, // Energy Converter
+                2263321587 // Charge Harvester
               ]
             ],
             groups: [
@@ -1292,14 +1328,9 @@ export default [
                 name: "Seasonal Mod: Dawn",
                 items: [
                   3523075120, // Protective Light
+                  3523075121, // Extra Reserves
                   3523075122, // Precisely Charged
                   3523075123 // Stacks on Stacks
-                ]
-              },
-              {
-                name: "Ammo Reserves",
-                items: [
-                  3523075121 // Extra Reserves
                 ]
               },
               {
@@ -1311,6 +1342,15 @@ export default [
                   2597888508, // Warmind's Protection
                   2597888509, // Warmind's Longevity
                   2597888506 // Light from Darkness
+                ]
+              },
+              {
+                name: "Seasonal Mod: Arrivals",
+                items: [
+                  2263321584, // Precision Charge
+                  2263321585, // Surprise Attack
+                  2263321586, // Energy Converter
+                  2263321587 // Charge Harvester
                 ]
               }
             ]
