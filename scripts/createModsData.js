@@ -115,24 +115,62 @@ const matchPlugCategory = (categoryName, ...plugCategories) => ({
 
 const matchArtifactMods = categoryName => ({ categoryName, matchArtifactMods });
 
+const CATEGORY_GENERAL = 'General';
+const CATEGORY_SEASONAL_ARTIFACT = 'Seasonal Artifact';
+const CATEGORY_AMMO_FINDER = 'Ammo Finder';
+const CATEGORY_AMMO_SCAVENGER = 'Ammo Scavenger';
+const CATEGORY_AMMO_RESERVES = 'Ammo Reserves';
+const CATEGORY_TARGETING = 'Targeting';
+const CATEGORY_DEXTERITY = 'Dexterity';
+const CATEGORY_LOADERS = 'Loaders';
+const CATEGORY_UNFLINCHING_AIM = 'Unflinching Aim';
+const CATEGORY_SEASON_OUTLAW = 'Season of the Outlaw';
+const CATEGORY_SEASON_FORGE = 'Season of the Forge';
+const CATEGORY_SEASON_DRIFTER = 'Season of the Drifter';
+const CATEGORY_SEASON_OPULENCE = 'Season of Opulence';
+const CATEGORY_SEASON_UNDYING = 'Season of the Undying';
+const CATEGORY_SEASON_DAWN = 'Season of Dawn';
+const CATEGORY_SEASON_WORTHY = 'Season of the Worthy';
+const CATEGORY_SEASON_ARRIVALS = 'Season of Arrivals';
+
 const MOD_CATEGORISER = [
-  matchArtifactMods('Seasonal Artifact mod'),
-  matchPlugCategory('Seasonal Mod: Outlaw', 'enhancements.season_outlaw'),
-  matchPlugCategory('Seasonal Mod: Forge', 'enhancements.season_forge'),
-  matchPlugCategory('Seasonal Mod: Opulence', 'enhancements.season_opulence'),
-  matchPlugCategory('Seasonal Mod: Undying', 'enhancements.season_maverick'),
-  matchPlugCategory('Seasonal Mod: Dawn', 'enhancements.season_v470'),
-  matchPlugCategory('Seasonal Mod: Worthy', 'enhancements.season_v480'),
-  matchPlugCategory('Seasonal Mod: Arrivals', 'enhancements.season_v490'),
+  matchArtifactMods(CATEGORY_SEASONAL_ARTIFACT),
+  matchPlugCategory(CATEGORY_SEASON_OUTLAW, 'enhancements.season_outlaw'),
+  matchPlugCategory(CATEGORY_SEASON_FORGE, 'enhancements.season_forge'),
+  matchPlugCategory(CATEGORY_SEASON_OPULENCE, 'enhancements.season_opulence'),
+  matchPlugCategory(CATEGORY_SEASON_UNDYING, 'enhancements.season_maverick'),
+  matchPlugCategory(CATEGORY_SEASON_DAWN, 'enhancements.season_v470'),
+  matchPlugCategory(CATEGORY_SEASON_WORTHY, 'enhancements.season_v480'),
+  matchPlugCategory(CATEGORY_SEASON_ARRIVALS, 'enhancements.season_v490'),
   // matchPlugCategory('General', 'enhancements.v2_general'), // must be before scavenger to prevent Circuit Scavenger mod from being classed as ammo scavenger
-  matchName('Ammo Finder', /\sAmmo Finder$/g),
-  matchName('Ammo Scavenger', /\sScavenger$/g),
-  matchName('Ammo Reserves', /\sReserves$/g),
-  matchName('Targeting', /\sTargeting$/g),
-  matchName('Dexterity', /\sDexterity$/g),
-  matchName('Loaders', /\sLoader$/g, /\sReloader$/g),
-  matchName('Unflinching aim', /^(Enhanced )?Unflinching/g),
-  matchName('General', /.*/)
+  matchName(CATEGORY_AMMO_FINDER, /\sAmmo Finder$/g),
+  matchName(CATEGORY_AMMO_SCAVENGER, /\sScavenger$/g),
+  matchName(CATEGORY_AMMO_RESERVES, /\sReserves$/g),
+  matchName(CATEGORY_TARGETING, /\sTargeting$/g),
+  matchName(CATEGORY_DEXTERITY, /\sDexterity$/g),
+  matchName(CATEGORY_LOADERS, /\sLoader$/g, /\sReloader$/g),
+  matchName(CATEGORY_UNFLINCHING_AIM, /^(Enhanced )?Unflinching/g),
+  matchName(CATEGORY_GENERAL, /.*/)
+];
+
+const CATERGORY_DISPLAY_ORDER = [
+  CATEGORY_GENERAL,
+  CATEGORY_SEASONAL_ARTIFACT,
+  CATEGORY_AMMO_FINDER,
+  CATEGORY_AMMO_SCAVENGER,
+  CATEGORY_AMMO_RESERVES,
+  CATEGORY_TARGETING,
+  CATEGORY_DEXTERITY,
+  CATEGORY_LOADERS,
+  CATEGORY_UNFLINCHING_AIM,
+  CATEGORY_SEASON_OUTLAW,
+  CATEGORY_SEASON_FORGE,
+  CATEGORY_SEASON_DRIFTER,
+  CATEGORY_SEASON_OPULENCE,
+  CATEGORY_SEASON_UNDYING,
+  CATEGORY_SEASON_DAWN,
+  CATEGORY_SEASON_WORTHY,
+  CATEGORY_SEASON_ARRIVALS
 ];
 
 const collectRewardsFromArtifacts = DestinyArtifactDefinition => {
@@ -253,6 +291,7 @@ function prettySetData(setData, DestinyInventoryItemDefinition) {
             .mapValues(items => items.map(i => i.hash))
             .toPairs()
             .map(([name, items]) => ({ name, items }))
+            .sortBy(group => CATERGORY_DISPLAY_ORDER.indexOf(group.name))
             .value();
 
           const itemGroups = groups.map(g => g.items);
