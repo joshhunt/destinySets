@@ -32,9 +32,9 @@ export default ([
         ],
         [
           2764373298, // The Inverted Spire
-          4238775804, // Operation Radiolarian Cascade
           4238775806, // Unconventional Research
-          4238775807 // A Mind Forever Changing
+          4238775807, // A Mind Forever Changing
+          4238775804 // Operation Radiolarian Cascade
         ]
       ),
       {
@@ -72,8 +72,8 @@ export default ([
             name: 'Nightfall Emblems',
             items: [
               2726018197, // Exodus Crash
-              769740914, // Better Failsafe Than Sorry
               769740915, // Operation Piccolo
+              769740914, // Better Failsafe Than Sorry
               769740913 // Operation… Oboe?
             ]
           }
@@ -94,8 +94,8 @@ export default ([
             items: [
               997563763, // The Arms Dealer
               2399682325, // Outlawed and Unsanctioned
-              2399682327, // A Flare for the Dramatic
-              2399682324 // No More Flame Turrets
+              2399682324, // No More Flame Turrets
+              2399682327 // A Flare for the Dramatic
             ]
           }
         ]
@@ -115,8 +115,8 @@ export default ([
             items: [
               148664963, // Savathûn's Song
               4040838277, // Search and Rescue
-              4040838279, // Praxic Fire
-              4040838276 // Watcher from Beyond
+              4040838276, // Watcher from Beyond
+              4040838279 // Praxic Fire
             ]
           }
         ]
@@ -142,8 +142,8 @@ export default ([
             name: 'Nightfall Emblems',
             items: [
               2933984410, // Tree of Probabilities
-              2178159623, // No More Lasers
               2178159622, // Valus Intrigue
+              2178159623, // No More Lasers
               2178159620 // A Forest of Red
             ]
           }
@@ -165,8 +165,8 @@ export default ([
             name: 'Nightfall Emblems',
             items: [
               893502917, // A Garden World
-              1505307650, // Blast from the Past
               1505307651, // Pulling Out the Roots
+              1505307650, // Blast from the Past
               1505307649 // Odysseus's Offspring
             ]
           }
@@ -194,9 +194,9 @@ export default ([
             name: 'Nightfall Emblems',
             items: [
               3427785728, // Will of the Thousands
+              1456844008, // Giantfall
               1456844009, // Feast of Worms
-              1456844010, // Death to the Deathless
-              1456844008 // Giantfall
+              1456844010 // Death to the Deathless
             ]
           }
         ]
@@ -218,8 +218,8 @@ export default ([
             items: [
               2136479687, // Strange Terrain
               1901100185, // Maleficarum Interrupted
-              1901100187, // Bane of Nokris
-              1901100184 // Purifying Light
+              1901100184, // Purifying Light
+              1901100187 // Bane of Nokris
             ]
           }
         ]
