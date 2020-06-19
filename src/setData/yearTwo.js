@@ -2586,7 +2586,7 @@ export default ([
               // 258623690, // Expedition-JT (Wasn't sold for Bright Dust)
               258623691, // The Motherlode
               258623692, // The Grateful Crane
-              // 258623693, // The Calypso (Wasn't sold for Bright Dust)
+              258623693, // The Calypso (Wasn't sold for Bright Dust)
               258623694, // Blood in the Water
               258623695 // One Fell Swoop
             ]

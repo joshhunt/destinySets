@@ -401,7 +401,9 @@ export const SOLSTICE_OF_HEROES_YEAR_3 = {
         [
           3478783829 // Awakened Shell
         ],
-        []
+        [
+          1821549984 // Sand Castle Projection
+        ]
       ]
     },
     {
