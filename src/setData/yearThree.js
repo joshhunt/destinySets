@@ -2025,7 +2025,7 @@ export default ([
               ],
               [
                 //  1395929128, // Clock Cleaner (Not planned to be sold for Bright Dust)
-                //  885220736, // Fist of Fury (Not planned to be sold for Bright Dust)
+                885220736, // Fist of Fury (Not planned to be sold for Bright Dust)
                 //  3643356340, // Flash Kick (Not planned to be sold for Bright Dust)
                 //  1294248797, // Sure Shot (Not planned to be sold for Bright Dust)
                 //  3474738931, // Nail on the Head (Not planned to be sold for Bright Dust)
