@@ -1874,7 +1874,7 @@ export default ([
                 // 1360105767, // Járngreipr (Not planned to be sold for Bright Dust)
                 1563263613, // Law of Induction
                 // 3438514430, // Peacebringer (Not planned to be sold for Bright Dust)
-                // 2020179519, // Polemology (Not planned to be sold for Bright Dust)
+                2020179519, // Polemology
                 3093486579, // Sky/Perdition
                 // 2744195002, // Third Rail (Not planned to be sold for Bright Dust)
                 519687404 // What If
