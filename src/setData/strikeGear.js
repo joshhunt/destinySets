@@ -167,7 +167,8 @@ export default ([
               893502917, // A Garden World
               1505307651, // Pulling Out the Roots
               1505307650, // Blast from the Past
-              1505307649 // Odysseus's Offspring
+              1505307649, // Odysseus's Offspring
+              2939572591 // Master Gardener
             ]
           }
         ]
