@@ -1871,7 +1871,7 @@ export default ([
                 // 651701175, // Big Blind (Not planned to be sold for Bright Dust)
                 // 3844102542, // Father of Islands (Not planned to be sold for Bright Dust)
                 // 3432171457, // Heretic Robe (Not planned to be sold for Bright Dust)
-                // 1360105767, // Járngreipr (Not planned to be sold for Bright Dust)
+                1360105767, // Járngreipr
                 1563263613, // Law of Induction
                 // 3438514430, // Peacebringer (Not planned to be sold for Bright Dust)
                 2020179519, // Polemology
