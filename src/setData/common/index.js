@@ -395,33 +395,161 @@ export const SOLSTICE_OF_HEROES_YEAR_3 = {
   big: false,
   sections: [
     {
-      name: 'Ghosts',
+      name: 'Hunter Armor',
       season: 11,
       itemGroups: [
         [
-          3478783829 // Awakened Shell
+          2479769639, // Solstice Mask (Renewed)
+          426368686, // Solstice Grasps (Renewed)
+          1166603202, // Solstice Vest (Renewed)
+          2933904296, // Solstice Strides (Renewed)
+          856633363 // Solstice Cloak (Renewed)
         ],
         [
-          1821549984 // Sand Castle Projection
+          510413482, // Solstice Mask (Majestic)
+          515974643, // Solstice Grasps (Majestic)
+          3243833629, // Solstice Vest (Majestic)
+          250928581, // Solstice Strides (Majestic)
+          410854224 // Solstice Cloak (Majestic)
+        ],
+        [
+          3742741341, // Solstice Mask (Magnificent)
+          2629627596, // Solstice Grasps (Magnificent)
+          1167143060, // Solstice Vest (Magnificent)
+          3275463030, // Solstice Strides (Magnificent)
+          2335430633 // Solstice Cloak (Magnificent)
+        ],
+        [
+          3656394176, // Solstice Mask (Magnificent)
+          1222467473, // Solstice Grasps (Magnificent)
+          2723301959, // Solstice Vest (Magnificent)
+          629159779, // Solstice Strides (Magnificent)
+          3438799702 // Solstice Cloak (Magnificent)
         ]
       ]
     },
     {
-      name: 'Emotes',
+      name: 'Titan Armor',
+      season: 11,
+      itemGroups: [
+        [
+          4153787689, // Solstice Helm (Renewed)
+          1945196704, // Solstice Gauntlets (Renewed)
+          749733608, // Solstice Plate (Renewed)
+          640136282, // Solstice Greaves (Renewed)
+          2451830981 // Solstice Mark (Renewed)
+        ],
+        [
+          4116309852, // Solstice Helm (Majestic)
+          1217693397, // Solstice Gauntlets (Majestic)
+          2221612747, // Solstice Plate (Majestic)
+          2793815607, // Solstice Greaves (Majestic)
+          578329058 // Solstice Mark (Majestic)
+        ],
+        [
+          3081894763, // Solstice Helm (Magnificent)
+          1404151898, // Solstice Gauntlets (Magnificent)
+          3654315694, //  Solstice Plate (Magnificent)
+          2660623764, // Solstice Greaves (Magnificent)
+          3972410231 // Solstice Mark (Magnificent)
+        ],
+        [
+          393225356, // Solstice Helm (Magnificent)
+          3884067141, //Solstice Gauntlets (Magnificent)
+          2967332123, // Solstice Plate (Magnificent)
+          4231293639, // Solstice Graves (Magnificent)
+          1324151602 // Solstice Mark (Magnificent)
+        ]
+      ]
+    },
+    {
+      name: 'Warlock Armor',
+      season: 11,
+      itemGroups: [
+        [
+          4116537170, // Solstice Hood (Renewed)
+          287923131, // Solstice Gloves (Renewed)
+          242828821, // Solstice Robes (Renewed)
+          2991353901, // Solstice Boots (Renewed)
+          3235287656 //  Solstice Bond (Renewed)
+        ],
+        [
+          3162915011, // Solstice Hood (Majestic)
+          3834419602, // Solstice Gloves (Majestic)
+          211668054, // Solstice Robes (Majestic)
+          4235761196, // Solstice Boots (Majestic)
+          3836262527 // Solstice Bond (Majestic)
+        ],
+        [
+          1858878452, // Solstice Hood (Magnificent)
+          731283469, // Solstice Gloves (Magnificent)
+          803600051, // Solstice Robes (Magnificent)
+          1402082511, // Solstice Boots (Magnificent)
+          3009026026 // Solstice Bond (Magnificent)
+        ],
+        [
+          1529650477, // Solstice Hood (Magnificent)
+          2182316188, // Solstice Gloves (Magnificent)
+          486920324, // Solstice Robes (Magnificent)
+          1185244198, // Solstice Boots (Magnificent)
+          1230647257 // Solstice Bond (Magnificent)
+        ]
+      ]
+    },
+    {
+      name: 'Emotes & Finishers',
+      season: 11,
+      itemGroups: [
+        [
+          3574066955, // Catching Rays
+          801509177, // Power Rising
+          4264494593, // Sweltering Heat
+          2840773569, //Twisty Dance
+          1623693459 // Intimidating Snap
+        ],
+        [
+          876119751 // Iron Severance
+        ]
+      ]
+    },
+    {
+      name: 'Ghosts',
+      season: 11,
+      itemGroups: [
+        [
+          217626588, // Backspin Shell
+          217626590, // Spelunking Shell
+          217626591 // Cabana Shell
+        ],
+        [
+          1821549984, // Sand Castle Projection
+          1821549985 // Flamingo Projection
+        ]
+      ]
+    },
+    {
+      name: 'Sparrows',
       season: 11,
       items: [
-        3574066955, // Catching Rays
-        801509177, // Power Rising
-        4264494593, // Sweltering Heat
-        2840773569, //Twisty Dance
-        1623693459 // Intimidating Snap
+        320750826, // Eira's Grace
+        320750827 // On Gilt Wings
+      ]
+    },
+    {
+      name: 'Ships',
+      season: 11,
+      items: [
+        2924794318 // Solpiercer
       ]
     },
     {
       name: 'Extras',
       season: 11,
       items: [
-        1138508286 // Magnificence in Action
+        1138508286, // Magnificence in Action
+        261886690, // Oiled Algae
+        261886691, // Vintage Timber
+        147998763 // Shocking Entrance
       ]
     }
   ]
