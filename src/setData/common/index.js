@@ -508,7 +508,7 @@ export const SOLSTICE_OF_HEROES_YEAR_3 = {
           1623693459 // Intimidating Snap
         ],
         [
-          876119751 // Iron Severance
+          // 876119751 // Iron Severance (Not planned to be sold for Bright Dust)
         ]
       ]
     },
@@ -517,9 +517,9 @@ export const SOLSTICE_OF_HEROES_YEAR_3 = {
       season: 11,
       itemGroups: [
         [
-          217626588, // Backspin Shell
           217626590, // Spelunking Shell
-          217626591 // Cabana Shell
+          217626591, // Cabana Shell
+          217626588 // Backspin Shell
         ],
         [
           1821549984, // Sand Castle Projection
@@ -547,8 +547,8 @@ export const SOLSTICE_OF_HEROES_YEAR_3 = {
       season: 11,
       items: [
         1138508286, // Magnificence in Action
-        261886690, // Oiled Algae
         261886691, // Vintage Timber
+        261886690, // Oiled Algae
         147998763 // Shocking Entrance
       ]
     }
