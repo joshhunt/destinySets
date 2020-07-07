@@ -888,7 +888,9 @@ export default ([
             name: 'Prophecy Dungeon Extras',
             season: 11,
             items: [
-              1138508276 // Prophetic Visionary
+              1138508276, // Prophetic Visionary
+              732682038, // Cottontail Shell
+              2232750624 // Of Ten Suns
             ]
           },
           {
@@ -1456,6 +1458,15 @@ export default ([
             items: [
               1328791939 // Resurrecting Flight
             ]
+          },
+
+          {
+            name: 'Extras',
+            season: 11,
+            items: [
+              1138508287, // Accolades on Accolades
+              3622268497 // Savior / Sunset
+            ]
           }
         ]
       },
@@ -2000,7 +2011,7 @@ export default ([
             ]
           },
           {
-            name: 'Emotes',
+            name: 'Emotes & Finishers',
             season: 9,
             itemGroups: [
               [
@@ -2025,7 +2036,7 @@ export default ([
               ],
               [
                 //  1395929128, // Clock Cleaner (Not planned to be sold for Bright Dust)
-                885220736, // Fist of Fury (Not planned to be sold for Bright Dust)
+                885220736 // Fist of Fury (Not planned to be sold for Bright Dust)
                 //  3643356340, // Flash Kick (Not planned to be sold for Bright Dust)
                 //  1294248797, // Sure Shot (Not planned to be sold for Bright Dust)
                 //  3474738931, // Nail on the Head (Not planned to be sold for Bright Dust)
