@@ -888,7 +888,9 @@ export default ([
             name: 'Prophecy Dungeon Extras',
             season: 11,
             items: [
-              1138508276 // Prophetic Visionary
+              1138508276, // Prophetic Visionary
+              732682038, // Cottontail Shell
+              2232750624 // Of Ten Suns
             ]
           },
           {
@@ -1456,6 +1458,16 @@ export default ([
             items: [
               1328791939 // Resurrecting Flight
             ]
+          },
+
+          {
+            name: 'Extras',
+            season: 11,
+            items: [
+              1138508287, // Accolades on Accolades
+              3605490916, // Eclipsed Void
+              3622268497 // Savior / Sunset
+            ]
           }
         ]
       },
@@ -1873,7 +1885,7 @@ export default ([
                 // 3432171457, // Heretic Robe (Not planned to be sold for Bright Dust)
                 1360105767, // Járngreipr
                 1563263613, // Law of Induction
-                // 3438514430, // Peacebringer (Not planned to be sold for Bright Dust)
+                3438514430, // Peacebringer
                 2020179519, // Polemology
                 3093486579, // Sky/Perdition
                 // 2744195002, // Third Rail (Not planned to be sold for Bright Dust)
@@ -2000,7 +2012,7 @@ export default ([
             ]
           },
           {
-            name: 'Emotes',
+            name: 'Emotes & Finishers',
             season: 9,
             itemGroups: [
               [
@@ -2025,7 +2037,7 @@ export default ([
               ],
               [
                 //  1395929128, // Clock Cleaner (Not planned to be sold for Bright Dust)
-                885220736, // Fist of Fury (Not planned to be sold for Bright Dust)
+                885220736 // Fist of Fury (Not planned to be sold for Bright Dust)
                 //  3643356340, // Flash Kick (Not planned to be sold for Bright Dust)
                 //  1294248797, // Sure Shot (Not planned to be sold for Bright Dust)
                 //  3474738931, // Nail on the Head (Not planned to be sold for Bright Dust)
@@ -2108,7 +2120,7 @@ export default ([
               [
                 // 779216204, // Harper's Shell (Not planned to be sold for Bright Dust)
                 779216202, // Lander Shell
-                // 779216203, // Lion Guardant Shell (Not planned to be sold for Bright Dust)
+                779216203, // Lion Guardant Shell
                 779216206, // Lunar Shell
                 779216207, // Ophiuchus Shell
                 779216200, // Propheteer Shell
