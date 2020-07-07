@@ -2504,7 +2504,7 @@ export default ([
               1295682251, // IMPERIAL BEAST PROJECTION
               1295682250, // CHALICE PROJECTION
               1295682249, // CROWN OF SORROW PROJECTION
-              // 1295682248, // EMPEROR CALUS PROJECTION (Wasn't sold for Bright Dust)
+              1295682248, // EMPEROR CALUS PROJECTION
               1295682255, // DARING HAT PROJECTION
               // 3527564900, // IMPERIAL AXES PROJECTION (Wasn't sold for Bright Dust)
               // 3527564901, // DROPSHIP PROJECTION (Wasn't sold for Bright Dust)

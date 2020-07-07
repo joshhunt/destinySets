@@ -1884,7 +1884,7 @@ export default ([
                 // 3432171457, // Heretic Robe (Not planned to be sold for Bright Dust)
                 1360105767, // Járngreipr
                 1563263613, // Law of Induction
-                // 3438514430, // Peacebringer (Not planned to be sold for Bright Dust)
+                3438514430, // Peacebringer
                 2020179519, // Polemology
                 3093486579, // Sky/Perdition
                 // 2744195002, // Third Rail (Not planned to be sold for Bright Dust)
@@ -2119,7 +2119,7 @@ export default ([
               [
                 // 779216204, // Harper's Shell (Not planned to be sold for Bright Dust)
                 779216202, // Lander Shell
-                // 779216203, // Lion Guardant Shell (Not planned to be sold for Bright Dust)
+                779216203, // Lion Guardant Shell
                 779216206, // Lunar Shell
                 779216207, // Ophiuchus Shell
                 779216200, // Propheteer Shell
