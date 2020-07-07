@@ -1465,6 +1465,7 @@ export default ([
             season: 11,
             items: [
               1138508287, // Accolades on Accolades
+              3605490916, // Eclipsed Void
               3622268497 // Savior / Sunset
             ]
           }
