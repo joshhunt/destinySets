@@ -1466,7 +1466,8 @@ export default ([
             items: [
               1138508287, // Accolades on Accolades
               3605490916, // Eclipsed Void
-              3622268497 // Savior / Sunset
+              3622268497, // Savior / Sunset
+              1138508279 // No Power in the Verse Can Stop Me
             ]
           }
         ]
