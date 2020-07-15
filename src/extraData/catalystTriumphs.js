@@ -17,6 +17,7 @@ export default {
   400096939: 1576480714, // Outbreak Perfected
   2816212794: 2245186555, // Bad JuJu
   3512014804: 3180129357, // Lumina
+  2357297366: 2815790941, // Witherhoard
 
   // Energy weapons
   4190156464: 2490851406, // Merciless
@@ -37,6 +38,7 @@ export default {
   4017959782: 725782604, // Symmetry
   776191470: 2711296708, // Tommy's Matchbook
   1665952087: 4149879737, // The Fourth Horseman
+  1363238943: 1543180637, // Ruinous Effigy
 
   // Heavy weapons
   3549153979: 3715769785, // The Prospector
