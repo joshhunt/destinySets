@@ -1881,7 +1881,7 @@ export default ([
             itemGroups: [
               [
                 // 52189603, // Bad Dog (Not planned to be sold for Bright Dust)
-                // 651701175, // Big Blind (Not planned to be sold for Bright Dust)
+                651701175, // Big Blind
                 // 3844102542, // Father of Islands (Not planned to be sold for Bright Dust)
                 // 3432171457, // Heretic Robe (Not planned to be sold for Bright Dust)
                 1360105767, // Járngreipr
