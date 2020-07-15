@@ -22,7 +22,7 @@ export default class AppRouter extends Component {
       <Provider store={store}>
         <Router history={browserHistory}>
           <Route component={App}>
-            <Route path="/solstice-2019" component={SolsticeOfHeroes} />
+            <Route path="/solstice" component={SolsticeOfHeroes} />
 
             <Route path="/" component={Inventory} setData={sets.yearThree} />
 

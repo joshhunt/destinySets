@@ -4,7 +4,7 @@ import cx from 'classnames';
 import { connect } from 'react-redux';
 
 import { fetchProfile as fetchProfileAction } from 'app/store/profile';
-import { WARLOCK, HUNTER, TITAN, CLASSES } from 'app/lib/destinyEnums';
+import { HUNTER, TITAN, WARLOCK, CLASSES } from 'app/lib/destinyEnums';
 import Footer from 'app/components/Footer';
 import BungieImage from 'app/components/BungieImage';
 import Icon from 'app/components/Icon';
@@ -16,60 +16,57 @@ import Objectives from 'app/components/Objectives';
 
 import s from './styles.styl';
 
-const DRAINED_WARLOCK = 1432280527;
-const DRAINED_HUNTER = 2557471208;
-const DRAINED_TITAN = 2946324356;
+const RENEWED_HUNTER = 2574248771;
+const RENEWED_TITAN = 2963102071;
+const RENEWED_WARLOCK = 1482613376;
 
-const RENEWED_WARLOCK = 1432280512;
-const RENEWED_HUNTER = 2557471207;
-const RENEWED_TITAN = 2946324363;
+const MAJESTIC_HUNTER = 2574248768;
+const MAJESTIC_TITAN = 2963102068;
+const MAJESTIC_WARLOCK = 1482613379;
 
-const MAJESTIC_WARLOCK = 1432280513;
-const MAJESTIC_HUNTER = 2557471206;
-const MAJESTIC_TITAN = 2946324362;
+const MAGNIFICENT_HUNTER = 2574248769;
+const MAGNIFICENT_TITAN = 2963102069;
+const MAGNIFICENT_WARLOCK = 1482613378;
 
-const DRAINED = [DRAINED_WARLOCK, DRAINED_HUNTER, DRAINED_TITAN];
-const RENEWED = [RENEWED_WARLOCK, RENEWED_HUNTER, RENEWED_TITAN];
-const MAJESTIC = [MAJESTIC_WARLOCK, MAJESTIC_HUNTER, MAJESTIC_TITAN];
+const RENEWED = [RENEWED_HUNTER, RENEWED_TITAN, RENEWED_WARLOCK];
+const MAJESTIC = [MAJESTIC_HUNTER, MAJESTIC_TITAN, MAJESTIC_WARLOCK];
+const MAGNIFICENT = [
+  MAGNIFICENT_HUNTER,
+  MAGNIFICENT_TITAN,
+  MAGNIFICENT_WARLOCK
+];
 
-const ALL_SETS = [DRAINED, RENEWED, MAJESTIC];
+const ALL_SETS = [RENEWED, MAJESTIC, MAGNIFICENT];
 
 const CLASS_MAP = {
-  [DRAINED_WARLOCK]: CLASSES[WARLOCK],
-  [DRAINED_HUNTER]: CLASSES[HUNTER],
-  [DRAINED_TITAN]: CLASSES[TITAN],
-  [RENEWED_WARLOCK]: CLASSES[WARLOCK],
   [RENEWED_HUNTER]: CLASSES[HUNTER],
   [RENEWED_TITAN]: CLASSES[TITAN],
-  [MAJESTIC_WARLOCK]: CLASSES[WARLOCK],
+  [RENEWED_WARLOCK]: CLASSES[WARLOCK],
   [MAJESTIC_HUNTER]: CLASSES[HUNTER],
-  [MAJESTIC_TITAN]: CLASSES[TITAN]
+  [MAJESTIC_TITAN]: CLASSES[TITAN],
+  [MAJESTIC_WARLOCK]: CLASSES[WARLOCK]
 };
 
-const WARLOCK_ICON_NODE = 7761993;
-const TITAN_ICON_NODE = 272447096;
 const HUNTER_ICON_NODE = 308119616;
+const TITAN_ICON_NODE = 272447096;
+const WARLOCK_ICON_NODE = 7761993;
 
 const CLASS_ICON_NODE_MAP = {
-  [DRAINED_WARLOCK]: WARLOCK_ICON_NODE,
-  [DRAINED_HUNTER]: HUNTER_ICON_NODE,
-  [DRAINED_TITAN]: TITAN_ICON_NODE,
-  [RENEWED_WARLOCK]: WARLOCK_ICON_NODE,
   [RENEWED_HUNTER]: HUNTER_ICON_NODE,
   [RENEWED_TITAN]: TITAN_ICON_NODE,
-  [MAJESTIC_WARLOCK]: WARLOCK_ICON_NODE,
+  [RENEWED_WARLOCK]: WARLOCK_ICON_NODE,
   [MAJESTIC_HUNTER]: HUNTER_ICON_NODE,
-  [MAJESTIC_TITAN]: TITAN_ICON_NODE
+  [MAJESTIC_TITAN]: TITAN_ICON_NODE,
+  [MAJESTIC_WARLOCK]: WARLOCK_ICON_NODE
 };
 
 const FINISHED_IF_MAP = {
-  [DRAINED_WARLOCK]: 381563628,
-  [DRAINED_HUNTER]: 2826719795,
-  [DRAINED_TITAN]: 808331801,
-
-  [RENEWED_WARLOCK]: 3359671646,
-  [RENEWED_HUNTER]: 1597235361,
-  [RENEWED_TITAN]: 536106547
+  [RENEWED_HUNTER]: 2479769639,
+  [RENEWED_TITAN]: 4153787689,
+  [RENEWED_WARLOCK]: 4116537170,
+  [MAJESTIC_HUNTER]: 510413482,
+  [MAJESTIC_TITAN]: 4116309852,
+  [MAJESTIC_WARLOCK]: 3162915011
 };
 
 const _g = (gear, field) =>
@@ -191,14 +188,16 @@ function SolsticeOfHeroes({
 
   return (
     <div className={s.page}>
-      <h1 className={s.heading}>Solstice of Heroes 2019</h1>
+      <h1 className={s.heading}>Solstice of Heroes 2020</h1>
 
       {!viewData.length ? <p className={s.loading}>Loading...</p> : null}
 
-      <p className={s.explainer}>
-        Complete all objectives on all items in a set to unlock the next set.
-        Complete objectives on Majestic gear to masterwork it.
-      </p>
+      {!viewData.length ? null : (
+        <p className={s.explainer}>
+          Complete all objectives on all items in a set to unlock the next set.
+          Complete objectives on Magnificent gear to masterwork it.
+        </p>
+      )}
 
       {viewData.length > 0 && (
         <button
@@ -206,7 +205,7 @@ function SolsticeOfHeroes({
           onClick={() => setViewAllObjectives(!viewAllObjectives)}
         >
           {viewAllObjectives
-            ? 'Relevent objectives only'
+            ? 'View only relevent objectives'
             : 'View all objectives'}
         </button>
       )}
@@ -366,7 +365,6 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(
-  mapStateToProps,
-  { fetchProfile: fetchProfileAction }
-)(SolsticeOfHeroes);
+export default connect(mapStateToProps, { fetchProfile: fetchProfileAction })(
+  SolsticeOfHeroes
+);
