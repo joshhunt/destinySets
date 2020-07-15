@@ -2431,6 +2431,14 @@ export default ([
               2257180473, // Interference VI
               2857348871 // Honor's Edge
             ]
+          },
+          {
+            name: 'Weapons',
+            season: 11,
+            items: [
+              1835747805, // Nature of the Beast
+              1946491241 // Truthteller
+            ]
           }
         ]
       }
