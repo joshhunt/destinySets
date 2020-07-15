@@ -1881,7 +1881,7 @@ export default ([
             itemGroups: [
               [
                 // 52189603, // Bad Dog (Not planned to be sold for Bright Dust)
-                // 651701175, // Big Blind (Not planned to be sold for Bright Dust)
+                651701175, // Big Blind
                 // 3844102542, // Father of Islands (Not planned to be sold for Bright Dust)
                 // 3432171457, // Heretic Robe (Not planned to be sold for Bright Dust)
                 1360105767, // Járngreipr
@@ -2430,6 +2430,14 @@ export default ([
               1162247618, // Jian 7 Rifle
               2257180473, // Interference VI
               2857348871 // Honor's Edge
+            ]
+          },
+          {
+            name: 'Weapons',
+            season: 11,
+            items: [
+              1835747805, // Nature of the Beast
+              1946491241 // Truthteller
             ]
           }
         ]
