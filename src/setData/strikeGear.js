@@ -141,6 +141,7 @@ export default ([
           {
             name: 'Nightfall Emblems',
             items: [
+              2939572588, // Master Cartographer
               2933984410, // Tree of Probabilities
               2178159622, // Valus Intrigue
               2178159623, // No More Lasers
@@ -164,11 +165,11 @@ export default ([
           {
             name: 'Nightfall Emblems',
             items: [
+              2939572591, // Master Gardener
               893502917, // A Garden World
               1505307651, // Pulling Out the Roots
               1505307650, // Blast from the Past
-              1505307649, // Odysseus's Offspring
-              2939572591 // Master Gardener
+              1505307649 // Odysseus's Offspring
             ]
           }
         ]
