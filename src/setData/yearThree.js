@@ -1931,8 +1931,8 @@ export default ([
                 2579031865, // Calliope's Lullaby
                 3654808012, // The Fourteenth Anamnesis
                 3786758103, // Embodiment of the Warbeast
-                3778646768 // Flight of the Interceptor
-                // 475012491 // The Want of Lies and Wishes (Didn't show up for Bright Dust due to an in-game issue)
+                3778646768, // Flight of the Interceptor
+                475012491 // The Want of Lies and Wishes
               ]
             ]
           },
@@ -2264,7 +2264,7 @@ export default ([
             name: 'Ships',
             season: 8,
             items: [
-              // 4079130217, // Quality Cut (Not planned to be sold for Bright Dust)
+              4079130217, // Quality Cut
               4079130220, // Refashioned Shapes
               4079130223 // The Machinoform
 
