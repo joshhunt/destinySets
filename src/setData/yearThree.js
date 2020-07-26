@@ -1931,8 +1931,8 @@ export default ([
                 2579031865, // Calliope's Lullaby
                 3654808012, // The Fourteenth Anamnesis
                 3786758103, // Embodiment of the Warbeast
-                3778646768 // Flight of the Interceptor
-                // 475012491 // The Want of Lies and Wishes (Didn't show up for Bright Dust due to an in-game issue)
+                3778646768, // Flight of the Interceptor
+                475012491 // The Want of Lies and Wishes
               ]
             ]
           },
@@ -2264,7 +2264,7 @@ export default ([
             name: 'Ships',
             season: 8,
             items: [
-              // 4079130217, // Quality Cut (Not planned to be sold for Bright Dust)
+              4079130217, // Quality Cut
               4079130220, // Refashioned Shapes
               4079130223 // The Machinoform
 
@@ -2452,160 +2452,283 @@ export default ([
           'DestinyInventoryItemDefinition[3692259864].displayProperties.description',
           'An engram containing different ornaments, emotes, and accessories from previous Destiny 2 releases.'
         ),
-        big: true,
+        big: false,
         sections: [
           {
             name: 'Ornaments',
             season: 11,
-            items: [
-              2110420504, // "Down to Business"
-              3034617041, // "Jade Countenance"
-              2599526136, // "Catacombs"
-              2425317590, // "Positive Infinity"
-              3779623011, // "Lethal System"
-              346961818,  // "IKELOS Field Tuning"
-              3838841051, // "Ultraviolet"
-              3093486579, // "Sky/Perdition"
-              2744195002, // "Third Rail"
-              2020179519, // "Polemology"
-              135999390,  // "Past Is Past"
-              451772823,  // "Foretelling"
-              4150423078, // "Unwelcome Visit"
-              2812946864, // "At Any Cost"
-              1414396215, // "Itsy-Bitsy Spider"
-              403561732,  // "Defenseless, to Be Armed"
-              3473397300, // "King in All Directions"
-              1145663134, // "Great White"
-              3628276006, // "Thundergod"
-              3624790844, // "Eerie Breeze"
-              933468683,  // "Grant's Vicksburg"
-              3200402431, // "Bronze Carapace"
-              2173197096, // "A Stride to the Edge"
-              2406427719 // "Conflux Control"
-            ]
-          },
-          {
-            name: 'Ghost Shells',
-            season: 11,
-            items: [
-              1558857470, // "Star Map Shell"
-              443190217,  // "Kitbash Shell"
-              779216204,  // "Harper's Shell"
-              779216201,  // "Scarlet Swarm Shell"
-              261110024,  // "Bold Shell"
-              261110022,  // "Interchange Shell"
-              277887715,  // "Hemisphere Shell"
-              277887712,  // "Aggressive Shell"
-              89965910,   // "Kaleidoscope Shell"
-              89965911,   // "In Fine Omnium Shell"
-              89965918,   // "Orchid Shell"
-              89965919,   // "Yellowspear Shell"
-              1271045317, // "Infinite Blue Shell"
-              1271045316, // "Garter Snake Shell"
-              1748063012, // "Palm of Gold Shell"
-              1748063015, // "Waiting Cask Shell"
-              374922800,  // "Cordial Diamond Shell"
-              374922801,  // "Trusty Shell"
-              374922810,  // "Spectral Circuit Shell"
-              374922811,  // "Eyeball Shell"
-              2371653990, // "Tastemaker Shell"
-              2371653991 // "Worrier Shell"
+            itemGroups: [
+              [
+                2110420504, // Down to Business
+                3034617041, // Jade Countenance
+                2599526136, // Catacombs
+                2425317590, // Positive Infinity
+                3779623011, // Lethal System
+                346961818, // IKELOS Field Tuning
+                3838841051, // Ultraviolet
+                3093486579, // Sky/Perdition
+                2744195002, // Third Rail
+                2020179519 // Polemology
+              ],
+              [
+                135999390, // Past Is Past
+                451772823, // Foretelling
+                4150423078, // Unwelcome Visit
+                2812946864, // At Any Cost
+                1414396215, // Itsy-Bitsy Spider
+                403561732, // Defenseless, to Be Armed
+                3473397300, // King in All Directions
+                1145663134 // Great White
+              ],
+              [
+                3628276006, // Thundergod
+                3624790844, // Eerie Breeze
+                933468683, // Grant's Vicksburg
+                3200402431, // Bronze Carapace
+                2173197096, // A Stride to the Edge
+                2406427719 // Conflux Control
+              ]
             ]
           },
           {
             name: 'Emotes',
             season: 11,
             items: [
-              421712807,  // "Mic Drop"
-              717948749,  // "Sweeping"
-              1863079869, // "Red Card"
-              2272950849, // "Chicken Dinner"
-              3470992439, // "Guitar Solo"
-              2291520183, // "Ninja Vanish"
-              267290351,  // "Flowing Dance"
-              159967058,  // "Hold On"
-              1471723144, // "Confused"
-              319183094,  // "Meditative Moment"
-              3105326202, // "Cross-Step Shuffle"
-              1188569234, // "Ding"
-              2541494210, // "You're the Guardian"
-              1073496778, // "Opulent Clap"
-              896553940,  // "Lucky Shot"
-              4179243516, // "Time Out"
-              248592690,  // "Eat It Up"
-              3702002191 // "Be Sneaky"
+              421712807, // Mic Drop
+              717948749, // Sweeping
+              1863079869, // Red Card
+              2272950849, // Chicken Dinner
+              3470992439, // Guitar Solo
+              2291520183, // Ninja Vanish
+              267290351, // Flowing Dance
+              159967058, // Hold On
+              1471723144, // Confused
+              319183094, // Meditative Moment
+              3105326202, // Cross-Step Shuffle
+              1188569234, // Ding
+              2541494210, // You're the Guardian
+              1073496778, // Opulent Clap
+              896553940, // Lucky Shot
+              4179243516, // Time Out
+              248592690, // Eat It Up
+              3702002191 // Be Sneaky
             ]
           },
+          {
+            name: 'Ghosts',
+            season: 11,
+            itemGroups: [
+              [
+                1558857470, // Star Map Shell
+                443190217, // Kitbash Shell
+                779216204, // Harper's Shell
+                779216201, // Scarlet Swarm Shell
+                261110024, // Bold Shell
+                261110022, // Interchange Shell
+                277887715, // Hemisphere Shell
+                277887712, // Aggressive Shell
+                89965910, // Kaleidoscope Shell
+                89965911, // In Fine Omnium Shell
+                89965918, // Orchid Shell
+                89965919, // Yellowspear Shell
+                1271045317, // Infinite Blue Shell
+                1271045316, // Garter Snake Shell
+                1748063012, // Palm of Gold Shell
+                1748063015, // Waiting Cask Shell
+                374922800, // Cordial Diamond Shell
+                374922801, // Trusty Shell
+                374922810, // Spectral Circuit Shell
+                374922811, // Eyeball Shell
+                2371653990, // Tastemaker Shell
+                2371653991 // Worrier Shell
+              ],
+              [
+                1295682249, // Crown of Sorrow Projection
+                1295682248, // Emperor Calus Projection
+                2155593794, // Moonbound Projection
+                2155593795, // Mindjack Projection
+                1927164028, // Electrostatic Projection
+                3148574220, // Häkke Projection
+                2233846232, // Clashing Projection
+                668465167, // Twin Snake Projection
+                3527564903, // Treasure Chest Projection
+                3527564896 // Salacot Projection
+              ]
+            ]
+          },
+
           {
             name: 'Sparrows',
             season: 11,
             items: [
-              3268592503, // "The Bronco"
-              258623693,  // "The Calypso"
-              2067296769, // "Blood Runner"
-              2067296773, // "Four Degrees of Separation"
-              2546958593, // "October Dash"
-              2546958592, // "Sagittarius"
-              3889183912, // "Athwart the Void"
-              3889183906, // "Chronoglass"
-              3538153288, // "Tropidon V"
-              3538153289, // "Velos Knight"
-              3610177558, // "Soul Sylph"
-              3610177553, // "Striped Abandon"
-              3538153285, // "Sharklight"
-              3588486148, // "Machina Macro"
-              2351197438, // "Mindbarge"
-              2351197439, // "Fiery Phoenician"
-              2285214171, // "Thermal Runaway"
-              2285214168, // "Endymion Cavalcade"
-              4085575831, // "Where I Belong"
-              4085575830, // "Gravity Maestro"
-              3330250540, // "Sunny Disposition"
-              3330250541 // "Aerolite HW-42"
+              3268592503, // The Bronco
+              258623693, // The Calypso
+              2067296769, // Blood Runner
+              2067296773, // Four Degrees of Separation
+              2546958593, // October Dash
+              2546958592, // Sagittarius
+              3889183912, // Athwart the Void
+              3889183906, // Chronoglass
+              3538153288, // Tropidon V
+              3538153289, // Velos Knight
+              3610177558, // Soul Sylph
+              3610177553, // Striped Abandon
+              3538153285, // Sharklight
+              3588486148, // Machina Macro
+              2351197438, // Mindbarge
+              2351197439, // Fiery Phoenician
+              2285214171, // Thermal Runaway
+              2285214168, // Endymion Cavalcade
+              4085575831, // Where I Belong
+              4085575830, // Gravity Maestro
+              3330250540, // Sunny Disposition
+              3330250541 // Aerolite HW-42
             ]
           },
           {
             name: 'Ships',
             season: 11,
             items: [
-              292872939,  // "Asher Mir's One-Way Ticket"
-              2417017738, // "Ódrerir"
-              2964059919, // "The Oviraptor"
-              4079130217, // "Quality Cut"
-              4209989372, // "Dead Fall"
-              4209989373, // "Sojourner"
-              2503134036, // "Shadowed Dawn"
-              2503134042, // "Helios Strain"
-              658724913,  // "Runereed"
-              658724914,  // "Wanderlonging"
-              530012777,  // "Nebula Bloom"
-              530012776,  // "Rubente Dextra"
-              1833943247, // "Pitfall Souter E5D"
-              1833943245, // "Dusk Harrier"
-              3600237174, // "Bicameral Promise"
-              3600237175, // "Last Sunset"
-              3941922388, // "The People's Pride"
-              3941922389, // "Technical Meltdown"
-              4063523621, // "Broadcast-IS"
-              4063523618, // "Egbe-01X"
-              4063523630, // "DSV-Huygens IX"
-              4063523631 // "SCRAP MS-123-88"
+              292872939, // Asher Mir's One-Way Ticket
+              2417017738, // Ódrerir
+              2964059919, // The Oviraptor
+              4079130217, // Quality Cut
+              4209989372, // Dead Fall
+              4209989373, // Sojourner
+              2503134036, // Shadowed Dawn
+              2503134042, // Helios Strain
+              658724913, // Runereed
+              658724914, // Wanderlonging
+              530012777, // Nebula Bloom
+              530012776, // Rubente Dextra
+              1833943247, // Pitfall Souter E5D
+              1833943245, // Dusk Harrier
+              3600237174, // Bicameral Promise
+              3600237175, // Last Sunset
+              3941922388, // The People's Pride
+              3941922389, // Technical Meltdown
+              4063523621, // Broadcast-IS
+              4063523618, // Egbe-01X
+              4063523630, // DSV-Huygens IX
+              4063523631 // SCRAP MS-123-88
             ]
           },
           {
-            name: 'Ghost Projections',
+            name: 'Shaders',
             season: 11,
             items: [
-              1295682249, // "Crown of Sorrow Projection"
-              1295682248, // "Emperor Calus Projection"
-              2155593794, // "Moonbound Projection"
-              2155593795, // "Mindjack Projection"
-              1927164028, // "Electrostatic Projection"
-              3148574220, // "Häkke Projection"
-              2233846232, // "Clashing Projection"
-              668465167,  // "Twin Snake Projection"
-              3527564903, // "Treasure Chest Projection"
-              3527564896 // "Salacot Projection"
+              3205869476, // Metro Shift
+              3205869479, // Watermelon
+              3205869478, // Arctic Pearl
+              3205869473, // Monochromatic
+              3205869472, // Golden Trace
+              3205869475, // Nebula Rose
+              3205869474, // Cerulean Divide
+              3205869485, // Bumblebee
+              3205869484, // Indigo Matrix
+              2395477998, // Descendant Vex Chrome
+              2395477999, // Mercury Vex Chrome
+              2395477996, // Precursor Vex Chrome
+              2395477997, // Desert of Gold
+              2395477994, // Mercurian Sunrise
+              1017491633, // Molten Bronze
+              1017491632, // Mars Sunset
+              1017491635, // Cargulo Bristle
+              1017491634, // Ancient Republic
+              1017491637, // Petiolora Growth
+              1017491636, // Buffer Overflow
+              2815102890, // Smashing Success
+              2815102891, // Melchizedek Bramble
+              2815102888, // Safety First
+              2815102889, // Flavedo Core
+              2815102894, // Metropolitan Acoustics
+              2815102895, // Celestial Dome
+              2815102892, // Forty-Four Steel
+              2644588991, // Sunrise Warrior
+              2644588990, // Chalco's Finery
+              2644588989, // Vibrant Beach
+              2644588988, // Lilac Bombast
+              2644588987, // Temperature Wash
+              2644588986, // Deep-Sea Jaunt
+              915277992, // Warbrick
+              915277993, // Reefmade
+              915277994, // Verdigris
+              915277995, // Chrome Stock
+              915277996, // Atlantic Rush
+              915277997, // Bloody Tooth
+              1363705635, // Coastal Suede
+              1363705634, // Amethyst Veil
+              1363705633, // Atmospheric Glow
+              1363705632, // First Light
+              1363705639, // Royal Welcome
+              3818755494, // Bruised Blush
+              3818755495, // Chitin Slate
+              3818755492, // Oiled Gunmetal
+              3818755493, // Iridescent Coral
+              3818755490, // Jungle Viper
+              3818755491 // Polished Sea Stone
+            ]
+          },
+          {
+            name: 'Transmat Effects',
+            season: 11,
+            items: [
+              1311389414, // Celebrate Newness
+              1311389415, // AI-COM/RSPN: REBOOT
+              1311389412, // Plesiohedral State
+              1836879402, // Reef Oracle
+              1836879403, // Reef Shimmer
+              1836879400, // Reef Awoken
+              1836879401, // Corrupt Ether
+              1866581851, // Signal Processed
+              1866581850, // Only the Finest
+              1866581849, // Guiding Light
+              1866581848, // The Past Unearthed
+              1556665148, // Twin Snake Effects
+              1556665149, // Jade Coin Effects
+              1556665150, // Sterile Neutrino Effects
+              1556665151, // Illicit Transmat Effects
+              515071965, // Darkblade Effects
+              515071964, // Eldritch Effects
+              515071967, // Minotaur Effects
+              515071966, // Loot Chest Effects
+              515071961, // Tiger Effects
+              3951356824, // Nightmare Emergence
+              3951356825, // Shattered Shrieker
+              3951356826, // Harpy's Cry
+              3951356827, // Blind Clutch
+              1281013979, // Coral Rabbit
+              1281013978, // Amethyst Rabbit
+              3351378134, // Guardian White
+              3351378135, // Guardian Gold
+              3351378133, // Guardian Green
+              3351378132, // Guardian Pink
+              3351378131, // Guardian Blue
+              3351378143, // Ghost White
+              3351378142, // Ghost Gold
+              1281013970, // Ghost Green
+              1281013971, // Ghost Pink
+              1281013968, // Ghost Blue
+              1281013969, // Crucible White
+              1281013974, // Crucible Gold
+              1281013975, // Crucible Green
+              1281013972, // Crucible Pink
+              1281013973, // Crucible Blue
+              3351378128, // Void Effects
+              3351378129, // Solar Effects
+              3351378130, // Arc Effects
+              2153115587, // Silver Beam Effects
+              2153115586, // Gold Beam Effects
+              2153115585, // Green Beam Effects
+              2153115584, // Purple Beam Effects
+              2153115591, // Silver Spotlight Effects
+              2153115590, // Yellow Spotlight Effects
+              2153115589, // Green Spotlight Effects
+              2153115588, // Purple Spotlight Effects
+              2153115594, // Yellow Class Sigil
+              3376967254, // Green Class Sigil
+              2153115595, // Pink Class Sigil
+              3376967255 // Purple Class Sigil
             ]
           }
         ]

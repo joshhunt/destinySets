@@ -20,15 +20,15 @@ export default ([
         sections: [
           {
             name: 'Kinetic',
-            query: 'is:legendary is:weapon is:kinetic'
+            query: 'is:legendary is:weapon is:kinetic is:incollections'
           },
           {
             name: 'Energy',
-            query: 'is:legendary is:weapon is:energy'
+            query: 'is:legendary is:weapon is:energy is:incollections'
           },
           {
             name: 'Power',
-            query: 'is:legendary is:weapon is:power'
+            query: 'is:legendary is:weapon is:power is:incollections'
           }
         ]
       },
@@ -43,7 +43,7 @@ export default ([
         name: 'Ghosts',
         id: 'ALL_GHOSTS',
         big: true,
-        query: 'is:ghostly',
+        query: 'is:ghostly', // not in collections yet
         sections: []
       }
     ]
@@ -59,19 +59,19 @@ export default ([
         sections: [
           {
             name: 'Legendary',
-            query: 'is:legendary is:emblem'
+            query: 'is:legendary is:emblem is:incollections'
           },
           {
             name: 'Rare',
-            query: 'is:rare is:emblem'
+            query: 'is:rare is:emblem is:incollections'
           },
           {
             name: 'Uncommon',
-            query: 'is:uncommon is:emblem'
+            query: 'is:uncommon is:emblem is:incollections'
           },
           {
             name: 'Common',
-            query: 'is:common is:emblem'
+            query: 'is:common is:emblem is:incollections'
           }
         ]
       },
@@ -83,15 +83,15 @@ export default ([
         sections: [
           {
             name: 'Legendary',
-            query: 'is:legendary is:shader'
+            query: 'is:legendary is:shader is:incollections'
           },
           {
             name: 'Rare',
-            query: 'is:rare is:shader'
+            query: 'is:rare is:shader is:incollections'
           },
           {
             name: 'Uncommon',
-            query: 'is:uncommon is:shader'
+            query: 'is:uncommon is:shader is:incollections'
           }
         ]
       },
@@ -100,7 +100,7 @@ export default ([
         name: 'Emotes',
         id: 'ALL_EMOTES',
         big: true,
-        query: 'is:emote',
+        query: 'is:emote', // not in collections yet
         sections: []
       },
 
@@ -108,7 +108,7 @@ export default ([
         name: 'Ornaments',
         id: 'ALL_ORNAMENTS',
         big: true,
-        query: 'is:ornament',
+        query: 'is:ornament', // not all in collections yet
         sections: []
       }
     ]
@@ -120,14 +120,14 @@ export default ([
       {
         name: 'Sparrows',
         id: 'ALL_SPARROWS',
-        query: 'is:sparrow',
+        query: 'is:sparrow is:incollections',
         sections: []
       },
 
       {
         name: 'Ships',
         id: 'ALL_SHIPS',
-        query: 'is:ship',
+        query: 'is:ship is:incollections',
         sections: []
       }
     ]
