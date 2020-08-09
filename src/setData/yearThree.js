@@ -1890,8 +1890,8 @@ export default ([
                 2020179519, // Polemology
                 3093486579, // Sky/Perdition
                 // 2744195002, // Third Rail (Not planned to be sold for Bright Dust)
-                519687404 // What If
-                // 4159445096 // A Better Specimen (Not planned to be sold for Bright Dust)
+                519687404, // What If
+                4159445096 // A Better Specimen
               ],
               [
                 // 1617168101, // Augury of Snakes (Not planned to be sold for Bright Dust)
