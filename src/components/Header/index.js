@@ -33,8 +33,8 @@ const LINKS = [
   link('Strikes', '/strike-gear'),
   link('All Items', '/all-items'),
   link('Catalysts', '/catalysts'),
-  link('Solstice of Heroes', '/solstice'),
-  link('Mods', '/mods')
+  link('Mods', '/mods'),
+  link('Solstice of Heroes', '/solstice')
 ];
 
 const SOCIALS = [
