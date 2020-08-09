@@ -2210,7 +2210,7 @@ export default ([
             items: [
               2067296769, // Blood Runner
               2067296773, // Four Degrees of Separation
-              // 2067296775, // Golden Pride (Not planned to be sold for Bright Dust)
+              2067296775, // Golden Pride
               2067296772, // Invasive Species
               2067296770 // Jotuneer
               // 2067296771, // The Regal Howl (Not planned to be sold for Bright Dust)
