@@ -238,8 +238,6 @@ export default function fancySearch(search, defs, opts = { hashOnly: false }) {
       })
       .filter(Boolean);
 
-    console.log({ catalystWeaponType, itemHashes });
-
     return opts.hashOnly
       ? itemHashes
       : itemHashes.map(h => defs.item.find(d => d.hash === h));

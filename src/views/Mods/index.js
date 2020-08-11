@@ -235,8 +235,6 @@ function mapStateToProps(state, { route: { setData } }) {
     .map(itemHash => DestinyInventoryItemDefinition[itemHash])
     .filter(Boolean);
 
-  console.log('modDefinitions:', modDefinitions);
-
   return {
     DestinyEnergyTypeDefinition,
     modDefinitions

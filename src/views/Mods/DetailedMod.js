@@ -66,8 +66,6 @@ const mapStateToProps = (state, ownProps) => {
     st => st.statTypeHash && st.hasOwnProperty('value')
   );
 
-  console.log({ energyCost });
-
   const energyDefs = state.definitions.DestinyEnergyTypeDefinition;
   const energyDef =
     energyDefs &&

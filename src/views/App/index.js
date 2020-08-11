@@ -1,6 +1,5 @@
 import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
-import { pick } from 'lodash';
 
 import * as ls from 'app/lib/ls';
 import destinyAuth from 'app/lib/destinyAuth';

@@ -175,9 +175,7 @@ function SolsticeOfHeroes({
   isLoggedIn
 }) {
   useEffect(() => {
-    console.log('effect running');
     const intervalId = window.setInterval(() => {
-      console.log('fetch...');
       fetchProfile && fetchProfile();
     }, REFRESH_INTERVAL);
 

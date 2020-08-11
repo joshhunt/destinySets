@@ -53,8 +53,6 @@ function ExtraInfo({
         richVendorEntry.map((ve, index) => {
           const vendor = vendorDefs[ve.vendorHash];
 
-          console.log('extraInfo ve', ve);
-
           return (
             <div key={index}>
               <span className={styles.orangeTick}>

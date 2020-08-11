@@ -25,12 +25,11 @@ export function PresentationNode({
       <div className={s.iconCornersTop} />
       <div className={s.iconCornersBottom} />
 
-      {node.displayProperties &&
-        node.displayProperties.icon && (
-          <div className={s.accessory}>
-            <BungieImage className={s.icon} src={node.displayProperties.icon} />
-          </div>
-        )}
+      {node.displayProperties && node.displayProperties.icon && (
+        <div className={s.accessory}>
+          <BungieImage className={s.icon} src={node.displayProperties.icon} />
+        </div>
+      )}
 
       <div className={s.main}>
         <div className={s.name}>{node.displayProperties.name}</div>
@@ -44,7 +43,7 @@ export function PresentationNode({
           className={s.progressTrack}
           style={{
             width: `calc(${Math.min(
-              childRecordsCompleted / totalChildRecords * 100,
+              (childRecordsCompleted / totalChildRecords) * 100,
               100
             )}% + 2px)`
           }}
@@ -56,7 +55,6 @@ export function PresentationNode({
 
 function recursiveRecords(node, definitions) {
   if (!node || !node.children) {
-    console.log('bailing early for', node);
     return [];
   }
 

@@ -67,17 +67,6 @@ export const makeItemPresentationSelector = () => {
             }
           });
 
-      if (itemHash === 4193902249) {
-        console.log({
-          itemHash,
-          itemDef,
-          perk,
-          sandboxPerkDef,
-          newItemDef,
-          perkDefs
-        });
-      }
-
       if (newItemDef && !newItemDef.redacted) {
         return newItemDef;
       }

@@ -1,6 +1,7 @@
 import queryString from 'query-string';
 import { getDestiny } from 'app/lib/destiny';
-import { saveAuth, getAuth } from 'app/lib/ls';
+import { saveAuth, getAuth, getLastPage } from 'app/lib/ls';
+import { browserHistory } from 'react-router';
 
 const CLIENT_ID = process.env.REACT_APP_BUNGIE_CLIENT_ID;
 const CLIENT_SECRET = process.env.REACT_APP_BUNGIE_CLIENT_SECRET;
@@ -101,8 +102,6 @@ function reauth(cb) {
   const authData = getAuth();
   const now = Date.now();
 
-  console.log('our auth data:', authData);
-
   if (
     !authData ||
     !authData.refreshTokenExpiry ||
@@ -143,8 +142,8 @@ function reauth(cb) {
 }
 
 function exchangeCodeForAccessToken(cb, code) {
-  // TODO: replace the URL witout the code, rather than forcing /
-  window.history.replaceState({}, 'foo', '/');
+  const navigateTo = getLastPage();
+  browserHistory.replace(navigateTo || '/');
   log('Authorisation code present in URL, requesting new acceess code', code);
 
   requestNewAccessToken(code)

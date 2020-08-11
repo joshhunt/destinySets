@@ -46,7 +46,6 @@ function loadDefinitions(store, language) {
       language.code,
       REQUIRED_DEFINITIONS,
       (err, result) => {
-        console.log('definitions cb:', { err, result });
         if (err) {
           trackError(err);
           store.dispatch(definitionsError(err));

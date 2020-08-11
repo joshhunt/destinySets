@@ -12,6 +12,7 @@ const keys = {
   TRACKED_RECORDS: '$trackedRecords',
   UID: 'uid',
   DEBUGID: 'debugid',
+  LAST_PAGE: 'lastpage',
   PROFILE_ERROR_REPORTED: 'profileErrorReported',
   REQUEST_CACHE: 'cache',
   DATA_EXPLORER_VISITED: 'dataExplorerVisited',
@@ -93,6 +94,14 @@ function save(key, value) {
     LOCAL_STORAGE = localStoragePolyfill;
     LOCAL_STORAGE.setItem(key, jason);
   }
+}
+
+export function setLastPage(path) {
+  return save(keys.LAST_PAGE, path);
+}
+
+export function getLastPage() {
+  return get(keys.LAST_PAGE);
 }
 
 export function getI18nString(path) {
