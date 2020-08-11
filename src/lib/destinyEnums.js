@@ -60,6 +60,7 @@ export const COMMON = 3340296461;
 
 export const XBOX = 1;
 export const PLAYSTATION = 2;
+export const PC_STEAM = 3;
 export const PC_BLIZZARD = 4;
 export const TIGERDEMON = 10;
 export const BUNGIENEXT = 254;
@@ -85,6 +86,7 @@ export const STAT_BLACKLIST = [
 export const PLATFORMS = {
   [XBOX]: 'Xbox',
   [PLAYSTATION]: 'PlayStation',
+  [PC_STEAM]: 'PC (Steam)',
   [PC_BLIZZARD]: 'PC (Battle.net)',
   [TIGERDEMON]: 'TigerDemon',
   [BUNGIENEXT]: 'BungieNext'

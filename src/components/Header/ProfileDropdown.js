@@ -1,30 +1,10 @@
 import React, { Fragment, Component } from 'react';
 import DropdownMenu from 'app/components/DropdownMenu';
-import Icon from 'app/components/Icon';
+import Icon, { PlatformIcon } from 'app/components/Icon';
 
-import {
-  XBOX,
-  PLAYSTATION,
-  PC_BLIZZARD,
-  TIGERDEMON,
-  BUNGIENEXT
-} from 'app/lib/destinyEnums';
+import { PLATFORMS } from 'app/lib/destinyEnums';
 
 import styles from './dropdownStyles.styl';
-
-const PLATFORM = {
-  [XBOX]: 'Xbox',
-  [PLAYSTATION]: 'PlayStation',
-  [PC_BLIZZARD]: 'PC (Battle.net)',
-  [TIGERDEMON]: 'TigerDemon',
-  [BUNGIENEXT]: 'BungieNext'
-};
-
-const ICONS = {
-  [XBOX]: 'xbox',
-  [PLAYSTATION]: 'playstation',
-  [PC_BLIZZARD]: 'windows'
-};
 
 function Platform({
   authExpired,
@@ -54,7 +34,7 @@ function Platform({
 
   return (
     <Fragment>
-      <Icon name={ICONS[membershipType]} brand /> {PLATFORM[membershipType]}
+      <PlatformIcon type={membershipType} brand /> {PLATFORMS[membershipType]}
     </Fragment>
   );
 }
@@ -78,19 +58,12 @@ export default class ProfileDropdown extends Component {
           </div>
         ))}
 
-        {this.props.googleAuthSignedIn ? (
+        {this.props.googleAuthSignedIn && (
           <div
             className={styles.dropdownItem}
             onClick={this.props.googleSignOut}
           >
-            <Icon name="google-drive" brand /> Disconnect Google Drive
-          </div>
-        ) : (
-          <div
-            className={styles.dropdownItem}
-            onClick={this.props.googleSignIn}
-          >
-            <Icon name="google-drive" brand /> Connect Google Drive
+            <Icon name="google-drive" brand /> Disconnect Google Drive forever
           </div>
         )}
 
