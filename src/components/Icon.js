@@ -17,6 +17,7 @@ const Icon = ({
   light,
   duotone,
   brand,
+  spin,
   className,
   ...rest
 }) => {
@@ -42,11 +43,13 @@ const Icon = ({
   }
 
   return (
-    <span
-      data-icon
-      {...rest}
-      className={cx(className, prefix, `fa-${name}`)}
-    ></span>
+    <span>
+      <span
+        data-icon
+        {...rest}
+        className={cx(className, prefix, `fa-${name}`, spin && 'fa-spin')}
+      ></span>
+    </span>
   );
 };
 

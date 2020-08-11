@@ -202,7 +202,16 @@ export function saveAuth(authData) {
 }
 
 export function getAuth() {
-  return get(keys.AUTH);
+  const data = get(keys.AUTH);
+
+  if (data) {
+    data.accessTokenExpiry =
+      data.accessTokenExpiry && new Date(data.accessTokenExpiry);
+    data.refreshTokenExpiry =
+      data.refreshTokenExpiry && new Date(data.refreshTokenExpiry);
+  }
+
+  return data;
 }
 
 export function removeAuth() {

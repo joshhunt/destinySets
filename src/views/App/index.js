@@ -4,7 +4,6 @@ import { pick } from 'lodash';
 
 import * as ls from 'app/lib/ls';
 import * as cloudStorage from 'app/lib/cloudStorage';
-import { sendProfileStats } from 'app/lib/telemetry';
 import googleAuth from 'app/lib/googleDriveAuth';
 import destinyAuth from 'app/lib/destinyAuth';
 import * as destiny from 'app/lib/destiny';
@@ -120,7 +119,6 @@ class App extends Component {
     if (isAuthenticated && isFinal && !this.alreadyFetched) {
       this.alreadyFetched = true;
       this.fetch();
-      sendProfileStats();
     }
 
     this.props.setAuthStatus({
@@ -330,7 +328,4 @@ const mapDispatchToActions = {
   openXurModal
 };
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToActions
-)(App);
+export default connect(mapStateToProps, mapDispatchToActions)(App);

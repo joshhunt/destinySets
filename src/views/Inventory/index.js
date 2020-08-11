@@ -83,13 +83,7 @@ class Inventory extends Component {
   };
 
   render() {
-    const {
-      filters,
-      filteredSetData,
-      trackedItems,
-      route,
-      searchValue
-    } = this.props;
+    const { filters, filteredSetData, trackedItems, searchValue } = this.props;
     const { itemTooltip, itemModal } = this.state;
     const noUi = (filteredSetData[0] || {}).noUi;
 
@@ -114,7 +108,7 @@ class Inventory extends Component {
 
         <div className={styles.maintenance}>
           <p>
-            Login will be temporarily unavailable as Destiny Sets maintenance is
+            Login may be temporarily unavailable as Destiny Sets maintenance is
             performed.
           </p>
         </div>
