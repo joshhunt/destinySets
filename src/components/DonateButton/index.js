@@ -15,7 +15,7 @@ export default function DonateButton({ className }) {
       rel="noopener noreferrer"
       href={DONATION_LINK}
     >
-      <Icon className={styles.icon} icon="paypal" brand /> Support and donate
+      <Icon className={styles.icon} name="paypal" brand /> Support and donate
     </a>
   );
 }

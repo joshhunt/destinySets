@@ -32,6 +32,7 @@ export const makePerksSelector = () =>
               })),
 
             randomPerks:
+              socket.randomizedPlugItems &&
               socket.randomizedPlugItems.length > 0 &&
               socket.randomizedPlugItems
                 .map(randomRoll => itemDefs[randomRoll.plugItemHash])

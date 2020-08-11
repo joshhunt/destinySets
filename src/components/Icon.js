@@ -1,44 +1,71 @@
 import React from 'react';
-import FontAwesomeIcon from '@fortawesome/react-fontawesome';
-import fontawesome from '@fortawesome/fontawesome';
+import cx from 'classnames';
 
-fontawesome.library.add(
-  require('@fortawesome/fontawesome-pro-regular/faTimes'),
-  require('@fortawesome/fontawesome-pro-regular/faCheck'),
-  require('@fortawesome/fontawesome-pro-regular/faChevronDown'),
-  require('@fortawesome/fontawesome-pro-regular/faSpinnerThird'),
-  require('@fortawesome/fontawesome-pro-regular/faBars'),
-  require('@fortawesome/fontawesome-pro-regular/faExclamationTriangle'),
-  require('@fortawesome/fontawesome-pro-regular/faDollarSign'),
-  require('@fortawesome/fontawesome-pro-regular/faSearch'),
+const MembershipType = {
+  Xbox: 1,
+  Playstation: 2,
+  Steam: 3,
+  BattleNet: 4,
+  Stadia: 5
+};
 
-  require('@fortawesome/fontawesome-pro-regular/faInfoCircle'),
-  require('@fortawesome/fontawesome-pro-solid/faInfoCircle'),
+const Icon = ({
+  name,
+  icon,
+  solid,
+  regular,
+  light,
+  duotone,
+  brand,
+  className,
+  ...rest
+}) => {
+  const prefix =
+    {
+      [solid ? 'true' : 'false']: 'fas',
+      [regular ? 'true' : 'false']: 'far',
+      [light ? 'true' : 'false']: 'fal',
+      [duotone ? 'true' : 'false']: 'fad',
+      [brand ? 'true' : 'false']: 'fab'
+    }['true'] || 'far';
 
-  require('@fortawesome/fontawesome-pro-regular/faEyeSlash'),
-  require('@fortawesome/fontawesome-pro-regular/faEye'),
-  require('@fortawesome/fontawesome-pro-light/faEyeSlash'),
-  require('@fortawesome/fontawesome-pro-light/faEye'),
-
-  require('@fortawesome/fontawesome-free-brands/faPaypal'),
-  require('@fortawesome/fontawesome-free-brands/faGithub'),
-  require('@fortawesome/fontawesome-free-brands/faTwitter'),
-  require('@fortawesome/fontawesome-free-brands/faPlaystation'),
-  require('@fortawesome/fontawesome-free-brands/faXbox'),
-  require('@fortawesome/fontawesome-free-brands/faWindows'),
-  require('@fortawesome/fontawesome-free-brands/faGoogleDrive')
-);
-
-export default function Icon({ icon, name, brand, light, solid, ...props }) {
-  let prefix = 'far';
-
-  if (brand) {
-    prefix = 'fab';
-  } else if (light) {
-    prefix = 'fal';
-  } else if (solid) {
-    prefix = 'fas';
+  if (icon) {
+    throw new Error('Icon prop specificed on Icon component!', {
+      name,
+      icon,
+      solid,
+      regular,
+      light,
+      duotone,
+      brand
+    });
   }
 
-  return <FontAwesomeIcon icon={[prefix, icon || name]} {...props} />;
-}
+  return (
+    <span
+      data-icon
+      {...rest}
+      className={cx(className, prefix, `fa-${name}`)}
+    ></span>
+  );
+};
+
+export default Icon;
+
+export const PlatformIcon = ({ type, ...rest }) => {
+  const iconMap = {
+    [MembershipType.Xbox]: 'xbox',
+    [MembershipType.Playstation]: 'playstation',
+    [MembershipType.Steam]: 'steam',
+    [MembershipType.BattleNet]: 'battle-net',
+    [MembershipType.Stadia]: 'google'
+  };
+
+  return (
+    <Icon
+      brand
+      name={iconMap[type.toString ? type.toString() : type]}
+      {...rest}
+    />
+  );
+};

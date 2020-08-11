@@ -76,7 +76,7 @@ export default function ItemBanner({ className, item, displayItem, onClose }) {
           {onClose && (
             <div>
               <button className={styles.close} onClick={() => onClose(item)}>
-                <Icon icon="times" />
+                <Icon name="times" />
               </button>
             </div>
           )}

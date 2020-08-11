@@ -21,7 +21,7 @@ class XurModalContent extends Component {
     return (
       <div className={styles.root}>
         <button className={styles.close} onClick={onRequestClose}>
-          <Icon icon="times" />
+          <Icon name="times" />
         </button>
 
         <div className={styles.header}>

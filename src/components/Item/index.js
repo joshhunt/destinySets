@@ -202,7 +202,7 @@ class Item extends PureComponent {
 
             {inventoryEntry && (
               <div className={styles.tick}>
-                <Icon icon="check" />
+                <Icon name="check" />
               </div>
             )}
 

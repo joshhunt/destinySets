@@ -130,7 +130,7 @@ function query(
   }).filter(item => {
     return (
       !ITEM_BLACKLIST.includes(item.hash) &&
-      !item.itemCategoryHashes.includes(3109687656)
+      !(item.itemCategoryHashes || []).includes(3109687656)
     );
   });
 

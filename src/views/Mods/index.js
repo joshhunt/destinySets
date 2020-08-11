@@ -26,7 +26,7 @@ const ELEMENT_CLASS_NAME = {
 function Search({ className, ...props }) {
   return (
     <div className={cx(className, s.search)}>
-      <Icon className={s.searchIcon} icon="search" />
+      <Icon className={s.searchIcon} name="search" />
       <input
         className={s.searchInput}
         type="text"
@@ -243,7 +243,6 @@ function mapStateToProps(state, { route: { setData } }) {
   };
 }
 
-export default connect(
-  mapStateToProps,
-  { fetchProfile: fetchProfileAction }
-)(Mods);
+export default connect(mapStateToProps, { fetchProfile: fetchProfileAction })(
+  Mods
+);

@@ -36,7 +36,7 @@ class MasterworkCatalyst extends Component {
         <div className={s.inner}>
           {completed && (
             <div className={s.tick}>
-              <Icon icon="check" />
+              <Icon name="check" />
             </div>
           )}
 

@@ -35,7 +35,7 @@ function Platform({
   if (profileLoading) {
     return (
       <Fragment>
-        <Icon icon="spinner-third" spin /> Updating...
+        <Icon name="spinner-third" spin /> Updating...
       </Fragment>
     );
   }
@@ -43,7 +43,7 @@ function Platform({
   if (profileCached) {
     return (
       <Fragment>
-        <Icon icon="spinner-third" spin /> Booting up...
+        <Icon name="spinner-third" spin /> Booting up...
       </Fragment>
     );
   }
@@ -54,7 +54,7 @@ function Platform({
 
   return (
     <Fragment>
-      <Icon icon={ICONS[membershipType]} brand /> {PLATFORM[membershipType]}
+      <Icon name={ICONS[membershipType]} brand /> {PLATFORM[membershipType]}
     </Fragment>
   );
 }
@@ -83,14 +83,14 @@ export default class ProfileDropdown extends Component {
             className={styles.dropdownItem}
             onClick={this.props.googleSignOut}
           >
-            <Icon icon="google-drive" brand /> Disconnect Google Drive
+            <Icon name="google-drive" brand /> Disconnect Google Drive
           </div>
         ) : (
           <div
             className={styles.dropdownItem}
             onClick={this.props.googleSignIn}
           >
-            <Icon icon="google-drive" brand /> Connect Google Drive
+            <Icon name="google-drive" brand /> Connect Google Drive
           </div>
         )}
 
@@ -133,7 +133,7 @@ export default class ProfileDropdown extends Component {
         </div>
 
         <div className={styles.fakeButton}>
-          <Icon icon="chevron-down" />
+          <Icon name="chevron-down" />
         </div>
       </DropdownMenu>
     );

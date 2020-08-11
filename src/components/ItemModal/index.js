@@ -79,7 +79,7 @@ class ItemModalContent extends Component {
     return (
       <div className={styles.root}>
         <button className={styles.close} onClick={onRequestClose}>
-          <Icon icon="times" />
+          <Icon name="times" />
         </button>
 
         {screenshot && (
@@ -258,7 +258,4 @@ const mapDispatchToActions = {
   forgetDismantled: forgetDismantledAction
 };
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToActions
-)(ItemModalWrapper);
+export default connect(mapStateToProps, mapDispatchToActions)(ItemModalWrapper);

@@ -26,7 +26,7 @@ export default class Dismissable extends Component {
     return (
       <div {...props}>
         <button className={s.close} onClick={this.toggle}>
-          <Icon icon="times" />
+          <Icon name="times" />
         </button>
         {children}
       </div>

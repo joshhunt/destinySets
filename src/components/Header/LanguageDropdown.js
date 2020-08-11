@@ -33,7 +33,7 @@ export default class LanguageDropdown extends Component {
         <div className={styles.main}>{this.props.language.name}</div>
 
         <div className={styles.fakeButton}>
-          <Icon icon="chevron-down" />
+          <Icon name="chevron-down" />
         </div>
       </DropdownMenu>
     );

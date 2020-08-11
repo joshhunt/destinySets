@@ -59,7 +59,7 @@ export default class FilterDropdown extends Component {
         <div className={styles.main}>Filters</div>
 
         <div className={styles.fakeButton}>
-          <Icon icon="chevron-down" />
+          <Icon name="chevron-down" />
         </div>
       </DropdownMenu>
     );

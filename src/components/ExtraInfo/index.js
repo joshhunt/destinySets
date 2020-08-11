@@ -24,7 +24,7 @@ function ExtraInfo({
     return (
       <span>
         <span className={TICK_STYLE[location] || styles.greenTick}>
-          <Icon icon="check" />
+          <Icon name="check" />
         </span>{' '}
         {location}
       </span>
@@ -35,7 +35,7 @@ function ExtraInfo({
     extraInfo.push(
       <span>
         <span className={styles.blueTick}>
-          <Icon icon="check" />
+          <Icon name="check" />
         </span>{' '}
         {inventoryEntry.obtained
           ? 'Unlocked in Collections'
@@ -59,7 +59,7 @@ function ExtraInfo({
           return (
             <div key={index}>
               <span className={styles.orangeTick}>
-                <Icon icon="dollar-sign" />
+                <Icon name="dollar-sign" />
               </span>{' '}
               Available from{' '}
               {vendor ? vendor.displayProperties.name : 'unknown vendor'}

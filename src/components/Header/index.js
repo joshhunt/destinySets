@@ -103,7 +103,7 @@ const SocialLinks = () => (
         target="_blank"
         rel="noopener noreferrer"
       >
-        <Icon icon={name} brand />
+        <Icon name={name} brand />
       </a>
     ))}
   </Fragment>
@@ -136,7 +136,7 @@ function Sidebar({
         <div className={styles.sidebarTop}>
           <SiteName />
           <button className={styles.toggleSidebar} onClick={toggleSidebar}>
-            <Icon icon="times" />
+            <Icon name="times" />
           </button>
         </div>
 
@@ -246,7 +246,7 @@ export default class Header extends Component {
               className={styles.toggleSidebar}
               onClick={this.toggleSidebar}
             >
-              <Icon icon="bars" />
+              <Icon name="bars" />
             </button>
           )}
 
