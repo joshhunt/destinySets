@@ -112,18 +112,12 @@ class Inventory extends Component {
           />
         )}
 
-        {route.isCollections && (
-          <div className={styles.promo}>
-            <p>
-              This was an experimental preview of the items that will be marked
-              off in Collections when Forsaken dropped, and may be retired soon
-              by Bungie in an upcomming update.
-            </p>
-            <p>
-              Official Collections support is now built into DestinySets.com.
-            </p>
-          </div>
-        )}
+        <div className={styles.maintenance}>
+          <p>
+            Login will be temporarily unavailable as Destiny Sets maintenance is
+            performed.
+          </p>
+        </div>
 
         {filteredSetData.map(({ sets, noUi, slug, name }, index) => (
           <Section
@@ -208,7 +202,4 @@ const mapDispatchToActions = {
   setSearchValue
 };
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToActions
-)(Inventory);
+export default connect(mapStateToProps, mapDispatchToActions)(Inventory);
