@@ -105,12 +105,12 @@ class Inventory extends Component {
           />
         )}
 
-        <div className={styles.maintenance}>
+        {/* <div className={styles.maintenance}>
           <p>
             Login may be temporarily unavailable as Destiny Sets maintenance is
             performed.
           </p>
-        </div>
+        </div> */}
 
         {filteredSetData.map(({ sets, noUi, slug, name }, index) => (
           <Section
