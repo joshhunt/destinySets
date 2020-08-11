@@ -1,6 +1,5 @@
 import { sortBy, has } from 'lodash';
 
-import { setUser } from 'app/lib/telemetry';
 import { getEnsuredAccessToken } from 'app/lib/destinyAuth';
 import { trackError, trackBreadcrumb } from 'app/lib/telemetry';
 import * as ls from 'app/lib/ls';
@@ -52,10 +51,6 @@ const VENDOR_COMPONENTS = [
   componentItemPlugStates,
   componentVendorSales
 ];
-
-let DEBUG_STORE = {
-  profiles: []
-};
 
 export function get(url, opts) {
   return fetch(url, opts).then(res => res.json());
@@ -177,8 +172,6 @@ export function getExtendedProfile(ship) {
     .then(_profile => {
       profile = _profile;
 
-      DEBUG_STORE.profiles.push(profile);
-
       if (!profile) {
         log('Empty profile, ignoring', { ship });
         return null;
@@ -210,17 +203,23 @@ export function getExtendedProfile(ship) {
 export function getCurrentProfiles() {
   let bungieNetUser;
 
-  return getDestiny('/Platform/User/GetMembershipsForCurrentUser/')
-    .then(body => {
-      bungieNetUser = body.bungieNetUser;
-      DEBUG_STORE.membershipsForCurrentUser = body;
+  const authData = ls.getAuth();
 
-      setUser(bungieNetUser);
+  if (!authData || !authData.refreshTokenExpiry) {
+    // TODO: I'm not sure what it's supposed to return here? I guess before it just used to
+    // throw an error?
+    return Promise.resolve([]);
+  }
 
-      return Promise.all(body.destinyMemberships.map(getExtendedProfile));
+  return getDestiny(
+    `/Platform/Destiny2/254/Profile/${authData.membership_id}/LinkedProfiles/`
+  )
+    .then(data => {
+      return Promise.all(data.profiles.map(getExtendedProfile));
     })
     .then(profiles => {
       log('profiles:', profiles);
+
       const sortedProfiles = sortBy(
         profiles
           .filter(Boolean)
@@ -288,19 +287,4 @@ export function getCurrentProfile() {
     // TODO: validate that all fields got their data
     return latestProfile;
   });
-}
-
-function cachedGet(url, cb) {
-  const cached = ls.getCachedUrl(url);
-
-  if (cached) {
-    cb(null, cached);
-  }
-
-  return get(url)
-    .then(data => {
-      ls.saveCachedUrl(url, data);
-      cb(null, data);
-    })
-    .catch(err => cb(err));
 }
