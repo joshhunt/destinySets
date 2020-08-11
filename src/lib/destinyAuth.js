@@ -122,7 +122,7 @@ function reauth(cb) {
     log('Have invalid access token, but valid refresh token. calling cb.');
     cb(null, { isAuthenticated: true, isFinal: false });
 
-    refreshAccessToken(authData.refreshToken)
+    refreshAccessToken(authData.refresh_token)
       .then(handleNewAuthData)
       .then(authData => {
         log('Successfully refreshed access token, calling cb');
