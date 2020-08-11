@@ -50,7 +50,6 @@ class ItemModalContent extends Component {
       objectiveDefs,
       toggleManuallyObtained,
       forgetDismantled,
-      googleAuth,
       collectionInventory,
       vendorEntry,
       collectible,
@@ -151,15 +150,6 @@ class ItemModalContent extends Component {
             </button>
           )}
 
-          {googleAuth.signedIn && !itemInventoryEntry && (
-            <button
-              className={styles.button}
-              onClick={() => toggleManuallyObtained(hash)}
-            >
-              Mark as collected
-            </button>
-          )}
-
           {itemInventoryEntry && itemInventoryEntry.manuallyObtained && (
             <button
               className={styles.button}
@@ -236,7 +226,6 @@ const mapStateToProps = () => {
 
   return (state, ownProps) => {
     return {
-      googleAuth: state.app.googleAuth,
       objectiveInstances: objectiveInstancesSelector(state),
       objectiveDefs: objectiveDefsSelector(state),
       statDefs: statDefsSelector(state),

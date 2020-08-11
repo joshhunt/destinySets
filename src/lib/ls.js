@@ -7,8 +7,6 @@ const keys = {
   ACCOUNT: '$account',
   LANGUAGE: '$lang',
   AUTH: '$auth2',
-  GDRIVE_FILE_ID: '$googleDriveFileId' + window.DESTINYSETS_ENV,
-  GOOGLE_LOGIN_TOOLTIP: '$hideGoogleLoginTooltip',
   VISIT_COUNT: '$visitCount',
   TRACKED_ITEMS: '$trackedItems',
   TRACKED_RECORDS: '$trackedRecords',
@@ -145,14 +143,6 @@ export function getInventory() {
   return get(keys.INVENTORY, []);
 }
 
-export function saveHideGoogleLoginTooltip(bool) {
-  save(keys.GOOGLE_LOGIN_TOOLTIP, bool);
-}
-
-export function getHideGoogleLoginTooltip() {
-  return get(keys.GOOGLE_LOGIN_TOOLTIP, false);
-}
-
 export function saveCloudInventory(inventory) {
   save(keys.CLOUD_INVENTORY, inventory);
 }
@@ -224,14 +214,6 @@ export function saveVisitCount(count) {
 
 export function getVisitCount() {
   return parseInt(get(keys.VISIT_COUNT, 0), 10);
-}
-
-export function getGoogleDriveInventoryFileId(keySuffix) {
-  return get(keys.GDRIVE_FILE_ID + keySuffix, null);
-}
-
-export function saveGoogleDriveInventoryFileId(keySuffix, fileId) {
-  save(keys.GDRIVE_FILE_ID + keySuffix, fileId);
 }
 
 export function getTrackedItems() {

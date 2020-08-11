@@ -3,11 +3,6 @@ import React, { Component, Fragment } from 'react';
 import { Link } from 'react-router';
 import cx from 'classnames';
 
-import {
-  signIn as googleSignIn,
-  signOut as googleSignOut
-} from 'app/lib/googleDriveAuth';
-
 import logo from 'app/logo.svg';
 import { DONATION_LINK } from 'app/components/DonateButton';
 import Icon from 'app/components/Icon';
@@ -189,7 +184,6 @@ export default class Header extends Component {
       language,
       setLanguage,
       logout,
-      googleAuth,
       profileCached,
       profileLoading,
       showDataExplorerLink
@@ -248,9 +242,6 @@ export default class Header extends Component {
                 allProfiles={allProfiles}
                 switchProfile={switchProfile}
                 logout={logout}
-                googleSignOut={googleSignOut}
-                googleSignIn={googleSignIn}
-                googleAuthSignedIn={googleAuth.signedIn}
               />
             )}
 

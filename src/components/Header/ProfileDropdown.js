@@ -58,15 +58,6 @@ export default class ProfileDropdown extends Component {
           </div>
         ))}
 
-        {this.props.googleAuthSignedIn && (
-          <div
-            className={styles.dropdownItem}
-            onClick={this.props.googleSignOut}
-          >
-            <Icon name="google-drive" brand /> Disconnect Google Drive forever
-          </div>
-        )}
-
         <div className={styles.dropdownItem} onClick={this.props.logout}>
           Log out
         </div>

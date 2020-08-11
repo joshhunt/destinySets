@@ -3,18 +3,11 @@ import { connect } from 'react-redux';
 import { pick } from 'lodash';
 
 import * as ls from 'app/lib/ls';
-import * as cloudStorage from 'app/lib/cloudStorage';
-import googleAuth from 'app/lib/googleDriveAuth';
 import destinyAuth from 'app/lib/destinyAuth';
-import * as destiny from 'app/lib/destiny';
 
 import { inventorySelector } from 'app/store/selectors';
 
-import {
-  setCloudInventory,
-  setGoogleAuth,
-  setLanguage
-} from 'app/store/reducer';
+import { setCloudInventory, setLanguage } from 'app/store/reducer';
 import { setProfiles, switchProfile, fetchProfile } from 'app/store/profile';
 import { setAuthStatus } from 'app/store/auth';
 
@@ -76,11 +69,6 @@ class App extends Component {
 
     if (inventoryChanged && !props.isCached && props.cloudInventory) {
       log('Inventory has changed, saving new cloudInventory');
-
-      cloudStorage.saveInventory(
-        pick(props, ['inventory', 'manualInventory']),
-        props.profile
-      );
     }
 
     if (propChanged('trackedItems')) {
@@ -121,31 +109,7 @@ class App extends Component {
   };
 
   fetch = () => {
-    const profilePromise = this.props.fetchProfile();
-
-    // Create a promise that will resolve immediately with the
-    // pre-cached profile, or with the call to fetch the profile
-    const withProfile = this.props.profile
-      ? Promise.resolve(this.props.profile)
-      : profilePromise;
-
-    googleAuth(({ signedIn }) => {
-      // If they log out
-      if (this.props.googleAuth.signedIn && !signedIn) {
-        this.props.setCloudInventory(null);
-      }
-
-      this.props.setGoogleAuth({ loaded: true, signedIn });
-
-      Promise.all([withProfile, this.itemDefsPromise]).then(
-        ([profile, itemDefs]) => {
-          signedIn &&
-            cloudStorage
-              .getInventory(profile, itemDefs)
-              .then(this.props.setCloudInventory);
-        }
-      );
-    });
+    this.props.fetchProfile();
   };
 
   handleDismissLoginUpsell = () => {
@@ -183,7 +147,6 @@ class App extends Component {
       children,
       profile,
       allProfiles,
-      googleAuth,
       language,
       profileCached,
       profileLoading,
@@ -254,7 +217,6 @@ class App extends Component {
           authExpired={!auth.isAuthed && profile}
           currentProfile={profile}
           allProfiles={allProfiles}
-          googleAuth={googleAuth}
           language={language}
           switchProfile={this.switchProfile}
           setLanguage={this.setLanguage}
@@ -287,7 +249,6 @@ const mapStateToProps = state => {
     profile: state.profile.profile,
     profileLoading: state.profile.profileLoading,
     allProfiles: state.profile.allProfiles,
-    googleAuth: state.app.googleAuth,
     language: state.app.language,
     dataExplorerVisited: state.app.dataExplorerVisited,
     cloudInventory: state.app.cloudInventory,
@@ -302,7 +263,6 @@ const mapDispatchToActions = {
   setProfiles,
   switchProfile,
   setCloudInventory,
-  setGoogleAuth,
   setLanguage,
   fetchProfile
 };

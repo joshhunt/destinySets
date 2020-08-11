@@ -24,7 +24,6 @@ const ADD_TRACKED_RECORDS = 'Add tracked records';
 const REMOVE_TRACKED_RECORD = 'Remove tracked record';
 
 const TOGGLE_MANUALLY_OBTAINED = 'Toggle manually obtained';
-const SET_GOOGLE_AUTH = 'Set Google auth data';
 const FORGET_DISMANTLED_ITEM = 'Forget dismantled item';
 const SET_APP_VALUE = 'Set app value';
 const SET_SEARCH_VALUE = 'Set search value';
@@ -45,11 +44,7 @@ const INITIAL_STORE = {
   trackedItems: [],
   trackedRecords: [],
   manualInventory: {},
-  dataExplorerVisited: false,
-  googleAuth: {
-    loaded: false,
-    signedIn: false
-  }
+  dataExplorerVisited: false
 };
 
 function toggleManualInventory(manualInventory, itemHash) {
@@ -94,12 +89,6 @@ export default function reducer(state = INITIAL_STORE, action) {
         searchValue: action.payload
       };
     }
-
-    case SET_GOOGLE_AUTH:
-      return {
-        ...state,
-        googleAuth: action.data
-      };
 
     case SET_CLOUD_INVENTORY:
       return {
@@ -195,10 +184,6 @@ export default function reducer(state = INITIAL_STORE, action) {
 
 export function setAppValue(payload) {
   return { type: SET_APP_VALUE, payload };
-}
-
-export function setGoogleAuth(data) {
-  return { type: SET_GOOGLE_AUTH, data };
 }
 
 export function setCloudInventory(cloudInventory) {
