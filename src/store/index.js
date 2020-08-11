@@ -6,7 +6,6 @@ import app from './reducer';
 import definitions, { SET_BULK_DEFINITIONS } from './definitions';
 import auth from './auth';
 import profile from './profile';
-import xur from './xur';
 
 import preloadStore from './preloadStore';
 
@@ -14,7 +13,6 @@ const rootReducer = combineReducers({
   app,
   auth,
   profile,
-  xur,
   definitions
 });
 

@@ -1,5 +1,4 @@
 import React from 'react';
-import { uniqBy } from 'lodash';
 import { connect } from 'react-redux';
 
 import getItemExtraInfo, { DISMANTLED_MESSAGE } from 'app/lib/getItemExtraInfo';

@@ -9,7 +9,6 @@ import {
 } from 'app/lib/googleDriveAuth';
 
 import logo from 'app/logo.svg';
-import xur from 'app/assets/xur_icon.png';
 import { DONATION_LINK } from 'app/components/DonateButton';
 import Icon from 'app/components/Icon';
 import LoginCTA from '../LoginCTA';
@@ -50,12 +49,7 @@ const SiteName = () => (
   </div>
 );
 
-const SiteLinks = ({
-  displayXur,
-  openXurModal,
-  xurHasNewItems,
-  showDataExplorerLink
-}) => (
+const SiteLinks = ({ showDataExplorerLink }) => (
   <Fragment>
     <div className={styles.dummyLink} />
 
@@ -78,16 +72,6 @@ const SiteLinks = ({
         rel="noopener noreferrer"
       >
         Data Explorer
-      </a>
-    )}
-
-    {displayXur && (
-      <a
-        onClick={() => openXurModal(true)}
-        className={cx(styles.xurLink, xurHasNewItems && styles.xurLinkNewItems)}
-      >
-        <img className={styles.xurIcon} src={xur} alt="" />
-        Xûr
       </a>
     )}
   </Fragment>
@@ -122,9 +106,6 @@ function Sidebar({
   language,
   setLanguage,
   toggleSidebar,
-  displayXur,
-  openXurModal,
-  xurHasNewItems,
   showDataExplorerLink
 }) {
   return (
@@ -140,12 +121,7 @@ function Sidebar({
           </button>
         </div>
 
-        <SiteLinks
-          displayXur={displayXur}
-          openXurModal={openXurModal}
-          xurHasNewItems={xurHasNewItems}
-          showDataExplorerLink={showDataExplorerLink}
-        />
+        <SiteLinks showDataExplorerLink={showDataExplorerLink} />
 
         <div className={styles.hr} />
 
@@ -214,9 +190,6 @@ export default class Header extends Component {
       setLanguage,
       logout,
       googleAuth,
-      displayXur,
-      xurHasNewItems,
-      openXurModal,
       profileCached,
       profileLoading,
       showDataExplorerLink
@@ -253,12 +226,7 @@ export default class Header extends Component {
           <SiteName />
 
           <div className={styles.links} ref={this.setLinksRef}>
-            <SiteLinks
-              displayXur={displayXur}
-              openXurModal={openXurModal}
-              xurHasNewItems={xurHasNewItems}
-              showDataExplorerLink={showDataExplorerLink}
-            />
+            <SiteLinks showDataExplorerLink={showDataExplorerLink} />
           </div>
 
           {!isAuth && !isOverflowing && (

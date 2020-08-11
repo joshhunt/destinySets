@@ -16,7 +16,6 @@ import {
 
 export const cloudInventorySelector = state => state.app.cloudInventory;
 export const manualInventorySelector = state => state.app.manualInventory;
-const baseXurItemsSelector = state => state.xur.items;
 const profileSelector = state => state.profile.profile;
 
 export const itemDefsSelector = state =>
@@ -177,36 +176,33 @@ export const currentInventorySelector = createSelector(
   }
 );
 
-export const recordsSelector = createSelector(
-  profileSelector,
-  profile => {
-    const profileRecords = get(profile, 'profileRecords.data.records', {});
-    const characterRecords = Object.values(
-      get(profile, 'characterRecords.data', {})
-    ).reduce((acc, { records }) => {
-      return {
-        ...acc,
-        ...records
-      };
-    }, {});
-
-    const all = {
-      ...profileRecords,
-      ...characterRecords
+export const recordsSelector = createSelector(profileSelector, profile => {
+  const profileRecords = get(profile, 'profileRecords.data.records', {});
+  const characterRecords = Object.values(
+    get(profile, 'characterRecords.data', {})
+  ).reduce((acc, { records }) => {
+    return {
+      ...acc,
+      ...records
     };
+  }, {});
 
-    const allMappedRecords = mapValues(all, record => {
-      return {
-        ...record,
-        enumeratedState: enumerateState(record.state)
-      };
-    });
+  const all = {
+    ...profileRecords,
+    ...characterRecords
+  };
 
-    window.__records = allMappedRecords;
+  const allMappedRecords = mapValues(all, record => {
+    return {
+      ...record,
+      enumeratedState: enumerateState(record.state)
+    };
+  });
 
-    return allMappedRecords;
-  }
-);
+  window.__records = allMappedRecords;
+
+  return allMappedRecords;
+});
 
 const enumerateCollectibleState = state => ({
   none: flagEnum(state, 0),
@@ -328,32 +324,6 @@ export const inventorySelector = createSelector(
     });
 
     return inventory;
-  }
-);
-
-export const xurItemsSelector = createSelector(
-  inventorySelector,
-  baseXurItemsSelector,
-  (inventory, xurHashes) => {
-    if (!inventory) {
-      return { obtainedItems: [], newItems: xurHashes };
-    }
-
-    const obtainedItems = [];
-    const newItems = [];
-
-    xurHashes.forEach(itemHash => {
-      (inventory[itemHash] ? obtainedItems : newItems).push(itemHash);
-    });
-
-    return { obtainedItems, newItems };
-  }
-);
-
-export const xurHasNewItemsSelector = createSelector(
-  xurItemsSelector,
-  xurItems => {
-    return xurItems.newItems.length > 0;
   }
 );
 

@@ -5,7 +5,6 @@ import { Redirect, Router, Route, browserHistory } from 'react-router';
 import { Provider } from 'react-redux';
 
 import App from './views/App';
-import Diff from './views/Diff';
 import Inventory from './views/Inventory';
 import Triumphs from './views/Triumphs';
 import ItemPage from './views/ItemPage';
@@ -111,7 +110,6 @@ export default class AppRouter extends Component {
             <Route path="/item/:itemHash" components={ItemPage} />
 
             <Route path="/data(/:itemHash)" component={DataExplorerRedirect} />
-            <Route path="/diff" component={Diff} />
 
             <Redirect from="/curse-of-osiris" to="year-1" />
             <Redirect from="/warmind" to="year-1" />

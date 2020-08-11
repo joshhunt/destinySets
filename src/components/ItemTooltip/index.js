@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { uniq, get } from 'lodash';
+import { uniq } from 'lodash';
 import cx from 'classnames';
 
 import { EMBLEM, WEAPON, EXOTIC } from 'app/lib/destinyEnums';

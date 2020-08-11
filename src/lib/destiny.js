@@ -5,8 +5,6 @@ import { getEnsuredAccessToken } from 'app/lib/destinyAuth';
 import { trackError, trackBreadcrumb } from 'app/lib/telemetry';
 import * as ls from 'app/lib/ls';
 
-const XUR_URL = 'https://api.destiny.plumbing/xur';
-
 const log = require('app/lib/log')('http');
 
 const componentProfiles = 100; // eslint-disable-line
@@ -305,22 +303,4 @@ function cachedGet(url, cb) {
       cb(null, data);
     })
     .catch(err => cb(err));
-}
-
-export function xur(cb) {
-  return cachedGet(XUR_URL, (err, xurData) => {
-    if (err) {
-      return cb(err);
-    }
-
-    const isLive =
-      window.location.href.indexOf('forceXur') > -1 || xurData.isLive;
-
-    const payload =
-      isLive && xurData.itemHashes.length > 0
-        ? { items: xurData.itemHashes, location: xurData.location }
-        : { items: [] };
-
-    cb(null, payload);
-  });
 }

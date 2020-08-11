@@ -80,7 +80,7 @@ function Mods({
   const searchResults = useMemo(() => {
     const compareSearch = modSearch && modSearch.toLowerCase();
 
-    if (!modSearch || modSearch.length == 0) {
+    if (!modSearch || modSearch.length === 0) {
       return [];
     }
 

@@ -2,7 +2,6 @@ $baseColour = rgba(11, 13, 16, 1.0)
 $bgColour = lighten($baseColour, 4%)
 $filterColour = lighten($baseColour, 10%)
 $activeBg = rgba(white, .07)
-$xurColor = #536751
 $padding = 15px
 $height = 52px
 
@@ -74,23 +73,6 @@ $height = 52px
       height: 3px
       background: rgba(white, .2)
 
-.xurLink
-  composes: link
-  display: inline-flex
-  align-items: center
-  justify-content: center
-  padding-right: 14px
-  cursor: pointer
-
-.xurLinkNewItems
-  background: $xurColor
-
-  &:hover
-    background: lighten($xurColor, 7%)
-
-.xurIcon
-  height: 25px
-  margin-right: 5px
 
 .etc
   margin: 0 -8px
@@ -190,10 +172,6 @@ $height = 52px
       top: 0
       width: 3px
 
-  .xurLink
-    display: flex !important
-    justify-content: flex-start
-
 .sidebarInner
   height: 100%
   overflow: scroll
@@ -214,9 +192,7 @@ $height = 52px
   text-align: center
 
 
-.xurLink
 .link
 .dummyLink
-.xurLinkNewItems
   @media screen and (max-width: 500px)
     display: none
