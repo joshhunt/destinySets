@@ -321,7 +321,11 @@ function mapStateToProps(state) {
           }
 
           const upgradedInventoryEntry =
-            inventory[FINISHED_IF_MAP[presentationNodeHash]];
+            inventory[FINISHED_IF_MAP[presentationNodeHash]] &&
+            inventory[FINISHED_IF_MAP[presentationNodeHash]].checklisted !==
+              null
+              ? inventory[FINISHED_IF_MAP[presentationNodeHash]].checklisted
+              : false;
 
           const childItems = node.children.collectibles.map(
             ({ collectibleHash }) => {
