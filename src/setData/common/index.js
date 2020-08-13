@@ -504,8 +504,8 @@ export const SOLSTICE_OF_HEROES_YEAR_3 = {
           3574066955, // Catching Rays
           801509177, // Power Rising
           4264494593, // Sweltering Heat
-          2840773569, //Twisty Dance
-          1623693459 // Intimidating Snap
+          1623693459, // Intimidating Snap
+          2840773569 //Twisty Dance
         ],
         [
           // 876119751 // Iron Severance (Not planned to be sold for Bright Dust)
@@ -522,8 +522,8 @@ export const SOLSTICE_OF_HEROES_YEAR_3 = {
           217626588 // Backspin Shell
         ],
         [
-          1821549984, // Sand Castle Projection
-          1821549985 // Flamingo Projection
+          1821549985, // Flamingo Projection
+          1821549984 // Sand Castle Projection
         ]
       ]
     },
