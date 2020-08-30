@@ -497,7 +497,7 @@ export const SOLSTICE_OF_HEROES_YEAR_3 = {
       ]
     },
     {
-      name: 'Emotes & Finishers',
+      name: 'Emotes',
       season: 11,
       itemGroups: [
         [
