@@ -399,6 +399,13 @@ export const SOLSTICE_OF_HEROES_YEAR_3 = {
       season: 11,
       itemGroups: [
         [
+          3656394176, // Solstice Mask (Magnificent)
+          1222467473, // Solstice Grasps (Magnificent)
+          2723301959, // Solstice Vest (Magnificent)
+          629159779, // Solstice Strides (Magnificent)
+          3438799702 // Solstice Cloak (Magnificent)
+        ],
+        [
           2479769639, // Solstice Mask (Renewed)
           426368686, // Solstice Grasps (Renewed)
           1166603202, // Solstice Vest (Renewed)
@@ -418,13 +425,6 @@ export const SOLSTICE_OF_HEROES_YEAR_3 = {
           1167143060, // Solstice Vest (Magnificent)
           3275463030, // Solstice Strides (Magnificent)
           2335430633 // Solstice Cloak (Magnificent)
-        ],
-        [
-          3656394176, // Solstice Mask (Magnificent)
-          1222467473, // Solstice Grasps (Magnificent)
-          2723301959, // Solstice Vest (Magnificent)
-          629159779, // Solstice Strides (Magnificent)
-          3438799702 // Solstice Cloak (Magnificent)
         ]
       ]
     },
@@ -432,6 +432,13 @@ export const SOLSTICE_OF_HEROES_YEAR_3 = {
       name: 'Titan Armor',
       season: 11,
       itemGroups: [
+        [
+          393225356, // Solstice Helm (Magnificent)
+          3884067141, //Solstice Gauntlets (Magnificent)
+          2967332123, // Solstice Plate (Magnificent)
+          4231293639, // Solstice Graves (Magnificent)
+          1324151602 // Solstice Mark (Magnificent)
+        ],
         [
           4153787689, // Solstice Helm (Renewed)
           1945196704, // Solstice Gauntlets (Renewed)
@@ -452,13 +459,6 @@ export const SOLSTICE_OF_HEROES_YEAR_3 = {
           3654315694, //  Solstice Plate (Magnificent)
           2660623764, // Solstice Greaves (Magnificent)
           3972410231 // Solstice Mark (Magnificent)
-        ],
-        [
-          393225356, // Solstice Helm (Magnificent)
-          3884067141, //Solstice Gauntlets (Magnificent)
-          2967332123, // Solstice Plate (Magnificent)
-          4231293639, // Solstice Graves (Magnificent)
-          1324151602 // Solstice Mark (Magnificent)
         ]
       ]
     },
@@ -466,6 +466,13 @@ export const SOLSTICE_OF_HEROES_YEAR_3 = {
       name: 'Warlock Armor',
       season: 11,
       itemGroups: [
+        [
+          1529650477, // Solstice Hood (Magnificent)
+          2182316188, // Solstice Gloves (Magnificent)
+          486920324, // Solstice Robes (Magnificent)
+          1185244198, // Solstice Boots (Magnificent)
+          1230647257 // Solstice Bond (Magnificent)
+        ],
         [
           4116537170, // Solstice Hood (Renewed)
           287923131, // Solstice Gloves (Renewed)
@@ -486,13 +493,6 @@ export const SOLSTICE_OF_HEROES_YEAR_3 = {
           803600051, // Solstice Robes (Magnificent)
           1402082511, // Solstice Boots (Magnificent)
           3009026026 // Solstice Bond (Magnificent)
-        ],
-        [
-          1529650477, // Solstice Hood (Magnificent)
-          2182316188, // Solstice Gloves (Magnificent)
-          486920324, // Solstice Robes (Magnificent)
-          1185244198, // Solstice Boots (Magnificent)
-          1230647257 // Solstice Bond (Magnificent)
         ]
       ]
     },

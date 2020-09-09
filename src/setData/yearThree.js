@@ -1045,14 +1045,28 @@ export default ([
             season: 8,
             itemGroups: [
               [
-                2352138838 // Masquerader Helmet: Hunter
-              ],
-              [
                 1256660988, // Chthonic Mask
                 2653114997, // Chthonic Grips
                 3560184043, // Chthonic Vest
                 4229237079, // Chthonic Strides
                 2299884162 // Chthonic Cloak
+              ],
+              [
+                2352138838 // Masquerader Helmet: Hunter
+              ]
+            ]
+          },
+          {
+            name: 'Hunter Armor',
+            season: 11,
+            itemGroups: [
+              [],
+              [
+                514561133, // Canis Luna Mask
+                1633261020, // Canis Luna Grips
+                1440616900, // Canis Luna Vest
+                594509158, // Canis Luna Strides
+                2650481177 // Canis Luna Cloak
               ]
             ]
           },
@@ -1061,14 +1075,28 @@ export default ([
             season: 8,
             itemGroups: [
               [
-                239189018 // Masquerader Helmet: Titan
-              ],
-              [
                 3055452222, // Pandemonic Helm
                 2325321839, // Pandemonic Gauntlets
                 170952905, // Pandemonic Plate
                 2899925137, // Pandemonic Greaves
                 1485222020 // Pandemonic Mark
+              ],
+              [
+                239189018 // Masquerader Helmet: Titan
+              ]
+            ]
+          },
+          {
+            name: 'Titan Armor',
+            season: 11,
+            itemGroups: [
+              [],
+              [
+                269052681, // Chemflesh Helm
+                1972548224, // Chemflesh Gauntlets
+                1903259976, // Chemflesh Plate
+                1050368698, // Chemflesh Greaves
+                4029814949 // Chemflesh Mark
               ]
             ]
           },
@@ -1077,15 +1105,29 @@ export default ([
             season: 8,
             itemGroups: [
               [
-                2213504923 // Masquerader Helmet: Warlock
-              ],
-              [
                 3081047495, // Phantasmagoric Hood
                 1027749710, // Phantasmagoric Gloves
                 3859783010, // Phantasmagoric Robes
                 3110827848, // Phantasmagoric Boots
                 3508236467 // Phantasmagoric Bond
+              ],
+              [
+                2213504923 // Masquerader Helmet: Warlock
               ]
+            ]
+          },
+          {
+            name: 'Warlock Armor',
+            season: 11,
+            itemGroups: [
+              [
+                1126889172, //  Blood Lineage Cover
+                4252684909, //  Blood Lineage Gloves
+                1627792659, //  Blood Lineage Robes
+                204059183, //  Blood Lineage Boots
+                4257676106 //  Blood Lineage Bond
+              ],
+              []
             ]
           },
           {
@@ -1103,6 +1145,20 @@ export default ([
             ]
           },
           {
+            name: 'Masks',
+            season: 11,
+            items: [
+              3326837142, // Associates Mask
+              3326837143, // Spider Mask
+              1691825973, // Bubbling Mask
+              1691825972, // Fractured Traveler Mask
+              1691825975, // Variks Mask
+              1691825974, // Exo Stranger Mask
+              1691825969, // Ana Bray Mask
+              1691825968 // Wrapped Traveler Mask
+            ]
+          },
+          {
             name: 'Emotes',
             season: 8,
             items: [
@@ -1113,20 +1169,49 @@ export default ([
             ]
           },
           {
-            name: 'Ghosts',
-            season: 8,
-            items: [
-              3677746975, // Gensym Relic Shell
-              3677746972, // Chiropteran Shell
-              3677746973 // Jack-O-Shell
+            name: 'Emotes',
+            season: 11,
+            itemGroups: [
+              [
+                3314737869, // Ghastly Durance
+                2580357958, //Lunar Roar
+                433582103, // By Candlelight
+                2024085840, // Peaceful Rest
+                1078097668, // Rueful Wail
+                712123915 // Summoning Ritual
+              ],
+              [
+                // 3846727856, // One-Inch Punch (Not planned to be sold for Bright Dust)
+              ]
             ]
           },
           {
-            name: 'Ghost Projections',
+            name: 'Ghosts',
             season: 8,
-            items: [
-              3661044025, // Winged Nightmare Projection
-              3661044024 // Hive-o'-lantern Projection
+            itemGroups: [
+              [
+                3677746975, // Gensym Relic Shell
+                3677746972, // Chiropteran Shell
+                3677746973 // Jack-O-Shell
+              ],
+              [
+                3661044025, // Winged Nightmare Projection
+                3661044024 // Hive-o'-lantern Projection
+              ]
+            ]
+          },
+          {
+            name: 'Ghosts',
+            season: 11,
+            itemGroups: [
+              [
+                4090775747, // Hexing Shell
+                2505000979 // Restless Shell
+              ],
+              [
+                968361536, //Fanged Projection
+                968361537 // Howling Projection
+              ]
             ]
           },
           {
@@ -1138,10 +1223,25 @@ export default ([
             ]
           },
           {
+            name: 'Sparrows',
+            season: 11,
+            items: [
+              3721195043, // Halted Oblivion
+              3948527015 // Tomb Rider
+            ]
+          },
+          {
             name: 'Ships',
             season: 8,
             items: [
               3755201983 // The Desmodus
+            ]
+          },
+          {
+            name: 'Ships',
+            season: 11,
+            items: [
+              558697641 // Wrap Speed
             ]
           },
           {
@@ -1153,8 +1253,18 @@ export default ([
               1005594230, // Skele-Ghaul
               1005594231, // Basalt Toxic
               2233576420, // Fright Night
-              3980259371, // Transmat: Looming Moon
-              3980259370 // Transmat: Murder of Crows
+              3980259371, // Looming Moon
+              3980259370 // Murder of Crows
+            ]
+          },
+          {
+            name: 'Extras',
+            season: 11,
+            items: [
+              2716279146, // Bloodmane
+              2716279147, // Nougat Delight
+              373634602, // Alchemy Scorch
+              810321696 // Reanimated Entrance
             ]
           }
         ]
@@ -1880,7 +1990,7 @@ export default ([
             season: 8,
             itemGroups: [
               [
-                // 52189603, // Bad Dog (Not planned to be sold for Bright Dust)
+                52189603, // Bad Dog
                 651701175, // Big Blind
                 3844102542, // Father of Islands
                 // 3432171457, // Heretic Robe (Not planned to be sold for Bright Dust)
@@ -1970,16 +2080,17 @@ export default ([
             season: 11,
             itemGroups: [
               [
-                1606218149, // Heated Exchange
                 3038888553, // Matterscourge
+                2347594371, // Objective Reality
+                1606218149, // Heated Exchange
+                3697492370 // Ahead of Its Time
                 // 3365127084 // Sand and Sun (Not planned to be sold for Bright Dust)
-                // 3697492370, // Ahead of Its Time (Not planned to be sold for Bright Dust)
-                2347594371 // Objective Reality
+                // 584392035 // Equinox (Not planned to be sold for Bright Dust)
               ],
               [
-                // 2549526496, // Hrafnagud (Not planned to be sold for Bright Dust)
-                // 2779460227, // Arcturus Engine (Not planned to be sold for Bright Dust)
-                // 1705887390 // Path to Convergence (Not planned to be sold for Bright Dust)
+                2549526496, // Hrafnagud (Not planned to be sold for Bright Dust)
+                2779460227, // Arcturus Engine (Not planned to be sold for Bright Dust)
+                1705887390 // Path to Convergence (Not planned to be sold for Bright Dust)
               ]
             ]
           },
@@ -1993,7 +2104,7 @@ export default ([
                 3470992439, // Guitar Solo
                 2291520183, // Ninja Vanish
                 // 3366702053, // Plant the Flag (Not planned to be sold for Bright Dust)
-                // 2035374481, // Precise Strike (Not planned to be sold for Bright Dust)
+                2035374481, // Precise Strike
                 // 2370712399, // Spring Showers (Not planned to be sold for Bright Dust)
                 // 3105326202, // Cross-Step Shuffle (Not planned to be sold for Bright Dust)
                 1188569234, // Ding
@@ -2093,7 +2204,7 @@ export default ([
                 2449520393, // Grasping Thoughts
                 391087589, // Elegant Twirl
                 4015309571, // Fluid Dance
-                // 1426984386, // Leggy Dance (Not planned to be sold for Bright Dust)
+                1426984386, // Leggy Dance
                 964709622, // Study Time
                 3615496977, // Wacky Inflation
                 3793695881, // Pumping Up
@@ -2101,8 +2212,8 @@ export default ([
                 346333546, // Fencing Salute
                 3462529885, // Sign of Approval
                 3086378545, // Miniscule Melody
-                2161809809 // Eager Beaver
-                // 1163621614 // Victory Shout (Not planned to be sold for Bright Dust)
+                2161809809, // Eager Beaver
+                1163621614 // Victory Shout
               ],
               [
                 // 2167929971, // Set and Spike (Not planned to be sold for Bright Dust)
@@ -2199,8 +2310,8 @@ export default ([
                 2062815065, // Sterling Arbor Projection
                 2062815064, // Tetrahedron Projection
                 2062815067, // Ennead Projection
-                2062815066 // Daito Projection
-                // 2062815069 // Depository Projection (Not planned to be sold for Bright Dust)
+                2062815066, // Daito Projection
+                2062815069 // Depository Projection
               ]
             ]
           },
@@ -2258,6 +2369,7 @@ export default ([
               406589945, // Adonis Blue
               406589950, // SK-1 Multiband Rover
               406589948 // August Courser
+              // 406589949 // Cryptomnesia (Not planned to be sold for Bright Dust)
             ]
           },
           {
