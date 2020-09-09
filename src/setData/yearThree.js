@@ -1990,7 +1990,7 @@ export default ([
             season: 8,
             itemGroups: [
               [
-                // 52189603, // Bad Dog (Not planned to be sold for Bright Dust)
+                52189603, // Bad Dog
                 651701175, // Big Blind
                 3844102542, // Father of Islands
                 // 3432171457, // Heretic Robe (Not planned to be sold for Bright Dust)
@@ -2080,11 +2080,11 @@ export default ([
             season: 11,
             itemGroups: [
               [
-                1606218149, // Heated Exchange
                 3038888553, // Matterscourge
+                2347594371, // Objective Reality
+                1606218149, // Heated Exchange
+                3697492370 // Ahead of Its Time
                 // 3365127084 // Sand and Sun (Not planned to be sold for Bright Dust)
-                3697492370, // Ahead of Its Time
-                2347594371 // Objective Reality
                 // 584392035 // Equinox (Not planned to be sold for Bright Dust)
               ],
               [
@@ -2104,7 +2104,7 @@ export default ([
                 3470992439, // Guitar Solo
                 2291520183, // Ninja Vanish
                 // 3366702053, // Plant the Flag (Not planned to be sold for Bright Dust)
-                // 2035374481, // Precise Strike (Not planned to be sold for Bright Dust)
+                2035374481, // Precise Strike
                 // 2370712399, // Spring Showers (Not planned to be sold for Bright Dust)
                 // 3105326202, // Cross-Step Shuffle (Not planned to be sold for Bright Dust)
                 1188569234, // Ding
