@@ -2752,7 +2752,7 @@ export default ([
               515071965, // Darkblade Effects
               515071964, // Eldritch Effects
               515071967, // Minotaur Effects
-              // 515071966, // Loot Chest Effects (Wasn't sold for Bright Dust)
+              515071966, // Loot Chest Effects
               515071961 // Tiger Effects
             ]
           }
