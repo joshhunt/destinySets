@@ -1261,6 +1261,7 @@ export default ([
             name: 'Extras',
             season: 11,
             items: [
+              3639046081, // Shadehallow
               2716279146, // Bloodmane
               2716279147, // Nougat Delight
               373634602, // Alchemy Scorch
