@@ -1150,12 +1150,12 @@ export default ([
             items: [
               3326837142, // Associates Mask
               3326837143, // Spider Mask
-              1691825973, // Bubbling Mask
               1691825972, // Fractured Traveler Mask
               1691825975, // Variks Mask
               1691825974, // Exo Stranger Mask
               1691825969, // Ana Bray Mask
-              1691825968 // Wrapped Traveler Mask
+              1691825968, // Wrapped Traveler Mask
+              1691825973 // Bubbling Mask
             ]
           },
           {
@@ -1174,9 +1174,9 @@ export default ([
             itemGroups: [
               [
                 3314737869, // Ghastly Durance
-                2580357958, //Lunar Roar
-                433582103, // By Candlelight
+                2580357958, // Lunar Roar
                 2024085840, // Peaceful Rest
+                433582103, // By Candlelight
                 1078097668, // Rueful Wail
                 712123915 // Summoning Ritual
               ],
@@ -1261,6 +1261,7 @@ export default ([
             name: 'Extras',
             season: 11,
             items: [
+              3639046081, // Shadehallow
               2716279146, // Bloodmane
               2716279147, // Nougat Delight
               373634602, // Alchemy Scorch
