@@ -804,7 +804,119 @@ export default ([
           }
         ]
       },
-
+      {
+        name: 'The Reckoning',
+        id: 'YEAR_TWO_RECKONING',
+        description: `Weapons & Gambit Prime armor, obtained from The Reckoning`,
+        sections: [
+          {
+            name: 'Weapons (Tier 2 & 3)',
+            season: 6,
+            items: [
+              821154603, // Gnawing Hunger
+              715338174, // Just in Case
+              736901634 // Doomsday
+            ]
+          },
+          {
+            name: 'Hunter Armor (Tier 1)',
+            season: 6,
+            itemGroups: [
+              common.RECKONING_ILLICIT_COLLECTOR_HUNTER,
+              common.RECKONING_ILLICIT_SENTRY_HUNTER,
+              common.RECKONING_ILLICIT_INVADER_HUNTER,
+              common.RECKONING_ILLICIT_REAPER_HUNTER
+            ]
+          },
+          {
+            name: 'Hunter Armor (Tier 2)',
+            season: 6,
+            itemGroups: [
+              common.RECKONING_OUTLAWED_COLLECTOR_HUNTER,
+              common.RECKONING_OUTLAWED_SENTRY_HUNTER,
+              common.RECKONING_OUTLAWED_INVADER_HUNTER,
+              common.RECKONING_OUTLAWED_REAPER_HUNTER
+            ]
+          },
+          {
+            name: 'Hunter Armor (Tier 3)',
+            season: 6,
+            itemGroups: [
+              common.RECKONING_NOTORIOUS_COLLECTOR_HUNTER,
+              common.RECKONING_NOTORIOUS_SENTRY_HUNTER,
+              common.RECKONING_NOTORIOUS_INVADER_HUNTER,
+              common.RECKONING_NOTORIOUS_REAPER_HUNTER
+            ]
+          },
+          {
+            name: 'Titan Armor (Tier 1)',
+            season: 6,
+            itemGroups: [
+              common.RECKONING_ILLICIT_COLLECTOR_TITAN,
+              common.RECKONING_ILLICIT_SENTRY_TITAN,
+              common.RECKONING_ILLICIT_INVADER_TITAN,
+              common.RECKONING_ILLICIT_REAPER_TITAN
+            ]
+          },
+          {
+            name: 'Titan Armor (Tier 2)',
+            season: 6,
+            itemGroups: [
+              common.RECKONING_OUTLAWED_COLLECTOR_TITAN,
+              common.RECKONING_OUTLAWED_SENTRY_TITAN,
+              common.RECKONING_OUTLAWED_INVADER_TITAN,
+              common.RECKONING_OUTLAWED_REAPER_TITAN
+            ]
+          },
+          {
+            name: 'Titan Armor (Tier 3)',
+            season: 6,
+            itemGroups: [
+              common.RECKONING_NOTORIOUS_COLLECTOR_TITAN,
+              common.RECKONING_NOTORIOUS_SENTRY_TITAN,
+              common.RECKONING_NOTORIOUS_INVADER_TITAN,
+              common.RECKONING_NOTORIOUS_REAPER_TITAN
+            ]
+          },
+          {
+            name: 'Warlock Armor (Tier 1)',
+            season: 6,
+            itemGroups: [
+              common.RECKONING_ILLICIT_COLLECTOR_WARLOCK,
+              common.RECKONING_ILLICIT_SENTRY_WARLOCK,
+              common.RECKONING_ILLICIT_INVADER_WARLOCK,
+              common.RECKONING_ILLICIT_REAPER_WARLOCK
+            ]
+          },
+          {
+            name: 'Warlock Armor (Tier 2)',
+            season: 6,
+            itemGroups: [
+              common.RECKONING_OUTLAWED_COLLECTOR_WARLOCK,
+              common.RECKONING_OUTLAWED_SENTRY_WARLOCK,
+              common.RECKONING_OUTLAWED_INVADER_WARLOCK,
+              common.RECKONING_OUTLAWED_REAPER_WARLOCK
+            ]
+          },
+          {
+            name: 'Warlock Armor (Tier 3)',
+            season: 6,
+            itemGroups: [
+              common.RECKONING_NOTORIOUS_COLLECTOR_WARLOCK,
+              common.RECKONING_NOTORIOUS_SENTRY_WARLOCK,
+              common.RECKONING_NOTORIOUS_INVADER_WARLOCK,
+              common.RECKONING_NOTORIOUS_REAPER_WARLOCK
+            ]
+          },
+          {
+            name: 'Extras',
+            season: 6,
+            items: [
+              2868525732 // 	Wheel of Fortune
+            ]
+          }
+        ]
+      },
       {
         name: 'Menagerie',
         description: 'Acquired from the Menagerie.',
@@ -971,119 +1083,7 @@ export default ([
           }
         ]
       },
-      {
-        name: 'The Reckoning',
-        id: 'YEAR_TWO_RECKONING',
-        description: `Weapons & Gambit Prime armor, obtained from The Reckoning`,
-        sections: [
-          {
-            name: 'Weapons (Tier 2 & 3)',
-            season: 6,
-            items: [
-              821154603, // Gnawing Hunger
-              715338174, // Just in Case
-              736901634 // Doomsday
-            ]
-          },
-          {
-            name: 'Hunter Armor (Tier 1)',
-            season: 6,
-            itemGroups: [
-              common.RECKONING_ILLICIT_COLLECTOR_HUNTER,
-              common.RECKONING_ILLICIT_SENTRY_HUNTER,
-              common.RECKONING_ILLICIT_INVADER_HUNTER,
-              common.RECKONING_ILLICIT_REAPER_HUNTER
-            ]
-          },
-          {
-            name: 'Hunter Armor (Tier 2)',
-            season: 6,
-            itemGroups: [
-              common.RECKONING_OUTLAWED_COLLECTOR_HUNTER,
-              common.RECKONING_OUTLAWED_SENTRY_HUNTER,
-              common.RECKONING_OUTLAWED_INVADER_HUNTER,
-              common.RECKONING_OUTLAWED_REAPER_HUNTER
-            ]
-          },
-          {
-            name: 'Hunter Armor (Tier 3)',
-            season: 6,
-            itemGroups: [
-              common.RECKONING_NOTORIOUS_COLLECTOR_HUNTER,
-              common.RECKONING_NOTORIOUS_SENTRY_HUNTER,
-              common.RECKONING_NOTORIOUS_INVADER_HUNTER,
-              common.RECKONING_NOTORIOUS_REAPER_HUNTER
-            ]
-          },
-          {
-            name: 'Titan Armor (Tier 1)',
-            season: 6,
-            itemGroups: [
-              common.RECKONING_ILLICIT_COLLECTOR_TITAN,
-              common.RECKONING_ILLICIT_SENTRY_TITAN,
-              common.RECKONING_ILLICIT_INVADER_TITAN,
-              common.RECKONING_ILLICIT_REAPER_TITAN
-            ]
-          },
-          {
-            name: 'Titan Armor (Tier 2)',
-            season: 6,
-            itemGroups: [
-              common.RECKONING_OUTLAWED_COLLECTOR_TITAN,
-              common.RECKONING_OUTLAWED_SENTRY_TITAN,
-              common.RECKONING_OUTLAWED_INVADER_TITAN,
-              common.RECKONING_OUTLAWED_REAPER_TITAN
-            ]
-          },
-          {
-            name: 'Titan Armor (Tier 3)',
-            season: 6,
-            itemGroups: [
-              common.RECKONING_NOTORIOUS_COLLECTOR_TITAN,
-              common.RECKONING_NOTORIOUS_SENTRY_TITAN,
-              common.RECKONING_NOTORIOUS_INVADER_TITAN,
-              common.RECKONING_NOTORIOUS_REAPER_TITAN
-            ]
-          },
-          {
-            name: 'Warlock Armor (Tier 1)',
-            season: 6,
-            itemGroups: [
-              common.RECKONING_ILLICIT_COLLECTOR_WARLOCK,
-              common.RECKONING_ILLICIT_SENTRY_WARLOCK,
-              common.RECKONING_ILLICIT_INVADER_WARLOCK,
-              common.RECKONING_ILLICIT_REAPER_WARLOCK
-            ]
-          },
-          {
-            name: 'Warlock Armor (Tier 2)',
-            season: 6,
-            itemGroups: [
-              common.RECKONING_OUTLAWED_COLLECTOR_WARLOCK,
-              common.RECKONING_OUTLAWED_SENTRY_WARLOCK,
-              common.RECKONING_OUTLAWED_INVADER_WARLOCK,
-              common.RECKONING_OUTLAWED_REAPER_WARLOCK
-            ]
-          },
-          {
-            name: 'Warlock Armor (Tier 3)',
-            season: 6,
-            itemGroups: [
-              common.RECKONING_NOTORIOUS_COLLECTOR_WARLOCK,
-              common.RECKONING_NOTORIOUS_SENTRY_WARLOCK,
-              common.RECKONING_NOTORIOUS_INVADER_WARLOCK,
-              common.RECKONING_NOTORIOUS_REAPER_WARLOCK
-            ]
-          },
-          {
-            name: 'Extras',
-            season: 6,
-            items: [
-              2868525732 // 	Wheel of Fortune
-            ]
-          }
-        ]
-      },
+
       {
         name: 'Tribute Hall',
         description: 'Acquired by Placing Tributes in the Tribute Hall',
