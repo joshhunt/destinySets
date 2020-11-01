@@ -617,7 +617,7 @@ export default ([
         sections: [
           {
             name: 'Weapons',
-            // season: "K", // Double Check
+            season: '8',
             items: [
               4103414242, // Divinity
               3385326721, // Reckless Oracle
@@ -631,7 +631,7 @@ export default ([
           },
           {
             name: 'Hunter Armor',
-            // season: "K", // Double Check
+            season: '8',
             items: [
               557676195, // Cowl of Righteousness
               1653741426, // Grips of Exaltation
@@ -642,7 +642,7 @@ export default ([
           },
           {
             name: 'Titan Armor',
-            // season: "K", // Double Check
+            season: '8',
             items: [
               519078295, // Helm of Righteousness
               3887559710, // Gauntlets of Exaltation
@@ -653,7 +653,7 @@ export default ([
           },
           {
             name: 'Warlock Armor',
-            // season: "K", // Double Check
+            season: '8',
             items: [
               3001934726, // Mask of Righteousness
               2015894615, // Gloves of Exaltation
@@ -664,7 +664,7 @@ export default ([
           },
           {
             name: 'Extras',
-            // season: "K", // Double Check
+            season: '8',
             items: [
               298334059, // Inherent Truth
               3996862462, // Ancient Believer
@@ -672,7 +672,12 @@ export default ([
             ]
           }
         ]
-      },
+      }
+    ]
+  },
+  {
+    name: 'Seasonal Content',
+    sets: [
       {
         name: 'Season 8',
         id: 'year-three-season-8',

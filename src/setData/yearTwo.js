@@ -610,6 +610,81 @@ export default ([
         ]
       },
       {
+        name: _(
+          'DestinyRecordDefinition[3688903951].displayProperties.name',
+          'Raid: Last Wish'
+        ),
+        id: 'YEAR_TWO_LAST_WISH',
+        description: _(
+          'DestinyCollectibleDefinition[3471068543].sourceString',
+          'Last Wish raid.'
+        ),
+        sections: [
+          {
+            name: 'Weapons',
+            season: 4,
+            items: [
+              2069224589, // One Thousand Voices
+              686951703, // The Supremacy
+              4094657108, // Techeun Force
+              654370424, // Nation of Beasts
+              568515759, // Chattering Bone
+              3799980700, // Transfiguration
+              601592879, // Age-Old Bond
+              2721249463, // Tyranny of Heaven
+              2545083870 // Apex Predator
+            ]
+          },
+          {
+            name: 'Hunter Armor',
+            season: 4,
+            items: [
+              3838639757, // Mask of the Great Hunt
+              196235132, // Grips of the Great Hunt
+              146275556, // Vest of the Great Hunt
+              3494130310, // Strides of the Great Hunt
+              1314563129 // Cloak of the Great Hunt
+            ]
+          },
+          {
+            name: 'Titan Armor',
+            season: 4,
+            items: [
+              2274520361, // Helm of the Great Hunt
+              65929376, // Gauntlets of the Great Hunt
+              3614211816, // Plate of the Great Hunt
+              3055836250, // Greaves of the Great Hunt
+              1021341893 // Mark of the Great Hunt
+            ]
+          },
+          {
+            name: 'Warlock Armor',
+            season: 4,
+            items: [
+              3251351304, // Hood of the Great Hunt
+              2598685593, // Gloves of the Great Hunt
+              3445296383, // Robes of the Great Hunt
+              1195800715, // Boots of the Great Hunt
+              821841934 // Bond of the Great Hunt
+            ]
+          },
+
+          {
+            name: 'Extras',
+            season: 4,
+            items: [
+              3862768196, // Wish-Maker Shell
+              2081719592, // Cleansing Knife
+              2269373482, // Ermine TAC-717
+              1059304051, // Wish No More
+              1511214613, // The Winding Tower (Emblem)
+              1511214612, // Castle in the Clouds (Emblem)
+              3668669364 // Dreaming Spectrum (Shader)
+            ]
+          }
+        ]
+      },
+      {
         name: 'Black Armory Forge Gear',
         description:
           'Gear from Forge Ignitions and crafted in a Black Armory forge.',
@@ -729,6 +804,7 @@ export default ([
           }
         ]
       },
+
       {
         name: 'Menagerie',
         description: 'Acquired from the Menagerie.',
@@ -833,159 +909,6 @@ export default ([
         ]
       },
       {
-        name: 'Tribute Hall',
-        description: 'Acquired by Placing Tributes in the Tribute Hall',
-        id: 'YEAR_TWO_TRIBUTE_HALL',
-        sections: [
-          {
-            name: 'Extras',
-            season: 7,
-            items: [
-              377681571, // X Marks the Spot
-              1661191192 // The Tribute Hall
-            ]
-          }
-        ]
-      },
-      {
-        name: _(
-          'DestinyRecordDefinition[3688903951].displayProperties.name',
-          'Raid: Last Wish'
-        ),
-        id: 'YEAR_TWO_LAST_WISH',
-        description: _(
-          'DestinyCollectibleDefinition[3471068543].sourceString',
-          'Last Wish raid.'
-        ),
-        sections: [
-          {
-            name: 'Weapons',
-            season: 4,
-            items: [
-              2069224589, // One Thousand Voices
-              686951703, // The Supremacy
-              4094657108, // Techeun Force
-              654370424, // Nation of Beasts
-              568515759, // Chattering Bone
-              3799980700, // Transfiguration
-              601592879, // Age-Old Bond
-              2721249463, // Tyranny of Heaven
-              2545083870 // Apex Predator
-            ]
-          },
-          {
-            name: 'Hunter Armor',
-            season: 4,
-            items: [
-              3838639757, // Mask of the Great Hunt
-              196235132, // Grips of the Great Hunt
-              146275556, // Vest of the Great Hunt
-              3494130310, // Strides of the Great Hunt
-              1314563129 // Cloak of the Great Hunt
-            ]
-          },
-          {
-            name: 'Titan Armor',
-            season: 4,
-            items: [
-              2274520361, // Helm of the Great Hunt
-              65929376, // Gauntlets of the Great Hunt
-              3614211816, // Plate of the Great Hunt
-              3055836250, // Greaves of the Great Hunt
-              1021341893 // Mark of the Great Hunt
-            ]
-          },
-          {
-            name: 'Warlock Armor',
-            season: 4,
-            items: [
-              3251351304, // Hood of the Great Hunt
-              2598685593, // Gloves of the Great Hunt
-              3445296383, // Robes of the Great Hunt
-              1195800715, // Boots of the Great Hunt
-              821841934 // Bond of the Great Hunt
-            ]
-          },
-
-          {
-            name: 'Extras',
-            season: 4,
-            items: [
-              3862768196, // Wish-Maker Shell
-              2081719592, // Cleansing Knife
-              2269373482, // Ermine TAC-717
-              1059304051, // Wish No More
-              1511214613, // The Winding Tower (Emblem)
-              1511214612, // Castle in the Clouds (Emblem)
-              3668669364 // Dreaming Spectrum (Shader)
-            ]
-          }
-        ]
-      },
-      {
-        name: 'Raid: Scourge of the Past',
-        id: 'YEAR_TWO_RAID_BLACK_ARMORY',
-        description: _(
-          'DestinyCollectibleDefinition[982798874].sourceString',
-          'Found in the "Scourge of the Past" raid.'
-        ),
-        sections: [
-          {
-            name: 'Weapons',
-            season: 5,
-            items: [
-              2376481550, // Anarchy
-              1931556011, // No Feelings
-              1664372054, // Threat Level
-              2753269585, // Tempered Dynamo
-              2186258845 // Bellowing Giant
-            ]
-          },
-          {
-            name: 'Hunter Armor',
-            season: 5,
-            items: [
-              350056552, // Bladesmith's Memory Mask
-              3992358137, // Bladesmith's Memory Grips
-              1917693279, // Bladesmith's Memory Vest
-              2589473259, // Bladesmith's Memory Strides
-              3164851950 // Bladesmith's Memory Cloak
-            ]
-          },
-          {
-            name: 'Titan Armor',
-            season: 5,
-            items: [
-              2921334134, // Bulletsmith's Ire Helm
-              4125324487, // Bulletsmith's Ire Gauntlets
-              2530113265, // Bulletsmith's Ire Plate
-              2878130185, // Bulletsmith's Ire Greaves
-              388999052 // Bulletsmith's Ire Mark
-            ]
-          },
-          {
-            name: 'Warlock Armor',
-            season: 5,
-            items: [
-              1624906371, // Gunsmith's Devotion Crown
-              2762445138, // Gunsmith's Devotion Gloves
-              4238134294, // Gunsmith's Devotion Robes
-              3163683564, // Gunsmith's Devotion Boots
-              3567761471 // Gunsmith's Devotion Bond
-            ]
-          },
-          {
-            name: 'Extras',
-            season: 5,
-            items: [
-              3317837688, // Always on Time
-              3931192718, // Recovered Memories
-              2557722678 // Midnight Smith
-            ]
-          }
-        ]
-      },
-      {
         name: 'Raid: Crown of Sorrow',
         id: 'YEAR_TWO_RAID_PENUMBRA',
         description:
@@ -1047,55 +970,11 @@ export default ([
             ]
           }
         ]
-      }
-    ]
-  },
-  {
-    name: 'The Reckoning',
-    sets: [
-      {
-        name: 'Illicit Set',
-        description:
-          'The Gambit Prime Illicit armor, obtained from The Reckoning Tier 1',
-        id: 'RECKONING_ILLICIT',
-        sections: [
-          {
-            name: 'Hunter Armor',
-            season: 6,
-            itemGroups: [
-              common.RECKONING_ILLICIT_COLLECTOR_HUNTER,
-              common.RECKONING_ILLICIT_SENTRY_HUNTER,
-              common.RECKONING_ILLICIT_INVADER_HUNTER,
-              common.RECKONING_ILLICIT_REAPER_HUNTER
-            ]
-          },
-          {
-            name: 'Titan Armor',
-            season: 6,
-            itemGroups: [
-              common.RECKONING_ILLICIT_COLLECTOR_TITAN,
-              common.RECKONING_ILLICIT_SENTRY_TITAN,
-              common.RECKONING_ILLICIT_INVADER_TITAN,
-              common.RECKONING_ILLICIT_REAPER_TITAN
-            ]
-          },
-          {
-            name: 'Warlock Armor',
-            season: 6,
-            itemGroups: [
-              common.RECKONING_ILLICIT_COLLECTOR_WARLOCK,
-              common.RECKONING_ILLICIT_SENTRY_WARLOCK,
-              common.RECKONING_ILLICIT_INVADER_WARLOCK,
-              common.RECKONING_ILLICIT_REAPER_WARLOCK
-            ]
-          }
-        ]
       },
       {
-        name: 'Outlawed Set',
-        description:
-          'The Gambit Prime Outlawed armor & weapons, obtained from The Reckoning Tier 2',
-        id: 'RECKONING_OUTLAWED',
+        name: 'The Reckoning',
+        id: 'YEAR_TWO_RECKONING',
+        description: `Weapons & Gambit Prime armor, obtained from The Reckoning`,
         sections: [
           {
             name: 'Weapons (Tier 2 & 3)',
@@ -1107,7 +986,17 @@ export default ([
             ]
           },
           {
-            name: 'Hunter Armor',
+            name: 'Hunter Armor (Tier 1)',
+            season: 6,
+            itemGroups: [
+              common.RECKONING_ILLICIT_COLLECTOR_HUNTER,
+              common.RECKONING_ILLICIT_SENTRY_HUNTER,
+              common.RECKONING_ILLICIT_INVADER_HUNTER,
+              common.RECKONING_ILLICIT_REAPER_HUNTER
+            ]
+          },
+          {
+            name: 'Hunter Armor (Tier 2)',
             season: 6,
             itemGroups: [
               common.RECKONING_OUTLAWED_COLLECTOR_HUNTER,
@@ -1117,35 +1006,7 @@ export default ([
             ]
           },
           {
-            name: 'Titan Armor',
-            season: 6,
-            itemGroups: [
-              common.RECKONING_OUTLAWED_COLLECTOR_TITAN,
-              common.RECKONING_OUTLAWED_SENTRY_TITAN,
-              common.RECKONING_OUTLAWED_INVADER_TITAN,
-              common.RECKONING_OUTLAWED_REAPER_TITAN
-            ]
-          },
-          {
-            name: 'Warlock Armor',
-            season: 6,
-            itemGroups: [
-              common.RECKONING_OUTLAWED_COLLECTOR_WARLOCK,
-              common.RECKONING_OUTLAWED_SENTRY_WARLOCK,
-              common.RECKONING_OUTLAWED_INVADER_WARLOCK,
-              common.RECKONING_OUTLAWED_REAPER_WARLOCK
-            ]
-          }
-        ]
-      },
-      {
-        name: 'Notorious Set',
-        description:
-          'The Gambit Prime Notorious armor & flair, obtained from The Reckoning Tier 3',
-        id: 'RECKONING_NOTORIOUS',
-        sections: [
-          {
-            name: 'Hunter Armor',
+            name: 'Hunter Armor (Tier 3)',
             season: 6,
             itemGroups: [
               common.RECKONING_NOTORIOUS_COLLECTOR_HUNTER,
@@ -1155,7 +1016,27 @@ export default ([
             ]
           },
           {
-            name: 'Titan Armor',
+            name: 'Titan Armor (Tier 1)',
+            season: 6,
+            itemGroups: [
+              common.RECKONING_ILLICIT_COLLECTOR_TITAN,
+              common.RECKONING_ILLICIT_SENTRY_TITAN,
+              common.RECKONING_ILLICIT_INVADER_TITAN,
+              common.RECKONING_ILLICIT_REAPER_TITAN
+            ]
+          },
+          {
+            name: 'Titan Armor (Tier 2)',
+            season: 6,
+            itemGroups: [
+              common.RECKONING_OUTLAWED_COLLECTOR_TITAN,
+              common.RECKONING_OUTLAWED_SENTRY_TITAN,
+              common.RECKONING_OUTLAWED_INVADER_TITAN,
+              common.RECKONING_OUTLAWED_REAPER_TITAN
+            ]
+          },
+          {
+            name: 'Titan Armor (Tier 3)',
             season: 6,
             itemGroups: [
               common.RECKONING_NOTORIOUS_COLLECTOR_TITAN,
@@ -1165,7 +1046,27 @@ export default ([
             ]
           },
           {
-            name: 'Warlock Armor',
+            name: 'Warlock Armor (Tier 1)',
+            season: 6,
+            itemGroups: [
+              common.RECKONING_ILLICIT_COLLECTOR_WARLOCK,
+              common.RECKONING_ILLICIT_SENTRY_WARLOCK,
+              common.RECKONING_ILLICIT_INVADER_WARLOCK,
+              common.RECKONING_ILLICIT_REAPER_WARLOCK
+            ]
+          },
+          {
+            name: 'Warlock Armor (Tier 2)',
+            season: 6,
+            itemGroups: [
+              common.RECKONING_OUTLAWED_COLLECTOR_WARLOCK,
+              common.RECKONING_OUTLAWED_SENTRY_WARLOCK,
+              common.RECKONING_OUTLAWED_INVADER_WARLOCK,
+              common.RECKONING_OUTLAWED_REAPER_WARLOCK
+            ]
+          },
+          {
+            name: 'Warlock Armor (Tier 3)',
             season: 6,
             itemGroups: [
               common.RECKONING_NOTORIOUS_COLLECTOR_WARLOCK,
@@ -1182,10 +1083,24 @@ export default ([
             ]
           }
         ]
+      },
+      {
+        name: 'Tribute Hall',
+        description: 'Acquired by Placing Tributes in the Tribute Hall',
+        id: 'YEAR_TWO_TRIBUTE_HALL',
+        sections: [
+          {
+            name: 'Extras',
+            season: 7,
+            items: [
+              377681571, // X Marks the Spot
+              1661191192 // The Tribute Hall
+            ]
+          }
+        ]
       }
     ]
   },
-
   {
     name: 'Destinations',
     sets: [
