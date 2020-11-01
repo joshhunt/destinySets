@@ -918,6 +918,34 @@ export default ([
         ]
       },
       {
+        name: 'Zero Hour',
+        id: 'YEAR_ONE_ZERO_HOUR',
+        description: 'Gear obtained by playing the Zero Hour mission.',
+        sections: [
+          {
+            name: 'Weapons',
+            season: 6,
+            items: [
+              400096939 // Outbreak Perfected
+            ]
+          },
+          {
+            name: 'Ships',
+            season: 6,
+            items: [
+              2200702883 // Scrap CF-717-91
+            ]
+          },
+          {
+            name: 'Extras',
+            season: 6,
+            items: [
+              2868525737 // Quarantine Zone
+            ]
+          }
+        ]
+      },
+      {
         name: 'Menagerie',
         description: 'Acquired from the Menagerie.',
         id: 'YEAR_TWO_MENAGERIE',
