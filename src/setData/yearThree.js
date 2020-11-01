@@ -1264,7 +1264,7 @@ export default ([
               3639046081, // Shadehallow
               2716279146, // Bloodmane
               2716279147, // Nougat Delight
-              373634602, // Alchemy Scorch
+              // 373634602, // Alchemy Scorch (Never sold and has no collectible)
               810321696 // Reanimated Entrance
             ]
           }
