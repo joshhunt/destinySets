@@ -823,6 +823,27 @@ export default ([
             ]
           }
         ]
+      },
+      {
+        name: 'The Whisper',
+        id: 'YEAR_ONE_THE_WHISPER',
+        description: 'Gear obtained by playing the The Whisper mission.',
+        sections: [
+          {
+            name: 'Weapons',
+            season: 3,
+            items: [
+              1891561814 // Whisper of the Worm
+            ]
+          },
+          {
+            name: 'Extras',
+            season: 3,
+            items: [
+              3403859120 // A Thousand Wings
+            ]
+          }
+        ]
       }
     ]
   },
