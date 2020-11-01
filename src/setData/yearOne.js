@@ -1,150 +1,192 @@
 // @flow
-
-import * as common from './common';
 import type { SetPage } from '../types';
+import * as common from './common';
+import { i18nDefinitionString as _ } from './utils';
 
 export default ([
   {
-    name: 'Endgame',
+    name: 'Activities',
     sets: [
       {
-        name: 'Leviathan Raid',
-        id: 'ALL_SEASONS_LEVIATHAN_RAID',
-        description:
-          'Gear obtained by playing the Leviathan raid and increasing your reputation with Emperor Calus.',
+        name: _(
+          'DestinyActivityModeDefinition[2394616003].displayProperties.name',
+          'Strikes'
+        ),
+        id: 'YEAR_ONE_STRIKES',
+        description: _(
+          'DestinyCollectibleDefinition[1333654058].sourceString',
+          'Complete strikes and earn rank-up packages from Commander Zavala.'
+        ),
         sections: [
           {
             name: 'Weapons',
             season: 1,
-            items: common.RAID_LEVIATHAN_WEAPONS
+            items: common.VENDOR_VANGUARD_S1_WEAPONS
           },
           {
-            name: 'Armor',
-            season: 1,
-            itemGroups: [
-              common.RAID_LEVIATHAN_ARMOR_HUNTER,
-              common.RAID_LEVIATHAN_ARMOR_TITAN,
-              common.RAID_LEVIATHAN_ARMOR_WARLOCK
-            ]
+            name: 'Weapons',
+            season: 2,
+            items: common.VENDOR_VANGUARD_S2_WEAPONS
           },
-          {
-            name: 'Armor - Prestige Mode',
-            season: 1,
-            itemGroups: [
-              common.RAID_LEVIATHAN_ARMOR_PRESTIGE_HUNTER,
-              common.RAID_LEVIATHAN_ARMOR_PRESTIGE_TITAN,
-              common.RAID_LEVIATHAN_ARMOR_PRESTIGE_WARLOCK
-            ]
-          },
-          {
-            name: 'Extras',
-            items: [
-              3257147585, // Embrace His Name
-              1667199810, // Good Dog
-              2984066626, // Splish Splash
-              1625974211, // Two Enter, One Leaves
-              812824526, // Take the Throne
-              1422712818, // Calus's Selected
-              2107367383, // Glory to the Emperor
-              1422712819 // Calus's Treasured
-            ]
-          }
-        ]
-      },
 
-      {
-        name: 'Eater of Worlds, Raid Lair',
-        id: 'ALL_SEASONS_EATER_OF_WORLDS',
-        description:
-          'Gear obtained by playing the Eater of Worlds raid lair and increasing your reputation with Emperor Calus.',
-        sections: [
           {
             name: 'Weapons',
-            season: 2,
-            items: common.RAID_EOW_WEAPONS
+            season: 3,
+            items: common.VENDOR_VANGUARD_S3_WEAPONS
           },
           {
             name: 'Armor',
-            season: 2,
+            season: 1,
             itemGroups: [
-              common.RAID_EOW_ARMOR_HUNTER,
-              common.RAID_EOW_ARMOR_TITAN,
-              common.RAID_EOW_ARMOR_WARLOCK
+              common.VENDOR_VANGUARD_S1_ARMOR_HUNTER,
+              common.VENDOR_VANGUARD_S1_ARMOR_TITAN,
+              common.VENDOR_VANGUARD_S1_ARMOR_WARLOCK
             ]
           },
           {
             name: 'Ornaments',
             season: 2,
             itemGroups: [
-              common.RAID_EOW_ORNAMENTS_HUNTER,
-              common.RAID_EOW_ORNAMENTS_TITAN,
-              common.RAID_EOW_ORNAMENTS_WARLOCK
-            ]
-          },
-          {
-            name: 'Extras',
-            items: [
-              113124080, // Contender's Shell (Ghost)
-              4261480751, // Emperor's Envy (Emblem)
-              4242407217, // Calus's Elite (Shader)
-              4261480750, // Covetous Emperor (Emblem)
-              4242407216 // Calus's Preferred (Shader)
-            ]
-          }
-        ]
-      },
-
-      {
-        name: 'Spire of Stars, Raid Lair',
-        id: 'ALL_SEASONS_SPIRE_OF_STARS',
-        description:
-          'Gear obtained by playing the Spire of Stars raid lair and increasing your reputation with Emperor Calus.',
-        sections: [
-          {
-            name: 'Weapons',
-            season: 3,
-            items: common.RAID_SOS_WEAPONS
-          },
-          {
-            name: 'Armor',
-            season: 3,
-            itemGroups: [
-              common.RAID_SOS_ARMOR_HUNTER,
-              common.RAID_SOS_ARMOR_TITAN,
-              common.RAID_SOS_ARMOR_WARLOCK
+              common.VENDOR_VANGUARD_S2_ORNAMENTS_HUNTER,
+              common.VENDOR_VANGUARD_S2_ORNAMENTS_TITAN,
+              common.VENDOR_VANGUARD_S2_ORNAMENTS_WARLOCK
             ]
           },
           {
             name: 'Ornaments',
             season: 3,
             itemGroups: [
-              common.RAID_SOS_ORNAMENTS_HUNTER,
-              common.RAID_SOS_ORNAMENTS_TITAN,
-              common.RAID_SOS_ORNAMENTS_WARLOCK
+              common.VENDOR_VANGUARD_S3_ORNAMENTS_HUNTER,
+              common.VENDOR_VANGUARD_S3_ORNAMENTS_TITAN,
+              common.VENDOR_VANGUARD_S3_ORNAMENTS_WARLOCK
+            ]
+          },
+          {
+            name: 'Extras',
+            season: 1,
+            items: [
+              2010554576, // At the Vanguard
+              2010554578, // Make Us Proud
+              2010554579, // Push Forward
+              223308216 // Vanguard Magnus
+            ]
+          },
+          {
+            name: 'Extras',
+            season: 2,
+            items: [
+              822835819 // Vanguard Discipline
             ]
           },
           {
             name: 'Extras',
             season: 3,
             items: [
-              530754878, // Luxurious Toast emote
-              2925370359, // I'm Open Emote
-              1057119308, // Spire Star emblem
-              2331063860, // Grind Underfoot emblem
-              2331063861, // Together, For Glory! emblem
-              2543722796, // Praetorian Visage shader
-              1595521942, // Atop the Spire emblem
-              2543722797 // Calus's Shadow shader
+              1887457789, // Ambrite Complex Shell
+              123555424, // S-99 Bogtreader Steel
+              806017499, // Zavala's Authority
+              1400453406 // Vanguard Unity
             ]
           }
         ]
       },
-
       {
-        name: 'Iron Banner',
-        id: 'ALL_SEASONS_IRON_BANNER',
-        description:
-          'Weapons and armor obtained by honoring the heroes of old in the Iron Banner Crucible tournament.',
+        name: _(
+          'DestinyActivityModeDefinition[1164760504].displayProperties.name',
+          'Crucible'
+        ),
+        id: 'YEAR_ONE_CRUCIBLE',
+        description: _(
+          'DestinyCollectibleDefinition[273762345].sourceString',
+          'Complete Crucible matches and earn rank-up packages from Lord Shaxx.'
+        ),
+        sections: [
+          {
+            name: 'Weapons',
+            season: 1,
+            items: common.VENDOR_CRUCIBLE_S1_WEAPONS
+          },
+          {
+            name: 'Weapons',
+            season: 2,
+            items: common.VENDOR_CRUCIBLE_S2_WEAPONS
+          },
+          {
+            name: 'Valor Rewards',
+            season: 3,
+            items: common.VENDOR_CRUCIBLE_S3_VALOR_REWARDS
+          },
+          {
+            name: 'Glory Rewards',
+            season: 3,
+            items: common.VENDOR_CRUCIBLE_S3_GLORY_REWARDS
+          },
+          {
+            name: 'Armor',
+            season: 1,
+            itemGroups: [
+              common.VENDOR_CRUCIBLE_S1_ARMOR_HUNTER,
+              common.VENDOR_CRUCIBLE_S1_ARMOR_TITAN,
+              common.VENDOR_CRUCIBLE_S1_ARMOR_WARLOCK
+            ]
+          },
+          {
+            name: 'Ornaments',
+            season: 2,
+            itemGroups: [
+              common.VENDOR_CRUCIBLE_S2_ORNAMENTS_HUNTER,
+              common.VENDOR_CRUCIBLE_S2_ORNAMENTS_TITAN,
+              common.VENDOR_CRUCIBLE_S2_ORNAMENTS_WARLOCK
+            ]
+          },
+          {
+            name: 'Ornaments',
+            season: 3,
+            itemGroups: [
+              common.VENDOR_CRUCIBLE_S3_ORNAMENTS_HUNTER,
+              common.VENDOR_CRUCIBLE_S3_ORNAMENTS_TITAN,
+              common.VENDOR_CRUCIBLE_S3_ORNAMENTS_WARLOCK
+            ]
+          },
+          {
+            name: 'Extras',
+            season: 1,
+            items: [
+              4242592195, // Fight Forever
+              4242592192, // Give Them War
+              4242592193, // One Path to Victory
+              969863968, // Victorious Veteran
+              3875413893 // Crucible Glory
+            ]
+          },
+          {
+            name: 'Extras',
+            season: 2,
+            items: [
+              87646118 // Endless Glory
+            ]
+          },
+          {
+            name: 'Extras',
+            season: 3,
+            items: [
+              29194593, // For Valor (Season 3)
+              2890977363, // For Glory (Season 3)
+              2361935691 // Crucible Triumph
+            ]
+          }
+        ]
+      },
+      {
+        name: _(
+          'DestinyActivityModeDefinition[1826469369].displayProperties.name',
+          'Iron Banner'
+        ),
+        id: 'YEAR_TWO_IRON_BANNER',
+        description: _(
+          'DestinyCollectibleDefinition[1333654062].sourceString',
+          'Complete Iron Banner matches and earn rank-up packages from Lord Saladin.'
+        ),
         sections: [
           {
             name: 'Weapons',
@@ -222,10 +264,15 @@ export default ([
       },
 
       {
-        name: 'Trials of the Nine',
-        id: 'ALL_SEASONS_TRIALS_OF_THE_NINE',
-        description:
-          'Weapons and armor obtained by competing in the Trials of the Nine.',
+        name: _(
+          'DestinyRecordDefinition[1370326378].displayProperties.name',
+          'Trials of the Nine'
+        ),
+        id: 'YEAR_ONE_TRIALS_OF_THE_NINE',
+        description: _(
+          'DestinyCollectibleDefinition[1152758805].sourceString',
+          'Complete Trials tickets and earn rank-up packages from the Emissary of the Nine.'
+        ),
         sections: [
           {
             name: 'Weapons',
@@ -311,78 +358,82 @@ export default ([
           }
         ]
       },
-
       {
-        name: 'Escalation Protocol',
-        id: 'WARMIND_ESCALATION_PROTOCOL',
-        description: 'Gear obtained by completing Escalation Protocol.',
+        name: 'Vanguard Research Gear',
+        id: 'BASE_VANGUARD_RESEARCH_GEAR',
+        description:
+          'Weapons and armor obtained by assisting Ikora Rey with her research.',
         sections: [
           {
-            name: 'Weapons',
-            season: 3,
-            items: [
-              3866356643, // IKELOS_HC_v1.0.1
-              1723472487, // IKELOS_SMG_v1.0.1
-              1887808042, // IKELOS_SG_v1.0.1
-              847450546 // IKELOS_SR_v1.0.1
-            ]
-          },
-
-          {
             name: 'Hunter Armor',
-            season: 3,
-            items: [
-              3324158902, // Abhorrent Imperative Mask
-              191708423, // Abhorrent Imperative Grasps
-              4138580785, // Abhorrent Imperative Vest
-              3663938889, // Abhorrent Imperative Strides
-              2039043276 // Abhorrent Imperative Cloak
-            ]
+            season: 1,
+            items: [4248632159, 4224076198, 385045066, 3741528736, 555828571]
           },
           {
             name: 'Titan Armor',
-            season: 3,
-            items: [
-              2193087628, // Midnight Exigent Helm
-              1388962117, // Midnight Exigent Gauntlets
-              2462354715, // Midnight Exigent Plate
-              1736188615, // Midnight Exigent Greaves
-              819174194 // Midnight Exigent Mark
-            ]
+            season: 1,
+            items: [4081859017, 1490387264, 2682045448, 185326970, 89175653]
           },
           {
             name: 'Warlock Armor',
-            season: 3,
+            season: 1,
+            items: [2615512594, 3081969019, 868792277, 1532009197, 4285708584]
+          },
+          {
+            name: 'Extras',
+            season: 1,
             items: [
-              1612891919, // Yuga Sundown Helmet
-              3768023958, // Yuga Sundown Gloves
-              4144095450, // Yuga Sundown Robes
-              685439088, // Yuga Sundown Boots
-              3792548907 // Yuga Sundown Bond
+              1724152706, // Red Legion Aegis
+              1724152705, // Red Legion Logistics
+              1724152704 // WAR Vault 5
+            ]
+          }
+        ]
+      },
+      {
+        name: 'Leviathan Raid',
+        id: 'ALL_SEASONS_LEVIATHAN_RAID',
+        description:
+          'Gear obtained by playing the Leviathan raid and increasing your reputation with Emperor Calus.',
+        sections: [
+          {
+            name: 'Weapons',
+            season: 1,
+            items: common.RAID_LEVIATHAN_WEAPONS
+          },
+          {
+            name: 'Armor',
+            season: 1,
+            itemGroups: [
+              common.RAID_LEVIATHAN_ARMOR_HUNTER,
+              common.RAID_LEVIATHAN_ARMOR_TITAN,
+              common.RAID_LEVIATHAN_ARMOR_WARLOCK
+            ]
+          },
+          {
+            name: 'Armor - Prestige Mode',
+            season: 1,
+            itemGroups: [
+              common.RAID_LEVIATHAN_ARMOR_PRESTIGE_HUNTER,
+              common.RAID_LEVIATHAN_ARMOR_PRESTIGE_TITAN,
+              common.RAID_LEVIATHAN_ARMOR_PRESTIGE_WARLOCK
             ]
           },
           {
             name: 'Extras',
-            season: 3,
             items: [
-              2731919245, // BLOCK-Z SHELL
-              3969205939, // PACIFIC DECEPTION
-              4268441917, // GROUNDSWELL NULLIFIER99
-              1291068165, // IKELOS Imperative emblem
-              1273131836, // Apparatus Belli emblem
-              4052831236, // Activate ESCALATION emblem
-              2544513644, // Return TYRANT++ emblem
-              3286479728 // GENOTYPENULL-ZERO shader
+              3257147585, // Embrace His Name
+              1667199810, // Good Dog
+              2984066626, // Splish Splash
+              1625974211, // Two Enter, One Leaves
+              812824526, // Take the Throne
+              1422712818, // Calus's Selected
+              2107367383, // Glory to the Emperor
+              1422712819 // Calus's Treasured
             ]
           }
         ]
-      }
-    ]
-  },
-
-  {
-    name: 'Faction Rally',
-    sets: [
+      },
       {
         name: 'Dead Orbit Arsenal',
         id: 'ALL_SEASONS_DEAD_ORBIT_ARSENAL',
@@ -619,12 +670,186 @@ export default ([
             ]
           }
         ]
+      },
+      {
+        name: 'Eater of Worlds, Raid Lair',
+        id: 'ALL_SEASONS_EATER_OF_WORLDS',
+        description:
+          'Gear obtained by playing the Eater of Worlds raid lair and increasing your reputation with Emperor Calus.',
+        sections: [
+          {
+            name: 'Weapons',
+            season: 2,
+            items: common.RAID_EOW_WEAPONS
+          },
+          {
+            name: 'Armor',
+            season: 2,
+            itemGroups: [
+              common.RAID_EOW_ARMOR_HUNTER,
+              common.RAID_EOW_ARMOR_TITAN,
+              common.RAID_EOW_ARMOR_WARLOCK
+            ]
+          },
+          {
+            name: 'Ornaments',
+            season: 2,
+            itemGroups: [
+              common.RAID_EOW_ORNAMENTS_HUNTER,
+              common.RAID_EOW_ORNAMENTS_TITAN,
+              common.RAID_EOW_ORNAMENTS_WARLOCK
+            ]
+          },
+          {
+            name: 'Extras',
+            items: [
+              113124080, // Contender's Shell (Ghost)
+              4261480751, // Emperor's Envy (Emblem)
+              4242407217, // Calus's Elite (Shader)
+              4261480750, // Covetous Emperor (Emblem)
+              4242407216 // Calus's Preferred (Shader)
+            ]
+          }
+        ]
+      },
+
+      {
+        name: 'Escalation Protocol',
+        id: 'WARMIND_ESCALATION_PROTOCOL',
+        description: 'Gear obtained by completing Escalation Protocol.',
+        sections: [
+          {
+            name: 'Weapons',
+            season: 3,
+            items: [
+              3866356643, // IKELOS_HC_v1.0.1
+              1723472487, // IKELOS_SMG_v1.0.1
+              1887808042, // IKELOS_SG_v1.0.1
+              847450546 // IKELOS_SR_v1.0.1
+            ]
+          },
+
+          {
+            name: 'Hunter Armor',
+            season: 3,
+            items: [
+              3324158902, // Abhorrent Imperative Mask
+              191708423, // Abhorrent Imperative Grasps
+              4138580785, // Abhorrent Imperative Vest
+              3663938889, // Abhorrent Imperative Strides
+              2039043276 // Abhorrent Imperative Cloak
+            ]
+          },
+          {
+            name: 'Titan Armor',
+            season: 3,
+            items: [
+              2193087628, // Midnight Exigent Helm
+              1388962117, // Midnight Exigent Gauntlets
+              2462354715, // Midnight Exigent Plate
+              1736188615, // Midnight Exigent Greaves
+              819174194 // Midnight Exigent Mark
+            ]
+          },
+          {
+            name: 'Warlock Armor',
+            season: 3,
+            items: [
+              1612891919, // Yuga Sundown Helmet
+              3768023958, // Yuga Sundown Gloves
+              4144095450, // Yuga Sundown Robes
+              685439088, // Yuga Sundown Boots
+              3792548907 // Yuga Sundown Bond
+            ]
+          },
+          {
+            name: 'Extras',
+            season: 3,
+            items: [
+              2731919245, // BLOCK-Z SHELL
+              3969205939, // PACIFIC DECEPTION
+              4268441917, // GROUNDSWELL NULLIFIER99
+              1291068165, // IKELOS Imperative emblem
+              1273131836, // Apparatus Belli emblem
+              4052831236, // Activate ESCALATION emblem
+              2544513644, // Return TYRANT++ emblem
+              3286479728 // GENOTYPENULL-ZERO shader
+            ]
+          }
+        ]
+      },
+
+      {
+        name: 'Spire of Stars, Raid Lair',
+        id: 'ALL_SEASONS_SPIRE_OF_STARS',
+        description:
+          'Gear obtained by playing the Spire of Stars raid lair and increasing your reputation with Emperor Calus.',
+        sections: [
+          {
+            name: 'Weapons',
+            season: 3,
+            items: common.RAID_SOS_WEAPONS
+          },
+          {
+            name: 'Armor',
+            season: 3,
+            itemGroups: [
+              common.RAID_SOS_ARMOR_HUNTER,
+              common.RAID_SOS_ARMOR_TITAN,
+              common.RAID_SOS_ARMOR_WARLOCK
+            ]
+          },
+          {
+            name: 'Ornaments',
+            season: 3,
+            itemGroups: [
+              common.RAID_SOS_ORNAMENTS_HUNTER,
+              common.RAID_SOS_ORNAMENTS_TITAN,
+              common.RAID_SOS_ORNAMENTS_WARLOCK
+            ]
+          },
+          {
+            name: 'Extras',
+            season: 3,
+            items: [
+              530754878, // Luxurious Toast emote
+              2925370359, // I'm Open Emote
+              1057119308, // Spire Star emblem
+              2331063860, // Grind Underfoot emblem
+              2331063861, // Together, For Glory! emblem
+              2543722796, // Praetorian Visage shader
+              1595521942, // Atop the Spire emblem
+              2543722797 // Calus's Shadow shader
+            ]
+          }
+        ]
+      },
+      {
+        name: 'The Whisper',
+        id: 'YEAR_ONE_THE_WHISPER',
+        description: 'Gear obtained by playing the The Whisper mission.',
+        sections: [
+          {
+            name: 'Weapons',
+            season: 3,
+            items: [
+              1891561814 // Whisper of the Worm
+            ]
+          },
+          {
+            name: 'Extras',
+            season: 3,
+            items: [
+              3403859120 // A Thousand Wings
+            ]
+          }
+        ]
       }
     ]
   },
 
   {
-    name: 'Planetary Sets',
+    name: 'Destinations',
     sets: [
       {
         name: 'European Dead Zone Gear',
@@ -999,213 +1224,213 @@ export default ([
               1273131835, // Arctic Arsenalist
               1291068171, // Data Mine
               1273131832, // Warminded
-              235397500, // The Mad Monk 
+              235397500, // The Mad Monk
               235397502, // Arctic Dreamscape
               235397503 // Bray Innovation
-
             ]
           }
         ]
       }
     ]
   },
-
   {
-    name: 'Vendor',
+    name: 'Holiday & Special Events',
     sets: [
       {
-        name: 'Vanguard Tactician Gear',
-        id: 'ALL_SEASONS_VANGUARD_TACTICIAN_GEAR',
-        description:
-          'Weapons and armor obtained by carrying out special operations for Zavala.',
+        name: 'The Dawning',
+        id: 'OSIRIS_THE_DAWNING',
+        big: false,
         sections: [
           {
             name: 'Weapons',
-            season: 1,
-            items: common.VENDOR_VANGUARD_S1_WEAPONS
-          },
-          {
-            name: 'Weapons',
-            season: 2,
-            items: common.VENDOR_VANGUARD_S2_WEAPONS
-          },
-
-          {
-            name: 'Weapons',
-            season: 3,
-            items: common.VENDOR_VANGUARD_S3_WEAPONS
-          },
-          {
-            name: 'Armor',
-            season: 1,
-            itemGroups: [
-              common.VENDOR_VANGUARD_S1_ARMOR_HUNTER,
-              common.VENDOR_VANGUARD_S1_ARMOR_TITAN,
-              common.VENDOR_VANGUARD_S1_ARMOR_WARLOCK
-            ]
-          },
-          {
-            name: 'Ornaments',
-            season: 2,
-            itemGroups: [
-              common.VENDOR_VANGUARD_S2_ORNAMENTS_HUNTER,
-              common.VENDOR_VANGUARD_S2_ORNAMENTS_TITAN,
-              common.VENDOR_VANGUARD_S2_ORNAMENTS_WARLOCK
-            ]
-          },
-          {
-            name: 'Ornaments',
-            season: 3,
-            itemGroups: [
-              common.VENDOR_VANGUARD_S3_ORNAMENTS_HUNTER,
-              common.VENDOR_VANGUARD_S3_ORNAMENTS_TITAN,
-              common.VENDOR_VANGUARD_S3_ORNAMENTS_WARLOCK
-            ]
-          },
-          {
-            name: 'Extras',
-            season: 1,
-            items: [
-              2010554576, // At the Vanguard
-              2010554578, // Make Us Proud
-              2010554579, // Push Forward
-              223308216 // Vanguard Magnus
-            ]
-          },
-          {
-            name: 'Extras',
             season: 2,
             items: [
-              822835819 // Vanguard Discipline
+              4203034886 // Zephyr
             ]
           },
-          {
-            name: 'Extras',
-            season: 3,
-            items: [
-              1887457789, // Ambrite Complex Shell
-              123555424, // S-99 Bogtreader Steel
-              806017499, // Zavala's Authority
-              1400453406 // Vanguard Unity
-            ]
-          }
-        ]
-      },
-
-      {
-        name: 'Vanguard Research Gear',
-        id: 'BASE_VANGUARD_RESEARCH_GEAR',
-        description:
-          'Weapons and armor obtained by assisting Ikora Rey with her research.',
-        sections: [
           {
             name: 'Hunter Armor',
-            season: 1,
-            items: [4248632159, 4224076198, 385045066, 3741528736, 555828571]
+            season: 2,
+            items: [
+              316740353, // Winterhart Mask
+              1154659864, // Winterhart Grips
+              3309556272, // Winterhart Vest
+              3909352274, // Winterhart Strides
+              2661272173, // Winterhart Cloak
+              2661272172 // Warm Winter Cloak
+            ]
           },
           {
             name: 'Titan Armor',
-            season: 1,
-            items: [4081859017, 1490387264, 2682045448, 185326970, 89175653]
+            season: 2,
+            items: [
+              3956230125, // Winterhart Helm
+              779962716, // Winterhart Gauntlets
+              3306267716, // Winterhart Plate
+              4036178150, // Winterhart Greaves
+              221164697, // Winterhart Mark
+              221164696 // Quilted Winter Mark
+            ]
           },
           {
             name: 'Warlock Armor',
-            season: 1,
-            items: [2615512594, 3081969019, 868792277, 1532009197, 4285708584]
+            season: 2,
+            items: [
+              3734501342, // Winterhart Cover
+              2538439951, // Winterhart Gloves
+              270671209, // Winterhart Robes
+              3154516913, // Winterhart Boots
+              1584837156, // Winterhart Bond
+              1584837157 // Festive Winter Bond
+            ]
+          },
+          {
+            name: 'Emotes',
+            season: 2,
+            items: [
+              3494199208, // Giving
+              367778392, // Honest Dance
+              80303715, // Excited Dance
+              2134318165 // Icecapade
+            ]
+          },
+          {
+            name: 'Ghosts',
+            season: 2,
+            items: [
+              3287805175, // Dulcinea Shell
+              3287805177, // Pomegranate Shell
+              3287805178, // Circular Time Shell
+              3287805174, // Wild Hunt Shell
+              3287805183, // Infinite Hand Shell
+              3287805180, // Joyous Hunt Shell
+              3287805176, // Dawning Bauble Shell
+              3287805181, // Sweet Memories Shell
+              3287805179 // Jasper Dawn Shell
+            ]
+          },
+          {
+            name: 'Sparrows',
+            season: 2,
+            items: [
+              3105953707, // Chill of Winter
+              3105953706, // Holiday Cheer
+              63024229, // Star of Dark Nights
+              1423305598, // December Muse
+              1423305588, // Insectus Invictus
+              1423305586, // Acumen Maxer
+              1423305599, // Viperdiamond
+              1423305591, // Verità Scelta
+              1423305587, // Subito Mk. 9
+              1423305585, // Rocket-Propelled Bobsled
+              1423305589, // Rupture
+              1423305590, // Shimmering Iris
+              1423305584 // Magikon
+            ]
+          },
+          {
+            name: 'Ships',
+            season: 2,
+            items: [
+              317465075, // A History of Starlight
+              317465074, // Cerulean Flash
+              3140833552, // Dragonfly Strident
+              3140833555, // Alta Clara
+              3140833553, // Brilliant Narcissus
+              3140833558, // Breath of Stars
+              3140833556, // Winter Blade
+              3140833557, // Carmina Commencing
+              3140833559, // Regent Redeemer
+              3140833554 // Joyfire
+            ]
           },
           {
             name: 'Extras',
-            season: 1,
+            season: 2,
             items: [
-              1724152706, // Red Legion Aegis
-              1724152705, // Red Legion Logistics
-              1724152704 // WAR Vault 5
+              3639894194, // Light of the Dawning
+              3800267415, // Dawning Hope
+              3800267413, // Dawning Festiveness
+              3800267412, // Dawning Warmth
+              3800267414, // Dawning Brilliance
+              3023230941, // Ice Ball Effects
+              2607476204, // Silver Dawning Lanterns
+              2607476205, // Yellow Dawning Lanterns
+              2607476206, // Green Dawning Lanterns
+              2607476207 // Purple Dawning Lanterns
             ]
           }
         ]
       },
-
       {
-        name: 'Crucible Engram',
-        id: 'ALL_SEASONS_CRUCIBLE_ENGRAM',
-        description: 'Rewards for your efforts in the Crucible.',
+        name: 'Crimson Days',
+        id: 'OSIRIS_CRIMSON_DAYS',
+        big: false,
         sections: [
           {
-            name: 'Weapons',
-            season: 1,
-            items: common.VENDOR_CRUCIBLE_S1_WEAPONS
-          },
-          {
-            name: 'Weapons',
-            season: 2,
-            items: common.VENDOR_CRUCIBLE_S2_WEAPONS
-          },
-          {
-            name: 'Valor Rewards',
-            season: 3,
-            items: common.VENDOR_CRUCIBLE_S3_VALOR_REWARDS
-          },
-          {
-            name: 'Glory Rewards',
-            season: 3,
-            items: common.VENDOR_CRUCIBLE_S3_GLORY_REWARDS
-          },
-          {
-            name: 'Armor',
-            season: 1,
-            itemGroups: [
-              common.VENDOR_CRUCIBLE_S1_ARMOR_HUNTER,
-              common.VENDOR_CRUCIBLE_S1_ARMOR_TITAN,
-              common.VENDOR_CRUCIBLE_S1_ARMOR_WARLOCK
-            ]
-          },
-          {
             name: 'Ornaments',
             season: 2,
-            itemGroups: [
-              common.VENDOR_CRUCIBLE_S2_ORNAMENTS_HUNTER,
-              common.VENDOR_CRUCIBLE_S2_ORNAMENTS_TITAN,
-              common.VENDOR_CRUCIBLE_S2_ORNAMENTS_WARLOCK
-            ]
-          },
-          {
-            name: 'Ornaments',
-            season: 3,
-            itemGroups: [
-              common.VENDOR_CRUCIBLE_S3_ORNAMENTS_HUNTER,
-              common.VENDOR_CRUCIBLE_S3_ORNAMENTS_TITAN,
-              common.VENDOR_CRUCIBLE_S3_ORNAMENTS_WARLOCK
-            ]
-          },
-          {
-            name: 'Extras',
-            season: 1,
             items: [
-              4242592195, // Fight Forever
-              4242592192, // Give Them War
-              4242592193, // One Path to Victory
-              969863968, // Victorious Veteran
-              3875413893 // Crucible Glory
+              3373357626, // Prism
+              3171649853, // Go About Your Business
+              2433900295, // Carina Nebula
+              669267835 // Dieselpunk
+            ]
+          },
+          {
+            name: 'Emotes',
+            season: 2,
+            items: [
+              596833222, // Heart Sign
+              4097227155, // Vengeful Dance
+              3809722908, // Amour Dance
+              2764644855 // Flaunting Dance
+            ]
+          },
+          {
+            name: 'Ghosts',
+            season: 2,
+            items: [
+              263371517, // Electric Heart Shell
+              263371516, // Amo Ludere Shell
+              263371519, // Radiant Sunflake Shell
+              263371513, // Garland Shell
+              263371512, // Entwining Heart Shell
+              263371515, // True Conifer Shell
+              263371514, // Propulsive Heart Shell
+              263371518 // Tirastrella Shell
+            ]
+          },
+          {
+            name: 'Sparrows',
+            season: 2,
+            items: [
+              3587167050, // Undefeated
+              3587167051, // Undeterred
+              1623653769, // First Love
+              1623653768, // Last Love
+              1623653771, // Battleheart
+              1623653770 // Heartbreaker
             ]
           },
           {
             name: 'Extras',
             season: 2,
             items: [
-              87646118 // Endless Glory
-            ]
-          },
-          {
-            name: 'Extras',
-            season: 3,
-            items: [
-              29194593, // For Valor (Season 3)
-              2890977363, // For Glory (Season 3)
-              2361935691 // Crucible Triumph
+              1782320603, // Fire of the Crimson Days
+              1052553863, // Crimson Passion
+              1052553862 // Crimson Valor
             ]
           }
         ]
       },
+      common.SOLSTICE_OF_HEROES
+    ]
+  },
+
+  {
+    name: 'Other',
+    sets: [
       {
         name: 'Gunsmith Arsenal',
         id: 'ALL_SEASONS_GUNSMITH_ARSENAL',
@@ -1298,13 +1523,7 @@ export default ([
             ]
           }
         ]
-      }
-    ]
-  },
-
-  {
-    name: 'World Gear',
-    sets: [
+      },
       {
         name: 'Hunter Specific Sets',
         id: 'BASE_WORLD_HUNTER',
@@ -1471,208 +1690,7 @@ export default ([
             ]
           }
         ]
-      }
-    ]
-  },
-
-  {
-    name: 'Holiday & Special Events',
-    sets: [
-      {
-        name: 'The Dawning',
-        id: 'OSIRIS_THE_DAWNING',
-        big: false,
-        sections: [
-          {
-            name: 'Weapons',
-            season: 2,
-            items: [
-              4203034886 // Zephyr
-            ]
-          },
-          {
-            name: 'Hunter Armor',
-            season: 2,
-            items: [
-              316740353, // Winterhart Mask
-              1154659864, // Winterhart Grips
-              3309556272, // Winterhart Vest
-              3909352274, // Winterhart Strides
-              2661272173, // Winterhart Cloak
-              2661272172 // Warm Winter Cloak
-            ]
-          },
-          {
-            name: 'Titan Armor',
-            season: 2,
-            items: [
-              3956230125, // Winterhart Helm
-              779962716, // Winterhart Gauntlets
-              3306267716, // Winterhart Plate
-              4036178150, // Winterhart Greaves
-              221164697, // Winterhart Mark
-              221164696 // Quilted Winter Mark
-            ]
-          },
-          {
-            name: 'Warlock Armor',
-            season: 2,
-            items: [
-              3734501342, // Winterhart Cover
-              2538439951, // Winterhart Gloves
-              270671209, // Winterhart Robes
-              3154516913, // Winterhart Boots
-              1584837156, // Winterhart Bond
-              1584837157 // Festive Winter Bond
-            ]
-          },
-          {
-            name: 'Emotes',
-            season: 2,
-            items: [
-              3494199208, // Giving
-              367778392, // Honest Dance
-              80303715, // Excited Dance
-              2134318165 // Icecapade
-            ]
-          },
-          {
-            name: 'Ghosts',
-            season: 2,
-            items: [
-              3287805175, // Dulcinea Shell
-              3287805177, // Pomegranate Shell
-              3287805178, // Circular Time Shell
-              3287805174, // Wild Hunt Shell
-              3287805183, // Infinite Hand Shell
-              3287805180, // Joyous Hunt Shell
-              3287805176, // Dawning Bauble Shell
-              3287805181, // Sweet Memories Shell
-              3287805179 // Jasper Dawn Shell
-            ]
-          },
-          {
-            name: 'Sparrows',
-            season: 2,
-            items: [
-              3105953707, // Chill of Winter
-              3105953706, // Holiday Cheer
-              63024229, // Star of Dark Nights
-              1423305598, // December Muse
-              1423305588, // Insectus Invictus
-              1423305586, // Acumen Maxer
-              1423305599, // Viperdiamond
-              1423305591, // Verità Scelta
-              1423305587, // Subito Mk. 9
-              1423305585, // Rocket-Propelled Bobsled
-              1423305589, // Rupture
-              1423305590, // Shimmering Iris
-              1423305584 // Magikon
-            ]
-          },
-          {
-            name: 'Ships',
-            season: 2,
-            items: [
-              317465075, // A History of Starlight
-              317465074, // Cerulean Flash
-              3140833552, // Dragonfly Strident
-              3140833555, // Alta Clara
-              3140833553, // Brilliant Narcissus
-              3140833558, // Breath of Stars
-              3140833556, // Winter Blade
-              3140833557, // Carmina Commencing
-              3140833559, // Regent Redeemer
-              3140833554, // Joyfire
-            ]
-          },
-          {
-            name: 'Extras',
-            season: 2,
-            items: [
-              3639894194, // Light of the Dawning
-              3800267415, // Dawning Hope
-              3800267413, // Dawning Festiveness
-              3800267412, // Dawning Warmth
-              3800267414, // Dawning Brilliance
-              3023230941, // Ice Ball Effects
-              2607476204, // Silver Dawning Lanterns
-              2607476205, // Yellow Dawning Lanterns
-              2607476206, // Green Dawning Lanterns
-              2607476207 // Purple Dawning Lanterns
-            ]
-          }
-        ]
       },
-      {
-        name: 'Crimson Days',
-        id: 'OSIRIS_CRIMSON_DAYS',
-        big: false,
-        sections: [
-          {
-            name: 'Ornaments',
-            season: 2,
-            items: [
-              3373357626, // Prism
-              3171649853, // Go About Your Business
-              2433900295, // Carina Nebula
-              669267835 // Dieselpunk
-            ]
-          },
-          {
-            name: 'Emotes',
-            season: 2,
-            items: [
-              596833222, // Heart Sign
-              4097227155, // Vengeful Dance
-              3809722908, // Amour Dance
-              2764644855 // Flaunting Dance
-            ]
-          },
-          {
-            name: 'Ghosts',
-            season: 2,
-            items: [
-              263371517, // Electric Heart Shell
-              263371516, // Amo Ludere Shell
-              263371519, // Radiant Sunflake Shell
-              263371513, // Garland Shell
-              263371512, // Entwining Heart Shell
-              263371515, // True Conifer Shell
-              263371514, // Propulsive Heart Shell
-              263371518 // Tirastrella Shell
-            ]
-          },
-          {
-            name: 'Sparrows',
-            season: 2,
-            items: [
-              3587167050, // Undefeated
-              3587167051, // Undeterred
-              1623653769, // First Love
-              1623653768, // Last Love
-              1623653771, // Battleheart
-              1623653770 // Heartbreaker
-            ]
-          },
-          {
-            name: 'Extras',
-            season: 2,
-            items: [
-              1782320603, // Fire of the Crimson Days
-              1052553863, // Crimson Passion
-              1052553862 // Crimson Valor
-            ]
-          }
-        ]
-      },
-      common.SOLSTICE_OF_HEROES
-    ]
-  },
-
-  {
-    name: 'Other',
-    sets: [
       {
         name: 'Eververse',
         id: 'ALL_SEASONS_EVERVERSE',
@@ -1832,7 +1850,7 @@ export default ([
                 1967983910, // Hip Wader
                 2140296014, // Crown Joules
                 2173197096, // A Stride to the Edge
-                915385568 // Capreolinax                
+                915385568 // Capreolinax
               ]
             ]
           },
@@ -2157,7 +2175,7 @@ export default ([
               4258704674, // Taken Arrival
               4258704675, // Hive Arrival
               4258704676, // Fallen Arrival
-              3351378135, // Guardian Gold 
+              3351378135, // Guardian Gold
               3351378134, // Guardian White
               3351378133, // Guardian Green
               3351378132, // Guardian Pink

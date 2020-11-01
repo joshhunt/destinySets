@@ -617,7 +617,7 @@ export default ([
         sections: [
           {
             name: 'Weapons',
-            // season: "K", // Double Check
+            season: 8,
             items: [
               4103414242, // Divinity
               3385326721, // Reckless Oracle
@@ -631,7 +631,7 @@ export default ([
           },
           {
             name: 'Hunter Armor',
-            // season: "K", // Double Check
+            season: 8,
             items: [
               557676195, // Cowl of Righteousness
               1653741426, // Grips of Exaltation
@@ -642,7 +642,7 @@ export default ([
           },
           {
             name: 'Titan Armor',
-            // season: "K", // Double Check
+            season: 8,
             items: [
               519078295, // Helm of Righteousness
               3887559710, // Gauntlets of Exaltation
@@ -653,7 +653,7 @@ export default ([
           },
           {
             name: 'Warlock Armor',
-            // season: "K", // Double Check
+            season: 8,
             items: [
               3001934726, // Mask of Righteousness
               2015894615, // Gloves of Exaltation
@@ -664,7 +664,7 @@ export default ([
           },
           {
             name: 'Extras',
-            // season: "K", // Double Check
+            season: 8,
             items: [
               298334059, // Inherent Truth
               3996862462, // Ancient Believer
@@ -672,7 +672,12 @@ export default ([
             ]
           }
         ]
-      },
+      }
+    ]
+  },
+  {
+    name: 'Seasonal Content',
+    sets: [
       {
         name: 'Season 8',
         id: 'year-three-season-8',
@@ -927,7 +932,7 @@ export default ([
         sections: [
           {
             name: 'Weapons',
-            // season: "K",
+            season: 8,
             items: [
               2723909519, // Arc Logic
               3924212056, // Loud Lullaby
@@ -942,7 +947,7 @@ export default ([
           },
           {
             name: 'Hunter Armor',
-            // season: "K",
+            season: 8,
             items: [
               659922705, // Dreambane Cowl
               3571441640, // Dreambane Grips
@@ -953,7 +958,7 @@ export default ([
           },
           {
             name: 'Titan Armor',
-            // season: "K",
+            season: 8,
             items: [
               272413517, // Dreambane Helm
               925079356, // Dreambane Gauntlets
@@ -964,7 +969,7 @@ export default ([
           },
           {
             name: 'Warlock Armor',
-            // season: "K",
+            season: 8,
             items: [
               1528483180, // Dreambane Hood
               682780965, // Dreambane Gloves
@@ -975,7 +980,7 @@ export default ([
           },
           {
             name: 'Altars of Sorrow',
-            // season: "K",
+            season: 8,
             itemGroups: [
               [
                 2782847179, // Blasphemer (Shotgun)
@@ -989,7 +994,7 @@ export default ([
           },
           {
             name: 'Nightmare Hunts',
-            // season: "K",
+            season: 8,
             items: [
               298334057, // A Sibyl's Dreams
               2056256564 // Lunar Halcyon Gilt
@@ -997,7 +1002,7 @@ export default ([
           },
           {
             name: "'Pit of Heresy' Dungeon",
-            // season: "K",
+            season: 8,
             itemGroups: [
               [
                 208088207 // Premonition (Dungeon Pulse)
@@ -1011,7 +1016,7 @@ export default ([
           },
           {
             name: 'Extras',
-            // season: "K",
+            season: 8,
             items: [
               1272828316, // Moonshot Shell
               3382260610, // Moonrider One
@@ -1264,7 +1269,7 @@ export default ([
               3639046081, // Shadehallow
               2716279146, // Bloodmane
               2716279147, // Nougat Delight
-              373634602, // Alchemy Scorch
+              // 373634602, // Alchemy Scorch (Never sold and has no collectible)
               810321696 // Reanimated Entrance
             ]
           }

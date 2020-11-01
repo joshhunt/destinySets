@@ -40,7 +40,7 @@ export default ([
     ]
   },
   {
-    name: 'Heavy Weapons',
+    name: 'Power Weapons',
     sets: [
       {
         name: 'Exotics',
