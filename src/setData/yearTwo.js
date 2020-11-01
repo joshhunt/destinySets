@@ -805,6 +805,69 @@ export default ([
         ]
       },
       {
+        name: 'Raid: Scourge of the Past',
+        id: 'YEAR_TWO_RAID_BLACK_ARMORY',
+        description: _(
+          'DestinyCollectibleDefinition[982798874].sourceString',
+          'Found in the "Scourge of the Past" raid.'
+        ),
+        sections: [
+          {
+            name: 'Weapons',
+            season: 5,
+            items: [
+              2376481550, // Anarchy
+              1931556011, // No Feelings
+              1664372054, // Threat Level
+              2753269585, // Tempered Dynamo
+              2186258845 // Bellowing Giant
+            ]
+          },
+          {
+            name: 'Hunter Armor',
+            season: 5,
+            items: [
+              350056552, // Bladesmith's Memory Mask
+              3992358137, // Bladesmith's Memory Grips
+              1917693279, // Bladesmith's Memory Vest
+              2589473259, // Bladesmith's Memory Strides
+              3164851950 // Bladesmith's Memory Cloak
+            ]
+          },
+          {
+            name: 'Titan Armor',
+            season: 5,
+            items: [
+              2921334134, // Bulletsmith's Ire Helm
+              4125324487, // Bulletsmith's Ire Gauntlets
+              2530113265, // Bulletsmith's Ire Plate
+              2878130185, // Bulletsmith's Ire Greaves
+              388999052 // Bulletsmith's Ire Mark
+            ]
+          },
+          {
+            name: 'Warlock Armor',
+            season: 5,
+            items: [
+              1624906371, // Gunsmith's Devotion Crown
+              2762445138, // Gunsmith's Devotion Gloves
+              4238134294, // Gunsmith's Devotion Robes
+              3163683564, // Gunsmith's Devotion Boots
+              3567761471 // Gunsmith's Devotion Bond
+            ]
+          },
+          {
+            name: 'Extras',
+            season: 5,
+            items: [
+              3317837688, // Always on Time
+              3931192718, // Recovered Memories
+              2557722678 // Midnight Smith
+            ]
+          }
+        ]
+      },
+      {
         name: 'The Reckoning',
         id: 'YEAR_TWO_RECKONING',
         description: `Weapons & Gambit Prime armor, obtained from The Reckoning`,
