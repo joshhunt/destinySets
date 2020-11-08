@@ -685,7 +685,7 @@ export default ([
         ]
       },
       {
-        name: 'Black Armory Forge Gear',
+        name: 'Black Armory Forges',
         description:
           'Gear from Forge Ignitions and crafted in a Black Armory forge.',
         id: 'YEAR_TWO_FORGE_GEAR',

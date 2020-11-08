@@ -1214,6 +1214,12 @@ export default ([
             name: 'Extras',
             season: 3,
             items: [
+              2995501285, // Polestar I Shell
+              2995501286, // Polestar II Shell
+              2932488014, // G-72 Classical Sepheid
+              2932488015, // G-693 Orchestral Maneuver
+              4222882592, // G-335 Anseris Overdrive
+              3073638913, // Alpha Umi
               1210937132, // Hellas Basin
               842157716, // Cradle of Invention
               842157717, // Warmind's Fortress
