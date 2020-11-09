@@ -1277,7 +1277,7 @@ export default ([
       },
       {
         name: 'The Dawning',
-        id: 'year_three_the_dawning',
+        id: 'year-three-the-dawning',
         description: 'Earned during the seasonal Dawning event.',
         big: false,
         sections: [
@@ -1394,7 +1394,7 @@ export default ([
       },
       {
         name: 'Crimson Days',
-        id: 'year_three_crimson_days',
+        id: 'year-three-crimson-days',
         description: 'Earned during the seasonal Crimson Days event.',
         big: false,
         sections: [
@@ -1436,7 +1436,7 @@ export default ([
       },
       {
         name: 'Guardian Games',
-        id: 'year_three_guardian_games',
+        id: 'year-three-guardian-games',
         description: 'Earned during the seasonal Guardian Games event.',
         big: false,
         sections: [
@@ -1557,7 +1557,7 @@ export default ([
       },
       {
         name: 'Moments of Triumph',
-        id: 'YEAR_THREE_MOMENTS_OF_TRIUMPH',
+        id: 'year-three-moments-of-triumph',
         description: 'Earned during the 2020 Moments of Triumph event.',
         big: false,
         sections: [
@@ -2565,7 +2565,7 @@ export default ([
           'DestinyVendorDefinition[3767535285].displayProperties.name',
           'Mnemonic Engram'
         ),
-        id: 'season-11-mnemonic-engram',
+        id: 'season-11-eververse-engram',
         description: _(
           'DestinyInventoryItemDefinition[3692259864].displayProperties.description',
           'An engram containing different ornaments, emotes, and accessories from previous Destiny 2 releases.'
