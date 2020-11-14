@@ -639,33 +639,33 @@ export default ([
             name: 'Hunter Armor',
             season: 4,
             items: [
-              3838639757, // Mask of the Great Hunt
-              196235132, // Grips of the Great Hunt
-              146275556, // Vest of the Great Hunt
-              3494130310, // Strides of the Great Hunt
-              1314563129 // Cloak of the Great Hunt
+              3423279826, // Mask of the Great Hunt
+              3889633083, // Grips of the Great Hunt
+              2180477077, // Vest of the Great Hunt
+              2298096557, // Strides of the Great Hunt
+              877968616 // Cloak of the Great Hunt
             ]
           },
           {
             name: 'Titan Armor',
             season: 4,
             items: [
-              2274520361, // Helm of the Great Hunt
-              65929376, // Gauntlets of the Great Hunt
-              3614211816, // Plate of the Great Hunt
-              3055836250, // Greaves of the Great Hunt
-              1021341893 // Mark of the Great Hunt
+              3546379828, // Helm of the Great Hunt
+              1952647501, // Gauntlets of the Great Hunt
+              1146451699, // Plate of the Great Hunt
+              2623446543, // Greaves of the Great Hunt
+              3351877674 // Mark of the Great Hunt
             ]
           },
           {
             name: 'Warlock Armor',
             season: 4,
             items: [
-              3251351304, // Hood of the Great Hunt
-              2598685593, // Gloves of the Great Hunt
-              3445296383, // Robes of the Great Hunt
-              1195800715, // Boots of the Great Hunt
-              821841934 // Bond of the Great Hunt
+              1350126011, // Hood of the Great Hunt
+              2850984298, // Gloves of the Great Hunt
+              4241329310, // Robes of the Great Hunt
+              1890196228, // Boots of the Great Hunt
+              3570956455 // Bond of the Great Hunt
             ]
           },
 

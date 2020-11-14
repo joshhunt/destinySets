@@ -633,33 +633,33 @@ export default ([
             name: 'Hunter Armor',
             season: 8,
             items: [
-              557676195, // Cowl of Righteousness
-              1653741426, // Grips of Exaltation
-              4177973942, // Vest of Transcendence
-              2054979724, // Strides of Ascendancy
-              3549177695 // Cloak of Temptation
+              407842012, // Cowl of Righteousness
+              1804192853, // Grips of Exaltation
+              210208587, // Vest of Transcendence
+              3380315063, // Strides of Ascendancy
+              2861892194 // Cloak of Temptation
             ]
           },
           {
             name: 'Titan Armor',
             season: 8,
             items: [
-              519078295, // Helm of Righteousness
-              3887559710, // Gauntlets of Exaltation
-              3939809874, // Plate of Transcendence
-              11974904, // Greaves of Ascendancy
-              281660259 // Temptation's Mark
+              959087754, // Helm of Righteousness
+              964752083, // Gauntlets of Exaltation
+              3876398589, // Plate of Transcendence
+              275145509, // Greaves of Ascendancy
+              1043419184 // Temptation's Mark
             ]
           },
           {
             name: 'Warlock Armor',
             season: 8,
             items: [
-              3001934726, // Mask of Righteousness
-              2015894615, // Gloves of Exaltation
-              2320830625, // Robes of Transcendence
-              3824429433, // Boots of Ascendancy
-              3103335676 // Temptation's Bond
+              2367878193, // Mask of Righteousness
+              984532872, // Gloves of Exaltation
+              1789501056, // Robes of Transcendence
+              2085872226, // Boots of Ascendancy
+              1141217085 // Temptation's Bond
             ]
           },
           {
