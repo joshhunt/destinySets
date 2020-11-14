@@ -604,6 +604,8 @@ function deepCollectiblesFromPresentationNodes(
       presentationNodeDefs[childNode.presentationNodeHash];
 
     if (
+      childPresentationNode.children &&
+      childPresentationNode.children.length &&
       childPresentationNode.children.collectibles &&
       childPresentationNode.children.collectibles.length
     ) {
@@ -612,11 +614,18 @@ function deepCollectiblesFromPresentationNodes(
       );
     }
 
-    return deepCollectiblesFromPresentationNodes(
-      childPresentationNode,
-      collectibleDefs,
-      presentationNodeDefs
-    );
+    if (
+      childPresentationNode.children &&
+      childPresentationNode.children.length &&
+      childPresentationNode.children.presentationNodes &&
+      childPresentationNode.children.presentationNodes.length
+    ) {
+      return deepCollectiblesFromPresentationNodes(
+        childPresentationNode,
+        collectibleDefs,
+        presentationNodeDefs
+      );
+    }
   });
 }
 
