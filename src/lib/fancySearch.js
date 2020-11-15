@@ -207,9 +207,9 @@ export const fancySearchFns = {
 export const fancySearchTerms = Object.keys(fancySearchFns);
 
 const CATALYST_PRESENTATION_NODES = {
-  kinetic: 4145555894,
-  energy: 259629437,
-  power: 3274555605
+  kinetic: 2538646043,
+  energy: 185103480,
+  power: 3788273704
 };
 
 const catalystItemsByRecordHash = invert(catalystTriumphs);
