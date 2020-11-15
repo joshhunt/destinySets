@@ -2111,7 +2111,7 @@ export default ([
                 2291520183, // Ninja Vanish
                 // 3366702053, // Plant the Flag (Not planned to be sold for Bright Dust)
                 2035374481, // Precise Strike
-                // 2370712399, // Spring Showers (Not planned to be sold for Bright Dust)
+                2370712399, // Spring Showers
                 // 3105326202, // Cross-Step Shuffle (Not planned to be sold for Bright Dust)
                 1188569234, // Ding
                 1141309169, // Flare Gun
