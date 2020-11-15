@@ -5,6 +5,7 @@ export default {
   yearOne: require('./yearOne').default,
   yearTwo: require('./yearTwo').default,
   yearThree: require('./yearThree').default,
+  yearFour: require('./yearFour').default,
   dlc1: require('./dlc1').default,
   dlc2: require('./dlc2').default,
   baseGame: require('./baseGame').default,

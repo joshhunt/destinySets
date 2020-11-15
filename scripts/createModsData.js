@@ -132,6 +132,7 @@ const CATEGORY_SEASON_UNDYING = 'Season of the Undying';
 const CATEGORY_SEASON_DAWN = 'Season of Dawn';
 const CATEGORY_SEASON_WORTHY = 'Season of the Worthy';
 const CATEGORY_SEASON_ARRIVALS = 'Season of Arrivals';
+const CATEGORY_DEEP_STONE_CRYPT = 'Deep Stone Crypt';
 
 const MOD_CATEGORISER = [
   matchArtifactMods(CATEGORY_SEASONAL_ARTIFACT),
@@ -142,6 +143,7 @@ const MOD_CATEGORISER = [
   matchPlugCategory(CATEGORY_SEASON_DAWN, 'enhancements.season_v470'),
   matchPlugCategory(CATEGORY_SEASON_WORTHY, 'enhancements.season_v480'),
   matchPlugCategory(CATEGORY_SEASON_ARRIVALS, 'enhancements.season_v490'),
+  matchPlugCategory(CATEGORY_DEEP_STONE_CRYPT, 'enhancements.raid_descent'),
   // matchPlugCategory('General', 'enhancements.v2_general'), // must be before scavenger to prevent Circuit Scavenger mod from being classed as ammo scavenger
   matchName(CATEGORY_AMMO_FINDER, /\sAmmo Finder$/g),
   matchName(CATEGORY_AMMO_SCAVENGER, /\sScavenger$/g),
@@ -170,7 +172,8 @@ const CATERGORY_DISPLAY_ORDER = [
   CATEGORY_SEASON_UNDYING,
   CATEGORY_SEASON_DAWN,
   CATEGORY_SEASON_WORTHY,
-  CATEGORY_SEASON_ARRIVALS
+  CATEGORY_SEASON_ARRIVALS,
+  CATEGORY_DEEP_STONE_CRYPT
 ];
 
 const collectRewardsFromArtifacts = DestinyArtifactDefinition => {
@@ -251,8 +254,10 @@ function prettySetData(setData, DestinyInventoryItemDefinition) {
   const allMods = lodash(DestinyInventoryItemDefinition)
     .values()
     .filter(v => v.itemCategoryHashes)
+    .filter(v => v.displayProperties)
+    .filter(v => !v.displayProperties.description.includes('deprecated'))
     .filter(v => v.itemCategoryHashes.includes(4104513227)) // armour mods
-    .filter(v => v.plug && v.plug.energyCost) // exlude ornaments
+    .filter(v => v.plug && v.plug.energyCost) // exclude ornaments
     .value();
 
   console.log('Grouping mods');

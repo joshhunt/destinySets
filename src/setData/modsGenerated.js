@@ -15,38 +15,86 @@ export default [
             nameHash: 1198124803,
             itemGroups: [
               [
-                3213968580 // Enhanced Scatter Projectile Targeting
+                1397877686, // Hand Cannon Targeting
+                1397877684, // Scout Rifle Targeting
+                550475664 // Shotgun Ammo Finder
               ],
               [
-                3068122505, // Primary Ammo Finder
-                1041574086, // Special Ammo Finder
-                3091871970 // Heavy Ammo Finder
+                2193892158, // Auto Rifle Ammo Finder
+                1624081088, // Bow Ammo Finder
+                3394151347, // Fusion Rifle Ammo Finder
+                755265365, // Grenade Launcher Ammo Finder
+                650047261, // Hand Cannon Ammo Finder
+                2128395292, // Machine Gun Ammo Finder
+                1499759470, // Linear Fusion Rifle Ammo Finder
+                589699896, // Pulse Rifle Ammo Finder
+                2603856295, // Rocket Launcher Ammo Finder
+                421111969, // Scout Rifle Ammo Finder
+                4148827738, // Shotgun Ammo Finder
+                1050260245, // Sidearm Ammo Finder
+                1588113119, // Submachine Gun Ammo Finder
+                2754084930, // Sniper Rifle Ammo Finder
+                1476367343 // Sword Ammo Finder
               ],
               [
-                3786078704, // Precision Weapon Targeting
-                3476502793 // Scatter Projectile Targeting
+                3201675491, // Auto Rifle Targeting
+                2080519917, // Bow Targeting
+                3901392720, // Fusion Rifle Targeting
+                2829974286, // Hand Cannon Targeting
+                1015337793, // Machine Gun Targeting
+                3338875786, // Linear Fusion Rifle Targeting
+                3319681729, // Pulse Rifle Targeting
+                631976966, // Scout Rifle Targeting
+                2919349723, // Shotgun Targeting
+                1507854082, // Sidearm Targeting
+                3857411140, // Submachine Gun Targeting
+                2307244871 // Sniper Rifle Targeting
               ]
             ],
             groups: [
               {
                 name: "Seasonal Artifact",
                 items: [
-                  3213968580 // Enhanced Scatter Projectile Targeting
+                  1397877686, // Hand Cannon Targeting
+                  1397877684, // Scout Rifle Targeting
+                  550475664 // Shotgun Ammo Finder
                 ]
               },
               {
                 name: "Ammo Finder",
                 items: [
-                  3068122505, // Primary Ammo Finder
-                  1041574086, // Special Ammo Finder
-                  3091871970 // Heavy Ammo Finder
+                  2193892158, // Auto Rifle Ammo Finder
+                  1624081088, // Bow Ammo Finder
+                  3394151347, // Fusion Rifle Ammo Finder
+                  755265365, // Grenade Launcher Ammo Finder
+                  650047261, // Hand Cannon Ammo Finder
+                  2128395292, // Machine Gun Ammo Finder
+                  1499759470, // Linear Fusion Rifle Ammo Finder
+                  589699896, // Pulse Rifle Ammo Finder
+                  2603856295, // Rocket Launcher Ammo Finder
+                  421111969, // Scout Rifle Ammo Finder
+                  4148827738, // Shotgun Ammo Finder
+                  1050260245, // Sidearm Ammo Finder
+                  1588113119, // Submachine Gun Ammo Finder
+                  2754084930, // Sniper Rifle Ammo Finder
+                  1476367343 // Sword Ammo Finder
                 ]
               },
               {
                 name: "Targeting",
                 items: [
-                  3786078704, // Precision Weapon Targeting
-                  3476502793 // Scatter Projectile Targeting
+                  3201675491, // Auto Rifle Targeting
+                  2080519917, // Bow Targeting
+                  3901392720, // Fusion Rifle Targeting
+                  2829974286, // Hand Cannon Targeting
+                  1015337793, // Machine Gun Targeting
+                  3338875786, // Linear Fusion Rifle Targeting
+                  3319681729, // Pulse Rifle Targeting
+                  631976966, // Scout Rifle Targeting
+                  2919349723, // Shotgun Targeting
+                  1507854082, // Sidearm Targeting
+                  3857411140, // Submachine Gun Targeting
+                  2307244871 // Sniper Rifle Targeting
                 ]
               }
             ]
@@ -56,45 +104,14 @@ export default [
             nameHash: 728351493,
             itemGroups: [
               [
-                1624081088, // Bow Ammo Finder
-                2128395292, // Machine Gun Ammo Finder
-                589699896, // Pulse Rifle Ammo Finder
-                4148827738, // Shotgun Ammo Finder
-                1476367343 // Sword Ammo Finder
-              ],
-              [
-                2080519917, // Bow Targeting
-                3993244252, // Enhanced Bow Targeting
-                1015337793, // Machine Gun Targeting
-                3319681729, // Pulse Rifle Targeting
-                2919349723, // Shotgun Targeting
-                3309247652, // Enhanced Machine Gun Targeting
-                1248126076, // Enhanced Pulse Rifle Targeting
-                4190395210 // Enhanced Shotgun Targeting
+                3065699930 // Hands-On
               ]
             ],
             groups: [
               {
-                name: "Ammo Finder",
+                name: "General",
                 items: [
-                  1624081088, // Bow Ammo Finder
-                  2128395292, // Machine Gun Ammo Finder
-                  589699896, // Pulse Rifle Ammo Finder
-                  4148827738, // Shotgun Ammo Finder
-                  1476367343 // Sword Ammo Finder
-                ]
-              },
-              {
-                name: "Targeting",
-                items: [
-                  2080519917, // Bow Targeting
-                  3993244252, // Enhanced Bow Targeting
-                  1015337793, // Machine Gun Targeting
-                  3319681729, // Pulse Rifle Targeting
-                  2919349723, // Shotgun Targeting
-                  3309247652, // Enhanced Machine Gun Targeting
-                  1248126076, // Enhanced Pulse Rifle Targeting
-                  4190395210 // Enhanced Shotgun Targeting
+                  3065699930 // Hands-On
                 ]
               }
             ]
@@ -104,45 +121,14 @@ export default [
             nameHash: 591714140,
             itemGroups: [
               [
-                2193892158, // Auto Rifle Ammo Finder
-                3394151347, // Fusion Rifle Ammo Finder
-                1499759470, // Linear Fusion Rifle Ammo Finder
-                2603856295, // Rocket Launcher Ammo Finder
-                1588113119 // Submachine Gun Ammo Finder
-              ],
-              [
-                3201675491, // Auto Rifle Targeting
-                3901392720, // Fusion Rifle Targeting
-                3338875786, // Linear Fusion Rifle Targeting
-                1627441143, // Enhanced Linear Fusion Targeting
-                3857411140, // Submachine Gun Targeting
-                1758950396, // Enhanced Auto Rifle Targeting
-                87259167, // Enhanced Fusion Rifle Targeting
-                2847540257 // Enhanced Submachine Gun Targeting
+                322752304 // Ashes to Assets
               ]
             ],
             groups: [
               {
-                name: "Ammo Finder",
+                name: "General",
                 items: [
-                  2193892158, // Auto Rifle Ammo Finder
-                  3394151347, // Fusion Rifle Ammo Finder
-                  1499759470, // Linear Fusion Rifle Ammo Finder
-                  2603856295, // Rocket Launcher Ammo Finder
-                  1588113119 // Submachine Gun Ammo Finder
-                ]
-              },
-              {
-                name: "Targeting",
-                items: [
-                  3201675491, // Auto Rifle Targeting
-                  3901392720, // Fusion Rifle Targeting
-                  3338875786, // Linear Fusion Rifle Targeting
-                  1627441143, // Enhanced Linear Fusion Targeting
-                  3857411140, // Submachine Gun Targeting
-                  1758950396, // Enhanced Auto Rifle Targeting
-                  87259167, // Enhanced Fusion Rifle Targeting
-                  2847540257 // Enhanced Submachine Gun Targeting
+                  322752304 // Ashes to Assets
                 ]
               }
             ]
@@ -152,45 +138,14 @@ export default [
             nameHash: 4069572561,
             itemGroups: [
               [
-                755265365, // Grenade Launcher Ammo Finder
-                650047261, // Hand Cannon Ammo Finder
-                421111969, // Scout Rifle Ammo Finder
-                1050260245, // Sidearm Ammo Finder
-                2754084930 // Sniper Rifle Ammo Finder
-              ],
-              [
-                2829974286, // Hand Cannon Targeting
-                1871240627, // Enhanced Hand Cannon Targeting
-                631976966, // Scout Rifle Targeting
-                1507854082, // Sidearm Targeting
-                2307244871, // Sniper Rifle Targeting
-                198889228, // Enhanced Sniper Rifle Targeting
-                130615063, // Enhanced Scout Rifle Targeting
-                3178987263 // Enhanced Sidearm Targeting
+                1016705548 // Dynamo
               ]
             ],
             groups: [
               {
-                name: "Ammo Finder",
+                name: "General",
                 items: [
-                  755265365, // Grenade Launcher Ammo Finder
-                  650047261, // Hand Cannon Ammo Finder
-                  421111969, // Scout Rifle Ammo Finder
-                  1050260245, // Sidearm Ammo Finder
-                  2754084930 // Sniper Rifle Ammo Finder
-                ]
-              },
-              {
-                name: "Targeting",
-                items: [
-                  2829974286, // Hand Cannon Targeting
-                  1871240627, // Enhanced Hand Cannon Targeting
-                  631976966, // Scout Rifle Targeting
-                  1507854082, // Sidearm Targeting
-                  2307244871, // Sniper Rifle Targeting
-                  198889228, // Enhanced Sniper Rifle Targeting
-                  130615063, // Enhanced Scout Rifle Targeting
-                  3178987263 // Enhanced Sidearm Targeting
+                  1016705548 // Dynamo
                 ]
               }
             ]
@@ -209,14 +164,48 @@ export default [
                 403494087 // Fastball
               ],
               [
-                3213968582, // Enhanced Pulse Rifle Loader
-                3213968578, // Enhanced Bow Loader
-                3175764267 // Unstoppable Pulse Rifle
+                1397877683, // Shotgun Dexterity
+                1397877682, // Grenade Launcher Loader
+                550475670, // Pulse Rifle Loader
+                1878293399, // Unstoppable Shotgun
+                1878293395, // Thermal Blooming
+                2950379997, // Overload Rounds (Auto Rifle)
+                2950379998, // Unstoppable Hand Cannon
+                2950379999, // Anti-Barrier Pulse Rifle
+                2950379992, // Overload Rounds (Scout Rifle)
+                2950379993 // Anti-Barrier Submachine Gun
               ],
               [
-                575217150, // Light Arms Loader
-                4146282118, // Rifle Loader
-                3493464614 // Large Weapon Loader
+                1312062056, // Auto Rifle Dexterity
+                3296399440, // Bow Dexterity
+                945523359, // Fusion Rifle Dexterity
+                2214082005, // Grenade Launcher Dexterity
+                3484440775, // Hand Cannon Dexterity
+                3362003312, // Machine Gun Dexterity
+                2520883911, // Linear Fusion Dexterity
+                691818084, // Pulse Rifle Dexterity
+                3026352437, // Rocket Launcher Dexterity
+                327265103, // Scout Rifle Dexterity
+                2561450986, // Shotgun Dexterity
+                101023751, // Sidearm Dexterity
+                201274281, // Submachine Gun Dexterity
+                1819979056 // Sniper Rifle Dexterity
+              ],
+              [
+                2571974065, // Auto Rifle Loader
+                3436675785, // Bow Reloader
+                428274928, // Fusion Rifle Loader
+                4140815674, // Grenade Launcher Loader
+                1052494884, // Hand Cannon Loader
+                157329321, // Machine Gun Loader
+                178399816, // Linear Fusion Rifle Loader
+                1129724921, // Pulse Rifle Loader
+                2324400338, // Rocket Launcher Loader
+                667313240, // Scout Rifle Loader
+                1534061443, // Shotgun Loader
+                762238512, // Sidearm Loader
+                2790645726, // Submachine Gun Loader
+                2039949393 // Sniper Rifle Loader
               ]
             ],
             groups: [
@@ -229,17 +218,54 @@ export default [
               {
                 name: "Seasonal Artifact",
                 items: [
-                  3213968582, // Enhanced Pulse Rifle Loader
-                  3213968578, // Enhanced Bow Loader
-                  3175764267 // Unstoppable Pulse Rifle
+                  1397877683, // Shotgun Dexterity
+                  1397877682, // Grenade Launcher Loader
+                  550475670, // Pulse Rifle Loader
+                  1878293399, // Unstoppable Shotgun
+                  1878293395, // Thermal Blooming
+                  2950379997, // Overload Rounds (Auto Rifle)
+                  2950379998, // Unstoppable Hand Cannon
+                  2950379999, // Anti-Barrier Pulse Rifle
+                  2950379992, // Overload Rounds (Scout Rifle)
+                  2950379993 // Anti-Barrier Submachine Gun
+                ]
+              },
+              {
+                name: "Dexterity",
+                items: [
+                  1312062056, // Auto Rifle Dexterity
+                  3296399440, // Bow Dexterity
+                  945523359, // Fusion Rifle Dexterity
+                  2214082005, // Grenade Launcher Dexterity
+                  3484440775, // Hand Cannon Dexterity
+                  3362003312, // Machine Gun Dexterity
+                  2520883911, // Linear Fusion Dexterity
+                  691818084, // Pulse Rifle Dexterity
+                  3026352437, // Rocket Launcher Dexterity
+                  327265103, // Scout Rifle Dexterity
+                  2561450986, // Shotgun Dexterity
+                  101023751, // Sidearm Dexterity
+                  201274281, // Submachine Gun Dexterity
+                  1819979056 // Sniper Rifle Dexterity
                 ]
               },
               {
                 name: "Loaders",
                 items: [
-                  575217150, // Light Arms Loader
-                  4146282118, // Rifle Loader
-                  3493464614 // Large Weapon Loader
+                  2571974065, // Auto Rifle Loader
+                  3436675785, // Bow Reloader
+                  428274928, // Fusion Rifle Loader
+                  4140815674, // Grenade Launcher Loader
+                  1052494884, // Hand Cannon Loader
+                  157329321, // Machine Gun Loader
+                  178399816, // Linear Fusion Rifle Loader
+                  1129724921, // Pulse Rifle Loader
+                  2324400338, // Rocket Launcher Loader
+                  667313240, // Scout Rifle Loader
+                  1534061443, // Shotgun Loader
+                  762238512, // Sidearm Loader
+                  2790645726, // Submachine Gun Loader
+                  2039949393 // Sniper Rifle Loader
                 ]
               }
             ]
@@ -249,39 +275,14 @@ export default [
             nameHash: 728351493,
             itemGroups: [
               [
-                3470562293, // Impact Induction
-                774147760 // Enhanced Impact Induction
-              ],
-              [
-                3436675785, // Bow Reloader
-                157329321, // Machine Gun Loader
-                1129724921, // Pulse Rifle Loader
-                1534061443, // Shotgun Loader
-                1657427196, // Enhanced Shotgun Loader
-                2599026044, // Enhanced Bow Loader
-                3661789072, // Enhanced Machine Gun Loader
-                38612140 // Enhanced Pulse Rifle Loader
+                3788210493 // Momentum Transfer
               ]
             ],
             groups: [
               {
                 name: "General",
                 items: [
-                  3470562293, // Impact Induction
-                  774147760 // Enhanced Impact Induction
-                ]
-              },
-              {
-                name: "Loaders",
-                items: [
-                  3436675785, // Bow Reloader
-                  157329321, // Machine Gun Loader
-                  1129724921, // Pulse Rifle Loader
-                  1534061443, // Shotgun Loader
-                  1657427196, // Enhanced Shotgun Loader
-                  2599026044, // Enhanced Bow Loader
-                  3661789072, // Enhanced Machine Gun Loader
-                  38612140 // Enhanced Pulse Rifle Loader
+                  3788210493 // Momentum Transfer
                 ]
               }
             ]
@@ -291,43 +292,14 @@ export default [
             nameHash: 591714140,
             itemGroups: [
               [
-                3788210493, // Momentum Transfer
-                531981182 // Enhanced Momentum Transfer
-              ],
-              [
-                2571974065, // Auto Rifle Loader
-                428274928, // Fusion Rifle Loader
-                178399816, // Linear Fusion Rifle Loader
-                2324400338, // Rocket Launcher Loader
-                503582313, // Enhanced Rocket Launcher Loader
-                2790645726, // Submachine Gun Loader
-                4258747542, // Enhanced Auto Rifle Loader
-                1318561067, // Enhanced Fusion Rifle Loader
-                2818043025, // Enhanced Linear Fusion Rifle Loader
-                1823641159 // Enhanced Submachine Gun Loader
+                3470562293 // Impact Induction
               ]
             ],
             groups: [
               {
                 name: "General",
                 items: [
-                  3788210493, // Momentum Transfer
-                  531981182 // Enhanced Momentum Transfer
-                ]
-              },
-              {
-                name: "Loaders",
-                items: [
-                  2571974065, // Auto Rifle Loader
-                  428274928, // Fusion Rifle Loader
-                  178399816, // Linear Fusion Rifle Loader
-                  2324400338, // Rocket Launcher Loader
-                  503582313, // Enhanced Rocket Launcher Loader
-                  2790645726, // Submachine Gun Loader
-                  4258747542, // Enhanced Auto Rifle Loader
-                  1318561067, // Enhanced Fusion Rifle Loader
-                  2818043025, // Enhanced Linear Fusion Rifle Loader
-                  1823641159 // Enhanced Submachine Gun Loader
+                  3470562293 // Impact Induction
                 ]
               }
             ]
@@ -337,32 +309,16 @@ export default [
             nameHash: 4069572561,
             itemGroups: [
               [
-                4140815674, // Grenade Launcher Loader
-                2165754723, // Enhanced Grenade Launcher Loader
-                1052494884, // Hand Cannon Loader
-                989778135, // Enhanced Hand Cannon Loader
-                667313240, // Scout Rifle Loader
-                762238512, // Sidearm Loader
-                2039949393, // Sniper Rifle Loader
-                3282442165, // Enhanced Scout Rifle Loader
-                361808353, // Enhanced Sidearm Loader
-                2163041754 // Enhanced Sniper Rifle Loader
+                1839911272, // Focusing Strike
+                3750579462 // Bolstering Detonation
               ]
             ],
             groups: [
               {
-                name: "Loaders",
+                name: "General",
                 items: [
-                  4140815674, // Grenade Launcher Loader
-                  2165754723, // Enhanced Grenade Launcher Loader
-                  1052494884, // Hand Cannon Loader
-                  989778135, // Enhanced Hand Cannon Loader
-                  667313240, // Scout Rifle Loader
-                  762238512, // Sidearm Loader
-                  2039949393, // Sniper Rifle Loader
-                  3282442165, // Enhanced Scout Rifle Loader
-                  361808353, // Enhanced Sidearm Loader
-                  2163041754 // Enhanced Sniper Rifle Loader
+                  1839911272, // Focusing Strike
+                  3750579462 // Bolstering Detonation
                 ]
               }
             ]
@@ -378,48 +334,101 @@ export default [
             nameHash: 1198124803,
             itemGroups: [
               [
-                3213968581, // Enhanced Unflinching Rifle Aim
-                3175764264, // Counter Charge
-                3175764266, // Overload Grenades
-                3175764269, // Breach Resonator
-                3175764268 // Inferno Whip
+                2588939505, // Concussive Dampener
+                760472183, // Melee Damage Resistance
+                3566745556 // Sniper Damage Resistance
               ],
               [
-                2020900991, // Light Arms Reserves
-                3397262883, // Large Arms Reserves
-                1384818155 // Rifle Reserves
+                1397877685, // Unflinching Pulse Rifle Aim
+                550475669, // Unflinching Hand Cannon Aim
+                550475671 // Unflinching Scout Rifle Aim
               ],
               [
-                1541497724, // Unflinching Light Arms Aim
-                3084181312, // Unflinching Rifle Aim
-                364819640 // Unflinching Large Arms
+                1131497704, // Auto Rifle Reserves
+                201502208, // Bow Reserves
+                3531950723, // Fusion Rifle Reserves
+                3330921441, // Grenade Launcher Reserves
+                1043617959, // Hand Cannon Reserves
+                3188535145, // Machine Gun Reserves
+                749060462, // Linear Fusion Rifle Reserves
+                1478123840, // Pulse Rifle Reserves
+                1303690937, // Rocket Launcher Reserves
+                240987419, // Scout Rifle Reserves
+                2368162286, // Shotgun Reserves
+                3859610803, // Sidearm Reserves
+                1829115845, // Submachine Gun Reserves
+                3926976952, // Sniper Rifle Reserves
+                3543966269 // Sword Reserves
+              ],
+              [
+                2505824339, // Unflinching Auto Rifle Aim
+                3662638763, // Unflinching Bow Aim
+                3121039270, // Unflinching Fusion Rifle Aim
+                807774340, // Unflinching Grenade Launcher Aim
+                1859929470, // Unflinching Hand Cannon Aim
+                3091213995, // Unflinching Machine Gun
+                650627622, // Unflinching Linear Fusion Aim
+                2379452959, // Unflinching Pulse Rifle Aim
+                1279446438, // Unflinching Scout Rifle Aim
+                357349821, // Unflinching Shotgun Aim
+                2881057950, // Unflinching Sidearm Aim
+                1203395203, // Unflinching Sniper Aim
+                3626376648 // Unflinching Submachine Gun Aim
               ]
             ],
             groups: [
               {
+                name: "General",
+                items: [
+                  2588939505, // Concussive Dampener
+                  760472183, // Melee Damage Resistance
+                  3566745556 // Sniper Damage Resistance
+                ]
+              },
+              {
                 name: "Seasonal Artifact",
                 items: [
-                  3213968581, // Enhanced Unflinching Rifle Aim
-                  3175764264, // Counter Charge
-                  3175764266, // Overload Grenades
-                  3175764269, // Breach Resonator
-                  3175764268 // Inferno Whip
+                  1397877685, // Unflinching Pulse Rifle Aim
+                  550475669, // Unflinching Hand Cannon Aim
+                  550475671 // Unflinching Scout Rifle Aim
                 ]
               },
               {
                 name: "Ammo Reserves",
                 items: [
-                  2020900991, // Light Arms Reserves
-                  3397262883, // Large Arms Reserves
-                  1384818155 // Rifle Reserves
+                  1131497704, // Auto Rifle Reserves
+                  201502208, // Bow Reserves
+                  3531950723, // Fusion Rifle Reserves
+                  3330921441, // Grenade Launcher Reserves
+                  1043617959, // Hand Cannon Reserves
+                  3188535145, // Machine Gun Reserves
+                  749060462, // Linear Fusion Rifle Reserves
+                  1478123840, // Pulse Rifle Reserves
+                  1303690937, // Rocket Launcher Reserves
+                  240987419, // Scout Rifle Reserves
+                  2368162286, // Shotgun Reserves
+                  3859610803, // Sidearm Reserves
+                  1829115845, // Submachine Gun Reserves
+                  3926976952, // Sniper Rifle Reserves
+                  3543966269 // Sword Reserves
                 ]
               },
               {
                 name: "Unflinching Aim",
                 items: [
-                  1541497724, // Unflinching Light Arms Aim
-                  3084181312, // Unflinching Rifle Aim
-                  364819640 // Unflinching Large Arms
+                  2505824339, // Unflinching Auto Rifle Aim
+                  3662638763, // Unflinching Bow Aim
+                  3121039270, // Unflinching Fusion Rifle Aim
+                  807774340, // Unflinching Grenade Launcher Aim
+                  1859929470, // Unflinching Hand Cannon Aim
+                  3091213995, // Unflinching Machine Gun
+                  650627622, // Unflinching Linear Fusion Aim
+                  2379452959, // Unflinching Pulse Rifle Aim
+                  1279446438, // Unflinching Scout Rifle Aim
+                  357349821, // Unflinching Shotgun Aim
+                  2881057950, // Unflinching Sidearm Aim
+                  1203395203, // Unflinching Sniper Aim
+                  3626376648 // Unflinching Submachine Gun Aim
                 ]
               }
             ]
@@ -429,45 +438,14 @@ export default [
             nameHash: 728351493,
             itemGroups: [
               [
-                201502208, // Bow Reserves
-                3188535145, // Machine Gun Reserves
-                1478123840, // Pulse Rifle Reserves
-                2368162286, // Shotgun Reserves
-                3543966269 // Sword Reserves
-              ],
-              [
-                3662638763, // Unflinching Bow Aim
-                643703876, // Enhanced Unflinching Bow Aim
-                3091213995, // Unflinching Machine Gun
-                2379452959, // Unflinching Pulse Rifle Aim
-                357349821, // Unflinching Shotgun Aim
-                476007934, // Enhanced Unflinching Machine Gun Aim
-                2066320542, // Enhanced Unflinching Pulse Rifle Aim
-                2998471416 // Enhanced Unflinching Shotgun Aim
+                3074491624 // Arc Resistance
               ]
             ],
             groups: [
               {
-                name: "Ammo Reserves",
+                name: "General",
                 items: [
-                  201502208, // Bow Reserves
-                  3188535145, // Machine Gun Reserves
-                  1478123840, // Pulse Rifle Reserves
-                  2368162286, // Shotgun Reserves
-                  3543966269 // Sword Reserves
-                ]
-              },
-              {
-                name: "Unflinching Aim",
-                items: [
-                  3662638763, // Unflinching Bow Aim
-                  643703876, // Enhanced Unflinching Bow Aim
-                  3091213995, // Unflinching Machine Gun
-                  2379452959, // Unflinching Pulse Rifle Aim
-                  357349821, // Unflinching Shotgun Aim
-                  476007934, // Enhanced Unflinching Machine Gun Aim
-                  2066320542, // Enhanced Unflinching Pulse Rifle Aim
-                  2998471416 // Enhanced Unflinching Shotgun Aim
+                  3074491624 // Arc Resistance
                 ]
               }
             ]
@@ -477,45 +455,14 @@ export default [
             nameHash: 591714140,
             itemGroups: [
               [
-                1131497704, // Auto Rifle Reserves
-                3531950723, // Fusion Rifle Reserves
-                749060462, // Linear Fusion Rifle Reserves
-                1303690937, // Rocket Launcher Reserves
-                1829115845 // Submachine Gun Reserves
-              ],
-              [
-                2505824339, // Unflinching Auto Rifle Aim
-                3121039270, // Unflinching Fusion Rifle Aim
-                650627622, // Unflinching Linear Fusion Aim
-                3673056113, // Enhanced Unflinching Linear Fusion Aim
-                3626376648, // Unflinching Submachine Gun Aim
-                2568247584, // Enhanced Unflinching Auto Rifle Aim
-                4057143977, // Enhanced Unflinching Fusion Rifle Aim
-                1008801629 // Enhanced Unflinching Submachine Gun Aim
+                1429600943 // Solar Resistance
               ]
             ],
             groups: [
               {
-                name: "Ammo Reserves",
+                name: "General",
                 items: [
-                  1131497704, // Auto Rifle Reserves
-                  3531950723, // Fusion Rifle Reserves
-                  749060462, // Linear Fusion Rifle Reserves
-                  1303690937, // Rocket Launcher Reserves
-                  1829115845 // Submachine Gun Reserves
-                ]
-              },
-              {
-                name: "Unflinching Aim",
-                items: [
-                  2505824339, // Unflinching Auto Rifle Aim
-                  3121039270, // Unflinching Fusion Rifle Aim
-                  650627622, // Unflinching Linear Fusion Aim
-                  3673056113, // Enhanced Unflinching Linear Fusion Aim
-                  3626376648, // Unflinching Submachine Gun Aim
-                  2568247584, // Enhanced Unflinching Auto Rifle Aim
-                  4057143977, // Enhanced Unflinching Fusion Rifle Aim
-                  1008801629 // Enhanced Unflinching Submachine Gun Aim
+                  1429600943 // Solar Resistance
                 ]
               }
             ]
@@ -525,49 +472,14 @@ export default [
             nameHash: 4069572561,
             itemGroups: [
               [
-                3330921441, // Grenade Launcher Reserves
-                1043617959, // Hand Cannon Reserves
-                240987419, // Scout Rifle Reserves
-                3859610803, // Sidearm Reserves
-                3926976952 // Sniper Rifle Reserves
-              ],
-              [
-                807774340, // Unflinching Grenade Launcher Aim
-                1859929470, // Unflinching Hand Cannon Aim
-                1279446438, // Unflinching Scout Rifle Aim
-                263996333, // Enhanced Unflinching Scout Rifle Aim
-                2881057950, // Unflinching Sidearm Aim
-                1203395203, // Unflinching Sniper Aim
-                435979054, // Enhanced Unflinching Sniper Aim
-                1582133419, // Enhanced Unflinching Grenade Launcher Aim
-                262997143, // Enhanced Unflinching Hand Cannon Aim
-                3234602043 // Enhanced Unflinching Sidearm Aim
+                107977982 // Void Resistance
               ]
             ],
             groups: [
               {
-                name: "Ammo Reserves",
+                name: "General",
                 items: [
-                  3330921441, // Grenade Launcher Reserves
-                  1043617959, // Hand Cannon Reserves
-                  240987419, // Scout Rifle Reserves
-                  3859610803, // Sidearm Reserves
-                  3926976952 // Sniper Rifle Reserves
-                ]
-              },
-              {
-                name: "Unflinching Aim",
-                items: [
-                  807774340, // Unflinching Grenade Launcher Aim
-                  1859929470, // Unflinching Hand Cannon Aim
-                  1279446438, // Unflinching Scout Rifle Aim
-                  263996333, // Enhanced Unflinching Scout Rifle Aim
-                  2881057950, // Unflinching Sidearm Aim
-                  1203395203, // Unflinching Sniper Aim
-                  435979054, // Enhanced Unflinching Sniper Aim
-                  1582133419, // Enhanced Unflinching Grenade Launcher Aim
-                  262997143, // Enhanced Unflinching Hand Cannon Aim
-                  3234602043 // Enhanced Unflinching Sidearm Aim
+                  107977982 // Void Resistance
                 ]
               }
             ]
@@ -583,57 +495,60 @@ export default [
             nameHash: 1198124803,
             itemGroups: [
               [
-                1708067044 // Traction
+                3320641683 // Absolution
               ],
               [
-                3465659109, // Flourishing Blade
-                3465659111, // Automatic Prize
-                3465659104, // Dimensional Tithes
-                3465659105, // Ascendant Bounty
-                3213968579 // Enhanced Sword Scavenger
+                550475665 // Grenade Launcher Scavenger
               ],
               [
-                2401086340, // Primary Ammo Scavenger
-                345205583, // Special Ammo Scavenger
-                3866072732 // Heavy Ammo Scavenger
-              ],
-              [
-                805625272, // Light Arms Dexterity
-                3507619526, // Rifle Dexterity
-                3175015261 // Oversize Weapon Dexterity
+                737634704, // Auto Rifle Scavenger
+                987267082, // Arrow Scavenger
+                2347686425, // Fusion Rifle Scavenger
+                3670960347, // Grenade Launcher Scavenger
+                2758832455, // Hand Cannon Scavenger
+                1559280270, // Machine Gun Scavenger
+                2051366208, // Linear Fusion Rifle Scavenger
+                3156855054, // Pulse Rifle Scavenger
+                311492789, // Rocket Launcher Scavenger
+                356666687, // Scout Rifle Scavenger
+                3836152936, // Shotgun Scavenger
+                2183342667, // Sidearm Scavenger
+                1023632589, // Submachine Gun Scavenger
+                498878196, // Sniper Rifle Scavenger
+                2146553541 // Sword Scavenger
               ]
             ],
             groups: [
               {
                 name: "General",
                 items: [
-                  1708067044 // Traction
+                  3320641683 // Absolution
                 ]
               },
               {
                 name: "Seasonal Artifact",
                 items: [
-                  3465659109, // Flourishing Blade
-                  3465659111, // Automatic Prize
-                  3465659104, // Dimensional Tithes
-                  3465659105, // Ascendant Bounty
-                  3213968579 // Enhanced Sword Scavenger
+                  550475665 // Grenade Launcher Scavenger
                 ]
               },
               {
                 name: "Ammo Scavenger",
                 items: [
-                  2401086340, // Primary Ammo Scavenger
-                  345205583, // Special Ammo Scavenger
-                  3866072732 // Heavy Ammo Scavenger
-                ]
-              },
-              {
-                name: "Dexterity",
-                items: [
-                  805625272, // Light Arms Dexterity
-                  3507619526, // Rifle Dexterity
-                  3175015261 // Oversize Weapon Dexterity
+                  737634704, // Auto Rifle Scavenger
+                  987267082, // Arrow Scavenger
+                  2347686425, // Fusion Rifle Scavenger
+                  3670960347, // Grenade Launcher Scavenger
+                  2758832455, // Hand Cannon Scavenger
+                  1559280270, // Machine Gun Scavenger
+                  2051366208, // Linear Fusion Rifle Scavenger
+                  3156855054, // Pulse Rifle Scavenger
+                  311492789, // Rocket Launcher Scavenger
+                  356666687, // Scout Rifle Scavenger
+                  3836152936, // Shotgun Scavenger
+                  2183342667, // Sidearm Scavenger
+                  1023632589, // Submachine Gun Scavenger
+                  498878196, // Sniper Rifle Scavenger
+                  2146553541 // Sword Scavenger
                 ]
               }
             ]
@@ -643,45 +558,14 @@ export default [
             nameHash: 728351493,
             itemGroups: [
               [
-                987267082, // Arrow Scavenger
-                1559280270, // Machine Gun Scavenger
-                3156855054, // Pulse Rifle Scavenger
-                3836152936, // Shotgun Scavenger
-                2146553541 // Sword Scavenger
-              ],
-              [
-                3296399440, // Bow Dexterity
-                3362003312, // Machine Gun Dexterity
-                691818084, // Pulse Rifle Dexterity
-                2561450986, // Shotgun Dexterity
-                294409479, // Enhanced Shotgun Dexterity
-                768133715, // Enhanced Bow Dexterity
-                1993219983, // Enhanced Machine Gun Dexterity
-                727582839 // Enhanced Pulse Rifle Dexterity
+                1432806784 // Invigoration
               ]
             ],
             groups: [
               {
-                name: "Ammo Scavenger",
+                name: "General",
                 items: [
-                  987267082, // Arrow Scavenger
-                  1559280270, // Machine Gun Scavenger
-                  3156855054, // Pulse Rifle Scavenger
-                  3836152936, // Shotgun Scavenger
-                  2146553541 // Sword Scavenger
-                ]
-              },
-              {
-                name: "Dexterity",
-                items: [
-                  3296399440, // Bow Dexterity
-                  3362003312, // Machine Gun Dexterity
-                  691818084, // Pulse Rifle Dexterity
-                  2561450986, // Shotgun Dexterity
-                  294409479, // Enhanced Shotgun Dexterity
-                  768133715, // Enhanced Bow Dexterity
-                  1993219983, // Enhanced Machine Gun Dexterity
-                  727582839 // Enhanced Pulse Rifle Dexterity
+                  1432806784 // Invigoration
                 ]
               }
             ]
@@ -691,49 +575,16 @@ export default [
             nameHash: 591714140,
             itemGroups: [
               [
-                737634704, // Auto Rifle Scavenger
-                2347686425, // Fusion Rifle Scavenger
-                2051366208, // Linear Fusion Rifle Scavenger
-                311492789, // Rocket Launcher Scavenger
-                1023632589 // Submachine Gun Scavenger
-              ],
-              [
-                1312062056, // Auto Rifle Dexterity
-                945523359, // Fusion Rifle Dexterity
-                2520883911, // Linear Fusion Dexterity
-                3026352437, // Rocket Launcher Dexterity
-                3076533032, // Enhanced Rocket Launcher Dexterity
-                201274281, // Submachine Gun Dexterity
-                2912791105, // Enhanced Auto Rifle Dexterity
-                206913198, // Enhanced Fusion Rifle Dexterity
-                1472121496, // Enhanced Linear Fusion Rifle Dexterity
-                4085860898 // Enhanced Submachine Gun Dexterity
+                2476831315, // Recuperation
+                3598368346 // Innervation
               ]
             ],
             groups: [
               {
-                name: "Ammo Scavenger",
+                name: "General",
                 items: [
-                  737634704, // Auto Rifle Scavenger
-                  2347686425, // Fusion Rifle Scavenger
-                  2051366208, // Linear Fusion Rifle Scavenger
-                  311492789, // Rocket Launcher Scavenger
-                  1023632589 // Submachine Gun Scavenger
-                ]
-              },
-              {
-                name: "Dexterity",
-                items: [
-                  1312062056, // Auto Rifle Dexterity
-                  945523359, // Fusion Rifle Dexterity
-                  2520883911, // Linear Fusion Dexterity
-                  3026352437, // Rocket Launcher Dexterity
-                  3076533032, // Enhanced Rocket Launcher Dexterity
-                  201274281, // Submachine Gun Dexterity
-                  2912791105, // Enhanced Auto Rifle Dexterity
-                  206913198, // Enhanced Fusion Rifle Dexterity
-                  1472121496, // Enhanced Linear Fusion Rifle Dexterity
-                  4085860898 // Enhanced Submachine Gun Dexterity
+                  2476831315, // Recuperation
+                  3598368346 // Innervation
                 ]
               }
             ]
@@ -743,49 +594,16 @@ export default [
             nameHash: 4069572561,
             itemGroups: [
               [
-                3670960347, // Grenade Launcher Scavenger
-                2758832455, // Hand Cannon Scavenger
-                356666687, // Scout Rifle Scavenger
-                2183342667, // Sidearm Scavenger
-                498878196 // Sniper Rifle Scavenger
-              ],
-              [
-                2214082005, // Grenade Launcher Dexterity
-                3484440775, // Hand Cannon Dexterity
-                23817334, // Enhanced Hand Cannon Dexterity
-                327265103, // Scout Rifle Dexterity
-                101023751, // Sidearm Dexterity
-                1819979056, // Sniper Rifle Dexterity
-                439107567, // Enhanced Sniper Rifle Dexterity
-                358728248, // Enhanced Grenade Launcher Dexterity
-                4235763716, // Enhanced Scout Rifle Dexterity
-                2620269144 // Enhanced Sidearm Dexterity
+                1320020854, // Better Already
+                973776237 // Insulation
               ]
             ],
             groups: [
               {
-                name: "Ammo Scavenger",
+                name: "General",
                 items: [
-                  3670960347, // Grenade Launcher Scavenger
-                  2758832455, // Hand Cannon Scavenger
-                  356666687, // Scout Rifle Scavenger
-                  2183342667, // Sidearm Scavenger
-                  498878196 // Sniper Rifle Scavenger
-                ]
-              },
-              {
-                name: "Dexterity",
-                items: [
-                  2214082005, // Grenade Launcher Dexterity
-                  3484440775, // Hand Cannon Dexterity
-                  23817334, // Enhanced Hand Cannon Dexterity
-                  327265103, // Scout Rifle Dexterity
-                  101023751, // Sidearm Dexterity
-                  1819979056, // Sniper Rifle Dexterity
-                  439107567, // Enhanced Sniper Rifle Dexterity
-                  358728248, // Enhanced Grenade Launcher Dexterity
-                  4235763716, // Enhanced Scout Rifle Dexterity
-                  2620269144 // Enhanced Sidearm Dexterity
+                  1320020854, // Better Already
+                  973776237 // Insulation
                 ]
               }
             ]
@@ -801,24 +619,24 @@ export default [
             nameHash: 1198124803,
             itemGroups: [
               [
-                3320641683, // Absolution
                 1513970148, // Distribution
                 4237638090, // Special Finisher
                 4237638094 // Snapload Finisher
               ],
               [
-                4186620519, // Oppressive Darkness
-                4186620516, // Solar Plexus
-                4186620517, // Heavy Finisher
-                4186620514, // Volatile Conduction
-                4186620515 // Guardian Angel
+                2689341528, // Momentum Siphon
+                2689341531, // Surge Eater
+                2689341530, // Unstoppable Schwarzschild Condensor
+                2689341533, // Thermal Overload
+                2689341532, // Spoils of War
+                1878293396, // Pyretic Embrace
+                1878293397 // Berserker
               ]
             ],
             groups: [
               {
                 name: "General",
                 items: [
-                  3320641683, // Absolution
                   1513970148, // Distribution
                   4237638090, // Special Finisher
                   4237638094 // Snapload Finisher
@@ -827,11 +645,13 @@ export default [
               {
                 name: "Seasonal Artifact",
                 items: [
-                  4186620519, // Oppressive Darkness
-                  4186620516, // Solar Plexus
-                  4186620517, // Heavy Finisher
-                  4186620514, // Volatile Conduction
-                  4186620515 // Guardian Angel
+                  2689341528, // Momentum Siphon
+                  2689341531, // Surge Eater
+                  2689341530, // Unstoppable Schwarzschild Condensor
+                  2689341533, // Thermal Overload
+                  2689341532, // Spoils of War
+                  1878293396, // Pyretic Embrace
+                  1878293397 // Berserker
                 ]
               }
             ]
@@ -841,28 +661,16 @@ export default [
             nameHash: 728351493,
             itemGroups: [
               [
-                1432806784, // Invigoration
                 3974455041, // Outreach
-                4237638091, // One-Two Finisher
-                4237638095, // Explosive Finisher
-                3065699930, // Hands-On
-                4092923892, // Pump Action
-                1957851633, // Bleeding Edge
-                4121395272 // Storm of Lead
+                4237638091 // One-Two Finisher
               ]
             ],
             groups: [
               {
                 name: "General",
                 items: [
-                  1432806784, // Invigoration
                   3974455041, // Outreach
-                  4237638091, // One-Two Finisher
-                  4237638095, // Explosive Finisher
-                  3065699930, // Hands-On
-                  4092923892, // Pump Action
-                  1957851633, // Bleeding Edge
-                  4121395272 // Storm of Lead
+                  4237638091 // One-Two Finisher
                 ]
               }
             ]
@@ -872,30 +680,18 @@ export default [
             nameHash: 591714140,
             itemGroups: [
               [
-                2476831315, // Recuperation
-                3598368346, // Innervation
                 3561960031, // Bomber
-                3884084138, // Enhanced Bomber
-                322752304, // Ashes to Assets
-                3320253353, // Enhanced Ashes to Assets
-                4084428384, // Light Reactor
-                2548337781, // Blast Off
-                1834598430 // Light Conductor
+                4237638089, // Healthy Finisher
+                4237638095 // Explosive Finisher
               ]
             ],
             groups: [
               {
                 name: "General",
                 items: [
-                  2476831315, // Recuperation
-                  3598368346, // Innervation
                   3561960031, // Bomber
-                  3884084138, // Enhanced Bomber
-                  322752304, // Ashes to Assets
-                  3320253353, // Enhanced Ashes to Assets
-                  4084428384, // Light Reactor
-                  2548337781, // Blast Off
-                  1834598430 // Light Conductor
+                  4237638089, // Healthy Finisher
+                  4237638095 // Explosive Finisher
                 ]
               }
             ]
@@ -905,28 +701,16 @@ export default [
             nameHash: 4069572561,
             itemGroups: [
               [
-                1320020854, // Better Already
-                973776237, // Insulation
                 4137020505, // Perpetuation
-                1016705548, // Dynamo
-                4237638088, // Bulwark Finisher
-                4237638089, // Healthy Finisher
-                2375300279, // Remote Connection
-                3962384413 // Dire Artillery
+                4237638088 // Bulwark Finisher
               ]
             ],
             groups: [
               {
                 name: "General",
                 items: [
-                  1320020854, // Better Already
-                  973776237, // Insulation
                   4137020505, // Perpetuation
-                  1016705548, // Dynamo
-                  4237638088, // Bulwark Finisher
-                  4237638089, // Healthy Finisher
-                  2375300279, // Remote Connection
-                  3962384413 // Dire Artillery
+                  4237638088 // Bulwark Finisher
                 ]
               }
             ]
@@ -948,13 +732,17 @@ export default [
                 3961599962, // Mobility Mod
                 2645858828, // Recovery Mod
                 2850583378, // Resilience Mod
-                531752975, // Minor Resist
-                1313760467, // Major Resist
-                1719752237, // Boss Resist
-                2588939505 // Concussive Dampener
+                3630287380, // Enhanced Relay Defender
+                3415291596, // Relay Defender
+                2623485440, // Minor Discipline Mod
+                3699676109, // Minor Strength Mod
+                1227870362, // Minor Intellect Mod
+                204137529, // Minor Mobility Mod
+                555005975, // Minor Recovery Mod
+                3682186345 // Minor Resilience Mod
               ],
               [
-                3465659110 // Prized Shooting
+                1878293394 // Abyssal Charge
               ],
               [
                 2859541905, // Taken Armaments
@@ -963,26 +751,7 @@ export default [
                 2589105944 // Taken Repurposing
               ],
               [
-                2503471403, // Fallen Armaments
-                3395883122, // Fallen Invigoration
-                3099724909, // Fallen Barrier
-                2276366746 // Fallen Repurposing
-              ],
-              [
-                2816649701, // Striking Hand
-                499567183, // Shielding Hand
-                2280136185, // Giving Hand
-                1489470244, // Power Overwhelming
-                4130296084, // Energized
-                927348227, // Hive Armaments
-                2146600970, // Hive Invigoration
-                3967424085, // Hive Barrier
-                3302924434 // Hive Repurposing
-              ],
-              [
-                3895804619, // Dreambane Mod
-                3630287380, // Enhanced Relay Defender
-                3415291596 // Relay Defender
+                3895804619 // Dreambane Mod
               ],
               [
                 3632726238, // Taking Charge
@@ -992,6 +761,9 @@ export default [
               ],
               [
                 179977572 // Global Reach
+              ],
+              [
+                2142852459 // Herd Thinner
               ]
             ],
             groups: [
@@ -1004,16 +776,20 @@ export default [
                   3961599962, // Mobility Mod
                   2645858828, // Recovery Mod
                   2850583378, // Resilience Mod
-                  531752975, // Minor Resist
-                  1313760467, // Major Resist
-                  1719752237, // Boss Resist
-                  2588939505 // Concussive Dampener
+                  3630287380, // Enhanced Relay Defender
+                  3415291596, // Relay Defender
+                  2623485440, // Minor Discipline Mod
+                  3699676109, // Minor Strength Mod
+                  1227870362, // Minor Intellect Mod
+                  204137529, // Minor Mobility Mod
+                  555005975, // Minor Recovery Mod
+                  3682186345 // Minor Resilience Mod
                 ]
               },
               {
                 name: "Seasonal Artifact",
                 items: [
-                  3465659110 // Prized Shooting
+                  1878293394 // Abyssal Charge
                 ]
               },
               {
@@ -1026,34 +802,9 @@ export default [
                 ]
               },
               {
-                name: "Season of the Forge",
-                items: [
-                  2503471403, // Fallen Armaments
-                  3395883122, // Fallen Invigoration
-                  3099724909, // Fallen Barrier
-                  2276366746 // Fallen Repurposing
-                ]
-              },
-              {
-                name: "Season of Opulence",
-                items: [
-                  2816649701, // Striking Hand
-                  499567183, // Shielding Hand
-                  2280136185, // Giving Hand
-                  1489470244, // Power Overwhelming
-                  4130296084, // Energized
-                  927348227, // Hive Armaments
-                  2146600970, // Hive Invigoration
-                  3967424085, // Hive Barrier
-                  3302924434 // Hive Repurposing
-                ]
-              },
-              {
                 name: "Season of the Undying",
                 items: [
-                  3895804619, // Dreambane Mod
-                  3630287380, // Enhanced Relay Defender
-                  3415291596 // Relay Defender
+                  3895804619 // Dreambane Mod
                 ]
               },
               {
@@ -1070,6 +821,12 @@ export default [
                 items: [
                   179977572 // Global Reach
                 ]
+              },
+              {
+                name: "Deep Stone Crypt",
+                items: [
+                  2142852459 // Herd Thinner
+                ]
               }
             ]
           },
@@ -1078,18 +835,13 @@ export default [
             nameHash: 728351493,
             itemGroups: [
               [
-                3074491624 // Arc Resistance
-              ],
-              [
-                4240256197, // Empowering Largesse
-                1409526707 // Emperor's Shock
+                2037533514, // Enhanced Resistant Tether
+                2887845822 // Resistant Tether
               ],
               [
                 3829100654, // Supreme Nightmare Banisher
                 1996040463, // Enhanced Nightmare Banisher
-                2874957617, // Nightmare Banisher
-                2037533514, // Enhanced Resistant Tether
-                2887845822 // Resistant Tether
+                2874957617 // Nightmare Banisher
               ],
               [
                 1484685884, // Quick Charge
@@ -1108,22 +860,19 @@ export default [
               [
                 2979815164, // Swift Charge
                 2979815165, // Lucent Blade
-                2979815166, // Font of Light
+                2979815166, // Reactive Pulse
                 2979815167 // Radiant Light
+              ],
+              [
+                1578165808 // Enhanced Scanner Augment
               ]
             ],
             groups: [
               {
                 name: "General",
                 items: [
-                  3074491624 // Arc Resistance
-                ]
-              },
-              {
-                name: "Season of Opulence",
-                items: [
-                  4240256197, // Empowering Largesse
-                  1409526707 // Emperor's Shock
+                  2037533514, // Enhanced Resistant Tether
+                  2887845822 // Resistant Tether
                 ]
               },
               {
@@ -1131,9 +880,7 @@ export default [
                 items: [
                   3829100654, // Supreme Nightmare Banisher
                   1996040463, // Enhanced Nightmare Banisher
-                  2874957617, // Nightmare Banisher
-                  2037533514, // Enhanced Resistant Tether
-                  2887845822 // Resistant Tether
+                  2874957617 // Nightmare Banisher
                 ]
               },
               {
@@ -1161,8 +908,14 @@ export default [
                 items: [
                   2979815164, // Swift Charge
                   2979815165, // Lucent Blade
-                  2979815166, // Font of Light
+                  2979815166, // Reactive Pulse
                   2979815167 // Radiant Light
+                ]
+              },
+              {
+                name: "Deep Stone Crypt",
+                items: [
+                  1578165808 // Enhanced Scanner Augment
                 ]
               }
             ]
@@ -1172,18 +925,13 @@ export default [
             nameHash: 591714140,
             itemGroups: [
               [
-                1429600943 // Solar Resistance
-              ],
-              [
-                2689994974, // Radiant Largesse
-                4018667352 // Emperor's Blaze
+                4020036031, // Enhanced Voltaic Ammo Collector
+                928186993 // Voltaic Ammo Collector
               ],
               [
                 2023980600, // Supreme Nightmare Breaker
                 4193902249, // Enhanced Nightmare Breaker
-                1560574695, // Nightmare Breaker
-                4020036031, // Enhanced Voltaic Ammo Collector
-                928186993 // Voltaic Ammo Collector
+                1560574695 // Nightmare Breaker
               ],
               [
                 3185435909, // Heal Thyself
@@ -1204,20 +952,17 @@ export default [
                 4272180932, // Argent Ordnance
                 4272180935, // Kindling the Flame
                 4272180934 // Supercharged
+              ],
+              [
+                817361141 // Enhanced Operator Augment
               ]
             ],
             groups: [
               {
                 name: "General",
                 items: [
-                  1429600943 // Solar Resistance
-                ]
-              },
-              {
-                name: "Season of Opulence",
-                items: [
-                  2689994974, // Radiant Largesse
-                  4018667352 // Emperor's Blaze
+                  4020036031, // Enhanced Voltaic Ammo Collector
+                  928186993 // Voltaic Ammo Collector
                 ]
               },
               {
@@ -1225,9 +970,7 @@ export default [
                 items: [
                   2023980600, // Supreme Nightmare Breaker
                   4193902249, // Enhanced Nightmare Breaker
-                  1560574695, // Nightmare Breaker
-                  4020036031, // Enhanced Voltaic Ammo Collector
-                  928186993 // Voltaic Ammo Collector
+                  1560574695 // Nightmare Breaker
                 ]
               },
               {
@@ -1258,6 +1001,12 @@ export default [
                   4272180935, // Kindling the Flame
                   4272180934 // Supercharged
                 ]
+              },
+              {
+                name: "Deep Stone Crypt",
+                items: [
+                  817361141 // Enhanced Operator Augment
+                ]
               }
             ]
           },
@@ -1266,18 +1015,13 @@ export default [
             nameHash: 4069572561,
             itemGroups: [
               [
-                107977982 // Void Resistance
-              ],
-              [
-                4185864113, // Embraced Largesse
-                301151651 // Emperor's Balance
+                865380761, // Enhanced Voltaic Mote Collector
+                4134680615 // Voltaic Mote Collector
               ],
               [
                 2045123179, // Supreme Nightmare Crusher
                 1565861116, // Enhanced Nightmare Crusher
-                3736152098, // Nightmare Crusher
-                865380761, // Enhanced Voltaic Mote Collector
-                4134680615 // Voltaic Mote Collector
+                3736152098 // Nightmare Crusher
               ],
               [
                 3523075120, // Protective Light
@@ -1298,20 +1042,17 @@ export default [
                 2263321585, // Surprise Attack
                 2263321586, // Energy Converter
                 2263321587 // Charge Harvester
+              ],
+              [
+                1362793604 // Enhanced Suppressor Augment
               ]
             ],
             groups: [
               {
                 name: "General",
                 items: [
-                  107977982 // Void Resistance
-                ]
-              },
-              {
-                name: "Season of Opulence",
-                items: [
-                  4185864113, // Embraced Largesse
-                  301151651 // Emperor's Balance
+                  865380761, // Enhanced Voltaic Mote Collector
+                  4134680615 // Voltaic Mote Collector
                 ]
               },
               {
@@ -1319,9 +1060,7 @@ export default [
                 items: [
                   2045123179, // Supreme Nightmare Crusher
                   1565861116, // Enhanced Nightmare Crusher
-                  3736152098, // Nightmare Crusher
-                  865380761, // Enhanced Voltaic Mote Collector
-                  4134680615 // Voltaic Mote Collector
+                  3736152098 // Nightmare Crusher
                 ]
               },
               {
@@ -1351,6 +1090,12 @@ export default [
                   2263321585, // Surprise Attack
                   2263321586, // Energy Converter
                   2263321587 // Charge Harvester
+                ]
+              },
+              {
+                name: "Deep Stone Crypt",
+                items: [
+                  1362793604 // Enhanced Suppressor Augment
                 ]
               }
             ]
