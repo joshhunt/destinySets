@@ -13,13 +13,22 @@ $green = #44bd32;
 
 .root
   .fadeOut
-    opacity: .4
+    .image,
+    .overlay
+      opacity: .35
+
+    &:hover
+      .image,
+      .overlay
+        opacity: 1
 
   &.obtained
   &.dismantled
   &.checklisted
     .fadeOut
-      opacity: 1
+      .image,
+      .overlay
+        opacity: 1
 
 .image
   display: block
