@@ -2071,8 +2071,8 @@ export default ([
                 // 4124216484, // Prized Ivory (Not planned to be sold for Bright Dust)
                 1418556229, // Lord of the Hunt
                 1828076537, // Necrosis
-                1733242439 // Only the Penitent Pass
-                // 572589482 // Blissful Ignorance (Not planned to be sold for Bright Dust)
+                1733242439, // Only the Penitent Pass
+                572589482 // Blissful Ignorance
               ],
               [
                 3927691568, // Nano Redux
@@ -2329,8 +2329,8 @@ export default ([
               2067296773, // Four Degrees of Separation
               2067296775, // Golden Pride
               2067296772, // Invasive Species
-              2067296770 // Jotuneer
-              // 2067296771, // The Regal Howl (Not planned to be sold for Bright Dust)
+              2067296770, // Jotuneer
+              2067296771 // The Regal Howl
 
               // Has highResIcon but not attached to Tess
 
