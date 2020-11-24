@@ -121,6 +121,7 @@ class Item extends PureComponent {
       className,
       itemDef,
       investmentStatItem,
+      watermark,
       displayItem,
       inventoryEntry,
       extended,
@@ -131,7 +132,10 @@ class Item extends PureComponent {
     } = this.props;
 
     const bgColor = getItemColor(itemDef);
-    const overlayImage = get(investmentStatItem, 'displayProperties.icon');
+    const overlayImage =
+      watermark != null
+        ? watermark
+        : get(investmentStatItem, 'displayProperties.icon');
 
     if (!itemDef) {
       if (hideMissing) {
@@ -274,6 +278,11 @@ function mapStateToProps() {
       })
       .filter(Boolean)[0];
 
+    const watermark =
+      itemDef && itemDef.iconWatermark !== undefined
+        ? itemDef.iconWatermark
+        : null;
+
     const vendorEntry = betterItemVendorEntrySelector(state, ownProps);
 
     const richVendorEntries = vendorEntry.map(ve => ({
@@ -288,6 +297,7 @@ function mapStateToProps() {
       itemDef,
       inventoryEntry: itemInventoryEntrySelector(state, ownProps),
       investmentStatItem,
+      watermark,
       richVendorEntries,
       itemObjectiveProgress: itemObjectiveProgressSelector(state, ownProps),
       displayItem,
