@@ -279,8 +279,11 @@ function mapStateToProps() {
       .filter(Boolean)[0];
 
     const watermark =
-      itemDef && itemDef.iconWatermark !== undefined
-        ? itemDef.iconWatermark
+      itemDef &&
+      itemDef.quality &&
+      itemDef.quality.displayVersionWatermarkIcons.length &&
+      itemDef.quality.displayVersionWatermarkIcons[0] !== undefined
+        ? itemDef.quality.displayVersionWatermarkIcons[0]
         : null;
 
     const vendorEntry = betterItemVendorEntrySelector(state, ownProps);
