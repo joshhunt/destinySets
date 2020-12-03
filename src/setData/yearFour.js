@@ -193,7 +193,7 @@ export default ([
         id: 'year-four-garden-of-salvation',
         description: _(
           'DestinyCollectibleDefinition[2273453973].sourceString',
-          '""Deep Stone Crypt" raid.'
+          '"Deep Stone Crypt" raid.'
         ),
         sections: [
           {
