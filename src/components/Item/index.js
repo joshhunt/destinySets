@@ -284,6 +284,8 @@ function mapStateToProps() {
       itemDef.quality.displayVersionWatermarkIcons.length &&
       itemDef.quality.displayVersionWatermarkIcons[0] !== undefined
         ? itemDef.quality.displayVersionWatermarkIcons[0]
+        : itemDef && itemDef.iconWatermark !== undefined
+        ? itemDef.iconWatermark
         : null;
 
     const vendorEntry = betterItemVendorEntrySelector(state, ownProps);
