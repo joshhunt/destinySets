@@ -176,19 +176,19 @@ class Item extends PureComponent {
       >
         <div className={styles.imageWrapper}>
           <div className={styles.fadeOut}>
-            {isMasterwork(inventoryEntry) && (
-              <img
-                className={styles.overlay}
-                src={masterworkOutline}
-                alt="Masterwork"
-              />
-            )}
-
             {overlayImage && (
               <BungieImage
                 className={styles.overlay}
                 alt=""
                 src={overlayImage}
+              />
+            )}
+
+            {isMasterwork(inventoryEntry) && (
+              <img
+                className={styles.overlay}
+                src={masterworkOutline}
+                alt="Masterwork"
               />
             )}
 
