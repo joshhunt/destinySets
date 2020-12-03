@@ -2005,7 +2005,7 @@ export default ([
                 3438514430, // Peacebringer
                 2020179519, // Polemology
                 3093486579, // Sky/Perdition
-                // 2744195002, // Third Rail (Not planned to be sold for Bright Dust)
+                2744195002, // Third Rail
                 519687404, // What If
                 4159445096 // A Better Specimen
               ],

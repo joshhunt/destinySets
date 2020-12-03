@@ -18,7 +18,7 @@ export default ([
           {
             name: 'Weapons',
             season: 12,
-            items: [2891672170]
+            itemGroups: [[2891672170], [4060882458]]
           },
           {
             name: 'Hunter Armor',
@@ -53,7 +53,7 @@ export default ([
           {
             name: 'Weapons',
             season: 12,
-            items: [2050789284]
+            itemGroups: [[2050789284], [4060882456]]
           },
           {
             name: 'Hunter Armor',
@@ -88,7 +88,7 @@ export default ([
           {
             name: 'Weapons',
             season: 12,
-            items: [3565520715]
+            itemGroups: [[3565520715], [4060882457]]
           },
           {
             name: 'Hunter Armor',
@@ -193,7 +193,7 @@ export default ([
         id: 'year-four-garden-of-salvation',
         description: _(
           'DestinyCollectibleDefinition[2273453973].sourceString',
-          '""Deep Stone Crypt" raid.'
+          '"Deep Stone Crypt" raid.'
         ),
         sections: [
           {
@@ -244,7 +244,7 @@ export default ([
           {
             name: 'Pursuit Weapon',
             season: 12,
-            itemGroups: [[4184808992], [4060882458, 4060882456, 4060882457]]
+            items: [4184808992]
           },
           {
             name: 'Wrathborn Hunts',
@@ -558,79 +558,79 @@ export default ([
             items: [2527044465, 2527044464]
           }
         ]
-      },
-      {
-        name: _(
-          'DestinyInventoryItemDefinition[2266135479].displayProperties.name',
-          'Eververse Engram'
-        ),
-        id: 'season-12-eververse-engram',
-        description: _(
-          'DestinyInventoryItemDefinition[2266135479].displayProperties.description',
-          'An engram containing various Eververse ornaments, emotes, and accessories from previous Destiny 2 seasons.'
-        ),
-        big: false,
-        sections: [
-          {
-            name: 'Ornaments',
-            season: 12,
-            itemGroups: [
-              [3449188806, 432606867, 384923539],
-              [],
-              [
-                929374195,
-                2579031865,
-                3654808012,
-                3786758103,
-                475012491,
-                3778646768
-              ]
-            ]
-          },
-          {
-            name: 'Emotes',
-            season: 12,
-            items: [
-              2711683305,
-              1194404806,
-              208153163,
-              300144357,
-              1037681135,
-              2737227933,
-              2970231290
-            ]
-          },
-          {
-            name: 'Ghosts',
-            season: 12,
-            itemGroups: [
-              [4005536858, 4005536857, 4005536856],
-              [859004029, 859004030, 3661044024]
-            ]
-          },
-
-          {
-            name: 'Sparrows',
-            season: 12,
-            items: [4248884710, 4248884709, 4248884708]
-          },
-          {
-            name: 'Ships',
-            season: 12,
-            items: [430387803, 430387802, 430387801]
-          },
-          {
-            name: 'Shaders',
-            season: 12,
-            items: [3906243543, 3906243540, 3906243541]
-          },
-          {
-            name: 'Transmat Effects',
-            season: 12,
-            items: [1378231107, 1378231104, 1378231105]
-          }
-        ]
       }
+      // {
+      //   name: _(
+      //     'DestinyInventoryItemDefinition[2266135479].displayProperties.name',
+      //     'Eververse Engram'
+      //   ),
+      //   id: 'season-12-eververse-engram',
+      //   description: _(
+      //     'DestinyInventoryItemDefinition[2266135479].displayProperties.description',
+      //     'An engram containing various Eververse ornaments, emotes, and accessories from previous Destiny 2 seasons.'
+      //   ),
+      //   big: false,
+      //   sections: [
+      //     {
+      //       name: 'Ornaments',
+      //       season: 12,
+      //       itemGroups: [
+      //         [3449188806, 432606867, 384923539],
+      //         [],
+      //         [
+      //           929374195,
+      //           2579031865,
+      //           3654808012,
+      //           3786758103,
+      //           475012491,
+      //           3778646768
+      //         ]
+      //       ]
+      //     },
+      //     {
+      //       name: 'Emotes',
+      //       season: 12,
+      //       items: [
+      //         2711683305,
+      //         1194404806,
+      //         208153163,
+      //         300144357,
+      //         1037681135,
+      //         2737227933,
+      //         2970231290
+      //       ]
+      //     },
+      //     {
+      //       name: 'Ghosts',
+      //       season: 12,
+      //       itemGroups: [
+      //         [4005536858, 4005536857, 4005536856],
+      //         [859004029, 859004030, 3661044024]
+      //       ]
+      //     },
+
+      //     {
+      //       name: 'Sparrows',
+      //       season: 12,
+      //       items: [4248884710, 4248884709, 4248884708]
+      //     },
+      //     {
+      //       name: 'Ships',
+      //       season: 12,
+      //       items: [430387803, 430387802, 430387801]
+      //     },
+      //     {
+      //       name: 'Shaders',
+      //       season: 12,
+      //       items: [3906243543, 3906243540, 3906243541]
+      //     },
+      //     {
+      //       name: 'Transmat Effects',
+      //       season: 12,
+      //       items: [1378231107, 1378231104, 1378231105]
+      //     }
+      //   ]
+      // }
     ]
   }
 ]: SetPage);
