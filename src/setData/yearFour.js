@@ -18,7 +18,7 @@ export default ([
           {
             name: 'Weapons',
             season: 12,
-            items: [2891672170]
+            itemGroups: [[2891672170], [4060882458]]
           },
           {
             name: 'Hunter Armor',
@@ -53,7 +53,7 @@ export default ([
           {
             name: 'Weapons',
             season: 12,
-            items: [2050789284]
+            itemGroups: [[2050789284], [4060882456]]
           },
           {
             name: 'Hunter Armor',
@@ -88,7 +88,7 @@ export default ([
           {
             name: 'Weapons',
             season: 12,
-            items: [3565520715]
+            itemGroups: [[3565520715], [4060882457]]
           },
           {
             name: 'Hunter Armor',
@@ -244,7 +244,7 @@ export default ([
           {
             name: 'Pursuit Weapon',
             season: 12,
-            itemGroups: [[4184808992], [4060882458, 4060882456, 4060882457]]
+            items: [4184808992]
           },
           {
             name: 'Wrathborn Hunts',
