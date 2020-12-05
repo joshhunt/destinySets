@@ -25,10 +25,10 @@ export default function getItemExtraInfo(item, _itemInventoryEntry) {
 
 export const DISMANTLED_MESSAGE = 'Dismantled, recorded in Google Drive';
 const LOCATIONS = {
-  characterEquipment: 'Equipped on character',
-  characterInventories: 'On character',
-  profileInventory: 'In vault',
-  destinySetsManual: 'Manually marked as collected',
+  characterEquipment: 'Equipped on Character',
+  characterInventories: 'On Character',
+  profileInventory: 'In Vault',
+  destinySetsManual: 'Manually Marked as Collected',
   cloudInventory: DISMANTLED_MESSAGE
   // profilePlugSets: 'Unlocked',
   // vendorPlugStates: 'Unlocked'

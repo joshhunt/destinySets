@@ -38,7 +38,7 @@ function ExtraInfo({
         </span>{' '}
         {inventoryEntry.obtained
           ? 'Unlocked in Collections'
-          : 'Dismantled & unlocked in Collections'}
+          : 'Dismantled & Unlocked in Collections'}
       </span>
     );
   }
