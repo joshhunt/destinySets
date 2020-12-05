@@ -132,10 +132,9 @@ class Item extends PureComponent {
     } = this.props;
 
     const bgColor = getItemColor(itemDef);
-    const overlayImage =
-      watermark != null
-        ? watermark
-        : get(investmentStatItem, 'displayProperties.icon');
+    const overlayImage = watermark
+      ? watermark
+      : get(investmentStatItem, 'displayProperties.icon');
 
     if (!itemDef) {
       if (hideMissing) {
@@ -272,21 +271,16 @@ function mapStateToProps() {
     const itemDef = itemDefSelector(state, ownProps);
     const statDefs = state.definitions.DestinyStatDefinition || {};
 
+    const watermark =
+      itemDef && itemDef.iconWatermark !== undefined
+        ? itemDef.iconWatermark
+        : null;
+
     const investmentStatItem = ((itemDef && itemDef.investmentStats) || [])
       .map(is => {
         return statDefs[is.statTypeHash];
       })
       .filter(Boolean)[0];
-
-    const watermark =
-      itemDef &&
-      itemDef.quality &&
-      itemDef.quality.displayVersionWatermarkIcons.length &&
-      itemDef.quality.displayVersionWatermarkIcons[0] !== undefined
-        ? itemDef.quality.displayVersionWatermarkIcons[0]
-        : itemDef && itemDef.iconWatermark !== undefined
-        ? itemDef.iconWatermark
-        : null;
 
     const vendorEntry = betterItemVendorEntrySelector(state, ownProps);
 
