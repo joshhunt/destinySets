@@ -323,7 +323,7 @@ export default ([
           {
             name: 'Weapons',
             season: 12,
-            itemGroups: [[1030895163], [116918307, 1981661519]]
+            itemGroups: [[1030895163], [1981661519, 116918307]]
           },
           {
             name: 'Hunter Armor',
