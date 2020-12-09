@@ -2089,8 +2089,8 @@ export default ([
                 3038888553, // Matterscourge
                 2347594371, // Objective Reality
                 1606218149, // Heated Exchange
-                3697492370 // Ahead of Its Time
-                // 3365127084 // Sand and Sun (Not planned to be sold for Bright Dust)
+                3697492370, // Ahead of Its Time
+                3365127084 // Sand and Sun
                 // 584392035 // Equinox (Not planned to be sold for Bright Dust)
               ],
               [

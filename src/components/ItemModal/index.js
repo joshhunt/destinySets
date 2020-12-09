@@ -103,14 +103,6 @@ class ItemModalContent extends Component {
           <p className={styles.description}>{displayProperties.description}</p>
         )}
 
-        {collectible &&
-          collectible.sourceString &&
-          collectible.sourceString.length > 1 && (
-            <p className={styles.extraInfo}>
-              <Icon name="info-circle" /> {collectible.sourceString}
-            </p>
-          )}
-
         {perks && perks.length > 0 && (
           <ItemPerks className={styles.perks} perks={perks} />
         )}
@@ -137,7 +129,7 @@ class ItemModalContent extends Component {
               className={styles.mainButton}
               onClick={() => trackOrnament(hash)}
             >
-              Track objective progress
+              Track Objective Progress
             </button>
           )}
 
@@ -146,7 +138,7 @@ class ItemModalContent extends Component {
               className={styles.button}
               onClick={() => forgetDismantled(hash)}
             >
-              Forget dismantled
+              Forget Dismantled
             </button>
           )}
 
@@ -155,9 +147,17 @@ class ItemModalContent extends Component {
               className={styles.button}
               onClick={() => toggleManuallyObtained(hash)}
             >
-              Unmark as collected
+              Unmark as Collected
             </button>
           )}
+
+          {collectible &&
+            collectible.sourceString &&
+            collectible.sourceString.length > 1 && (
+              <p className={styles.extraInfo}>
+                <Icon name="info-circle" /> {collectible.sourceString}
+              </p>
+            )}
         </p>
 
         <div className={styles.section}>
@@ -185,7 +185,7 @@ class ItemModalContent extends Component {
           </li>
 
           <li>
-            <Link to={`/item/${hash}`}>View perks</Link>
+            <Link to={`/item/${hash}`}>View Perks</Link>
           </li>
         </ul>
 
@@ -225,16 +225,21 @@ const mapStateToProps = () => {
   const itemPresentationSelector = makeItemPresentationSelector();
 
   return (state, ownProps) => {
+    const item = itemSelector(state, ownProps);
     return {
       objectiveInstances: objectiveInstancesSelector(state),
       objectiveDefs: objectiveDefsSelector(state),
       statDefs: statDefsSelector(state),
       stats: itemStatsSelector(state, ownProps),
-      item: itemSelector(state, ownProps),
+      item: item,
       itemInventoryEntry: itemInventoryEntrySelector(state, ownProps),
       vendorEntry: itemVendorEntrySelector(state, ownProps),
       collectionInventory: checklistInventorySelector(state),
-      collectible: itemHashToCollectableSelector(state, ownProps),
+      collectible:
+        state.definitions.DestinyCollectibleDefinition &&
+        state.definitions.DestinyCollectibleDefinition[
+          item && item.collectibleHash
+        ],
       perks: itemPerksSelector(state, ownProps),
       displayItem: itemPresentationSelector(state, ownProps)
     };

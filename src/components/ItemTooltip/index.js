@@ -206,7 +206,11 @@ const mapStateToProps = () => {
       investmentStatItem,
       itemInventoryEntry: itemInventoryEntrySelector(state, ownProps),
       richVendorEntry: richVendorEntries,
-      collectible: itemHashToCollectableSelector(state, ownProps),
+      collectible:
+        state.definitions.DestinyCollectibleDefinition &&
+        state.definitions.DestinyCollectibleDefinition[
+          itemDef && itemDef.collectibleHash
+        ],
       perks: perksSelector(state, ownProps),
       displayItem: itemPresentationSelector(state, ownProps)
     };
