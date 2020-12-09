@@ -254,7 +254,7 @@ export default ([
           {
             name: 'Extras',
             season: 12,
-            items: []
+            items: [3677784672]
           }
         ]
       }
