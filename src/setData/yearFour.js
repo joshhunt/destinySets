@@ -323,7 +323,7 @@ export default ([
           {
             name: 'Weapons',
             season: 12,
-            itemGroups: [[], [116918307, 1981661519]]
+            itemGroups: [[1030895163], [116918307, 1981661519]]
           },
           {
             name: 'Hunter Armor',
@@ -353,17 +353,20 @@ export default ([
           {
             name: 'Ghosts',
             season: 12,
-            itemGroups: [[], [505272876, 505272877]]
+            itemGroups: [
+              [4088827200, 4088827201, 4088827202],
+              [505272876, 505272877]
+            ]
           },
           {
             name: 'Sparrows',
             season: 12,
-            items: []
+            items: [3301342410, 3301342411, 3301342408]
           },
           {
             name: 'Ships',
             season: 12,
-            items: []
+            items: [249784434, 472776702]
           },
           {
             name: 'Extras',
