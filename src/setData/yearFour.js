@@ -1,6 +1,6 @@
 // @flow
 import type { SetPage } from '../types';
-import * as common from './common';
+// import * as common from './common';
 import { i18nDefinitionString as _ } from './utils';
 
 export default ([
