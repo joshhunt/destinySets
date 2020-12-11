@@ -27,7 +27,6 @@ import {
   makeItemInventoryEntrySelector,
   checklistInventorySelector,
   makeBetterItemVendorEntrySelector,
-  makeItemHashToCollectableSelector,
   makeItemPerksSelector,
   makeItemPresentationSelector
 } from 'app/store/selectors';
@@ -171,7 +170,6 @@ const mapStateToProps = () => {
   const itemSelector = makeItemSelector();
   const itemInventoryEntrySelector = makeItemInventoryEntrySelector();
   const betterItemVendorEntrySelector = makeBetterItemVendorEntrySelector();
-  const itemHashToCollectableSelector = makeItemHashToCollectableSelector();
   const perksSelector = makeItemPerksSelector();
   const itemPresentationSelector = makeItemPresentationSelector();
 
