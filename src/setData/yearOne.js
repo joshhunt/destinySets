@@ -1304,6 +1304,7 @@ export default ([
             name: 'Ghosts',
             season: 2,
             items: [
+              2549404869, // Winter Lotus Shell
               3287805175, // Dulcinea Shell
               3287805177, // Pomegranate Shell
               3287805178, // Circular Time Shell
