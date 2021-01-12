@@ -2112,7 +2112,7 @@ export default ([
                 // 3366702053, // Plant the Flag (Not planned to be sold for Bright Dust)
                 2035374481, // Precise Strike
                 2370712399, // Spring Showers
-                // 3105326202, // Cross-Step Shuffle (Not planned to be sold for Bright Dust)
+                3105326202, // Cross-Step Shuffle
                 1188569234, // Ding
                 1141309169, // Flare Gun
                 1422833575, // Give Dap
@@ -2236,7 +2236,7 @@ export default ([
             season: 8,
             itemGroups: [
               [
-                // 779216204, // Harper's Shell (Not planned to be sold for Bright Dust)
+                779216204, // Harper's Shell
                 779216202, // Lander Shell
                 779216203, // Lion Guardant Shell
                 779216206, // Lunar Shell
