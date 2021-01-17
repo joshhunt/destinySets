@@ -2587,7 +2587,7 @@ export default ([
             name: 'Sparrows',
             season: 7,
             items: [
-              // 258623688, // BrayTech DREAM9 (Wasn't sold for Bright Dust)
+              258623688, // BrayTech DREAM9
               // 258623689, // Clean Sweep (Wasn't sold for Bright Dust)
               // 258623690, // Expedition-JT (Wasn't sold for Bright Dust)
               258623691, // The Motherlode
