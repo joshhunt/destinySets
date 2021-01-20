@@ -290,7 +290,7 @@ export default ([
       {
         name: _(
           'DestinyPlaceDefinition[1729879943].displayProperties.name',
-          'Castalia Macula, Europa'
+          'Rathmore Chaos, Europa'
         ),
         id: 'year-four-europa',
         description: _(
