@@ -19,7 +19,7 @@ export default {
   //: 2660706768 // Bastion
   3512014804: 3663964046, // Lumina
   2357297366: 2744473468, // Witherhoard
-  //: 1107121513 // Classified
+  3856705927: 1107121513, // Hawkmoon
   1594120904: 2708727662, // No Time to Explain
 
   // Energy weapons

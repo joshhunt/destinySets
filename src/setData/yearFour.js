@@ -190,7 +190,7 @@ export default ([
           'DestinyActivityDefinition[910380154].displayProperties.name',
           'Deep Stone Crypt'
         ),
-        id: 'year-four-garden-of-salvation',
+        id: 'year-four-deep-stone-crypt',
         description: _(
           'DestinyCollectibleDefinition[2273453973].sourceString',
           '"Deep Stone Crypt" raid.'
@@ -230,6 +230,30 @@ export default ([
             items: [296637832, 3102002768, 1230660644, 2357830697, 2357830696]
           }
         ]
+      },
+      {
+        name: _(
+          'DestinyActivityDefinition[1738383283].displayProperties.name',
+          'Harbinger'
+        ),
+        id: 'year-four-harbinger',
+        description: _(
+          'DestinyCollectibleDefinition[653763964].sourceString',
+          'Gear obtained by completing the "Let Loose Thy Talons" Exotic quest & playing the Harbinger mission.'
+        ),
+        sections: [
+          {
+            name: 'Weapons',
+            season: 12,
+            items: [3856705927]
+          },
+
+          {
+            name: 'Extras',
+            season: 12,
+            items: [3518986339, 1230660641]
+          }
+        ]
       }
     ]
   },
@@ -266,7 +290,7 @@ export default ([
       {
         name: _(
           'DestinyPlaceDefinition[1729879943].displayProperties.name',
-          'Castalia Macula, Europa'
+          'Rathmore Chaos, Europa'
         ),
         id: 'year-four-europa',
         description: _(
