@@ -15,7 +15,7 @@
     "dotenv": "^8.2.0",
     "flow-bin": "^0.72.0",
     "image-size": "^0.6.2",
-    "immer": "^1.2.0",
+    "immer": "^8.0.1",
     "indexeddbshim": "^3.8.0",
     "lodash": "^4.17.4",
     "npm": "^6.0.0",
