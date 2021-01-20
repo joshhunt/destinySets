@@ -230,6 +230,30 @@ export default ([
             items: [296637832, 3102002768, 1230660644, 2357830697, 2357830696]
           }
         ]
+      },
+      {
+        name: _(
+          'DestinyActivityDefinition[1738383283].displayProperties.name',
+          'Harbinger'
+        ),
+        id: 'year-four-garden-of-salvation',
+        description: _(
+          'DestinyCollectibleDefinition[653763964].sourceString',
+          'Gear obtained by completing the "Let Loose Thy Talons" Exotic quest & playing the Harbinger mission.'
+        ),
+        sections: [
+          {
+            name: 'Weapons',
+            season: 12,
+            items: [3856705927]
+          },
+
+          {
+            name: 'Extras',
+            season: 12,
+            items: [3518986339, 1230660641]
+          }
+        ]
       }
     ]
   },
