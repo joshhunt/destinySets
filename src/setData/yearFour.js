@@ -190,7 +190,7 @@ export default ([
           'DestinyActivityDefinition[910380154].displayProperties.name',
           'Deep Stone Crypt'
         ),
-        id: 'year-four-garden-of-salvation',
+        id: 'year-four-deep-stone-crypt',
         description: _(
           'DestinyCollectibleDefinition[2273453973].sourceString',
           '"Deep Stone Crypt" raid.'
@@ -236,7 +236,7 @@ export default ([
           'DestinyActivityDefinition[1738383283].displayProperties.name',
           'Harbinger'
         ),
-        id: 'year-four-garden-of-salvation',
+        id: 'year-four-harbinger',
         description: _(
           'DestinyCollectibleDefinition[653763964].sourceString',
           'Gear obtained by completing the "Let Loose Thy Talons" Exotic quest & playing the Harbinger mission.'
