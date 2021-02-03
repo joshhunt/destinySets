@@ -239,7 +239,7 @@ export default ([
         id: 'year-four-harbinger',
         description: _(
           'DestinyCollectibleDefinition[653763964].sourceString',
-          'Gear obtained by completing the "Let Loose Thy Talons" Exotic quest & playing the Harbinger mission.'
+          '"Let Loose Thy Talons" Exotic quest.'
         ),
         sections: [
           {
