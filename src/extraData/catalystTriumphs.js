@@ -44,6 +44,7 @@ export default {
   1665952087: 1940645774, // The Fourth Horseman
   1363238943: 3567687058, // Ruinous Effigy
   3460576091: 2135780490, // Duality
+  3260753130: 1833569807, // Ticuu's Divination
 
   // Heavy weapons
   3549153979: 3371896300, // The Prospector
