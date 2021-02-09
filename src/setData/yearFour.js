@@ -21,6 +21,19 @@ export default ([
             itemGroups: [[2891672170], [4060882458]]
           },
           {
+            name: 'Weapons',
+            season: 13,
+            itemGroups: [[4156253727, 2448907086], [1132740485]]
+          },
+          {
+            name: 'Nightfall: The Ordeal Weapons',
+            season: 13,
+            itemGroups: [
+              [2633186522, 432476743, 47772649],
+              [2147010335, 1481892490, 3836861464]
+            ]
+          },
+          {
             name: 'Hunter Armor',
             season: 12,
             items: [3977387640, 146223817, 2335208655, 438165659, 4006721630]
@@ -39,6 +52,11 @@ export default ([
             name: 'Extras',
             season: 12,
             items: [2588647361]
+          },
+          {
+            name: 'Extras',
+            season: 13,
+            items: [532530781, 4166922308]
           }
         ]
       },
@@ -54,6 +72,11 @@ export default ([
             name: 'Weapons',
             season: 12,
             itemGroups: [[2050789284], [4060882456]]
+          },
+          {
+            name: 'Weapons',
+            season: 13,
+            itemGroups: [[409551876, 3473290087], [1132740487]]
           },
           {
             name: 'Hunter Armor',
@@ -74,6 +97,11 @@ export default ([
             name: 'Extras',
             season: 12,
             items: [1230660649]
+          },
+          {
+            name: 'Extras',
+            season: 13,
+            items: [532530779, 179465689]
           }
         ]
       },
@@ -89,6 +117,11 @@ export default ([
             name: 'Weapons',
             season: 12,
             itemGroups: [[3565520715], [4060882457]]
+          },
+          {
+            name: 'Weapons',
+            season: 13,
+            itemGroups: [[1046651176, 3258665412], [1132740486]]
           },
           {
             name: 'Hunter Armor',
@@ -109,6 +142,11 @@ export default ([
             name: 'Extras',
             season: 12,
             items: [2588647363]
+          },
+          {
+            name: 'Extras',
+            season: 13,
+            items: [532530778, 117960780]
           }
         ]
       },
@@ -129,24 +167,19 @@ export default ([
             items: [2220884262, 1641430382]
           },
           {
-            name: 'Hunter Armor',
-            season: 12,
-            items: []
-          },
-          {
-            name: 'Titan Armor',
-            season: 12,
-            items: []
-          },
-          {
-            name: 'Warlock Armor',
-            season: 12,
-            items: []
+            name: 'Weapons',
+            season: 13,
+            items: [3593598010, 3717177717]
           },
           {
             name: 'Extras',
             season: 12,
             items: [2588647362, 2532730764, 2532730765]
+          },
+          {
+            name: 'Extras',
+            season: 13,
+            items: [726145097]
           }
         ]
       },
@@ -164,24 +197,32 @@ export default ([
             items: [3514144928, 532746994, 276080079, 3637570176, 1366917989]
           },
           {
+            name: 'Weapons',
+            season: 13,
+            itemGroups: [
+              [3658188704, 2351180975, 1313528549],
+              [1173780905, 2527666306, 3847137620]
+            ]
+          },
+          {
             name: 'Hunter Armor',
-            season: 12,
-            items: []
+            season: 13,
+            items: [1001798188, 197672677, 2540765499, 120441703, 1322042322]
           },
           {
             name: 'Titan Armor',
-            season: 12,
-            items: []
+            season: 13,
+            items: [1260563064, 1724366537, 2671565007, 2016308379, 48110686]
           },
           {
             name: 'Warlock Armor',
-            season: 12,
-            items: []
+            season: 13,
+            items: [4161591237, 605724052, 2304861612, 469005214, 708549601]
           },
           {
             name: 'Extras',
-            season: 12,
-            items: []
+            season: 13,
+            items: [758112594, 774879414, 2710956576, 3919943498, 647195977]
           }
         ]
       },
@@ -278,7 +319,30 @@ export default ([
           {
             name: 'Extras',
             season: 12,
-            items: [3677784672]
+            items: [3677784672, 532530783]
+          }
+        ]
+      },
+      {
+        name: 'Season 13',
+        id: 'year-four-season-13',
+        description:
+          'Complete seasonal activities during Season of the Chosen.',
+        sections: [
+          {
+            name: 'Pursuit Weapon',
+            season: 13,
+            items: [2060863616]
+          },
+          {
+            name: 'Battlegrounds',
+            season: 13,
+            items: [1097616550, 3460122497, 893527433, 2496242052]
+          },
+          {
+            name: 'Extras',
+            season: 13,
+            items: [532530782, 532530777, 1249788648, 397043529, 1953632753]
           }
         ]
       }
@@ -404,6 +468,65 @@ export default ([
             items: [1230660647, 2962058751, 2696974649, 2696974648, 912276057]
           }
         ]
+      },
+      {
+        name: 'Guardian Games',
+        id: 'year-four-guardian-games',
+        description: 'Earned during the seasonal Guardian Games event.',
+        big: false,
+        sections: [
+          {
+            name: 'Hunter Armor',
+            season: 13,
+            itemGroups: [[], []]
+          },
+          {
+            name: 'Titan Armor',
+            season: 13,
+            itemGroups: [[], []]
+          },
+          {
+            name: 'Warlock Armor',
+            season: 13,
+            itemGroups: [[], []]
+          },
+          {
+            name: 'Emotes',
+            season: 13,
+            itemGroups: [
+              [
+                2532993847,
+                1303706313,
+                3651793541,
+                838156448,
+                2624974641,
+                2222286218,
+                411709610
+              ],
+              []
+            ]
+          },
+          {
+            name: 'Ghosts',
+            season: 13,
+            itemGroups: [[], []]
+          },
+          {
+            name: 'Sparrows',
+            season: 13,
+            items: []
+          },
+          {
+            name: 'Ships',
+            season: 13,
+            items: []
+          },
+          {
+            name: 'Extras',
+            season: 13,
+            items: [532530780]
+          }
+        ]
       }
     ]
   },
@@ -420,6 +543,11 @@ export default ([
           'Welcome, Guardian. Fight through the Cosmodrome to find a ship and make your escape.',
         big: false,
         sections: [
+          {
+            name: 'Earned While Leveling',
+            season: 13,
+            items: [3651075426, 3117873459]
+          },
           {
             name: '"A Spark of Hope" Quest',
             season: 12,
@@ -448,6 +576,16 @@ export default ([
             ]
           },
           {
+            name: 'Free Track',
+            season: 13,
+            itemGroups: [
+              [3260753130, 2121785039, 3075224551],
+              [505747572, 3673119885, 3100185651, 48951631, 1010644330],
+              [4003170632, 3350504921, 412014143, 1947723211, 1659172686],
+              [3311198527, 3245065734, 2166974634, 2804094976, 2803792315]
+            ]
+          },
+          {
             name: 'Paid Track',
             season: 12,
             itemGroups: [
@@ -465,6 +603,26 @@ export default ([
                 2086800026,
                 2086800027,
                 575614550
+              ]
+            ]
+          },
+          {
+            name: 'Paid Track',
+            season: 13,
+            itemGroups: [
+              [2528315727],
+              [2388099734, 3592193383, 32123025, 2344999081, 2227552940],
+              [4111701460, 2942529901, 1916301843, 3188871471, 251217994],
+              [2365135029, 999504644, 1813208572, 2547166766, 3099145329],
+              [
+                2884151045,
+                3886820084,
+                2922021463,
+                970919108,
+                532530776,
+                2320367075,
+                2320367074,
+                1955679597
               ]
             ]
           }
@@ -489,6 +647,15 @@ export default ([
             ]
           },
           {
+            name: 'Armor',
+            season: 13,
+            itemGroups: [
+              [1597467149, 2250029820, 1044330340, 1252957702, 2212617913],
+              [2188215631, 48380374, 2956050458, 1260659632, 2179943275],
+              [3149327402, 3154888563, 3721737629, 2889842501, 888758224]
+            ]
+          },
+          {
             name: 'Ornaments',
             season: 12,
             itemGroups: [
@@ -510,6 +677,23 @@ export default ([
                 // 3391785621,
                 740142754
               ]
+            ]
+          },
+          {
+            name: 'Ornaments',
+            season: 13,
+            itemGroups: [
+              [
+                2267660625,
+                287295296,
+                568877018,
+                3802742250,
+                4074521886,
+                3925195811,
+                4231724739
+              ],
+              [],
+              [3951784665, 3049004864, 46563601]
             ]
           },
           {
@@ -542,6 +726,34 @@ export default ([
             ]
           },
           {
+            name: 'Emotes',
+            season: 13,
+            itemGroups: [
+              [
+                122185975,
+                801080977,
+                2847002782,
+                1733566584,
+                3043004564,
+                3234459356,
+                4099441739,
+                3516475261,
+                63857986,
+                2662325594,
+                1033800931,
+                2067971469,
+                293474540,
+                2566498639,
+                633593783,
+                4217695393,
+                2517691934,
+                4198587027,
+                2073721669
+              ],
+              [848275837, 4286421958, 3615928434]
+            ]
+          },
+          {
             name: 'Ghosts',
             season: 12,
             itemGroups: [
@@ -564,6 +776,21 @@ export default ([
             ]
           },
           {
+            name: 'Ghosts',
+            season: 13,
+            itemGroups: [
+              [
+                2012043037,
+                2012043036,
+                2012043039,
+                2012043038,
+                2012043033,
+                2012043032
+              ],
+              []
+            ]
+          },
+          {
             name: 'Sparrows',
             season: 12,
             items: [
@@ -576,9 +803,26 @@ export default ([
             ]
           },
           {
+            name: 'Sparrows',
+            season: 13,
+            items: [
+              2056426001,
+              2056426000,
+              2056426003,
+              2056426002,
+              2056426005,
+              2056426004
+            ]
+          },
+          {
             name: 'Ships',
             season: 12,
             items: [3891757416, 3891757417, 3891757418, 3891757419]
+          },
+          {
+            name: 'Ships',
+            season: 13,
+            items: [1018723385, 1018723384, 1018723387, 1018723386, 1018723389]
           },
           {
             name: 'Shaders',
@@ -593,9 +837,38 @@ export default ([
             ]
           },
           {
+            name: 'Shaders',
+            season: 13,
+            items: [1854244374, 1854244375]
+          },
+          {
             name: 'Transmat Effects',
             season: 12,
             items: [2527044465, 2527044464]
+          },
+          {
+            name: 'Transmat Effects',
+            season: 13,
+            items: [3182550856, 3182550857]
+          }
+        ]
+      },
+      {
+        name: _(
+          'DestinyVendorDefinition[3163810067].displayProperties.name',
+          'Legendary Engrams'
+        ),
+        id: 'year-three-legendary-engram',
+        description: _(
+          'DestinyCollectibleDefinition[4273799635].sourceString',
+          'Open Legendary engrams and earn faction rank-up packages.'
+        ),
+        big: false,
+        sections: [
+          {
+            name: 'Weapons',
+            season: 13,
+            items: [3335343363, 2481881293]
           }
         ]
       }
