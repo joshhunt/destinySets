@@ -29,6 +29,7 @@ export default function Footer({ item, children }) {
       >
         Destiny Data Explorer
       </a>
+      .
       <br />
       <br />
       Made by{' '}
@@ -46,10 +47,41 @@ export default function Footer({ item, children }) {
       for Destiny fans.
       <br />
       Having issues or need help?{' '}
-      <a href="https://twitter.com/joshhunt">Contact me on twitter</a> or{' '}
-      <a href="https://github.com/joshhunt/destinySets">
-        file an issue on Github
+      <a
+        href="https://twitter.com/intent/tweet?text=@joshhunt%20@Jakosaur"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Contact us on Twitter
       </a>{' '}
+      or{' '}
+      <a
+        href="https://github.com/joshhunt/destinySets/issues"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        file an issue on GitHub
+      </a>
+      .
+      <br />
+      Many thanks to{' '}
+      <a
+        href="https://twitter.com/JpDeathBlade"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        JpDeathBlade
+      </a>{' '}
+      and{' '}
+      <a
+        href="https://www.todayindestiny.com/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        TodayInDestiny
+      </a>{' '}
+      for the Eververse Bright Dust schedule.
+      <br />
       <br />
       Destiny is a registered trademark of Bungie. Data and images sourced from
       Bungie.
