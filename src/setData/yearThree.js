@@ -2020,7 +2020,7 @@ export default ([
                 // 3200402431, // Bronze Carapace (Not planned to be sold for Bright Dust)
                 // 1206183717, // Shock Grenadier (Not planned to be sold for Bright Dust)
                 // 2406427719, // Conflux Control (Not planned to be sold for Bright Dust)
-                // 3916835562 // Fènghuáng (Not planned to be sold for Bright Dust)
+                3916835562 // Fènghuáng (Not planned to be sold for Bright Dust)
               ]
             ]
           },
