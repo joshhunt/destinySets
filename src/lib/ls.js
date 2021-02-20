@@ -169,7 +169,14 @@ export function saveFilters(filters) {
 }
 
 export function getFilters() {
-  return get(keys.FILTERS);
+  let filters = get(keys.FILTERS);
+
+  if (filters && filters.ps4Exclusives) {
+    delete filters['ps4Exclusives'];
+    saveFilters(filters);
+  }
+
+  return filters;
 }
 
 export function getTempFilterItemWhitelist() {
