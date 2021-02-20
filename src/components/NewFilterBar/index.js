@@ -5,7 +5,6 @@ import {
   TITAN,
   WARLOCK,
   FILTER_SHOW_COLLECTED,
-  FILTER_SHOW_PS4_EXCLUSIVES,
   FILTER_SHOW_HIDDEN_SETS
 } from 'app/lib/destinyEnums';
 
@@ -16,7 +15,6 @@ const FILTER_NAMES = {
   [TITAN]: 'Titan',
   [WARLOCK]: 'Warlock',
   [FILTER_SHOW_COLLECTED]: 'Collected items',
-  [FILTER_SHOW_PS4_EXCLUSIVES]: 'PS4 Exclusives',
   [FILTER_SHOW_HIDDEN_SETS]: 'Hidden sets'
 };
 

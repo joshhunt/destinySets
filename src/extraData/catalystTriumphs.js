@@ -21,6 +21,7 @@ export default {
   2357297366: 2744473468, // Witherhoard
   3856705927: 1107121513, // Hawkmoon
   1594120904: 2708727662, // No Time to Explain
+  3654674561: 15917031, // Dead Man's Tale
 
   // Energy weapons
   4190156464: 4178028503, // Merciless

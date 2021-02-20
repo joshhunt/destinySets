@@ -2385,6 +2385,7 @@ export default ([
               374922806, // Painted Eye Shell
               374922807, // Triangle Shell
               374922804, // Skewed Orbit Shell
+              374922805, // Freyja Shell
               374922810, // Spectral Circuit Shell
               374922811, // Eyeball Shell
               1625672313, // Mansansas Shell

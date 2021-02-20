@@ -4,7 +4,7 @@ export const WARLOCK = 2;
 export const NO_CLASS = 3;
 
 export const FILTER_SHOW_COLLECTED = 'showCollected';
-export const FILTER_SHOW_PS4_EXCLUSIVES = 'ps4Exclusives';
+export const FILTER_SHOW_COMPLETED = 'showCompleted';
 export const FILTER_SHOW_HIDDEN_SETS = 'showHiddenSets';
 export const FILTER_SHOW_ORNAMENTS = 'showOrnaments';
 export const FILTER_SHOW_WEAPONS = 'showWeapons';
