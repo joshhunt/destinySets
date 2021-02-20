@@ -31,33 +31,37 @@ class MasterworkCatalyst extends Component {
       recordState &&
       (!recordState.objectiveNotCompleted || recordState.recordRedeemed);
 
-    return (
-      <div className={cx(className, s.root, completed && s.completed)}>
-        <div className={s.inner}>
-          {completed && (
-            <div className={s.tick}>
-              <Icon name="check" />
-            </div>
-          )}
+    if (completed && !this.props.filters.showCompleted) {
+      return null;
+    } else {
+      return (
+        <div className={cx(className, s.root, completed && s.completed)}>
+          <div className={s.inner}>
+            {completed && (
+              <div className={s.tick}>
+                <Icon name="check" />
+              </div>
+            )}
 
-          <BungieImage className={s.screenshot} src={itemDef.screenshot} />
-          <ItemBanner item={itemDef} />
+            <BungieImage className={s.screenshot} src={itemDef.screenshot} />
+            <ItemBanner item={itemDef} />
 
-          {completed ? (
-            <p className={s.completeMessage}>
-              <img
-                className={s.masterworkComplete}
-                src={masterworkComplete}
-                alt=""
-              />{' '}
-              <span>Masterwork Complete</span>
-            </p>
-          ) : (
-            <Record className={s.record} hash={recordHash} />
-          )}
+            {completed ? (
+              <p className={s.completeMessage}>
+                <img
+                  className={s.masterworkComplete}
+                  src={masterworkComplete}
+                  alt=""
+                />{' '}
+                <span>Masterwork Complete</span>
+              </p>
+            ) : (
+              <Record className={s.record} hash={recordHash} />
+            )}
+          </div>
         </div>
-      </div>
-    );
+      );
+    }
   }
 }
 
@@ -73,6 +77,7 @@ function mapStateToProps() {
     const recordState = record && record.enumeratedState;
 
     return {
+      filters: state.app.filters,
       itemDef: itemDefSelector(state, ownProps),
       instances: itemInstanceSelector(state, ownProps),
       objectiveDefs: objectiveDefsSelector(state),
