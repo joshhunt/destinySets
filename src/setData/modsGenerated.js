@@ -15,9 +15,7 @@ export default [
             nameHash: 1198124803,
             itemGroups: [
               [
-                1397877686, // Hand Cannon Targeting
-                1397877684, // Scout Rifle Targeting
-                550475664 // Shotgun Ammo Finder
+                1082186949 // Scout and Sniper Rifle Targeting
               ],
               [
                 2193892158, // Auto Rifle Ammo Finder
@@ -55,9 +53,7 @@ export default [
               {
                 name: "Seasonal Artifact",
                 items: [
-                  1397877686, // Hand Cannon Targeting
-                  1397877684, // Scout Rifle Targeting
-                  550475664 // Shotgun Ammo Finder
+                  1082186949 // Scout and Sniper Rifle Targeting
                 ]
               },
               {
@@ -164,16 +160,19 @@ export default [
                 403494087 // Fastball
               ],
               [
-                1397877683, // Shotgun Dexterity
-                1397877682, // Grenade Launcher Loader
-                550475670, // Pulse Rifle Loader
-                1878293399, // Unstoppable Shotgun
-                1878293395, // Thermal Blooming
-                2950379997, // Overload Rounds (Auto Rifle)
-                2950379998, // Unstoppable Hand Cannon
-                2950379999, // Anti-Barrier Pulse Rifle
-                2950379992, // Overload Rounds (Scout Rifle)
-                2950379993 // Anti-Barrier Submachine Gun
+                1082186950, // Scout Rifle Loader
+                1082186951, // Bow Dexterity
+                1082186944, // Sniper Rifle Dexterity
+                1082186945, // Sidearm Dexterity
+                76553636, // Bow Reloader
+                76553634, // Submachine Gun Loader
+                1007628743, // Anti-Barrier Sniper Rifle
+                1007628740, // Disrupting Blade
+                2215945390, // Overload Bow
+                2215945389, // Unstoppable Pulse Rifle
+                2215945388, // Anti-Barrier Scout Rifle
+                2215945387, // Unstoppable Hand Cannon
+                2215945386 // Overload Submachine Gun
               ],
               [
                 1312062056, // Auto Rifle Dexterity
@@ -218,16 +217,19 @@ export default [
               {
                 name: "Seasonal Artifact",
                 items: [
-                  1397877683, // Shotgun Dexterity
-                  1397877682, // Grenade Launcher Loader
-                  550475670, // Pulse Rifle Loader
-                  1878293399, // Unstoppable Shotgun
-                  1878293395, // Thermal Blooming
-                  2950379997, // Overload Rounds (Auto Rifle)
-                  2950379998, // Unstoppable Hand Cannon
-                  2950379999, // Anti-Barrier Pulse Rifle
-                  2950379992, // Overload Rounds (Scout Rifle)
-                  2950379993 // Anti-Barrier Submachine Gun
+                  1082186950, // Scout Rifle Loader
+                  1082186951, // Bow Dexterity
+                  1082186944, // Sniper Rifle Dexterity
+                  1082186945, // Sidearm Dexterity
+                  76553636, // Bow Reloader
+                  76553634, // Submachine Gun Loader
+                  1007628743, // Anti-Barrier Sniper Rifle
+                  1007628740, // Disrupting Blade
+                  2215945390, // Overload Bow
+                  2215945389, // Unstoppable Pulse Rifle
+                  2215945388, // Anti-Barrier Scout Rifle
+                  2215945387, // Unstoppable Hand Cannon
+                  2215945386 // Overload Submachine Gun
                 ]
               },
               {
@@ -339,9 +341,8 @@ export default [
                 3566745556 // Sniper Damage Resistance
               ],
               [
-                1397877685, // Unflinching Pulse Rifle Aim
-                550475669, // Unflinching Hand Cannon Aim
-                550475671 // Unflinching Scout Rifle Aim
+                76553638, // Unflinching Scout Rifle Aim
+                76553635 // Unflinching Sniper Aim
               ],
               [
                 1131497704, // Auto Rifle Reserves
@@ -388,9 +389,8 @@ export default [
               {
                 name: "Seasonal Artifact",
                 items: [
-                  1397877685, // Unflinching Pulse Rifle Aim
-                  550475669, // Unflinching Hand Cannon Aim
-                  550475671 // Unflinching Scout Rifle Aim
+                  76553638, // Unflinching Scout Rifle Aim
+                  76553635 // Unflinching Sniper Aim
                 ]
               },
               {
@@ -498,7 +498,7 @@ export default [
                 3320641683 // Absolution
               ],
               [
-                550475665 // Grenade Launcher Scavenger
+                76553637 // Sniper Rifle Scavenger
               ],
               [
                 737634704, // Auto Rifle Scavenger
@@ -528,7 +528,7 @@ export default [
               {
                 name: "Seasonal Artifact",
                 items: [
-                  550475665 // Grenade Launcher Scavenger
+                  76553637 // Sniper Rifle Scavenger
                 ]
               },
               {
@@ -624,13 +624,14 @@ export default [
                 4237638094 // Snapload Finisher
               ],
               [
-                2689341528, // Momentum Siphon
-                2689341531, // Surge Eater
-                2689341530, // Unstoppable Schwarzschild Condensor
-                2689341533, // Thermal Overload
-                2689341532, // Spoils of War
-                1878293396, // Pyretic Embrace
-                1878293397 // Berserker
+                1007628741, // Resonance Siphon
+                1007628738, // Surge Detonators
+                1007628739, // Inferno Whip
+                792292104, // Focusing Lens
+                792292107, // Passive Guard
+                792292106, // Glacial Inheritance
+                792292109, // Sundering Glare
+                792292108 // Volatile Conduction
               ]
             ],
             groups: [
@@ -645,13 +646,14 @@ export default [
               {
                 name: "Seasonal Artifact",
                 items: [
-                  2689341528, // Momentum Siphon
-                  2689341531, // Surge Eater
-                  2689341530, // Unstoppable Schwarzschild Condensor
-                  2689341533, // Thermal Overload
-                  2689341532, // Spoils of War
-                  1878293396, // Pyretic Embrace
-                  1878293397 // Berserker
+                  1007628741, // Resonance Siphon
+                  1007628738, // Surge Detonators
+                  1007628739, // Inferno Whip
+                  792292104, // Focusing Lens
+                  792292107, // Passive Guard
+                  792292106, // Glacial Inheritance
+                  792292109, // Sundering Glare
+                  792292108 // Volatile Conduction
                 ]
               }
             ]
@@ -742,9 +744,6 @@ export default [
                 3682186345 // Minor Resilience Mod
               ],
               [
-                1878293394 // Abyssal Charge
-              ],
-              [
                 2859541905, // Taken Armaments
                 399528760, // Taken Invigoration
                 3570105787, // Taken Barrier
@@ -764,6 +763,14 @@ export default [
               ],
               [
                 2142852459 // Herd Thinner
+              ],
+              [
+                1824486242, // Elemental Ordnance
+                2823326549, // Elemental Light
+                1515669996, // Elemental Armaments
+                1740246051, // Font of Might
+                1196831979, // Font of Wisdom
+                3730619869 // Elemental Charge
               ]
             ],
             groups: [
@@ -784,12 +791,6 @@ export default [
                   204137529, // Minor Mobility Mod
                   555005975, // Minor Recovery Mod
                   3682186345 // Minor Resilience Mod
-                ]
-              },
-              {
-                name: "Seasonal Artifact",
-                items: [
-                  1878293394 // Abyssal Charge
                 ]
               },
               {
@@ -826,6 +827,17 @@ export default [
                 name: "Deep Stone Crypt",
                 items: [
                   2142852459 // Herd Thinner
+                ]
+              },
+              {
+                name: "Season of the Chosen",
+                items: [
+                  1824486242, // Elemental Ordnance
+                  2823326549, // Elemental Light
+                  1515669996, // Elemental Armaments
+                  1740246051, // Font of Might
+                  1196831979, // Font of Wisdom
+                  3730619869 // Elemental Charge
                 ]
               }
             ]
