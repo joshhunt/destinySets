@@ -2251,7 +2251,7 @@ export default ([
               [
                 // Order based on Eververse Store
                 343223696, // VORACIOUS
-                // 2182432903, // STOLEN GOODS (Wasn't sold for Bright Dust)
+                2182432903, // STOLEN GOODS
                 // 1541998888, // Lucid Melody (Wasn't sold for Bright Dust)
                 // 12695374, // Aurelian Decree (Wasn't sold for Bright Dust)
                 // 12695375, // Beast Magic (Wasn't sold for Bright Dust)
