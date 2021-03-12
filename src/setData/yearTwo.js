@@ -1328,33 +1328,33 @@ export default ([
             name: 'Hunter Armor',
             season: 4,
             items: [
-              2824453288, // Reverie Dawn Casque
-              1705856569, // Reverie Dawn Grasps
-              1593474975, // Reverie Dawn Hauberk
-              344548395, // Reverie Dawn Strides
-              3306564654 // Reverie Dawn Cloak
+              2804026582, // Reverie Dawn Casque
+              4008120231, // Reverie Dawn Grasps
+              3368092113, // Reverie Dawn Hauberk
+              3185383401, // Reverie Dawn Strides
+              844097260 // Reverie Dawn Cloak
             ]
           },
           {
             name: 'Titan Armor',
             season: 4,
             items: [
-              4097166900, // Reverie Dawn Helm
-              2503434573, // Reverie Dawn Gauntlets
-              4070309619, // Reverie Dawn Plate
-              3174233615, // Reverie Dawn Greaves
-              1980768298 // Reverie Dawn Mark
+              1472713738, // Reverie Dawn Helm
+              1478378067, // Reverie Dawn Gauntlets
+              2561756285, // Reverie Dawn Plate
+              788771493, // Reverie Dawn Greaves
+              4023744176 // Reverie Dawn Mark
             ]
           },
           {
             name: 'Warlock Armor',
             season: 4,
             items: [
-              185695659, // Reverie Dawn Hood
-              2761343386, // Reverie Dawn Gloves
-              2859583726, // Reverie Dawn Tabard
-              188778964, // Reverie Dawn Boots
-              3602032567 // Reverie Dawn Bond
+              1076538039, // Reverie Dawn Hood
+              150052158, // Reverie Dawn Gloves
+              757360370, // Reverie Dawn Tabard
+              569434520, // Reverie Dawn Boots
+              1394177923 // Reverie Dawn Bond
             ]
           },
           {

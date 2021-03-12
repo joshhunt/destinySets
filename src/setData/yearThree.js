@@ -949,33 +949,33 @@ export default ([
             name: 'Hunter Armor',
             season: 8,
             items: [
-              659922705, // Dreambane Cowl
-              3571441640, // Dreambane Grips
-              883769696, // Dreambane Vest
-              377813570, // Dreambane Strides
-              193805725 // Dreambane Cloak
+              1496857121, // Dreambane Cowl
+              2293199928, // Dreambane Grips
+              3434445392, // Dreambane Vest
+              328467570, // Dreambane Strides
+              2786161293 // Dreambane Cloak
             ]
           },
           {
             name: 'Titan Armor',
             season: 8,
             items: [
-              272413517, // Dreambane Helm
-              925079356, // Dreambane Gauntlets
-              2568538788, // Dreambane Plate
-              310888006, // Dreambane Greaves
-              3312368889 // Dreambane Mark
+              2813078109, // Dreambane Helm
+              1699964364, // Dreambane Gauntlets
+              175015316, // Dreambane Plate
+              2345799798, // Dreambane Greaves
+              1343302889 // Dreambane Mark
             ]
           },
           {
             name: 'Warlock Armor',
             season: 8,
             items: [
-              1528483180, // Dreambane Hood
-              682780965, // Dreambane Gloves
-              3692187003, // Dreambane Robes
-              1030110631, // Dreambane Boots
-              2048903186 // Dreambane Bond
+              1721938300, // Dreambane Hood
+              3118392309, // Dreambane Gloves
+              4235863403, // Dreambane Robes
+              399547095, // Dreambane Boots
+              2975563522 // Dreambane Bond
             ]
           },
           {
