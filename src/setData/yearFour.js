@@ -498,17 +498,17 @@ export default ([
           {
             name: 'Hunter Armor',
             season: 13,
-            itemGroups: [[], []]
+            itemGroups: [[], [539974843]]
           },
           {
             name: 'Titan Armor',
             season: 13,
-            itemGroups: [[], []]
+            itemGroups: [[], [3371868783 ]]
           },
           {
             name: 'Warlock Armor',
             season: 13,
-            itemGroups: [[], []]
+            itemGroups: [[], [3628145148 ]]
           },
           {
             name: 'Emotes',
@@ -544,7 +544,7 @@ export default ([
           {
             name: 'Extras',
             season: 13,
-            items: [532530780, 3919847953]
+            items: [532530780, 532530769, 3919847953]
           }
         ]
       }
