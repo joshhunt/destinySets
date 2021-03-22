@@ -194,7 +194,7 @@ export default ([
           {
             name: 'Weapons',
             season: 12,
-            items: [3514144928, 532746994, 276080079, 3637570176, 1366917989]
+            items: [3514144928, 2386979999, 532746994, 276080079, 3637570176, 1366917989]
           },
           {
             name: 'Weapons',
@@ -498,17 +498,17 @@ export default ([
           {
             name: 'Hunter Armor',
             season: 13,
-            itemGroups: [[], []]
+            itemGroups: [[], [539974843]]
           },
           {
             name: 'Titan Armor',
             season: 13,
-            itemGroups: [[], []]
+            itemGroups: [[], [3371868783 ]]
           },
           {
             name: 'Warlock Armor',
             season: 13,
-            itemGroups: [[], []]
+            itemGroups: [[], [3628145148 ]]
           },
           {
             name: 'Emotes',
@@ -544,7 +544,7 @@ export default ([
           {
             name: 'Extras',
             season: 13,
-            items: [532530780, 3919847953]
+            items: [532530780, 532530769, 3919847953]
           }
         ]
       }
@@ -864,7 +864,7 @@ export default ([
             season: 12,
             items: [
               1371145733,
-              // 1371145732,
+              1371145732,
               1371145735,
               1371145734,
               1371145729,
@@ -903,7 +903,7 @@ export default ([
           {
             name: 'Weapons',
             season: 13,
-            items: [3335343363, 2481881293]
+            items: [3514096004, 1402766122, 2481881293, 3335343363, ]
           }
         ]
       }
