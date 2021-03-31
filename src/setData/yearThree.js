@@ -2173,7 +2173,7 @@ export default ([
                 4273833730, // Feline Fancy
                 2082339998, // Hit the Bag
                 2737290434, // Master Chef
-                // 2836141137, // Blinding Imagery (Not planned to be sold for Bright Dust)
+                2836141137, // Blinding Imagery
                 // 3394806033, // Masterful Flow (Not planned to be sold for Bright Dust)
                 // 2032032009, // Up High, Down Low (Not planned to be sold for Bright Dust)
                 666690120, // Big Red Button
