@@ -571,7 +571,7 @@ export default ([
           {
             name: '"A Spark of Hope" Quest',
             season: 12,
-            items: [2535664169, 2535664168, 2535664170]
+            itemGroups: [[2535664169, 2535664168, 2535664170], [2962058736]]
           }
         ]
       },
