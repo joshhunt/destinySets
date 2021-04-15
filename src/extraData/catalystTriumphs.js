@@ -58,7 +58,8 @@ export default {
   4036115577: 1547246830, // Sleeper Simulant
   1891561814: 173502661, // Whisper of the Worm
   3766045777: 252263460, // Black Talon
-  2591746970: 3740374319 // Leviathan's Breath
+  2591746970: 3740374319, // Leviathan's Breath
+  2084878005: 1514331782 // Heir Apparent
 
   // 1364093401: 0, // The Last Word
   // 2694576561: 0, // Two-Tailed Fox
