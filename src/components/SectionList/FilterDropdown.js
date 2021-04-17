@@ -7,7 +7,6 @@ import {
   TITAN,
   WARLOCK,
   FILTER_SHOW_COLLECTED,
-  FILTER_SHOW_COMPLETED,
   FILTER_SHOW_HIDDEN_SETS,
   FILTER_SHOW_ORNAMENTS,
   FILTER_SHOW_WEAPONS
@@ -20,7 +19,6 @@ const FILTER_NAMES = {
   [TITAN]: 'Titan',
   [WARLOCK]: 'Warlock',
   [FILTER_SHOW_COLLECTED]: 'Collected items',
-  [FILTER_SHOW_COMPLETED]: 'Completed catalysts',
   [FILTER_SHOW_ORNAMENTS]: 'Ornaments',
   [FILTER_SHOW_WEAPONS]: 'Weapons',
   [FILTER_SHOW_HIDDEN_SETS]: 'Hidden sets'
