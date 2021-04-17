@@ -171,8 +171,13 @@ export function saveFilters(filters) {
 export function getFilters() {
   let filters = get(keys.FILTERS);
 
-  if (filters && filters.ps4Exclusives) {
+  if (filters && filters.ps4Exclusives !== undefined) {
     delete filters['ps4Exclusives'];
+    saveFilters(filters);
+  }
+
+  if (filters && filters.showCompleted !== undefined) {
+    delete filters['showCompleted'];
     saveFilters(filters);
   }
 
