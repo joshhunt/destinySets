@@ -1,6 +1,6 @@
 // @flow
 import type { SetPage } from '../types';
-// import * as common from './common';
+import * as common from './common';
 import { i18nDefinitionString as _ } from './utils';
 
 export default ([
@@ -26,12 +26,22 @@ export default ([
             itemGroups: [[4156253727, 2448907086], [1132740485]]
           },
           {
+            name: 'Weapons',
+            season: 14,
+            itemGroups: [[], []]
+          },
+          {
             name: 'Nightfall: The Ordeal Weapons',
             season: 13,
             itemGroups: [
               [2633186522, 432476743, 47772649],
               [2147010335, 1481892490, 3836861464]
             ]
+          },
+          {
+            name: 'Nightfall: The Ordeal Weapons',
+            season: 14,
+            itemGroups: [[], []]
           },
           {
             name: 'Hunter Armor',
@@ -57,6 +67,11 @@ export default ([
             name: 'Extras',
             season: 13,
             items: [532530781, 4166922308]
+          },
+          {
+            name: 'Extras',
+            season: 14,
+            items: []
           }
         ]
       },
@@ -77,6 +92,11 @@ export default ([
             name: 'Weapons',
             season: 13,
             itemGroups: [[409551876, 3473290087], [1132740487]]
+          },
+          {
+            name: 'Weapons',
+            season: 14,
+            itemGroups: [[], []]
           },
           {
             name: 'Hunter Armor',
@@ -102,6 +122,11 @@ export default ([
             name: 'Extras',
             season: 13,
             items: [532530779, 179465689]
+          },
+          {
+            name: 'Extras',
+            season: 14,
+            items: []
           }
         ]
       },
@@ -122,6 +147,11 @@ export default ([
             name: 'Weapons',
             season: 13,
             itemGroups: [[1046651176, 3258665412], [1132740486]]
+          },
+          {
+            name: 'Weapons',
+            season: 14,
+            itemGroups: [[], []]
           },
           {
             name: 'Hunter Armor',
@@ -147,6 +177,11 @@ export default ([
             name: 'Extras',
             season: 13,
             items: [532530778, 117960780]
+          },
+          {
+            name: 'Extras',
+            season: 14,
+            items: []
           }
         ]
       },
@@ -172,6 +207,11 @@ export default ([
             items: [3593598010, 3717177717]
           },
           {
+            name: 'Weapons',
+            season: 14,
+            items: []
+          },
+          {
             name: 'Extras',
             season: 12,
             items: [2588647362, 2532730764, 2532730765]
@@ -180,6 +220,11 @@ export default ([
             name: 'Extras',
             season: 13,
             items: [726145097]
+          },
+          {
+            name: 'Extras',
+            season: 14,
+            items: []
           }
         ]
       },
@@ -278,6 +323,44 @@ export default ([
             items: [296637832, 3102002768, 1230660644, 2357830697, 2357830696]
           }
         ]
+      },
+      {
+        name: _(
+          'DestinyActivityDefinition[910380154].displayProperties.name',
+          'Vault of Glass'
+        ),
+        id: 'year-four-vault-of-glass',
+        description: _(
+          'DestinyCollectibleDefinition[2273453973].sourceString',
+          '"Vault of Glass" raid.'
+        ),
+        sections: [
+          {
+            name: 'Weapons',
+            season: 14,
+            items: []
+          },
+          {
+            name: 'Hunter Armor',
+            season: 14,
+            items: []
+          },
+          {
+            name: 'Titan Armor',
+            season: 14,
+            items: []
+          },
+          {
+            name: 'Warlock Armor',
+            season: 14,
+            items: []
+          },
+          {
+            name: 'Extras',
+            season: 14,
+            items: []
+          }
+        ]
       }
     ]
   },
@@ -345,6 +428,38 @@ export default ([
             name: 'Presage Extras',
             season: 13,
             items: [532530783, 1249788648]
+          }
+        ]
+      },
+      {
+        name: 'Season 14',
+        id: 'year-four-season-14',
+        description: 'Complete seasonal activities from Season of the Splicer.',
+        sections: [
+          {
+            name: 'Pursuit Weapon',
+            season: 14,
+            items: []
+          },
+          {
+            name: 'Override',
+            season: 14,
+            items: []
+          },
+          {
+            name: 'Expunge',
+            season: 14,
+            items: []
+          },
+          {
+            name: 'Extras',
+            season: 14,
+            items: []
+          },
+          {
+            name: 'Expunge Extras',
+            season: 14,
+            items: []
           }
         ]
       }
@@ -558,7 +673,8 @@ export default ([
             ]
           }
         ]
-      }
+      },
+      common.SOLSTICE_OF_HEROES_YEAR_4
     ]
   },
   {
@@ -575,14 +691,19 @@ export default ([
         big: false,
         sections: [
           {
+            name: '"A Spark of Hope" Quest',
+            season: 12,
+            items: [2535664169, 2535664168, 2535664170, 2962058736]
+          },
+          {
             name: 'Earned While Leveling',
             season: 13,
             items: [3651075426, 3117873459]
           },
           {
-            name: '"A Spark of Hope" Quest',
-            season: 12,
-            items: [2535664169, 2535664168, 2535664170, 2962058736]
+            name: 'Earned While Leveling',
+            season: 14,
+            items: []
           }
         ]
       },
@@ -615,6 +736,11 @@ export default ([
               [4003170632, 3350504921, 412014143, 1947723211, 1659172686],
               [3311198527, 3245065734, 2166974634, 2804094976, 2803792315]
             ]
+          },
+          {
+            name: 'Free Track',
+            season: 14,
+            itemGroups: [[], [], [], []]
           },
           {
             name: 'Paid Track',
@@ -656,6 +782,11 @@ export default ([
                 1955679597
               ]
             ]
+          },
+          {
+            name: 'Paid Track',
+            season: 14,
+            itemGroups: [[], [], [], [], []]
           }
         ]
       },
@@ -685,6 +816,11 @@ export default ([
               [2188215631, 48380374, 2956050458, 1260659632, 2179943275],
               [3149327402, 3154888563, 3721737629, 2889842501, 888758224]
             ]
+          },
+          {
+            name: 'Armor',
+            season: 14,
+            itemGroups: [[], [], []]
           },
           {
             name: 'Ornaments',
@@ -731,6 +867,11 @@ export default ([
                 // 46563601
               ]
             ]
+          },
+          {
+            name: 'Ornaments',
+            season: 14,
+            itemGroups: [[], [], []]
           },
           {
             name: 'Emotes',
@@ -794,6 +935,11 @@ export default ([
             ]
           },
           {
+            name: 'Emotes',
+            season: 14,
+            itemGroups: [[], []]
+          },
+          {
             name: 'Ghosts',
             season: 12,
             itemGroups: [
@@ -831,6 +977,11 @@ export default ([
             ]
           },
           {
+            name: 'Ghosts',
+            season: 14,
+            itemGroups: [[], []]
+          },
+          {
             name: 'Sparrows',
             season: 12,
             items: [
@@ -855,6 +1006,11 @@ export default ([
             ]
           },
           {
+            name: 'Sparrows',
+            season: 14,
+            items: []
+          },
+          {
             name: 'Ships',
             season: 12,
             items: [3891757416, 3891757417, 3891757418, 3891757419]
@@ -869,6 +1025,11 @@ export default ([
               // 1018723386,
               // 1018723389
             ]
+          },
+          {
+            name: 'Ships',
+            season: 14,
+            items: []
           },
           {
             name: 'Shaders',
@@ -888,6 +1049,11 @@ export default ([
             items: [1854244374, 1854244375]
           },
           {
+            name: 'Shaders',
+            season: 14,
+            items: []
+          },
+          {
             name: 'Transmat Effects',
             season: 12,
             items: [2527044465, 2527044464]
@@ -896,6 +1062,11 @@ export default ([
             name: 'Transmat Effects',
             season: 13,
             items: [3182550856, 3182550857]
+          },
+          {
+            name: 'Transmat Effects',
+            season: 14,
+            items: []
           }
         ]
       },
