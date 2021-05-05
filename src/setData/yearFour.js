@@ -278,51 +278,6 @@ export default ([
             items: [296637832, 3102002768, 1230660644, 2357830697, 2357830696]
           }
         ]
-      },
-      {
-        name: _(
-          'DestinyActivityDefinition[1738383283].displayProperties.name',
-          'Harbinger'
-        ),
-        id: 'year-four-harbinger',
-        description: _(
-          'DestinyCollectibleDefinition[653763964].sourceString',
-          '"Let Loose Thy Talons" Exotic quest.'
-        ),
-        sections: [
-          {
-            name: 'Weapons',
-            season: 12,
-            items: [3856705927]
-          },
-
-          {
-            name: 'Extras',
-            season: 12,
-            items: [3518986339, 1230660641]
-          }
-        ]
-      },
-      {
-        name: 'Presage',
-        id: 'year-four-presage',
-        description: _(
-          'DestinyCollectibleDefinition[3723101298].sourceString',
-          'Presage Exotic Quest.'
-        ),
-        sections: [
-          {
-            name: 'Weapons',
-            season: 13,
-            items: [3654674561]
-          },
-
-          {
-            name: 'Extras',
-            season: 13,
-            items: [532530783, 1249788648]
-          }
-        ]
       }
     ]
   },
@@ -345,9 +300,19 @@ export default ([
             items: [1513993763, 981718087, 2714022207]
           },
           {
+            name: 'Harbinger',
+            season: 12,
+            items: [3856705927]
+          },
+          {
             name: 'Extras',
             season: 12,
             items: [3677784672]
+          },
+          {
+            name: 'Harbinger Extras',
+            season: 12,
+            items: [3518986339, 1230660641]
           }
         ]
       },
@@ -367,9 +332,19 @@ export default ([
             items: [1097616550, 3460122497, 893527433, 2496242052]
           },
           {
+            name: 'Presage',
+            season: 13,
+            items: [3654674561]
+          },
+          {
             name: 'Extras',
             season: 13,
             items: [532530782, 532530777, 2962058750, 397043529, 1953632753]
+          },
+          {
+            name: 'Presage Extras',
+            season: 13,
+            items: [532530783, 1249788648]
           }
         ]
       }
