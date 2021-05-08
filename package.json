@@ -17,7 +17,7 @@
     "image-size": "^0.6.2",
     "immer": "^1.2.0",
     "indexeddbshim": "^3.8.0",
-    "lodash": "^4.17.4",
+    "lodash": "^4.17.21",
     "npm": "^6.0.0",
     "popper.js": "^1.14.1",
     "prettier": "^1.18.2",
