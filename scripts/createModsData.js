@@ -134,6 +134,7 @@ const CATEGORY_SEASON_WORTHY = 'Season of the Worthy';
 const CATEGORY_SEASON_ARRIVALS = 'Season of Arrivals';
 const CATEGORY_DEEP_STONE_CRYPT = 'Deep Stone Crypt';
 const CATEGORY_SEASON_CHOSEN = 'Season of the Chosen';
+const CATEGORY_VAULT_OF_GLASS = 'Vault of Glass';
 
 const MOD_CATEGORISER = [
   matchArtifactMods(CATEGORY_SEASONAL_ARTIFACT),
@@ -146,6 +147,7 @@ const MOD_CATEGORISER = [
   matchPlugCategory(CATEGORY_SEASON_ARRIVALS, 'enhancements.season_v490'),
   matchPlugCategory(CATEGORY_DEEP_STONE_CRYPT, 'enhancements.raid_descent'),
   matchPlugCategory(CATEGORY_SEASON_CHOSEN, 'enhancements.season_v500'),
+  matchPlugCategory(CATEGORY_VAULT_OF_GLASS, 'enhancements.raid_v520'),
   // matchPlugCategory('General', 'enhancements.v2_general'), // must be before scavenger to prevent Circuit Scavenger mod from being classed as ammo scavenger
   matchName(CATEGORY_AMMO_FINDER, /\sAmmo Finder$/g),
   matchName(CATEGORY_AMMO_SCAVENGER, /\sScavenger$/g),
@@ -176,7 +178,8 @@ const CATERGORY_DISPLAY_ORDER = [
   CATEGORY_SEASON_WORTHY,
   CATEGORY_SEASON_ARRIVALS,
   CATEGORY_DEEP_STONE_CRYPT,
-  CATEGORY_SEASON_CHOSEN
+  CATEGORY_SEASON_CHOSEN,
+  CATEGORY_VAULT_OF_GLASS
 ];
 
 const collectRewardsFromArtifacts = DestinyArtifactDefinition => {
