@@ -28,20 +28,23 @@ export default ([
           {
             name: 'Weapons',
             season: 14,
-            itemGroups: [[], []]
+            itemGroups: [[4255586669], [4226042917]]
           },
           {
             name: 'Nightfall: The Ordeal Weapons',
             season: 13,
             itemGroups: [
-              [2633186522, 432476743, 47772649],
-              [2147010335, 1481892490, 3836861464]
+              [2633186522, 432476743, 47772649, 4281371574],
+              [2147010335, 1481892490, 3836861464, 681067419]
             ]
           },
           {
             name: 'Nightfall: The Ordeal Weapons',
             season: 14,
-            itemGroups: [[], []]
+            itemGroups: [
+              [1289000550, 2065081837],
+              [534775659, 852228780]
+            ]
           },
           {
             name: 'Hunter Armor',
@@ -71,7 +74,7 @@ export default ([
           {
             name: 'Extras',
             season: 14,
-            items: []
+            items: [3328204877]
           }
         ]
       },
@@ -96,7 +99,7 @@ export default ([
           {
             name: 'Weapons',
             season: 14,
-            itemGroups: [[], []]
+            itemGroups: [[310708513], [4226042919]]
           },
           {
             name: 'Hunter Armor',
@@ -126,7 +129,7 @@ export default ([
           {
             name: 'Extras',
             season: 14,
-            items: []
+            items: [2510169800, 3684946776]
           }
         ]
       },
@@ -151,7 +154,7 @@ export default ([
           {
             name: 'Weapons',
             season: 14,
-            itemGroups: [[], []]
+            itemGroups: [[875848769], [4226042918]]
           },
           {
             name: 'Hunter Armor',
@@ -181,7 +184,7 @@ export default ([
           {
             name: 'Extras',
             season: 14,
-            items: []
+            items: [2510169801, 2926661061]
           }
         ]
       },
@@ -209,7 +212,7 @@ export default ([
           {
             name: 'Weapons',
             season: 14,
-            items: []
+            items: [108221785, 852551895, 3813153080, 1967303408]
           },
           {
             name: 'Extras',
@@ -224,7 +227,7 @@ export default ([
           {
             name: 'Extras',
             season: 14,
-            items: []
+            items: [3873834914]
           }
         ]
       },
@@ -255,6 +258,11 @@ export default ([
               [3658188704, 2351180975, 1313528549],
               [1173780905, 2527666306, 3847137620]
             ]
+          },
+          {
+            name: 'Weapons',
+            season: 14,
+            itemGroups: [[3682803680], [4023807721]]
           },
           {
             name: 'Hunter Armor',
@@ -326,7 +334,7 @@ export default ([
       },
       {
         name: _(
-          'DestinyActivityDefinition[910380154].displayProperties.name',
+          'DestinyActivityDefinition[3711931140].displayProperties.name',
           'Vault of Glass'
         ),
         id: 'year-four-vault-of-glass',
@@ -338,27 +346,45 @@ export default ([
           {
             name: 'Weapons',
             season: 14,
-            items: []
+            itemGroups: [
+              [4289226715],
+              [
+                3197270240,
+                3653573172,
+                2171478765,
+                3186018373,
+                471518543,
+                4050645223
+              ],
+              [
+                631439337,
+                1987769101,
+                1216319404,
+                690668916,
+                3796510434,
+                1921159786
+              ]
+            ]
           },
           {
             name: 'Hunter Armor',
             season: 14,
-            items: []
+            items: [586128500, 3753500813, 1133961267, 129332559, 3339387242]
           },
           {
             name: 'Titan Armor',
             season: 14,
-            items: []
+            items: [4029224226, 3368765451, 3890978501, 123979037, 3012927512]
           },
           {
             name: 'Warlock Armor',
             season: 14,
-            items: []
+            items: [673599343, 3253292022, 3029386938, 170603856, 2253382795]
           },
           {
             name: 'Extras',
             season: 14,
-            items: []
+            items: [2907216422, 2510169794, 2510169795, 2173688423, 2173688422]
           }
         ]
       }
@@ -437,9 +463,29 @@ export default ([
         description: 'Complete seasonal activities from Season of the Splicer.',
         sections: [
           {
+            name: 'Weapons',
+            season: 14,
+            items: [304659313, 1119734784, 1621558458, 541188001]
+          },
+          {
             name: 'Pursuit Weapon',
             season: 14,
-            items: []
+            items: [1644680957]
+          },
+          {
+            name: 'Hunter Armor',
+            season: 14,
+            items: [30472172, 3479737253, 3436655867, 3827066919, 1793372050]
+          },
+          {
+            name: 'Titan Armor',
+            season: 14,
+            items: [4129456190, 3399325807, 3497822409, 3973929105, 517124228]
+          },
+          {
+            name: 'Warlock Armor',
+            season: 14,
+            items: [1245678091, 3862902650, 2146386894, 1248864692, 2888835735]
           },
           {
             name: 'Override',
@@ -454,12 +500,12 @@ export default ([
           {
             name: 'Extras',
             season: 14,
-            items: []
+            items: [2510169802, 2510169807]
           },
           {
             name: 'Expunge Extras',
             season: 14,
-            items: []
+            items: [4015028642]
           }
         ]
       }
@@ -740,7 +786,7 @@ export default ([
           {
             name: 'Free Track',
             season: 14,
-            itemGroups: [[], [], [], []]
+            itemGroups: [[603721696, 599895591, 2434225986], [], [], []]
           },
           {
             name: 'Paid Track',
@@ -786,7 +832,20 @@ export default ([
           {
             name: 'Paid Track',
             season: 14,
-            itemGroups: [[], [], [], [], []]
+            itemGroups: [
+              [3549553800],
+              [1760291195, 3219469610, 4233075550, 1875800772, 3604279399],
+              [1126055399, 3367724910, 2195981186, 1155835752, 1419977171],
+              [1644764626, 2111117883, 2698389909, 519581357, 1395881448],
+              [
+                2104928736,
+                3499897239,
+                2510169803,
+                2944573668,
+                2944573669,
+                895031268
+              ]
+            ]
           }
         ]
       },
@@ -820,7 +879,11 @@ export default ([
           {
             name: 'Armor',
             season: 14,
-            itemGroups: [[], [], []]
+            itemGroups: [
+              [3912040564, 2784445581, 1446726707, 3455244623, 3652152682],
+              [3794176656, 3550280545, 3343867063, 750261843, 1177219078],
+              [3032081193, 823490208, 3968549096, 3813397082, 1375679173]
+            ]
           },
           {
             name: 'Ornaments',
@@ -871,7 +934,22 @@ export default ([
           {
             name: 'Ornaments',
             season: 14,
-            itemGroups: [[], [], []]
+            itemGroups: [
+              [
+                314669087,
+                2272772784,
+                899855954,
+                1173052383,
+                3205431489,
+                3991681308,
+                3756164435,
+                3753648496,
+                3855774718,
+                116193775
+              ],
+              [],
+              [2413288976, 1185631823, 3736112681]
+            ]
           },
           {
             name: 'Emotes',
@@ -937,7 +1015,37 @@ export default ([
           {
             name: 'Emotes',
             season: 14,
-            itemGroups: [[], []]
+            itemGroups: [
+              [
+                3982999012,
+                2214129016,
+                1066617987,
+                2054283378,
+                2990575665,
+                1521453111,
+                4247137339,
+                4210150840,
+                3969779337,
+                451244149,
+                3157963939,
+                3326173065,
+                1333212979,
+                352241391,
+                3577052913,
+                2255318456,
+                2967915798,
+                3474327983,
+                1020589069,
+                3305426869,
+                2213036539,
+                2884457784,
+                4039169807,
+                3250156679,
+                1530151545,
+                390568252
+              ],
+              [3702733224, 2787596977, 2878428802]
+            ]
           },
           {
             name: 'Ghosts',
@@ -979,7 +1087,17 @@ export default ([
           {
             name: 'Ghosts',
             season: 14,
-            itemGroups: [[], []]
+            itemGroups: [
+              [
+                3705925874,
+                3705925875,
+                3705925872,
+                3705925873,
+                3705925878,
+                3705925879
+              ],
+              [1753939277, 1753939276, 1753939279, 1753939278, 3045953004]
+            ]
           },
           {
             name: 'Sparrows',
@@ -1008,7 +1126,15 @@ export default ([
           {
             name: 'Sparrows',
             season: 14,
-            items: []
+            items: [
+              422524822,
+              422524823,
+              422524820,
+              422524821,
+              422524818,
+              422524819,
+              422524816
+            ]
           },
           {
             name: 'Ships',
@@ -1029,7 +1155,14 @@ export default ([
           {
             name: 'Ships',
             season: 14,
-            items: []
+            items: [
+              489224274,
+              489224275,
+              489224272,
+              489224273,
+              489224278,
+              489224279
+            ]
           },
           {
             name: 'Shaders',
@@ -1051,7 +1184,12 @@ export default ([
           {
             name: 'Shaders',
             season: 14,
-            items: []
+            items: [
+              208045063,
+              208045062
+              // 208045061,
+              // 208045060
+            ]
           },
           {
             name: 'Transmat Effects',
@@ -1066,7 +1204,7 @@ export default ([
           {
             name: 'Transmat Effects',
             season: 14,
-            items: []
+            items: [51305743, 51305742]
           }
         ]
       },
@@ -1086,6 +1224,23 @@ export default ([
             name: 'Weapons',
             season: 13,
             items: [3514096004, 1402766122, 2481881293, 3335343363]
+          },
+          {
+            name: 'Weapons',
+            season: 14,
+            itemGroups: [
+              [2782325300],
+              [2782325302],
+              [2782325301],
+              [
+                217140611,
+                2492081469,
+                3556999246,
+                2414141462,
+                2272470786,
+                3165547384
+              ]
+            ]
           }
         ]
       }
