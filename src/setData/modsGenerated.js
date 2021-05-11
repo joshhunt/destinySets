@@ -15,7 +15,7 @@ export default [
             nameHash: 1198124803,
             itemGroups: [
               [
-                1082186949 // Scout and Sniper Rifle Targeting
+                2072507547 // Ashes to Assets
               ],
               [
                 2193892158, // Auto Rifle Ammo Finder
@@ -32,7 +32,8 @@ export default [
                 1050260245, // Sidearm Ammo Finder
                 1588113119, // Submachine Gun Ammo Finder
                 2754084930, // Sniper Rifle Ammo Finder
-                1476367343 // Sword Ammo Finder
+                1476367343, // Sword Ammo Finder
+                3973928133 // Trace Rifle Ammo Finder
               ],
               [
                 3201675491, // Auto Rifle Targeting
@@ -46,14 +47,15 @@ export default [
                 2919349723, // Shotgun Targeting
                 1507854082, // Sidearm Targeting
                 3857411140, // Submachine Gun Targeting
-                2307244871 // Sniper Rifle Targeting
+                2307244871, // Sniper Rifle Targeting
+                3330325954 // Trace Rifle Targeting
               ]
             ],
             groups: [
               {
                 name: "Seasonal Artifact",
                 items: [
-                  1082186949 // Scout and Sniper Rifle Targeting
+                  2072507547 // Ashes to Assets
                 ]
               },
               {
@@ -73,7 +75,8 @@ export default [
                   1050260245, // Sidearm Ammo Finder
                   1588113119, // Submachine Gun Ammo Finder
                   2754084930, // Sniper Rifle Ammo Finder
-                  1476367343 // Sword Ammo Finder
+                  1476367343, // Sword Ammo Finder
+                  3973928133 // Trace Rifle Ammo Finder
                 ]
               },
               {
@@ -90,7 +93,8 @@ export default [
                   2919349723, // Shotgun Targeting
                   1507854082, // Sidearm Targeting
                   3857411140, // Submachine Gun Targeting
-                  2307244871 // Sniper Rifle Targeting
+                  2307244871, // Sniper Rifle Targeting
+                  3330325954 // Trace Rifle Targeting
                 ]
               }
             ]
@@ -160,19 +164,16 @@ export default [
                 403494087 // Fastball
               ],
               [
-                1082186950, // Scout Rifle Loader
-                1082186951, // Bow Dexterity
-                1082186944, // Sniper Rifle Dexterity
-                1082186945, // Sidearm Dexterity
-                76553636, // Bow Reloader
-                76553634, // Submachine Gun Loader
-                1007628743, // Anti-Barrier Sniper Rifle
-                1007628740, // Disrupting Blade
-                2215945390, // Overload Bow
-                2215945389, // Unstoppable Pulse Rifle
-                2215945388, // Anti-Barrier Scout Rifle
-                2215945387, // Unstoppable Hand Cannon
-                2215945386 // Overload Submachine Gun
+                4132945797, // Scout Rifle Loader
+                2072507549, // Grenade Launcher Dexterity
+                2072507546, // Rocket Launcher Loader
+                2788876190, // Unstoppable Grenade Launcher
+                282898296, // Impulse Recycler
+                864745279, // Overload Submachine Gun
+                864745276, // Anti-Barrier Scout Rifle
+                864745277, // Unstoppable Sidearm
+                864745274, // Overload Hand Cannon
+                864745275 // Anti-Barrier Auto Rifle
               ],
               [
                 1312062056, // Auto Rifle Dexterity
@@ -188,7 +189,8 @@ export default [
                 2561450986, // Shotgun Dexterity
                 101023751, // Sidearm Dexterity
                 201274281, // Submachine Gun Dexterity
-                1819979056 // Sniper Rifle Dexterity
+                1819979056, // Sniper Rifle Dexterity
+                1670364231 // Trace Rifle Dexterity
               ],
               [
                 2571974065, // Auto Rifle Loader
@@ -204,7 +206,8 @@ export default [
                 1534061443, // Shotgun Loader
                 762238512, // Sidearm Loader
                 2790645726, // Submachine Gun Loader
-                2039949393 // Sniper Rifle Loader
+                2039949393, // Sniper Rifle Loader
+                1807758212 // Trace Rifle Loader
               ]
             ],
             groups: [
@@ -217,19 +220,16 @@ export default [
               {
                 name: "Seasonal Artifact",
                 items: [
-                  1082186950, // Scout Rifle Loader
-                  1082186951, // Bow Dexterity
-                  1082186944, // Sniper Rifle Dexterity
-                  1082186945, // Sidearm Dexterity
-                  76553636, // Bow Reloader
-                  76553634, // Submachine Gun Loader
-                  1007628743, // Anti-Barrier Sniper Rifle
-                  1007628740, // Disrupting Blade
-                  2215945390, // Overload Bow
-                  2215945389, // Unstoppable Pulse Rifle
-                  2215945388, // Anti-Barrier Scout Rifle
-                  2215945387, // Unstoppable Hand Cannon
-                  2215945386 // Overload Submachine Gun
+                  4132945797, // Scout Rifle Loader
+                  2072507549, // Grenade Launcher Dexterity
+                  2072507546, // Rocket Launcher Loader
+                  2788876190, // Unstoppable Grenade Launcher
+                  282898296, // Impulse Recycler
+                  864745279, // Overload Submachine Gun
+                  864745276, // Anti-Barrier Scout Rifle
+                  864745277, // Unstoppable Sidearm
+                  864745274, // Overload Hand Cannon
+                  864745275 // Anti-Barrier Auto Rifle
                 ]
               },
               {
@@ -248,7 +248,8 @@ export default [
                   2561450986, // Shotgun Dexterity
                   101023751, // Sidearm Dexterity
                   201274281, // Submachine Gun Dexterity
-                  1819979056 // Sniper Rifle Dexterity
+                  1819979056, // Sniper Rifle Dexterity
+                  1670364231 // Trace Rifle Dexterity
                 ]
               },
               {
@@ -267,7 +268,8 @@ export default [
                   1534061443, // Shotgun Loader
                   762238512, // Sidearm Loader
                   2790645726, // Submachine Gun Loader
-                  2039949393 // Sniper Rifle Loader
+                  2039949393, // Sniper Rifle Loader
+                  1807758212 // Trace Rifle Loader
                 ]
               }
             ]
@@ -341,8 +343,8 @@ export default [
                 3566745556 // Sniper Damage Resistance
               ],
               [
-                76553638, // Unflinching Scout Rifle Aim
-                76553635 // Unflinching Sniper Aim
+                4132945794, // Unflinching Pulse Rifle Aim
+                2072507551 // Unflinching Auto Rifle Aim
               ],
               [
                 1131497704, // Auto Rifle Reserves
@@ -359,7 +361,8 @@ export default [
                 3859610803, // Sidearm Reserves
                 1829115845, // Submachine Gun Reserves
                 3926976952, // Sniper Rifle Reserves
-                3543966269 // Sword Reserves
+                3543966269, // Sword Reserves
+                2321484659 // Trace Rifle Reserves
               ],
               [
                 2505824339, // Unflinching Auto Rifle Aim
@@ -374,7 +377,8 @@ export default [
                 357349821, // Unflinching Shotgun Aim
                 2881057950, // Unflinching Sidearm Aim
                 1203395203, // Unflinching Sniper Aim
-                3626376648 // Unflinching Submachine Gun Aim
+                3626376648, // Unflinching Submachine Gun Aim
+                4023967480 // Unflinching Trace Rifle Aim
               ]
             ],
             groups: [
@@ -389,8 +393,8 @@ export default [
               {
                 name: "Seasonal Artifact",
                 items: [
-                  76553638, // Unflinching Scout Rifle Aim
-                  76553635 // Unflinching Sniper Aim
+                  4132945794, // Unflinching Pulse Rifle Aim
+                  2072507551 // Unflinching Auto Rifle Aim
                 ]
               },
               {
@@ -410,7 +414,8 @@ export default [
                   3859610803, // Sidearm Reserves
                   1829115845, // Submachine Gun Reserves
                   3926976952, // Sniper Rifle Reserves
-                  3543966269 // Sword Reserves
+                  3543966269, // Sword Reserves
+                  2321484659 // Trace Rifle Reserves
                 ]
               },
               {
@@ -428,7 +433,8 @@ export default [
                   357349821, // Unflinching Shotgun Aim
                   2881057950, // Unflinching Sidearm Aim
                   1203395203, // Unflinching Sniper Aim
-                  3626376648 // Unflinching Submachine Gun Aim
+                  3626376648, // Unflinching Submachine Gun Aim
+                  4023967480 // Unflinching Trace Rifle Aim
                 ]
               }
             ]
@@ -498,7 +504,8 @@ export default [
                 3320641683 // Absolution
               ],
               [
-                76553637 // Sniper Rifle Scavenger
+                4132945792, // Grenade Launcher Scavenger
+                4132945795 // Rocket Launcher Scavenger
               ],
               [
                 737634704, // Auto Rifle Scavenger
@@ -515,7 +522,8 @@ export default [
                 2183342667, // Sidearm Scavenger
                 1023632589, // Submachine Gun Scavenger
                 498878196, // Sniper Rifle Scavenger
-                2146553541 // Sword Scavenger
+                2146553541, // Sword Scavenger
+                3632415743 // Trace Rifle Scavenger
               ]
             ],
             groups: [
@@ -528,7 +536,8 @@ export default [
               {
                 name: "Seasonal Artifact",
                 items: [
-                  76553637 // Sniper Rifle Scavenger
+                  4132945792, // Grenade Launcher Scavenger
+                  4132945795 // Rocket Launcher Scavenger
                 ]
               },
               {
@@ -548,7 +557,8 @@ export default [
                   2183342667, // Sidearm Scavenger
                   1023632589, // Submachine Gun Scavenger
                   498878196, // Sniper Rifle Scavenger
-                  2146553541 // Sword Scavenger
+                  2146553541, // Sword Scavenger
+                  3632415743 // Trace Rifle Scavenger
                 ]
               }
             ]
@@ -624,14 +634,12 @@ export default [
                 4237638094 // Snapload Finisher
               ],
               [
-                1007628741, // Resonance Siphon
-                1007628738, // Surge Detonators
-                1007628739, // Inferno Whip
-                792292104, // Focusing Lens
-                792292107, // Passive Guard
-                792292106, // Glacial Inheritance
-                792292109, // Sundering Glare
-                792292108 // Volatile Conduction
+                2788876188, // Sundering Blast
+                2788876187, // Surge Detonators
+                2788876186, // Unstoppable Schwarzschild Condensor
+                282898301, // Breach and Clear
+                282898302, // Glacial Inheritance
+                282898297 // Energy Accelerant
               ]
             ],
             groups: [
@@ -646,14 +654,12 @@ export default [
               {
                 name: "Seasonal Artifact",
                 items: [
-                  1007628741, // Resonance Siphon
-                  1007628738, // Surge Detonators
-                  1007628739, // Inferno Whip
-                  792292104, // Focusing Lens
-                  792292107, // Passive Guard
-                  792292106, // Glacial Inheritance
-                  792292109, // Sundering Glare
-                  792292108 // Volatile Conduction
+                  2788876188, // Sundering Blast
+                  2788876187, // Surge Detonators
+                  2788876186, // Unstoppable Schwarzschild Condensor
+                  282898301, // Breach and Clear
+                  282898302, // Glacial Inheritance
+                  282898297 // Energy Accelerant
                 ]
               }
             ]
@@ -704,7 +710,8 @@ export default [
             itemGroups: [
               [
                 4137020505, // Perpetuation
-                4237638088 // Bulwark Finisher
+                4237638088, // Bulwark Finisher
+                4055766573 // Utility Finisher
               ]
             ],
             groups: [
@@ -712,7 +719,8 @@ export default [
                 name: "General",
                 items: [
                   4137020505, // Perpetuation
-                  4237638088 // Bulwark Finisher
+                  4237638088, // Bulwark Finisher
+                  4055766573 // Utility Finisher
                 ]
               }
             ]
@@ -744,6 +752,12 @@ export default [
                 3682186345 // Minor Resilience Mod
               ],
               [
+                4132945796, // Blast Radius
+                2072507548, // Argent Ordnance
+                2788876189, // Hammer of the Warmind
+                282898303 // Warmind's Decree
+              ],
+              [
                 2859541905, // Taken Armaments
                 399528760, // Taken Invigoration
                 3570105787, // Taken Barrier
@@ -770,7 +784,12 @@ export default [
                 1515669996, // Elemental Armaments
                 1740246051, // Font of Might
                 1196831979, // Font of Wisdom
-                3730619869 // Elemental Charge
+                3730619869, // Elemental Charge
+                1052528480 // Shieldcrash Wellmaker
+              ],
+              [
+                2725575870, // Anti-Oracle
+                2725575871 // Anti-Praetorian
               ]
             ],
             groups: [
@@ -791,6 +810,15 @@ export default [
                   204137529, // Minor Mobility Mod
                   555005975, // Minor Recovery Mod
                   3682186345 // Minor Resilience Mod
+                ]
+              },
+              {
+                name: "Seasonal Artifact",
+                items: [
+                  4132945796, // Blast Radius
+                  2072507548, // Argent Ordnance
+                  2788876189, // Hammer of the Warmind
+                  282898303 // Warmind's Decree
                 ]
               },
               {
@@ -837,7 +865,15 @@ export default [
                   1515669996, // Elemental Armaments
                   1740246051, // Font of Might
                   1196831979, // Font of Wisdom
-                  3730619869 // Elemental Charge
+                  3730619869, // Elemental Charge
+                  1052528480 // Shieldcrash Wellmaker
+                ]
+              },
+              {
+                name: "Vault of Glass",
+                items: [
+                  2725575870, // Anti-Oracle
+                  2725575871 // Anti-Praetorian
                 ]
               }
             ]
@@ -877,6 +913,15 @@ export default [
               ],
               [
                 1578165808 // Enhanced Scanner Augment
+              ],
+              [
+                3097132144, // Overload Wellmaker
+                1680735357 // Well of Ions
+              ],
+              [
+                4076776732, // Rapid Oracle Disruptor
+                4076776733, // Vex Breaker
+                4076776734 // Superstructure Striker
               ]
             ],
             groups: [
@@ -929,6 +974,21 @@ export default [
                 items: [
                   1578165808 // Enhanced Scanner Augment
                 ]
+              },
+              {
+                name: "Season of the Chosen",
+                items: [
+                  3097132144, // Overload Wellmaker
+                  1680735357 // Well of Ions
+                ]
+              },
+              {
+                name: "Vault of Glass",
+                items: [
+                  4076776732, // Rapid Oracle Disruptor
+                  4076776733, // Vex Breaker
+                  4076776734 // Superstructure Striker
+                ]
               }
             ]
           },
@@ -967,6 +1027,15 @@ export default [
               ],
               [
                 817361141 // Enhanced Operator Augment
+              ],
+              [
+                825650462, // Explosive Wellmaker
+                2164090163 // Well of Life
+              ],
+              [
+                1401506405, // Aggressive Oracle Disruptor
+                1401506404, // Vex Destroyer
+                1401506407 // Superstructure Medic
               ]
             ],
             groups: [
@@ -1019,6 +1088,21 @@ export default [
                 items: [
                   817361141 // Enhanced Operator Augment
                 ]
+              },
+              {
+                name: "Season of the Chosen",
+                items: [
+                  825650462, // Explosive Wellmaker
+                  2164090163 // Well of Life
+                ]
+              },
+              {
+                name: "Vault of Glass",
+                items: [
+                  1401506405, // Aggressive Oracle Disruptor
+                  1401506404, // Vex Destroyer
+                  1401506407 // Superstructure Medic
+                ]
               }
             ]
           },
@@ -1057,6 +1141,15 @@ export default [
               ],
               [
                 1362793604 // Enhanced Suppressor Augment
+              ],
+              [
+                240958661, // Reaping Wellmaker
+                3809244044 // Well of Tenacity
+              ],
+              [
+                518521232, // Precise Oracle Disruptor
+                518521233, // Vex Striker
+                518521234 // Superstructure Defender
               ]
             ],
             groups: [
@@ -1108,6 +1201,21 @@ export default [
                 name: "Deep Stone Crypt",
                 items: [
                   1362793604 // Enhanced Suppressor Augment
+                ]
+              },
+              {
+                name: "Season of the Chosen",
+                items: [
+                  240958661, // Reaping Wellmaker
+                  3809244044 // Well of Tenacity
+                ]
+              },
+              {
+                name: "Vault of Glass",
+                items: [
+                  518521232, // Precise Oracle Disruptor
+                  518521233, // Vex Striker
+                  518521234 // Superstructure Defender
                 ]
               }
             ]
