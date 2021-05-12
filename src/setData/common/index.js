@@ -589,12 +589,12 @@ export const SOLSTICE_OF_HEROES_YEAR_4 = {
     {
       name: 'Sparrows',
       season: 14,
-      items: []
+      items: [2795689399, 2795689398]
     },
     {
       name: 'Ships',
       season: 14,
-      items: []
+      items: [2988472427, 2988472426]
     },
     {
       name: 'Extras',
