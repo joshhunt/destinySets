@@ -554,3 +554,52 @@ export const SOLSTICE_OF_HEROES_YEAR_3 = {
     }
   ]
 };
+
+export const SOLSTICE_OF_HEROES_YEAR_4 = {
+  name: 'Solstice of Heroes',
+  id: 'COMMON_SOLSTICE_OF_HEROES',
+  description: 'Earned during the 2021 Solstice of Heroes event.',
+  big: false,
+  sections: [
+    {
+      name: 'Hunter Armor',
+      season: 14,
+      itemGroups: [[], [], [], []]
+    },
+    {
+      name: 'Titan Armor',
+      season: 14,
+      itemGroups: [[], [], [], []]
+    },
+    {
+      name: 'Warlock Armor',
+      season: 14,
+      itemGroups: [[], [], [], []]
+    },
+    {
+      name: 'Emotes',
+      season: 14,
+      itemGroups: [[], []]
+    },
+    {
+      name: 'Ghosts',
+      season: 14,
+      itemGroups: [[], [4202033493]]
+    },
+    {
+      name: 'Sparrows',
+      season: 14,
+      items: [2795689399, 2795689398]
+    },
+    {
+      name: 'Ships',
+      season: 14,
+      items: [2988472427, 2988472426]
+    },
+    {
+      name: 'Extras',
+      season: 14,
+      items: [2510169805]
+    }
+  ]
+};

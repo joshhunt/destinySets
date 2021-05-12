@@ -46,6 +46,8 @@ export default {
   1363238943: 3567687058, // Ruinous Effigy
   3460576091: 2135780490, // Duality
   3260753130: 1833569807, // Ticuu's Divination
+  603721696: 3972260545, // Cryosthesia 77K
+  4289226715: 507778024, // Vex Mythoclast
 
   // Heavy weapons
   3549153979: 3371896300, // The Prospector
@@ -59,7 +61,8 @@ export default {
   1891561814: 173502661, // Whisper of the Worm
   3766045777: 252263460, // Black Talon
   2591746970: 3740374319, // Leviathan's Breath
-  2084878005: 1514331782 // Heir Apparent
+  2084878005: 1514331782, // Heir Apparent
+  2232171099: 2254190310 // Deathbringer
 
   // 1364093401: 0, // The Last Word
   // 2694576561: 0, // Two-Tailed Fox
