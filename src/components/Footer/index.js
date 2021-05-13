@@ -48,19 +48,11 @@ export default function Footer({ item, children }) {
       <br />
       Having issues or need help?{' '}
       <a
-        href="https://twitter.com/intent/tweet?text=@joshhunt%20@Jakosaur"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Contact us on Twitter
-      </a>{' '}
-      or{' '}
-      <a
         href="https://github.com/joshhunt/destinySets/issues"
         target="_blank"
         rel="noopener noreferrer"
       >
-        file an issue on GitHub
+        File an issue on GitHub
       </a>
       .
       <br />
