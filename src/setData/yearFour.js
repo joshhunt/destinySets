@@ -500,7 +500,7 @@ export default ([
           {
             name: 'Extras',
             season: 14,
-            items: [2510169802]
+            items: [713316410, 2510169802]
           },
           {
             name: 'Expunge Extras',
