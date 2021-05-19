@@ -726,33 +726,33 @@ export default ([
             name: 'Hunter Armor',
             season: 5,
             items: [
-              3086191374, // Woven Firesmith Mask
-              240988159, // Woven Firesmith Grips
-              2791841721, // Woven Firesmith Vest
-              3457205569, // Woven Firesmith Boots
-              4106007668 // Woven Firesmith Cape
+              2174117797, // Woven Firesmith Mask
+              2913217908, // Woven Firesmith Grips
+              1126789516, // Woven Firesmith Vest
+              3200956542, // Woven Firesmith Boots
+              3359513793 // Woven Firesmith Cape
             ]
           },
           {
             name: 'Titan Armor',
             season: 5,
             items: [
-              524862116, // Forged Machinist Helm
-              89175933, // Forged Machinist Gauntlets
-              866063619, // Forged Machinist Plate
-              2413328031, // Forged Machinist Greaves
-              4059853946 // Forged Machinist Mark
+              578189287, // Forged Machinist Helm
+              2819858798, // Forged Machinist Gauntlets
+              449270146, // Forged Machinist Plate
+              607969640, // Forged Machinist Greaves
+              3968233427 // Forged Machinist Mark
             ]
           },
           {
             name: 'Warlock Armor',
             season: 5,
             items: [
-              2389815461, // Annealed Shaper Crown
-              3128915572, // Annealed Shaper Gloves
-              2153602188, // Annealed Shaper Robes
-              3416654206, // Annealed Shaper Boots
-              91359169 // Annealed Shaper Bond
+              2668526660, // Annealed Shaper Crown
+              2615721245, // Annealed Shaper Gloves
+              2011267747, // Annealed Shaper Robes
+              261922239, // Annealed Shaper Boots
+              1293074586 // Annealed Shaper Bond
             ]
           },
           {
