@@ -1031,11 +1031,11 @@ export default ([
             season: 7,
             itemGroups: [
               [
-                2172333833, // EXODUS DOWN MASK
-                3875829376, // EXODUS DOWN GRIPS
-                126418248, // EXODUS DOWN VEST
-                2953649850, // EXODUS DOWN STRIDES
-                2252973221 // EXODUS DOWN CLOAK
+                3968652888, // EXODUS DOWN MASK
+                137386025, // EXODUS DOWN GRIPS
+                2956080815, // EXODUS DOWN VEST
+                4258364155, // EXODUS DOWN STRIDES
+                374306366 // EXODUS DOWN CLOAK
               ],
               [
                 906236408, // OPULENT STALKER MASK
@@ -1054,11 +1054,11 @@ export default ([
             season: 7,
             itemGroups: [
               [
-                582151075, // EXODUS DOWN HELM
-                1678216306, // EXODUS DOWN GAUNTLETS
-                1156448694, // EXODUS DOWN
-                2079454604, // EXODUS DOWN GREAVES
-                527652447 // EXODUS DOWN MARK
+                413767702, // EXODUS DOWN HELM
+                1617861351, // EXODUS DOWN GAUNTLETS
+                1092747537, // EXODUS DOWN PLATE
+                370667049, // EXODUS DOWN GREAVES
+                3288177452 // EXODUS DOWN MARK
               ],
               [
                 1420117606, // OPULENT DUELIST HELM
@@ -1077,11 +1077,11 @@ export default ([
             season: 7,
             itemGroups: [
               [
-                2731698402, // EXODUS DOWN HOOD
-                2029766091, // EXODUS DOWN GLOVES
-                2218838661, // EXODUS DOWN ROBES
-                3545981149, // EXODUS DOWN BOOTS
-                874856664 // EXODUS DOWN BOND
+                280471817, // EXODUS DOWN HOOD
+                1983967360, // EXODUS DOWN GLOVES
+                2210204488, // EXODUS DOWN ROBES
+                1061787834, // EXODUS DOWN BOOTS
+                41792165 // EXODUS DOWN BOND
               ],
               [
                 831222279, // OPULENT SCHOLAR HOOD
