@@ -1222,33 +1222,33 @@ export default ([
             name: 'Hunter Armor',
             season: 4,
             items: [
-              2276115770, // Scatterhorn Mask
-              218523139, // Scatterhorn Grasps
-              307138509, // Scatterhorn Vest
-              2563857333, // Scatterhorn Strides
-              2757593792 // Scatterhorn Cloak
+              1164347863, // Scatterhorn Mask
+              237758814, // Scatterhorn Grasps
+              4044826514, // Scatterhorn Vest
+              1081701944, // Scatterhorn Strides
+              345100195 // Scatterhorn Cloak
             ]
           },
           {
             name: 'Titan Armor',
             season: 4,
             items: [
-              1862088022, // Scatterhorn Helm
-              3066181671, // Scatterhorn Gauntlets
-              3871458129, // Scatterhorn Plate
-              2243444841, // Scatterhorn Greaves
-              1347463276 // Scatterhorn Mark
+              822537185, // Scatterhorn Helm
+              1660456696, // Scatterhorn Gauntlets
+              3340244240, // Scatterhorn Plate
+              3990691634, // Scatterhorn Greaves
+              2267399501 // Scatterhorn Mark
             ]
           },
           {
             name: 'Warlock Armor',
             season: 4,
             items: [
-              2411325265, // Scatterhorn Hood
-              1069453608, // Scatterhorn Wraps
-              1250571424, // Scatterhorn Robe
-              1704861826, // Scatterhorn Boots
-              177829853 // Scatterhorn Bond
+              3682059404, // Scatterhorn Hood
+              2877933893, // Scatterhorn Wraps
+              1222559003, // Scatterhorn Robe
+              3225160391, // Scatterhorn Boots
+              3874345778 // Scatterhorn Bond
             ]
           },
           {
