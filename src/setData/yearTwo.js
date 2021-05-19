@@ -477,11 +477,11 @@ export default ([
             name: 'Hunter Armor',
             season: 7,
             items: [
-              481390023, // IRON TRUAGE CASQUE
-              2723059534, // IRON TRUAGE GRIPS
-              4169842018, // IRON TRUAGE VEST
-              511170376, // IRON TRUAGE BOOTS
-              3818295475 // MANTLE OF EFRIDEET
+              1495869176, // IRON TRUAGE CASQUE
+              1959672649, // IRON TRUAGE GRIPS
+              863163983, // IRON TRUAGE VEST
+              2251614491, // IRON TRUAGE BOOTS
+              2534676958 // MANTLE OF EFRIDEET
             ]
           },
           {
@@ -521,11 +521,11 @@ export default ([
             name: 'Titan Armor',
             season: 7,
             items: [
-              3379235805, // IRON TRUAGE HELM
-              2266122060, // IRON TRUAGE GAUNTLETS
-              2850783764, // IRON TRUAGE PLATE
-              2911957494, // IRON TRUAGE GREAVES
-              4019071337 // RADEGAST'S IRON SASH
+              682107058, // IRON TRUAGE HELM
+              1148460187, // IRON TRUAGE GAUNTLETS
+              1779796469, // IRON TRUAGE PLATE
+              23061005, // IRON TRUAGE GREAVES
+              860168648 // RADEGAST'S IRON SASH
             ]
           },
           {
@@ -565,11 +565,11 @@ export default ([
             name: 'Warlock Armor',
             season: 7,
             items: [
-              1854612346, // IRON TRUAGE HOOD
-              3625849667, // IRON TRUAGE GLOVES
-              1166260237, // IRON TRUAGE VESTMENTS
-              1717896437, // IRON TRUAGE LEGS
-              4041069824 // TIMUR'S IRON BOND
+              2321258055, // IRON TRUAGE HOOD
+              267960270, // IRON TRUAGE GLOVES
+              459833058, // IRON TRUAGE VESTMENTS
+              2351038408, // IRON TRUAGE LEGS
+              108286515 // TIMUR'S IRON BOND
             ]
           },
           {
