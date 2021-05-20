@@ -562,29 +562,51 @@ export const SOLSTICE_OF_HEROES_YEAR_4 = {
   big: false,
   sections: [
     {
+      name: 'Weapons',
+      season: 14,
+      items: [
+        //2591111628 // Not 100% about this
+      ]
+    },
+    {
       name: 'Hunter Armor',
       season: 14,
-      itemGroups: [[], [], [], []]
+      itemGroups: [
+        [],
+        [],
+        [343482209],
+        [604124708, 168438525, 596633475, 2492590623, 3790423802]
+      ]
     },
     {
       name: 'Titan Armor',
       season: 14,
-      itemGroups: [[], [], [], []]
+      itemGroups: [
+        [],
+        [],
+        [],
+        [3474363664, 3230467553, 1160766519, 430448851, 3289085830]
+      ]
     },
     {
       name: 'Warlock Armor',
       season: 14,
-      itemGroups: [[], [], [], []]
+      itemGroups: [[], [], [], [444202817, 3612254098, 2805962096]]
     },
     {
       name: 'Emotes',
       season: 14,
-      itemGroups: [[], []]
+      itemGroups: [
+        [],
+        [
+          // 130305507
+        ]
+      ]
     },
     {
       name: 'Ghosts',
       season: 14,
-      itemGroups: [[], [4202033493]]
+      itemGroups: [[3116258570, 3116258571, 3116258568, 52039562], [4202033493]]
     },
     {
       name: 'Sparrows',
@@ -599,7 +621,7 @@ export const SOLSTICE_OF_HEROES_YEAR_4 = {
     {
       name: 'Extras',
       season: 14,
-      items: [2510169805]
+      items: [2510169805, 3004379087, 1282122328, 1691540653, 3592198503]
     }
   ]
 };

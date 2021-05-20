@@ -408,11 +408,11 @@ export default ([
             name: 'Hunter Armor',
             season: 8,
             items: [
-              1098138990, // Iron Will Mask
-              2547799775, // Iron Will Sleeves
-              1058936857, // Iron Will Vest
-              1469050017, // Iron Will Boots
-              2414679508 // Iron Will Cloak
+              2399134521, // Iron Will Mask
+              2295273904, // Iron Will Sleeves
+              2509940440, // Iron Will Vest
+              2653909130, // Iron Will Boots
+              1329892341 // Iron Will Cloak
             ]
           },
           {
@@ -441,11 +441,11 @@ export default ([
             name: 'Titan Armor',
             season: 8,
             items: [
-              1895324274, // Iron Will Helm
-              2320100699, // Iron Will Gauntlets
-              2536633781, // Iron Will Plate
-              770140877, // Iron Will Greaves
-              1234228360 // Iron Will Mark
+              2105414511, // Iron Will Helm
+              390139894, // Iron Will Gauntlets
+              230314682, // Iron Will Plate
+              1602419024, // Iron Will Greaves
+              3749277835 // Iron Will Mark
             ]
           },
           {
@@ -474,11 +474,11 @@ export default ([
             name: 'Warlock Armor',
             season: 8,
             items: [
-              2205315921, // Iron Will Hood
-              863444264, // Iron Will Gloves
-              4128151712, // Iron Will Vestments
-              1498852482, // Iron Will Steps
-              3055410141 // Iron Will Bond
+              3598520298, // Iron Will Hood
+              3179623987, // Iron Will Gloves
+              1412970845, // Iron Will Vestments
+              2914474757, // Iron Will Steps
+              3299416208 // Iron Will Bond
             ]
           },
           {

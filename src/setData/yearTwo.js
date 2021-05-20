@@ -477,11 +477,11 @@ export default ([
             name: 'Hunter Armor',
             season: 7,
             items: [
-              481390023, // IRON TRUAGE CASQUE
-              2723059534, // IRON TRUAGE GRIPS
-              4169842018, // IRON TRUAGE VEST
-              511170376, // IRON TRUAGE BOOTS
-              3818295475 // MANTLE OF EFRIDEET
+              1495869176, // IRON TRUAGE CASQUE
+              1959672649, // IRON TRUAGE GRIPS
+              863163983, // IRON TRUAGE VEST
+              2251614491, // IRON TRUAGE BOOTS
+              2534676958 // MANTLE OF EFRIDEET
             ]
           },
           {
@@ -521,11 +521,11 @@ export default ([
             name: 'Titan Armor',
             season: 7,
             items: [
-              3379235805, // IRON TRUAGE HELM
-              2266122060, // IRON TRUAGE GAUNTLETS
-              2850783764, // IRON TRUAGE PLATE
-              2911957494, // IRON TRUAGE GREAVES
-              4019071337 // RADEGAST'S IRON SASH
+              682107058, // IRON TRUAGE HELM
+              1148460187, // IRON TRUAGE GAUNTLETS
+              1779796469, // IRON TRUAGE PLATE
+              23061005, // IRON TRUAGE GREAVES
+              860168648 // RADEGAST'S IRON SASH
             ]
           },
           {
@@ -565,11 +565,11 @@ export default ([
             name: 'Warlock Armor',
             season: 7,
             items: [
-              1854612346, // IRON TRUAGE HOOD
-              3625849667, // IRON TRUAGE GLOVES
-              1166260237, // IRON TRUAGE VESTMENTS
-              1717896437, // IRON TRUAGE LEGS
-              4041069824 // TIMUR'S IRON BOND
+              2321258055, // IRON TRUAGE HOOD
+              267960270, // IRON TRUAGE GLOVES
+              459833058, // IRON TRUAGE VESTMENTS
+              2351038408, // IRON TRUAGE LEGS
+              108286515 // TIMUR'S IRON BOND
             ]
           },
           {
@@ -726,33 +726,33 @@ export default ([
             name: 'Hunter Armor',
             season: 5,
             items: [
-              3086191374, // Woven Firesmith Mask
-              240988159, // Woven Firesmith Grips
-              2791841721, // Woven Firesmith Vest
-              3457205569, // Woven Firesmith Boots
-              4106007668 // Woven Firesmith Cape
+              2174117797, // Woven Firesmith Mask
+              2913217908, // Woven Firesmith Grips
+              1126789516, // Woven Firesmith Vest
+              3200956542, // Woven Firesmith Boots
+              3359513793 // Woven Firesmith Cape
             ]
           },
           {
             name: 'Titan Armor',
             season: 5,
             items: [
-              524862116, // Forged Machinist Helm
-              89175933, // Forged Machinist Gauntlets
-              866063619, // Forged Machinist Plate
-              2413328031, // Forged Machinist Greaves
-              4059853946 // Forged Machinist Mark
+              578189287, // Forged Machinist Helm
+              2819858798, // Forged Machinist Gauntlets
+              449270146, // Forged Machinist Plate
+              607969640, // Forged Machinist Greaves
+              3968233427 // Forged Machinist Mark
             ]
           },
           {
             name: 'Warlock Armor',
             season: 5,
             items: [
-              2389815461, // Annealed Shaper Crown
-              3128915572, // Annealed Shaper Gloves
-              2153602188, // Annealed Shaper Robes
-              3416654206, // Annealed Shaper Boots
-              91359169 // Annealed Shaper Bond
+              2668526660, // Annealed Shaper Crown
+              2615721245, // Annealed Shaper Gloves
+              2011267747, // Annealed Shaper Robes
+              261922239, // Annealed Shaper Boots
+              1293074586 // Annealed Shaper Bond
             ]
           },
           {
@@ -1031,11 +1031,11 @@ export default ([
             season: 7,
             itemGroups: [
               [
-                2172333833, // EXODUS DOWN MASK
-                3875829376, // EXODUS DOWN GRIPS
-                126418248, // EXODUS DOWN VEST
-                2953649850, // EXODUS DOWN STRIDES
-                2252973221 // EXODUS DOWN CLOAK
+                3968652888, // EXODUS DOWN MASK
+                137386025, // EXODUS DOWN GRIPS
+                2956080815, // EXODUS DOWN VEST
+                4258364155, // EXODUS DOWN STRIDES
+                374306366 // EXODUS DOWN CLOAK
               ],
               [
                 906236408, // OPULENT STALKER MASK
@@ -1054,11 +1054,11 @@ export default ([
             season: 7,
             itemGroups: [
               [
-                582151075, // EXODUS DOWN HELM
-                1678216306, // EXODUS DOWN GAUNTLETS
-                1156448694, // EXODUS DOWN
-                2079454604, // EXODUS DOWN GREAVES
-                527652447 // EXODUS DOWN MARK
+                413767702, // EXODUS DOWN HELM
+                1617861351, // EXODUS DOWN GAUNTLETS
+                1092747537, // EXODUS DOWN PLATE
+                370667049, // EXODUS DOWN GREAVES
+                3288177452 // EXODUS DOWN MARK
               ],
               [
                 1420117606, // OPULENT DUELIST HELM
@@ -1077,11 +1077,11 @@ export default ([
             season: 7,
             itemGroups: [
               [
-                2731698402, // EXODUS DOWN HOOD
-                2029766091, // EXODUS DOWN GLOVES
-                2218838661, // EXODUS DOWN ROBES
-                3545981149, // EXODUS DOWN BOOTS
-                874856664 // EXODUS DOWN BOND
+                280471817, // EXODUS DOWN HOOD
+                1983967360, // EXODUS DOWN GLOVES
+                2210204488, // EXODUS DOWN ROBES
+                1061787834, // EXODUS DOWN BOOTS
+                41792165 // EXODUS DOWN BOND
               ],
               [
                 831222279, // OPULENT SCHOLAR HOOD
@@ -1222,33 +1222,33 @@ export default ([
             name: 'Hunter Armor',
             season: 4,
             items: [
-              2276115770, // Scatterhorn Mask
-              218523139, // Scatterhorn Grasps
-              307138509, // Scatterhorn Vest
-              2563857333, // Scatterhorn Strides
-              2757593792 // Scatterhorn Cloak
+              1164347863, // Scatterhorn Mask
+              237758814, // Scatterhorn Grasps
+              4044826514, // Scatterhorn Vest
+              1081701944, // Scatterhorn Strides
+              345100195 // Scatterhorn Cloak
             ]
           },
           {
             name: 'Titan Armor',
             season: 4,
             items: [
-              1862088022, // Scatterhorn Helm
-              3066181671, // Scatterhorn Gauntlets
-              3871458129, // Scatterhorn Plate
-              2243444841, // Scatterhorn Greaves
-              1347463276 // Scatterhorn Mark
+              822537185, // Scatterhorn Helm
+              1660456696, // Scatterhorn Gauntlets
+              3340244240, // Scatterhorn Plate
+              3990691634, // Scatterhorn Greaves
+              2267399501 // Scatterhorn Mark
             ]
           },
           {
             name: 'Warlock Armor',
             season: 4,
             items: [
-              2411325265, // Scatterhorn Hood
-              1069453608, // Scatterhorn Wraps
-              1250571424, // Scatterhorn Robe
-              1704861826, // Scatterhorn Boots
-              177829853 // Scatterhorn Bond
+              3682059404, // Scatterhorn Hood
+              2877933893, // Scatterhorn Wraps
+              1222559003, // Scatterhorn Robe
+              3225160391, // Scatterhorn Boots
+              3874345778 // Scatterhorn Bond
             ]
           },
           {
