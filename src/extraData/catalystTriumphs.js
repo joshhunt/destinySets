@@ -22,6 +22,7 @@ export default {
   3856705927: 1107121513, // Hawkmoon
   1594120904: 2708727662, // No Time to Explain
   3654674561: 15917031, // Dead Man's Tale
+  603721696: 250211794, // Cryosthesia 77K
 
   // Energy weapons
   4190156464: 4178028503, // Merciless
@@ -46,7 +47,6 @@ export default {
   1363238943: 3567687058, // Ruinous Effigy
   3460576091: 2135780490, // Duality
   3260753130: 1833569807, // Ticuu's Divination
-  603721696: 3972260545, // Cryosthesia 77K
   4289226715: 507778024, // Vex Mythoclast
 
   // Heavy weapons
