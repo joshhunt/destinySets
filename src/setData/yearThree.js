@@ -2412,8 +2412,8 @@ export default ([
               3528646494, // Waking Nightmare
               // 3528646493, // NS81 Reprisal Sprint (Not planned to be sold for Bright Dust)
               3528646492, // Solar Sails
-              3528646491 // Arrow of Time
-              // 3528646490, // Knucklebug (Not planned to be sold for Bright Dust)
+              3528646491, // Arrow of Time
+              3528646490 // Knucklebug
               // 3528646489 // Saint's Vocation (Not planned to be sold for Bright Dust)
             ]
           },
