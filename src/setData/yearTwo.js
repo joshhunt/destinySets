@@ -2280,7 +2280,7 @@ export default ([
                 2783100859, // QUEEN COBRA
                 3211076406, // BLUED STEEL
                 3105540650, // ~FLEX ENHANCE REPLICATE~
-                // 1011994721, // JIĀN (Wasn't sold for Bright Dust)
+                1011994721, // JIĀN (Wasn't sold for Bright Dust)
                 1984736607, // CADUCEUS
                 2986573526 // ELECTROMAG STABILIZERS
               ]
