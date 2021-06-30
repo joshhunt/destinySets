@@ -57,7 +57,7 @@ export default function Objectives(props) {
     objectiveInstances,
     trackedStatStyle,
     onlyIncomplete,
-    showObjectivesAsCompletedOverride
+    showObjectivesAsCompletedOverride // For Solstice page
   } = props;
 
   if (!((objectives || objectiveHashes) && objectiveDefs)) {
@@ -119,7 +119,7 @@ export default function Objectives(props) {
                 completionValue={completionValue}
                 showObjectivesAsCompletedOverride={
                   showObjectivesAsCompletedOverride
-                }
+                } // For Solstice page
               />
             </div>
           </div>
