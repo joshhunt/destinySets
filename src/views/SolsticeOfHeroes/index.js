@@ -16,17 +16,17 @@ import Objectives from 'app/components/Objectives';
 
 import s from './styles.styl';
 
-const RENEWED_HUNTER = 2574248771;
-const RENEWED_TITAN = 2963102071;
-const RENEWED_WARLOCK = 1482613376;
+const RENEWED_HUNTER = 3270435520;
+const RENEWED_TITAN = 689787436;
+const RENEWED_WARLOCK = 2223917119;
 
-const MAJESTIC_HUNTER = 2574248768;
-const MAJESTIC_TITAN = 2963102068;
-const MAJESTIC_WARLOCK = 1482613379;
+const MAJESTIC_HUNTER = 3270435523;
+const MAJESTIC_TITAN = 689787439;
+const MAJESTIC_WARLOCK = 2223917116;
 
-const MAGNIFICENT_HUNTER = 2574248769;
-const MAGNIFICENT_TITAN = 2963102069;
-const MAGNIFICENT_WARLOCK = 1482613378;
+const MAGNIFICENT_HUNTER = 3270435522;
+const MAGNIFICENT_TITAN = 689787438;
+const MAGNIFICENT_WARLOCK = 2223917117;
 
 const RENEWED = [RENEWED_HUNTER, RENEWED_TITAN, RENEWED_WARLOCK];
 const MAJESTIC = [MAJESTIC_HUNTER, MAJESTIC_TITAN, MAJESTIC_WARLOCK];
@@ -149,6 +149,9 @@ function Gear({
             objectiveHashes={objectiveHashes}
             objectiveInstances={objectiveInstances}
             objectiveDefs={objectiveDefs}
+            showObjectivesAsCompletedOverride={
+              isObjectivesComplete ? true : false
+            }
           />
         )}
 
