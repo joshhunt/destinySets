@@ -6,7 +6,13 @@ import styles from './styles.styl';
 
 const FRACTION = 1;
 
-function ObjectiveValue({ objective, def, trackedStatStyle, completionValue }) {
+function ObjectiveValue({
+  objective,
+  def,
+  trackedStatStyle,
+  completionValue,
+  showObjectivesAsCompletedOverride
+}) {
   const { valueStyle } = def;
   let value;
 
@@ -23,7 +29,11 @@ function ObjectiveValue({ objective, def, trackedStatStyle, completionValue }) {
       <input type="checkbox" checked={objective.progress >= 1} readOnly />
     );
   } else {
-    value = (
+    value = showObjectivesAsCompletedOverride ? (
+      <span>
+        {completionValue} / {completionValue}
+      </span>
+    ) : (
       <span>
         {objective.progress || 0} / {completionValue}
       </span>
@@ -46,7 +56,8 @@ export default function Objectives(props) {
     objectiveDefs,
     objectiveInstances,
     trackedStatStyle,
-    onlyIncomplete
+    onlyIncomplete,
+    showObjectivesAsCompletedOverride // For Solstice page
   } = props;
 
   if (!((objectives || objectiveHashes) && objectiveDefs)) {
@@ -89,10 +100,12 @@ export default function Objectives(props) {
             <div
               className={styles.objectiveTrack}
               style={{
-                width: `${Math.min(
-                  (objective.progress / completionValue) * 100,
-                  100
-                )}%`
+                width: showObjectivesAsCompletedOverride
+                  ? `100%`
+                  : `${Math.min(
+                      (objective.progress / completionValue) * 100,
+                      100
+                    )}%`
               }}
             />
 
@@ -104,6 +117,9 @@ export default function Objectives(props) {
                 def={objective.def}
                 trackedStatStyle={trackedStatStyle}
                 completionValue={completionValue}
+                showObjectivesAsCompletedOverride={
+                  showObjectivesAsCompletedOverride
+                } // For Solstice page
               />
             </div>
           </div>

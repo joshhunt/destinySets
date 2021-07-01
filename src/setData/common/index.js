@@ -564,9 +564,7 @@ export const SOLSTICE_OF_HEROES_YEAR_4 = {
     {
       name: 'Weapons',
       season: 14,
-      items: [
-        //2591111628 // Not 100% about this
-      ]
+      items: [2591111628]
     },
     {
       name: 'Hunter Armor',
