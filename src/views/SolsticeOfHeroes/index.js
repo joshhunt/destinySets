@@ -195,7 +195,7 @@ function SolsticeOfHeroes({
 
   return (
     <div className={s.page}>
-      <h1 className={s.heading}>Solstice of Heroes 2020</h1>
+      <h1 className={s.heading}>Solstice of Heroes 2021</h1>
 
       {!viewData.length ? <p className={s.loading}>Loading...</p> : null}
 
