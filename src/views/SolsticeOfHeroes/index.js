@@ -202,9 +202,8 @@ function SolsticeOfHeroes({
       {!viewData.length ? null : (
         <p className={s.explainer}>
           Complete all objectives on all items in a set to unlock the next set.
-          Complete objectives on Magnificent gear to masterwork it, unlock its
-          white glow and unlock access to buy subclass colored glows from
-          Eververse.
+          Complete objectives on Magnificent gear to unlock its white glow and
+          unlock access to buy subclass colored glows from Eververse.
         </p>
       )}
 

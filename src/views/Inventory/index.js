@@ -124,8 +124,8 @@ class Inventory extends Component {
 
             <p>
               Use Destiny Sets to pursue limited-time Solstice-themed armor sets
-              and track your progress unlocking and obtaining glows for all your
-              Solstice of Heroes 2021 armor.
+              and track your progress unlocking and obtaining white glows for
+              all your Solstice of Heroes 2021 armor.
             </p>
 
             <Link className={styles.solsticeCta} to="/solstice">
