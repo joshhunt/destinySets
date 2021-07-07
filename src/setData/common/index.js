@@ -600,7 +600,7 @@ export const SOLSTICE_OF_HEROES_YEAR_4 = {
       name: 'Emotes',
       season: 14,
       itemGroups: [
-        [],
+        [3157963939, 3326173065, 2214129016, 1020589069, 2255318456],
         [
           // 130305507
         ]
@@ -614,12 +614,12 @@ export const SOLSTICE_OF_HEROES_YEAR_4 = {
     {
       name: 'Sparrows',
       season: 14,
-      items: [2795689399, 2795689398]
+      items: [2795689398, 2795689399]
     },
     {
       name: 'Ships',
       season: 14,
-      items: [2988472427, 2988472426]
+      items: [2988472426, 2988472427]
     },
     {
       name: 'Extras',
