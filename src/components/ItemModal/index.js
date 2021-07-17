@@ -14,6 +14,8 @@ import ExtraInfo from 'app/components/ExtraInfo';
 import ChaliceRecipie from 'app/components/ChaliceRecipie';
 import ishtarSvg from 'app/ishar.svg';
 
+import { makeItemDefSelector } from 'app/components/Item/selectors';
+
 import CHALICE_DATA from 'app/extraData/chalice';
 
 import {
@@ -32,7 +34,8 @@ import {
   makeItemInventoryEntrySelector,
   makeItemVendorEntrySelector,
   makeItemPerksSelector,
-  makeItemPresentationSelector
+  makeItemPresentationSelector,
+  makeBetterItemVendorEntrySelector
 } from 'app/store/selectors';
 
 import styles from './styles.styl';
@@ -45,17 +48,17 @@ class ItemModalContent extends Component {
       item,
       displayItem,
       itemInventoryEntry,
+      richVendorEntry,
       objectiveInstances,
       objectiveDefs,
       toggleManuallyObtained,
       forgetDismantled,
       collectionInventory,
-      vendorEntry,
       collectible,
       perks
     } = this.props;
 
-    const { hash, screenshot, itemCategoryHashes, loreHash } = item;
+    const { hash, screenshot, itemCategoryHashes, loreHash, flavorText } = item;
     const { displayProperties } = displayItem || item;
 
     const ishtarLink =
@@ -100,6 +103,10 @@ class ItemModalContent extends Component {
 
         {displayProperties.description && (
           <p className={styles.description}>{displayProperties.description}</p>
+        )}
+
+        {flavorText !== '' && (
+          <p className={styles.description}>{flavorText}</p>
         )}
 
         {perks && perks.length > 0 && (
@@ -192,7 +199,7 @@ class ItemModalContent extends Component {
           className={styles.extraInfo}
           item={item}
           inventoryEntry={itemInventoryEntry}
-          vendorEntry={vendorEntry}
+          richVendorEntry={richVendorEntry}
           inCollection={collectionInventory[item.hash]}
         />
       </div>
@@ -221,9 +228,23 @@ const mapStateToProps = () => {
   const itemVendorEntrySelector = makeItemVendorEntrySelector();
   const itemPerksSelector = makeItemPerksSelector();
   const itemPresentationSelector = makeItemPresentationSelector();
+  const itemDefSelector = makeItemDefSelector();
+  const betterItemVendorEntrySelector = makeBetterItemVendorEntrySelector();
 
   return (state, ownProps) => {
+    const vendorEntry = betterItemVendorEntrySelector(state, ownProps);
     const item = itemSelector(state, ownProps);
+
+    const richVendorEntries = vendorEntry.map(ve => ({
+      ...ve,
+      costs: ve.costs.map(cost => ({
+        ...cost,
+        item: itemDefSelector(state, {
+          itemHash: cost.itemHash
+        })
+      }))
+    }));
+
     return {
       objectiveInstances: objectiveInstancesSelector(state),
       objectiveDefs: objectiveDefsSelector(state),
@@ -239,7 +260,8 @@ const mapStateToProps = () => {
           item && item.collectibleHash
         ],
       perks: itemPerksSelector(state, ownProps),
-      displayItem: itemPresentationSelector(state, ownProps)
+      displayItem: itemPresentationSelector(state, ownProps),
+      richVendorEntry: richVendorEntries
     };
   };
 };

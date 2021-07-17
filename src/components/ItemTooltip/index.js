@@ -53,7 +53,7 @@ function ItemTooltip({
     return null;
   }
 
-  const { itemCategoryHashes, loreHash } = item;
+  const { itemCategoryHashes, loreHash, flavorText } = item;
   const { displayProperties } = displayItem;
 
   const isEmblem = (itemCategoryHashes || []).includes(EMBLEM);
@@ -93,6 +93,16 @@ function ItemTooltip({
                 {displayProperties.description}
               </p>
             )}
+          </div>
+        )}
+
+        {flavorText && (
+          <div className={styles.section}>
+            {!small && (
+              <ItemAttributes className={styles.itemAttributes} item={item} />
+            )}
+
+            {flavorText && <p className={styles.description}>{flavorText}</p>}
           </div>
         )}
 

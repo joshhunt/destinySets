@@ -49,7 +49,7 @@ export function getFriendlyItemLocation(instance) {
     masterworkLocations.includes(instance.location) &&
     instance.itemState & MASTERWORK_FLAG
   ) {
-    location = `${location} & masterworked`;
+    location = `${location} & Masterworked`;
   }
 
   return location;
