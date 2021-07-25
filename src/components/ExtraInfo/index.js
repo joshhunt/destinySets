@@ -63,7 +63,7 @@ function ExtraInfo({
               </span>{' '}
               Available from{' '}
               {vendor ? vendor.displayProperties.name : 'unknown vendor'}
-              {ve.costs.length && (
+              {ve.costs.length > 0 && (
                 <span>
                   {' for '}
 
