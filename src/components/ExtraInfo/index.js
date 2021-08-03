@@ -49,6 +49,9 @@ function ExtraInfo({
 
   return (
     <div className={className}>
+      {extraInfo.map((info, index) => (
+        <div key={index}>{info}</div>
+      ))}
       {richVendorEntry &&
         richVendorEntry.map((ve, index) => {
           const vendor = vendorDefs[ve.vendorHash];
@@ -60,7 +63,7 @@ function ExtraInfo({
               </span>{' '}
               Available from{' '}
               {vendor ? vendor.displayProperties.name : 'unknown vendor'}
-              {ve.costs.length && (
+              {ve.costs.length > 0 && (
                 <span>
                   {' for '}
 
@@ -79,10 +82,6 @@ function ExtraInfo({
             </div>
           );
         })}
-
-      {extraInfo.map((info, index) => (
-        <div key={index}>{info}</div>
-      ))}
     </div>
   );
 }

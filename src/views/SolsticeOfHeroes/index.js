@@ -158,6 +158,7 @@ function Gear({
             showObjectivesAsCompletedOverride={
               isObjectivesComplete ? true : false
             }
+            viewAllObjectives={viewAllObjectives}
           />
         )}
 
@@ -191,7 +192,7 @@ function SolsticeOfHeroes({
     return () => window.clearInterval(intervalId);
   }, []);
 
-  const [viewAllObjectives, setViewAllObjectives] = useState();
+  const [viewAllObjectives = false, setViewAllObjectives] = useState();
 
   return (
     <div className={s.page}>
@@ -213,7 +214,7 @@ function SolsticeOfHeroes({
           onClick={() => setViewAllObjectives(!viewAllObjectives)}
         >
           {viewAllObjectives
-            ? 'View only relevent objectives'
+            ? 'View only relevant objectives'
             : 'View all objectives'}
         </button>
       )}
@@ -332,8 +333,7 @@ function mapStateToProps(state) {
 
           const upgradedInventoryEntry =
             inventory[FINISHED_IF_MAP[presentationNodeHash]] &&
-            inventory[FINISHED_IF_MAP[presentationNodeHash]].checklisted !==
-              null
+            inventory[FINISHED_IF_MAP[presentationNodeHash]].checklisted
               ? inventory[FINISHED_IF_MAP[presentationNodeHash]].checklisted
               : false;
 

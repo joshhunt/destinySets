@@ -57,7 +57,8 @@ export default function Objectives(props) {
     objectiveInstances,
     trackedStatStyle,
     onlyIncomplete,
-    showObjectivesAsCompletedOverride // For Solstice page
+    showObjectivesAsCompletedOverride, // For Solstice page
+    viewAllObjectives // For Solstice page
   } = props;
 
   if (!((objectives || objectiveHashes) && objectiveDefs)) {
@@ -95,35 +96,51 @@ export default function Objectives(props) {
           ? objective.completionValue
           : objective.def.completionValue;
 
-        return (
-          <div className={styles.objective} key={index}>
+        const objectivePercentage = showObjectivesAsCompletedOverride
+          ? 100
+          : Math.min((objective.progress / completionValue) * 100, 100);
+
+        const objectiveComplete = objectivePercentage === 100 ? true : false;
+
+        if (
+          viewAllObjectives === undefined ||
+          viewAllObjectives === true ||
+          (viewAllObjectives === false && !objectiveComplete)
+        ) {
+          return (
             <div
-              className={styles.objectiveTrack}
-              style={{
-                width: showObjectivesAsCompletedOverride
-                  ? `100%`
-                  : `${Math.min(
-                      (objective.progress / completionValue) * 100,
-                      100
-                    )}%`
-              }}
-            />
-
-            <div className={styles.objectiveText}>
-              <div>{objective.def.progressDescription}</div>
-
-              <ObjectiveValue
-                objective={objective}
-                def={objective.def}
-                trackedStatStyle={trackedStatStyle}
-                completionValue={completionValue}
-                showObjectivesAsCompletedOverride={
-                  showObjectivesAsCompletedOverride
-                } // For Solstice page
+              className={cx(
+                styles.objective
+                // objectiveComplete && styles.completedObjective,
+                // showObjectivesAsCompletedOverride && styles.completedObjective
+              )}
+              key={index}
+            >
+              <div
+                className={styles.objectiveTrack}
+                style={{
+                  width: showObjectivesAsCompletedOverride
+                    ? `100%`
+                    : `${objectivePercentage}%`
+                }}
               />
+
+              <div className={styles.objectiveText}>
+                <div>{objective.def.progressDescription}</div>
+
+                <ObjectiveValue
+                  objective={objective}
+                  def={objective.def}
+                  trackedStatStyle={trackedStatStyle}
+                  completionValue={completionValue}
+                  showObjectivesAsCompletedOverride={
+                    showObjectivesAsCompletedOverride
+                  } // For Solstice page
+                />
+              </div>
             </div>
-          </div>
-        );
+          );
+        }
       })}
 
       {onlyIncomplete && numCompleted > 0 && (

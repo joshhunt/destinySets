@@ -111,7 +111,7 @@ class Inventory extends Component {
             performed.
           </p>
         </div> */}
-        <div className={styles.solsticePromo}>
+        {/* <div className={styles.solsticePromo}>
           <div className={styles.solsticeBg} />
 
           <div className={styles.solsticePromoContent}>
@@ -132,7 +132,7 @@ class Inventory extends Component {
               Track your Solstice gear now
             </Link>
           </div>
-        </div>
+        </div> */}
 
         {filteredSetData.map(({ sets, noUi, slug, name }, index) => (
           <Section

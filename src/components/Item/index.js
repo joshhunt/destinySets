@@ -209,6 +209,12 @@ class Item extends PureComponent {
               </div>
             )}
 
+            {!inventoryEntry && firstVendorEntry && !firstSaleCurrency && (
+              <div className={cx(styles.purchasable, styles.noCurrency)}>
+                <Icon name="dollar-sign" />
+              </div>
+            )}
+
             {!inventoryEntry && firstVendorEntry && firstSaleCurrency && (
               <div
                 className={cx(
