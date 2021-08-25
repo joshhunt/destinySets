@@ -23,6 +23,7 @@ export default {
   1594120904: 2708727662, // No Time to Explain
   3654674561: 15917031, // Dead Man's Tale
   603721696: 250211794, // Cryosthesia 77K
+  1853180924: 571025162, // Traveler's Chosen
 
   // Energy weapons
   4190156464: 4178028503, // Merciless
@@ -48,6 +49,7 @@ export default {
   3460576091: 2135780490, // Duality
   3260753130: 1833569807, // Ticuu's Divination
   4289226715: 507778024, // Vex Mythoclast
+  3761898871: 2329638530, // Lorentz Driver
 
   // Heavy weapons
   3549153979: 3371896300, // The Prospector
