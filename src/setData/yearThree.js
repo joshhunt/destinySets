@@ -2117,7 +2117,7 @@ export default ([
                 1141309169, // Flare Gun
                 1422833575, // Give Dap
                 1300438173, // Happy Feet
-                // 3702002191, // Be Sneaky (Not planned to be sold for Bright Dust)
+                3702002191, // Be Sneaky
                 248592690, // Eat It Up
                 991204036, // Make It Stop
                 88498859 // Too Hot
