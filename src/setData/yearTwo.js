@@ -2296,6 +2296,7 @@ export default ([
               132405572, // All Alone'
               704532774, // Sad Trombone'
               1332836182, // Unbridled Enthusiasm
+              1617583310, // Standoff
               3256616328, // Accidental Dance
               4080789277, // Beguiling Dance'
               2604685098, // Linear Fusion Dance'
@@ -2647,6 +2648,7 @@ export default ([
             name: 'Ships',
             season: 6,
             items: [
+              554648945, // Black Peregrine
               554648944, // Skulking Fox
               554648947, // Threat Display
               4063523622, // Vimana-S

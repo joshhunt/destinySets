@@ -8,8 +8,9 @@ const ELEMENTAL_DAMAGE_CLASS = {
   1: s.kineticDamage,
   2: s.arcDamage,
   3: s.solarDamage,
-  4: s.voidDamage
+  4: s.voidDamage,
   // 5: Raid,
+  6: s.stasisDamage
 };
 
 const AMMO_TYPE = {
@@ -53,7 +54,9 @@ export default function ItemAttributes({ className, item }) {
     <div className={cx(className, s.root)}>
       {elementalDamageClass && (
         <div className={elementalDamageClass}>
-          <div className={s.elementalDamageIcon} />
+          {item.damageTypes[0] && item.damageTypes[0] !== 1 && (
+            <div className={s.elementalDamageIcon} />
+          )}
           <div>600</div>
         </div>
       )}
