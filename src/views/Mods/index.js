@@ -20,7 +20,8 @@ const ELEMENT_CLASS_NAME = {
   1198124803: s.Any,
   728351493: s.Arc,
   591714140: s.Solar,
-  4069572561: s.Void
+  4069572561: s.Void,
+  1819698290: s.Stasis
 };
 
 function Search({ className, ...props }) {

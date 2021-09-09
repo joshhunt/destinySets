@@ -91,7 +91,8 @@ const SORTED_ENERGY_TYPES = [
   '1198124803', // Any
   '728351493', // Arc
   '591714140', // Solar
-  '4069572561' // Void
+  '4069572561', // Void
+  '1819698290' // Stasis
 ];
 
 const SORTED_PRIMARY_CATEGORIES = [

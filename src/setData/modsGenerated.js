@@ -143,6 +143,23 @@ export default [
                 ]
               }
             ]
+          },
+          {
+            name: "Stasis",
+            nameHash: 1819698290,
+            itemGroups: [
+              [
+                3638321667 // Power Preservation
+              ]
+            ],
+            groups: [
+              {
+                name: "General",
+                items: [
+                  3638321667 // Power Preservation
+                ]
+              }
+            ]
           }
         ]
       },
@@ -322,6 +339,25 @@ export default [
                 ]
               }
             ]
+          },
+          {
+            name: "Stasis",
+            nameHash: 1819698290,
+            itemGroups: [
+              [
+                47859594, // Grenade Kickstart
+                1371877916 // Melee Kickstart
+              ]
+            ],
+            groups: [
+              {
+                name: "General",
+                items: [
+                  47859594, // Grenade Kickstart
+                  1371877916 // Melee Kickstart
+                ]
+              }
+            ]
           }
         ]
       },
@@ -461,6 +497,23 @@ export default [
                 name: "General",
                 items: [
                   107977982 // Void Resistance
+                ]
+              }
+            ]
+          },
+          {
+            name: "Stasis",
+            nameHash: 1819698290,
+            itemGroups: [
+              [
+                3176563510 // Stasis Resistance
+              ]
+            ],
+            groups: [
+              {
+                name: "General",
+                items: [
+                  3176563510 // Stasis Resistance
                 ]
               }
             ]
@@ -610,6 +663,23 @@ export default [
                 ]
               }
             ]
+          },
+          {
+            name: "Stasis",
+            nameHash: 1819698290,
+            itemGroups: [
+              [
+                1985887424 // Orbs of Restoration
+              ]
+            ],
+            groups: [
+              {
+                name: "General",
+                items: [
+                  1985887424 // Orbs of Restoration
+                ]
+              }
+            ]
           }
         ]
       },
@@ -716,6 +786,25 @@ export default [
                   4137020505, // Perpetuation
                   4237638088, // Bulwark Finisher
                   4055766573 // Utility Finisher
+                ]
+              }
+            ]
+          },
+          {
+            name: "Stasis",
+            nameHash: 1819698290,
+            itemGroups: [
+              [
+                445559589, // Utility Kickstart
+                958741637 // Restorative Finisher
+              ]
+            ],
+            groups: [
+              {
+                name: "General",
+                items: [
+                  445559589, // Utility Kickstart
+                  958741637 // Restorative Finisher
                 ]
               }
             ]
@@ -1221,6 +1310,29 @@ export default [
                   518521232, // Precise Oracle Disruptor
                   518521233, // Vex Striker
                   518521234 // Superstructure Defender
+                ]
+              }
+            ]
+          },
+          {
+            name: "Stasis",
+            nameHash: 1819698290,
+            itemGroups: [
+              [
+                1977242753, // Supreme Wellmaker
+                1977242752, // Elemental Shards
+                1977242755, // Well of Restoration
+                1977242754 // Elemental Time Dilation
+              ]
+            ],
+            groups: [
+              {
+                name: "H.E.L.M.",
+                items: [
+                  1977242753, // Supreme Wellmaker
+                  1977242752, // Elemental Shards
+                  1977242755, // Well of Restoration
+                  1977242754 // Elemental Time Dilation
                 ]
               }
             ]

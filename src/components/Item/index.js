@@ -88,7 +88,8 @@ export const ITEM_ELEMENT_CLASS_NAME = {
   3578062600: styles.itemAny,
   3779394102: styles.itemArc,
   3344745325: styles.itemSolar,
-  2399985800: styles.itemVoid
+  2399985800: styles.itemVoid,
+  998798867: styles.itemStasis
 };
 
 class Item extends PureComponent {
