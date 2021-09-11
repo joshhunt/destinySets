@@ -33,67 +33,67 @@
 // ];
 
 export const RECKONING_ILLICIT_SENTRY_HUNTER = [
-  3280699112, // Illicit Sentry Mask
-  2628033401, // Illicit Sentry Grips
-  3998122207, // Illicit Sentry Vest
-  1225148523, // Illicit Sentry Strides
-  950313582 // Illicit Sentry Cloak
+  1000646860, // Illicit Sentry Mask
+  154944645, // Illicit Sentry Grips
+  2655279451, // Illicit Sentry Vest
+  77816839, // Illicit Sentry Strides
+  1394979698 // Illicit Sentry Cloak
 ];
 
 export const RECKONING_ILLICIT_COLLECTOR_HUNTER = [
-  1722308938, // Illicit Collector Mask
-  1769446803, // Illicit Collector Grips
-  2082319037, // Illicit Collector Vest
-  1504400869, // Illicit Collector Strides
-  3585883632 // Illicit Collector Cloak
+  1654117930, // Illicit Collector Mask
+  1659679091, // Illicit Collector Grips
+  2447741853, // Illicit Collector Vest
+  1394633029, // Illicit Collector Strides
+  3909729744 // Illicit Collector Cloak
 ];
 
 export const RECKONING_ILLICIT_REAPER_HUNTER = [
-  3639906116, // Illicit Reaper Mask
-  3587100701, // Illicit Reaper Grips
-  2635164579, // Illicit Reaper Vest
-  1233301695, // Illicit Reaper Strides
-  1916971418 // Illicit Reaper Cloak
+  4144123204, // Illicit Reaper Mask
+  4091317789, // Illicit Reaper Grips
+  3971188131, // Illicit Reaper Vest
+  1737518783, // Illicit Reaper Strides
+  3252994970 // Illicit Reaper Cloak
 ];
 
 export const RECKONING_ILLICIT_INVADER_HUNTER = [
-  493448176, // Illicit Invader Mask
-  249655105, // Illicit Invader Grips
-  4053228823, // Illicit Invader Vest
-  1320043187, // Illicit Invader Strides
-  1886580966 // Illicit Invader Cloak
+  3146160048, // Illicit Invader Mask
+  2943943681, // Illicit Invader Grips
+  3597838551, // Illicit Invader Vest
+  143821939, // Illicit Invader Strides
+  1431190694 // Illicit Invader Cloak
 ];
 
 export const RECKONING_ILLICIT_INVADER_TITAN = [
-  200738236, // Illicit Invader Helm
-  1555512373, // Illicit Invader Gauntlets
-  386784171, // Illicit Invader Plate
-  3131634455, // Illicit Invader Greaves
-  3038467650 // Illicit Invader Mark
+  1854337492, // Illicit Invader Helm
+  685165933, // Illicit Invader Gauntlets
+  2731689491, // Illicit Invader Plate
+  931507503, // Illicit Invader Greaves
+  1066605642 // Illicit Invader Mark
 ];
 
 export const RECKONING_ILLICIT_SENTRY_TITAN = [
-  1698832196, // Illicit Sentry Helm
-  1646026781, // Illicit Sentry Gauntlets
-  2066422691, // Illicit Sentry Plate
-  3587195071, // Illicit Sentry Greaves
-  1348229530 // Illicit Sentry Mark
+  1630402260, // Illicit Sentry Helm
+  2320491441, // Illicit Sentry Gauntlets
+  3423777255, // Illicit Sentry Plate
+  2151744259, // Illicit Sentry Greaves
+  4139274998 // Illicit Sentry Mark
 ];
 
 export const RECKONING_ILLICIT_REAPER_TITAN = [
-  360521696, // Illicit Reaper Helm
-  2263035825, // Illicit Reaper Gauntlets
-  1744000487, // Illicit Reaper Plate
-  2094288643, // Illicit Reaper Greaves
-  2459498230 // Illicit Reaper Mark
+  1909470440, // Illicit Reaper Helm
+  1256804729, // Illicit Reaper Gauntlets
+  1148781279, // Illicit Reaper Plate
+  4148887147, // Illicit Reaper Greaves
+  2395939950 // Illicit Reaper Mark
 ];
 
 export const RECKONING_ILLICIT_COLLECTOR_TITAN = [
-  2525623542, // Illicit Collector Helm
-  3729613895, // Illicit Collector Gauntlets
-  4120018289, // Illicit Collector Plate
-  2482419593, // Illicit Collector Greaves
-  1978904076 // Illicit Collector Mark
+  1266712686, // Illicit Collector Helm
+  2716373471, // Illicit Collector Gauntlets
+  274659609, // Illicit Collector Plate
+  1637623713, // Illicit Collector Greaves
+  1630402260 // Illicit Collector Mark
 ];
 
 export const RECKONING_OUTLAWED_INVADER_TITAN = [
@@ -257,35 +257,35 @@ export const RECKONING_OUTLAWED_SENTRY_WARLOCK = [
 ];
 
 export const RECKONING_ILLICIT_REAPER_WARLOCK = [
-  2030998601, // Illicit Reaper Hood
-  3734494144, // Illicit Reaper Gloves
-  2966502280, // Illicit Reaper Robes
-  2429433850, // Illicit Reaper Boots
-  373632485 // Illicit Reaper Bond
+  2013313923, // Illicit Reaper Hood
+  3150852690, // Illicit Reaper Gloves
+  1852587798, // Illicit Reaper Robes
+  3552091116, // Illicit Reaper Boots
+  1182214975 // Illicit Reaper Bond
 ];
 
 export const RECKONING_ILLICIT_INVADER_WARLOCK = [
-  2342017355, // Illicit Invader Hood
-  239713978, // Illicit Invader Gloves
-  1258016014, // Illicit Invader Robes
-  1920643316, // Illicit Invader Boots
-  1576110551 // Illicit Invader Bond
+  3731378629, // Illicit Invader Hood
+  175511444, // Illicit Invader Gloves
+  727872428, // Illicit Invader Robes
+  38792606, // Illicit Invader Boots
+  3426527713 // Illicit Invader Bond
 ];
 
 export const RECKONING_ILLICIT_SENTRY_WARLOCK = [
-  1823966645, // Illicit Sentry Hood
-  458336260, // Illicit Sentry Gloves
-  2765681916, // Illicit Sentry Robes
-  2005998382, // Illicit Sentry Boots
-  4051618673 // Illicit Sentry Bond
+  1262430251, // Illicit Sentry Hood
+  3838077978, // Illicit Sentry Gloves
+  844443758, // Illicit Sentry Robes
+  1265513556, // Illicit Sentry Boots
+  1586892599 // Illicit Sentry Bond
 ];
 
 export const RECKONING_ILLICIT_COLLECTOR_WARLOCK = [
-  359531057, // Illicit Collector Hood
-  3271153032, // Illicit Collector Gloves
-  4174424192, // Illicit Collector Robes
-  77525090, // Illicit Collector Boots
-  3526140221 // Illicit Collector Bond
+  3638406027, // Illicit Collector Hood
+  1960663290, // Illicit Collector Gloves
+  2195587150, // Illicit Collector Robes
+  3641592628, // Illicit Collector Boots
+  2938035991 // Illicit Collector Bond
 ];
 
 export const RECKONING_NOTORIOUS_REAPER_WARLOCK = [

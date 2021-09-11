@@ -733,33 +733,33 @@ export default ([
             name: 'Hunter Armor',
             season: 3,
             items: [
-              3324158902, // Abhorrent Imperative Mask
-              191708423, // Abhorrent Imperative Grasps
-              4138580785, // Abhorrent Imperative Vest
-              3663938889, // Abhorrent Imperative Strides
-              2039043276 // Abhorrent Imperative Cloak
+              3792637803, // Abhorrent Imperative Mask
+              2114894938, // Abhorrent Imperative Grasps
+              2320951982, // Abhorrent Imperative Vest
+              3371366804, // Abhorrent Imperative Strides
+              2639046519 // Abhorrent Imperative Cloak
             ]
           },
           {
             name: 'Titan Armor',
             season: 3,
             items: [
-              2193087628, // Midnight Exigent Helm
-              1388962117, // Midnight Exigent Gauntlets
-              2462354715, // Midnight Exigent Plate
-              1736188615, // Midnight Exigent Greaves
-              819174194 // Midnight Exigent Mark
+              508035927, // Midnight Exigent Helm
+              3876414174, // Midnight Exigent Gauntlets
+              3691605010, // Midnight Exigent Plate
+              425390008, // Midnight Exigent Greaves
+              4286845987 // Midnight Exigent Mark
             ]
           },
           {
             name: 'Warlock Armor',
             season: 3,
             items: [
-              1612891919, // Yuga Sundown Helmet
-              3768023958, // Yuga Sundown Gloves
-              4144095450, // Yuga Sundown Robes
-              685439088, // Yuga Sundown Boots
-              3792548907 // Yuga Sundown Bond
+              3126089918, // Yuga Sundown Helmet
+              2395959535, // Yuga Sundown Gloves
+              720656969, // Yuga Sundown Robes
+              2970562833, // Yuga Sundown Boots
+              2034926084 // Yuga Sundown Bond
             ]
           },
           {
@@ -927,15 +927,15 @@ export default ([
           },
           {
             name: 'Hunter Armor',
-            items: [2715114534, 1729074423, 1085797441, 3537609113, 1868302492]
+            items: [1707236192, 3609750321, 1156579431, 3441003139, 1872077174]
           },
           {
             name: 'Titan Armor',
-            items: [1370341044, 4071576013, 2523633779, 447407759, 434092458]
+            items: [1447990748, 2844341589, 2778321483, 125496503, 1135037794]
           },
           {
             name: 'Warlock Armor',
-            items: [1554079989, 229923140, 3388454204, 2160569198, 845354673]
+            items: [1980271175, 4221940686, 481073890, 2010051528, 129527347]
           },
           {
             name: 'Extras',
@@ -984,15 +984,15 @@ export default ([
           },
           {
             name: 'Hunter Armor',
-            items: [1607012852, 479417869, 2380978355, 1150216911, 291437034]
+            items: [784477316, 348791133, 1833326563, 2672840191, 732149466]
           },
           {
             name: 'Titan Armor',
-            items: [2930137294, 3955340735, 1847610489, 2876590849, 3586337076]
+            items: [1135037794, 1598597433, 1317716127, 237289259, 3030805806]
           },
           {
             name: 'Warlock Armor',
-            items: [2575848725, 1251692004, 2400621276, 2757777294, 3686454865]
+            items: [720513501, 3902367052, 832551956, 253235190, 2000839529]
           },
           {
             name: 'Extras',
@@ -1037,15 +1037,15 @@ export default ([
           },
           {
             name: 'Hunter Armor',
-            items: [4130486121, 1539014368, 3446606632, 192377242, 853736709]
+            items: [3968652888, 137386025, 2956080815, 4258364155, 374306366]
           },
           {
             name: 'Titan Armor',
-            items: [2736812653, 3855512540, 3654781892, 2816760678, 569678873]
+            items: [413767702, 1617861351, 1092747537, 370667049, 3288177452]
           },
           {
             name: 'Warlock Armor',
-            items: [3660228214, 569251271, 3951684081, 3617024265, 1810569868]
+            items: [280471817, 1983967360, 2210204488, 1061787834, 41792165]
           },
           {
             name: 'Extras',
@@ -1093,33 +1093,33 @@ export default ([
             name: 'Hunter Armor',
             season: 2,
             items: [
-              952071004, // Kairos Function Mask
-              2348421845, // Kairos Function Grips
-              2638643915, // Kairos Function Vest
-              3924544055, // Kairos Function Boots
-              995360226 // Kairos Function Cloak
+              3585812448, // Kairos Function Mask
+              1193359281, // Kairos Function Grips
+              161082855, // Kairos Function Vest
+              1024612099, // Kairos Function Boots
+              876580598 // Kairos Function Cloak
             ]
           },
           {
             name: 'Titan Armor',
             season: 2,
             items: [
-              1768175752, // Kairos Function Helm
-              1115510041, // Kairos Function Gauntlets
-              578519423, // Kairos Function Plate
-              4007592459, // Kairos Function Greaves
-              2250032270 // Kairos Function Mark
+              4182737364, // Kairos Function Helm
+              3013565805, // Kairos Function Gauntlets
+              479000083, // Kairos Function Plate
+              3259907375, // Kairos Function Greaves
+              3108883530 // Kairos Function Mark
             ]
           },
           {
             name: 'Warlock Armor',
             season: 2,
             items: [
-              2062911883, // Kairos Function Crown
-              385169146, // Kairos Function Wraps
-              2926606926, // Kairos Function Robes
-              2066098484, // Kairos Function Boots
-              3669055767 // Kairos Function Bond
+              149949001, // Kairos Function Crown
+              1853444544, // Kairos Function Wraps
+              817757576, // Kairos Function Robes
+              548384250, // Kairos Function Boots
+              2519855077 // Kairos Function Bond
             ]
           },
           {
@@ -1181,33 +1181,33 @@ export default ([
             name: 'Hunter Armor',
             season: 3,
             items: [
-              3792294545, // BrayTech Sn0Mask
-              2408846184, // BrayTech Survival Mitts
-              2656719840, // BrayTech Combat Vest
-              3510185410, // BrayTech Sn0Treads
-              1966755869 // BrayTech Winter Cloak
+              620774353, // BrayTech Sn0Mask
+              3573869992, // BrayTech Survival Mitts
+              3360543264, // BrayTech Combat Vest
+              4209278210, // BrayTech Sn0Treads
+              2287801693 // BrayTech Winter Cloak
             ]
           },
           {
             name: 'Titan Armor',
             season: 3,
             items: [
-              1751069659, // BrayTech Sn0Helm
-              3251824778, // BrayTech Thermal Grips
-              1002301118, // BrayTech Iron-Heart Engine
-              2291036836, // BrayTech Sn0Boots
-              756282439 // BrayTech Absolute Zero Mark
+              3240387365, // BrayTech Sn0Helm
+              3979487476, // BrayTech Thermal Grips
+              3484179468, // BrayTech Iron-Heart Engine
+              4267226110, // BrayTech Sn0Boots
+              1421936449 // BrayTech Absolute Zero Mark
             ]
           },
           {
             name: 'Warlock Armor',
             season: 3,
             items: [
-              198099636, // BrayTech Researcher's Hood
-              2899334605, // BrayTech Researcher's Gloves
-              2556748915, // BrayTech Researcher's Robes
-              3570133647, // BrayTech Researcher's Boots
-              467207594 // BrayTech Researcher's Bond
+              2519855077, // BrayTech Researcher's Hood
+              1005587287, // BrayTech Researcher's Gloves
+              3188870561, // BrayTech Researcher's Robes
+              2814122105, // BrayTech Researcher's Boots
+              3971375612 // BrayTech Researcher's Bond
             ]
           },
           {
@@ -1545,32 +1545,32 @@ export default ([
           {
             name: 'Dead End Cure 2.1',
             season: 1,
-            items: [3125909492, 1998314509, 316000947, 2669113551, 2521426922]
+            items: [3064716714, 3070277875, 1835885085, 2805231813, 3297872976]
           },
           {
             name: 'Errant Knight 1.0',
             season: 1,
-            items: [2550994842, 493299171, 1024867629, 2414278933, 3433746208]
+            items: [3051359899, 215674186, 2531405438, 3166972772, 1861032455]
           },
           {
             name: 'Road Complex AA1',
             season: 1,
-            items: [269552461, 922218300, 1415533220, 308026950, 2159363321]
+            items: [2932691109, 3671791220, 1889156236, 3959529854, 4121880513]
           },
           {
             name: 'Icarus Drifter',
             season: 1,
-            items: [155832748, 3646674533, 3066593211, 3569443559, 1847870034]
+            items: [1507837170, 1932613595, 3145637173, 382653773, 1843231752]
           },
           {
             name: 'Insight',
             season: 3,
             items: [
-              1680657538, // Insight Rover Mask
-              1020198891, // Insight Rover Grips
-              369384485, // Insight Rover Vest
-              2111956477, // Insight Rover Boots
-              3786300792 // Clandestine Maneuvers
+              1794052784, // Insight Rover Mask
+              1591836417, // Insight Rover Grips
+              4159457751, // Insight Rover Vest
+              3086681971, // Insight Rover Boots
+              1992809894 // Clandestine Maneuvers
             ]
           },
           {
@@ -1601,32 +1601,32 @@ export default ([
           {
             name: 'Retro-Grade TG2',
             season: 1,
-            items: [2525344810, 2530905971, 1364856221, 2265859909, 2826844112]
+            items: [2783831726, 3809138207, 331602521, 2730285281, 2070329108]
           },
           {
             name: 'Kerak Type 2',
             season: 1,
-            items: [160388292, 107582877, 2696303651, 2048751167, 1978110490]
+            items: [1091190365, 4273043916, 2038956436, 623912054, 3207244009]
           },
           {
             name: 'Devastation Complex',
             season: 1,
-            items: [3725654227, 1260134370, 2932121030, 3304280092, 3250112431]
+            items: [3434301337, 2906086416, 385985080, 3264721770, 3076446677]
           },
           {
             name: 'Terra Concord',
             season: 1,
-            items: [690335398, 3999262583, 3291075521, 1512829977, 4073580572]
+            items: [178467806, 3277373711, 1708233065, 3893450673, 3022399012]
           },
           {
             name: 'Insight',
             season: 3,
             items: [
-              1192751404, // Insight Unyielding Helm
-              388625893, // Insight Unyielding Gauntlets
-              2185500219, // Insight Unyielding Plate
-              311394919, // Insight Unyielding Greaves
-              966777042 // Anti-Hero Victory
+              2996100508, // Insight Unyielding Helm
+              56010517, // Insight Unyielding Gauntlets
+              4227656459, // Insight Unyielding Plate
+              2098166903, // Insight Unyielding Greaves
+              3008933410 // Anti-Hero Victory
             ]
           },
           {
@@ -1657,32 +1657,32 @@ export default ([
           {
             name: 'Heiro Camo',
             season: 1,
-            items: [2791527489, 3629447000, 3884999792, 1664611474, 2770578349]
+            items: [2954945607, 901647822, 2432846050, 2984725960, 2081299507]
           },
           {
             name: 'Philomath',
             season: 1,
-            items: [2542514983, 489114030, 683173058, 2996649640, 373203219]
+            items: [1196270212, 760584029, 282139107, 3084633087, 3475929306]
           },
           {
             name: 'High-Minded Complex',
             season: 1,
-            items: [993844472, 1457647945, 410671183, 1749589787, 2082184158]
+            items: [1800940324, 1365254141, 1876989571, 3689406239, 775812602]
           },
           {
             name: 'Tesseract Trace',
             season: 1,
-            items: [2811180959, 3169402598, 4092393610, 2728535008, 434243995]
+            items: [1292840125, 4050339372, 1162508660, 825561686, 1906338633]
           },
           {
             name: 'Insight',
             season: 3,
             items: [
-              2905154661, // Insight Vikti Hood
-              3685831476, // Insight Vikti Gloves
-              731888972, // Insight Vikti Robes
-              3973570110, // Insight Vikti Boots
-              3430647425 // Synaptic Construct
+              616641643, // Insight Vikti Hood
+              3233866074, // Insight Vikti Gloves
+              2294753710, // Insight Vikti Robes
+              195370644, // Insight Vikti Boots
+              2612848247 // Synaptic Construct
             ]
           },
           {

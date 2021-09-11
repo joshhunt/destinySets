@@ -12,27 +12,27 @@ export const IRONBANNER_S1_WEAPONS = [
 ];
 
 export const IRONBANNER_S1_ARMOR_HUNTER = [
-  1496224967, // Iron Truage Casque
-  3737894478, // Iron Truage Grips
-  831464034, // Iron Truage Vest
-  1526005320, // Iron Truage Boots
-  479917491 // Mantle of Efrideet
+  1778619592, // Iron Truage Casque
+  1125953881, // Iron Truage Grips
+  3713593535, // Iron Truage Vest
+  4018139467, // Iron Truage Boots
+  665784782 // Mantle of Efrideet
 ];
 
 export const IRONBANNER_S1_ARMOR_TITAN = [
-  1804445917, // Iron Truage Helm
-  691332172, // Iron Truage Gauntlets
-  3865618708, // Iron Truage Plate
-  1337167606, // Iron Truage Greaves
-  738938985 // Radegast's Iron Sash
+  2203751966, // Iron Truage Helm
+  1473724751, // Iron Truage Gauntlets
+  3866772393, // Iron Truage Plate
+  2048225009, // Iron Truage Greaves
+  1352108388 // Radegast's Iron Sash
 ];
 
 export const IRONBANNER_S1_ARMOR_WARLOCK = [
-  2811201658, // Iron Truage Hood
-  287471683, // Iron Truage Gloves
-  124696333, // Iron Truage Vestments
-  2674485749, // Iron Truage Legs
-  2999505920 // Timur's Iron Bond
+  307912519, // Iron Truage Hood
+  2549582030, // Iron Truage Gloves
+  830400994, // Iron Truage Vestments
+  337692872, // Iron Truage Legs
+  478854451 // Timur's Iron Bond
 ];
 
 export const IRONBANNER_S2_WEAPONS = [

@@ -12,27 +12,27 @@ export const TRIALS_S1_WEAPONS = [
 ];
 
 export const TRIALS_S1_ARMOR_HUNTER = [
-  400025383, // Flowing Cowl
-  2641591726, // Flowing Grips
-  548290754, // Flowing Vest
-  854160040, // Flowing Boots
-  238320915 // Cloak Judgment
+  3075372781, // Flowing Cowl
+  4194072668, // Flowing Grips
+  508076356, // Flowing Vest
+  3155320806, // Flowing Boots
+  1717940633 // Cloak Judgment
 ];
 
 export const TRIALS_S1_ARMOR_TITAN = [
-  2391227801, // Crushing Helm
-  1863012880, // Crushing Guard
-  934145080, // Crushing Plate
-  2221648234, // Crushing Greaves
-  3624606677 // Mark Judgment
+  3976073347, // Crushing Helm
+  818644818, // Crushing Guard
+  2570653206, // Crushing Plate
+  1219883244, // Crushing Greaves
+  1900280383 // Mark Judgment
 ];
 
 export const TRIALS_S1_ARMOR_WARLOCK = [
-  2964441920, // Channeling Cowl
-  530515217, // Channeling Wraps
-  891933383, // Channeling Robes
-  4232174819, // Flowing Treads
-  1607431126 // Judgement's Wrap
+  2602907742, // Channeling Cowl
+  1406846351, // Channeling Wraps
+  1652467433, // Channeling Robes
+  2022923313, // Flowing Treads
+  2966633380 // Judgement's Wrap
 ];
 
 export const TRIALS_S1_ARMOR_FLAWLESS_HUNTER = [

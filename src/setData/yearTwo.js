@@ -58,33 +58,33 @@ export default ([
             name: 'Hunter Armor',
             season: 4,
             items: [
-              575676771, // Vigil of Heroes
-              1247181362, // Vigil of Heroes
-              3916064886, // Vigil of Heroes
-              2072877132, // Vigil of Heroes
-              3670149407 // Vigil of Heroes
+              1524444346, // Vigil of Heroes
+              3761819011, // Vigil of Heroes
+              178749005, // Vigil of Heroes
+              1812185909, // Vigil of Heroes
+              2629204288 // Vigil of Heroes
             ]
           },
           {
             name: 'Titan Armor',
             season: 4,
             items: [
-              1514863327, // Vigil of Heroes
-              1490307366, // Vigil of Heroes
-              335317194, // Vigil of Heroes
-              1007759904, // Vigil of Heroes
-              506100699 // Vigil of Heroes
+              1392054568, // Vigil of Heroes
+              273457849, // Vigil of Heroes
+              2009892127, // Vigil of Heroes
+              3207116971, // Vigil of Heroes
+              3722981806 // Vigil of Heroes
             ]
           },
           {
             name: 'Warlock Armor',
             season: 4,
             items: [
-              3213912958, // Vigil of Heroes
-              2442309039, // Vigil of Heroes
-              3569624585, // Vigil of Heroes
-              2592351697, // Vigil of Heroes
-              1054960580 // Vigil of Heroes
+              3631862279, // Vigil of Heroes
+              1578461326, // Vigil of Heroes
+              1108278178, // Vigil of Heroes
+              4086100104, // Vigil of Heroes
+              332170995 // Vigil of Heroes
             ]
           },
           {
@@ -183,33 +183,33 @@ export default ([
             name: 'Hunter Armor',
             season: 4,
             items: [
-              1127237110, // Wing Contender
-              2331227463, // Wing Contender
-              3211001969, // Wing Contender
-              1084033161, // Wing Contender
-              1069887756 // Wing Contender
+              3153956825, // Wing Contender
+              3091776080, // Wing Contender
+              1914589560, // Wing Contender
+              3408834730, // Wing Contender
+              693067797 // Wing Contender
             ]
           },
           {
             name: 'Titan Armor',
             season: 4,
             items: [
-              2124666626, // Wing Discipline
-              1464207979, // Wing Discipline
-              1063904165, // Wing Discipline
-              2555965565, // Wing Discipline
-              185853176 // Wing Discipline
+              657606375, // Wing Discipline
+              2899275886, // Wing Discipline
+              2389585538, // Wing Discipline
+              687386728, // Wing Discipline
+              1613581523 // Wing Discipline
             ]
           },
           {
             name: 'Warlock Armor',
             season: 4,
             items: [
-              3724026171, // Wing Theorem
-              929917162, // Wing Theorem
-              997903134, // Wing Theorem
-              4264096388, // Wing Theorem
-              327530279 // Wing Theorem
+              3684978064, // Wing Theorem
+              3441081953, // Wing Theorem
+              2286507447, // Wing Theorem
+              641063251, // Wing Theorem
+              119859462 // Wing Theorem
             ]
           },
           {
@@ -315,33 +315,33 @@ export default ([
             name: 'Hunter Armor',
             season: 4,
             items: [
-              629787707, // Ancient Apocalypse Mask
-              2130645994, // Ancient Apocalypse Grips
-              3855285278, // Ancient Apocalypse Vest
-              1169857924, // Ancient Apocalypse Strides
-              3184912423 // Ancient Apocalypse Cloak
+              1267361154, // Ancient Apocalypse Mask
+              606902507, // Ancient Apocalypse Grips
+              1314666277, // Ancient Apocalypse Vest
+              1698660093, // Ancient Apocalypse Strides
+              436615288 // Ancient Apocalypse Cloak
             ]
           },
           {
             name: 'Titan Armor',
             season: 4,
             items: [
-              3031848199, // Ancient Apocalypse Helm
-              978447246, // Ancient Apocalypse Gauntlets
-              4115739810, // Ancient Apocalypse Plate
-              3486086024, // Ancient Apocalypse Greaves
-              3339632627 // Ancient Apocalypse Mark
+              2002452096, // Ancient Apocalypse Helm
+              3863492689, // Ancient Apocalypse Gauntlets
+              1811579911, // Ancient Apocalypse Plate
+              3694642467, // Ancient Apocalypse Greaves
+              2993008662 // Ancient Apocalypse Mark
             ]
           },
           {
             name: 'Warlock Armor',
             season: 4,
             items: [
-              1236746902, // Ancient Apocalypse Hood
-              2440840551, // Ancient Apocalypse Gloves
-              4188366993, // Ancient Apocalypse Robes
-              1193646249, // Ancient Apocalypse Boots
-              2088829612 // Ancient Apocalypse Bond
+              754069623, // Ancient Apocalypse Hood
+              4122447870, // Ancient Apocalypse Gloves
+              725297842, // Ancient Apocalypse Robes
+              671423576, // Ancient Apocalypse Boots
+              896081219 // Ancient Apocalypse Bond
             ]
           },
           {
@@ -444,33 +444,33 @@ export default ([
             name: 'Hunter Armor',
             season: 4,
             items: [
-              1944853984, // Iron Remembrance Casque
-              3847368113, // Iron Remembrance Grips
-              279785447, // Iron Remembrance Vest
-              3678620931, // Iron Remembrance Strides
-              995283190 // Cloak of Remembrance
+              2936230179, // Iron Remembrance Casque
+              4032295410, // Iron Remembrance Grips
+              2810038838, // Iron Remembrance Vest
+              138566412, // Iron Remembrance Strides
+              2181242591 // Cloak of Remembrance
             ]
           },
           {
             name: 'Hunter Armor',
             season: 5,
             items: [
-              142417051, // Iron Fellowship Casque
-              1601698634, // Iron Fellowship Grips
-              2753509502, // Iron Fellowship Vest
-              258029924, // Iron Fellowship Strides
-              2083136519 // Iron Fellowship Cloak
+              3624199242, // Iron Fellowship Casque
+              3671337107, // Iron Fellowship Grips
+              4039932861, // Iron Fellowship Vest
+              3406291173, // Iron Fellowship Strides
+              1248530160 // Iron Fellowship Cloak
             ]
           },
           {
             name: 'Hunter Armor',
             season: 6,
             items: [
-              1618191618, // Iron Symmachy Mask
-              957732971, // Iron Symmachy Grips
-              3112906149, // Iron Symmachy Vest
-              2049490557, // Iron Symmachy Strides
-              2234855160 // Iron Symmachy Cloak
+              3875549237, // Iron Symmachy Mask
+              2509918852, // Iron Symmachy Grips
+              2772262012, // Iron Symmachy Vest
+              4057580974, // Iron Symmachy Strides
+              4058198769 // Iron Symmachy Cloak
             ]
           },
           {
@@ -488,33 +488,33 @@ export default ([
             name: 'Titan Armor',
             season: 4,
             items: [
-              485774636, // Iron Remembrance Helm
-              3976616421, // Iron Remembrance Gauntlets
-              741704251, // Iron Remembrance Plate
-              3899385447, // Iron Remembrance Greaves
-              3817948370 // Mark of Remembrance
+              2368311917, // Iron Remembrance Helm
+              3487011804, // Iron Remembrance Gauntlets
+              1177873348, // Iron Remembrance Plate
+              2448259942, // Iron Remembrance Greaves
+              2387737625 // Mark of Remembrance
             ]
           },
           {
             name: 'Titan Armor',
             season: 5,
             items: [
-              3018777825, // Iron Fellowship Helm
-              3856697336, // Iron Fellowship Gauntlets
-              3661959184, // Iron Fellowship Plate
-              1891964978, // Iron Fellowship Greaves
-              2589114445 // Iron Fellowship Mark
+              391384020, // Iron Fellowship Helm
+              3517179757, // Iron Fellowship Gauntlets
+              1571959827, // Iron Fellowship Plate
+              3763521327, // Iron Fellowship Greaves
+              4201843274 // Iron Fellowship Mark
             ]
           },
           {
             name: 'Titan Armor',
             season: 6,
             items: [
-              1127757814, // Iron Symmachy Helm
-              2331748167, // Iron Symmachy Gauntlets
-              3420845681, // Iron Symmachy Plate
-              1084553865, // Iron Symmachy Greaves
-              1279731468 // Iron Symmachy Mark
+              4161524635, // Iron Symmachy Helm
+              1325838922, // Iron Symmachy Gauntlets
+              3251195262, // Iron Symmachy Plate
+              4277137508, // Iron Symmachy Greaves
+              2580822279 // Iron Symmachy Mark
             ]
           },
           {
@@ -532,33 +532,33 @@ export default ([
             name: 'Warlock Armor',
             season: 4,
             items: [
-              2340483067, // Iron Remembrance Hood
-              3799661482, // Iron Remembrance Gloves
-              3974682334, // Iron Remembrance Vestments
-              2455992644, // Iron Remembrance Legs
-              3345886183 // Bond of Remembrance
+              1466284308, // Iron Remembrance Hood
+              297009581, // Iron Remembrance Gloves
+              4144779347, // Iron Remembrance Vestments
+              1009385327, // Iron Remembrance Legs
+              2096711562 // Bond of Remembrance
             ]
           },
           {
             name: 'Warlock Armor',
             season: 5,
             items: [
-              2055774222, // Iron Fellowship Hood
-              3505538303, // Iron Fellowship Gloves
-              4145557177, // Iron Fellowship Robes
-              2426788417, // Iron Fellowship Boots
-              1164755828 // Iron Fellowship Bond
+              2717305289, // Iron Fellowship Hood
+              125833536, // Iron Fellowship Gloves
+              2522706952, // Iron Fellowship Robes
+              3115740538, // Iron Fellowship Boots
+              4224804453 // Iron Fellowship Bond
             ]
           },
           {
             name: 'Warlock Armor',
             season: 6,
             items: [
-              3147146325, // Iron Symmachy Hood
-              1822989604, // Iron Symmachy Gloves
-              3543613212, // Iron Symmachy Robes
-              3753635534, // Iron Symmachy Boots
-              959040145 // Iron Symmachy Bond"
+              2645763830, // Iron Symmachy Hood
+              3849754183, // Iron Symmachy Gloves
+              996946801, // Iron Symmachy Robes
+              2602559881, // Iron Symmachy Boots
+              3150799884 // Iron Symmachy Bond"
             ]
           },
           {
@@ -827,33 +827,33 @@ export default ([
             name: 'Hunter Armor',
             season: 5,
             items: [
-              350056552, // Bladesmith's Memory Mask
-              3992358137, // Bladesmith's Memory Grips
-              1917693279, // Bladesmith's Memory Vest
-              2589473259, // Bladesmith's Memory Strides
-              3164851950 // Bladesmith's Memory Cloak
+              96643258, // Bladesmith's Memory Mask
+              2334017923, // Bladesmith's Memory Grips
+              300528205, // Bladesmith's Memory Vest
+              384384821, // Bladesmith's Memory Strides
+              2750983488 // Bladesmith's Memory Cloak
             ]
           },
           {
             name: 'Titan Armor',
             season: 5,
             items: [
-              2921334134, // Bulletsmith's Ire Helm
-              4125324487, // Bulletsmith's Ire Gauntlets
-              2530113265, // Bulletsmith's Ire Plate
-              2878130185, // Bulletsmith's Ire Greaves
-              388999052 // Bulletsmith's Ire Mark
+              2719710110, // Bulletsmith's Ire Helm
+              1989682895, // Bulletsmith's Ire Gauntlets
+              3491990569, // Bulletsmith's Ire Plate
+              2564183153, // Bulletsmith's Ire Greaves
+              977326564 // Bulletsmith's Ire Mark
             ]
           },
           {
             name: 'Warlock Armor',
             season: 5,
             items: [
-              1624906371, // Gunsmith's Devotion Crown
-              2762445138, // Gunsmith's Devotion Gloves
-              4238134294, // Gunsmith's Devotion Robes
-              3163683564, // Gunsmith's Devotion Boots
-              3567761471 // Gunsmith's Devotion Bond
+              583145321, // Gunsmith's Devotion Crown
+              2286640864, // Gunsmith's Devotion Gloves
+              4092373800, // Gunsmith's Devotion Robes
+              940003738, // Gunsmith's Devotion Boots
+              1499503877 // Gunsmith's Devotion Bond
             ]
           },
           {
@@ -1038,11 +1038,11 @@ export default ([
                 374306366 // EXODUS DOWN CLOAK
               ],
               [
-                906236408, // OPULENT STALKER MASK
-                1370039881, // OPULENT STALKER GRIPS
-                3759327055, // OPULENT STALKER VEST
-                1661981723, // OPULENT STALKER STRIDES
-                1135872734 // OPULENT STALKER CLOAK
+                1440812312, // OPULENT STALKER MASK
+                1904615913, // OPULENT STALKER GRIPS
+                3258844783, // OPULENT STALKER VEST
+                2196557755, // OPULENT STALKER STRIDES
+                211036158 // OPULENT STALKER CLOAK
               ],
               [
                 569799275 // GOLDTUSK
@@ -1061,11 +1061,11 @@ export default ([
                 3288177452 // EXODUS DOWN MARK
               ],
               [
-                1420117606, // OPULENT DUELIST HELM
-                392500791, // OPULENT DUELIST GAUNTLETS
-                2856582785, // OPULENT DUELIST PLATE
-                1776578009, // OPULENT DUELIST GREAVES
-                4105225180 // OPULENT DUELIST MARK
+                2450046452, // OPULENT DUELIST HELM
+                1322451469, // OPULENT DUELIST GAUNTLETS
+                2821102771, // OPULENT DUELIST PLATE
+                1993250511, // OPULENT DUELIST GREAVES
+                731561450 // OPULENT DUELIST MARK
               ],
               [
                 569799273 // THRONE-CLEAVER
@@ -1084,11 +1084,11 @@ export default ([
                 41792165 // EXODUS DOWN BOND
               ],
               [
-                831222279, // OPULENT SCHOLAR HOOD
-                3072788622, // OPULENT SCHOLAR GLOVES
-                2026757026, // OPULENT SCHOLAR ROBES
-                1285460104, // OPULENT SCHOLAR BOOTS
-                1250649843 // OPULENT SCHOLAR BOND
+                164194947, // OPULENT SCHOLAR HOOD
+                1301733714, // OPULENT SCHOLAR GLOVES
+                3981949974, // OPULENT SCHOLAR ROBES
+                1702972140, // OPULENT SCHOLAR BOOTS
+                3311577151 // OPULENT SCHOLAR BOND
               ],
               [
                 569799274 // DEATH'S RAZOR
@@ -1133,33 +1133,33 @@ export default ([
             name: 'Hunter Armor',
             season: 7,
             items: [
-              1999427172, // SHADOW'S MASK
-              1946621757, // SHADOW'S GRIPS
-              3483984579, // SHADOW'S VEST
-              17280095, // SHADOW'S STRIDES
-              2765688378 // SHADOW'S CLOAK
+              326149062, // SHADOW'S MASK
+              4017853847, // SHADOW'S GRIPS
+              942205921, // SHADOW'S VEST
+              1107067065, // SHADOW'S STRIDES
+              2149271612 // PENUMBRAL CLOAK
             ]
           },
           {
             name: 'Titan Armor',
             season: 7,
             items: [
-              1434870610, // SHADOW'S HELM
-              1901223867, // SHADOW'S GAUNTLETS
-              1862963733, // SHADOW'S PLATE
-              309687341, // SHADOW'S GREAVES
-              560455272 // SHADOW'S MARK
+              1129634130, // SHADOW'S HELM
+              1595987387, // SHADOW'S GAUNTLETS
+              3406713877, // SHADOW'S PLATE
+              4450861, // SHADOW'S GREAVES
+              2104205416 // PENUMBRAL MARK
             ]
           },
           {
             name: 'Warlock Armor',
             season: 7,
             items: [
-              1481751647, // SHADOW'S MIND
-              1457195686, // SHADOW'S GLOVES
-              2023695690, // SHADOW'S ROBES
-              974648224, // SHADOW'S BOOTS
-              2194479195 // SHADOW'S BOND
+              2472794149, // SHADOW'S MIND
+              3211894260, // SHADOW'S GLOVES
+              3381758732, // SHADOW'S ROBES
+              3499632894, // SHADOW'S BOOTS
+              1319515713 // PENUMBRAL BOND
             ]
           },
           {
@@ -1271,16 +1271,16 @@ export default ([
             season: 4,
             itemGroups: [
               [
-                2932919026, // Nea-Thonis Breather
-                1928007477 // Scorned Baron Vest
+                3124726865, // Nea-Thonis Breather
+                988607392 // Scorned Baron Vest
               ],
               [
-                2007698582, // Torobatl Celebration Mask
-                1349281425 // Scorned Baron Plate
+                64566999, // Torobatl Celebration Mask
+                3214769810 // Scorned Baron Plate
               ],
               [
-                3858472841, // Eimin-Tin Ritual Mask
-                3183089352 // Scorned Baron Robes
+                3634942770, // Eimin-Tin Ritual Mask
+                4214131061 // Scorned Baron Robes
               ],
               [
                 785442930 // Eye for an Eye
@@ -1910,25 +1910,25 @@ export default ([
             season: 4,
             itemGroups: [
               [
-                4261835528, // Tangled Web Mask
-                3609169817, // Tangled Web Grips
-                2648545535, // Tangled Web Vest
-                2206284939, // Tangled Web Strides
-                25091086 // Tangled Web Cloak
+                141163281, // Tangled Web Mask
+                3052682216, // Tangled Web Grips
+                2277119328, // Tangled Web Vest
+                4154021442, // Tangled Web Strides
+                1587155357 // Tangled Web Cloak
               ],
               [
-                4104298449, // Prodigal Mask
-                2762426792, // Prodigal Grasps
-                2766448160, // Prodigal Vest
-                3397835010, // Prodigal Strides
-                1693706589 // Prodigal Cloak
+                3605448950, // Prodigal Mask
+                514472007, // Prodigal Grasps
+                1202993521, // Prodigal Vest
+                3562245001, // Prodigal Strides
+                3356846604 // Prodigal Cloak
               ],
               [
-                3994031968, // Red Moon Phantom Mask
-                1601578801, // Red Moon Phantom Grips
-                3612275815, // Red Moon Phantom Vest
-                1432831619, // Red Moon Phantom Steps
-                32806262 // Cloak of Five Full Moons
+                1395001913, // Red Moon Phantom Mask
+                1291141296, // Red Moon Phantom Grips
+                1571425240, // Red Moon Phantom Vest
+                1649776522, // Red Moon Phantom Steps
+                391377141 // Cloak of Five Full Moons
               ]
             ]
           },
@@ -1937,25 +1937,25 @@ export default ([
             season: 4,
             itemGroups: [
               [
-                2982412348, // Tangled Web Helm
-                42219189, // Tangled Web Gauntlets
-                2562470699, // Tangled Web Plate
-                1618341271, // Tangled Web Greaves
-                919186882 // Tangled Web Mark
+                2483687741, // Tangled Web Helm
+                946219692, // Tangled Web Gauntlets
+                2185244404, // Tangled Web Plate
+                2016409302, // Tangled Web Greaves
+                2929074377 // Tangled Web Mark
               ],
               [
-                2753581141, // Prodigal Helm
-                1429424420, // Prodigal Gauntlets
-                3850634012, // Prodigal Cuirass
-                3360070350, // Prodigal Greaves
-                1266060945 // Prodigal Mark
+                2143887570, // Prodigal Helm
+                2610240827, // Prodigal Gauntlets
+                1981473429, // Prodigal Cuirass
+                1018704301, // Prodigal Greaves
+                678964968 // Prodigal Mark
               ],
               [
-                3839471140, // Mimetic Savior Helm
-                3403784957, // Mimetic Savior Gauntlets
-                3066154883, // Mimetic Savior Plate
-                1432969759, // Mimetic Savior Greaves
-                1964977914 // Mimetic Savior Bond
+                343027757, // Mimetic Savior Helm
+                995693468, // Mimetic Savior Gauntlets
+                3314301316, // Mimetic Savior Plate
+                4293588774, // Mimetic Savior Greaves
+                4058028249 // Mimetic Savior Mark
               ]
             ]
           },
@@ -1964,25 +1964,25 @@ export default ([
             season: 4,
             itemGroups: [
               [
-                1664085089, // Tangled Web Hood
-                2502004600, // Tangled Web Gloves
-                1034149520, // Tangled Web Robes
-                537272242, // Tangled Web Boots
-                4256272077 // Tangled Web Bond
+                4113317396, // Tangled Web Hood
+                2944042669, // Tangled Web Gloves
+                1452257107, // Tangled Web Robes
+                3656418415, // Tangled Web Boots
+                3699156618 // Tangled Web Bond
               ],
               [
-                2012084760, // Prodigal Hood
-                2475888361, // Prodigal Gloves
-                1553407343, // Prodigal Robes
-                2767830203, // Prodigal Steps
-                2800566014 // Prodigal Bond
+                265597079, // Prodigal Hood
+                3634078494, // Prodigal Gloves
+                571127634, // Prodigal Robes
+                4053460984, // Prodigal Steps
+                1207945315 // Prodigal Bond
               ],
               [
-                2470746631, // Thorium Holt Hood
-                417345678, // Thorium Holt Gloves
-                1330107298, // Thorium Holt Robes
-                2924984456, // Thorium Holt Boots
-                554000115 // Thorium Holt Bond
+                1592984110, // Thorium Holt Hood
+                2618290591, // Thorium Holt Gloves
+                3603834073, // Thorium Holt Robes
+                1539437665, // Thorium Holt Boots
+                1047593364 // Thorium Holt Bond
               ]
             ]
           }
