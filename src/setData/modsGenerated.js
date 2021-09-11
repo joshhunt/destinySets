@@ -143,6 +143,23 @@ export default [
                 ]
               }
             ]
+          },
+          {
+            name: "Stasis",
+            nameHash: 1819698290,
+            itemGroups: [
+              [
+                3638321667 // Power Preservation
+              ]
+            ],
+            groups: [
+              {
+                name: "General",
+                items: [
+                  3638321667 // Power Preservation
+                ]
+              }
+            ]
           }
         ]
       },
@@ -171,23 +188,6 @@ export default [
                 4184328260 // Disrupting Blade
               ],
               [
-                1312062056, // Auto Rifle Dexterity
-                3296399440, // Bow Dexterity
-                945523359, // Fusion Rifle Dexterity
-                2214082005, // Grenade Launcher Dexterity
-                3484440775, // Hand Cannon Dexterity
-                3362003312, // Machine Gun Dexterity
-                2520883911, // Linear Fusion Dexterity
-                691818084, // Pulse Rifle Dexterity
-                3026352437, // Rocket Launcher Dexterity
-                327265103, // Scout Rifle Dexterity
-                2561450986, // Shotgun Dexterity
-                101023751, // Sidearm Dexterity
-                201274281, // Submachine Gun Dexterity
-                1819979056, // Sniper Rifle Dexterity
-                1670364231 // Trace Rifle Dexterity
-              ],
-              [
                 2571974065, // Auto Rifle Loader
                 3436675785, // Bow Reloader
                 428274928, // Fusion Rifle Loader
@@ -203,6 +203,23 @@ export default [
                 2790645726, // Submachine Gun Loader
                 2039949393, // Sniper Rifle Loader
                 1807758212 // Trace Rifle Loader
+              ],
+              [
+                1312062056, // Auto Rifle Dexterity
+                3296399440, // Bow Dexterity
+                945523359, // Fusion Rifle Dexterity
+                2214082005, // Grenade Launcher Dexterity
+                3484440775, // Hand Cannon Dexterity
+                3362003312, // Machine Gun Dexterity
+                2520883911, // Linear Fusion Dexterity
+                691818084, // Pulse Rifle Dexterity
+                3026352437, // Rocket Launcher Dexterity
+                327265103, // Scout Rifle Dexterity
+                2561450986, // Shotgun Dexterity
+                101023751, // Sidearm Dexterity
+                201274281, // Submachine Gun Dexterity
+                1819979056, // Sniper Rifle Dexterity
+                1670364231 // Trace Rifle Dexterity
               ]
             ],
             groups: [
@@ -229,26 +246,6 @@ export default [
                 ]
               },
               {
-                name: "Dexterity",
-                items: [
-                  1312062056, // Auto Rifle Dexterity
-                  3296399440, // Bow Dexterity
-                  945523359, // Fusion Rifle Dexterity
-                  2214082005, // Grenade Launcher Dexterity
-                  3484440775, // Hand Cannon Dexterity
-                  3362003312, // Machine Gun Dexterity
-                  2520883911, // Linear Fusion Dexterity
-                  691818084, // Pulse Rifle Dexterity
-                  3026352437, // Rocket Launcher Dexterity
-                  327265103, // Scout Rifle Dexterity
-                  2561450986, // Shotgun Dexterity
-                  101023751, // Sidearm Dexterity
-                  201274281, // Submachine Gun Dexterity
-                  1819979056, // Sniper Rifle Dexterity
-                  1670364231 // Trace Rifle Dexterity
-                ]
-              },
-              {
                 name: "Loaders",
                 items: [
                   2571974065, // Auto Rifle Loader
@@ -266,6 +263,26 @@ export default [
                   2790645726, // Submachine Gun Loader
                   2039949393, // Sniper Rifle Loader
                   1807758212 // Trace Rifle Loader
+                ]
+              },
+              {
+                name: "Dexterity",
+                items: [
+                  1312062056, // Auto Rifle Dexterity
+                  3296399440, // Bow Dexterity
+                  945523359, // Fusion Rifle Dexterity
+                  2214082005, // Grenade Launcher Dexterity
+                  3484440775, // Hand Cannon Dexterity
+                  3362003312, // Machine Gun Dexterity
+                  2520883911, // Linear Fusion Dexterity
+                  691818084, // Pulse Rifle Dexterity
+                  3026352437, // Rocket Launcher Dexterity
+                  327265103, // Scout Rifle Dexterity
+                  2561450986, // Shotgun Dexterity
+                  101023751, // Sidearm Dexterity
+                  201274281, // Submachine Gun Dexterity
+                  1819979056, // Sniper Rifle Dexterity
+                  1670364231 // Trace Rifle Dexterity
                 ]
               }
             ]
@@ -319,6 +336,25 @@ export default [
                 items: [
                   1839911272, // Focusing Strike
                   3750579462 // Bolstering Detonation
+                ]
+              }
+            ]
+          },
+          {
+            name: "Stasis",
+            nameHash: 1819698290,
+            itemGroups: [
+              [
+                47859594, // Grenade Kickstart
+                1371877916 // Melee Kickstart
+              ]
+            ],
+            groups: [
+              {
+                name: "General",
+                items: [
+                  47859594, // Grenade Kickstart
+                  1371877916 // Melee Kickstart
                 ]
               }
             ]
@@ -464,6 +500,23 @@ export default [
                 ]
               }
             ]
+          },
+          {
+            name: "Stasis",
+            nameHash: 1819698290,
+            itemGroups: [
+              [
+                3176563510 // Stasis Resistance
+              ]
+            ],
+            groups: [
+              {
+                name: "General",
+                items: [
+                  3176563510 // Stasis Resistance
+                ]
+              }
+            ]
           }
         ]
       },
@@ -476,21 +529,7 @@ export default [
             nameHash: 1198124803,
             itemGroups: [
               [
-                3320641683, // Absolution
-                96170281, // Auto Rifle Holster
-                107499324, // Fusion Rifle Holster
-                2627515934, // Grenade Launcher Holster
-                3759707664, // Hand Cannon Holster
-                2979161761, // Hand Cannon Holster
-                1127642993, // Machine Gun Holster
-                2238903692, // Linear Fusion Rifle Holster
-                2001283033, // Pulse Rifle Holster
-                2356995028, // Scout Rifle Holster
-                2395653827, // Shotgun Holster
-                2982054284, // Sidearm Holster
-                3563461386, // Submachine Gun Holster
-                1597311617, // Sniper Rifle Holster
-                320966913 // Trace Rifle Holster
+                3320641683 // Absolution
               ],
               [
                 583723941, // Sword Scavenger
@@ -508,27 +547,29 @@ export default [
                 498878196, // Sniper Rifle Scavenger
                 2146553541, // Sword Scavenger
                 3632415743 // Trace Rifle Scavenger
+              ],
+              [
+                96170281, // Auto Rifle Holster
+                107499324, // Fusion Rifle Holster
+                2627515934, // Grenade Launcher Holster
+                3759707664, // Hand Cannon Holster
+                2979161761, // Hand Cannon Holster
+                1127642993, // Machine Gun Holster
+                2238903692, // Linear Fusion Rifle Holster
+                2001283033, // Pulse Rifle Holster
+                2356995028, // Scout Rifle Holster
+                2395653827, // Shotgun Holster
+                2982054284, // Sidearm Holster
+                3563461386, // Submachine Gun Holster
+                1597311617, // Sniper Rifle Holster
+                320966913 // Trace Rifle Holster
               ]
             ],
             groups: [
               {
                 name: "General",
                 items: [
-                  3320641683, // Absolution
-                  96170281, // Auto Rifle Holster
-                  107499324, // Fusion Rifle Holster
-                  2627515934, // Grenade Launcher Holster
-                  3759707664, // Hand Cannon Holster
-                  2979161761, // Hand Cannon Holster
-                  1127642993, // Machine Gun Holster
-                  2238903692, // Linear Fusion Rifle Holster
-                  2001283033, // Pulse Rifle Holster
-                  2356995028, // Scout Rifle Holster
-                  2395653827, // Shotgun Holster
-                  2982054284, // Sidearm Holster
-                  3563461386, // Submachine Gun Holster
-                  1597311617, // Sniper Rifle Holster
-                  320966913 // Trace Rifle Holster
+                  3320641683 // Absolution
                 ]
               },
               {
@@ -552,6 +593,25 @@ export default [
                   498878196, // Sniper Rifle Scavenger
                   2146553541, // Sword Scavenger
                   3632415743 // Trace Rifle Scavenger
+                ]
+              },
+              {
+                name: "Holster",
+                items: [
+                  96170281, // Auto Rifle Holster
+                  107499324, // Fusion Rifle Holster
+                  2627515934, // Grenade Launcher Holster
+                  3759707664, // Hand Cannon Holster
+                  2979161761, // Hand Cannon Holster
+                  1127642993, // Machine Gun Holster
+                  2238903692, // Linear Fusion Rifle Holster
+                  2001283033, // Pulse Rifle Holster
+                  2356995028, // Scout Rifle Holster
+                  2395653827, // Shotgun Holster
+                  2982054284, // Sidearm Holster
+                  3563461386, // Submachine Gun Holster
+                  1597311617, // Sniper Rifle Holster
+                  320966913 // Trace Rifle Holster
                 ]
               }
             ]
@@ -607,6 +667,23 @@ export default [
                 items: [
                   1320020854, // Better Already
                   973776237 // Insulation
+                ]
+              }
+            ]
+          },
+          {
+            name: "Stasis",
+            nameHash: 1819698290,
+            itemGroups: [
+              [
+                1985887424 // Orbs of Restoration
+              ]
+            ],
+            groups: [
+              {
+                name: "General",
+                items: [
+                  1985887424 // Orbs of Restoration
                 ]
               }
             ]
@@ -716,6 +793,25 @@ export default [
                   4137020505, // Perpetuation
                   4237638088, // Bulwark Finisher
                   4055766573 // Utility Finisher
+                ]
+              }
+            ]
+          },
+          {
+            name: "Stasis",
+            nameHash: 1819698290,
+            itemGroups: [
+              [
+                445559589, // Utility Kickstart
+                958741637 // Restorative Finisher
+              ]
+            ],
+            groups: [
+              {
+                name: "General",
+                items: [
+                  445559589, // Utility Kickstart
+                  958741637 // Restorative Finisher
                 ]
               }
             ]
@@ -1221,6 +1317,29 @@ export default [
                   518521232, // Precise Oracle Disruptor
                   518521233, // Vex Striker
                   518521234 // Superstructure Defender
+                ]
+              }
+            ]
+          },
+          {
+            name: "Stasis",
+            nameHash: 1819698290,
+            itemGroups: [
+              [
+                1977242753, // Supreme Wellmaker
+                1977242752, // Elemental Shards
+                1977242755, // Well of Restoration
+                1977242754 // Elemental Time Dilation
+              ]
+            ],
+            groups: [
+              {
+                name: "H.E.L.M.",
+                items: [
+                  1977242753, // Supreme Wellmaker
+                  1977242752, // Elemental Shards
+                  1977242755, // Well of Restoration
+                  1977242754 // Elemental Time Dilation
                 ]
               }
             ]

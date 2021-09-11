@@ -1614,25 +1614,25 @@ export default ([
                 3369545945 // Temporal Clause
               ],
               [
-                4078925540, // Substitutional Alloy Mask
-                4026120125, // Substitutional Alloy Grips
-                1855720515, // Substitutional Alloy Vest
-                2096778463, // Substitutional Alloy Strides
-                1137424314 // Substitutional Alloy Cloak
+                4070722289, // Substitutional Alloy Mask
+                2687273800, // Substitutional Alloy Grips
+                2657028416, // Substitutional Alloy Vest
+                3364258850, // Substitutional Alloy Strides
+                1584183805 // Substitutional Alloy Cloak
               ],
               [
-                2903026872, // Substitutional Alloy Helm
-                2942269705, // Substitutional Alloy Gauntlets
-                2468603407, // Substitutional Alloy Plate
-                3192738011, // Substitutional Alloy Greaves
-                3757338782 // Substitutional Alloy Mark
+                695795213, // Substitutional Alloy Helm
+                1348357884, // Substitutional Alloy Gauntlets
+                2742760292, // Substitutional Alloy Plate
+                351285766, // Substitutional Alloy Greaves
+                3911047865 // Substitutional Alloy Mark
               ],
               [
-                2690973103, // Substitutional Alloy Hood
-                509561142, // Substitutional Alloy Gloves
-                3166926330, // Substitutional Alloy Robes
-                1721943440, // Substitutional Alloy Boots
-                2815379659 // Substitutional Alloy Bond
+                377757362, // Substitutional Alloy Hood
+                844110491, // Substitutional Alloy Gloves
+                3680920565, // Substitutional Alloy Robes
+                4013678605, // Substitutional Alloy Boots
+                2761292744 // Substitutional Alloy Bond
               ]
             ]
           },
@@ -1646,25 +1646,25 @@ export default ([
                 4166221755 // Trophy Hunter
               ],
               [
-                382498903, // Righteous Mask
-                3750877150, // Righteous Grips
-                344824594, // Righteous Vest
-                299852984, // Righteous Strides
-                940065571 // Righteous Cloak
+                3931166610, // Righteous Mask
+                102655739, // Righteous Grips
+                648899669, // Righteous Vest
+                2847663213, // Righteous Strides
+                4065815976 // Righteous Cloak
               ],
               [
-                238618945, // Righteous Helm
-                1076538456, // Righteous Gauntlets
-                1560040304, // Righteous Plate
-                3406670226, // Righteous Greaves
-                445618861 // Righteous Mark
+                3491384606, // Righteous Helm
+                2761357391, // Righteous Gauntlets
+                3091683497, // Righteous Plate
+                3335857649, // Righteous Greaves
+                577019492 // Righteous Mark
               ],
               [
-                1557571326, // Righteous Hood
-                785967407, // Righteous Gloves
-                3931361417, // Righteous Robes
-                936010065, // Righteous Boots
-                1416697412 // Righteous Bond
+                1259643537, // Righteous Hood
+                4171162472, // Righteous Gloves
+                4200580064, // Righteous Robes
+                977534402, // Righteous Boots
+                3510616093 // Righteous Bond
               ]
             ]
           },

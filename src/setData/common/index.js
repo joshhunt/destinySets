@@ -114,27 +114,9 @@ export const SOLSTICE_OF_HEROES = {
       name: 'Armor Glows',
       season: 3,
       itemGroups: [
-        [
-          3054638345, // Arcing Helmet Glow
-          463166592, // Arcing Arms Glow
-          3507818312, // Arcing Chest Glow
-          3835954362, // Arcing Leg Glow
-          1339405989 // Arcing Class Item Glow
-        ],
-        [
-          4143534670, // Sunlit Helmet Glow
-          873770815, // Sunlit Arms Glow
-          3367964921, // Sunlit Chest Glow
-          4089988225, // Sunlit Leg Glow
-          811724212 // Sunlit Class Item Glow
-        ],
-        [
-          4236468733, // Void-Tinged Helmet Glow
-          2699000684, // Void-Tinged Arms Glow
-          1702504372, // Void-Tinged Chest Glow
-          3344732822, // Void-Tinged Leg Glow
-          2912265353 // Void-Tinged Class Item Glow
-        ]
+        [1553202889, 3256698432, 1540875016, 1951638138, 3242972517],
+        [3911008533, 2586851812, 3599111900, 4092937102, 589978193],
+        [485239296, 2346279889, 2407661191, 2177429667, 3589089942]
       ]
     },
     {
@@ -305,27 +287,9 @@ export const SOLSTICE_OF_HEROES_YEAR_2 = {
       name: 'Armor Glows',
       season: 7,
       itemGroups: [
-        [
-          834178986, // Arc Head Armor Glow
-          839740147, // Arc Arms Armor Glow
-          577345565, // Arc Chest Armor Glow
-          574694085, // Arc Leg Armor Glow
-          2039333456 // Arc Class Item Glow
-        ],
-        [
-          60802325, // Solar Head Armor Glow
-          3031612900, // Solar Arms Armor Glow
-          2449203932, // Solar Chest Armor Glow
-          242730894, // Solar Leg Armor Glow
-          3735037521 // Solar Class Item Glow
-        ],
-        [
-          558870048, // Void Head Armor Glow
-          2419910641, // Void Arms Armor Glow
-          2552954151, // Void Chest Armor Glow
-          2251060291, // Void Leg Armor Glow
-          3692806198 // Void Class Item Glow
-        ]
+        [3664536990, 2934509775, 2005133865, 3509010033, 3785437156],
+        [2021434466, 1319502155, 1597797637, 2835717213, 253815640],
+        [2971194471, 917896686, 610201346, 3000974824, 4129164627]
       ]
     },
     {
