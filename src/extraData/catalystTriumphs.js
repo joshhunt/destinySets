@@ -24,6 +24,7 @@ export default {
   3654674561: 15917031, // Dead Man's Tale
   603721696: 250211794, // Cryosthesia 77K
   1853180924: 571025162, // Traveler's Chosen
+  1833195496: 478443982, // Ager's Scepter
 
   // Energy weapons
   4190156464: 4178028503, // Merciless
