@@ -988,6 +988,7 @@ export const FESTIVAL_OF_THE_LOST_Y2 = {
       season: 4,
       items: [
         2024188850, // Heroic Guitarist
+        // 375770440, // Prankster Dance
         171748061, // Summoning Dance
         937162783, // Magnificent Dance
         3665594271 // Spell of Abolition
