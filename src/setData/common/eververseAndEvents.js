@@ -3918,17 +3918,26 @@ export const FESTIVAL_OF_THE_LOST_Y4 = {
     {
       name: 'Hunter Armor',
       season: 15,
-      itemGroups: [[], []]
+      itemGroups: [
+        [881651163, 456874738, 514572085, 3626658637, 3507133960],
+        []
+      ]
     },
     {
       name: 'Titan Armor',
       season: 15,
-      itemGroups: [[], []]
+      itemGroups: [
+        [2818777309, 3254463492, 2952826467, 847859071, 1851649370],
+        []
+      ]
     },
     {
       name: 'Warlock Armor',
       season: 15,
-      itemGroups: [[], []]
+      itemGroups: [
+        [2909593268, 2128916453, 3587987404, 3197331902, 1991778561],
+        []
+      ]
     },
 
     {
