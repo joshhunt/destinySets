@@ -1,3 +1,6 @@
+// IMPORTANT TO UPDATE THIS
+const currentSeason = '15';
+
 const path = require('path');
 const fs = require('fs');
 const { promisify } = require('util');
@@ -13,9 +16,6 @@ const readFile = promisify(fs.readFile);
 const writeFile = promisify(fs.writeFile);
 
 const API_KEY = process.env.REACT_APP_API_KEY;
-
-// IMPORTANT TO UPDATE THIS
-const currentSeason = '15';
 
 const hashString = string =>
   crypto
@@ -61,6 +61,9 @@ async function getDefinitions() {
   return defs;
 }
 
+let setsFile;
+let brightDustItems = [];
+let silverItems = [];
 let hashesNotFound = [];
 
 function sortSeasonalItems(
@@ -69,9 +72,6 @@ function sortSeasonalItems(
 ) {
   console.log('Sorting Tess Everis items');
   const tessEveris = DestinyVendorDefinition[3361454721];
-
-  let brightDustItems = [];
-  let silverItems = [];
 
   tessEveris.itemList.forEach(i => {
     if (
@@ -99,10 +99,10 @@ function sortSeasonalItems(
 
   console.log('Sorted Tess Everis items');
 
-  return [brightDustItems, silverItems];
+  return;
 }
 
-function removeDuplicates(brightDustItems, silverItems) {
+function removeDuplicates() {
   console.log('Removing duplicates');
   brightDustItems = brightDustItems.filter(function(elem, index, self) {
     return index === self.indexOf(elem);
@@ -113,10 +113,10 @@ function removeDuplicates(brightDustItems, silverItems) {
   });
   console.log('Removed duplicates');
 
-  return [brightDustItems, silverItems];
+  return;
 }
 
-function itemsNotSilverOnly(brightDustItems, silverItems) {
+function itemsNotSilverOnly() {
   console.log('Removing items not silver only');
 
   brightDustItems.forEach(i => {
@@ -126,14 +126,10 @@ function itemsNotSilverOnly(brightDustItems, silverItems) {
   });
   console.log('Removed items not silver only');
 
-  return [brightDustItems, silverItems];
+  return;
 }
 
-function removeOtherItems(
-  brightDustItems,
-  silverItems,
-  DestinyInventoryItemDefinition
-) {
+function removeOtherItems(DestinyInventoryItemDefinition) {
   console.log('Removing dummies and packages');
 
   let bdIndexes = [];
@@ -182,10 +178,10 @@ function removeOtherItems(
 
   console.log('Removed dummies and packages');
 
-  return [brightDustItems, silverItems];
+  return;
 }
 
-function changeFromSilverOnlyToBrightDust(brightDustItems, setsFile) {
+function changeFromSilverOnlyToBrightDust() {
   console.log('Changing items that are now available for Bright Dust');
 
   brightDustItems.forEach(hash => {
@@ -205,10 +201,10 @@ function changeFromSilverOnlyToBrightDust(brightDustItems, setsFile) {
   });
   console.log('Changed items that are now available for Bright Dust');
 
-  return setsFile;
+  return;
 }
 
-function changeFromBrightDustToSilverOnly(silverItems, setsFile) {
+function changeFromBrightDustToSilverOnly() {
   console.log(
     `Changing items that are only available for Silver in Season ${currentSeason}`
   );
@@ -279,7 +275,7 @@ function changeFromBrightDustToSilverOnly(silverItems, setsFile) {
     `Changing items that are only available for Silver in Season ${currentSeason}`
   );
 
-  return setsFile;
+  return;
 }
 
 (async function run() {
@@ -298,54 +294,71 @@ function changeFromBrightDustToSilverOnly(silverItems, setsFile) {
     'eververseAndEvents.js'
   );
   console.log('Reading file', readDataPath);
-  let setsFile = await readFile(readDataPath);
+  setsFile = await readFile(readDataPath);
 
   setsFile = setsFile.toString();
 
-  const sortedSeasonalItems = sortSeasonalItems(
-    DestinyInventoryItemDefinition,
-    DestinyVendorDefinition
-  );
+  sortSeasonalItems(DestinyInventoryItemDefinition, DestinyVendorDefinition);
 
-  const duplicatesRemoved = removeDuplicates(
-    sortedSeasonalItems[0],
-    sortedSeasonalItems[1]
-  );
+  removeDuplicates();
 
-  const notSilverOnly = itemsNotSilverOnly(
-    duplicatesRemoved[0],
-    duplicatesRemoved[1]
-  );
+  itemsNotSilverOnly();
 
-  const removedItems = removeOtherItems(
-    notSilverOnly[0],
-    notSilverOnly[1],
-    DestinyInventoryItemDefinition
-  );
+  removeOtherItems(DestinyInventoryItemDefinition);
 
-  const brightDustItems = removedItems[0];
-  const silverItems = removedItems[1];
+  changeFromSilverOnlyToBrightDust();
 
-  const seasonalBrightDustChanges = changeFromSilverOnlyToBrightDust(
-    brightDustItems,
-    setsFile
-  );
+  changeFromBrightDustToSilverOnly();
 
-  const seasonalSilverChanges = changeFromBrightDustToSilverOnly(
-    silverItems,
-    seasonalBrightDustChanges
-  );
-
-  if (hashesNotFound !== []) {
-    let stringToComment;
-    hashesNotFound.forEach(hash => {
-      stringToComment = hash + ' ';
-    });
-
+  if (hashesNotFound.length) {
+    console.log('');
     console.log(
-      'There were no references to the following hashes in the file - ' +
-        stringToComment
+      'There were no references to the following hashes in the file - '
     );
+
+    hashesNotFound.forEach(hash => {
+      if (
+        DestinyInventoryItemDefinition &&
+        DestinyInventoryItemDefinition[hash] &&
+        DestinyInventoryItemDefinition[hash].displayProperties &&
+        DestinyInventoryItemDefinition[hash].displayProperties.name
+      ) {
+        if (
+          DestinyInventoryItemDefinition[
+            hash
+          ].displayProperties.name.toLowerCase() === 'classified' &&
+          DestinyVendorDefinition &&
+          DestinyVendorDefinition[hash] &&
+          DestinyVendorDefinition[hash].displayProperties &&
+          DestinyVendorDefinition[hash].displayProperties.name
+        ) {
+          console.log(
+            DestinyInventoryItemDefinition[hash].displayProperties.name +
+              ' / ' +
+              DestinyVendorDefinition[hash].displayProperties.name +
+              ' ' +
+              '(' +
+              hash +
+              ')'
+          );
+        } else {
+          console.log(
+            DestinyInventoryItemDefinition[hash].displayProperties.name +
+              ' ' +
+              '(' +
+              hash +
+              ')'
+          );
+        }
+      } else {
+        console.log(
+          DestinyInventoryItemDefinition[hash].displayProperties.name +
+            ' ' +
+            hash
+        );
+      }
+    });
+    console.log('');
   }
 
   // console.log(brightDustItems.length);
@@ -360,5 +373,5 @@ function changeFromBrightDustToSilverOnly(silverItems, setsFile) {
   );
 
   console.log('Writing to file', dataPath);
-  writeFile(path.resolve(dataPath), seasonalSilverChanges);
+  writeFile(path.resolve(dataPath), setsFile);
 })();
