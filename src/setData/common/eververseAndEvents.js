@@ -3943,7 +3943,7 @@ export const FESTIVAL_OF_THE_LOST_Y4 = {
     {
       name: 'Masks',
       season: 15,
-      items: []
+      items: [3727346032, 3727346033]
     },
 
     {
@@ -3981,15 +3981,7 @@ export const FESTIVAL_OF_THE_LOST_Y4 = {
     {
       name: 'Extras',
       season: 15,
-      items: [
-        1141716960,
-        1141716967,
-        418753772,
-        418753773,
-        3186457725,
-        3727346032,
-        3727346033
-      ]
+      items: [1141716960, 1141716967, 418753772, 418753773, 3186457725]
     }
   ]
 };
