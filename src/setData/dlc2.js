@@ -1,6 +1,7 @@
 // @flow
 
 import * as common from './common';
+import * as eververseAndEvents from './common/eververseAndEvents';
 import { section as $ } from './common';
 import type { SetPage } from '../types';
 
@@ -406,7 +407,7 @@ export default ([
   },
   {
     name: 'Holiday',
-    sets: [common.SOLSTICE_OF_HEROES]
+    sets: [eververseAndEvents.SOLSTICE_OF_HEROES]
   },
   {
     name: 'Other',

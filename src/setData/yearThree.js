@@ -1,6 +1,7 @@
 // @flow
 import type { SetPage } from '../types';
 import * as common from './common';
+import * as eververseAndEvents from './common/eververseAndEvents';
 import { i18nDefinitionString as _ } from './utils';
 
 export default ([
@@ -1033,12 +1034,12 @@ export default ([
   {
     name: 'Holiday & Special Events',
     sets: [
-      common.FESTIVAL_OF_THE_LOST_Y3,
-      common.DAWNING_Y3,
-      common.CRIMSON_DAYS_Y3,
-      common.GUARDIAN_GAMES_Y3,
-      common.MOMENTS_OF_TRIUMPH_Y3,
-      common.SOLSTICE_OF_HEROES_Y3
+      eververseAndEvents.FESTIVAL_OF_THE_LOST_Y3,
+      eververseAndEvents.DAWNING_Y3,
+      eververseAndEvents.CRIMSON_DAYS_Y3,
+      eververseAndEvents.GUARDIAN_GAMES_Y3,
+      eververseAndEvents.MOMENTS_OF_TRIUMPH_Y3,
+      eververseAndEvents.SOLSTICE_OF_HEROES_Y3
     ]
   },
   {
@@ -1351,7 +1352,7 @@ export default ([
           }
         ]
       },
-      common.EVERVERSE_Y3,
+      eververseAndEvents.EVERVERSE_Y3,
       {
         name: _(
           'DestinyVendorDefinition[3163810067].displayProperties.name',

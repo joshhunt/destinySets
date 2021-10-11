@@ -1,6 +1,7 @@
 // @flow
 import type { SetPage } from '../types';
 import * as common from './common';
+import * as eververseAndEvents from './common/eververseAndEvents';
 import { i18nDefinitionString as _ } from './utils';
 
 export default ([
@@ -1398,12 +1399,12 @@ export default ([
   {
     name: 'Holiday & Special Events',
     sets: [
-      common.FESTIVAL_OF_THE_LOST_Y2,
-      common.DAWNING_Y2,
-      common.CRIMSON_DAYS_Y2,
-      common.REVELRY_Y2,
-      common.MOMENTS_OF_TRIUMPH_Y2,
-      common.SOLSTICE_OF_HEROES_Y2
+      eververseAndEvents.FESTIVAL_OF_THE_LOST_Y2,
+      eververseAndEvents.DAWNING_Y2,
+      eververseAndEvents.CRIMSON_DAYS_Y2,
+      eververseAndEvents.REVELRY_Y2,
+      eververseAndEvents.MOMENTS_OF_TRIUMPH_Y2,
+      eververseAndEvents.SOLSTICE_OF_HEROES_Y2
     ]
   },
   {
@@ -1522,7 +1523,7 @@ export default ([
           }
         ]
       },
-      common.EVERVERSE_Y2
+      eververseAndEvents.EVERVERSE_Y2
     ]
   }
 ]: SetPage);
