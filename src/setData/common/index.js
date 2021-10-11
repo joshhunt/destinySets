@@ -8,7 +8,6 @@ export * from './factions';
 export * from './yearOneRaids';
 export * from './vendors';
 export * from './gambitPrimeStuff';
-export * from './eververseAndEvents';
 
 export const section = (name: string, items: ItemsList): SetSection => ({
   name,
