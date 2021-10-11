@@ -140,6 +140,8 @@ export default function Objectives(props) {
               </div>
             </div>
           );
+        } else {
+          return null;
         }
       })}
 
