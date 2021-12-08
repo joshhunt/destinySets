@@ -58,6 +58,12 @@ export default function AppRouter() {
           <Route path="/year-4" component={Inventory} setData={sets.yearFour} />
 
           <Route
+            path="/eververseandevents"
+            component={Inventory}
+            setData={sets.eververseAndEvents}
+          />
+
+          <Route
             path="/catalysts"
             component={Inventory}
             setData={sets.catalysts}

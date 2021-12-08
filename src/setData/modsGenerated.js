@@ -28,6 +28,7 @@ export default [
                 1499759470, // Linear Fusion Rifle Ammo Finder
                 2603856295, // Rocket Launcher Ammo Finder
                 4148827738, // Shotgun Ammo Finder
+                1050260245, // Sidearm Ammo Finder
                 2754084930, // Sniper Rifle Ammo Finder
                 1476367343, // Sword Ammo Finder
                 3973928133 // Trace Rifle Ammo Finder
@@ -68,6 +69,7 @@ export default [
                   1499759470, // Linear Fusion Rifle Ammo Finder
                   2603856295, // Rocket Launcher Ammo Finder
                   4148827738, // Shotgun Ammo Finder
+                  1050260245, // Sidearm Ammo Finder
                   2754084930, // Sniper Rifle Ammo Finder
                   1476367343, // Sword Ammo Finder
                   3973928133 // Trace Rifle Ammo Finder
@@ -383,6 +385,7 @@ export default [
                 749060462, // Linear Fusion Rifle Reserves
                 1303690937, // Rocket Launcher Reserves
                 2368162286, // Shotgun Reserves
+                3859610803, // Sidearm Reserves
                 3926976952, // Sniper Rifle Reserves
                 3543966269, // Sword Reserves
                 2321484659 // Trace Rifle Reserves
@@ -424,6 +427,7 @@ export default [
                   749060462, // Linear Fusion Rifle Reserves
                   1303690937, // Rocket Launcher Reserves
                   2368162286, // Shotgun Reserves
+                  3859610803, // Sidearm Reserves
                   3926976952, // Sniper Rifle Reserves
                   3543966269, // Sword Reserves
                   2321484659 // Trace Rifle Reserves
@@ -544,6 +548,7 @@ export default [
                 2051366208, // Linear Fusion Rifle Scavenger
                 311492789, // Rocket Launcher Scavenger
                 3836152936, // Shotgun Scavenger
+                2183342667, // Sidearm Scavenger
                 498878196, // Sniper Rifle Scavenger
                 2146553541, // Sword Scavenger
                 3632415743 // Trace Rifle Scavenger
@@ -590,6 +595,7 @@ export default [
                   2051366208, // Linear Fusion Rifle Scavenger
                   311492789, // Rocket Launcher Scavenger
                   3836152936, // Shotgun Scavenger
+                  2183342667, // Sidearm Scavenger
                   498878196, // Sniper Rifle Scavenger
                   2146553541, // Sword Scavenger
                   3632415743 // Trace Rifle Scavenger

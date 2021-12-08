@@ -25,6 +25,7 @@ export default {
   603721696: 250211794, // Cryosthesia 77K
   1853180924: 571025162, // Traveler's Chosen
   1833195496: 478443982, // Ager's Scepter
+  2179048386: 3574136388, // Forerunner
 
   // Energy weapons
   4190156464: 4178028503, // Merciless
@@ -65,7 +66,8 @@ export default {
   3766045777: 252263460, // Black Talon
   2591746970: 3740374319, // Leviathan's Breath
   2084878005: 1514331782, // Heir Apparent
-  2232171099: 2254190310 // Deathbringer
+  2232171099: 2254190310, // Deathbringer
+  1363886209: 1855685192 // Gjallarhorn
 
   // 1364093401: 0, // The Last Word
   // 2694576561: 0, // Two-Tailed Fox
