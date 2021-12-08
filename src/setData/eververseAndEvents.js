@@ -2,7 +2,6 @@
 import type { SetPage } from '../types';
 // import * as common from './common';
 import * as eververseAndEvents from './common/eververseAndEvents';
-import { i18nDefinitionString as _ } from './utils';
 
 export default ([
   {
