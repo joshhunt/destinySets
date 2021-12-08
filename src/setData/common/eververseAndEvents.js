@@ -3692,9 +3692,19 @@ export const DAWNING_Y4 = {
       ]
     },
     {
+      name: 'Weapons',
+      season: 15,
+      itemGroups: [[], [301177215, 3264152240]]
+    },
+    {
       name: 'Hunter Armor',
       season: 12,
       items: [3104651352, 3568351785, 2655812783, 3394362619, 74038334]
+    },
+    {
+      name: 'Hunter Armor',
+      season: 15,
+      items: [1938477372, 3293251509, 2763470379, 574406295, 1120186562]
     },
     {
       name: 'Titan Armor',
@@ -3702,9 +3712,19 @@ export const DAWNING_Y4 = {
       items: [428862428, 1825213269, 91501643, 3401335479, 2743185250]
     },
     {
+      name: 'Titan Armor',
+      season: 15,
+      items: [2423798800, 2179902689, 2984888631, 3674851283, 818240646]
+    },
+    {
       name: 'Warlock Armor',
       season: 12,
       items: [3656766039, 2730176990, 1319520530, 3574120120, 1914761507]
+    },
+    {
+      name: 'Warlock Armor',
+      season: 15,
+      items: [1581478491, 3082233610, 3524020798, 2121445668, 3278002119]
     },
     {
       name: 'Emotes',
@@ -3717,6 +3737,14 @@ export const DAWNING_Y4 = {
       ]
     },
     {
+      name: 'Emotes',
+      season: 15,
+      itemGroups: [
+        [1983275378, 386969562, 2195752360, 796298276, 2760841051],
+        [2892092373]
+      ]
+    },
+    {
       name: 'Ghosts',
       season: 12,
       itemGroups: [
@@ -3725,9 +3753,22 @@ export const DAWNING_Y4 = {
       ]
     },
     {
+      name: 'Ghosts',
+      season: 15,
+      itemGroups: [
+        [2021594588, 2021594589, 2021594590],
+        [2191694033, 2191694032]
+      ]
+    },
+    {
       name: 'Sparrows',
       season: 12,
       items: [3301342410, 3301342411, 3301342408]
+    },
+    {
+      name: 'Sparrows',
+      season: 15,
+      items: [773659238, 773659239, 773659236]
     },
     {
       name: 'Ships',
@@ -3735,9 +3776,26 @@ export const DAWNING_Y4 = {
       items: [249784434, 472776702]
     },
     {
+      name: 'Ships',
+      season: 15,
+      items: [3078552186, 1926033630]
+    },
+    {
       name: 'Extras',
       season: 12,
       items: [1230660647, 2962058751, 2696974649, 2696974648, 912276057]
+    },
+    {
+      name: 'Extras',
+      season: 15,
+      items: [
+        3800278199,
+        2214585029,
+        2214585028,
+        1091411797,
+        1091411796,
+        707118595
+      ]
     }
   ]
 };
@@ -3999,6 +4057,159 @@ export const FESTIVAL_OF_THE_LOST_Y4 = {
         418753772,
         3186457725
       ]
+    }
+  ]
+};
+
+export const BUNGIE_30TH_ANNIVERSARY_EVENT_Y4 = {
+  name: 'Bungie 30th Anniversary Event',
+  id: 'year-four-bungie-30th-anniversary-event',
+  description: 'Earned during the Bungie 30th Anniversary Event.',
+  sections: [
+    {
+      name: 'Weapons',
+      season: 15,
+      items: [
+        3046205073,
+        296103153,
+        2014761391,
+        3227439259,
+        2452241573,
+        3593477432,
+        2109129768,
+        2991424415,
+        2768498167
+      ]
+    },
+    {
+      name: 'Hunter Armor',
+      season: 15,
+      itemGroups: [[], [1324885391, 3492105806]]
+    },
+    {
+      name: 'Titan Armor',
+      season: 15,
+      itemGroups: [[], [4069013424, 4212806147]]
+    },
+    {
+      name: 'Warlock Armor',
+      season: 15,
+      itemGroups: [[], [115580637, 3242034340]]
+    },
+
+    {
+      name: 'Masks',
+      season: 15,
+      items: []
+    },
+
+    {
+      name: 'Emotes',
+      season: 15,
+      itemGroups: [
+        [
+          3703169394,
+          3582457406,
+          2388840381,
+          2433436300,
+          4271566634,
+          1505110164,
+          2214333484,
+          2078304963,
+          2637432184,
+          3485775922,
+          2438702274,
+          1967918626,
+          3825460361,
+          2001069811,
+          542633380,
+          2064956040,
+          2203190004,
+          3125136030,
+          1378831120
+        ],
+        [2163010787, 4039153625, 3681248702]
+      ]
+    },
+
+    {
+      name: 'Ghosts',
+      season: 15,
+      itemGroups: [
+        [
+          // 3105072596,
+          3105072597,
+          3105072598,
+          3105072599,
+          3105072592,
+          3105072593,
+          3105072594
+        ],
+        [1538938258, 1538938257, 1538938256, 1538938259]
+      ]
+    },
+
+    {
+      name: 'Sparrows',
+      season: 15,
+      items: [
+        // 2357026176,
+        2357026177,
+        2357026178,
+        2357026179,
+        2357026180,
+        2357026181
+      ]
+    },
+
+    {
+      name: 'Ships',
+      season: 15,
+      items: [
+        // 3210287508,
+        3210287509,
+        3210287510,
+        3210287511,
+        3210287504
+      ]
+    },
+
+    {
+      name: 'Extras',
+      season: 15,
+      items: [
+        557384113,
+        557384112,
+        557384115,
+        557384114,
+        2827976013,
+        2827976012
+      ]
+    }
+  ]
+};
+
+export const MOMENTS_OF_TRIUMPH_Y4 = {
+  name: 'Moments of Triumph',
+  id: 'year-four-moments-of-triumph',
+  description: 'Earned during the 2021 Moments of Triumph event.',
+  big: false,
+  sections: [
+    {
+      name: 'Ghosts',
+      season: 15,
+      items: [787883499]
+    },
+    {
+      name: 'Sparrows',
+      season: 15,
+      items: [4153737633]
+    },
+
+    {
+      name: 'Extras',
+      season: 15,
+      items: [3800278192, 3752071771]
     }
   ]
 };

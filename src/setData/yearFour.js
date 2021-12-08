@@ -696,6 +696,96 @@ export default ([
             items: [3376331270, 1230660643, 3089508707, 3089508706]
           }
         ]
+      },
+      {
+        name: _(
+          'DestinyDestinationDefinition[1449984089].displayProperties.name',
+          'Eternity'
+        ),
+        id: 'year-four-eternity',
+        description:
+          'Found by completing activites from the 30th Anniversary Event and 30th Anniversary Pack.',
+        sections: [
+          {
+            name: 'Quest Weapons',
+            season: 15,
+            itemGroups: [[2179048386, 1363886209], []]
+          },
+          {
+            name: 'Xûr',
+            season: 15,
+            itemGroups: [
+              [2768498166],
+              [1400258675, 3188232450, 531444966, 978987708, 849539407],
+              [1400258673],
+              [925503559, 3167173070, 611486946, 955283912, 259940403],
+              [925503557],
+              [3089494084, 3036688669, 4157415075, 682889663, 3439221914],
+              [3089494086],
+              [
+                3658937452,
+                2646067235,
+                3510467636,
+                2944651291,
+                3800278196,
+                4198761574,
+                4198761575
+              ]
+            ]
+          },
+          {
+            name: "Xûr's Treasure Hoard",
+            season: 15,
+            itemGroups: [
+              [
+                3257091166,
+                3257091167,
+                3849810018,
+                1679868061,
+                2708806099,
+                548958835
+              ],
+              [2680833851, 1615970029, 4039670779]
+            ]
+          },
+          {
+            name: 'Hunter Armor',
+            season: 15,
+            itemGroups: [
+              [1400258674, 3188232451, 531444967, 978987709, 849539406]
+            ]
+          },
+          {
+            name: 'Titan Armor',
+            season: 15,
+            itemGroups: [
+              [925503558, 3167173071, 611486947, 955283913, 259940402]
+            ]
+          },
+          {
+            name: 'Warlock Armor',
+            season: 15,
+            itemGroups: [
+              [3089494085, 3036688668, 4157415074, 682889662, 3439221915]
+            ]
+          },
+          {
+            name: "'Grasp of Avarice' Dungeon",
+            season: 15,
+            itemGroups: [
+              [2139640995, 235827225, 4164201232, 2563012876],
+              [2744480004, 2308793821, 3587911011, 337875583, 2486733914],
+              [3473581026, 2771648715, 549825413, 4287863773, 3500810712],
+              [1832715465, 3536211008, 2515293448, 2231150714, 4217390949],
+              [983635618, 3800278197, 3800278198, 2716058777]
+            ]
+          },
+          {
+            name: 'Extras',
+            season: 12,
+            items: []
+          }
+        ]
       }
     ]
   },
@@ -705,7 +795,9 @@ export default ([
       eververseAndEvents.DAWNING_Y4,
       eververseAndEvents.GUARDIAN_GAMES_Y4,
       eververseAndEvents.SOLSTICE_OF_HEROES_Y4,
-      eververseAndEvents.FESTIVAL_OF_THE_LOST_Y4
+      eververseAndEvents.FESTIVAL_OF_THE_LOST_Y4,
+      eververseAndEvents.BUNGIE_30TH_ANNIVERSARY_EVENT_Y4,
+      eververseAndEvents.MOMENTS_OF_TRIUMPH_Y4
     ]
   },
   {
