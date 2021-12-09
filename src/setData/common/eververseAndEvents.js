@@ -3694,7 +3694,7 @@ export const DAWNING_Y4 = {
     {
       name: 'Weapons',
       season: 15,
-      itemGroups: [[], [301177215, 3264152240]]
+      itemGroups: [[3400256755], [301177215, 3264152240]]
     },
     {
       name: 'Hunter Armor',
