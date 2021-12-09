@@ -26,6 +26,7 @@ export default {
   1853180924: 571025162, // Traveler's Chosen
   1833195496: 478443982, // Ager's Scepter
   2179048386: 3574136388, // Forerunner
+  2130065553: 3835718947, // Arbalest
 
   // Energy weapons
   4190156464: 4178028503, // Merciless
