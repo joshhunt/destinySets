@@ -19,22 +19,22 @@ export default ([
           {
             name: 'Weapons',
             season: 12,
-            itemGroups: [[2891672170], [4060882458]]
+            items: [[2891672170]]
           },
           {
             name: 'Weapons',
             season: 13,
-            itemGroups: [[4156253727, 2448907086], [1132740485]]
+            items: [4156253727, 2448907086]
           },
           {
             name: 'Weapons',
             season: 14,
-            itemGroups: [[4255586669], [4226042917]]
+            items: [4255586669]
           },
           {
             name: 'Weapons',
             season: 15,
-            itemGroups: [[378498222], [2056295391]]
+            items: [378498222]
           },
           {
             name: 'Nightfall: The Ordeal Weapons',
@@ -108,22 +108,22 @@ export default ([
           {
             name: 'Weapons',
             season: 12,
-            itemGroups: [[2050789284], [4060882456]]
+            items: [2050789284]
           },
           {
             name: 'Weapons',
             season: 13,
-            itemGroups: [[409551876, 3473290087], [1132740487]]
+            items: [409551876, 3473290087]
           },
           {
             name: 'Weapons',
             season: 14,
-            itemGroups: [[310708513], [4226042919]]
+            items: [310708513]
           },
           {
             name: 'Weapons',
             season: 15,
-            itemGroups: [[2496875173], [2056295389]]
+            items: [2496875173]
           },
           {
             name: 'Hunter Armor',
@@ -173,22 +173,22 @@ export default ([
           {
             name: 'Weapons',
             season: 12,
-            itemGroups: [[3565520715], [4060882457]]
+            items: [3565520715]
           },
           {
             name: 'Weapons',
             season: 13,
-            itemGroups: [[1046651176, 3258665412], [1132740486]]
+            items: [1046651176, 3258665412]
           },
           {
             name: 'Weapons',
             season: 14,
-            itemGroups: [[875848769], [4226042918]]
+            items: [875848769]
           },
           {
             name: 'Weapons',
             season: 15,
-            itemGroups: [[1107446438], [2056295388]]
+            items: [1107446438]
           },
           {
             name: 'Hunter Armor',
@@ -511,7 +511,7 @@ export default ([
           {
             name: 'Pursuit Weapon',
             season: 12,
-            items: [4184808992]
+            itemGroups: [[4184808992], [4060882458, 4060882456, 4060882457]]
           },
           {
             name: 'Wrathborn Hunts',
@@ -543,7 +543,7 @@ export default ([
           {
             name: 'Pursuit Weapon',
             season: 13,
-            items: [2060863616]
+            itemGroups: [[2060863616], [1132740485, 1132740487, 1132740486]]
           },
           {
             name: 'Battlegrounds',
@@ -580,7 +580,7 @@ export default ([
           {
             name: 'Pursuit Weapon',
             season: 14,
-            items: [1644680957]
+            itemGroups: [[1644680957], [4226042917, 4226042919, 4226042918]]
           },
           {
             name: 'Hunter Armor',
@@ -622,7 +622,7 @@ export default ([
           {
             name: 'Pursuit Weapon',
             season: 15,
-            items: [725408022]
+            itemGroups: [[725408022], [2056295391, 2056295389, 2056295388]]
           },
           {
             name: 'Hunter Armor',
