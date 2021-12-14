@@ -106,13 +106,6 @@ function ItemTooltip({
           </div>
         )}
 
-        {investmentStatItem && (
-          <p className={styles.description}>
-            {investmentStatItem.displayProperties.name}:{' '}
-            {item.investmentStats[0].value}
-          </p>
-        )}
-
         {!small && stats && (
           <div className={styles.section}>
             <ItemStats
