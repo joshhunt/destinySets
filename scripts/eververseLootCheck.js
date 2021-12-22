@@ -79,8 +79,9 @@ function sortSeasonalItems(
       i.displayCategoryIndex === 2 ||
       i.displayCategoryIndex === 3 ||
       i.displayCategoryIndex === 4 ||
-      i.displayCategoryIndex === 7 ||
-      i.displayCategoryIndex === 8
+      i.displayCategoryIndex === 5 ||
+      i.displayCategoryIndex === 8 ||
+      i.displayCategoryIndex === 9
     ) {
       if (
         DestinyInventoryItemDefinition &&
