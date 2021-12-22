@@ -19,7 +19,7 @@ export default ([
           {
             name: 'Weapons',
             season: 12,
-            items: [[2891672170]]
+            items: [2891672170]
           },
           {
             name: 'Weapons',
