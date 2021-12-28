@@ -7,9 +7,10 @@ import {
   TITAN,
   WARLOCK,
   FILTER_SHOW_COLLECTED,
-  FILTER_SHOW_HIDDEN_SETS,
+  FILTER_SHOW_EVERVERSE,
   FILTER_SHOW_ORNAMENTS,
-  FILTER_SHOW_WEAPONS
+  FILTER_SHOW_WEAPONS,
+  FILTER_SHOW_HIDDEN_SETS
 } from 'app/lib/destinyEnums';
 
 import styles from 'app/components/Header/dropdownStyles.styl';
@@ -19,6 +20,7 @@ const FILTER_NAMES = {
   [TITAN]: 'Titan',
   [WARLOCK]: 'Warlock',
   [FILTER_SHOW_COLLECTED]: 'Collected items',
+  [FILTER_SHOW_EVERVERSE]: 'Eververse items',
   [FILTER_SHOW_ORNAMENTS]: 'Ornaments',
   [FILTER_SHOW_WEAPONS]: 'Weapons',
   [FILTER_SHOW_HIDDEN_SETS]: 'Hidden sets'

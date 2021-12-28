@@ -3,9 +3,10 @@ import {
   TITAN,
   WARLOCK,
   FILTER_SHOW_COLLECTED,
-  FILTER_SHOW_HIDDEN_SETS,
+  FILTER_SHOW_EVERVERSE,
   FILTER_SHOW_ORNAMENTS,
-  FILTER_SHOW_WEAPONS
+  FILTER_SHOW_WEAPONS,
+  FILTER_SHOW_HIDDEN_SETS
 } from 'app/lib/destinyEnums';
 
 import { makePayloadAction } from './utils';
@@ -28,12 +29,13 @@ const SET_APP_VALUE = 'Set app value';
 const SET_SEARCH_VALUE = 'Set search value';
 
 export const DEFAULT_FILTER = {
-  [TITAN]: true,
   [HUNTER]: true,
+  [TITAN]: true,
   [WARLOCK]: true,
+  [FILTER_SHOW_COLLECTED]: true,
+  [FILTER_SHOW_EVERVERSE]: false,
   [FILTER_SHOW_ORNAMENTS]: true,
   [FILTER_SHOW_WEAPONS]: true,
-  [FILTER_SHOW_COLLECTED]: true,
   [FILTER_SHOW_HIDDEN_SETS]: false
 };
 

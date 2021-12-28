@@ -4,9 +4,10 @@ export const WARLOCK = 2;
 export const NO_CLASS = 3;
 
 export const FILTER_SHOW_COLLECTED = 'showCollected';
-export const FILTER_SHOW_HIDDEN_SETS = 'showHiddenSets';
+export const FILTER_SHOW_EVERVERSE = 'showEververse';
 export const FILTER_SHOW_ORNAMENTS = 'showOrnaments';
 export const FILTER_SHOW_WEAPONS = 'showWeapons';
+export const FILTER_SHOW_HIDDEN_SETS = 'showHiddenSets';
 
 const testChecklists = false;
 

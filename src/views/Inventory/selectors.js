@@ -6,19 +6,21 @@ import {
   HUNTER,
   TITAN,
   WARLOCK,
-  WEAPON,
+  FILTER_SHOW_COLLECTED,
+  FILTER_SHOW_EVERVERSE,
+  FILTER_SHOW_ORNAMENTS,
   WEAPON_MODS_ORNAMENTS,
   ARMOR_MODS_ORNAMENTS,
-  FILTER_SHOW_COLLECTED,
-  FILTER_SHOW_HIDDEN_SETS,
-  FILTER_SHOW_ORNAMENTS,
-  FILTER_SHOW_WEAPONS
+  FILTER_SHOW_WEAPONS,
+  WEAPON,
+  FILTER_SHOW_HIDDEN_SETS
 } from 'app/lib/destinyEnums';
 
 import {
   inventorySelector,
   itemDefsSelector,
-  checklistDefsSelector
+  checklistDefsSelector,
+  collectibleDefsSelector
 } from 'app/store/selectors';
 import * as ls from 'app/lib/ls';
 
@@ -46,7 +48,7 @@ const compare = (string, search) => {
   return string && string.toLowerCase().includes(search);
 };
 
-function filterItem(item, inventory, filters, searchTerm) {
+function filterItem(item, inventory, filters, searchTerm, collectible) {
   if (!item) {
     return false;
   }
@@ -57,6 +59,19 @@ function filterItem(item, inventory, filters, searchTerm) {
       (compare(item.displayProperties.name, searchTerm) ||
         compare(item.displayProperties.description, searchTerm))
     );
+  }
+
+  if (
+    !filters[FILTER_SHOW_EVERVERSE] &&
+    collectible &&
+    collectible.sourceString
+  ) {
+    let res =
+      collectible.sourceString.toLowerCase().includes('eververse') ||
+      collectible.sourceString.toLowerCase().includes('bright engram');
+    if (res) {
+      return false;
+    }
   }
 
   if (!filters[FILTER_SHOW_WEAPONS] && hasCategoryHash(item, WEAPON)) {
@@ -200,6 +215,7 @@ export const filteredSetDataSelector = createSelector(
   itemDefsSelector,
   state => state.app.searchValue,
   propsPreventFilteringSelector,
+  collectibleDefsSelector,
   (
     filters,
     hiddenSets,
@@ -207,7 +223,8 @@ export const filteredSetDataSelector = createSelector(
     inventory,
     itemDefs,
     searchValue,
-    preventFiltering
+    preventFiltering,
+    collectibleDefs
   ) => {
     if (preventFiltering) {
       return setData;
@@ -248,7 +265,17 @@ export const filteredSetDataSelector = createSelector(
                   }
 
                   const item = itemDefs[itemHash];
-                  return filterItem(item, inventory, filters, searchTerm);
+                  const collectible =
+                    item && item.collectibleHash
+                      ? collectibleDefs[item.collectibleHash]
+                      : null;
+                  return filterItem(
+                    item,
+                    inventory,
+                    filters,
+                    searchTerm,
+                    collectible
+                  );
                 });
               })
               .filter(itemList => itemList.length);
