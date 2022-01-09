@@ -839,8 +839,6 @@ export default [
                 3961599962, // Mobility Mod
                 2645858828, // Recovery Mod
                 2850583378, // Resilience Mod
-                3630287380, // Enhanced Relay Defender
-                3415291596, // Relay Defender
                 2623485440, // Minor Discipline Mod
                 3699676109, // Minor Strength Mod
                 1227870362, // Minor Intellect Mod
@@ -860,6 +858,10 @@ export default [
               ],
               [
                 3895804619 // Dreambane Mod
+              ],
+              [
+                3630287380, // Enhanced Relay Defender
+                3415291596 // Relay Defender
               ],
               [
                 3632726238, // Taking Charge
@@ -898,8 +900,6 @@ export default [
                   3961599962, // Mobility Mod
                   2645858828, // Recovery Mod
                   2850583378, // Resilience Mod
-                  3630287380, // Enhanced Relay Defender
-                  3415291596, // Relay Defender
                   2623485440, // Minor Discipline Mod
                   3699676109, // Minor Strength Mod
                   1227870362, // Minor Intellect Mod
@@ -916,7 +916,7 @@ export default [
                 ]
               },
               {
-                name: "Season of the Outlaw",
+                name: "Last Wish",
                 items: [
                   2859541905, // Taken Armaments
                   399528760, // Taken Invigoration
@@ -928,6 +928,13 @@ export default [
                 name: "Season of the Undying",
                 items: [
                   3895804619 // Dreambane Mod
+                ]
+              },
+              {
+                name: "Garden of Salvation",
+                items: [
+                  3630287380, // Enhanced Relay Defender
+                  3415291596 // Relay Defender
                 ]
               },
               {
@@ -978,13 +985,13 @@ export default [
             nameHash: 728351493,
             itemGroups: [
               [
-                2037533514, // Enhanced Resistant Tether
-                2887845822 // Resistant Tether
-              ],
-              [
                 3829100654, // Supreme Nightmare Banisher
                 1996040463, // Enhanced Nightmare Banisher
                 2874957617 // Nightmare Banisher
+              ],
+              [
+                2037533514, // Enhanced Resistant Tether
+                2887845822 // Resistant Tether
               ],
               [
                 1484685884, // Quick Charge
@@ -1023,18 +1030,18 @@ export default [
             ],
             groups: [
               {
-                name: "General",
-                items: [
-                  2037533514, // Enhanced Resistant Tether
-                  2887845822 // Resistant Tether
-                ]
-              },
-              {
                 name: "Season of the Undying",
                 items: [
                   3829100654, // Supreme Nightmare Banisher
                   1996040463, // Enhanced Nightmare Banisher
                   2874957617 // Nightmare Banisher
+                ]
+              },
+              {
+                name: "Garden of Salvation",
+                items: [
+                  2037533514, // Enhanced Resistant Tether
+                  2887845822 // Resistant Tether
                 ]
               },
               {
@@ -1096,13 +1103,13 @@ export default [
             nameHash: 591714140,
             itemGroups: [
               [
-                4020036031, // Enhanced Voltaic Ammo Collector
-                928186993 // Voltaic Ammo Collector
-              ],
-              [
                 2023980600, // Supreme Nightmare Breaker
                 4193902249, // Enhanced Nightmare Breaker
                 1560574695 // Nightmare Breaker
+              ],
+              [
+                4020036031, // Enhanced Voltaic Ammo Collector
+                928186993 // Voltaic Ammo Collector
               ],
               [
                 3185435909, // Heal Thyself
@@ -1141,18 +1148,18 @@ export default [
             ],
             groups: [
               {
-                name: "General",
-                items: [
-                  4020036031, // Enhanced Voltaic Ammo Collector
-                  928186993 // Voltaic Ammo Collector
-                ]
-              },
-              {
                 name: "Season of the Undying",
                 items: [
                   2023980600, // Supreme Nightmare Breaker
                   4193902249, // Enhanced Nightmare Breaker
                   1560574695 // Nightmare Breaker
+                ]
+              },
+              {
+                name: "Garden of Salvation",
+                items: [
+                  4020036031, // Enhanced Voltaic Ammo Collector
+                  928186993 // Voltaic Ammo Collector
                 ]
               },
               {
@@ -1214,13 +1221,13 @@ export default [
             nameHash: 4069572561,
             itemGroups: [
               [
-                865380761, // Enhanced Voltaic Mote Collector
-                4134680615 // Voltaic Mote Collector
-              ],
-              [
                 2045123179, // Supreme Nightmare Crusher
                 1565861116, // Enhanced Nightmare Crusher
                 3736152098 // Nightmare Crusher
+              ],
+              [
+                865380761, // Enhanced Voltaic Mote Collector
+                4134680615 // Voltaic Mote Collector
               ],
               [
                 3523075120, // Protective Light
@@ -1259,18 +1266,18 @@ export default [
             ],
             groups: [
               {
-                name: "General",
-                items: [
-                  865380761, // Enhanced Voltaic Mote Collector
-                  4134680615 // Voltaic Mote Collector
-                ]
-              },
-              {
                 name: "Season of the Undying",
                 items: [
                   2045123179, // Supreme Nightmare Crusher
                   1565861116, // Enhanced Nightmare Crusher
                   3736152098 // Nightmare Crusher
+                ]
+              },
+              {
+                name: "Garden of Salvation",
+                items: [
+                  865380761, // Enhanced Voltaic Mote Collector
+                  4134680615 // Voltaic Mote Collector
                 ]
               },
               {
