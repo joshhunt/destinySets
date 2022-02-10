@@ -2337,7 +2337,7 @@ export const EVERVERSE_Y2 = {
 export const FESTIVAL_OF_THE_LOST_Y3 = {
   name: 'Festival of the Lost',
   id: 'year-three-festival-of-the-lost',
-  description: 'Earned during the seasonal Festival of the Lost event.',
+  description: 'Acquirable during the seasonal Festival of the Lost event.',
   sections: [
     {
       name: 'Weapons',
@@ -2580,7 +2580,7 @@ export const FESTIVAL_OF_THE_LOST_Y3 = {
 export const DAWNING_Y3 = {
   name: 'The Dawning',
   id: 'year-three-the-dawning',
-  description: 'Earned during the seasonal Dawning event.',
+  description: 'Acquirable during the seasonal Dawning event.',
   big: false,
   sections: [
     {
@@ -2698,7 +2698,7 @@ export const DAWNING_Y3 = {
 export const CRIMSON_DAYS_Y3 = {
   name: 'Crimson Days',
   id: 'year-three-crimson-days',
-  description: 'Earned during the seasonal Crimson Days event.',
+  description: 'Acquirable during the seasonal Crimson Days event.',
   big: false,
   sections: [
     {
@@ -2741,7 +2741,7 @@ export const CRIMSON_DAYS_Y3 = {
 export const GUARDIAN_GAMES_Y3 = {
   name: 'Guardian Games',
   id: 'year-three-guardian-games',
-  description: 'Earned during the seasonal Guardian Games event.',
+  description: 'Acquirable during the seasonal Guardian Games event.',
   big: false,
   sections: [
     {
@@ -2863,7 +2863,7 @@ export const GUARDIAN_GAMES_Y3 = {
 export const MOMENTS_OF_TRIUMPH_Y3 = {
   name: 'Moments of Triumph',
   id: 'year-three-moments-of-triumph',
-  description: 'Earned during the 2020 Moments of Triumph event.',
+  description: 'Acquirable during the 2020 Moments of Triumph event.',
   big: false,
   sections: [
     {
@@ -2897,7 +2897,7 @@ export const MOMENTS_OF_TRIUMPH_Y3 = {
 export const SOLSTICE_OF_HEROES_Y3 = {
   name: 'Solstice of Heroes',
   id: 'COMMON_SOLSTICE_OF_HEROES',
-  description: 'Earned during the 2020 Solstice of Heroes event.',
+  description: 'Acquirable during the 2020 Solstice of Heroes event.',
   big: false,
   sections: [
     {
@@ -3677,7 +3677,7 @@ export const EVERVERSE_Y3 = {
 export const DAWNING_Y4 = {
   name: 'The Dawning',
   id: 'year-four-the-dawning',
-  description: 'Earned during the seasonal Dawning event.',
+  description: 'Acquirable during the seasonal Dawning event.',
   big: false,
   sections: [
     {
@@ -3806,7 +3806,7 @@ export const DAWNING_Y4 = {
 export const GUARDIAN_GAMES_Y4 = {
   name: 'Guardian Games',
   id: 'year-four-guardian-games',
-  description: 'Earned during the seasonal Guardian Games event.',
+  description: 'Acquirable during the seasonal Guardian Games event.',
   big: false,
   sections: [
     {
@@ -3895,7 +3895,7 @@ export const GUARDIAN_GAMES_Y4 = {
 export const SOLSTICE_OF_HEROES_Y4 = {
   name: 'Solstice of Heroes',
   id: 'COMMON_SOLSTICE_OF_HEROES',
-  description: 'Earned during the 2021 Solstice of Heroes event.',
+  description: 'Acquirable during the 2021 Solstice of Heroes event.',
   big: false,
   sections: [
     {
@@ -3969,7 +3969,7 @@ export const SOLSTICE_OF_HEROES_Y4 = {
 export const FESTIVAL_OF_THE_LOST_Y4 = {
   name: 'Festival of the Lost',
   id: 'year-four-festival-of-the-lost',
-  description: 'Earned during the seasonal Festival of the Lost event.',
+  description: 'Acquirable during the seasonal Festival of the Lost event.',
   sections: [
     {
       name: 'Weapons',
@@ -4061,7 +4061,7 @@ export const FESTIVAL_OF_THE_LOST_Y4 = {
 export const BUNGIE_30TH_ANNIVERSARY_EVENT_Y4 = {
   name: 'Bungie 30th Anniversary Event',
   id: 'year-four-bungie-30th-anniversary-event',
-  description: 'Earned during the Bungie 30th Anniversary Event.',
+  description: 'Acquirable during the Bungie 30th Anniversary Event.',
   sections: [
     {
       name: 'Weapons',
@@ -4180,7 +4180,7 @@ export const BUNGIE_30TH_ANNIVERSARY_EVENT_Y4 = {
 export const MOMENTS_OF_TRIUMPH_Y4 = {
   name: 'Moments of Triumph',
   id: 'year-four-moments-of-triumph',
-  description: 'Earned during the 2021 Moments of Triumph event.',
+  description: 'Acquirable during the 2021 Moments of Triumph event.',
   big: false,
   sections: [
     {
