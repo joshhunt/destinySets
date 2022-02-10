@@ -4000,7 +4000,6 @@ export const FESTIVAL_OF_THE_LOST_Y4 = {
         [2545426109]
       ]
     },
-
     {
       name: 'Masks',
       season: 15,
@@ -4015,7 +4014,6 @@ export const FESTIVAL_OF_THE_LOST_Y4 = {
         3727346032
       ]
     },
-
     {
       name: 'Emotes',
       season: 15,
@@ -4026,7 +4024,6 @@ export const FESTIVAL_OF_THE_LOST_Y4 = {
         ]
       ]
     },
-
     {
       name: 'Ghosts',
       season: 15,
@@ -4035,19 +4032,16 @@ export const FESTIVAL_OF_THE_LOST_Y4 = {
         [442994988, 442994989]
       ]
     },
-
     {
       name: 'Sparrows',
       season: 15,
       items: [3542826854, 3397132454, 3397132455]
     },
-
     {
       name: 'Ships',
       season: 15,
       items: [3499472512]
     },
-
     {
       name: 'Extras',
       season: 15,
@@ -4087,25 +4081,18 @@ export const BUNGIE_30TH_ANNIVERSARY_EVENT_Y4 = {
     {
       name: 'Hunter Armor',
       season: 15,
-      itemGroups: [[], [1324885391, 3492105806]]
+      items: [1324885391, 3492105806]
     },
     {
       name: 'Titan Armor',
       season: 15,
-      itemGroups: [[], [4069013424, 4212806147]]
+      items: [4069013424, 4212806147]
     },
     {
       name: 'Warlock Armor',
       season: 15,
-      itemGroups: [[], [115580637, 3242034340]]
+      items: [115580637, 3242034340]
     },
-
-    {
-      name: 'Masks',
-      season: 15,
-      items: []
-    },
-
     {
       name: 'Emotes',
       season: 15,
@@ -4136,7 +4123,6 @@ export const BUNGIE_30TH_ANNIVERSARY_EVENT_Y4 = {
         ]
       ]
     },
-
     {
       name: 'Ghosts',
       season: 15,
@@ -4153,7 +4139,6 @@ export const BUNGIE_30TH_ANNIVERSARY_EVENT_Y4 = {
         [1538938258, 1538938257, 1538938256, 1538938259]
       ]
     },
-
     {
       name: 'Sparrows',
       season: 15,
@@ -4166,7 +4151,6 @@ export const BUNGIE_30TH_ANNIVERSARY_EVENT_Y4 = {
         2357026181
       ]
     },
-
     {
       name: 'Ships',
       season: 15,
@@ -4178,7 +4162,6 @@ export const BUNGIE_30TH_ANNIVERSARY_EVENT_Y4 = {
         // 3210287504
       ]
     },
-
     {
       name: 'Extras',
       season: 15,
@@ -4210,7 +4193,6 @@ export const MOMENTS_OF_TRIUMPH_Y4 = {
       season: 15,
       items: [4153737633]
     },
-
     {
       name: 'Extras',
       season: 15,
@@ -4277,7 +4259,6 @@ export const EVERVERSE_Y4 = {
           1061828070,
           396425346
         ],
-        [],
         [
           // 1029444727,
           1516829881,
@@ -4302,7 +4283,6 @@ export const EVERVERSE_Y4 = {
           3925195811,
           4231724739
         ],
-        [],
         [3951784665, 3049004864, 46563601]
       ]
     },
@@ -4322,7 +4302,6 @@ export const EVERVERSE_Y4 = {
           3991681308,
           116193775
         ],
-        [],
         [2413288976, 1185631823, 3736112681]
       ]
     },
@@ -4342,7 +4321,6 @@ export const EVERVERSE_Y4 = {
           2321971501,
           1339798067
         ],
-        [],
         [2906309175, 2548770303, 533407799, 3810306343, 2296382436, 31326870]
       ]
     },
