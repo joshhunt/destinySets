@@ -6,6 +6,7 @@ export default {
   yearTwo: require('./yearTwo').default,
   yearThree: require('./yearThree').default,
   yearFour: require('./yearFour').default,
+  yearFive: require('./yearFive').default,
   eververseAndEvents: require('./eververseAndEvents').default,
   dlc1: require('./dlc1').default,
   dlc2: require('./dlc2').default,

@@ -4684,3 +4684,63 @@ export const EVERVERSE_Y4 = {
     }
   ]
 };
+
+// Year 5
+
+export const EVERVERSE_Y5 = {
+  name: _(
+    'DestinyFactionDefinition[1393733616].displayProperties.name',
+    'Eververse'
+  ),
+  id: 'year-five-eververse',
+  description: 'Items sold at Eververse for Bright Dust.',
+  big: false,
+  sections: [
+    {
+      name: 'Armor',
+      season: 16,
+      itemGroups: [[], [], []]
+    },
+    {
+      name: 'Ornaments',
+      season: 16,
+      itemGroups: [[], [], []]
+    },
+
+    {
+      name: 'Emotes',
+      season: 16,
+      itemGroups: [[], []]
+    },
+
+    {
+      name: 'Ghosts',
+      season: 16,
+      itemGroups: [[], []]
+    },
+
+    {
+      name: 'Sparrows',
+      season: 16,
+      items: []
+    },
+
+    {
+      name: 'Ships',
+      season: 16,
+      items: []
+    },
+
+    {
+      name: 'Shaders',
+      season: 16,
+      items: []
+    },
+
+    {
+      name: 'Transmat Effects',
+      season: 16,
+      items: []
+    }
+  ]
+};
