@@ -33,7 +33,11 @@ export default function Footer({ item, children }) {
       <br />
       <br />
       Made by{' '}
-      <a href="http://joshhunt.is" target="_blank" rel="noopener noreferrer">
+      <a
+        href="https://twitter.com/joshhunt"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         Josh Hunt
       </a>{' '}
       and{' '}
