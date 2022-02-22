@@ -2861,7 +2861,7 @@ export const GUARDIAN_GAMES_Y3 = {
 export const MOMENTS_OF_TRIUMPH_Y3 = {
   name: 'Moments of Triumph',
   id: 'year-three-moments-of-triumph',
-  description: 'Acquirable during the 2020 Moments of Triumph event.',
+  description: 'Earned during the 2020 Moments of Triumph event.',
   big: false,
   sections: [
     {
@@ -4178,7 +4178,7 @@ export const BUNGIE_30TH_ANNIVERSARY_EVENT_Y4 = {
 export const MOMENTS_OF_TRIUMPH_Y4 = {
   name: 'Moments of Triumph',
   id: 'year-four-moments-of-triumph',
-  description: 'Acquirable during the 2021 Moments of Triumph event.',
+  description: 'Earned during the 2021 Moments of Triumph event.',
   big: false,
   sections: [
     {
