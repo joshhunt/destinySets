@@ -1394,7 +1394,7 @@ export const MOMENTS_OF_TRIUMPH_Y2 = {
 export const SOLSTICE_OF_HEROES_Y2 = {
   name: 'Solstice of Heroes',
   id: 'COMMON_SOLSTICE_OF_HEROES',
-  description: 'Earned during the 2019 Solstice of Heroes event.',
+  description: 'Acquirable during the 2019 Solstice of Heroes event.',
   big: false,
   sections: [
     {
@@ -1558,10 +1558,8 @@ export const EVERVERSE_Y2 = {
     'Eververse'
   ),
   id: 'YEAR_TWO_EVERVERSE',
-  description: _(
-    'DestinyCollectibleDefinition[764786884].sourceString',
-    'Seasonal Bright Engrams.'
-  ),
+  description:
+    'Bright Engrams (Season 6 and prior) or items sold at Eververse for Bright Dust (Season 7).',
   big: true,
   sections: [
     {
