@@ -126,11 +126,12 @@ const CATEGORY_DEXTERITY = 'Dexterity';
 const CATEGORY_HOLSTER = 'Holster';
 const CATEGORY_LOADERS = 'Loaders';
 const CATEGORY_UNFLINCHING_AIM = 'Unflinching Aim';
-const CATEGORY_SEASON_OUTLAW = 'Season of the Outlaw';
+const CATEGORY_LAST_WISH = 'Last Wish';
 const CATEGORY_SEASON_FORGE = 'Season of the Forge';
 const CATEGORY_SEASON_DRIFTER = 'Season of the Drifter';
 const CATEGORY_SEASON_OPULENCE = 'Season of Opulence';
 const CATEGORY_SEASON_UNDYING = 'Season of the Undying';
+const CATEGORY_GARDEN_OF_SALVATION = 'Garden of Salvation';
 const CATEGORY_SEASON_DAWN = 'Season of Dawn';
 const CATEGORY_SEASON_WORTHY = 'Season of the Worthy';
 const CATEGORY_SEASON_ARRIVALS = 'Season of Arrivals';
@@ -140,10 +141,11 @@ const CATEGORY_VAULT_OF_GLASS = 'Vault of Glass';
 
 const MOD_CATEGORISER = [
   matchArtifactMods(CATEGORY_SEASONAL_ARTIFACT),
-  matchPlugCategory(CATEGORY_SEASON_OUTLAW, 'enhancements.season_outlaw'),
+  matchPlugCategory(CATEGORY_LAST_WISH, 'enhancements.season_outlaw'),
   matchPlugCategory(CATEGORY_SEASON_FORGE, 'enhancements.season_forge'),
   matchPlugCategory(CATEGORY_SEASON_OPULENCE, 'enhancements.season_opulence'),
   matchPlugCategory(CATEGORY_SEASON_UNDYING, 'enhancements.season_maverick'),
+  matchPlugCategory(CATEGORY_GARDEN_OF_SALVATION, 'enhancements.raid_garden'),
   matchPlugCategory(CATEGORY_SEASON_DAWN, 'enhancements.season_v470'),
   matchPlugCategory(CATEGORY_SEASON_WORTHY, 'enhancements.season_v480'),
   matchPlugCategory(CATEGORY_SEASON_ARRIVALS, 'enhancements.season_v490'),
@@ -173,11 +175,12 @@ const CATERGORY_DISPLAY_ORDER = [
   CATEGORY_UNFLINCHING_AIM,
   CATEGORY_AMMO_SCAVENGER,
   CATEGORY_HOLSTER,
-  CATEGORY_SEASON_OUTLAW,
+  CATEGORY_LAST_WISH,
   CATEGORY_SEASON_FORGE,
   CATEGORY_SEASON_DRIFTER,
   CATEGORY_SEASON_OPULENCE,
   CATEGORY_SEASON_UNDYING,
+  CATEGORY_GARDEN_OF_SALVATION,
   CATEGORY_SEASON_DAWN,
   CATEGORY_SEASON_WORTHY,
   CATEGORY_SEASON_ARRIVALS,

@@ -187,7 +187,9 @@ class ItemModalContent extends Component {
           </li>*/}
 
           <li>
-            <Link to={`/data/${hash}`}>View in Data Explorer</Link>
+            <Link to={`/data/${hash}`} target="_blank">
+              View in Data Explorer
+            </Link>
           </li>
 
           <li>

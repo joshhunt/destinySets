@@ -291,7 +291,10 @@ export default ([
           {
             name: 'Extras',
             season: 15,
-            items: [1141716966, 193842215]
+            items: [
+              // 1141716966,
+              193842215
+            ]
           }
         ]
       },
@@ -645,7 +648,7 @@ export default ([
             items: [
               2832223387,
               2950966011,
-              2716077507,
+              // 2716077507,
               1141716963,
               1141716961,
               3953403254
@@ -716,7 +719,7 @@ export default ([
           {
             name: 'Quest Weapons',
             season: 15,
-            itemGroups: [[2179048386, 1363886209], []]
+            items: [2179048386, 1363886209]
           },
           {
             name: 'Xûr',
@@ -768,11 +771,6 @@ export default ([
               [1832715465, 3536211008, 2515293448, 2231150714, 4217390949],
               [983635618, 3800278197, 3800278198, 2962058737, 2716058777]
             ]
-          },
-          {
-            name: 'Extras',
-            season: 12,
-            items: []
           }
         ]
       }
@@ -811,11 +809,6 @@ export default ([
             name: 'Earned While Leveling',
             season: 13,
             items: [3651075426, 3117873459]
-          },
-          {
-            name: 'Earned While Leveling',
-            season: 14,
-            items: []
           }
         ]
       },
@@ -852,12 +845,12 @@ export default ([
           {
             name: 'Free Track',
             season: 14,
-            itemGroups: [[603721696, 599895591, 2434225986]]
+            items: [603721696, 599895591, 2434225986]
           },
           {
             name: 'Free Track',
             season: 15,
-            itemGroups: [[3761898871, 1337707096, 3184681056]]
+            items: [3761898871, 1337707096, 3184681056]
           },
           {
             name: 'Paid Track',
@@ -948,7 +941,7 @@ export default ([
           'DestinyVendorDefinition[3163810067].displayProperties.name',
           'Legendary Engrams'
         ),
-        id: 'year-three-legendary-engram',
+        id: 'year-four-legendary-engram',
         description: _(
           'DestinyCollectibleDefinition[4273799635].sourceString',
           'Open Legendary engrams and earn faction rank-up packages.'
@@ -991,78 +984,6 @@ export default ([
           }
         ]
       }
-      // {
-      //   name: _(
-      //     'DestinyInventoryItemDefinition[2266135479].displayProperties.name',
-      //     'Eververse Engram'
-      //   ),
-      //   id: 'season-12-eververse-engram',
-      //   description: _(
-      //     'DestinyInventoryItemDefinition[2266135479].displayProperties.description',
-      //     'An engram containing various Eververse ornaments, emotes, and accessories from previous Destiny 2 seasons.'
-      //   ),
-      //   big: false,
-      //   sections: [
-      //     {
-      //       name: 'Ornaments',
-      //       season: 12,
-      //       itemGroups: [
-      //         [3449188806, 432606867, 384923539],
-      //         [],
-      //         [
-      //           929374195,
-      //           2579031865,
-      //           3654808012,
-      //           3786758103,
-      //           475012491,
-      //           3778646768
-      //         ]
-      //       ]
-      //     },
-      //     {
-      //       name: 'Emotes',
-      //       season: 12,
-      //       items: [
-      //         2711683305,
-      //         1194404806,
-      //         208153163,
-      //         300144357,
-      //         1037681135,
-      //         2737227933,
-      //         2970231290
-      //       ]
-      //     },
-      //     {
-      //       name: 'Ghosts',
-      //       season: 12,
-      //       itemGroups: [
-      //         [4005536858, 4005536857, 4005536856],
-      //         [859004029, 859004030, 3661044024]
-      //       ]
-      //     },
-
-      //     {
-      //       name: 'Sparrows',
-      //       season: 12,
-      //       items: [4248884710, 4248884709, 4248884708]
-      //     },
-      //     {
-      //       name: 'Ships',
-      //       season: 12,
-      //       items: [430387803, 430387802, 430387801]
-      //     },
-      //     {
-      //       name: 'Shaders',
-      //       season: 12,
-      //       items: [3906243543, 3906243540, 3906243541]
-      //     },
-      //     {
-      //       name: 'Transmat Effects',
-      //       season: 12,
-      //       items: [1378231107, 1378231104, 1378231105]
-      //     }
-      //   ]
-      // }
     ]
   }
 ]: SetPage);

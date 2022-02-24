@@ -1394,7 +1394,7 @@ export const MOMENTS_OF_TRIUMPH_Y2 = {
 export const SOLSTICE_OF_HEROES_Y2 = {
   name: 'Solstice of Heroes',
   id: 'COMMON_SOLSTICE_OF_HEROES',
-  description: 'Earned during the 2019 Solstice of Heroes event.',
+  description: 'Acquirable during the 2019 Solstice of Heroes event.',
   big: false,
   sections: [
     {
@@ -1558,10 +1558,8 @@ export const EVERVERSE_Y2 = {
     'Eververse'
   ),
   id: 'YEAR_TWO_EVERVERSE',
-  description: _(
-    'DestinyCollectibleDefinition[764786884].sourceString',
-    'Seasonal Bright Engrams.'
-  ),
+  description:
+    'Bright Engrams (Season 6 and prior) or items sold at Eververse for Bright Dust (Season 7).',
   big: true,
   sections: [
     {
@@ -2337,7 +2335,7 @@ export const EVERVERSE_Y2 = {
 export const FESTIVAL_OF_THE_LOST_Y3 = {
   name: 'Festival of the Lost',
   id: 'year-three-festival-of-the-lost',
-  description: 'Earned during the seasonal Festival of the Lost event.',
+  description: 'Acquirable during the seasonal Festival of the Lost event.',
   sections: [
     {
       name: 'Weapons',
@@ -2580,7 +2578,7 @@ export const FESTIVAL_OF_THE_LOST_Y3 = {
 export const DAWNING_Y3 = {
   name: 'The Dawning',
   id: 'year-three-the-dawning',
-  description: 'Earned during the seasonal Dawning event.',
+  description: 'Acquirable during the seasonal Dawning event.',
   big: false,
   sections: [
     {
@@ -2698,7 +2696,7 @@ export const DAWNING_Y3 = {
 export const CRIMSON_DAYS_Y3 = {
   name: 'Crimson Days',
   id: 'year-three-crimson-days',
-  description: 'Earned during the seasonal Crimson Days event.',
+  description: 'Acquirable during the seasonal Crimson Days event.',
   big: false,
   sections: [
     {
@@ -2741,7 +2739,7 @@ export const CRIMSON_DAYS_Y3 = {
 export const GUARDIAN_GAMES_Y3 = {
   name: 'Guardian Games',
   id: 'year-three-guardian-games',
-  description: 'Earned during the seasonal Guardian Games event.',
+  description: 'Acquirable during the seasonal Guardian Games event.',
   big: false,
   sections: [
     {
@@ -2897,7 +2895,7 @@ export const MOMENTS_OF_TRIUMPH_Y3 = {
 export const SOLSTICE_OF_HEROES_Y3 = {
   name: 'Solstice of Heroes',
   id: 'COMMON_SOLSTICE_OF_HEROES',
-  description: 'Earned during the 2020 Solstice of Heroes event.',
+  description: 'Acquirable during the 2020 Solstice of Heroes event.',
   big: false,
   sections: [
     {
@@ -3573,8 +3571,8 @@ export const EVERVERSE_Y3 = {
         // 3528646493, // NS81 Reprisal Sprint (Not planned to be sold for Bright Dust)
         3528646492, // Solar Sails
         3528646491, // Arrow of Time
-        3528646490 // Knucklebug
-        // 3528646489 // Saint's Vocation (Not planned to be sold for Bright Dust)
+        3528646490, // Knucklebug
+        3528646489 // Saint's Vocation
       ]
     },
     {
@@ -3677,7 +3675,7 @@ export const EVERVERSE_Y3 = {
 export const DAWNING_Y4 = {
   name: 'The Dawning',
   id: 'year-four-the-dawning',
-  description: 'Earned during the seasonal Dawning event.',
+  description: 'Acquirable during the seasonal Dawning event.',
   big: false,
   sections: [
     {
@@ -3806,15 +3804,13 @@ export const DAWNING_Y4 = {
 export const GUARDIAN_GAMES_Y4 = {
   name: 'Guardian Games',
   id: 'year-four-guardian-games',
-  description: 'Earned during the seasonal Guardian Games event.',
+  description: 'Acquirable during the seasonal Guardian Games event.',
   big: false,
   sections: [
     {
       name: 'Weapons',
       season: 13,
-      items: [
-        // 3044160466
-      ]
+      items: [3044160466]
     },
     {
       name: 'Hunter Armor',
@@ -3895,7 +3891,7 @@ export const GUARDIAN_GAMES_Y4 = {
 export const SOLSTICE_OF_HEROES_Y4 = {
   name: 'Solstice of Heroes',
   id: 'COMMON_SOLSTICE_OF_HEROES',
-  description: 'Earned during the 2021 Solstice of Heroes event.',
+  description: 'Acquirable during the 2021 Solstice of Heroes event.',
   big: false,
   sections: [
     {
@@ -3969,7 +3965,7 @@ export const SOLSTICE_OF_HEROES_Y4 = {
 export const FESTIVAL_OF_THE_LOST_Y4 = {
   name: 'Festival of the Lost',
   id: 'year-four-festival-of-the-lost',
-  description: 'Earned during the seasonal Festival of the Lost event.',
+  description: 'Acquirable during the seasonal Festival of the Lost event.',
   sections: [
     {
       name: 'Weapons',
@@ -4000,7 +3996,6 @@ export const FESTIVAL_OF_THE_LOST_Y4 = {
         [2545426109]
       ]
     },
-
     {
       name: 'Masks',
       season: 15,
@@ -4015,7 +4010,6 @@ export const FESTIVAL_OF_THE_LOST_Y4 = {
         3727346032
       ]
     },
-
     {
       name: 'Emotes',
       season: 15,
@@ -4026,7 +4020,6 @@ export const FESTIVAL_OF_THE_LOST_Y4 = {
         ]
       ]
     },
-
     {
       name: 'Ghosts',
       season: 15,
@@ -4035,19 +4028,16 @@ export const FESTIVAL_OF_THE_LOST_Y4 = {
         [442994988, 442994989]
       ]
     },
-
     {
       name: 'Sparrows',
       season: 15,
       items: [3542826854, 3397132454, 3397132455]
     },
-
     {
       name: 'Ships',
       season: 15,
       items: [3499472512]
     },
-
     {
       name: 'Extras',
       season: 15,
@@ -4067,45 +4057,38 @@ export const FESTIVAL_OF_THE_LOST_Y4 = {
 export const BUNGIE_30TH_ANNIVERSARY_EVENT_Y4 = {
   name: 'Bungie 30th Anniversary Event',
   id: 'year-four-bungie-30th-anniversary-event',
-  description: 'Earned during the Bungie 30th Anniversary Event.',
+  description: 'Acquirable during the Bungie 30th Anniversary Event.',
   sections: [
     {
       name: 'Weapons',
       season: 15,
       items: [
         3046205073,
-        // 296103153,
+        296103153,
         2014761391,
-        // 3227439259,
+        3227439259,
         2452241573,
-        // 3593477432,
+        3593477432,
         2109129768,
-        2991424415
-        // 2768498167
+        2991424415,
+        2768498167
       ]
     },
     {
       name: 'Hunter Armor',
       season: 15,
-      itemGroups: [[], [1324885391, 3492105806]]
+      items: [1324885391, 3492105806]
     },
     {
       name: 'Titan Armor',
       season: 15,
-      itemGroups: [[], [4069013424, 4212806147]]
+      items: [4069013424, 4212806147]
     },
     {
       name: 'Warlock Armor',
       season: 15,
-      itemGroups: [[], [115580637, 3242034340]]
+      items: [115580637, 3242034340]
     },
-
-    {
-      name: 'Masks',
-      season: 15,
-      items: []
-    },
-
     {
       name: 'Emotes',
       season: 15,
@@ -4117,12 +4100,12 @@ export const BUNGIE_30TH_ANNIVERSARY_EVENT_Y4 = {
           2433436300,
           4271566634,
           1505110164,
-          // 2214333484,
+          2214333484,
           2078304963,
           2637432184,
           3485775922,
           2438702274,
-          // 1967918626,
+          1967918626,
           3825460361,
           2001069811,
           // 542633380,
@@ -4136,7 +4119,6 @@ export const BUNGIE_30TH_ANNIVERSARY_EVENT_Y4 = {
         ]
       ]
     },
-
     {
       name: 'Ghosts',
       season: 15,
@@ -4145,15 +4127,14 @@ export const BUNGIE_30TH_ANNIVERSARY_EVENT_Y4 = {
           // 3105072596,
           // 3105072597,
           3105072598,
-          // 3105072599,
-          // 3105072592,
+          3105072599,
+          3105072592,
           3105072593,
           3105072594
         ],
         [1538938258, 1538938257, 1538938256, 1538938259]
       ]
     },
-
     {
       name: 'Sparrows',
       season: 15,
@@ -4161,24 +4142,22 @@ export const BUNGIE_30TH_ANNIVERSARY_EVENT_Y4 = {
         // 2357026176,
         // 2357026177,
         2357026178,
-        // 2357026179,
-        // 2357026180,
+        2357026179,
+        2357026180,
         2357026181
       ]
     },
-
     {
       name: 'Ships',
       season: 15,
       items: [
         // 3210287508,
         // 3210287509,
-        // 3210287510,
-        3210287511
-        // 3210287504
+        3210287510,
+        3210287511,
+        3210287504
       ]
     },
-
     {
       name: 'Extras',
       season: 15,
@@ -4210,7 +4189,6 @@ export const MOMENTS_OF_TRIUMPH_Y4 = {
       season: 15,
       items: [4153737633]
     },
-
     {
       name: 'Extras',
       season: 15,
@@ -4277,15 +4255,7 @@ export const EVERVERSE_Y4 = {
           1061828070,
           396425346
         ],
-        [],
-        [
-          // 1029444727,
-          1516829881,
-          // 488956963,
-          2099043843,
-          // 3391785621,
-          740142754
-        ]
+        [1029444727, 1516829881, 488956963, 2099043843, 3391785621, 740142754]
       ]
     },
     {
@@ -4302,7 +4272,6 @@ export const EVERVERSE_Y4 = {
           3925195811,
           4231724739
         ],
-        [],
         [3951784665, 3049004864, 46563601]
       ]
     },
@@ -4322,7 +4291,6 @@ export const EVERVERSE_Y4 = {
           3991681308,
           116193775
         ],
-        [],
         [2413288976, 1185631823, 3736112681]
       ]
     },
@@ -4342,7 +4310,6 @@ export const EVERVERSE_Y4 = {
           2321971501,
           1339798067
         ],
-        [],
         [2906309175, 2548770303, 533407799, 3810306343, 2296382436, 31326870]
       ]
     },
@@ -4598,13 +4565,7 @@ export const EVERVERSE_Y4 = {
     {
       name: 'Ships',
       season: 13,
-      items: [
-        1018723385,
-        1018723384,
-        1018723387,
-        // 1018723386,
-        1018723389
-      ]
+      items: [1018723385, 1018723384, 1018723387, 1018723386, 1018723389]
     },
     {
       name: 'Ships',
@@ -4681,6 +4642,200 @@ export const EVERVERSE_Y4 = {
       name: 'Transmat Effects',
       season: 15,
       items: [2353828566, 2353828567]
+    }
+  ]
+};
+
+// Year 5
+
+export const EVERVERSE_Y5 = {
+  name: _(
+    'DestinyFactionDefinition[1393733616].displayProperties.name',
+    'Eververse'
+  ),
+  id: 'year-five-eververse',
+  description: 'Items sold at Eververse for Bright Dust.',
+  big: false,
+  sections: [
+    {
+      name: 'Armor',
+      season: 16,
+      itemGroups: [
+        [340605625, 236745008, 3998967128, 595380234, 2818919029],
+        [1829123755, 109804186, 3736142830, 1832207060, 183624375],
+        [2318928118, 3522918471, 2426141041, 2275724169, 285026828]
+      ]
+    },
+    {
+      name: 'Ornaments',
+      season: 16,
+      itemGroups: [
+        [
+          1868384995,
+          2325054640,
+          // 478593030,
+          // 2971678083,
+          682653408,
+          // 567817402,
+          1141818699
+        ],
+        [],
+        [3115540150, 599904805, 3472374302, 2471221568, 2316352266, 3192251706]
+      ]
+    },
+
+    {
+      name: 'Emotes',
+      season: 16,
+      itemGroups: [
+        [
+          1948636808,
+          1283540420,
+          1880883246,
+          2888139384,
+          1801784637,
+          1614426798,
+          2340699134,
+          428294954,
+          // 3103707650,
+          // 1344199169,
+          1812891775,
+          4130815052,
+          1143446663,
+          // 1181305814,
+          3813350081,
+          // 1556736433,
+          3114447426,
+          1768949382
+        ],
+        [
+          // 22044598, // 3140272522, // 2964064937
+        ]
+      ]
+    },
+
+    {
+      name: 'Ghosts',
+      season: 16,
+      itemGroups: [
+        [
+          2222909937,
+          // 2222909936,
+          2222909939,
+          // 2222909938,
+          2222909941,
+          2222909940,
+          2222909943
+        ],
+        [
+          2371951502,
+          2371951503,
+          2371951500,
+          2371951501
+          // 2371951498
+        ]
+      ]
+    },
+
+    {
+      name: 'Sparrows',
+      season: 16,
+      items: [
+        2862488837,
+        // 2862488836,
+        // 2862488839,
+        2862488838,
+        2862488833,
+        // 2862488832,
+        2862488835
+      ]
+    },
+
+    {
+      name: 'Ships',
+      season: 16,
+      items: [
+        // 1326263069,
+        //1326263068,
+        1326263071,
+        1326263070
+      ]
+    },
+
+    {
+      name: 'Shaders',
+      season: 16,
+      items: [
+        2776737690,
+        2776737691,
+        2776737688,
+        2776737689,
+        2776737694,
+        2776737695
+      ]
+    },
+
+    {
+      name: 'Transmat Effects',
+      season: 16,
+      items: [1091850348, 1091850349]
+    }
+  ]
+};
+
+export const GUARDIAN_GAMES_Y5 = {
+  name: 'Guardian Games',
+  id: 'year-five-guardian-games',
+  description: 'Acquirable during the seasonal Guardian Games event.',
+  big: false,
+  sections: [
+    {
+      name: 'Weapons',
+      season: 16,
+      items: [4294938474]
+    },
+    {
+      name: 'Hunter Armor',
+      season: 16,
+      itemGroups: [[], []]
+    },
+    {
+      name: 'Titan Armor',
+      season: 16,
+      itemGroups: [[], []]
+    },
+    {
+      name: 'Warlock Armor',
+      season: 16,
+      itemGroups: [[], []]
+    },
+    {
+      name: 'Emotes',
+      season: 16,
+      itemGroups: [[928070392, 214374661, 3104486761, 465351846, 51945187], []]
+    },
+    {
+      name: 'Ghosts',
+      season: 16,
+      itemGroups: [
+        [2200729532, 2200729533, 2200729535],
+        [2934252066, 2934252067]
+      ]
+    },
+    {
+      name: 'Sparrows',
+      season: 16,
+      items: [134085740, 134085741, 134085743]
+    },
+    {
+      name: 'Ships',
+      season: 16,
+      items: [386610725]
+    },
+    {
+      name: 'Extras',
+      season: 16,
+      items: [787024992, 2983466243, 2450544934]
     }
   ]
 };

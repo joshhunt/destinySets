@@ -27,7 +27,8 @@ export default ([
       eververseAndEvents.SOLSTICE_OF_HEROES_Y4,
       eververseAndEvents.FESTIVAL_OF_THE_LOST_Y4,
       eververseAndEvents.BUNGIE_30TH_ANNIVERSARY_EVENT_Y4,
-      eververseAndEvents.MOMENTS_OF_TRIUMPH_Y4
+      eververseAndEvents.MOMENTS_OF_TRIUMPH_Y4,
+      eververseAndEvents.GUARDIAN_GAMES_Y5
     ]
   },
   {
@@ -36,7 +37,8 @@ export default ([
       eververseAndEvents.EVERVERSE_Y1,
       eververseAndEvents.EVERVERSE_Y2,
       eververseAndEvents.EVERVERSE_Y3,
-      eververseAndEvents.EVERVERSE_Y4
+      eververseAndEvents.EVERVERSE_Y4,
+      eververseAndEvents.EVERVERSE_Y5
     ]
   }
 ]: SetPage);

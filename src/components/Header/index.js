@@ -21,7 +21,8 @@ function isOverflowing(el) {
 
 const link = (name, to) => ({ name, to });
 const LINKS = [
-  link('Year 4', '/'),
+  link('Year 5', '/'),
+  link('Year 4', '/year-4'),
   link('Year 3', '/year-3'),
   link('Year 2', '/year-2'),
   link('Year 1', '/year-1'),
@@ -35,6 +36,7 @@ const LINKS = [
 const SOCIALS = [
   link('paypal', DONATION_LINK),
   link('twitter', 'https://twitter.com/joshhunt'),
+  link('twitter', 'https://twitter.com/Jakosaur'),
   link('github', 'https://github.com/joshhunt/destinySets')
 ];
 
