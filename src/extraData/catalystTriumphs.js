@@ -27,6 +27,7 @@ export default {
   1833195496: 478443982, // Ager's Scepter
   2179048386: 3574136388, // Forerunner
   2130065553: 3835718947, // Arbalest
+  46524085: 494981303, // Osteo Striga
 
   // Energy weapons
   4190156464: 4178028503, // Merciless
@@ -53,6 +54,8 @@ export default {
   3260753130: 1833569807, // Ticuu's Divination
   4289226715: 507778024, // Vex Mythoclast
   3761898871: 2329638530, // Lorentz Driver
+  3588934839: 3628100770, // Le Monarque
+  2812324401: 1163649614, // Dead Messenger
 
   // Heavy weapons
   3549153979: 3371896300, // The Prospector
@@ -68,14 +71,14 @@ export default {
   2591746970: 3740374319, // Leviathan's Breath
   2084878005: 1514331782, // Heir Apparent
   2232171099: 2254190310, // Deathbringer
-  1363886209: 1855685192 // Gjallarhorn
+  1363886209: 1855685192, // Gjallarhorn
+  1763584999: 263158944 // Grand Overture
 
   // 1364093401: 0, // The Last Word
   // 2694576561: 0, // Two-Tailed Fox
   // 2376481550: 0, // Anarchy
   // 3413860062: 0, // The Chaperone
   // 3973202132: 0, // Thorn
-  // 3588934839: 0, // Le Monarque
   // 2044500762: 0, // The Queenbreaker
   // 1852863732: 0, // Wavesplitter
   // 2130065553: 0, // Arbalest
