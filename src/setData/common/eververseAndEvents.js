@@ -4792,7 +4792,7 @@ export const GUARDIAN_GAMES_Y5 = {
     {
       name: 'Weapons',
       season: 16,
-      items: []
+      items: [4294938474]
     },
     {
       name: 'Hunter Armor',
@@ -4817,22 +4817,25 @@ export const GUARDIAN_GAMES_Y5 = {
     {
       name: 'Ghosts',
       season: 16,
-      itemGroups: [[], []]
+      itemGroups: [
+        [2200729532, 2200729533, 2200729535],
+        [2934252066, 2934252067]
+      ]
     },
     {
       name: 'Sparrows',
       season: 16,
-      items: []
+      items: [134085740, 134085741, 134085743]
     },
     {
       name: 'Ships',
       season: 16,
-      items: []
+      items: [386610725]
     },
     {
       name: 'Extras',
       season: 16,
-      items: [787024992, 2983466243]
+      items: [787024992, 2983466243, 2450544934]
     }
   ]
 };
