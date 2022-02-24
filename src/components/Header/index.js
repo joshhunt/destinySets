@@ -36,6 +36,7 @@ const LINKS = [
 const SOCIALS = [
   link('paypal', DONATION_LINK),
   link('twitter', 'https://twitter.com/joshhunt'),
+  link('twitter', 'https://twitter.com/Jakosaur'),
   link('github', 'https://github.com/joshhunt/destinySets')
 ];
 

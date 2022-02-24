@@ -4675,48 +4675,177 @@ export const EVERVERSE_Y5 = {
     {
       name: 'Armor',
       season: 16,
-      itemGroups: [[], [], []]
+      itemGroups: [
+        [340605625, 236745008, 3998967128, 595380234, 2818919029],
+        [1829123755, 109804186, 3736142830, 1832207060, 183624375],
+        [2318928118, 3522918471, 2426141041, 2275724169, 285026828]
+      ]
     },
     {
       name: 'Ornaments',
       season: 16,
-      itemGroups: [[], [], []]
+      itemGroups: [
+        [
+          1868384995,
+          2325054640,
+          478593030,
+          2971678083,
+          682653408,
+          567817402,
+          1141818699
+        ],
+        [],
+        [3115540150, 599904805, 3472374302, 2471221568, 2316352266, 3192251706]
+      ]
     },
 
     {
       name: 'Emotes',
       season: 16,
-      itemGroups: [[], []]
+      itemGroups: [
+        [
+          1948636808,
+          1283540420,
+          1880883246,
+          2888139384,
+          1801784637,
+          1614426798,
+          2340699134,
+          428294954,
+          3103707650,
+          1344199169,
+          1812891775,
+          4130815052,
+          1143446663,
+          1181305814,
+          3813350081,
+          // 1556736433,
+          3114447426,
+          1768949382
+        ],
+        [22044598, 3140272522, 2964064937]
+      ]
     },
 
     {
       name: 'Ghosts',
       season: 16,
-      itemGroups: [[], []]
+      itemGroups: [
+        [
+          2222909937,
+          // 2222909936,
+          2222909939,
+          2222909938,
+          2222909941,
+          2222909940,
+          2222909943
+        ],
+        [
+          2371951502,
+          2371951503,
+          2371951500,
+          2371951501
+          // 2371951498
+        ]
+      ]
     },
 
     {
       name: 'Sparrows',
       season: 16,
-      items: []
+      items: [
+        2862488837,
+        // 2862488836,
+        2862488839,
+        2862488838,
+        2862488833,
+        2862488832,
+        2862488835
+      ]
     },
 
     {
       name: 'Ships',
       season: 16,
-      items: []
+      items: [
+        1326263069,
+        //1326263068,
+        1326263071,
+        1326263070
+      ]
     },
 
     {
       name: 'Shaders',
       season: 16,
-      items: []
+      items: [
+        2776737690,
+        2776737691,
+        2776737688,
+        2776737689,
+        2776737694,
+        2776737695
+      ]
     },
 
     {
       name: 'Transmat Effects',
       season: 16,
+      items: [1091850348, 1091850349]
+    }
+  ]
+};
+
+export const GUARDIAN_GAMES_Y5 = {
+  name: 'Guardian Games',
+  id: 'year-five-guardian-games',
+  description: 'Acquirable during the seasonal Guardian Games event.',
+  big: false,
+  sections: [
+    {
+      name: 'Weapons',
+      season: 16,
       items: []
+    },
+    {
+      name: 'Hunter Armor',
+      season: 16,
+      itemGroups: [[], []]
+    },
+    {
+      name: 'Titan Armor',
+      season: 16,
+      itemGroups: [[], []]
+    },
+    {
+      name: 'Warlock Armor',
+      season: 16,
+      itemGroups: [[], []]
+    },
+    {
+      name: 'Emotes',
+      season: 16,
+      itemGroups: [[928070392, 214374661, 3104486761, 465351846, 51945187], []]
+    },
+    {
+      name: 'Ghosts',
+      season: 16,
+      itemGroups: [[], []]
+    },
+    {
+      name: 'Sparrows',
+      season: 16,
+      items: []
+    },
+    {
+      name: 'Ships',
+      season: 16,
+      items: []
+    },
+    {
+      name: 'Extras',
+      season: 16,
+      items: [787024992, 2983466243]
     }
   ]
 };
