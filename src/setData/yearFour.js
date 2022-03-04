@@ -378,6 +378,38 @@ export default ([
         ]
       },
       {
+        name: 'Legend and Master Lost Sectors',
+        id: 'year-four-lost-sectors',
+        description: 'Solo Legend and Master Lost Sectors',
+        big: false,
+        sections: [
+          {
+            name: 'Armor',
+            season: 12,
+            itemGroups: [
+              [1619425569, 2415768376],
+              [3974038291, 1467044898],
+              [2316914168, 2780717641]
+            ]
+          },
+          {
+            name: 'Armor',
+            season: 13,
+            itemGroups: [[1935198785], [2321120637], [3301944824]]
+          },
+          {
+            name: 'Armor',
+            season: 14,
+            itemGroups: [[1001356380], [1453120846], [3045642045]]
+          },
+          {
+            name: 'Armor',
+            season: 15,
+            itemGroups: [[1702288800], [3267996858], [300502917]]
+          }
+        ]
+      },
+      {
         name: _(
           'DestinyActivityDefinition[4148187374].displayProperties.name',
           'Prophecy'
