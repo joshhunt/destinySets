@@ -19,7 +19,7 @@ export default ([
           {
             name: 'Weapons',
             season: 16,
-            itemGroups: [[2821430069], [1990579948], [2814111720]]
+            items: [2821430069]
           },
 
           {
@@ -63,7 +63,7 @@ export default ([
           {
             name: 'Weapons',
             season: 16,
-            itemGroups: [[2888266564], [1990579948], [2814111722]]
+            items: [2888266564]
           },
           {
             name: 'Hunter Armor',
@@ -98,7 +98,7 @@ export default ([
           {
             name: 'Weapons',
             season: 16,
-            itemGroups: [[1788603939], [1990579948], [2814111723]]
+            items: [1788603939]
           },
           {
             name: 'Hunter Armor',
@@ -239,12 +239,17 @@ export default ([
           {
             name: 'Pursuit Weapon',
             season: 16,
-            itemGroups: [[], []]
+            itemGroups: [[3216652511], [2814111720, 2814111722, 2814111723]]
           },
           {
             name: 'Weapons',
             season: 16,
             items: [1248372789, 232928045, 4096943616, 1572896086]
+          },
+          {
+            name: 'Vox Obscura',
+            season: 16,
+            items: [2812324401, 1112018949]
           },
           {
             name: 'Extras',
@@ -305,11 +310,6 @@ export default ([
             name: 'The Enclave',
             season: 16,
             items: [542203595, 2535142413, 14194600]
-          },
-          {
-            name: 'Vox Obscura',
-            season: 16,
-            items: [2812324401, 1112018949]
           },
           {
             name: 'Extras',
