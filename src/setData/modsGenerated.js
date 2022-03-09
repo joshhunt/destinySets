@@ -929,6 +929,9 @@ export default [
               [
                 2725575870, // Anti-Oracle
                 2725575871 // Anti-Praetorian
+              ],
+              [
+                2804214704 // Umbral Sharpening
               ]
             ],
             groups: [
@@ -1019,6 +1022,12 @@ export default [
                   2725575870, // Anti-Oracle
                   2725575871 // Anti-Praetorian
                 ]
+              },
+              {
+                name: "Vow of the Disciple",
+                items: [
+                  2804214704 // Umbral Sharpening
+                ]
               }
             ]
           },
@@ -1068,6 +1077,10 @@ export default [
                 4076776732, // Rapid Oracle Disruptor
                 4076776733, // Vex Breaker
                 4076776734 // Superstructure Striker
+              ],
+              [
+                3922904113, // Umbral Hastening
+                3808234135 // Shocked Glyphkeeper
               ]
             ],
             groups: [
@@ -1137,6 +1150,13 @@ export default [
                   4076776733, // Vex Breaker
                   4076776734 // Superstructure Striker
                 ]
+              },
+              {
+                name: "Vow of the Disciple",
+                items: [
+                  3922904113, // Umbral Hastening
+                  3808234135 // Shocked Glyphkeeper
+                ]
               }
             ]
           },
@@ -1186,6 +1206,10 @@ export default [
                 1401506405, // Aggressive Oracle Disruptor
                 1401506404, // Vex Destroyer
                 1401506407 // Superstructure Medic
+              ],
+              [
+                4230067633, // Into the Light
+                2851458940 // Smoldering Glyphkeeper
               ]
             ],
             groups: [
@@ -1255,6 +1279,13 @@ export default [
                   1401506404, // Vex Destroyer
                   1401506407 // Superstructure Medic
                 ]
+              },
+              {
+                name: "Vow of the Disciple",
+                items: [
+                  4230067633, // Into the Light
+                  2851458940 // Smoldering Glyphkeeper
+                ]
               }
             ]
           },
@@ -1304,6 +1335,10 @@ export default [
                 518521232, // Precise Oracle Disruptor
                 518521233, // Vex Striker
                 518521234 // Superstructure Defender
+              ],
+              [
+                1956421814, // Umbral Recharge
+                1098978103 // Distorted Glyphkeeper
               ]
             ],
             groups: [
@@ -1373,6 +1408,13 @@ export default [
                   518521233, // Vex Striker
                   518521234 // Superstructure Defender
                 ]
+              },
+              {
+                name: "Vow of the Disciple",
+                items: [
+                  1956421814, // Umbral Recharge
+                  1098978103 // Distorted Glyphkeeper
+                ]
               }
             ]
           },
@@ -1385,6 +1427,10 @@ export default [
                 1977242752, // Elemental Shards
                 1977242755, // Well of Restoration
                 1977242754 // Elemental Time Dilation
+              ],
+              [
+                2779468392, // Siphoned Glyphkeeper
+                899058084 // Stagnant Glyphkeeper
               ]
             ],
             groups: [
@@ -1395,6 +1441,13 @@ export default [
                   1977242752, // Elemental Shards
                   1977242755, // Well of Restoration
                   1977242754 // Elemental Time Dilation
+                ]
+              },
+              {
+                name: "Vow of the Disciple",
+                items: [
+                  2779468392, // Siphoned Glyphkeeper
+                  899058084 // Stagnant Glyphkeeper
                 ]
               }
             ]

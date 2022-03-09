@@ -4797,22 +4797,27 @@ export const GUARDIAN_GAMES_Y5 = {
     {
       name: 'Hunter Armor',
       season: 16,
-      itemGroups: [[], []]
+      itemGroups: [[223597399], []]
     },
     {
       name: 'Titan Armor',
       season: 16,
-      itemGroups: [[], []]
+      itemGroups: [[617617371], []]
     },
     {
       name: 'Warlock Armor',
       season: 16,
-      itemGroups: [[], []]
+      itemGroups: [[1599443272], []]
     },
     {
       name: 'Emotes',
       season: 16,
-      itemGroups: [[928070392, 214374661, 3104486761, 465351846, 51945187], []]
+      itemGroups: [
+        [928070392, 214374661, 3104486761, 465351846, 51945187],
+        [
+          // 2580533670
+        ]
+      ]
     },
     {
       name: 'Ghosts',
@@ -4835,7 +4840,7 @@ export const GUARDIAN_GAMES_Y5 = {
     {
       name: 'Extras',
       season: 16,
-      items: [787024992, 2983466243, 2450544934]
+      items: [787024992, 2450544934]
     }
   ]
 };
