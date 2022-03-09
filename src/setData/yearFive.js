@@ -190,39 +190,57 @@ export default ([
       },
       {
         name: _(
-          'DestinyActivityDefinition[910380154].displayProperties.name',
-          'Deep Stone Crypt'
+          'DestinyActivityDefinition[2906950631].displayProperties.name',
+          'Vow of the Disciple'
         ),
-        id: 'year-five-deep-stone-crypt',
+        id: 'year-five-vow-of-the-disciple',
         description: _(
-          'DestinyCollectibleDefinition[2273453973].sourceString',
-          '"Deep Stone Crypt" raid.'
+          'DestinyCollectibleDefinition[3070552038].sourceString',
+          'Vow of the Disciple raid'
         ),
         sections: [
           {
             name: 'Weapons',
             season: 16,
-            items: []
+            itemGroups: [
+              [
+                3505113722,
+                3428521585,
+                3886416794,
+                613334176,
+                768621510,
+                2534546147,
+                999767358
+              ],
+              [
+                786352912,
+                1941816543,
+                4038592169,
+                2943293195,
+                1466006054,
+                2886339027
+              ]
+            ]
           },
           {
             name: 'Hunter Armor',
             season: 16,
-            items: []
+            items: [1649346047, 1583213254, 3487540074, 1566699968, 4124357755]
           },
           {
             name: 'Titan Armor',
             season: 16,
-            items: []
+            items: [362541459, 2150515362, 1627640710, 365727964, 2370089583]
           },
           {
             name: 'Warlock Armor',
             season: 16,
-            items: []
+            items: [2316722050, 1656263403, 3300312357, 2748020989, 2422261368]
           },
           {
             name: 'Extras',
             season: 16,
-            items: []
+            items: [522693977, 3645278673, 787024996, 1782474706, 1782474707]
           }
         ]
       }
