@@ -168,6 +168,11 @@ export default ([
             name: 'Weapons',
             season: 16,
             items: [2607304614, 2595497736, 3175851496]
+          },
+          {
+            name: 'Extras',
+            season: 16,
+            items: [787024997]
           }
         ]
       },
@@ -272,7 +277,7 @@ export default ([
           {
             name: 'Extras',
             season: 16,
-            items: [2235731789, 787024998, 787024993]
+            items: [1049640809, 2235731789, 787024998, 787024993]
           }
         ]
       }
