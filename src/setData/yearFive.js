@@ -168,6 +168,11 @@ export default ([
             name: 'Weapons',
             season: 16,
             items: [2607304614, 2595497736, 3175851496]
+          },
+          {
+            name: 'Extras',
+            season: 16,
+            items: [787024997]
           }
         ]
       },
