@@ -4790,22 +4790,31 @@ export const GUARDIAN_GAMES_Y5 = {
     {
       name: 'Weapons',
       season: 16,
-      items: [4294938474]
+      itemGroups: [[294129361], [4294938474]]
     },
     {
       name: 'Hunter Armor',
       season: 16,
-      itemGroups: [[223597399], []]
+      itemGroups: [
+        [223597399],
+        [4140869021, 2603400972, 1625014740, 3249133238, 2410421545]
+      ]
     },
     {
       name: 'Titan Armor',
       season: 16,
-      itemGroups: [[617617371], []]
+      itemGroups: [
+        [617617371],
+        [3581751827, 1074758434, 4036779270, 3584938332, 484260847]
+      ]
     },
     {
       name: 'Warlock Armor',
       season: 16,
-      itemGroups: [[1599443272], []]
+      itemGroups: [
+        [1599443272],
+        [2353359390, 1623332175, 4029022121, 2197832433, 1514358116]
+      ]
     },
     {
       name: 'Emotes',
@@ -4821,24 +4830,24 @@ export const GUARDIAN_GAMES_Y5 = {
       name: 'Ghosts',
       season: 16,
       itemGroups: [
-        [2200729532, 2200729533, 2200729535],
+        [2200729533, 2200729532, 2200729535],
         [2934252066, 2934252067]
       ]
     },
     {
       name: 'Sparrows',
       season: 16,
-      items: [134085740, 134085741, 134085743]
+      items: [134085741, 134085740, 134085743]
     },
     {
       name: 'Ships',
       season: 16,
-      items: [386610725]
+      items: [2873488357, 386610725]
     },
     {
       name: 'Extras',
       season: 16,
-      items: [787024992, 2450544934]
+      items: [787024992, 1901885386, 2760449282, 2450544934]
     }
   ]
 };
