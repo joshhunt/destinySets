@@ -80,7 +80,7 @@ function sortSeasonalItems(
       i.displayCategoryIndex === 1 ||
       i.displayCategoryIndex === 2 ||
       i.displayCategoryIndex === 3 ||
-      i.displayCategoryIndex === 4 ||
+      // i.displayCategoryIndex === 4 ||
       i.displayCategoryIndex === 5 ||
       i.displayCategoryIndex === 8 ||
       i.displayCategoryIndex === 9
@@ -275,7 +275,7 @@ function changeFromBrightDustToSilverOnly() {
     }
   });
   console.log(
-    `Changing items that are only available for Silver in Season ${currentSeason}`
+    `Changed items that are only available for Silver in Season ${currentSeason}`
   );
 
   return;
