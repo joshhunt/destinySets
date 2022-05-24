@@ -19,9 +19,10 @@ export default [
                 212107599 // Harmonic Siphon
               ],
               [
-                288409040, // Psionic Forging I
-                288409046, // Hand Cannon Targeting
-                2119661525 // Psionic Forging II
+                3339644637, // Trace Rifle Ammo Finder
+                3339644636, // Nightmarish Opulence
+                3339644635, // Pulse Rifle Targeting
+                875346623 // Unquenchable Thirst
               ],
               [
                 1624081088, // Bow Ammo Finder
@@ -66,9 +67,10 @@ export default [
               {
                 name: "Seasonal Artifact",
                 items: [
-                  288409040, // Psionic Forging I
-                  288409046, // Hand Cannon Targeting
-                  2119661525 // Psionic Forging II
+                  3339644637, // Trace Rifle Ammo Finder
+                  3339644636, // Nightmarish Opulence
+                  3339644635, // Pulse Rifle Targeting
+                  875346623 // Unquenchable Thirst
                 ]
               },
               {
@@ -200,14 +202,15 @@ export default [
                 403494087 // Fastball
               ],
               [
-                288409042, // Glaive Dexterity
-                2119661523, // Auto Rifle Loader
-                1861426412, // Unstoppable Glaive
-                2081977513, // Anti-Barrier Scout Rifle
-                2081977514, // Overload Rounds
-                2081977515, // Unstoppable Hand Cannon
-                2081977516, // Piercing Bowstring
-                2081977517 // Unstoppable Pulse Rifle
+                1942359019, // Piercing Sidearms
+                1942359016, // Overload Rounds
+                1942359017, // Unstoppable Scout Rifle
+                1942359022, // Unstoppable Glaive
+                1942359023, // Anti-Barrier Pulse Rifle
+                875346621, // Shotgun Dexterity
+                875346617, // Sidearm Dexterity
+                706723264, // Overload Trace Rifles
+                706723268 // Glaive of Dreams
               ],
               [
                 2571974065, // Auto Rifle Loader
@@ -256,14 +259,15 @@ export default [
               {
                 name: "Seasonal Artifact",
                 items: [
-                  288409042, // Glaive Dexterity
-                  2119661523, // Auto Rifle Loader
-                  1861426412, // Unstoppable Glaive
-                  2081977513, // Anti-Barrier Scout Rifle
-                  2081977514, // Overload Rounds
-                  2081977515, // Unstoppable Hand Cannon
-                  2081977516, // Piercing Bowstring
-                  2081977517 // Unstoppable Pulse Rifle
+                  1942359019, // Piercing Sidearms
+                  1942359016, // Overload Rounds
+                  1942359017, // Unstoppable Scout Rifle
+                  1942359022, // Unstoppable Glaive
+                  1942359023, // Anti-Barrier Pulse Rifle
+                  875346621, // Shotgun Dexterity
+                  875346617, // Sidearm Dexterity
+                  706723264, // Overload Trace Rifles
+                  706723268 // Glaive of Dreams
                 ]
               },
               {
@@ -398,7 +402,8 @@ export default [
                 3566745556 // Sniper Damage Resistance
               ],
               [
-                2119661522 // Thermoshock Plating
+                875346622, // Trace Rifle Reserves
+                875346616 // Armor of the Dying Star
               ],
               [
                 201502208, // Bow Reserves
@@ -445,7 +450,8 @@ export default [
               {
                 name: "Seasonal Artifact",
                 items: [
-                  2119661522 // Thermoshock Plating
+                  875346622, // Trace Rifle Reserves
+                  875346616 // Armor of the Dying Star
                 ]
               },
               {
@@ -570,8 +576,8 @@ export default [
                 3320641683 // Absolution
               ],
               [
-                288409041, // Rocket Launcher Scavenger
-                2119661521 // Glaive Scavenger
+                3339644638, // Shotgun Holster
+                3339644634 // Sidearm Holster
               ],
               [
                 987267082, // Arrow Scavenger
@@ -616,8 +622,8 @@ export default [
               {
                 name: "Seasonal Artifact",
                 items: [
-                  288409041, // Rocket Launcher Scavenger
-                  2119661521 // Glaive Scavenger
+                  3339644638, // Shotgun Holster
+                  3339644634 // Sidearm Holster
                 ]
               },
               {
@@ -748,14 +754,14 @@ export default [
                 4237638094 // Snapload Finisher
               ],
               [
-                1861426415, // Lucent Finisher
-                1861426414, // Suppressing Glaive
-                1861426409, // Overload Grenades
-                1861426408, // Inferno Whip
-                2129265547, // Suppression Mastery
-                2129265544, // Devouring Depths
-                2129265550, // Energy Vampirism
-                2129265551 // Suppressive Darkness
+                706723267, // Revitalizing Blast
+                706723266, // Withering Heat
+                706723269, // Molten Overload
+                2240395231, // Classy Restoration
+                2240395228, // Radiant Orbs
+                2240395229, // Rays of Precision
+                2240395226, // Flame Harvesting
+                2240395227 // Solar Fulmination
               ]
             ],
             groups: [
@@ -770,14 +776,14 @@ export default [
               {
                 name: "Seasonal Artifact",
                 items: [
-                  1861426415, // Lucent Finisher
-                  1861426414, // Suppressing Glaive
-                  1861426409, // Overload Grenades
-                  1861426408, // Inferno Whip
-                  2129265547, // Suppression Mastery
-                  2129265544, // Devouring Depths
-                  2129265550, // Energy Vampirism
-                  2129265551 // Suppressive Darkness
+                  706723267, // Revitalizing Blast
+                  706723266, // Withering Heat
+                  706723269, // Molten Overload
+                  2240395231, // Classy Restoration
+                  2240395228, // Radiant Orbs
+                  2240395229, // Rays of Precision
+                  2240395226, // Flame Harvesting
+                  2240395227 // Solar Fulmination
                 ]
               }
             ]
@@ -887,11 +893,6 @@ export default [
                 3682186345 // Minor Resilience Mod
               ],
               [
-                288409047, // Melee Wellmaker
-                2119661524, // Font of Might
-                2129265545 // Volatile Flow
-              ],
-              [
                 2859541905, // Taken Armaments
                 399528760, // Taken Invigoration
                 3570105787, // Taken Barrier
@@ -950,14 +951,6 @@ export default [
                   204137529, // Minor Mobility Mod
                   555005975, // Minor Recovery Mod
                   3682186345 // Minor Resilience Mod
-                ]
-              },
-              {
-                name: "Seasonal Artifact",
-                items: [
-                  288409047, // Melee Wellmaker
-                  2119661524, // Font of Might
-                  2129265545 // Volatile Flow
                 ]
               },
               {
