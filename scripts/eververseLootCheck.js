@@ -1,7 +1,7 @@
 // IF TESS HAS ANOTHER UPDATE MID-SEASON FOR EXAMPLE, COMPARE THE OLD CHANGES TO MAKE SURE IT'S NOT HIDING ITEMS ALREADY SOLD FOR BRIGHT DUST
 
 // ! IMPORTANT TO UPDATE THIS
-const currentSeason = '16';
+const currentSeason = '17';
 
 const path = require('path');
 const fs = require('fs');
