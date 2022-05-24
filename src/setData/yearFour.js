@@ -608,14 +608,14 @@ export default ([
         description: 'Complete seasonal activities from Season of the Splicer.',
         sections: [
           {
-            name: 'Weapons',
-            season: 14,
-            items: [1119734784, 1621558458, 541188001, 304659313]
-          },
-          {
             name: 'Pursuit Weapon',
             season: 14,
             itemGroups: [[1644680957], [4226042917, 4226042919, 4226042918]]
+          },
+          {
+            name: 'Weapons',
+            season: 14,
+            items: [1119734784, 1621558458, 541188001, 304659313]
           },
           {
             name: 'Hunter Armor',
@@ -650,14 +650,14 @@ export default ([
         description: 'Complete seasonal activities from Season of the Lost.',
         sections: [
           {
-            name: 'Weapons',
-            season: 15,
-            items: [1833195496, 1622998472, 3472875143, 3044460004, 2066434718]
-          },
-          {
             name: 'Pursuit Weapon',
             season: 15,
             itemGroups: [[725408022], [2056295391, 2056295389, 2056295388]]
+          },
+          {
+            name: 'Weapons',
+            season: 15,
+            items: [1833195496, 1622998472, 3472875143, 3044460004, 2066434718]
           },
           {
             name: 'Hunter Armor',

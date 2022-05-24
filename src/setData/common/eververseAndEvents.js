@@ -1703,6 +1703,7 @@ export const EVERVERSE_Y2 = {
           1445854248, // Electric Violet
           3779623011, // Lethal System
           4252160794, // Sneak Attack
+          // 2243729317, // Last Hand
           3474614844, // Iridescent Death
           2752106987, // Author of Devastation
           3977461550, // Tangled Outrider
@@ -1827,15 +1828,15 @@ export const EVERVERSE_Y2 = {
           3838841051 // ULTRAVIOLET
         ],
         [
-          // 2533050120, // BEGGAR, TO BE FED (Wasn't sold for Bright Dust)
+          2533050120, // BEGGAR, TO BE FED
           4017323452, // BROKEN BIRD, TO BE HEALED
-          // 1069601252, // UNSEEING, TO BE SHOWN (Wasn't sold for Bright Dust)
+          1069601252, // UNSEEING, TO BE SHOWN
           1546315793, // UNHEARING, TO BE TOLD
           77772312, // ALONE, TO BE JOINED
-          // 3967294031, // UNLOVED, TO BE CHERISHED (Wasn't sold for Bright Dust)
+          3967294031, // UNLOVED, TO BE CHERISHED
           403561732, // DEFENSELESS, TO BE ARMED
-          // 3199440990, // ROCK-A-BYE (Wasn't sold for Bright Dust)
-          // 2512537661, // SHAPESHIFTER (Wasn't sold for Bright Dust)
+          // 3199440990, // ROCK-A-BYE
+          // 2512537661, // SHAPESHIFTER
           3473397300 // KING IN ALL DIRECTIONS
         ],
         [
@@ -3226,7 +3227,7 @@ export const EVERVERSE_Y3 = {
           // 3673548752 // Regal Deterrent (Not planned to be sold for Bright Dust)
         ],
         [
-          // 4124216484, // Prized Ivory (Not planned to be sold for Bright Dust)
+          4124216484, // Prized Ivory
           1418556229, // Lord of the Hunt
           1828076537, // Necrosis
           1733242439, // Only the Penitent Pass
@@ -4478,7 +4479,7 @@ export const EVERVERSE_Y4 = {
           3705925874,
           3705925875,
           3705925872,
-          // 3705925873,
+          3705925873,
           3705925878,
           3705925879
         ],
@@ -4667,18 +4668,61 @@ export const EVERVERSE_Y5 = {
       ]
     },
     {
+      name: 'Armor',
+      season: 17,
+      itemGroups: [
+        [
+          3832460306,
+          3949435,
+          1672448469,
+          2748956909,
+          794397480 // 794397481
+        ],
+        [
+          2872765574,
+          1886725463,
+          1805269921,
+          3695260281,
+          2587774972
+          // 2587774973
+        ],
+        [
+          4283990519,
+          3357401470,
+          3796727602,
+          4201344472,
+          3967510979 // 3967510978
+        ]
+      ]
+    },
+    {
       name: 'Ornaments',
       season: 16,
       itemGroups: [
-        [
-          1868384995,
-          // 478593030,
-          // 2971678083,
-          // 567817402,
-          1141818699
-        ],
+        [1868384995, 478593030, 2971678083, 567817402, 1141818699],
         [],
         [3115540150, 599904805, 3472374302, 2471221568, 2316352266, 3192251706]
+      ]
+    },
+
+    {
+      name: 'Ornaments',
+      season: 17,
+      itemGroups: [
+        [
+          // 3363257468,
+          2293905440,
+          2949710074,
+          2720745558,
+          // 1075867128,
+          581152885,
+          3620946736,
+          468010077,
+          // 2954623542,
+          114225848
+        ],
+        [],
+        [1745233901, 1154500559, 3612802599, 2604520237, 2869506899, 882243108]
       ]
     },
 
@@ -4695,12 +4739,12 @@ export const EVERVERSE_Y5 = {
           1614426798,
           2340699134,
           428294954,
-          // 3103707650,
-          // 1344199169,
+          3103707650,
+          1344199169,
           1812891775,
           4130815052,
           1143446663,
-          // 1181305814,
+          1181305814,
           3813350081,
           // 1556736433,
           3114447426,
@@ -4711,7 +4755,37 @@ export const EVERVERSE_Y5 = {
         ]
       ]
     },
+    {
+      name: 'Emotes',
+      season: 17,
+      itemGroups: [
+        [
+          // 3233781546,
+          1972565160,
+          4035006667,
+          2839364423,
+          4041621012,
+          2660284125,
+          918947620,
+          3434490958,
 
+          3811499292,
+          1864834357,
+          1155950691,
+          125508792,
+          448812068,
+          // 644942096,
+          1086362290,
+          // 2790810426,
+          862318366,
+          4053390172,
+          1026128010
+        ],
+        [
+          // 655492558, // 2884238702, // 1425490449
+        ]
+      ]
+    },
     {
       name: 'Ghosts',
       season: 16,
@@ -4720,7 +4794,7 @@ export const EVERVERSE_Y5 = {
           2222909937,
           // 2222909936,
           2222909939,
-          // 2222909938,
+          2222909938,
           2222909941,
           2222909940,
           2222909943
@@ -4734,18 +4808,50 @@ export const EVERVERSE_Y5 = {
         ]
       ]
     },
-
+    {
+      name: 'Ghosts',
+      season: 17,
+      itemGroups: [
+        [
+          // 1490733292,
+          1490733293,
+          1490733294,
+          // 1490733295,
+          1490733288,
+          1490733289
+        ],
+        [
+          779991370,
+          779991369,
+          779991368, // 779991375,
+          779991371,
+          2027044330
+        ]
+      ]
+    },
     {
       name: 'Sparrows',
       season: 16,
       items: [
         2862488837,
         // 2862488836,
-        // 2862488839,
+        2862488839,
         2862488838,
         2862488833,
-        // 2862488832,
+        2862488832,
         2862488835
+      ]
+    },
+    {
+      name: 'Sparrows',
+      season: 17,
+      items: [
+        // 151208504,
+        151208505,
+        151208506,
+        151208507,
+        151208508,
+        151208509
       ]
     },
 
@@ -4753,13 +4859,23 @@ export const EVERVERSE_Y5 = {
       name: 'Ships',
       season: 16,
       items: [
-        // 1326263069,
+        1326263069,
         //1326263068,
         1326263071,
         1326263070
       ]
     },
-
+    {
+      name: 'Ships',
+      season: 17,
+      items: [
+        // 1966562412,
+        1966562413,
+        // 1966562414,
+        1966562415,
+        1966562408
+      ]
+    },
     {
       name: 'Shaders',
       season: 16,
@@ -4772,11 +4888,20 @@ export const EVERVERSE_Y5 = {
         2776737695
       ]
     },
-
+    {
+      name: 'Shaders',
+      season: 17,
+      items: [4103741401, 4103741400, 4103741403, 4103741402]
+    },
     {
       name: 'Transmat Effects',
       season: 16,
       items: [1091850348, 1091850349]
+    },
+    {
+      name: 'Transmat Effects',
+      season: 17,
+      items: [2370958485, 2370958484]
     }
   ]
 };
@@ -4848,6 +4973,63 @@ export const GUARDIAN_GAMES_Y5 = {
       name: 'Extras',
       season: 16,
       items: [787024992, 1901885386, 2760449282, 2450544934]
+    }
+  ]
+};
+
+export const SOLSTICE_Y5 = {
+  name: 'Solstice',
+  id: 'year-five-solstice',
+  description: 'Acquirable during the 2022 Solstice event.',
+  big: false,
+  sections: [
+    {
+      name: 'Weapons',
+      season: 17,
+      items: []
+    },
+    {
+      name: 'Hunter Armor',
+      season: 17,
+      itemGroups: [[3344467069], []]
+    },
+    {
+      name: 'Titan Armor',
+      season: 17,
+      itemGroups: [[385402729, 1699568676], []]
+    },
+    {
+      name: 'Warlock Armor',
+      season: 17,
+      itemGroups: [
+        [3388974843],
+        [3328007649, 4165927160, 3727526672, 2201194802, 2654681933]
+      ]
+    },
+    {
+      name: 'Emotes',
+      season: 17,
+      itemGroups: [[1374246204, 3633178755, 3491209107], []]
+    },
+    {
+      name: 'Ghosts',
+      season: 17,
+      itemGroups: [[3626242165, 3626242166], [500185866]]
+    },
+    {
+      name: 'Sparrows',
+      season: 17,
+      items: []
+    },
+    {
+      name: 'Ships',
+      season: 17,
+      items: []
+    },
+    {
+      name: 'Extras',
+      season: 17,
+      items: []
     }
   ]
 };
