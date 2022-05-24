@@ -28,6 +28,8 @@ export default {
   2179048386: 3574136388, // Forerunner
   2130065553: 3835718947, // Arbalest
   46524085: 494981303, // Osteo Striga
+  1234150730: 3022631571, // Trespasser
+  417164956: 1060652297, // Jötunn
 
   // Energy weapons
   4190156464: 4178028503, // Merciless
