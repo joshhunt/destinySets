@@ -21,13 +21,25 @@ export default ([
             season: 16,
             items: [2821430069]
           },
-
+          {
+            name: 'Weapons',
+            season: 17,
+            items: [2591241074]
+          },
           {
             name: 'Nightfall: The Ordeal Weapons',
             season: 16,
             itemGroups: [
               [435216110, 3355385170],
               [1135050595, 1387987271]
+            ]
+          },
+          {
+            name: 'Nightfall: The Ordeal Weapons',
+            season: 17,
+            itemGroups: [
+              [575830664, 216983039],
+              [2006308129, 1924276978]
             ]
           },
           {
@@ -49,6 +61,11 @@ export default ([
             name: 'Extras',
             season: 16,
             items: [503394676, 1619668808]
+          },
+          {
+            name: 'Extras',
+            season: 17,
+            items: [3624264409, 1453926847]
           }
         ]
       },
@@ -64,6 +81,11 @@ export default ([
             name: 'Weapons',
             season: 16,
             items: [2888266564]
+          },
+          {
+            name: 'Weapons',
+            season: 17,
+            items: [2715240478]
           },
           {
             name: 'Hunter Armor',
@@ -84,6 +106,11 @@ export default ([
             name: 'Extras',
             season: 16,
             items: [4048492909, 233502397]
+          },
+          {
+            name: 'Extras',
+            season: 17,
+            items: [2088009808, 247978378]
           }
         ]
       },
@@ -99,6 +126,11 @@ export default ([
             name: 'Weapons',
             season: 16,
             items: [1788603939]
+          },
+          {
+            name: 'Weapons',
+            season: 17,
+            items: [3738678140]
           },
           {
             name: 'Hunter Armor',
@@ -119,6 +151,11 @@ export default ([
             name: 'Extras',
             season: 16,
             items: [537464956, 2342965008]
+          },
+          {
+            name: 'Extras',
+            season: 17,
+            items: [1677618961, 776125535]
           }
         ]
       },
@@ -137,6 +174,16 @@ export default ([
             name: 'Weapons',
             season: 16,
             items: [1141547457, 1796949035]
+          },
+          {
+            name: 'Weapons',
+            season: 17,
+            items: [2488587246, 1999697514]
+          },
+          {
+            name: 'Extras',
+            season: 17,
+            items: [987236624]
           }
         ]
       },
@@ -152,6 +199,34 @@ export default ([
             name: 'Weapons',
             season: 16,
             itemGroups: [[2638190703], [3245493570]]
+          },
+          {
+            name: 'Weapons',
+            season: 17,
+            itemGroups: [
+              [2345794502, 933455006],
+              [2405619467, 2002522739]
+            ]
+          },
+          {
+            name: 'Hunter Armor',
+            season: 17,
+            items: [868732497, 3821828136, 2355943840, 162269058, 1283202269]
+          },
+          {
+            name: 'Titan Armor',
+            season: 17,
+            items: [486861531, 1987616650, 2627533758, 1026828708, 2381515079]
+          },
+          {
+            name: 'Warlock Armor',
+            season: 17,
+            items: [2612856746, 2618417907, 124944413, 2353371845, 1586932304]
+          },
+          {
+            name: 'Extras',
+            season: 17,
+            items: [1554105351, 3262125707, 4279814045, 3854366006]
           }
         ]
       },
@@ -190,6 +265,46 @@ export default ([
               [3316517958, 1322544481],
               [3259193988, 511888814]
             ]
+          },
+          {
+            name: 'Armor',
+            season: 17,
+            itemGroups: [[3453042252], [1443166262], [1624882687]]
+          }
+        ]
+      },
+      {
+        name: _(
+          'DestinyActivityDefinition[4148187374].displayProperties.name',
+          'Prophecy'
+        ),
+        id: 'year-five-prophecy',
+        description: 'Complete encounters in the Prophecy dungeon.',
+        sections: [
+          {
+            name: 'Weapons',
+            season: 17,
+            itemGroups: [[], []]
+          },
+          {
+            name: 'Hunter Armor',
+            season: 17,
+            items: []
+          },
+          {
+            name: 'Titan Armor',
+            season: 17,
+            items: []
+          },
+          {
+            name: 'Warlock Armor',
+            season: 17,
+            items: []
+          },
+          {
+            name: 'Extras',
+            season: 17,
+            items: []
           }
         ]
       },
@@ -280,6 +395,38 @@ export default ([
             items: [1049640809, 2235731789, 787024998, 787024993]
           }
         ]
+      },
+      {
+        name: 'Season 17',
+        id: 'year-five-season-17',
+        description: 'Complete seasonal activities from Season of the Haunted.',
+        sections: [
+          {
+            name: 'Pursuit Weapon',
+            season: 17,
+            itemGroups: [[3105930175], [1842527158, 1842527156, 1842527157]]
+          },
+          {
+            name: 'Weapons',
+            season: 17,
+            items: [1366394399, 2323544076, 254636484, 1959650777]
+          },
+          {
+            name: 'The Derelict Leviathan Weapons',
+            season: 17,
+            items: [3055790362, 2490988246, 502356570, 3107853529]
+          },
+          {
+            name: 'Vox Obscura',
+            season: 17,
+            items: []
+          },
+          {
+            name: 'Extras',
+            season: 17,
+            items: [3692900164, 2912094496, 2032249948, 383734236]
+          }
+        ]
       }
     ]
   },
@@ -345,7 +492,7 @@ export default ([
   },
   {
     name: 'Holiday & Special Events',
-    sets: [eververseAndEvents.GUARDIAN_GAMES_Y5]
+    sets: [eververseAndEvents.GUARDIAN_GAMES_Y5, eververseAndEvents.SOLSTICE_Y5]
   },
   {
     name: 'Other',
@@ -383,6 +530,11 @@ export default ([
             items: [1763584999, 2097055732, 4067556514]
           },
           {
+            name: 'Free Track',
+            season: 17,
+            items: [1234150730, 2778013407, 1478986057]
+          },
+          {
             name: 'Paid Track',
             season: 16,
             itemGroups: [
@@ -402,6 +554,29 @@ export default ([
                 997314999,
                 997314998,
                 2425962977
+              ]
+            ]
+          },
+          {
+            name: 'Paid Track',
+            season: 17,
+            itemGroups: [
+              [1934353448],
+              [1285042454, 2489136103, 29154321, 1241941801, 2224584236],
+              [1819090317, 2471652988, 2311637476, 1474580870, 3479925049],
+              [527342912, 2388383505, 2288543943, 1795075811, 3004041686],
+              [3022208769, 3860128280, 2691634736, 2319853394, 2043350637],
+              [217647949, 870313788, 1972851364, 256122438, 2716681465],
+              [443668396, 3934510181, 3100242363, 3857279207, 1881519186],
+              [
+                2989179500,
+                493352427,
+                2523952013,
+                634549439,
+                3816300537,
+                3195867806,
+                3195867807,
+                467976170
               ]
             ]
           }
@@ -437,6 +612,11 @@ export default ([
               3568377122,
               3489657138
             ]
+          },
+          {
+            name: 'Weapons',
+            season: 17,
+            items: [4019668921, 1601177201, 2513965917, 617501162]
           }
         ]
       }
