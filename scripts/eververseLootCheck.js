@@ -66,7 +66,9 @@ async function getDefinitions() {
 let setsFile;
 let brightDustItems = [];
 let silverItems = [];
-let hashesNotFound = [];
+
+let brightDustHashesNotFound = [];
+let silverHashesNotFound = [];
 
 function sortSeasonalItems(
   DestinyInventoryItemDefinition,
@@ -199,7 +201,7 @@ function changeFromSilverOnlyToBrightDust() {
         setsFile = setsFile.substr(0, index - 3) + setsFile.substr(index);
       }
     } else {
-      hashesNotFound.push(hash);
+      brightDustHashesNotFound.push(hash);
     }
   });
   console.log('Changed items that are now available for Bright Dust');
@@ -271,7 +273,7 @@ function changeFromBrightDustToSilverOnly() {
         }
       }
     } else {
-      hashesNotFound.push(hash);
+      silverHashesNotFound.push(hash);
     }
   });
   console.log(
@@ -313,13 +315,24 @@ function changeFromBrightDustToSilverOnly() {
 
   changeFromBrightDustToSilverOnly();
 
-  if (hashesNotFound.length) {
+  if (brightDustHashesNotFound.length || silverHashesNotFound.length) {
     console.log('');
     console.log(
       'There were no references to the following hashes in the file - '
     );
 
-    hashesNotFound.forEach(hash => {
+    brightDustHashesNotFound.forEach(hash => {
+      logHash(hash, 'brightDust');
+    });
+
+    silverHashesNotFound.forEach(hash => {
+      logHash(hash, 'silver');
+    });
+
+    function logHash(hash, brightDustorSilver) {
+      const currency =
+        brightDustorSilver === 'brightDust' ? 'Bright Dust' : 'Silver';
+
       if (
         DestinyInventoryItemDefinition &&
         DestinyInventoryItemDefinition[hash] &&
@@ -342,6 +355,7 @@ function changeFromBrightDustToSilverOnly() {
               ' ' +
               '(' +
               hash +
+              ` | available for ${currency}` +
               ')'
           );
         } else {
@@ -350,6 +364,7 @@ function changeFromBrightDustToSilverOnly() {
               ' ' +
               '(' +
               hash +
+              ` | available for ${currency}` +
               ')'
           );
         }
@@ -357,10 +372,12 @@ function changeFromBrightDustToSilverOnly() {
         console.log(
           DestinyInventoryItemDefinition[hash].displayProperties.name +
             ' ' +
-            hash
+            hash +
+            ` | available for ${currency}`
         );
       }
-    });
+    }
+
     console.log('');
   }
 
