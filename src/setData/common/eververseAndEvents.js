@@ -4824,8 +4824,7 @@ export const EVERVERSE_Y5 = {
           779991370,
           779991369,
           779991368, // 779991375,
-          779991371,
-          2027044330
+          779991371
         ]
       ]
     },
@@ -5009,27 +5008,35 @@ export const SOLSTICE_Y5 = {
     {
       name: 'Emotes',
       season: 17,
-      itemGroups: [[1374246204, 3633178755, 3491209107], []]
+      itemGroups: [
+        [1374246204, 3633178755, 3491209107],
+        [
+          // 105911828
+        ]
+      ]
     },
     {
       name: 'Ghosts',
       season: 17,
-      itemGroups: [[3626242165, 3626242166], [500185866]]
+      itemGroups: [
+        [3626242165, 3626242166],
+        [500185866, 500185867]
+      ]
     },
     {
       name: 'Sparrows',
       season: 17,
-      items: []
+      items: [2683352144, 2683352145]
     },
     {
       name: 'Ships',
       season: 17,
-      items: []
+      items: [2964031581]
     },
     {
       name: 'Extras',
       season: 17,
-      items: []
+      items: [1126354273]
     }
   ]
 };

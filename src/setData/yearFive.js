@@ -183,7 +183,7 @@ export default ([
           {
             name: 'Extras',
             season: 17,
-            items: [987236624]
+            items: [383734238, 987236624]
           }
         ]
       },
@@ -275,36 +275,46 @@ export default ([
       },
       {
         name: _(
-          'DestinyActivityDefinition[4148187374].displayProperties.name',
-          'Prophecy'
+          'DestinyActivityDefinition[2823159265].displayProperties.name',
+          'Duality'
         ),
-        id: 'year-five-prophecy',
-        description: 'Complete encounters in the Prophecy dungeon.',
+        id: 'year-five-duality',
+        description: 'Complete encounters in the Duality dungeon.',
         sections: [
           {
             name: 'Weapons',
             season: 17,
-            itemGroups: [[], []]
+            itemGroups: [
+              [3664831848],
+              [
+                1780464822,
+                3000847393,
+                2026087437,
+                2263839058,
+                3652506829,
+                2194955522
+              ]
+            ]
           },
           {
             name: 'Hunter Armor',
             season: 17,
-            items: []
+            items: [3262689948, 322599957, 4289018379, 2364756343, 3070295330]
           },
           {
             name: 'Titan Armor',
             season: 17,
-            items: []
+            items: [2610749098, 2616310259, 3570529565, 2351264197, 737550160]
           },
           {
             name: 'Warlock Armor',
             season: 17,
-            items: []
+            items: [630469185, 1468388696, 561897072, 3798520466, 3742442925]
           },
           {
             name: 'Extras',
             season: 17,
-            items: []
+            items: [488052106, 383734239, 383734232]
           }
         ]
       },
@@ -407,7 +417,12 @@ export default ([
           {
             name: 'Extras',
             season: 16,
-            items: [1049640809, 2235731789, 787024998, 787024993]
+            items: [
+              1049640809,
+              2235731789,
+              787024998
+              // 787024993
+            ]
           }
         ]
       },
@@ -592,6 +607,7 @@ export default ([
                 493352427,
                 2523952013,
                 634549439,
+                2027044330,
                 3816300537,
                 3195867806,
                 3195867807,
