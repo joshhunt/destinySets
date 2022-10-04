@@ -4696,6 +4696,15 @@ export const EVERVERSE_Y5 = {
       ]
     },
     {
+      name: 'Armor',
+      season: 18,
+      itemGroups: [
+        [712681839, 3292374518, 1599763642, 209686352, 823759499],
+        [4089395649, 632347864, 792374512, 2962479634, 3972920365],
+        [1076063796, 3777298765, 2041503475, 153130511, 4246929450]
+      ]
+    },
+    {
       name: 'Ornaments',
       season: 16,
       itemGroups: [
@@ -4723,6 +4732,37 @@ export const EVERVERSE_Y5 = {
         ],
         [],
         [1745233901, 1154500559, 3612802599, 2604520237, 2869506899, 882243108]
+      ]
+    },
+
+    {
+      name: 'Ornaments',
+      season: 18,
+      itemGroups: [
+        [
+          // 3066440557, // Threatening Breath (Touch of Malice) - Silver Only
+          844227660, // End of an Era (The Last Word)
+          2757144557, // Honor of the Empress (Skyburner's Oath)
+          525967465, // Muspell Populuxe (Jötunn)
+          // 2920072631, // Felsic Pyroclasm (Prometheus Lens) - Silver Only
+          3142425843, // Pseudoscience (Wavesplitter)
+          1716717668, // Theoretical Endothermics (Coldheart)
+          1742941198, // Directive: Crash (Sleeper Simulant)
+          2392937477, // Grimmest Hunter (Leviathan's Breath)
+          3673249931, // Indra Soaring (Thunderlord)
+          // 2078240126, // Promethean Prelude (Grand Overture) - Festival of the Lost?
+          // 512458769, // Tyrant's Vision (Eyes of Tomorrow) - Silver Only
+          // 1781082581 // Wyrm Perilous (Parasite) - Festival of the Lost?
+        ],
+        [],
+        [
+          779755286, // Gilded Memento (Assassin's Cowl)
+          3002234975, // Vallhund (The Sixth Coyote)
+          1022577697, // Sainted Visage (Helm of Saint-14)
+          4197082027, // Nouveau Parapet (Citan's Ramparts)
+          3382176091, // Grasp of the Void (Contraverse Hold)
+          4215514285 // Alternate Conduction (Geomag Stabilizers)
+        ]
       ]
     },
 
@@ -4785,6 +4825,29 @@ export const EVERVERSE_Y5 = {
       ]
     },
     {
+      name: 'Emotes',
+      season: 18,
+      itemGroups: [
+        [
+          1179902636, // Feast of Feelings
+          2587387189, // Gong Show
+          1349950529, // Hatchling Huddle 
+          3105506741, // High Seas Dance
+          257961339, // Spherical Ruminations
+          240204086, // Swab the Deck
+          264272522, // Take a Seat
+          // 377057783, // Brilliant Idea - Silver Only
+          // 2222999865, // Couch Nap - Silver Only
+          // 830612080, // Disallowed Banner - Silver Only
+          1954823452, // Great Stuff Dance
+          966630782, // Scene Clapper
+          492734512, // Dramatic Countdown
+          2527061042, // Energetic Explanation
+          3543877842 // Thinking Headache
+        ]
+      ]
+    },
+    {
       name: 'Ghosts',
       season: 16,
       itemGroups: [
@@ -4828,6 +4891,26 @@ export const EVERVERSE_Y5 = {
       ]
     },
     {
+      name: 'Ghosts',
+      season: 18,
+      itemGroups: [
+        [
+          1003860282, // Additive Shell
+          // 1003860280, // Ctenophore Shell - Silver Only
+          1003860281, // Photovoltaic Shell
+          // 1003860283, // Self-Contained Shell - Silver Only
+          1003860286, // Skiff Scribbles Shell
+          1003860287 // Tethys Shell
+        ],
+        [
+          13476581, // X Marks the Spot Projection
+          13476582, // Overflowing Treasure Projection
+          13476583, // Hazardous Projection
+          13476576, // If It Fits Projection
+        ]
+      ]
+    },
+    {
       name: 'Sparrows',
       season: 16,
       items: [
@@ -4850,6 +4933,18 @@ export const EVERVERSE_Y5 = {
         151208507,
         151208508,
         151208509
+      ]
+    },
+    {
+      name: 'Sparrows',
+      season: 18,
+      items: [
+        4002999940, // Chelicerate Visitor
+        // 4002999943, // Containment Hazard - Silver Only
+        4002999942, // Lightweight Custom
+        4002999939, // Omen of Saturn
+        4002999938, // Skiffscooter
+        4002999941, // Sunny-Day Seeker
       ]
     },
 
@@ -4875,6 +4970,17 @@ export const EVERVERSE_Y5 = {
       ]
     },
     {
+      name: 'Ships',
+      season: 18,
+      items: [
+        3866405757, // Heliotropium
+        // 3866405759, // Impermeable Tanker - Silver Only
+        3866405755, // Queen's Best
+        // 3866405758, // Trussworked Clipper - Silver Only
+        3866405756, // Xenothalassic Voyage
+      ]
+    },
+    {
       name: 'Shaders',
       season: 16,
       items: [
@@ -4892,6 +4998,16 @@ export const EVERVERSE_Y5 = {
       items: [4103741401, 4103741400, 4103741403, 4103741402]
     },
     {
+      name: 'Shaders',
+      season: 18,
+      items: [
+        1869315391, // Breezy Clear
+        1869315389, // Cursed Azure
+        1869315388, // Ravensilk
+        1869315390, // Whispered Sheen
+      ]
+    },
+    {
       name: 'Transmat Effects',
       season: 16,
       items: [1091850348, 1091850349]
@@ -4900,6 +5016,14 @@ export const EVERVERSE_Y5 = {
       name: 'Transmat Effects',
       season: 17,
       items: [2370958485, 2370958484]
+    },
+    {
+      name: 'Transmat Effects',
+      season: 18,
+      items: [
+        1373960922, // Cannon Fodder
+        1373960923, // Dreaming Shimmer
+      ]
     }
   ]
 };
