@@ -231,7 +231,7 @@ export default ([
           {
             name: 'Extras',
             season: 18,
-            items: [572069851]
+            items: [1141716966, 572069851]
           }
         ]
       },
@@ -686,7 +686,7 @@ export default ([
   },
   {
     name: 'Holiday & Special Events',
-    sets: [eververseAndEvents.GUARDIAN_GAMES_Y5, eververseAndEvents.SOLSTICE_Y5]
+    sets: [eververseAndEvents.GUARDIAN_GAMES_Y5, eververseAndEvents.SOLSTICE_Y5, eververseAndEvents.FESTIVAL_OF_THE_LOST_Y5]
   },
   {
     name: 'Other',

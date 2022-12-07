@@ -4750,9 +4750,7 @@ export const EVERVERSE_Y5 = {
           1742941198, // Directive: Crash (Sleeper Simulant)
           2392937477, // Grimmest Hunter (Leviathan's Breath)
           3673249931, // Indra Soaring (Thunderlord)
-          // 2078240126, // Promethean Prelude (Grand Overture) - Festival of the Lost?
           // 512458769, // Tyrant's Vision (Eyes of Tomorrow) - Silver Only
-          // 1781082581 // Wyrm Perilous (Parasite) - Festival of the Lost?
         ],
         [],
         [
@@ -5187,6 +5185,126 @@ export const SOLSTICE_Y5 = {
         1126354273
         // 1126354272,
         // 2214469173
+      ]
+    }
+  ]
+};
+
+export const FESTIVAL_OF_THE_LOST_Y5 = {
+  name: 'Festival of the Lost',
+  id: 'year-five-festival-of-the-lost',
+  description: 'Acquirable during the 2022 Festival of the Lost event.',
+  big: false,
+  sections: [
+    {
+      name: 'Weapons',
+      season: 18,
+      items: [
+        1280894514, // Mechabre
+        2869466318, // BrayTech Werewolf
+        2603335652, // Jurassic Green
+      ],
+    },
+    {
+      name: 'Hunter Armor',
+      season: 18,
+      itemGroups: [
+        [3387401614, 542198399, 1773000505, 3758415809, 3087166452], // Machined Skirmisher Set
+      ]
+    },
+    {
+      name: 'Titan Armor',
+      season: 18,
+      itemGroups: [
+        [2190633952, 4093148081, 544864743, 3924400899, 1260362486], // Mechanized Protector Set
+      ]
+    },
+    {
+      name: 'Warlock Armor',
+      season: 18,
+      itemGroups: [
+        [2607012497, 1223564136, 1729424352, 2324903362, 1039460381], // Mobile Exoskeleten Set
+      ]
+    },
+    {
+      name: 'Masks',
+      season: 18,
+      items: [
+        1844904393, // Blueberry Mask
+        1844904399, // Bread Mask
+        1844904398, // Caiatl Mask
+        494187469, // Fynch Mask
+        1844904397, // Riven Mask
+        1844904396, // Savathûn Mask
+        494187468, // Starhorse Mask
+        1844904392, // Telesto Mask
+      ],
+    },
+    {
+      name: 'Emotes',
+      season: 18,
+      itemGroups: [
+        [
+          1221462631, // Bobbing for Apples
+          2337196620, // Buster Ray
+          2424824187, // Investigative Dance
+          784603963, // No Escape
+          1858618510, // Hold Me
+          1676763078, // It Was You
+        ],
+      ]
+    },
+    {
+      name: 'Ghosts',
+      season: 18,
+      itemGroups: [
+        [
+          1317763554, // Caramel Apple Shell
+          1317763555, // Hazy Future Shell
+          1317763552, // Papercraft Aranea Shell
+        ],
+        [
+          1662794280, // Moonrise Projection
+          1662794281, // Sweet Treat Projection
+        ]
+      ]
+    },
+    {
+      name: 'Sparrows',
+      season: 18,
+      items: [
+        1776174699, // Bold Chapalu
+        1776174698, // Majestic Whinny
+      ]
+    },
+    {
+      name: 'Ships',
+      season: 18,
+      items: [
+        1412999460, // Coffin Nail
+        2811521173, // Manse Macabre
+        2811521172, // Retrograde Tourer
+      ]
+    },
+    {
+      name: 'Ornaments',
+      season: 18,
+      items: [
+        1781082581, // Wyrm Perilous (Parasite)
+        2078240126, // Promethean Prelude (Grand Overture)
+      ],
+    },
+    {
+      name: 'Extras',
+      season: 18,
+      items: [
+        2549951962, // Rocket Punch (Finisher)
+        2838582256, // Angel's Gleam (Shader)
+        2838582257, // Flower Child (Shader)
+        1214401677, // Pulp Texture (Shader)
+        2418147569, // Pumpkin Bomb (Transmat Effect)
+        866034302, // Lost at Sea (Emblem)
+        1968995955, // Pareidolia (Emblem)
       ]
     }
   ]
