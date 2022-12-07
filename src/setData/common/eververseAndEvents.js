@@ -5193,7 +5193,7 @@ export const SOLSTICE_Y5 = {
 export const FESTIVAL_OF_THE_LOST_Y5 = {
   name: 'Festival of the Lost',
   id: 'year-five-festival-of-the-lost',
-  description: 'Acquirable during the 2023 Festival of the Lost event.',
+  description: 'Acquirable during the 2022 Festival of the Lost event.',
   big: false,
   sections: [
     {
