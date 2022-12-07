@@ -19,10 +19,10 @@ export default [
                 212107599 // Harmonic Siphon
               ],
               [
-                1324233022, // Scout and Sniper Rifle Targeting
-                1404465541, // Inferno Whip
-                1324233023, // Bottomless Bounty I
-                2187989976, // Bottomless Bounty II
+                4058375011, // Legacy Ambush
+                4058375010, // In-Flight Compensator
+                2092805631, // Hand Cannon Targeting
+                2092805626 // Sharp Shooting
               ],
               [
                 1624081088, // Bow Ammo Finder
@@ -67,10 +67,10 @@ export default [
               {
                 name: "Seasonal Artifact",
                 items: [
-                  1324233022, // Scout and Sniper Rifle Targeting
-                  1404465541, // Inferno Whip
-                  1324233023, // Bottomless Bounty I
-                  2187989976, // Bottomless Bounty II
+                  4058375011, // Legacy Ambush
+                  4058375010, // In-Flight Compensator
+                  2092805631, // Hand Cannon Targeting
+                  2092805626 // Sharp Shooting
                 ]
               },
               {
@@ -202,16 +202,14 @@ export default [
                 403494087 // Fastball
               ],
               [
-                3521781038, // Overload Bow
-                3521781037, // Unstoppable Pulse Rifle
-                3521781036, // Anti-Barrier Scout Rifle
-                3521781035, // Anti-Barrier Auto Rifle
-                3521781034, // Unstoppable Shotgun
-                1324233019, // Scout Rifle Loader
-                2187989980, // Glaive Loader
-                2187989983, // Focusing Strike
-                1404465537, // Overload Machine Guns
-                1404465538, // Anti-Barrier Sniper Rifle
+                1360604625, // Unstoppable Hand Cannon
+                1360604626, // Overload Scout Rifle
+                1360604627, // Piercing Bowstring
+                1360604628, // Anti-Barrier Pulse Rifle
+                1360604629, // Overload Rounds
+                4058375013, // Bow Dexterity
+                2092805628, // Pulse Rifle Loader
+                3138762878 // Unstoppable Grenade Launcher
               ],
               [
                 2571974065, // Auto Rifle Loader
@@ -247,7 +245,7 @@ export default [
                 459449847, // Submachine Gun Dexterity
                 146553282, // Sniper Rifle Dexterity
                 532451225, // Trace Rifle Dexterity
-                3725144328, // Glaive Dexterity
+                3725144328 // Glaive Dexterity
               ]
             ],
             groups: [
@@ -260,16 +258,14 @@ export default [
               {
                 name: "Seasonal Artifact",
                 items: [
-                  3521781038, // Overload Bow
-                  3521781037, // Unstoppable Pulse Rifle
-                  3521781036, // Anti-Barrier Scout Rifle
-                  3521781035, // Anti-Barrier Auto Rifle
-                  3521781034, // Unstoppable Shotgun
-                  1324233019, // Scout Rifle Loader
-                  2187989980, // Glaive Loader
-                  2187989983, // Focusing Strike
-                  1404465537, // Overload Machine Guns
-                  1404465538, // Anti-Barrier Sniper Rifle
+                  1360604625, // Unstoppable Hand Cannon
+                  1360604626, // Overload Scout Rifle
+                  1360604627, // Piercing Bowstring
+                  1360604628, // Anti-Barrier Pulse Rifle
+                  1360604629, // Overload Rounds
+                  4058375013, // Bow Dexterity
+                  2092805628, // Pulse Rifle Loader
+                  3138762878 // Unstoppable Grenade Launcher
                 ]
               },
               {
@@ -311,7 +307,7 @@ export default [
                   459449847, // Submachine Gun Dexterity
                   146553282, // Sniper Rifle Dexterity
                   532451225, // Trace Rifle Dexterity
-                  3725144328, // Glaive Dexterity
+                  3725144328 // Glaive Dexterity
                 ]
               }
             ]
@@ -404,7 +400,8 @@ export default [
                 3566745556 // Sniper Damage Resistance
               ],
               [
-                2187989982, // Thermoshock Plating
+                2092805629, // Energy Diffusion Substrate
+                2092805627 // Resilient Retrofit
               ],
               [
                 201502208, // Bow Reserves
@@ -451,7 +448,8 @@ export default [
               {
                 name: "Seasonal Artifact",
                 items: [
-                  2187989982, // Thermoshock Plating
+                  2092805629, // Energy Diffusion Substrate
+                  2092805627 // Resilient Retrofit
                 ]
               },
               {
@@ -576,9 +574,8 @@ export default [
                 1207025932 // Absolution
               ],
               [
-                1324233016, // Sword Scavenger
-                1324233017, // Machine Gun Holster
-                2187989977, // Machine Gun Scavenger
+                4058375008, // Grenade Launcher Holster
+                4058375012 // Mobile Retrofit
               ],
               [
                 987267082, // Arrow Scavenger
@@ -600,7 +597,6 @@ export default [
                 107499324, // Fusion Rifle Holster
                 2627515934, // Grenade Launcher Holster
                 3759707664, // Hand Cannon Holster
-                // 2979161761, // Hand Cannon Holster - Duplicate that isn't earnable
                 1127642993, // Machine Gun Holster
                 2238903692, // Linear Fusion Rifle Holster
                 2001283033, // Pulse Rifle Holster
@@ -623,9 +619,8 @@ export default [
               {
                 name: "Seasonal Artifact",
                 items: [
-                  1324233016, // Sword Scavenger
-                  1324233017, // Machine Gun Holster
-                  2187989977, // Machine Gun Scavenger
+                  4058375008, // Grenade Launcher Holster
+                  4058375012 // Mobile Retrofit
                 ]
               },
               {
@@ -653,7 +648,6 @@ export default [
                   107499324, // Fusion Rifle Holster
                   2627515934, // Grenade Launcher Holster
                   3759707664, // Hand Cannon Holster
-                  // 2979161761, // Hand Cannon Holster - Duplicate that isn't earnable
                   1127642993, // Machine Gun Holster
                   2238903692, // Linear Fusion Rifle Holster
                   2001283033, // Pulse Rifle Holster
@@ -756,13 +750,14 @@ export default [
                 4237638094 // Snapload Finisher
               ],
               [
-                1404465539, // Bad Amplitude
-                1404465540, // Surge Detonators
-                3778343682, // Thunderous Retort
-                3778343681, // Amped Up
-                3778343680, // Trace Evidence
-                3778343687, // Lightning Strikes Twice
-                3778343686, // Sundering Glare
+                3138762876, // Advance Scout
+                3138762875, // Lord Kelvin's Basilisk
+                3138762874, // Low Entropy Superconductor
+                632888029, // Passive Aggressive Guard
+                632888030, // Weakened Clear
+                632888031, // Monochromatic Maestro
+                632888024, // Solo Operative
+                632888025 // Lucent Finisher
               ]
             ],
             groups: [
@@ -777,13 +772,14 @@ export default [
               {
                 name: "Seasonal Artifact",
                 items: [
-                  1404465539, // Bad Amplitude
-                  1404465540, // Surge Detonators
-                  3778343682, // Thunderous Retort
-                  3778343681, // Amped Up
-                  3778343680, // Trace Evidence
-                  3778343687, // Lightning Strikes Twice
-                  3778343686, // Sundering Glare
+                  3138762876, // Advance Scout
+                  3138762875, // Lord Kelvin's Basilisk
+                  3138762874, // Low Entropy Superconductor
+                  632888029, // Passive Aggressive Guard
+                  632888030, // Weakened Clear
+                  632888031, // Monochromatic Maestro
+                  632888024, // Solo Operative
+                  632888025 // Lucent Finisher
                 ]
               }
             ]
@@ -935,10 +931,10 @@ export default [
                 2804214704 // Umbral Sharpening
               ],
               [
-                1291268263, // Mortal Medicine
+                1291268260, // Will of Light (Kinetic)
                 1291268261, // Old Gods' Boon
                 1291268262, // Run for Your Life
-                1291268260, // Will of Light (Kinetic)
+                1291268263 // Mortal Medicine
               ]
             ],
             groups: [
@@ -1031,12 +1027,12 @@ export default [
               {
                 name: "King's Fall",
                 items: [
-                  1291268263, // Mortal Medicine
+                  1291268260, // Will of Light (Kinetic)
                   1291268261, // Old Gods' Boon
                   1291268262, // Run for Your Life
-                  1291268260, // Will of Light (Kinetic)
-                ],
-              },
+                  1291268263 // Mortal Medicine
+                ]
+              }
             ]
           },
           {
@@ -1091,8 +1087,8 @@ export default [
                 3808234135 // Shocked Glyphkeeper
               ],
               [
-                3643044286, // Will of Light (Arc)
-              ],
+                3643044286 // Will of Light (Arc)
+              ]
             ],
             groups: [
               {
@@ -1172,9 +1168,9 @@ export default [
               {
                 name: "King's Fall",
                 items: [
-                  3643044286, // Will of Light (Arc)
-                ],
-              },
+                  3643044286 // Will of Light (Arc)
+                ]
+              }
             ]
           },
           {
@@ -1229,8 +1225,8 @@ export default [
                 2851458940 // Smoldering Glyphkeeper
               ],
               [
-                3540739611, // Will of Light (Solar)
-              ],
+                3540739611 // Will of Light (Solar)
+              ]
             ],
             groups: [
               {
@@ -1310,9 +1306,9 @@ export default [
               {
                 name: "King's Fall",
                 items: [
-                  3540739611, // Will of Light (Solar)
-                ],
-              },
+                  3540739611 // Will of Light (Solar)
+                ]
+              }
             ]
           },
           {
@@ -1367,8 +1363,8 @@ export default [
                 1098978103 // Distorted Glyphkeeper
               ],
               [
-                852793406, // Will of Light (Void)
-              ],
+                852793406 // Will of Light (Void)
+              ]
             ],
             groups: [
               {
@@ -1448,9 +1444,9 @@ export default [
               {
                 name: "King's Fall",
                 items: [
-                  852793406, // Will of Light (Void)
-                ],
-              },
+                  852793406 // Will of Light (Void)
+                ]
+              }
             ]
           },
           {
@@ -1468,8 +1464,8 @@ export default [
                 899058084 // Stagnant Glyphkeeper
               ],
               [
-                2074494595, // Will of Light (Stasis)
-              ],
+                2074494595 // Will of Light (Stasis)
+              ]
             ],
             groups: [
               {
@@ -1491,9 +1487,9 @@ export default [
               {
                 name: "King's Fall",
                 items: [
-                  2074494595, // Will of Light (Stasis)
-                ],
-              },
+                  2074494595 // Will of Light (Stasis)
+                ]
+              }
             ]
           }
         ]

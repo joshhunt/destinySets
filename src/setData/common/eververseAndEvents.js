@@ -4705,6 +4705,18 @@ export const EVERVERSE_Y5 = {
       ]
     },
     {
+      name: 'Armor',
+      season: 19,
+      itemGroups: [
+        [1379845312, 3240885905, 102143815, 2647578211, 817641558], // Dynamo Current Set (Hunter)
+        [3270099132, 329905973, 388644011, 1906028055, 3040327490], // Thunderous Impact Set (Titan)
+        [688245605, 1468922420, 670736972, 1756661054, 3369495425], // Arclight Set (Warlock)
+        // [3619553576, 2043827487, 2500956857, 1139648683, 3756917166], // Misthios Set (Hunter) - Silver Only
+        // [3811486388, 2217754061, 2757696627, 2888553103, 668155306], // Wolf-Kissed Set (Titan) - Silver Only
+        // [3241438375, 1188037422, 1028942146, 3695573032, 718972307], // Eagle's Set (Warlock) - Silver Only
+      ]
+    },
+    {
       name: 'Ornaments',
       season: 16,
       itemGroups: [
@@ -4760,6 +4772,33 @@ export const EVERVERSE_Y5 = {
           4197082027, // Nouveau Parapet (Citan's Ramparts)
           3382176091, // Grasp of the Void (Contraverse Hold)
           4215514285 // Alternate Conduction (Geomag Stabilizers)
+        ]
+      ]
+    },
+
+    {
+      name: 'Ornaments',
+      season: 19,
+      itemGroups: [
+        [
+          // 403878807, // Blooming Gift (Osteo Striga) - Silver Only
+          // 1410194939, // Noble Burden (Dead Man's Tale) - Silver Only
+          // 109428985, // Leporine Jubilation (Riskrunner) - Silver Only
+          // 3287498059, // Calyptra (Le Monarque) - Not Being Sold?
+          1163145340, // Solar Astrolabe (Ticuu's Divination)
+          2972088291, // Three Glowing Dawns (Trinity Ghoul)
+          3789077741, // Open Hands (Lorentz Driver)
+          // 2173404085, // Gjallerfoam (Gjallerhorn) - Silver Only
+          //1138782604, // The Knight's Elegy (The Lament)  - Silver Only
+        ],
+        [],
+        [
+          3956218404, // Eight-Thousander (Fr0st-EE5)
+          1679002088, // Isochronal Nanofluid (Renewal Grasps)
+          2126482184, // Abyss, Inverted (Heart of Inmost Light)
+          686662632, // Meyrin's Odyssey (Dunemarchers)
+          940471310, // Endothermia (Osmiomancy Gloves)
+          961465568, // Rayonnant Tracery (Secant Filaments)
         ]
       ]
     },
@@ -4846,6 +4885,30 @@ export const EVERVERSE_Y5 = {
       ]
     },
     {
+      name: 'Emotes',
+      season: 19,
+      itemGroups: [
+        [
+          2394501953, // Dance Off
+          // 60382475, // Disciple's Judgment - Silver Only
+          1646103576, // Ghost Fist Bump
+          1817373587, // Red Light, Green Light
+          // 1408399356, // Stress Ball - Silver Only
+          // 2054709461, // Heads-Up Buddies - Silver Only
+          2736703249, // Coach Dance
+          // 1304182215, // Decadent Cocoa - Not Being Sold?
+          1037921423, // Flight Dance
+          // 2396326849, // My 10-Gallon Hat - Silver Only
+          3146635512, // Rolling Rulebook
+          // 996371370, // Stow the Rings - Silver Only
+          4029442307, // VR Exploration
+          581051562, // Oh You
+          2189114025, // Standout Pose
+          3275097609, // Wall Sneak
+        ],
+      ]
+    },
+    {
       name: 'Ghosts',
       season: 16,
       itemGroups: [
@@ -4909,6 +4972,28 @@ export const EVERVERSE_Y5 = {
       ]
     },
     {
+      name: 'Ghosts',
+      season: 19,
+      itemGroups: [
+        [
+          3806521906, // Drilldown Shell
+          // 461938196, // Edenic Shell - Silver Only
+          // 3806521909, // Exotech Shell - Silver Only
+          // 140806329, // Infiltrator Shell - Not Being Sold?
+          // 3806521911, // Lunar Lagomorph Shell - Silver Only
+          // 3806521910, // Overcharged Shell - Silver Only
+          // 3806521908, // Repulsor Shell - Not Being Sold?
+        ],
+        [
+          // 143766266, // BrayTech Projection - Not Being Sold?
+          // 143766269, // Clue Projection - Not Being Sold?
+          // 143766264, // Lunar Rabbit Projection - Not Being Sold?
+          // 143766267, // Secure Projection - Not Being Sold?
+          // 143766265, // Seraph Projection - Not Being Sold?
+        ],
+      ],
+    },
+    {
       name: 'Sparrows',
       season: 16,
       items: [
@@ -4945,6 +5030,18 @@ export const EVERVERSE_Y5 = {
         4002999941, // Sunny-Day Seeker
       ]
     },
+    {
+      name: 'Sparrows',
+      season: 19,
+      items: [
+        // 1822839838, // All-Terrain Explorer - Silver Only
+        1822839833, // Externalization
+        // 2159348178, // Gulltoppr-I - Silver Only
+        // 1822839832, // Intrinsic Force - Not Being Sold?
+        // 1822839835, // Rabbit's Chase - Silver Only
+        // 1822839834, // Surging Current - Silver Only
+      ],
+    },
 
     {
       name: 'Ships',
@@ -4979,6 +5076,17 @@ export const EVERVERSE_Y5 = {
       ]
     },
     {
+      name: 'Ships',
+      season: 19,
+      items: [
+        1320342774, // Arc's Courier
+        // 4058196762, // Ascendance Event - Silver Only
+        // 1320342773, // Exohelian - Silver Only
+        // 1320342772, // Gravitic Keel - Not Being Sold?
+        // 1320342775, // Moonshadow Hop - Silver Only
+      ]
+    },
+    {
       name: 'Shaders',
       season: 16,
       items: [
@@ -5006,6 +5114,16 @@ export const EVERVERSE_Y5 = {
       ]
     },
     {
+      name: 'Shaders',
+      season: 19,
+      items: [
+        1622227946, // Empirical Imperative
+        1622227944, // Growing Gilt
+        1622227945, // Sinking Feeling
+        1622227947, // Transcendental Ambition
+      ]
+    },
+    {
       name: 'Transmat Effects',
       season: 16,
       items: [1091850348, 1091850349]
@@ -5022,14 +5140,22 @@ export const EVERVERSE_Y5 = {
         1373960922, // Cannon Fodder
         1373960923, // Dreaming Shimmer
       ]
-    }
+    },
+    {
+      name: 'Transmat Effects',
+      season: 19,
+      items: [
+        2218066866, // Swirling Leaf Entrance
+        2218066867, // Vex Incursion Entrance
+      ],
+    },
   ]
 };
 
 export const GUARDIAN_GAMES_Y5 = {
   name: 'Guardian Games',
   id: 'year-five-guardian-games',
-  description: 'Acquirable during the seasonal Guardian Games event.',
+  description: 'Acquirable during the 2022 Guardian Games event.',
   big: false,
   sections: [
     {
@@ -5308,4 +5434,134 @@ export const FESTIVAL_OF_THE_LOST_Y5 = {
       ]
     }
   ]
+};
+
+export const DAWNING_Y5 = {
+  name: 'The Dawning',
+  id: 'year-five-the-dawning',
+  description: 'Acquirable during the 2022 Dawning event.',
+  big: false,
+  sections: [
+    {
+      name: 'Weapons',
+      season: 19,
+      items: [
+        2812100428, // Stay Frosty
+        2814093983, // Cold Front
+        3573686365, // Glacioclasm
+        495940989, // Avalanche
+        396910433, // Zephyr
+      ],
+    },
+    {
+      name: 'Hunter Armor',
+      season: 19,
+      items: [2580432862, 1384371471, 3332509033, 2000448433, 351707684], // Pruina Luster Set
+    },
+    {
+      name: 'Titan Armor',
+      season: 19,
+      items: [3746956458, 1900594973, 3752517619, 3487471557, 3362582864], // Pruina Luster Set
+    },
+    {
+      name: 'Warlock Armor',
+      season: 19,
+      items: [569039965, 3750893516, 2065742740, 101761654, 3234030313], // Pruina Luster Set
+    },
+    {
+      name: 'Emotes',
+      season: 19,
+      items: [
+        1748608556, // Downhill Skiing
+        3631942882, // Snowboard Tricks
+        4086164721, // Shaky Skating
+        4202615266, // Action Figure Showdown
+        3058007494, // Solo Fist Bump
+        3386658625, // Belly Laugh
+      ],
+    },
+    {
+      name: 'Ghosts',
+      season: 19,
+      itemGroups: [
+        [
+          3684684730, // Dawn Chimes Shell
+          2990668491, // Festive Shell
+          2990668490, // Mountainside Shell
+          2990668488, // Nutcracker Shell
+        ],
+        [
+          413766122, // Baking Projection
+          413766123, // Warm Hat Projection
+        ],
+      ],
+    },
+    {
+      name: 'Sparrows',
+      season: 19,
+      items: [
+        2552460292, // Forward Erebus
+        2552460293, // Joy of Dawning
+      ],
+    },
+    {
+      name: 'Ships',
+      season: 19,
+      items: [
+        1739076284, // Africtional Cooler
+        1739076285, // Seirios Majoris
+      ],
+    },
+    {
+      name: 'Ornaments',
+      season: 19,
+      items: [
+        89300158, // Cold Cheer (Ager's Scepter)
+        1871823355, // Infinite Gift (Vex Mythoclast)
+      ],
+    },
+    {
+      name: 'Extras',
+      season: 19,
+      items: [
+        1997760147, // Hoarfroast Sunrise (Shader)
+        1997760146, // Joyful Gift (Shader)
+        2721907666, // Beneficence (Shader)
+        2721907667, // Noble Rime (Shader)
+        2853747581, // Gift Stack Entrance (Transmat Effect)
+        2026109719, // Dawning Cheer and Treats (Emblem)
+      ],
+    },
+  ],
+};
+
+export const MOMENTS_OF_TRIUMPH_Y5 = {
+  name: 'Moments of Triumph',
+  id: 'year-five-moments-of-triumph',
+  description: 'Earned during the 2022 Moments of Triumph event.',
+  big: false,
+  sections: [
+    {
+      name: 'Ghosts',
+      season: 19,
+      items: [
+        4117442486, // Gallant Ward Shell
+      ],
+    },
+    {
+      name: 'Sparrows',
+      season: 19,
+      items: [
+        4024856518, // Blistering Slipstream
+      ],
+    },
+    {
+      name: 'Extras',
+      season: 19,
+      items: [
+        2026109714, // Stories We Remember (Emblem)
+        2026109712, // Memorialized (Emblem)
+      ],
+    },
+  ],
 };

@@ -32,6 +32,13 @@ export default ([
             items: [2671639706]
           },
           {
+            name: 'Weapons',
+            season: 19,
+            items: [
+              2349907931, // Prolonged Engagement
+            ],
+          },
+          {
             name: 'Nightfall: The Ordeal Weapons',
             season: 16,
             itemGroups: [
@@ -53,6 +60,20 @@ export default ([
             itemGroups: [
               [40394833, 1094005544],
               [2378101424, 912150785]
+            ]
+          },
+          {
+            name: 'Nightfall: The Ordeal Weapons',
+            season: 19,
+            itemGroups: [
+              [
+                772231794, // Hung Jury SR4
+                3183283212, // Wendigo GL3
+              ],
+              [
+                4074251943, // Hung Jury SR4 (Adept)
+                555148853, // Wendigo GL3 (Adept)
+              ],
             ]
           },
           {
@@ -82,9 +103,17 @@ export default ([
           },
           {
             name: 'Extras',
-            season: 17,
+            season: 18,
             items: [2199880738, 1902811978]
-          }
+          },
+          {
+            name: 'Extras',
+            season: 19,
+            items: [
+              3353094415, // Musical Vanguard Projection (Ghost Projection)
+              1216139473, // Stalwart Tenet (Shader)
+            ],
+          },
         ]
       },
       {
@@ -109,6 +138,18 @@ export default ([
             name: 'Weapons',
             season: 18,
             items: [2988121501]
+          },
+          {
+            name: 'Weapons',
+            season: 19,
+            itemGroups: [
+              [
+                1903182562, // Blowout
+              ],
+              [
+                882778888, // Rose
+              ],
+            ]
           },
           {
             name: 'Hunter Armor',
@@ -139,7 +180,15 @@ export default ([
             name: 'Extras',
             season: 18,
             items: [4078150875, 1443620695]
-          }
+          },
+          {
+            name: 'Extras',
+            season: 19,
+            items: [
+              3660738414, // Wishful Thinking Projection (Ghost Projection)
+              3110493660, // Compbative Tanager (Shader)
+            ],
+          },
         ]
       },
       {
@@ -164,6 +213,13 @@ export default ([
             name: 'Weapons',
             season: 18,
             items: [1141927949]
+          },
+          {
+            name: 'Weapons',
+            season: 19,
+            items: [
+              676270382, // Albruna-D
+            ],
           },
           {
             name: 'Hunter Armor',
@@ -194,6 +250,14 @@ export default ([
             name: 'Extras',
             season: 18,
             items: [227203906, 2102881346]
+          },
+          {
+            name: 'Extras',
+            season: 19,
+            items: [
+              3764695079, // Derelict Projection (Ghost Projection)
+              2810509977, // Colubrid Forester (Shader)
+            ],
           }
         ]
       },
@@ -224,6 +288,29 @@ export default ([
             items: [1532276803, 4009352833]
           },
           {
+            name: 'Weapons',
+            season: 19,
+            items: [
+              540880995, // Dark Decider
+              487361141, // Gunnora's Axe
+            ],
+          },
+          {
+            name: 'Hunter Armor',
+            season: 19,
+            items: [3352415987, 845422466, 3419310182, 2931145020, 3737404623], // Iron Companion Set
+          },
+          {
+            name: 'Titan Armor',
+            season: 19,
+            items: [1880357865, 3583853408, 735535272, 2237216282, 2437632645], // Iron Companion Set
+          },
+          {
+            name: 'Warlock Armor',
+            season: 19,
+            items: [960442438, 357179927, 1011882337, 1741360441, 2218948028], // Iron Companion Set
+          },
+          {
             name: 'Extras',
             season: 17,
             items: [383734238, 987236624]
@@ -232,7 +319,15 @@ export default ([
             name: 'Extras',
             season: 18,
             items: [1141716966, 572069851]
-          }
+          },
+          {
+            name: 'Extras',
+            season: 19,
+            items: [
+              2026109715, // Blood of the Wolf (Emblem)
+              249893830, // Iron Countershade (Shader)
+            ],
+          },
         ]
       },
       {
@@ -263,6 +358,20 @@ export default ([
               [1574601402, 2185327324],
               [711889599, 2307365]
             ]
+          },
+          {
+            name: 'Weapons',
+            season: 19,
+            itemGroups: [
+              [
+                3102421004, // Exalted Truth
+                3624844116, // Unwavering Duty
+              ],
+              [
+                3920882229, // Exalted Truth (Adept)
+                2759251821, // Unwavering Duty (Adept)
+              ],
+            ],
           },
           {
             name: 'Hunter Armor',
@@ -621,7 +730,64 @@ export default ([
             items: [2213418427, 4252635431, 982950671, 866034303]
           }
         ]
-      }
+      },
+      {
+        name: 'Season 19',
+        id: 'year-five-season-19',
+        description: 'Complete seasonal activities from Season of the Seraph.',
+        sections: [
+          {
+            name: 'Pursuit Weapon',
+            season: 19,
+            itemGroups: [[2276328320], [807109344, 807109346, 807109347]], // Veles-X and Ornaments
+          },
+          {
+            name: 'Weapons',
+            season: 19,
+            itemGroups: [
+              [
+                1731355324, // IKELOS_HC_V1.0.3
+                1168625549, // IKELOS_SG_V1.0.3
+                2302346155, // IKELOS_SR_V1.0.3
+                2149683300, // IKELOS_SMG_V1.0.3
+              ],
+              [
+                1751893422, // Disparity
+                3849444474, // Tripwire Canary
+                2978226043, // Judgment of Kelgorath
+                2827764482, // Path of Least Resistance
+                2272041093, // Fire and Forget
+                3103325054, // Retrofit Escapade
+              ],
+            ],
+          },
+          {
+            name: 'Hunter Armor',
+            season: 19,
+            items: [648266032, 446049665, 4116381015, 1940895219, 1949733158], // Warmind's Avatar Set
+          },
+          {
+            name: 'Titan Armor',
+            season: 19,
+            items: [1059446290, 1525902715, 839296981, 4270910189, 4256213288], // Warmind's Avatar Set
+          },
+          {
+            name: 'Warlock Armor',
+            season: 19,
+            items: [2974824815, 1259550198, 2710316218, 2471829328, 1934312075], // Warmind's Avatar Set
+          },
+          {
+            name: 'Extras',
+            season: 19,
+            items: [
+              3809059822, // Warsat Shell (Ghost Shell)
+              2593587862, // Sprit of the Warmind (Ship)
+              1455706250, // Archangel's Refit (Sparrow)
+              2026109718, // Orbital Step (Emblem)
+            ],
+          },
+        ],
+      },
     ]
   },
   {
@@ -686,7 +852,13 @@ export default ([
   },
   {
     name: 'Holiday & Special Events',
-    sets: [eververseAndEvents.GUARDIAN_GAMES_Y5, eververseAndEvents.SOLSTICE_Y5, eververseAndEvents.FESTIVAL_OF_THE_LOST_Y5]
+    sets: [
+      eververseAndEvents.GUARDIAN_GAMES_Y5,
+      eververseAndEvents.SOLSTICE_Y5,
+      eververseAndEvents.FESTIVAL_OF_THE_LOST_Y5,
+      eververseAndEvents.DAWNING_Y5,
+      eververseAndEvents.MOMENTS_OF_TRIUMPH_Y5,
+    ],
   },
   {
     name: 'Other',
@@ -732,6 +904,15 @@ export default ([
             name: 'Free Track',
             season: 18,
             items: [374573733, 1298815317, 820890091]
+          },
+          {
+            name: 'Free Track',
+            season: 19,
+            items: [
+              219145368, // The Manticore
+              3103325054, // Retrofit Escapade
+              2978226043, // Judgment of Kelgorath
+            ],
           },
           {
             name: 'Paid Track',
@@ -794,8 +975,29 @@ export default ([
                 3851215879
               ]
             ]
-          }
-        ]
+          },
+          {
+            name: 'Paid Track',
+            season: 19,
+            itemGroups: [
+              [1880238324], // Scorpionflight (The Manticore Ornament)
+              [832039575, 4200520990, 1214186834, 324936184, 1851004515], // Hardened Basilisk Set (Hunter)
+              [4092823443, 1585830050, 1692726662, 4096009948, 2435175535], // Hardened Basilisk Set (Titan)
+              [2752126238, 2022099023, 1523304617, 2596599281, 3303607908], // Hardened Basilisk Set (Warlock)
+              [
+                781932118, // Tripwire Dodge (Emote)
+                1382109741, // Spy Goggles (Emote)
+                3620647249, // Stylish Draw (Finisher)
+                140806329, // Infiltrator Shell (Ghost Shell)
+                1025446168, // Mechanica Projection (Ghost Projection)
+                1068790731, // Intercepted Transmission (Sparrow)
+                2255551160, // Seraphim Cloak (Shader)
+                2255551161, // Carrhae Black (Shader)
+                2498169544, // Seraph Reboot Entrance (Transmat Effect)
+              ],
+            ],
+          },
+        ],
       },
       eververseAndEvents.EVERVERSE_Y5,
       {
@@ -837,7 +1039,17 @@ export default ([
             name: 'Weapons',
             season: 18,
             items: [1916287826, 4100775158, 2119346509, 1911060537]
-          }
+          },
+          {
+            name: 'Weapons',
+            season: 19,
+            items: [
+              2328531378, // Lodbrok-C
+              963710795, // Aurvandil FR6
+              1851521408, // Jararaca-3SR
+              2566006935, // Fioitura-59
+            ],
+          },
         ]
       }
     ]

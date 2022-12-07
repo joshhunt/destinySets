@@ -31,6 +31,8 @@ export default ([
       eververseAndEvents.GUARDIAN_GAMES_Y5,
       eververseAndEvents.SOLSTICE_Y5,
       eververseAndEvents.FESTIVAL_OF_THE_LOST_Y5,
+      eververseAndEvents.DAWNING_Y5,
+      eververseAndEvents.MOMENTS_OF_TRIUMPH_Y5,
     ]
   },
   {
