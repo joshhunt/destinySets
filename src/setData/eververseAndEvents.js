@@ -31,6 +31,7 @@ export default ([
       eververseAndEvents.GUARDIAN_GAMES_Y5,
       eververseAndEvents.SOLSTICE_Y5,
       eververseAndEvents.FESTIVAL_OF_THE_LOST_Y5,
+      eververseAndEvents.GUARDIAN_GAMES_Y6,
     ]
   },
   {
@@ -41,6 +42,7 @@ export default ([
       eververseAndEvents.EVERVERSE_Y3,
       eververseAndEvents.EVERVERSE_Y4,
       eververseAndEvents.EVERVERSE_Y5,
+      eververseAndEvents.EVERVERSE_Y6
     ]
   }
 ]: SetPage);
